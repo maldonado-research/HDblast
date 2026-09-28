@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HDBLAST — Ricardo Maldonado (español)</title>
+<meta name="description" content="HDBLAST: una hipótesis de investigación especulativa y comprobable que pregunta si un evento gravitacional en una dimensión superior pudo haber encendido el Big Bang caliente. Ecuaciones, código, resultados, resultados negativos y correcciones.">
+<link rel="canonical" href="https://maldonado-research.github.io/HDblast/es/">
+<link rel="alternate" hreflang="en" href="https://maldonado-research.github.io/HDblast/">
+<link rel="alternate" hreflang="es" href="https://maldonado-research.github.io/HDblast/es/">
+<meta name="author" content="Ricardo Maldonado">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HDBLAST">
+<meta property="og:title" content="¿Pudo una “explosión” en una dimensión superior encender nuestro Big Bang?">
+<meta property="og:locale" content="es_MX">
+<meta property="og:description" content="HDBLAST: una hipótesis especulativa y comprobable del investigador independiente Ricardo Maldonado — un modelo en cinco dimensiones, simulaciones, resultados negativos y correcciones, todo público y reproducible.">
+<meta property="og:url" content="https://maldonado-research.github.io/HDblast/es/">
+<meta property="og:image" content="https://maldonado-research.github.io/HDblast/figures/share-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="HDBLAST: Could a higher-dimensional blast have sparked our Big Bang? Speculative, testable hypothesis by Ricardo Maldonado.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="¿Pudo una “explosión” en una dimensión superior encender nuestro Big Bang?">
+<meta name="twitter:description" content="Un modelo en cinco dimensiones, simulaciones, resultados negativos y correcciones — todo público y reproducible.">
+<meta name="twitter:image" content="https://maldonado-research.github.io/HDblast/figures/share-card.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://maldonado-research.github.io/HDblast/#website",
+      "name": "HDBLAST",
+      "url": "https://maldonado-research.github.io/HDblast/",
+      "inLanguage": ["en", "es"],
+      "author": {"@id": "https://maldonado-research.github.io/HDblast/#author"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://maldonado-research.github.io/HDblast/#author",
+      "name": "Ricardo Maldonado",
+      "jobTitle": "Independent researcher",
+      "url": "https://maldonado-research.github.io/HDblast/",
+      "sameAs": ["https://github.com/maldonado-research"]
+    },
+    {
+      "@type": "Dataset",
+      "name": "HDBLAST: could a higher-dimensional blast have sparked the hot Big Bang? (research program, code and data)",
+      "description": "A speculative, testable research hypothesis asking whether a gravitational event in a fifth dimension could have transferred energy into our four-dimensional universe and started the hot Big Bang. Registered five-dimensional Einstein–scalar brane model with certified, exact and numerical results, negative results and published corrections. Not peer reviewed.",
+      "url": "https://maldonado-research.github.io/HDblast/",
+      "sameAs": ["https://github.com/maldonado-research/HDblast", "https://doi.org/10.5281/zenodo.17088132"],
+      "identifier": "https://doi.org/10.5281/zenodo.17088132",
+      "creator": {"@id": "https://maldonado-research.github.io/HDblast/#author"},
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "isAccessibleForFree": true,
+      "keywords": ["brane-world cosmology", "extra dimensions", "Big Bang", "five-dimensional gravity", "numerical relativity", "de Sitter brane", "Randall–Sundrum", "cosmology"],
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#fbfaf7; --surface:#ffffff; --ink:#1c1d21; --muted:#5b5f6a; --line:#e3e1dc;
+  --accent:#2a6fdb; --accent-ink:#ffffff; --warn:#a14a15; --ok:#1f7a4d; --chip:#eef2fb;
+  --maxw:980px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111317; --surface:#181b21; --ink:#e9eaee; --muted:#a4a9b5; --line:#2a2e37;
+    --accent:#7aa7ff; --accent-ink:#0d1320; --warn:#f0a068; --ok:#6fd3a0; --chip:#1f2633;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111317; --surface:#181b21; --ink:#e9eaee; --muted:#a4a9b5; --line:#2a2e37;
+  --accent:#7aa7ff; --accent-ink:#0d1320; --warn:#f0a068; --ok:#6fd3a0; --chip:#1f2633;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+header{border-bottom:1px solid var(--line);background:var(--surface)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;max-width:var(--maxw);margin:0 auto}
+.brand{font-weight:700;letter-spacing:.04em}
+nav a{margin-left:14px;text-decoration:none;color:var(--muted);font-size:15px}
+nav a:hover{color:var(--ink)}
+.hero{padding:56px 0 28px}
+.eyebrow{color:var(--muted);font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 14px}
+.lede{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:760px;margin:0 0 22px}
+.notice{border-left:4px solid var(--warn);background:var(--surface);padding:14px 16px;border-radius:6px;margin:0 0 26px;max-width:760px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;border:1px solid var(--line);color:var(--ink);background:var(--surface)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+section{padding:34px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(22px,3vw,28px);margin:0 0 14px}
+h3{font-size:18px;margin:0 0 6px}
+figure{margin:18px 0 6px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px}
+figure img{width:100%;height:auto;display:block;background:#fff;border-radius:6px}
+figcaption{font-size:14px;color:var(--muted);padding:8px 4px 0}
+.table{width:100%;overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600}
+.tag{display:inline-block;font-size:12.5px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--chip);white-space:nowrap}
+.tag.neg{color:var(--warn)} .tag.ok{color:var(--ok)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+ol li{margin:4px 0}
+code{font-size:.92em;background:var(--chip);padding:1px 5px;border-radius:4px}
+footer{padding:30px 0 50px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+.theme{background:none;border:1px solid var(--line);color:var(--muted);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:13px}
+@media (max-width:640px){nav a{margin-left:10px;font-size:14px} .hide-sm{display:none} th,td{padding:8px 6px;font-size:14px} .tag{white-space:normal;border-radius:8px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="top">
+    <div class="brand">HDBLAST</div>
+    <nav>
+      <a href="#results">Resultados</a>
+      <a href="#next" class="hide-sm">Siguiente</a>
+      <a href="https://github.com/maldonado-research/HDblast/tree/main/hdblast">Investigación</a>
+      <a href="#cite">Citar</a>
+      <a href="../" hreflang="en" lang="en">English</a>
+      <button class="theme" id="theme" aria-label="Cambiar tema de color">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <p class="eyebrow">Ricardo Maldonado · programa de investigación independiente · 2025–2026</p>
+    <h1>¿Pudo una “explosión” en una dimensión superior encender nuestro Big Bang?</h1>
+    <p class="lede">HDBLAST pregunta si un evento gravitacional violento en una quinta dimensión pudo haber transferido energía a nuestro universo de cuatro dimensiones e iniciado el Big Bang caliente. Las ecuaciones, el código, los resultados, los fracasos y las correcciones son todos públicos.</p>
+    <div class="notice"><strong>Estado honesto:</strong> esta es una hipótesis especulativa y comprobable, no un descubrimiento. No ha sido revisada por pares, no ha demostrado que existan dimensiones extra y ninguna observación la respalda todavía. Cada resultado de abajo indica qué tan bien está establecido.</div>
+    <div class="btns">
+      <a class="btn primary" href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/HDBLAST_IN_PLAIN_LANGUAGE.md">Leer la guía en lenguaje sencillo (inglés)</a>
+      <a class="btn" href="https://github.com/maldonado-research/HDblast/tree/main/hdblast/checkpoints">Etapas de investigación y código</a>
+      <a class="btn" href="https://doi.org/10.5281/zenodo.17088132">Registros en Zenodo</a>
+    </div>
+  </div>
+
+  <section id="idea">
+    <h2>La idea</h2>
+    <p>Nuestro universo podría comportarse como una delgada <strong>membrana (una “brana”)</strong> dentro de un espacio más grande de cinco dimensiones, lleno de gravedad y de un campo escalar. Si la membrana está en un equilibrio inestable, como una pelota en la cima de una colina, puede rodar hacia abajo y liberar energía. HDBLAST pregunta si un evento así pudo haber producido el estado caliente y denso donde comienza la historia estándar del Big Bang. La <em>ampliaría</em>, no la reemplazaría.</p>
+    <figure>
+      <img src="../figures/shell_hilltop_and_spectrum.png" alt="Izquierda: la membrana registrada está en la cima de una colina de potencial. Derecha: la tasa de inestabilidad en cinco dimensiones coincide con una fórmula cerrada en cuatro dimensiones." loading="lazy">
+      <figcaption>La membrana registrada está en la cima de una colina (izquierda). Su tasa de inestabilidad en cinco dimensiones coincide con una fórmula cerrada en cuatro dimensiones (derecha). Cálculos del modelo, no observaciones. (Figura con rótulos en inglés.)</figcaption>
+    </figure>
+  </section>
+
+  <section id="results">
+    <h2>Lo que se ha encontrado (sept. 2026)</h2>
+    <div class="table">
+    <table>
+      <thead><tr><th>Resultado</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td>Se fija de antemano un modelo específico de Einstein–escalar en 5D: W(φ)=1−φ+φ³/3, tensión de la membrana σ=2W+δ(1+cφ), δ=0.001</td><td><span class="tag">Definición</span></td></tr>
+        <tr><td>Dentro del modelo, la solución de membrana registrada existe (prueba asistida por computadora, localmente única; es una afirmación sobre las ecuaciones, no sobre la naturaleza)</td><td><span class="tag ok">Certificado (condicional)</span></td></tr>
+        <tr><td>Un modo escalar inestable, m² ≈ −7.7179 H², crecimiento e<sup>1.657 Hτ</sup> (numéricamente el único). Ningún modo inestable en los sectores tensorial, vectorial ni de armónicos especiales (estabilidad de modos, no estabilidad lineal completa).</td><td><span class="tag ok">Certificado (modo) / Numérico (unicidad) / Exacto (otros sectores)</span></td></tr>
+        <tr><td>Una teoría 4D de forma cerrada coincide con el espectro 5D hasta ~10⁻⁶ y predijo el punto de retorno antes de que la simulación 5D lo confirmara</td><td><span class="tag ok">Exacto + Numérico</span></td></tr>
+        <tr><td>Evolución no lineal completa en 5D: dos destinos, relajación <em>hacia</em> una brana de de Sitter vacía (las simulaciones aún no alcanzan el estado final) o inversión y colapso</td><td><span class="tag">Numérico</span></td></tr>
+        <tr><td>El movimiento homogéneo y clásico de la membrana, sin materia añadida, no produce un universo caliente lleno de radiación</td><td><span class="tag neg">Negativo</span></td></tr>
+        <tr><td>Solución estática tardía corregida (numérica); una extensión propuesta con materia y una ley exacta de intercambio de energía</td><td><span class="tag">Numérico / Exacto (propuesta)</span></td></tr>
+        <tr><td>Afirmación de julio de 2026 sobre radiación gravitacional, retirada tras una auditoría</td><td><span class="tag neg">Retirada</span></td></tr>
+        <tr><td>Firma de “rodilla” en la sincronización de púlsares: evaluada de forma preliminar con datos públicos, no derivada del modelo 5D; la prueba estricta registrada falló</td><td><span class="tag neg">Preliminar / Negativo</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <figure>
+      <img src="../figures/two_fates_registered_detuning.png" alt="Dos paneles: la posición de la membrana y la tasa de Hubble de la brana en función del tiempo; una curva se relaja hacia una brana de de Sitter y la otra colapsa." loading="lazy">
+      <figcaption>Simulación completa en cinco dimensiones con los parámetros registrados: la membrana se dirige hacia una brana de de Sitter vacía (azul) o se invierte y colapsa (naranja). Ninguna contiene una era caliente de radiación. (Figura con rótulos en inglés.)</figcaption>
+    </figure>
+    <p><strong>En resumen:</strong> las matemáticas están inusualmente bien controladas para un proyecto independiente. La versión más simple de la explosión no produce, por sí sola, un Big Bang caliente. La pregunta abierta es si añadir materia u otros ingredientes físicos puede lograrlo.</p>
+  </section>
+
+  <section id="next">
+    <h2>Lo que sigue</h2>
+    <div class="grid">
+      <div class="card"><h3>Estabilidad</h3><p>¿Es estable la solución tardía corregida y termina realmente ahí la explosión?</p></div>
+      <div class="card"><h3>Producción de partículas</h3><p>¿Puede la energía de la explosión convertirse en partículas y en una era duradera de radiación, incluyendo su efecto de retorno?</p></div>
+      <div class="card"><h3>Simulaciones confiables</h3><p>Controlar los errores numéricos en evoluciones largas en cinco dimensiones.</p></div>
+      <div class="card"><h3>Nuevos ingredientes</h3><p>Evaluar acoplamientos con materia, “radiación oscura” en el volumen extra, construcciones de universo-burbuja y una fase de contracción (colapso).</p></div>
+    </div>
+    <p>Para que la hipótesis sea creíble necesita un mecanismo que funcione, una predicción cuantitativa única, reproducción independiente, revisión por pares y pruebas observacionales. Puede fallar en cualquier paso, y los fracasos también se publicarán.</p>
+  </section>
+
+  <section id="explore">
+    <h2>Explora la investigación</h2>
+    <ol>
+      <li><a href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/HDBLAST_IN_PLAIN_LANGUAGE.md">Guía en lenguaje sencillo</a> (inglés)</li>
+      <li><a href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/PROGRAM_MAP.md">Mapa del programa</a>: modelo, cronología, registro de afirmaciones y pruebas de falsación (inglés)</li>
+      <li><a href="https://github.com/maldonado-research/HDblast/tree/main/hdblast/checkpoints">Etapas de investigación</a>: informes, código, datos y revisiones internas hechas con IA (no revisión externa por pares)</li>
+      <li><a href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/ZENODO_RECORDS.md">Todos los registros en Zenodo</a></li>
+      <li><a href="https://github.com/maldonado-research/HDblast/tree/main/research">Ronda de investigación más reciente</a> (en curso)</li>
+    </ol>
+  </section>
+
+  <section id="cite">
+    <h2>Citar</h2>
+    <p>Maldonado, R. <em>HDBLAST: higher-dimensional blast research program.</em> Zenodo, <a href="https://doi.org/10.5281/zenodo.17088132">doi:10.5281/zenodo.17088132</a> (todas las versiones). Registro más reciente localizado: <a href="https://zenodo.org/records/22922928">22922928</a> (23 de sept. de 2026). Cada registro de Zenodo indica su propia licencia.</p>
+    <p>Se invita a especialistas a revisar el trabajo y reportar errores en <a href="https://github.com/maldonado-research/HDblast/issues">GitHub issues</a>.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    © 2025–2026 Ricardo Maldonado · Investigador independiente · Parte de los cálculos y documentos de 2025–2026 se prepararon con asistentes de IA (Claude de Anthropic y ChatGPT/Codex de OpenAI) bajo la dirección del autor, con pasos de verificación registrados en cada etapa. · Texto, figuras y datos: CC BY 4.0 · Código: MIT.
+  </div>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement, key='hdblast-theme';
+  try{var saved=localStorage.getItem(key); if(saved){root.setAttribute('data-theme',saved);}}catch(e){}
+  document.getElementById('theme').addEventListener('click',function(){
+    var dark = root.getAttribute('data-theme') ? root.getAttribute('data-theme')==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem(key,next);}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
