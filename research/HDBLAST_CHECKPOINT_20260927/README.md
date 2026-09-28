@@ -62,3 +62,5 @@ python3 synthesis/make_manifest.py --check
 ---
 
 **Note for this public copy:** the raw simulation arrays (`.npz`, 113 files, about 195 MB) are not included in the public repository because of their size. `MANIFEST.sha256.json` still lists them, so a manifest check will report them as missing. Every JSON result, script, log and report is included. The arrays are kept in the author's archive and are available on request.
+
+In this public copy, `stability_gauge_invariant/reproduce_backgrounds.py` reads the 22 Sept package from its location in this repository (`hdblast/checkpoints/...`) instead of the original workstation path, so it runs without edits. That one file therefore differs from its manifest hash.

@@ -11,7 +11,7 @@ sys.dont_write_bytecode = True
 from pathlib import Path
 import numpy as np
 HERE = Path(__file__).resolve().parent
-PKG = Path('/home/user/unified-theory-maldonado/new-files/latest-work/HDBLAST_SCALAR_PROFILE_BRANCH_AND_MATTER_20260922/HDBLAST_SCALAR_PROFILE_BRANCH_AND_MATTER_20260922')
+PKG = Path(__file__).resolve().parents[3] / 'hdblast/checkpoints/2026-09-22_scalar-profile-branch-and-matter_zenodo-22922928/HDBLAST_SCALAR_PROFILE_BRANCH_AND_MATTER_20260922'  # public-repo path
 sys.path.insert(0, str(PKG/'static_branch')); sys.path.insert(0, str(PKG/'frozen')); sys.path.insert(0, str(HERE))
 import solve_plus_branch as spb
 import registered_solver as rs
