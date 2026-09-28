@@ -1,0 +1,324 @@
+{
+ "status": "PASS",
+ "checks": [
+  {
+   "name": "order-4 operators equal frozen solver to roundoff (relative < 1e-14)",
+   "pass_": true,
+   "relative_max_differences": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "low-memory operator builder equals frozen R.matrices (relative < 1e-14)",
+   "pass_": true,
+   "relative_max_differences": [
+    5.695366657488354e-16,
+    7.450704775336741e-17,
+    0.0,
+    1.746159981004779e-16,
+    0.0
+   ]
+  },
+  {
+   "name": "rhs equals frozen solver to roundoff (initial state, relative < 1e-13)",
+   "pass_": true,
+   "relative_max_difference": 3.352990927373669e-16
+  },
+  {
+   "name": "rhs equals frozen solver to roundoff (perturbed state, relative < 1e-13)",
+   "pass_": true,
+   "relative_max_difference": 1.7991089743593907e-17
+  },
+  {
+   "name": "constraint arrays equal frozen diagnostics to roundoff (relative < 1e-13)",
+   "pass_": true,
+   "relative_max_difference": 2.1068950467376e-16
+  },
+  {
+   "name": "KO dissipation equals the frozen solver KO term to roundoff",
+   "pass_": true,
+   "relative_max_difference": 1.7991089743593907e-17
+  },
+  {
+   "name": "order-2 stencil incl. shell ghost converges at order >= 2-0.3",
+   "pass_": true,
+   "observed_D1": [
+    1.8879817137035884,
+    1.9744802034874416
+   ],
+   "observed_D2": [
+    1.995941793528403,
+    1.9984215039275617
+   ]
+  },
+  {
+   "name": "order-4 stencil incl. shell ghost converges at order >= 4-0.3",
+   "pass_": true,
+   "observed_D1": [
+    3.9989004965400388,
+    3.9997252561705343
+   ],
+   "observed_D2": [
+    4.067320381605534,
+    4.025506195771515
+   ]
+  },
+  {
+   "name": "order-6 first derivative converges at order >= 5.7",
+   "pass_": true,
+   "observed_D1": [
+    5.99016936348361,
+    5.99545401414402
+   ]
+  },
+  {
+   "name": "negative control: 1% wrong shell slope destroys boundary D2 convergence",
+   "pass_": true,
+   "shell_D2_error_log2_ratios": [
+    -0.9985565127036067,
+    -0.9992791049878659
+   ]
+  },
+  {
+   "name": "damped law: (d_t-d_z)[e^3A C+] = -kappa e^3A C+",
+   "pass_": true
+  },
+  {
+   "name": "damped law: (d_t+d_z)[e^3A C-] = -kappa e^3A C+ (A_t-A_z)/(A_t+A_z)",
+   "pass_": true
+  },
+  {
+   "name": "negative control: wrong damping sign violates the damped law",
+   "pass_": true
+  },
+  {
+   "name": "negative control: denominator A_t-A_z violates the damped law",
+   "pass_": true
+  },
+  {
+   "name": "projection reduces discrete initial H to roundoff and keeps M exactly zero",
+   "pass_": true,
+   "rows": [
+    {
+     "h": 0.0004,
+     "H_before": 1.0403199138136458e-06,
+     "H_after": 1.2430847794948694e-14,
+     "M_after": 0.0,
+     "Cw_before": 0.008627643901369268,
+     "Cw_after": 1.9271270258460995e-12,
+     "max_abs_change_a": 4.7257152455736713e-08
+    },
+    {
+     "h": 0.0002,
+     "H_before": 2.9878688117393134e-07,
+     "H_after": 5.449341252163943e-14,
+     "M_after": 0.0,
+     "Cw_before": 0.0012080809070108447,
+     "Cw_after": 7.322404959098136e-11,
+     "max_abs_change_a": 6.875955563698743e-09
+    }
+   ]
+  },
+  {
+   "name": "projection change decreases under refinement (converges to the continuum data)",
+   "pass_": true,
+   "ratio": 6.872812370287622
+  },
+  {
+   "name": "zero-amplitude control: projection leaves the zero perturbation exactly zero",
+   "pass_": true
+  }
+ ],
+ "finding_order6_shell_D2": {
+  "observed_D2_order": [
+   7.338472818169636,
+   4.320654150235911
+  ],
+  "errors": [
+   [
+    9.441387947006774e-07,
+    2.24939952886416e-06,
+    2.24939952886416e-06
+   ],
+   [
+    1.4853034357997785e-08,
+    1.3898443285143003e-08,
+    1.3898443285143003e-08
+   ],
+   [
+    2.3281110372863623e-10,
+    6.955360731808469e-10,
+    6.955360731808469e-10
+   ]
+  ],
+  "finding": "the degree-7 Hermite shell closure reaches ~1e-9 error already at h=0.01 and then loses accuracy to roundoff amplification; it is not a usable 6th-order closure at the evolution spacings (h<=4e-4). Recorded as a negative finding, not a pass/fail control."
+ },
+ "order6_shell_D2_roundoff_floor": {
+  "h": [
+   0.01,
+   0.005,
+   0.0025
+  ],
+  "shell_D2_error": [
+   6.955360731808469e-10,
+   2.6657289708964527e-09,
+   1.1524207366164774e-08
+  ],
+  "note": "degree-7 Hermite ghost weights amplify roundoff ~eps*W/h^2; error rises as h decreases below ~0.01"
+ },
+ "sympy_seconds": 3.394857406616211,
+ "stencil_orders": {
+  "2": {
+   "h": [
+    0.02,
+    0.01,
+    0.005
+   ],
+   "errors": [
+    [
+     0.003364014082740674,
+     0.006203487845596101,
+     0.006203487845596101
+    ],
+    [
+     0.0009089053883979403,
+     0.001555240603920538,
+     0.001555240603920538
+    ],
+    [
+     0.000231281508358272,
+     0.0003892357926815748,
+     0.0003892357926815748
+    ]
+   ],
+   "observed_D1_order": [
+    1.8879817137035884,
+    1.9744802034874416
+   ],
+   "observed_D2_order": [
+    1.995941793528403,
+    1.9984215039275617
+   ]
+  },
+  "4": {
+   "h": [
+    0.02,
+    0.01,
+    0.005
+   ],
+   "errors": [
+    [
+     4.2236194885969525e-06,
+     1.761692078616761e-05,
+     1.761692078616761e-05
+    ],
+    [
+     2.6417747567286654e-07,
+     1.050859282258898e-06,
+     1.050859282258898e-06
+    ],
+    [
+     1.651423686688247e-08,
+     6.452773959608749e-08,
+     6.452773959608749e-08
+    ]
+   ],
+   "observed_D1_order": [
+    3.9989004965400388,
+    3.9997252561705343
+   ],
+   "observed_D2_order": [
+    4.067320381605534,
+    4.025506195771515
+   ]
+  },
+  "6": {
+   "h": [
+    0.04,
+    0.02,
+    0.01
+   ],
+   "errors": [
+    [
+     9.441387947006774e-07,
+     2.24939952886416e-06,
+     2.24939952886416e-06
+    ],
+    [
+     1.4853034357997785e-08,
+     1.3898443285143003e-08,
+     1.3898443285143003e-08
+    ],
+    [
+     2.3281110372863623e-10,
+     6.955360731808469e-10,
+     6.955360731808469e-10
+    ]
+   ],
+   "observed_D1_order": [
+    5.99016936348361,
+    5.99545401414402
+   ],
+   "observed_D2_order": [
+    7.338472818169636,
+    4.320654150235911
+   ]
+  }
+ },
+ "projection_rows": [
+  {
+   "h": 0.0004,
+   "H_before": 1.0403199138136458e-06,
+   "H_after": 1.2430847794948694e-14,
+   "M_after": 0.0,
+   "Cw_before": 0.008627643901369268,
+   "Cw_after": 1.9271270258460995e-12,
+   "max_abs_change_a": 4.7257152455736713e-08,
+   "newton": [
+    {
+     "iteration": 0,
+     "max_abs_H_window": 0.010540129954564513,
+     "max_abs_M": 0.0
+    },
+    {
+     "iteration": 1,
+     "max_abs_H_window": 1.864388447506062e-09,
+     "max_abs_M": 0.0
+    },
+    {
+     "iteration": 2,
+     "max_abs_H_window": 3.6091342588140396e-12,
+     "max_abs_M": 0.0
+    }
+   ]
+  },
+  {
+   "h": 0.0002,
+   "H_before": 2.9878688117393134e-07,
+   "H_after": 5.449341252163943e-14,
+   "M_after": 0.0,
+   "Cw_before": 0.0012080809070108447,
+   "Cw_after": 7.322404959098136e-11,
+   "max_abs_change_a": 6.875955563698743e-09,
+   "newton": [
+    {
+     "iteration": 0,
+     "max_abs_H_window": 0.0014758756737168533,
+     "max_abs_M": 0.0
+    },
+    {
+     "iteration": 1,
+     "max_abs_H_window": 7.324030860007e-11,
+     "max_abs_M": 0.0
+    }
+   ]
+  }
+ ],
+ "sha256": {
+  "lab.py": "abdd207e447c0b651281ae4a5515a6478810c9dbd6cef0df14a9c1a78c4657d3",
+  "controls.py": "3ae0812cdcc92096c8307bf9503039847e9ef9cfc43e19c4718da53851772dca"
+ }
+}

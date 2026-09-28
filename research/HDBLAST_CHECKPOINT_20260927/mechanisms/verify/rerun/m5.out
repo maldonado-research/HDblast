@@ -1,0 +1,93 @@
+{
+ "status": "numerical/conditional order-of-magnitude screen",
+ "delta_N_eff_bounds": {
+  "conservative_BBN_level_0.3": {
+   "delta_N_eff": 0.3,
+   "rho_DR_over_rho_SM_at_BBN": 0.04883720930232558,
+   "rho_DR_over_rho_SM_at_production": 0.1049713169074991
+  },
+  "combined_CMB_BBN_BAO_0.09": {
+   "delta_N_eff": 0.09,
+   "rho_DR_over_rho_SM_at_BBN": 0.014651162790697675,
+   "rho_DR_over_rho_SM_at_production": 0.03149139507224973
+  }
+ },
+ "weyl_from_blast": {
+  "run": "v2_t1e3_plus_c4_finecoarse",
+  "Wy_over_H0sq_at_freeze": 0.025984718760325987,
+  "H_over_H0_at_freeze": 0.628690290854591,
+  "Wy_over_Hvac2": 0.07058930733426143,
+  "peak_Wy_over_H0sq": 0.08056545737019999,
+  "peak_at_H0tau": 6.23914383667768,
+  "same_quantity_other_runs": {
+   "v2_t1e3_plus_c4": 0.00041789649328016765,
+   "v2_t1e3_plus_c4_fine": 0.0017695633317910686,
+   "v2_t1e3_plus_c4_finecoarse": 0.025984718760325987,
+   "v2_t1e3_plus_c4_ext": -0.36508247259369675
+  },
+  "required_radiation_H2_contribution_over_H0sq": {
+   "conservative_BBN_level_0.3": 0.247541133386216,
+   "combined_CMB_BBN_BAO_0.09": 0.8251371112873866
+  },
+  "max_radiation_H2_contribution_over_H0sq_from_4D_budget": 3.9246513748902725,
+  "caveat": "value at chart freeze; default-far-grid runs give 0.0004-0.0018 and the ext run turns negative, so the late Weyl amplitude is NOT converged (inconclusive); the peak ~0.081 H0^2 is grid-robust"
+ },
+ "collapse_branch": {
+  "runs": {
+   "v2_t1e3_minus_c4": {
+    "ln_a_contraction_resolved": 1.0834134883124806,
+    "fraction_of_ln_a_with_w_gt_1": 0.19235796762629695,
+    "ln_a_weighted_mean_w": 0.7573533590386139,
+    "H_range": [
+     -0.5,
+     -10
+    ]
+   },
+   "v2_t1e3_minus_c4_fine": {
+    "ln_a_contraction_resolved": 1.0444422683845125,
+    "fraction_of_ln_a_with_w_gt_1": 0.20697393165216524,
+    "ln_a_weighted_mean_w": 0.8502447632790127,
+    "H_range": [
+     -0.5,
+     -10
+    ]
+   },
+   "v2_t1e3_minus_c4_finecoarse": {
+    "ln_a_contraction_resolved": 1.0991533606031862,
+    "fraction_of_ln_a_with_w_gt_1": 0.1929251645678624,
+    "ln_a_weighted_mean_w": 0.7556232554726836,
+    "H_range": [
+     -0.5,
+     -10
+    ]
+   }
+  },
+  "lna_weighted_mean_w_median": 0.7573533590386139,
+  "bounce_H_required_over_H_vac": 9.367789772211888e+18,
+  "bounce_H_required_over_H0": 5.683641623497236e+18,
+  "bounce_H_required_eV_if_Hvac_is_HLambda": 1.1147407908489041e-14,
+  "shear_fraction_growth_exponent_in_H": 0.27615008639370003,
+  "shear_fraction_growth_from_H0_to_bounce": 151039.93138067788,
+  "note": "ekpyrotic smoothing requires w >> 1 sustained; resolved collapse has mean w well below 1"
+ },
+ "gravitational_particle_production": {
+  "registered_c_Hvac_eq_HLambda": {
+   "H0_eV": 1.9613143556419132e-33,
+   "rho_gpp_eV4": 1.4797516349187618e-131,
+   "ratio_to_released_energy": 5.510286040904423e-122,
+   "H_needed_for_order_one_over_Mpl": 1.7320508075688772
+  },
+  "c_tuned_Tmax_5MeV_minimal": {
+   "H0_eV": 5.3802871600311366e-15,
+   "rho_gpp_eV4": 8.379571729230029e-58,
+   "ratio_to_released_energy": 4.146585655888672e-85,
+   "H_needed_for_order_one_over_Mpl": 1.7320508075688772
+  }
+ },
+ "assumptions": {
+  "C_g": 0.01,
+  "g_dof": 100,
+  "gstar_BBN": 10.75,
+  "gstar_production": 106.75
+ }
+}

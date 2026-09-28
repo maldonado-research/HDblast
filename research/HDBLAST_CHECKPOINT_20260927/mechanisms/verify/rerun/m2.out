@@ -1,0 +1,132 @@
+delta=0.0003 rho_i=143.925950 H0^2/d=0.160916 Hv^2/d=0.059191 fH=0.367838 Mi2/Mf2=0.231178 (RS 0.333525) fE=0.085036 Nmax=0.5940  tol=1.9e-09
+delta=0.001 rho_i=78.828177 H0^2/d=0.160930 Hv^2/d=0.059240 fH=0.368111 Mi2/Mf2=0.232950 (RS 0.333973) fE=0.085752 Nmax=0.5917  tol=9.6e-10
+delta=0.003 rho_i=45.506006 H0^2/d=0.160969 Hv^2/d=0.059380 fH=0.368892 Mi2/Mf2=0.236999 (RS 0.335250) fE=0.087427 Nmax=0.5864  tol=3.3e-10
+delta=0.01 rho_i=24.914200 H0^2/d=0.161104 Hv^2/d=0.059870 fH=0.371621 Mi2/Mf2=0.247858 (RS 0.339698) fE=0.092109 Nmax=0.5720  tol=6.4e-11
+delta=0.03 rho_i=14.366986 H0^2/d=0.161491 Hv^2/d=0.061267 fH=0.379385 Mi2/Mf2=0.271116 (RS 0.352238) fE=0.102857 Nmax=0.5415  tol=3.2e-11
+delta=0.1 rho_i=7.836279 H0^2/d=0.162847 Hv^2/d=0.066143 fH=0.406168 Mi2/Mf2=0.330405 (RS 0.394213) fE=0.134200 Nmax=0.4661  tol=6.1e-12
+{
+ "controls": {
+  "registered_rho_b_matches_archive": true,
+  "registered_plus_H2_matches_package": true,
+  "H2_identity_initial_all": true,
+  "analytic_AdS_I": 4.4381429977660245,
+  "plus_branch_I_minus_analytic_rel": 1.111467645656906e-09,
+  "plus_branch_matches_analytic_dS_in_AdS_I_to_1e-6": true,
+  "wrong_formula_unsquared_warp_I": 8.398129456613617,
+  "wrong_formula_control_differs": true
+ },
+ "sudden": [
+  {
+   "eps": 0.01,
+   "R": 0.013326902045310023,
+   "radiation_terms": 0.0004997052795948191,
+   "Wy_required": -0.0003980154190871141,
+   "Wy_over_radiation_terms": -0.7965003279730021,
+   "R_over_Rcrit": 8.361926575580103
+  },
+  {
+   "eps": 0.1,
+   "R": 0.13326902045310024,
+   "radiation_terms": 0.005441068591261413,
+   "Wy_required": -0.00533937873075371,
+   "Wy_over_radiation_terms": -0.9813106821202324,
+   "R_over_Rcrit": 83.61926575580102
+  },
+  {
+   "eps": 0.5,
+   "R": 0.6663451022655011,
+   "radiation_terms": 0.0370723606299342,
+   "Wy_required": -0.036970670769426506,
+   "Wy_over_radiation_terms": -0.9972569898765609,
+   "R_over_Rcrit": 418.0963287790051
+  },
+  {
+   "eps": 1.0,
+   "R": 1.3326902045310023,
+   "radiation_terms": 0.09881226544393625,
+   "Wy_required": -0.09871057558342855,
+   "Wy_over_radiation_terms": -0.9989708781591958,
+   "R_over_Rcrit": 836.1926575580102
+  }
+ ],
+ "phys": {
+  "H_Lambda_eV": 1.1899720403158616e-33,
+  "H0_blast_eV": 1.9613143556419132e-33,
+  "gamma_eV": 3.250277722825035e-33,
+  "efold_time_Gyr": 6.417137263077446,
+  "note": "delta enters H_vac^2 and H_0^2 linearly at leading order, so H0/H_vac is delta-independent; identifying H_vac with the observed dark-energy rate fixes the blast rate independently of ell.",
+  "delta_required": [
+   {
+    "ell_plus_micron": 0.1,
+    "inv_L_eV": 17.759428236,
+    "delta_required_for_Hvac_eq_HLambda": 7.578782105097523e-68
+   },
+   {
+    "ell_plus_micron": 1.0,
+    "inv_L_eV": 1.7759428235999999,
+    "delta_required_for_Hvac_eq_HLambda": 7.578782105097527e-66
+   },
+   {
+    "ell_plus_micron": 10.0,
+    "inv_L_eV": 0.17759428236,
+    "delta_required_for_Hvac_eq_HLambda": 7.578782105097526e-64
+   },
+   {
+    "ell_plus_micron": 38.6,
+    "inv_L_eV": 0.04600888144041451,
+    "delta_required_for_Hvac_eq_HLambda": 1.1292082185311108e-62
+   }
+  ]
+ },
+ "ctune": {
+  "c_star": -0.999929697389664,
+  "one_plus_c_star": 7.030261033602603e-05,
+  "leading_order_one_plus_cstar": 7.03125e-05,
+  "registered_c": 0.5975949350280132,
+  "required_precision_on_c_for_N_efolds": {
+   "1": {
+    "max_abs_c_minus_cstar": 0.3354882638075803
+   },
+   "5": {
+    "max_abs_c_minus_cstar": 3.8445723154837014e-08
+   },
+   "10": {
+    "max_abs_c_minus_cstar": 7.924254171119331e-17
+   },
+   "22": {
+    "max_abs_c_minus_cstar": 1.1293362427189313e-37
+   }
+  },
+  "note": "series-based (O(delta^3) remainder); changing c is a change of the registered model"
+ },
+ "window": [
+  {
+   "ell_plus_micron": 0.1,
+   "rho_max_per_delta_eV4": 3.875708041653126e+57,
+   "delta_min_for_Tmax_5MeV": 5.703164760017628e-31,
+   "H0_at_delta_min_eV": 5.3802871600311366e-15
+  },
+  {
+   "ell_plus_micron": 1.0,
+   "rho_max_per_delta_eV4": 3.8757080416531244e+55,
+   "delta_min_for_Tmax_5MeV": 5.70316476001763e-29,
+   "H0_at_delta_min_eV": 5.380287160031137e-15
+  },
+  {
+   "ell_plus_micron": 10.0,
+   "rho_max_per_delta_eV4": 3.8757080416531255e+53,
+   "delta_min_for_Tmax_5MeV": 5.703164760017628e-27,
+   "H0_at_delta_min_eV": 5.380287160031136e-15
+  },
+  {
+   "ell_plus_micron": 38.6,
+   "rho_max_per_delta_eV4": 2.601216167986473e+52,
+   "delta_min_for_Tmax_5MeV": 8.497487365835865e-26,
+   "H0_at_delta_min_eV": 5.3802871600311366e-15
+  }
+ ],
+ "target": {
+  "rho_r_over_rho_Lambda_at_T5MeV": 8.775548521635766e+37,
+  "N_equivalent": 21.841904429441524
+ }
+}

@@ -8,7 +8,7 @@
 | [Program map](PROGRAM_MAP.md) | Researchers: model definition, dated chronology, full claims ledger, falsification tests, file index |
 | [Zenodo records](ZENODO_RECORDS.md) | The dated public record of every HDBLAST release |
 | [Checkpoints](checkpoints/) | Full research packages (reports, code, data and internal AI referee reviews, not external peer review), 16–22 Sept 2026 |
-| [Newest research round](../research/HDBLAST_CHECKPOINT_20260927/) | 27 Sept 2026 onward: stability, exact analysis, particle production, constraint control, new mechanisms (in progress; not yet reviewed) |
+| [27 Sept 2026 checkpoint](../research/HDBLAST_CHECKPOINT_20260927/) | Stability of the end state, exact series, particle production, constraint control, new mechanisms, literature review ([public summary](../research/HDBLAST_CHECKPOINT_20260927/PUBLIC_SUMMARY.md)) |
 | [Public guide v20 (July 2026)](guides/HDBLAST_GENERAL_PUBLIC_GUIDE_V20.md) | The earlier guide, written after the v20 correction (archived; partly out of date) |
 
 ## The model in one paragraph
@@ -50,6 +50,10 @@ K^μ_ν = (σ/6) δ^μ_ν and n·∂φ = −σ′(φ)/2.
 - **Exact / numerical (22 Sept):** the constant φ = 1 endpoint fails the scalar boundary condition.
   A corrected static solution was found (numerical), and a matter extension was proposed with an
   exact energy-exchange law (no particle production computed yet).
+- **New (27 Sept 2026):** the corrected end state is linearly stable in the tested sectors (numerical,
+  two independent methods, audited); exact series through δ⁸; no radiation era from particle
+  production or six other screened routes in the registered model (negative, conditional); a
+  tension-term model change is inconclusive because of dark radiation.
 - **Withdrawn (14 July 2026):** a claimed gravitational-radiation certification (PHYS-M309) was
   withdrawn after an audit found it tested the wrong wave direction.
 

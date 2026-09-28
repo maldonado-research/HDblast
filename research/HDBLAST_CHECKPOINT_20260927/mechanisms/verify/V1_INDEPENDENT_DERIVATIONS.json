@@ -1,0 +1,46 @@
+{
+  "status": "exact-verified (SymPy 1.14.0) unless marked",
+  "checks": {
+    "D1_H2_identity_matches_package_with_Wy_eq_Etautau_over_3": true,
+    "D1_control_wrong_junction_factor_fails": true,
+    "D2_rho_plus_p_eff": "2*(R**2 + R*sigma + 3*v**2)/9",
+    "D2_weyl_transport_with_matter_matches_package_form": true,
+    "D2_control_wrong_ledger_sign_fails": true,
+    "D3_codazzi_gives_ledger_Rdot_plus_4HR_eq_Yv2": true,
+    "D4_DeltaW_eq_critical_is_identity_for_any_W": true,
+    "D4_U_prime_at_minus1_is_zero": true,
+    "D5_linear_coefficient_matches_exact_near_critical": true,
+    "D6_Hvac2_leading": true,
+    "D7_sigma_prime_at_minus1_is_delta_c": true
+  },
+  "notes": {
+    "rho_eff": "(R**2 + 2*R*sigma + 6*U + sigma**2 + 3*v**2 - 3*w**2)/12",
+    "p_eff": "(5*R**2 + 2*R*sigma - 18*U - 3*sigma**2 + 15*v**2 + 9*w**2)/36",
+    "U_pp_at_minus1": "76/9",
+    "m2_l2_at_minus1": "684/25",
+    "D5": {
+      "4/3": {
+        "exact": 6.487763211206882e-25,
+        "linear": 0.0
+      },
+      "13/10": {
+        "exact": 0.0033327854481700636,
+        "linear": 0.0030864197530864196
+      },
+      "6/5": {
+        "exact": 0.016680384087791496,
+        "linear": 0.012345679012345678
+      },
+      "1": {
+        "exact": 0.06481481481481481,
+        "linear": 0.030864197530864196
+      },
+      "1/2": {
+        "exact": 0.6365740740740741,
+        "linear": 0.07716049382716049
+      },
+      "note": "X = H^2 (flat slicing). Linear formula valid only for |X| << 1/l_+^2 = 1/81, i.e. lambda close to 4/3."
+    },
+    "D7": "phi == -1 is an exact bulk solution (U'(-1)=0) and satisfies the scalar junction iff sigma'(-1)=delta*c=0; so at c=0 the shell family meets the constant solution; the linear response phi_h+1 changes sign with c."
+  }
+}

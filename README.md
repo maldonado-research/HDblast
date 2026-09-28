@@ -48,6 +48,10 @@ formula. Floating-point calculations in the model; not observations.*
 | A proposed extension adds a new matter field to the shell, with an exact energy-exchange law; no particle production has been computed yet | **Exact**, as a proposal |
 | An earlier (July 2026) gravitational-radiation claim was **withdrawn** after an audit | **Published correction** |
 | A pulsar-timing "knee" signature was proposed and screened against public data | **Screening only**; not derived from the 5D model; the strict registered test failed on pilot data |
+| **New (27 Sept):** the corrected end state (the "+1 branch") is linearly stable in the sectors tested; two independent methods agree, each first calibrated on the known instability | **Numerical**, independently audited (not a proof) |
+| **New (27 Sept):** exact small-parameter series for the end state through eighth order, confirmed to 30–40 digits | **Exact**, independently re-derived |
+| **New (27 Sept):** particle production and six other heating routes screened; none gives a radiation era in the registered model. The obstacle is leftover vacuum energy (about 0.6 of the ~22 e-folds needed) | **Negative**, under stated assumptions |
+| **New (27 Sept):** an added tension term cancels the leftover vacuum, but "dark radiation" from the fifth dimension stays above observational limits so far | **Inconclusive** (requires a model change) |
 
 ![Two fates of the unstable shell at the registered parameters](hdblast/figures/two_fates_registered_detuning.png)
 
@@ -56,9 +60,13 @@ toward an empty de Sitter brane (blue) or reverses and collapses (orange). Neith
 contains a hot radiation era.*
 
 **Bottom line today:** the mathematics of the model is unusually well controlled for an
-independent project. The simplest version of the "blast", the shell rolling off its hill with
-nothing else added, **does not by itself make a hot Big Bang**. The open question is whether
-adding matter or other physical ingredients can. That question is now being tested.
+independent project. In its registered form, the five-dimensional event ends in a **stable but
+empty** expanding universe: self-consistent, but not our universe. Particle production does not
+change that. To remain viable, the hypothesis needs an added ingredient or model change that
+produces a hot phase while keeping "dark radiation" within observational limits. The next
+calculations are designed to decide this either way. Latest checkpoint:
+[`research/HDBLAST_CHECKPOINT_20260927/`](research/HDBLAST_CHECKPOINT_20260927/)
+([plain-language summary](research/HDBLAST_CHECKPOINT_20260927/PUBLIC_SUMMARY.md)).
 
 ## What would count for or against the hypothesis
 
@@ -76,7 +84,7 @@ For the hypothesis to become credible, all of the following must happen, and it 
 |---|---|
 | [`hdblast/`](hdblast/) | Start here: the plain-language guide, program map, claims ledger and Zenodo records |
 | [`hdblast/checkpoints/`](hdblast/checkpoints/) | Dated research checkpoints (Sept 2026) with reports, code, data and internal AI referee reviews (not external peer review) |
-| [`research/`](research/) | The newest research round (27 Sept 2026 onward), in progress and not yet reviewed |
+| [`research/HDBLAST_CHECKPOINT_20260927/`](research/HDBLAST_CHECKPOINT_20260927/) | The 27 Sept 2026 checkpoint: stability, exact series, particle production, simulation-error control, new mechanisms and a 2022–2026 literature review, each with an internal audit report. Start with `00_READ_FIRST.md` or `PUBLIC_SUMMARY.md`. Raw simulation arrays (`.npz`) are not included. |
 | [`site/`](site/) | Source of the website |
 
 Most checkpoints can be re-run with Python 3 (`numpy`, `scipy`, `sympy`, `mpmath`). Each
