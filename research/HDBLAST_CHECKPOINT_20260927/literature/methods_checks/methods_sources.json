@@ -1,0 +1,985 @@
+{
+ "access_note": "No WebSearch was executed in sweep 3 (session budget exhausted); sources come from sweep-1 search records (snippet-level) or programme records (not re-verified).",
+ "queries_attempted": [
+  {
+   "query": "Z4 formulation constraint damping Gundlach Calabrese Hinder Martin-Garcia 2005",
+   "outcome": "refused: session web-search budget used (200 of 200)"
+  },
+  {
+   "query": "conformal and covariant Z4 CCZ4 formulation Alic Bona-Casas Bona Rezzolla Palenzuela",
+   "outcome": "refused: session web-search budget used (200 of 200)"
+  },
+  {
+   "query": "Z4c formulation Bernuzzi Hilditch constraint-preserving spherical symmetry",
+   "outcome": "refused: session web-search budget used (200 of 200)"
+  },
+  {
+   "query": "generalized harmonic formulation constraint damping Pretorius Lindblom Scheel Kidder 2006",
+   "outcome": "refused: session web-search budget used (200 of 200)"
+  }
+ ],
+ "fetch_attempted": [
+  {
+   "url": "https://journals.aps.org/prd/abstract/10.1103/PhysRevD.44.1007",
+   "outcome": "EGRESS_BLOCKED (journals.aps.org blocked by the network egress proxy)"
+  }
+ ],
+ "queries_planned_not_run": [
+  "constraint damping Z4 formulation spherical symmetry Einstein scalar field evolution",
+  "CCZ4 spherical symmetry scalar field collapse constraint damping parameters",
+  "Z4c spherical symmetry constraint-preserving boundary conditions scalar field",
+  "generalized harmonic spherically symmetric scalar field anti-de Sitter numerical evolution",
+  "hyperboloidal compactification spherical symmetry scalar field evolution 2023 2024 2025",
+  "horizon-penetrating hyperboloidal slice Rindler horizon de Sitter slicing AdS numerical",
+  "numerical relativity thin shell Israel junction conditions moving boundary evolution",
+  "summation-by-parts simultaneous approximation term interface conditions numerical relativity",
+  "braneworld numerical evolution bulk scalar brane junction conditions 2020 2026",
+  "negative mode Coleman-De Luccia bounce gravity Lavrelashvili Lee Weinberg",
+  "negative modes de Sitter brane instanton Garriga Sasaki bulk scalar Euclidean",
+  "Gregory Ruth negative mode bubble brane (identify the intended reference)",
+  "gauge-invariant perturbations de Sitter sliced domain wall bulk scalar master variable 2020 2026",
+  "instant preheating lattice simulation backreaction 2021 2022 2023 2024 2025",
+  "non-perturbative particle production renormalized stress tensor backreaction adiabatic regularization 2022 2026",
+  "CosmoLattice preheating tachyonic lattice 2024 2025",
+  "computer-assisted proof boundary value problem ODE radii polynomial Einstein metric",
+  "validated numerics interval arithmetic existence proof domain wall soliton gravity",
+  "computer-assisted eigenvalue enclosure Sturm-Liouville stability rigorous",
+  "rigorous numerics self-similar solution Einstein scalar computer-assisted proof"
+ ],
+ "problems": {
+  "P1": "Rigorous existence and local uniqueness of the static +1 branch (certification)",
+  "P2": "Stability beyond the computed sectors: negative modes, gauge modes, coupled matter",
+  "P3": "Long 5D evolutions: constraint growth, far-boundary contamination, attraction to the +1 branch",
+  "P4": "The collapse fate: unconverged terminal collapse; horizon or crunch",
+  "P5": "Shell/junction numerics: boundary closure, moving shell, thin versus thick wall",
+  "P6": "Matter and radiation: non-perturbative particle production with consistent backreaction"
+ },
+ "sources": [
+  {
+   "id": "A1",
+   "theme": "A",
+   "provenance": "sweep1",
+   "sweep1_id": "C7",
+   "access": "search-snippet-only",
+   "title": "Robustness of slow contraction to cosmic initial conditions",
+   "authors": "A. Ijjas, W. G. Cook, F. Pretorius, P. J. Steinhardt, G. N. Davies",
+   "year": "2020",
+   "venue": "arXiv:2006.04999",
+   "url": "https://arxiv.org/abs/2006.04999",
+   "problems": [
+    "P3"
+   ],
+   "finding": "Per the sweep-1 snippet record: numerical-relativity simulations vary all freely specifiable initial data (shear, curvature, scalar-field and velocity profiles), including data far outside the perturbative regime, and find slow contraction robust. A follow-up (arXiv:2104.12293) reports robustness enhanced with several modes and reduced symmetry. The evolution formulation and its constraint-damping choices are not stated in the record.",
+   "relevance": "A template: test whether the two Chat 14 fates survive non-perturbative disturbances rather than the narrow balanced two-bump family. Arbitrary data first need a constraint solve. The programme's discrete-constraint projection (evolution_constraints workstream) is the analogue of that step.",
+   "implication": "method"
+  },
+  {
+   "id": "A2",
+   "theme": "A",
+   "provenance": "programme",
+   "programme_file": "untitled folder 141/FORWARD_ERROR_CONTROL_COMPONENTS_20260905/METHODS_AND_LITERATURE_20260905.md",
+   "programme_access": "primary preprint page, checked 5 Sept 2026 by an earlier agent",
+   "access": "programme-record-only",
+   "title": "Characteristic evolution of conformal scattering: I. Scalar Waves in Minkowski Spacetime",
+   "authors": "He, Tian and Zhang (surnames as recorded)",
+   "year": "2026",
+   "venue": "arXiv:2608.15729v1 (16 Aug 2026)",
+   "url": "https://arxiv.org/html/2608.15729v1",
+   "problems": [
+    "P3"
+   ],
+   "finding": "Per the programme record: studies compactified double-null scattering with alternative characteristic stencils, and reports loss of convergence near spatial infinity. Its stability, convergence and Richardson-extrapolation evidence are numerical, not interval certificates.",
+   "relevance": "A compactified or characteristic outer region is one way to stop the far-boundary signals that contaminate the late Chat 14 values (H/H0 near 0.628690 arrives after taper and boundary signals could reach the shell). The reported loss of convergence at the compactified edge is a warning to test any such map with a convergence study at the new boundary.",
+   "implication": "method"
+  },
+  {
+   "id": "A3",
+   "theme": "A",
+   "provenance": "programme",
+   "programme_file": "untitled folder 141/FORWARD_ERROR_CONTROL_COMPONENTS_20260905/METHODS_AND_LITERATURE_20260905.md",
+   "programme_access": "preprint and institutional record, checked 5 Sept 2026 by an earlier agent",
+   "access": "programme-record-only",
+   "title": "A posteriori error analysis and adaptivity of a space-time finite element method for the wave equation in second order formulation",
+   "authors": "Dong, Georgoulis, Mascotto and Wang (surnames as recorded)",
+   "year": "2026",
+   "venue": "arXiv:2509.08537v2; Numerische Mathematik, DOI 10.1007/s00211-026-01561-3 (per programme record)",
+   "url": "https://arxiv.org/html/2509.08537v2",
+   "problems": [
+    "P3",
+    "P5"
+   ],
+   "finding": "Per the programme record: explicit a posteriori error bounds from temporal and spatial reconstructions, including mesh-change discontinuities, for a scalar wave equation on a bounded domain.",
+   "relevance": "a route from 'grid convergence' to computable error estimates for wave evolutions. The HDBLAST system (coupled, nonlinear, with a shell boundary) would need its own constants. At most it can guide an error indicator near the steep wall.",
+   "implication": "method"
+  },
+  {
+   "id": "A4",
+   "theme": "A",
+   "provenance": "programme",
+   "programme_file": "untitled folder 136/M489G_LITERATURE_AND_PUBLICATION_REVIEW_20260903.md",
+   "programme_access": "arXiv full text (html v3), read 3 Sept 2026 by an earlier agent",
+   "access": "programme-record-only",
+   "title": "Adaptive FEM with explicit time integration for the wave equation",
+   "authors": "M. J. Grote, O. Lakkis, C. S. Santos",
+   "year": "2025",
+   "venue": "arXiv:2507.11193v3; J. Comput. Appl. Math. 481, 117272 (2026) (per programme record)",
+   "url": "https://arxiv.org/abs/2507.11193v3",
+   "problems": [
+    "P3",
+    "P5"
+   ],
+   "finding": "Per the programme record: combines a posteriori error indicators, evolving spatial meshes and local explicit time steps for the wave equation.",
+   "relevance": "the constraint workstream of this round found the outgoing constraint front is generated within about 0.02 of the shell in the first ~0.05 time units. Local refinement with local time stepping in exactly that region is the natural use. Not an error certificate.",
+   "implication": "method"
+  },
+  {
+   "id": "A5",
+   "theme": "A",
+   "provenance": "programme",
+   "programme_file": "untitled folder 145 APS JOURNAL/HDBLAST-v24-APS-review-package/manuscript/HDBLAST-v24-manuscript.md",
+   "programme_access": "preprint metadata and abstract, checked 9 Sept 2026 by an earlier agent",
+   "access": "programme-record-only",
+   "title": "Damped energy-norm a posteriori error estimates for fully discrete approximations of the wave equation using C2-reconstructions with the leapfrog scheme",
+   "authors": "T. Chaumont-Frelet, A. Ern",
+   "year": "2024",
+   "venue": "arXiv:2403.12954v2 (20 Dec 2024)",
+   "url": "https://arxiv.org/abs/2403.12954v2",
+   "problems": [
+    "P3"
+   ],
+   "finding": "Per the programme record: scalar finite-element/leapfrog a posteriori estimates in a damped energy norm; the programme noted that they concern a different formulation and do not supply its constants.",
+   "relevance": "a second example of energy-norm error control for explicit wave schemes. Relevance is indirect for the method-of-lines finite-difference solvers used in HDBLAST.",
+   "implication": "context"
+  },
+  {
+   "id": "B1",
+   "theme": "B",
+   "provenance": "sweep1",
+   "sweep1_id": "E12",
+   "access": "search-snippet-only",
+   "title": "BRANECODE: A Program for Simulations of Braneworld Dynamics",
+   "authors": "J. Martin, G. Felder, A. Frolov, M. Peloso, L. Kofman (per sweep-1 record)",
+   "year": "2004",
+   "venue": "arXiv:hep-ph/0404141; companion 'Brane world dynamics with the BraneCode', arXiv:hep-th/0309001",
+   "url": "https://arxiv.org/abs/hep-ph/0404141v1",
+   "problems": [
+    "P3",
+    "P5"
+   ],
+   "finding": "Per the sweep-1 snippet record: a C++ code for fully nonlinear evolution of 5D braneworlds with bulk scalar fields, described as the first of its type, used to confirm the tachyonic instability of 'stabilized' de Sitter branes. The programme's Chat 9 prior-art file (which read the papers through ar5iv on 16 Sept 2026) gives hep-th/0309001 as the BraneCode reference; the two identifiers may be a program paper and a dynamics paper, which this sweep could not check.",
+   "relevance": "the closest published analogue of rolloff5d (nonlinear 5D evolution of a brane with bulk scalar and junction conditions). Reproducing one published BraneCode test would give the programme an external calibration that its internal controls cannot provide.",
+   "implication": "method"
+  },
+  {
+   "id": "B2",
+   "theme": "B",
+   "provenance": "sweep1",
+   "sweep1_id": "D5",
+   "access": "search-snippet-only",
+   "title": "Dynamics of Anti-de Sitter Domain Walls",
+   "authors": "P. Kraus",
+   "year": "1999",
+   "venue": "JHEP 12 (1999) 011; arXiv:hep-th/9910149",
+   "url": "https://arxiv.org/abs/hep-th/9910149v1",
+   "problems": [
+    "P5"
+   ],
+   "finding": "Per the sweep-1 snippet record: moving domain walls in the Randall-Sundrum universe with the bulk patched from AdS5 black-hole solutions; the junction equations fix the wall motion, which observers on the wall see as cosmological expansion or contraction.",
+   "relevance": "an exact moving-shell benchmark. A thin shell in pure AdS5 (scalar frozen at a vacuum) evolved by the HDBLAST moving-boundary code must reproduce the exact Friedmann-type trajectory, including the a^-4 bulk-mass term when a black-hole patch is used. This tests the shell closure separately from the scalar physics.",
+   "implication": "method"
+  },
+  {
+   "id": "B3",
+   "theme": "B",
+   "provenance": "sweep1",
+   "sweep1_id": "C10",
+   "access": "search-snippet-only",
+   "title": "When do colliding bubbles produce an expanding universe?",
+   "authors": "J. J. Blanco-Pillado and colleagues (per sweep-1 record)",
+   "year": "2003",
+   "venue": "Phys. Rev. D 69, 103515 (2004); arXiv:hep-th/0306151",
+   "url": "https://arxiv.org/abs/hep-th/0306151",
+   "problems": [
+    "P5",
+    "P4"
+   ],
+   "finding": "Per the sweep-1 snippet record: a symmetric collision leaves a collapsing universe unless the bulk expansion rate before the collision is large compared with the momentum transfer in the fifth dimension; thick-wall numerical collisions confirm the thin-wall result.",
+   "relevance": "a published thin-wall versus thick-wall numerical cross-validation, the check HDBLAST needs if the Israel shell is ever replaced by a resolved wall. P4: an explicit expansion-versus-collapse criterion to evaluate along the Chat 14 trajectories.",
+   "implication": "method"
+  },
+  {
+   "id": "B4",
+   "theme": "B",
+   "provenance": "sweep1",
+   "sweep1_id": "C13",
+   "access": "search-snippet-only",
+   "title": "Dynamics of colliding branes and black brane production",
+   "authors": "Y. Takamizu, H. Kudoh, K. Maeda",
+   "year": "2007",
+   "venue": "Phys. Rev. D 75, 061304; arXiv:gr-qc/0702138",
+   "url": "https://arxiv.org/abs/gr-qc/0702138",
+   "problems": [
+    "P4"
+   ],
+   "finding": "Per the sweep-1 snippet record: self-gravitating colliding domain walls (initial data from a BPS wall in 5D supergravity) generically form a spacelike curvature singularity covered by a horizon, a black brane with trapped walls; non-relativistic weak-field cases can pass through or bounce.",
+   "relevance": "a concrete hypothesis and a method for the unconverged Chat 14 collapse: track trapped surfaces. In the 1+1 reduction with metric e^{2B}(-dt^2+dz^2)+e^{2A}dx_3^2, a trapped region is where (d_t+d_z)A and (d_t-d_z)A are both negative. Evaluating this needs the velocity-field snapshots the Chat 14 archive lacks, so it must be added to new runs.",
+   "implication": "method"
+  },
+  {
+   "id": "B5",
+   "theme": "B",
+   "provenance": "sweep1",
+   "sweep1_id": "B17",
+   "access": "search-snippet-only",
+   "title": "Crunch from AdS bubble collapse in unbounded potentials",
+   "authors": "not captured in snippet",
+   "year": "2024",
+   "venue": "arXiv:2411.07692",
+   "url": "https://arxiv.org/abs/2411.07692",
+   "problems": [
+    "P4"
+   ],
+   "finding": "Per the sweep-1 snippet record: an AdS bubble nucleated in a Minkowski false vacuum, in a potential with an infinitely deep true vacuum, has an interior that collapses to a spacelike singularity behind an apparent horizon; trapped surfaces form once kinetic energy dominates.",
+   "relevance": "the diagnostic set for the collapse fate: apparent-horizon location, trapped-surface formation, and the sign of the local energy density. The registered U is also unbounded below (sweep 1 checked U ~ -(2/27) phi^6 exactly).",
+   "implication": "method"
+  },
+  {
+   "id": "B6",
+   "theme": "B",
+   "provenance": "sweep1",
+   "sweep1_id": "C17",
+   "access": "search-snippet-only",
+   "title": "Simulating the universe(s) II: phenomenology of cosmic bubble collisions in full General Relativity",
+   "authors": "Johnson, Peiris, Lehner and collaborators (per query context in sweep 1)",
+   "year": "2014",
+   "venue": "arXiv:1407.2950 (also arXiv:1112.4487, arXiv:1508.03641)",
+   "url": "https://arxiv.org/pdf/1407.2950",
+   "problems": [
+    "P3",
+    "P5"
+   ],
+   "finding": "Per the sweep-1 snippet record: full-GR simulations of bubble collisions that compute cosmological observables directly from the scalar Lagrangian, giving relativistic predictions that differ significantly from non-relativistic approximations.",
+   "relevance": "established practice for evolving resolved scalar walls in full GR in a symmetry-reduced setting. It is an alternative to a thin Israel shell, and a later route from a violent 5D event to observables.",
+   "implication": "method"
+  },
+  {
+   "id": "B7",
+   "theme": "B",
+   "provenance": "sweep1",
+   "sweep1_id": "E9",
+   "access": "search-snippet-only",
+   "title": "Exactly solvable model for cosmological perturbations in dilatonic brane worlds",
+   "authors": "K. Koyama, K. Takahashi",
+   "year": "2003",
+   "venue": "arXiv:hep-th/0307073",
+   "url": "https://arxiv.org/pdf/hep-th/0307073",
+   "problems": [
+    "P2",
+    "P5"
+   ],
+   "finding": "Per the sweep-1 snippet record: a bulk scalar with exponential potential and exponential coupling to the brane tension gives power-law inflation on a single brane; the backreacted background and the perturbations obeying the junction conditions are solved exactly.",
+   "relevance": "an exact benchmark with a bulk scalar, a moving de Sitter-like brane and both junction conditions. It is the cheapest external test of the full perturbation and junction machinery.",
+   "implication": "method"
+  },
+  {
+   "id": "C1",
+   "theme": "C",
+   "provenance": "sweep1",
+   "sweep1_id": "E1",
+   "access": "search-snippet-only",
+   "title": "Perturbations on domain walls and strings: A covariant theory",
+   "authors": "J. Garriga, A. Vilenkin",
+   "year": "1991",
+   "venue": "Phys. Rev. D 44, 1007",
+   "url": "https://journals.aps.org/prd/abstract/10.1103/PhysRevD.44.1007",
+   "problems": [
+    "P2"
+   ],
+   "finding": "Per the sweep-1 snippet record: a covariant perturbation formalism for walls and strings, including nucleated bubbles and walls in de Sitter space; the perturbation field often has a tachyonic mass and a nonminimal coupling to worldsheet curvature, and, without gravity, one scalar describes wall translations.",
+   "relevance": "the standard way to separate wall-translation (gauge) modes from physical instabilities. This round's gauge-invariant stability workstream already classifies the mu^2 = -4 harmonics on the +1 branch as pure gauge in the bulk.",
+   "implication": "method"
+  },
+  {
+   "id": "C2",
+   "theme": "C",
+   "provenance": "sweep1",
+   "sweep1_id": "B1",
+   "access": "search-snippet-only",
+   "title": "Brane-world creation and black holes",
+   "authors": "J. Garriga, M. Sasaki",
+   "year": "2000",
+   "venue": "Phys. Rev. D 62, 043523; arXiv:hep-th/9912118",
+   "url": "https://arxiv.org/abs/hep-th/9912118",
+   "problems": [
+    "P1",
+    "P2"
+   ],
+   "finding": "Per the sweep-1 snippet record: an inflating brane-world can be created from nothing with its AdS bulk; the de Sitter brane instanton has AdS inside; 5D and 4D actions and entropies agree when the instanton is much larger than the AdS radius; thermal instantons with a bulk AdS black hole may describe creation of a hot universe.",
+   "relevance": "the Euclidean static branch (an S^4 shell bounding a hyperbolic 5-ball, Z2-doubled) is this instanton with a bulk scalar. If the branch is to be read as a tunnelling or creation saddle, its negative-mode count must be computed. The Lorentzian stability result of this round does not settle that count.",
+   "implication": "method"
+  },
+  {
+   "id": "C3",
+   "theme": "C",
+   "provenance": "sweep1",
+   "sweep1_id": "E3",
+   "access": "search-snippet-only",
+   "title": "Can Inflating Braneworlds be Stabilized?",
+   "authors": "A. Frolov, L. Kofman",
+   "year": "2003",
+   "venue": "arXiv:hep-th/0309002",
+   "url": "https://arxiv.org/abs/hep-th/0309002v1",
+   "problems": [
+    "P2",
+    "P1"
+   ],
+   "finding": "Per the sweep-1 snippet record: for de Sitter branes the radion mass squared is typically negative, confirmed with BraneCode numerics. The programme's Chat 9 file (full text read via ar5iv, 16 Sept 2026) adds: scalar perturbations in generalized longitudinal gauge reduce to a self-adjoint Sturm-Liouville problem with a Rayleigh bound m^2 <= -4H^2 + (2/3) int(dw/a) / int(dw/(a phi'^2)), and the programme reproduced its registered eigenvalue mu^2 = -7.7178716 with these equations.",
+   "relevance": "because the problem is self-adjoint Sturm-Liouville, rigorous eigenvalue enclosures of the kind found in verification-method texts (E2) apply in principle. The +1-branch statement 'no normalizable scalar mode below 9/4' could be certified rather than only computed.",
+   "implication": "method"
+  },
+  {
+   "id": "C4",
+   "theme": "C",
+   "provenance": "sweep1",
+   "sweep1_id": "E2",
+   "access": "search-snippet-only",
+   "title": "Radion on the de Sitter brane",
+   "authors": "U. Gen, M. Sasaki",
+   "year": "2000",
+   "venue": "arXiv:gr-qc/0011078",
+   "url": "https://arxiv.org/pdf/gr-qc/0011078",
+   "problems": [
+    "P2"
+   ],
+   "finding": "Per the sweep-1 snippet record: with two de Sitter branes of opposite tension the radion has negative mass squared proportional to the brane curvature; with a single positive-tension de Sitter brane there is no radion.",
+   "relevance": "fixes which scalar modes can exist with one shell and a regular cone.",
+   "implication": "context"
+  },
+  {
+   "id": "C5",
+   "theme": "C",
+   "provenance": "sweep1",
+   "sweep1_id": "E5",
+   "access": "search-snippet-only",
+   "title": "Thick Brane Worlds and Their Stability",
+   "authors": "S. Kobayashi, K. Koyama, J. Soda",
+   "year": "2001",
+   "venue": "Phys. Rev. D 65, 064014 (2002); arXiv:hep-th/0107025",
+   "url": "https://arxiv.org/abs/hep-th/0107025",
+   "problems": [
+    "P2"
+   ],
+   "finding": "Per the sweep-1 snippet record: non-singular thick Poincare, de Sitter and AdS branes with a dilaton have positive-definite effective potentials in their scalar master equations, hence stability.",
+   "relevance": "a master-variable (Schrodinger-form) method. A positive-definite effective potential would be an analytic stability proof, stronger than a numerical spectrum.",
+   "implication": "method"
+  },
+  {
+   "id": "C6",
+   "theme": "C",
+   "provenance": "sweep1",
+   "sweep1_id": "E6",
+   "access": "search-snippet-only",
+   "title": "Fake supergravity and domain wall stability",
+   "authors": "D. Z. Freedman, C. Nunez, M. Schnabl, K. Skenderis",
+   "year": "2004",
+   "venue": "Phys. Rev. D 69, 104027",
+   "url": "https://ui.adsabs.harvard.edu/abs/2004PhRvD..69j4027F/abstract",
+   "problems": [
+    "P2"
+   ],
+   "finding": "Per the sweep-1 snippet record: a generalized Witten-Nester spinor argument proves stability of flat domain walls without supersymmetry in any dimension, extended to AdS-sliced walls.",
+   "relevance": "covers the balanced flat wall (delta = 0) only. The record shows no analogous positive-energy theorem for de Sitter-sliced walls, so +1-branch stability has to be computed, or proved by a new argument.",
+   "implication": "constrains"
+  },
+  {
+   "id": "C7",
+   "theme": "C",
+   "provenance": "sweep1",
+   "sweep1_id": "E7",
+   "access": "search-snippet-only",
+   "title": "Hidden Supersymmetry of Domain Walls and Cosmologies",
+   "authors": "K. Skenderis, P. K. Townsend",
+   "year": "2006",
+   "venue": "Phys. Rev. Lett. 96, 191301",
+   "url": "https://www.osti.gov/etdeweb/biblio/20777232",
+   "problems": [
+    "P1"
+   ],
+   "finding": "Per the sweep-1 snippet record: every domain-wall solution with Minkowski or AdS worldvolume admits first-order equations with a solution-determined superpotential; FLRW cosmologies obey similar equations through pseudo-Killing spinors.",
+   "relevance": "a first-order reformulation reduces the static BVP to a lower-order system, which is often the key simplification in a computer-assisted proof. The de Sitter-sliced case needs the curved version.",
+   "implication": "method"
+  },
+  {
+   "id": "C8",
+   "theme": "C",
+   "provenance": "sweep1",
+   "sweep1_id": "E8",
+   "access": "search-snippet-only",
+   "title": "Coupled bulk and brane fields about a de Sitter brane",
+   "authors": "A. Cardoso, K. Koyama, A. Mennim, S. S. Seahra, D. Wands",
+   "year": "2006",
+   "venue": "Phys. Rev. D 75, 084002 (2007); arXiv:hep-th/0612202",
+   "url": "https://arxiv.org/abs/hep-th/0612202",
+   "problems": [
+    "P2",
+    "P6"
+   ],
+   "finding": "Per the sweep-1 snippet record: a bulk scalar coupled linearly to a scalar on a de Sitter brane has zero, one or two bound states plus resonances; with brane test-field matter an infinite ladder of discrete tachyonic modes can become normalizable.",
+   "relevance": "any matter extension that couples a shell field to phi needs a coupled-sector negative-mode check. Adding brane fields can create normalizable tachyons that the vacuum analysis cannot see.",
+   "implication": "constrains"
+  },
+  {
+   "id": "C9",
+   "theme": "C",
+   "provenance": "sweep1",
+   "sweep1_id": "E11",
+   "access": "search-snippet-only",
+   "title": "Complex scalar field thick branes: stability of linear perturbation and evolution of scalar Kaluza-Klein modes coupled with gravity",
+   "authors": "not captured in snippet",
+   "year": "2026",
+   "venue": "arXiv:2609.21421 (18 Sept 2026)",
+   "url": "https://arxiv.org/abs/2609.21421",
+   "problems": [
+    "P2"
+   ],
+   "finding": "Per the sweep-1 snippet record: Minkowski, de Sitter and AdS thick branes from a complex scalar show no instability in the scalar and vector sectors; a factorized tensor equation excludes tachyonic tensor modes.",
+   "relevance": "a current sector-by-sector template, including the vector sector, which this round's stability workstreams did not treat.",
+   "implication": "method"
+  },
+  {
+   "id": "C10",
+   "theme": "C",
+   "provenance": "sweep1",
+   "sweep1_id": "B10",
+   "access": "search-snippet-only",
+   "title": "Revisiting Coleman-de Luccia transitions in the AdS regime using holography",
+   "authors": "J. K. Ghosh, E. Kiritsis, F. Nitti, L. T. Witkowski",
+   "year": "2021",
+   "venue": "JHEP (2021); arXiv:2102.11881",
+   "url": "https://arxiv.org/abs/2102.11881",
+   "problems": [
+    "P1",
+    "P2"
+   ],
+   "finding": "Per the sweep-1 snippet record: CDL AdS-to-AdS decays in Einstein-scalar theories are interpreted as vev-driven holographic RG flows on de Sitter space; such flows do not exist for generic potentials, and existence is tied to exotic RG flows.",
+   "relevance": "existence of de Sitter-sliced regular solutions is non-generic, so an existence proof for the +1 branch is not a formality. P2: gives the tunnelling interpretation in which a negative-mode count matters.",
+   "implication": "method"
+  },
+  {
+   "id": "C11",
+   "theme": "C",
+   "provenance": "sweep1",
+   "sweep1_id": "B11",
+   "access": "search-snippet-only",
+   "title": "Searching for Coleman-de Luccia bubbles in AdS compactifications",
+   "authors": "G. Dibitetto, N. Petri",
+   "year": "2022",
+   "venue": "Phys. Rev. D 107, 046020 (2023); arXiv:2207.02172",
+   "url": "https://arxiv.org/abs/2207.02172",
+   "problems": [
+    "P1"
+   ],
+   "finding": "Per the sweep-1 snippet record: fully backreacted instantons are obtained by numerically integrating first-order Hamilton-Jacobi equations for smooth de Sitter-foliated walls between AdS vacua.",
+   "relevance": "an independent solver architecture (first-order Hamilton-Jacobi) for the same class of solutions; a cross-check on the +1 branch that shares no code with the checkpoint's shooting solvers.",
+   "implication": "method"
+  },
+  {
+   "id": "C12",
+   "theme": "C",
+   "provenance": "sweep1",
+   "sweep1_id": "F1",
+   "access": "search-snippet-only",
+   "title": "Holographic RG flows on curved manifolds and quantum phase transitions",
+   "authors": "J. K. Ghosh, E. Kiritsis, F. Nitti, L. T. Witkowski",
+   "year": "2017",
+   "venue": "JHEP 05 (2018) 034; arXiv:1711.08462",
+   "url": "https://arxiv.org/abs/1711.08462",
+   "problems": [
+    "P1"
+   ],
+   "finding": "Per the sweep-1 snippet record: Einstein-dilaton flows with dS, AdS or sphere slicing and general potential; UV and IR asymptotics; new flows at finite curvature with no flat counterpart.",
+   "relevance": "the regular-endpoint (IR) expansions classified there are the local cone solutions a certification needs. In this problem the linear germ is the explicit polynomial C_14^(2)(cosh u) (pilot, part 1).",
+   "implication": "method"
+  },
+  {
+   "id": "C13",
+   "theme": "C",
+   "provenance": "sweep1",
+   "sweep1_id": "B16",
+   "access": "search-snippet-only",
+   "title": "Generalized surface tension bounds in vacuum decay",
+   "authors": "A. Masoumi, S. Paban, E. J. Weinberg",
+   "year": "2017",
+   "venue": "arXiv:1711.06776",
+   "url": "https://arxiv.org/abs/1711.06776",
+   "problems": [
+    "P2"
+   ],
+   "finding": "Per the sweep-1 snippet record: defines a tension for thin walls whose curvature radius changes across the wall and derives CDL-like bounds for bounces with Minkowski or AdS false vacua.",
+   "relevance": "context for tunnelling interpretations of a shell with a nonconstant scalar profile.",
+   "implication": "context"
+  },
+  {
+   "id": "C14",
+   "theme": "C",
+   "provenance": "sweep1",
+   "sweep1_id": "B15",
+   "access": "search-snippet-only",
+   "title": "Gravitational Effects on and of Vacuum Decay",
+   "authors": "S. Coleman, F. De Luccia",
+   "year": "1980 (per sweep-1 caveat, year from general knowledge)",
+   "venue": "Phys. Rev. D (1980)",
+   "url": "https://www.semanticscholar.org/paper/Gravitational-Effects-on-and-of-Vacuum-Decay-Coleman-Luccia/a60b863946ca2d85da9d8b48b72257e8ec05e3ed",
+   "problems": [
+    "P2"
+   ],
+   "finding": "Per the sweep-1 snippet record: gravity can prevent decay of a Minkowski or AdS false vacuum; in the thin-wall limit this happens above a tension bound.",
+   "relevance": "origin of the CDL setting in which the 'negative-mode problem' arises. The negative-mode literature itself (Lavrelashvili, Lee-Weinberg, Koehn-Lavrelashvili-Lehners and others) could not be retrieved in this sweep; see LEADS.",
+   "implication": "context"
+  },
+  {
+   "id": "D1",
+   "theme": "D",
+   "provenance": "programme",
+   "programme_file": "untitled folder 142/00_READ_FIRST.md",
+   "programme_access": "cited as the established benchmark in the 6 Sept 2026 read-first",
+   "access": "programme-record-only",
+   "title": "Instant preheating (title and authors not written in the programme record; see caveat)",
+   "authors": "not stated in the programme record",
+   "year": "1998 (arXiv number)",
+   "venue": "arXiv:hep-ph/9812289v2",
+   "url": "https://arxiv.org/abs/hep-ph/9812289v2",
+   "problems": [
+    "P6"
+   ],
+   "finding": "Per the programme record: the established instant-preheating benchmark, adapted there to a brane field with m_eff^2 = m_chi^2 + g_b^2 (phi - phi_*)^2 crossing linearly: n_k = exp[-pi (k^2 + m_chi^2)/mu^2], n_chi = mu^3/(8 pi^3) exp[-pi m_chi^2/mu^2], mu^2 = g_b |phi_dot_b|, in the locally flat adiabatic in/out limit. Backreaction, the quantum state and thermalization were left open.",
+   "relevance": "the mechanism used by this round's preheating workstream, which found it insufficient on the fixed archived trajectory. Its open item is the self-consistent bulk-coupled backreaction.",
+   "implication": "method",
+   "caveat": "To this sweep's general knowledge the identifier is Felder, Kofman and Linde, 'Instant preheating'. This attribution was not verified here."
+  },
+  {
+   "id": "D2",
+   "theme": "D",
+   "provenance": "programme",
+   "programme_file": "untitled folder 144/HDBLAST_CHAT8_INFORMATION_AND_QUANTUM_20260906/quantum/EXACT_SCALAR_PULSE_PRODUCTION.md",
+   "programme_access": "cited with equation numbers in the 6 Sept 2026 exact-pulse memo",
+   "access": "programme-record-only",
+   "title": "Exact Bogoliubov coefficients for a sech-profile mass pulse (paper title not recorded)",
+   "authors": "Alves and Camilo (as recorded)",
+   "year": "2019",
+   "venue": "Eur. Phys. J. C (2019), article s10052-019-6581-2",
+   "url": "https://link.springer.com/article/10.1140/epjc/s10052-019-6581-2",
+   "problems": [
+    "P6"
+   ],
+   "finding": "Per the programme record: equations (28)-(32) give the massless profile and Bogoliubov coefficients of the solvable sech mass quench, which the programme reproduced as a benchmark; integer indices give zero asymptotic production.",
+   "relevance": "an exact calibration for any mode-function particle-production code, alongside the Landau-Zener limit used for instant preheating.",
+   "implication": "method"
+  },
+  {
+   "id": "D3",
+   "theme": "D",
+   "provenance": "programme",
+   "programme_file": "untitled folder 144/HDBLAST_CHAT8_INFORMATION_AND_QUANTUM_20260906/quantum/EXACT_SCALAR_PULSE_PRODUCTION.md",
+   "programme_access": "cited (section V) in the 6 Sept 2026 exact-pulse memo",
+   "access": "programme-record-only",
+   "title": "Poschl-Teller non-production points (paper title not recorded)",
+   "authors": "Ahmadiniaz et al. (as recorded)",
+   "year": "2022 (arXiv number)",
+   "venue": "arXiv:2205.15946",
+   "url": "https://arxiv.org/pdf/2205.15946",
+   "problems": [
+    "P6"
+   ],
+   "finding": "Per the programme record: section V discusses Poschl-Teller non-production points in an electric-field construction with additional momentum dependence.",
+   "relevance": "a second exact benchmark family for particle-production codes (reflectionless profiles).",
+   "implication": "method"
+  },
+  {
+   "id": "D4",
+   "theme": "D",
+   "provenance": "programme",
+   "programme_file": "untitled folder 144/HDBLAST_CHAT8_INFORMATION_AND_QUANTUM_20260906/quantum/EXACT_SCALAR_PULSE_PRODUCTION.md",
+   "programme_access": "cited for the conformal non-production check",
+   "access": "programme-record-only",
+   "title": "Parker (1969), Physical Review 183, 1057 (title not written in the programme record)",
+   "authors": "L. Parker (surname as recorded)",
+   "year": "1969",
+   "venue": "Phys. Rev. 183, 1057",
+   "url": "https://journals.aps.org/pr/abstract/10.1103/PhysRev.183.1057",
+   "problems": [
+    "P6"
+   ],
+   "finding": "Per the programme record: the established conformal non-production result (beta_k = 0 for a conformally coupled massless field in the conformal vacuum), used as a control.",
+   "relevance": "a mandatory zero-production control for any gravitational particle-production calculation.",
+   "implication": "method"
+  },
+  {
+   "id": "D5",
+   "theme": "D",
+   "provenance": "programme",
+   "programme_file": "untitled folder 144/HDBLAST_CHAT8_INFORMATION_AND_QUANTUM_20260906/review/FRESH_SCOPE_AND_REFERENCES.md",
+   "programme_access": "abstract, model setup and methods sections read 6 Sept 2026 by an earlier agent",
+   "access": "programme-record-only",
+   "title": "Probing inflationary particle production with the CMB power spectrum",
+   "authors": "Jense, Abu El-Haj, Hill and Philcox",
+   "year": "2026",
+   "venue": "arXiv:2606.26823 (25 June 2026)",
+   "url": "https://arxiv.org/html/2606.26823v1",
+   "problems": [
+    "P6"
+   ],
+   "finding": "Per the programme record: a particle-production burst from an inflaton-spectator mass crossing is turned into CMB templates normalized by the inverse-covariance norm (their eqs. 26-27, 30); the weak joint-data preference is not an established detection.",
+   "relevance": "if a mass-crossing burst ever happens during an inflating stage of an HDBLAST variant, this gives the observable-template method. It does not address reheating.",
+   "implication": "method"
+  },
+  {
+   "id": "D6",
+   "theme": "D",
+   "provenance": "programme",
+   "programme_file": "untitled folder 144/HDBLAST_CHAT8_INFORMATION_AND_QUANTUM_20260906/review/FRESH_SCOPE_AND_REFERENCES.md",
+   "programme_access": "abstract and sections 2.1, 6, 7 inspected 6 Sept 2026 by an earlier agent",
+   "access": "programme-record-only",
+   "title": "Massive Graviton Dark Matter from a Gapped Continuum",
+   "authors": "Megias, Prieto and Quiros",
+   "year": "2026",
+   "venue": "arXiv:2607.07295 (v2 3 Aug 2026)",
+   "url": "https://arxiv.org/html/2607.07295v2",
+   "problems": [
+    "P6"
+   ],
+   "finding": "Per the programme record: in a linear-dilaton braneworld, brane-to-bulk graviton leakage scales as the eighth power of temperature, and the hidden fluid later scales as matter.",
+   "relevance": "consistent backreaction must include energy leaving the brane into the bulk. Not every bulk channel acts as dark radiation.",
+   "implication": "constrains"
+  },
+  {
+   "id": "D7",
+   "theme": "D",
+   "provenance": "programme",
+   "programme_file": "untitled folder 142/00_READ_FIRST.md",
+   "programme_access": "cited in the 6 Sept 2026 read-first",
+   "access": "programme-record-only",
+   "title": "RS2 gravitational-wave calculation with bulk Kaluza-Klein leakage (title not recorded)",
+   "authors": "Hiramatsu (as recorded)",
+   "year": "2006",
+   "venue": "arXiv:hep-th/0601105v2",
+   "url": "https://arxiv.org/abs/hep-th/0601105v2",
+   "problems": [
+    "P6"
+   ],
+   "finding": "Per the programme record: in established RS2 calculations, bulk Kaluza-Klein leakage can cancel an expansion enhancement in their radiation examples.",
+   "relevance": "a numerical precedent for brane-bulk energy bookkeeping in a radiation era; it limits any expansion-only inference.",
+   "implication": "constrains"
+  },
+  {
+   "id": "D8",
+   "theme": "D",
+   "provenance": "programme",
+   "programme_file": "untitled folder 144/HDBLAST_CHAT8_INFORMATION_AND_QUANTUM_20260906/review/FRESH_SCOPE_AND_REFERENCES.md",
+   "programme_access": "abstract and methods read by an earlier agent",
+   "access": "programme-record-only",
+   "title": "Particle Creation from Entanglement Entropy",
+   "authors": "not stated in the programme record",
+   "year": "2026",
+   "venue": "PTEP 2026, 013A01",
+   "url": "https://academic.oup.com/ptep/article/2026/1/013A01/8400342",
+   "problems": [
+    "P6"
+   ],
+   "finding": "Per the programme record: the main calculation is restricted to low-velocity moving mirrors; the programme treated it as an analogy, not a brane energy source.",
+   "relevance": "moving-mirror (dynamical Casimir) production is the closest analogue of production by a moving shell. The low-velocity restriction does not cover the Chat 14 roll-off.",
+   "implication": "context"
+  },
+  {
+   "id": "D9",
+   "theme": "D",
+   "provenance": "sweep1",
+   "sweep1_id": "C12",
+   "access": "search-snippet-only",
+   "title": "Collision of Domain Walls and Reheating of the Brane Universe",
+   "authors": "Y. Takamizu, K. Maeda",
+   "year": "2004",
+   "venue": "Phys. Rev. D 70, 123514; arXiv:hep-th/0406235",
+   "url": "https://arxiv.org/abs/hep-th/0406235",
+   "problems": [
+    "P6"
+   ],
+   "finding": "Per the sweep-1 snippet record: particle production when two domain walls collide in 5D, with a reheating estimate (formula garbled in the snippet); a follow-up treats asymptotically AdS5.",
+   "relevance": "a wall-collision production estimate against which a moving-shell production code can be compared.",
+   "implication": "method"
+  },
+  {
+   "id": "D10",
+   "theme": "D",
+   "provenance": "sweep1",
+   "sweep1_id": "F6",
+   "access": "search-snippet-only",
+   "title": "A dynamical inflaton coupled to strongly interacting matter",
+   "authors": "C. Ecker, E. Kiritsis, W. van der Schee",
+   "year": "2023",
+   "venue": "Phys. Rev. Lett. 130, 251001; arXiv:2302.06618",
+   "url": "https://arxiv.org/abs/2302.06618",
+   "problems": [
+    "P6"
+   ],
+   "finding": "Per the sweep-1 snippet record: the Einstein-inflaton equations are coupled self-consistently to a holographic strongly coupled QFT, giving inflation, reheating and a thermal QFT-dominated universe.",
+   "relevance": "the only item in this session's records that computes reheating with full self-consistent backreaction; the heat bath is a 5D (holographic) sector. Methodologically the closest template for bulk-coupled feedback, which this round's preheating workstream did not solve.",
+   "implication": "method"
+  },
+  {
+   "id": "D11",
+   "theme": "D",
+   "provenance": "sweep1",
+   "sweep1_id": "F7",
+   "access": "search-snippet-only",
+   "title": "Gravitational reheating at strong coupling",
+   "authors": "A. Buchel",
+   "year": "2023",
+   "venue": "JHEP 07 (2023) 159; arXiv:2304.11195",
+   "url": "https://arxiv.org/abs/2304.11195",
+   "problems": [
+    "P6"
+   ],
+   "finding": "Per the sweep-1 snippet record: estimates the maximal reheating temperature of strongly coupled theories after a rapid exit from de Sitter; most efficient when H greatly exceeds the conformal-breaking scale.",
+   "relevance": "an upper-bound method for gravitational production during a change of de Sitter rate.",
+   "implication": "constrains"
+  },
+  {
+   "id": "D12",
+   "theme": "D",
+   "provenance": "sweep1",
+   "sweep1_id": "D11",
+   "access": "search-snippet-only",
+   "title": "Reheating the Universe in Braneworld Cosmological Models with bulk-brane energy transfer",
+   "authors": "not captured in snippet",
+   "year": "2008",
+   "venue": "arXiv:0805.1792",
+   "url": "https://arxiv.org/abs/0805.1792",
+   "problems": [
+    "P6"
+   ],
+   "finding": "Per the sweep-1 snippet record: analyses the reheating era in 5D braneworlds with brane-bulk energy exchange.",
+   "relevance": "a precedent for the energy-exchange law of the programme's matter extension.",
+   "implication": "context"
+  },
+  {
+   "id": "E1",
+   "theme": "E",
+   "provenance": "programme",
+   "programme_file": "untitled folder 136/M489G_LITERATURE_AND_PUBLICATION_REVIEW_20260903.md",
+   "programme_access": "publisher full text and versioned preprint, read 3 Sept 2026 by an earlier agent",
+   "access": "programme-record-only",
+   "title": "Computer-assisted construction of SU(2)-invariant negative Einstein metrics",
+   "authors": "Qiu Shi Wang",
+   "year": "2026",
+   "venue": "Ann. Global Anal. Geom. 69, 18 (2026); arXiv:2504.21644v2",
+   "url": "https://arxiv.org/abs/2504.21644v2",
+   "problems": [
+    "P1"
+   ],
+   "finding": "Per the programme record: high-accuracy approximate solutions, rigorous residual bounds and a fixed-point argument yield actual Riemannian Einstein metrics, with explicit constants and reproducible computations.",
+   "relevance": "the closest structural precedent found. The Euclidean continuation of the +1 branch is a symmetry-reduced (cohomogeneity-one) Riemannian Einstein-scalar metric on a ball with a regular centre and an S^4 shell boundary. The Riemannian approximation -> residual -> fixed-point architecture therefore applies more directly to the static branch than to any Lorentzian evolution. The static Lorentzian problem is the same ODE BVP.",
+   "implication": "method"
+  },
+  {
+   "id": "E2",
+   "theme": "E",
+   "provenance": "programme",
+   "programme_file": "untitled folder 135/HDBLAST_PHYS_M488G_FIXED_P0_CAUSAL_EXCISION_AND_GOURSAT_ADJOINT_RESEARCH_CHECKPOINT_20260902/lanes/lane_methods/PHYS_M488G_CHARACTERISTIC_PDE_AND_VALIDATED_NUMERICS_METHODS_ROUTE.md",
+   "programme_access": "listed as a reference for the computer-assisted-proof gate, 2 Sept 2026",
+   "access": "programme-record-only",
+   "title": "Numerical Verification Methods and Computer-Assisted Proofs for Partial Differential Equations",
+   "authors": "M. T. Nakao, M. Plum, Y. Watanabe",
+   "year": "2019",
+   "venue": "Springer book, DOI 10.1007/978-981-13-7669-6",
+   "url": "https://doi.org/10.1007/978-981-13-7669-6",
+   "problems": [
+    "P1",
+    "P2"
+   ],
+   "finding": "Per the programme record: title, authors, year and DOI only; the record lists it as a primary reference for its next computer-assisted-proof step and does not summarise the content.",
+   "relevance": "the standard reference class for verified solutions of elliptic/ODE BVPs and verified eigenvalue enclosures. The latter would certify spectral statements such as 'no scalar mode below 9/4 on the +1 branch'. Content not checked in this sweep.",
+   "implication": "method"
+  },
+  {
+   "id": "E3",
+   "theme": "E",
+   "provenance": "programme",
+   "programme_file": "untitled folder 135/HDBLAST_PHYS_M488G_FIXED_P0_CAUSAL_EXCISION_AND_GOURSAT_ADJOINT_RESEARCH_CHECKPOINT_20260902/lanes/lane_methods/PHYS_M488G_CHARACTERISTIC_PDE_AND_VALIDATED_NUMERICS_METHODS_ROUTE.md",
+   "programme_access": "listed as a reference for the computer-assisted-proof gate, 2 Sept 2026",
+   "access": "programme-record-only",
+   "title": "Verification Methods: Rigorous Results Using Floating-Point Arithmetic",
+   "authors": "S. M. Rump",
+   "year": "2010",
+   "venue": "Acta Numerica 19 (2010), 287-449",
+   "url": "https://doi.org/10.1017/S096249291000005X",
+   "problems": [
+    "P1"
+   ],
+   "finding": "Per the programme record: bibliographic entry only (title, venue, pages, DOI).",
+   "relevance": "the survey behind interval-Newton/Krawczyk-type existence tests with outward-rounded floating point, the step used by the programme's earlier certified BVP root (M462). Content not checked in this sweep.",
+   "implication": "method"
+  },
+  {
+   "id": "E4",
+   "theme": "E",
+   "provenance": "programme",
+   "programme_file": "untitled folder 135/HDBLAST_PHYS_M488G_FIXED_P0_CAUSAL_EXCISION_AND_GOURSAT_ADJOINT_RESEARCH_CHECKPOINT_20260902/lanes/lane_methods/PHYS_M488G_CHARACTERISTIC_PDE_AND_VALIDATED_NUMERICS_METHODS_ROUTE.md",
+   "programme_access": "listed as a reference for the computer-assisted-proof gate, 2 Sept 2026",
+   "access": "programme-record-only",
+   "title": "Verified Bounds for the Determinant of Real or Complex Point or Interval Matrices",
+   "authors": "S. M. Rump",
+   "year": "2020",
+   "venue": "J. Comput. Appl. Math. 372 (2020), 112610",
+   "url": "https://doi.org/10.1016/j.cam.2019.112610",
+   "problems": [
+    "P1",
+    "P2"
+   ],
+   "finding": "Per the programme record: bibliographic entry only (title, venue, DOI).",
+   "relevance": "certifying that a junction Jacobian is nonsingular is the local-uniqueness half of a Krawczyk argument. This round's stability workstream reports floating-point condition numbers of 15-17 for the static junction Jacobian. Content not checked in this sweep.",
+   "implication": "method"
+  }
+ ],
+ "leads_unverified_no_url": [
+  {
+   "theme": "A",
+   "pointer": "Gundlach, Calabrese, Hinder, Martin-Garcia (2005): constraint damping in the Z4 formulation and harmonic gauge",
+   "planned_query": 1,
+   "why": "Damping terms that drive constraint violations to zero at a tunable rate. The direct remedy for the outgoing constraint front (P3)."
+  },
+  {
+   "theme": "A",
+   "pointer": "Alic, Bona-Casas, Bona, Rezzolla, Palenzuela (2012): conformal and covariant Z4 (CCZ4)",
+   "planned_query": 2,
+   "why": "Standard damped formulation used in spherical and higher-dimensional codes (P3, P4)."
+  },
+  {
+   "theme": "A",
+   "pointer": "Bernuzzi, Hilditch (2010): Z4c; and later work on constraint-preserving boundary conditions for Z4c",
+   "planned_query": 3,
+   "why": "Constraint-preserving outer boundaries, the other half of the far-boundary problem (P3)."
+  },
+  {
+   "theme": "A",
+   "pointer": "Pretorius (2005) and Lindblom, Scheel, Kidder, Owen, Rinne (2006): generalized harmonic evolution with constraint damping",
+   "planned_query": 4,
+   "why": "Alternative damped formulation; widely used for AdS and cosmological problems (P3, P4)."
+  },
+  {
+   "theme": "A",
+   "pointer": "Zenginoglu (2008): hyperboloidal foliations and scri-fixing; later hyperboloidal spherical-symmetry work",
+   "planned_query": 5,
+   "why": "P3: in the evolution chart the far end of the bulk (z -> -infinity) is the Lorentzian continuation of the regular cone. That is a Rindler-type horizon of the de Sitter slicing, reached only asymptotically in coordinate time. Horizon-penetrating or hyperboloidal-type slices would let outgoing signals leave instead of reflecting from a finite boundary."
+  },
+  {
+   "theme": "A",
+   "pointer": "Sarbach, Tiglio (2012), Living Reviews in Relativity: continuum and discrete initial-boundary value problems and Einstein's equations",
+   "planned_query": 8,
+   "why": "Well-posed boundary conditions and summation-by-parts (SBP) discretizations with energy estimates (P3, P5)."
+  },
+  {
+   "theme": "A",
+   "pointer": "Summation-by-parts operators with simultaneous-approximation-term (SAT) boundary and interface closures (review literature on SBP-SAT)",
+   "planned_query": 8,
+   "why": "P5: Chat 14 found that the order of the one-sided shell closure dominated the error at delta=0.001. SBP-SAT closures give provably stable boundary/interface treatments of a chosen order."
+  },
+  {
+   "theme": "A",
+   "pointer": "Higher-dimensional numerical relativity with symmetry reduction (modified cartoon method, Shibata-Yoshino; 5D CCZ4 codes)",
+   "planned_query": 4,
+   "why": "Established 5D formulations if the programme leaves the 1+1 reduction (P3)."
+  },
+  {
+   "theme": "A",
+   "pointer": "Chesler, Yaffe (2014): characteristic formulation for asymptotically AdS gravitational dynamics",
+   "planned_query": 4,
+   "why": "Characteristic (null) evolution in AdS5 avoids an artificial timelike outer boundary (P3, P4)."
+  },
+  {
+   "theme": "B",
+   "pointer": "Israel (1966): singular hypersurfaces and thin shells; Ida (2000): brane-world cosmology from junction conditions",
+   "planned_query": 7,
+   "why": "Foundations for the moving-shell benchmarks (P5)."
+  },
+  {
+   "theme": "C",
+   "pointer": "Lavrelashvili (2006) and Lee, Weinberg (2014): negative modes of Coleman-De Luccia bounces",
+   "planned_query": 10,
+   "why": "The CDL negative-mode problem: counting and gauge-invariant definition of the negative mode (P2)."
+  },
+  {
+   "theme": "C",
+   "pointer": "Koehn, Lavrelashvili, Lehners (2015): towards a solution of the negative-mode problem in quantum tunnelling with gravity",
+   "planned_query": 10,
+   "why": "Gauge-invariant Euclidean perturbation variables for O(4)/O(5)-symmetric bounces (P2)."
+  },
+  {
+   "theme": "C",
+   "pointer": "Tanaka, Sasaki (1992); Khvedelidze, Lavrelashvili, Tanaka (2000); Dunne, Wang (2006); Gratton, Turok (2000): negative modes and fluctuations of gravitational instantons",
+   "planned_query": 11,
+   "why": "Methods for counting negative modes of the Euclidean +1 and -1 branches (P2)."
+  },
+  {
+   "theme": "C",
+   "pointer": "'Gregory-Ruth' (named in the task): NOT identified. No record in this session or in the scanned programme files matches this pair of names",
+   "planned_query": 12,
+   "why": "Left open; not cited."
+  },
+  {
+   "theme": "D",
+   "pointer": "Kofman, Linde, Starobinsky (1997): towards the theory of reheating after inflation",
+   "planned_query": 14,
+   "why": "Broad-resonance preheating; background for P6."
+  },
+  {
+   "theme": "D",
+   "pointer": "Figueroa, Florio, Torrenti, Valkenburg (2021): CosmoLattice; and lattice reviews of early-universe field dynamics (2020-2023)",
+   "planned_query": 16,
+   "why": "Lattice tools with full classical backreaction for P6; no 2020-2026 lattice paper with renormalized backreaction could be verified in this sweep."
+  },
+  {
+   "theme": "D",
+   "pointer": "Kofman, Linde, Liu, Maloney, McAllister, Silverstein (2004): 'Beauty is attractive', moduli trapping at enhanced symmetry points",
+   "planned_query": 14,
+   "why": "Backreaction of production at a mass crossing on the rolling field, the self-consistency issue flagged by the preheating workstream (P6)."
+  },
+  {
+   "theme": "D",
+   "pointer": "Parker, Fulling (1974): adiabatic regularization; later semiclassical-backreaction work on renormalized stress tensors",
+   "planned_query": 15,
+   "why": "Renormalized energy density needed for any backreacted production calculation (P6)."
+  },
+  {
+   "theme": "D",
+   "pointer": "Durrer, Ruser (2007): dynamical Casimir effect in braneworlds (graviton production by a moving brane)",
+   "planned_query": 15,
+   "why": "Particle production by a moving brane in AdS5, the closest physical analogue for P6."
+  },
+  {
+   "theme": "E",
+   "pointer": "Krawczyk (1969); Moore (1966); Tucker (2011, 'Validated Numerics'): interval Newton/Krawczyk existence tests",
+   "planned_query": 18,
+   "why": "The existence/uniqueness step used by the programme's M462 certified BVP root (P1)."
+  },
+  {
+   "theme": "E",
+   "pointer": "Kashiwagi's kv library (validated Taylor ODE integration; used by the programme's M462 release as kv v0.4.62); CAPD::DynSys (Kapela et al. 2021); Arb/FLINT (Johansson)",
+   "planned_query": 17,
+   "why": "Validated ODE integrators for a shooting-type proof of the +1 branch (P1). None is installed in this environment."
+  },
+  {
+   "theme": "E",
+   "pointer": "Radii-polynomial approach: Day, Lessard, Mischaikow (2007); van den Berg, Lessard (2015)",
+   "planned_query": 17,
+   "why": "Newton-Kantorovich proofs for BVPs in Chebyshev/Taylor bases; an alternative to shooting (P1)."
+  },
+  {
+   "theme": "E",
+   "pointer": "Lohner (1987): the wrapping effect in interval ODE integration",
+   "planned_query": 18,
+   "why": "Controls overestimation in validated shooting; the pilot suggests the transverse direction contracts strongly outward (P1)."
+  }
+ ],
+ "counts": "42 sources with URLs (26 from sweep-1 search records, 16 from programme records); 23 unverified leads without URLs; 20 planned queries (none run); implications: constrains 5, context 6, method 31; published 2020-2026: 17, before 2020: 25"
+}

@@ -1,0 +1,44 @@
+=== A. closure algebra
+trial 0: centred D1 at shell with ghosts = 0.364572396186075   target g = 0.364572396186076   one-sided 5-pt formula = 0.364572396186076
+trial 1: centred D1 at shell with ghosts = -0.292456750965089   target g = -0.292456750965089   one-sided 5-pt formula = -0.292456750965089
+trial 2: centred D1 at shell with ghosts = -0.174772092055161   target g = -0.174772092055162   one-sided 5-pt formula = -0.174772092055161
+deg 0 closure 2: ghost errors e1-p(1)=0.00e+00 e2-p(2)=0.00e+00
+deg 0 closure 4: ghost errors e1-p(1)=-1.11e-16 e2-p(2)=-4.44e-16
+deg 1 closure 2: ghost errors e1-p(1)=0.00e+00 e2-p(2)=0.00e+00
+deg 1 closure 4: ghost errors e1-p(1)=-2.78e-16 e2-p(2)=-1.33e-15
+deg 2 closure 2: ghost errors e1-p(1)=2.22e-16 e2-p(2)=0.00e+00
+deg 2 closure 4: ghost errors e1-p(1)=1.22e-15 e2-p(2)=9.33e-15
+deg 3 closure 2: ghost errors e1-p(1)=1.03e+00 e2-p(2)=8.22e+00
+deg 3 closure 4: ghost errors e1-p(1)=-3.55e-15 e2-p(2)=-1.60e-14
+deg 4 closure 2: ghost errors e1-p(1)=2.45e+00 e2-p(2)=1.96e+01
+deg 4 closure 4: ghost errors e1-p(1)=-8.88e-16 e2-p(2)=-7.11e-15
+deg 5 closure 2: ghost errors e1-p(1)=8.22e-01 e2-p(2)=3.09e+01
+deg 5 closure 4: ghost errors e1-p(1)=1.22e+01 e2-p(2)=1.22e+02
+--- truncation order (f = sin(2z+0.3) on z<=0, Neumann slope exact)
+closure 2 h=0.1000  |D1 err| shell 2.22e-16, N-1 2.22e-03 | |D2 err| shell 1.71e-01, N-1 2.12e-02
+closure 2 h=0.0500  |D1 err| shell 2.22e-16, N-1 5.37e-04 | |D2 err| shell 8.50e-02, N-1 1.06e-02   orders: 0.00 2.05 1.00 1.00
+closure 2 h=0.0250  |D1 err| shell 2.22e-16, N-1 1.33e-04 | |D2 err| shell 4.25e-02, N-1 5.31e-03   orders: 0.00 2.01 1.00 1.00
+closure 2 h=0.0125  |D1 err| shell 6.66e-16, N-1 3.32e-05 | |D2 err| shell 2.12e-02, N-1 2.65e-03   orders: -1.58 2.00 1.00 1.00
+closure 4 h=0.1000  |D1 err| shell 4.44e-16, N-1 5.30e-05 | |D2 err| shell 3.17e-03, N-1 5.33e-04
+closure 4 h=0.0500  |D1 err| shell 8.88e-16, N-1 3.27e-06 | |D2 err| shell 3.92e-04, N-1 6.59e-05   orders: -1.00 4.02 3.02 3.02
+closure 4 h=0.0250  |D1 err| shell 1.33e-15, N-1 2.02e-07 | |D2 err| shell 4.84e-05, N-1 8.12e-06   orders: -0.58 4.02 3.02 3.02
+closure 4 h=0.0125  |D1 err| shell 6.44e-15, N-1 1.25e-08 | |D2 err| shell 6.01e-06, N-1 1.01e-06   orders: -2.27 4.01 3.01 3.01
+
+=== B. semi-discrete stability of u_tt = u_zz, Dirichlet left (two zero ghosts), Neumann right (u_z = 0) via each closure
+closure 2: max Re(lambda) = -6.872e-04, max |Im(lambda)| = 0.000e+00, min Re = -5.332 (continuum: -pi^2/4/h^2 ... )
+   largest growth rate Re sqrt(lambda) (per unit h^-1 time) = 0.000e+00
+closure 4: max Re(lambda) = -6.872e-04, max |Im(lambda)| = 0.000e+00, min Re = -7.428 (continuum: -pi^2/4/h^2 ... )
+   largest growth rate Re sqrt(lambda) (per unit h^-1 time) = 0.000e+00
+--- fully discrete: RK4, dt = 0.5 h, system (u, v): u_t = v + KO(u), v_t = D2 u + KO(v); spectral radius of the step map
+closure 2 eps=0.00: spectral radius of the RK4 step map = 1.0000000000  (growth per unit time in h^-1 units: -7.261e-14)
+closure 2 eps=0.05: spectral radius of the RK4 step map = 0.9999999901  (growth per unit time in h^-1 units: -1.988e-08)
+closure 4 eps=0.00: spectral radius of the RK4 step map = 1.0000000000  (growth per unit time in h^-1 units: -7.061e-14)
+closure 4 eps=0.05: spectral radius of the RK4 step map = 0.9999999890  (growth per unit time in h^-1 units: -2.206e-08)
+
+=== C. the stretched grid actually used (dzf = 1.5e-4, dzc = 8e-3, L = 10)
+nodes 1392, dz at shell 1.6941e-04, dz far 8.0000e-03, z[0] = -10.0041
+max per-cell stretch ratio dz_{i+1}/dz_i = 0.8228 at z = -0.0609 (i.e. -17.7% per cell); ratio > 1.10 on 0 cells, > 1.05 on 0 cells
+chain rule: max |f_z err| = 2.04e-03, max |f_zz err| = 1.60e-01 (interior, f = sin 3z); at the transition region |z+0.06|<0.05: 2.04e-03 / 1.60e-01
+points across a 0.0127-wide feature: 75.0 at the shell, 1.6 at z = -0.1, 1.6 at z = -1
+Kreiss-Oliger: v1 damping rate of the grid mode = eps/dz = 125.0 (dz=4e-4) ; v2 as coded (h = 1 in xi) = eps/h = 0.050 per unit t at every node; per time step dt = 8.47e-05 that is 4.2e-06 (v1 at CFL 0.5: 0.025 per step)
+finecoarse grid (dzc = 2e-3): 5214 nodes, max stretch 0.0% per cell

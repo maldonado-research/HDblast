@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "Hamiltonian transport from direct differentiation",
+      "pass": true,
+      "negative_control": false
+    },
+    {
+      "name": "Momentum transport from direct differentiation",
+      "pass": true,
+      "negative_control": false
+    },
+    {
+      "name": "Outgoing density follows z=z0-t",
+      "pass": true,
+      "negative_control": false
+    },
+    {
+      "name": "Incoming density follows z=z0+t",
+      "pass": true,
+      "negative_control": false
+    },
+    {
+      "name": "reject outgoing characteristic sign swap",
+      "pass": true,
+      "negative_control": true
+    },
+    {
+      "name": "reject density e^(2A)",
+      "pass": true,
+      "negative_control": true
+    },
+    {
+      "name": "reject Hamiltonian scalar kinetic coefficient",
+      "pass": true,
+      "negative_control": true
+    },
+    {
+      "name": "reject momentum coupling 3 Az H",
+      "pass": true,
+      "negative_control": true
+    },
+    {
+      "name": "junction implies shell momentum identity",
+      "pass": true,
+      "negative_control": false
+    },
+    {
+      "name": "reject scalar junction sign reversal",
+      "pass": true,
+      "negative_control": true
+    },
+    {
+      "name": "zero velocity-slope is generally invalid",
+      "pass": true,
+      "negative_control": true
+    },
+    {
+      "name": "momentum-only dissipation source in H transport",
+      "pass": true,
+      "negative_control": false
+    },
+    {
+      "name": "momentum-only dissipation source in M transport",
+      "pass": true,
+      "negative_control": false
+    }
+  ],
+  "positive_controls": 7,
+  "negative_controls": 6,
+  "sympy_version": "1.14.0",
+  "definition": "H=2(G_tt-T_tt), M=G_tz-T_tz; evolution has E_zz=H/2, E_ij=0",
+  "outgoing_density": "exp(3A)*(H+2M), transported toward decreasing z at unit coordinate speed",
+  "incoming_density": "exp(3A)*(H-2M), transported toward increasing z at unit coordinate speed",
+  "dissipation_scope": "Identities are for continuum nondissipative PDE; specified momentum-only Q adds source terms in report.",
+  "self_sha256": "cefbd639f042994122e2ddaa6161a2c4ed87ea43772d9a897de71019fdf77218"
+}

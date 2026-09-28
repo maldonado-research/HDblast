@@ -1,0 +1,35 @@
+U0 = (rho(y)**2*Derivative(phi(y), y)**2 - 12*Derivative(rho(y), y)**2 + 12)/(2*rho(y)**2)
+rho'' = (-rho(y)**2*Derivative(phi(y), y)**2/3 + Derivative(rho(y), y)**2 - 1)/rho(y)
+phi'' = U1(y) - 4*Derivative(phi(y), y)*Derivative(rho(y), y)/rho(y)
+PASS bg_first_integral_is_rho1^2=1+rho^2(phi1^2/12-U/6)
+PASS bg_scalar_is_phi''=U1-4Hphi'
+PASS bg_tt_consistent
+PASS bg_U1_consistency(d/dy of first integral)
+PASS offdiag_yx_zero
+PASS offdiag_x1x2_zero
+trace-free coefficient: -N(y) - 2*psi(y)
+PASS tracefree_proportional_to_N+2psi
+yt: -(chi(y)*rho(y)*Derivative(phi(y), y) + 6*psi(y)*Derivative(rho(y), y) + 3*rho(y)*Derivative(psi(y), y))/rho(y)
+PASS yt_equals_const*(psi'+2Hpsi+phi'chi/3)
+PASS claimed_system_implies_yy
+PASS claimed_system_implies_yt
+PASS claimed_system_implies_tt
+PASS claimed_system_implies_xx
+PASS claimed_system_implies_scalar
+PASS Z'=-(2H+g)Z-X/3
+PASS X'=gX+(3lam/rho^2-2phi'^2)Z
+PASS bg_metric_junction_is_rho1/rho=sigma/6
+PASS bg_scalar_junction_is_phi1=-sigma1/2
+junction trace-free: -zeta
+junction trace: -(3*c*delta*N(y)*phi(y)*rho(y)**2 + 3*c*delta*chi(y)*rho(y)**2 + 3*delta*N(y)*rho(y)**2 + 18*zeta + 2*N(y)*phi(y)**3*rho(y)**2 - 6*N(y)*phi(y)*rho(y)**2 + 6*N(y)*rho(y)**2 + 6*chi(y)*phi(y)**2*rho(y)**2 - 6*chi(y)*rho(y)**2 - 18*rho(y)**2*Derivative(psi(y), y))/18
+junction scalar: (6*c**2*delta**2*zeta*phi(y) + 6*c*delta**2*zeta + 16*c*delta*zeta*phi(y)**3 - 42*c*delta*zeta*phi(y) + 12*c*delta*zeta + 9*c*delta*N(y) + 12*delta*zeta*phi(y)**2 - 12*delta*zeta + 18*zeta*U1(y) + 8*zeta*phi(y)**5 - 68*zeta*phi(y)**3 + 24*zeta*phi(y)**2 + 60*zeta*phi(y) - 24*zeta + 18*N(y)*phi(y)**2 - 18*N(y) + 36*chi(y)*phi(y) + 18*Derivative(chi(y), y))/18
+PASS junction_tracefree_depends_only_on_zeta
+PASS trace_junction_equals_momentum_constraint
+scalar junction / (chi' + s2/2 chi + 2 phi' psi) = 1
+PASS scalar_junction_equals_chi'+sigma''/2 chi+2phi'psi
+PASS M=BX+3lamZ/rho^2
+tensor ratio -rho(y)**2/2
+PASS tensor_eq_proportional(ratio free of hT)
+tensor junction rho(y)**2*Derivative(hT(y), y)/2
+PASS tensor_junction_Neumann
+30 / 30 runtime 12.45664119720459

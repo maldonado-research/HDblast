@@ -1,0 +1,574 @@
+PART A exact rational controls: {
+ "samples": 400,
+ "samples_E1b": 212,
+ "failures": {
+  "E1_conformal_K2_minus_H2": 0,
+  "E1b_conformal_friedmann": 0,
+  "E2_constraint_substitution": 0,
+  "E3_static_reduction_M462_7p1": 0,
+  "E3b_M462_7p2_expanded": 0,
+  "E4_ychart_friedmann": 0,
+  "E5_chart_equivalence": 0,
+  "E6_codazzi_constraint_propagation": 0,
+  "E7_BPS_no_force": 0,
+  "E8_junction_trace_algebra": 0,
+  "E9_maeda_wands_Lambda4": 0,
+  "E10_kinematic_gradphi": 0,
+  "E11_sum_rule_integrand": 0,
+  "E12_rapidity_law": 0
+ },
+ "all_pass": true
+}
+
+B1_static_shell {
+ "y_b": 8.228201550199884,
+ "rho_b": 78.82817689966795,
+ "phi_b": 2.2793413471676998e-05,
+ "s_b": 0.9997012020109242,
+ "h": 0.00016093000877032376,
+ "israel_residual": 8.198997036856781e-14,
+ "scalar_residual": -2.0220491947497976e-12,
+ "theorem_rhs": 0.00016093000871558738,
+ "theorem_rhs_minus_h": -5.4736380358799686e-14,
+ "M462_7p1": 0.0001609300083787079,
+ "M462_7p1_minus_h": -3.916158575808376e-13,
+ "sigma_conformal_at_shell": 12.447391539290901,
+ "Omega_at_shell": 22.343042270743936
+}
+
+B2_conformal_background_identities {
+ "grid_points": 16,
+ "y_min": 1.0099999999999214,
+ "y_max": 8.510000000006844,
+ "max_abs_w_sigma_minus_w2_plus_Hs2_over_3": 8.883406854565123e-08,
+ "scale_w2": 1.3719411343671855,
+ "max_abs_registered_constraint": 1.113356248083619e-06,
+ "scale_4w": 4.685195636243482,
+ "max_abs_F_conformal_minus_F_ychart": 2.7755575615628914e-16,
+ "max_abs_w_minus_dlnOmega_dsigma": 7.022053383209936e-09
+}
+
+B3_vacuum_shell_outward_kick {
+ "n_steps": 3001,
+ "tau_end": 2.9999999999997806,
+ "y_range": [
+  8.228201550199884,
+  9.141964637230728
+ ],
+ "eta_end": 0.03561991124347393,
+ "psi_range": [
+  0.3,
+  0.3001848200922446
+ ],
+ "a_ratio": 1.2143341434278856,
+ "lam_range": [
+  0.8446065785669694,
+  2.091674727345226
+ ],
+ "H_range": [
+  0.041387260782760914,
+  0.10155520487031781
+ ],
+ "max_abs_theta_theta_constraint_C": 1.1129985821867194e-14,
+ "max_abs_scalar_junction_S": 0.0,
+ "max_abs_H_formula_minus_H_finite_difference": 1.2973372376379189e-12,
+ "max_abs_friedmann_residual_using_Hfd": 2.373500701535747e-13,
+ "max_abs_friedmann_residual_using_Hformula": 5.55805401702969e-15,
+ "friedmann_scale": 0.010474389645022494,
+ "max_abs_Cdot_plus_phidot_S_over_3_plus_HC": 6.475796830976223e-13,
+ "max_abs_Cdot_finite_difference": 6.476300976980079e-13,
+ "J_range": [
+  0.0,
+  0.0
+ ],
+ "max_abs_rapidity_law_residual": 1.1124754546384952e-14,
+ "phi_b_monotone": true,
+ "vacuum_shell_hyperboloid": {
+  "T0_first": -1.027775979169457,
+  "T0_spread": 3.086420008457935e-14,
+  "b2_first": 11.391068075933166,
+  "b2_spread": 1.8758328224066645e-12,
+  "max_abs_closed_form_tension_residual": 1.1129985821867194e-14
+ },
+ "conformal_chart_max_abs": {
+  "normalisation": 8.881784197001252e-16,
+  "K_theta_theta": 2.220446049250313e-16,
+  "Hubble": 6.938893903907228e-17
+ },
+ "max_abs_C_at_double_step": 6.8833827526759706e-15,
+ "initial_state_y_eta_psi_rhom_lam": [
+  8.228201550199884,
+  0.0,
+  0.3,
+  0.0,
+  2.091674727345226
+ ],
+ "w_eos": 0.0,
+ "reconstructed_tension_samples_phi_lam": [
+  [
+   2.2793413471676998e-05,
+   2.091674727345226
+  ],
+  [
+   0.15106953801912595,
+   1.7783885532739174
+  ],
+  [
+   0.29537263948426834,
+   1.4923645462025494
+  ],
+  [
+   0.42734536554413616,
+   1.2529993347935418
+  ],
+  [
+   0.5433072371125449,
+   1.068058517127368
+  ],
+  [
+   0.641669021009815,
+   0.934894143602977
+  ],
+  [
+   0.7226321785437726,
+   0.8446065785669694
+  ]
+ ]
+}
+
+B4_vacuum_shell_inward_kick {
+ "n_steps": 6001,
+ "tau_end": 6.000000000000338,
+ "y_range": [
+  5.72503136672746,
+  8.228201550199884
+ ],
+ "eta_end": 0.3629467622654748,
+ "psi_range": [
+  -0.41727171498780297,
+  -0.4
+ ],
+ "a_ratio": 0.2867335509839228,
+ "lam_range": [
+  2.1570057314082383,
+  3.5984692469327504
+ ],
+ "H_range": [
+  -0.22375438043811186,
+  -0.13427591865774086
+ ],
+ "max_abs_theta_theta_constraint_C": 3.097522238704187e-14,
+ "max_abs_scalar_junction_S": 0.0,
+ "max_abs_H_formula_minus_H_finite_difference": 1.3065937221057311e-12,
+ "max_abs_friedmann_residual_using_Hfd": 5.450709328336245e-13,
+ "max_abs_friedmann_residual_using_Hformula": 3.704675455296069e-14,
+ "friedmann_scale": 0.05111772539404916,
+ "max_abs_Cdot_plus_phidot_S_over_3_plus_HC": 7.178704317642289e-13,
+ "max_abs_Cdot_finite_difference": 7.170190367370802e-13,
+ "J_range": [
+  0.0,
+  0.0
+ ],
+ "max_abs_rapidity_law_residual": 3.095180362011618e-14,
+ "phi_b_monotone": true,
+ "vacuum_shell_hyperboloid": {
+  "T0_first": 1.4206615045761106,
+  "T0_spread": 1.199040866595169e-13,
+  "b2_first": 12.447391539290903,
+  "b2_spread": 7.86926079854311e-12,
+  "max_abs_closed_form_tension_residual": 3.097522238704187e-14
+ },
+ "conformal_chart_max_abs": {
+  "normalisation": 1.1102230246251565e-15,
+  "K_theta_theta": 4.440892098500626e-16,
+  "Hubble": 1.942890293094024e-16
+ },
+ "max_abs_C_at_double_step": 3.3306690738754696e-15,
+ "initial_state_y_eta_psi_rhom_lam": [
+  8.228201550199884,
+  0.2,
+  -0.4,
+  0.0,
+  2.1570057314082383
+ ],
+ "w_eos": 0.0,
+ "reconstructed_tension_samples_phi_lam": [
+  [
+   2.2793413471676998e-05,
+   2.1570057314082383
+  ],
+  [
+   -0.3895076813432975,
+   2.9565819187296722
+  ],
+  [
+   -0.6771785757438774,
+   3.3975309155686158
+  ],
+  [
+   -0.8450024034004556,
+   3.549496569165929
+  ],
+  [
+   -0.9296059279414082,
+   3.58836011618156
+  ],
+  [
+   -0.96902707206256,
+   3.5967927134156987
+  ],
+  [
+   -0.9866603973204996,
+   3.5984692469327504
+  ]
+ ]
+}
+
+B5_radiation_shell {
+ "n_steps": 2296,
+ "tau_end": 2.2949999999998583,
+ "y_range": [
+  4.581591908449097,
+  6.063417832923498
+ ],
+ "eta_end": 0.2545323291585043,
+ "psi_range": [
+  -2.4933065391079334,
+  0.25
+ ],
+ "a_ratio": 0.4649607772401763,
+ "lam_range": [
+  2.6514196994833847,
+  2.6530615312364825
+ ],
+ "H_range": [
+  -3.246707534741322,
+  0.14473381485616052
+ ],
+ "max_abs_theta_theta_constraint_C": 8.035794252236883e-10,
+ "max_abs_scalar_junction_S": 0.0,
+ "max_abs_H_formula_minus_H_finite_difference": 4.81061110946257e-08,
+ "max_abs_friedmann_residual_using_Hfd": 3.0990292820831655e-07,
+ "max_abs_friedmann_residual_using_Hformula": 5.29557553363702e-09,
+ "friedmann_scale": 10.548324126808112,
+ "max_abs_Cdot_plus_phidot_S_over_3_plus_HC": 4.006133932393567e-08,
+ "max_abs_Cdot_finite_difference": 4.2322478854828205e-08,
+ "J_range": [
+  0.0,
+  0.0
+ ],
+ "max_abs_rapidity_law_residual": 8.035794252236883e-10,
+ "phi_b_monotone": false,
+ "vacuum_shell_hyperboloid": null,
+ "conformal_chart_max_abs": {
+  "normalisation": 1.4432899320127035e-14,
+  "K_theta_theta": 1.7763568394002505e-15,
+  "Hubble": 1.3322676295501878e-15
+ },
+ "max_abs_C_at_double_step": 1.1939709665398368e-08,
+ "initial_state_y_eta_psi_rhom_lam": [
+  6.0,
+  0.1,
+  0.25,
+  0.8,
+  2.651720691419185
+ ],
+ "w_eos": 0.3333333333333333,
+ "reconstructed_tension_samples_phi_lam": [
+  [
+   -0.9770094051508807,
+   2.651720691419185
+  ],
+  [
+   -0.9741608910531422,
+   2.6514418732878617
+  ],
+  [
+   -0.9746599588988041,
+   2.651492463374793
+  ],
+  [
+   -0.9783823606199548,
+   2.6518463966935153
+  ],
+  [
+   -0.9845442689240319,
+   2.6523416982524237
+  ],
+  [
+   -0.9917879714817489,
+   2.652780924508505
+  ],
+  [
+   -0.9986272373205968,
+   2.6530615312364825
+  ]
+ ]
+}
+
+B6_dust_shell_with_coupling_J {
+ "n_steps": 3966,
+ "tau_end": 3.9649999999996743,
+ "y_range": [
+  4.85425323354845,
+  7.08544355867004
+ ],
+ "eta_end": 0.06687579421297767,
+ "psi_range": [
+  -2.4917553256007174,
+  0.2
+ ],
+ "a_ratio": 0.30214280006027777,
+ "lam_range": [
+  2.8314155748287684,
+  2.979494623755834
+ ],
+ "H_range": [
+  -3.3331142787034156,
+  0.10804155605218434
+ ],
+ "max_abs_theta_theta_constraint_C": 2.5388535718207095e-10,
+ "max_abs_scalar_junction_S": 2.0816681711721685e-16,
+ "max_abs_H_formula_minus_H_finite_difference": 1.7170955768364138e-08,
+ "max_abs_friedmann_residual_using_Hfd": 1.1403316335645286e-07,
+ "max_abs_friedmann_residual_using_Hformula": 1.7162307131002308e-09,
+ "friedmann_scale": 11.115288660459743,
+ "max_abs_Cdot_plus_phidot_S_over_3_plus_HC": 9.817655828700292e-09,
+ "max_abs_Cdot_finite_difference": 1.057605854744755e-08,
+ "J_range": [
+  0.1321165464163205,
+  5.190026079680288
+ ],
+ "max_abs_rapidity_law_residual": 2.538858012712808e-10,
+ "phi_b_monotone": false,
+ "vacuum_shell_hyperboloid": null,
+ "conformal_chart_max_abs": {
+  "normalisation": 1.887379141862766e-14,
+  "K_theta_theta": 1.3322676295501878e-15,
+  "Hubble": 1.3322676295501878e-15
+ },
+ "max_abs_C_at_double_step": 3.835679773800393e-09,
+ "initial_state_y_eta_psi_rhom_lam": [
+  7.0,
+  -0.1,
+  0.2,
+  0.5,
+  2.8520694300030427
+ ],
+ "w_eos": 0.0,
+ "reconstructed_tension_samples_phi_lam": [
+  [
+   -0.8419460079676137,
+   2.8520694300030427
+  ],
+  [
+   -0.8168532596989142,
+   2.8327201930473396
+  ],
+  [
+   -0.8226366276831197,
+   2.8373063594858055
+  ],
+  [
+   -0.8576652760534514,
+   2.8635497116406716
+  ],
+  [
+   -0.9108457010272516,
+   2.8989410106746245
+  ],
+  [
+   -0.9638959722656504,
+   2.9329433914274925
+  ],
+  [
+   -0.997638906068727,
+   2.979494623755834
+  ]
+ ]
+}
+
+B7_stiff_matter_deep_bulk {
+ "n_steps": 1735,
+ "tau_end": 1.7339999999999198,
+ "y_range": [
+  1.9543654116813547,
+  3.111491873848264
+ ],
+ "eta_end": 0.9090117264793468,
+ "psi_range": [
+  -2.493123667063511,
+  0.5
+ ],
+ "a_ratio": 0.7091691153909863,
+ "lam_range": [
+  2.735068932419529,
+  2.735068947229249
+ ],
+ "H_range": [
+  -2.338244946646646,
+  0.38240466694676517
+ ],
+ "max_abs_theta_theta_constraint_C": 7.7555561972531e-10,
+ "max_abs_scalar_junction_S": 0.0,
+ "max_abs_H_formula_minus_H_finite_difference": 4.314736967714339e-08,
+ "max_abs_friedmann_residual_using_Hfd": 2.0022199542779617e-07,
+ "max_abs_friedmann_residual_using_Hformula": 3.7555558662916155e-09,
+ "friedmann_scale": 5.553569221820759,
+ "max_abs_Cdot_plus_phidot_S_over_3_plus_HC": 4.1246142750242476e-08,
+ "max_abs_Cdot_finite_difference": 4.280549988540846e-08,
+ "J_range": [
+  0.0,
+  0.0
+ ],
+ "max_abs_rapidity_law_residual": 7.7555561972531e-10,
+ "phi_b_monotone": false,
+ "vacuum_shell_hyperboloid": null,
+ "conformal_chart_max_abs": {
+  "normalisation": 1.609823385706477e-14,
+  "K_theta_theta": 1.7763568394002505e-15,
+  "Hubble": 2.220446049250313e-15
+ },
+ "max_abs_C_at_double_step": 1.223144607820359e-08,
+ "initial_state_y_eta_psi_rhom_lam": [
+  3.0,
+  0.3,
+  0.5,
+  1.5,
+  2.7350689365211496
+ ],
+ "w_eos": 1.0,
+ "reconstructed_tension_samples_phi_lam": [
+  [
+   -0.9999391235336151,
+   2.7350689365211496
+  ],
+  [
+   -0.9999267782899024,
+   2.7350689331061826
+  ],
+  [
+   -0.9999249285307152,
+   2.735068932568526
+  ],
+  [
+   -0.9999325831530123,
+   2.735068934738106
+  ],
+  [
+   -0.999947820410228,
+   2.73506893863475
+  ],
+  [
+   -0.9999680501049418,
+   2.7350689429856176
+  ],
+  [
+   -0.9999914520411983,
+   2.735068947229249
+  ]
+ ]
+}
+
+B8_fixed_registered_tension_kicked_shell_frozen_bulk {
+ "note": "C != 0 and S != 0 here: a generic fixed sigma_t(phi) is NOT compatible with motion in the frozen bulk; the drift law Cdot = -(phidot/3) S - H C is verified by finite differences.",
+ "psi0": 0.05,
+ "max_abs_C": 0.00041695235988215007,
+ "max_abs_S": 0.0012498868610421043,
+ "max_abs_Cdot_plus_phidot_S_over_3_plus_HC": 1.9118723362007272e-13,
+ "max_abs_Cdot_finite_difference": 2.778622552416602e-05,
+ "y_range": [
+  8.228201550199884,
+  8.376539916599643
+ ]
+}
+
+B11_registered_tension_dust_shell_reconstructed_J {
+ "n_steps": 3001,
+ "tau_end": 2.9999999999997806,
+ "y_range": [
+  8.228201550199884,
+  9.010304995584884
+ ],
+ "eta_end": 0.03551472968909813,
+ "psi_range": [
+  0.23115446747494525,
+  0.3
+ ],
+ "a_ratio": 1.1921159359918034,
+ "lam_range": [
+  0.880263114314432,
+  2.000954426794293
+ ],
+ "H_range": [
+  0.03458688235520255,
+  0.10155520487031781
+ ],
+ "max_abs_theta_theta_constraint_C": 6.106226635438361e-16,
+ "max_abs_scalar_junction_S": 0.0,
+ "max_abs_H_formula_minus_H_finite_difference": 1.0234799119324123e-12,
+ "max_abs_friedmann_residual_using_Hfd": 1.9331411471590343e-13,
+ "max_abs_friedmann_residual_using_Hformula": 3.5822039778921066e-16,
+ "friedmann_scale": 0.010474389645022494,
+ "max_abs_Cdot_plus_phidot_S_over_3_plus_HC": 1.5729613980497761e-13,
+ "max_abs_Cdot_finite_difference": 1.5728159515523052e-13,
+ "J_range": [
+  -0.09064993413997802,
+  -0.02990133232249237
+ ],
+ "max_abs_rapidity_law_residual": 6.175615574477433e-16,
+ "phi_b_monotone": true,
+ "vacuum_shell_hyperboloid": null,
+ "conformal_chart_max_abs": {
+  "normalisation": 9.992007221626409e-16,
+  "K_theta_theta": 1.6653345369377348e-16,
+  "Hubble": 5.551115123125783e-17
+ },
+ "rho_m_initial": 0.09072030055093316,
+ "rho_m_range": [
+  0.023705331533860896,
+  0.09072030055093316
+ ]
+}
+
+B10_planck_mass_sum_rule {
+ "statement": "delta_lambda(phi_b)/6 = h*I_kept + int (rho/rho_b)^4 (2 Z^2 - Fd^2/6) dy,  I_kept = int_0^{y_b} (rho/rho_b)^2 dy",
+ "Z_b": 0.000166668936524339,
+ "delta_lambda_over_6": 0.00016666893652690683,
+ "h_times_I_kept": 0.0001663801267042797,
+ "quadratic_defect_integral": 2.888098206982285e-07,
+ "residual": 1.9288951382834556e-15,
+ "I_kept": 1.033866388446823,
+ "I_plus_flat_BPS": 1.0357712571566784,
+ "first_order_prediction_h": 0.00016120935779457293,
+ "h": 0.0001609300085228929,
+ "relative_error_of_first_order_prediction": 0.0017358432665484091
+}
+
+B9 Lambda_eff table
+       y          phi        rho    sigma_t    sig_t^2/36        F_bulk    Lambda_eff     Isr.mism    scal.mism
+  0.0200  -1.0000e+00     0.0200   3.333736  3.087165e-01 -3.086420e-01  2.235722e-04   -4.945e+01    2.971e-04
+  0.5000  -1.0000e+00     0.5065   3.333736  3.087165e-01 -3.086420e-01  2.235722e-04   -1.496e+00    2.975e-04
+  1.0000  -1.0000e+00     1.0522   3.333736  3.087165e-01 -3.086420e-01  2.235725e-04   -5.452e-01    2.976e-04
+  2.0000  -9.9999e-01     2.4377   3.333736  3.087165e-01 -3.086420e-01  2.235750e-04   -1.350e-01    2.969e-04
+  3.0000  -9.9994e-01     4.5951   3.333736  3.087165e-01 -3.086420e-01  2.235923e-04   -4.104e-02    2.949e-04
+  4.0000  -9.9957e-01     8.2075   3.333736  3.087165e-01 -3.086419e-01  2.237194e-04   -1.314e-02    2.899e-04
+  5.0000  -9.9684e-01    14.4189   3.333718  3.087132e-01 -3.086383e-01  2.246852e-04   -4.245e-03    2.775e-04
+  6.0000  -9.7701e-01    25.1952   3.332700  3.085248e-01 -3.084474e-01  2.322914e-04   -1.347e-03    2.478e-04
+  7.0000  -8.4195e-01    43.8594   3.286500  3.000301e-01 -2.999337e-01  2.892096e-04   -3.864e-04    1.815e-04
+  7.5000  -6.2183e-01    57.3151   3.083994  2.641950e-01 -2.640699e-01  3.752036e-04   -1.744e-04    1.284e-04
+  8.0000  -2.2424e-01    72.4310   2.441828  1.656257e-01 -1.654692e-01  4.694096e-04   -4.194e-05    5.230e-05
+  8.2282   2.2793e-05    78.8282   2.000954  1.112172e-01 -1.110563e-01  4.827900e-04   -8.199e-14   -2.022e-12
+  8.5000   2.6523e-01    85.2763   1.483137  6.110262e-02 -6.094699e-02  4.669080e-04    3.666e-05   -8.993e-05
+  9.0000   6.4773e-01    93.7707   0.887103  2.185978e-02 -2.172478e-02  4.050120e-04    7.197e-05   -3.910e-04
+  9.5000   8.5382e-01   100.0337   0.708831  1.395669e-02 -1.383743e-02  3.577919e-04    8.184e-05   -1.030e-03
+
+B9_reference {
+ "three_h": 0.00048279002556867866,
+ "eightpiG_zero_mode_1_over_2Iplus": 0.4827320670903366,
+ "eightpiG_friedmann_at_shell": 0.3334924056183268,
+ "h_lin_coefficient_1_over_6Iplus": 0.16091068903011221,
+ "naive_coefficient_sigma_over_18": 0.11116413520610895
+}
+
+runtime 4.0 s ; wrote MOVING_SHELL_CHECKS.json

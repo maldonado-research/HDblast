@@ -1,0 +1,118 @@
+{
+  "status": "MATCHED_TIME_FLOATING_REFINEMENT_DIAGNOSTIC",
+  "time": 0.5,
+  "runs": [
+    {
+      "source": "balanced_epsp01_wide_h2.npz",
+      "source_sha256": "dbe1e01db65df57fcd2a6a15e1359d70cf27b1770be82791f43e1e3f56301629",
+      "hmin": 0.0002,
+      "nodes": 9164,
+      "start_time": 0.49920000000000003,
+      "additional_RK4_steps": 10,
+      "dt": 8e-05,
+      "comparison_time": 0.5,
+      "diagnostics": {
+        "momentum_max": 0.022103559145296384,
+        "hamiltonian_max": 0.04466110004757754,
+        "boundary_velocity_slope_error": -3.40375849727792e-07,
+        "weighted_characteristic_max": 0.0008737113502179626
+      },
+      "coarse_node_stride": 1
+    },
+    {
+      "source": "balanced_epsp01_wide_h1.npz",
+      "source_sha256": "4c434e4092a8f1804093142be9028dd25811ed6c765c8227fd0b7b3f7710bacc",
+      "hmin": 0.0001,
+      "nodes": 18327,
+      "start_time": 0.5,
+      "additional_RK4_steps": 0,
+      "dt": 4e-05,
+      "comparison_time": 0.5,
+      "diagnostics": {
+        "momentum_max": 0.0037419280596675147,
+        "hamiltonian_max": 0.007540673294097867,
+        "boundary_velocity_slope_error": -2.284315986367247e-08,
+        "weighted_characteristic_max": 0.0001477142116747872
+      },
+      "coarse_node_stride": 2
+    },
+    {
+      "source": "balanced_epsp01_wide_h05.npz",
+      "source_sha256": "5fc141408290a95387da88c1a64efcb654f70bb68461565878dfab7ce4e5ff42",
+      "hmin": 5e-05,
+      "nodes": 36653,
+      "start_time": 0.5,
+      "additional_RK4_steps": 0,
+      "dt": 2e-05,
+      "comparison_time": 0.5,
+      "diagnostics": {
+        "momentum_max": 0.0032669374104657045,
+        "hamiltonian_max": 0.00655073174275474,
+        "boundary_velocity_slope_error": -2.6680751497032418e-09,
+        "weighted_characteristic_max": 0.00011934606897534875
+      },
+      "coarse_node_stride": 4
+    }
+  ],
+  "pairwise": [
+    {
+      "coarser_h": 0.0002,
+      "finer_h": 0.0001,
+      "Linf_by_component": [
+        1.5036936229506637e-07,
+        1.91952982397936e-07,
+        9.056386950367923e-06,
+        9.0822921042788e-05,
+        0.00035976658696689704,
+        0.02408772810406798
+      ],
+      "L2_dz_by_component": [
+        7.287534503393413e-08,
+        4.757918024565551e-08,
+        5.878564077644151e-07,
+        5.309409448874045e-06,
+        2.026624494429191e-05,
+        0.0015158490890760383
+      ]
+    },
+    {
+      "coarser_h": 0.0001,
+      "finer_h": 5e-05,
+      "Linf_by_component": [
+        9.183373617105417e-09,
+        2.3654969316666552e-08,
+        1.6238754787512022e-06,
+        8.128136639418138e-06,
+        9.444991365535182e-05,
+        0.006219080965773172
+      ],
+      "L2_dz_by_component": [
+        4.7710548409363085e-09,
+        4.3040718868935596e-09,
+        7.548554166157831e-08,
+        4.153220580535339e-07,
+        4.734505323616037e-06,
+        0.0003425773096963517
+      ]
+    }
+  ],
+  "L2_reduction_factor_three_grids": [
+    15.274472305087256,
+    11.054457615018025,
+    7.787668934005021,
+    12.783836894571287,
+    4.280541167247715,
+    4.424837974294424
+  ],
+  "components": [
+    "A-t",
+    "B",
+    "phi",
+    "A_t",
+    "B_t",
+    "phi_t"
+  ],
+  "norm_scope": "Per-component coordinate L2(dz) and Linf on identical coarse nodes; not a physical energy norm or error bound.",
+  "replay_scope": "Only the coarse ten-step RK4 replay is newly integrated; all finer states are directly archived at .5.",
+  "frozen_solver_sha256": "4147239c40b63c2de89f5091e732e19f09c4644a0c08ae5735202a548cdcd6b6"
+}

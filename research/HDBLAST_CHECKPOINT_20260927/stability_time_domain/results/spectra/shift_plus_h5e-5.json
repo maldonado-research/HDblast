@@ -1,0 +1,1431 @@
+{
+ "script": "spectra.py",
+ "background": {
+  "branch": "plus",
+  "tdet": 0.001,
+  "c": 0.5975949350280132,
+  "eta_h": -1.3366923651568947e-23,
+  "y_b": 30.276680395886032,
+  "rho_b": 129.9247628496884,
+  "phi_b": 0.9999159473169134,
+  "eta_b": -8.405268308664617e-05,
+  "H2": 5.924014794328336e-05,
+  "junction_residual": [
+   5.551115123125783e-17,
+   -1.3552527156068805e-19
+  ],
+  "hamiltonian_first_integral_at_shell": 2.5579538487363607e-13,
+  "z_end": 12.724643730457524,
+  "rtol": 3e-13,
+  "y0": 5e-05
+ },
+ "bg": "plus",
+ "hmin": 5e-05,
+ "L": 6.0,
+ "stretch": 0.05,
+ "nodes": 4797,
+ "tdet": 0.001,
+ "s20_scale": 1.0,
+ "matrix_vs_complex_step_rhs_rel_error": 3.3691656264939994e-16,
+ "background_junction_residual_on_grid": [
+  3.552713678800501e-15,
+  -6.46011022453763e-15
+ ],
+ "mode": "shift",
+ "pot_mode": "eta-polynomial (precise)",
+ "shift_invert": [
+  {
+   "shift": [
+    1.6572,
+    0.0
+   ],
+   "modes": [
+    {
+     "real": 0.9999965910952875,
+     "imag": 0.0,
+     "constraint_H_max_rel": 6.980275455055624e-10,
+     "constraint_M_max_rel": 4.1402794836609515e-05,
+     "constraint_H_l2_rel": 3.3076115380345226e-10,
+     "constraint_M_l2_rel": 8.156576579031479e-06,
+     "shell_phi_rel": 1.6339065358373417e-14,
+     "shell_hubble_rel": 1.1878255066809482e-09,
+     "gauge_template_residual": 3.675252230865106e-06,
+     "far_weight": 0.003192299507024006,
+     "label": "gauge",
+     "eigen_residual": 1.1564108642799508e-07,
+     "mu2": [
+      -3.999982955488058,
+      -0.0
+     ]
+    },
+    {
+     "real": 0.10358187959775078,
+     "imag": 0.0,
+     "constraint_H_max_rel": 2.1068690251613054e-05,
+     "constraint_M_max_rel": 0.014705291134702777,
+     "constraint_H_l2_rel": 5.973745206978276e-06,
+     "constraint_M_l2_rel": 0.0033290849318207967,
+     "shell_phi_rel": 1.6693712527592015e-15,
+     "shell_hubble_rel": 2.6699540519043587e-09,
+     "gauge_template_residual": 3.549256137883863e-05,
+     "far_weight": 0.6810874555808379,
+     "label": "constraint-violating",
+     "eigen_residual": 9.848022695898874e-08,
+     "mu2": [
+      -0.3214748445742553,
+      -0.0
+     ]
+    },
+    {
+     "real": 0.08880508224128758,
+     "imag": -0.5874979211013495,
+     "constraint_H_max_rel": 4.165021850248239e-06,
+     "constraint_M_max_rel": 0.000506338768799329,
+     "constraint_H_l2_rel": 1.1822366255417568e-06,
+     "constraint_M_l2_rel": 0.00011906803235449077,
+     "shell_phi_rel": 8.118361983647186e-15,
+     "shell_hubble_rel": 2.3362154567146897e-09,
+     "gauge_template_residual": 3.1723223618280266e-05,
+     "far_weight": 0.999503666763039,
+     "label": "gauge",
+     "eigen_residual": 8.324485412870295e-08,
+     "mu2": [
+      0.07085221794266289,
+      1.86683936570403
+     ]
+    },
+    {
+     "real": 0.08880508224128758,
+     "imag": 0.5874979211013495,
+     "constraint_H_max_rel": 4.165021850248239e-06,
+     "constraint_M_max_rel": 0.000506338768799329,
+     "constraint_H_l2_rel": 1.1822366255417568e-06,
+     "constraint_M_l2_rel": 0.00011906803235449077,
+     "shell_phi_rel": 8.118361983647186e-15,
+     "shell_hubble_rel": 2.3362154567146897e-09,
+     "gauge_template_residual": 3.1723223618280266e-05,
+     "far_weight": 0.999503666763039,
+     "label": "gauge",
+     "eigen_residual": 8.324485412870295e-08,
+     "mu2": [
+      0.07085221794266289,
+      -1.86683936570403
+     ]
+    },
+    {
+     "real": 0.06607648403988886,
+     "imag": -1.1523031617831887,
+     "constraint_H_max_rel": 2.690703453928173e-06,
+     "constraint_M_max_rel": 0.00016841856691029994,
+     "constraint_H_l2_rel": 7.649548346969302e-07,
+     "constraint_M_l2_rel": 4.214420946661932e-05,
+     "shell_phi_rel": 1.1874658271667676e-14,
+     "shell_hubble_rel": 1.842590198153561e-09,
+     "gauge_template_residual": 3.0087260894354316e-05,
+     "far_weight": 1.0,
+     "label": "gauge",
+     "eigen_residual": 8.494333136767512e-08,
+     "mu2": [
+      1.1252070227927933,
+      3.6091897683069267
+     ]
+    },
+    {
+     "real": 0.06607648403988886,
+     "imag": 1.1523031617831887,
+     "constraint_H_max_rel": 2.690703453928173e-06,
+     "constraint_M_max_rel": 0.00016841856691029994,
+     "constraint_H_l2_rel": 7.649548346969302e-07,
+     "constraint_M_l2_rel": 4.214420946661932e-05,
+     "shell_phi_rel": 1.1874658271667676e-14,
+     "shell_hubble_rel": 1.842590198153561e-09,
+     "gauge_template_residual": 3.0087260894354316e-05,
+     "far_weight": 1.0,
+     "label": "gauge",
+     "eigen_residual": 8.494333136767512e-08,
+     "mu2": [
+      1.1252070227927933,
+      -3.6091897683069267
+     ]
+    }
+   ]
+  },
+  {
+   "shift": [
+    1.2,
+    0.0
+   ],
+   "modes": [
+    {
+     "real": 0.9999967175970383,
+     "imag": 0.0,
+     "constraint_H_max_rel": 7.003082839682606e-10,
+     "constraint_M_max_rel": 8.919845461346904e-05,
+     "constraint_H_l2_rel": 2.3768287259124844e-10,
+     "constraint_M_l2_rel": 1.3431281127343354e-05,
+     "shell_phi_rel": 1.634629492002267e-14,
+     "shell_hubble_rel": 7.096056097501952e-09,
+     "gauge_template_residual": 1.321911436607288e-06,
+     "far_weight": 0.0031922924624049427,
+     "label": "gauge",
+     "eigen_residual": 9.424617626079762e-08,
+     "mu2": [
+      -3.9999835879959655,
+      -0.0
+     ]
+    },
+    {
+     "real": 0.10358157572277116,
+     "imag": 0.0,
+     "constraint_H_max_rel": 2.107043880757905e-05,
+     "constraint_M_max_rel": 0.014649834665986202,
+     "constraint_H_l2_rel": 5.974723813143095e-06,
+     "constraint_M_l2_rel": 0.0037779304641033786,
+     "shell_phi_rel": 1.6589899480720265e-15,
+     "shell_hubble_rel": 8.10852893915087e-09,
+     "gauge_template_residual": 3.5292708349976115e-05,
+     "far_weight": 0.6810883259429106,
+     "label": "constraint-violating",
+     "eigen_residual": 1.7571527343440582e-07,
+     "mu2": [
+      -0.32147386999752564,
+      -0.0
+     ]
+    },
+    {
+     "real": 0.08880511038550543,
+     "imag": -0.587497959643998,
+     "constraint_H_max_rel": 4.165180073299712e-06,
+     "constraint_M_max_rel": 0.0006116301033428515,
+     "constraint_H_l2_rel": 1.1822890703113016e-06,
+     "constraint_M_l2_rel": 0.00014816556540227623,
+     "shell_phi_rel": 8.12704692044616e-15,
+     "shell_hubble_rel": 6.0533234792706175e-09,
+     "gauge_template_residual": 3.175877679167314e-05,
+     "far_weight": 0.9995036624718049,
+     "label": "gauge",
+     "eigen_residual": 1.6947799884641813e-07,
+     "mu2": [
+      0.07085217379876257,
+      1.8668395212468827
+     ]
+    },
+    {
+     "real": 0.08880511038550543,
+     "imag": 0.587497959643998,
+     "constraint_H_max_rel": 4.165180073299712e-06,
+     "constraint_M_max_rel": 0.0006116301033428515,
+     "constraint_H_l2_rel": 1.1822890703113016e-06,
+     "constraint_M_l2_rel": 0.00014816556540227623,
+     "shell_phi_rel": 8.12704692044616e-15,
+     "shell_hubble_rel": 6.0533234792706175e-09,
+     "gauge_template_residual": 3.175877679167314e-05,
+     "far_weight": 0.9995036624718049,
+     "label": "gauge",
+     "eigen_residual": 1.6947799884641813e-07,
+     "mu2": [
+      0.07085217379876257,
+      -1.8668395212468827
+     ]
+    },
+    {
+     "real": 0.06607649428990192,
+     "imag": -1.1523031657262615,
+     "constraint_H_max_rel": 2.690599736564853e-06,
+     "constraint_M_max_rel": 0.0007339256492022183,
+     "constraint_H_l2_rel": 7.648838528733397e-07,
+     "constraint_M_l2_rel": 7.18516585289414e-05,
+     "shell_phi_rel": 1.188802243939569e-14,
+     "shell_hubble_rel": 4.452851973529912e-09,
+     "gauge_template_residual": 3.008998147336805e-05,
+     "far_weight": 1.0,
+     "label": "gauge",
+     "eigen_residual": 1.7675988828804601e-07,
+     "mu2": [
+      1.1252069997754148,
+      3.609189804279479
+     ]
+    },
+    {
+     "real": 0.06607649428990192,
+     "imag": 1.1523031657262615,
+     "constraint_H_max_rel": 2.690599736564853e-06,
+     "constraint_M_max_rel": 0.0007339256492022183,
+     "constraint_H_l2_rel": 7.648838528733397e-07,
+     "constraint_M_l2_rel": 7.18516585289414e-05,
+     "shell_phi_rel": 1.188802243939569e-14,
+     "shell_hubble_rel": 4.452851973529912e-09,
+     "gauge_template_residual": 3.008998147336805e-05,
+     "far_weight": 1.0,
+     "label": "gauge",
+     "eigen_residual": 1.7675988828804601e-07,
+     "mu2": [
+      1.1252069997754148,
+      -3.609189804279479
+     ]
+    }
+   ]
+  },
+  {
+   "shift": [
+    0.5,
+    0.0
+   ],
+   "modes": [
+    {
+     "real": 0.1035817556403647,
+     "imag": 0.0,
+     "constraint_H_max_rel": 2.1069403234054675e-05,
+     "constraint_M_max_rel": 0.014610147363144725,
+     "constraint_H_l2_rel": 5.974143510081013e-06,
+     "constraint_M_l2_rel": 0.0034690854646653837,
+     "shell_phi_rel": 1.6957779988644212e-15,
+     "shell_hubble_rel": 6.467774905611189e-09,
+     "gauge_template_residual": 3.5409862891141535e-05,
+     "far_weight": 0.6810878095232747,
+     "label": "constraint-violating",
+     "eigen_residual": 8.53681669471824e-08,
+     "mu2": [
+      -0.32147444702263434,
+      -0.0
+     ]
+    },
+    {
+     "real": 0.9999966408828485,
+     "imag": 0.0,
+     "constraint_H_max_rel": 6.989524897230972e-10,
+     "constraint_M_max_rel": 0.0001464926759523613,
+     "constraint_H_l2_rel": 2.8402968134352296e-10,
+     "constraint_M_l2_rel": 1.3615857962638833e-05,
+     "shell_phi_rel": 1.6387891657457427e-14,
+     "shell_hubble_rel": 5.4893976366456676e-09,
+     "gauge_template_residual": 2.7487168871115597e-06,
+     "far_weight": 0.003192296646649247,
+     "label": "gauge",
+     "eigen_residual": 1.259681138032024e-07,
+     "mu2": [
+      -3.999983204425526,
+      -0.0
+     ]
+    },
+    {
+     "real": 0.08880509030192874,
+     "imag": -0.5874979364349798,
+     "constraint_H_max_rel": 4.16506184541644e-06,
+     "constraint_M_max_rel": 0.0008291092937926492,
+     "constraint_H_l2_rel": 1.1822449821572335e-06,
+     "constraint_M_l2_rel": 0.00013978314633090766,
+     "shell_phi_rel": 8.134006863509908e-15,
+     "shell_hubble_rel": 5.326124815468224e-09,
+     "gauge_template_residual": 3.17334962844907e-05,
+     "far_weight": 0.9995036650422526,
+     "label": "gauge",
+     "eigen_residual": 1.0939155961260544e-07,
+     "mu2": [
+      0.07085221034603967,
+      1.8668394238995498
+     ]
+    },
+    {
+     "real": 0.08880509030192874,
+     "imag": 0.5874979364349798,
+     "constraint_H_max_rel": 4.16506184541644e-06,
+     "constraint_M_max_rel": 0.0008291092937926492,
+     "constraint_H_l2_rel": 1.1822449821572335e-06,
+     "constraint_M_l2_rel": 0.00013978314633090766,
+     "shell_phi_rel": 8.134006863509908e-15,
+     "shell_hubble_rel": 5.326124815468224e-09,
+     "gauge_template_residual": 3.17334962844907e-05,
+     "far_weight": 0.9995036650422526,
+     "label": "gauge",
+     "eigen_residual": 1.0939155961260544e-07,
+     "mu2": [
+      0.07085221034603967,
+      -1.8668394238995498
+     ]
+    },
+    {
+     "real": 0.06607648934637506,
+     "imag": -1.1523031678695193,
+     "constraint_H_max_rel": 2.690602346452585e-06,
+     "constraint_M_max_rel": 0.0003431140735979016,
+     "constraint_H_l2_rel": 7.648988038983714e-07,
+     "constraint_M_l2_rel": 6.698382739946542e-05,
+     "shell_phi_rel": 1.1890680203002199e-14,
+     "shell_hubble_rel": 4.10461111766626e-09,
+     "gauge_template_residual": 3.008357464309019e-05,
+     "far_weight": 1.0,
+     "label": "gauge",
+     "eigen_residual": 1.5727723455219458e-07,
+     "mu2": [
+      1.1252070201986626,
+      3.6091897995996067
+     ]
+    },
+    {
+     "real": 0.06607648934637506,
+     "imag": 1.1523031678695193,
+     "constraint_H_max_rel": 2.690602346452585e-06,
+     "constraint_M_max_rel": 0.0003431140735979016,
+     "constraint_H_l2_rel": 7.648988038983714e-07,
+     "constraint_M_l2_rel": 6.698382739946542e-05,
+     "shell_phi_rel": 1.1890680203002199e-14,
+     "shell_hubble_rel": 4.10461111766626e-09,
+     "gauge_template_residual": 3.008357464309019e-05,
+     "far_weight": 1.0,
+     "label": "gauge",
+     "eigen_residual": 1.5727723455219458e-07,
+     "mu2": [
+      1.1252070201986626,
+      -3.6091897995996067
+     ]
+    }
+   ]
+  },
+  {
+   "shift": [
+    0.1,
+    0.0
+   ],
+   "modes": [
+    {
+     "real": 0.10358180757572344,
+     "imag": 0.0,
+     "constraint_H_max_rel": 2.1069104808327227e-05,
+     "constraint_M_max_rel": 0.014677612441049152,
+     "constraint_H_l2_rel": 5.973976451634403e-06,
+     "constraint_M_l2_rel": 0.0033865807596926483,
+     "shell_phi_rel": 1.6973286794037347e-15,
+     "shell_hubble_rel": 2.79563519868257e-09,
+     "gauge_template_residual": 3.544424757605168e-05,
+     "far_weight": 0.6810876626875731,
+     "label": "constraint-violating",
+     "eigen_residual": 6.853187673569149e-08,
+     "mu2": [
+      -0.3214746135878245,
+      -0.0
+     ]
+    },
+    {
+     "real": 0.0888050916782974,
+     "imag": -0.5874979317716519,
+     "constraint_H_max_rel": 4.165072429249342e-06,
+     "constraint_M_max_rel": 0.030315798127890044,
+     "constraint_H_l2_rel": 1.182485715139477e-06,
+     "constraint_M_l2_rel": 0.006207712673768759,
+     "shell_phi_rel": 8.076512305542146e-15,
+     "shell_hubble_rel": 9.41386096499464e-09,
+     "gauge_template_residual": 3.174597450122812e-05,
+     "far_weight": 0.999503665461827,
+     "label": "constraint-violating",
+     "eigen_residual": 6.837850623602768e-06,
+     "mu2": [
+      0.0708522004930856,
+      1.8668394106985386
+     ]
+    },
+    {
+     "real": 0.0888050916782974,
+     "imag": 0.5874979317716519,
+     "constraint_H_max_rel": 4.165072429249342e-06,
+     "constraint_M_max_rel": 0.030315798127890044,
+     "constraint_H_l2_rel": 1.182485715139477e-06,
+     "constraint_M_l2_rel": 0.006207712673768759,
+     "shell_phi_rel": 8.076512305542146e-15,
+     "shell_hubble_rel": 9.41386096499464e-09,
+     "gauge_template_residual": 3.174597450122812e-05,
+     "far_weight": 0.999503665461827,
+     "label": "constraint-violating",
+     "eigen_residual": 6.837850623602768e-06,
+     "mu2": [
+      0.0708522004930856,
+      -1.8668394106985386
+     ]
+    },
+    {
+     "real": 0.9999966253000521,
+     "imag": 0.0,
+     "constraint_H_max_rel": 7.156445039680248e-08,
+     "constraint_M_max_rel": 0.01311175873471238,
+     "constraint_H_l2_rel": 1.3900303224766275e-08,
+     "constraint_M_l2_rel": 0.0024056904218785996,
+     "shell_phi_rel": 1.6526930948056113e-14,
+     "shell_hubble_rel": 4.1250265955443413e-10,
+     "gauge_template_residual": 3.425464855084943e-06,
+     "far_weight": 0.00319229776112975,
+     "label": "constraint-violating",
+     "eigen_residual": 1.1348208631981727e-05,
+     "mu2": [
+      -3.999983126511649,
+      -0.0
+     ]
+    },
+    {
+     "real": 0.06607647428473873,
+     "imag": -1.1523031798130974,
+     "constraint_H_max_rel": 2.6905442131419366e-06,
+     "constraint_M_max_rel": 0.027777927258772633,
+     "constraint_H_l2_rel": 7.656935264644547e-07,
+     "constraint_M_l2_rel": 0.004768071161744113,
+     "shell_phi_rel": 1.1956228117707767e-14,
+     "shell_hubble_rel": 1.7309610603645268e-08,
+     "gauge_template_residual": 3.0094743224817475e-05,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 1.1628974445997096e-05,
+     "mu2": [
+      1.1252070948992574,
+      3.609189802297578
+     ]
+    },
+    {
+     "real": 0.06607647428473873,
+     "imag": 1.1523031798130974,
+     "constraint_H_max_rel": 2.6905442131419366e-06,
+     "constraint_M_max_rel": 0.027777927258772633,
+     "constraint_H_l2_rel": 7.656935264644547e-07,
+     "constraint_M_l2_rel": 0.004768071161744113,
+     "shell_phi_rel": 1.1956228117707767e-14,
+     "shell_hubble_rel": 1.7309610603645268e-08,
+     "gauge_template_residual": 3.0094743224817475e-05,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 1.1628974445997096e-05,
+     "mu2": [
+      1.1252070948992574,
+      -3.609189802297578
+     ]
+    }
+   ]
+  },
+  {
+   "shift": [
+    -0.5,
+    0.0
+   ],
+   "modes": [
+    {
+     "real": 0.10358166219052967,
+     "imag": 0.0,
+     "constraint_H_max_rel": 2.106994066818682e-05,
+     "constraint_M_max_rel": 0.014703142477430174,
+     "constraint_H_l2_rel": 5.974444722452123e-06,
+     "constraint_M_l2_rel": 0.003411212788614429,
+     "shell_phi_rel": 1.6639673065538645e-15,
+     "shell_hubble_rel": 5.253688586768982e-09,
+     "gauge_template_residual": 3.534843892974182e-05,
+     "far_weight": 0.6810880792109243,
+     "label": "constraint-violating",
+     "eigen_residual": 1.2807488018172152e-07,
+     "mu2": [
+      -0.321474147313742,
+      -0.0
+     ]
+    },
+    {
+     "real": 0.08880510446300838,
+     "imag": 0.5874979453751162,
+     "constraint_H_max_rel": 4.165154396656506e-06,
+     "constraint_M_max_rel": 0.0005063957815088638,
+     "constraint_H_l2_rel": 1.1822870473930034e-06,
+     "constraint_M_l2_rel": 0.00012472991707796087,
+     "shell_phi_rel": 8.128585603429345e-15,
+     "shell_hubble_rel": 4.579812013441086e-09,
+     "gauge_template_residual": 3.175011275674288e-05,
+     "far_weight": 0.9995036640817745,
+     "label": "gauge",
+     "eigen_residual": 9.636614584310425e-08,
+     "mu2": [
+      0.0708521758522721,
+      -1.8668394689470285
+     ]
+    },
+    {
+     "real": 0.08880510446300838,
+     "imag": -0.5874979453751162,
+     "constraint_H_max_rel": 4.165154396656506e-06,
+     "constraint_M_max_rel": 0.0005063957815088638,
+     "constraint_H_l2_rel": 1.1822870473930034e-06,
+     "constraint_M_l2_rel": 0.00012472991707796087,
+     "shell_phi_rel": 8.128585603429345e-15,
+     "shell_hubble_rel": 4.579812013441086e-09,
+     "gauge_template_residual": 3.175011275674288e-05,
+     "far_weight": 0.9995036640817745,
+     "label": "gauge",
+     "eigen_residual": 9.636614584310425e-08,
+     "mu2": [
+      0.0708521758522721,
+      1.8668394689470285
+     ]
+    },
+    {
+     "real": 0.06607649718927822,
+     "imag": 1.1523031636743832,
+     "constraint_H_max_rel": 2.6906071653077577e-06,
+     "constraint_M_max_rel": 0.00016843746993068132,
+     "constraint_H_l2_rel": 7.648785093779643e-07,
+     "constraint_M_l2_rel": 4.6976775823003265e-05,
+     "shell_phi_rel": 1.1884607343059866e-14,
+     "shell_hubble_rel": 3.617237464625977e-09,
+     "gauge_template_residual": 3.0094349203891935e-05,
+     "far_weight": 1.0,
+     "label": "gauge",
+     "eigen_residual": 8.376792552579925e-08,
+     "mu2": [
+      1.125206985965353,
+      -3.609189804534603
+     ]
+    },
+    {
+     "real": 0.06607649718927822,
+     "imag": -1.1523031636743832,
+     "constraint_H_max_rel": 2.6906071653077577e-06,
+     "constraint_M_max_rel": 0.00016843746993068132,
+     "constraint_H_l2_rel": 7.648785093779643e-07,
+     "constraint_M_l2_rel": 4.6976775823003265e-05,
+     "shell_phi_rel": 1.1884607343059866e-14,
+     "shell_hubble_rel": 3.617237464625977e-09,
+     "gauge_template_residual": 3.0094349203891935e-05,
+     "far_weight": 1.0,
+     "label": "gauge",
+     "eigen_residual": 8.376792552579925e-08,
+     "mu2": [
+      1.125206985965353,
+      3.609189804534603
+     ]
+    },
+    {
+     "real": -1.4999999999998315,
+     "imag": -1.0446798647626019,
+     "constraint_H_max_rel": 0.32632820385579286,
+     "constraint_M_max_rel": 0.9999996805960687,
+     "constraint_H_l2_rel": 0.22309637438372026,
+     "constraint_M_l2_rel": 0.9999858847801593,
+     "shell_phi_rel": 5.565740743302176e-19,
+     "shell_hubble_rel": 2.6136504477426572e-11,
+     "gauge_template_residual": 0.9999999999999325,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 1.3485910268813005e-07,
+     "mu2": [
+      3.341356019840408,
+      3.5216274341109965e-13
+     ]
+    }
+   ]
+  },
+  {
+   "shift": [
+    -1.0,
+    0.0
+   ],
+   "modes": [
+    {
+     "real": 0.10358170914635778,
+     "imag": 0.0,
+     "constraint_H_max_rel": 2.1069666577360398e-05,
+     "constraint_M_max_rel": 0.014701446195031652,
+     "constraint_H_l2_rel": 5.974293521815615e-06,
+     "constraint_M_l2_rel": 0.003402499444453821,
+     "shell_phi_rel": 1.6973516174390898e-15,
+     "shell_hubble_rel": 4.3064984629886066e-09,
+     "gauge_template_residual": 3.5379141192997575e-05,
+     "far_weight": 0.6810879447893781,
+     "label": "constraint-violating",
+     "eigen_residual": 1.289993936510127e-07,
+     "mu2": [
+      -0.321474297908754,
+      -0.0
+     ]
+    },
+    {
+     "real": -1.4999999999998255,
+     "imag": -1.0446798647619335,
+     "constraint_H_max_rel": 0.21011461246375876,
+     "constraint_M_max_rel": 0.9999988682495115,
+     "constraint_H_l2_rel": 0.20377133822928803,
+     "constraint_M_l2_rel": 0.9999275931613945,
+     "shell_phi_rel": 2.2339969936312156e-19,
+     "shell_hubble_rel": 3.4455358435513503e-12,
+     "gauge_template_residual": 0.9999999999999888,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 2.1238576404720766e-08,
+     "mu2": [
+      3.3413560198390115,
+      3.645972412869014e-13
+     ]
+    },
+    {
+     "real": -1.4999999999998255,
+     "imag": 1.0446798647619335,
+     "constraint_H_max_rel": 0.21011461246375876,
+     "constraint_M_max_rel": 0.9999988682495115,
+     "constraint_H_l2_rel": 0.20377133822928803,
+     "constraint_M_l2_rel": 0.9999275931613945,
+     "shell_phi_rel": 2.2339969936312156e-19,
+     "shell_hubble_rel": 3.4455358435513503e-12,
+     "gauge_template_residual": 0.9999999999999888,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 2.1238576404720766e-08,
+     "mu2": [
+      3.3413560198390115,
+      -3.645972412869014e-13
+     ]
+    },
+    {
+     "real": 0.08880508911548346,
+     "imag": 0.5874979418323547,
+     "constraint_H_max_rel": 4.165047734827972e-06,
+     "constraint_M_max_rel": 0.0005062813171424508,
+     "constraint_H_l2_rel": 1.1822323687331104e-06,
+     "constraint_M_l2_rel": 0.00012060999334356266,
+     "shell_phi_rel": 8.150256314495597e-15,
+     "shell_hubble_rel": 3.72906795221107e-09,
+     "gauge_template_residual": 3.173279657866443e-05,
+     "far_weight": 0.9995036644142506,
+     "label": "gauge",
+     "eigen_residual": 9.56032248199616e-08,
+     "mu2": [
+      0.0708522204579935,
+      -1.866839439656235
+     ]
+    },
+    {
+     "real": 0.08880508911548346,
+     "imag": -0.5874979418323547,
+     "constraint_H_max_rel": 4.165047734827972e-06,
+     "constraint_M_max_rel": 0.0005062813171424508,
+     "constraint_H_l2_rel": 1.1822323687331104e-06,
+     "constraint_M_l2_rel": 0.00012060999334356266,
+     "shell_phi_rel": 8.150256314495597e-15,
+     "shell_hubble_rel": 3.72906795221107e-09,
+     "gauge_template_residual": 3.173279657866443e-05,
+     "far_weight": 0.9995036644142506,
+     "label": "gauge",
+     "eigen_residual": 9.56032248199616e-08,
+     "mu2": [
+      0.0708522204579935,
+      1.866839439656235
+     ]
+    },
+    {
+     "real": 0.0660764874795694,
+     "imag": -1.1523031690196428,
+     "constraint_H_max_rel": 2.690599250288544e-06,
+     "constraint_M_max_rel": 0.00021523209006480394,
+     "constraint_H_l2_rel": 7.649027054156993e-07,
+     "constraint_M_l2_rel": 4.317031324549184e-05,
+     "shell_phi_rel": 1.1911916817170263e-14,
+     "shell_hubble_rel": 3.0685469871999495e-09,
+     "gauge_template_residual": 3.008083069872697e-05,
+     "far_weight": 1.0,
+     "label": "gauge",
+     "eigen_residual": 7.944147383002999e-08,
+     "mu2": [
+      1.1252070286963656,
+      3.6091897988997177
+     ]
+    }
+   ]
+  },
+  {
+   "shift": [
+    -1.3,
+    0.0
+   ],
+   "modes": [
+    {
+     "real": -1.499999999998791,
+     "imag": -1.0446798647603386,
+     "constraint_H_max_rel": 0.2100760521443059,
+     "constraint_M_max_rel": 0.9987696334473036,
+     "constraint_H_l2_rel": 0.20222069942194748,
+     "constraint_M_l2_rel": 0.9902467949549413,
+     "shell_phi_rel": 4.1230900467877795e-20,
+     "shell_hubble_rel": 1.1480367412917287e-11,
+     "gauge_template_residual": 0.9999999999993434,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 2.698170730177845e-08,
+     "mu2": [
+      3.341356019835679,
+      2.526201470232081e-12
+     ]
+    },
+    {
+     "real": -1.499999999998791,
+     "imag": 1.0446798647603386,
+     "constraint_H_max_rel": 0.2100760521443059,
+     "constraint_M_max_rel": 0.9987696334473036,
+     "constraint_H_l2_rel": 0.20222069942194748,
+     "constraint_M_l2_rel": 0.9902467949549413,
+     "shell_phi_rel": 4.1230900467877795e-20,
+     "shell_hubble_rel": 1.1480367412917287e-11,
+     "gauge_template_residual": 0.9999999999993434,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 2.698170730177845e-08,
+     "mu2": [
+      3.341356019835679,
+      -2.526201470232081e-12
+     ]
+    },
+    {
+     "real": 0.10358170062371963,
+     "imag": 0.0,
+     "constraint_H_max_rel": 2.106971001181781e-05,
+     "constraint_M_max_rel": 0.014644950040451382,
+     "constraint_H_l2_rel": 5.9743213734371605e-06,
+     "constraint_M_l2_rel": 0.0034961795034026055,
+     "shell_phi_rel": 1.7150259173668814e-15,
+     "shell_hubble_rel": 4.0842105273368804e-09,
+     "gauge_template_residual": 3.5373544360434653e-05,
+     "far_weight": 0.6810879694657404,
+     "label": "constraint-violating",
+     "eigen_residual": 1.4798253594275407e-07,
+     "mu2": [
+      -0.3214742705752608,
+      -0.0
+     ]
+    },
+    {
+     "real": 0.08880509863096475,
+     "imag": 0.587497941017948,
+     "constraint_H_max_rel": 4.165119173260587e-06,
+     "constraint_M_max_rel": 0.0005064211569846502,
+     "constraint_H_l2_rel": 1.1822708352875754e-06,
+     "constraint_M_l2_rel": 0.00012281312541026902,
+     "shell_phi_rel": 8.135304594959693e-15,
+     "shell_hubble_rel": 3.1938310712567603e-09,
+     "gauge_template_residual": 3.174314487322771e-05,
+     "far_weight": 0.9995036645555664,
+     "label": "gauge",
+     "eigen_residual": 1.1056091369541273e-07,
+     "mu2": [
+      0.07085218926457876,
+      -1.8668394482490192
+     ]
+    },
+    {
+     "real": 0.08880509863096475,
+     "imag": -0.587497941017948,
+     "constraint_H_max_rel": 4.165119173260587e-06,
+     "constraint_M_max_rel": 0.0005064211569846502,
+     "constraint_H_l2_rel": 1.1822708352875754e-06,
+     "constraint_M_l2_rel": 0.00012281312541026902,
+     "shell_phi_rel": 8.135304594959693e-15,
+     "shell_hubble_rel": 3.1938310712567603e-09,
+     "gauge_template_residual": 3.174314487322771e-05,
+     "far_weight": 0.9995036645555664,
+     "label": "gauge",
+     "eigen_residual": 1.1056091369541273e-07,
+     "mu2": [
+      0.07085218926457876,
+      1.8668394482490192
+     ]
+    },
+    {
+     "real": 0.06607649339662469,
+     "imag": -1.1523031643578197,
+     "constraint_H_max_rel": 2.6906187650063747e-06,
+     "constraint_M_max_rel": 0.00016843540544893878,
+     "constraint_H_l2_rel": 7.648948852764957e-07,
+     "constraint_M_l2_rel": 4.0890268601634204e-05,
+     "shell_phi_rel": 1.188997252609831e-14,
+     "shell_hubble_rel": 1.976364050637743e-09,
+     "gauge_template_residual": 3.0090780935615807e-05,
+     "far_weight": 1.0,
+     "label": "gauge",
+     "eigen_residual": 2.206607240076757e-07,
+     "mu2": [
+      1.125206999419576,
+      3.6091897979346577
+     ]
+    }
+   ]
+  },
+  {
+   "shift": [
+    -1.45,
+    0.0
+   ],
+   "modes": [
+    {
+     "real": -1.5000000000008977,
+     "imag": -1.0446798647633408,
+     "constraint_H_max_rel": 0.2097243216095154,
+     "constraint_M_max_rel": 0.9998944541601462,
+     "constraint_H_l2_rel": 0.20216867755966497,
+     "constraint_M_l2_rel": 0.9966744691129201,
+     "shell_phi_rel": 1.4894606575312398e-19,
+     "shell_hubble_rel": 7.854982745508309e-12,
+     "gauge_template_residual": 0.9999999999993217,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 2.1302761784498472e-08,
+     "mu2": [
+      3.3413560198419523,
+      -1.8758328224066645e-12
+     ]
+    },
+    {
+     "real": -1.5000000000008977,
+     "imag": 1.0446798647633408,
+     "constraint_H_max_rel": 0.2097243216095154,
+     "constraint_M_max_rel": 0.9998944541601462,
+     "constraint_H_l2_rel": 0.20216867755966497,
+     "constraint_M_l2_rel": 0.9966744691129201,
+     "shell_phi_rel": 1.4894606575312398e-19,
+     "shell_hubble_rel": 7.854982745508309e-12,
+     "gauge_template_residual": 0.9999999999993217,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 2.1302761784498472e-08,
+     "mu2": [
+      3.3413560198419523,
+      1.8758328224066645e-12
+     ]
+    },
+    {
+     "real": 0.1035816822358242,
+     "imag": 0.0,
+     "constraint_H_max_rel": 2.106981976967495e-05,
+     "constraint_M_max_rel": 0.014690022941492523,
+     "constraint_H_l2_rel": 5.974379646364939e-06,
+     "constraint_M_l2_rel": 0.0035655581332834935,
+     "shell_phi_rel": 1.6808101685135628e-15,
+     "shell_hubble_rel": 5.634135451125364e-09,
+     "gauge_template_residual": 3.536157186166912e-05,
+     "far_weight": 0.6810880212599423,
+     "label": "constraint-violating",
+     "eigen_residual": 1.44508075523294e-07,
+     "mu2": [
+      -0.3214742116022759,
+      -0.0
+     ]
+    },
+    {
+     "real": 0.08880510162981503,
+     "imag": -0.5874979450407167,
+     "constraint_H_max_rel": 4.16513505469126e-06,
+     "constraint_M_max_rel": 0.0005064331806829259,
+     "constraint_H_l2_rel": 1.1822767719530616e-06,
+     "constraint_M_l2_rel": 0.00012517312929025885,
+     "shell_phi_rel": 8.130650500931423e-15,
+     "shell_hubble_rel": 4.847511080738201e-09,
+     "gauge_template_residual": 3.174693938973251e-05,
+     "far_weight": 0.9995036641102957,
+     "label": "gauge",
+     "eigen_residual": 2.313247804063354e-07,
+     "mu2": [
+      0.07085218446213815,
+      1.8668394645554467
+     ]
+    },
+    {
+     "real": 0.08880510162981503,
+     "imag": 0.5874979450407167,
+     "constraint_H_max_rel": 4.16513505469126e-06,
+     "constraint_M_max_rel": 0.0005064331806829259,
+     "constraint_H_l2_rel": 1.1822767719530616e-06,
+     "constraint_M_l2_rel": 0.00012517312929025885,
+     "shell_phi_rel": 8.130650500931423e-15,
+     "shell_hubble_rel": 4.847511080738201e-09,
+     "gauge_template_residual": 3.174693938973251e-05,
+     "far_weight": 0.9995036641102957,
+     "label": "gauge",
+     "eigen_residual": 2.313247804063354e-07,
+     "mu2": [
+      0.07085218446213815,
+      -1.8668394645554467
+     ]
+    },
+    {
+     "real": -3.1035759910325225,
+     "imag": 0.0,
+     "constraint_H_max_rel": 0.07126960275274757,
+     "constraint_M_max_rel": 0.05083873055255027,
+     "constraint_H_l2_rel": 0.05823038818337323,
+     "constraint_M_l2_rel": 0.04073407358773817,
+     "shell_phi_rel": 3.5254956195205967e-19,
+     "shell_hubble_rel": 5.025764626284286e-10,
+     "gauge_template_residual": 0.14635379490525938,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 4.0645756793587816e-08,
+     "mu2": [
+      -0.32145595901593654,
+      0.0
+     ]
+    }
+   ]
+  },
+  {
+   "shift": [
+    -1.55,
+    0.0
+   ],
+   "modes": [
+    {
+     "real": -1.4999999999991358,
+     "imag": -1.0446798647613251,
+     "constraint_H_max_rel": 0.20988202370801604,
+     "constraint_M_max_rel": 0.9999348160878953,
+     "constraint_H_l2_rel": 0.20219546520921605,
+     "constraint_M_l2_rel": 0.9975395768553242,
+     "shell_phi_rel": 2.28368085866267e-19,
+     "shell_hubble_rel": 1.9870544058560952e-12,
+     "gauge_template_residual": 0.9999999999998757,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 1.100257970521492e-08,
+     "mu2": [
+      3.3413560198377406,
+      1.8056667272503546e-12
+     ]
+    },
+    {
+     "real": -1.4999999999991358,
+     "imag": 1.0446798647613251,
+     "constraint_H_max_rel": 0.20988202370801604,
+     "constraint_M_max_rel": 0.9999348160878953,
+     "constraint_H_l2_rel": 0.20219546520921605,
+     "constraint_M_l2_rel": 0.9975395768553242,
+     "shell_phi_rel": 2.28368085866267e-19,
+     "shell_hubble_rel": 1.9870544058560952e-12,
+     "gauge_template_residual": 0.9999999999998757,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 1.100257970521492e-08,
+     "mu2": [
+      3.3413560198377406,
+      -1.8056667272503546e-12
+     ]
+    },
+    {
+     "real": -3.103597201903784,
+     "imag": 0.0,
+     "constraint_H_max_rel": 0.07126843110035977,
+     "constraint_M_max_rel": 0.05083691940320661,
+     "constraint_H_l2_rel": 0.05822933620434991,
+     "constraint_M_l2_rel": 0.04073226234234803,
+     "shell_phi_rel": 3.2652881962708176e-19,
+     "shell_hubble_rel": 5.058494470882685e-10,
+     "gauge_template_residual": 0.14635857671339603,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 6.90880563335977e-10,
+     "mu2": [
+      -0.3215239859536456,
+      0.0
+     ]
+    },
+    {
+     "real": -3.088757931204328,
+     "imag": -0.5874578898435794,
+     "constraint_H_max_rel": 0.07549188937985378,
+     "constraint_M_max_rel": 0.06043328039169757,
+     "constraint_H_l2_rel": 0.06143974441131191,
+     "constraint_M_l2_rel": 0.056931610552267975,
+     "shell_phi_rel": 3.409007035764239e-19,
+     "shell_hubble_rel": 4.657683032803792e-10,
+     "gauge_template_residual": 0.21017596525713797,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 2.023136061556649e-09,
+     "mu2": [
+      0.07095500837481461,
+      -1.8666567634750906
+     ]
+    },
+    {
+     "real": -3.088757931204328,
+     "imag": 0.5874578898435794,
+     "constraint_H_max_rel": 0.07549188937985378,
+     "constraint_M_max_rel": 0.06043328039169757,
+     "constraint_H_l2_rel": 0.06143974441131191,
+     "constraint_M_l2_rel": 0.056931610552267975,
+     "shell_phi_rel": 3.409007035764239e-19,
+     "shell_hubble_rel": 4.657683032803792e-10,
+     "gauge_template_residual": 0.21017596525713797,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 2.023136061556649e-09,
+     "mu2": [
+      0.07095500837481461,
+      1.8666567634750906
+     ]
+    },
+    {
+     "real": 0.1035817037029736,
+     "imag": 0.0,
+     "constraint_H_max_rel": 2.1069673005599056e-05,
+     "constraint_M_max_rel": 0.014710606040531352,
+     "constraint_H_l2_rel": 5.974310832114105e-06,
+     "constraint_M_l2_rel": 0.0035651859930593563,
+     "shell_phi_rel": 1.69464598514567e-15,
+     "shell_hubble_rel": 5.7614407215457655e-09,
+     "gauge_template_residual": 3.537564585197342e-05,
+     "far_weight": 0.6810879594352214,
+     "label": "constraint-violating",
+     "eigen_residual": 1.4702904630967823e-07,
+     "mu2": [
+      -0.32147428045093135,
+      -0.0
+     ]
+    }
+   ]
+  },
+  {
+   "shift": [
+    -2.0,
+    0.0
+   ],
+   "modes": [
+    {
+     "real": -3.1035821308747304,
+     "imag": 0.0,
+     "constraint_H_max_rel": 0.0712692635855346,
+     "constraint_M_max_rel": 0.05083819763333215,
+     "constraint_H_l2_rel": 0.05823008365891893,
+     "constraint_M_l2_rel": 0.04073354900187447,
+     "shell_phi_rel": 2.9311516201426e-19,
+     "shell_hubble_rel": 5.060438561309827e-10,
+     "gauge_template_residual": 0.14635517903783207,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 7.110721664425569e-10,
+     "mu2": [
+      -0.3214756504607411,
+      0.0
+     ]
+    },
+    {
+     "real": -1.4999999999999916,
+     "imag": -1.0446798647618483,
+     "constraint_H_max_rel": 0.2100374018771533,
+     "constraint_M_max_rel": 0.9999743736864657,
+     "constraint_H_l2_rel": 0.2021945520892484,
+     "constraint_M_l2_rel": 0.9938360381660889,
+     "shell_phi_rel": 1.6978583614073871e-19,
+     "shell_hubble_rel": 5.635483269069645e-12,
+     "gauge_template_residual": 0.9999999999976839,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 2.1392694459269457e-08,
+     "mu2": [
+      3.341356019838834,
+      1.7763568394002505e-14
+     ]
+    },
+    {
+     "real": -1.4999999999999916,
+     "imag": 1.0446798647618483,
+     "constraint_H_max_rel": 0.2100374018771533,
+     "constraint_M_max_rel": 0.9999743736864657,
+     "constraint_H_l2_rel": 0.2021945520892484,
+     "constraint_M_l2_rel": 0.9938360381660889,
+     "shell_phi_rel": 1.6978583614073871e-19,
+     "shell_hubble_rel": 5.635483269069645e-12,
+     "gauge_template_residual": 0.9999999999976839,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 2.1392694459269457e-08,
+     "mu2": [
+      3.341356019838834,
+      -1.7763568394002505e-14
+     ]
+    },
+    {
+     "real": -3.088777593268647,
+     "imag": 0.5874620822818973,
+     "constraint_H_max_rel": 0.07549102044949028,
+     "constraint_M_max_rel": 0.06043137443855059,
+     "constraint_H_l2_rel": 0.06143893588607938,
+     "constraint_M_l2_rel": 0.0569298764025961,
+     "shell_phi_rel": 2.7215357970378444e-19,
+     "shell_hubble_rel": 4.6527261125952924e-10,
+     "gauge_template_residual": 0.2101796991430277,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 1.029398123080037e-09,
+     "mu2": [
+      0.07089745724646845,
+      1.8666931864488414
+     ]
+    },
+    {
+     "real": -3.088777593268647,
+     "imag": -0.5874620822818973,
+     "constraint_H_max_rel": 0.07549102044949028,
+     "constraint_M_max_rel": 0.06043137443855059,
+     "constraint_H_l2_rel": 0.06143893588607938,
+     "constraint_M_l2_rel": 0.0569298764025961,
+     "shell_phi_rel": 2.7215357970378444e-19,
+     "shell_hubble_rel": 4.6527261125952924e-10,
+     "gauge_template_residual": 0.2101796991430277,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 1.029398123080037e-09,
+     "mu2": [
+      0.07089745724646845,
+      -1.8666931864488414
+     ]
+    },
+    {
+     "real": -3.065936898150589,
+     "imag": -1.1524090759524297,
+     "constraint_H_max_rel": 0.07536606684034575,
+     "constraint_M_max_rel": 0.10926228257788492,
+     "constraint_H_l2_rel": 0.05878596523514189,
+     "constraint_M_l2_rel": 0.11624381523005457,
+     "shell_phi_rel": 4.877608351693548e-19,
+     "shell_hubble_rel": 4.151618810952047e-10,
+     "gauge_template_residual": 0.33010943530867626,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 2.202361806763953e-09,
+     "mu2": [
+      1.1258883093480454,
+      -3.6091997875950677
+     ]
+    }
+   ]
+  },
+  {
+   "shift": [
+    -2.9,
+    0.0
+   ],
+   "modes": [
+    {
+     "real": -3.103581790159553,
+     "imag": 0.0,
+     "constraint_H_max_rel": 0.07126928240223016,
+     "constraint_M_max_rel": 0.05083824055203966,
+     "constraint_H_l2_rel": 0.05823010056853404,
+     "constraint_M_l2_rel": 0.04073357839024948,
+     "shell_phi_rel": 3.266112657488127e-19,
+     "shell_hubble_rel": 5.071570674597927e-10,
+     "gauge_template_residual": 0.14635510224358408,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 9.645544362760415e-12,
+     "mu2": [
+      -0.32147455773131683,
+      0.0
+     ]
+    },
+    {
+     "real": -3.0888051429995635,
+     "imag": -0.5874978659365868,
+     "constraint_H_max_rel": 0.07549003366524616,
+     "constraint_M_max_rel": 0.06042986888193939,
+     "constraint_H_l2_rel": 0.06143793258747498,
+     "constraint_M_l2_rel": 0.05692924152401753,
+     "shell_phi_rel": 3.2888578497093257e-19,
+     "shell_hubble_rel": 4.671111473731175e-10,
+     "gauge_template_residual": 0.21019059693351957,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 2.7308516394459183e-11,
+     "mu2": [
+      0.07085196005818012,
+      -1.8668392618026344
+     ]
+    },
+    {
+     "real": -3.0888051429995635,
+     "imag": 0.5874978659365868,
+     "constraint_H_max_rel": 0.07549003366524616,
+     "constraint_M_max_rel": 0.06042986888193939,
+     "constraint_H_l2_rel": 0.06143793258747498,
+     "constraint_M_l2_rel": 0.05692924152401753,
+     "shell_phi_rel": 3.2888578497093257e-19,
+     "shell_hubble_rel": 4.671111473731175e-10,
+     "gauge_template_residual": 0.21019059693351957,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 2.7308516394459183e-11,
+     "mu2": [
+      0.07085196005818012,
+      1.8668392618026344
+     ]
+    },
+    {
+     "real": -3.999996437294326,
+     "imag": 0.0,
+     "constraint_H_max_rel": 0.018212595574031817,
+     "constraint_M_max_rel": 0.027069524977749965,
+     "constraint_H_l2_rel": 0.011916444239643291,
+     "constraint_M_l2_rel": 0.01777656764285774,
+     "shell_phi_rel": 2.7449699333453763e-19,
+     "shell_hubble_rel": 8.299471133669929e-07,
+     "gauge_template_residual": 0.4113383192737041,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 3.6468661416799623e-10,
+     "mu2": [
+      -3.999982186484323,
+      0.0
+     ]
+    },
+    {
+     "real": -3.0660755920941525,
+     "imag": -1.1523030943520616,
+     "constraint_H_max_rel": 0.07536286603567897,
+     "constraint_M_max_rel": 0.10923460208990242,
+     "constraint_H_l2_rel": 0.05878225004603555,
+     "constraint_M_l2_rel": 0.1162148622023267,
+     "shell_phi_rel": 4.346713965467096e-19,
+     "shell_hubble_rel": 4.1469368143860336e-10,
+     "gauge_template_residual": 0.33010061403362584,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 3.460462194273432e-10,
+     "mu2": [
+      1.125209661100286,
+      -3.6091875015186576
+     ]
+    },
+    {
+     "real": -3.0660755920941525,
+     "imag": 1.1523030943520616,
+     "constraint_H_max_rel": 0.07536286603567897,
+     "constraint_M_max_rel": 0.10923460208990242,
+     "constraint_H_l2_rel": 0.05878225004603555,
+     "constraint_M_l2_rel": 0.1162148622023267,
+     "shell_phi_rel": 4.346713965467096e-19,
+     "shell_hubble_rel": 4.1469368143860336e-10,
+     "gauge_template_residual": 0.33010061403362584,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 3.460462194273432e-10,
+     "mu2": [
+      1.125209661100286,
+      3.6091875015186576
+     ]
+    }
+   ]
+  },
+  {
+   "shift": [
+    -4.0,
+    0.0
+   ],
+   "modes": [
+    {
+     "real": -3.9999967401427963,
+     "imag": 0.0,
+     "constraint_H_max_rel": 0.018212573303551423,
+     "constraint_M_max_rel": 0.02706953260620388,
+     "constraint_H_l2_rel": 0.011916425135167353,
+     "constraint_M_l2_rel": 0.017776578794107663,
+     "shell_phi_rel": 3.723294079943445e-19,
+     "shell_hubble_rel": 8.299485388060951e-07,
+     "gauge_template_residual": 0.4113384166878836,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 4.310106055656529e-12,
+     "mu2": [
+      -3.999983700724608,
+      0.0
+     ]
+    },
+    {
+     "real": -3.32886708898607,
+     "imag": 0.0,
+     "constraint_H_max_rel": 0.059019140123748724,
+     "constraint_M_max_rel": 0.03478481869768694,
+     "constraint_H_l2_rel": 0.04737703144439445,
+     "constraint_M_l2_rel": 0.028268826011200017,
+     "shell_phi_rel": 8.833651308841635e-17,
+     "shell_hubble_rel": 1.869074010645356e-08,
+     "gauge_template_residual": 0.2045262724909649,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 7.51677214017467e-06,
+     "mu2": [
+      -1.0947548291763811,
+      0.0
+     ]
+    },
+    {
+     "real": -3.5011688703592037,
+     "imag": -0.5964569419174913,
+     "constraint_H_max_rel": 0.059592251206632425,
+     "constraint_M_max_rel": 0.06500449606097812,
+     "constraint_H_l2_rel": 0.04778643457455478,
+     "constraint_M_l2_rel": 0.034284208823628426,
+     "shell_phi_rel": 1.65501736585629e-16,
+     "shell_hubble_rel": 5.145106692558465e-08,
+     "gauge_template_residual": 0.30124128028887676,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 1.392632778138729e-05,
+     "mu2": [
+      -1.3989159641331657,
+      -2.3872221293498623
+     ]
+    },
+    {
+     "real": -3.5011688703592037,
+     "imag": 0.5964569419174913,
+     "constraint_H_max_rel": 0.059592251206632425,
+     "constraint_M_max_rel": 0.06500449606097812,
+     "constraint_H_l2_rel": 0.04778643457455478,
+     "constraint_M_l2_rel": 0.034284208823628426,
+     "shell_phi_rel": 1.65501736585629e-16,
+     "shell_hubble_rel": 5.145106692558465e-08,
+     "gauge_template_residual": 0.30124128028887676,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 1.392632778138729e-05,
+     "mu2": [
+      -1.3989159641331657,
+      2.3872221293498623
+     ]
+    },
+    {
+     "real": -2.762799758009395,
+     "imag": 0.0,
+     "constraint_H_max_rel": 0.09117798136808482,
+     "constraint_M_max_rel": 0.36582093267621607,
+     "constraint_H_l2_rel": 0.07656063747622396,
+     "constraint_M_l2_rel": 0.16226135460503524,
+     "shell_phi_rel": 6.326779922067303e-16,
+     "shell_hubble_rel": 9.673234743362253e-08,
+     "gauge_template_residual": 0.1089429586155211,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 7.95795844150823e-05,
+     "mu2": [
+      0.6553367711714133,
+      0.0
+     ]
+    },
+    {
+     "real": -4.136343876968784,
+     "imag": -1.3653948249229222,
+     "constraint_H_max_rel": 0.09004924453219652,
+     "constraint_M_max_rel": 0.9998367085794483,
+     "constraint_H_l2_rel": 0.0838050499418862,
+     "constraint_M_l2_rel": 0.6244904203149357,
+     "shell_phi_rel": 7.827995573014382e-15,
+     "shell_hubble_rel": 1.595224598874359e-06,
+     "gauge_template_residual": 0.6021673862721257,
+     "far_weight": 1.0,
+     "label": "constraint-violating",
+     "eigen_residual": 0.0005440051712804541,
+     "mu2": [
+      -2.8360060097045015,
+      -7.199300572660822
+     ]
+    }
+   ]
+  }
+ ],
+ "runtime_seconds": 4.8876848220825195
+}

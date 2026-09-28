@@ -1,0 +1,67 @@
+PASS background_yy
+PASS background_tt
+PASS background_xx
+PASS background_scalar
+PASS offdiag_yx_vanish
+PASS offdiag_tx_vanish
+PASS offdiag_xx_vanish
+yy : ((-mu2 + 8*Derivative(rho(y), y)**2 - 8)*N(y) + 2*(mu2*B(y) - mu2*Derivative(E(y), y) + 2*Derivative(N(y), y) - 4*Derivative(psi(y), y))*rho(y)*Derivative(rho(y), y) + (3*mu2*Derivative(B(y), y) - 3*mu2*Derivative(E(y), (y, 2)) - 2*N(y)*Derivative(phi(y), y)**2 - 2*U1(y)*chi(y) - 6*Derivative(chi(y), y)*Derivative(phi(y), y) - 12*Derivative(psi(y), (y, 2)))*rho(y)**2/3)/rho(y)**2
+yt : -3*B(y) + 3*N(y)*Derivative(rho(y), y)/rho(y) - chi(y)*Derivative(phi(y), y) + 3*Derivative(E(y), y) - 3*Derivative(psi(y), y)
+trace : mu2*B(y)*rho(y)*Derivative(rho(y), y) - mu2*psi(y) - mu2*rho(y)*Derivative(E(y), y)*Derivative(rho(y), y) - 2*N(y)*rho(y)**2*Derivative(phi(y), y)**2/3 + 8*N(y)*Derivative(rho(y), y)**2 - 2*N(y) - 2*U1(y)*chi(y)*rho(y)**2/3 - 6*psi(y) - rho(y)**2*Derivative(psi(y), (y, 2)) + rho(y)*Derivative(N(y), y)*Derivative(rho(y), y) - 8*rho(y)*Derivative(psi(y), y)*Derivative(rho(y), y)
+tracefree : 4*B(y)*rho(y)*Derivative(rho(y), y) - N(y) - 2*psi(y) + rho(y)**2*Derivative(B(y), y) - rho(y)**2*Derivative(E(y), (y, 2)) - 4*rho(y)*Derivative(E(y), y)*Derivative(rho(y), y)
+scalar : -mu2*B(y)*Derivative(phi(y), y) + mu2*chi(y)/rho(y)**2 + mu2*Derivative(E(y), y)*Derivative(phi(y), y) - 2*N(y)*U1(y) - U2(y)*chi(y) - Derivative(N(y), y)*Derivative(phi(y), y) + Derivative(chi(y), (y, 2)) + 4*Derivative(phi(y), y)*Derivative(psi(y), y) + 4*Derivative(chi(y), y)*Derivative(rho(y), y)/rho(y)
+gauge shifts reproduce Lie derivative: True
+PASS gauge_invariance_yy
+PASS gauge_invariance_yt
+PASS gauge_invariance_trace
+PASS gauge_invariance_tracefree
+PASS gauge_invariance_scalar
+longitudinal yt : -(-3*N(y)*Derivative(rho(y), y) + chi(y)*rho(y)*Derivative(phi(y), y) + 3*rho(y)*Derivative(psi(y), y))/rho(y)
+longitudinal tracefree : -N(y) - 2*psi(y)
+PASS tracefree_gives_N_eq_minus2psi
+psi' = -chi(y)*Derivative(phi(y), y)/3 - 2*psi(y)*Derivative(rho(y), y)/rho(y)
+chi' = (3*(mu2 + 4)*psi(y) + U1(y)*chi(y)*rho(y)**2 - 4*chi(y)*rho(y)*Derivative(phi(y), y)*Derivative(rho(y), y) - 2*psi(y)*rho(y)**2*Derivative(phi(y), y)**2)/(rho(y)**2*Derivative(phi(y), y))
+PASS momentum_constraint_form
+PASS gauss_constraint_form
+PASS implied_by_first_order_system_trace
+PASS implied_by_first_order_system_scalar
+PASS implied_by_first_order_system_yy
+Z' = -U1(y)*Z(y)/Derivative(phi(y), y) - X(y)/3 + 2*Z(y)*Derivative(rho(y), y)/rho(y)
+X' = 3*mu2*Z(y)/rho(y)**2 + U1(y)*X(y)/Derivative(phi(y), y) - 4*X(y)*Derivative(rho(y), y)/rho(y) - 2*Z(y)*Derivative(phi(y), y)**2 + 12*Z(y)/rho(y)**2
+PASS Z_equation
+PASS X_equation
+PASS wronskian_identity_[rho^2(Z2X1-X2Z1)]'=3(l1-l2)Z1Z2
+PASS energy_identity_[rho^2 Z X]'=3 l Z^2 - rho^2 X^2/3 - 2 rho^2 phi^2 Z^2
+PASS background_metric_junction
+PASS background_scalar_junction
+junction trace     : -(3*c*delta*N(y)*phi(y)*rho(y)**2 + 3*c*delta*chi(y)*rho(y)**2 + 3*delta*N(y)*rho(y)**2 + 18*zeta + 2*N(y)*phi(y)**3*rho(y)**2 - 6*N(y)*phi(y)*rho(y)**2 + 6*N(y)*rho(y)**2 + 6*chi(y)*phi(y)**2*rho(y)**2 - 6*chi(y)*rho(y)**2 - 18*rho(y)**2*Derivative(psi(y), y))/18
+junction trace-free: -zeta - B(y)*rho(y)**2 + rho(y)**2*Derivative(E(y), y)
+junction scalar    : (6*c**2*delta**2*zeta*phi(y) + 6*c*delta**2*zeta + 16*c*delta*zeta*phi(y)**3 - 42*c*delta*zeta*phi(y) + 12*c*delta*zeta + 9*c*delta*N(y) + 12*delta*zeta*phi(y)**2 - 12*delta*zeta + 18*zeta*U1(y) + 8*zeta*phi(y)**5 - 68*zeta*phi(y)**3 + 24*zeta*phi(y)**2 + 60*zeta*phi(y) - 24*zeta + 18*N(y)*phi(y)**2 - 18*N(y) + 36*chi(y)*phi(y) + 18*Derivative(chi(y), y))/18
+PASS junction_gauge_invariance_trace
+PASS junction_gauge_invariance_tracefree
+PASS junction_gauge_invariance_scalar
+longitudinal junctions: {'trace': -c*delta*chi(y)*rho(y)**2/6 + c*delta*phi(y)*psi(y)*rho(y)**2/3 + delta*psi(y)*rho(y)**2/3 - zeta - chi(y)*phi(y)**2*rho(y)**2/3 + chi(y)*rho(y)**2/3 + 2*phi(y)**3*psi(y)*rho(y)**2/9 - 2*phi(y)*psi(y)*rho(y)**2/3 + 2*psi(y)*rho(y)**2/3 + rho(y)**2*Derivative(psi(y), y), 'tracefree': -zeta, 'scalar': c**2*delta**2*zeta*phi(y)/3 + c*delta**2*zeta/3 + 8*c*delta*zeta*phi(y)**3/9 - 7*c*delta*zeta*phi(y)/3 + 2*c*delta*zeta/3 - c*delta*psi(y) + 2*delta*zeta*phi(y)**2/3 - 2*delta*zeta/3 + zeta*U1(y) + 4*zeta*phi(y)**5/9 - 34*zeta*phi(y)**3/9 + 4*zeta*phi(y)**2/3 + 10*zeta*phi(y)/3 - 4*zeta/3 + 2*chi(y)*phi(y) - 2*phi(y)**2*psi(y) + 2*psi(y) + Derivative(chi(y), y)}
+PASS tracefree_junction_is_pure_zeta
+PASS trace_junction_equals_momentum_constraint
+scalar junction / M = 1
+PASS M_in_XZ_form
+PASS l1_displacement_metric_junction_tt_vanishes
+PASS l1_displacement_metric_junction_xx_vanishes
+PASS l1_displacement_scalar_junction_equals_phi2+sig2phi1/2
+PASS l1_gauge_family_solves_yy
+PASS l1_gauge_family_solves_yt
+PASS l1_gauge_family_solves_tt
+PASS l1_gauge_family_solves_xx
+PASS l1_gauge_family_solves_scalar
+PASS l1_gauge_family_spans_first_order_system
+l=1 first-order system: [{Derivative(Pt(y), y): -chi(y)*Derivative(phi(y), y)/3, Derivative(chi(y), y): U1(y)*chi(y)/Derivative(phi(y), y) - 4*chi(y)*Derivative(rho(y), y)/rho(y)}]
+tensor: -(mu2*hT(y) + rho(y)**2*Derivative(hT(y), (y, 2)) + 4*rho(y)*Derivative(hT(y), y)*Derivative(rho(y), y))/2
+PASS tensor_equation_is_h2+4Hh1+mu2h/rho^2
+tensor ratio: -rho(y)**2/2
+tensor junction: rho(y)**2*Derivative(hT(y), y)/2
+PASS tensor_junction_is_Neumann
+CONTROL-OK wrong_gauge_shift_psi=-HT_breaks_yt_invariance
+CONTROL-OK wrong_zeta_shift_sign_breaks_scalar_junction_invariance
+CONTROL-OK scalar_junction_without_2phiPsi_term_is_not_the_junction
+CONTROL-OK wrong_Z_equation_sign_detected
+ALL PASS 55 / 55 time 11.545667171478271

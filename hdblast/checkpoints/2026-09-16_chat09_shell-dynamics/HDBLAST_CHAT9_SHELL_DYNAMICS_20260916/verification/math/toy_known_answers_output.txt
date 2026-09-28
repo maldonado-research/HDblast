@@ -1,0 +1,19 @@
+=== A. exact mu2=-4 residual-gauge solution through the orchestrator's full_rhs
+  background at y=2: rho=2.08625 phi=0.21017 phi'=0.45374
+  psi  at y=2: gauge construction -0.050744848568   orchestrator master eq -0.050744848568   diff 1.60e-13
+  psi' at y=2: gauge construction 0.016224563956   orchestrator master eq 0.016224563956   diff 6.83e-14
+  chi  at y=2: gauge -phi' rho^2 e' = 0.221896153600   Codazzi expression from orchestrator psi = 0.221896153602
+  sensitivity: same data with mu2 = -3.9 in the master equation -> psi(2) differs by 6.12e-02
+=== B. Rayleigh identity on the registered shell
+  phi''+sigma''phi'/2 at shell = -2.681026e-04  (t = 1e-03)   beta = -1.034897e+04  (negative => one mode with mu2 < -4 allowed)
+  LHS int[pP'^2+2P^2/(3rho^2)] = 3.39480384e+50 ;  lam*(int wP^2 + P_b^2/beta) = 3.39480383e+50 ; ratio 1.00000000
+  int w P^2 = 7.511506e+45,  P_b^2/beta = -9.131792e+49  => w-norm N = -9.131041e+49 (negative), lam*N = 3.394804e+50 (positive)
+  shell condition p P' - lam P/beta = 1.156e+15 (relative 3.3e-09)
+=== C. exact-solution toy (test scalar on dS-sliced AdS5 with Robin brane)
+  ODE residual of the closed form at y=0.9, mu2=-1.3: -1.01e-09 (terms ~ 3.35e-01)
+  Robin L=+0.0, M^2=0.5, y_b=1.5: shooting roots ['1.20852285'] | exact (2F1) roots ['1.20852285']
+  Robin L=-0.4, M^2=0.5, y_b=1.5: shooting roots ['-4.25644740'] | exact (2F1) roots ['-4.25644740']
+  Robin L=+0.8, M^2=0.5, y_b=1.5: shooting roots [] | exact (2F1) roots []
+  Robin L=-1.5, M^2=0.5, y_b=1.5: shooting roots [] | exact (2F1) roots []
+  massless scalar, Neumann brane: shooting root -1.421e-14 (exact 0)
+=== pure AdS5 + dS brane, no bulk scalar: (C) => psi = C/rho^2, (H) => (mu2+4) psi = 0: no scalar mode except the mu2=-4 cone-singular gauge/radion mode (analytic).

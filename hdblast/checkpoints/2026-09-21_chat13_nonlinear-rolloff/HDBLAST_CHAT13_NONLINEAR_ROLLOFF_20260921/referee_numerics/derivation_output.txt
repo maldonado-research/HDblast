@@ -1,0 +1,21 @@
+G_AB - T_AB == trace-reverse of (R_AB - dphi dphi - (2/3)U g): True
+G_tz - T_tz  = -3*Derivative(A(t, z), t)*Derivative(A(t, z), z) + 3*Derivative(A(t, z), t)*Derivative(B(t, z), z) + 3*Derivative(A(t, z), z)*Derivative(B(t, z), t) - Derivative(phi(t, z), t)*Derivative(phi(t, z), z) - 3*Derivative(A(t, z), t, z)    ratio to code's M: 1
+G_tt - T_tt (Hamiltonian) = -U*exp(2*B(t, z)) + 3*Derivative(A(t, z), t)**2 + 3*Derivative(A(t, z), t)*Derivative(B(t, z), t) - 6*Derivative(A(t, z), z)**2 + 3*Derivative(A(t, z), z)*Derivative(B(t, z), z) - 3*Derivative(A(t, z), (z, 2)) - Derivative(phi(t, z), t)**2/2 - Derivative(phi(t, z), z)**2/2
+ratio (G_tt - T_tt)/(code Hc): 1/2
+after imposing the three evolution equations, the residual components of G-T are:
+    (0, 0) = -(2*U*exp(2*B(t, z)) - 6*Derivative(A(t, z), t)**2 - 6*Derivative(A(t, z), t)*Derivative(B(t, z), t) + 12*Derivative(A(t, z), z)**2 - 6*Derivative(A(t, z), z)*Derivative(B(t, z), z) + 6*Derivative(A(t, z), (z, 2)) + Derivative(phi(t, z), t)**2 + Derivative(phi(t, z), z)**2)/2
+    (0, 1) = -3*Derivative(A(t, z), t)*Derivative(A(t, z), z) + 3*Derivative(A(t, z), t)*Derivative(B(t, z), z) + 3*Derivative(A(t, z), z)*Derivative(B(t, z), t) - Derivative(phi(t, z), t)*Derivative(phi(t, z), z) - 3*Derivative(A(t, z), t, z)
+    (1, 1) = -(2*U*exp(2*B(t, z)) - 6*Derivative(A(t, z), t)**2 - 6*Derivative(A(t, z), t)*Derivative(B(t, z), t) + 12*Derivative(A(t, z), z)**2 - 6*Derivative(A(t, z), z)*Derivative(B(t, z), z) + 6*Derivative(A(t, z), (z, 2)) + Derivative(phi(t, z), t)**2 + Derivative(phi(t, z), z)**2)/2
+   (all others vanish);  (2,2),(3,3),(4,4) vanish: True
+Klein-Gordon residual with phi_tt = fp: 0
+   residual (0, 0) = (None) * M   or  (1) * Hc
+   residual (0, 1) = (1) * M   or  (None) * Hc
+   residual (1, 1) = (None) * M   or  (1) * Hc
+K^t_t = exp(-B(t, z))*Derivative(B(t, z), z)   K^x_x = exp(-B(t, z))*Derivative(A(t, z), z)
+RS check: outward-normal extrinsic curvature on the kept side  K^m_n = +k delta^m_n = (sigma/6) delta^m_n  with sigma = 6k > 0
+  => the correct Z2 Israel rule in this convention is  K^m_n|kept, outward normal = (sigma/6) delta^m_n ,
+     i.e. the algebraic form is  K_mn - h_mn K = +(1/2) S_mn ... only the RS-anchored form matters for the code:
+     A_z = B_z = (sigma/6) e^B  at the shell (bulk z<0, outward normal +z).  Code uses exactly this.
+scalar junction on the kept side (bulk z<0):  phi_z = -(sigma'/2) e^B .  Code uses exactly this.
+momentum constraint at the shell with junction data imposed for all t: 0
+A_tz at shell = d/dt[(sigma/6) e^B] =  (sigma(fb(t))*Derivative(Bb(t), t) + Derivative(fb(t), t)*Derivative(sigma(fb(t)), fb(t)))*exp(Bb(t))/6  (NOT zero: the code's constraint monitor uses pa_z = 0 there and skips the last 6 points)

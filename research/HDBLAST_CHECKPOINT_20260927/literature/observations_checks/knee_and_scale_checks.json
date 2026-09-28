@@ -1,0 +1,526 @@
+{
+ "script": "knee_and_scale_checks.py",
+ "numpy": "2.3.5",
+ "sympy": "1.14.0",
+ "precision": "IEEE double; mpmath 30 digits for the Beta function; sympy exact for model facts",
+ "A_knee_benchmark": {
+  "shape": {
+   "Omega_at_fk_over_Omega_k": 1.0,
+   "slope_far_below_knee": 2.0,
+   "slope_far_above_knee": -2.9999999999999996,
+   "slope_at_knee": -0.5,
+   "gamma_equiv_far_below": 3.0,
+   "gamma_equiv_far_above": 8.0,
+   "gamma_equiv_at_knee": 5.5,
+   "strain_alpha_far_below": 0.0,
+   "strain_alpha_far_above": -2.5,
+   "analytic_vs_finite_difference_slope_max_abs_diff": 9.045848514688259e-10,
+   "wrong_formula_control": {
+    "claim_tested": "naive reading 'Omega ~ f^{+a1} below the knee'",
+    "naive_low_slope": 3.0,
+    "actual_low_slope": 2.0,
+    "naive_reading_rejected": true
+   },
+   "convention_note": "gamma is the timing-residual PSD index, Omega_gw ~ f^(5-gamma); SMBHB circular GW-driven gamma=13/3"
+  },
+  "knee_location": {
+   "f_k_Hz": 3.16e-08,
+   "f_yr_Hz": 3.168808781402895e-08,
+   "f_k_over_f_yr": 0.99722016,
+   "relative_offset_from_1_per_yr": -0.002779839999999956,
+   "per_dataset": {
+    "NANOGrav_15yr": {
+     "T_yr": 16.03,
+     "frequency_resolution_1_over_T_nHz": 1.976798990270053,
+     "knee_in_units_of_1_over_T": 15.9854391648,
+     "one_per_yr_in_units_of_1_over_T": 16.03,
+     "knee_minus_1_per_yr_in_bins": -0.044560835199999295,
+     "highest_standard_bin_nHz": 27.67518586378074,
+     "knee_above_highest_standard_bin": true
+    },
+    "EPTA_DR2new": {
+     "T_yr": 10.3,
+     "frequency_resolution_1_over_T_nHz": 3.076513380002811,
+     "knee_in_units_of_1_over_T": 10.271367648,
+     "one_per_yr_in_units_of_1_over_T": 10.299999999999999,
+     "knee_minus_1_per_yr_in_bins": -0.028632351999999545
+    },
+    "MPTA_4p5yr": {
+     "T_yr": 4.5,
+     "frequency_resolution_1_over_T_nHz": 7.041797292006433,
+     "knee_in_units_of_1_over_T": 4.487490719999999,
+     "one_per_yr_in_units_of_1_over_T": 4.5,
+     "knee_minus_1_per_yr_in_bins": -0.012509279999999802
+    },
+    "CPTA_DR1": {
+     "T_yr": 3.0,
+     "frequency_resolution_1_over_T_nHz": 10.56269593800965,
+     "knee_in_units_of_1_over_T": 2.9916604799999997,
+     "one_per_yr_in_units_of_1_over_T": 2.9999999999999996,
+     "knee_minus_1_per_yr_in_bins": -0.008339519999999868
+    }
+   }
+  },
+  "project_BK_family_windows": {
+   "LowK_narrow_nHz": {
+    "width_nHz": 0.2330000000000001,
+    "width_over_resolution": {
+     "NANOGrav_15yr": 0.11786732042400008,
+     "EPTA_DR2new": 0.07573508424000006,
+     "MPTA_4p5yr": 0.03308814360000002,
+     "CPTA_DR1": 0.02205876240000001
+    },
+    "contains_1_per_yr": false
+   },
+   "LowK_broad_nHz": {
+    "width_nHz": 0.7359999999999998,
+    "width_over_resolution": {
+     "NANOGrav_15yr": 0.37231908940799996,
+     "EPTA_DR2new": 0.23923185407999997,
+     "MPTA_4p5yr": 0.10451877119999999,
+     "CPTA_DR1": 0.06967918079999998
+    },
+    "contains_1_per_yr": false
+   },
+   "HighK_narrow_nHz": {
+    "width_nHz": 10.215,
+    "width_over_resolution": {
+     "NANOGrav_15yr": 5.167444970520001,
+     "EPTA_DR2new": 3.3203171052000005,
+     "MPTA_4p5yr": 1.450623978,
+     "CPTA_DR1": 0.967082652
+    },
+    "contains_1_per_yr": true
+   },
+   "HighK_broad_nHz": {
+    "width_nHz": 18.653000000000002,
+    "width_over_resolution": {
+     "NANOGrav_15yr": 9.435961922184005,
+     "EPTA_DR2new": 6.0630323018400025,
+     "MPTA_4p5yr": 2.648897607600001,
+     "CPTA_DR1": 1.7659317384000006
+    },
+    "contains_1_per_yr": true
+   }
+  },
+  "hypothetical_20yr_span": {
+   "resolution_nHz": 1.5844043907014476,
+   "one_per_yr_bin": 19.999999999999996,
+   "knee_bin": 19.9444032
+  },
+  "NG15_bins": {
+   "rows": [
+    {
+     "bin": 1,
+     "f_nHz": 1.976798990270053,
+     "Omega_SBPL": 4.427472177194132e-11,
+     "local_slope": 1.999999999995411,
+     "local_gamma": 3.000000000004589,
+     "ratio_SBPL_over_NG15_A_13_3": 0.03528909514370159,
+     "ratio_SBPL_over_NG15_CNM_A_fixed": 0.04609187937136536
+    },
+    {
+     "bin": 2,
+     "f_nHz": 3.953597980540106,
+     "Omega_SBPL": 1.770988870046242e-10,
+     "local_slope": 1.9999999953007965,
+     "local_gamma": 3.0000000046992037,
+     "ratio_SBPL_over_NG15_A_13_3": 0.08892294756483927,
+     "ratio_SBPL_over_NG15_CNM_A_fixed": 0.11614425804387173
+    },
+    {
+     "bin": 3,
+     "f_nHz": 5.9303969708101585,
+     "Omega_SBPL": 3.9847248514985775e-10,
+     "local_slope": 1.9999997290202687,
+     "local_gamma": 3.000000270979731,
+     "ratio_SBPL_over_NG15_A_13_3": 0.1526870427851832,
+     "ratio_SBPL_over_NG15_CNM_A_fixed": 0.19942797425003514
+    },
+    {
+     "bin": 4,
+     "f_nHz": 7.907195961080212,
+     "Omega_SBPL": 7.083952074728103e-10,
+     "local_slope": 1.9999951880203826,
+     "local_gamma": 3.0000048119796174,
+     "ratio_SBPL_over_NG15_A_13_3": 0.22407167919366078,
+     "ratio_SBPL_over_NG15_CNM_A_fixed": 0.29266505037539375
+    },
+    {
+     "bin": 5,
+     "f_nHz": 9.883994951350264,
+     "Omega_SBPL": 1.1068630838926647e-09,
+     "local_slope": 1.9999551853060835,
+     "local_gamma": 3.0000448146939167,
+     "ratio_SBPL_over_NG15_A_13_3": 0.3017161672378563,
+     "ratio_SBPL_over_NG15_CNM_A_fixed": 0.39407825924944495
+    },
+    {
+     "bin": 6,
+     "f_nHz": 11.860793941620317,
+     "Omega_SBPL": 1.5938457578525822e-09,
+     "local_slope": 1.9997225321388903,
+     "local_gamma": 3.0002774678611095,
+     "ratio_SBPL_over_NG15_A_13_3": 0.38473657328064104,
+     "ratio_SBPL_over_NG15_CNM_A_fixed": 0.5025130753053271
+    },
+    {
+     "bin": 7,
+     "f_nHz": 13.837592931890368,
+     "Omega_SBPL": 2.1691801947624373e-09,
+     "local_slope": 1.9987040384890316,
+     "local_gamma": 3.0012959615109684,
+     "ratio_SBPL_over_NG15_A_13_3": 0.4724780303458758,
+     "ratio_SBPL_over_NG15_CNM_A_fixed": 0.6171141620844093
+    },
+    {
+     "bin": 8,
+     "f_nHz": 15.814391922160423,
+     "Omega_SBPL": 2.832186984893492e-09,
+     "local_slope": 1.9950773793446919,
+     "local_gamma": 3.004922620655308,
+     "ratio_SBPL_over_NG15_A_13_3": 0.5643475101293528,
+     "ratio_SBPL_over_NG15_CNM_A_fixed": 0.7371069520056853
+    },
+    {
+     "bin": 9,
+     "f_nHz": 17.791190912430476,
+     "Omega_SBPL": 3.5805278076393785e-09,
+     "local_slope": 1.984049960574232,
+     "local_gamma": 3.0159500394257677,
+     "ratio_SBPL_over_NG15_A_13_3": 0.6595839207739707,
+     "ratio_SBPL_over_NG15_CNM_A_fixed": 0.8614973659088597
+    },
+    {
+     "bin": 10,
+     "f_nHz": 19.767989902700528,
+     "Omega_SBPL": 4.407293015592088e-09,
+     "local_slope": 1.9545267020264,
+     "local_gamma": 3.0454732979736,
+     "ratio_SBPL_over_NG15_A_13_3": 0.7568153647995103,
+     "ratio_SBPL_over_NG15_CNM_A_fixed": 0.9884935376973196
+    },
+    {
+     "bin": 11,
+     "f_nHz": 21.74478889297058,
+     "Omega_SBPL": 5.294591248052487e-09,
+     "local_slope": 1.8837391247512938,
+     "local_gamma": 3.116260875248706,
+     "ratio_SBPL_over_NG15_A_13_3": 0.8532088061814004,
+     "ratio_SBPL_over_NG15_CNM_A_fixed": 1.114395175420605
+    },
+    {
+     "bin": 12,
+     "f_nHz": 23.721587883240634,
+     "Omega_SBPL": 6.201775768127906e-09,
+     "local_slope": 1.731136283101416,
+     "local_gamma": 3.2688637168985837,
+     "ratio_SBPL_over_NG15_A_13_3": 0.9430757501070215,
+     "ratio_SBPL_over_NG15_CNM_A_fixed": 1.2317724083030486
+    },
+    {
+     "bin": 13,
+     "f_nHz": 25.69838687351069,
+     "Omega_SBPL": 7.049713780164021e-09,
+     "local_slope": 1.4384147584898177,
+     "local_gamma": 3.5615852415101825,
+     "ratio_SBPL_over_NG15_A_13_3": 1.0163124956729794,
+     "ratio_SBPL_over_NG15_CNM_A_fixed": 1.3274285657769536
+    },
+    {
+     "bin": 14,
+     "f_nHz": 27.675185863780737,
+     "Omega_SBPL": 7.714077053592203e-09,
+     "local_slope": 0.9510645537714796,
+     "local_gamma": 4.04893544622852,
+     "ratio_SBPL_over_NG15_A_13_3": 1.0584815622308938,
+     "ratio_SBPL_over_NG15_CNM_A_fixed": 1.3825065302607595
+    }
+   ],
+   "effective_unweighted_loglog_slope_all14": 1.977723645455231,
+   "effective_gamma_all14": 3.0222763545447693,
+   "effective_unweighted_loglog_slope_bins1to5": 1.9999980614566633,
+   "effective_gamma_bins1to5": 3.0000019385433365,
+   "caveat": "descriptive only; not a likelihood fit; PTA sensitivity is dominated by the lowest bins"
+  },
+  "amplitude_at_1_per_yr": {
+   "Omega_SBPL_at_f_yr": 7.988486010166064e-09,
+   "hc_SBPL_at_f_yr_h0674": 2.401824744176491e-15,
+   "hc_SBPL_at_f_yr_h0735": 2.6192005741390517e-15,
+   "note_h": "Omega_k is stated as Omega_gw with h=0.674 in the archived script; Omega_gw h^2 is the H0-independent quantity",
+   "Omega_k_h2": 3.6342080000000006e-09,
+   "per_PTA": {
+    "NG15_A_13_3": {
+     "A": 2.4e-15,
+     "gamma": 4.333333333333333,
+     "Omega_powerlaw_at_f_yr": 7.97635239710958e-09,
+     "SBPL_over_PTA_Omega_at_f_yr": 1.001521198218484,
+     "SBPL_hc_over_A": 1.000760310073538,
+     "note": "NANOGrav 15-yr, median, 90% CI +0.7/-0.6",
+     "url": "https://arxiv.org/abs/2306.16213"
+    },
+    "NG15_CNM_A_fixed": {
+     "A": 2.1e-15,
+     "gamma": 4.333333333333333,
+     "Omega_powerlaw_at_f_yr": 6.106894804037021e-09,
+     "SBPL_over_PTA_Omega_at_f_yr": 1.308109320122102,
+     "SBPL_hc_over_A": 1.143726068655472,
+     "note": "NANOGrav 15-yr customized chromatic noise, +0.6/-0.5 (2026)",
+     "url": "https://arxiv.org/abs/2606.28554"
+    },
+    "EPTA_DR2new_A_13_3": {
+     "A": 2.5e-15,
+     "gamma": 4.333333333333333,
+     "Omega_powerlaw_at_f_yr": 8.654896264224805e-09,
+     "SBPL_over_PTA_Omega_at_f_yr": 0.923001936278155,
+     "SBPL_hc_over_A": 0.9607298976705965,
+     "note": "EPTA DR2new+InPTA, +-0.7",
+     "url": "https://arxiv.org/abs/2306.16214"
+    },
+    "EPTA_DR2full_HD_free": {
+     "A": 2.8840315031266117e-15,
+     "gamma": 4.19,
+     "Omega_powerlaw_at_f_yr": 1.1518126648374515e-08,
+     "SBPL_over_PTA_Omega_at_f_yr": 0.693557750668893,
+     "SBPL_hc_over_A": 0.8328011471347124,
+     "note": "EPTA DR2 full, HD process, log10A=-14.54(+0.28/-0.41), gamma=4.19(+0.73/-0.63)",
+     "url": "https://arxiv.org/abs/2306.16214"
+    },
+    "PPTA_DR3_A_13_3": {
+     "A": 2e-15,
+     "gamma": 4.333333333333333,
+     "Omega_powerlaw_at_f_yr": 5.539133609103876e-09,
+     "SBPL_over_PTA_Omega_at_f_yr": 1.4421905254346168,
+     "SBPL_hc_over_A": 1.2009123720882455,
+     "note": "PPTA DR3 common-spectrum process, +-0.2",
+     "url": "https://arxiv.org/abs/2306.16215"
+    },
+    "MPTA_4p5yr_A_13_3": {
+     "A": 4.8e-15,
+     "gamma": 4.333333333333333,
+     "Omega_powerlaw_at_f_yr": 3.190540958843832e-08,
+     "SBPL_over_PTA_Omega_at_f_yr": 0.250380299554621,
+     "SBPL_hc_over_A": 0.500380155036769,
+     "note": "MeerKAT PTA 4.5 yr, h_c,yr at alpha=-2/3, +0.8/-0.9",
+     "url": "https://arxiv.org/abs/2412.01153"
+    },
+    "MPTA_4p5yr_A_free": {
+     "A": 7.5e-15,
+     "gamma": 3.52,
+     "Omega_powerlaw_at_f_yr": 7.789406637802324e-08,
+     "SBPL_over_PTA_Omega_at_f_yr": 0.10255577069757277,
+     "SBPL_hc_over_A": 0.3202432992235322,
+     "note": "MeerKAT PTA 4.5 yr, h_c,yr at alpha=-0.26, +0.8/-0.9",
+     "url": "https://arxiv.org/abs/2412.01153"
+    }
+   },
+   "calibration_control": {
+    "Omega_from_NG15_A_at_f_yr": 7.97635239710958e-09,
+    "matches_Omega_k_within_5pct": true
+   }
+  },
+  "delta_neff": {
+   "closed_form": "int Omega dln f = Omega_k 2^(1/D) B(s, 1/D - s) / ((a1-a2) D), s = -a2/((a1-a2) D)",
+   "s": 0.2,
+   "q": 0.3,
+   "Beta": 7.748481388736765,
+   "integral_exact": 8.766405974197639e-09,
+   "integral_quad": 8.76640597419764e-09,
+   "quad_error_estimate": 2.4362759167143545e-22,
+   "integral_trapezoid_archived_band_by_n": {
+    "50000": 8.766405968532626e-09,
+    "100000": 8.766405968532626e-09,
+    "200000": 8.766405968532626e-09,
+    "400000": 8.766405968532626e-09
+   },
+   "rel_diff_quad_vs_exact": 2.220446049250313e-16,
+   "rel_diff_trap200k_vs_exact": 6.462184121147629e-10,
+   "Omega_gamma": 5.441625795771733e-05,
+   "conversion_factor": 4.403204662458465,
+   "DeltaNeff_exact": 0.0007093519677259704,
+   "DeltaNeff_archived_method_n200k": 0.0007093519672675741,
+   "archived_value_quoted_in_project": "about 7e-4",
+   "ACT_DR6_95pct_gaussian_upper_DeltaNeff": 0.07079999999999975,
+   "caveat": "applies only if this spectrum existed as GW radiation before BBN/CMB; a late astrophysical origin would not count"
+  },
+  "LVK_25Hz": {
+   "Omega_SBPL_25Hz": 2.2847895652888354e-35,
+   "archived_value_quoted": "about 2.3e-35",
+   "limits_O1_O4a": {
+    "alpha_2over3": 2e-09,
+    "flat": 2.8e-09
+   },
+   "orders_of_magnitude_below_limit": 25.94218378900095
+  },
+  "perturbed_f_k_control": {
+   "0.9": {
+    "Omega_at_f_yr_over_frozen": 0.8847767268726167,
+    "knee_in_NG15_bins": 14.38689524832
+   },
+   "1.1": {
+    "Omega_at_f_yr_over_frozen": 0.9960106885343923,
+    "knee_in_NG15_bins": 17.58398308128
+   }
+  }
+ },
+ "B_braneworld_scale_setting": {
+  "exact_model_facts": {
+   "W(1)": "1/3",
+   "U(1)": "-2/27",
+   "1/ell=sqrt(-U(1)/6)": "1/9",
+   "ell": "9",
+   "sigma_crit=2W(1)": "2/3",
+   "sigma_crit/6 == 1/ell": true,
+   "W_phi(1)": "0"
+  },
+  "registered_H_ell": {
+   "H_ell_from_rho_b": 0.06927085955439773,
+   "H_ell_from_H2": 0.06927085955441364,
+   "rel_diff": 2.298161660974074e-13,
+   "H2_expansion_O_delta": 5.917018277881531e-05,
+   "H2_expansion_O_delta2": 5.9240150267814056e-05,
+   "rel_diff_expansion2_vs_registered": 3.923882929690592e-08,
+   "rho_over_lambda_estimate=(H ell)^2/2": 0.0023992259917025474,
+   "note": "rel. diff of the O(delta^2) expansion should be O(delta^2) ~ 1e-6 or smaller (control)"
+  },
+  "perturbed_c_control": {
+   "H_ell_leading_order_c": 0.06922994153604378,
+   "H_ell_leading_order_1.01c": 0.06935930112922764
+  },
+  "tabletop_scale_setting": {
+   "EotWash2020_Yukawa_range_38.6um_proxy": {
+    "ell_m": 3.86e-05,
+    "1/ell_eV": 0.005112097937823834,
+    "H_brane_eV": 0.000354119418279321,
+    "H_brane_over_H0(h=0.674)": 2.463057913753662e+29,
+    "rho_vac_quarter_GeV": 1222.1752085491496,
+    "M5_GeV": 311820096.84540534,
+    "lambda_quarter_GeV": 5522.245125679104,
+    "T_if_fully_thermalised_GeV(g*=106.75)": 502.0498901063673,
+    "f_today_horizon_scale_Hz(f*/H*=1)": 8.357803110485568e-05,
+    "f_today_over_knee": 2644.874402052395,
+    "delta_required_for_knee_at_this_ell_leading_order": 2.0435242062592623e-17,
+    "ell_required_for_knee_at_registered_delta_m": 270.0209192615958
+   },
+   "LivingReview_0.1mm": {
+    "ell_m": 0.0001,
+    "1/ell_eV": 0.001973269804,
+    "H_brane_eV": 0.00013669009545581794,
+    "H_brane_over_H0(h=0.674)": 9.507403547089137e+28,
+    "rho_vac_quarter_GeV": 759.3239919766612,
+    "M5_GeV": 227038688.97916058,
+    "lambda_quarter_GeV": 3430.9100562447616,
+    "T_if_fully_thermalised_GeV(g*=106.75)": 311.91806547897284,
+    "f_today_horizon_scale_Hz(f*/H*=1)": 5.192610991956351e-05,
+    "f_today_over_knee": 1643.2313265684656,
+    "delta_required_for_knee_at_this_ell_leading_order": 1.3715295754646162e-16,
+    "ell_required_for_knee_at_registered_delta_m": 270.02091926159596
+   }
+  },
+  "if_brane_dS_is_todays_dark_energy": {
+   "H_dS_s^-1": 1.807817712016454e-18,
+   "ell_needed_m": 1.14872650685683e+25,
+   "ell_needed_Mpc": 372.2769072657385,
+   "ratio_to_38.6um": 2.9759754063648442e+29,
+   "assumptions": "H_dS = H0 sqrt(Omega_L), h=0.674, Omega_L=0.685; registered H*ell",
+   "delta_needed_for_H_dS_at_38.6um_leading_order": 1.1304583027140134e-62,
+   "delta_needed_for_H_dS_at_0.1mm_leading_order": 7.58717215706471e-62
+  },
+  "frequency_map_control": {
+   "f0_at_T_1GeV_gstar100_Hz": 1.6467105921999225e-07,
+   "agrees_with_commonly_quoted_1.65e-7_within_2pct": true
+  },
+  "temperature_for_knee": {
+   "10.75": 0.278292643521472,
+   "17.25": 0.25720038855428184,
+   "61.75": 0.20795225936344586,
+   "106.75": 0.18981993614395523
+  },
+  "temperature_for_knee_units": "GeV, g* = g_s given by key, f*/H* = 1",
+  "temperature_for_band_GeV": {
+   "LVK_25Hz": {
+    "fH1": 150174000.11388865,
+    "fH100": 1501740.0011388864
+   },
+   "space_3mHz": {
+    "fH1": 18020.880013666636,
+    "fH100": 180.20880013666635
+   }
+  },
+  "M5_control_vs_review_1e8GeV": true,
+  "label": "CONDITIONAL, order of magnitude: RS2 low-energy relations M_Pl^2 = M5^3 ell (Z2-doubled bulk), rho_vac = 3 M_Pl^2 H^2, instantaneous thermalisation, f*/H*=1, standard radiation era afterwards; O((H ell)^2) corrections to M_Pl ignored"
+ },
+ "C_dark_radiation": {
+  "rho_dr_over_rho_gamma_per_unit_DeltaNeff": 0.22710731766023898,
+  "ACT_DR6_gaussian_95_upper_DeltaNeff": 0.07079999999999975,
+  "ACT_DR6_rho_dr_over_rho_gamma_upper": 0.016079198090344863,
+  "BBN_2024_gaussian_95_upper_DeltaNeff": 0.4588000000000001,
+  "BBN_2024_rho_dr_over_rho_gamma_upper": 0.10419683734251767,
+  "caveat": "Gaussian approximations built from quoted central values and 1-sigma errors; not the collaborations' own 95% limits"
+ },
+ "literature_inputs": {
+  "NG15_A_13_3": {
+   "A": 2.4e-15,
+   "gamma": 4.333333333333333,
+   "note": "NANOGrav 15-yr, median, 90% CI +0.7/-0.6",
+   "url": "https://arxiv.org/abs/2306.16213"
+  },
+  "NG15_CNM_A_fixed": {
+   "A": 2.1e-15,
+   "gamma": 4.333333333333333,
+   "note": "NANOGrav 15-yr customized chromatic noise, +0.6/-0.5 (2026)",
+   "url": "https://arxiv.org/abs/2606.28554"
+  },
+  "EPTA_DR2new_A_13_3": {
+   "A": 2.5e-15,
+   "gamma": 4.333333333333333,
+   "note": "EPTA DR2new+InPTA, +-0.7",
+   "url": "https://arxiv.org/abs/2306.16214"
+  },
+  "EPTA_DR2full_HD_free": {
+   "A": 2.8840315031266117e-15,
+   "gamma": 4.19,
+   "note": "EPTA DR2 full, HD process, log10A=-14.54(+0.28/-0.41), gamma=4.19(+0.73/-0.63)",
+   "url": "https://arxiv.org/abs/2306.16214"
+  },
+  "PPTA_DR3_A_13_3": {
+   "A": 2e-15,
+   "gamma": 4.333333333333333,
+   "note": "PPTA DR3 common-spectrum process, +-0.2",
+   "url": "https://arxiv.org/abs/2306.16215"
+  },
+  "MPTA_4p5yr_A_13_3": {
+   "A": 4.8e-15,
+   "gamma": 4.333333333333333,
+   "note": "MeerKAT PTA 4.5 yr, h_c,yr at alpha=-2/3, +0.8/-0.9",
+   "url": "https://arxiv.org/abs/2412.01153"
+  },
+  "MPTA_4p5yr_A_free": {
+   "A": 7.5e-15,
+   "gamma": 3.52,
+   "note": "MeerKAT PTA 4.5 yr, h_c,yr at alpha=-0.26, +0.8/-0.9",
+   "url": "https://arxiv.org/abs/2412.01153"
+  }
+ },
+ "data_spans_yr": {
+  "NANOGrav_15yr": 16.03,
+  "EPTA_DR2new": 10.3,
+  "MPTA_4p5yr": 4.5,
+  "CPTA_DR1": 3.0
+ },
+ "checks": {
+  "Omega(f_k)=Omega_k": true,
+  "slopes_limit_+2_and_-3": true,
+  "slope_analytic_vs_fd": true,
+  "wrong_formula_rejected": true,
+  "calibration_NG15_amplitude_gives_Omega_k": true,
+  "DeltaNeff_quad_vs_exact_1e-9": true,
+  "DeltaNeff_trap_vs_exact_1e-6": true,
+  "H_ell_two_routes_1e-9": true,
+  "H2_expansion_O_delta2_within_1e-5": true,
+  "sigma_crit_matches_1_over_ell": true,
+  "frequency_map_textbook_coefficient": true,
+  "M5_review_bound_reproduced": true
+ },
+ "all_checks_pass": true
+}

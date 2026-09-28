@@ -1,0 +1,212 @@
+{
+ "status": "mixed: exact (A,C) / numerical (B,D,E,F); leading order in delta, scalar-metric mixing neglected",
+ "A_reduction_to_Legendre": {
+  "statement": "f = sinh^{-3/2}(u) w(cosh u) turns the mode equation into (1-x^2)w''-2xw'+[nu(nu+1)-mu^2/(1-x^2)]w=0 with nu(nu+1)=m5^2/k^2+15/4, mu^2=9/4-M^2",
+  "residual": "0",
+  "passed": true,
+  "nu_tensor": "3/2",
+  "nu_scalar": "31/2 (nu+1/2 = sqrt(252+4) = 16)"
+ },
+ "B_identity_checks": {
+  "max_logderiv_err": 3.7865323450608567e-29,
+  "max_ode_rel_residual": 2.9083547771427345e-29,
+  "dps": 30,
+  "passed": true
+ },
+ "C_tensor": {
+  "exact_condition": "f'(u_b)=0  <=>  (mu - 3/2) P^{-mu}_{1/2}(cosh u_b) = 0 ;  P^{-mu}_{1/2}(x)>0 for x>1, mu>0",
+  "result": "bound states: only mu=3/2 (M^2=0, f=const, the massless 4D graviton) for EVERY u_b; continuum M^2 >= 9/4, i.e. m >= (3/2) H",
+  "min_normalised_P_minus_mu_half": 1.0000026785885183,
+  "scan": [
+   {
+    "u_b": 0.01,
+    "H_over_k": 99.99833335277756,
+    "sign_changes_in_0_to_9over4": 0,
+    "max_F": -0.6681235359213574,
+    "min_F": -139.98812199032776
+   },
+   {
+    "u_b": 0.1,
+    "H_over_k": 9.983352757296108,
+    "sign_changes_in_0_to_9over4": 0,
+    "max_F": -0.06650400563535333,
+    "min_F": -13.881985523308959
+   },
+   {
+    "u_b": 0.5,
+    "H_over_k": 1.9190347513349437,
+    "sign_changes_in_0_to_9over4": 0,
+    "max_F": -0.01190485059502255,
+    "min_F": -2.290142415627256
+   },
+   {
+    "u_b": 1,
+    "H_over_k": 0.8509181282393216,
+    "sign_changes_in_0_to_9over4": 0,
+    "max_F": -0.004271243659488033,
+    "min_F": -0.6897602388339082
+   },
+   {
+    "u_b": 2,
+    "H_over_k": 0.2757205647717832,
+    "sign_changes_in_0_to_9over4": 0,
+    "max_F": -0.0006734133673182163,
+    "min_F": -0.08419756009127448
+   },
+   {
+    "u_b": 3.364,
+    "H_over_k": 0.06927610910813202,
+    "sign_changes_in_0_to_9over4": 0,
+    "max_F": -4.7336512030064414e-05,
+    "min_F": -0.0053755520399326046
+   },
+   {
+    "u_b": 5,
+    "H_over_k": 0.013476505830589087,
+    "sign_changes_in_0_to_9over4": 0,
+    "max_F": -1.8146895730504107e-06,
+    "min_F": -0.00020341811675266298
+   },
+   {
+    "u_b": 8,
+    "H_over_k": 0.0006709253313077231,
+    "sign_changes_in_0_to_9over4": 0,
+    "max_F": -4.501392938074621e-09,
+    "min_F": -5.041578268428358e-07
+   }
+  ],
+  "literature": "Garriga & Sasaki, https://arxiv.org/abs/hep-th/9912118 (gap m=(3/2)H); this project re-derives it in closed form"
+ },
+ "D_bulk_scalar_decoupled": {
+  "exact_condition": "(14 cosh u_b + 18 sinh u_b) P^{-mu}_{31/2}(cosh u_b) = (31/2 - mu) P^{-mu}_{29/2}(cosh u_b)",
+  "no_zero_or_tachyonic_mode": "exact: for M^2<=0 the regular f is positive and increasing (maximum principle), so f'/f>0 > -18",
+  "scan": [
+   {
+    "u_b": 0.02,
+    "H_over_k": 49.99666682221566,
+    "bound_state_M2": [
+     1.0041046635653021
+    ],
+    "min_F_plus_b": -52.97970425556257,
+    "max_F_plus_b": 18.988501568334424,
+    "F_plus_b_at_M2_0": 19.005033621783685
+   },
+   {
+    "u_b": 0.03,
+    "H_over_k": 33.328333858283514,
+    "bound_state_M2": [
+     1.438818293489709
+    ],
+    "min_F_plus_b": -27.34113983731533,
+    "max_F_plus_b": 19.49113500641851,
+    "F_plus_b_at_M2_0": 19.50204464548048
+   },
+   {
+    "u_b": 0.05,
+    "H_over_k": 19.991669096581678,
+    "bound_state_M2": [
+     2.1053083048414045
+    ],
+    "min_F_plus_b": -5.62508222629556,
+    "max_F_plus_b": 20.46838198874864,
+    "F_plus_b_at_M2_0": 20.474721789064315
+   },
+   {
+    "u_b": 0.07,
+    "H_over_k": 14.27405428504791,
+    "bound_state_M2": [],
+    "min_F_plus_b": 4.580430826815731,
+    "max_F_plus_b": 21.402618134236498,
+    "F_plus_b_at_M2_0": 21.406941991956998
+   },
+   {
+    "u_b": 0.08,
+    "H_over_k": 12.486676615508316,
+    "bound_state_M2": [],
+    "min_F_plus_b": 7.980594908517231,
+    "max_F_plus_b": 21.850456406068652,
+    "F_plus_b_at_M2_0": 21.854135734527617
+   },
+   {
+    "u_b": 0.09,
+    "H_over_k": 11.09612527401454,
+    "bound_state_M2": [],
+    "min_F_plus_b": 10.714437796537243,
+    "max_F_plus_b": 22.28400081969193,
+    "F_plus_b_at_M2_0": 22.2871724075409
+   },
+   {
+    "u_b": 0.1,
+    "H_over_k": 9.983352757296108,
+    "bound_state_M2": [],
+    "min_F_plus_b": 12.96164649962598,
+    "max_F_plus_b": 22.702423825559233,
+    "F_plus_b_at_M2_0": 22.705184881628487
+   },
+   {
+    "u_b": 0.12,
+    "H_over_k": 8.313366882391323,
+    "bound_state_M2": [],
+    "min_F_plus_b": 16.42975117505536,
+    "max_F_plus_b": 23.491660972953188,
+    "F_plus_b_at_M2_0": 23.493799931853623
+   },
+   {
+    "u_b": 0.15,
+    "H_over_k": 6.641732136332666,
+    "bound_state_M2": [],
+    "min_F_plus_b": 19.98654184216699,
+    "max_F_plus_b": 24.553228394729352,
+    "F_plus_b_at_M2_0": 24.554744210110847
+   },
+   {
+    "u_b": 0.2,
+    "H_over_k": 4.966821568814517,
+    "bound_state_M2": [],
+    "min_F_plus_b": 23.555716662918268,
+    "max_F_plus_b": 26.009351135477107,
+    "F_plus_b_at_M2_0": 26.01026708784881
+   },
+   {
+    "u_b": 0.3,
+    "H_over_k": 3.2838533966984236,
+    "bound_state_M2": [],
+    "min_F_plus_b": 27.02090328518034,
+    "max_F_plus_b": 27.988697295642286,
+    "F_plus_b_at_M2_0": 27.98910239615675
+   },
+   {
+    "u_b": 0.5,
+    "H_over_k": 1.9190347513349437,
+    "bound_state_M2": [],
+    "min_F_plus_b": 29.638496253608544,
+    "max_F_plus_b": 29.938123536153352,
+    "F_plus_b_at_M2_0": 29.93825504070539
+   },
+   {
+    "u_b": 1,
+    "H_over_k": 0.8509181282393216,
+    "bound_state_M2": [],
+    "min_F_plus_b": 31.367778787869703,
+    "max_F_plus_b": 31.4232044367503,
+    "F_plus_b_at_M2_0": 31.42322904093845
+   },
+   {
+    "u_b": 2,
+    "H_over_k": 0.2757205647717832,
+    "bound_state_M2": [],
+    "min_F_plus_b": 31.92473787390829,
+    "max_F_plus_b": 31.930448779762465,
+    "F_plus_b_at_M2_0": 31.930451319679626
+   },
+   {
+    "u_b": 3.364,
+    "H_over_k": 0.06927610910813202,
+    "bound_state_M2": [],
+    "min_F_plus_b": 31.995166724895768,
+    "max_F_plus_b": 31.995526401380936,
+    "F_plus_b_at_M2_0": 31.995526561377318
+   },
+   {
+    "u_b": 5,
+    "H_over_k": 0.01347650583

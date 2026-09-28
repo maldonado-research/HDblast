@@ -1,0 +1,58 @@
+static shell: phi_h+1=8.785515e-07 y_b=8.22820155 rho_b=78.828177 phi_b=+2.2798e-05 junction residuals=(-2.8e-15,5.2e-14)
+junction check on grid: Hc_b - sigma rho_b/6 = -1.62e-11 ; phiz_b + sigma' rho_b/2 = -5.09e-10
+seed: dc=1.0e-04  max|a|=1.34e-05 max|f|=9.02e-05  f_b=+8.979e-05
+t=  0.00 H0tau= 0.0000 phi_b=+1.125884e-04 H_J/H0=+1.000013 b_b=-1.342e-05 a_b=-1.342e-05 phi_min=-1.0000 M=0.0e+00 Mshell=0.0e+00 H=1.9e-09 Hshell=1.7e-06  [0s]
+t=  0.50 H0tau= 0.5001 phi_b=+2.294557e-04 H_J/H0=+0.999899 b_b=+4.675e-04 a_b=+2.246e-05 phi_min=-1.0000 M=3.3e-01 Mshell=9.6e-06 H=9.4e-02 Hshell=1.5e-07  [31s]
+t=  1.00 H0tau= 1.0005 phi_b=+1.726863e-03 H_J/H0=+0.999243 b_b=+8.933e-04 a_b=+2.845e-04 phi_min=-1.0000 M=6.3e-01 Mshell=7.4e-05 H=3.9e-01 Hshell=9.4e-07  [63s]
+t=  1.50 H0tau= 1.5023 phi_b=+7.474576e-03 H_J/H0=+0.996386 b_b=+1.118e-02 a_b=+1.187e-03 phi_min=-1.0000 M=7.1e-01 Mshell=4.1e-05 H=5.3e-01 Hshell=4.9e-06  [95s]
+t=  2.00 H0tau= 2.0160 phi_b=+5.137617e-02 H_J/H0=+0.974917 b_b=+4.351e-02 a_b=+9.057e-03 phi_min=-1.0000 M=7.3e-01 Mshell=1.6e-03 H=5.7e-01 Hshell=3.2e-05  [127s]
+t=  2.50 H0tau= 2.6054 phi_b=+2.843239e-01 H_J/H0=+0.790873 b_b=+4.757e-01 a_b=+5.019e-02 phi_min=-1.0000 M=1.0e+00 Mshell=6.4e-03 H=6.7e-01 Hshell=3.6e-04  [159s]
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:188: RuntimeWarning: overflow encountered in expm1
+  e2b = np.expm1(2*b)
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:40: RuntimeWarning: overflow encountered in power
+  dU = sum(D[j]*f**j/math.factorial(j) for j in range(1, 7))
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:40: RuntimeWarning: invalid value encountered in add
+  dU = sum(D[j]*f**j/math.factorial(j) for j in range(1, 7))
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:41: RuntimeWarning: overflow encountered in power
+  dU1 = sum(D[j+1]*f**j/math.factorial(j) for j in range(1, 6))
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:189: RuntimeWarning: overflow encountered in multiply
+  SU = rho2*(e2b*(U0 + dU) + dU)                       # e^{2B}U(phi) - rho^2 U(phi_s)
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:191: RuntimeWarning: overflow encountered in multiply
+  kin = 2*pa + pa*pa; grad = 2*Hc*az + az*az
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:191: RuntimeWarning: invalid value encountered in add
+  kin = 2*pa + pa*pa; grad = 2*Hc*az + az*az
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:193: RuntimeWarning: overflow encountered in multiply
+  rbb = bzz + 3*kin - 3*grad - 0.5*pf*pf + 0.5*(2*phz*fz + fz*fz) - (1/3)*SU
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:193: RuntimeWarning: invalid value encountered in subtract
+  rbb = bzz + 3*kin - 3*grad - 0.5*pf*pf + 0.5*(2*phz*fz + fz*fz) - (1/3)*SU
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:194: RuntimeWarning: overflow encountered in multiply
+  rf = fzz - 3*(1 + pa)*pf + 3*((Hc + az)*(phz + fz) - Hc*phz) - SU1
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:146: RuntimeWarning: invalid value encountered in subtract
+  return +eps*(F[:-6] - 6*F[1:-5] + 15*F[2:-4] - 20*F[3:-3] + 15*F[4:-2] - 6*F[5:-1] + F[6:])/(64*h)
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:146: RuntimeWarning: invalid value encountered in add
+  return +eps*(F[:-6] - 6*F[1:-5] + 15*F[2:-4] - 20*F[3:-3] + 15*F[4:-2] - 6*F[5:-1] + F[6:])/(64*h)
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:138: RuntimeWarning: invalid value encountered in subtract
+  return (F[:-4] - 8*F[1:-3] + 8*F[3:-1] - F[4:])/(12*h)
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:138: RuntimeWarning: invalid value encountered in add
+  return (F[:-4] - 8*F[1:-3] + 8*F[3:-1] - F[4:])/(12*h)
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:141: RuntimeWarning: invalid value encountered in add
+  return (-F[:-4] + 16*F[1:-3] - 30*F[2:-2] + 16*F[3:-1] - F[4:])/(12*h*h)
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:141: RuntimeWarning: invalid value encountered in subtract
+  return (-F[:-4] + 16*F[1:-3] - 30*F[2:-2] + 16*F[3:-1] - F[4:])/(12*h*h)
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:40: RuntimeWarning: overflow encountered in square
+  dU = sum(D[j]*f**j/math.factorial(j) for j in range(1, 7))
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:41: RuntimeWarning: overflow encountered in square
+  dU1 = sum(D[j+1]*f**j/math.factorial(j) for j in range(1, 6))
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:41: RuntimeWarning: invalid value encountered in add
+  dU1 = sum(D[j+1]*f**j/math.factorial(j) for j in range(1, 6))
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:193: RuntimeWarning: invalid value encountered in add
+  rbb = bzz + 3*kin - 3*grad - 0.5*pf*pf + 0.5*(2*phz*fz + fz*fz) - (1/3)*SU
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:194: RuntimeWarning: invalid value encountered in add
+  rf = fzz - 3*(1 + pa)*pf + 3*((Hc + az)*(phz + fz) - Hc*phz) - SU1
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:194: RuntimeWarning: invalid value encountered in subtract
+  rf = fzz - 3*(1 + pa)*pf + 3*((Hc + az)*(phz + fz) - Hc*phz) - SU1
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:217: RuntimeWarning: invalid value encountered in add
+  Hm = -2*SU + 6*(At_**2 - 1) + 6*At_*pbv - 12*(Az_**2 - Hc**2) + 6*(Az_*Bz_ - Hc**2) - 6*azz - pf**2 - (2*phz*fz + fz**2)
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/rolloff5d_ref.py:221: RuntimeWarning: invalid value encountered in divide
+  return (float(np.max(np.abs(M[sl])/scale[sl])), float(np.max(np.abs(M[se])/scale[se])),
+{"H0_tau_end": NaN, "tag": "runs/ref_t1e3_dz5e-4_pslope", "d": 0.0, "dc": 0.0001, "dz": 0.0005, "L": 3.0, "t_det": 0.001, "t_end": 2.6099999999999133, "stop_reason": "non-finite", "phi_b_static": 2.279813329573695e-05, "rho_b": 78.82817681706904, "phi_b_end": NaN, "HJ_over_H0_end": NaN, "growth_fit": null, "max_momentum_constraint": 0.9998605250210733, "max_M_shell": 0.014629798555213956, "max_H_interior": 0.6737450489543342, "max_H_shell": 0.0011249470903430265, "pslope": true, "runtime_s": 166.1}

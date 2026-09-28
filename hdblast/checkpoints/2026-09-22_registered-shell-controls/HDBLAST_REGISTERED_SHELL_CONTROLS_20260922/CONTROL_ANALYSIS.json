@@ -1,0 +1,532 @@
+{
+  "status": "PASS_SAVED_CONTROL_ANALYSIS",
+  "expected_growth": 1.6571936312453648,
+  "checks": [
+    {
+      "name": "spectrum_reg_h4 matrix agrees with nonlinear RHS",
+      "passed": true
+    },
+    {
+      "name": "spectrum_reg_h2 matrix agrees with nonlinear RHS",
+      "passed": true
+    },
+    {
+      "name": "spectrum_reg_h1 matrix agrees with nonlinear RHS",
+      "passed": true
+    },
+    {
+      "name": "spectrum_reg_h05 matrix agrees with nonlinear RHS",
+      "passed": true
+    },
+    {
+      "name": "spectrum_reg_h1_L8 matrix agrees with nonlinear RHS",
+      "passed": true
+    },
+    {
+      "name": "spectrum_t01_h4 matrix agrees with nonlinear RHS",
+      "passed": true
+    },
+    {
+      "name": "registered selected rate approaches previous independent rate with refinement",
+      "passed": true
+    },
+    {
+      "name": "finest selected rate is within 1e-7 of independent rate",
+      "passed": true
+    },
+    {
+      "name": "L6 versus L8 selected-rate change below 1e-8",
+      "passed": true
+    },
+    {
+      "name": "larger-detuning selected-rate control within 1e-7",
+      "passed": true
+    },
+    {
+      "name": "reg_mode_plus_h2 reached requested final time",
+      "passed": true
+    },
+    {
+      "name": "reg_mode_plus_h2 recovers expected growth within 1e-4",
+      "passed": true
+    },
+    {
+      "name": "reg_mode_minus_h2 reached requested final time",
+      "passed": true
+    },
+    {
+      "name": "reg_mode_minus_h2 recovers expected growth within 1e-4",
+      "passed": true
+    },
+    {
+      "name": "reg_mode_ko_h2 reached requested final time",
+      "passed": true
+    },
+    {
+      "name": "reg_mode_ko_h2 recovers expected growth within 1e-4",
+      "passed": true
+    },
+    {
+      "name": "reg_mode_h1 reached requested final time",
+      "passed": true
+    },
+    {
+      "name": "reg_mode_h1 recovers expected growth within 1e-4",
+      "passed": true
+    },
+    {
+      "name": "reg_plus_h2 reached requested final time",
+      "passed": true
+    },
+    {
+      "name": "reg_plus_h2 recovers expected growth within 1e-4",
+      "passed": true
+    },
+    {
+      "name": "reg_plus_h1 reached requested final time",
+      "passed": true
+    },
+    {
+      "name": "reg_plus_h1 recovers expected growth within 1e-4",
+      "passed": true
+    },
+    {
+      "name": "fine mode H residual improves by more than factor8",
+      "passed": true
+    },
+    {
+      "name": "fine mode M residual improves by more than factor8",
+      "passed": true
+    },
+    {
+      "name": "small KO change in fitted growth",
+      "passed": true
+    },
+    {
+      "name": "opposite-sign small-mode growth agrees",
+      "passed": true
+    },
+    {
+      "name": "negative finding: shifted-tension seed has worsening refined constraints",
+      "passed": true
+    }
+  ],
+  "spectra": [
+    {
+      "name": "spectrum_reg_h4",
+      "sha256": "b84a752f962e70be51597bb0862e4fff6bcf8ea50677990aa13ce74d8832d97f",
+      "detuning": 0.001,
+      "hmin": 0.0004,
+      "L": 6.0,
+      "nodes": 601,
+      "growth": 1.6587017985533357,
+      "expected_growth": 1.6571936312453648,
+      "error": 0.0015081673079708757,
+      "eigen_residual": 1.17097966914693e-09,
+      "matrix_rhs_relative_error": 4.835681128764232e-16
+    },
+    {
+      "name": "spectrum_reg_h2",
+      "sha256": "38e95c3558e26e68c9ff8a265388a3265fd30bc0e685b4d561f5aa85784cabf3",
+      "detuning": 0.001,
+      "hmin": 0.0002,
+      "L": 6.0,
+      "nodes": 1200,
+      "growth": 1.657211039351267,
+      "expected_growth": 1.6571936312453648,
+      "error": 1.7408105902116944e-05,
+      "eigen_residual": 5.393531398001229e-09,
+      "matrix_rhs_relative_error": 2.8750384970284012e-16
+    },
+    {
+      "name": "spectrum_reg_h1",
+      "sha256": "272620ad85c7c251380ee32d6a930ba9082fe431d5202517c52a287f587a1981",
+      "detuning": 0.001,
+      "hmin": 0.0001,
+      "L": 6.0,
+      "nodes": 2399,
+      "growth": 1.6571943719996842,
+      "expected_growth": 1.6571936312453648,
+      "error": 7.407543194393185e-07,
+      "eigen_residual": 1.5646514167883394e-08,
+      "matrix_rhs_relative_error": 2.8640782439756285e-16
+    },
+    {
+      "name": "spectrum_reg_h05",
+      "sha256": "9b7031b348b61932a9c833fe3d745fbaf0bb7900cd6b60b9b5aeb5a48795bcff",
+      "detuning": 0.001,
+      "hmin": 5e-05,
+      "L": 6.0,
+      "nodes": 4797,
+      "growth": 1.6571936637667442,
+      "expected_growth": 1.6571936312453648,
+      "error": 3.25213793672674e-08,
+      "eigen_residual": 6.722672106626779e-08,
+      "matrix_rhs_relative_error": 2.6931423872762515e-16
+    },
+    {
+      "name": "spectrum_reg_h1_L8",
+      "sha256": "88c3e4d195c953d6d8a765cb862b52ea8128e9e8943bce13f2e498621c4a414e",
+      "detuning": 0.001,
+      "hmin": 0.0001,
+      "L": 8.0,
+      "nodes": 2542,
+      "growth": 1.6571943723400548,
+      "expected_growth": 1.6571936312453648,
+      "error": 7.410946900598958e-07,
+      "eigen_residual": 1.8032314398162104e-08,
+      "matrix_rhs_relative_error": 2.276507943259886e-16
+    },
+    {
+      "name": "spectrum_t01_h4",
+      "sha256": "5606aa557a0842d6f1fdb5a290dddd6e02edeae217caa5e3ffc69961b8ce727e",
+      "detuning": 0.1,
+      "hmin": 0.0004,
+      "L": 6.0,
+      "nodes": 601,
+      "growth": 1.6270213697430387,
+      "expected_growth": 1.6270213424531335,
+      "error": 2.7289905224492372e-08,
+      "eigen_residual": 1.0352033671766217e-09,
+      "matrix_rhs_relative_error": 1.1992009946374522e-16
+    }
+  ],
+  "evolutions": [
+    {
+      "name": "reg_mode_plus_h2",
+      "sha256": "f7e61e93e2b4d1d5d40e9e2041ec4b5862f0b119b48165ee173bbc58a3cdcb6e",
+      "seed": "linear eigenmode",
+      "hmin": 0.0002,
+      "ko": 0.0,
+      "amplitude": 1e-08,
+      "dc": 0.0,
+      "t_end": 2.5,
+      "fits": [
+        {
+          "window": [
+            0.5,
+            1.5
+          ],
+          "samples": 40,
+          "slope": 1.657210981462087,
+          "max_log_residual": 8.547818453052969e-09
+        },
+        {
+          "window": [
+            1,
+            2.5
+          ],
+          "samples": 61,
+          "slope": 1.6572108152914655,
+          "max_log_residual": 7.563442316893543e-08
+        }
+      ],
+      "max_normalized_H": 3.4012117157876455e-09,
+      "max_normalized_M": 1.7005890545045706e-09,
+      "max_weighted_characteristic": 3.609270736830437e-06,
+      "initial": {
+        "time": 0.0,
+        "H0tau": 0.0,
+        "phi_b": 2.280179355602068e-05,
+        "scalar_deviation": 1e-08,
+        "H_over_H0": 0.9999999990186481,
+        "momentum_max": 2.699630981404812e-11,
+        "hamiltonian_max": 5.3992619614265504e-11,
+        "boundary_velocity_slope_error": 4.554206222243693e-13,
+        "weighted_characteristic_max": 3.4720466088180906e-11
+      },
+      "final": {
+        "time": 2.5,
+        "H0tau": 2.499999941425372,
+        "phi_b": 2.3421725827652195e-05,
+        "scalar_deviation": 6.299322716315154e-07,
+        "H_over_H0": 0.9999999381813656,
+        "momentum_max": 1.7005890545045706e-09,
+        "hamiltonian_max": 3.4012117157876455e-09,
+        "boundary_velocity_slope_error": 3.1865286803526086e-11,
+        "weighted_characteristic_max": 3.609270736830437e-06
+      }
+    },
+    {
+      "name": "reg_mode_minus_h2",
+      "sha256": "adabc63aa6aa7ce4bc97945f992e930472b6b15002f2140188dedd49ab490607",
+      "seed": "linear eigenmode",
+      "hmin": 0.0002,
+      "ko": 0.0,
+      "amplitude": -1e-08,
+      "dc": 0.0,
+      "t_end": 2.5,
+      "fits": [
+        {
+          "window": [
+            0.5,
+            1.5
+          ],
+          "samples": 40,
+          "slope": 1.6572110982510038,
+          "max_log_residual": 8.547407115422345e-09
+        },
+        {
+          "window": [
+            1,
+            2.5
+          ],
+          "samples": 61,
+          "slope": 1.6572112644201955,
+          "max_log_residual": 7.563433124246899e-08
+        }
+      ],
+      "max_normalized_H": 3.4012084897923245e-09,
+      "max_normalized_M": 1.7005986484641842e-09,
+      "max_weighted_characteristic": 3.609210457208167e-06,
+      "initial": {
+        "time": 0.0,
+        "H0tau": 0.0,
+        "phi_b": 2.2781793556020677e-05,
+        "scalar_deviation": -1e-08,
+        "H_over_H0": 1.0000000009813519,
+        "momentum_max": 2.699630981351961e-11,
+        "hamiltonian_max": 5.399261961403785e-11,
+        "boundary_velocity_slope_error": -4.583611846627935e-13,
+        "weighted_characteristic_max": 8.396176543821534e-11
+      },
+      "final": {
+        "time": 2.5,
+        "H0tau": 2.5000000585746087,
+        "phi_b": 2.2161860800098394e-05,
+        "scalar_deviation": -6.299327559222853e-07,
+        "H_over_H0": 1.0000000618184655,
+        "momentum_max": 1.7005986484641842e-09,
+        "hamiltonian_max": 3.4012084897923245e-09,
+        "boundary_velocity_slope_error": -3.18725909651419e-11,
+        "weighted_characteristic_max": 3.609210457208167e-06
+      }
+    },
+    {
+      "name": "reg_mode_ko_h2",
+      "sha256": "b24522028a8188402933aca7bf686bc92a2a23a616d8da1e95a4f671da9c390c",
+      "seed": "linear eigenmode",
+      "hmin": 0.0002,
+      "ko": 0.02,
+      "amplitude": 1e-08,
+      "dc": 0.0,
+      "t_end": 2.5,
+      "fits": [
+        {
+          "window": [
+            0.5,
+            1.5
+          ],
+          "samples": 40,
+          "slope": 1.6572109807477775,
+          "max_log_residual": 8.549072449959283e-09
+        },
+        {
+          "window": [
+            1,
+            2.5
+          ],
+          "samples": 61,
+          "slope": 1.657210814572202,
+          "max_log_residual": 7.563456105863509e-08
+        }
+      ],
+      "max_normalized_H": 3.401171662949361e-09,
+      "max_normalized_M": 1.700581493192907e-09,
+      "max_weighted_characteristic": 3.6093702054900953e-06,
+      "initial": {
+        "time": 0.0,
+        "H0tau": 0.0,
+        "phi_b": 2.280179355602068e-05,
+        "scalar_deviation": 1e-08,
+        "H_over_H0": 0.9999999990186481,
+        "momentum_max": 2.699630981404812e-11,
+        "hamiltonian_max": 5.3992619614265504e-11,
+        "boundary_velocity_slope_error": 4.554206222243693e-13,
+        "weighted_characteristic_max": 3.4720466088180906e-11
+      },
+      "final": {
+        "time": 2.5,
+        "H0tau": 2.499999941425375,
+        "phi_b": 2.342172582659765e-05,
+        "scalar_deviation": 6.299322705769715e-07,
+        "H_over_H0": 0.9999999381813655,
+        "momentum_max": 1.700581493192907e-09,
+        "hamiltonian_max": 3.401171662949361e-09,
+        "boundary_velocity_slope_error": 3.186963717829571e-11,
+        "weighted_characteristic_max": 3.6093702054900953e-06
+      }
+    },
+    {
+      "name": "reg_mode_h1",
+      "sha256": "f2bcbc2d221f6327ec5c8ff4b1635d2c864c62f65580ab1b47f78d677ef8838f",
+      "seed": "linear eigenmode",
+      "hmin": 0.0001,
+      "ko": 0.0,
+      "amplitude": 1e-08,
+      "dc": 0.0,
+      "t_end": 2.5,
+      "fits": [
+        {
+          "window": [
+            0.5,
+            1.5
+          ],
+          "samples": 40,
+          "slope": 1.6571943171626469,
+          "max_log_residual": 8.107324367401247e-09
+        },
+        {
+          "window": [
+            1,
+            2.5
+          ],
+          "samples": 61,
+          "slope": 1.6571941589557058,
+          "max_log_residual": 7.983177052750534e-08
+        }
+      ],
+      "max_normalized_H": 2.9218778757173555e-10,
+      "max_normalized_M": 1.4220253601772335e-10,
+      "max_weighted_characteristic": 2.185485179040047e-07,
+      "initial": {
+        "time": 0.0,
+        "H0tau": 0.0,
+        "phi_b": 2.280179355602068e-05,
+        "scalar_deviation": 1e-08,
+        "H_over_H0": 0.9999999990184002,
+        "momentum_max": 1.660771646635426e-12,
+        "hamiltonian_max": 3.321543271643717e-12,
+        "boundary_velocity_slope_error": 1.1654421665418044e-12,
+        "weighted_characteristic_max": 1.0474519728408248e-10
+      },
+      "final": {
+        "time": 2.5,
+        "H0tau": 2.4999999456561692,
+        "phi_b": 2.342169958399043e-05,
+        "scalar_deviation": 6.299060279697523e-07,
+        "H_over_H0": 0.9999999381683342,
+        "momentum_max": 1.1689304930832614e-10,
+        "hamiltonian_max": 2.400359545771182e-10,
+        "boundary_velocity_slope_error": 2.037001203293847e-12,
+        "weighted_characteristic_max": 2.185485179040047e-07
+      }
+    },
+    {
+      "name": "reg_plus_h2",
+      "sha256": "c04800fc9142ea2d5478f7ea980342b594e199e3d242a6c8a8a4bbc35b5e7f55",
+      "seed": "shifted tension",
+      "hmin": 0.0002,
+      "ko": 0.0,
+      "amplitude": null,
+      "dc": 1e-07,
+      "t_end": 4.5,
+      "fits": [
+        {
+          "window": [
+            2.5,
+            3.5
+          ],
+          "samples": 40,
+          "slope": 1.6571994278496571,
+          "max_log_residual": 1.4889287980324184e-06
+        },
+        {
+          "window": [
+            3,
+            4.5
+          ],
+          "samples": 61,
+          "slope": 1.6571697740852955,
+          "max_log_residual": 1.384929848469163e-05
+        }
+      ],
+      "max_normalized_H": 2.7708085146756697e-06,
+      "max_normalized_M": 1.0649811995920373e-06,
+      "max_weighted_characteristic": 0.2656544585350442,
+      "initial": {
+        "time": 0.0,
+        "H0tau": 0.0,
+        "phi_b": 2.288159775254428e-05,
+        "scalar_deviation": 8.980419652360183e-08,
+        "H_over_H0": 1.0000000134163418,
+        "momentum_max": 0.0,
+        "hamiltonian_max": 2.9748537984497158e-09,
+        "boundary_velocity_slope_error": 0.0,
+        "weighted_characteristic_max": 1.2565889564664573e-05
+      },
+      "final": {
+        "time": 4.5,
+        "H0tau": 4.499989281236443,
+        "phi_b": 0.0001375696897656995,
+        "scalar_deviation": 0.00011477789620967883,
+        "H_over_H0": 0.9999887326532749,
+        "momentum_max": 3.0939761966163776e-07,
+        "hamiltonian_max": 6.189556687147249e-07,
+        "boundary_velocity_slope_error": 5.802547328910557e-09,
+        "weighted_characteristic_max": 0.2656544585350442
+      }
+    },
+    {
+      "name": "reg_plus_h1",
+      "sha256": "970d98ff2fb554ba9f257af8dd48f119927e8213277995913deb7ac4a906e403",
+      "seed": "shifted tension",
+      "hmin": 0.0001,
+      "ko": 0.0,
+      "amplitude": null,
+      "dc": 1e-07,
+      "t_end": 4.5,
+      "fits": [
+        {
+          "window": [
+            2.5,
+            3.5
+          ],
+          "samples": 40,
+          "slope": 1.657184273537577,
+          "max_log_residual": 1.4668004807427693e-06
+        },
+        {
+          "window": [
+            3,
+            4.5
+          ],
+          "samples": 61,
+          "slope": 1.657155492040254,
+          "max_log_residual": 1.4543878391171106e-05
+        }
+      ],
+      "max_normalized_H": 1.5022340102662807e-05,
+      "max_normalized_M": 6.7906975191468095e-06,
+      "max_weighted_characteristic": 0.015862627219237545,
+      "initial": {
+        "time": 0.0,
+        "H0tau": 0.0,
+        "phi_b": 2.288159775254428e-05,
+        "scalar_deviation": 8.980419652360183e-08,
+        "H_over_H0": 1.0000000134163418,
+        "momentum_max": 0.0,
+        "hamiltonian_max": 1.3270417355131389e-08,
+        "boundary_velocity_slope_error": 0.0,
+        "weighted_characteristic_max": 5.9022247824120375e-05
+      },
+      "final": {
+        "time": 4.5,
+        "H0tau": 4.499989952509898,
+        "phi_b": 0.00013756238372030963,
+        "scalar_deviation": 0.00011477059016428894,
+        "H_over_H0": 0.9999887305278201,
+        "momentum_max": 9.91087488641518e-08,
+        "hamiltonian_max": 2.0214720788689204e-07,
+        "boundary_velocity_slope_error": 3.910178179508672e-10,
+        "weighted_characteristic_max": 0.015862627219237545
+      }
+    }
+  ],
+  "L6_L8_growth_change": 3.40370620577346e-10,
+  "KO_growth_change": -7.192635376185308e-10,
+  "opposite_sign_growth_change": 4.4912872998459363e-07,
+  "scope": "Saved-run analysis only. Linear-limit controls, not full nonlinear fate, complete mode counting, interval certification, or evidence of a cosmological origin.",
+  "constraints": "H,M are divided by 1+6Hc(z)^2+phi_z(z)^2 on z>\u22120.8L excluding first 6 nodes. This is a background normalization, not a relative perturbation-error bound. Raw arrays are in NPZ snapshots.",
+  "nonlinear_seed_gate": "Neither evolved seed family is fully nonlinear compatible. The shifted-tension family also fails constraint refinement. Separate initial_data construction is not evolved here."
+}

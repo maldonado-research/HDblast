@@ -1,0 +1,485 @@
+{
+  "status": "mixed: exact (A,C) / numerical (B,D,E,F); leading order in delta, scalar-metric mixing neglected",
+  "A_reduction_to_Legendre": {
+    "statement": "f = sinh^{-3/2}(u) w(cosh u) turns the mode equation into (1-x^2)w''-2xw'+[nu(nu+1)-mu^2/(1-x^2)]w=0 with nu(nu+1)=m5^2/k^2+15/4, mu^2=9/4-M^2",
+    "residual": "0",
+    "passed": true,
+    "nu_tensor": "3/2",
+    "nu_scalar": "31/2 (nu+1/2 = sqrt(252+4) = 16)"
+  },
+  "B_identity_checks": {
+    "max_logderiv_err": 3.7865323450608567e-29,
+    "max_ode_rel_residual": 2.9083547771427345e-29,
+    "rows": [
+      {
+        "nu": 1.5,
+        "mu": 0.3,
+        "u": 0.4,
+        "logderiv_identity_err": 3.944304526105059e-31,
+        "ode_rel_residual": 6.505690857862943e-30
+      },
+      {
+        "nu": 1.5,
+        "mu": 0.3,
+        "u": 2.0,
+        "logderiv_identity_err": 8.628166150854817e-32,
+        "ode_rel_residual": 0.0
+      },
+      {
+        "nu": 1.5,
+        "mu": 1.1,
+        "u": 0.4,
+        "logderiv_identity_err": 1.9721522630525295e-31,
+        "ode_rel_residual": 1.2066955651285683e-30
+      },
+      {
+        "nu": 1.5,
+        "mu": 1.1,
+        "u": 2.0,
+        "logderiv_identity_err": 2.157041537713704e-31,
+        "ode_rel_residual": 1.4092050691401153e-32
+      },
+      {
+        "nu": 1.5,
+        "mu": 2.7,
+        "u": 0.4,
+        "logderiv_identity_err": 2.3665827156630354e-30,
+        "ode_rel_residual": 2.9083547771427345e-29
+      },
+      {
+        "nu": 1.5,
+        "mu": 2.7,
+        "u": 2.0,
+        "logderiv_identity_err": 2.465190328815662e-31,
+        "ode_rel_residual": 6.827617045486675e-32
+      },
+      {
+        "nu": 15.5,
+        "mu": 0.3,
+        "u": 0.4,
+        "logderiv_identity_err": 3.470987982972452e-29,
+        "ode_rel_residual": 1.9512645143273884e-30
+      },
+      {
+        "nu": 15.5,
+        "mu": 0.3,
+        "u": 2.0,
+        "logderiv_identity_err": 6.310887241768095e-30,
+        "ode_rel_residual": 3.141021671420789e-31
+      },
+      {
+        "nu": 15.5,
+        "mu": 1.1,
+        "u": 0.4,
+        "logderiv_identity_err": 2.997671439839845e-29,
+        "ode_rel_residual": 2.268741525001224e-30
+      },
+      {
+        "nu": 15.5,
+        "mu": 1.1,
+        "u": 2.0,
+        "logderiv_identity_err": 7.888609052210118e-30,
+        "ode_rel_residual": 3.739199145779734e-31
+      },
+      {
+        "nu": 15.5,
+        "mu": 2.7,
+        "u": 0.4,
+        "logderiv_identity_err": 3.7865323450608567e-29,
+        "ode_rel_residual": 2.6355262431076334e-30
+      },
+      {
+        "nu": 15.5,
+        "mu": 2.7,
+        "u": 2.0,
+        "logderiv_identity_err": 6.310887241768095e-30,
+        "ode_rel_residual": 2.9735827815501154e-31
+      }
+    ],
+    "dps": 30,
+    "passed": true
+  },
+  "C_tensor": {
+    "exact_condition": "f'(u_b)=0  <=>  (mu - 3/2) P^{-mu}_{1/2}(cosh u_b) = 0 ;  P^{-mu}_{1/2}(x)>0 for x>1, mu>0",
+    "result": "bound states: only mu=3/2 (M^2=0, f=const, the massless 4D graviton) for EVERY u_b; continuum M^2 >= 9/4, i.e. m >= (3/2) H",
+    "min_normalised_P_minus_mu_half": 1.0000026785885183,
+    "scan": [
+      {
+        "u_b": 0.01,
+        "H_over_k": 99.99833335277756,
+        "sign_changes_in_0_to_9over4": 0,
+        "max_F": -0.6681235359213574,
+        "min_F": -139.98812199032776
+      },
+      {
+        "u_b": 0.1,
+        "H_over_k": 9.983352757296108,
+        "sign_changes_in_0_to_9over4": 0,
+        "max_F": -0.06650400563535333,
+        "min_F": -13.881985523308959
+      },
+      {
+        "u_b": 0.5,
+        "H_over_k": 1.9190347513349437,
+        "sign_changes_in_0_to_9over4": 0,
+        "max_F": -0.01190485059502255,
+        "min_F": -2.290142415627256
+      },
+      {
+        "u_b": 1,
+        "H_over_k": 0.8509181282393216,
+        "sign_changes_in_0_to_9over4": 0,
+        "max_F": -0.004271243659488033,
+        "min_F": -0.6897602388339082
+      },
+      {
+        "u_b": 2,
+        "H_over_k": 0.2757205647717832,
+        "sign_changes_in_0_to_9over4": 0,
+        "max_F": -0.0006734133673182163,
+        "min_F": -0.08419756009127448
+      },
+      {
+        "u_b": 3.364,
+        "H_over_k": 0.06927610910813202,
+        "sign_changes_in_0_to_9over4": 0,
+        "max_F": -4.7336512030064414e-05,
+        "min_F": -0.0053755520399326046
+      },
+      {
+        "u_b": 5,
+        "H_over_k": 0.013476505830589087,
+        "sign_changes_in_0_to_9over4": 0,
+        "max_F": -1.8146895730504107e-06,
+        "min_F": -0.00020341811675266298
+      },
+      {
+        "u_b": 8,
+        "H_over_k": 0.0006709253313077231,
+        "sign_changes_in_0_to_9over4": 0,
+        "max_F": -4.501392938074621e-09,
+        "min_F": -5.041578268428358e-07
+      }
+    ],
+    "literature": "Garriga & Sasaki, https://arxiv.org/abs/hep-th/9912118 (gap m=(3/2)H); this project re-derives it in closed form"
+  },
+  "D_bulk_scalar_decoupled": {
+    "exact_condition": "(14 cosh u_b + 18 sinh u_b) P^{-mu}_{31/2}(cosh u_b) = (31/2 - mu) P^{-mu}_{29/2}(cosh u_b)",
+    "no_zero_or_tachyonic_mode": "exact: for M^2<=0 the regular f is positive and increasing (maximum principle), so f'/f>0 > -18",
+    "scan": [
+      {
+        "u_b": 0.02,
+        "H_over_k": 49.99666682221566,
+        "bound_state_M2": [
+          1.0041046635653021
+        ],
+        "min_F_plus_b": -52.97970425556257,
+        "max_F_plus_b": 18.988501568334424,
+        "F_plus_b_at_M2_0": 19.005033621783685
+      },
+      {
+        "u_b": 0.03,
+        "H_over_k": 33.328333858283514,
+        "bound_state_M2": [
+          1.438818293489709
+        ],
+        "min_F_plus_b": -27.34113983731533,
+        "max_F_plus_b": 19.49113500641851,
+        "F_plus_b_at_M2_0": 19.50204464548048
+      },
+      {
+        "u_b": 0.05,
+        "H_over_k": 19.991669096581678,
+        "bound_state_M2": [
+          2.1053083048414045
+        ],
+        "min_F_plus_b": -5.62508222629556,
+        "max_F_plus_b": 20.46838198874864,
+        "F_plus_b_at_M2_0": 20.474721789064315
+      },
+      {
+        "u_b": 0.07,
+        "H_over_k": 14.27405428504791,
+        "bound_state_M2": [],
+        "min_F_plus_b": 4.580430826815731,
+        "max_F_plus_b": 21.402618134236498,
+        "F_plus_b_at_M2_0": 21.406941991956998
+      },
+      {
+        "u_b": 0.08,
+        "H_over_k": 12.486676615508316,
+        "bound_state_M2": [],
+        "min_F_plus_b": 7.980594908517231,
+        "max_F_plus_b": 21.850456406068652,
+        "F_plus_b_at_M2_0": 21.854135734527617
+      },
+      {
+        "u_b": 0.09,
+        "H_over_k": 11.09612527401454,
+        "bound_state_M2": [],
+        "min_F_plus_b": 10.714437796537243,
+        "max_F_plus_b": 22.28400081969193,
+        "F_plus_b_at_M2_0": 22.2871724075409
+      },
+      {
+        "u_b": 0.1,
+        "H_over_k": 9.983352757296108,
+        "bound_state_M2": [],
+        "min_F_plus_b": 12.96164649962598,
+        "max_F_plus_b": 22.702423825559233,
+        "F_plus_b_at_M2_0": 22.705184881628487
+      },
+      {
+        "u_b": 0.12,
+        "H_over_k": 8.313366882391323,
+        "bound_state_M2": [],
+        "min_F_plus_b": 16.42975117505536,
+        "max_F_plus_b": 23.491660972953188,
+        "F_plus_b_at_M2_0": 23.493799931853623
+      },
+      {
+        "u_b": 0.15,
+        "H_over_k": 6.641732136332666,
+        "bound_state_M2": [],
+        "min_F_plus_b": 19.98654184216699,
+        "max_F_plus_b": 24.553228394729352,
+        "F_plus_b_at_M2_0": 24.554744210110847
+      },
+      {
+        "u_b": 0.2,
+        "H_over_k": 4.966821568814517,
+        "bound_state_M2": [],
+        "min_F_plus_b": 23.555716662918268,
+        "max_F_plus_b": 26.009351135477107,
+        "F_plus_b_at_M2_0": 26.01026708784881
+      },
+      {
+        "u_b": 0.3,
+        "H_over_k": 3.2838533966984236,
+        "bound_state_M2": [],
+        "min_F_plus_b": 27.02090328518034,
+        "max_F_plus_b": 27.988697295642286,
+        "F_plus_b_at_M2_0": 27.98910239615675
+      },
+      {
+        "u_b": 0.5,
+        "H_over_k": 1.9190347513349437,
+        "bound_state_M2": [],
+        "min_F_plus_b": 29.638496253608544,
+        "max_F_plus_b": 29.938123536153352,
+        "F_plus_b_at_M2_0": 29.93825504070539
+      },
+      {
+        "u_b": 1,
+        "H_over_k": 0.8509181282393216,
+        "bound_state_M2": [],
+        "min_F_plus_b": 31.367778787869703,
+        "max_F_plus_b": 31.4232044367503,
+        "F_plus_b_at_M2_0": 31.42322904093845
+      },
+      {
+        "u_b": 2,
+        "H_over_k": 0.2757205647717832,
+        "bound_state_M2": [],
+        "min_F_plus_b": 31.92473787390829,
+        "max_F_plus_b": 31.930448779762465,
+        "F_plus_b_at_M2_0": 31.930451319679626
+      },
+      {
+        "u_b": 3.364,
+        "H_over_k": 0.06927610910813202,
+        "bound_state_M2": [],
+        "min_F_plus_b": 31.995166724895768,
+        "max_F_plus_b": 31.995526401380936,
+        "F_plus_b_at_M2_0": 31.995526561377318
+      },
+      {
+        "u_b": 5,
+        "H_over_k": 0.013476505830589087,
+        "bound_state_M2": [],
+        "min_F_plus_b": 31.999816884611565,
+        "max_F_plus_b": 31.999830493802644,
+        "F_plus_b_at_M2_0": 31.99983049985655
+      }
+    ],
+    "u_b_where_bound_state_reaches_threshold": 0.060034034582129046,
+    "large_u_b_log_derivative": [
+      {
+        "u_b": 3,
+        "F_at_M2": [
+          13.990724863257146,
+          13.990392612260623,
+          13.990060353372622
+        ]
+      },
+      {
+        "u_b": 5,
+        "F_at_M2": [
+          13.99983049985655,
+          13.999824445947565,
+          13.99981839203596
+        ]
+      },
+      {
+        "u_b": 8,
+        "F_at_M2": [
+          13.999999579868637,
+          13.999999564863945,
+          13.99999954985925
+        ]
+      }
+    ],
+    "interpretation": "for u_b above the threshold value (H/k below ~ 1/sinh(u_thr)) the decoupled bulk scalar has NO discrete mode below the universal continuum M^2>=9/4; f'/f -> 14 = Delta-4 while the brane demands -18 = -Delta (sigma''/(2k) = 3W''/W = Delta)."
+  },
+  "E_calibration": {
+    "rows": [
+      {
+        "u_b": 0.5,
+        "M2": 0.3,
+        "tensor_exact": -0.18401600389664013,
+        "tensor_shoot": -0.18401600389665895,
+        "scalar_exact": 11.898735113409833,
+        "scalar_shoot": 11.898735113410567,
+        "tensor_abs_err": 1.8818280267396403e-14,
+        "scalar_rel_err": 6.165658514790357e-14,
+        "wrong_degree_control_err": 0.30397343448461794
+      },
+      {
+        "u_b": 0.5,
+        "M2": 1.2,
+        "tensor_exact": -0.8331447714955308,
+        "tensor_shoot": -0.8331447714955902,
+        "scalar_exact": 11.779332930639416,
+        "scalar_shoot": 11.779332930640214,
+        "tensor_abs_err": 5.939693181744587e-14,
+        "scalar_rel_err": 6.771047440352951e-14,
+        "wrong_degree_control_err": 0.35443534531331156
+      },
+      {
+        "u_b": 0.5,
+        "M2": 2.0,
+        "tensor_exact": -1.7018362564786431,
+        "tensor_shoot": -1.701836256480711,
+        "scalar_exact": 11.67209677364869,
+        "scalar_shoot": 11.672096773649656,
+        "tensor_abs_err": 2.0679014056668166e-12,
+        "scalar_rel_err": 8.279044796950048e-14,
+        "wrong_degree_control_err": 0.4621171572579419
+      },
+      {
+        "u_b": 2.0,
+        "M2": 0.3,
+        "tensor_exact": -0.01019134351516214,
+        "tensor_shoot": -0.010191343515172768,
+        "scalar_exact": 13.929689323743027,
+        "scalar_shoot": 13.929689323743036,
+        "tensor_abs_err": 1.062691601383392e-14,
+        "scalar_rel_err": 6.376153832707764e-16,
+        "wrong_degree_control_err": 0.8639174520653199
+      },
+      {
+        "u_b": 2.0,
+        "M2": 1.2,
+        "tensor_exact": -0.04214197473536385,
+        "tensor_shoot": -0.04214197473551127,
+        "scalar_exact": 13.927403085595717,
+        "scalar_shoot": 13.927403085595724,
+        "tensor_abs_err": 1.4741680098850907e-13,
+        "scalar_rel_err": 5.101760402805978e-16,
+        "wrong_degree_control_err": 0.9050674691869571
+      },
+      {
+        "u_b": 2.0,
+        "M2": 2.0,
+        "tensor_exact": -0.07328714065173121,
+        "tensor_shoot": -0.07328714065232718,
+        "scalar_exact": 13.925370558544904,
+        "scalar_shoot": 13.925370558544916,
+        "tensor_abs_err": 5.95967719618784e-13,
+        "scalar_rel_err": 8.929383834724369e-16,
+        "wrong_degree_control_err": 0.9640275800752209
+      },
+      {
+        "u_b": 3.364,
+        "M2": 0.3,
+        "tensor_exact": -0.0007110099036144954,
+        "tensor_shoot": -0.0007110099036146678,
+        "scalar_exact": 13.995478562381424,
+        "scalar_shoot": 13.99547856238143,
+        "tensor_abs_err": 1.723881454251952e-16,
+        "scalar_rel_err": 5.07694490469211e-16,
+        "wrong_degree_control_err": 0.9815371824513048
+      },
+      {
+        "u_b": 3.364,
+        "M2": 1.2,
+        "tensor_exact": -0.002857584016774636,
+        "tensor_shoot": -0.002857584016776002,
+        "scalar_exact": 13.995334564405981,
+        "scalar_shoot": 13.995334564405983,
+        "tensor_abs_err": 1.3656610564627414e-15,
+        "scalar_rel_err": 1.2692492853425731e-16,
+        "wrong_degree_control_err": 0.9889884463775005
+      },
+      {
+        "u_b": 3.364,
+        "M2": 2.0,
+        "tensor_exact": -0.004787704517867337,
+        "tensor_shoot": -0.004787704517872254,
+        "scalar_exact": 13.995206564961705,
+        "scalar_shoot": 13.995206564961707,
+        "tensor_abs_err": 4.91707369265626e-15,
+        "scalar_rel_err": 1.2692608938316953e-16,
+        "wrong_degree_control_err": 0.9976090130012755
+      }
+    ],
+    "max_tensor_abs_err": 2.0679014056668166e-12,
+    "max_scalar_rel_err": 8.279044796950048e-14,
+    "min_wrong_control_err": 0.30397343448461794,
+    "note": "float shooting from u0=1e-4 with leading Frobenius behaviour u^(mu-3/2); errors O(u0^2)"
+  },
+  "F_tensor_full_branch": {
+    "rows": [
+      {
+        "delta": "0.001",
+        "u_b": 3.364075599542847,
+        "eta_h": -1.336692365157743e-23,
+        "H2_from_mp": "0.000059240147943288795996237552780159188577484394070663",
+        "R_b_float": 14.43608476107582,
+        "R_b_mp": "14.436084761075825693177636439590205240467101263508",
+        "sign_changes": 0,
+        "min_F": -0.005374737552794915,
+        "max_F": -4.732942036751265e-05,
+        "F_sign": "negative"
+      },
+      {
+        "delta": "0.01",
+        "u_b": 2.2182096368907094,
+        "eta_h": -1.2171085962567166e-15,
+        "H2_from_mp": "0.00059869624947783264976339007406043586425416306613742",
+        "R_b_float": 4.5410284394453715,
+        "R_b_mp": "4.5410284394451502983515180622623931610538743116032",
+        "sign_changes": 0,
+        "min_F": -0.05399536169056006,
+        "max_F": -0.0004446078354665194,
+        "F_sign": "negative"
+      },
+      {
+        "delta": "0.1",
+        "u_b": 1.1181828257297497,
+        "eta_h": -5.035586694391458e-08,
+        "H2_from_mp": "0.0066143388162729328125452095150617627509173268622975",
+        "R_b_float": 1.366199970835621,
+        "R_b_mp": "1.366199970828644827657773343907980876111976525609",
+        "sign_changes": 0,
+        "min_F": -0.5324891352703625,
+        "max_F": -0.0034348579483333367,
+        "F_sign": "negative"
+      }
+    ],
+    "zero_mode": "exact for any background: h=const (M^2=0), normalisable because the doubled bulk has finite warped volume",
+    "note": "float shooting; no tensor bound state in 0<M^2<9/4 detected at the listed detunings"
+  },
+  "runtime_s": 26.584429264068604,
+  "script_sha256": "018f4df7cdbf8c8629fbc7216805e1d65ebd0fe5b1e1a0b7bde875c6a0ac24d7"
+}

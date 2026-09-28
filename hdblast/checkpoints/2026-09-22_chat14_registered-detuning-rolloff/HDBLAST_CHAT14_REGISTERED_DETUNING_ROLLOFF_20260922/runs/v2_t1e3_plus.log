@@ -1,0 +1,49 @@
+grid: 1392 points, dz from 1.69e-04 (shell) to 8.00e-03 (far), wall width in z = 0.0127 -> 75 points across it
+static shell: phi_h+1=8.785515e-07 y_b=8.22820155 rho_b=78.828177 phi_b=+2.2780e-05 junction residuals=(-2.8e-15,5.2e-14)
+junction check on grid: Hc_b - sigma rho_b/6 = -3.60e-11 ; phiz_b + sigma' rho_b/2 = 4.32e-10
+seed: dc=1.0e-04  max|a|=1.34e-05 max|f|=9.02e-05  f_b=+8.979e-05
+t=  0.00 H0tau= 0.0000 phi_b=+1.125694e-04 H_J/H0=+1.000013 b_b=-1.342e-05 phi_min=-1.0000 M_bulk=0.0e+00 M_shell=0.0e+00  [0s]
+t=  0.50 H0tau= 0.4998 phi_b=+1.730096e-04 H_J/H0=+0.999981 b_b=+4.765e-05 phi_min=-1.0000 M_bulk=6.2e-03 M_shell=8.1e-05  [23s]
+t=  1.00 H0tau= 0.9996 phi_b=+3.785636e-04 H_J/H0=+0.999946 b_b=+4.716e-04 phi_min=-1.0000 M_bulk=2.1e-02 M_shell=3.3e-04  [43s]
+t=  1.50 H0tau= 1.4998 phi_b=+9.615717e-04 H_J/H0=+0.999853 b_b=+1.348e-03 phi_min=-1.0000 M_bulk=3.0e-02 M_shell=1.7e-04  [63s]
+t=  2.00 H0tau= 2.0006 phi_b=+2.507761e-03 H_J/H0=+0.999616 b_b=+2.878e-03 phi_min=-1.0000 M_bulk=3.2e-02 M_shell=1.5e-04  [84s]
+t=  2.50 H0tau= 2.5026 phi_b=+6.439331e-03 H_J/H0=+0.999010 b_b=+6.905e-03 phi_min=-1.0000 M_bulk=3.3e-02 M_shell=6.0e-04  [104s]
+t=  3.00 H0tau= 3.0084 phi_b=+1.655485e-02 H_J/H0=+0.997384 b_b=+1.897e-02 phi_min=-1.0000 M_bulk=3.2e-02 M_shell=3.2e-03  [124s]
+t=  3.50 H0tau= 3.5248 phi_b=+4.335456e-02 H_J/H0=+0.992728 b_b=+5.218e-02 phi_min=-1.0000 M_bulk=3.2e-02 M_shell=7.3e-03  [146s]
+t=  4.00 H0tau= 4.0723 phi_b=+1.172584e-01 H_J/H0=+0.977481 b_b=+1.465e-01 phi_min=-1.0000 M_bulk=8.9e-02 M_shell=1.8e-02  [168s]
+t=  4.50 H0tau= 4.7402 phi_b=+3.493856e-01 H_J/H0=+0.907982 b_b=+5.276e-01 phi_min=-1.0000 M_bulk=9.9e-01 M_shell=1.1e-01  [191s]
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 151/HDBLAST_CHAT14_REGISTERED_DETUNING_ROLLOFF_20260922/rolloff5d_v2.py:72: RuntimeWarning: overflow encountered in expm1
+  eB = rb*math.exp(bb); p = pb + ff; s2 = 2*R.W2(p) + ten.t*ten.d
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 151/HDBLAST_CHAT14_REGISTERED_DETUNING_ROLLOFF_20260922/rolloff5d_v1.py:40: RuntimeWarning: overflow encountered in power
+  dU = sum(D[j]*f**j/math.factorial(j) for j in range(1, 7))
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 151/HDBLAST_CHAT14_REGISTERED_DETUNING_ROLLOFF_20260922/rolloff5d_v1.py:41: RuntimeWarning: overflow encountered in power
+  dU1 = sum(D[j+1]*f**j/math.factorial(j) for j in range(1, 6))
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 151/HDBLAST_CHAT14_REGISTERED_DETUNING_ROLLOFF_20260922/rolloff5d_v2.py:74: RuntimeWarning: invalid value encountered in add
+  def rhs(state):
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 151/HDBLAST_CHAT14_REGISTERED_DETUNING_ROLLOFF_20260922/rolloff5d_v2.py:78: RuntimeWarning: invalid value encountered in add
+  dU, dU1, U0, U10 = R.dU_exact(phs, f); e2b = np.expm1(2*b)
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 151/HDBLAST_CHAT14_REGISTERED_DETUNING_ROLLOFF_20260922/rolloff5d_v2.py:61: RuntimeWarning: invalid value encountered in subtract
+  E = ext(F, gR); return D1x(E)/zp
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 151/HDBLAST_CHAT14_REGISTERED_DETUNING_ROLLOFF_20260922/rolloff5d_v1.py:40: RuntimeWarning: invalid value encountered in add
+  dU = sum(D[j]*f**j/math.factorial(j) for j in range(1, 7))
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 151/HDBLAST_CHAT14_REGISTERED_DETUNING_ROLLOFF_20260922/rolloff5d_v1.py:41: RuntimeWarning: invalid value encountered in add
+  dU1 = sum(D[j+1]*f**j/math.factorial(j) for j in range(1, 6))
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 151/HDBLAST_CHAT14_REGISTERED_DETUNING_ROLLOFF_20260922/rolloff5d_v2.py:73: RuntimeWarning: invalid value encountered in add
+  return (ten.s1(p)*pff + ten.s(p)*pbb)*eB/6, -(s2*pff + ten.s1(p)*pbb)*eB/2
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 151/HDBLAST_CHAT14_REGISTERED_DETUNING_ROLLOFF_20260922/rolloff5d_v2.py:75: RuntimeWarning: invalid value encountered in subtract
+  a, b, f, pa, pbv, pf = state
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 151/HDBLAST_CHAT14_REGISTERED_DETUNING_ROLLOFF_20260922/rolloff5d_v2.py:76: RuntimeWarning: invalid value encountered in add
+  gA, gF = neumann(b[-1], f[-1])
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 151/HDBLAST_CHAT14_REGISTERED_DETUNING_ROLLOFF_20260922/rolloff5d_v2.py:77: RuntimeWarning: invalid value encountered in subtract
+  az, bz, fz = dz1(a, gA), dz1(b, gA), dz1(f, gF); azz, bzz, fzz = dz2(a, gA), dz2(b, gA), dz2(f, gF)
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 151/HDBLAST_CHAT14_REGISTERED_DETUNING_ROLLOFF_20260922/rolloff5d_v2.py:77: RuntimeWarning: invalid value encountered in add
+  az, bz, fz = dz1(a, gA), dz1(b, gA), dz1(f, gF); azz, bzz, fzz = dz2(a, gA), dz2(b, gA), dz2(f, gF)
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 151/HDBLAST_CHAT14_REGISTERED_DETUNING_ROLLOFF_20260922/rolloff5d_v2.py:56: RuntimeWarning: invalid value encountered in add
+  def ext(F, gR):
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 151/HDBLAST_CHAT14_REGISTERED_DETUNING_ROLLOFF_20260922/rolloff5d_v2.py:61: RuntimeWarning: invalid value encountered in multiply
+  E = ext(F, gR); return D1x(E)/zp
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 151/HDBLAST_CHAT14_REGISTERED_DETUNING_ROLLOFF_20260922/rolloff5d_v2.py:64: RuntimeWarning: invalid value encountered in add
+  def ko(F, gR):
+/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 151/HDBLAST_CHAT14_REGISTERED_DETUNING_ROLLOFF_20260922/rolloff5d_v2.py:56: RuntimeWarning: invalid value encountered in subtract
+  def ext(F, gR):
+{"tag": "runs/v2_t1e3_plus", "version": 2, "d": 0.0, "dc": 0.0001, "dz_fine": 0.00016941009177958398, "dz_coarse": 0.008, "n_points": 1392, "points_across_wall": 74.88231089137037, "closure": 2, "taper": 0.15, "L": 10.0, "t_det": 0.001, "t_end": 4.707737040462198, "H0_tau_end": NaN, "stop_reason": "non-finite", "phi_b_static": 2.2779572432385354e-05, "rho_b": 78.82817714224423, "phi_b_end": NaN, "HJ_over_H0_end": NaN, "growth_fit": null, "max_bulk_constraint": 0.9985814550845592, "max_shell_constraint": 0.4262768685426741, "runtime_s": 199.7}

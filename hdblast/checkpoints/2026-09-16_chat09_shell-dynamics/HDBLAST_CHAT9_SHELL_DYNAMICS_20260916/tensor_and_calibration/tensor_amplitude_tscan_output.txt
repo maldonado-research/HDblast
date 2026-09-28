@@ -1,0 +1,16 @@
+t=1e-02  H=4.013775e-02  H/k_-=0.07225  I_kept=1.022105927  F^2_shell-1=1.336978e-02  F^2_LMW(H/k_-)-1=1.495445e-02  ratio=0.8940   C=[(F^2-1) 2k^3 I+/H^2 - ln(1/H)]=-0.2677
+t=3e-03  H=2.197512e-02  H/k_-=0.03956  I_kept=1.030828481  F^2_shell-1=4.794955e-03  F^2_LMW(H/k_-)-1=5.385767e-03  ratio=0.8903   C=[(F^2-1) 2k^3 I+/H^2 - ln(1/H)]=-0.2909
+t=1e-03  H=1.268582e-02  H/k_-=0.02283  I_kept=1.033866387  F^2_shell-1=1.842472e-03  F^2_LMW(H/k_-)-1=2.075784e-03  ratio=0.8876   C=[(F^2-1) 2k^3 I+/H^2 - ln(1/H)]=-0.3006
+t=3e-04  H=6.948017e-03  H/k_-=0.01251  I_kept=1.035115113  F^2_shell-1=6.338850e-04  F^2_LMW(H/k_-)-1=7.160478e-04  ratio=0.8853   C=[(F^2-1) 2k^3 I+/H^2 - ln(1/H)]=-0.3052
+t=1e-04  H=4.011392e-03  H/k_-=0.00722  I_kept=1.035526762  F^2_shell-1=2.361071e-04  F^2_LMW(H/k_-)-1=2.672145e-04  ratio=0.8836   C=[(F^2-1) 2k^3 I+/H^2 - ln(1/H)]=-0.3067
+t=3e-05  H=2.197120e-03  H/k_-=0.00395  I_kept=1.035689344  F^2_shell-1=7.909075e-05  F^2_LMW(H/k_-)-1=8.956554e-05  ratio=0.8830   C=[(F^2-1) 2k^3 I+/H^2 - ln(1/H)]=-0.3010
+Traceback (most recent call last):
+  File "/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 146/HDBLAST_CHAT9_SHELL_DYNAMICS_20260916/tensor_and_calibration/tensor_amplitude_tscan.py", line 13, in <module>
+    s = bg.solve_shell(t, c, (math.log10(0.2207*t**1.8), 8.2282 + 0.9*math.log(1e-3/t)), dv=4e-4)
+  File "/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 146/HDBLAST_CHAT9_SHELL_DYNAMICS_20260916/tensor_and_calibration/../background/hdblast_background.py", line 62, in solve_shell
+    dx = np.linalg.solve(J, -F)
+  File "/Users/ricardomaldonado/Library/Python/3.9/lib/python/site-packages/numpy/linalg/_linalg.py", line 410, in solve
+    r = gufunc(a, b, signature=signature)
+  File "/Users/ricardomaldonado/Library/Python/3.9/lib/python/site-packages/numpy/linalg/_linalg.py", line 104, in _raise_linalgerror_singular
+    raise LinAlgError("Singular matrix")
+numpy.linalg.LinAlgError: Singular matrix

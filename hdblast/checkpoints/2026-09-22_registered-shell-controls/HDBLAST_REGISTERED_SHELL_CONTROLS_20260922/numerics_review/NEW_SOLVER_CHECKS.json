@@ -1,0 +1,253 @@
+{
+  "status": "PASS",
+  "scope": "No evolution or spectrum recomputed. New polynomial, map, real Jacobian and saved-mode constraint diagnostics.",
+  "solver_sha256": "4147239c40b63c2de89f5091e732e19f09c4644a0c08ae5735202a548cdcd6b6",
+  "checks": [
+    {
+      "name": "Hermite reproduces degree 0",
+      "pass_check": true,
+      "error": 1.1368683772161603e-13
+    },
+    {
+      "name": "Hermite reproduces degree 1",
+      "pass_check": true,
+      "error": 1.4210854715202004e-14
+    },
+    {
+      "name": "Hermite reproduces degree 2",
+      "pass_check": true,
+      "error": 1.1368683772161603e-13
+    },
+    {
+      "name": "Hermite reproduces degree 3",
+      "pass_check": true,
+      "error": 4.547473508864641e-13
+    },
+    {
+      "name": "Hermite reproduces degree 4",
+      "pass_check": true,
+      "error": 9.094947017729282e-13
+    },
+    {
+      "name": "Hermite reproduces degree 5",
+      "pass_check": true,
+      "error": 3.637978807091713e-12
+    },
+    {
+      "name": "analytic grid orientation",
+      "pass_check": true
+    },
+    {
+      "name": "analytic grid second derivative sign",
+      "pass_check": true
+    },
+    {
+      "name": "mapped derivative of z^0",
+      "pass_check": true,
+      "relative_error_D1": 1.1937117960769683e-12,
+      "relative_error_D2": 2.9802322387695312e-08
+    },
+    {
+      "name": "mapped derivative of z^1",
+      "pass_check": true,
+      "relative_error_D1": 4.3458014964414815e-12,
+      "relative_error_D2": 2.2995250070752631e-10
+    },
+    {
+      "name": "mapped derivative of z^2",
+      "pass_check": true,
+      "relative_error_D1": 1.2687125092035207e-10,
+      "relative_error_D2": 2.7032176497243654e-10
+    },
+    {
+      "name": "spectrum_reg_h4 mode has negligible imaginary eigenvalue",
+      "pass_check": true
+    },
+    {
+      "name": "spectrum_reg_h4 real directional Jacobian",
+      "pass_check": true,
+      "relative_error": 1.0089455842547112e-14
+    },
+    {
+      "name": "spectrum_reg_h2 mode has negligible imaginary eigenvalue",
+      "pass_check": true
+    },
+    {
+      "name": "spectrum_reg_h2 real directional Jacobian",
+      "pass_check": true,
+      "relative_error": 7.896222727330117e-15
+    },
+    {
+      "name": "spectrum_reg_h1 mode has negligible imaginary eigenvalue",
+      "pass_check": true
+    },
+    {
+      "name": "spectrum_reg_h1 real directional Jacobian",
+      "pass_check": true,
+      "relative_error": 7.667390609733867e-16
+    },
+    {
+      "name": "spectrum_reg_h05 mode has negligible imaginary eigenvalue",
+      "pass_check": true
+    },
+    {
+      "name": "spectrum_reg_h05 real directional Jacobian",
+      "pass_check": true,
+      "relative_error": 2.21833242265758e-15
+    }
+  ],
+  "mode_diagnostics": [
+    {
+      "name": "spectrum_reg_h4",
+      "hmin": 0.0004,
+      "eigenvalue": 1.6587017985533357,
+      "mode_max_absolute_by_field": [
+        0.29106197153320923,
+        0.3850527484695631,
+        1.0291740345566653,
+        0.4827850156726141,
+        0.6386876864243849,
+        1.707092822130042
+      ],
+      "per_unit_shell_scalar_amplitude": {
+        "weighted_characteristic_max": 0.053580671507766006,
+        "weighted_peak_z": -0.0,
+        "weighted_peak_index": 600,
+        "H_at_weighted_peak": 0.048247886312585045,
+        "M_at_weighted_peak": -0.0026663925659891606,
+        "maximum_unweighted_H_plus_M_position": -0.7463374318887461,
+        "independent_shell_H": -2.197782907657711,
+        "independent_shell_M": -0.002667277339355678,
+        "independent_shell_field_slope_defects": [
+          0.0005362677971874064,
+          0.00053591388716967,
+          -0.00021149402752485003
+        ]
+      },
+      "velocity_eigenvector_defect_max": 2.9068012441513247e-09,
+      "projected_velocities_diagnostic_only": {
+        "shell_linear_M": -0.0026687020344282495,
+        "shell_linear_M_before": -0.0026663925659891606
+      },
+      "second_order_even_residual_max": {
+        "H": 723576.2925355679,
+        "M": 156.40799113735122
+      },
+      "leading_second_order_H_corner_from_nonlinear_boundary": -755212.1671095145
+    },
+    {
+      "name": "spectrum_reg_h2",
+      "hmin": 0.0002,
+      "eigenvalue": 1.657211039351267,
+      "mode_max_absolute_by_field": [
+        0.1537025728027613,
+        0.1565824057603894,
+        1.0051079346831822,
+        0.254717600425428,
+        0.25949009139430557,
+        1.6656759689888372
+      ],
+      "per_unit_shell_scalar_amplitude": {
+        "weighted_characteristic_max": 0.003139549596497705,
+        "weighted_peak_z": -0.0,
+        "weighted_peak_index": 1199,
+        "H_at_weighted_peak": 0.0028654105259151522,
+        "M_at_weighted_peak": -0.00013706952317192017,
+        "maximum_unweighted_H_plus_M_position": -0.7463374318887461,
+        "independent_shell_H": -0.12459307748122228,
+        "independent_shell_M": -0.0001370807803198204,
+        "independent_shell_field_slope_defects": [
+          3.0525740204012664e-05,
+          3.052123616242852e-05,
+          -2.0649217960411193e-05
+        ]
+      },
+      "velocity_eigenvector_defect_max": 4.858814017794089e-09,
+      "projected_velocities_diagnostic_only": {
+        "shell_linear_M": -0.0001517650330612393,
+        "shell_linear_M_before": -0.00013706952317192017
+      },
+      "second_order_even_residual_max": {
+        "H": 525574.4764105007,
+        "M": 65.59058072337035
+      },
+      "leading_second_order_H_corner_from_nonlinear_boundary": -554944.9292853845
+    },
+    {
+      "name": "spectrum_reg_h1",
+      "hmin": 0.0001,
+      "eigenvalue": 1.6571943719996842,
+      "mode_max_absolute_by_field": [
+        0.1468972132138563,
+        0.14527726374563718,
+        1.00440761964115,
+        0.2434372350004407,
+        0.2407526638589033,
+        1.664498661297995
+      ],
+      "per_unit_shell_scalar_amplitude": {
+        "weighted_characteristic_max": 0.0008722102700988932,
+        "weighted_peak_z": -0.0,
+        "weighted_peak_index": 2398,
+        "H_at_weighted_peak": 0.00017213064946264566,
+        "M_at_weighted_peak": -0.00035003978839768276,
+        "maximum_unweighted_H_plus_M_position": -0.7447463486385796,
+        "independent_shell_H": -0.006084183638677132,
+        "independent_shell_M": -0.000350040015803188,
+        "independent_shell_field_slope_defects": [
+          1.939065665368389e-06,
+          1.9389725203211583e-06,
+          -9.135238983049021e-07
+        ]
+      },
+      "velocity_eigenvector_defect_max": 3.071792109565763e-08,
+      "projected_velocities_diagnostic_only": {
+        "shell_linear_M": -9.640267017636432e-06,
+        "shell_linear_M_before": -0.00035003978839768276
+      },
+      "second_order_even_residual_max": {
+        "H": 994738.5031271332,
+        "M": 66.25625915205717
+      },
+      "leading_second_order_H_corner_from_nonlinear_boundary": -1023956.6720260609
+    },
+    {
+      "name": "spectrum_reg_h05",
+      "hmin": 5e-05,
+      "eigenvalue": 1.6571936637667442,
+      "mode_max_absolute_by_field": [
+        0.1464788347724736,
+        0.14458227891372064,
+        1.00436924026594,
+        0.24274379686087896,
+        0.23960083650869227,
+        1.6644343494878109
+      ],
+      "per_unit_shell_scalar_amplitude": {
+        "weighted_characteristic_max": 0.0032859399655947967,
+        "weighted_peak_z": -0.0,
+        "weighted_peak_index": 4796,
+        "H_at_weighted_peak": 1.0790850114053144e-05,
+        "M_at_weighted_peak": 0.0016375745136262153,
+        "maximum_unweighted_H_plus_M_position": -0.0,
+        "independent_shell_H": -0.0003245150537622976,
+        "independent_shell_M": 0.0016375744794174807,
+        "independent_shell_field_slope_defects": [
+          1.2225597956216916e-07,
+          1.2224560919094074e-07,
+          -4.304274980881928e-08
+        ]
+      },
+      "velocity_eigenvector_defect_max": 1.5371401795860606e-07,
+      "projected_velocities_diagnostic_only": {
+        "shell_linear_M": -6.078083436370245e-07,
+        "shell_linear_M_before": 0.0016375745136262153
+      },
+      "second_order_even_residual_max": {
+        "H": 2007841.2444576377,
+        "M": 66.29668432886048
+      },
+      "leading_second_order_H_corner_from_nonlinear_boundary": -2037049.88549027
+    }
+  ]
+}

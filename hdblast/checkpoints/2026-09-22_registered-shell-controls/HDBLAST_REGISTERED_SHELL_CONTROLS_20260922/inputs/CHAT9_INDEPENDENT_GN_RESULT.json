@@ -1,0 +1,40 @@
+{
+ "task": "independent Gaussian-normal-gauge scalar-sector spectrum of the registered Z2 dS shell (t=1e-3, c=c_star)",
+ "written_before_reading_orchestrator": true,
+ "lowest_mu2": -7.717871625176294,
+ "lowest_mu2_uncertainty_estimate": 5e-09,
+ "convergence": {
+  "n1000_y00.002": -7.71787205723596,
+  "n2000_y00.002": -7.7178716514993955,
+  "n4000_y00.002": -7.7178716251756665,
+  "n4000_y00.0005": -7.717871625176294,
+  "n4000_y00.008": -7.717871625464665
+ },
+ "brane_hubble2_h": 0.00016093000853360052,
+ "m2_physical": -0.0012420371465008543,
+ "growth_exponent_lambda_in_H_units": 1.6571936312453648,
+ "number_of_bound_states_below_continuum_mu2_lt_9_over_4": 1,
+ "scan_range": [
+  -400,
+  2.2499
+ ],
+ "continuum_threshold_mu2": 2.25,
+ "unstable": true,
+ "norm_sign": "positive (tachyon with healthy kinetic term, not a ghost)",
+ "N_scalar_route": 5330724927252029.0,
+ "N_metric_route": 5330724933084541.0,
+ "note": "N = d/dmu2 of the reduced on-shell quadratic action, normalised chi ~ y^{s+} at the cone; two independent reductions agree to 1e-9 relative.",
+ "appended_after_comparison": {
+  "orchestrator_mu2": -7.7178716187365355,
+  "difference": -6.439758948317831e-09,
+  "t_to_0_intercept_mine": -7.719796,
+  "HJ_closed_form": -7.719795918,
+  "norm_bulk_integral": 5330731512975320.0,
+  "norm_bulk_over_action": 1.0000012559947453,
+  "identity": "N_action = 12*lam*N_FK = 12*Q_FK = 2 int rho^2 X^2 + 12 int rho^2 Psi^2 > 0 (proved in GN_DERIVATION.md sec.7; numerically 1.3e-6)",
+  "Q_over_lamN_FK": 1.000001229150081,
+  "Z_canonical_5D": 0.8963831398632679,
+  "Z_EFT_cI_times_1_plus_3c_over_4": 0.8963924025420198,
+  "spurious_root_warning": "uniform grid with 4*H*dy > 2.8 at the cone gave a fake root near mu2=2.177; absent on the stable (geometric) grid"
+ }
+}

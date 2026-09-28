@@ -1,0 +1,44 @@
+{
+ "exact_ok": true,
+ "controls": {
+  "wrong_degree_13_fails": true,
+  "wrong_degree_15_fails": true,
+  "wrong_index_3half_fails": true,
+  "wrong_dimension_coef4_fails": true,
+  "wrong_degree_13_amplification_misses_by_over_90pct": true,
+  "c_perturbed_1pct_detected_at_three_smallest_delta": true,
+  "wrong_sign_scalar_junction_detected_reldev_over_100pct": true,
+  "containment_detects_shifted_point": true
+ },
+ "expectations": {
+  "E1_exact_and_controls": true,
+  "E2_containment_all": true,
+  "E2_n_containment_checks": 30,
+  "E3_metric_only_H2_reproduced_1e-12": true,
+  "E4_slopes_in_0.8_1.2": {
+   "reldev_ratio_vs_G": true,
+   "reldev_eta_b_LO_vs_checkpoint": true,
+   "reldev_eta_h_LO_vs_checkpoint": true,
+   "reldev_H2_LO_vs_checkpoint_H2": true
+  }
+ },
+ "slopes": {
+  "reldev_ratio_vs_G": 1.0007819823392083,
+  "reldev_eta_b_LO_vs_checkpoint": 1.0003935883527235,
+  "reldev_eta_h_LO_vs_checkpoint": 0.8528203199742882,
+  "reldev_H2_LO_vs_checkpoint_H2": 1.0015237154130483
+ },
+ "planning": {
+  "binary64_1_plus_eta_h_equals_1": true,
+  "interval_15_digits_phi_h_contains_1": true,
+  "digits_for_16_significant_digits_of_eta_h_in_direct_phi_form": 39,
+  "amplification_G_at_registered_u_b": 6.288479277145973e+18,
+  "log10_amplification": 18.798545634094904,
+  "unwanted_mode_suppression_log10_exp32_times_ub_minus_u0": 43.277627171552865,
+  "u0_germ_interface": 0.25,
+  "registered_u_b": 3.3640755995428657,
+  "a_hat_eta_h_times_G_over_delta_registered": -0.08405762238217447,
+  "minus_9c_over_64": -0.08403678773831436
+ },
+ "runtime_s": 0.54
+}

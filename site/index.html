@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HDBLAST — Ricardo Maldonado</title>
+<meta name="description" content="HDBLAST: a speculative, testable research hypothesis asking whether a higher-dimensional gravitational event sparked the hot Big Bang. Equations, code, results, negative results and corrections.">
+<meta property="og:title" content="HDBLAST — could a higher-dimensional blast have sparked our Big Bang?">
+<meta property="og:description" content="An independent research program with a registered five-dimensional model, certified and numerical results, published negative results and corrections.">
+<meta property="og:image" content="https://maldonado-research.github.io/HDblast/figures/two_fates_registered_detuning.png">
+<meta property="og:url" content="https://maldonado-research.github.io/HDblast/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{
+  --bg:#fbfaf7; --surface:#ffffff; --ink:#1c1d21; --muted:#5b5f6a; --line:#e3e1dc;
+  --accent:#2a6fdb; --accent-ink:#ffffff; --warn:#a14a15; --ok:#1f7a4d; --chip:#eef2fb;
+  --maxw:980px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111317; --surface:#181b21; --ink:#e9eaee; --muted:#a4a9b5; --line:#2a2e37;
+    --accent:#7aa7ff; --accent-ink:#0d1320; --warn:#f0a068; --ok:#6fd3a0; --chip:#1f2633;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111317; --surface:#181b21; --ink:#e9eaee; --muted:#a4a9b5; --line:#2a2e37;
+  --accent:#7aa7ff; --accent-ink:#0d1320; --warn:#f0a068; --ok:#6fd3a0; --chip:#1f2633;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+header{border-bottom:1px solid var(--line);background:var(--surface)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;max-width:var(--maxw);margin:0 auto}
+.brand{font-weight:700;letter-spacing:.04em}
+nav a{margin-left:14px;text-decoration:none;color:var(--muted);font-size:15px}
+nav a:hover{color:var(--ink)}
+.hero{padding:56px 0 28px}
+.eyebrow{color:var(--muted);font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 14px}
+.lede{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:760px;margin:0 0 22px}
+.notice{border-left:4px solid var(--warn);background:var(--surface);padding:14px 16px;border-radius:6px;margin:0 0 26px;max-width:760px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;border:1px solid var(--line);color:var(--ink);background:var(--surface)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+section{padding:34px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(22px,3vw,28px);margin:0 0 14px}
+h3{font-size:18px;margin:0 0 6px}
+figure{margin:18px 0 6px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px}
+figure img{width:100%;height:auto;display:block;background:#fff;border-radius:6px}
+figcaption{font-size:14px;color:var(--muted);padding:8px 4px 0}
+.table{width:100%;overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600}
+.tag{display:inline-block;font-size:12.5px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--chip);white-space:nowrap}
+.tag.neg{color:var(--warn)} .tag.ok{color:var(--ok)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+ol li{margin:4px 0}
+code{font-size:.92em;background:var(--chip);padding:1px 5px;border-radius:4px}
+footer{padding:30px 0 50px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+.theme{background:none;border:1px solid var(--line);color:var(--muted);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:13px}
+@media (max-width:640px){nav a{margin-left:10px;font-size:14px} .hide-sm{display:none} th,td{padding:8px 6px;font-size:14px} .tag{white-space:normal;border-radius:8px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="top">
+    <div class="brand">HDBLAST</div>
+    <nav>
+      <a href="#results">Results</a>
+      <a href="#next" class="hide-sm">Next</a>
+      <a href="https://github.com/maldonado-research/HDblast/tree/main/hdblast">Research</a>
+      <a href="#cite">Cite</a>
+      <button class="theme" id="theme" aria-label="Toggle color theme">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <p class="eyebrow">Ricardo Maldonado · independent research program · 2025–2026</p>
+    <h1>Could a higher-dimensional “blast” have sparked our Big Bang?</h1>
+    <p class="lede">HDBLAST asks whether a violent gravitational event in a fifth dimension could have transferred energy into our four-dimensional universe and started the hot Big Bang. The equations, code, results, failures and corrections are all public.</p>
+    <div class="notice"><strong>Honest status:</strong> this is a speculative, testable hypothesis, not a discovery. It has not been peer reviewed, it has not shown that extra dimensions exist, and no observation supports it yet. Every result below is labelled with how well it is established.</div>
+    <div class="btns">
+      <a class="btn primary" href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/HDBLAST_IN_PLAIN_LANGUAGE.md">Read the plain-language guide</a>
+      <a class="btn" href="https://github.com/maldonado-research/HDblast/tree/main/hdblast/checkpoints">Research checkpoints &amp; code</a>
+      <a class="btn" href="https://doi.org/10.5281/zenodo.17088132">Zenodo records</a>
+    </div>
+  </div>
+
+  <section id="idea">
+    <h2>The idea</h2>
+    <p>Our universe may behave like a thin <strong>shell (a “brane”)</strong> inside a larger five-dimensional space filled with gravity and a scalar field. If the shell sits in an unstable balance, like a ball on a hilltop, it can roll off and release energy. HDBLAST asks whether such an event could have produced the hot, dense state where the standard Big Bang story begins. It would <em>extend</em> that well-tested story, not replace it.</p>
+    <figure>
+      <img src="figures/shell_hilltop_and_spectrum.png" alt="Left: the registered shell sits at the top of a potential hill. Right: the five-dimensional instability rate matches a closed-form four-dimensional formula." loading="lazy">
+      <figcaption>The registered shell sits on a hilltop (left). Its five-dimensional instability rate agrees with a closed-form four-dimensional formula (right). Model calculations, not observations.</figcaption>
+    </figure>
+  </section>
+
+  <section id="results">
+    <h2>What has been found (Sept 2026)</h2>
+    <div class="table">
+    <table>
+      <thead><tr><th>Result</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>A specific 5D Einstein–scalar model is fixed in advance: W(φ)=1−φ+φ³/3, shell tension σ=2W+δ(1+cφ), δ=0.001</td><td><span class="tag">Definition</span></td></tr>
+        <tr><td>Within the model, the registered shell solution exists (computer-assisted proof, locally unique; a statement about the equations, not about nature)</td><td><span class="tag ok">Certified (conditional)</span></td></tr>
+        <tr><td>An unstable scalar mode, m² ≈ −7.7179 H², growth e<sup>1.657 Hτ</sup> (numerically the only one). No unstable mode in the tensor, vector or special-harmonic sectors (mode stability, not full linear stability).</td><td><span class="tag ok">Certified (mode) / Numerical (uniqueness) / Exact (other sectors)</span></td></tr>
+        <tr><td>A closed-form 4D theory matches the 5D spectrum to ~10⁻⁶ and predicted the turnaround before the 5D simulation confirmed it</td><td><span class="tag ok">Exact + Numerical</span></td></tr>
+        <tr><td>Full nonlinear 5D evolution: two fates, relaxation <em>toward</em> an empty de Sitter brane (endpoint not yet reached in the simulations) or reversal and collapse</td><td><span class="tag">Numerical</span></td></tr>
+        <tr><td>No hot, radiation-filled universe from the shell's own homogeneous, classical motion (no added matter)</td><td><span class="tag neg">Negative</span></td></tr>
+        <tr><td>Corrected late-time static solution (numerical); a proposed matter extension with an exact energy-exchange law</td><td><span class="tag">Numerical / Exact (proposal)</span></td></tr>
+        <tr><td>July 2026 gravitational-radiation claim withdrawn after audit</td><td><span class="tag neg">Withdrawn</span></td></tr>
+        <tr><td>Pulsar-timing “knee” signature: screened on public data, not derived from the 5D model; strict registered test failed</td><td><span class="tag neg">Screening / Negative</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <figure>
+      <img src="figures/two_fates_registered_detuning.png" alt="Two panels: the shell position and the brane Hubble rate versus time; one curve relaxes toward a de Sitter brane and the other collapses." loading="lazy">
+      <figcaption>Full five-dimensional simulation at the registered parameters: the shell heads toward an empty de Sitter brane (blue) or reverses and collapses (orange). Neither contains a hot radiation era.</figcaption>
+    </figure>
+    <p><strong>Bottom line:</strong> the mathematics is unusually well controlled for an independent project. The simplest version of the blast does not, by itself, make a hot Big Bang. The open question is whether adding matter or other physical ingredients can.</p>
+  </section>
+
+  <section id="next">
+    <h2>What comes next</h2>
+    <div class="grid">
+      <div class="card"><h3>Stability</h3><p>Is the corrected late-time solution stable, and does the blast actually end there?</p></div>
+      <div class="card"><h3>Particle production</h3><p>Can the blast's energy become particles and a lasting radiation era, with backreaction included?</p></div>
+      <div class="card"><h3>Reliable simulations</h3><p>Control the numerical errors in long five-dimensional evolutions.</p></div>
+      <div class="card"><h3>New ingredients</h3><p>Screen matter couplings, bulk “dark radiation”, bubble-universe constructions and a contracting (collapse) phase.</p></div>
+    </div>
+    <p>For the hypothesis to become credible it needs a working mechanism, a unique quantitative prediction, independent reproduction, peer review and observational tests. It can fail at any step, and failures will be published.</p>
+  </section>
+
+  <section id="explore">
+    <h2>Explore the research</h2>
+    <ol>
+      <li><a href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/HDBLAST_IN_PLAIN_LANGUAGE.md">Plain-language guide</a></li>
+      <li><a href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/PROGRAM_MAP.md">Program map</a>: model, chronology, claims ledger and falsification tests</li>
+      <li><a href="https://github.com/maldonado-research/HDblast/tree/main/hdblast/checkpoints">Research checkpoints</a>: reports, code, data and internal AI referee reviews (not external peer review)</li>
+      <li><a href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/ZENODO_RECORDS.md">All Zenodo records</a></li>
+      <li><a href="https://github.com/maldonado-research/HDblast/tree/main/research">Newest research round</a> (in progress)</li>
+    </ol>
+  </section>
+
+  <section id="cite">
+    <h2>Cite</h2>
+    <p>Maldonado, R. <em>HDBLAST: higher-dimensional blast research program.</em> Zenodo, <a href="https://doi.org/10.5281/zenodo.17088132">doi:10.5281/zenodo.17088132</a> (all versions). Newest record located: <a href="https://zenodo.org/records/22922928">22922928</a> (23 Sept 2026). Each Zenodo record states its own licence.</p>
+    <p>Specialists are invited to check the work and report errors through <a href="https://github.com/maldonado-research/HDblast/issues">GitHub issues</a>.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    © 2025–2026 Ricardo Maldonado · Independent researcher · Parts of the 2025–2026 calculations and documents were prepared with AI assistants (Claude by Anthropic, and OpenAI ChatGPT/Codex) under the author's direction, with verification steps recorded in each checkpoint. · Text, figures and data: CC BY 4.0 · Code: MIT.
+  </div>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement, key='hdblast-theme';
+  try{var saved=localStorage.getItem(key); if(saved){root.setAttribute('data-theme',saved);}}catch(e){}
+  document.getElementById('theme').addEventListener('click',function(){
+    var dark = root.getAttribute('data-theme') ? root.getAttribute('data-theme')==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem(key,next);}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

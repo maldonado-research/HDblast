@@ -1,0 +1,26 @@
+grid: 1458 points, dz from 9.46e-05 (shell) to 8.00e-03 (far), wall width in z = 0.0127 -> 134 points across it
+static shell: phi_h+1=8.785515e-07 y_b=8.22820155 rho_b=78.828180 phi_b=+2.2628e-05 junction residuals=(-2.8e-15,5.2e-14)
+junction check on grid: Hc_b - sigma rho_b/6 = -3.15e-10 ; phiz_b + sigma' rho_b/2 = 7.63e-09
+seed: dc=-1.0e-04  max|a|=1.34e-05 max|f|=9.02e-05  f_b=-8.981e-05
+t=  0.00 H0tau= 0.0000 phi_b=-6.718324e-05 H_J/H0=+0.999987 b_b=+1.341e-05 phi_min=-1.0000 M_bulk=0.0e+00@z=-9.922 M_shell=0.0e+00  [0s]
+t=  0.50 H0tau= 0.4990 phi_b=-1.311566e-04 H_J/H0=+1.000013 b_b=+2.221e-05 phi_min=-1.0000 M_bulk=1.3e-05@z=-0.530 M_shell=2.9e-08  [67s]
+t=  1.00 H0tau= 0.9980 phi_b=-3.239572e-04 H_J/H0=+1.000034 b_b=+4.928e-05 phi_min=-1.0000 M_bulk=3.2e-05@z=-1.026 M_shell=2.5e-09  [124s]
+t=  1.50 H0tau= 1.4970 phi_b=-7.694793e-04 H_J/H0=+1.000078 b_b=+1.102e-04 phi_min=-1.0000 M_bulk=4.2e-05@z=-1.514 M_shell=1.2e-08  [174s]
+t=  2.00 H0tau= 1.9961 phi_b=-1.789401e-03 H_J/H0=+1.000177 b_b=+2.463e-04 phi_min=-1.0000 M_bulk=4.4e-05@z=-1.962 M_shell=1.9e-08  [225s]
+t=  2.49 H0tau= 2.4953 phi_b=-4.125909e-03 H_J/H0=+1.000402 b_b=+5.519e-04 phi_min=-1.0000 M_bulk=4.7e-05@z=-2.458 M_shell=8.6e-09  [274s]
+t=  2.99 H0tau= 2.9947 phi_b=-9.492075e-03 H_J/H0=+1.000909 b_b=+1.239e-03 phi_min=-1.0000 M_bulk=5.5e-05@z=-0.930 M_shell=5.6e-09  [326s]
+t=  3.49 H0tau= 3.4947 phi_b=-2.188794e-02 H_J/H0=+1.002019 b_b=+2.775e-03 phi_min=-1.0000 M_bulk=1.3e-04@z=-0.922 M_shell=1.1e-08  [373s]
+t=  3.99 H0tau= 3.9958 phi_b=-5.090240e-02 H_J/H0=+1.004286 b_b=+6.161e-03 phi_min=-1.0000 M_bulk=3.0e-04@z=-0.930 M_shell=2.8e-08  [417s]
+t=  4.49 H0tau= 4.4994 phi_b=-1.208706e-01 H_J/H0=+1.007816 b_b=+1.325e-02 phi_min=-1.0000 M_bulk=6.8e-04@z=-0.930 M_shell=1.1e-07  [462s]
+t=  4.99 H0tau= 5.0080 phi_b=-3.010796e-01 H_J/H0=+1.003910 b_b=+2.534e-02 phi_min=-1.0000 M_bulk=1.6e-03@z=-0.930 M_shell=4.2e-07  [504s]
+t=  5.49 H0tau= 5.5207 phi_b=-8.281425e-01 H_J/H0=+0.877832 b_b=+1.853e-02 phi_min=-1.0000 M_bulk=3.6e-03@z=-0.930 M_shell=2.2e-06  [549s]
+t=  5.99 H0tau= 5.9821 phi_b=-2.420083e+00 H_J/H0=-0.647022 b_b=-2.994e-01 phi_min=-2.4201 M_bulk=8.4e-03@z=-0.906 M_shell=1.9e-06  [586s]
+t=  6.49 H0tau= 6.2146 phi_b=-4.556536e+00 H_J/H0=-5.686527 b_b=-1.409e+00 phi_min=-4.5565 M_bulk=4.0e-02@z=-0.698 M_shell=8.6e-07  [623s]
+t=  6.99 H0tau= 6.2871 phi_b=-5.711558e+00 H_J/H0=-11.717951 b_b=-2.513e+00 phi_min=-5.7116 M_bulk=9.0e-02@z=-1.178 M_shell=4.7e-07  [658s]
+t=  7.48 H0tau= 6.3128 phi_b=-6.469120e+00 H_J/H0=-37.516766 b_b=-3.512e+00 phi_min=-6.4691 M_bulk=1.2e-01@z=-1.666 M_shell=3.5e-06  [692s]
+Traceback (most recent call last):
+  File "/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 151/HDBLAST_CHAT14_REGISTERED_DETUNING_ROLLOFF_20260922/rolloff5d_v2.py", line 140, in <module>
+    run(d=A_.d, dc=A_.dc, dz_fine=A_.dzf, dz_coarse=A_.dzc, z_fine=A_.zfine, L=A_.L, t_final=A_.tf, t_det=A_.tdet, tag=A_.tag, ko_eps=A_.ko, closure=A_.closure, taper=A_.taper,
+  File "/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 151/HDBLAST_CHAT14_REGISTERED_DETUNING_ROLLOFF_20260922/rolloff5d_v2.py", line 120, in run
+    tau += dt*0.5*math.exp(state[1][-1])
+OverflowError: math range error

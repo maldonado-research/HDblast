@@ -1,0 +1,544 @@
+{
+  "status": "PASS_COMPLETED_RESULT_ACCOUNTING",
+  "checks": [
+    {
+      "name": "balanced_epsp01_h2 completed requested bounded run",
+      "passed": true
+    },
+    {
+      "name": "balanced_epsp01_h2 executed code version retained",
+      "passed": true
+    },
+    {
+      "name": "balanced_epsp01_h2 remains before taper can reach shell",
+      "passed": true
+    },
+    {
+      "name": "balanced_epsp01_h1 completed requested bounded run",
+      "passed": true
+    },
+    {
+      "name": "balanced_epsp01_h1 executed code version retained",
+      "passed": true
+    },
+    {
+      "name": "balanced_epsp01_h1 remains before taper can reach shell",
+      "passed": true
+    },
+    {
+      "name": "balanced_epsp01_wide_h2 completed requested bounded run",
+      "passed": true
+    },
+    {
+      "name": "balanced_epsp01_wide_h2 executed code version retained",
+      "passed": true
+    },
+    {
+      "name": "balanced_epsp01_wide_h2 remains before taper can reach shell",
+      "passed": true
+    },
+    {
+      "name": "balanced_epsp01_wide_h1 completed requested bounded run",
+      "passed": true
+    },
+    {
+      "name": "balanced_epsp01_wide_h1 executed code version retained",
+      "passed": true
+    },
+    {
+      "name": "balanced_epsp01_wide_h1 remains before taper can reach shell",
+      "passed": true
+    },
+    {
+      "name": "balanced_epsp001_wide_h2 completed requested bounded run",
+      "passed": true
+    },
+    {
+      "name": "balanced_epsp001_wide_h2 executed code version retained",
+      "passed": true
+    },
+    {
+      "name": "balanced_epsp001_wide_h2 remains before taper can reach shell",
+      "passed": true
+    },
+    {
+      "name": "balanced_epsm001_wide_h2 completed requested bounded run",
+      "passed": true
+    },
+    {
+      "name": "balanced_epsm001_wide_h2 executed code version retained",
+      "passed": true
+    },
+    {
+      "name": "balanced_epsm001_wide_h2 remains before taper can reach shell",
+      "passed": true
+    },
+    {
+      "name": "balanced_epsp01_wide_h05 completed requested bounded run",
+      "passed": true
+    },
+    {
+      "name": "balanced_epsp01_wide_h05 executed code version retained",
+      "passed": true
+    },
+    {
+      "name": "balanced_epsp01_wide_h05 remains before taper can reach shell",
+      "passed": true
+    },
+    {
+      "name": "registered static branch satisfies both junctions numerically",
+      "passed": true
+    },
+    {
+      "name": "constant-phi benchmark violates scalar junction",
+      "passed": true
+    },
+    {
+      "name": "new branch retains a nonconstant scalar",
+      "passed": true
+    },
+    {
+      "name": "full H2 identity includes scalar boundary gradient",
+      "passed": true
+    },
+    {
+      "name": "small benchmark correction is not percent-scale",
+      "passed": true
+    }
+  ],
+  "static_registered_candidate": {
+    "delta": 0.001,
+    "rtol": 8e-14,
+    "y0": 5e-05,
+    "root_success": true,
+    "eta_h": -1.336692365158688e-23,
+    "y_b": 30.27668039588533,
+    "rho_b": 129.92476284967807,
+    "eta_b": -8.405268308664358e-05,
+    "phi_b": 0.9999159473169134,
+    "phi_y_b": -0.0001306991661942445,
+    "junction_residual": [
+      1.3877787807814457e-17,
+      9.025983085941824e-18
+    ],
+    "H2": 5.9240147943292764e-05,
+    "junction_H2": 5.924014794328816e-05,
+    "H2_identity_residual": 4.6010829694853594e-18,
+    "metric_only_H2": 5.9241080267048024e-05,
+    "H2_second_order_expansion": 5.9240150267814056e-05,
+    "H2_expansion_remainder": -2.32452129241131e-12,
+    "eta_first_order": -8.403678773831436e-05,
+    "eta_finite_curvature_linear": -8.404853570606331e-05,
+    "constant_phi_scalar_junction_residual": 0.0002987974675140066,
+    "min_phi": 0.9999159473169134,
+    "max_abs_phi_y": 0.0001306991661942445,
+    "scope": "Floating regular-cone static branch candidate; no dynamical attraction, stability or interval existence claim"
+  },
+  "expansion_rate_correction_ppm": -7.868926589993386,
+  "evolutions": [
+    {
+      "name": "balanced_epsp01_h2",
+      "epsilon": 0.01,
+      "hmin": 0.0002,
+      "stretch": 0.05,
+      "L": 6.0,
+      "nodes": 1200,
+      "dt": 8e-05,
+      "t_end": 2.5,
+      "initial": {
+        "time": 0.0,
+        "H0tau": 0.0,
+        "phi_b": -0.0005111149214751531,
+        "scalar_deviation": -0.0005339050304136173,
+        "H_over_H0": 1.0000740162853212,
+        "momentum_max": 0.0,
+        "hamiltonian_max": 1.8004290026335726e-07,
+        "boundary_velocity_slope_error": 0.0,
+        "weighted_characteristic_max": 0.0015540555653172305,
+        "core_H": 1.8004290026335726e-07,
+        "core_M": 0.0,
+        "core_raw_H": 0.0018401573854242756,
+        "core_raw_M": 0.0,
+        "max_scalar_displacement": 0.0007708832354622608,
+        "peak_scalar_gradient_z": -0.0,
+        "peak_scalar_gradient": 78.7987703171188,
+        "shell_phi_velocity_over_H0": 0.0
+      },
+      "final": {
+        "time": 2.5,
+        "H0tau": 2.5902137379664096,
+        "phi_b": -0.039471267426982745,
+        "scalar_deviation": -0.03949405753592121,
+        "H_over_H0": 1.0034466583796477,
+        "momentum_max": 0.5651870725428124,
+        "hamiltonian_max": 1.1377636548887842,
+        "boundary_velocity_slope_error": -9.03451005029865e-06,
+        "weighted_characteristic_max": 1.9741958938910953,
+        "core_H": 0.0006076595940701574,
+        "core_M": 0.00012136464607247343,
+        "core_raw_H": 0.08733327917172631,
+        "core_raw_M": 0.026368638292852097,
+        "max_scalar_displacement": 0.07332646812511083,
+        "peak_scalar_gradient_z": -0.0,
+        "peak_scalar_gradient": 89.32118248469932,
+        "shell_phi_velocity_over_H0": -0.06665326891880655
+      },
+      "maximum_over_recorded_times": {
+        "hamiltonian_max": 1.405272448931242,
+        "momentum_max": 0.6940890216301876,
+        "core_H": 0.0008521471933161049,
+        "core_M": 0.00040055809065738017,
+        "weighted_characteristic_max": 1.9741958938910953
+      },
+      "runtime_seconds": 24.70394658402074
+    },
+    {
+      "name": "balanced_epsp01_h1",
+      "epsilon": 0.01,
+      "hmin": 0.0001,
+      "stretch": 0.05,
+      "L": 6.0,
+      "nodes": 2399,
+      "dt": 4e-05,
+      "t_end": 2.5,
+      "initial": {
+        "time": 0.0,
+        "H0tau": 0.0,
+        "phi_b": -0.0005111149214751531,
+        "scalar_deviation": -0.0005339050304136173,
+        "H_over_H0": 1.0000740162853212,
+        "momentum_max": 0.0,
+        "hamiltonian_max": 2.307999925959448e-08,
+        "boundary_velocity_slope_error": 0.0,
+        "weighted_characteristic_max": 0.00021151647960262102,
+        "core_H": 2.307999925959448e-08,
+        "core_M": 0.0,
+        "core_raw_H": 0.00022388657152621198,
+        "core_raw_M": 0.0,
+        "max_scalar_displacement": 0.0007709012695888973,
+        "peak_scalar_gradient_z": -0.0,
+        "peak_scalar_gradient": 78.7987703149937,
+        "shell_phi_velocity_over_H0": 0.0
+      },
+      "final": {
+        "time": 2.5,
+        "H0tau": 2.5927007100113517,
+        "phi_b": -0.03953402833989977,
+        "scalar_deviation": -0.03955681844883823,
+        "H_over_H0": 1.0034536263674512,
+        "momentum_max": 0.861106293367903,
+        "hamiltonian_max": 1.7379779599786316,
+        "boundary_velocity_slope_error": -1.972977464959058e-06,
+        "weighted_characteristic_max": 0.14128948452266205,
+        "core_H": 9.737743091664013e-05,
+        "core_M": 1.6165615734368327e-05,
+        "core_raw_H": 0.019932297316227383,
+        "core_raw_M": 0.0035646729967435758,
+        "max_scalar_displacement": 0.07517861304589699,
+        "peak_scalar_gradient_z": -0.0,
+        "peak_scalar_gradient": 89.78401298500633,
+        "shell_phi_velocity_over_H0": -0.06673362287507571
+      },
+      "maximum_over_recorded_times": {
+        "hamiltonian_max": 2.2279600488493165,
+        "momentum_max": 1.1058876437008935,
+        "core_H": 0.00022333843994056885,
+        "core_M": 0.00010288971342386032,
+        "weighted_characteristic_max": 0.17847266113007962
+      },
+      "runtime_seconds": 72.38513433409389
+    },
+    {
+      "name": "balanced_epsp01_wide_h2",
+      "epsilon": 0.01,
+      "hmin": 0.0002,
+      "stretch": 2.0,
+      "L": 3.0,
+      "nodes": 9164,
+      "dt": 8e-05,
+      "t_end": 1.0,
+      "initial": {
+        "time": 0.0,
+        "H0tau": 0.0,
+        "phi_b": -0.0005111149214751531,
+        "scalar_deviation": -0.0005339050304136173,
+        "H_over_H0": 1.0000740162853212,
+        "momentum_max": 0.0,
+        "hamiltonian_max": 3.0667917940932616e-07,
+        "boundary_velocity_slope_error": 0.0,
+        "weighted_characteristic_max": 0.0012273916499873508,
+        "core_H": 1.4799868772171856e-07,
+        "core_M": 0.0,
+        "core_raw_H": 0.001499467020652759,
+        "core_raw_M": 0.0,
+        "max_scalar_displacement": 0.0007708521496803122,
+        "peak_scalar_gradient_z": -0.0,
+        "peak_scalar_gradient": 78.79877032068676,
+        "shell_phi_velocity_over_H0": 0.0
+      },
+      "final": {
+        "time": 1.0,
+        "H0tau": 1.0031593973704005,
+        "phi_b": -0.002771327591938365,
+        "scalar_deviation": -0.0027941177008768293,
+        "H_over_H0": 1.0002735221615444,
+        "momentum_max": 0.14894942530245486,
+        "hamiltonian_max": 0.30047427375135166,
+        "boundary_velocity_slope_error": -1.1302797066070625e-06,
+        "weighted_characteristic_max": 0.0009553498642947737,
+        "core_H": 2.386025900773685e-06,
+        "core_M": 1.1929995587361722e-06,
+        "core_raw_H": 0.00030734561841145127,
+        "core_raw_M": 0.0001536710842180985,
+        "max_scalar_displacement": 0.011480335042570667,
+        "peak_scalar_gradient_z": -0.0,
+        "peak_scalar_gradient": 79.7637785178309,
+        "shell_phi_velocity_over_H0": -0.004626993898127254
+      },
+      "maximum_over_recorded_times": {
+        "hamiltonian_max": 0.30285928463311695,
+        "momentum_max": 0.1501094380672821,
+        "core_H": 0.002014155570578928,
+        "core_M": 0.0009782039103625223,
+        "weighted_characteristic_max": 0.002854399315681761
+      },
+      "runtime_seconds": 51.80441512505058
+    },
+    {
+      "name": "balanced_epsp01_wide_h1",
+      "epsilon": 0.01,
+      "hmin": 0.0001,
+      "stretch": 2.0,
+      "L": 3.0,
+      "nodes": 18327,
+      "dt": 4e-05,
+      "t_end": 1.0,
+      "initial": {
+        "time": 0.0,
+        "H0tau": 0.0,
+        "phi_b": -0.0005111149214751531,
+        "scalar_deviation": -0.0005339050304136173,
+        "H_over_H0": 1.0000740162853212,
+        "momentum_max": 0.0,
+        "hamiltonian_max": 1.3147298088364777e-06,
+        "boundary_velocity_slope_error": 0.0,
+        "weighted_characteristic_max": 0.00023755492698679403,
+        "core_H": 1.0063666208335412e-07,
+        "core_M": 0.0,
+        "core_raw_H": 0.0002453068687597247,
+        "core_raw_M": 0.0,
+        "max_scalar_displacement": 0.0007709310923030843,
+        "peak_scalar_gradient_z": -0.0,
+        "peak_scalar_gradient": 78.7987703158469,
+        "shell_phi_velocity_over_H0": 0.0
+      },
+      "final": {
+        "time": 1.0,
+        "H0tau": 1.0031581844401343,
+        "phi_b": -0.0027710303940934778,
+        "scalar_deviation": -0.002793820503031942,
+        "H_over_H0": 1.0002736740570684,
+        "momentum_max": 0.016915190925122586,
+        "hamiltonian_max": 0.034032713835383636,
+        "boundary_velocity_slope_error": -8.597968903512054e-08,
+        "weighted_characteristic_max": 0.00010639713465585689,
+        "core_H": 1.487742386944951e-07,
+        "core_M": 7.438834848629483e-08,
+        "core_raw_H": 1.916371082997288e-05,
+        "core_raw_M": 9.582013741222746e-06,
+        "max_scalar_displacement": 0.011478767783447277,
+        "peak_scalar_gradient_z": -0.0,
+        "peak_scalar_gradient": 79.76314784960353,
+        "shell_phi_velocity_over_H0": -0.004624689650061258
+      },
+      "maximum_over_recorded_times": {
+        "hamiltonian_max": 0.034032713835383636,
+        "momentum_max": 0.016915190925122586,
+        "core_H": 0.0002960477192473152,
+        "core_M": 0.00014728071492445326,
+        "weighted_characteristic_max": 0.00029488755197829697
+      },
+      "runtime_seconds": 211.4677066670265
+    },
+    {
+      "name": "balanced_epsp001_wide_h2",
+      "epsilon": 0.001,
+      "hmin": 0.0002,
+      "stretch": 2.0,
+      "L": 3.0,
+      "nodes": 9164,
+      "dt": 8e-05,
+      "t_end": 1.0,
+      "initial": {
+        "time": 0.0,
+        "H0tau": 0.0,
+        "phi_b": 2.6106561870964384e-05,
+        "scalar_deviation": 3.316452932500269e-06,
+        "H_over_H0": 0.9999995395734113,
+        "momentum_max": 0.0,
+        "hamiltonian_max": 3.0355068925157186e-07,
+        "boundary_velocity_slope_error": 0.0,
+        "weighted_characteristic_max": 0.00012305265566919557,
+        "core_H": 2.063714593519728e-08,
+        "core_M": 0.0,
+        "core_raw_H": 0.0001502844902671778,
+        "core_raw_M": 0.0,
+        "max_scalar_displacement": 5.233026889867043e-05,
+        "peak_scalar_gradient_z": -0.0,
+        "peak_scalar_gradient": 78.80465952906513,
+        "shell_phi_velocity_over_H0": 0.0
+      },
+      "final": {
+        "time": 1.0,
+        "H0tau": 1.0000338174218548,
+        "phi_b": -3.615146718355532e-05,
+        "scalar_deviation": -5.894157612201943e-05,
+        "H_over_H0": 1.0000057790706531,
+        "momentum_max": 0.01266681151209869,
+        "hamiltonian_max": 0.025595963840109388,
+        "boundary_velocity_slope_error": -1.1287069034623953e-08,
+        "weighted_characteristic_max": 8.135497510906276e-05,
+        "core_H": 2.4681652694386844e-08,
+        "core_M": 1.2335530409516756e-08,
+        "core_raw_H": 3.1792604633140155e-06,
+        "core_raw_M": 1.5889480583244486e-06,
+        "max_scalar_displacement": 0.0011477694432262824,
+        "peak_scalar_gradient_z": -0.0,
+        "peak_scalar_gradient": 78.81448699948385,
+        "shell_phi_velocity_over_H0": -9.745409051108159e-05
+      },
+      "maximum_over_recorded_times": {
+        "hamiltonian_max": 0.025595963840109388,
+        "momentum_max": 0.01266681151209869,
+        "core_H": 0.00019937363492125886,
+        "core_M": 9.686157638178391e-05,
+        "weighted_characteristic_max": 0.00028632905791337764
+      },
+      "runtime_seconds": 75.08833158295602
+    },
+    {
+      "name": "balanced_epsm001_wide_h2",
+      "epsilon": -0.001,
+      "hmin": 0.0002,
+      "stretch": 2.0,
+      "L": 3.0,
+      "nodes": 9164,
+      "dt": 8e-05,
+      "t_end": 1.0,
+      "initial": {
+        "time": 0.0,
+        "H0tau": 0.0,
+        "phi_b": 6.85364444841241e-06,
+        "scalar_deviation": -1.5936464490051705e-05,
+        "H_over_H0": 1.000002212362585,
+        "momentum_max": 0.0,
+        "hamiltonian_max": 3.1831866971838166e-07,
+        "boundary_velocity_slope_error": 0.0,
+        "weighted_characteristic_max": 0.00024065300589288776,
+        "core_H": 2.5107965309316363e-08,
+        "core_M": 0.0,
+        "core_raw_H": 0.00024065460313153994,
+        "core_raw_M": 0.0,
+        "max_scalar_displacement": 4.7153741943528615e-05,
+        "peak_scalar_gradient_z": -0.0,
+        "peak_scalar_gradient": 78.80444895431326,
+        "shell_phi_velocity_over_H0": 0.0
+      },
+      "final": {
+        "time": 1.0,
+        "H0tau": 1.000028518370217,
+        "phi_b": 3.30685504232648e-05,
+        "scalar_deviation": 1.0278441484800683e-05,
+        "H_over_H0": 0.9999990292696581,
+        "momentum_max": 0.0121638450635374,
+        "hamiltonian_max": 0.02458832439290177,
+        "boundary_velocity_slope_error": -8.729425221738751e-09,
+        "weighted_characteristic_max": 7.813848200377706e-05,
+        "core_H": 1.996030545509109e-08,
+        "core_M": 9.981013071946872e-09,
+        "core_raw_H": 2.573646523304819e-06,
+        "core_raw_M": 1.286717413886138e-06,
+        "max_scalar_displacement": 0.0011477223425463662,
+        "peak_scalar_gradient_z": -0.0,
+        "peak_scalar_gradient": 78.81369447109883,
+        "shell_phi_velocity_over_H0": 1.6968908357412743e-05
+      },
+      "maximum_over_recorded_times": {
+        "hamiltonian_max": 0.02458832439290177,
+        "momentum_max": 0.0121638450635374,
+        "core_H": 0.00020819200553171344,
+        "core_M": 0.00010091675836859627,
+        "weighted_characteristic_max": 0.00028622500557021294
+      },
+      "runtime_seconds": 74.94904866605066
+    },
+    {
+      "name": "balanced_epsp01_wide_h05",
+      "epsilon": 0.01,
+      "hmin": 5e-05,
+      "stretch": 2.0,
+      "L": 3.0,
+      "nodes": 36653,
+      "dt": 2e-05,
+      "t_end": 0.5,
+      "initial": {
+        "time": 0.0,
+        "H0tau": 0.0,
+        "phi_b": -0.0005111149214751531,
+        "scalar_deviation": -0.0005339050304136173,
+        "H_over_H0": 1.0000740162853212,
+        "momentum_max": 0.0,
+        "hamiltonian_max": 5.1896970959155e-06,
+        "boundary_velocity_slope_error": 0.0,
+        "weighted_characteristic_max": 0.00044264544016014946,
+        "core_H": 5.69964698497415e-07,
+        "core_M": 0.0,
+        "core_raw_H": 0.00045708993820402916,
+        "core_raw_M": 0.0,
+        "max_scalar_displacement": 0.0007709310923030843,
+        "peak_scalar_gradient_z": -0.0,
+        "peak_scalar_gradient": 78.7987703149923,
+        "shell_phi_velocity_over_H0": 0.0
+      },
+      "final": {
+        "time": 0.5,
+        "H0tau": 0.5001742649122206,
+        "phi_b": -0.001208054680367155,
+        "scalar_deviation": -0.0012308447893056192,
+        "H_over_H0": 1.000127224943383,
+        "momentum_max": 0.0032669374104657045,
+        "hamiltonian_max": 0.00655073174275474,
+        "boundary_velocity_slope_error": -2.6680751497032418e-09,
+        "weighted_characteristic_max": 0.00011934606897534875,
+        "core_H": 3.8080170912304294e-09,
+        "core_M": 1.920219356443694e-09,
+        "core_raw_H": 5.000713245357859e-07,
+        "core_raw_M": 2.521644766740744e-07,
+        "max_scalar_displacement": 0.00696842317136114,
+        "peak_scalar_gradient_z": -0.0,
+        "peak_scalar_gradient": 78.93340354950715,
+        "shell_phi_velocity_over_H0": -0.0019236060906492808
+      },
+      "maximum_over_recorded_times": {
+        "hamiltonian_max": 0.00655073174275474,
+        "momentum_max": 0.0032669374104657045,
+        "core_H": 0.0003113010118003928,
+        "core_M": 0.00015470508000992345,
+        "weighted_characteristic_max": 0.00044264544016014946
+      },
+      "runtime_seconds": 347.4909282500157
+    }
+  ],
+  "input_hashes": {
+    "runs/balanced_epsp01_h2.json": "ffa93661810328eaf8912f9ddb3005f5a38f00134d230fe20fa463c1db97c311",
+    "runs/balanced_epsp01_h1.json": "44f9f105fc1ede3fadcc733ab8aefaa81e25ce82d7837b5b61dce5b25ef1270d",
+    "runs/balanced_epsp01_wide_h2.json": "739f92ea544e97ccebb01b27579f75263c0eb31d78c3a713fac0c5d16e9ca1c2",
+    "runs/balanced_epsp01_wide_h1.json": "e377b70b1473e8ce394bad298246c85624e5c5ee120b5951b9d52305f510dd88",
+    "runs/balanced_epsp001_wide_h2.json": "d11d433fa3f1782d576241e4adaf644d666a7ef9ededecdfe7b2b70c4c8d5e3e",
+    "runs/balanced_epsm001_wide_h2.json": "6163c21deef91b6e16ff2af8a1c4f3e17f229e32e61fd361691d6efd7c54bece",
+    "runs/balanced_epsp01_wide_h05.json": "a3ffc61320c01f8fdcf44574463a4003eb5f096b8ee90abe259cb5e4f2852086",
+    "static_branch/PLUS_BRANCH_RESULTS.json": "b03e1c5569afb3567873fa990d16af9321b06e12a80ed89f9088a1bc00cd4fc7"
+  },
+  "physical_gate": "OPEN: none of these checks certifies full-domain late-time evolution, branch attraction, quantum production or a hot universe.",
+  "count_scope": "Completion and result-accounting checks include explicit negative physical findings; PASS is not a global nonlinear-accuracy verdict."
+}

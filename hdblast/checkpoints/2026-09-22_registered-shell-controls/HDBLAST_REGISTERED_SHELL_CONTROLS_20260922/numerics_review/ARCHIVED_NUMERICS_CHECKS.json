@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "scope": "Archive diagnostics and exact stencil controls; no evolution replay or interval bounds.",
+  "check_count": 10,
+  "checks": [
+    {
+      "name": "even-plus-linear closure enforces derivative",
+      "pass_check": true
+    },
+    {
+      "name": "even-plus-linear closure has cubic second-derivative error",
+      "pass_check": true,
+      "value": "-4/3",
+      "scaled_error": "-(4/3)*h for f(z)=z^3"
+    },
+    {
+      "name": "V2 third ghost creates KO forcing on quadratic",
+      "pass_check": true,
+      "value": "-2",
+      "Q_over_epsilon": "-1/32"
+    },
+    {
+      "name": "consistent polynomial third ghost removes quadratic KO forcing",
+      "pass_check": true
+    },
+    {
+      "name": "correct velocity slope cancels shell M",
+      "pass_check": true
+    },
+    {
+      "name": "zero velocity slope produces false nonzero shell M",
+      "pass_check": true,
+      "false_residual": "76"
+    },
+    {
+      "name": "archived radial nodes ordered",
+      "pass_check": true
+    },
+    {
+      "name": "archived warp factor positive",
+      "pass_check": true
+    },
+    {
+      "name": "constraint gain near old reported front exceeds ten thousand",
+      "pass_check": true
+    },
+    {
+      "name": "registered dc1e-4 automatic growth-fit window is empty",
+      "pass_check": true,
+      "lower_threshold": 0.0026937000000000003,
+      "upper_threshold": 0.002
+    }
+  ],
+  "archive": "/Users/ricardomaldonado/Documents/D-Blast 3/untitled folder 150/HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921.zip",
+  "archive_sha256": "88dcdd841f72f17e1e64e20b793ba066c4f7acd169eecabe5f512795d9af77fc",
+  "solver_sha256": "9ea4d8d6ef36ce3d242fbb0e09f27a944b571fdfb8646e3d71195b60b089080b",
+  "background_archive_member": "HDBLAST_CHAT13_NONLINEAR_ROLLOFF_20260921/referee_numerics/runs/ref_t1e3_dz2.5e-4_timeseries.npz",
+  "background_member_sha256": "f4fc464131d6e117c19e018d47840e520bcca9ddb304e2736e02899666cc0bed",
+  "rho_b": 78.82817709590013,
+  "constraint_transport_amplification": [
+    {
+      "time": 0.01,
+      "ray_position": -0.01,
+      "rho": 58.62097822178246,
+      "Cplus_unweighted_gain": 2.3596980429866785
+    },
+    {
+      "time": 0.1,
+      "ray_position": -0.1,
+      "rho": 14.941733843120682,
+      "Cplus_unweighted_gain": 108.78101783152422
+    },
+    {
+      "time": 0.5,
+      "ray_position": -0.5,
+      "rho": 3.3090880337940405,
+      "Cplus_unweighted_gain": 3016.3224366455224
+    },
+    {
+      "time": 1.0,
+      "ray_position": -1.0,
+      "rho": 1.4918207047733083,
+      "Cplus_unweighted_gain": 7345.3266528058675
+    },
+    {
+      "time": 2.0,
+      "ray_position": -2.0,
+      "rho": 0.4860242812760223,
+      "Cplus_unweighted_gain": 10575.566957623665
+    },
+    {
+      "time": 2.5,
+      "ray_position": -2.5,
+      "rho": 0.29148929833234966,
+      "Cplus_unweighted_gain": 10938.757437260254
+    },
+    {
+      "time": 3.0,
+      "ray_position": -3.0,
+      "rho": 0.17607224084762035,
+      "Cplus_unweighted_gain": 11074.431450703496
+    }
+  ],
+  "transport_scope": "Static-background formula evaluated on archived numerical rho with linear interpolation; explanatory diagnostic, not proof of the cause of the original run failure.",
+  "self_sha256": "d5bc9452d44488bb5700d6d65438eacb0f90c782d94c9c71589684706d0a91b2"
+}

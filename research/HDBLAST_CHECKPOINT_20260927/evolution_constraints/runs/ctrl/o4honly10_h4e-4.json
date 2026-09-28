@@ -1,0 +1,102 @@
+{
+ "status": "FLOATING_POINT_CONSTRAINT_CONTROL_RUN",
+ "settings": {
+  "epsilon": 0.01,
+  "hmin": 0.0004,
+  "L": 3.0,
+  "stretch": 2.0,
+  "order": 4,
+  "kappa": 10.0,
+  "damp_form": "honly",
+  "ko": 0.0,
+  "xtol": 2e-14,
+  "tf": 1.0,
+  "project": false,
+  "out": "runs/ctrl/o4honly10_h4e-4"
+ },
+ "nodes": 4583,
+ "dt": 0.0001599488163787588,
+ "steps": 6252,
+ "stop_reason": "guard",
+ "initial": {
+  "time": 0.0,
+  "H_max": 1.0403199138136458e-06,
+  "M_max": 0.0,
+  "H_L2": 3.652075358608839e-08,
+  "M_L2": 0.0,
+  "H_peak_z": -0.0024014405761728416,
+  "core_H": 1.0403199138136458e-06,
+  "core_M": 0.0,
+  "Cplus_w_max": 0.008627643901369268,
+  "Cminus_w_max": 0.008627643901369268,
+  "shell_phi_dev": -0.0005339050291585101,
+  "max_abs_f": 0.00077085214835515,
+  "finite": true
+ },
+ "projection": null,
+ "snapshots": {},
+ "records": [
+  {
+   "time": 0.0,
+   "H_max": 1.0403199138136458e-06,
+   "M_max": 0.0,
+   "H_L2": 3.652075358608839e-08,
+   "M_L2": 0.0,
+   "H_peak_z": -0.0024014405761728416,
+   "core_H": 1.0403199138136458e-06,
+   "core_M": 0.0,
+   "Cplus_w_max": 0.008627643901369268,
+   "Cminus_w_max": 0.008627643901369268,
+   "shell_phi_dev": -0.0005339050291585101,
+   "max_abs_f": 0.00077085214835515,
+   "finite": true
+  },
+  {
+   "time": 0.02495201535508637,
+   "H_max": 0.002090179759894073,
+   "M_max": 0.057693003761158254,
+   "H_L2": 6.458921308708215e-05,
+   "M_L2": 0.0009237909325414684,
+   "H_peak_z": -0.00040004000266680005,
+   "core_H": 0.002090179759894073,
+   "core_M": 0.057693003761158254,
+   "Cplus_w_max": 1270.4173469985064,
+   "Cminus_w_max": 1305.0876881285626,
+   "shell_phi_dev": -0.0007042529710986441,
+   "max_abs_f": 0.0007042529710986441,
+   "finite": true
+  },
+  {
+   "time": 0.04990403071017274,
+   "H_max": NaN,
+   "M_max": NaN,
+   "H_L2": NaN,
+   "M_L2": NaN,
+   "H_peak_z": -2.399747621635538,
+   "core_H": NaN,
+   "core_M": NaN,
+   "Cplus_w_max": NaN,
+   "Cminus_w_max": NaN,
+   "shell_phi_dev": NaN,
+   "max_abs_f": NaN,
+   "finite": false
+  }
+ ],
+ "seed_meta": {
+  "analytic_boundary_slope_minus_target": [
+   7.320012651579333e-14,
+   3.0176642434875944e-13
+  ],
+  "initial_shell_scalar_displacement": -0.0005339050291585101
+ },
+ "runtime_seconds": 5.845360297999832,
+ "sha256": {
+  "lab.py": "8f85c830bb1db9712b20ed58e1af80af65666c6c4848b60e2db02168dc62a297",
+  "run_case.py": "ecca177bc63f3f944ed7bb5593df5dc4cbd2a474cf3df0761ccb824d40b524c1",
+  "src/registered_solver.py": "4147239c40b63c2de89f5091e732e19f09c4644a0c08ae5735202a548cdcd6b6",
+  "src/evolve_balanced.py": "3348ff44464b36ef16ec8f4f1d8e3e55e7d47bfff5f94df8263cd5a58955f406",
+  "src/balanced_constraint_seed.py": "f26dd57127db356388b5cbbf73c1cdd286d58316eb2c6ff62703325e455f30f4",
+  "src/constraint_seed.py": "e0ae56fc32e150169ba0807f73807e9ae25fc9131c2af2c64ce8111cac1d519a"
+ },
+ "scope": "Classical matter-free floating-point run; no interval certificate; diagnostics defined in lab.py."
+}

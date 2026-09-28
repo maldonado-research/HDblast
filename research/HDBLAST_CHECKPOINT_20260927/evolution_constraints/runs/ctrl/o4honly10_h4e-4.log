@@ -1,0 +1,31 @@
+{"setup_seconds": 4.796717075999368, "nodes": 4583, "initial": {"time": 0.0, "H_max": 1.0403199138136458e-06, "M_max": 0.0, "H_L2": 3.652075358608839e-08, "M_L2": 0.0, "H_peak_z": -0.0024014405761728416, "core_H": 1.0403199138136458e-06, "core_M": 0.0, "Cplus_w_max": 0.008627643901369268, "Cminus_w_max": 0.008627643901369268, "shell_phi_dev": -0.0005339050291585101, "max_abs_f": 0.00077085214835515, "finite": true}}
+{"time": 0.0, "H_max": 1.0403199138136458e-06, "M_max": 0.0, "H_L2": 3.652075358608839e-08, "M_L2": 0.0, "H_peak_z": -0.0024014405761728416, "core_H": 1.0403199138136458e-06, "core_M": 0.0, "Cplus_w_max": 0.008627643901369268, "Cminus_w_max": 0.008627643901369268, "shell_phi_dev": -0.0005339050291585101, "max_abs_f": 0.00077085214835515, "finite": true}
+/home/user/unified-theory-maldonado/research/HDBLAST_CHECKPOINT_20260927/evolution_constraints/src/registered_solver.py:115: RuntimeWarning: overflow encountered in exp
+  eb=np.exp(b);ds=self.s10*f+2*self.pb*f*f+(2/3)*f**3;ds1=self.s20*f+2*f*f
+/home/user/unified-theory-maldonado/research/HDBLAST_CHECKPOINT_20260927/evolution_constraints/src/registered_solver.py:116: RuntimeWarning: overflow encountered in expm1
+  ga=self.rb*(self.s0*np.expm1(b)+eb*ds)/6
+/home/user/unified-theory-maldonado/research/HDBLAST_CHECKPOINT_20260927/evolution_constraints/src/registered_solver.py:117: RuntimeWarning: overflow encountered in expm1
+  gf=-self.rb*(self.s10*np.expm1(b)+eb*ds1)/2
+/home/user/unified-theory-maldonado/research/HDBLAST_CHECKPOINT_20260927/evolution_constraints/src/registered_solver.py:117: RuntimeWarning: invalid value encountered in scalar add
+  gf=-self.rb*(self.s10*np.expm1(b)+eb*ds1)/2
+/home/user/unified-theory-maldonado/research/HDBLAST_CHECKPOINT_20260927/evolution_constraints/lab.py:170: RuntimeWarning: invalid value encountered in multiply
+  d1 = self.D1 @ state[:3].T + self.g1[:, None] * np.array([ga, ga, gf])
+/home/user/unified-theory-maldonado/research/HDBLAST_CHECKPOINT_20260927/evolution_constraints/lab.py:171: RuntimeWarning: invalid value encountered in multiply
+  d2 = self.D2 @ state[:3].T + self.g2[:, None] * np.array([ga, ga, gf])
+/home/user/unified-theory-maldonado/research/HDBLAST_CHECKPOINT_20260927/evolution_constraints/lab.py:138: RuntimeWarning: overflow encountered in expm1
+  eb = np.expm1(2 * b)
+/home/user/unified-theory-maldonado/research/HDBLAST_CHECKPOINT_20260927/evolution_constraints/lab.py:174: RuntimeWarning: invalid value encountered in add
+  kin = 2 * pa + pa * pa; grad = 2 * self.hc * az + az * az
+/home/user/unified-theory-maldonado/research/HDBLAST_CHECKPOINT_20260927/evolution_constraints/lab.py:176: RuntimeWarning: invalid value encountered in add
+  out[3] = azz - 3 * kin + 3 * grad + (2 / 3) * su
+/home/user/unified-theory-maldonado/research/HDBLAST_CHECKPOINT_20260927/evolution_constraints/lab.py:177: RuntimeWarning: invalid value encountered in subtract
+  out[4] = bzz + 3 * kin - 3 * grad - .5 * pf * pf + self.phz * fz + .5 * fz * fz - su / 3
+/home/user/unified-theory-maldonado/research/HDBLAST_CHECKPOINT_20260927/evolution_constraints/lab.py:180: RuntimeWarning: invalid value encountered in multiply
+  paz = self.D1 @ pa + self.g1 * gpa     # interior operator incl. exact shell slope
+/home/user/unified-theory-maldonado/research/HDBLAST_CHECKPOINT_20260927/evolution_constraints/lab.py:181: RuntimeWarning: invalid value encountered in subtract
+  M = -3 * paz - 3 * (1 + pa) * (az - bz) + 3 * (self.hc + az) * pb - pf * (self.phz + fz)
+/home/user/unified-theory-maldonado/research/HDBLAST_CHECKPOINT_20260927/evolution_constraints/lab.py:182: RuntimeWarning: invalid value encountered in subtract
+  H = (-2 * su + 12 * pa + 6 * pa * pa + 6 * (1 + pa) * pb - 18 * self.hc * az + 6 * self.hc * bz
+/home/user/unified-theory-maldonado/research/HDBLAST_CHECKPOINT_20260927/evolution_constraints/lab.py:182: RuntimeWarning: invalid value encountered in add
+  H = (-2 * su + 12 * pa + 6 * pa * pa + 6 * (1 + pa) * pb - 18 * self.hc * az + 6 * self.hc * bz
+{"done": "runs/ctrl/o4honly10_h4e-4", "reason": "guard", "runtime": 5.845360297999832, "snap": {}}

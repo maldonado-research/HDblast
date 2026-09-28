@@ -1,0 +1,91 @@
+{
+  "status": "FLOATING_COMPENSATED_SEED_EVOLUTION",
+  "epsilon": 0.01,
+  "hmin": 0.0002,
+  "L": 6.0,
+  "dt": 0.0,
+  "nodes": 1200,
+  "metadata": {
+    "reference": {
+      "epsilon": 0.0,
+      "rtol": 8e-14,
+      "transport_formulation": true,
+      "root_success": true,
+      "root_message": "The solution converged.",
+      "psi_h": 8.785514650264172e-07,
+      "yb": 8.228201550242208,
+      "compensation": 0.40932878,
+      "rho_b": 78.82817695942111,
+      "phi_b": 2.2790108938464115e-05,
+      "junction_residual": [
+        0.0,
+        0.0
+      ],
+      "scaled_compensation_residual": 0.0,
+      "mass_defect_b": -1.1368683772161603e-13,
+      "mass_defect_integral": 0.0,
+      "second_corner_B": 3.586401138907208e-11,
+      "second_corner_phi": 3.583619366456078e-11,
+      "bump_at_brane": 0.0,
+      "scope": "FLOATING_POINT_COMPENSATED_INITIAL_DATA_ONLY; no evolution; no interval proof"
+    },
+    "seed": {
+      "epsilon": 0.01,
+      "rtol": 8e-14,
+      "transport_formulation": true,
+      "root_success": true,
+      "root_message": "The solution converged.",
+      "psi_h": 8.763949774650521e-07,
+      "yb": 8.227734560264025,
+      "compensation": 0.4099601519670424,
+      "rho_b": 78.82234282240509,
+      "phi_b": -0.0005111149214751531,
+      "junction_residual": [
+        8.881784197001252e-16,
+        4.107825191113079e-15
+      ],
+      "scaled_compensation_residual": 1.0590536523573543e-14,
+      "mass_defect_b": 6.821210263296962e-13,
+      "mass_defect_integral": 6.579859810008368e-13,
+      "second_corner_B": -2.1528293262636338e-10,
+      "second_corner_phi": -2.1500119232193957e-10,
+      "bump_at_brane": 0.0,
+      "scope": "FLOATING_POINT_COMPENSATED_INITIAL_DATA_ONLY; no evolution; no interval proof"
+    },
+    "initialization": "Dense ODE interpolation; separate inversion at identical shell-anchored conformal z; log1p warp and shifted scalar differences.",
+    "analytic_boundary_slope_minus_target": [
+      6.89240331475105e-14,
+      3.187424282846685e-13
+    ],
+    "initial_shell_scalar_displacement": -0.0005339050304136173,
+    "initial_max_scalar_displacement": 0.0007708832354622608,
+    "taper": "C2 quintic smoothstep on [-.99L,-.85L]; modifies data outside the shell causal window.",
+    "earliest_taper_influence_on_shell": 5.1,
+    "initial_acceleration_bulk_max": 31.845845220258592
+  },
+  "stop_reason": "init_only",
+  "records": [
+    {
+      "time": 0.0,
+      "H0tau": 0.0,
+      "phi_b": -0.0005111149214751531,
+      "scalar_deviation": -0.0005339050304136173,
+      "H_over_H0": 1.0000740162853212,
+      "momentum_max": 0.0,
+      "hamiltonian_max": 1.8004290026335726e-07,
+      "boundary_velocity_slope_error": 0.0,
+      "weighted_characteristic_max": 0.0015540555653172305,
+      "core_H": 1.8004290026335726e-07,
+      "core_M": 0.0,
+      "core_raw_H": 0.0018401573854242756,
+      "core_raw_M": 0.0,
+      "max_scalar_displacement": 0.0007708832354622608,
+      "peak_scalar_gradient_z": -0.0,
+      "peak_scalar_gradient": 78.7987703171188,
+      "shell_phi_velocity_over_H0": 0.0
+    }
+  ],
+  "runtime_seconds": 0.00042875006329268217,
+  "scope": "Classical matter-free short-time numerical control; no interval certificate, full nonlinear fate, or reheating.",
+  "code_sha256": "e90fb5efb71d99a4602e2c9e9408852d7aad257554a7462303289621e883491c"
+}

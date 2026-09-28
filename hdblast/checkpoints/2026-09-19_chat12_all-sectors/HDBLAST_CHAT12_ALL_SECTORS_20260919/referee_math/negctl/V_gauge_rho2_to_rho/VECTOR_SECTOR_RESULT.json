@@ -1,0 +1,34 @@
+{
+ "sympy": "1.14.0",
+ "all_pass": false,
+ "checks": {
+  "V0_harmonic_is_transverse": {
+   "passed": true,
+   "note": ""
+  },
+  "V1_gauge_rule_Fv->Fv+zeta_Bv->Bv+rho^2 zeta'": {
+   "passed": false,
+   "note": ""
+  },
+  "V2a_EQ_{x1x2}_and_EQ_{tau x2}_proportional_to_(Bv'+2H Bv)": {
+   "passed": true,
+   "note": ""
+  },
+  "V2b_EQ_{y x2}=-(Bv/(2rho^2))[(Box+3)V]_{x2}": {
+   "passed": true,
+   "note": "[(Box+3)V]_x2 = (6*E(x1)*T(tau)*exp(2*tau) - E(x1)*exp(2*tau)*Derivative(T(tau), tau) - E(x1)*exp(2*tau)*Derivative(T(tau), (tau, 2)) + T(tau)*Derivative(E(x1), (x1, 2)))*exp(-2*tau)"
+  },
+  "V2c_other_components_of_(Box+3)V_vanish_for_this_harmonic": {
+   "passed": true,
+   "note": ""
+  },
+  "V2d_all_other_field_equation_components_vanish": {
+   "passed": true,
+   "note": ""
+  },
+  "V3_(Bv'+2H Bv)=0_<=>_(rho^2 Bv)'=0": {
+   "passed": true,
+   "note": ""
+  }
+ }
+}

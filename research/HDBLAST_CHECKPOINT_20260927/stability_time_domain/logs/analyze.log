@@ -1,0 +1,44 @@
+/home/user/unified-theory-maldonado/research/HDBLAST_CHECKPOINT_20260927/stability_time_domain/analyze.py:90: RuntimeWarning: invalid value encountered in log
+  return float(np.polyfit(t[m], np.log(y[m]), 1)[0])
+CAL original_lin_h2e-4 1.657062807 1.657042838  -1.31e-04 -1.51e-04
+CAL original_lin_h1e-4 1.657192238 1.657193144  -1.39e-06 -4.87e-07
+CAL original_nl_eps1e-8_h1e-4 1.657193014 1.657193837  -6.17e-07 2.06e-07
+CAL original_lin_h5e-5 1.657192773 1.657193368  -8.58e-07 -2.63e-07
+CAL original_nl_eps1e-8_h5e-5 1.657192818 1.657193408  -8.13e-07 -2.23e-07
+SPEC control_plus_s20flip_h4 maxRe 167.5 rk4max 167 real: [(167.488987, 'physi'), (0.999997, 'gauge'), (0.104003, 'const'), (-3.103992, 'const'), (-3.999998, 'const'), (-170.488987, 'physi')]
+SPEC control_plus_s20zero_h4 maxRe 1 rk4max 1 real: [(0.999997, 'gauge'), (0.104003, 'const'), (-3.103993, 'const'), (-3.999998, 'const')]
+SPEC original_h2_L6 maxRe 22.73 rk4max 1.66 real: [(1.657211, 'physi'), (1.013162, 'physi'), (0.101964, 'const'), (-3.028577, 'const'), (-4.059798, 'const'), (-4.657213, 'const')]
+SPEC original_h3_L6 maxRe 22.74 rk4max 1.66 real: [(1.657375, 'const'), (1.064211, 'const'), (0.09439, 'const'), (-2.829449, 'const'), (-4.23342, 'const'), (-4.657526, 'const')]
+SPEC original_h4_L6 maxRe 22.76 rk4max 1.66 real: [(1.658702, 'const'), (1.18498, 'const'), (0.079411, 'const'), (-2.547357, 'const'), (-4.508977, 'const'), (-4.663651, 'const')]
+SPEC plus_h2_L6 maxRe 1 rk4max 1 real: [(0.999997, 'gauge'), (0.103966, 'const'), (-3.103966, 'const'), (-3.999997, 'const')]
+SPEC plus_h3_L6 maxRe 1 rk4max 1 real: [(0.999997, 'gauge'), (0.103746, 'const'), (-3.103742, 'const'), (-3.999997, 'const')]
+SPEC plus_h4_L10 maxRe 1 rk4max 1 real: [(1.0, 'gauge'), (0.059448, 'gauge'), (-2.997031, 'const'), (-4.00012, 'const')]
+SPEC plus_h4_L6 maxRe 1 rk4max 1 real: [(0.999997, 'gauge'), (0.104003, 'const'), (-3.103994, 'const'), (-3.999998, 'const')]
+SPEC plus_h4_L6_phipoly maxRe 1 rk4max 1 real: [(0.999997, 'gauge'), (0.104003, 'const'), (-3.103991, 'const'), (-3.999998, 'const')]
+SPEC plus_h4_L6_st10 maxRe 1 rk4max 1 real: [(0.999998, 'gauge'), (0.10386, 'const'), (-3.103847, 'const'), (-4.000006, 'const')]
+SPEC plus_h4_L8 maxRe 1 rk4max 1 real: [(1.0, 'gauge'), (0.075255, 'gauge'), (-3.075418, 'const'), (-3.999999, 'const')]
+TD control_plus_s20flip_lin_h1e-4 [167.518728, 167.489159] {'real': 167.4892453329019, 'imag': 0.0, 'abs_amplitude': 9.373477057382152e-09}
+TD control_plus_s20flip_lin_h2e-4 [167.51862, 167.489144] {'real': 167.4892302523489, 'imag': 0.0, 'abs_amplitude': 9.37061806436116e-09}
+TD control_plus_s20zero_lin_h1e-4 rate(E) -1.50619 [-1.50179, -1.509279862673939] EXdrift 1.0e-01 fb peak 9.66e-09 late 4.02e-14 H 1.4e-01
+TD original_lin_h1e-4 [1.657192, 1.657194, 1.657212] {'real': 1.6571931442666916, 'imag': 0.0, 'abs_amplitude': 1.097698533449259e-11}
+TD original_lin_h2e-4 [1.657063, 1.657043, 1.657326] {'real': 1.6570428375000812, 'imag': 0.0, 'abs_amplitude': 8.726248175871932e-12}
+TD original_lin_h5e-5 [1.657193, 1.657194, 1.657193] {'real': 1.6571933679410478, 'imag': 0.0, 'abs_amplitude': 1.1116839839886097e-11}
+TD original_nl_eps1e-8_h1e-4 [1.657193, 1.657195, 1.657213] {'real': 1.657193837185496, 'imag': 0.0, 'abs_amplitude': 1.097527272471108e-13}
+TD original_nl_eps1e-8_h5e-5 [1.657193, 1.657194, 1.657194] {'real': 1.657193408175295, 'imag': 0.0, 'abs_amplitude': 1.1115061186332292e-13}
+TD plus_lin_L10_h1e-4 rate(E) -1.50611 [-1.50179, -1.5090294169900542] EXdrift 6.4e-02 fb peak 3.62e-09 late 5.12e-14 H 5.0e-02
+TD plus_lin_bumpB_h1e-4 rate(E) -1.50115 [-1.50011, -1.5024758708699524] EXdrift 6.7e-02 fb peak 2.00e-10 late 1.94e-15 H 1.3e-01
+TD plus_lin_bumpB_h2e-4 rate(E) -1.50616 [-1.50117, -1.5106887842513896] EXdrift 2.2e-01 fb peak 2.00e-10 late 6.25e-15 H 1.5e-02
+TD plus_lin_bumpB_h5e-5 rate(E) -1.50033 [-1.50001, -1.5008327918851714] EXdrift 2.3e-02 fb peak 2.00e-10 late 8.83e-17 H 4.3e-01
+TD plus_lin_h1e-4 rate(E) -1.50620 [-1.50179, -1.5092910024849526] EXdrift 1.1e-01 fb peak 3.62e-09 late 5.12e-14 H 4.1e-02
+TD plus_lin_h2e-4 rate(E) -1.53934 [-1.51214, -1.5561715289316567] EXdrift 3.4e-01 fb peak 3.62e-09 late 2.08e-13 H 3.9e-02
+TD plus_lin_h4e-4 rate(E) -1.53701 [-1.57848, -1.4506546087017507] EXdrift 6.2e-01 fb peak 3.45e-09 late 2.18e-13 H 6.6e-02
+TD plus_lin_h5e-5 rate(E) -1.50106 [-1.50022, -1.5018063471916607] EXdrift 6.5e-02 fb peak 3.62e-09 late 3.94e-15 H 9.2e-02
+TD plus_nl_eps1e-6_h1e-4 rate(E) -1.50616 [-1.50179, -1.5091680002133914] EXdrift 1.0e-01 fb peak 3.62e-09 late 5.12e-14 H 3.2e-07
+TD plus_nl_eps1e-6_h2e-4 rate(E) -1.53928 [-1.51214, -1.555996424948661] EXdrift 3.4e-01 fb peak 3.62e-09 late 2.08e-13 H 3.8e-07
+TD plus_nl_eps2e-6_h1e-4 rate(E) -1.50602 [-1.50179, -1.5087998540229837] EXdrift 9.7e-02 fb peak 7.25e-09 late 1.02e-13 H 2.1e-07
+TD plus_tdet3e-3_lin_h1e-4 rate(E) -1.50479 [-1.50180, -1.5067393637328268] EXdrift 1.1e-01 fb peak 1.54e-08 late 4.23e-14 H 1.0e-01
+NL original_nl_eps1e-8_h1e-4 {'linear_partner': 'original_lin_h1e-4', 'max_abs_diff_fb_over_eps': 2.438146232545176e-07, 'max_abs_fb_over_eps': 0.009788601458584638, 'relative': 2.490801411070744e-05}
+NL original_nl_eps1e-8_h5e-5 {'linear_partner': 'original_lin_h5e-5', 'max_abs_diff_fb_over_eps': 2.563888184675678e-07, 'max_abs_fb_over_eps': 0.009788578438965252, 'relative': 2.619265096216265e-05}
+NL plus_nl_eps1e-6_h1e-4 {'linear_partner': 'plus_lin_h1e-4', 'max_abs_diff_fb_over_eps': 1.5037185706681666e-09, 'max_abs_fb_over_eps': 0.008470902204428775, 'relative': 1.775157514959846e-07}
+NL plus_nl_eps1e-6_h2e-4 {'linear_partner': 'plus_lin_h2e-4', 'max_abs_diff_fb_over_eps': 1.5037417613189552e-09, 'max_abs_fb_over_eps': 0.008471087721605606, 'relative': 1.7751460151730512e-07}
+NL plus_nl_eps2e-6_h1e-4 {'linear_partner': 'plus_lin_h1e-4', 'max_abs_diff_fb_over_eps': 3.007433315403707e-09, 'max_abs_fb_over_eps': 0.008470902204428775, 'relative': 3.5503105133610847e-07}

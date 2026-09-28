@@ -1,0 +1,193 @@
+{
+  "status": "PASS_INDEPENDENT_IDENTITIES_AND_SAVED_DATA_CHECKS",
+  "positive_symbolic_checks": 13,
+  "negative_controls": 4,
+  "symbolic_checks": [
+    {
+      "name": "full initial Hamiltonian after proper-distance constraint ODE",
+      "pass_check": true,
+      "negative_control": false
+    },
+    {
+      "name": "initial momentum for equal A_z and B_z",
+      "pass_check": true,
+      "negative_control": false
+    },
+    {
+      "name": "D transport from differentiated definition",
+      "pass_check": true,
+      "negative_control": false
+    },
+    {
+      "name": "integrating-factor ledger",
+      "pass_check": true,
+      "negative_control": false
+    },
+    {
+      "name": "A acceleration equals minus two D",
+      "pass_check": true,
+      "negative_control": false
+    },
+    {
+      "name": "B acceleration equals four D",
+      "pass_check": true,
+      "negative_control": false
+    },
+    {
+      "name": "scalar acceleration is initial bump",
+      "pass_check": true,
+      "negative_control": false
+    },
+    {
+      "name": "A second corner including nonzero bump",
+      "pass_check": true,
+      "negative_control": false
+    },
+    {
+      "name": "B general second corner",
+      "pass_check": true,
+      "negative_control": false
+    },
+    {
+      "name": "scalar general second corner",
+      "pass_check": true,
+      "negative_control": false
+    },
+    {
+      "name": "B corner on bump-free neighborhood",
+      "pass_check": true,
+      "negative_control": false
+    },
+    {
+      "name": "scalar corner on bump-free neighborhood",
+      "pass_check": true,
+      "negative_control": false
+    },
+    {
+      "name": "reject wrong sign in D transport",
+      "pass_check": true,
+      "negative_control": true
+    },
+    {
+      "name": "reject omitting scalar boundary acceleration",
+      "pass_check": true,
+      "negative_control": true
+    },
+    {
+      "name": "b value zero alone does not remove its spatial derivative",
+      "pass_check": true,
+      "negative_control": true
+    },
+    {
+      "name": "reject replacing B corner coefficient twelve by eight",
+      "pass_check": true,
+      "negative_control": true
+    },
+    {
+      "name": "D zero gives the static radial Einstein ODE",
+      "pass_check": true,
+      "negative_control": false
+    }
+  ],
+  "saved_balanced_candidates_checked": 10,
+  "saved_data_checks": [
+    {
+      "epsilon": 0.0,
+      "version": "nominal",
+      "pass_check": true,
+      "open_scalar_gap_to_bump": 0.1500227903415411,
+      "direct_D": 1.1254996934439987e-10,
+      "integral_D": 0.0,
+      "second_corner_B": -3.550537126608162e-08
+    },
+    {
+      "epsilon": 0.0,
+      "version": "refined",
+      "pass_check": true,
+      "open_scalar_gap_to_bump": 0.15002279017659303,
+      "direct_D": 6.184563972055912e-11,
+      "integral_D": 0.0,
+      "second_corner_B": -1.951002219391446e-08
+    },
+    {
+      "epsilon": 1e-06,
+      "version": "nominal",
+      "pass_check": true,
+      "open_scalar_gap_to_bump": 0.15002279979572142,
+      "direct_D": 5.3432813729159534e-11,
+      "integral_D": 1.1122794365737928e-14,
+      "second_corner_B": -1.6856085211852128e-08
+    },
+    {
+      "epsilon": 1e-06,
+      "version": "refined",
+      "pass_check": true,
+      "open_scalar_gap_to_bump": 0.15002279971742605,
+      "direct_D": 3.524291969370097e-11,
+      "integral_D": 5.845106447809805e-14,
+      "second_corner_B": -1.1117843438561485e-08
+    },
+    {
+      "epsilon": -1e-06,
+      "version": "nominal",
+      "pass_check": true,
+      "open_scalar_gap_to_bump": 0.15002278055046447,
+      "direct_D": 5.2295945351943374e-11,
+      "integral_D": -2.4802764128999087e-15,
+      "second_corner_B": -1.6497445374210542e-08
+    },
+    {
+      "epsilon": -1e-06,
+      "version": "refined",
+      "pass_check": true,
+      "open_scalar_gap_to_bump": 0.1500227804839983,
+      "direct_D": 2.319211489520967e-11,
+      "integral_D": 4.155526647963748e-14,
+      "second_corner_B": -7.3162583838470375e-09
+    },
+    {
+      "epsilon": 0.0001,
+      "version": "nominal",
+      "pass_check": true,
+      "open_scalar_gap_to_bump": 0.15002368954443612,
+      "direct_D": 5.718447937397286e-11,
+      "integral_D": 9.086784013015598e-15,
+      "second_corner_B": -1.8039583767941594e-08
+    },
+    {
+      "epsilon": 0.0001,
+      "version": "refined",
+      "pass_check": true,
+      "open_scalar_gap_to_bump": 0.15002368948542155,
+      "direct_D": 1.77351466845721e-11,
+      "integral_D": -5.382866442883223e-14,
+      "second_corner_B": -5.594781447257599e-09
+    },
+    {
+      "epsilon": -0.0001,
+      "version": "nominal",
+      "pass_check": true,
+      "open_scalar_gap_to_bump": 0.1500217646074281,
+      "direct_D": 5.4569682106375694e-11,
+      "integral_D": -1.9623575301152954e-14,
+      "second_corner_B": -1.721474065547142e-08
+    },
+    {
+      "epsilon": -0.0001,
+      "version": "refined",
+      "pass_check": true,
+      "open_scalar_gap_to_bump": 0.15002176454335026,
+      "direct_D": 2.4556356947869062e-11,
+      "integral_D": 4.043869658773142e-15,
+      "second_corner_B": -7.746633295485712e-09
+    }
+  ],
+  "source_hashes": {
+    "constraint_seed.py": "e0ae56fc32e150169ba0807f73807e9ae25fc9131c2af2c64ce8111cac1d519a",
+    "balanced_constraint_seed.py": "f26dd57127db356388b5cbbf73c1cdd286d58316eb2c6ff62703325e455f30f4",
+    "verify_constraint_seed_algebra.py": "ff7d9ccc72c417db7bbef8c49c793fb373a6afb1a07cb3082420adfda5774b29",
+    "CONSTRAINT_SEED_RESULTS.json": "fcbfe8f8b8bf331fd9b5d2b0a03d4e1b346dbf62a583af28d51471cfac10138c",
+    "BALANCED_CONSTRAINT_SEED_RESULTS.json": "f6f68a8838e2fd8fe138a72f57b7ce3292aad929b991193385984ef2b3a485c0"
+  },
+  "scope": "Exact conditional identities and read-only saved floating-result checks; no new shooting or evolution and no interval existence proof."
+}
