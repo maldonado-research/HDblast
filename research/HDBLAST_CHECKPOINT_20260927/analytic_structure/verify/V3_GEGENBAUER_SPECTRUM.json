@@ -1,0 +1,305 @@
+{
+ "phi_1": {
+  "m2_over_k2": "252",
+  "s": "18",
+  "Delta": "18",
+  "n": "14"
+ },
+ "phi_-1": {
+  "m2_over_k2": "684/25",
+  "s": "-18/5",
+  "Delta": "38/5",
+  "n": "18/5"
+ },
+ "tensor_condition_vs_direct_ODE": [
+  {
+   "u_b": 0.5,
+   "M2": 0.3,
+   "shoot": -0.18401600389664013,
+   "pred": -0.18401600389664013,
+   "abs_err": 6.399469884319427e-22,
+   "wrong_nu_err": 1.8599799792540161
+  },
+  {
+   "u_b": 0.5,
+   "M2": 1.2,
+   "shoot": -0.8331447714955308,
+   "pred": -0.8331447714955308,
+   "abs_err": 2.5651149968726125e-19,
+   "wrong_nu_err": 1.8095180684252818
+  },
+  {
+   "u_b": 0.5,
+   "M2": 2.0,
+   "shoot": -1.701836256478643,
+   "pred": -1.7018362564786431,
+   "abs_err": 2.5744432385269225e-16,
+   "wrong_nu_err": 1.701836256478643
+  },
+  {
+   "u_b": 2.0,
+   "M2": 0.3,
+   "shoot": -0.01019134351516214,
+   "pred": -0.01019134351516214,
+   "abs_err": 3.2372327195373617e-25,
+   "wrong_nu_err": 0.17339726866221755
+  },
+  {
+   "u_b": 2.0,
+   "M2": 1.2,
+   "shoot": -0.04214197473536385,
+   "pred": -0.04214197473536385,
+   "abs_err": 2.331130675493679e-22,
+   "wrong_nu_err": 0.13224725154044348
+  },
+  {
+   "u_b": 2.0,
+   "M2": 2.0,
+   "shoot": -0.07328714065173121,
+   "pred": -0.07328714065173121,
+   "abs_err": 4.774229956575085e-19,
+   "wrong_nu_err": 0.07328714065173121
+  },
+  {
+   "u_b": 3.364,
+   "M2": 0.3,
+   "shoot": -0.0007110099036144953,
+   "pred": -0.0007110099036144953,
+   "abs_err": 1.3505298697383722e-27,
+   "wrong_nu_err": 0.020859535067842692
+  },
+  {
+   "u_b": 3.364,
+   "M2": 1.2,
+   "shoot": -0.0028575840167746358,
+   "pred": -0.0028575840167746358,
+   "abs_err": 9.669793867326745e-25,
+   "wrong_nu_err": 0.013408271141645728
+  },
+  {
+   "u_b": 3.364,
+   "M2": 2.0,
+   "shoot": -0.004787704517867336,
+   "pred": -0.004787704517867336,
+   "abs_err": 2.0375227555092684e-21,
+   "wrong_nu_err": 0.004787704517867336
+  }
+ ],
+ "P_minus_mu_half_positivity": {
+  "nonpositive_count": 0,
+  "min_normalised": 1.0000028846089457
+ },
+ "tensor_direct_scan": [
+  {
+   "u_b": 0.02,
+   "sign_changes": 0,
+   "max": -0.16682109548512464,
+   "min": -69.97624864878321
+  },
+  {
+   "u_b": 0.2,
+   "sign_changes": 0,
+   "max": -0.01637695315431725,
+   "min": -6.768497821431261
+  },
+  {
+   "u_b": 1.0,
+   "sign_changes": 0,
+   "max": -0.002133940905700325,
+   "min": -0.689760238873269
+  },
+  {
+   "u_b": 3.364,
+   "sign_changes": 0,
+   "max": -2.3667131114387806e-05,
+   "min": -0.005375552559886464
+  },
+  {
+   "u_b": 6.0,
+   "sign_changes": 0,
+   "max": -1.2286921557984246e-07,
+   "min": -2.7526870080087877e-05
+  }
+ ],
+ "scalar_threshold": {
+  "grid": [
+   0.03,
+   0.04,
+   0.05,
+   0.055,
+   0.06,
+   0.065,
+   0.07,
+   0.1
+  ],
+  "F_plus_b": [
+   -27.98745425402742,
+   -14.445452334832694,
+   -5.946905994776898,
+   -2.745251874687227,
+   -0.01720433145706224,
+   2.3410700118925334,
+   4.403888285236221,
+   12.887376946727118
+  ],
+  "u_b_crit": 0.060034034582191795,
+  "H_over_k_crit": 16.647216508884686
+ },
+ "scalar_H_over_k_50": {
+  "roots_M2": [
+   1.0040433418456587
+  ]
+ },
+ "scalar_u_b_1.0": {
+  "min": 31.36800114995613,
+  "max": 31.42298299701185
+ },
+ "scalar_u_b_3.364": {
+  "min": 31.99516816490013,
+  "max": 31.99552496141344
+ },
+ "checks": [
+  {
+   "name": "phi=1: k^2 = W^2/9",
+   "passed": true,
+   "value": "1/81"
+  },
+  {
+   "name": "phi=1: m^2/k^2 = s(s-4)",
+   "passed": true,
+   "value": "(252, 18)"
+  },
+  {
+   "name": "phi=-1: k^2 = W^2/9",
+   "passed": true,
+   "value": "25/81"
+  },
+  {
+   "name": "phi=-1: m^2/k^2 = s(s-4)",
+   "passed": true,
+   "value": "(684/25, -18/5)"
+  },
+  {
+   "name": "Delta(+1)=18, n=14",
+   "passed": true,
+   "value": "{'m2_over_k2': '252', 's': '18', 'Delta': '18', 'n': '14'}"
+  },
+  {
+   "name": "Delta(-1)=38/5, n=18/5 (s=-18/5 = 4-Delta there, i.e. s is the OTHER root)",
+   "passed": true,
+   "value": "{'m2_over_k2': '684/25', 's': '-18/5', 'Delta': '38/5', 'n': '18/5'}"
+  },
+  {
+   "name": "scalar Robin coefficient: f_u = -(9/2) sigma'' f = -18 f",
+   "passed": true,
+   "value": "18"
+  },
+  {
+   "name": "C14^(2)(cosh u) = sum (j+1)(15-j) e^{(14-2j)u}",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "C14^(2)(1) = 680",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "C14^(2) = (1/2) dU15/dx",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "U15(cosh u) = sinh(16u)/sinh(u)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "explicit polynomial of C14^(2) as stated",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "f_nu solves the radial equation (numerical substitution at 6 points, 30 digits)",
+   "passed": true,
+   "value": "4.887898181599368e-150"
+  },
+  {
+   "name": "singular partner also solves it",
+   "passed": true,
+   "value": "9.775796363198735e-150"
+  },
+  {
+   "name": "singular partner ~ -u^-3 at the cone",
+   "passed": true,
+   "value": "-1"
+  },
+  {
+   "name": "f_16 = 2 C14^(2)(cosh u)",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "control: f_15 does not solve the m^2/k^2=252 equation",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "d ln C/du > 0 at sample points",
+   "passed": true,
+   "value": "[0.5036279422275775, 4.70518488163125, 11.93825504070552, 13.423229040938471, 13.995490590450673]"
+  },
+  {
+   "name": "large-u limit of static response = -9c delta/64",
+   "passed": true,
+   "value": ""
+  },
+  {
+   "name": "tensor: f'/f from direct ODE equals (mu-3/2)P_{1/2}/(sinh P_{3/2})",
+   "passed": true,
+   "value": "2.5744432385269225e-16"
+  },
+  {
+   "name": "tensor control (wrong degree) fails",
+   "passed": true,
+   "value": "0.004787704517867336"
+  },
+  {
+   "name": "P^{-mu}_{1/2}(x) > 0 on sweep",
+   "passed": true,
+   "value": "(0, 1.0000028846089457)"
+  },
+  {
+   "name": "tensor: no sign change of f'(u_b) for 0<M^2<9/4 (direct ODE)",
+   "passed": true,
+   "value": "[{'u_b': 0.02, 'sign_changes': 0, 'max': np.float64(-0.16682109548512464), 'min': np.float64(-69.97624864878321)}, {'u_b': 0.2, 'sign_changes': 0, 'max': np.flo"
+  },
+  {
+   "name": "scalar: critical H/k ~ 16.6 (audited: u_b=0.0600, H/k=16.65)",
+   "passed": true,
+   "value": "16.647216508884686"
+  },
+  {
+   "name": "scalar: bound state M^2 ~ 1.004 at H/k=50",
+   "passed": true,
+   "value": "[1.0040433418456587]"
+  },
+  {
+   "name": "scalar: no root and F+b>0 at u_b=1.0",
+   "passed": true,
+   "value": "(np.float64(31.36800114995613), np.float64(31.42298299701185))"
+  },
+  {
+   "name": "scalar: no root and F+b>0 at u_b=3.364",
+   "passed": true,
+   "value": "(np.float64(31.99516816490013), np.float64(31.99552496141344))"
+  },
+  {
+   "name": "scalar: M^2<0 gives f'/f>0 at u_b=1",
+   "passed": true,
+   "value": "[np.float64(13.435525448170266), np.float64(13.472346844593131), np.float64(13.667043935757588)]"
+  }
+ ],
+ "all_passed": true,
+ "runtime_s": 77.2961893081665
+}

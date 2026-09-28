@@ -1,0 +1,48 @@
+{
+  "status": "exact-verified (SymPy 1.14.0)",
+  "checks": {
+    "E1_BPS_constraint_identity": true,
+    "E1_BPS_scalar_identity": true,
+    "E1_control_wrong_A_fails": true,
+    "E2_l_minus_is_9_over_5": true,
+    "E2_l_plus_is_9": true,
+    "E2_BPS_tension_equals_critical": true,
+    "E3_brane_rho_coefficient_negative_for_l_plus_gt_l_minus": true,
+    "E3_exterior_mass_positive_radiation": true,
+    "E3_interior_mass_negative_radiation": true,
+    "E3_critical_tension_equals_DeltaW": true,
+    "E3_control_Z2_limit_matches_package": true,
+    "E4_Wy_a4_conserved_when_v_zero": true,
+    "E5_Wy_required_equals_minus_radiation_terms_plus_gap": true,
+    "E6_power_balance": true,
+    "E6_matter_fraction_is_Y_over_2_plus_Y": true
+  },
+  "notes": {
+    "E2": {
+      "DeltaW": "4/3",
+      "critical": "4/3",
+      "U_minus": "-50/27",
+      "U_plus": "-2/27"
+    },
+    "E3": {
+      "X_first_order": "(2*a**4*l_m**2*l_p**2*lambda/3 + 2*a**4*l_m**2*l_p**2*rho/3 + 2*a**4*l_m**2*Abs(l_p) - 2*a**4*l_p**2*Abs(l_m) + l_m**2*l_p**2*mu_m*Abs(l_m) - l_m**2*l_p**2*mu_p*Abs(l_p))/(a**4*l_m**2*l_p**2*(Abs(l_m) - Abs(l_p)))",
+      "coef_rho": "2/(3*(Abs(l_m) - Abs(l_p)))",
+      "coef_mu_interior": "Abs(l_m)/(a**4*(Abs(l_m) - Abs(l_p)))",
+      "coef_mu_exterior": "-Abs(l_p)/(a**4*(Abs(l_m) - Abs(l_p)))",
+      "Lambda_term": "2*(l_m**2*l_p**2*lambda + 3*l_m**2*Abs(l_p) - 3*l_p**2*Abs(l_m))/(3*l_m**2*l_p**2*(Abs(l_m) - Abs(l_p)))",
+      "model_values": {
+        "coef_rho": "-5/54",
+        "coef_mu_interior": "-1/(4*a**4)",
+        "coef_mu_exterior": "5/(4*a**4)",
+        "Lambda_term": "10/81 - 5*lambda/54",
+        "lambda_critical": "4/3"
+      }
+    },
+    "E6": {
+      "v": "-sigma1/(Y + 2)",
+      "matter_fraction": "Y/(Y + 2)",
+      "validity": "short-wavelength limit (frequency >> bulk curvature 1/l and >> H); the registered roll has rate ~1.66 H0 << 1/l, so this is a known-limit calibration only"
+    }
+  },
+  "all_passed": true
+}

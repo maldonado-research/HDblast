@@ -1,0 +1,144 @@
+{
+ "status": "PASS",
+ "checks": [
+  {
+   "name": "H is a constant multiple of (G-T)_tt",
+   "pass_": true,
+   "factor": "2"
+  },
+  {
+   "name": "M is a constant multiple of (G-T)_tz",
+   "pass_": true,
+   "factor": "1"
+  },
+  {
+   "name": "(G-T)_zz vanishes modulo H on the evolution equations",
+   "pass_": true,
+   "coefficient": "1/2"
+  },
+  {
+   "name": "(G-T)_xx vanishes modulo H on the evolution equations",
+   "pass_": true,
+   "coefficient": "0"
+  },
+  {
+   "name": "scalar equation box(phi)=U_phi reproduces EP",
+   "pass_": true
+  },
+  {
+   "name": "control: doubled scalar kinetic normalisation breaks H proportionality",
+   "pass_": true
+  },
+  {
+   "name": "undamped limit: (d_t - d_z)[e^{3A}(H+2M)] = 0 on the evolution equations",
+   "pass_": true
+  },
+  {
+   "name": "undamped limit: (d_t + d_z)[e^{3A}(H-2M)] = 0 on the evolution equations",
+   "pass_": true
+  },
+  {
+   "name": "damped law C+ with z-dependent kappa (jet-space derivation)",
+   "pass_": true
+  },
+  {
+   "name": "damped law C- with z-dependent kappa (jet-space derivation)",
+   "pass_": true
+  },
+  {
+   "name": "negative control: wrong sign violates the C+ law",
+   "pass_": true
+  },
+  {
+   "name": "negative control: denominator A_t-A_z violates the C+ law",
+   "pass_": true
+  },
+  {
+   "name": "source S in B_tt enters (d_t-d_z)[e^3A C+] as 6 e^3A (A_t+A_z) S",
+   "pass_": true
+  },
+  {
+   "name": "source S in B_tt enters (d_t+d_z)[e^3A C-] as 6 e^3A (A_t-A_z) S",
+   "pass_": true
+  },
+  {
+   "name": "H-only damping: high-k max growth rate equals kappa(r-1)/2 for r = A_z/A_t > 1 (numeric eigenvalues, k=1e5, kappa=10)",
+   "pass_": true
+  },
+  {
+   "name": "C+ damping: frozen-coefficient eigenvalues ik-kappa and -ik (no growth)",
+   "pass_": true
+  },
+  {
+   "name": "lab H = continuum H minus the static-background H (difference independent of a,b,f)",
+   "pass_": true,
+   "background_part": "-2*U(phi0(z))*rho(z)**2 - Derivative(phi0(z), z)**2 + 6 - 6*Derivative(rho(z), (z, 2))/rho(z)"
+  },
+  {
+   "name": "lab M = continuum M exactly (background M vanishes)",
+   "pass_": true
+  },
+  {
+   "name": "lab damping denominator 1+pa+hc+az equals A_t+A_z",
+   "pass_": true
+  },
+  {
+   "name": "lab weight (rho/rb)^3 e^{3(t+a)} equals e^{3A}/rb^3",
+   "pass_": true
+  },
+  {
+   "name": "ga (lab/frozen) equals e^{-B}A_z = sigma(phi)/6 exactly",
+   "pass_": true
+  },
+  {
+   "name": "gf (lab/frozen) equals e^{-B}phi_z = -sigma_phi/2 exactly",
+   "pass_": true
+  },
+  {
+   "name": "gpa equals d/dt of the metric junction slope",
+   "pass_": true
+  },
+  {
+   "name": "gpf equals d/dt of the scalar junction slope",
+   "pass_": true
+  },
+  {
+   "name": "control: sigma/3 metric slope does not match ga",
+   "pass_": true
+  },
+  {
+   "name": "BPS: U = W_phi^2/2 - 2W^2/3 solves 6A_y^2 = phi_y^2/2 - U with phi_y=W_phi, A_y=-W/3",
+   "pass_": true
+  },
+  {
+   "name": "BPS: scalar equation phi_yy + 4A_y phi_y = U_phi holds on the flow",
+   "pass_": true
+  },
+  {
+   "name": "BPS: at delta=0 sigma=2W gives |A_y| = sigma/6 = W/3 and |phi_y| = sigma_phi/2 = |W_phi|",
+   "pass_": true
+  }
+ ],
+ "einstein_factors": {
+  "H_over_Ett": "2",
+  "M_over_Etz": "1"
+ },
+ "honly_high_k_growth_rates": [
+  {
+   "r": 0.5,
+   "max_re": -2.49999999765625,
+   "predicted": -2.5
+  },
+  {
+   "r": 2.0,
+   "max_re": 4.9999999625000004,
+   "predicted": 5.0
+  },
+  {
+   "r": 17.0,
+   "max_re": 79.99996940003864,
+   "predicted": 80.0
+  }
+ ],
+ "seconds": 4.334133148193359
+}

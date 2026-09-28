@@ -40,7 +40,7 @@ for f in sorted((HERE / 'runs').glob('V2_BVP_*.json')):
         match = [v for k, v in aud_rows.items() if k[1] == r['delta'] and abs(mp.mpf(k[0]) - cval) < mp.mpf('1e-15')]
         if match:
             a = match[0]
-            rec['vs_audited_BVP_rel'] = {n: mp.nstr(abs(mp.mpf(r[n]) - mp.mpf(a[n])) / abs(mp.mpf(a[n])), 4) for n in ('eta_b', 'H2', 'rho_b', 'eta_h')}
+            rec['vs_audited_BVP_rel'] = {n: (mp.nstr(abs(mp.mpf(r[n]) - mp.mpf(a[n])) / abs(mp.mpf(a[n])), 4) if mp.mpf(a[n]) != 0 else 'abs ' + mp.nstr(abs(mp.mpf(r[n]) - mp.mpf(a[n])), 4)) for n in ('eta_b', 'H2', 'rho_b', 'eta_h')}
         rows.append(rec)
     out[f.stem] = dict(c=s['c'], dps=s['dps'], u0=s['u0'], rows=rows)
 # cross-setting convergence of the auditor's own solver (reg40 vs reg50)

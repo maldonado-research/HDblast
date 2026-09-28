@@ -1,0 +1,18 @@
+order-4 operators equal frozen solver to roundoff (relative < 1e-14) True {'relative_max_differences': [0.0, 0.0, 0.0, 0.0]}
+low-memory operator builder equals frozen R.matrices (relative < 1e-14) True {'relative_max_differences': [5.695366657488354e-16, 7.450704775336741e-17, 0.0, 1.746159981004779e-16, 0.0]}
+rhs equals frozen solver to roundoff (initial state, relative < 1e-13) True {'relative_max_difference': 3.352990927373669e-16}
+rhs equals frozen solver to roundoff (perturbed state, relative < 1e-13) True {'relative_max_difference': 1.7991089743593907e-17}
+constraint arrays equal frozen diagnostics to roundoff (relative < 1e-13) True {'relative_max_difference': 2.1068950467376e-16}
+KO dissipation equals the frozen solver KO term to roundoff True {'relative_max_difference': 1.7991089743593907e-17}
+order-2 stencil incl. shell ghost converges at order >= 2-0.3 True {'observed_D1': [1.8879817137035884, 1.9744802034874416], 'observed_D2': [1.995941793528403, 1.9984215039275617]}
+order-4 stencil incl. shell ghost converges at order >= 4-0.3 True {'observed_D1': [3.9989004965400388, 3.9997252561705343], 'observed_D2': [4.067320381605534, 4.025506195771515]}
+order-6 first derivative converges at order >= 5.7 True {'observed_D1': [5.99016936348361, 5.99545401414402]}
+negative control: 1% wrong shell slope destroys boundary D2 convergence True {'shell_D2_error_log2_ratios': [-0.9985565127036067, -0.9992791049878659]}
+damped law: (d_t-d_z)[e^3A C+] = -kappa e^3A C+ True {}
+damped law: (d_t+d_z)[e^3A C-] = -kappa e^3A C+ (A_t-A_z)/(A_t+A_z) True {}
+negative control: wrong damping sign violates the damped law True {}
+negative control: denominator A_t-A_z violates the damped law True {}
+projection reduces discrete initial H to roundoff and keeps M exactly zero True {'rows': [{'h': 0.0004, 'H_before': 1.0403199138136458e-06, 'H_after': 1.2430847794948694e-14, 'M_after': 0.0, 'Cw_before': 0.008627643901369268, 'Cw_after': 1.9271270258460995e-12, 'max_abs_change_a': 4.7257152455736713e-08}, {'h': 0.0002, 'H_before': 2.9878688117393134e-07, 'H_after': 5.449341252163943e-14, 'M_after': 0.0, 'Cw_before': 0.0012080809070108447, 'Cw_after': 7.322404959098136e-11, 'max_abs_change_a': 6.875955563698743e-09}]}
+projection change decreases under refinement (converges to the continuum data) True {'ratio': 6.872812370287622}
+zero-amplitude control: projection leaves the zero perturbation exactly zero True {}
+PASS

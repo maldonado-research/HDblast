@@ -1,0 +1,1036 @@
+{
+ "checkpoint": "HDBLAST research checkpoint, 27 September 2026 (calculations and audits completed 28 September 2026)",
+ "author": "Ricardo Maldonado (HDBLAST program); prepared with AI assistance",
+ "hypothesis": "A higher-dimensional 'blast' (a five-dimensional gravitational event) sparked our Big Bang.",
+ "registered_model": {
+  "W": "1-phi+phi^3/3",
+  "U": "(1/2)W_phi^2-(2/3)W^2",
+  "sigma": "2W+delta(1+c phi)",
+  "delta": 0.001,
+  "c": 0.5975949350280132,
+  "bulk": "doubled (Z2), single shell"
+ },
+ "headline": [
+  "The static +1 branch (the corrected late-time endpoint of 22 Sept) is linearly stable in the scalar and tensor sectors at all six tested detunings (the second method covers only the homogeneous sector, at three detunings); two independent methods agree and both reproduce the original shell's tachyon. Status: numerical, independently verified; not interval-certified.",
+  "No screened mechanism turns the registered 5D event into a hot, radiation-dominated Big Bang: instant preheating delivers <=1.7e-4 of the residual-vacuum threshold at the M5 cutoff for screen-passing couplings (data-end energy; <=5.9e-4 over the stored profile; conditional on the fixed archived trajectory), and a 4D energy budget allows at most ~0.59 e-folds of radiation domination vs ~22 needed (conditional).",
+  "Two model-changing leads remain open and unresolved: a quadratic tension term that removes the residual vacuum (in delta=0.1 pilots radiation reaches 69% of H^2, inside a budget with large cancellations, but bulk Weyl radiation stays above N_eff limits so far), and a sign-continued initial-shell family reaching the vacuum-tuned c* (found by the auditor at delta=0.1; one exploratory single-grid pilot)."
+ ],
+ "allowed_status": [
+  "conditional",
+  "context",
+  "corrected",
+  "exact-verified",
+  "inconclusive",
+  "negative",
+  "numerical",
+  "procedural-negative"
+ ],
+ "allowed_verdicts": [
+  "confirmed",
+  "not-independently-audited",
+  "partially-confirmed",
+  "refuted",
+  "unverifiable"
+ ],
+ "established_rule": "established=true only if the independent verifier confirmed the claim",
+ "validator_negative_control_rejected": true,
+ "counts": {
+  "status": {
+   "numerical": 27,
+   "exact-verified": 11,
+   "conditional": 10,
+   "negative": 6,
+   "corrected": 3,
+   "context": 4,
+   "inconclusive": 4,
+   "procedural-negative": 1
+  },
+  "verifier_verdict": {
+   "partially-confirmed": 13,
+   "confirmed": 39,
+   "refuted": 3,
+   "not-independently-audited": 11
+  }
+ },
+ "n_claims": 66,
+ "claims": [
+  {
+   "id": "GI-1",
+   "workstream": "stability_gauge_invariant",
+   "claim": "The +1 static background is reproduced to all stated digits (phi_b=0.9999159473169134, rho_b=129.92476284968, H^2=5.924014794329e-5, H/H0=0.606721732).",
+   "producer_label": "numerical",
+   "verifier_verdict": "partially-confirmed",
+   "status": "numerical",
+   "established": false,
+   "evidence": [
+    "stability_gauge_invariant/BACKGROUNDS.json",
+    "stability_gauge_invariant/VERIFICATION.md"
+   ],
+   "correction": "Independent-polish agreement in rho_b is <=8.5e-14 relative, not 6e-15 as first quoted.",
+   "note": ""
+  },
+  {
+   "id": "GI-2",
+   "workstream": "stability_gauge_invariant",
+   "claim": "Gauge-invariant linearized system (X, Z=Psi/phi') and shell condition M=BX+3(mu^2+4)Z/rho^2=0 with B=phi''/phi'+sigma''/2; no brane bending in longitudinal gauge; tensor h''+4Hh'+mu^2h/rho^2=0, h'(y_b)=0.",
+   "producer_label": "exact-verified",
+   "verifier_verdict": "confirmed",
+   "status": "exact-verified",
+   "established": true,
+   "evidence": [
+    "stability_gauge_invariant/DERIVATION_RESULTS.json",
+    "stability_gauge_invariant/verify/indep_derivation.json"
+   ],
+   "correction": "",
+   "note": "55/55 symbolic checks, 4/4 wrong-formula controls; auditor's independent derivation 26/26."
+  },
+  {
+   "id": "GI-3",
+   "workstream": "stability_gauge_invariant",
+   "claim": "Calibration on the original unstable shell: one bound state mu^2=-7.717871625260, growth 1.657193631259 (recorded Chat 9: -7.717871625176).",
+   "producer_label": "numerical",
+   "verifier_verdict": "confirmed",
+   "status": "numerical",
+   "established": true,
+   "evidence": [
+    "stability_gauge_invariant/SPECTRUM_RESULTS.json",
+    "stability_gauge_invariant/WINDING_RESULTS.json"
+   ],
+   "correction": "",
+   "note": "Validation against a known internal target, not a blind test."
+  },
+  {
+   "id": "GI-4",
+   "workstream": "stability_gauge_invariant",
+   "claim": "On the +1 branch at delta in {0.0003,0.001,0.003,0.01,0.03,0.1} there is no scalar eigenvalue with mu^2<9/4 (min normalized mismatch >=0.99274).",
+   "producer_label": "numerical",
+   "verifier_verdict": "confirmed",
+   "status": "numerical",
+   "established": true,
+   "evidence": [
+    "stability_gauge_invariant/SPECTRUM_RESULTS.json",
+    "stability_gauge_invariant/verify"
+   ],
+   "correction": "",
+   "note": "Real mu^2 scanned on a 360-point grid in [-400, 2.2499]; mu^2<-400 and complex mu^2 outside the winding contours are excluded only by the conditional B>0 theorem (GI-6). Regularity (normalisability) at the cone is an assumed criterion. Auditor's margin test: an instability needs B in [-0.659, 0.0081], actual B=3.479-3.555. [critic 28 Sept 2026]"
+  },
+  {
+   "id": "GI-5",
+   "workstream": "stability_gauge_invariant",
+   "claim": "No complex scalar eigenvalues inside [-60,2]x[-30,30] and [-400,2]x[-200,200] (winding 0; 1 on calibration).",
+   "producer_label": "numerical",
+   "verifier_verdict": "partially-confirmed",
+   "status": "numerical",
+   "established": false,
+   "evidence": [
+    "stability_gauge_invariant/WINDING_RESULTS.json"
+   ],
+   "correction": "",
+   "note": "Auditor re-ran only a subset (small contour, 3 cases)."
+  },
+  {
+   "id": "GI-6",
+   "workstream": "stability_gauge_invariant",
+   "claim": "If B>0 at the shell, all scalar eigenvalues are real and mu^2>-4; B=3.479-3.555 on the +1 branch and -2.68e-4 on the original shell.",
+   "producer_label": "conditional",
+   "verifier_verdict": "confirmed",
+   "status": "conditional",
+   "established": true,
+   "evidence": [
+    "stability_gauge_invariant/DERIVATION_RESULTS.json",
+    "stability_gauge_invariant/verify/identities.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "GI-7",
+   "workstream": "stability_gauge_invariant",
+   "claim": "No physical l=1 mode (B phi'_b != 0) and no l=0 static zero mode (junction Jacobian condition number 15-17).",
+   "producer_label": "numerical",
+   "verifier_verdict": "confirmed",
+   "status": "numerical",
+   "established": true,
+   "evidence": [
+    "stability_gauge_invariant/SPECTRUM_RESULTS.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "GI-8",
+   "workstream": "stability_gauge_invariant",
+   "claim": "Tensor sector: only the normalizable massless graviton; no KK bound state in (0,9/4); no tachyons.",
+   "producer_label": "exact-verified",
+   "verifier_verdict": "partially-confirmed",
+   "status": "numerical",
+   "established": false,
+   "evidence": [
+    "stability_gauge_invariant/SPECTRUM_RESULTS.json",
+    "stability_gauge_invariant/VERIFICATION.md"
+   ],
+   "correction": "Label split: mu^2>=0 (Sturm-Liouville) is exact; absence of bound states in (0,9/4) is numerical.",
+   "note": ""
+  },
+  {
+   "id": "GI-9",
+   "workstream": "stability_gauge_invariant",
+   "claim": "Controls C1-C5 behave as expected (Gegenbauer limit, flipped sigma'' creates a tachyon, dropping gravity removes the calibration root, 4D limit, perturbed c).",
+   "producer_label": "numerical",
+   "verifier_verdict": "partially-confirmed",
+   "status": "numerical",
+   "established": false,
+   "evidence": [
+    "stability_gauge_invariant/CONTROLS_RESULTS.json"
+   ],
+   "correction": "C1 pass criterion was chosen after seeing an O(delta) deviation; C2's root (-28555) lies outside the main scan, so it is a weak demonstration of detection power.",
+   "note": ""
+  },
+  {
+   "id": "GI-10",
+   "workstream": "stability_gauge_invariant",
+   "claim": "The static +1 branch is linearly stable in the scalar (including brane bending and both junctions) and tensor sectors at all six tested delta; the only marginal mode is the massless graviton.",
+   "producer_label": "numerical",
+   "verifier_verdict": "confirmed",
+   "status": "numerical",
+   "established": true,
+   "evidence": [
+    "stability_gauge_invariant/README.md",
+    "stability_gauge_invariant/VERIFICATION.md"
+   ],
+   "correction": "",
+   "note": "Floating point, not interval-certified; vector sector, nonlinear stability, tunnelling and dynamical attraction not studied."
+  },
+  {
+   "id": "TD-1",
+   "workstream": "stability_time_domain",
+   "claim": "Time-domain calibration on the original shell: rate 1.657193368 (linear) / 1.657193408 (nonlinear) vs 1.6571936312.",
+   "producer_label": "numerical",
+   "verifier_verdict": "confirmed",
+   "status": "numerical",
+   "established": true,
+   "evidence": [
+    "stability_time_domain/results/KEY_RESULTS.json",
+    "stability_time_domain/VERIFICATION.md"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "TD-2",
+   "workstream": "stability_time_domain",
+   "claim": "Only gauge (lambda->1) and far-boundary (~0.6/L) modes have positive rates on the +1 branch.",
+   "producer_label": "numerical",
+   "verifier_verdict": "partially-confirmed",
+   "status": "numerical",
+   "established": false,
+   "evidence": [
+    "stability_time_domain/results/KEY_RESULTS.json",
+    "stability_time_domain/VERIFICATION.md"
+   ],
+   "correction": "True for the fully discrete RK4 system and for shell observables. The semi-discrete operator also has grid-scale shell-localised modes with Re(lambda)~+0.245 that do not shrink with refinement (numerical artefacts damped by RK4).",
+   "note": ""
+  },
+  {
+   "id": "TD-3",
+   "workstream": "stability_time_domain",
+   "claim": "Every shell-supported mode lies on Re(lambda)=-3/2 (dS continuum mu^2>9/4) to ~1e-8; no scalar bound state with mu^2<9/4 in the homogeneous sector.",
+   "producer_label": "numerical",
+   "verifier_verdict": "confirmed",
+   "status": "numerical",
+   "established": true,
+   "evidence": [
+    "stability_time_domain/results/KEY_RESULTS.json",
+    "stability_time_domain/verify"
+   ],
+   "correction": "",
+   "note": "Homogeneous (FRW-symmetric) sector only, at delta=0.001 with 0.003 and 0.01 as perturbed-parameter checks. The time-domain signal barely reaches the shell (peak |f_b|~8.5e-9), so this claim rests on the spectral evidence. [critic 28 Sept 2026]"
+  },
+  {
+   "id": "TD-4",
+   "workstream": "stability_time_domain",
+   "claim": "Leading physical rate on the +1 branch converges to -3/2 (in H_+ units).",
+   "producer_label": "numerical",
+   "verifier_verdict": "partially-confirmed",
+   "status": "numerical",
+   "established": false,
+   "evidence": [
+    "stability_time_domain/results/KEY_RESULTS.json"
+   ],
+   "correction": "Supported precision is -1.500 +/- 1e-3 (Richardson depends on assumed order). The 'shell-localised' second profile is actually a bulk bump (near-shell weight 2.4e-10); the time-domain test barely excites the shell (~1e-8), so the spectral evidence carries the no-bound-state claim.",
+   "note": ""
+  },
+  {
+   "id": "TD-5",
+   "workstream": "stability_time_domain",
+   "claim": "Flipping sigma'' in the scalar junction produces lambda=167.48925 (partner sums to -3).",
+   "producer_label": "numerical",
+   "verifier_verdict": "confirmed",
+   "status": "numerical",
+   "established": true,
+   "evidence": [
+    "stability_time_domain/results/KEY_RESULTS.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "TD-6",
+   "workstream": "stability_time_domain",
+   "claim": "Whole-domain constraints do not converge in the far stretched region (under-resolved outgoing radiation); near-shell constraints converge.",
+   "producer_label": "negative",
+   "verifier_verdict": "confirmed",
+   "status": "negative",
+   "established": true,
+   "evidence": [
+    "stability_time_domain/results/KEY_RESULTS.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "TD-7",
+   "workstream": "stability_time_domain",
+   "claim": "Model equations, junctions and normalisations re-derived (32/32 sympy checks).",
+   "producer_label": "exact-verified",
+   "verifier_verdict": "confirmed",
+   "status": "exact-verified",
+   "established": true,
+   "evidence": [
+    "stability_time_domain/verify"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "AS-1",
+   "workstream": "analytic_structure",
+   "claim": "The 22 Sept O(delta) and O(delta^2) coefficients are reproduced exactly.",
+   "producer_label": "exact-verified",
+   "verifier_verdict": "confirmed",
+   "status": "exact-verified",
+   "established": true,
+   "evidence": [
+    "analytic_structure/SERIES_COEFFICIENTS.json",
+    "analytic_structure/verify/V1_SERIES_INDEPENDENT.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "AS-2",
+   "workstream": "analytic_structure",
+   "claim": "phi_b, H^2, rho_b, y_b and eta_h expansions exact in c through O(delta^8); e.g. h3=-c^2(11767c+11362)/2826240.",
+   "producer_label": "exact-verified",
+   "verifier_verdict": "confirmed",
+   "status": "exact-verified",
+   "established": true,
+   "evidence": [
+    "analytic_structure/SERIES_COEFFICIENTS.json",
+    "analytic_structure/verify/V1_SERIES_INDEPENDENT.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "AS-3",
+   "workstream": "analytic_structure",
+   "claim": "30-65 digit solutions of the nonlinear boundary-value problem confirm the new coefficients (e.g. H^2(delta=1e-3)=5.9240147943288795996237552780e-5).",
+   "producer_label": "numerical",
+   "verifier_verdict": "confirmed",
+   "status": "numerical",
+   "established": true,
+   "evidence": [
+    "analytic_structure/SERIES_VS_BVP.json",
+    "analytic_structure/runs/BVP_SCAN_reg.json",
+    "analytic_structure/verify/V4_COMPARE.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "AS-4",
+   "workstream": "analytic_structure",
+   "claim": "The delta^9 shell coefficients depend on cone regularity and need global matching.",
+   "producer_label": "numerical",
+   "verifier_verdict": "refuted",
+   "status": "corrected",
+   "established": false,
+   "evidence": [
+    "analytic_structure/VERIFICATION.md",
+    "analytic_structure/verify/V1_SERIES_INDEPENDENT.json"
+   ],
+   "correction": "The delta^9 coefficients are local and exactly computable (resonance constant drops out): at registered c, eta_b: 3.249147254269e-6, H^2: -2.759694789e-7; they match the workstream's fits and an independent BVP.",
+   "note": ""
+  },
+  {
+   "id": "AS-5",
+   "workstream": "analytic_structure",
+   "claim": "Exact resonance at (m,j)=(2,7) with S=-24576/17; no log in shell observables at delta^9; the cone value eta_h gets a delta^16 ln(delta) term.",
+   "producer_label": "numerical",
+   "verifier_verdict": "confirmed",
+   "status": "exact-verified",
+   "established": true,
+   "evidence": [
+    "analytic_structure/RESONANCE_PROBE.json",
+    "analytic_structure/verify/V1_SERIES_INDEPENDENT.json"
+   ],
+   "correction": "",
+   "note": "Verifier upgraded 'no log at delta^9' from fitted to exact."
+  },
+  {
+   "id": "AS-6",
+   "workstream": "analytic_structure",
+   "claim": "Leading cone displacement eta_h=-(111537/131072)c(1+c)^7 delta^8[1+O(delta)].",
+   "producer_label": "exact-verified",
+   "verifier_verdict": "confirmed",
+   "status": "exact-verified",
+   "established": true,
+   "evidence": [
+    "analytic_structure/SERIES_COEFFICIENTS.json",
+    "analytic_structure/verify/V4_COMPARE.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "AS-7",
+   "workstream": "analytic_structure",
+   "claim": "Degree-14 Gegenbauer structure: n(n+4)=252, n=Delta-4 with Delta=3W''/W=18 at phi=+1; closed forms; no polynomial at phi=-1.",
+   "producer_label": "exact-verified",
+   "verifier_verdict": "confirmed",
+   "status": "exact-verified",
+   "established": true,
+   "evidence": [
+    "analytic_structure/GEGENBAUER_STRUCTURE.json",
+    "analytic_structure/verify/V3_GEGENBAUER_SPECTRUM.json"
+   ],
+   "correction": "Wording: at phi=-1, s=3W''/W=-18/5 equals 4-Delta, not Delta.",
+   "note": ""
+  },
+  {
+   "id": "AS-8",
+   "workstream": "analytic_structure",
+   "claim": "Leading-order tensor quantization (mu-3/2)P^{-mu}_{1/2}(cosh u_b)=0: massless graviton plus continuum from m=3H/2 (the gap itself is known literature).",
+   "producer_label": "exact-verified",
+   "verifier_verdict": "confirmed",
+   "status": "exact-verified",
+   "established": true,
+   "evidence": [
+    "analytic_structure/SPECTRUM_LEADING_ORDER.json",
+    "analytic_structure/verify/V3_GEGENBAUER_SPECTRUM.json"
+   ],
+   "correction": "",
+   "note": "Leading order in delta only."
+  },
+  {
+   "id": "AS-9",
+   "workstream": "analytic_structure",
+   "claim": "Decoupled bulk scalar: no zero mode or tachyon for any H; no mode below 9H^2/4 for H/k<16.65.",
+   "producer_label": "conditional",
+   "verifier_verdict": "confirmed",
+   "status": "conditional",
+   "established": true,
+   "evidence": [
+    "analytic_structure/SPECTRUM_LEADING_ORDER.json"
+   ],
+   "correction": "",
+   "note": "Neglects scalar-metric mixing; superseded for the actual branch by GI-4/GI-10, which include mixing."
+  },
+  {
+   "id": "AS-10",
+   "workstream": "analytic_structure",
+   "claim": "Stability of the +1 branch is not established by this workstream.",
+   "producer_label": "negative",
+   "verifier_verdict": "confirmed",
+   "status": "context",
+   "established": true,
+   "evidence": [
+    "analytic_structure/README.md"
+   ],
+   "correction": "",
+   "note": "Resolved within scope by the two stability workstreams (GI-10, TD-3)."
+  },
+  {
+   "id": "PH-1",
+   "workstream": "preheating",
+   "claim": "Flat linear-crossing calibration reproduces the instant-preheating spectrum to <=8.4e-7.",
+   "producer_label": "numerical",
+   "verifier_verdict": "confirmed",
+   "status": "numerical",
+   "established": true,
+   "evidence": [
+    "preheating/CONTROLS.json",
+    "preheating/verify/INDEP_MODES.json"
+   ],
+   "correction": "",
+   "note": "The two wrong-formula controls are fixed by Gaussian algebra; weak as solver tests."
+  },
+  {
+   "id": "PH-2",
+   "workstream": "preheating",
+   "claim": "On the archived trajectory N=q^{3/2}/(8pi^3)(1+D/q+...), with D=10.648, 7.0034, 3.0032, 1.3416 at phi*=0.25,0.5,0.75,0.9.",
+   "producer_label": "numerical",
+   "verifier_verdict": "partially-confirmed",
+   "status": "numerical",
+   "established": false,
+   "evidence": [
+    "preheating/CONTROLS.json"
+   ],
+   "correction": "G x (relative deviation) is constant to 0.4%/0.1% (not '4 digits'); D at phi*=0.25 and 0.9 are closed-form values (measured 10.6476 and 1.3415).",
+   "note": ""
+  },
+  {
+   "id": "PH-3",
+   "workstream": "preheating",
+   "claim": "Closed-form O(1/q) coefficient D for a curved, expanding crossing matches toy backgrounds to ~3e-5.",
+   "producer_label": "numerical",
+   "verifier_verdict": "confirmed",
+   "status": "numerical",
+   "established": true,
+   "evidence": [
+    "preheating/CORRECTION_FIT.json",
+    "preheating/verify/DDP_EXPONENT.json"
+   ],
+   "correction": "Derivation note corrected: exponent-only h^2 term is 15/(2pi), so c_hh and c_hA follow from the mass shift plus exponent; only the +/-pi/8 pieces remain fitted. No novelty claimed.",
+   "note": ""
+  },
+  {
+   "id": "PH-4",
+   "workstream": "preheating",
+   "claim": "At the M5 cutoff the produced energy is <=1.7e-4 of the residual-vacuum radiation threshold for screen-passing couplings (<=2.8e-3 over the whole scan).",
+   "producer_label": "conditional",
+   "verifier_verdict": "confirmed",
+   "status": "conditional",
+   "established": true,
+   "evidence": [
+    "preheating/SUMMARY.json",
+    "preheating/verify/CHECK_CLAIMS.json"
+   ],
+   "correction": "",
+   "note": "Evaluated at the data end; the maximum over the post-window profile is 5.9e-4. Conditional on the fixed archived trajectory, the M5 cutoff and instantaneous full conversion."
+  },
+  {
+   "id": "PH-5",
+   "workstream": "preheating",
+   "claim": "Reaching the threshold needs chi masses >=18 M5 (>=6.3 M5 if only post-crossing masses are constrained); stronger coupling makes it worse (R ~ K/sqrt(G)).",
+   "producer_label": "conditional",
+   "verifier_verdict": "confirmed",
+   "status": "conditional",
+   "established": true,
+   "evidence": [
+    "preheating/SUMMARY.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "PH-6",
+   "workstream": "preheating",
+   "claim": "Wherever the channel could matter (R~1), backreaction on the scalar junction is 10-79%, so the fixed-trajectory calculation stops being self-consistent.",
+   "producer_label": "conditional",
+   "verifier_verdict": "confirmed",
+   "status": "conditional",
+   "established": true,
+   "evidence": [
+    "preheating/SUMMARY.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "PH-7",
+   "workstream": "preheating",
+   "claim": "Unsubtracted one-loop tension shift is 1.1-3.7 x |sigma'| at the favoured points: keeping the registered sigma requires tuned counterterms.",
+   "producer_label": "conditional",
+   "verifier_verdict": "confirmed",
+   "status": "conditional",
+   "established": true,
+   "evidence": [
+    "preheating/PREHEATING_RESULTS.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "PH-8",
+   "workstream": "preheating",
+   "claim": "Perturbative decay chi->psi psibar gives a radiation/vacuum ratio <=1.3e-4.",
+   "producer_label": "conditional",
+   "verifier_verdict": "refuted",
+   "status": "corrected",
+   "established": false,
+   "evidence": [
+    "preheating/SUMMARY.json",
+    "preheating/verify/CHECK_CLAIMS.json"
+   ],
+   "correction": "Stale README number: the JSON maximum is 2.34e-4 at (phi*=0.5, G=300, y=1). Conclusion (<<1) unchanged.",
+   "note": ""
+  },
+  {
+   "id": "PH-9",
+   "workstream": "preheating",
+   "claim": "Instant preheating on the archived +1 roll-off does not produce a radiation era in any scanned coupling range.",
+   "producer_label": "conditional",
+   "verifier_verdict": "confirmed",
+   "status": "negative",
+   "established": true,
+   "evidence": [
+    "preheating/README.md",
+    "preheating/VERIFICATION.md"
+   ],
+   "correction": "",
+   "note": "Conditional negative; the bulk-coupled feedback (all three junctions) is not solved."
+  },
+  {
+   "id": "EC-1",
+   "workstream": "evolution_constraints",
+   "claim": "The 22 Sept constraint stall is reproduced (finest-pair order 0.24 at t=0.5, 0.27 at t=1).",
+   "producer_label": "numerical",
+   "verifier_verdict": "confirmed",
+   "status": "numerical",
+   "established": true,
+   "evidence": [
+    "evolution_constraints/ANALYSIS.json",
+    "evolution_constraints/verify/compare_reruns.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "EC-2",
+   "workstream": "evolution_constraints",
+   "claim": "The error front is seeded within ~0.02 of the shell for t<~0.05 and carried outward by the exact transport law of e^{3A}(H+2M).",
+   "producer_label": "numerical",
+   "verifier_verdict": "partially-confirmed",
+   "status": "numerical",
+   "established": false,
+   "evidence": [
+    "evolution_constraints/ANALYSIS.json"
+   ],
+   "correction": "The geometric gain applies to the un-normalised H+2M; the background-normalised H has an extra factor ~360. The t=0.05 density diagnostic depends on the time step.",
+   "note": ""
+  },
+  {
+   "id": "EC-3",
+   "workstream": "evolution_constraints",
+   "claim": "The stall comes from an initial-data defect floor near the shell that does not decrease with h.",
+   "producer_label": "numerical",
+   "verifier_verdict": "confirmed",
+   "status": "numerical",
+   "established": true,
+   "evidence": [
+    "evolution_constraints/ANALYSIS.json",
+    "evolution_constraints/verify/recompute_saved.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "EC-4",
+   "workstream": "evolution_constraints",
+   "claim": "Discrete-constraint projection of the initial data restores convergence (orders ~2.9-3.1 at the finest pair; H_max(t=0.5) 6.38e-3 -> 9.35e-4).",
+   "producer_label": "numerical",
+   "verifier_verdict": "confirmed",
+   "status": "numerical",
+   "established": true,
+   "evidence": [
+    "evolution_constraints/ANALYSIS.json"
+   ],
+   "correction": "",
+   "note": "The projection correction itself does not converge below h=1e-4 (~1e-9)."
+  },
+  {
+   "id": "EC-5",
+   "workstream": "evolution_constraints",
+   "claim": "Damped transport law (d_t-d_z)[e^{3A}C+]=-kappa e^{3A}C+ for the outgoing constraint source.",
+   "producer_label": "exact-verified",
+   "verifier_verdict": "confirmed",
+   "status": "exact-verified",
+   "established": true,
+   "evidence": [
+    "evolution_constraints/CONTROLS.json",
+    "evolution_constraints/verify/sympy_independent.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "EC-6",
+   "workstream": "evolution_constraints",
+   "claim": "Outgoing-characteristic damping (kappa=10, off near the shell) lowers H by 13-100x.",
+   "producer_label": "numerical",
+   "verifier_verdict": "partially-confirmed",
+   "status": "numerical",
+   "established": false,
+   "evidence": [
+    "evolution_constraints/ANALYSIS.json"
+   ],
+   "correction": "Measured factors are ~25-200 at t=0.5-1 and ~8 at t=0.25; at t=1 'A+B smallest' is a tie with B.",
+   "note": ""
+  },
+  {
+   "id": "EC-7",
+   "workstream": "evolution_constraints",
+   "claim": "Asymptotic fourth order for the eps=0.01 seed is not demonstrated (phi_t and B_t converge at ~2).",
+   "producer_label": "inconclusive",
+   "verifier_verdict": "confirmed",
+   "status": "inconclusive",
+   "established": false,
+   "evidence": [
+    "evolution_constraints/ANALYSIS.json",
+    "evolution_constraints/verify/recompute_saved.json"
+   ],
+   "correction": "",
+   "note": "Verifier localised the deficit on the shell-seeded front z~-t; no constraint remedy touches it."
+  },
+  {
+   "id": "EC-8",
+   "workstream": "evolution_constraints",
+   "claim": "Uniform damping, H-only damping, KO dissipation, tighter inversion and order 6 without projection do not help or are unstable.",
+   "producer_label": "negative",
+   "verifier_verdict": "confirmed",
+   "status": "negative",
+   "established": true,
+   "evidence": [
+    "evolution_constraints/ANALYSIS.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "MX-1",
+   "workstream": "mechanisms",
+   "claim": "The blast produces a positive bulk Weyl (dark-radiation-like) term, peaking at 0.0806-0.0809 H0^2 (~15% of H^2) at H0 tau~6.24; late value not converged.",
+   "producer_label": "numerical",
+   "verifier_verdict": "confirmed",
+   "status": "numerical",
+   "established": true,
+   "evidence": [
+    "mechanisms/M1_WEYL_ALONG_CHAT14.json"
+   ],
+   "correction": "",
+   "note": "3 independent grids (not 4)."
+  },
+  {
+   "id": "MX-2",
+   "workstream": "mechanisms",
+   "claim": "Bulk Weyl radiation cannot be the hot Big Bang and is capped by N_eff at a few percent of the radiation.",
+   "producer_label": "negative",
+   "verifier_verdict": "partially-confirmed",
+   "status": "negative",
+   "established": false,
+   "evidence": [
+    "mechanisms/M5_OBSERVATIONAL_SCREEN.json"
+   ],
+   "correction": "The N_eff input values come from search snippets and are unverifiable here.",
+   "note": ""
+  },
+  {
+   "id": "MX-3",
+   "workstream": "mechanisms",
+   "claim": "Dark-bubble cosmology is not available in the registered model.",
+   "producer_label": "negative",
+   "verifier_verdict": "partially-confirmed",
+   "status": "conditional",
+   "established": false,
+   "evidence": [
+    "mechanisms/M3_EXACT_CHECKS.json",
+    "mechanisms/verify/V1_INDEPENDENT_DERIVATIONS.json"
+   ],
+   "correction": "Algebra exact, but the exclusion rests on a cited stability theorem and the Z2 topology: conditional, not exact. The linear Lambda_4 formula holds only near lambda=4/3.",
+   "note": ""
+  },
+  {
+   "id": "MX-4",
+   "workstream": "mechanisms",
+   "claim": "The collapse fate is not ekpyrotic (w_eff=0.76-0.85).",
+   "producer_label": "negative",
+   "verifier_verdict": "partially-confirmed",
+   "status": "inconclusive",
+   "established": false,
+   "evidence": [
+    "mechanisms/M5_OBSERVATIONAL_SCREEN.json"
+   ],
+   "correction": "Covers only ~1.05-1.10 e-folds of resolved contraction; negative only on that range.",
+   "note": ""
+  },
+  {
+   "id": "MX-5",
+   "workstream": "mechanisms",
+   "claim": "4D energy budget with zero-mode Planck masses: radiation can dominate the residual RS vacuum for at most 0.59 e-folds (0.47 at delta=0.1); ~21.8 are needed.",
+   "producer_label": "conditional",
+   "verifier_verdict": "confirmed",
+   "status": "conditional",
+   "established": true,
+   "evidence": [
+    "mechanisms/M2_ENERGY_BUDGET_AND_SCALES.json",
+    "mechanisms/verify/V4_ARITHMETIC_CHECKS.json"
+   ],
+   "correction": "",
+   "note": "H_vac^2/H0^2=0.368 only as delta->0 (0.372 at 0.01, 0.406 at 0.1). Conditional on the 4D EFT and NEC."
+  },
+  {
+   "id": "MX-6",
+   "workstream": "mechanisms",
+   "claim": "If H_vac is today's dark-energy rate, the blast e-folds in 6.4 Gyr and delta~1.1e-62..7.6e-68.",
+   "producer_label": "conditional",
+   "verifier_verdict": "confirmed",
+   "status": "conditional",
+   "established": true,
+   "evidence": [
+    "mechanisms/M2_ENERGY_BUDGET_AND_SCALES.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "MX-7",
+   "workstream": "mechanisms",
+   "claim": "Sudden tension-to-radiation conversion is gravitationally screened (the Weyl term must cancel 80-99.9% of the radiation terms).",
+   "producer_label": "exact-verified",
+   "verifier_verdict": "confirmed",
+   "status": "exact-verified",
+   "established": true,
+   "evidence": [
+    "mechanisms/M3_EXACT_CHECKS.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "MX-8",
+   "workstream": "mechanisms",
+   "claim": "A dissipative shell coupling at registered c captures 0.37-2.2% of the tension drop; radiation never reaches the residual-vacuum threshold (R/R_crit<=0.038).",
+   "producer_label": "negative",
+   "verifier_verdict": "confirmed",
+   "status": "negative",
+   "established": true,
+   "evidence": [
+    "mechanisms/M6_PILOT_COUPLED_5D.json",
+    "mechanisms/verify/V2_PILOT_CONSISTENCY.json"
+   ],
+   "correction": "",
+   "note": "5D pilots run at delta=0.1 (100x the registered detuning). [critic 28 Sept 2026]"
+  },
+  {
+   "id": "MX-9",
+   "workstream": "mechanisms",
+   "claim": "Gravitational particle production is short by 85-122 orders of magnitude.",
+   "producer_label": "negative",
+   "verifier_verdict": "confirmed",
+   "status": "negative",
+   "established": true,
+   "evidence": [
+    "mechanisms/M5_OBSERVATIONAL_SCREEN.json"
+   ],
+   "correction": "",
+   "note": "Order of magnitude, assumed coefficient."
+  },
+  {
+   "id": "MX-10",
+   "workstream": "mechanisms",
+   "claim": "The registered linear tension cannot tune away the vacuum: the initial-shell family ends near c->0+ and the shell cannot be built at c*.",
+   "producer_label": "numerical",
+   "verifier_verdict": "refuted",
+   "status": "corrected",
+   "established": false,
+   "evidence": [
+    "mechanisms/verify/V3B_CONTINUE_TO_CSTAR.json",
+    "mechanisms/verify/V5_CSTAR_PILOT_SIGNED.json"
+   ],
+   "correction": "The stop was a parametrisation artefact (phi_h=-1+10^x). With the sign allowed, a static shell exists all the way to c*=-0.99307 at delta=0.1 (phi_h=-1.00695, phi_b=-1.7287), and the c* pilot (single grid, one seed sign, Y=0, delta=0.1 only) rolls from phi_b=-1.73 across phi=-1 to 0.80. It is a qualitatively different initial state; its endpoint is open.",
+   "note": ""
+  },
+  {
+   "id": "MX-11",
+   "workstream": "mechanisms",
+   "claim": "With a quadratic tension term tuned to remove the vacuum (d*~-3.1, a model change), shell radiation reaches 69% of H^2, but Weyl radiation is ~1.8x the radiation when the run stops.",
+   "producer_label": "inconclusive",
+   "verifier_verdict": "partially-confirmed",
+   "status": "inconclusive",
+   "established": false,
+   "evidence": [
+    "mechanisms/M8_QUADRATIC_TENSION_TUNING.json",
+    "mechanisms/verify/V2_PILOT_CONSISTENCY.json",
+    "mechanisms/verify/pilot/ext_dstar_Y1_dzf2e-3_phimax1.3_summary.json"
+   ],
+   "correction": "The runs stopped at the solver's phi_b>0.995 cutoff, not the chart freeze. The H^2 budget has large cancellations (vacuum -117%, Weyl +121%, radiation +69%). With the cutoff lifted, Weyl/radiation is 1.23 at the end of the reliable window (about 12x the Delta N_eff-derived limit of 0.1). Values after the chart freeze are not usable: proper time advances by only ~0.2 H0 tau while the ratio falls through 0.6 and below zero and then swings back as H turns negative (gauge artefact or reversal); the earlier '~0.6 after the freeze' figure is withdrawn (CRITIC_CHECKS.json, post_freeze_dstar).",
+   "note": "Pilots at delta=0.1 only; d* convergence rests on one grid pair (dz_fine 1e-3 and 2e-3). [critic 28 Sept 2026]"
+  },
+  {
+   "id": "LT-1",
+   "workstream": "literature",
+   "claim": "'Our universe as a wall born in a 5D event' has substantial published prior art (1998-2026); HDBLAST cannot claim the concept.",
+   "producer_label": "context",
+   "verifier_verdict": "not-independently-audited",
+   "status": "context",
+   "established": false,
+   "evidence": [
+    "literature/theory.md",
+    "literature/theory_checks/theory_sources.json"
+   ],
+   "correction": "",
+   "note": "Snippet-level only."
+  },
+  {
+   "id": "LT-2",
+   "workstream": "literature",
+   "claim": "Registered model sits inside standard RS/KR/DFGK formulas: balanced tension = critical tension; thin-brane H^2 differs from the branch by exactly -c^2 delta^2/384 (7.869 ppm in H).",
+   "producer_label": "exact-verified",
+   "verifier_verdict": "not-independently-audited",
+   "status": "exact-verified",
+   "established": false,
+   "evidence": [
+    "literature/theory_checks/rs_thin_brane_crosscheck.json"
+   ],
+   "correction": "",
+   "note": "Self-checked with 4 wrong-formula controls; no separate auditor. The O(delta^2) term predicts -7.849 ppm of the measured -7.869 ppm shift in H; higher orders supply the rest. [critic 28 Sept 2026]"
+  },
+  {
+   "id": "LT-3",
+   "workstream": "literature",
+   "claim": "The registered PTA knee is at 0.9972 x (1/yr), on the pulsar position/proper-motion blind spot; no 2025-2026 release tests it at likelihood level.",
+   "producer_label": "numerical",
+   "verifier_verdict": "not-independently-audited",
+   "status": "inconclusive",
+   "established": false,
+   "evidence": [
+    "literature/observations_checks/knee_and_scale_checks.json",
+    "literature/observations.md"
+   ],
+   "correction": "",
+   "note": "Knee position numerical; the blind-spot statement is from snippets."
+  },
+  {
+   "id": "LT-4",
+   "workstream": "literature",
+   "claim": "Tabletop gravity bounds put the static branch at >=TeV vacuum scale and sub-mHz horizon-scale GW frequency, ~1600-2600x the knee frequency.",
+   "producer_label": "conditional",
+   "verifier_verdict": "not-independently-audited",
+   "status": "conditional",
+   "established": false,
+   "evidence": [
+    "literature/observations_checks/knee_and_scale_checks.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "LT-5",
+   "workstream": "literature",
+   "claim": "Methods sweep ran no new searches (budget exhausted); its list is second-hand.",
+   "producer_label": "procedural-negative",
+   "verifier_verdict": "not-independently-audited",
+   "status": "procedural-negative",
+   "established": false,
+   "evidence": [
+    "literature/methods.md"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "LT-6",
+   "workstream": "literature",
+   "claim": "Certifying the +1 branch needs the eta=phi-1 formulation: the regular cone germ is amplified by 6.288e18 at delta=1e-3 (a direct phi formulation needs ~39 digits).",
+   "producer_label": "numerical",
+   "verifier_verdict": "not-independently-audited",
+   "status": "numerical",
+   "established": false,
+   "evidence": [
+    "literature/methods_checks/certification_pilot.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "PM-1",
+   "workstream": "program_map",
+   "claim": "Program map of HDBLAST Aug 2025 - 23 Sept 2026 with claims ledger; 34/34 self-checks pass.",
+   "producer_label": "context",
+   "verifier_verdict": "not-independently-audited",
+   "status": "context",
+   "established": false,
+   "evidence": [
+    "program_map/PROGRAM_MAP.md",
+    "program_map/program_map_checks.json"
+   ],
+   "correction": "",
+   "note": "Zenodo record 22922928 metadata (version, concept, files) unverified: zenodo.org blocked."
+  },
+  {
+   "id": "SY-1",
+   "workstream": "synthesis",
+   "claim": "Methods A and B agree where they overlap: calibration growth to 1.6e-8 (eigenvalue) and 1.6e-7 (time domain); the artificial flipped-sigma'' tachyon to 3.7e-10; both find no scalar mode below the 9/4 continuum; B's leading rate matches the continuum edge -3/2 (A's criterion).",
+   "producer_label": "numerical",
+   "verifier_verdict": "not-independently-audited",
+   "status": "numerical",
+   "established": false,
+   "evidence": [
+    "synthesis/RECONCILIATION.json",
+    "synthesis/reconcile_stability.py"
+   ],
+   "correction": "",
+   "note": "Comparison of saved outputs; wrong mu^2 maps are rejected as controls. Slowest-decay agreement is within the supported +/-1e-3 of TD-4. [critic 28 Sept 2026]"
+  },
+  {
+   "id": "SY-2",
+   "workstream": "synthesis",
+   "claim": "Method A's shell coefficient B extrapolates to 3.5555554 as delta->0, matching the exact 32/9 = 14/9 (regular Delta=18 growth rate) + 2 (sigma''/2) to 3e-8.",
+   "producer_label": "numerical",
+   "verifier_verdict": "not-independently-audited",
+   "status": "numerical",
+   "established": false,
+   "evidence": [
+    "synthesis/RECONCILIATION.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "SY-3",
+   "workstream": "synthesis",
+   "claim": "Cross-workstream reconciliation: the theory sweep's 'no dark radiation' statement applies to static pure-tension configurations; the dynamical roll-off does produce a positive Weyl term (MX-1).",
+   "producer_label": "context",
+   "verifier_verdict": "not-independently-audited",
+   "status": "context",
+   "established": false,
+   "evidence": [
+    "literature/theory.md",
+    "mechanisms/M1_WEYL_ALONG_CHAT14.json"
+   ],
+   "correction": "",
+   "note": ""
+  },
+  {
+   "id": "SY-4",
+   "workstream": "synthesis",
+   "claim": "All 56 key numbers quoted in this checkpoint's report are found in the workstreams' JSON outputs within stated tolerances; 3 negative controls pass.",
+   "producer_label": "numerical",
+   "verifier_verdict": "not-independently-audited",
+   "status": "numerical",
+   "established": false,
+   "evidence": [
+    "synthesis/QUOTED_NUMBER_CHECKS.json",
+    "synthesis/check_quoted_numbers.py"
+   ],
+   "correction": "",
+   "note": ""
+  }
+ ],
+ "critic_review": {
+  "date": "2026-09-28",
+  "scope": "completeness and overclaim review of the top-level report files; workstream outputs not modified",
+  "script": "critic_corrections.py",
+  "checks": "CRITIC_CHECKS.json",
+  "summary": [
+   "wording stronger than the audits support was tightened (stability scope, detection-power controls, decay-rate precision, thin-brane ppm attribution, audit re-run coverage)",
+   "missing caveats added (delta=0.1 pilots, Method A scan range and cone-regularity assumption, Method B weak shell excitation, preheating fixed trajectory and 'post' cutoff maximum, projection non-convergence)",
+   "the unsourced '~0.6 after the chart freeze' Weyl/radiation value was withdrawn",
+   "the unverified-citation list was completed; arXiv:2609.21421 does have a search record",
+   "contradiction fixed: 'each workstream audited' vs literature/program_map self-checked only",
+   "AI product names removed from the top-level files"
+  ]
+ }
+}

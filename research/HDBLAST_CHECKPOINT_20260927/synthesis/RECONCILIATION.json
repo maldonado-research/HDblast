@@ -1,0 +1,269 @@
+{
+ "status": "numerical comparison of saved outputs + exact sympy limits; no new ODE/PDE solves",
+ "inputs": {
+  "A_spectrum": {
+   "path": "stability_gauge_invariant/SPECTRUM_RESULTS.json",
+   "sha256": "02b13437f022a0537710597f706cd7991409c3027b57618bfdee711baa8a7ac7"
+  },
+  "A_controls": {
+   "path": "stability_gauge_invariant/CONTROLS_RESULTS.json",
+   "sha256": "b8d939835258bd1d6123d9730cbb9a190dd62264d2ea240a88da1322d76275c8"
+  },
+  "A_backgrounds": {
+   "path": "stability_gauge_invariant/BACKGROUNDS.json",
+   "sha256": "b369e352996ff146bcecc08e5230707d0ad7edbfa36e3e554f40a55001a37181"
+  },
+  "B_key": {
+   "path": "stability_time_domain/results/KEY_RESULTS.json",
+   "sha256": "c3a7a2d08e82e7b1d33099fb7d2cf52de4bf2e228ba47e87b9daaf05325381be"
+  },
+  "S_series": {
+   "path": "analytic_structure/SERIES_COEFFICIENTS.json",
+   "sha256": "5322b4917ec3423819d6f85c5f9974f58888428000df70c91441bae32bd8487d"
+  },
+  "S_spectrum": {
+   "path": "analytic_structure/SPECTRUM_LEADING_ORDER.json",
+   "sha256": "34372dc1e1a5241194a45c1987ff2b29308fe1760609fdc5c979c1eb5f180abb"
+  },
+  "P_summary": {
+   "path": "preheating/SUMMARY.json",
+   "sha256": "3b5aa55197e938ec0b672b67e26e9d320cff61cf373e38f6095b295e816961a3"
+  }
+ },
+ "checks": [
+  {
+   "name": "calibration growth: A (shooting) vs B (time-domain pencil, h=5e-5)",
+   "value": 1.6571933679410478,
+   "target": 1.657193631258659,
+   "rel_diff": 1.5889369009399973e-07,
+   "tolerance_rel": 1e-06,
+   "agrees": true,
+   "expected_to_agree": true,
+   "passes": true,
+   "note": ""
+  },
+  {
+   "name": "calibration growth: A vs B (nonlinear RHS, eps=1e-8, h=5e-5)",
+   "value": 1.657193408175295,
+   "target": 1.657193631258659,
+   "rel_diff": 1.3461514683371658e-07,
+   "tolerance_rel": 1e-06,
+   "agrees": true,
+   "expected_to_agree": true,
+   "passes": true,
+   "note": ""
+  },
+  {
+   "name": "calibration growth: A vs B (semi-discrete eigenvalue, h=5e-5)",
+   "value": 1.6571936572879495,
+   "target": 1.657193631258659,
+   "rel_diff": 1.5706849223770856e-08,
+   "tolerance_rel": 1e-07,
+   "agrees": true,
+   "expected_to_agree": true,
+   "passes": true,
+   "note": ""
+  },
+  {
+   "name": "calibration: mu^2 from A's growth via p(p+3) reproduces A's mu^2",
+   "value": -7.717871625260237,
+   "target": -7.717871625260236,
+   "rel_diff": 1.1508074542120634e-16,
+   "tolerance_rel": 1e-12,
+   "agrees": true,
+   "expected_to_agree": true,
+   "passes": true,
+   "note": ""
+  },
+  {
+   "name": "CONTROL (must fail): wrong map mu^2=-p^2 applied to A's growth",
+   "value": -2.7462907314842604,
+   "target": -7.717871625260236,
+   "rel_diff": 0.6441647561879912,
+   "tolerance_rel": 0.001,
+   "agrees": false,
+   "expected_to_agree": false,
+   "passes": true,
+   "note": "flat-space map ignores the 3H friction of dS4 harmonics"
+  },
+  {
+   "name": "flipped-sigma'' control growth (delta=0.001): A vs B shift-invert h=5e-5",
+   "value": 167.48924627154153,
+   "target": 167.4892463335146,
+   "rel_diff": 3.7001213869295927e-10,
+   "tolerance_rel": 1e-07,
+   "agrees": true,
+   "expected_to_agree": true,
+   "passes": true,
+   "note": "two independent codes, one detects the same artificial tachyon"
+  },
+  {
+   "name": "flipped-sigma'' control: mu^2 from B's rate vs A's root",
+   "value": -28555.115355423713,
+   "target": -28555.115376369275,
+   "rel_diff": 7.335134473229057e-10,
+   "tolerance_rel": 1e-07,
+   "agrees": true,
+   "expected_to_agree": true,
+   "passes": true,
+   "note": ""
+  },
+  {
+   "name": "CONTROL (must fail): wrong map on B's flipped rate",
+   "value": -28052.64761660909,
+   "target": -28555.115376369275,
+   "rel_diff": 0.017596418474848823,
+   "tolerance_rel": 0.001,
+   "agrees": false,
+   "expected_to_agree": false,
+   "passes": true,
+   "note": ""
+  },
+  {
+   "name": "B's gauge eigenvalue (L=8) mapped to mu^2 vs A's pure-gauge l=1 value -4",
+   "value": -3.9999996318045934,
+   "target": -4.0,
+   "rel_diff": 9.204885165203791e-08,
+   "tolerance_rel": 1e-06,
+   "agrees": true,
+   "expected_to_agree": true,
+   "passes": true,
+   "note": "consistency of interpretation: dS4 translation harmonic p=1 <-> mu^2=-4"
+  },
+  {
+   "name": "+1 branch leading amplitude rate (B, Richardson) vs continuum edge -3/2",
+   "value": -1.5001190418671013,
+   "target": -1.5,
+   "rel_diff": 7.93612447342144e-05,
+   "tolerance_rel": 0.001,
+   "agrees": true,
+   "expected_to_agree": true,
+   "passes": true,
+   "note": "verifier: only -1.500 +/- 1e-3 is supported"
+  },
+  {
+   "name": "+1 branch leading rate, second profile (B) vs -3/2",
+   "value": -1.5001670577516808,
+   "target": -1.5,
+   "rel_diff": 0.00011137183445386611,
+   "tolerance_rel": 0.001,
+   "agrees": true,
+   "expected_to_agree": true,
+   "passes": true,
+   "note": ""
+  },
+  {
+   "name": "A: zero scalar/longitudinal roots below 9/4 at all six delta",
+   "agrees": true,
+   "expected_to_agree": true,
+   "passes": true
+  },
+  {
+   "name": "B: no shell-supported mode above Re(lambda)=-3/2 (dense spectra, excl. grid-scale)",
+   "agrees": true,
+   "expected_to_agree": true,
+   "passes": true
+  },
+  {
+   "name": "B(delta->0) from A's numerics (linear fit, 3 smallest delta) vs exact 32/9",
+   "value": 3.5555554484160083,
+   "target": 3.5555555555555554,
+   "rel_diff": 3.013299759713206e-08,
+   "tolerance_rel": 0.0001,
+   "agrees": true,
+   "expected_to_agree": true,
+   "passes": true,
+   "note": ""
+  },
+  {
+   "name": "CONTROL (must fail): same fit vs wrong limit 14/9 (bulk term only)",
+   "value": 3.5555554484160083,
+   "target": 1.5555555555555556,
+   "rel_diff": 1.2857142168388624,
+   "tolerance_rel": 0.01,
+   "agrees": false,
+   "expected_to_agree": false,
+   "passes": true,
+   "note": ""
+  },
+  {
+   "name": "A tensor roots: exactly one per delta, |mu^2|<1e-12 (graviton); analytic_structure: spectrum {0} U [9/4, inf)",
+   "value": 2.221781135468022e-14,
+   "agrees": true,
+   "expected_to_agree": true,
+   "passes": true
+  },
+  {
+   "name": "calibration delta->0 extrapolation (A) vs closed-form 4D value",
+   "value": -7.71979563693238,
+   "target": -7.719795918397124,
+   "rel_diff": 3.646012756446632e-08,
+   "tolerance_rel": 1e-06,
+   "agrees": true,
+   "expected_to_agree": true,
+   "passes": true,
+   "note": ""
+  },
+  {
+   "name": "series h2 (analytic_structure) minus 22 Sept package form, symbolic",
+   "value": 1.0,
+   "target": 1.0,
+   "rel_diff": 0.0,
+   "tolerance_rel": 1e-15,
+   "agrees": true,
+   "expected_to_agree": true,
+   "passes": true,
+   "note": "value-1 is the symbolic difference evaluated at c=1 (identically 0)"
+  },
+  {
+   "name": "H^2 at delta=0.001: exact series through delta^8 vs package float solution",
+   "value": 5.924014794328879e-05,
+   "target": 5.924014794328961e-05,
+   "rel_diff": 1.3840746882115771e-14,
+   "tolerance_rel": 1e-13,
+   "agrees": true,
+   "expected_to_agree": true,
+   "passes": true,
+   "note": ""
+  },
+  {
+   "name": "CONTROL (must fail at 1e-13): two-term series vs package H^2",
+   "value": 5.924015026781405e-05,
+   "target": 5.924014794328961e-05,
+   "rel_diff": 3.923900458221119e-08,
+   "tolerance_rel": 1e-13,
+   "agrees": false,
+   "expected_to_agree": false,
+   "passes": true,
+   "note": "truncation error O(delta^3) ~ 4e-8 relative"
+  }
+ ],
+ "all_pass": true,
+ "n_checks": 20,
+ "exact": {
+  "U''(1)": "28/9",
+  "ell_plus": "9",
+  "Delta": "18",
+  "gegenbauer_degree": "14",
+  "g_limit": "14/9",
+  "sigma''/2 at phi=1": "2",
+  "B_limit": "32/9"
+ },
+ "fit_B_vs_delta": {
+  "B0": 3.5555554484160083,
+  "B1": -0.7765545183455934,
+  "max_fit_residual": 5.845128425718826e-08,
+  "deltas": [
+   0.0003,
+   0.001,
+   0.003
+  ]
+ },
+ "derived_for_next_tests": {
+  "status": "conditional (linear theory; assumes the far-region evolution approaches the +1 branch)",
+  "H_plus_over_H0": 0.6067217319722785,
+  "slowest_linear_decay_rate_in_H0_units": -0.9100825979584177,
+  "e_folding_time_in_H0tau": 1.098801364011677,
+  "note": "If Chat 14's positive-side run relaxes onto the +1 branch linearly, deviations should decay no slower than exp(-1.5 H_+ tau) (continuum edge, possibly with power-law prefactors from the branch cut)."
+ }
+}

@@ -1,0 +1,588 @@
+{
+ "status": "critic checks: numbers are floating-point reads of saved JSON/NPZ outputs (tolerances per entry); wording and citation scans are text searches",
+ "mode": "apply+check",
+ "patch_log": [
+  [
+   "author",
+   null,
+   "already"
+  ],
+  [
+   "headline",
+   0,
+   "already"
+  ],
+  [
+   "headline",
+   1,
+   "already"
+  ],
+  [
+   "headline",
+   2,
+   "already"
+  ],
+  [
+   "headline",
+   2,
+   "already"
+  ],
+  [
+   "GI-4",
+   "note",
+   "already"
+  ],
+  [
+   "TD-3",
+   "note",
+   "already"
+  ],
+  [
+   "MX-6",
+   "claim",
+   "already"
+  ],
+  [
+   "MX-8",
+   "note",
+   "already"
+  ],
+  [
+   "MX-10",
+   "correction",
+   "already"
+  ],
+  [
+   "MX-11",
+   "correction",
+   "already"
+  ],
+  [
+   "MX-11",
+   "note",
+   "already"
+  ],
+  [
+   "LT-2",
+   "note",
+   "already"
+  ],
+  [
+   "SY-1",
+   "note",
+   "already"
+  ]
+ ],
+ "all_pass": true,
+ "json_patches_missing": [],
+ "claim_review_has_critic_section": true,
+ "numbers": [
+  {
+   "id": "P1",
+   "desc": "preheating: max R over stored profile, screen-passing",
+   "quoted": 0.00059,
+   "rtol": 0.01,
+   "file": "preheating/verify/CHECK_CLAIMS.json",
+   "value": 0.0005912394391276746,
+   "passed": true
+  },
+  {
+   "id": "P2",
+   "desc": "preheating: max R with 'post' cutoff, screen-passing",
+   "quoted": 0.004,
+   "rtol": 0.02,
+   "file": "preheating/verify/CHECK_CLAIMS.json",
+   "value": 0.0040480353446512764,
+   "passed": true
+  },
+  {
+   "id": "P3",
+   "desc": "preheating: decay maximum y=1, screen-passing",
+   "quoted": 0.000234,
+   "rtol": 0.005,
+   "file": "preheating/verify/CHECK_CLAIMS.json",
+   "value": 0.0002340087189810673,
+   "passed": true
+  },
+  {
+   "id": "M1",
+   "desc": "delta-Lambda lock, ell=38.6 um",
+   "quoted": 1.1e-62,
+   "rtol": 0.03,
+   "file": "mechanisms/M2_ENERGY_BUDGET_AND_SCALES.json",
+   "value": 1.1292082185311108e-62,
+   "passed": true
+  },
+  {
+   "id": "M2",
+   "desc": "delta-Lambda lock, ell=0.1 um",
+   "quoted": 7.6e-68,
+   "rtol": 0.01,
+   "file": "mechanisms/M2_ENERGY_BUDGET_AND_SCALES.json",
+   "value": 7.578782105097523e-68,
+   "passed": true
+  },
+  {
+   "id": "M3",
+   "desc": "H_vac^2/H0^2 at delta=0.01",
+   "quoted": 0.372,
+   "rtol": 0.002,
+   "file": "mechanisms/M2_ENERGY_BUDGET_AND_SCALES.json",
+   "value": 0.37162114470598606,
+   "passed": true
+  },
+  {
+   "id": "M4",
+   "desc": "H_vac^2/H0^2 at delta=0.1",
+   "quoted": 0.406,
+   "rtol": 0.002,
+   "file": "mechanisms/M2_ENERGY_BUDGET_AND_SCALES.json",
+   "value": 0.40616846475555957,
+   "passed": true
+  },
+  {
+   "id": "M5",
+   "desc": "N_max at delta=0.1",
+   "quoted": 0.47,
+   "rtol": 0.01,
+   "file": "mechanisms/M2_ENERGY_BUDGET_AND_SCALES.json",
+   "value": 0.4660807296902979,
+   "passed": true
+  },
+  {
+   "id": "M6",
+   "desc": "c* (signed family, delta=0.1)",
+   "quoted": -0.99307,
+   "rtol": 1e-05,
+   "file": "mechanisms/verify/V3B_CONTINUE_TO_CSTAR.json",
+   "value": -0.99307,
+   "passed": true
+  },
+  {
+   "id": "M7",
+   "desc": "c* shell cone value phi_h",
+   "quoted": -1.00695,
+   "rtol": 1e-05,
+   "file": "mechanisms/verify/V3B_CONTINUE_TO_CSTAR.json",
+   "value": -1.0069463732874038,
+   "passed": true
+  },
+  {
+   "id": "M8",
+   "desc": "c* pilot H/H0 at window end",
+   "quoted": 0.14,
+   "rtol": 0.01,
+   "file": "mechanisms/verify/V5_CSTAR_PILOT_SIGNED.json",
+   "value": 0.14008591581308608,
+   "passed": true
+  },
+  {
+   "id": "L1",
+   "desc": "thin-brane O(delta^2) prediction (ppm)",
+   "quoted": -7.849,
+   "rtol": 0.0002,
+   "file": "literature/theory_checks/rs_thin_brane_crosscheck.json",
+   "value": -7.84928,
+   "passed": true
+  },
+  {
+   "id": "L2",
+   "desc": "full vs thin-brane shift (ppm)",
+   "quoted": -7.869,
+   "rtol": 0.0002,
+   "file": "literature/theory_checks/rs_thin_brane_crosscheck.json",
+   "value": -7.86893,
+   "passed": true
+  },
+  {
+   "id": "T1",
+   "desc": "Method B Richardson assuming order 2",
+   "quoted": -1.4994,
+   "rtol": 0.0001,
+   "file": "stability_time_domain/verify/v4_compare_and_extract.json",
+   "value": -1.4993492590901534,
+   "passed": true
+  },
+  {
+   "id": "T2",
+   "desc": "Method B Richardson assuming order 4",
+   "quoted": -1.5007,
+   "rtol": 0.0001,
+   "file": "stability_time_domain/verify/v4_compare_and_extract.json",
+   "value": -1.5007199730828003,
+   "passed": true
+  },
+  {
+   "id": "T3",
+   "desc": "Method B peak shell response |f_b| (finest grid)",
+   "quoted": 8.5e-09,
+   "rtol": 0.01,
+   "file": "stability_time_domain/verify/v4_compare_and_extract.json",
+   "value": 8.470881617254606e-09,
+   "passed": true
+  },
+  {
+   "id": "G1",
+   "desc": "Method A real mu^2 scan: number of points",
+   "quoted": 360,
+   "rtol": 0.0,
+   "file": "stability_gauge_invariant/SPECTRUM_RESULTS.json",
+   "value": 360,
+   "passed": true
+  },
+  {
+   "id": "G2",
+   "desc": "Method A scan interval [-400, 2.2499]",
+   "quoted": [
+    -400,
+    2.2499
+   ],
+   "value": [
+    -400.0000000000001,
+    2.2499
+   ],
+   "passed": true
+  },
+  {
+   "id": "G3",
+   "desc": "B* range over +1 branches [-0.659, 0.0081]; actual B 3.479-3.555",
+   "quoted": [
+    -0.659,
+    0.0081,
+    3.479,
+    3.555
+   ],
+   "value": [
+    -0.6590380938247695,
+    0.00809679049669728,
+    3.478555409581149,
+    3.5553225253577523
+   ],
+   "passed": true
+  },
+  {
+   "id": "E1",
+   "desc": "Remedy B / baseline H_max factors at t=0.5 and 1 lie in 25-200",
+   "quoted": [
+    25,
+    200
+   ],
+   "value": [
+    26.182536795815665,
+    194.2465511105939
+   ],
+   "passed": true
+  },
+  {
+   "id": "D1",
+   "desc": "d* stop budget: vacuum -117%, Weyl +121%, radiation +69%",
+   "quoted": [
+    -1.17,
+    1.21,
+    0.69
+   ],
+   "value": [
+    -1.1725511236192636,
+    1.2130568689966041,
+    0.6905295839496798
+   ],
+   "passed": true
+  },
+  {
+   "id": "D2",
+   "desc": "extended d*: Weyl/radiation at reliable-window end, and multiple of the 0.1 limit",
+   "quoted": [
+    1.23,
+    12
+   ],
+   "value": [
+    1.232045878803561,
+    12.32045878803561
+   ],
+   "passed": true
+  }
+ ],
+ "post_freeze_dstar": {
+  "window_end_t": 4.779999999999931,
+  "window_end_H0tau": 3.7522520076907986,
+  "ratio_at_window_end": 1.2320458788035609,
+  "control_reproduces_V2_window_end_ratio": true,
+  "first_H_negative_t": 10.439999999999653,
+  "H0tau_at_first_H_negative": 3.958961215808972,
+  "proper_time_advance_window_end_to_H_negative": 0.2067092081181734,
+  "coordinate_time_advance": 5.659999999999722,
+  "ratio_min_before_H_negative": -0.16610422219927645,
+  "ratio_max_before_H_negative": 1.2320458788035609,
+  "ratio_crosses_0p6": true,
+  "ratio_changes_sign": true,
+  "samples": [
+   [
+    4.779999999999931,
+    3.7522520076907986,
+    0.23166981421471505,
+    1.2320458788035609
+   ],
+   [
+    5.250000000000088,
+    3.8287076143766408,
+    0.21786318447799694,
+    0.9654517961961286
+   ],
+   [
+    5.720000000000245,
+    3.877324589840461,
+    0.20987617640252346,
+    0.8189573426961475
+   ],
+   [
+    6.190000000000402,
+    3.9080235307587494,
+    0.2045292723833737,
+    0.7307601348468606
+   ],
+   [
+    6.660000000000559,
+    3.9273295207293017,
+    0.20021699406913535,
+    0.6702220518116956
+   ],
+   [
+    7.130000000000716,
+    3.939441329793572,
+    0.19583634126153265,
+    0.6196171777081144
+   ],
+   [
+    7.600000000000873,
+    3.947028656561485,
+    0.19033629573562413,
+    0.5659764231699838
+   ],
+   [
+    8.070000000000967,
+    3.9517773931323994,
+    0.1826338555016952,
+    0.49943104300759716
+   ],
+   [
+    8.540000000000706,
+    3.9547478707837733,
+    0.1709358583703143,
+    0.40739350208853614
+   ],
+   [
+    9.010000000000446,
+    3.9566053542566824,
+    0.1524207389425057,
+    0.27662655352045035
+   ],
+   [
+    9.480000000000185,
+    3.95776661727964,
+    0.12339440780549053,
+    0.10650475742768335
+   ],
+   [
+    9.949999999999925,
+    3.958492519714558,
+    0.07714401299488603,
+    -0.07965695291923888
+   ],
+   [
+    10.419999999999664,
+    3.9589462415998997,
+    0.0031648265035321126,
+    -0.16072813606296962
+   ],
+   [
+    10.889999999999404,
+    3.959229823566219,
+    -0.11460777184242238,
+    0.26119303107308645
+   ]
+  ],
+  "samples_columns": [
+   "t",
+   "H0tau",
+   "H/H0",
+   "Weyl/radiation_terms"
+  ],
+  "plateau_near_0p6": false,
+  "passed": true
+ },
+ "wording": {
+  "ai_names_in_top_level": [],
+  "withdrawn_phrases_present": [],
+  "control_ai_regex": true,
+  "control_withdrawn_scanner": true,
+  "ai_names_outside_top_level_not_editable_here": [
+   "synthesis/build_claim_review.py",
+   "synthesis/build_results_summary.py"
+  ],
+  "passed": true
+ },
+ "citations": {
+  "per_file": {
+   "NEXT_TESTS.md": {
+    "arxiv_ids_without_literature_record": [
+     "2603.13226"
+    ],
+    "other_links_without_record": []
+   },
+   "analytic_structure/README.md": {
+    "arxiv_ids_without_literature_record": [
+     "gr-qc/0010035",
+     "hep-th/0011156",
+     "hep-th/0012044"
+    ],
+    "other_links_without_record": [
+     "https://arxiv.org/abs/gr-qc/0010035",
+     "https://arxiv.org/pdf/hep-th/0011156",
+     "https://arxiv.org/pdf/hep-th/0012044"
+    ]
+   },
+   "evolution_constraints/README.md": {
+    "arxiv_ids_without_literature_record": [
+     "1503.03436",
+     "gr-qc/0407110",
+     "gr-qc/0504114"
+    ],
+    "other_links_without_record": [
+     "https://arxiv.org/pdf/1503.03436",
+     "https://arxiv.org/pdf/gr-qc/0407110",
+     "https://arxiv.org/pdf/gr-qc/0504114"
+    ]
+   },
+   "mechanisms/README.md": {
+    "arxiv_ids_without_literature_record": [
+     "2312.09042",
+     "2603.13226",
+     "astro-ph/0208133",
+     "gr-qc/0111013",
+     "hep-th/0111279",
+     "hep-th/0206146",
+     "hep-th/9906064"
+    ],
+    "other_links_without_record": [
+     "https://arxiv.org/abs/2312.09042",
+     "https://arxiv.org/abs/hep-th/9906064v1",
+     "https://arxiv.org/html/2603.13226v2",
+     "https://arxiv.org/pdf/astro-ph/0208133",
+     "https://arxiv.org/pdf/gr-qc/0111013",
+     "https://arxiv.org/pdf/hep-th/0111279",
+     "https://arxiv.org/pdf/hep-th/0206146",
+     "https://harvest.aps.org/v2/journals/articles/10.1103/PhysRevD.64.123522/fulltext",
+     "https://journals.aps.org/prd/abstract/10.1103/PhysRevD.102.063514",
+     "https://link.springer.com/article/10.1007/JHEP02(2024)102"
+    ]
+   },
+   "preheating/README.md": {
+    "arxiv_ids_without_literature_record": [
+     "0905.2284",
+     "1402.5669",
+     "hep-ph/0205240",
+     "hep-th/0405016"
+    ],
+    "other_links_without_record": [
+     "https://arxiv.org/html/0905.2284",
+     "https://arxiv.org/html/1402.5669",
+     "https://arxiv.org/html/hep-ph/0205240",
+     "https://arxiv.org/html/hep-th/0405016v2",
+     "https://journals.aps.org/prd/abstract/10.1103/PhysRevD.9.341"
+    ]
+   },
+   "stability_gauge_invariant/README.md": {
+    "arxiv_ids_without_literature_record": [
+     "astro-ph/9702174"
+    ],
+    "other_links_without_record": [
+     "https://arxiv.org/pdf/astro-ph/9702174",
+     "https://www.osti.gov/etdeweb/biblio/5746769",
+     "https://www.sciencedirect.com/science/article/abs/pii/0550321384903948"
+    ]
+   },
+   "analytic_structure/VERIFICATION.md": {
+    "arxiv_ids_without_literature_record": [
+     "gr-qc/0010035",
+     "hep-th/0011156",
+     "hep-th/0012044"
+    ],
+    "other_links_without_record": []
+   },
+   "evolution_constraints/VERIFICATION.md": {
+    "arxiv_ids_without_literature_record": [
+     "gr-qc/0407110",
+     "gr-qc/0504114"
+    ],
+    "other_links_without_record": []
+   },
+   "preheating/VERIFICATION.md": {
+    "arxiv_ids_without_literature_record": [
+     "hep-ph/0205240",
+     "hep-th/0405016"
+    ],
+    "other_links_without_record": []
+   }
+  },
+  "all_missing_arxiv_ids": [
+   "0905.2284",
+   "1402.5669",
+   "1503.03436",
+   "2312.09042",
+   "2603.13226",
+   "astro-ph/0208133",
+   "astro-ph/9702174",
+   "gr-qc/0010035",
+   "gr-qc/0111013",
+   "gr-qc/0407110",
+   "gr-qc/0504114",
+   "hep-ph/0205240",
+   "hep-th/0011156",
+   "hep-th/0012044",
+   "hep-th/0111279",
+   "hep-th/0206146",
+   "hep-th/0405016",
+   "hep-th/9906064"
+  ],
+  "all_listed_in_CLAIM_REVIEW": true,
+  "control_fabricated_id_absent_and_known_ids_present": true,
+  "corpus_files": [
+   "literature/observations.md",
+   "literature/theory.md",
+   "literature/README.md",
+   "literature/methods.md",
+   "literature/README_OBSERVATIONS.md",
+   "literature/theory_checks/prior_mentions.json",
+   "literature/theory_checks/rs_thin_brane_crosscheck.json",
+   "literature/theory_checks/builder_negative_control.json",
+   "literature/theory_checks/builder_negative_control.py",
+   "literature/theory_checks/build_theory_md.py",
+   "literature/theory_checks/prior_mention_scan.py",
+   "literature/theory_checks/rs_thin_brane_crosscheck.py",
+   "literature/theory_checks/theory_sources.py",
+   "literature/theory_checks/theory_template.md",
+   "literature/theory_checks/theory_sources.json",
+   "literature/methods_checks/methods_template.md",
+   "literature/methods_checks/builder_negative_control.json",
+   "literature/methods_checks/README.md",
+   "literature/methods_checks/builder_negative_control.py",
+   "literature/methods_checks/methods_sources.py",
+   "literature/methods_checks/certification_pilot.py",
+   "literature/methods_checks/certification_pilot.json",
+   "literature/methods_checks/methods_sources.json",
+   "literature/methods_checks/build_methods_md.py",
+   "literature/observations_checks/sources_observations.py",
+   "literature/observations_checks/observations_sources.json",
+   "literature/observations_checks/project_scan_1yr.py",
+   "literature/observations_checks/README.md",
+   "literature/observations_checks/knee_and_scale_checks.py",
+   "literature/observations_checks/build_observations_md.py",
+   "literature/observations_checks/builder_selftest.json",
+   "literature/observations_checks/knee_and_scale_checks.json",
+   "literature/observations_checks/MANIFEST.sha256.json",
+   "literature/observations_checks/project_scan_1yr.json",
+   "LITERATURE_2022_2026.md",
+   "synthesis/LITERATURE_MERGED.json"
+  ]
+ }
+}
