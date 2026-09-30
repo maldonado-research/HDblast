@@ -1,5 +1,8 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+[Readable project overview](https://maldonado-research.github.io/projects/hdblast/) · [All research projects](https://maldonado-research.github.io/)
+
+
 **Ricardo Maldonado · independent researcher · research program 2025–2026**
 
 **Website:** <https://maldonado-research.github.io/HDblast/> ·
