@@ -1,0 +1,15 @@
+static shells: rho_b=7.8362788522 phi_b=2.335296e-03 (bg); seed phi_b=1.117175e-02 rho_b=7.8256762383  [28s]
+grid: 4291 points, dz 1.00e-03 (shell) .. 4.00e-03 (far), L=16.00; chart xc=4.1 F_inf=4.100274540487108; T_switch=3.100274540487108; kappa=0
+T=  0.000 H0tau= 0.0000 phi_b=+0.01117 H/H0=+1.00135 lapse=0.9992 R=0.000e+00 Wy/H0^2=+5.0417e-03 rad=0.0000e+00 mode=dev Hmax=3.1e-12 [0s]
+T=  0.830 H0tau= 0.8298 phi_b=+0.02785 H/H0=+0.99754 lapse=1.0002 R=0.000e+00 Wy/H0^2=+1.9716e-03 rad=0.0000e+00 mode=dev Hmax=- [30s]
+T=  1.630 H0tau= 1.6310 phi_b=+0.09311 H/H0=+0.98952 lapse=1.0039 R=0.000e+00 Wy/H0^2=+6.4981e-03 rad=0.0000e+00 mode=dev Hmax=- [60s]
+T=  2.440 H0tau= 2.4507 phi_b=+0.30682 H/H0=+0.94851 lapse=1.0257 R=0.000e+00 Wy/H0^2=+2.1661e-02 rad=0.0000e+00 mode=dev Hmax=- [90s]
+switched to full-field mode at T=3.1000
+T=  3.950 H0tau= 4.2657 phi_b=+0.98804 H/H0=+0.65904 lapse=1.7744 R=0.000e+00 Wy/H0^2=+2.6572e-02 rad=0.0000e+00 mode=full Hmax=- [120s]
+Traceback (most recent call last):
+  File "/home/user/unified-theory-maldonado/research/HDBLAST_CHECKPOINT_20260928/A1_tuned_vacuum/evolve_a1.py", line 415, in <module>
+    run.evolve(T_final=a.Tf, tag=a.tag, out_dir=os.path.join(str(HERE), a.out), wall_limit=a.wall, stop_dbdt=(-0.9 if a.prerun else None))
+  File "/home/user/unified-theory-maldonado/research/HDBLAST_CHECKPOINT_20260928/A1_tuned_vacuum/evolve_a1.py", line 368, in evolve
+    tau += h*0.5*(math.exp(Bb0) + math.exp(Bb1))/self.rb      # trapezoid in e^{B_b}; O(h^2), h ~ 5e-4
+                                  ^^^^^^^^^^^^^
+OverflowError: math range error

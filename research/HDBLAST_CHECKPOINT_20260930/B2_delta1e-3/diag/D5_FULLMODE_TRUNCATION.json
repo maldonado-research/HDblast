@@ -1,0 +1,286 @@
+{
+ "status": "numerical",
+ "purpose": "B2 diagnosis D5: why the main runs fail after the switch to full-field mode, and what resolution would be needed.\n\nAt T_switch the solver stops evolving the deviation from the exact (analytic) seed and evolves the full fields with 4th-order\nfinite differences.  The finite-difference truncation error of the steep static background then acts as a source.  Here the\nEXACT seed solution (static shell, tension c+dc, in the bounded chart) is put on each grid in full-field form at a given chart\ntime T and we evaluate, without evolving:\n  * the relative Hamiltonian / momentum constraint residuals (as recorded by the solver; near shell z > -1 and domain),\n  * the relative residual of the evolution equations |accel_FD(S) - S_TT| / (|S_TT| + |terms|) (max over z > -1).\nFor an exact solution all of these vanish in the continuum; on the grid they are the truncation error that the full-field run\nstarts from.  Compared with: the same quantities at T = 0 (identity-chart part of the slice) and the A1 delta = 0.1 main-run\nconfiguration (where full-field mode ran stably to a plateau).  Output diag/D5_FULLMODE_TRUNCATION.json.  Numerical.",
+ "cases": [
+  {
+   "label": "delta1e-3 S1",
+   "n_points": 1149,
+   "points_per_wall": 42.70881678570528,
+   "rho_b": 78.82837596647016,
+   "dzf": 0.0003,
+   "xc": 11.3,
+   "T_switch": 10.30000000015309,
+   "probes": [
+    {
+     "T": 0.0,
+     "lapse_shell": 0.9996473912611837,
+     "H_near": 6.3414239151031e-08,
+     "M_near": 2.9274839742476837e-13,
+     "z_H_near": -0.005443370966276206,
+     "H_dom": 6.3414239151031e-08,
+     "M_dom": 2.7526423498029592e-08,
+     "accelA_near": 2.001397506064688e-07,
+     "accelphi_near": 6.113329869625785e-07,
+     "z_accel": -0.006145127207857691,
+     "rel_err_A_Z_shell": 3.091378911897904e-08
+    },
+    {
+     "T": 8.0,
+     "lapse_shell": 1.0023708726106266,
+     "H_near": 6.420217516442911e-08,
+     "M_near": 1.4376584847577001e-09,
+     "z_H_near": -0.005443370966276206,
+     "H_dom": 6.420217516442911e-08,
+     "M_dom": 2.0566653749333977e-08,
+     "accelA_near": 2.0264737776242962e-07,
+     "accelphi_near": 6.207430889685088e-07,
+     "z_accel": -0.006145127207857691,
+     "rel_err_A_Z_shell": 3.186077333823718e-08
+    },
+    {
+     "T": 10.3,
+     "lapse_shell": 1.312572463380572,
+     "H_near": 2.258572366421507e-07,
+     "M_near": 2.43593801621882e-07,
+     "z_H_near": -0.0030974728654605196,
+     "H_dom": 2.258572366421507e-07,
+     "M_dom": 2.43593801621882e-07,
+     "accelA_near": 6.910429747926583e-07,
+     "accelphi_near": 2.059305858299704e-06,
+     "z_accel": -0.0034227611772990178,
+     "rel_err_A_Z_shell": 2.487397485858143e-07
+    }
+   ],
+   "seconds": 1.5
+  },
+  {
+   "label": "delta1e-3 S2",
+   "n_points": 2297,
+   "points_per_wall": 85.41763357141056,
+   "rho_b": 78.82837596647016,
+   "dzf": 0.00015,
+   "xc": 11.3,
+   "T_switch": 10.30000000015309,
+   "probes": [
+    {
+     "T": 0.0,
+     "lapse_shell": 0.9996473912611837,
+     "H_near": 4.790489155409095e-09,
+     "M_near": 7.21653752148621e-13,
+     "z_H_near": -0.0052702315840765625,
+     "H_dom": 4.790489155409095e-09,
+     "M_dom": 1.7229738214680935e-09,
+     "accelA_near": 1.3580321048236744e-08,
+     "accelphi_near": 6.356716687608423e-07,
+     "z_accel": -0.0052702315840765625,
+     "rel_err_A_Z_shell": 1.0340169272932061e-08
+    },
+    {
+     "T": 8.0,
+     "lapse_shell": 1.0023708726106266,
+     "H_near": 4.73020475837481e-09,
+     "M_near": 9.02115706031622e-11,
+     "z_H_near": -0.0052702315840765625,
+     "H_dom": 4.73020475837481e-09,
+     "M_dom": 1.286337196411719e-09,
+     "accelA_near": 1.4055205847305389e-08,
+     "accelphi_near": 9.760945047351541e-07,
+     "z_accel": -0.006322917998836324,
+     "rel_err_A_Z_shell": 1.038260149192953e-08
+    },
+    {
+     "T": 10.3,
+     "lapse_shell": 1.312572463380572,
+     "H_near": 1.4382679989755463e-08,
+     "M_near": 1.5557167256469485e-08,
+     "z_H_near": -0.0026152573001469144,
+     "H_dom": 1.4382679989755463e-08,
+     "M_dom": 1.5557167256469485e-08,
+     "accelA_near": 4.368415927266374e-08,
+     "accelphi_near": 3.2434026100096093e-06,
+     "z_accel": -0.0034227611775426185,
+     "rel_err_A_Z_shell": 2.182524166134198e-08
+    }
+   ],
+   "seconds": 0.8
+  },
+  {
+   "label": "delta1e-3 S3",
+   "n_points": 4593,
+   "points_per_wall": 170.83526714282112,
+   "rho_b": 78.82837596647016,
+   "dzf": 7.5e-05,
+   "xc": 11.3,
+   "T_switch": 10.30000000015309,
+   "probes": [
+    {
+     "T": 0.0,
+     "lapse_shell": 0.9996473912611837,
+     "H_near": 3.6573619452738693e-09,
+     "M_near": 1.3410992494183737e-12,
+     "z_H_near": -0.005443370966542977,
+     "H_dom": 3.6573619452738693e-09,
+     "M_dom": 1.0779022119950594e-10,
+     "accelA_near": 6.30037618274724e-09,
+     "accelphi_near": 4.240179254602938e-06,
+     "z_accel": -0.005443370966542977,
+     "rel_err_A_Z_shell": 9.70814598401601e-09
+    },
+    {
+     "T": 8.0,
+     "lapse_shell": 1.0023708726106266,
+     "H_near": 3.1110695328756804e-09,
+     "M_near": 6.4813202391195605e-12,
+     "z_H_near": -0.0052702315840921,
+     "H_dom": 3.1110695328756804e-09,
+     "M_dom": 8.0464380095641e-11,
+     "accelA_near": 5.4054098214262156e-09,
+     "accelphi_near": 3.189786671038406e-06,
+     "z_accel": -0.0052702315840921,
+     "rel_err_A_Z_shell": 9.693519914447619e-09
+    },
+    {
+     "T": 10.3,
+     "lapse_shell": 1.312572463380572,
+     "H_near": 3.439906765290022e-09,
+     "M_near": 9.73215007530472e-10,
+     "z_H_near": -0.005443370966542977,
+     "H_dom": 3.439906765290022e-09,
+     "M_dom": 9.73215007530472e-10,
+     "accelA_near": 6.620537937657527e-09,
+     "accelphi_near": 8.025293670689861e-06,
+     "z_accel": -0.005443370966542977,
+     "rel_err_A_Z_shell": 1.0335886162125067e-08
+    }
+   ],
+   "seconds": 1.7
+  },
+  {
+   "label": "delta1e-3 S4",
+   "n_points": 9185,
+   "points_per_wall": 341.67053428564225,
+   "rho_b": 78.82837596647016,
+   "dzf": 3.75e-05,
+   "xc": 11.3,
+   "T_switch": 10.30000000015309,
+   "probes": [
+    {
+     "T": 0.0,
+     "lapse_shell": 0.9996473912611837,
+     "H_near": 1.3980759541022556e-08,
+     "M_near": 3.4843736595811087e-12,
+     "z_H_near": -0.0025753751876794345,
+     "H_dom": 1.3980759541022556e-08,
+     "M_dom": 6.976493458154795e-12,
+     "accelA_near": 2.2595453590162957e-08,
+     "accelphi_near": 1.7908227514638336e-05,
+     "z_accel": -0.006907432657617142,
+     "rel_err_A_Z_shell": 9.679701467171272e-09
+    },
+    {
+     "T": 8.0,
+     "lapse_shell": 1.0023708726106266,
+     "H_near": 1.0057438977360197e-08,
+     "M_near": 3.2482246204970742e-12,
+     "z_H_near": -0.005661075351706358,
+     "H_dom": 1.0057438977360197e-08,
+     "M_dom": 5.133191867566269e-12,
+     "accelA_near": 1.6392921979268824e-08,
+     "accelphi_near": 1.4644713568679497e-05,
+     "z_accel": -0.005661075351706358,
+     "rel_err_A_Z_shell": 9.648339908413614e-09
+    },
+    {
+     "T": 10.3,
+     "lapse_shell": 1.312572463380572,
+     "H_near": 1.4435502846306358e-08,
+     "M_near": 6.257081544414426e-11,
+     "z_H_near": -0.00029818983219798183,
+     "H_dom": 1.4435502846306358e-08,
+     "M_dom": 6.257081544414426e-11,
+     "accelA_near": 2.0431792261957582e-08,
+     "accelphi_near": 4.8070555420483964e-05,
+     "z_accel": -0.00029818983219798183,
+     "rel_err_A_Z_shell": 9.691221774402218e-09
+    }
+   ],
+   "seconds": 3.3
+  },
+  {
+   "label": "delta0.1 A1 main dzf5e-4",
+   "n_points": 8581,
+   "points_per_wall": 255.1578390816861,
+   "rho_b": 7.838285538073243,
+   "dzf": 0.0005,
+   "xc": 3.1,
+   "T_switch": 2.1020232804669727,
+   "probes": [
+    {
+     "T": 0.0,
+     "lapse_shell": 1.0036890674593204,
+     "H_near": 1.983855619073678e-05,
+     "M_near": 1.8580604126552974e-10,
+     "z_H_near": -0.4055951501225992,
+     "H_dom": 1.983855619073678e-05,
+     "M_dom": 1.8580604126552974e-10,
+     "accelA_near": 2.403062067647984e-05,
+     "accelphi_near": 2.8862466524544215e-05,
+     "z_accel": -0.4055951501225992,
+     "rel_err_A_Z_shell": 1.1869918690322534e-06
+    },
+    {
+     "T": 2.1,
+     "lapse_shell": 1.3117040077782114,
+     "H_near": 1.8331428430683648e-05,
+     "M_near": 2.132528722471762e-09,
+     "z_H_near": -0.4055951501225992,
+     "H_dom": 1.8331428430683648e-05,
+     "M_dom": 2.132528722471762e-09,
+     "accelA_near": 2.3273369646966508e-05,
+     "accelphi_near": 2.5699916362322322e-05,
+     "z_accel": -0.4055951501225992,
+     "rel_err_A_Z_shell": 1.1872216810279131e-06
+    }
+   ],
+   "seconds": 21.7
+  },
+  {
+   "label": "delta0.1 A1 main dzf1e-3",
+   "n_points": 4291,
+   "points_per_wall": 127.57891954084305,
+   "rho_b": 7.838285538073243,
+   "dzf": 0.001,
+   "xc": 3.1,
+   "T_switch": 2.1020232804669727,
+   "probes": [
+    {
+     "T": 0.0,
+     "lapse_shell": 1.0036890674593204,
+     "H_near": 0.0003072415835835532,
+     "M_near": 2.8385247913827547e-09,
+     "z_H_near": -0.40559514544548003,
+     "H_dom": 0.0003072415835835532,
+     "M_dom": 2.8385247913827547e-09,
+     "accelA_near": 0.0003716233454210711,
+     "accelphi_near": 0.0004436470474333483,
+     "z_accel": -0.40559514544548003,
+     "rel_err_A_Z_shell": 1.1888556261583587e-06
+    },
+    {
+     "T": 2.1,
+     "lapse_shell": 1.3117040077782114,
+     "H_near": 0.000283847725434361,
+     "M_near": 3.303931436387613e-08,
+     "z_H_near": -0.40559514544548003,
+     "H_dom": 0.000283847725434361,
+     "M_dom": 3.303931436387613e-08,
+     "accelA_near": 0.00035982887608917313,
+     "accelphi_near": 0.0003912859477363357,
+     "z_accel": -0.40559514544548003,
+     "rel_err_A_Z_shell": 1.1926369187123326e-06
+    }
+   ],
+   "seconds": 0.0
+  }
+ ]
+}

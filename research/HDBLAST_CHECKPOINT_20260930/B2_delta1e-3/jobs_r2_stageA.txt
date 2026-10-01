@@ -1,0 +1,10 @@
+# restart (1 Oct), stage A: pre-runs per REGISTRATION section 4 + dated note 1 (amendment 1), and C2 (amendment 2)
+runs/pre pre_Y1_dc1e-4 --delta 0.001 --dstar --Y 1 --dc 1e-4 --grid rho --dzf 4e-4 --dzc 4e-2 --L 24 --Tf 45 --kappa 0 --prerun --wall 1450
+runs/pre preS1_Y1_dc1e-2 --delta 0.001 --dstar --Y 1 --dc 1e-2 --grid rho --dzf 3e-4 --dzc 3e-2 --L 24 --Tf 45 --kappa 0 --prerun --wall 1450
+runs/pre preS1k10_Y1_dc1e-2 --delta 0.001 --dstar --Y 1 --dc 1e-2 --grid rho --dzf 3e-4 --dzc 3e-2 --L 24 --Tf 45 --kappa 10 --prerun --wall 1450
+runs/pre preS1_Y1_dc1e-4 --delta 0.001 --dstar --Y 1 --dc 1e-4 --grid rho --dzf 3e-4 --dzc 3e-2 --L 24 --Tf 45 --kappa 0 --prerun --wall 1450
+runs/pre preS1k10_Y1_dc1e-4 --delta 0.001 --dstar --Y 1 --dc 1e-4 --grid rho --dzf 3e-4 --dzc 3e-2 --L 24 --Tf 45 --kappa 10 --prerun --wall 1450
+runs/cal C2a8_rho1.7e-4 --delta 0.001 --dc 1e-8 --Y 0 --grid rho --dzf 1.7e-4 --dzc 2e-2 --L 16 --Tf 8 --kappa 0 --wall 1450
+runs/cal C2d_tanh_chat14grid --delta 0.001 --dc 1e-8 --Y 0 --grid tanh --dzf 1.69e-4 --dzc 8e-3 --zfine 0.06 --L 10 --Tf 8 --kappa 0 --wall 1450
+runs/cal C2c_rho1.7e-4_dc3e-8 --delta 0.001 --dc 3e-8 --Y 0 --grid rho --dzf 1.7e-4 --dzc 2e-2 --L 16 --Tf 8 --kappa 0 --wall 1450
+runs/cal C2b_rho9.5e-5 --delta 0.001 --dc 1e-8 --Y 0 --grid rho --dzf 9.5e-5 --dzc 1.1e-2 --L 16 --Tf 8 --kappa 0 --wall 1450
