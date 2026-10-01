@@ -1,0 +1,36 @@
+name: HDBLAST exact controls
+on:
+  push:
+    branches: ["research/20261001-transfer-duration"]
+    paths: ["research/HDBLAST_CHECKPOINT_20261001/**", ".github/workflows/hdblast_oct1.yml"]
+  pull_request:
+    branches: [main]
+    paths: ["research/HDBLAST_CHECKPOINT_20261001/**", ".github/workflows/hdblast_oct1.yml"]
+permissions:
+  contents: read
+jobs:
+  controls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: research/HDBLAST_CHECKPOINT_20261001
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Replay published controls
+        working-directory: research/HDBLAST_CHECKPOINT_20261001
+        run: |
+          mkdir -p runner_outputs
+          node code/cohort_verify.js > runner_outputs/cohort_verify.json
+          node code/duration_verify.js > runner_outputs/duration_verify.json
+          node code/mode_controls.mjs > runner_outputs/mode_controls.json
+          node -e "const fs=require('fs'); if(!JSON.parse(fs.readFileSync('runner_outputs/mode_controls.json','utf8')).summary.registered_controls_pass) process.exit(1)"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hdblast-exact-controls
+          path: research/HDBLAST_CHECKPOINT_20261001/runner_outputs/
+          if-no-files-found: error

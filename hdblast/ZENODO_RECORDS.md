@@ -3,7 +3,7 @@
 Zenodo preserves each release with a date and a permanent identifier. A record shows **what was
 published and when**. It does not mean the content was peer reviewed.
 
-**Concept DOI (all versions):** [10.5281/zenodo.17088132](https://doi.org/10.5281/zenodo.17088132)
+**Research-program concept DOI (all versions of that record):** [10.5281/zenodo.17088132](https://doi.org/10.5281/zenodo.17088132)
 
 | Date | Record | Content | Status label |
 |---|---|---|---|
@@ -22,10 +22,15 @@ published and when**. It does not mean the content was peer reviewed.
 | 2026-09-03 | [22285737](https://zenodo.org/records/22285737) | v22: Riemann preconditioning; two sources and two detectors registered | Certified bounds |
 | 2026-09-03 | [22287013](https://zenodo.org/records/22287013) | v23: rank-two registered linear response, det M ∈ [2.1987, 2.4615] | Certified (conditional) |
 | 2026-09-05 | [22347452](https://zenodo.org/records/22347452) | v24: conditional global adjoint certification | Certified (conditional) |
-| **2026-09-23** | [**22922928**](https://zenodo.org/records/22922928) | **Scalar junction consistency and a corrected static de Sitter branch** (title and date from site data; appears to correspond to the 22 Sept checkpoint, but its file list and version number are unverified) | Numerical / Exact / Negative / Conditional |
+| **2026-09-23** | [**22922928**](https://zenodo.org/records/22922928) | **Scalar junction consistency and a corrected static de Sitter branch**, companion version **1.0**, separate concept **22922927**. Title, date, version and concept verified from the author-provided Zenodo screenshot on 1 Oct 2026; file list not independently checked | Numerical / Exact / Negative / Conditional |
 
 All records before v20 (17088133 through 20313949) are marked in the author's 29 Aug 2026 audit as
 affected by the v20 correction, and should be read together with that correction.
+
+The September static-branch study is a **separate companion record**. Its all-version identifier is
+[10.5281/zenodo.22922927](https://doi.org/10.5281/zenodo.22922927), not the program identifier above.
+This screenshot verification is not a live API check. The 1 October checkpoint is available on
+GitHub; no new Zenodo record or version has been created by this research session.
 
 Companion 2025 concepts: 16866883 (brane-world two-link packs), 16929972 (HDBC reproducibility
 bundles), 17069899 (cross-PTA/LISA/CMB pipeline).
