@@ -1,0 +1,181 @@
+{
+  "status": "PASS",
+  "scope": "specified Gaussian cohort on fixed expanding archived history",
+  "provenance": [
+    "main_dstar_Y0_dc1e-2_dzf5e-4|phistar=0.5|G=100|y=1",
+    "main_dstar_Y0_dc1e-2_dzf5e-4|phistar=0.5|G=1000|y=1",
+    "main_dstar_Y0_dc1e-2_dzf5e-4|phistar=0.9|G=100|y=1",
+    "main_dstar_Y0_dc1e-2_dzf5e-4|phistar=0.9|G=1000|y=1"
+  ],
+  "sigmahat": 5.208194722502616,
+  "required_Rbar_for_r_point1": 0.12519817271006822,
+  "Gaussian_quadrature": [
+    {
+      "bins": 1024,
+      "number_relative_error": 1.5543122344752192e-15,
+      "second_moment_relative_error": 8.881784197001252e-16
+    },
+    {
+      "bins": 2048,
+      "number_relative_error": 2.220446049250313e-16,
+      "second_moment_relative_error": 2.1094237467877974e-15
+    },
+    {
+      "bins": 4096,
+      "number_relative_error": 0,
+      "second_moment_relative_error": 1.1102230246251565e-16
+    },
+    {
+      "bins": 8192,
+      "number_relative_error": 1.3322676295501878e-15,
+      "second_moment_relative_error": 3.4416913763379853e-15
+    }
+  ],
+  "endpoint_rows": [
+    {
+      "Rbar_cap": 0.00024630754955075107,
+      "r_lower": 51.43974552824247,
+      "gain_for_r_point1": 508.30018380850095,
+      "a_rel": 2.0116796282275793,
+      "M": 53.61022411468734,
+      "q": 128.31216219495383,
+      "nstar": 5.7478923181082555,
+      "bcut": 0.000006490185826699187,
+      "phistar": 0.5,
+      "G": 100,
+      "local_production_screen_pass": true,
+      "status": "conditional screened ansatz"
+    },
+    {
+      "Rbar_cap": 0.0000790636069624761,
+      "r_lower": 160.25326421767718,
+      "gain_for_r_point1": 1583.512029365012,
+      "a_rel": 2.0116796282275793,
+      "M": 536.1022411468734,
+      "q": 1283.1216219495382,
+      "nstar": 184.9413284072811,
+      "bcut": 6.490185826699186e-9,
+      "phistar": 0.5,
+      "G": 1000,
+      "local_production_screen_pass": true,
+      "status": "conditional screened ansatz"
+    },
+    {
+      "Rbar_cap": 0.000009546848048434832,
+      "r_lower": 1327.1695108603537,
+      "gain_for_r_point1": 13114.084572718633,
+      "a_rel": 1.7229550200379564,
+      "M": 13.610224114687341,
+      "q": 74.62015750906967,
+      "nstar": 2.50949716137503,
+      "bcut": 0.00000138547126701606,
+      "phistar": 0.9,
+      "G": 100,
+      "local_production_screen_pass": false,
+      "status": "formal budget; local production screen fails"
+    },
+    {
+      "Rbar_cap": 0.000003028975820348094,
+      "r_lower": 4183.028962393324,
+      "gain_for_r_point1": 41333.500211196886,
+      "a_rel": 1.7229550200379564,
+      "M": 136.1022411468734,
+      "q": 746.2015750906967,
+      "nstar": 81.89406539260125,
+      "bcut": 1.3854712670160601e-9,
+      "phistar": 0.9,
+      "G": 1000,
+      "local_production_screen_pass": false,
+      "status": "formal budget; local production screen fails"
+    }
+  ],
+  "positive_decay_histories": [
+    {
+      "label": "all survivors",
+      "total_probability": 1,
+      "mean_endpoint_energy": 1.8040914520731706,
+      "Jensen_upper": 2.090780125666276,
+      "pass": true
+    },
+    {
+      "label": "all decay late",
+      "total_probability": 1,
+      "mean_endpoint_energy": 2.089582801978376,
+      "Jensen_upper": 2.090780125666276,
+      "pass": true
+    },
+    {
+      "label": "early decay",
+      "total_probability": 1,
+      "mean_endpoint_energy": 0.8898506697172845,
+      "Jensen_upper": 2.090780125666276,
+      "pass": true
+    },
+    {
+      "label": "mixed nonmonotone bounded masses",
+      "total_probability": 1,
+      "mean_endpoint_energy": 0.781618295332631,
+      "Jensen_upper": 2.090780125666276,
+      "pass": true
+    },
+    {
+      "label": "incomplete specified population",
+      "total_probability": 0.5,
+      "mean_endpoint_energy": 0.8100220746571916,
+      "Jensen_upper": 2.090780125666276,
+      "pass": true
+    }
+  ],
+  "negative_controls": {
+    "contraction": {
+      "a_decay": 2,
+      "a_end": 1,
+      "k": 0,
+      "m": 1,
+      "daughter_energy": 2,
+      "expanding_formula_cap": 1
+    },
+    "massless_mean_energy": 0.5614458657916795,
+    "wrong_phase_space_factor": 248.05021344239853
+  },
+  "coupling_corridor": [
+    {
+      "phistar": 0.5,
+      "Gmin": 43.184788170506884,
+      "Fmax": 1,
+      "Rbar_cap": 0.000383404876218596,
+      "r_lower": 33.04556541649739,
+      "status": "post-registration exploratory fixed-history Gaussian corridor"
+    },
+    {
+      "phistar": 0.5,
+      "Gmin": 43.184788170506884,
+      "Fmax": 1.3,
+      "Rbar_cap": 0.0004984263390841747,
+      "r_lower": 25.419385025473456,
+      "status": "post-registration exploratory fixed-history Gaussian corridor"
+    },
+    {
+      "phistar": 0.9,
+      "Gmin": 2189.8058998630772,
+      "Fmax": 1,
+      "Rbar_cap": 0.000002050332758574125,
+      "r_lower": 6179.62851167568,
+      "status": "post-registration exploratory fixed-history Gaussian corridor"
+    },
+    {
+      "phistar": 0.9,
+      "Gmin": 2189.8058998630772,
+      "Fmax": 1.3,
+      "Rbar_cap": 0.0000026654325861463637,
+      "r_lower": 4753.560112893515,
+      "status": "post-registration exploratory fixed-history Gaussian corridor"
+    }
+  ],
+  "caveats": [
+    "population/mass/expansion bound is assumed, not derived quantum production",
+    "full-history characteristic cutoff screen is not UV certification",
+    "initial radiation and multiple cohorts need separate additions; contraction excluded",
+    "fixed Weyl/background endpoint, not a backreacted trajectory or future-time global bound"
+  ]
+}

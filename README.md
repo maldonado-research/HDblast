@@ -7,8 +7,9 @@
 
 **Website:** <https://maldonado-research.github.io/HDblast/> ·
 **Zenodo (all versions):** [10.5281/zenodo.17088132](https://doi.org/10.5281/zenodo.17088132) ·
-**Newest record located:** [Zenodo 22922928](https://zenodo.org/records/22922928) (23 Sept 2026;
-its version number and file list are still to be confirmed on zenodo.org)
+**Static-branch companion:** [Zenodo 22922928](https://zenodo.org/records/22922928), version 1.0 (23 Sept 2026),
+separate concept [10.5281/zenodo.22922927](https://doi.org/10.5281/zenodo.22922927).
+Version and concept verified from the author-provided record screenshot; file list not independently checked.
 
 > HDBLAST asks whether a violent gravitational event in a fifth dimension, the "blast", could have
 > transferred energy into our four-dimensional universe and started the hot Big Bang.
@@ -37,7 +38,7 @@ standard Big Bang story, not replace it.
 instability rate from full five-dimensional theory agrees with a closed-form four-dimensional
 formula. Floating-point calculations in the model; not observations.*
 
-## Where the research stands (September 2026)
+## Where the research stands (1 October 2026)
 
 | Result | Status |
 |---|---|
@@ -48,7 +49,7 @@ formula. Floating-point calculations in the model; not observations.*
 | Full nonlinear 5D evolution: the shell rolls off toward one of **two fates**, relaxation toward an empty de Sitter brane (endpoint not yet reached in the simulations) or reversal and collapse | **Numerical** |
 | Neither fate produces a radiation-filled (hot Big Bang) universe **in the homogeneous, classical roll-off of this model with no added matter** | **Negative result** |
 | The earlier late-time endpoint (constant φ=1) fails a boundary condition; a corrected static solution was found | **Exact** (the failure) / **Numerical** (the new solution) |
-| A proposed extension adds a new matter field to the shell, with an exact energy-exchange law; no particle production has been computed yet | **Exact**, as a proposal |
+| A proposed extension adds a new matter field to the shell, with an exact energy-exchange law; later checkpoints test particle production under stated approximations | **Exact**, as a proposal |
 | An earlier (July 2026) gravitational-radiation claim was **withdrawn** after an audit | **Published correction** |
 | A pulsar-timing "knee" signature was proposed and screened against public data | **Screening only**; not derived from the 5D model; the strict registered test failed on pilot data |
 | **New (27 Sept):** the corrected end state (the "+1 branch") is linearly stable in the sectors tested; two independent methods agree, each first calibrated on the known instability | **Numerical**, independently audited (not a proof) |
@@ -59,6 +60,9 @@ formula. Floating-point calculations in the model; not observations.*
 | **New (30 Sept):** at Y = 2 the dark radiation falls to 2.1%, within the strict current limit (3%). The phase lasts under half an expansion e-fold before leftover negative vacuum energy recollapses the shell, needs the tuning to about 1 part in 10⁴, and still uses the stand-in formula | **Numerical**, model-internal, conditional |
 | **New (30 Sept):** replacing the stand-in with particle production derived from the matter extension: with particle masses below the 5D gravity scale, dark radiation stays far larger than the radiation; no steady state in 32 runs | **Inconclusive**, leaning negative |
 | **New (30 Sept):** the same test at the registered δ = 0.001 is not completed; the numerical breakdown is diagnosed but not fixed. A simple 4D model does not reproduce the 5D dark-radiation numbers | **Inconclusive** / **Negative** (4D shortcut) |
+| **New (1 Oct):** a single-cohort energy envelope includes radiation and undecayed particles. The two locally screened archived crossing cases remain far below the radiation target at the tested endpoint, even with optimistically timed decay. This uses a fixed history and a cutoff screen, not a complete quantum calculation | **Analytical bound + exploratory numerical application**, conditional |
+| **New (1 Oct):** an executed audit of saved trajectories finds an earlier radiation-dominated sampled interval of about **0.314 e-fold** in the finer Y=2 run under a new cancellation-resistant diagnostic. Its later plateau fails this diagnostic. The original registered verdict is unchanged | **Post hoc saved-data diagnostic**; stand-in source, sampled duration |
+| **New (1 Oct):** the particle-mode solver passes 90 exact pulse occupation checks, including reflectionless cases, and 30 fine-resolution Wronskian checks | **Registered numerical control**; not a coupled 5D matter result |
 
 ![Two fates of the unstable shell at the registered parameters](hdblast/figures/two_fates_registered_detuning.png)
 
@@ -66,16 +70,16 @@ formula. Floating-point calculations in the model; not observations.*
 toward an empty de Sitter brane (blue) or reverses and collapses (orange). Neither branch
 contains a hot radiation era.*
 
-**Bottom line today:** the mathematics of the model is unusually well controlled for an
-independent project. In its registered form, the five-dimensional event ends in a **stable but
-empty** expanding universe: self-consistent, but not our universe. With a tuned model change and
-a stand-in energy-transfer formula, the simulations now show a **short** hot, radiation-dominated
-phase with dark radiation inside current limits. It requires severe fine-tuning (the
-cosmological-constant problem restated, not solved), ends in recollapse, and has not yet been
-reproduced with derived particle production or at the registered parameters. Nothing here is
-observational evidence or peer reviewed. Latest checkpoint:
-[`research/HDBLAST_CHECKPOINT_20260930/`](research/HDBLAST_CHECKPOINT_20260930/)
-([read first](research/HDBLAST_CHECKPOINT_20260930/00_READ_FIRST.md)).
+The registered homogeneous model has not produced a hot Big Bang. Tuned variants using a
+stand-in transfer formula meet the earlier radiation-fraction criterion briefly and then
+recollapse. The 1 October checks expose negative-vacuum cancellation and narrow the energy
+budget for a tested production event. A validated pulse solver now supplies a control for the
+next matter calculation. A sustained era from physically derived, energy-accounted transfer
+remains unestablished. Latest checkpoint:
+[`research/HDBLAST_CHECKPOINT_20261001/`](research/HDBLAST_CHECKPOINT_20261001/)
+([read first](research/HDBLAST_CHECKPOINT_20261001/00_READ_FIRST.md)).
+The checkpoint includes the selected raw numeric histories for independent replay, a verified
+ZIP download, and a [targeted review of five recent primary papers](research/HDBLAST_CHECKPOINT_20261001/LITERATURE_REVIEW_20261001.md).
 
 ## What would count for or against the hypothesis
 
@@ -96,6 +100,7 @@ For the hypothesis to become credible, all of the following must happen, and it 
 | [`research/HDBLAST_CHECKPOINT_20260927/`](research/HDBLAST_CHECKPOINT_20260927/) | The 27 Sept 2026 checkpoint: stability, exact series, particle production, simulation-error control, new mechanisms and a 2022–2026 literature review, each with an internal audit report. Start with `00_READ_FIRST.md` or `PUBLIC_SUMMARY.md`. Raw simulation arrays (`.npz`) are not included. |
 | [`research/HDBLAST_CHECKPOINT_20260928/`](research/HDBLAST_CHECKPOINT_20260928/) | The 28 Sept 2026 tuned-vacuum test (A1): pre-registration, solver, analysis and verdict. |
 | [`research/HDBLAST_CHECKPOINT_20260930/`](research/HDBLAST_CHECKPOINT_20260930/) | The 30 Sept 2026 checkpoint: derived particle production, the δ = 0.001 diagnosis, the transfer-rate scan, a 4D cross-check and a fine-tuning measure, each with an independent audit and a final critic pass. Start with `00_READ_FIRST.md`. Raw arrays (`.npz`, `.pkl`) are not included. |
+| [`research/HDBLAST_CHECKPOINT_20261001/`](research/HDBLAST_CHECKPOINT_20261001/) | The 1 October checkpoint: cohort bounds, radiation diagnostics, exact mode controls, executable code and internal audits. |
 | [`site/`](site/) | Source of the website |
 
 Most checkpoints can be re-run with Python 3 (`numpy`, `scipy`, `sympy`, `mpmath`). Each
@@ -121,6 +126,5 @@ place yet.** Specialists in general relativity, numerical relativity and cosmolo
 invited to check the work and report errors by opening a GitHub issue.
 
 *Research assistance: parts of the 2025–2026 calculations and documents were prepared with AI
-assistants under the author's direction: Claude (Anthropic) for Chats 9–14 and the current
-research round, and OpenAI ChatGPT/Codex for the 22 Sept packages and earlier work.
-Verification steps are recorded in each checkpoint.*
+assistants under the author's direction: Claude (Anthropic) and OpenAI ChatGPT/Codex. The 1 October checkpoint was prepared with AI
+assistance and independent internal computational checks. Verification steps are recorded in each checkpoint.*
