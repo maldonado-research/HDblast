@@ -22,6 +22,10 @@ Proposed post hoc instantaneous thresholds are F_abs>=0.9 and |Weyl|/Lrad<=0.03,
 
 The scalar-free F0 obtained by omitting the final three nonnegative terms is an upper bound on F_abs. A failure of F0 at a saved point excludes F_abs there. It cannot exclude every earlier or later point.
 
+## Whole-trajectory result
+
+The actual raw-array audit finds an earlier accepted sampled interval of **0.3144634074 e-fold** for Y2, dc=0.01 and **0.3130425994** for dc=0.0001. At both resolutions it occurs before the later plateau. The new gate and full execution evidence are in [TRAJECTORY_AUDIT.md](TRAJECTORY_AUDIT.md). These are sampled intervals under a retrospective diagnostic, not continuous lower bounds or end-to-end convergence proofs. Finer histories share earlier parent evolution. This result preserves the old registered verdicts and remains a phenomenological transfer-model result.
+
 ## Saved plateau checks
 
 Here q=Qrad/Lrad=R/(2sigma). The table uses linear radiation in the numerator.

@@ -1,4 +1,4 @@
-name: HDBLAST exact controls
+name: HDBLAST checkpoint replay
 on:
   push:
     branches: ["research/20261001-transfer-duration"]
@@ -28,6 +28,19 @@ jobs:
           node code/duration_verify.js > runner_outputs/duration_verify.json
           node code/mode_controls.mjs > runner_outputs/mode_controls.json
           node -e "const fs=require('fs'); if(!JSON.parse(fs.readFileSync('runner_outputs/mode_controls.json','utf8')).summary.registered_controls_pass) process.exit(1)"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install numeric data reader
+        run: python -m pip install numpy==2.2.6
+      - name: Replay bundled saved trajectories
+        working-directory: research/HDBLAST_CHECKPOINT_20261001
+        run: |
+          python code/trajectory_audit.py --scan-root data/B3_Y_scan --source-ref "${GITHUB_SHA}" --output runner_outputs/trajectory_audit.json > runner_outputs/trajectory_stdout.txt
+          python -c "import json; r=json.load(open('runner_outputs/trajectory_audit.json')); assert not r['errors']; assert len(r['runs']) == 9; rows={v['tag']:v for v in r['runs'].values()}; v=rows['fine_Y2_dc1e-2_dzf2.5e-4']['longest_F_abs']; assert abs(v['Delta_N']-0.31446340736608747)<1e-12 and v['n_saved']==67"
+      - name: Verify curated download
+        working-directory: research/HDBLAST_CHECKPOINT_20261001
+        run: python3 code/verify_package.py HDBLAST_CHECKPOINT_20261001.zip > runner_outputs/package_integrity.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:

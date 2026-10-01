@@ -6,6 +6,8 @@ At a fixed archived crossing set q=G v_star, Lambda_full=G L_full, Lambda_post=G
 
 Rbar_cap <= [F_max v_star^(3/2)/(8 pi^3 a_rel^3 L_full^3)] sqrt[L_post^2/G + 3v_star/(2pi a_rel^2 G^2)].
 
+This is the mass-dominated branch of the cutoff screen. It requires G>=|v_star|/L_full²: approximately 4.464497 and 0.927373 for the two crossings, below their stated G_min values. Thus mass dominance holds throughout both screened corridors.
+
 The expression in the square root is decreasing for G>0 when v_star>0. Thus a local screen G>=G_min bounds the entire assumed coupling corridor by evaluation at G_min. A larger coupling alone cannot increase this optimistic single-cohort cap when its full-history peak mass forces b down by this rule.
 
 | Crossing | Local G_min | Assumed F_max | Approximate Rbar upper cap | Approximate lower r=W/(sigmahat Rbar/18+Rbar²/36) |

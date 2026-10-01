@@ -1,8 +1,8 @@
 # Next physical test, in priority order
 
-## 1. Test the proposed radiation gate on whole saved histories
+## 1. Extend the executed radiation diagnostic to the physical source
 
-Use the raw B3 trajectories with the cancellation-resistant F_abs and linear Weyl ratio from TRAJECTORY_PROTOCOL.md. Report longest contiguous expanding DeltaN, original reliability labels, resolution comparisons and sampling limits. A saved plateau is insufficient. Preserve the older registration rather than relabelling its verdict.
+Use the raw B3 trajectories with the cancellation-resistant F_abs and linear Weyl ratio from TRAJECTORY_PROTOCOL.md. Report longest contiguous expanding DeltaN, original reliability labels, resolution comparisons and sampling limits. The executed nine-history audit finds about 0.314 e-fold in the finer Y2 stand-in model, before the late plateau. A saved plateau is insufficient. Preserve the older registration rather than relabelling its verdict.
 
 ## 2. Replace the Gaussian ansatz with modes on an actual history
 
@@ -26,7 +26,7 @@ Use the archived proper-clock construction as a gauge-analysis asset. It maps kn
 
 ## 5. Literature and discriminating predictions
 
-The newly connected scholarly/web tools are being used for a dated targeted review of production, renormalization, backreaction and brane cutoffs. Only retrieved sources belong in the final literature report. New papers are inputs to a specified test, not evidence that HDBLAST describes nature.
+The dated targeted review in LITERATURE_REVIEW_20261001.md retrieved five primary papers on production, renormalization, backreaction and bulk/KK budgets. Consensus queries and a direct-scrape batch stalled without results. The matched stress/current prescription is the priority from the completed sources. New papers are inputs to a specified test, not evidence that HDBLAST describes nature.
 
 After a working mechanism survives these tests, derive an observable prediction and compare it with competing cosmologies. Gravitational-wave or pulsar-timing screens must remain separate until derived from the same bulk/matter dynamics.
 

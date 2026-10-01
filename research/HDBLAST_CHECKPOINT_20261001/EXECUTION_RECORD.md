@@ -15,3 +15,9 @@ Root C3 replay exactly reproduced the reported maximum occupation error 2.438444
 The read-only GitHub Actions workflow completed successfully: run [36930743823](https://github.com/maldonado-research/HDblast-archive/actions/runs/36930743823), source commit 0594f3159031bce095d646668df8c6adff47e5a0, job 110599088143. Checkout, Node setup, all three script replays, the explicit registered-mode pass assertion and output-artifact upload completed successfully. The fetched run concluded at 2026-10-01T21:45:35Z. This runner reads the checkpoint only; it does not modify source or publish the website. Its private artifact is hdblast-exact-controls. Raw-trajectory status remains separately recorded in TRAJECTORY_AUDIT.md.
 
 No new full five-dimensional evolution, Python field-equation simulation or self-consistent renormalized quantum calculation was performed by the V8 tests.
+
+The separate raw-trajectory runner 36931967040 completed successfully with nine requested B3 histories and zero load/audit errors. The full stdout report was fetched from job logs and saved under outputs/trajectory_audit.json. Original arrays were read with pickle disabled. This is a data audit, not a new field-equation evolution.
+
+## Curated input verification before final replay
+
+Root fetched the eleven required scientific NPZ binaries and their matching already-public summaries. Their SHA-256 values match the original trajectory report's recorded inputs. The final read-only runner also replays this bundled data and verifies the curated ZIP's CRCs, inventory and per-file SHA-256 values. Its final check status is available from the pull request; the earlier completed run IDs above remain pinned evidence and are not reassigned to later commits.

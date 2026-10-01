@@ -61,7 +61,7 @@ formula. Floating-point calculations in the model; not observations.*
 | **New (30 Sept):** replacing the stand-in with particle production derived from the matter extension: with particle masses below the 5D gravity scale, dark radiation stays far larger than the radiation; no steady state in 32 runs | **Inconclusive**, leaning negative |
 | **New (30 Sept):** the same test at the registered δ = 0.001 is not completed; the numerical breakdown is diagnosed but not fixed. A simple 4D model does not reproduce the 5D dark-radiation numbers | **Inconclusive** / **Negative** (4D shortcut) |
 | **New (1 Oct):** a single-cohort energy envelope includes radiation and undecayed particles. The two locally screened archived crossing cases remain far below the radiation target at the tested endpoint, even with optimistically timed decay. This uses a fixed history and a cutoff screen, not a complete quantum calculation | **Analytical bound + exploratory numerical application**, conditional |
-| **New (1 Oct):** negative vacuum inflates the older radiation fraction. At the saved Y=2 plateau, a cancellation-resistant linear-radiation fraction is at most 0.76545, below the newly proposed 0.9 threshold; the original registered verdict remains unchanged | **Post hoc diagnostic** |
+| **New (1 Oct):** an executed audit of saved trajectories finds an earlier radiation-dominated sampled interval of about **0.314 e-fold** in the finer Y=2 run under a new cancellation-resistant diagnostic. Its later plateau fails this diagnostic. The original registered verdict is unchanged | **Post hoc saved-data diagnostic**; stand-in source, sampled duration |
 | **New (1 Oct):** the particle-mode solver passes 90 exact pulse occupation checks, including reflectionless cases, and 30 fine-resolution Wronskian checks | **Registered numerical control**; not a coupled 5D matter result |
 
 ![Two fates of the unstable shell at the registered parameters](hdblast/figures/two_fates_registered_detuning.png)
@@ -78,6 +78,8 @@ next matter calculation. A sustained era from physically derived, energy-account
 remains unestablished. Latest checkpoint:
 [`research/HDBLAST_CHECKPOINT_20261001/`](research/HDBLAST_CHECKPOINT_20261001/)
 ([read first](research/HDBLAST_CHECKPOINT_20261001/00_READ_FIRST.md)).
+The checkpoint includes the selected raw numeric histories for independent replay, a verified
+ZIP download, and a [targeted review of five recent primary papers](research/HDBLAST_CHECKPOINT_20261001/LITERATURE_REVIEW_20261001.md).
 
 ## What would count for or against the hypothesis
 

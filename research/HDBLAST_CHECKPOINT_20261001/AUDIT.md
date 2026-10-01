@@ -28,6 +28,12 @@ The absolute registered tolerance is comparatively loose for the smallest occupa
 
 September B1 remains INCONCLUSIVE; September B3 keeps its registered labels; the B4 effective shortcut remains NOT VALIDATED. The new cancellation-resistant criterion is post hoc. No claim of external mathematical novelty, observational evidence, full coupled quantum consistency, or a hot Big Bang follows.
 
-Fresh web literature was not searched in this environment. Archived exact-pulse and clock/constraint assets were reviewed as context; their references are not described as a current comprehensive literature review.
+Five primary papers were retrieved in a targeted Firecrawl review. Consensus searches and subsequent direct scrapes stalled without results. Only completed retrievals are cited in LITERATURE_REVIEW_20261001.md; no comprehensive search or novelty assessment is claimed. Archived exact-pulse and clock assets remain separately identified.
 
 Only curated scientific documents, code and outputs are copied to the public repository. Private chats, personal data and unrelated hypotheses are excluded. Program concept DOI 17088132 and static-branch companion concept DOI 22922927 are distinct; no new Zenodo version is asserted.
+
+## Final extensions
+
+The coupling-corridor formula was independently checked algebraically, including its mass-dominance precondition. Its additional numeric values were executed by root, not independently rerun by that reviewer. The whole-history audit succeeded on GitHub; its earlier accepted interval and failed later plateau are distinct. Shared restart ancestry, intermittent constraints, sampling limits and unchanged B3 labels are recorded. The legacy point gate is not the full original plateau rule.
+
+A final independent reader parsed the pinned raw-run job report, confirmed zero errors and the reported durations, and found no substantive blocker to the sampled interpretation. The reader additionally checked the two canonical frequencies and derivative/state mapping. The original B3 plateau rule, identity-defined Weyl decomposition and intermittent constraints remain explicit limitations.

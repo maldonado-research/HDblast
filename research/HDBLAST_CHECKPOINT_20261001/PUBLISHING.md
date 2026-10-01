@@ -8,6 +8,6 @@ For Zenodo, choose the correct existing concept from its live record only if thi
 
 ## Mac copy
 
-A curated ZIP named HDBLAST_CHECKPOINT_20261001.zip is included with this checkpoint when the package build is complete. Download that file from GitHub and expand it. The expanded folder can be placed inside D-Blast 3/untitled folder 155 using Finder. No file was written directly to the author's Mac.
+A curated ZIP named HDBLAST_CHECKPOINT_20261001.zip is included with this checkpoint. Download that file from GitHub and expand it. The expanded folder can be placed inside D-Blast 3/untitled folder 155 using Finder. No file was written directly to the author's Mac.
 
-The archive repository includes a private reference index pointing to useful older assets. That index and raw chats are excluded from the public ZIP.
+The archive repository includes a private reference index pointing to useful older assets. That index and raw chats are excluded from the public ZIP. The eleven required scientific timeseries and matching summaries are included, enabling a standalone saved-data replay. MANIFEST.sha256.json describes the public ZIP inventory; it excludes private reference files and original private-path metadata variants.

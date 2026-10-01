@@ -1,6 +1,6 @@
 /**
  * C3: prescribed positive-sech-squared oscillator calibration, 2026-10-01.
- * Run: node prospective_mode_calibration.mjs
+ * Run: node code/mode_controls.mjs
  * Pure ECMAScript; no dependencies, network access, or filesystem writes.
  *
  * Registration was read before this first execution:
@@ -31,7 +31,7 @@ const REGISTRATION = {
 const SOURCE_REFERENCE = {
   repository: "maldonado-research/HDblast-archive",
   commit: "8f67197b730d4e1c43554b86f224c29cc72629eb",
-  path: "new-files/D-Blast 3/untitled folder 144/HDBLAST_CHAT8_INFORMATION_AND_QUANTUM_20260906/quantum/EXACT_SCALAR_PULSE_PRODUCTION.md",
+  path: "[private archive reference; path withheld]",
   blob: "17a35192c539412e36981921bec5f1c49425cac7"
 };
 const ROW_COLUMNS = [
