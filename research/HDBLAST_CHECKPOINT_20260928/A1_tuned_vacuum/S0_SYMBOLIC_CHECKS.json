@@ -1,0 +1,130 @@
+{
+ "checks": [
+  {
+   "name": "evolution A_TT is a combination of field equations",
+   "result": "PASS",
+   "detail": "{a0: 0, a1: 0, a2: exp(-2*A(T, Z))*exp(2*B(T, Z)), a3: 0, a4: 0}"
+  },
+  {
+   "name": "evolution B_TT is a combination of field equations",
+   "result": "PASS",
+   "detail": "{a0: -1/2, a1: 1/2, a2: -3*exp(-2*A(T, Z))*exp(2*B(T, Z))/2, a3: 0, a4: 0}"
+  },
+  {
+   "name": "evolution phi_TT is a combination of field equations",
+   "result": "PASS",
+   "detail": "{a0: 0, a1: 0, a2: 0, a3: 0, a4: -exp(2*B(T, Z))}"
+  },
+  {
+   "name": "momentum constraint M is a combination of field equations",
+   "result": "PASS",
+   "detail": "{a0: 0, a1: 0, a2: 0, a3: 1, a4: 0}"
+  },
+  {
+   "name": "Hamiltonian constraint H is a combination of field equations",
+   "result": "PASS",
+   "detail": "{a0: 1, a1: 1, a2: 3*exp(-2*A(T, Z))*exp(2*B(T, Z)), a3: 0, a4: 0}"
+  },
+  {
+   "name": "CONTROL (must have no combination): A_TT with 3A_Z^2 -> 2A_Z^2",
+   "result": "PASS",
+   "detail": "no combination found"
+  },
+  {
+   "name": "CONTROL (must have no combination): B_TT with -phi_T^2/2 -> -phi_T^2",
+   "result": "PASS",
+   "detail": "no combination found"
+  },
+  {
+   "name": "CONTROL (must have no combination): phi_TT with -3A_T phi_T -> -4A_T phi_T",
+   "result": "PASS",
+   "detail": "no combination found"
+  },
+  {
+   "name": "CONTROL (must have no combination): H with -6A_ZZ -> -5A_ZZ",
+   "result": "PASS",
+   "detail": "no combination found"
+  },
+  {
+   "name": "constraint transport identity: outgoing C+ = H+2M along d_T - d_Z",
+   "result": "PASS",
+   "detail": "residual=0"
+  },
+  {
+   "name": "constraint transport identity: ingoing C- = H-2M along d_T + d_Z",
+   "result": "PASS",
+   "detail": "residual=0"
+  },
+  {
+   "name": "reference ansatz solves A-equation given the second-order w-ODE (depends on l''/Phi'': True)",
+   "result": "PASS",
+   "detail": ""
+  },
+  {
+   "name": "reference ansatz solves B-equation modulo the first-order constraint",
+   "result": "PASS",
+   "detail": "residual = (6*u1*v1) x constraint"
+  },
+  {
+   "name": "reference ansatz solves phi-equation given the second-order w-ODE (depends on l''/Phi'': True)",
+   "result": "PASS",
+   "detail": ""
+  },
+  {
+   "name": "reference ansatz solves M-equation modulo the first-order constraint",
+   "result": "PASS",
+   "detail": "residual = (-3*u1**2*w/uk**2 + 3*uk**2*v1**2/w) x constraint"
+  },
+  {
+   "name": "reference ansatz solves H-equation modulo the first-order constraint",
+   "result": "PASS",
+   "detail": "residual = (6*u1**2*w/uk**2 + 6*uk**2*v1**2/w) x constraint"
+  },
+  {
+   "name": "CONTROL (must fail): w-ODE with -8 l' -> -7 l' does not solve the A-equation",
+   "result": "PASS",
+   "detail": "-lp*u1*v1"
+  },
+  {
+   "name": "CONTROL (must fail): H-equation is not a multiple of a constraint with Phi'^2/3 -> Phi'^2/4",
+   "result": "PASS",
+   "detail": ""
+  },
+  {
+   "name": "rho_DR/rho_SM at BBN per unit Delta N_eff = 7/43",
+   "result": "PASS",
+   "detail": "0.16279069767441862"
+  },
+  {
+   "name": "M5 cross-check: Delta N_eff=0.3 -> 0.10497 at production (g*=106.75)",
+   "result": "PASS",
+   "detail": "0.1049713169074991"
+  }
+ ],
+ "status": "PASS",
+ "neff_mapping": {
+  "rho_DR_over_rho_SM_BBN_per_dNeff": "7/43",
+  "value_per_dNeff_BBN": 0.16279069767441862,
+  "production_factor": "(427/43)^(1/3) = (g*_prod/g*_BBN)^(1/3)",
+  "production_factor_value": 2.1494126795345054,
+  "rho_DR_over_rho_SM_prod_per_dNeff": 0.3499043896916637,
+  "rho_DR_over_rho_gamma_CMB_per_dNeff": "(7/8)(4/11)^(4/3)",
+  "value_CMB": 0.22710731766023895,
+  "thresholds": {
+   "0.1": {
+    "rho_DR_over_rho_SM_at_production": 0.1,
+    "equivalent_Delta_N_eff": 0.2857923562722953,
+    "rho_DR_over_rho_SM_at_BBN": 0.046524337067582966,
+    "rho_DR_over_rho_gamma_at_CMB": 0.06490553544080035
+   },
+   "0.03": {
+    "rho_DR_over_rho_SM_at_production": 0.03,
+    "equivalent_Delta_N_eff": 0.08573770688168858,
+    "rho_DR_over_rho_SM_at_BBN": 0.013957301120274886,
+    "rho_DR_over_rho_gamma_at_CMB": 0.019471660632240102
+   }
+  }
+ },
+ "script_sha256": "d018fb58f0be4057dd1421116f3d87883039bf2392d51f96aefbd0ea38648d77",
+ "label": "exact-verified (sympy / exact rationals); the N_eff inputs themselves are snippet-level (not verified against papers)"
+}

@@ -1,0 +1,244 @@
+{
+ "status": "exact-verified (symbolic identities of the closed shell system; controls must be nonzero)",
+ "n_checks": 22,
+ "n_controls": 8,
+ "all_passed": true,
+ "checks": [
+  {
+   "name": "C1 j = -dL_m/dphi = (1/2) dm^2/dphi <chi^2> = n d omega/d phi",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "name": "C1b j = g^2 (phi - phis) n/omega",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "name": "C2 Ward identity rho_dot + 3H(rho+p) = j v (free chi gas, per node)",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "name": "C2x wrong-sign source (j -> -j) violates the Ward identity",
+   "control": true,
+   "nonzero_as_required": true,
+   "residual": "2*g**2*(-phi_s + phi(tau))*N(tau)*Derivative(phi(tau), tau)/(sqrt(g**2*phi_s**2*a(tau)**2 - 2*g**2*phi_s*a(tau)**2*phi(tau) + g**2*a(tau)**2*phi(tau)**2 + k**2 + m_0**2*a(tau)**2)*a(tau)**2)",
+   "note": "residual = 2 j v"
+  },
+  {
+   "name": "C2y wrong pressure (p -> rho/3, radiation closure for a massive gas) violates it",
+   "control": true,
+   "nonzero_as_required": true,
+   "residual": "(g**2*(phi_s - phi(tau))**2 + m_0**2)*N(tau)*Derivative(a(tau), tau)/(sqrt(k**2 + (g**2*(phi_s - phi(tau))**2 + m_0**2)*a(tau)**2)*a(tau)**3)",
+   "note": ""
+  },
+  {
+   "name": "C3 chi ledger with decay: rho_dot + 3H(rho+p) = j v - Q, Q = Gamma m n (time-dilated per-mode decay)",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "name": "C3b total shell-matter ledger: d(rho_chi + R)/dtau + 3H(rho_chi+p_chi) + 4HR = j v (Q cancels)",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "name": "C3x decay without time dilation (dN = -Gamma N) is not balanced by Q = Gamma m n",
+   "control": true,
+   "nonzero_as_required": true,
+   "residual": "y**2*(g**2*phi_s**2*a(tau) - 2*g**2*phi_s*a(tau)*phi(tau) + g**2*a(tau)*phi(tau)**2 + m_0**2*a(tau) - sqrt(g**2*phi_s**2 - 2*g**2*phi_s*phi(tau) + g**2*phi(tau)**2 + m_0**2)*sqrt(g**2*phi_s**2*a(tau)**2 - 2*g**2*phi_s*a(tau)**2*phi(tau) + g**2*a(tau)**2*phi(tau)**2 + k**2 + m_0**2*a(tau)**2))*N(tau)/(8*pi*a(tau)**4)",
+   "note": ""
+  },
+  {
+   "name": "C4 production ramp: rho_dot + 3H(rho+p) = (j + j_prod) v with j_prod = P/v",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "name": "C4b production work is positive: j_prod v = P = N_fin f'(tau) omega/a^3 (>= 0 for a monotone ramp)",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "name": "C4c field-space ramp: rho_dot + 3H(rho+p) = (j + j_prod) v with the bounded force j_prod = dir N_fin f'(u) omega a^-3/dphi_r",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "name": "C4d field-space ramp with the stall switch s(dir v): Ward identity exact for any switch function",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "name": "C4x instant insertion without j_prod leaves an unpaid energy P",
+   "control": true,
+   "nonzero_as_required": true,
+   "residual": "N_fin*sqrt(g**2*phi_s**2*a(tau)**2 - 2*g**2*phi_s*a(tau)**2*phi(tau) + g**2*a(tau)**2*phi(tau)**2 + k**2 + m_0**2*a(tau)**2)*Derivative(f(tau), tau)/a(tau)**4",
+   "note": ""
+  },
+  {
+   "name": "C5 Codazzi: k_s_dot = -w v/3 - kappa^2 H (rho+p)/2 (with the total Ward identity)",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "name": "C5b signed shell budget: d(lambda+rho)/dtau + 3H(rho+p) = (sigma'/kappa^2 + j) v = -2 w v/kappa^2",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "name": "C5x scalar junction with + sign (w = +(sigma'+kappa^2 j)/2) breaks the budget",
+   "control": true,
+   "nonzero_as_required": true,
+   "residual": "2*(kappa**2*J_T(tau) + Derivative(sigma(phi(tau)), phi(tau)))*Derivative(phi(tau), tau)/kappa**2",
+   "note": ""
+  },
+  {
+   "name": "C5y scalar junction without the factor 1/2 breaks the budget",
+   "control": true,
+   "nonzero_as_required": true,
+   "residual": "(-kappa**2*J_T(tau) - Derivative(sigma(phi(tau)), phi(tau)))*Derivative(phi(tau), tau)/kappa**2",
+   "note": ""
+  },
+  {
+   "name": "C5c pure radiation: k_0 = (sigma - 3 kappa^2 R)/6 when p = R/3 (the A1 code path)",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "name": "C6 Weyl balance with the chi source: W_dot + 4HW = (1/6)[4 k_s w v - 4H v^2 - v v_dot + w w_dot - U' v]",
+   "passed": true,
+   "residual": "0",
+   "note": "derived from the H^2 identity, the Hdot identity and the total Ward identity; J(tau) arbitrary (j + j_prod)"
+  },
+  {
+   "name": "C6x wrong factor (4H -> 3H) in the Weyl balance",
+   "control": true,
+   "nonzero_as_required": true,
+   "residual": "-H(tau)*W(tau)",
+   "note": ""
+  },
+  {
+   "name": "C6y dropping the chi source from the scalar junction (J -> 0 in H^2 only) breaks the balance",
+   "control": true,
+   "nonzero_as_required": true,
+   "residual": "kappa**2*(-kappa**2*J_T(tau)*Derivative(J_T(tau), tau) - J_T(tau)*Derivative(phi(tau), tau)*Derivative(sigma(phi(tau)), (phi(tau), 2)) - Derivative(J_T(tau), tau)*Derivative(sigma(phi(tau)), phi(tau)))/24",
+   "note": ""
+  },
+  {
+   "name": "C6b (s+R+X)^2/36 = s^2/36 + [sR/18 + R^2/36] + [sX/18 + (X^2 + 2RX)/36]",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "name": "C7 kappa5^2 rho = b rhohat / r_b  (rho = H0^4 rhohat)",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "name": "C7b kappa5^2 j = b jhat / r_b",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "name": "C7c kappa5^2 Q = b Qhat / r_b^2 (Q = H0^5 Qhat)",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "name": "C7d H0/M5 = b^(1/3) with M5 = kappa5^(-2/3)",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "name": "C7e cutoff m_chi <= lambda_c M5  <=>  b <= (lambda_c/mhat)^3 (equality form)",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "name": "C8 int d^3k/(2pi)^3 exp(-pi k^2/q) = q^(3/2)/(8 pi^3)",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "name": "C8b int d^3k/(2pi)^3 k exp(-pi k^2/q) = q^2/(4 pi^4) (massless energy proxy)",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  },
+  {
+   "name": "C9 NR limit (m0 = 0, p = 0, phi - phis = Delta > 0): j = g^2 Delta n/m = g n  (constant scalar force per particle)",
+   "passed": true,
+   "residual": "0",
+   "note": ""
+  }
+ ],
+ "gauss_laguerre_nodes": [
+  {
+   "q": 10.0,
+   "mu0": 0.0,
+   "n_nodes": 0.1274853835553225,
+   "n_exact": 0.12748538355532252,
+   "rel_err_n": 2.220446049250313e-16,
+   "massless_energy_nodes": 0.2566941715078637,
+   "massless_energy_exact": 0.25664955636710846,
+   "rel_err_energy": 0.00017383681229299341,
+   "wrong_occupation_rel_dev": 1.8284271247461907
+  },
+  {
+   "q": 128.3,
+   "mu0": 0.0,
+   "n_nodes": 5.858688119913839,
+   "n_exact": 5.8586881199138405,
+   "rel_err_n": 3.3306690738754696e-16,
+   "massless_energy_nodes": 42.254145208320786,
+   "massless_energy_exact": 42.24680115907773,
+   "rel_err_energy": 0.00017383681229277137,
+   "wrong_occupation_rel_dev": 1.828427124746189
+  },
+  {
+   "q": 1283.0,
+   "mu0": 0.0,
+   "n_nodes": 185.26798559497416,
+   "n_exact": 185.2679855949742,
+   "rel_err_n": 1.1102230246251565e-16,
+   "massless_energy_nodes": 4225.414520832079,
+   "massless_energy_exact": 4224.680115907771,
+   "rel_err_energy": 0.00017383681229299341,
+   "wrong_occupation_rel_dev": 1.8284271247461894
+  },
+  {
+   "q": 100.0,
+   "mu0": 5.0,
+   "n_nodes": 1.8380880283816916,
+   "n_exact": 1.8380880283816923,
+   "rel_err_n": 3.3306690738754696e-16,
+   "massless_energy_nodes": 11.70366599657389,
+   "massless_energy_exact": 11.701631822199294,
+   "rel_err_energy": 0.00017383681229277137,
+   "wrong_occupation_rel_dev": 1.8284271247461894
+  }
+ ],
+ "sympy_version": "1.14.0",
+ "script_sha256": "042ef6cff5071ff91f3e94773b9549186789e977c36f2379292920b139148f38"
+}

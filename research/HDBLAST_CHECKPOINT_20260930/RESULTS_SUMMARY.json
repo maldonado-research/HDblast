@@ -1,0 +1,266 @@
+{
+ "checkpoint": "HDBLAST_CHECKPOINT_20260930",
+ "written": "2026-10-01",
+ "rule": "audit verdict overrides producer label; corrections applied",
+ "not_observational_evidence": true,
+ "peer_reviewed": false,
+ "registered_model": {
+  "kappa5_sq": 1,
+  "W": "1-phi+phi^3/3",
+  "sigma": "2W+delta(1+c phi)",
+  "delta": 0.001,
+  "c": 0.5975949350280132,
+  "note": "registered model as stated; B1, B3 and B4 results use delta=0.1 with MODEL CHANGE A1 (d=d*(0.1)); B2 uses delta=1e-3 with d=d*(1e-3)"
+ },
+ "model_changes": {
+  "A1": "sigma = 2W + delta(1 + c phi + d phi^2/2), d = d*(delta) (M8 series root)",
+  "friction_closure": "kappa5^2 j = Y v (phenomenological)",
+  "B1": "chi-field derived source replacing friction closure"
+ },
+ "key_answers": {
+  "derived_chi_replaces_friction": {
+   "answer": "no (at chi masses <= M5, scanned phi*,G,y)",
+   "label": "negative (conditional/descriptive)",
+   "registered_outcome": "INCONCLUSIVE at lambda_c=1",
+   "r_bcut_y1": [
+    94.0,
+    8470.0
+   ],
+   "Omega_r_max": 0.012,
+   "exploratory_lambda_c_5.36_r": 0.282,
+   "r_bcut_y1_note": "run-end values (no registered plateau); phi*=0.9,G=100 cell not fully decayed"
+  },
+  "delta_1e-3": {
+   "status": "inconclusive",
+   "registered_C2": "FAIL",
+   "C2_post_hoc_lambda": "rho-grid runs C2a/C2b/C2c: mode fit 1.65718-1.65725, audit derivative estimator 1.657184-1.657195; C2d (tanh grid): 1.65705-1.65709 by both; late-window estimator 1.65707-1.65711 (C2a/C2b); target 1.65719 (post hoc; Amendment 2 criteria not met as written, explanation not formally accepted)",
+   "blocker": "breakdown after static-vertex light-cone crossing in dc=1e-2 runs; dc=1e-4 pair ends before F_inf due to x_c=11.8 artifact; x_c not ruled out"
+  },
+  "min_r_over_Y": {
+   "registered_reliable": {
+    "Y": 2,
+    "r": 0.0213,
+    "class": "PASS-combined",
+    "seeds": [
+     "1e-2",
+     "1e-4"
+    ],
+    "label": "numerical",
+    "pair": "secondary (5e-4, hybrid 2.5e-4), registered before use; coarsest level 1e-3 has no plateau",
+    "caveat": "Omega_r=1.36 at plateau because Omega_vac=-0.39; turnaround 0.32 e-folds later; snippet-level threshold; phenomenological friction closure"
+   },
+   "conditional": {
+    "Y": 3,
+    "r": 0.0101,
+    "label": "conditional",
+    "reason": "post-hoc tertiary resolution level; Y=3 value known before registration; dc=1e-4 not run"
+   },
+   "Y5": {
+    "r_finest": 0.0044,
+    "label": "inconclusive (not converged)"
+   },
+   "any_Y_passes_combined_bound": true,
+   "scope": "friction closure only, delta=0.1, d=d*(0.1)",
+   "Y_at_r_0.03": [
+    1.64,
+    1.66
+   ],
+   "power_law_exponent": [
+    1.63,
+    1.67
+   ],
+   "power_law_note": "fit includes A1 Y=0.3,1 and the conditional Y=3 point; p=1.63 without Y=3; local slopes 1.42-1.84 (not a pure power law)"
+  },
+  "fine_tuning": {
+   "Lambda_res_at_dstar_M8_H0sq": -0.00034,
+   "dstar_exact": -3.10415,
+   "dstar_offset_rel": 0.0009,
+   "one_efold_tolerance_rel": 0.00013,
+   "one_efold_label": "numerical",
+   "BBN_tolerance_rel": {
+    "T_RH=10MeV": 7e-07,
+    "1GeV": 1.3e-15,
+    "1TeV": 7e-28,
+    "1e10GeV": 7e-56,
+    "1e16GeV": 7e-80
+   },
+   "BBN_label": "conditional",
+   "interpretation": "cosmological-constant problem restated, not solved",
+   "A1_radiation_efolds_abs_Omega_vac_le_0.1": 0.48,
+   "registered_model_tuning_windows_exclude_dstar": true,
+   "one_efold_tolerance_rel_range": [
+    8.7e-05,
+    0.00013
+   ],
+   "one_efold_note": "1.3e-4 with A1 Y=1 stop-record inputs, 8.7e-5 with Y=0.3 inputs",
+   "BBN_note": "relative to the exact zero; d*_exact fit spread ~1e-6 exceeds the 10 MeV tolerance"
+  }
+ },
+ "results": [
+  {
+   "id": "B1.1",
+   "claim": "chi shell system identities (22) + 8 controls",
+   "label": "exact-verified"
+  },
+  {
+   "id": "B1.2",
+   "claim": "K1/K2 calibration vs A1",
+   "label": "numerical"
+  },
+  {
+   "id": "B1.3",
+   "claim": "registered aggregate at lambda_c=1",
+   "value": "INCONCLUSIVE",
+   "label": "inconclusive"
+  },
+  {
+   "id": "B1.4",
+   "claim": "b_cut run-end r (y=1) 94-8.5e3, Omega_r<=0.012; no plateau; y=0.1 snapshots not bounds",
+   "label": "numerical (descriptive)"
+  },
+  {
+   "id": "B1.5",
+   "claim": "reduced estimate FAIL-Weyl/recollapse at b_cut",
+   "label": "conditional"
+  },
+  {
+   "id": "B1.6",
+   "claim": "lambda_c needed ~11-50 for r<=0.1",
+   "label": "conditional (unreliable)"
+  },
+  {
+   "id": "B1.7",
+   "claim": "exploratory lambda_c=5.36 r=0.282",
+   "label": "numerical (exploratory)"
+  },
+  {
+   "id": "B1.8",
+   "claim": "chi cannot replace friction below M5",
+   "label": "negative (conditional/descriptive)"
+  },
+  {
+   "id": "B1.9",
+   "claim": "b_need unreliable; control sensitivity ~2x at run end (beyond reliable end; values from B1 audit/AUDIT_TIMESERIES.json)",
+   "label": "inconclusive"
+  },
+  {
+   "id": "B2.1",
+   "claim": "x_c=inf from unstable kappa=0 pre-run; kappa=10 gives 11.3",
+   "label": "numerical"
+  },
+  {
+   "id": "B2.2",
+   "claim": "A1 delta=1e-3 spacing stops lost reliability for numerical reasons; the dz=2e-4 run end (10.97) lies near the physical crossing (11.36)",
+   "label": "numerical (partially confirmed)"
+  },
+  {
+   "id": "B2.3",
+   "claim": "registered C2",
+   "value": "FAIL",
+   "label": "negative"
+  },
+  {
+   "id": "B2.4",
+   "claim": "seed-offset explanation of C2 failure; post-hoc mode fit 1.65718-1.65725 on rho-grids, 1.65705-1.65709 on C2d (not formally accepted under Amendment 2)",
+   "label": "numerical (post hoc)"
+  },
+  {
+   "id": "B2.5",
+   "claim": "tuned test delta=1e-3",
+   "value": "INCONCLUSIVE",
+   "label": "inconclusive"
+  },
+  {
+   "id": "B2.6",
+   "claim": "post-crossing breakdown (dc=1e-2 + sensitivity set)",
+   "label": "numerical (diagnosis)"
+  },
+  {
+   "id": "B2.7",
+   "claim": "plain refinement cannot fix",
+   "label": "conditional"
+  },
+  {
+   "id": "B3.1",
+   "claim": "Y=0.5 FAIL-Weyl 0.2237; Y=0.7 FAIL-Weyl 0.1326; Y=1.5 PASS-conservative 0.0360",
+   "label": "numerical"
+  },
+  {
+   "id": "B3.2",
+   "claim": "Y=2 PASS-combined both seeds r=0.0213 (registered secondary pair)",
+   "label": "numerical"
+  },
+  {
+   "id": "B3.3",
+   "claim": "Y=3 PASS-combined r=0.0101 (dc=1e-2 only; post-hoc tertiary level)",
+   "label": "conditional"
+  },
+  {
+   "id": "B3.4",
+   "claim": "Y=5 r=0.0044",
+   "label": "inconclusive"
+  },
+  {
+   "id": "B3.5",
+   "claim": "r~0.069 Y^-1.67",
+   "label": "numerical (empirical fit)"
+  },
+  {
+   "id": "B3.6",
+   "claim": "e-folds plateau->turnaround 0.38 (Y=1.5)/0.32 (Y=2)/0.23 (Y=3)/0.09 (Y=5, unreliable), measured; Y=0.5/0.7 estimates only",
+   "label": "numerical"
+  },
+  {
+   "id": "B4.1",
+   "claim": "registered reduced EFT model: T1-T4 fail (r 3.6x high at Y=0.3, 12x at Y=1), T5-T8 pass",
+   "value": "NOT VALIDATED",
+   "label": "negative"
+  },
+  {
+   "id": "B4.2",
+   "claim": "failure in matching step",
+   "label": "numerical (post-registration)"
+  },
+  {
+   "id": "B4.3",
+   "claim": "Lambda_res(d*)=-3.40e-4 H0^2, d*_exact=-3.10415",
+   "label": "numerical"
+  },
+  {
+   "id": "B4.4",
+   "claim": "Lambda<0 radiation solution H=0 / crunch times",
+   "label": "exact-verified"
+  },
+  {
+   "id": "B4.5",
+   "claim": "A1 d* ~0.5 e-fold; H=0 ~44, crunch ~87 extrapolated",
+   "label": "numerical / conditional"
+  },
+  {
+   "id": "B4.6",
+   "claim": "one-e-fold tolerance 1.3e-4",
+   "label": "numerical"
+  },
+  {
+   "id": "B4.7",
+   "claim": "BBN tolerance 7e-7..7e-80",
+   "label": "conditional"
+  },
+  {
+   "id": "B4.8",
+   "claim": "tuning windows (radiation-only variant includes d*; registered excludes d*)",
+   "label": "conditional"
+  }
+ ],
+ "audit_files": [
+  "B1_derived_chi_source/AUDIT.md",
+  "B2_delta1e-3/AUDIT.md",
+  "B3_Y_scan/AUDIT.md",
+  "B4_eft_finetuning/AUDIT.md"
+ ],
+ "critic_review": {
+  "file": "CRITIC_NOTES.md",
+  "date": "2026-10-01",
+  "summary": "top-level numbers checked against workstream JSON; wording and scope corrections applied; no new computation"
+ }
+}

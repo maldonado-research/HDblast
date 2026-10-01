@@ -1,0 +1,4 @@
+runs/ctl ctl_Y3_dc1e-2_restart1e-3to5e-4 --dstar --Y 3 --dc 0.01 --dzf 5e-4 --dzc 2e-3 --L 10 --Tf 20 --kappa 10 --xc 6.1 --stop_recollapse --cfl 0.5 --restart runs/main/states/main_Y3_dc1e-2_dzf1e-3_state_T6.25.npz
+runs/fine fine_Y3_dc1e-2_dzf2.5e-4 --dstar --Y 3 --dc 0.01 --dzf 2.5e-4 --dzc 1e-3 --L 10 --Tf 20 --kappa 10 --xc 6.1 --stop_recollapse --cfl 0.5 --restart runs/main/states/main_Y3_dc1e-2_dzf5e-4_state_T6.25.npz
+runs/pre pre_dstar_Y5_dc1e-2_cfl0.25 --dstar --Y 5 --dc 1e-2 --dzf 2e-3 --dzc 8e-3 --L 12 --Tf 20 --prerun --cfl 0.25
+runs/fine fine_Y2_dc1e-2_dzf2.5e-4 --dstar --Y 2 --dc 0.01 --dzf 2.5e-4 --dzc 1e-3 --L 10 --Tf 20 --kappa 10 --xc 4.6 --stop_recollapse --cfl 0.5 --restart runs/main/states/main_Y2_dc1e-2_dzf5e-4_state_T4.75.npz

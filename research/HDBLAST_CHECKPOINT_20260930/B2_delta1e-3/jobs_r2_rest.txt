@@ -1,0 +1,6 @@
+runs/d6 D6_oldchart_Y1_dc1e-2_S1_k10_nostop --delta 0.001 --dstar --Y 1 --dc 1e-2 --grid rho --dzf 3e-4 --dzc 3e-2 --L 24 --Tf 24 --kappa 10 --prerun --stop_dbdt -100 --wall 1450
+runs/ctl sens_Y1_dc1e-4_xc18.7_S1 --delta 0.001 --dstar --Y 1 --dc 1e-4 --grid rho --dzf 3e-4 --dzc 3e-2 --L 24 --Tf 45 --kappa 10 --xc 18.7 --wall 1450
+runs/ctl C3p_Y1_dc1e-2_S1_xc12.3 --delta 0.001 --dstar --Y 1 --dc 1e-2 --grid rho --dzf 3e-4 --dzc 3e-2 --L 24 --Tf 45 --kappa 10 --xc 12.3 --wall 1450
+runs/ctl C7_Y1_dc1e-2_S1_k0 --delta 0.001 --dstar --Y 1 --dc 1e-2 --grid rho --dzf 3e-4 --dzc 3e-2 --L 24 --Tf 45 --kappa 0 --xc_from runs/pre/xc_Y1_dc1e-2.json --wall 1450
+runs/main main_Y0_dc1e-4_S1 --delta 0.001 --dstar --Y 0 --dc 1e-4 --grid rho --dzf 3e-4 --dzc 3e-2 --L 24 --Tf 45 --kappa 10 --xc_from runs/pre/xc_Y0_dc1e-4.json --wall 1450
+runs/main main_Y0_dc1e-4_S2 --delta 0.001 --dstar --Y 0 --dc 1e-4 --grid rho --dzf 1.5e-4 --dzc 1.5e-2 --L 24 --Tf 45 --kappa 10 --xc_from runs/pre/xc_Y0_dc1e-4.json --wall 1450

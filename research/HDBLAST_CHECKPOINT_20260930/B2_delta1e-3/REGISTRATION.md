@@ -1,0 +1,90 @@
+# B2 pre-registration: the A1 tuned-vacuum test at the registered detuning δ = 10⁻³
+
+Registered 30 September 2026, before any B2 tuned-model run with Y = 1, before any B2 pre-run with Y = 1, and before any B2 growth-rate calibration run with the corrected tables.
+Ricardo Maldonado's HDBLAST program; prepared with AI assistance. This file is not edited after registration; changes are appended below as dated notes with reasons.
+
+## 0. What was seen before this registration (disclosure)
+
+- The archived A1 material (read-only): `A1_VERDICT.md`, A1 `REGISTRATION.md`, the A1 δ = 10⁻³ runs `runs/pre/pre_d1e-3_dstar_Y1_dc1e-2*`, `runs/main/d3_*`, `runs/cal/cal_growth_d0.001*`. From these (script `diag/d2_a1_delta1e-3_diagnosis.py`, output `diag/D2_A1_DELTA1E-3_DIAGNOSIS.json`): with Y = 1 and dc = 10⁻², the tuned shell at δ = 10⁻³ rolls slowly (|φ_b − φ_b^static| grows at ≈ 0.326 per unit chart time for T ≤ 7; φ_b ≈ 0.055 at T = 10); R ≲ 10⁻⁶ in that phase; no plateau was reached.
+- First-attempt diagnosis `diag/D1_TABLE_KICK.json` (static-reference tables with dx = 2.5×10⁻⁴ violate the φ junction at the shell by −1.8×10⁻¹⁰, 35× the physical mismatch of the dc = 10⁻⁸ calibration seed).
+- B2 development runs (method only, **tuned model with Y = 0**, dc = 10⁻², old chart, T ≤ 2.5; `runs/dev/`, summary `diag/D3_GRID_DEV.json`): the Y = 0 tuned shell rolls fast (rate ≈ 3.73 per unit T, φ_b ≈ 0.87 and H/H₀ ≈ 0.27 at T = 2), and the old-chart light-cone criterion is met at T ≈ 2.1–2.4 (suggested x_c = 1.6, with κ = 0 and κ = 10). The ρ-adapted grid of §4 (32 and 64 points per wall) and the A1 tanh grid (30 points per wall) agree on the rate to 3×10⁻³ relative and on φ_b(T = 2) to 0.4%; a tanh grid with a 100× fine-to-coarse jump (`g5`) fails (lapse grows to 2.2, near-shell residual 0.5) — the failure mode of the A1 pre-run.
+- Timing of the solver (`diag/TIMING_GRID.json`).
+- A diagnostic rerun of the A1 C2 configuration with the A1 tables (dx = 2.5×10⁻⁴), launched to test the table-kick diagnosis; its output was not inspected before this file was written.
+
+Nothing about a Y = 1 plateau, Weyl ratio or radiation share at δ = 10⁻³ has been seen.
+
+## 1. Model (MODEL CHANGE as in A1, labelled)
+
+- Registered 5D Einstein-scalar model, κ₅² = 1: W = 1 − φ + φ³/3, U = ½W_φ² − (2/3)W², Z2-doubled bulk, one shell.
+- **Model change (A1):** σ(φ) = 2W + δ(1 + cφ + dφ²/2), δ = 10⁻³, c = 0.5975949350280132, d = d\*(10⁻³) = −3.1942416958680835 (`M8_QUADRATIC_TENSION_TUNING.json`). d = 0 (registered model) is used only for the growth-rate calibration.
+- Shell matter as in A1: R = κ₅²ρ, p = R/3; friction closure κ₅²j = Yv (v = dφ_b/dτ), **Y = 1 in model units**; Y = 0 baseline. Junctions n·∂A = (σ+R)/6, n·∂B = (σ−3R)/6, n·∂φ = −(σ′+Yv)/2; ledger dR/dτ + 4HR = Yv².
+- Note: in Hubble units of the initial shell the friction is Y ρ_b = 79 at δ = 10⁻³ against 7.8 at δ = 0.1, so "Y = 1" is a ten times stronger friction at δ = 10⁻³. This is the registered closure as A1 defined it; it is not re-scaled here.
+- Seeds: static shell with c + dc (same d), dc ∈ {10⁻², 10⁻⁴}, positive.
+
+## 2. Dark-radiation normalisation
+
+Unchanged from A1 §2: r ≡ 𝒲/rad with rad = σR/18 + R²/36 from the exact shell identity, Ω_r = rad/H², thresholds |r| ≤ 0.1 (conservative, ΔN_eff ≈ 0.29) and |r| ≤ 0.03 (combined); R/σ reported at the plateau.
+
+## 3. Pass/fail rule (A1 §3, unchanged)
+
+- **Plateau:** first τ_p such that over the last Δln a = 0.5: H > 0, |Δ(𝒲a⁴)| ≤ 0.05|𝒲a⁴|, |Δ(Ra⁴)| ≤ 0.05 Ra⁴ (code: `a1_analyze.plateau_index`, copied unchanged).
+- **Per run:** PASS-conservative (plateau, Ω_r ≥ 0.9, |r| ≤ 0.1; PASS-combined if also |r| ≤ 0.03); FAIL-Weyl (plateau, |r| > 0.1); FAIL-no-radiation-era (recollapse H/H₀ < −0.05 before any time with Ω_r ≥ 0.9 and |r| ≤ 0.1, or plateau with Ω_r < 0.5); INCONCLUSIVE otherwise (including runs that end — end time, wall-clock budget of §4, numerical failure, loss of reliability — before any of the above).
+- **Reliability:** the two spacings of §4 give the same class and agree on r at the classification time to 20% relative or 0.02 absolute (recollapse: H = 0 times within 0.05 H₀⁻¹), and the near-shell (z > −1) relative Hamiltonian and momentum residuals stay below 0.05 up to the classification time on the finer spacing. Records after the first violation of the residual criterion are not used (`a1_analyze.reliable_end`).
+- **Aggregate at δ = 10⁻³ (Y = 1):** PASS if both seeds give a reliable PASS-conservative (PASS-combined reported separately); FAIL if both seeds give a reliable FAIL (either kind); INCONCLUSIVE otherwise. Y = 0 is a baseline (by construction it cannot pass).
+- **Meaning.** PASS: the A1 δ = 0.1 candidate radiation era also exists at the registered detuning in this closure (the tuning 1 + c + d/2 ≈ 0 remains an unexplained fine tuning). FAIL: the d\* model with Y = 1 has no acceptable radiation era at the registered detuning; by the A1 rule the δ = 10⁻³ result then governs statements about the registered-scale detuning and the A1 aggregate becomes INCONCLUSIVE. INCONCLUSIVE: neither can be claimed; the report states what resolution and time would be needed.
+
+## 4. Method (changes relative to A1 are numerical only)
+
+- Solver: copy of A1 `evolve_a1.py` with (i) static-reference tables at dx = 2.5×10⁻⁵ (A1: 2.5×10⁻⁴; the table junction error drops from 1.8×10⁻¹⁰ to 3×10⁻¹⁴); (ii) a **ρ-adapted grid**: spacing s(z) = 1/(ρ(z)/(ρ_b dz_f) + 1/dz_c), ρ(z) the static background's conformal factor, i.e. a fixed number of points per local wall/curvature width (∝ 1/ρ(z)) and a smooth cap dz_c, no abrupt fine-to-coarse transition; (iii) checkpoint/restart (each process ≤ 25 min); (iv) caches (static shells on disk, reference fields per time level) that change speed only.
+- **Remedy A (projection) is not used** at δ = 10⁻³: the static seed's initial Hamiltonian residual is already ≲ 10⁻¹² relative with the fine tables, and the A1 Newton projection diverged at dz_f = 1.5×10⁻⁴ (residual 7×10⁻⁷ → 1.6×10⁻² → 2×10⁻⁶ with a spurious warp shift 9×10⁻³), which is why the A1 dz_f = 1.5×10⁻⁴ run stopped at H₀τ = 3.1.
+- Remedy B as in A1: κ = 10, off for z > −0.02, full for z < −0.05. 4th-order differences, Hermite ghost, RK4, Δt = 0.5 min Δz. Deviation form until T_switch = F_∞ − 1. Chart: `bounded` (A1 second dated note).
+- **Two spacings:** S1: dz_f = 3×10⁻⁴, dz_c = 3×10⁻² (42 points per wall 1/ρ_b); S2: dz_f = 1.5×10⁻⁴, dz_c = 1.5×10⁻² (85 points per wall). L = 24 (the shell is causally isolated from the far boundary for T < 48). T_final = 45.
+- **x_c rule (fix of the A1 failure).** Diagnosis (D2): the A1 δ = 10⁻³ pre-run did not fail physically; it went numerically unstable (lapse growing from T ≈ 1, |B_b| > 40 at T = 5.7) on a grid with a 20× fine-to-coarse jump inside the wall's tail, so d b_b/dT < −0.9 was never reached. The rule itself is kept: x_c = b_b + T at the first record with d b_b/dT < −0.9 (b_b = B_b − ln ρ_b), rounded to 0.1, from an old-chart pre-run per (Y, dc) — now on the ρ-adapted grid with dz_f = 4×10⁻⁴, dz_c = 4×10⁻², L = 24, κ = 0, no projection, T_final = 45. **Fallbacks, in order:** (a) if a pre-run stops without meeting the criterion (non-finite values, |B_b| > 40, lapse leaving [10⁻⁴, 10⁴], or T_final), repeat it at spacing S1 (κ = 0); (b) if that also fails, x_c = ∞ (old chart) for that (Y, dc), and the runs are classified only up to the chart freeze.
+- **Budget.** Total wall time for B2 is ≈ 3.5 h on 2 cores. Each main run may use up to 60 min of CPU (in ≤ 25-min processes continued from checkpoints); a run not classified by then is INCONCLUSIVE (budget), and the report gives the time and resolution it would need. Run order: pre-runs; C2; Y = 1 (dc = 10⁻⁴ first, then 10⁻²), both spacings; Y = 0 (dc = 10⁻²), both spacings; controls C7 and C3′ if time remains; Y = 0, dc = 10⁻⁴ last.
+
+## 5. Calibration and controls
+
+- **C2 (growth rate, target 1.65719 within 2×10⁻⁴, Chat 14).** Registered model (d = 0), δ = 10⁻³, dc = 10⁻⁸, Y = 0, κ = 0, no projection, old chart, fine tables. Runs: C2a ρ-grid dz_f = 1.7×10⁻⁴ (75 points per wall), dz_c = 2×10⁻², L = 16, T_final = 6.5; C2b ρ-grid dz_f = 9.5×10⁻⁵ (134 points per wall), dz_c = 1.1×10⁻², L = 16; C2c as C2a with dc = 3×10⁻⁸ (seed independence); C2d the Chat 14/A1 tanh grid (dz_f = 1.69×10⁻⁴, dz_c = 8×10⁻³, z_fine = 0.06, L = 10) with the fine tables. **Estimator (fixed now):** the log-slope of |φ_b − φ_b^static| against H₀τ on the five windows [a, a+1], a ∈ {2, 2.5, 3, 3.5, 4}, using only records with |φ_b − φ_b^static| < 10⁻³ (the Chat 14 estimator); rate = mean of the five, spread = max − min. **C2 passes** if C2a and C2b each give |rate − 1.65719| ≤ 2×10⁻⁴ with spread ≤ 2×10⁻⁴. C2c and C2d are reported (seed independence expected within 10⁻⁴). The A1 estimator (window 30×dev₀ < dev < 2×10⁻³, τ > 1) is also reported. Diagnostic control: the A1 configuration with the A1 tables (dx = 2.5×10⁻⁴) should reproduce the A1 drift (early-window rate off by > 10⁻²); if it does not, the table-kick diagnosis is withdrawn.
+- **C5 (Weyl identity), C6 (radiation ledger):** as A1 (median relative residual ≤ 10⁻³ and ≤ 10⁻⁴; the 4H → 3H control ≥ 10× worse; the "R dropped" control reported — A1 found it too weak to discriminate).
+- **C7:** Y = 1, dc = 10⁻², S1 with κ = 0: the class must not change.
+- **C3′ (chart independence at δ = 10⁻³):** Y = 1, dc = 10⁻², S1 with x_c + 1: the class must not change and r must agree within the reliability tolerance.
+- If C2 fails, the tuned-run classifications are reported but downgraded to INCONCLUSIVE (calibration failed) unless the failure is shown to be confined to the calibration's linear regime; the reason is stated.
+
+## Dated note 1 (1 October 2026, restart; written before any further run)
+
+**Status of this file.** This registration was written on 30 September by the first (interrupted) attempt of this round. The instructions for the restart stated that no REGISTRATION.md had been written; that statement was wrong — the file exists and is treated as binding. It is not edited; the text above is unchanged.
+
+**Seen after registration and before this note** (all outputs of the first attempt, inspected on restart; `B2_RESULTS.json` of 30 Sept, `runs/pre`, `runs/cal`, `runs/diag`, `runs/dev/capdev_*`):
+- Pre-runs (registered configuration: ρ-grid dz_f = 4×10⁻⁴, κ = 0): Y = 0, dc = 10⁻² → x_c = 1.6; Y = 0, dc = 10⁻⁴ → x_c = 2.7; **Y = 1, dc = 10⁻² → non-finite at T = 6.41** without meeting the criterion (lapse grows monotonically from T ≈ 1, 1.13 at T = 4.95, 2.18 at T = 6.19; near-shell residual 0.021 → 0.086 at T = 5.94: the same undamped numerical growth as the A1 pre-run, now also on the ρ-grid). Y = 1, dc = 10⁻⁴: interrupted at T ≈ 7.2 (no summary).
+- C2a (registered configuration, T_final 6.5): registered estimator rate 1.65630, spread 2.4×10⁻³ (windows 1.65466 → 1.65710, rising) → **C2 fails as registered** on C2a; the A1-estimator sliding windows reach 1.65714 at H₀τ 4.5–6.
+- Diagnostic control (A1 configuration and A1 tables): early windows 1.884 (1–2), 1.749 (1.5–2.5), i.e. it reproduces the A1 drift (> 10⁻² off) → the table-kick diagnosis stands.
+- Development runs after registration (Y = 1, dc = 10⁻², old chart, ρ-grid dz_f = 4×10⁻⁴, L = 24): **with κ = 10 the light-cone criterion was met at T = 13.49 (H₀τ = 11.15), suggested x_c = 11.2**; lapse 0.997 at T = 4.6, 0.889 at T = 9.2 (decaying, the physical approach). A capped-grid κ = 0 variant was interrupted at T ≈ 3.6. Nothing about a plateau, r or Ω_r at δ = 10⁻³ has been seen.
+
+**Amendment 1 (x_c rule).** The fallback chain of §4 becomes: (a) as registered (S1, κ = 0); **(a′) new: if (a) fails, the pre-run is repeated on S1 with κ = 10** (Remedy B exactly as in the main runs: off for z > −0.02, full for z < −0.05), the criterion and the rounding unchanged; (b) as registered (x_c = ∞). Reason: the κ = 0 failures are an undamped growth of constraint violation (lapse rising instead of falling, residual growing), not a property of the shell; the main runs are integrated with κ = 10, so a κ = 10 pre-run locates the light-cone approach of the same evolution system. The dc = 10⁻⁴ Y = 1 pre-run is first run as registered (it was never completed). For the record, the registered κ = 0 attempts are run and reported even though (a′) is expected to be needed. The C3′ control (x_c + 1) remains the test of chart dependence.
+
+**Amendment 2 (C2 run length; supplementary estimator).** C2b, C2c, C2d and a repeat of C2a (tag C2a8) are run with T_final = 8 instead of 6.5 (the registered estimator uses H₀τ ≤ 5 and is unaffected). The **registered C2 verdict is computed exactly as registered** (C2a, C2b). A **supplementary late-window estimator** is added and labelled post-registration: same fit, windows [a, a+1] with a ∈ {4.5, 5, 5.5, 6}, records with |dev| < 10⁻³; it "passes" if C2a8 and C2b each give |rate − 1.65719| ≤ 2×10⁻⁴ and spread ≤ 2×10⁻⁴. A seed-transient interpretation of the registered failure is accepted only if (i) the late estimator passes on both, (ii) the window rates increase monotonically toward the late value in both runs with differences that shrink geometrically, and (iii) C2d (the Chat 14 tanh grid with fine tables) shows the same behaviour. If so, §5's last clause ("failure confined to the calibration's linear regime") is applied and stated as such; otherwise tuned classifications are downgraded as registered.
+
+**Execution.** Two processes at a time (2 cores). Order: pre-runs (Y = 1: dc = 10⁻⁴ registered; then (a) and, if needed, (a′) for both seeds); C2a8, C2b, C2c, C2d; main runs as in §4; C7, C3′ if time remains.
+
+## Dated note 2 (1 October 2026, after the pre-runs, before any main run)
+
+**Pre-run outcome (`XC_SELECTION.json`, `select_xc.py`).** Y = 1, dc = 10⁻²: registered pre-run non-finite (30 Sept); (a) S1, κ = 0: |B_b| > 40 at T = 6.79 (lapse rising, criterion not met); **(a′) S1, κ = 10: x_c = 11.3** (H₀τ 11.26; near-shell residual ≤ 4×10⁻⁶). Y = 1, dc = 10⁻⁴: **registered pre-run (ρ-grid 4×10⁻⁴, κ = 0) met the criterion: x_c = 11.8** → chosen by the registered chain. Also run for the record: (a) S1 κ = 0 → 13.7; (a′) S1 κ = 10 → 18.7.
+
+**Observation.** For dc = 10⁻⁴ the κ = 0 light-cone time is resolution dependent (11.8 at 32 points/wall, 13.7 at 42) and coincides with a near-shell constraint residual growing to 2×10⁻³ at z ≈ −1 (κ = 10: ≤ 2×10⁻⁶ over the same interval, criterion met only at T = 21), with φ_b still ≈ 10⁻³. The registered x_c = 11.8 for dc = 10⁻⁴ is therefore triggered by undamped numerical growth, not by the shell's approach to the vertex light cone.
+
+**Amendment 3.** The registered chain is kept: the main dc = 10⁻⁴ runs use x_c = 11.8. In addition, a labelled **sensitivity set** repeats Y = 1, dc = 10⁻⁴ with x_c = 18.7 (κ = 10 pre-run) at both spacings (`runs/ctl/sens_*`). If the sensitivity set (when reliable) gives a different class from the main dc = 10⁻⁴ pair, the dc = 10⁻⁴ result is declared chart dependent and the aggregate cannot be PASS or FAIL (INCONCLUSIVE). The sensitivity set cannot by itself turn an INCONCLUSIVE main pair into a decisive one.
+Run order: main Y = 1 (dc 10⁻⁴, then 10⁻²; S2 and S1 in parallel), main Y = 0 dc 10⁻², sensitivity set, C3′, C7, main Y = 0 dc 10⁻⁴.
+
+## Dated note 3 (1 October 2026, 09:20 UTC, after the first main runs; exploratory runs added)
+
+**Seen.** All four main Y = 1 runs ended before any plateau: dc = 10⁻² (x_c = 11.3) at T = 11.58 (S1) and 11.63 (S2), H₀τ = 12.5 and 13.1, φ_b ≤ 0.15, shell lapse growing at d ln(lapse)/dT ≈ 3.5–4 beyond F_inf (A1 δ = 0.1: 1.24); dc = 10⁻⁴ (x_c = 11.8) at T = 11.6–11.7 (H₀τ 12.9–13.6), φ_b ≈ 10⁻³. Y = 0, dc = 10⁻² rolls to φ_b ≈ 1 (H/H₀ ≈ 0.08 at H₀τ ≈ 5) and runs 1.3–1.6 chart units past F_inf. The old-chart continuation D6 (Y = 1, dc = 10⁻², S1, κ = 10, no stop) shows d B_b/dT → −0.98 and a frozen shell proper time H₀τ ≈ 11.36 with φ_b ≈ 0.094 and H/H₀ ≈ 1.002: the shell reaches the static vertex light cone before it rolls (at δ = 0.1 this happened at φ_b ≈ 1, H/H₀ ≈ 0.26). Per the registered rule the four main Y = 1 runs are INCONCLUSIVE (ended before any classification).
+
+**Exploratory runs (post-registration; they do not enter the registered aggregate).** Hypothesis: the bounded chart's saturation (s_max = 20: beyond the light cone it covers only U_K < s_max e^{−c₀}) is reached by a shell that crosses the light cone before rolling. Tests on Y = 1, dc = 10⁻², x_c = 11.3, κ = 10: E1 bounded chart with s_max = 200, E2 s_max = 2000, E3 the `asinh` chart (regular for all U_K > 0, no saturation); S1 first, S2 for any that passes F_inf + 2 without the lapse leaving [10⁻⁴, 10⁴]. If an exploratory pair reaches a plateau with both spacings agreeing (A1 reliability rule), its class is reported as **exploratory**, labelled as obtained after seeing the registered runs fail, and the registered δ = 10⁻³ verdict stays INCONCLUSIVE.
+
+## Dated note 4 (1 October 2026, 09:48 UTC)
+
+Seen since note 3: E1 (s_max = 200) and E3 (asinh) end at exactly the same point as the default chart (T = 11.580, H₀τ = 12.4736), so E2 (s_max = 2000) is dropped; the chart's far-region saturation is not the cause. The breakdown is near the shell (momentum-constraint residual 0.29 at z ≈ −0.13 at T = 11.5 in S2). C3′ (x_c = 12.3) ends at H₀τ = 13.2, the sensitivity set (x_c = 18.7, dc = 10⁻⁴) at H₀τ = 19.8 (S1) and 20.5 (S2), C7 (κ = 0) at T = 6.79 in deviation mode. **Added (diagnostic only, not in the aggregate):** one finer run S3′ (Y = 1, dc = 10⁻², x_c = 11.3, dz_f = 7.5×10⁻⁵, dz_c = 1.5×10⁻², 171 points per wall) to measure how the end time moves with resolution (S1 → S2 moved it from H₀τ 12.47 to 13.10).
+
+## Dated note 5 (1 October 2026, 09:51 UTC)
+
+Added one exploratory run (not in the aggregate): E4 = Y = 1, dc = 10⁻², S1, x_c = 11.3, with time step halved (cfl 0.25), to test whether the post-crossing breakdown is a time-step (stiffness) instability rather than a spatial-resolution or gauge problem. If E4 ends at the same point as the default S1 run (within 0.05 in T), time-step instability is excluded.
