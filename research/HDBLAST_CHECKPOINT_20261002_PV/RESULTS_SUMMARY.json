@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-02",
+  "status": "EXECUTED_FLAT_BACKGROUND_BENCHMARK",
+  "model": "x=M^2=4 tanh^2(t), a=1, real scalar, exact asymptotic incoming state",
+  "matching_reference": 4,
+  "matching_conditions": [
+    "V(r)=0",
+    "V_x(r)=0",
+    "V_xx(r)=0",
+    "F(r)=0",
+    "F_x(r)=0"
+  ],
+  "first_source_commit": "9829992e2389f4195e7f062b34f731bbf56ecfaa",
+  "first_source_sha256": "4cf449075b2256d9e781ce438577718716a311fc3923c73a814ca53c57dcbbdf",
+  "first_run": 36949788139,
+  "registered_cases": 8,
+  "all_registered_controls_pass": true,
+  "crossing": {
+    "t": 0,
+    "rho": -0.009439488317636524,
+    "p": 0.006547708991634139,
+    "S": 0.013452897572762095,
+    "rho_direct": -0.009674605010176593,
+    "p_direct": 0.0064457339605026,
+    "S_direct": 0.013659550787392912,
+    "p_potential_only": -0.020525436118019172
+  },
+  "asymptotic_exact_particles": {
+    "number": 0.00883111530764424,
+    "energy": 0.019964326634510386,
+    "gas_pressure": 0.0014055140389449016,
+    "gas_w": 0.07040127446699487,
+    "mean_energy": 2.260680099741106,
+    "endpoint_rho": 0.01996432656749647,
+    "endpoint_energy_relative_difference": -3.3566829714398785e-9
+  },
+  "posthoc_direct_checks": {
+    "status": "EXECUTED_V8_POST_HOC_FROM_SAVED_FIRST_RUN_DATA",
+    "primary_exact_finite_K_trace_max_absolute": 1.6728935459120464e-9,
+    "primary_exact_finite_K_trace_max_scaled": 1.045558466195029e-10,
+    "leading_tail_corrected_crossing": [
+      {
+        "name": "cutoff64",
+        "K": 64,
+        "rho": -0.009677707870019484,
+        "p": 0.006447822038312862,
+        "S": 0.013662263071315248
+      },
+      {
+        "name": "primary",
+        "K": 128,
+        "rho": -0.009677697087314115,
+        "p": 0.006447795345260948,
+        "S": 0.013662256354888245
+      },
+      {
+        "name": "cutoff192",
+        "K": 192,
+        "rho": -0.009677696510070347,
+        "p": 0.006447793916891557,
+        "S": 0.013662255995304302
+      }
+    ],
+    "caution": "Asymptotic addbacks are diagnostic, not certified continuum values or rigorous error bounds."
+  },
+  "findings": [
+    "Common-action curvature matching is required for pressure even on a flat background.",
+    "Potential-only matching can pass the flat energy ledger while its pressure drifts with the regulator.",
+    "Direct physical-mode subtraction has controlled numerical cutoff evidence but shares the same mode solver."
+  ],
+  "limitations": [
+    "Several-percent residual finite-PV effects near the crossing.",
+    "Finite matching convention chosen, not empirically measured.",
+    "No curved-shell backreaction, thermalization, radiation era or hot Big Bang demonstrated.",
+    "No external novelty claim or peer review."
+  ]
+}
