@@ -1,0 +1,178 @@
+from pathlib import Path
+import csv, hashlib, json, shutil
+from decimal import Decimal
+from fractions import Fraction
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
+STAGE=Path(__file__).parent
+CPP=Path('/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_SOURCE_FREE_LEDGER')
+RUN=STAGE/'original-replay'
+read=lambda p:json.loads(p.read_text())
+replay=read(RUN/'REPLAY.json')
+if replay['status']!='COMPLETED_REPLAY': raise RuntimeError('Verified complete result required')
+primary=read(RUN/'fresh/primary/diagnostic.json')
+validation=read(RUN/'fresh/validation/VALIDATION.json')
+if validation['classification']!=primary['classification']: raise RuntimeError('Classification differs')
+destination=CPP/'outputs/original'
+destination.mkdir(parents=True,exist_ok=False)
+for name in ('fresh','logs'): shutil.copytree(RUN/name,destination/name)
+for name in ('REPLAY.json','EXECUTION.json','COMMAND_PLAN.json','INPUT_MANIFEST.json'):
+    shutil.copyfile(RUN/name,destination/name)
+report_dir=CPP/'reports'
+report_dir.mkdir(exist_ok=True)
+fig_dir=CPP/'figures'
+fig_dir.mkdir(exist_ok=True)
+rows=[]
+witnesses={(x['source'],x['setting'],x['K']) for x in primary['attribution_cases']}
+for rec in primary['records']:
+    for row in rec['levels']['100']:
+        rows.append({'source':rec['source'],'setting':rec['setting'],**row,
+                     'gate_scale_attribution':(rec['source'],rec['setting'],row['K']) in witnesses})
+keys=('D_S','D_cont','E_Q','E_flow','R_profile_max_error','P_profile_max_error','F_profile_max_error')
+summary={'schema_version':1,'classification':validation['classification'],'old_metric_status':'FAIL',
+         'cases':12,'attribution_cases':primary['attribution_cases'],
+         'maximum_absolute_reported_values':{k:str(abs(Decimal(max((r[k] for r in rows),key=lambda x:abs(Fraction(x)))))) for k in keys},
+         'cross_route_max_gap_exact_rational':validation['cross_route_max_gap_exact_rational'],
+         'streamed_flow_precision_gap_exact_rational':validation['streamed_flow_precision_gap_exact_rational'],
+         'executions':validation['executions'],'public_freeze_commit':validation['public_freeze_commit'],
+         'registration_sha256':validation['registration_sha256'],
+         'scope':'Post-support saved-data diagnosis on [-2.5,-1.5] only; prior59failedmetricchecks unchanged.'}
+(report_dir/'SUMMARY.json').write_text(json.dumps(summary,indent=2,sort_keys=True)+'\n')
+with (report_dir/'CASE_TABLE.csv').open('w') as f:
+    writer=csv.DictWriter(f,fieldnames=['source','setting','K',*keys,'gate_scale_attribution'])
+    writer.writeheader()
+    for row in rows: writer.writerow({k:row[k] for k in writer.fieldnames})
+maxs={k:abs(float(v)) for k,v in summary['maximum_absolute_reported_values'].items()}
+table='\n'.join('| {} | {} | {} | {:.6e} | {:.6e} | {:.6e} | {} |'.format(
+    r['source'],r['setting'],r['K'],float(r['D_S']),float(r['D_cont']),float(r['E_Q']),
+    'yes' if r['gate_scale_attribution'] else 'no') for r in rows)
+resource_table='\n'.join('| {} | {:.3f} | {:,} |'.format(x['name'],x['elapsed_seconds'],x['peak_rss_kib']) for x in validation['executions'])
+text=f'''# Source-free ledger diagnostic: measured result
+
+**{validation['classification']}.** All twelve saved-data consistency cases pass.
+Eight meet the prospectively fixed gate-scale attribution criterion: Simpson
+integration produces a conservation residual greater than2e-6, while the
+independent exact free-flow antiderivative accounts for at least90% of it.
+The previous metric calibration remains **FAIL**, including its59 failed
+endpoint/refinement checks. This diagnosis changes no historical verdict.
+
+The largest absolute Simpson residual is{maxs['D_S']:.8e}; the largest continuous
+ledger residual is{maxs['D_cont']:.8e}. The maximum density/pressure profile
+differences are{maxs['R_profile_max_error']:.8e} and{maxs['P_profile_max_error']:.8e},
+and the largest signed mode-flow projection is{maxs['E_flow']:.8e}, all below
+the unchanged2e-7 consistency scale. The numerical normalization and interval
+are exactly those in the frozen protocol. These are empirical finite-calculation
+results, not certified bounds on physical trajectory error.
+
+## What was fixed and what was measured
+
+Public freeze[`06984aa6b142499c592850e6b4afd49c28ced394`](https://github.com/maldonado-research/HDblast/commit/06984aa6b142499c592850e6b4afd49c28ced394)
+and registration SHA256`{validation['registration_sha256']}` precede every new
+physical diagnostic evaluation. All121 frozen files were checked against the
+public Git tree, with the registration independently downloaded. Input capsules
+preserve all68 selected NPY member byte strings from four prior failed archives.
+
+The single interval is[-2.5,-1.5], after both source histories have ended.
+Every129 coarse and257 fine profile sample is used at K=64,128,256. Both
+implementations run all12 cases at80 and100 decimal digits. The primary uses
+integer Fourier moments; the independent implementation uses MPF moment sums
+and retains every endpoint mode defect. They share the continuum model,
+saved trajectories and momentum quadrature. Their agreement checks numerical
+implementation, not independently established physics.
+
+The canonical ledger is an analytic phase antiderivative of the expanded
+integrand from the retained anchor state. It is not defined by measured final
+density. The separately recorded recurrence primitive agrees with this direct
+phase evaluation at each precision. Original Simpson global prefixes are
+subtracted in long double; the reset and same-fine-history doubled-step controls
+remain separate outputs.
+
+## Signed residuals
+
+`D_S=DeltaR-S_ab`, `D_cont=DeltaR-I_ab`, `E_Q=I_ab-S_ab`.
+The signed identity `D_S=D_cont+E_Q` closes at the registered1e-12 scale.
+Rounded display values are below; [CASE_TABLE.csv](CASE_TABLE.csv) and the raw
+diagnostics preserve long decimal strings. No case was dropped or retuned.
+
+| Source | Resolution | K | D_S | D_cont | E_Q | Gate-scale attribution |
+|---|---|---:|---:|---:|---:|---|
+{table}
+
+![Absolute Simpson, exact-ledger and signed-flow residuals](../figures/ledger_residuals.png)
+
+The four cases without a witness pass consistency but do not cross the strict
+2e-6 attribution trigger. In particular the signed-source fine K128 residual
+remains below that threshold; the threshold was not moved to include it.
+
+## Independent arithmetic and actual resources
+
+The largest common-field cross-route difference is
+{float(Fraction(validation['cross_route_max_gap_exact_rational'])):.5e}, below1e-12.
+All reported precision-gap, direct/recurrence primitive, streamed flow-prefix,
+serialization and signed-decomposition checks pass. Normal and optimized
+validators give identical substantive reports. [The validation receipt](../outputs/original/fresh/validation/VALIDATION.json)
+and [execution records](../outputs/original/EXECUTION.json) retain the evidence.
+
+| Complete route, both precisions | Outer wall seconds | Peak RSS KiB |
+|---|---:|---:|
+{resource_table}
+
+Each route has its own single900-second/262144-KiB allowance for all cases and
+both precisions, including provenance and output serialization. No budget is
+reset per case. These are observed execution resources, not synthetic estimates.
+
+## What this establishes and what remains open
+
+The stored source-free stress and free mode flow agree to very small numerical
+residuals, while the sampled-history integration accounts for the large tested
+conservation discrepancy. This is a useful diagnosis of the computational
+pipeline. It is not a new law of nature or a claimed mathematical first.
+
+The calculation does not test the active-source interval, the accumulated
+earlier global ledger, initial-state accuracy, complete momentum error, the
+actual shell root/lapse/bulk/state response, coupled dynamics or heating.
+It therefore cannot explain all59 original failures by itself, validate the
+higher-dimensional blast hypothesis, or establish a hot Big Bang.
+
+The next useful experiment is a separately registered active-source calculation
+with a phase-aware time integral and independently derived density/pressure.
+It must retain the old tolerances, inspect source-local matching/contact terms,
+and test both time and momentum refinement. A source defined retrospectively
+to enforce conservation would not be an independent check. Only a complete
+successful registered calibration should precede coupled-evolution claims.
+
+The bounded literature review covers85 returned metadata records and selected
+passages in four retrieved primary papers, with retrieval failures and coverage
+limits retained. [Research context](../literature/LEDGER_RESEARCH_CONTEXT.md)
+connects the exact antiderivative to established oscillatory quadrature methods;
+it supplies no new evidence for extra dimensions. No claim to search the entire
+web or establish fundamental mathematical novelty is made.
+
+All review here is internal and AI-assisted. Standalone package replay and
+hosted execution have separate publication receipts; their success must be
+checked rather than inferred from this original run. Zenodo transport remains
+blocked as documented in the publication handoff; this report creates no DOI.
+'''
+(report_dir/'RESULTS.md').write_text(text)
+fig,axes=plt.subplots(2,2,figsize=(11,7),sharex=True,sharey=True)
+for ax,rec in zip(axes.flat,primary['records']):
+    selected=rec['levels']['100']; x=[r['K'] for r in selected]
+    for key,label,marker in [('D_S','Simpson residual','o'),('D_cont','Exact-ledger residual','s'),('E_flow','Signed flow projection','^')]:
+        ax.plot(x,[abs(float(r[key])) for r in selected],marker=marker,label=label)
+    ax.axhline(2e-6,color='firebrick',ls='--',lw=1,label='Attribution trigger 2e-6')
+    ax.axhline(2e-7,color='gray',ls=':',lw=1,label='Consistency scale 2e-7')
+    ax.set_yscale('log');ax.set_ylim(1e-20,1e-3);ax.set_xticks([64,128,256])
+    ax.set_title(rec['source']+' / '+rec['setting']);ax.grid(alpha=.18)
+for ax in axes[-1]:ax.set_xlabel('Fixed comoving cutoff K')
+fig.supylabel('Absolute residual (frozen normalization)',fontsize=11)
+handles,labels=axes[0,0].get_legend_handles_labels()
+fig.legend(handles,labels,loc='lower center',ncol=3,fontsize=9)
+fig.suptitle('Post-support saved-data diagnosis; original metric calibration remains FAIL')
+fig.tight_layout(rect=[0,.10,1,.95])
+fig.savefig(fig_dir/'ledger_residuals.png',dpi=170)
+fig.savefig(fig_dir/'ledger_residuals.svg')
+plt.close(fig)
+shutil.copyfile(__file__,report_dir/'build_result_report.py.txt')
+print(json.dumps({'classification':validation['classification'],'witnesses':len(witnesses),'maxima':maxs}))

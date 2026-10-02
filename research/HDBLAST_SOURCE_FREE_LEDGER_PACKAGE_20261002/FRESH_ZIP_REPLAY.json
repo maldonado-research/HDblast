@@ -1,0 +1,470 @@
+{
+  "checks": {
+    "every_streamed_endpoint_file_identical": true,
+    "independent_all_scientific_records_equal": true,
+    "independent_classification_equal": true,
+    "primary_all_scientific_records_equal": true,
+    "primary_classification_equal": true
+  },
+  "classification": "LEDGER_ERROR_DEMONSTRATED",
+  "executions": [
+    {
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint/code/diagnostic_primary.py",
+        "--checkpoint-root",
+        "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint",
+        "--registration-sha256",
+        "e7a8fe5f6991bad9304440b037ce2eefafdfbaf9c011e177eb9b364b3239bba1",
+        "--freeze-commit",
+        "06984aa6b142499c592850e6b4afd49c28ced394",
+        "--output-dir",
+        "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/fresh/primary"
+      ],
+      "completed_utc": "2026-10-02T23:23:26.771841+00:00",
+      "cwd": "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint",
+      "elapsed_seconds": 93.42833528999472,
+      "exit_code": 0,
+      "memory_exceeded": false,
+      "memory_limit_kib": 262144,
+      "name": "primary",
+      "observed_peak_group_rss_kib": 54852,
+      "peak_rss_kib": 59844,
+      "physical_route": true,
+      "pid": 129816,
+      "process_creation_limit": 0,
+      "started_utc": "2026-10-02T23:21:53.343479+00:00",
+      "status": "PASS_EXECUTION",
+      "system_seconds": 0.140853,
+      "timed_out": false,
+      "timeout_seconds": 900,
+      "user_seconds": 93.257681,
+      "wait4_peak_rss_kib": 59844
+    },
+    {
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint/independent/diagnostic_independent.py",
+        "--checkpoint-root",
+        "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint",
+        "--registration-sha256",
+        "e7a8fe5f6991bad9304440b037ce2eefafdfbaf9c011e177eb9b364b3239bba1",
+        "--freeze-commit",
+        "06984aa6b142499c592850e6b4afd49c28ced394",
+        "--output-dir",
+        "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/fresh/independent"
+      ],
+      "completed_utc": "2026-10-02T23:27:53.461838+00:00",
+      "cwd": "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint",
+      "elapsed_seconds": 266.1536780669994,
+      "exit_code": 0,
+      "memory_exceeded": false,
+      "memory_limit_kib": 262144,
+      "name": "independent",
+      "observed_peak_group_rss_kib": 53692,
+      "peak_rss_kib": 59044,
+      "physical_route": true,
+      "pid": 129894,
+      "process_creation_limit": 0,
+      "started_utc": "2026-10-02T23:23:27.308133+00:00",
+      "status": "PASS_EXECUTION",
+      "system_seconds": 0.428262,
+      "timed_out": false,
+      "timeout_seconds": 900,
+      "user_seconds": 265.62871,
+      "wait4_peak_rss_kib": 59044
+    },
+    {
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint/code/validate_ledger.py",
+        "--checkpoint-root",
+        "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint",
+        "--registration-sha256",
+        "e7a8fe5f6991bad9304440b037ce2eefafdfbaf9c011e177eb9b364b3239bba1",
+        "--freeze-commit",
+        "06984aa6b142499c592850e6b4afd49c28ced394",
+        "--primary",
+        "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/fresh/primary/diagnostic.json",
+        "--independent",
+        "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/fresh/independent/diagnostic.json",
+        "--execution-receipts",
+        "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/EXECUTION.json",
+        "--output-dir",
+        "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/fresh/validation"
+      ],
+      "completed_utc": "2026-10-02T23:28:03.575327+00:00",
+      "cwd": "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint",
+      "elapsed_seconds": 9.542692413000623,
+      "exit_code": 0,
+      "memory_exceeded": false,
+      "memory_limit_kib": 262144,
+      "name": "validation",
+      "observed_peak_group_rss_kib": 27520,
+      "peak_rss_kib": 29232,
+      "physical_route": false,
+      "pid": 130088,
+      "process_creation_limit": 0,
+      "started_utc": "2026-10-02T23:27:54.032606+00:00",
+      "status": "PASS_EXECUTION",
+      "system_seconds": 0.138095,
+      "timed_out": false,
+      "timeout_seconds": 900,
+      "user_seconds": 9.382709,
+      "wait4_peak_rss_kib": 29232
+    },
+    {
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "-O",
+        "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint/code/validate_ledger.py",
+        "--checkpoint-root",
+        "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint",
+        "--registration-sha256",
+        "e7a8fe5f6991bad9304440b037ce2eefafdfbaf9c011e177eb9b364b3239bba1",
+        "--freeze-commit",
+        "06984aa6b142499c592850e6b4afd49c28ced394",
+        "--primary",
+        "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/fresh/primary/diagnostic.json",
+        "--independent",
+        "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/fresh/independent/diagnostic.json",
+        "--execution-receipts",
+        "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/EXECUTION.json",
+        "--output-dir",
+        "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/fresh/validation_optimized"
+      ],
+      "completed_utc": "2026-10-02T23:28:13.987496+00:00",
+      "cwd": "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint",
+      "elapsed_seconds": 9.868119203994866,
+      "exit_code": 0,
+      "memory_exceeded": false,
+      "memory_limit_kib": 262144,
+      "name": "validation_optimized",
+      "observed_peak_group_rss_kib": 28580,
+      "peak_rss_kib": 31312,
+      "physical_route": false,
+      "pid": 130089,
+      "process_creation_limit": 0,
+      "started_utc": "2026-10-02T23:28:04.119347+00:00",
+      "status": "PASS_EXECUTION",
+      "system_seconds": 0.14801599999999998,
+      "timed_out": false,
+      "timeout_seconds": 900,
+      "user_seconds": 9.709884,
+      "wait4_peak_rss_kib": 31312
+    }
+  ],
+  "old_metric_status": "FAIL",
+  "replay": {
+    "attempted_commands": 4,
+    "classification": "LEDGER_ERROR_DEMONSTRATED",
+    "commands": [
+      {
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint/code/diagnostic_primary.py",
+          "--checkpoint-root",
+          "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint",
+          "--registration-sha256",
+          "e7a8fe5f6991bad9304440b037ce2eefafdfbaf9c011e177eb9b364b3239bba1",
+          "--freeze-commit",
+          "06984aa6b142499c592850e6b4afd49c28ced394",
+          "--output-dir",
+          "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/fresh/primary"
+        ],
+        "completed_utc": "2026-10-02T23:23:26.771841+00:00",
+        "cwd": "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint",
+        "elapsed_seconds": 93.42833528999472,
+        "exit_code": 0,
+        "memory_exceeded": false,
+        "memory_limit_kib": 262144,
+        "name": "primary",
+        "observed_peak_group_rss_kib": 54852,
+        "peak_rss_kib": 59844,
+        "physical_route": true,
+        "pid": 129816,
+        "process_creation_limit": 0,
+        "started_utc": "2026-10-02T23:21:53.343479+00:00",
+        "status": "PASS_EXECUTION",
+        "system_seconds": 0.140853,
+        "timed_out": false,
+        "timeout_seconds": 900,
+        "user_seconds": 93.257681,
+        "wait4_peak_rss_kib": 59844
+      },
+      {
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint/independent/diagnostic_independent.py",
+          "--checkpoint-root",
+          "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint",
+          "--registration-sha256",
+          "e7a8fe5f6991bad9304440b037ce2eefafdfbaf9c011e177eb9b364b3239bba1",
+          "--freeze-commit",
+          "06984aa6b142499c592850e6b4afd49c28ced394",
+          "--output-dir",
+          "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/fresh/independent"
+        ],
+        "completed_utc": "2026-10-02T23:27:53.461838+00:00",
+        "cwd": "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint",
+        "elapsed_seconds": 266.1536780669994,
+        "exit_code": 0,
+        "memory_exceeded": false,
+        "memory_limit_kib": 262144,
+        "name": "independent",
+        "observed_peak_group_rss_kib": 53692,
+        "peak_rss_kib": 59044,
+        "physical_route": true,
+        "pid": 129894,
+        "process_creation_limit": 0,
+        "started_utc": "2026-10-02T23:23:27.308133+00:00",
+        "status": "PASS_EXECUTION",
+        "system_seconds": 0.428262,
+        "timed_out": false,
+        "timeout_seconds": 900,
+        "user_seconds": 265.62871,
+        "wait4_peak_rss_kib": 59044
+      },
+      {
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint/code/validate_ledger.py",
+          "--checkpoint-root",
+          "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint",
+          "--registration-sha256",
+          "e7a8fe5f6991bad9304440b037ce2eefafdfbaf9c011e177eb9b364b3239bba1",
+          "--freeze-commit",
+          "06984aa6b142499c592850e6b4afd49c28ced394",
+          "--primary",
+          "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/fresh/primary/diagnostic.json",
+          "--independent",
+          "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/fresh/independent/diagnostic.json",
+          "--execution-receipts",
+          "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/EXECUTION.json",
+          "--output-dir",
+          "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/fresh/validation"
+        ],
+        "completed_utc": "2026-10-02T23:28:03.575327+00:00",
+        "cwd": "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint",
+        "elapsed_seconds": 9.542692413000623,
+        "exit_code": 0,
+        "memory_exceeded": false,
+        "memory_limit_kib": 262144,
+        "name": "validation",
+        "observed_peak_group_rss_kib": 27520,
+        "peak_rss_kib": 29232,
+        "physical_route": false,
+        "pid": 130088,
+        "process_creation_limit": 0,
+        "started_utc": "2026-10-02T23:27:54.032606+00:00",
+        "status": "PASS_EXECUTION",
+        "system_seconds": 0.138095,
+        "timed_out": false,
+        "timeout_seconds": 900,
+        "user_seconds": 9.382709,
+        "wait4_peak_rss_kib": 29232
+      },
+      {
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "-O",
+          "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint/code/validate_ledger.py",
+          "--checkpoint-root",
+          "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint",
+          "--registration-sha256",
+          "e7a8fe5f6991bad9304440b037ce2eefafdfbaf9c011e177eb9b364b3239bba1",
+          "--freeze-commit",
+          "06984aa6b142499c592850e6b4afd49c28ced394",
+          "--primary",
+          "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/fresh/primary/diagnostic.json",
+          "--independent",
+          "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/fresh/independent/diagnostic.json",
+          "--execution-receipts",
+          "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/EXECUTION.json",
+          "--output-dir",
+          "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/fresh/validation_optimized"
+        ],
+        "completed_utc": "2026-10-02T23:28:13.987496+00:00",
+        "cwd": "/workspace/hdblast-research-work/ledger-root-20261002/fresh-zip-replay/checkpoint",
+        "elapsed_seconds": 9.868119203994866,
+        "exit_code": 0,
+        "memory_exceeded": false,
+        "memory_limit_kib": 262144,
+        "name": "validation_optimized",
+        "observed_peak_group_rss_kib": 28580,
+        "peak_rss_kib": 31312,
+        "physical_route": false,
+        "pid": 130089,
+        "process_creation_limit": 0,
+        "started_utc": "2026-10-02T23:28:04.119347+00:00",
+        "status": "PASS_EXECUTION",
+        "system_seconds": 0.14801599999999998,
+        "timed_out": false,
+        "timeout_seconds": 900,
+        "user_seconds": 9.709884,
+        "wait4_peak_rss_kib": 31312
+      }
+    ],
+    "completed_utc": "2026-10-02T23:28:15.056652+00:00",
+    "driver_sha256": "10bd739eae55e6df33d044ca2fc2534abe66329db2cfb0bc0ad50e44b0c4538b",
+    "fresh_output_sha256": {
+      "independent/diagnostic.json": "48e0016ad269fd6948931137cad303882e818847f43978e85540db921c93370a",
+      "independent/flow_positive_B_coarse_100.jsonl": "73786985117e6f6ecb625a62b5d3791bed1e51ce94e94815488f6c115fc970a3",
+      "independent/flow_positive_B_coarse_80.jsonl": "dfa9617744ec71e93884548359a827d92cc83710944f417dcc34cc5ec6f14946",
+      "independent/flow_positive_B_fine_100.jsonl": "3854e8bfa04e6b1c19ef47696a4d807fffa9ee034312c609514823d189dedf83",
+      "independent/flow_positive_B_fine_80.jsonl": "f23713ef2ff60b0c8ca9f3190b802e4d9fa98cf5935563b70e5b19c132e54458",
+      "independent/flow_signed_uB_coarse_100.jsonl": "bf5be9457c24a58b39abf2b284472f4abfec8685c8dcba26158fb5a292d36d73",
+      "independent/flow_signed_uB_coarse_80.jsonl": "878dbf87e81e811be9e03c8cf75fe2f52df7c0b26a086aac04fd353fbcdb23da",
+      "independent/flow_signed_uB_fine_100.jsonl": "a5cea66d2766a469e667e1a8cd640ad9cf72e152482d4c8a14f0859e9f38374f",
+      "independent/flow_signed_uB_fine_80.jsonl": "2c2b3e38df7b41c63fcce685a715fb10436021998a3e3b65d952037cd64ad534",
+      "independent/progress.jsonl": "c2ffb86606aca4e329dfe8e9ce62d6d0f92190548da96eedae82a5247844ccb6",
+      "primary/diagnostic.json": "7c301e0e92aad1b83cdb42356e7bc51cf63da9d5979bedd6253994d475d32f15",
+      "primary/progress.jsonl": "980d28fa9daf75b697e77a8130f5bf030c1a1c004a3ba27cc3baa0c0485d2d1d",
+      "validation/VALIDATION.json": "8eb6957e9fd842df67266e4573ec6f88e795920f26063f4dbd3b907a35341883",
+      "validation_optimized/VALIDATION.json": "a9e59a2dfc71d7402dd74b6a705c250ae1ec9d16d54adbce160ef8c42ee69998"
+    },
+    "old_metric_status": "FAIL",
+    "physical_routes_attempted": 2,
+    "physical_routes_completed": 2,
+    "physical_routes_planned": 2,
+    "plan_only": false,
+    "planned_commands": 4,
+    "source_verification_after": "PASS",
+    "source_verification_before": "PASS",
+    "started_utc": "2026-10-02T23:21:52.747611+00:00",
+    "status": "COMPLETED_REPLAY",
+    "successful_commands": 4
+  },
+  "schema_version": 1,
+  "scope": "Fresh complete replay of both12case/bothprecisionroutes fromverifiedZIP; receiptoutsidepayload.",
+  "status": "PASS_FRESH_STANDALONE_ZIP_REPLAY",
+  "validation": {
+    "classification": "LEDGER_ERROR_DEMONSTRATED",
+    "cross_route_max_gap_exact_rational": "957316090474776557181/1250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "executions": [
+      {
+        "elapsed_seconds": 93.42833528999472,
+        "exit_code": 0,
+        "name": "primary",
+        "peak_rss_kib": 59844
+      },
+      {
+        "elapsed_seconds": 266.1536780669994,
+        "exit_code": 0,
+        "name": "independent",
+        "peak_rss_kib": 59044
+      }
+    ],
+    "fixed_cases": 12,
+    "interpretation": "Saved-data post-support diagnostic only; no metric calibration or higher-dimensional evidence.",
+    "old_metric_status": "FAIL",
+    "public_freeze_commit": "06984aa6b142499c592850e6b4afd49c28ced394",
+    "python_optimization": 0,
+    "registration_sha256": "e7a8fe5f6991bad9304440b037ce2eefafdfbaf9c011e177eb9b364b3239bba1",
+    "result_sha256": {
+      "independent": "48e0016ad269fd6948931137cad303882e818847f43978e85540db921c93370a",
+      "primary": "7c301e0e92aad1b83cdb42356e7bc51cf63da9d5979bedd6253994d475d32f15"
+    },
+    "routes": {
+      "independent": {
+        "attribution_cases": [
+          {
+            "K": 64,
+            "setting": "coarse",
+            "source": "positive_B"
+          },
+          {
+            "K": 128,
+            "setting": "coarse",
+            "source": "positive_B"
+          },
+          {
+            "K": 256,
+            "setting": "coarse",
+            "source": "positive_B"
+          },
+          {
+            "K": 64,
+            "setting": "fine",
+            "source": "positive_B"
+          },
+          {
+            "K": 128,
+            "setting": "fine",
+            "source": "positive_B"
+          },
+          {
+            "K": 64,
+            "setting": "coarse",
+            "source": "signed_uB"
+          },
+          {
+            "K": 128,
+            "setting": "coarse",
+            "source": "signed_uB"
+          },
+          {
+            "K": 64,
+            "setting": "fine",
+            "source": "signed_uB"
+          }
+        ],
+        "classification": "LEDGER_ERROR_DEMONSTRATED",
+        "failures": [],
+        "profile_precision_gap_exact_rational": "35085260428357042564485520999021/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "primary": {
+        "attribution_cases": [
+          {
+            "K": 64,
+            "setting": "coarse",
+            "source": "positive_B"
+          },
+          {
+            "K": 128,
+            "setting": "coarse",
+            "source": "positive_B"
+          },
+          {
+            "K": 256,
+            "setting": "coarse",
+            "source": "positive_B"
+          },
+          {
+            "K": 64,
+            "setting": "fine",
+            "source": "positive_B"
+          },
+          {
+            "K": 128,
+            "setting": "fine",
+            "source": "positive_B"
+          },
+          {
+            "K": 64,
+            "setting": "coarse",
+            "source": "signed_uB"
+          },
+          {
+            "K": 128,
+            "setting": "coarse",
+            "source": "signed_uB"
+          },
+          {
+            "K": 64,
+            "setting": "fine",
+            "source": "signed_uB"
+          }
+        ],
+        "classification": "LEDGER_ERROR_DEMONSTRATED",
+        "failures": [],
+        "profile_precision_gap_exact_rational": "104654532635919107865938462123347599457276062700692160816978505031426981429150274201118102298657291268579871020037582460869221169567/50000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "schema_version": 1,
+    "status": "VERIFIED_COMPLETE_DIAGNOSTIC",
+    "streamed_flow_precision_gap_exact_rational": "150635931684352561861576486214904518555398411/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "zip_bytes": 48470467,
+  "zip_sha256": "b98291b7d8a2a40d5ddf79d877bb0177c03b748becc726d63a94456adc4830a0"
+}

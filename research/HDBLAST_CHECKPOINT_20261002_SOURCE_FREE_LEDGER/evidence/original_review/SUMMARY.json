@@ -1,0 +1,176 @@
+{
+  "all_common_scalar_and_profile_cross_route_gate": {
+    "measured_exact_rational": "957316090474776557181/1250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "name": "all_common_scalar_and_profile_cross_route_gate",
+    "status": "PASS"
+  },
+  "audit_receipt_sha256": "6a300482b5d85b7663f8f2eb3d3605caca039e6cb90c15ebb590eb0c39457784",
+  "audit_script_sha256": "fcb97e1b5564e07726213e2aedbef1232b2bb7113588debbc0376d35a608fab0",
+  "classification": "LEDGER_ERROR_DEMONSTRATED",
+  "counts": {
+    "fail": 0,
+    "pass": 204,
+    "total": 204
+  },
+  "maximum_reported_identity_gap_exact_rational": "3749642409188047/100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "normal_and_optimized_reports_identical": {
+    "name": "normal_and_optimized_reports_identical",
+    "status": "PASS"
+  },
+  "old_metric_status": "FAIL",
+  "outer_resources": [
+    {
+      "elapsed_seconds": 92.75491322300513,
+      "name": "outer_resource_budget_primary",
+      "peak_rss_kib": 56832,
+      "status": "PASS"
+    },
+    {
+      "elapsed_seconds": 265.77593102100946,
+      "name": "outer_resource_budget_independent",
+      "peak_rss_kib": 57128,
+      "status": "PASS"
+    },
+    {
+      "elapsed_seconds": 8.962912729999516,
+      "name": "outer_resource_budget_validation",
+      "peak_rss_kib": 29236,
+      "status": "PASS"
+    },
+    {
+      "elapsed_seconds": 9.26523759700649,
+      "name": "outer_resource_budget_validation_optimized",
+      "peak_rss_kib": 31216,
+      "status": "PASS"
+    }
+  ],
+  "public_freeze_commit": "06984aa6b142499c592850e6b4afd49c28ced394",
+  "registration_sha256": "e7a8fe5f6991bad9304440b037ce2eefafdfbaf9c011e177eb9b364b3239bba1",
+  "routes": {
+    "independent": {
+      "attribution_cases": [
+        {
+          "K": 64,
+          "setting": "coarse",
+          "source": "positive_B"
+        },
+        {
+          "K": 128,
+          "setting": "coarse",
+          "source": "positive_B"
+        },
+        {
+          "K": 256,
+          "setting": "coarse",
+          "source": "positive_B"
+        },
+        {
+          "K": 64,
+          "setting": "fine",
+          "source": "positive_B"
+        },
+        {
+          "K": 128,
+          "setting": "fine",
+          "source": "positive_B"
+        },
+        {
+          "K": 64,
+          "setting": "coarse",
+          "source": "signed_uB"
+        },
+        {
+          "K": 128,
+          "setting": "coarse",
+          "source": "signed_uB"
+        },
+        {
+          "K": 64,
+          "setting": "fine",
+          "source": "signed_uB"
+        }
+      ],
+      "classification": "LEDGER_ERROR_DEMONSTRATED",
+      "flow_precision_gap_approximate": "1.50635931684352562E-81",
+      "maximum_abs_D_S_approximate": "0.000102863406472460337",
+      "profile_precision_gap_approximate": "3.50852604283570426E-79",
+      "resources": {
+        "limit_peak_rss_kib": 262144,
+        "limit_seconds": 900,
+        "peak_rss_kib": 45992,
+        "scope": "all twelve cases and both decimal precision passes in this independent route",
+        "seconds": 265.5360378290061
+      },
+      "science_100digit_maxima_approximate": {
+        "D_cont": "1.61796600324641441E-17",
+        "E_flow": "4.51245749696013801E-18",
+        "P_profile_max_error": "5.00207869503383746E-17",
+        "R_profile_max_error": "5.59348927972900012E-17"
+      },
+      "scientific_failure_count": 0
+    },
+    "primary": {
+      "attribution_cases": [
+        {
+          "K": 64,
+          "setting": "coarse",
+          "source": "positive_B"
+        },
+        {
+          "K": 128,
+          "setting": "coarse",
+          "source": "positive_B"
+        },
+        {
+          "K": 256,
+          "setting": "coarse",
+          "source": "positive_B"
+        },
+        {
+          "K": 64,
+          "setting": "fine",
+          "source": "positive_B"
+        },
+        {
+          "K": 128,
+          "setting": "fine",
+          "source": "positive_B"
+        },
+        {
+          "K": 64,
+          "setting": "coarse",
+          "source": "signed_uB"
+        },
+        {
+          "K": 128,
+          "setting": "coarse",
+          "source": "signed_uB"
+        },
+        {
+          "K": 64,
+          "setting": "fine",
+          "source": "signed_uB"
+        }
+      ],
+      "classification": "LEDGER_ERROR_DEMONSTRATED",
+      "flow_precision_gap_approximate": "0",
+      "maximum_abs_D_S_approximate": "0.000102863406472460337",
+      "profile_precision_gap_approximate": "2.09309065271838216E-69",
+      "resources": {
+        "limit_peak_rss_kib": 262144,
+        "limit_seconds": 900,
+        "peak_rss_kib": 46984,
+        "scope": "all twelve cases and both decimal precision passes",
+        "seconds": 92.55225584701111
+      },
+      "science_100digit_maxima_approximate": {
+        "D_cont": "1.61796600324641441E-17",
+        "E_flow": "4.51245749696013801E-18",
+        "P_profile_max_error": "5.00207869503383746E-17",
+        "R_profile_max_error": "5.59348927972900012E-17"
+      },
+      "scientific_failure_count": 0
+    }
+  },
+  "status": "PASS_READ_ONLY_RECORDED_RESULT_AUDIT"
+}

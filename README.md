@@ -38,6 +38,8 @@ standard Big Bang story, not replace it.
 instability rate from full five-dimensional theory agrees with a closed-form four-dimensional
 formula. Floating-point calculations in the model; not observations.*
 
+**Latest diagnostic (2 October):** Two independent implementations identify a time-integration error on the saved interval after the source ends. All twelve consistency cases pass, and eight cross the fixed error-attribution threshold. The earlier metric calibration remains **FAIL**; the active-source interval and coupled evolution are still open. [Measured result and reproducible evidence](research/HDBLAST_CHECKPOINT_20261002_SOURCE_FREE_LEDGER/reports/RESULTS.md).
+
 ## Where the research stands (2 October 2026)
 
 | Result | Status |

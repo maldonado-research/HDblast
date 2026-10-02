@@ -1,0 +1,139 @@
+#!/usr/bin/env python3
+"""Post hoc interpretation: exact algebra and fabricated exponential data only."""
+from __future__ import annotations
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import sys
+import mpmath
+import sympy as s
+
+
+def require(ok, message):
+    if not ok:
+        raise RuntimeError(message)
+
+
+def run():
+    q = s.symbols('q', nonzero=True)
+    theta = s.symbols('theta', real=True)
+    delta = s.symbols('Delta', positive=True)
+    M = s.symbols('M', integer=True, positive=True)
+    identities = []
+    def identity(name, residual):
+        require(s.simplify(s.expand(residual)) == 0, 'Identity failed: ' + name)
+        identities.append(name)
+    # Direct expanded composite weights, independently grouped into two-cell blocks.
+    for N in (2, 4, 6, 8, 12, 18):
+        weights = [1] + [4 if j % 2 else 2 for j in range(1, N)] + [1]
+        direct = sum(weight * q**j for j, weight in enumerate(weights))
+        blocks = (1 + 4*q + q*q) * sum(q**(2*m) for m in range(N//2))
+        identity('composite_weight_block_identity_N' + str(N), direct - blocks)
+        identity('finite_geometric_identity_N' + str(N),
+                 (q*q - 1) * sum(q**(2*m) for m in range(N//2)) - (q**N - 1))
+    Q_closed = delta * (1 + 4*q + q*q) * (q**(2*M) - 1) / (3*(q*q - 1))
+    I_closed = delta * (q**(2*M) - 1) / (s.I*theta)
+    T_q = s.I * theta * (1 + 4*q + q*q) / (3*(q*q - 1))
+    identity('formal_even_N_transfer_cancellation', Q_closed - T_q * I_closed)
+    identity('divide_numerator_denominator_by_q',
+             (1+4*q+q*q)*(q-1/q) - (q+4+1/q)*(q*q-1))
+    identity('Euler_cos_numerator',
+             s.expand_complex(s.exp(s.I*theta)+4+s.exp(-s.I*theta)) - (2*s.cos(theta)+4))
+    identity('Euler_sin_denominator',
+             s.expand_complex(s.exp(s.I*theta)-s.exp(-s.I*theta)) - 2*s.I*s.sin(theta))
+    T = theta * (2+s.cos(theta)) / (3*s.sin(theta))
+    identity('transfer_is_even', T.subs(theta, -theta)-T)
+    require(s.limit(T, theta, 0) == 1, 'Constant-frequency removable limit failed')
+    identities.append('constant_frequency_limit_is_one')
+    expansion = s.series(T, theta, 0, 12)
+    polynomial = expansion.removeO().expand()
+    require(polynomial.coeff(theta, 0) == 1 and polynomial.coeff(theta, 2) == 0
+            and polynomial.coeff(theta, 4) == s.Rational(1, 180), 'Small-theta leading error failed')
+    identities.append('series_leading_error_theta4_over180')
+    # Explicit exact special cases; no division by a zero exact integral.
+    for N in (2, 8, 18):
+        weights = [1] + [4 if j % 2 else 2 for j in range(1, N)] + [1]
+        identity('constant_Q_N' + str(N), delta/3*sum(weights)-N*delta)
+        identity('odd_pi_alias_Q_N' + str(N), delta/3*sum(w*(-1)**j for j,w in enumerate(weights))+N*delta/3)
+        identity('even_nonzero_pi_alias_Q_N' + str(N), delta/3*sum(weights)-N*delta)
+    N = 8
+    special = s.pi/4
+    exact_Q_null = delta/3 * sum(([1]+[4 if j%2 else 2 for j in range(1,N)]+[1])[j]
+                                 * s.exp(s.I*j*special) for j in range(N+1))
+    identity('nonalias_global_null_Q', s.expand_complex(exact_Q_null))
+    identity('nonalias_global_null_exact_integral_numerator', s.exp(s.I*N*special)-1)
+    require(s.sin(special) != 0, 'Nonalias null witness accidentally singular')
+    identities.append('nonalias_null_transfer_extension_finite')
+    # Fabricated exponentials use an unrelated step and a nontrivial complex amplitude.
+    ctx = mpmath.mp.clone()
+    ctx.dps = 100
+    dt = ctx.mpf(3)/7
+    amplitude = ctx.mpc(ctx.mpf(3)/5, ctx.mpf(2)/7)
+    tolerance = ctx.mpf('1e-85')
+    fabricated = []
+    maximum_error = ctx.mpf(0)
+    def composite(N, angle):
+        samples = [amplitude * ctx.exp(ctx.j*j*angle) for j in range(N+1)]
+        return dt/3*(samples[0]+samples[-1]+4*sum(samples[1:-1:2])+2*sum(samples[2:-1:2]))
+    def exact_integral(N, angle):
+        return amplitude*N*dt if angle == 0 else amplitude*dt*ctx.expm1(ctx.j*N*angle)/(ctx.j*angle)
+    for N, angle in ((2,ctx.mpf(1)/3),(8,ctx.mpf(1)/2),(18,ctx.mpf(1)),
+                     (8,ctx.mpf(2)),(12,ctx.mpf(4)),(6,-ctx.mpf(2))):
+        Q, I = composite(N,angle), exact_integral(N,angle)
+        transfer = angle*(2+ctx.cos(angle))/(3*ctx.sin(angle))
+        error = abs(Q-transfer*I)
+        require(error < tolerance and abs(Q/I-transfer) < tolerance, 'Fabricated nonnull transfer failed')
+        maximum_error = max(maximum_error,error)
+        fabricated.append({'N':N,'theta':ctx.nstr(angle,100),'case':'nonnull_exponential',
+                           'abs_Q_minus_T_I':ctx.nstr(error,100)})
+    for angle, label, expected in ((ctx.mpf(0),'constant',amplitude*8*dt),
+                                  (ctx.pi,'odd_pi_alias',-amplitude*8*dt/3),
+                                  (2*ctx.pi,'even_nonzero_pi_alias',amplitude*8*dt),
+                                  (ctx.pi/4,'nonalias_global_null',ctx.mpc(0))):
+        Q,I=composite(8,angle),exact_integral(8,angle)
+        error=abs(Q-expected)
+        require(error<tolerance,'Fabricated exceptional Simpson value failed')
+        require(abs(I-(amplitude*8*dt if angle==0 else 0))<tolerance,
+                'Fabricated exceptional exact integral failed')
+        maximum_error=max(maximum_error,error)
+        fabricated.append({'N':8,'theta':ctx.nstr(angle,100),'case':label,
+                           'abs_Q_minus_expected':ctx.nstr(error,100),
+                           'ratio_divided_by_zero':False})
+    cutoff_response = []
+    for setting, denominator in (('coarse',128),('fine',256)):
+        for K in (64,128,256):
+            angle=ctx.mpf(2*K)/denominator
+            transfer=angle*(2+ctx.cos(angle))/(3*ctx.sin(angle))
+            cutoff_response.append({'setting':setting,'K':K,'dt':'1/'+str(denominator),
+                                    'theta_nominal_cutoff':ctx.nstr(angle,25),
+                                    'pure_exponential_T_at_nominal_bound':ctx.nstr(transfer,40),
+                                    'not_actual_saved_mode_or_error':True})
+    return {'schema_version':1,'status':'PASS_POST_HOC_ANALYTICAL_INTERPRETATION_ONLY',
+            'physical_arrays_loaded':False,'physical_source_or_modes_evaluated':False,
+            'physical_array_reruns':0,'new_criteria_or_gate_changes':0,
+            'post_hoc':True,'no_novelty_claim':True,'optimized':not __debug__,
+            'versions':{'sympy':s.__version__,'mpmath':mpmath.__version__},
+            'proof_script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+            'exact_identities_passed':len(identities),'exact_identities':identities,
+            'normalized_transfer':'theta*(2+cos(theta))/(3*sin(theta))',
+            'literal_ratio_domain':'even N>0, theta!=0, sin(theta)!=0, exp(i*N*theta)!=1',
+            'removable_constant_limit':'T(0)=1, I=Q=A*N*Delta',
+            'nonalias_global_null':'sin(theta)!=0 and exp(i*N*theta)=1 gives Q=I=0; literal Q/I undefined, analytic transfer extension finite',
+            'alias_zero_integral':'theta=m*pi!=0, evenN: I=0; Q=A*N*Delta if m even, Q=-A*N*Delta/3 if m odd',
+            'series':str(expansion),'fabricated_cases':fabricated,
+            'fabricated_max_abs_identity_error':ctx.nstr(maximum_error,100),
+            'cutoff_frequency_bounds':cutoff_response,
+            'interpretation_limit':'The rational L(t) envelope, momentum superposition, signed cancellation and inherited LD globalprefix arithmetic prevent this pure exponential transfer from quantitatively proving the actual ledger error.'}
+
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--output',type=Path,required=True)
+    args=parser.parse_args()
+    require(not args.output.exists(),'Interpretation receipt must be fresh')
+    result=run()
+    args.output.write_text(json.dumps(result,indent=2,sort_keys=True)+'\n')
+    print(json.dumps({'status':result['status'],'exact_identities_passed':result['exact_identities_passed'],
+                      'fabricated_cases':len(result['fabricated_cases']),
+                      'series':result['series'],'output':str(args.output)},indent=2))
