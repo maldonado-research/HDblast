@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "/workspace/hdblast-research-work/metric-original-complete-replay-001/checkpoint/code/metric_primary.py", line 254, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/hdblast-research-work/metric-original-complete-replay-001/checkpoint/code/metric_primary.py", line 243, in main
+    result=run(experiment,progress)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hdblast-research-work/metric-original-complete-replay-001/checkpoint/code/metric_primary.py", line 202, in run
+    q,errors,memories=continuum_q_jet(source,eta,gjet,config)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hdblast-research-work/metric-original-complete-replay-001/checkpoint/code/metric_primary.py", line 112, in continuum_q_jet
+    memories=[log_history(source,eta,n,jet,config) for n in (1,2,3)]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hdblast-research-work/metric-original-complete-replay-001/checkpoint/code/metric_primary.py", line 103, in log_history
+    value,error=integrate(derivative,-5.0,right,config,weight='alg-logb',wvar=(0.0,0.0))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hdblast-research-work/metric-original-complete-replay-001/checkpoint/code/metric_primary.py", line 90, in integrate
+    value,error=quad(function,left,right,epsabs=config['epsabs'],epsrel=config['epsrel'],limit=config['limit'],**kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hdblast-cloud-setup/venv-frw/lib/python3.12/site-packages/scipy/integrate/_quadpack_py.py", line 544, in quad
+    warnings.warn(msg, IntegrationWarning, stacklevel=2)
+scipy.integrate._quadpack_py.IntegrationWarning: The occurrence of roundoff error is detected, which prevents 
+  the requested tolerance from being achieved.  The error may be 
+  underestimated.
