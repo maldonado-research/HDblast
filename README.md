@@ -127,4 +127,6 @@ Verification steps are recorded in each checkpoint.*
 
 ## Separate FTL research program
 
-The [Einstein Audit for Faster-Than-Light Hidden Sectors](research/FTL_EINSTEIN_AUDIT_20260930/) is documented in a separate folder with its equations, assumptions, history, evidence limits, and sources. It is a distinct working-hypothesis/methods program; HDBLAST results do not validate it. No empirical FTL detection or external peer review is documented. Start with its [FTL overview](research/FTL_EINSTEIN_AUDIT_20260930/README.md).
+The Einstein Audit for Faster-Than-Light Hidden Sectors continues in the [dedicated FTL repository](https://github.com/maldonado-research/faster-than-light). Start with its [readable project overview](https://maldonado-research.github.io/projects/faster-than-light/) or the repository's [FTL README](https://github.com/maldonado-research/faster-than-light#readme).
+
+The [September 30 documentation edition](research/FTL_EINSTEIN_AUDIT_20260930/) remains here as a historical copy of the September 8 research snapshot, with its equations, assumptions, history, evidence limits, and sources. It is a distinct working-hypothesis/methods program; HDBLAST results do not validate it. No empirical FTL detection or external peer review is documented. Its original [FTL overview](research/FTL_EINSTEIN_AUDIT_20260930/README.md) remains available.
