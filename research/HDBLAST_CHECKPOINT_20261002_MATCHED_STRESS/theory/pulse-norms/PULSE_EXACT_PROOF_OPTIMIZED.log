@@ -1,0 +1,169 @@
+{
+  "status": "PASS",
+  "scope": "Exact polynomial identities and rational root isolation; no source/response/mode/interval evaluation",
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "optimization_level": 1,
+  "script_sha256": "280da359b15fa244514fadcef6d3aac63556d8dc6d18b0ad3602c3b0ce412cb4",
+  "module_sha256": "fa37e7a4d0b0ee09400d17b8a9689e0bcb7c100be89bf5a55cfc755ccba120a0",
+  "exact_identities": [
+    "positive_B_derivative_n0",
+    "positive_B_derivative_n1",
+    "positive_B_derivative_n2",
+    "positive_B_derivative_n3",
+    "positive_B_derivative_n4",
+    "positive_B_derivative_n5",
+    "positive_B_critical_polynomial_m2",
+    "positive_B_critical_polynomial_m3",
+    "positive_B_critical_polynomial_m4",
+    "signed_uB_derivative_n0",
+    "signed_uB_derivative_n1",
+    "signed_uB_derivative_n2",
+    "signed_uB_derivative_n3",
+    "signed_uB_derivative_n4",
+    "signed_uB_derivative_n5",
+    "signed_uB_critical_polynomial_m2",
+    "signed_uB_critical_polynomial_m3",
+    "signed_uB_critical_polynomial_m4"
+  ],
+  "root_certificates": [
+    {
+      "source": "positive_B",
+      "primitive_order": 2,
+      "critical_z_polynomial": "6*z**3 + 3*z**2 - 10*z + 3",
+      "roots_in_open_unit_interval": 2,
+      "simple_zero_u_root": true,
+      "isolating_brackets_z": [
+        [
+          "95/256",
+          "3/8"
+        ],
+        [
+          "205/256",
+          "103/128"
+        ]
+      ]
+    },
+    {
+      "source": "positive_B",
+      "primitive_order": 3,
+      "critical_z_polynomial": "30*z**5 + 45*z**4 - 132*z**3 + 58*z**2 + 6*z - 3",
+      "roots_in_open_unit_interval": 3,
+      "simple_zero_u_root": false,
+      "isolating_brackets_z": [
+        [
+          "59/256",
+          "15/64"
+        ],
+        [
+          "23/32",
+          "185/256"
+        ],
+        [
+          "7/8",
+          "225/256"
+        ]
+      ]
+    },
+    {
+      "source": "positive_B",
+      "primitive_order": 4,
+      "critical_z_polynomial": "90*z**6 + 270*z**5 - 765*z**4 + 300*z**3 + 264*z**2 - 170*z + 15",
+      "roots_in_open_unit_interval": 4,
+      "simple_zero_u_root": true,
+      "isolating_brackets_z": [
+        [
+          "27/256",
+          "7/64"
+        ],
+        [
+          "83/128",
+          "167/256"
+        ],
+        [
+          "213/256",
+          "107/128"
+        ],
+        [
+          "233/256",
+          "117/128"
+        ]
+      ]
+    },
+    {
+      "source": "signed_uB",
+      "primitive_order": 2,
+      "critical_z_polynomial": "3*z**4 + 24*z**3 - 26*z**2 + 3",
+      "roots_in_open_unit_interval": 2,
+      "simple_zero_u_root": false,
+      "isolating_brackets_z": [
+        [
+          "29/64",
+          "117/256"
+        ],
+        [
+          "207/256",
+          "13/16"
+        ]
+      ]
+    },
+    {
+      "source": "signed_uB",
+      "primitive_order": 3,
+      "critical_z_polynomial": "6*z**5 + 81*z**4 - 92*z**3 - 46*z**2 + 70*z - 15",
+      "roots_in_open_unit_interval": 3,
+      "simple_zero_u_root": true,
+      "isolating_brackets_z": [
+        [
+          "19/64",
+          "77/256"
+        ],
+        [
+          "47/64",
+          "189/256"
+        ],
+        [
+          "7/8",
+          "225/256"
+        ]
+      ]
+    },
+    {
+      "source": "signed_uB",
+      "primitive_order": 4,
+      "critical_z_polynomial": "30*z**7 + 615*z**6 - 570*z**5 - 1235*z**4 + 1738*z**3 - 555*z**2 - 30*z + 15",
+      "roots_in_open_unit_interval": 4,
+      "simple_zero_u_root": false,
+      "isolating_brackets_z": [
+        [
+          "47/256",
+          "3/16"
+        ],
+        [
+          "85/128",
+          "171/256"
+        ],
+        [
+          "107/128",
+          "215/256"
+        ],
+        [
+          "233/256",
+          "117/128"
+        ]
+      ]
+    }
+  ],
+  "detected_mutations": [
+    "positive_B_omit_one_critical_root_m2",
+    "positive_B_omit_one_critical_root_m3",
+    "positive_B_omit_one_critical_root_m4",
+    "signed_uB_omit_one_critical_root_m2",
+    "signed_uB_omit_one_critical_root_m3",
+    "signed_uB_omit_one_critical_root_m4",
+    "omit_denominator_derivative_in_recurrence"
+  ],
+  "exact_identity_count": 18,
+  "critical_root_certificate_count": 6,
+  "detected_mutation_count": 7
+}
