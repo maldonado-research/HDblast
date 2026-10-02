@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspace/hdblast-research-work/static-sensitivity/verify_sensitivity.py", line 62, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/hdblast-research-work/static-sensitivity/verify_sensitivity.py", line 59, in main
+    out={'status':'PASS' if all(gates.values()) else 'FAIL','scope':'classical local differential response; empirical floating-point evidence, no interval error certification','symbolic':symbolic(),'gates':{k:bool(v) for k,v in gates.items()},'reference':ref,'refinement_statistics':stats,'complex_step_max_difference':csdiff,'finest_start_spread':cone,'baseline_newton_correction_estimate_ell_y':correction.tolist(),'negative_controls':{'drop_scalar_junction_metric_column':{'wrong':missing_scalar_junction,'identity_discrepancy':omission_error},'reverse_current_sign':{'target_residual_discrepancy':scalar_sign_error},'omit_moving_endpoint':{'wrong_observable_response':missing_moving.tolist(),'absolute_discrepancy':missing_error.tolist()}},'small_response_coefficients':{'absolute_phi':source_absolute[0].tolist(),'relative_H2':source_relative.tolist()},'run_count':len(data['runs']),'failures':data['failures'],'inputs':{'runs_sha256':hashlib.sha256(a.runs.read_bytes()).hexdigest(),'verifier_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}}
+                                                                                                                                                                                           ^^^^^^^^^^
+  File "/workspace/hdblast-research-work/static-sensitivity/verify_sensitivity.py", line 14, in symbolic
+    assert identity==0
+           ^^^^^^^^^^^
+AssertionError
