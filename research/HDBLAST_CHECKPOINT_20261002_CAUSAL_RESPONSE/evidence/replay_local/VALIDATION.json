@@ -1,0 +1,197 @@
+{
+  "status": "PASS",
+  "completed_utc": "2026-10-02T15:25:53.145984+00:00",
+  "public_freeze_commit": "a01d17e015f070be2ad2018745e877148fe2f4e4",
+  "registration_sha256": "f59abda221a6a0296e839bc3022298bdf81fac913feb3877ac8f1485f4d71da6",
+  "manifest_sha256": "e2222b968b8438115d6a78d72f59b355564f62dc7d1ce487b6ff8c1ce8b094ba",
+  "commands": [
+    {
+      "check": "theory",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "theory/verify_causal_theory.py",
+        "--output",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/THEORY.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "theory_optimized",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "-O",
+        "theory/verify_causal_theory.py",
+        "--output",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/THEORY_OPTIMIZED.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "primary",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "code/causal_primary.py",
+        "--output",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/primary",
+        "--registration-sha256",
+        "f59abda221a6a0296e839bc3022298bdf81fac913feb3877ac8f1485f4d71da6",
+        "--public-freeze-commit",
+        "a01d17e015f070be2ad2018745e877148fe2f4e4"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "independent_modes",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "independent/forced_modes.py",
+        "--output-dir",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/modes",
+        "--freeze-commit",
+        "a01d17e015f070be2ad2018745e877148fe2f4e4",
+        "--manifest-sha256",
+        "5bf042c7fe686e23dc469031eef81f0e682d56b4db4ff4c0381cf0d8a2ecee22"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "validation",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "code/validate_causal.py",
+        "--primary",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/primary/results.json",
+        "--modes",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/modes/results.json",
+        "--registration-sha256",
+        "f59abda221a6a0296e839bc3022298bdf81fac913feb3877ac8f1485f4d71da6",
+        "--output",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/CHECKS.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "validation_optimized",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "-O",
+        "code/validate_causal.py",
+        "--primary",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/primary/results.json",
+        "--modes",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/modes/results.json",
+        "--registration-sha256",
+        "f59abda221a6a0296e839bc3022298bdf81fac913feb3877ac8f1485f4d71da6",
+        "--output",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/CHECKS_OPTIMIZED.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "archive_audit",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "independent/audit_archived_modes.py",
+        "--checkpoint",
+        "/workspace/hdblast-research-work/causal-complete-replay/checkpoint",
+        "--primary",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/primary/results.json",
+        "--modes",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/modes/results.json",
+        "--checks",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/CHECKS.json",
+        "--output",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/ARCHIVE_AUDIT.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "summary",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "postrun/summarize_causal.py",
+        "--checkpoint",
+        "/workspace/hdblast-research-work/causal-complete-replay/checkpoint",
+        "--primary",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/primary/results.json",
+        "--modes",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/modes/results.json",
+        "--checks",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/CHECKS.json",
+        "--checks-optimized",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/CHECKS_OPTIMIZED.json",
+        "--output",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/summary"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "figures",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "postrun/plot_causal.py",
+        "--summary",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/summary/SUMMARY.json",
+        "--output",
+        "/workspace/hdblast-research-work/causal-complete-replay/fresh/figures"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    }
+  ],
+  "scope": "two registered homogeneous scalar-variance responses on fixed de Sitter geometry",
+  "stress_response_executed": false,
+  "coupled_geometry_executed": false,
+  "heating_established": false,
+  "stability_established": false,
+  "total_numerical_error_certified": false,
+  "counts": {
+    "commands": 9,
+    "symbolic_identities": 46,
+    "symbolic_mutations": 14,
+    "response_points": 12,
+    "finite_K_comparisons": 36,
+    "wrong_formula_controls": 17,
+    "independent_mode_runs": 4,
+    "archive_integrals": 72,
+    "archive_snapshots": 24,
+    "panel_moment_checks": 98304,
+    "figure_files": 9
+  },
+  "fresh_output_sha256": {
+    "ARCHIVE_AUDIT.json": "cf11ac56ce977b44044b124caf146a172199ef638b917c79c9c624a14770ef2b",
+    "CHECKS.json": "c1001dcc487648584bfc027786ecdf00edec0e3042d9ede167374c77e436230f",
+    "CHECKS_OPTIMIZED.json": "32a8d5c9c46a792921647b18fc873b8e884d3c06e6bd2b1679c49ede7eaa68c8",
+    "THEORY.json": "6c8a7026415deb17cc5ca78bbedd59ce59281a7191dae2e7b7d668a23d69e789",
+    "THEORY_OPTIMIZED.json": "6c8a7026415deb17cc5ca78bbedd59ce59281a7191dae2e7b7d668a23d69e789",
+    "figures/FIGURE_PROVENANCE.json": "953d3fda08ca2c969582581ccb079c6bcd7f17b13640b89d3ec3492525bbf9d4",
+    "figures/causal_agreement.pdf": "61e8d4ecfbf5ba0c6cef41d78ccfe36adbefc1ae68e8ef7ae2c0ccefad8cb573",
+    "figures/causal_agreement.png": "fb14758bf06861b0a12731fc6c3707cd7da3d9277c48543c58cee2b2053c1449",
+    "figures/causal_agreement.svg": "3d0e3e3eb0391ad416bc19c7053d5b814a5012d13ed2eea3324cb2110c3128a7",
+    "figures/causal_cutoff.pdf": "84c81339d369f806955e63e8b324b4d2759f2d4e2be9b17c4b6141f7e63ab67d",
+    "figures/causal_cutoff.png": "f94ac887ddd7e7d6cbf350575459b9747ba803874375a4d54cc6e4eaf4a10c81",
+    "figures/causal_cutoff.svg": "778e563193a112157f94feb865aff963b714e654e1d09b657246cc2b0f82e6bf",
+    "figures/causal_memory.pdf": "bd9a75351e9b4bcbdb7faf57a2b9ec7ba06242b51928ca8ef6f885ad3b246929",
+    "figures/causal_memory.png": "a873c68e3e64ba35bb7deea67aa93f258a6ab99054cc688dc74e9a5e736c81d8",
+    "figures/causal_memory.svg": "77a463aeb4b9220a63c95f4a7fdecac5fe478d1c2a5f31873fcc7494a0b7a20c",
+    "modes/modes_positive_B_coarse.npz": "c40b2838511a369d0d5fd28d08c204a819bb179b8539a2512e16e8db9c76de52",
+    "modes/modes_positive_B_fine.npz": "648a1bba299be7d1d2e3401e0aa9058c636642d4162a2fc6d224cf237ec0cf7d",
+    "modes/modes_signed_uB_coarse.npz": "deb4073258c1940a06626009219c1962da9aeeba209f92bf6a38d3d104251398",
+    "modes/modes_signed_uB_fine.npz": "6bd3cfe0bbb2b9223597adc3ca21814f74976e72985c7b341d3ba6bf4e320d09",
+    "modes/results.json": "a6443d96258e92b0f7869f0edad4ca2bb6ef50e8db735761d7b9319191402bd8",
+    "primary/EXECUTION.json": "128805d7627dc1c1205247128648a304ffe5a88d0fa0d3828c014dc6fee4390d",
+    "primary/partial_results.json": "524919227f6365ae1869f886a3475e4337e4c6561cd267114eeacd5c107d3c87",
+    "primary/results.json": "713d0081b18948ffd51f8fa3f7c288fd3173295e8d90a7bcc052e6efab3dbf50",
+    "primary/started.json": "2a259fd00316ab3d4d630c6f722b6d1e0eea1443247a552aa046137acc9ca3bc",
+    "summary/NUMERICAL_RESULTS.md": "78ebd9d73dadd2d2f5bf0be5bb2dcb449dab7c7baf04afaf1b5fc9a73def2dc2",
+    "summary/SUMMARY.json": "5f9c210500b618d10f5b7206c8cd7ecc8dedec44f640d67c86feec7035e829c7"
+  }
+}
