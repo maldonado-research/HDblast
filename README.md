@@ -124,3 +124,7 @@ invited to check the work and report errors by opening a GitHub issue.
 assistants under the author's direction: Claude (Anthropic) for Chats 9–14 and the current
 research round, and OpenAI ChatGPT/Codex for the 22 Sept packages and earlier work.
 Verification steps are recorded in each checkpoint.*
+
+## Separate FTL research program
+
+The [Einstein Audit for Faster-Than-Light Hidden Sectors](research/FTL_EINSTEIN_AUDIT_20260930/) is documented in a separate folder with its equations, assumptions, history, evidence limits, and sources. It is a distinct working-hypothesis/methods program; HDBLAST results do not validate it. No empirical FTL detection or external peer review is documented. Start with its [FTL overview](research/FTL_EINSTEIN_AUDIT_20260930/README.md).
