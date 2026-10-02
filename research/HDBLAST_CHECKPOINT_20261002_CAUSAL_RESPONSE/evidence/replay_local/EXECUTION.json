@@ -1,0 +1,143 @@
+[
+  {
+    "check": "theory",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "theory/verify_causal_theory.py",
+      "--output",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/THEORY.json"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0
+  },
+  {
+    "check": "theory_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "theory/verify_causal_theory.py",
+      "--output",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/THEORY_OPTIMIZED.json"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0
+  },
+  {
+    "check": "primary",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "code/causal_primary.py",
+      "--output",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/primary",
+      "--registration-sha256",
+      "f59abda221a6a0296e839bc3022298bdf81fac913feb3877ac8f1485f4d71da6",
+      "--public-freeze-commit",
+      "a01d17e015f070be2ad2018745e877148fe2f4e4"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0
+  },
+  {
+    "check": "independent_modes",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "independent/forced_modes.py",
+      "--output-dir",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/modes",
+      "--freeze-commit",
+      "a01d17e015f070be2ad2018745e877148fe2f4e4",
+      "--manifest-sha256",
+      "5bf042c7fe686e23dc469031eef81f0e682d56b4db4ff4c0381cf0d8a2ecee22"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0
+  },
+  {
+    "check": "validation",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "code/validate_causal.py",
+      "--primary",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/primary/results.json",
+      "--modes",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/modes/results.json",
+      "--registration-sha256",
+      "f59abda221a6a0296e839bc3022298bdf81fac913feb3877ac8f1485f4d71da6",
+      "--output",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/CHECKS.json"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0
+  },
+  {
+    "check": "validation_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "code/validate_causal.py",
+      "--primary",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/primary/results.json",
+      "--modes",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/modes/results.json",
+      "--registration-sha256",
+      "f59abda221a6a0296e839bc3022298bdf81fac913feb3877ac8f1485f4d71da6",
+      "--output",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/CHECKS_OPTIMIZED.json"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0
+  },
+  {
+    "check": "archive_audit",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "independent/audit_archived_modes.py",
+      "--checkpoint",
+      "/workspace/hdblast-research-work/causal-complete-replay/checkpoint",
+      "--primary",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/primary/results.json",
+      "--modes",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/modes/results.json",
+      "--checks",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/CHECKS.json",
+      "--output",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/ARCHIVE_AUDIT.json"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0
+  },
+  {
+    "check": "summary",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "postrun/summarize_causal.py",
+      "--checkpoint",
+      "/workspace/hdblast-research-work/causal-complete-replay/checkpoint",
+      "--primary",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/primary/results.json",
+      "--modes",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/modes/results.json",
+      "--checks",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/CHECKS.json",
+      "--checks-optimized",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/CHECKS_OPTIMIZED.json",
+      "--output",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/summary"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0
+  },
+  {
+    "check": "figures",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "postrun/plot_causal.py",
+      "--summary",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/summary/SUMMARY.json",
+      "--output",
+      "/workspace/hdblast-research-work/causal-complete-replay/fresh/figures"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0
+  }
+]
