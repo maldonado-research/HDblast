@@ -1,0 +1,42 @@
+{
+  "title": "Finite-amplitude stationary de Sitter shell closure with paired quantum sources",
+  "scope": "Dimensionless mathematical model family; no physical parameter inference, dynamical evolution, quantum stability or EFT certification",
+  "b_values": [-1, 0, 1],
+  "gamma_values": [0, 0.01, 1, 100, 10000, 1000000],
+  "normalization": {"N": 1, "gamma": "N*kappa5_squared/L_cubed", "interpretation": "gamma=g5 for this explicit one-field model family; gamma=0 is the classical control; high gamma is a formal closure stress test"},
+  "mass_law": "x=r*[1+b*(eta_b-eta0)/2]^2; x_phi=b*r*[1+b*(eta_b-eta0)/2]; x_phiphi=b^2*r/2",
+  "fixed_reference_r": "0.00011848029588657912",
+  "reference_eta0": "-0.00008405268308670538",
+  "reference_H2": "0.00005924014794328956",
+  "detuning_delta": "0.001",
+  "detuning_c": "0.5975949350280132",
+  "state": "Euclidean/Bunch-Davies de Sitter invariant vacuum of one free massive minimally coupled shell scalar",
+  "finite_matching": "Inherited DESITTER common-action finite convention at fixed positive r; every retained local term occurs exactly once",
+  "source_primary": {"dps": 60, "terms": 128},
+  "source_validation": {"dps": 80, "terms": 256},
+  "domain": {"H2_over_reference": [0.75, 1.25], "absolute_eta_shift_over_abs_eta0_max": 0.1, "x_over_H2_open_interval": [0, 4.5], "ell_open_interval": [-28, -18], "yb_open_interval": [25, 35]},
+  "newton": {"C_absolute_tolerance": 2e-18, "B_absolute_tolerance": 2e-14, "iteration_cap": 12, "backtracking_cap": 12, "coordinate_step_caps": [0.3, 0.2], "retry_policy": "Record failed point and continue registered cases with last successful seed; no new grid, tolerance or parameter tuning"},
+  "resolutions": [
+    {"name": "primary", "method": "DOP853", "rtol": 1e-11, "y_start": 0.001, "max_step": 0.1, "coverage": "all"},
+    {"name": "refined", "method": "DOP853", "rtol": 3e-14, "y_start": 0.00001, "max_step": 0.05, "coverage": "all"},
+    {"name": "radau", "method": "Radau", "rtol": 1e-11, "y_start": 0.0001, "max_step": 0.1, "coverage": "endpoints"},
+    {"name": "cone_start", "method": "DOP853", "rtol": 3e-14, "y_start": 0.0001, "max_step": 0.05, "coverage": "endpoints"}
+  ],
+  "negative_controls": ["flip_current", "omit_metric_source", "freeze_sources"],
+  "acceptance": {
+    "C_absolute": 2e-16,
+    "B_absolute": 2e-13,
+    "cross_resolution_H2_absolute": 2e-14,
+    "cross_resolution_eta_absolute": 2e-11,
+    "cross_resolution_coordinate_absolute": 2e-8,
+    "constraint_jacobian_absolute": 2e-17,
+    "source_refinement_relative": 1e-10,
+    "source_refinement_absolute": 1e-22,
+    "source_derivative_relative": 1e-8,
+    "source_derivative_absolute": 1e-20,
+    "nonlinear_fraction_of_shift_min": 0.001,
+    "resolution_spread_multiple": 10,
+    "negative_control_residual_factor": 10
+  },
+  "reporting": "Every requested point, failure and control is retained. Differences use each resolution's own solved gamma-zero control. Numerically resolved shifts and nonlinear departures are classified separately from solver acceptance. No confidence/interval certification. No extension beyond the registered grid if feedback is unresolved."
+}

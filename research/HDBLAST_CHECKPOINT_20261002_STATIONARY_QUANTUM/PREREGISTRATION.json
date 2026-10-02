@@ -1,0 +1,144 @@
+{
+  "execution_rule": "Publish this registration and exact source before any new source evaluation or radial integration.",
+  "experiment": {
+    "acceptance": {
+      "B_absolute": 2e-13,
+      "C_absolute": 2e-16,
+      "constraint_jacobian_absolute": 2e-17,
+      "cross_resolution_H2_absolute": 2e-14,
+      "cross_resolution_coordinate_absolute": 2e-08,
+      "cross_resolution_eta_absolute": 2e-11,
+      "negative_control_residual_factor": 10,
+      "nonlinear_fraction_of_shift_min": 0.001,
+      "resolution_spread_multiple": 10,
+      "source_derivative_absolute": 1e-20,
+      "source_derivative_relative": 1e-08,
+      "source_refinement_absolute": 1e-22,
+      "source_refinement_relative": 1e-10
+    },
+    "b_values": [
+      -1,
+      0,
+      1
+    ],
+    "detuning_c": "0.5975949350280132",
+    "detuning_delta": "0.001",
+    "domain": {
+      "H2_over_reference": [
+        0.75,
+        1.25
+      ],
+      "absolute_eta_shift_over_abs_eta0_max": 0.1,
+      "ell_open_interval": [
+        -28,
+        -18
+      ],
+      "x_over_H2_open_interval": [
+        0,
+        4.5
+      ],
+      "yb_open_interval": [
+        25,
+        35
+      ]
+    },
+    "finite_matching": "Inherited DESITTER common-action finite convention at fixed positive r; every retained local term occurs exactly once",
+    "fixed_reference_r": "0.00011848029588657912",
+    "gamma_values": [
+      0,
+      0.01,
+      1,
+      100,
+      10000,
+      1000000
+    ],
+    "mass_law": "x=r*[1+b*(eta_b-eta0)/2]^2; x_phi=b*r*[1+b*(eta_b-eta0)/2]; x_phiphi=b^2*r/2",
+    "negative_controls": [
+      "flip_current",
+      "omit_metric_source",
+      "freeze_sources"
+    ],
+    "newton": {
+      "B_absolute_tolerance": 2e-14,
+      "C_absolute_tolerance": 2e-18,
+      "backtracking_cap": 12,
+      "coordinate_step_caps": [
+        0.3,
+        0.2
+      ],
+      "iteration_cap": 12,
+      "retry_policy": "Record failed point and continue registered cases with last successful seed; no new grid, tolerance or parameter tuning"
+    },
+    "normalization": {
+      "N": 1,
+      "gamma": "N*kappa5_squared/L_cubed",
+      "interpretation": "gamma=g5 for this explicit one-field model family; gamma=0 is the classical control; high gamma is a formal closure stress test"
+    },
+    "reference_H2": "0.00005924014794328956",
+    "reference_eta0": "-0.00008405268308670538",
+    "reporting": "Every requested point, failure and control is retained. Differences use each resolution's own solved gamma-zero control. Numerically resolved shifts and nonlinear departures are classified separately from solver acceptance. No confidence/interval certification. No extension beyond the registered grid if feedback is unresolved.",
+    "resolutions": [
+      {
+        "coverage": "all",
+        "max_step": 0.1,
+        "method": "DOP853",
+        "name": "primary",
+        "rtol": 1e-11,
+        "y_start": 0.001
+      },
+      {
+        "coverage": "all",
+        "max_step": 0.05,
+        "method": "DOP853",
+        "name": "refined",
+        "rtol": 3e-14,
+        "y_start": 1e-05
+      },
+      {
+        "coverage": "endpoints",
+        "max_step": 0.1,
+        "method": "Radau",
+        "name": "radau",
+        "rtol": 1e-11,
+        "y_start": 0.0001
+      },
+      {
+        "coverage": "endpoints",
+        "max_step": 0.05,
+        "method": "DOP853",
+        "name": "cone_start",
+        "rtol": 3e-14,
+        "y_start": 0.0001
+      }
+    ],
+    "scope": "Dimensionless mathematical model family; no physical parameter inference, dynamical evolution, quantum stability or EFT certification",
+    "source_primary": {
+      "dps": 60,
+      "terms": 128
+    },
+    "source_validation": {
+      "dps": 80,
+      "terms": 256
+    },
+    "state": "Euclidean/Bunch-Davies de Sitter invariant vacuum of one free massive minimally coupled shell scalar",
+    "title": "Finite-amplitude stationary de Sitter shell closure with paired quantum sources"
+  },
+  "local_sha256": {
+    "EXPERIMENT.json": "cedd635b7e7c1257f3306e1254e9052d301c76b995a504a748ac361357e25b3b",
+    "FIXED_MODEL.json": "ab82a94cc39e08eebabda0d4aeb8a09d68dcf61cfcaf0905cf336ef24e4710be",
+    "REGISTRATION.md": "d86302ab8cca57cdc92560bed5d1f38cac6820caa5fbcd91c4b76160746a24d7",
+    "code/stationary_shell.py": "1e40d32301c18ac278695e0e58212f961269b66a9c4d8be4965f0ad3878f9ea4",
+    "code/validate_stationary.py": "ed703b219679fc0978bab3e6a13f35a90d8364e672dd8c4766cd94ac31898e6d",
+    "requirements.txt": "8a53c3b4ee221eb76a87a1bd81a967f175abf01aba2cf4b4afafc7305808c2da"
+  },
+  "registered_at_utc": "2026-10-02T07:17:36.345237+00:00",
+  "source_commit": "e24643d579f7560db719775b2998c0ffa22898b0",
+  "source_sha256": {
+    "research/HDBLAST_CHECKPOINT_20261002_DESITTER/code/desitter_sources.py": "8343e9f06d4510fbd2ed1bdf81ed00b2bda97beb323c4470c2a7c3abd79da61f",
+    "research/HDBLAST_CHECKPOINT_20261002_DESITTER/sensitivity/CHECKS.json": "3aa097aeec6b5d0b00935c07c759c44642ba80bf8a8028353871e57e99d673aa",
+    "research/HDBLAST_CHECKPOINT_20261002_DESITTER/sensitivity/STATIC_SENSITIVITY.md": "10145ca3f47b799d3b57183ba136cc8eb5731395c8d87f79212305f065d21f0a",
+    "research/HDBLAST_CHECKPOINT_20261002_DESITTER/sensitivity/compute_sensitivity.py": "aba680a97e988b06874882c005ab032f475a8500b06850c51d61b8aaecfcebb8",
+    "research/HDBLAST_CHECKPOINT_20261002_JUNCTIONS/ACTION_AND_JUNCTION_SPECIFICATION.md": "b95844df95546c581149dfbf6c4ab194aff1580101ed3b4553c39cbfd381fdf8",
+    "research/HDBLAST_CHECKPOINT_20261002_JUNCTIONS/static_bridge/STATIC_DESITTER_SOURCE_BRIDGE.md": "2d8f9843af206ee692c38c2dae5240e5d884d9429b35d481cb9ebd109d98eddf"
+  }
+}
