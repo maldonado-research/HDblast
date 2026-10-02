@@ -1,0 +1,143 @@
+{
+  "Ward_refinement": [],
+  "baseline_refinement_descriptive": [],
+  "core_refinement": [],
+  "coverage": {
+    "audited_runs": 0,
+    "classification": "partial saved coverage",
+    "expected_complete_Ward_refinement": 36,
+    "expected_complete_core_refinement": 180,
+    "expected_complete_cross_baseline_current": 144,
+    "expected_complete_cross_core": 180,
+    "expected_complete_current_refinement": 36,
+    "expected_complete_raw_Ward_endpoints": 72,
+    "expected_complete_raw_points": 72,
+    "missing_runs": [
+      [
+        "signed_uB",
+        "coarse"
+      ],
+      [
+        "signed_uB",
+        "fine"
+      ]
+    ],
+    "present_runs": [
+      [
+        "positive_B",
+        "coarse"
+      ],
+      [
+        "positive_B",
+        "fine"
+      ]
+    ],
+    "raw_Ward_endpoints": 0,
+    "raw_reconstructed_points": 0
+  },
+  "created_at_utc": "2026-10-02T20:03:01.998700+00:00",
+  "cross_baseline_current": [],
+  "cross_core": [],
+  "current_refinement": [],
+  "diagnostic_status": "COMPLETED_SAVED_DATA_DIAGNOSTIC",
+  "fine_Ward_gate_comparisons": [],
+  "full_metric_prerequisite": "BLOCKED",
+  "gate_statistics": {
+    "Ward_refinement": {
+      "count": 0,
+      "exceeds_gate": 0,
+      "maximum_absolute_gap": null,
+      "maximum_gate_ratio": null
+    },
+    "core_refinement": {
+      "count": 0,
+      "exceeds_gate": 0,
+      "maximum_absolute_gap": null,
+      "maximum_gate_ratio": null
+    },
+    "cross_baseline_current": {
+      "count": 0,
+      "exceeds_gate": 0,
+      "maximum_absolute_gap": null,
+      "maximum_gate_ratio": null
+    },
+    "cross_core": {
+      "count": 0,
+      "exceeds_gate": 0,
+      "maximum_absolute_gap": null,
+      "maximum_gate_ratio": null
+    },
+    "current_refinement": {
+      "count": 0,
+      "exceeds_gate": 0,
+      "maximum_absolute_gap": null,
+      "maximum_gate_ratio": null
+    },
+    "fine_Ward_gate_comparisons": {
+      "count": 0,
+      "exceeds_gate": 0,
+      "maximum_absolute_gap": null,
+      "maximum_gate_ratio": null
+    }
+  },
+  "physical_evolution_or_response_quadratures": 0,
+  "provenance": {
+    "archive_sha256": {
+      "/workspace/hdblast-research-work/metric-followup-complete-replay-001/fresh/independent/metric_modes_positive_B_coarse.npz": "0b366d473a672fa110a499759aa61fb8e879b36a7104f9049fee1c5147337102",
+      "/workspace/hdblast-research-work/metric-followup-complete-replay-001/fresh/independent/metric_modes_positive_B_fine.npz": "8bd8daac59d12cf0af5acfc7ff33185e0a18bd6910a27c7e30963fea1c89ac35"
+    },
+    "diagnostic_source_sha256": "8ffd0c8bf7b3bcc577ce0fe0d26f3355b294409969c099fbdb06db18007fd213",
+    "frozen_validator_sha256": "358d695644b0e639589f7dfe05de53f72a50a1119d2f0da1d5eef3272927b863",
+    "input_sha256": {
+      "/workspace/hdblast-research-work/metric-followup-complete-replay-001/checkpoint/FULL_REGISTRATION.json": "e9eee4aa5d0db84e84039d177a1ae12e8bf7ac1d41bb9ae032287daa8a667a3b",
+      "/workspace/hdblast-research-work/metric-followup-complete-replay-001/fresh/independent/results.json": "0acc6c57f63327fc9999d77649c37ecef025026a0e225ebc90b2efc4a322b2a0",
+      "/workspace/hdblast-research-work/metric-followup-complete-replay-001/fresh/primary/results.json": "3ebb2fe671404b3e314b65541d9d7313a014dd58ab565d6348efefa285620dc2",
+      "/workspace/hdblast-research-work/metric-followup-complete-replay-001/logs/independent_modes.exit.json": "5cc8ee614cb1d096818c50d3713976999a8106f075bce23b2c51b913ae51a3da",
+      "/workspace/hdblast-research-work/metric-root/FOLLOWUP_PUBLIC_FREEZE_VERIFIED.json": "c1b7e69f3a0c358f57e9a94ef683567099b1d09c0c5bc6261e8870e1122cdb6e"
+    },
+    "public_freeze_commit": "5ff571cdb7729398834ff3c025b50191c4ee29f2",
+    "raw_auditor_sha256": "f0b3c3a2479d02312a1bbad35be66ae808d2753ad831fa73e13049a5bd2ee9d2",
+    "registered_files_verified": 331,
+    "registration_sha256": "e9eee4aa5d0db84e84039d177a1ae12e8bf7ac1d41bb9ae032287daa8a667a3b"
+  },
+  "python_optimization": 0,
+  "raw_archive_audits": [],
+  "raw_audit_errors": [
+    {
+      "archive_sha256": "0b366d473a672fa110a499759aa61fb8e879b36a7104f9049fee1c5147337102",
+      "audit_error": "RuntimeError('Complete finite-band baseline histories: raw mismatch, residual=1.283694347524729309e-12 allowance=1.0000555111512312578e-12')",
+      "reconstructed_values_accepted": false,
+      "setting": "coarse",
+      "source": "positive_B",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/hdblast-research-work/metric-saved-diagnostics/diagnose_saved_metric.py\", line 168, in main\n    audit,points=reconstructed_run(raw,run,args.modes.parent,experiment);audits.append(audit);values[ident]=points\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/hdblast-research-work/metric-saved-diagnostics/diagnose_saved_metric.py\", line 121, in reconstructed_run\n    try:report=raw.audit_run(run,directory,experiment)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/hdblast-research-work/metric-followup-complete-replay-001/checkpoint/code/raw_metric_audit.py\", line 269, in audit_run\n    near_array(history[:,:,[5,6,7]],baseline_primitives(time,experiment['cutoffs']),'Complete finite-band baseline histories')\n  File \"/workspace/hdblast-research-work/metric-followup-complete-replay-001/checkpoint/code/raw_metric_audit.py\", line 33, in near_array\n    require(residual<=allowance,label+': raw mismatch, residual='+str(residual)+' allowance='+str(allowance))\n  File \"/workspace/hdblast-research-work/metric-followup-complete-replay-001/checkpoint/code/raw_metric_audit.py\", line 22, in require\n    if not condition: raise RuntimeError(message)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Complete finite-band baseline histories: raw mismatch, residual=1.283694347524729309e-12 allowance=1.0000555111512312578e-12\n"
+    },
+    {
+      "archive_sha256": "8bd8daac59d12cf0af5acfc7ff33185e0a18bd6910a27c7e30963fea1c89ac35",
+      "audit_error": "RuntimeError('Saved mode/operator/subtraction C_1: raw mismatch, residual=0.0120210368144252441775 allowance=1.0000555111512312578e-12')",
+      "reconstructed_values_accepted": false,
+      "setting": "fine",
+      "source": "positive_B",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/hdblast-research-work/metric-saved-diagnostics/diagnose_saved_metric.py\", line 168, in main\n    audit,points=reconstructed_run(raw,run,args.modes.parent,experiment);audits.append(audit);values[ident]=points\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/hdblast-research-work/metric-saved-diagnostics/diagnose_saved_metric.py\", line 121, in reconstructed_run\n    try:report=raw.audit_run(run,directory,experiment)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/hdblast-research-work/metric-followup-complete-replay-001/checkpoint/code/raw_metric_audit.py\", line 294, in audit_run\n    target=f'{name}_{i}';expected_names.add(target);near_array(arc[target],array,'Saved mode/operator/subtraction '+name)\n                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/hdblast-research-work/metric-followup-complete-replay-001/checkpoint/code/raw_metric_audit.py\", line 33, in near_array\n    require(residual<=allowance,label+': raw mismatch, residual='+str(residual)+' allowance='+str(allowance))\n  File \"/workspace/hdblast-research-work/metric-followup-complete-replay-001/checkpoint/code/raw_metric_audit.py\", line 22, in require\n    if not condition: raise RuntimeError(message)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Saved mode/operator/subtraction C_1: raw mismatch, residual=0.0120210368144252441775 allowance=1.0000555111512312578e-12\n"
+    }
+  ],
+  "reconstructed_Ward_endpoints": [],
+  "recorded_producer_status": {
+    "independent": "failed",
+    "independent_declared_gate_failures": [],
+    "independent_elapsed_within_registered_budget": true,
+    "independent_exception": {
+      "message": "Frozen 256-MiB peak-memory budget exceeded",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/hdblast-research-work/metric-followup-complete-replay-001/checkpoint/independent/forced_metric.py\", line 552, in main\n    report[\"resources\"] = resource_check(started)\n                          ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/hdblast-research-work/metric-followup-complete-replay-001/checkpoint/independent/forced_metric.py\", line 214, in resource_check\n    require(peak <= RSS_BUDGET_KIB, \"Frozen 256-MiB peak-memory budget exceeded\")\n  File \"/workspace/hdblast-research-work/metric-followup-complete-replay-001/checkpoint/independent/forced_metric.py\", line 41, in require\n    raise RuntimeError(message)\nRuntimeError: Frozen 256-MiB peak-memory budget exceeded\n",
+      "type": "RuntimeError"
+    },
+    "independent_peak_rss_within_registered_budget": false,
+    "independent_resources": {
+      "elapsed_seconds": 153.80774093999935,
+      "peak_rss_kib": 306088
+    },
+    "primary": "completed"
+  },
+  "scientific_validator_PASS": false,
+  "scope": "Read-only reconstruction from saved complex observation modes and direct saved histories; no physical producer import/evolution/response quadrature. The source-pinned raw auditor enforces its original structural/operator/subtraction/Wronskian checks. Its returned Ward endpoints and unchanged cross/refinement gates are diagnostic classifications only. Scientific FAIL, original failures and full-metric BLOCKED remain unchanged. Global all-time Wronskians remain producer declarations; raw observation Wronskians are reconstructed. No continuum tail/precision certificate, complete original-validator PASS, stability or heating claim.",
+  "underlying_science_status": "FAIL"
+}
