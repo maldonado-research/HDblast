@@ -62,3 +62,16 @@ Zenodo remains outside this scheduler: publication credentials have not been val
 ## Matched-stress refresh boundary
 
 The actual normal and optimized validators pass in the registered linear fixed-geometry scope. Their exact comparison/control counts and hashes are pinned in SCIENTIFIC_PROGRESS.md and queue.json. First-order stress, a Ward identity or negative relative density does not establish heating. The retained future O(epsilon²) canonical proposal is distinct from adiabatic subtraction and from complete quadratic physical stress. New physical numerical work requires an earlier public source/implementation/error-budget registration. A registration co-published with its results is not prior registration. Workflows, helpers, tests, budgets, model, empty ledger and activation settings are unchanged.
+
+
+## Homogeneous metric component refresh
+
+The committed metric benchmark at `71d00cc423e9049c8166b7ee7afbefbac28d8a18` records actual `FAIL` in its special-point homogeneous conformal-metric scope. Its earlier public registration is `19fde76912af6e2f30d6f55e066b27d88cc7e34b`. Exact retained validator counts: `{}`. All inherited/frozen input hashes and committed raw archives are verified where PASS is claimed.
+
+The original metric experiment at `5d4e92c90331808e2baf6d26d69717bf2d0a5590` remains **FAIL**, with its source, public registration, failure report and nonzero exit receipt preserved byte-for-byte. The active checkpoint outcome is `FAIL` and is a distinct earlier-registered experiment; it does not overwrite or reinterpret the original failure.
+
+The high-precision metric followup at `c53287e51e34193575eb19d11a3f66025a52dbc8` also remains **FAIL** after its independent producer exceeded the unchanged memory budget. Completed primary work and partial independent runs do not constitute a calibration PASS. Its entire selected failure record remains unchanged. The separately registered memory-streaming followup has actual outcome `FAIL`, with no earlier failure relabeled or erased.
+
+The full matched metric prerequisite remains **BLOCKED**. Its scheduler status remains pending so a future bounded task can address the missing components; pending does not mean scientifically satisfied. Actual-root response, lapse channels, bulk/boundary conditions and admissible state/initial data remain required. The partial calibration creates no automated PASS record and cannot unlock initial data. Canonical excitation remains deferred outside executable items pending a separate earlier public numerical registration.
+
+All 14 protected controls and the actual empty automated ledger remain byte-identical. This refresh changes four queue/evidence/progress documents only. No activation, paid call, merge, release, site deployment or DOI is performed. The unchanged selector can advance only if the full metric task eventually receives a separately supported real PASS; offline fixtures are not scientific outcomes.
