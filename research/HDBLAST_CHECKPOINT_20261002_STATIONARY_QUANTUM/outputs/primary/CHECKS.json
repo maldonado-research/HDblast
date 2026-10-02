@@ -1,0 +1,3784 @@
+{
+  "checked_at_utc": "2026-10-02T07:20:51.584505+00:00",
+  "failures": [],
+  "gates": [
+    {
+      "name": "registration_hash",
+      "pass": true
+    },
+    {
+      "name": "producer_hash",
+      "pass": true
+    },
+    {
+      "name": "frozen_local/EXPERIMENT.json",
+      "pass": true
+    },
+    {
+      "name": "frozen_local/FIXED_MODEL.json",
+      "pass": true
+    },
+    {
+      "name": "frozen_local/REGISTRATION.md",
+      "pass": true
+    },
+    {
+      "name": "frozen_local/code/stationary_shell.py",
+      "pass": true
+    },
+    {
+      "name": "frozen_local/code/validate_stationary.py",
+      "pass": true
+    },
+    {
+      "name": "frozen_local/requirements.txt",
+      "pass": true
+    },
+    {
+      "name": "pinned_input/research/HDBLAST_CHECKPOINT_20261002_DESITTER/code/desitter_sources.py",
+      "pass": true
+    },
+    {
+      "name": "pinned_input/research/HDBLAST_CHECKPOINT_20261002_DESITTER/sensitivity/CHECKS.json",
+      "pass": true
+    },
+    {
+      "name": "pinned_input/research/HDBLAST_CHECKPOINT_20261002_DESITTER/sensitivity/STATIC_SENSITIVITY.md",
+      "pass": true
+    },
+    {
+      "name": "pinned_input/research/HDBLAST_CHECKPOINT_20261002_DESITTER/sensitivity/compute_sensitivity.py",
+      "pass": true
+    },
+    {
+      "name": "pinned_input/research/HDBLAST_CHECKPOINT_20261002_JUNCTIONS/ACTION_AND_JUNCTION_SPECIFICATION.md",
+      "pass": true
+    },
+    {
+      "name": "pinned_input/research/HDBLAST_CHECKPOINT_20261002_JUNCTIONS/static_bridge/STATIC_DESITTER_SOURCE_BRIDGE.md",
+      "pass": true
+    },
+    {
+      "name": "execution_complete",
+      "pass": true
+    },
+    {
+      "name": "no_run_failures",
+      "pass": true
+    },
+    {
+      "expected_count": 48,
+      "name": "exact_registered_coverage",
+      "observed_count": 48,
+      "pass": true
+    },
+    {
+      "absolute_residual": 8.89066154494772e-19,
+      "name": "primary/b-1/gamma0/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 5.955474544689636e-17,
+      "name": "primary/b-1/gamma0/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 1.0728288408918192e-21,
+      "name": "primary/b-1/gamma0/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 4.8161885671194626e-21,
+      "name": "primary/b-1/gamma0/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 3.0928506592857773e-21,
+      "name": "primary/b-1/gamma0/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "primary/b-1/gamma0/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "primary/b-1/gamma0/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "primary/b-1/gamma0/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "primary/b-1/gamma0/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 8.283339029544503e-19,
+      "name": "primary/b-1/gamma0.01/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 5.907320774373011e-17,
+      "name": "primary/b-1/gamma0.01/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 1.464916802079038e-20,
+      "name": "primary/b-1/gamma0.01/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 6.576366410963389e-20,
+      "name": "primary/b-1/gamma0.01/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 1.3049959350070512e-21,
+      "name": "primary/b-1/gamma0.01/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "primary/b-1/gamma0.01/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "primary/b-1/gamma0.01/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "primary/b-1/gamma0.01/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "primary/b-1/gamma0.01/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 8.280962563775509e-19,
+      "name": "primary/b-1/gamma1/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 5.872007350150235e-17,
+      "name": "primary/b-1/gamma1/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 7.09146450499e-21,
+      "name": "primary/b-1/gamma1/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 3.18353021200165e-20,
+      "name": "primary/b-1/gamma1/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 2.2669963694625105e-21,
+      "name": "primary/b-1/gamma1/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "primary/b-1/gamma1/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "primary/b-1/gamma1/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "primary/b-1/gamma1/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "primary/b-1/gamma1/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 3.149609575098296e-20,
+      "name": "primary/b-1/gamma100/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 8.828878206041894e-19,
+      "name": "primary/b-1/gamma100/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 4.3836904991171674e-21,
+      "name": "primary/b-1/gamma100/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 1.9679448618487916e-20,
+      "name": "primary/b-1/gamma100/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 5.685360733001167e-21,
+      "name": "primary/b-1/gamma100/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "primary/b-1/gamma100/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "primary/b-1/gamma100/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "primary/b-1/gamma100/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "primary/b-1/gamma100/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 6.503951139024235e-20,
+      "name": "primary/b-1/gamma10000/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 4.0900364470384084e-18,
+      "name": "primary/b-1/gamma10000/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 3.424573549546648e-21,
+      "name": "primary/b-1/gamma10000/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 1.537373935338263e-20,
+      "name": "primary/b-1/gamma10000/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 2.2435800249828563e-21,
+      "name": "primary/b-1/gamma10000/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "primary/b-1/gamma10000/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "primary/b-1/gamma10000/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "primary/b-1/gamma10000/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "primary/b-1/gamma10000/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 3.0614499920650625e-20,
+      "name": "primary/b-1/gamma1000000/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.1861377117898522e-16,
+      "name": "primary/b-1/gamma1000000/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 7.929898801996395e-21,
+      "name": "primary/b-1/gamma1000000/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 3.5599018020856094e-20,
+      "name": "primary/b-1/gamma1000000/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 6.068934003541191e-21,
+      "name": "primary/b-1/gamma1000000/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "primary/b-1/gamma1000000/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "primary/b-1/gamma1000000/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "primary/b-1/gamma1000000/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "primary/b-1/gamma1000000/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 8.89066154494772e-19,
+      "name": "primary/b0/gamma0/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 5.955474544689636e-17,
+      "name": "primary/b0/gamma0/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 1.0728288408918192e-21,
+      "name": "primary/b0/gamma0/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 4.8161885671194626e-21,
+      "name": "primary/b0/gamma0/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 3.0928506592857773e-21,
+      "name": "primary/b0/gamma0/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "primary/b0/gamma0/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "primary/b0/gamma0/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "primary/b0/gamma0/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "primary/b0/gamma0/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 6.468413898287495e-19,
+      "name": "primary/b0/gamma0.01/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 6.031370519365654e-17,
+      "name": "primary/b0/gamma0.01/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 8.60329266846876e-21,
+      "name": "primary/b0/gamma0.01/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 3.862226499710331e-20,
+      "name": "primary/b0/gamma0.01/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 6.5493572747172e-21,
+      "name": "primary/b0/gamma0.01/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "primary/b0/gamma0.01/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "primary/b0/gamma0.01/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "primary/b0/gamma0.01/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "primary/b0/gamma0.01/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 7.957255316915478e-19,
+      "name": "primary/b0/gamma1/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 6.164677388043799e-17,
+      "name": "primary/b0/gamma1/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 3.776195788378678e-21,
+      "name": "primary/b0/gamma1/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 1.6952257704000753e-20,
+      "name": "primary/b0/gamma1/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 3.3223864759388653e-21,
+      "name": "primary/b0/gamma1/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "primary/b0/gamma1/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "primary/b0/gamma1/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "primary/b0/gamma1/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "primary/b0/gamma1/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 2.5852722945997693e-20,
+      "name": "primary/b0/gamma100/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 5.99762477569416e-19,
+      "name": "primary/b0/gamma100/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 5.1268855178690336e-21,
+      "name": "primary/b0/gamma100/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 2.3015831099870978e-20,
+      "name": "primary/b0/gamma100/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 2.4707502551768505e-21,
+      "name": "primary/b0/gamma100/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "primary/b0/gamma100/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "primary/b0/gamma100/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "primary/b0/gamma100/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "primary/b0/gamma100/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 3.6903759559099534e-20,
+      "name": "primary/b0/gamma10000/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 7.598599707621777e-19,
+      "name": "primary/b0/gamma10000/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 4.283217501140818e-21,
+      "name": "primary/b0/gamma10000/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 1.9228399829864158e-20,
+      "name": "primary/b0/gamma10000/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 7.862317848755974e-21,
+      "name": "primary/b0/gamma10000/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "primary/b0/gamma10000/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "primary/b0/gamma10000/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "primary/b0/gamma10000/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "primary/b0/gamma10000/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 1.7117145582147136e-20,
+      "name": "primary/b0/gamma1000000/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 1.2142440838054348e-18,
+      "name": "primary/b0/gamma1000000/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 9.53792247676163e-21,
+      "name": "primary/b0/gamma1000000/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 4.281778156234189e-20,
+      "name": "primary/b0/gamma1000000/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 2.285409691807737e-21,
+      "name": "primary/b0/gamma1000000/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "primary/b0/gamma1000000/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "primary/b0/gamma1000000/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "primary/b0/gamma1000000/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "primary/b0/gamma1000000/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 8.89066154494772e-19,
+      "name": "primary/b1/gamma0/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 5.955474544689636e-17,
+      "name": "primary/b1/gamma0/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 1.0728288408918192e-21,
+      "name": "primary/b1/gamma0/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 4.8161885671194626e-21,
+      "name": "primary/b1/gamma0/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 3.0928506592857773e-21,
+      "name": "primary/b1/gamma0/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "primary/b1/gamma0/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "primary/b1/gamma0/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "primary/b1/gamma0/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "primary/b1/gamma0/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 8.022873665529345e-19,
+      "name": "primary/b1/gamma0.01/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 6.019900916581818e-17,
+      "name": "primary/b1/gamma0.01/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 1.1234839725617606e-20,
+      "name": "primary/b1/gamma0.01/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 5.0435917247485694e-20,
+      "name": "primary/b1/gamma0.01/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 1.1811510409872272e-22,
+      "name": "primary/b1/gamma0.01/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "primary/b1/gamma0.01/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "primary/b1/gamma0.01/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "primary/b1/gamma0.01/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "primary/b1/gamma0.01/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 8.411024634371568e-19,
+      "name": "primary/b1/gamma1/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 6.06705680095473e-17,
+      "name": "primary/b1/gamma1/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 4.260381329509797e-21,
+      "name": "primary/b1/gamma1/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 1.9125883895488724e-20,
+      "name": "primary/b1/gamma1/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 1.0801156368295007e-21,
+      "name": "primary/b1/gamma1/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "primary/b1/gamma1/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "primary/b1/gamma1/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "primary/b1/gamma1/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "primary/b1/gamma1/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 1.2883963027179746e-19,
+      "name": "primary/b1/gamma100/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 8.98232399757116e-19,
+      "name": "primary/b1/gamma100/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 1.461334027959882e-20,
+      "name": "primary/b1/gamma100/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 6.560282465991952e-20,
+      "name": "primary/b1/gamma100/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 2.06962250003173e-22,
+      "name": "primary/b1/gamma100/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "primary/b1/gamma100/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "primary/b1/gamma100/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "primary/b1/gamma100/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "primary/b1/gamma100/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 1.3520582541430002e-20,
+      "name": "primary/b1/gamma10000/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.1353994687790745e-18,
+      "name": "primary/b1/gamma10000/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 4.452397808122184e-21,
+      "name": "primary/b1/gamma10000/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 1.998789116704361e-20,
+      "name": "primary/b1/gamma10000/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 6.7928029460314255e-22,
+      "name": "primary/b1/gamma10000/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "primary/b1/gamma10000/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "primary/b1/gamma10000/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "primary/b1/gamma10000/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "primary/b1/gamma10000/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 1.4869989400060486e-19,
+      "name": "primary/b1/gamma1000000/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.8390779741715093e-17,
+      "name": "primary/b1/gamma1000000/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 9.52179285488264e-21,
+      "name": "primary/b1/gamma1000000/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 4.2745372293806194e-20,
+      "name": "primary/b1/gamma1000000/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 7.224928034464465e-21,
+      "name": "primary/b1/gamma1000000/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "primary/b1/gamma1000000/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "primary/b1/gamma1000000/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "primary/b1/gamma1000000/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "primary/b1/gamma1000000/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 7.594747859943388e-19,
+      "name": "refined/b-1/gamma0/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.106427622723058e-16,
+      "name": "refined/b-1/gamma0/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 1.9416591382729266e-21,
+      "name": "refined/b-1/gamma0/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 8.716578252333099e-21,
+      "name": "refined/b-1/gamma0/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 3.934710077815168e-21,
+      "name": "refined/b-1/gamma0/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "refined/b-1/gamma0/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "refined/b-1/gamma0/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "refined/b-1/gamma0/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "refined/b-1/gamma0/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 8.024156209219655e-19,
+      "name": "refined/b-1/gamma0.01/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.1085326310169948e-16,
+      "name": "refined/b-1/gamma0.01/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 6.686132163103251e-21,
+      "name": "refined/b-1/gamma0.01/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 3.0015667042858846e-20,
+      "name": "refined/b-1/gamma0.01/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 1.1811510409872272e-22,
+      "name": "refined/b-1/gamma0.01/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "refined/b-1/gamma0.01/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "refined/b-1/gamma0.01/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "refined/b-1/gamma0.01/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "refined/b-1/gamma0.01/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 1.0095234881268741e-18,
+      "name": "refined/b-1/gamma1/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.0995962418144911e-16,
+      "name": "refined/b-1/gamma1/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 8.62334936259579e-21,
+      "name": "refined/b-1/gamma1/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 3.871230435568182e-20,
+      "name": "refined/b-1/gamma1/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 7.350948190662017e-22,
+      "name": "refined/b-1/gamma1/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "refined/b-1/gamma1/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "refined/b-1/gamma1/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "refined/b-1/gamma1/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "refined/b-1/gamma1/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 1.6108645654414455e-19,
+      "name": "refined/b-1/gamma100/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 4.221173186494169e-19,
+      "name": "refined/b-1/gamma100/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 3.542337688609241e-21,
+      "name": "refined/b-1/gamma100/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 1.5902412030766782e-20,
+      "name": "refined/b-1/gamma100/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 4.843451680443252e-21,
+      "name": "refined/b-1/gamma100/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "refined/b-1/gamma100/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "refined/b-1/gamma100/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "refined/b-1/gamma100/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "refined/b-1/gamma100/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 9.046289741100217e-20,
+      "name": "refined/b-1/gamma10000/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 3.1422863431839233e-18,
+      "name": "refined/b-1/gamma10000/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 3.703343522034501e-21,
+      "name": "refined/b-1/gamma10000/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 1.6625205217547008e-20,
+      "name": "refined/b-1/gamma10000/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 4.871748393942575e-21,
+      "name": "refined/b-1/gamma10000/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "refined/b-1/gamma10000/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "refined/b-1/gamma10000/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "refined/b-1/gamma10000/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "refined/b-1/gamma10000/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 2.37164221124379e-19,
+      "name": "refined/b-1/gamma1000000/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.2050079584071464e-16,
+      "name": "refined/b-1/gamma1000000/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 4.4154490866583004e-21,
+      "name": "refined/b-1/gamma1000000/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 1.9821898807403427e-20,
+      "name": "refined/b-1/gamma1000000/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 4.1509453621821914e-21,
+      "name": "refined/b-1/gamma1000000/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "refined/b-1/gamma1000000/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "refined/b-1/gamma1000000/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "refined/b-1/gamma1000000/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "refined/b-1/gamma1000000/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 7.594747859943388e-19,
+      "name": "refined/b0/gamma0/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.106427622723058e-16,
+      "name": "refined/b0/gamma0/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 1.9416591382729266e-21,
+      "name": "refined/b0/gamma0/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 8.716578252333099e-21,
+      "name": "refined/b0/gamma0/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 3.934710077815168e-21,
+      "name": "refined/b0/gamma0/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "refined/b0/gamma0/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "refined/b0/gamma0/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "refined/b0/gamma0/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "refined/b0/gamma0/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 7.764327991394676e-19,
+      "name": "refined/b0/gamma0.01/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.0814916334491282e-16,
+      "name": "refined/b0/gamma0.01/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 1.4550389808239556e-20,
+      "name": "refined/b0/gamma0.01/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 6.532022478377436e-20,
+      "name": "refined/b0/gamma0.01/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 5.70749785122478e-21,
+      "name": "refined/b0/gamma0.01/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "refined/b0/gamma0.01/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "refined/b0/gamma0.01/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "refined/b0/gamma0.01/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "refined/b0/gamma0.01/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 1.054908203203627e-18,
+      "name": "refined/b0/gamma1/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.074123785139679e-16,
+      "name": "refined/b0/gamma1/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 5.434381555548835e-21,
+      "name": "refined/b0/gamma1/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 2.4396255319983786e-20,
+      "name": "refined/b0/gamma1/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 5.13759693183484e-21,
+      "name": "refined/b0/gamma1/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "refined/b0/gamma1/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "refined/b0/gamma1/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "refined/b0/gamma1/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "refined/b0/gamma1/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 1.0373848618620135e-19,
+      "name": "refined/b0/gamma100/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 1.0493476075805853e-19,
+      "name": "refined/b0/gamma100/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 2.4915792097107614e-21,
+      "name": "refined/b0/gamma100/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 1.1185302668214848e-20,
+      "name": "refined/b0/gamma100/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 5.147422375417933e-21,
+      "name": "refined/b0/gamma100/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "refined/b0/gamma100/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "refined/b0/gamma100/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "refined/b0/gamma100/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "refined/b0/gamma100/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 1.4057336572672965e-19,
+      "name": "refined/b0/gamma10000/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 4.0560040834603287e-19,
+      "name": "refined/b0/gamma10000/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 1.5810092160095554e-20,
+      "name": "refined/b0/gamma10000/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 7.097532948545046e-20,
+      "name": "refined/b0/gamma10000/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 3.657498009157674e-21,
+      "name": "refined/b0/gamma10000/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "refined/b0/gamma10000/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "refined/b0/gamma10000/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "refined/b0/gamma10000/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "refined/b0/gamma10000/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 1.7116756279135748e-20,
+      "name": "refined/b0/gamma1000000/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 7.588648077626281e-20,
+      "name": "refined/b0/gamma1000000/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 9.538311779773015e-21,
+      "name": "refined/b0/gamma1000000/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 4.281952922713405e-20,
+      "name": "refined/b0/gamma1000000/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 2.285409691807737e-21,
+      "name": "refined/b0/gamma1000000/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "refined/b0/gamma1000000/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "refined/b0/gamma1000000/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "refined/b0/gamma1000000/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "refined/b0/gamma1000000/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 7.594747859943388e-19,
+      "name": "refined/b1/gamma0/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.106427622723058e-16,
+      "name": "refined/b1/gamma0/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 1.9416591382729266e-21,
+      "name": "refined/b1/gamma0/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 8.716578252333099e-21,
+      "name": "refined/b1/gamma0/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 3.934710077815168e-21,
+      "name": "refined/b1/gamma0/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "refined/b1/gamma0/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "refined/b1/gamma0/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "refined/b1/gamma0/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "refined/b1/gamma0/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 7.763686222371408e-19,
+      "name": "refined/b1/gamma0.01/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.0888724372651022e-16,
+      "name": "refined/b1/gamma0.01/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 1.6838028197108945e-20,
+      "name": "refined/b1/gamma0.01/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 7.558998770794854e-20,
+      "name": "refined/b1/gamma0.01/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 5.70749785122478e-21,
+      "name": "refined/b1/gamma0.01/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "refined/b1/gamma0.01/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "refined/b1/gamma0.01/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "refined/b1/gamma0.01/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "refined/b1/gamma0.01/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 7.633506538117912e-19,
+      "name": "refined/b1/gamma1/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.0890355995350277e-16,
+      "name": "refined/b1/gamma1/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 1.0474710625225399e-21,
+      "name": "refined/b1/gamma1/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 4.702351356890373e-21,
+      "name": "refined/b1/gamma1/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 2.1355057433058214e-21,
+      "name": "refined/b1/gamma1/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "refined/b1/gamma1/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "refined/b1/gamma1/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "refined/b1/gamma1/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "refined/b1/gamma1/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 7.5111342913942e-22,
+      "name": "refined/b1/gamma100/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 1.5140108800678579e-18,
+      "name": "refined/b1/gamma100/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 1.545507599788204e-20,
+      "name": "refined/b1/gamma100/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 6.938158021340624e-20,
+      "name": "refined/b1/gamma100/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 6.3494680255950395e-22,
+      "name": "refined/b1/gamma100/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "refined/b1/gamma100/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "refined/b1/gamma100/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "refined/b1/gamma100/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "refined/b1/gamma100/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 2.9861006046312974e-19,
+      "name": "refined/b1/gamma10000/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 1.5407353305463911e-18,
+      "name": "refined/b1/gamma10000/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 3.9659901638673796e-21,
+      "name": "refined/b1/gamma10000/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 1.7804289549405705e-20,
+      "name": "refined/b1/gamma10000/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 1.715219056333253e-22,
+      "name": "refined/b1/gamma10000/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "refined/b1/gamma10000/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "refined/b1/gamma10000/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "refined/b1/gamma10000/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "refined/b1/gamma10000/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 3.203215372558273e-20,
+      "name": "refined/b1/gamma1000000/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.854879860878547e-17,
+      "name": "refined/b1/gamma1000000/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 4.972598157589515e-21,
+      "name": "refined/b1/gamma1000000/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 2.232306066232716e-20,
+      "name": "refined/b1/gamma1000000/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 1.2798715098858266e-21,
+      "name": "refined/b1/gamma1000000/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "refined/b1/gamma1000000/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "refined/b1/gamma1000000/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "refined/b1/gamma1000000/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "refined/b1/gamma1000000/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 3.830729667118375e-20,
+      "name": "radau/b-1/gamma0.0/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 3.626484332284197e-16,
+      "name": "radau/b-1/gamma0.0/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 4.825209189781326e-21,
+      "name": "radau/b-1/gamma0.0/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 2.1661532993898747e-20,
+      "name": "radau/b-1/gamma0.0/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 5.7702455066527655e-21,
+      "name": "radau/b-1/gamma0.0/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "radau/b-1/gamma0.0/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "radau/b-1/gamma0.0/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "radau/b-1/gamma0.0/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "radau/b-1/gamma0.0/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 4.37164572443375e-19,
+      "name": "radau/b-1/gamma1000000/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 1.1904526524433073e-16,
+      "name": "radau/b-1/gamma1000000/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 1.1675977340246942e-21,
+      "name": "radau/b-1/gamma1000000/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 5.241596874375364e-21,
+      "name": "radau/b-1/gamma1000000/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 3.4565253297879326e-21,
+      "name": "radau/b-1/gamma1000000/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "radau/b-1/gamma1000000/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "radau/b-1/gamma1000000/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "radau/b-1/gamma1000000/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "radau/b-1/gamma1000000/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 3.830729667118375e-20,
+      "name": "radau/b0/gamma0.0/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 3.626484332284197e-16,
+      "name": "radau/b0/gamma0.0/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 4.825209189781326e-21,
+      "name": "radau/b0/gamma0.0/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 2.1661532993898747e-20,
+      "name": "radau/b0/gamma0.0/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 5.7702455066527655e-21,
+      "name": "radau/b0/gamma0.0/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "radau/b0/gamma0.0/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "radau/b0/gamma0.0/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "radau/b0/gamma0.0/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "radau/b0/gamma0.0/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 8.732572185808745e-19,
+      "name": "radau/b0/gamma1000000/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 5.450312208811768e-15,
+      "name": "radau/b0/gamma1000000/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 2.0680178127632718e-20,
+      "name": "radau/b0/gamma1000000/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 9.283775915527725e-20,
+      "name": "radau/b0/gamma1000000/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 7.839106152986701e-22,
+      "name": "radau/b0/gamma1000000/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "radau/b0/gamma1000000/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "radau/b0/gamma1000000/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "radau/b0/gamma1000000/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "radau/b0/gamma1000000/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 3.830729667118375e-20,
+      "name": "radau/b1/gamma0.0/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 3.626484332284197e-16,
+      "name": "radau/b1/gamma0.0/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 4.825209189781326e-21,
+      "name": "radau/b1/gamma0.0/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 2.1661532993898747e-20,
+      "name": "radau/b1/gamma0.0/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 5.7702455066527655e-21,
+      "name": "radau/b1/gamma0.0/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "radau/b1/gamma0.0/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "radau/b1/gamma0.0/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "radau/b1/gamma0.0/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "radau/b1/gamma0.0/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 2.3651848658809034e-19,
+      "name": "radau/b1/gamma1000000/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.0043311734452034e-15,
+      "name": "radau/b1/gamma1000000/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 3.0020909419204413e-21,
+      "name": "radau/b1/gamma1000000/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 1.3477030736543371e-20,
+      "name": "radau/b1/gamma1000000/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 2.1110785633424298e-21,
+      "name": "radau/b1/gamma1000000/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "radau/b1/gamma1000000/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "radau/b1/gamma1000000/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "radau/b1/gamma1000000/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "radau/b1/gamma1000000/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 8.890657166636167e-19,
+      "name": "cone_start/b-1/gamma0.0/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.1001937564040966e-16,
+      "name": "cone_start/b-1/gamma0.0/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 1.0997364516487918e-21,
+      "name": "cone_start/b-1/gamma0.0/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 4.9369833503660675e-21,
+      "name": "cone_start/b-1/gamma0.0/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 3.0928506592857773e-21,
+      "name": "cone_start/b-1/gamma0.0/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "cone_start/b-1/gamma0.0/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "cone_start/b-1/gamma0.0/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "cone_start/b-1/gamma0.0/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "cone_start/b-1/gamma0.0/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 1.0807067266992047e-19,
+      "name": "cone_start/b-1/gamma1000000/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.2005997718168972e-16,
+      "name": "cone_start/b-1/gamma1000000/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 4.070908614853403e-21,
+      "name": "cone_start/b-1/gamma1000000/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 1.8275182667519084e-20,
+      "name": "cone_start/b-1/gamma1000000/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 2.8085894212687934e-21,
+      "name": "cone_start/b-1/gamma1000000/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "cone_start/b-1/gamma1000000/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "cone_start/b-1/gamma1000000/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "cone_start/b-1/gamma1000000/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "cone_start/b-1/gamma1000000/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 8.890657166636167e-19,
+      "name": "cone_start/b0/gamma0.0/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.1001937564040966e-16,
+      "name": "cone_start/b0/gamma0.0/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 1.0997364516487918e-21,
+      "name": "cone_start/b0/gamma0.0/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 4.9369833503660675e-21,
+      "name": "cone_start/b0/gamma0.0/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 3.0928506592857773e-21,
+      "name": "cone_start/b0/gamma0.0/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "cone_start/b0/gamma0.0/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "cone_start/b0/gamma0.0/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "cone_start/b0/gamma0.0/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "cone_start/b0/gamma0.0/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 1.7116230728577418e-20,
+      "name": "cone_start/b0/gamma1000000/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.927178022599291e-19,
+      "name": "cone_start/b0/gamma1000000/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 9.538837330331346e-21,
+      "name": "cone_start/b0/gamma1000000/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 4.282188853641355e-20,
+      "name": "cone_start/b0/gamma1000000/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 2.285409691807737e-21,
+      "name": "cone_start/b0/gamma1000000/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "cone_start/b0/gamma1000000/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "cone_start/b0/gamma1000000/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "cone_start/b0/gamma1000000/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "cone_start/b0/gamma1000000/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 8.890657166636167e-19,
+      "name": "cone_start/b1/gamma0.0/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.1001937564040966e-16,
+      "name": "cone_start/b1/gamma0.0/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 1.0997364516487918e-21,
+      "name": "cone_start/b1/gamma0.0/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 4.9369833503660675e-21,
+      "name": "cone_start/b1/gamma0.0/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 3.0928506592857773e-21,
+      "name": "cone_start/b1/gamma0.0/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "cone_start/b1/gamma0.0/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "cone_start/b1/gamma0.0/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "cone_start/b1/gamma0.0/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "cone_start/b1/gamma0.0/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_residual": 1.9604988859837224e-20,
+      "name": "cone_start/b1/gamma1000000/metric_residual",
+      "pass": true,
+      "threshold": 2e-16
+    },
+    {
+      "absolute_residual": 2.849203309500412e-17,
+      "name": "cone_start/b1/gamma1000000/scalar_residual",
+      "pass": true,
+      "threshold": 2e-13
+    },
+    {
+      "absolute_error": 9.175895696768651e-21,
+      "name": "cone_start/b1/gamma1000000/stable_C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 4.119256569274996e-20,
+      "name": "cone_start/b1/gamma1000000/original_metric_residual",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "absolute_error": 5.8825720503515244e-21,
+      "name": "cone_start/b1/gamma1000000/H2_radius",
+      "pass": true,
+      "threshold": 1e-18
+    },
+    {
+      "name": "cone_start/b1/gamma1000000/positive_tension",
+      "pass": true
+    },
+    {
+      "name": "cone_start/b1/gamma1000000/negative_cone_displacement",
+      "pass": true
+    },
+    {
+      "name": "cone_start/b1/gamma1000000/declared_domain",
+      "pass": true
+    },
+    {
+      "name": "cone_start/b1/gamma1000000/validation_exception",
+      "pass": false,
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py\", line 95, in validate\n    gate(label+'/nonsingular_numerical_jacobian',math.isfinite(determinant) and abs(determinant)>1e-12,\nTypeError: validate.<locals>.gate() got multiple values for argument 'condition'\n"
+    },
+    {
+      "absolute_error": 1.2874900798265365e-19,
+      "name": "refinement/primary/b-1/gamma0/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 7.601612481838993e-17,
+      "name": "refinement/primary/b-1/gamma0/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b-1/gamma0/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b-1/gamma0/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 2.710505431213761e-20,
+      "name": "refinement/primary/b-1/gamma0.01/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 7.593480965545352e-17,
+      "name": "refinement/primary/b-1/gamma0.01/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b-1/gamma0.01/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b-1/gamma0.01/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.8295911660692887e-19,
+      "name": "refinement/primary/b-1/gamma1/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 7.558244394939573e-17,
+      "name": "refinement/primary/b-1/gamma1/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b-1/gamma1/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b-1/gamma1/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.2874900798265365e-19,
+      "name": "refinement/primary/b-1/gamma100/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 1.3552527156068805e-19,
+      "name": "refinement/primary/b-1/gamma100/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 3.979039320256561e-13,
+      "name": "refinement/primary/b-1/gamma100/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.0658141036401503e-14,
+      "name": "refinement/primary/b-1/gamma100/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.6263032587282567e-19,
+      "name": "refinement/primary/b-1/gamma10000/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 2.574980159653073e-19,
+      "name": "refinement/primary/b-1/gamma10000/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 3.907985046680551e-13,
+      "name": "refinement/primary/b-1/gamma10000/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 3.552713678800501e-15,
+      "name": "refinement/primary/b-1/gamma10000/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 2.1006417091906648e-19,
+      "name": "refinement/primary/b-1/gamma1000000/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 5.55653613398821e-19,
+      "name": "refinement/primary/b-1/gamma1000000/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 3.907985046680551e-13,
+      "name": "refinement/primary/b-1/gamma1000000/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 3.552713678800501e-15,
+      "name": "refinement/primary/b-1/gamma1000000/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.2874900798265365e-19,
+      "name": "refinement/primary/b0/gamma0/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 7.601612481838993e-17,
+      "name": "refinement/primary/b0/gamma0/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b0/gamma0/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b0/gamma0/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.2874900798265365e-19,
+      "name": "refinement/primary/b0/gamma0.01/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 7.551468131361538e-17,
+      "name": "refinement/primary/b0/gamma0.01/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b0/gamma0.01/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b0/gamma0.01/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 2.507217523872729e-19,
+      "name": "refinement/primary/b0/gamma1/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 7.567731163948821e-17,
+      "name": "refinement/primary/b0/gamma1/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b0/gamma1/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b0/gamma1/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.2197274440461925e-19,
+      "name": "refinement/primary/b0/gamma100/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 2.0328790734103208e-19,
+      "name": "refinement/primary/b0/gamma100/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 3.907985046680551e-13,
+      "name": "refinement/primary/b0/gamma100/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b0/gamma100/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.1519648082658485e-19,
+      "name": "refinement/primary/b0/gamma10000/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 3.3881317890172014e-19,
+      "name": "refinement/primary/b0/gamma10000/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 3.907985046680551e-13,
+      "name": "refinement/primary/b0/gamma10000/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 3.552713678800501e-15,
+      "name": "refinement/primary/b0/gamma10000/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b0/gamma1000000/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 3.2526065174565133e-19,
+      "name": "refinement/primary/b0/gamma1000000/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 3.872457909892546e-13,
+      "name": "refinement/primary/b0/gamma1000000/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b0/gamma1000000/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.2874900798265365e-19,
+      "name": "refinement/primary/b1/gamma0/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 7.601612481838993e-17,
+      "name": "refinement/primary/b1/gamma0/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b1/gamma0/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b1/gamma0/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 2.0328790734103208e-20,
+      "name": "refinement/primary/b1/gamma0.01/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 7.570441669380035e-17,
+      "name": "refinement/primary/b1/gamma0.01/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b1/gamma0.01/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b1/gamma0.01/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 7.453889935837843e-20,
+      "name": "refinement/primary/b1/gamma1/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 7.579928438389283e-17,
+      "name": "refinement/primary/b1/gamma1/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b1/gamma1/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/primary/b1/gamma1/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.2874900798265365e-19,
+      "name": "refinement/primary/b1/gamma100/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 6.776263578034403e-19,
+      "name": "refinement/primary/b1/gamma100/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 3.979039320256561e-13,
+      "name": "refinement/primary/b1/gamma100/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.4210854715202004e-14,
+      "name": "refinement/primary/b1/gamma100/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 2.846030702774449e-19,
+      "name": "refinement/primary/b1/gamma10000/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 1.6263032587282567e-19,
+      "name": "refinement/primary/b1/gamma10000/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 4.014566457044566e-13,
+      "name": "refinement/primary/b1/gamma10000/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.4210854715202004e-14,
+      "name": "refinement/primary/b1/gamma10000/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.7618285302889447e-19,
+      "name": "refinement/primary/b1/gamma1000000/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 1.3552527156068805e-20,
+      "name": "refinement/primary/b1/gamma1000000/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 3.943512183468556e-13,
+      "name": "refinement/primary/b1/gamma1000000/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 7.105427357601002e-15,
+      "name": "refinement/primary/b1/gamma1000000/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 6.979551485375435e-19,
+      "name": "refinement/radau/b-1/gamma0.0/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 1.1478990501190278e-16,
+      "name": "refinement/radau/b-1/gamma0.0/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 1.276809769024112e-10,
+      "name": "refinement/radau/b-1/gamma0.0/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 7.105427357601002e-14,
+      "name": "refinement/radau/b-1/gamma0.0/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.8973538018496328e-19,
+      "name": "refinement/radau/b-1/gamma1000000/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 1.6929816923361152e-16,
+      "name": "refinement/radau/b-1/gamma1000000/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 1.291518003654346e-10,
+      "name": "refinement/radau/b-1/gamma1000000/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.7763568394002505e-14,
+      "name": "refinement/radau/b-1/gamma1000000/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 6.979551485375435e-19,
+      "name": "refinement/radau/b0/gamma0.0/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 1.1478990501190278e-16,
+      "name": "refinement/radau/b0/gamma0.0/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 1.276809769024112e-10,
+      "name": "refinement/radau/b0/gamma0.0/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 7.105427357601002e-14,
+      "name": "refinement/radau/b0/gamma0.0/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 8.876905287225068e-19,
+      "name": "refinement/radau/b0/gamma1000000/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 1.2529582406328732e-15,
+      "name": "refinement/radau/b0/gamma1000000/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 1.2244782965353807e-10,
+      "name": "refinement/radau/b0/gamma1000000/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 4.263256414560601e-14,
+      "name": "refinement/radau/b0/gamma1000000/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 6.979551485375435e-19,
+      "name": "refinement/radau/b1/gamma0.0/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 1.1478990501190278e-16,
+      "name": "refinement/radau/b1/gamma0.0/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 1.276809769024112e-10,
+      "name": "refinement/radau/b1/gamma0.0/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 7.105427357601002e-14,
+      "name": "refinement/radau/b1/gamma0.0/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.8295911660692887e-19,
+      "name": "refinement/radau/b1/gamma1000000/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 2.7545511444709847e-16,
+      "name": "refinement/radau/b1/gamma1000000/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 1.2853007547164452e-10,
+      "name": "refinement/radau/b1/gamma1000000/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.4210854715202004e-14,
+      "name": "refinement/radau/b1/gamma1000000/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.2874900798265365e-19,
+      "name": "refinement/cone_start/b-1/gamma0.0/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 1.7618285302889447e-19,
+      "name": "refinement/cone_start/b-1/gamma0.0/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/cone_start/b-1/gamma0.0/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/cone_start/b-1/gamma0.0/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.2874900798265365e-19,
+      "name": "refinement/cone_start/b-1/gamma1000000/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 1.3552527156068805e-19,
+      "name": "refinement/cone_start/b-1/gamma1000000/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/cone_start/b-1/gamma1000000/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/cone_start/b-1/gamma1000000/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.2874900798265365e-19,
+      "name": "refinement/cone_start/b0/gamma0.0/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 1.7618285302889447e-19,
+      "name": "refinement/cone_start/b0/gamma0.0/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/cone_start/b0/gamma0.0/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/cone_start/b0/gamma0.0/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/cone_start/b0/gamma1000000/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 5.421010862427522e-20,
+      "name": "refinement/cone_start/b0/gamma1000000/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/cone_start/b0/gamma1000000/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/cone_start/b0/gamma1000000/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 1.2874900798265365e-19,
+      "name": "refinement/cone_start/b1/gamma0.0/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 1.7618285302889447e-19,
+      "name": "refinement/cone_start/b1/gamma0.0/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/cone_start/b1/gamma0.0/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/cone_start/b1/gamma0.0/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 4.743384504624082e-20,
+      "name": "refinement/cone_start/b1/gamma1000000/H2",
+      "pass": true,
+      "threshold": 2e-14
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/cone_start/b1/gamma1000000/eta",
+      "pass": true,
+      "threshold": 2e-11
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/cone_start/b1/gamma1000000/coordinate0",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "absolute_error": 0.0,
+      "name": "refinement/cone_start/b1/gamma1000000/coordinate1",
+      "pass": true,
+      "threshold": 2e-08
+    },
+    {
+      "name": "negative_control_coverage",
+      "pass": true
+    },
+    {
+      "absolute_error": 9.57938744540761e-21,
+      "name": "negative_control_reconstruction/flip_current/C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 2.4899133586647286e-20,
+      "name": "negative_control_reconstruction/flip_current/B",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "correct_equation_residual": [
+        9.301454759589792e-21,
+        2.9804527594655123e-05
+      ],
+      "name": "negative_control/flip_current",
+      "pass": true,
+      "thresholds": [
+        2e-15,
+        2e-12
+      ]
+    },
+    {
+      "name": "wrong_model_root/flip_current",
+      "pass": true
+    },
+    {
+      "absolute_error": 6.101879699923469e-21,
+      "name": "negative_control_reconstruction/omit_metric_source/C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 3.3555695096830423e-20,
+      "name": "negative_control_reconstruction/omit_metric_source/B",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "correct_equation_residual": [
+        -1.5126304639715316e-07,
+        -4.096383236777398e-19
+      ],
+      "name": "negative_control/omit_metric_source",
+      "pass": true,
+      "thresholds": [
+        2e-15,
+        2e-12
+      ]
+    },
+    {
+      "name": "wrong_model_root/omit_metric_source",
+      "pass": true
+    },
+    {
+      "absolute_error": 3.442862402303095e-22,
+      "name": "negative_control_reconstruction/freeze_sources/C",
+      "pass": true,
+      "threshold": 3e-18
+    },
+    {
+      "absolute_error": 3.863967777656421e-20,
+      "name": "negative_control_reconstruction/freeze_sources/B",
+      "pass": true,
+      "threshold": 3e-17
+    },
+    {
+      "correct_equation_residual": [
+        -1.157016738815204e-09,
+        8.621284182925363e-08
+      ],
+      "name": "negative_control/freeze_sources",
+      "pass": true,
+      "thresholds": [
+        2e-15,
+        2e-12
+      ]
+    },
+    {
+      "name": "wrong_model_root/freeze_sources",
+      "pass": true
+    }
+  ],
+  "hierarchy_screen_failures": [
+    {
+      "b": -1,
+      "gamma": 1
+    },
+    {
+      "b": -1,
+      "gamma": 100
+    },
+    {
+      "b": -1,
+      "gamma": 10000
+    },
+    {
+      "b": -1,
+      "gamma": 1000000
+    },
+    {
+      "b": 0,
+      "gamma": 1
+    },
+    {
+      "b": 0,
+      "gamma": 100
+    },
+    {
+      "b": 0,
+      "gamma": 10000
+    },
+    {
+      "b": 0,
+      "gamma": 1000000
+    },
+    {
+      "b": 1,
+      "gamma": 1
+    },
+    {
+      "b": 1,
+      "gamma": 100
+    },
+    {
+      "b": 1,
+      "gamma": 10000
+    },
+    {
+      "b": 1,
+      "gamma": 1000000
+    }
+  ],
+  "high_gamma_nonlinear_resolved": true,
+  "input_sha256": "486b120a11c01404a9b4bc244d57a51aa436a353ae17d9243a1bc01b7b66fcc1",
+  "registration_sha256": "cc92741008b31a80c85d0facfb50a44baff2e752ee1b90f4c026d0b56676294b",
+  "run_count": 48,
+  "scope": "Empirical numerical stationary closure in a declared dimensionless model family; hierarchy screen and resolved nonlinear feedback are separately classified.",
+  "shift_diagnostics": [
+    {
+      "b": -1,
+      "gamma": 0.01,
+      "hierarchy": {
+        "Ehat": 0.11137737091693149,
+        "energy_over_M5": 0.023995527158798546,
+        "max_sampled_sqrt_abs_kN": 0.1111111111111111,
+        "max_sampled_sqrt_abs_kT": 0.1111111111111111,
+        "sample_count": 1628,
+        "status": "declared_scale_screen",
+        "tenfold_screen_pass": true
+      },
+      "observables": {
+        "H2": {
+          "archived_linear_prediction": 1.5126194173195455e-15,
+          "delta_from_own_solved_control": 1.5126585422610417e-15,
+          "empirical_spread": 1.0164395367051604e-19,
+          "nonlinear_departure": 3.912494149615875e-20,
+          "nonlinear_detection_threshold": 2.0164395367051605e-18,
+          "nonlinear_fraction": 2.5865018709164108e-05,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 2.0164395367051605e-18,
+          "shift_resolved": true
+        },
+        "eta": {
+          "archived_linear_prediction": 4.167870919621689e-14,
+          "delta_from_own_solved_control": 4.1678642416671796e-14,
+          "empirical_spread": 8.131516293641283e-20,
+          "nonlinear_departure": -6.677954509606901e-20,
+          "nonlinear_detection_threshold": 4.1678642416671795e-17,
+          "nonlinear_fraction": 1.6022485672267638e-06,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 1.0813151629364129e-17,
+          "shift_resolved": true
+        }
+      }
+    },
+    {
+      "b": -1,
+      "gamma": 1,
+      "hierarchy": {
+        "Ehat": 0.11137737091760394,
+        "energy_over_M5": 0.11137737091760394,
+        "max_sampled_sqrt_abs_kN": 0.1111111111111111,
+        "max_sampled_sqrt_abs_kT": 0.1111111111111111,
+        "sample_count": 1628,
+        "status": "declared_scale_screen",
+        "tenfold_screen_pass": false
+      },
+      "observables": {
+        "H2": {
+          "archived_linear_prediction": 1.5126194173195455e-13,
+          "delta_from_own_solved_control": 1.5126218826750845e-13,
+          "empirical_spread": 3.1170812458958252e-19,
+          "nonlinear_departure": 2.4653555390084092e-19,
+          "nonlinear_detection_threshold": 1.5126218826750845e-16,
+          "nonlinear_fraction": 1.6298557936028318e-06,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 4.117081245895825e-18,
+          "shift_resolved": true
+        },
+        "eta": {
+          "archived_linear_prediction": 4.16787091962169e-12,
+          "delta_from_own_solved_control": 4.167871139903502e-12,
+          "empirical_spread": 4.336808689942018e-19,
+          "nonlinear_departure": 2.2028181199908335e-19,
+          "nonlinear_detection_threshold": 4.167871139903502e-15,
+          "nonlinear_fraction": 5.2852356659995853e-08,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 1.433680868994202e-17,
+          "shift_resolved": true
+        }
+      }
+    },
+    {
+      "b": -1,
+      "gamma": 100,
+      "hierarchy": {
+        "Ehat": 0.11137737098484805,
+        "energy_over_M5": 0.5169679614804186,
+        "max_sampled_sqrt_abs_kN": 0.1111111111111111,
+        "max_sampled_sqrt_abs_kT": 0.1111111111111111,
+        "sample_count": 1628,
+        "status": "declared_scale_screen",
+        "tenfold_screen_pass": false
+      },
+      "observables": {
+        "H2": {
+          "archived_linear_prediction": 1.5126194173195455e-11,
+          "delta_from_own_solved_control": 1.5126204813437766e-11,
+          "empirical_spread": 0.0,
+          "nonlinear_departure": 1.0640242310607973e-17,
+          "nonlinear_detection_threshold": 1.5126204813437765e-14,
+          "nonlinear_fraction": 7.034310616470982e-07,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 1e-18,
+          "shift_resolved": true
+        },
+        "eta": {
+          "archived_linear_prediction": 4.1678709196216896e-10,
+          "delta_from_own_solved_control": 4.1678739313175204e-10,
+          "empirical_spread": 7.615165008995062e-17,
+          "nonlinear_departure": 3.011695830754628e-16,
+          "nonlinear_detection_threshold": 4.1678739313175206e-13,
+          "nonlinear_fraction": 7.225976314025868e-07,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 7.715165008995061e-16,
+          "shift_resolved": true
+        }
+      }
+    },
+    {
+      "b": -1,
+      "gamma": 10000,
+      "hierarchy": {
+        "Ehat": 0.11137737770977457,
+        "energy_over_M5": 2.3995528622272215,
+        "max_sampled_sqrt_abs_kN": 0.1111111111111111,
+        "max_sampled_sqrt_abs_kT": 0.1111111111111111,
+        "sample_count": 1628,
+        "status": "declared_scale_screen",
+        "tenfold_screen_pass": false
+      },
+      "observables": {
+        "H2": {
+          "archived_linear_prediction": 1.5126194173195454e-09,
+          "delta_from_own_solved_control": 1.5127351240073572e-09,
+          "empirical_spread": 2.913793338554793e-19,
+          "nonlinear_departure": 1.1570668781177987e-13,
+          "nonlinear_detection_threshold": 1.5127351240073573e-12,
+          "nonlinear_fraction": 7.648839904322677e-05,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 3.913793338554793e-18,
+          "shift_resolved": true
+        },
+        "eta": {
+          "archived_linear_prediction": 4.167870919621689e-08,
+          "delta_from_own_solved_control": 4.1681129764185084e-08,
+          "empirical_spread": 7.627362283435524e-17,
+          "nonlinear_departure": 2.4205679681924705e-12,
+          "nonlinear_detection_threshold": 4.168112976418509e-11,
+          "nonlinear_fraction": 5.8073473101306555e-05,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 7.727362283435523e-16,
+          "shift_resolved": true
+        }
+      }
+    },
+    {
+      "b": -1,
+      "gamma": 1000000,
+      "hierarchy": {
+        "Ehat": 0.11137805539117084,
+        "energy_over_M5": 11.13780553911708,
+        "max_sampled_sqrt_abs_kN": 0.1111111111111111,
+        "max_sampled_sqrt_abs_kT": 0.1111111111111111,
+        "sample_count": 1628,
+        "status": "declared_scale_screen",
+        "tenfold_screen_pass": false
+      },
+      "observables": {
+        "H2": {
+          "archived_linear_prediction": 1.5126194173195454e-07,
+          "delta_from_own_solved_control": 1.5243067813522555e-07,
+          "empirical_spread": 5.082197683525802e-19,
+          "nonlinear_departure": 1.168736403271007e-09,
+          "nonlinear_detection_threshold": 1.5243067813522555e-10,
+          "nonlinear_fraction": 0.007667330602794984,
+          "nonlinear_resolved": true,
+          "resolution_count": 4,
+          "resolution_threshold": 6.082197683525802e-18,
+          "shift_resolved": true
+        },
+        "eta": {
+          "archived_linear_prediction": 4.1678709196216904e-06,
+          "delta_from_own_solved_control": 4.192302210954358e-06,
+          "empirical_spread": 7.546047120499111e-17,
+          "nonlinear_departure": 2.4431291332667358e-08,
+          "nonlinear_detection_threshold": 4.192302210954358e-09,
+          "nonlinear_fraction": 0.005827655093382614,
+          "nonlinear_resolved": true,
+          "resolution_count": 4,
+          "resolution_threshold": 7.646047120499111e-16,
+          "shift_resolved": true
+        }
+      }
+    },
+    {
+      "b": 0,
+      "gamma": 0.01,
+      "hierarchy": {
+        "Ehat": 0.11137737091693149,
+        "energy_over_M5": 0.023995527158798546,
+        "max_sampled_sqrt_abs_kN": 0.1111111111111111,
+        "max_sampled_sqrt_abs_kT": 0.1111111111111111,
+        "sample_count": 1628,
+        "status": "declared_scale_screen",
+        "tenfold_screen_pass": true
+      },
+      "observables": {
+        "H2": {
+          "archived_linear_prediction": 1.512619481873567e-15,
+          "delta_from_own_solved_control": 1.5126382134703076e-15,
+          "empirical_spread": 2.574980159653073e-19,
+          "nonlinear_departure": 1.8731596740635707e-20,
+          "nonlinear_detection_threshold": 3.574980159653073e-18,
+          "nonlinear_fraction": 1.2383395166026857e-05,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 3.574980159653073e-18,
+          "shift_resolved": true
+        },
+        "eta": {
+          "archived_linear_prediction": -2.9966764711550386e-19,
+          "delta_from_own_solved_control": 3.9302328752599536e-19,
+          "empirical_spread": 5.014435047745458e-19,
+          "nonlinear_departure": 6.926909346414992e-19,
+          "nonlinear_detection_threshold": 1.501443504774546e-17,
+          "nonlinear_fraction": 1.7624679163462629,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 1.501443504774546e-17,
+          "shift_resolved": false
+        }
+      }
+    },
+    {
+      "b": 0,
+      "gamma": 1,
+      "hierarchy": {
+        "Ehat": 0.11137737091760376,
+        "energy_over_M5": 0.11137737091760376,
+        "max_sampled_sqrt_abs_kN": 0.1111111111111111,
+        "max_sampled_sqrt_abs_kT": 0.1111111111111111,
+        "sample_count": 1628,
+        "status": "declared_scale_screen",
+        "tenfold_screen_pass": false
+      },
+      "observables": {
+        "H2": {
+          "archived_linear_prediction": 1.512619481873567e-13,
+          "delta_from_own_solved_control": 1.512622357013535e-13,
+          "empirical_spread": 3.7947076036992655e-19,
+          "nonlinear_departure": 2.8751399680509823e-19,
+          "nonlinear_detection_threshold": 1.512622357013535e-16,
+          "nonlinear_fraction": 1.9007652205587859e-06,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 4.7947076036992656e-18,
+          "shift_resolved": true
+        },
+        "eta": {
+          "archived_linear_prediction": -2.9966764711550385e-17,
+          "delta_from_own_solved_control": -2.904306569545545e-17,
+          "empirical_spread": 3.3881317890172014e-19,
+          "nonlinear_departure": 9.236990160949346e-19,
+          "nonlinear_detection_threshold": 1.3388131789017202e-17,
+          "nonlinear_fraction": 0.031804459824620775,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 1.3388131789017202e-17,
+          "shift_resolved": true
+        }
+      }
+    },
+    {
+      "b": 0,
+      "gamma": 100,
+      "hierarchy": {
+        "Ehat": 0.1113773709848299,
+        "energy_over_M5": 0.5169679614803343,
+        "max_sampled_sqrt_abs_kN": 0.1111111111111111,
+        "max_sampled_sqrt_abs_kT": 0.1111111111111111,
+        "sample_count": 1628,
+        "status": "declared_scale_screen",
+        "tenfold_screen_pass": false
+      },
+      "observables": {
+        "H2": {
+          "archived_linear_prediction": 1.512619481873567e-11,
+          "delta_from_own_solved_control": 1.512620569435203e-11,
+          "empirical_spread": 2.507217523872729e-19,
+          "nonlinear_departure": 1.0875616360039481e-17,
+          "nonlinear_detection_threshold": 1.512620569435203e-14,
+          "nonlinear_fraction": 7.189917008797735e-07,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 3.507217523872729e-18,
+          "shift_resolved": true
+        },
+        "eta": {
+          "archived_linear_prediction": -2.9966764711550386e-15,
+          "delta_from_own_solved_control": -2.937388288333509e-15,
+          "empirical_spread": 7.621941272573096e-17,
+          "nonlinear_departure": 5.92881828215296e-17,
+          "nonlinear_detection_threshold": 7.721941272573096e-16,
+          "nonlinear_fraction": 0.020183978759977295,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 7.721941272573096e-16,
+          "shift_resolved": true
+        }
+      }
+    },
+    {
+      "b": 0,
+      "gamma": 10000,
+      "hierarchy": {
+        "Ehat": 0.1113773777079578,
+        "energy_over_M5": 2.3995528621880804,
+        "max_sampled_sqrt_abs_kN": 0.1111111111111111,
+        "max_sampled_sqrt_abs_kT": 0.1111111111111111,
+        "sample_count": 1628,
+        "status": "declared_scale_screen",
+        "tenfold_screen_pass": false
+      },
+      "observables": {
+        "H2": {
+          "archived_linear_prediction": 1.512619481873567e-09,
+          "delta_from_own_solved_control": 1.5127348970838425e-09,
+          "empirical_spread": 2.439454888092385e-19,
+          "nonlinear_departure": 1.1541521027545566e-13,
+          "nonlinear_detection_threshold": 1.5127348970838426e-12,
+          "nonlinear_fraction": 7.629572802078277e-05,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 3.439454888092385e-18,
+          "shift_resolved": true
+        },
+        "eta": {
+          "archived_linear_prediction": -2.9966764711550385e-13,
+          "delta_from_own_solved_control": -2.996311288276307e-13,
+          "empirical_spread": 7.635493799729165e-17,
+          "nonlinear_departure": 3.6518287873142215e-17,
+          "nonlinear_detection_threshold": 7.735493799729165e-16,
+          "nonlinear_fraction": 0.00012187748321086542,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 7.735493799729165e-16,
+          "shift_resolved": true
+        }
+      }
+    },
+    {
+      "b": 0,
+      "gamma": 1000000,
+      "hierarchy": {
+        "Ehat": 0.11137805519973742,
+        "energy_over_M5": 11.137805519973739,
+        "max_sampled_sqrt_abs_kN": 0.1111111111111111,
+        "max_sampled_sqrt_abs_kT": 0.11111111111111112,
+        "sample_count": 1628,
+        "status": "declared_scale_screen",
+        "tenfold_screen_pass": false
+      },
+      "observables": {
+        "H2": {
+          "archived_linear_prediction": 1.512619481873567e-07,
+          "delta_from_own_solved_control": 1.524277121645016e-07,
+          "empirical_spread": 1.7143946852427039e-18,
+          "nonlinear_departure": 1.1657639771448966e-09,
+          "nonlinear_detection_threshold": 1.524277121645016e-10,
+          "nonlinear_fraction": 0.00764797923284968,
+          "nonlinear_resolved": true,
+          "resolution_count": 4,
+          "resolution_threshold": 1.814394685242704e-17,
+          "shift_resolved": true
+        },
+        "eta": {
+          "archived_linear_prediction": -2.9966764711550386e-11,
+          "delta_from_own_solved_control": -3.019756749614733e-11,
+          "empirical_spread": 1.4434390098114203e-15,
+          "nonlinear_departure": -2.308027845969472e-13,
+          "nonlinear_detection_threshold": 3.0197567496147335e-14,
+          "nonlinear_fraction": 0.007643091935348551,
+          "nonlinear_resolved": true,
+          "resolution_count": 4,
+          "resolution_threshold": 1.4444390098114204e-14,
+          "shift_resolved": true
+        }
+      }
+    },
+    {
+      "b": 1,
+      "gamma": 0.01,
+      "hierarchy": {
+        "Ehat": 0.11137737091693148,
+        "energy_over_M5": 0.023995527158798543,
+        "max_sampled_sqrt_abs_kN": 0.1111111111111111,
+        "max_sampled_sqrt_abs_kT": 0.1111111111111111,
+        "sample_count": 1628,
+        "status": "declared_scale_screen",
+        "tenfold_screen_pass": true
+      },
+      "observables": {
+        "H2": {
+          "archived_linear_prediction": 1.5126195464275886e-15,
+          "delta_from_own_solved_control": 1.5126382134703076e-15,
+          "empirical_spread": 1.0842021724855044e-19,
+          "nonlinear_departure": 1.8667042719018657e-20,
+          "nonlinear_detection_threshold": 2.0842021724855045e-18,
+          "nonlinear_fraction": 1.2340718720964061e-05,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 2.0842021724855045e-18,
+          "shift_resolved": true
+        },
+        "eta": {
+          "archived_linear_prediction": -4.1679308531511125e-14,
+          "delta_from_own_solved_control": -4.1678818599524825e-14,
+          "empirical_spread": 3.1170812458958252e-19,
+          "nonlinear_departure": 4.899319862998393e-19,
+          "nonlinear_detection_threshold": 4.167881859952483e-17,
+          "nonlinear_fraction": 1.1754939385576179e-05,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 1.3117081245895826e-17,
+          "shift_resolved": true
+        }
+      }
+    },
+    {
+      "b": 1,
+      "gamma": 1,
+      "hierarchy": {
+        "Ehat": 0.11137737091760357,
+        "energy_over_M5": 0.11137737091760357,
+        "max_sampled_sqrt_abs_kN": 0.1111111111111111,
+        "max_sampled_sqrt_abs_kT": 0.1111111111111111,
+        "sample_count": 1628,
+        "status": "declared_scale_screen",
+        "tenfold_screen_pass": false
+      },
+      "observables": {
+        "H2": {
+          "archived_linear_prediction": 1.5126195464275886e-13,
+          "delta_from_own_solved_control": 1.512619578745468e-13,
+          "empirical_spread": 5.421010862427522e-20,
+          "nonlinear_departure": 3.231787938460654e-21,
+          "nonlinear_detection_threshold": 1.512619578745468e-16,
+          "nonlinear_fraction": 2.1365503817827246e-08,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 1.5421010862427523e-18,
+          "shift_resolved": true
+        },
+        "eta": {
+          "archived_linear_prediction": -4.167930853151113e-12,
+          "delta_from_own_solved_control": -4.167930364447174e-12,
+          "empirical_spread": 2.168404344971009e-19,
+          "nonlinear_departure": 4.887039386408711e-19,
+          "nonlinear_detection_threshold": 4.167930364447174e-15,
+          "nonlinear_fraction": 1.1725338379200387e-07,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 1.216840434497101e-17,
+          "shift_resolved": true
+        }
+      }
+    },
+    {
+      "b": 1,
+      "gamma": 100,
+      "hierarchy": {
+        "Ehat": 0.11137737098481174,
+        "energy_over_M5": 0.51696796148025,
+        "max_sampled_sqrt_abs_kN": 0.1111111111111111,
+        "max_sampled_sqrt_abs_kT": 0.1111111111111111,
+        "sample_count": 1628,
+        "status": "declared_scale_screen",
+        "tenfold_screen_pass": false
+      },
+      "observables": {
+        "H2": {
+          "archived_linear_prediction": 1.5126195464275887e-11,
+          "delta_from_own_solved_control": 1.5126206270334435e-11,
+          "empirical_spread": 0.0,
+          "nonlinear_departure": 1.0806058548459441e-17,
+          "nonlinear_detection_threshold": 1.5126206270334437e-14,
+          "nonlinear_fraction": 7.143931766719537e-07,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 1e-18,
+          "shift_resolved": true
+        },
+        "eta": {
+          "archived_linear_prediction": -4.1679308531511126e-10,
+          "delta_from_own_solved_control": -4.1679326872148034e-10,
+          "empirical_spread": 7.533849846058649e-17,
+          "nonlinear_departure": -1.8340636907993202e-16,
+          "nonlinear_detection_threshold": 4.1679326872148035e-13,
+          "nonlinear_fraction": 4.4004158138765975e-07,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 7.633849846058649e-16,
+          "shift_resolved": true
+        }
+      }
+    },
+    {
+      "b": 1,
+      "gamma": 10000,
+      "hierarchy": {
+        "Ehat": 0.11137737770614274,
+        "energy_over_M5": 2.399552862148976,
+        "max_sampled_sqrt_abs_kN": 0.1111111111111111,
+        "max_sampled_sqrt_abs_kT": 0.1111111111111111,
+        "sample_count": 1628,
+        "status": "declared_scale_screen",
+        "tenfold_screen_pass": false
+      },
+      "observables": {
+        "H2": {
+          "archived_linear_prediction": 1.5126195464275885e-09,
+          "delta_from_own_solved_control": 1.5127352527428127e-09,
+          "empirical_spread": 1.5585406229479126e-19,
+          "nonlinear_departure": 1.1570631522419617e-13,
+          "nonlinear_detection_threshold": 1.5127352527428127e-12,
+          "nonlinear_fraction": 7.648814623338982e-05,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 2.5585406229479127e-18,
+          "shift_resolved": true
+        },
+        "eta": {
+          "archived_linear_prediction": -4.167930853151113e-08,
+          "delta_from_own_solved_control": -4.1681731068510426e-08,
+          "empirical_spread": 7.617875514426276e-17,
+          "nonlinear_departure": -2.4225369992987453e-12,
+          "nonlinear_detection_threshold": 4.168173106851043e-11,
+          "nonlinear_fraction": 5.811987499552089e-05,
+          "nonlinear_resolved": false,
+          "resolution_count": 2,
+          "resolution_threshold": 7.717875514426275e-16,
+          "shift_resolved": true
+        }
+      }
+    },
+    {
+      "b": 1,
+      "gamma": 1000000,
+      "hierarchy": {
+        "Ehat": 0.11137805502588109,
+        "energy_over_M5": 11.137805502588106,
+        "max_sampled_sqrt_abs_kN": 0.1111111111111111,
+        "max_sampled_sqrt_abs_kT": 0.1111111111111111,
+        "sample_count": 1628,
+        "status": "declared_scale_screen",
+        "tenfold_screen_pass": false
+      },
+      "observables": {
+        "H2": {
+          "archived_linear_prediction": 1.5126195464275884e-07,
+          "delta_from_own_solved_control": 1.5243069128352825e-07,
+          "empirical_spread": 5.963111948670274e-19,
+          "nonlinear_departure": 1.1687366407694105e-09,
+          "nonlinear_detection_threshold": 1.5243069128352825e-10,
+          "nonlinear_fraction": 0.007667331499504292,
+          "nonlinear_resolved": true,
+          "resolution_count": 4,
+          "resolution_threshold": 6.963111948670275e-18,
+          "shift_resolved": true
+        },
+        "eta": {
+          "archived_linear_prediction": -4.167930853151113e-06,
+          "delta_from_own_solved_control": -4.192383249000843e-06,
+          "empirical_spread": 4.662475917502351e-16,
+          "nonlinear_departure": -2.4452395849730472e-08,
+          "nonlinear_detection_threshold": 4.192383249000843e-09,
+          "nonlinear_fraction": 0.005832576460073904,
+          "nonlinear_resolved": true,
+          "resolution_count": 4,
+          "resolution_threshold": 4.672475917502351e-15,
+          "shift_resolved": true
+        }
+      }
+    }
+  ],
+  "status": "FAIL",
+  "validator_sha256": "ed703b219679fc0978bab3e6a13f35a90d8364e672dd8c4766cd94ac31898e6d"
+}
