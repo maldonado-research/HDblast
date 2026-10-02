@@ -1,0 +1,798 @@
+{
+  "checks": [
+    {
+      "actual_accept": true,
+      "classification": "NO_GATE_SCALE_ATTRIBUTION",
+      "cross_route_max_gap_exact_rational": "0",
+      "expected_accept": true,
+      "name": "complete_no_attribution_fixture",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "5b6d5944521a84b58dd1052eef50c3357e9217431a26353ee5eb64d302dd8acd"
+    },
+    {
+      "actual_accept": true,
+      "classification": "LEDGER_ERROR_DEMONSTRATED",
+      "cross_route_max_gap_exact_rational": "0",
+      "expected_accept": true,
+      "name": "complete_ledger_attribution_fixture",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "daee8b502f5d4fca69659263c172cd51b956dd87523470e8797ebd0c3ff19c9e"
+    },
+    {
+      "actual_accept": true,
+      "classification": "CONSISTENCY_FAILURE",
+      "cross_route_max_gap_exact_rational": "0",
+      "expected_accept": true,
+      "name": "complete_consistency_failure_fixture",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "18c137a0d2562bbc6f78d3d897699ce5e5e591b687846b809496532935514ef3"
+    },
+    {
+      "actual_accept": true,
+      "classification": "NO_GATE_SCALE_ATTRIBUTION",
+      "cross_route_max_gap_exact_rational": "0",
+      "expected_accept": true,
+      "name": "arithmetic_tolerance_exact_boundary",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "7b96f0abfb797de0fd18f8b75dc8538fd1cee6b34036a8035d6c0f86628c690c"
+    },
+    {
+      "actual_accept": false,
+      "error": "Identity or arithmetic gate failed: decomposition_error",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "arithmetic_tolerance_overrun",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "fd72986a14fbc4d83c3467bd8fcac13aed50a922e8c6504437754913065b6f51"
+    },
+    {
+      "actual_accept": true,
+      "classification": "NO_GATE_SCALE_ATTRIBUTION",
+      "cross_route_max_gap_exact_rational": "0",
+      "expected_accept": true,
+      "name": "science_gate_exact_boundary",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "5cbda8a8e536a40a2ffc409d0a68d869165d38fcb8d1ebdf2bb528e2b312d64c"
+    },
+    {
+      "actual_accept": true,
+      "classification": "CONSISTENCY_FAILURE",
+      "cross_route_max_gap_exact_rational": "0",
+      "expected_accept": true,
+      "name": "science_gate_overrun_honest_classification",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "8af39ff6e7ad5b4340995c1b5c61212cdd4368b1047efcd40ab4e0e95ff0ef0f"
+    },
+    {
+      "actual_accept": false,
+      "error": "Classification not supported by fixed numerical criteria",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "science_gate_overrun_false_classification",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "3858c0c17e3234b3c5d8f9f96ba9ddcd569ca62ee4e5f40bae130305741be865"
+    },
+    {
+      "actual_accept": true,
+      "classification": "NO_GATE_SCALE_ATTRIBUTION",
+      "cross_route_max_gap_exact_rational": "0",
+      "expected_accept": true,
+      "name": "attribution_exact_boundary",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "1b5c27525b5cf2d62dc9bc8640d6baf6b26f38ca82f0cb5e7aaf6ac49de98fd3"
+    },
+    {
+      "actual_accept": true,
+      "classification": "LEDGER_ERROR_DEMONSTRATED",
+      "cross_route_max_gap_exact_rational": "0",
+      "expected_accept": true,
+      "name": "attribution_over_boundary_honest",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "b331733beb92bf84bfd50459a18bfd1fe8c72e80c51e381b73922aa4faa21833"
+    },
+    {
+      "actual_accept": false,
+      "error": "Classification not supported by fixed numerical criteria",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "attribution_boundary_false_witness",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "6802b4aaae834ebbee7abfbd60d88e8b9681c6ce97641d0b67e5b46398cf409e"
+    },
+    {
+      "actual_accept": true,
+      "classification": "NO_GATE_SCALE_ATTRIBUTION",
+      "cross_route_max_gap_exact_rational": "0",
+      "expected_accept": true,
+      "name": "full_precision_exact_boundary",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "d8aea8501e2adbf1f938f82babe4928e8347a6b53da496d4a3c56a8a5bbf1333"
+    },
+    {
+      "actual_accept": false,
+      "error": "Full reported precision gap exceeds threshold",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "full_precision_overrun",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "2042e4e47f00b6767d5c8c382fc015eadeda5b5a40945aacfe43bba5db88eb51"
+    },
+    {
+      "actual_accept": false,
+      "error": "Reported precision gap understates field universe",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "record_precision_underreported",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "dbb2e4593ca7cd5cafa40fca9994e63467ff9897e245272a5243b52dd0787a17"
+    },
+    {
+      "actual_accept": false,
+      "error": "Overall precision gap differs",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "overall_precision_underreported",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "3647bfb47ab0442c3b87c5077e2f6e3500bda3879f3b45582b4189fb2ca7002f"
+    },
+    {
+      "actual_accept": true,
+      "classification": "NO_GATE_SCALE_ATTRIBUTION",
+      "cross_route_max_gap_exact_rational": "1/1000000000000",
+      "expected_accept": true,
+      "name": "cross_profile_exact_boundary",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "061874388b06ac4d4b6083e74f99c97223b9239b9d29b6af58c050cf9a56e61f"
+    },
+    {
+      "actual_accept": false,
+      "error": "Cross-route common scientific fields disagree",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "cross_profile_overrun_same_reported_maxima",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "6f83dd15ed9c41819180c9b09fbb6cd7df7152c76a21ea45aba0423deb5a7087"
+    },
+    {
+      "actual_accept": false,
+      "error": "Identity or arithmetic gate failed: primary canonical direct phase",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "shared_biased_recurrence_direct_primitive_guard",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "19d824151f670b818edfe5fe4d5277ac1a209256560cc86b29319e480d214de7"
+    },
+    {
+      "actual_accept": false,
+      "error": "Independent recurrence/direct discrepancy",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "independent_recurrence_direct_discrepancy",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "85328dc78833f5b7e0706df66df4352b89e5d0ead078c57e94a568b0223b22d6"
+    },
+    {
+      "actual_accept": false,
+      "error": "Identity or arithmetic gate failed: independent recurrence difference",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "independent_recurrence_gap_falsely_zero",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "e2dca3b196214ac1eb819d1ced66f4a2d7d63cc79e1d4ee6197d40b31936c201"
+    },
+    {
+      "actual_accept": false,
+      "error": "Identity or arithmetic gate failed: primary recurrence difference",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "primary_recurrence_gap_falsely_zero",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "8c8b44e745676cc0b84e4cbaeb9884a26a3e7bd7acdfa12ce97599a7bb938880"
+    },
+    {
+      "actual_accept": false,
+      "error": "Exactly four ordered source/resolution records required",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "record_missing",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "5586cc785c0f46ef0447f975de3c03dad00c610ad0fd77efd0a79ca4a02aadaa"
+    },
+    {
+      "actual_accept": false,
+      "error": "Exactly four ordered source/resolution records required",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "record_reordered",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "5ffc2b7c586c4da21f8ecd0dba37d99b42613411ce337e0ebfacebc6e9c434dd"
+    },
+    {
+      "actual_accept": false,
+      "error": "Exactly four ordered source/resolution records required",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "record_duplicate",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "207960a701fb473fc698e2a0bf8b8dc385ac494069d66fc09ba40ace1e455e88"
+    },
+    {
+      "actual_accept": false,
+      "error": "Fixed ordered cutoffs changed",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "cutoff_missing",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "dba26619ff5dd9848e7cf6f74c966951d949f9cef24ae6bb8d30efec7bf58499"
+    },
+    {
+      "actual_accept": false,
+      "error": "Fixed ordered cutoffs changed",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "cutoff_reordered",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "9cc0233023473dac5475521bc5d0ddef4b726d868f2676d352026c9847b96412"
+    },
+    {
+      "actual_accept": false,
+      "error": "Fixed ordered cutoffs changed",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "cutoff_duplicate",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "489a4a96721415938b2be69812e58313040dc46d4c1d0fca274d7c0065c5b7e0"
+    },
+    {
+      "actual_accept": false,
+      "error": "Fixed ordered cutoffs changed",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "cutoff_boolean",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "1078f6ae25e2455108fb38bdb2e4ed67d67ff7c81a845a7cb67e5bd48a42ae82"
+    },
+    {
+      "actual_accept": false,
+      "error": "Precision levels changed",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "precision_level_missing",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "6405bb9d0df137c30b38a49888bdcac9cc42e7773ee128b82f9255fed9b387a9"
+    },
+    {
+      "actual_accept": false,
+      "error": "Precision levels changed",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "precision_level_extra",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "1b5307e4e2bf23ad267844241d5fe441e6cf6eca88d0624195291c06e7510d51"
+    },
+    {
+      "actual_accept": false,
+      "error": "Required common scientific fields missing",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "fine_field_missing",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "8d22b3334aa3a8cf6ef0ab32e3fea2c6671a38d06e70113dfc4c9c734caebf19"
+    },
+    {
+      "actual_accept": false,
+      "error": "Incomplete profile: R",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "full_profile_member_missing",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "c42d9065bf638ee4732e901c31ac77ec064dbdaf5f8634865f623088b49739ae"
+    },
+    {
+      "actual_accept": false,
+      "error": "Fixed inclusive interval/grid changed",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "inclusive_grid_shifted",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "0a040912ea5957ea59d201c0385f00616d840ac31b288eafaec838ba0c8ef5fa"
+    },
+    {
+      "actual_accept": false,
+      "error": "Identity or arithmetic gate failed: R profile maximum",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "full_profile_maximum_underreported",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "3fcd8eb5341553010038d27828e8c15d45d9b9879a6536ea4d28a67785af09be"
+    },
+    {
+      "actual_accept": false,
+      "error": "Classification not supported by fixed numerical criteria",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "true_profile_science_overrun_laundered_by_reported_maximum",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "b11994a9df782eca3e8b223e6d31acb2e07bcf002192c2817ee8a8b006b6e4f1"
+    },
+    {
+      "actual_accept": false,
+      "error": "Actual primary recurrence/direct discrepancy",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "true_primary_recurrence_overrun_laundered_by_reported_gap",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "7d0787c72adc530d2d4da314b4118994204834ac2af027cc4e4f736e0bed1640"
+    },
+    {
+      "actual_accept": false,
+      "error": "Actual independent recurrence/direct discrepancy",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "true_independent_recurrence_overrun_laundered_by_reported_gap",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "19aa32eaa2fae22143cf27492cff1c4e364a708a8926c5d89bb6dcbef0bf4e24"
+    },
+    {
+      "actual_accept": true,
+      "classification": "NO_GATE_SCALE_ATTRIBUTION",
+      "cross_route_max_gap_exact_rational": "0",
+      "expected_accept": false,
+      "name": "true_signed_decomposition_overrun_laundered_by_reported_residual",
+      "status": "FAIL",
+      "synthetic_fixture_sha256": "1c06560e4117e385d85aa4b9c560d4e20f2c79787ac4081415654cef8afc0f1e"
+    },
+    {
+      "actual_accept": false,
+      "error": "Identity or arithmetic gate failed: R profile maximum",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "stored_endpoint_delta_underreported",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "7e03bb3dc4a9aa026bf26829aaf0f61475a748d828a88a554fc73fbf1f85b63c"
+    },
+    {
+      "actual_accept": false,
+      "error": "Identity or arithmetic gate failed: flow_operator_closure",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "flow_closure_lie",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "8df90c249033cd8f5731ea6d95ab93532f36e8a0600042a6225fbbf5ed5bc53e"
+    },
+    {
+      "actual_accept": false,
+      "error": "Measured flow projection exceeds its triangle bound",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "negative_triangle_bound",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "5fac2baa13700de9669039f8df6926bd43481dceea2f6fd712b6c98fcd858c22"
+    },
+    {
+      "actual_accept": false,
+      "error": "Negative conditional quantization bound",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "negative_quantization_bound",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "0240bb8eda56752e7c3776c20ab4a021a3d47fb0cde03b68fc90bc5adf0fa089"
+    },
+    {
+      "actual_accept": false,
+      "error": "Serialization gate failed",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "serialization_gap_overrun",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "7aa4765644a9645726ab0030f59daf0a99115575a0299d4f65f99316c5e88da3"
+    },
+    {
+      "actual_accept": false,
+      "error": "Missing serialization evidence",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "serialization_level_missing",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "1cc0fad1da92b586e5abde6c408e5ff6f35d196928e1516696fec3022d486b42"
+    },
+    {
+      "actual_accept": false,
+      "error": "Classification not supported by fixed numerical criteria",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "false_classification",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "50ad89fee5937e4d8368834639007897c132a00e2b2c63468de8ef1a41fca15c"
+    },
+    {
+      "actual_accept": false,
+      "error": "Classification not supported by fixed numerical criteria",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "false_witness",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "b344f069b930c11a322de2d8bd021420c3d056246781adf243ed12e9815eaac1"
+    },
+    {
+      "actual_accept": false,
+      "error": "Classification not supported by fixed numerical criteria",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "duplicate_witness",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "b7a2a6f3f0d812687538f72a711d748c8ae2943ff420ce844f094fe9cb259516"
+    },
+    {
+      "actual_accept": false,
+      "error": "Scientific failure list differs",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "scientific_failure_missing",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "1a65b0e4f8539554fbcfed4d64e20161e22a71fb0c676e4909dd47d537a10a8a"
+    },
+    {
+      "actual_accept": false,
+      "error": "Scientific failure list differs",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "scientific_failure_duplicate",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "a28e0f690c484e24bdf2ab9f8ddd1f9d29037c2b1d84e608dba304179bc3a2ed"
+    },
+    {
+      "actual_accept": true,
+      "classification": "CONSISTENCY_FAILURE",
+      "cross_route_max_gap_exact_rational": "0",
+      "expected_accept": false,
+      "name": "scientific_failure_value_lie",
+      "status": "FAIL",
+      "synthetic_fixture_sha256": "5d9ebeb78e85ed61479be94aedbcec0cc21e37a01c9cb145b9eddc25dffdfe4b"
+    },
+    {
+      "actual_accept": false,
+      "error": "Wrong independent route identity",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "route_identity_primary_wrong",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "c61ac399199e7dcd09f6999b5ef5e6947fd72e7b327267d11780b9edcb1684ee"
+    },
+    {
+      "actual_accept": false,
+      "error": "Wrong independent route identity",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "route_identity_independent_wrong",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "b84677bf713cb42484e8c0e34ebf6995c643ddc76228296a0e11f738e5cc679d"
+    },
+    {
+      "actual_accept": false,
+      "error": "Wrong case count/schema",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "fixed_case_count_wrong",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "01b64f482b14d6f7d019ed2a422679d9a4b0858f46ac1bb4c317ea257f630b70"
+    },
+    {
+      "actual_accept": false,
+      "error": "Earlier metric status changed",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "old_metric_status_upgraded",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "36c4b9127e1e2bedda115b4f384ba0d4dae449bdd55e962e03fdc151245bd3c3"
+    },
+    {
+      "actual_accept": false,
+      "error": "Incomplete or internally failed route",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "route_status_incomplete",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "f385a24a06df313fd072c8ab2b7dcc8caf6eb02162e5fdc749f5b363d4d7d40f"
+    },
+    {
+      "actual_accept": false,
+      "error": "Incomplete or internally failed route",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "route_fatal_failure_retained",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "014a6ac9c7dd169b2816153753075e777f93f9beddda21612f8131a2a6819ffe"
+    },
+    {
+      "actual_accept": true,
+      "classification": "NO_GATE_SCALE_ATTRIBUTION",
+      "cross_route_max_gap_exact_rational": "0",
+      "expected_accept": true,
+      "name": "route_and_outer_exact_resource_boundary",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "fbd909e86f6269ce532b9a4bd3facc85db8d719b439f974f11b630db1b46b100"
+    },
+    {
+      "actual_accept": false,
+      "error": "Reported full-route budget exceeded",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "route_time_budget_overrun",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "a087b912b1d1d09c8f4d35f005e3024607fcb14d418fe39d273c114c7ad9d947"
+    },
+    {
+      "actual_accept": false,
+      "error": "Reported full-route budget exceeded",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "route_memory_budget_overrun",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "1c85668384ccae37e2ff775b92260212ae9424567c5d445499df04f3fd83dbd4"
+    },
+    {
+      "actual_accept": false,
+      "error": "Reported full-route budget exceeded",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "route_memory_zero",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "670630e7cd1b91ba9d32f0e46c4b3c3b009fa14ed31e2f634838b02bdd325ac8"
+    },
+    {
+      "actual_accept": false,
+      "error": "Resource limits changed",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "route_resource_limit_changed",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "0056e53957f2d56d59ce8d808194395cffbfc794dc73a99c42460777df7fe5fe"
+    },
+    {
+      "actual_accept": false,
+      "error": "Actual complete-route resource budget exceeded",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "outer_time_budget_overrun",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "6f8a74f67536010ac1d3ef5715e74a938277fe5731beca66a926ab0d80aa340e"
+    },
+    {
+      "actual_accept": false,
+      "error": "Actual complete-route resource budget exceeded",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "outer_memory_budget_overrun",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "bd9eb7b0baeb4c16a500260d026dac34e31108c6e9f45e7175e0ec40779de28f"
+    },
+    {
+      "actual_accept": false,
+      "error": "Outer execution limits changed",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "outer_resource_limit_changed",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "89156c883ec15607b998430d0e5ba69a03302d19aacd27a99effd14dadfecb64"
+    },
+    {
+      "actual_accept": false,
+      "error": "Two complete physical executions required",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "outer_missing_independent",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "fc19e814120a59687ae1d9e8a7fb858679737e036852261ffc157240cbe6a534"
+    },
+    {
+      "actual_accept": false,
+      "error": "Two complete physical executions required",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "outer_duplicate_primary",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "8222760fc81e05f65733da5a295f8f58626ef9ca47324a06e5a59512c950403d"
+    },
+    {
+      "actual_accept": false,
+      "error": "Two complete physical executions required",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "outer_routes_reordered",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "daa42914e88baafb74865ae7419cc5b1f66dc63ce8f5a1a6f3f0d29ca674fa63"
+    },
+    {
+      "actual_accept": false,
+      "error": "Execution exit/resource failure",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "outer_failed_status",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "4649b9c1b8cc5a9abd0f6b343392ad2e6bb46c0ac406ef255619f9f610d6d5e8"
+    },
+    {
+      "actual_accept": false,
+      "error": "Execution exit/resource failure",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "outer_nonzero_exit",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "48c19b030968e61fe46f2a8a1e3a6efba557e9996cd67da896750a55c14ce98e"
+    },
+    {
+      "actual_accept": false,
+      "error": "Execution exit/resource failure",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "outer_boolean_exit",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "c3d7b37194838a77bb5398dcf96997803241ffb1c7135109f2566da13d510e26"
+    },
+    {
+      "actual_accept": false,
+      "error": "Execution exit/resource failure",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "outer_timeout",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "aa431bfc6cabe3f214f74c00cb352a8477840bc3c4d7ab41626e756727c41494"
+    },
+    {
+      "actual_accept": false,
+      "error": "Execution exit/resource failure",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "outer_memory_exceeded",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "7fa424f3031c7283bfdae84bc5e8448f4909d978f7e3bd6b742ecae12fac37df"
+    },
+    {
+      "actual_accept": false,
+      "error": "Execution exit/resource failure",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "outer_exception_present",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "485e802d8be145e9e5feeb43b9a189eed789dbcf2bd8ad13db28298427015203"
+    },
+    {
+      "actual_accept": true,
+      "classification": "NO_GATE_SCALE_ATTRIBUTION",
+      "cross_route_max_gap_exact_rational": "0",
+      "expected_accept": true,
+      "name": "separate_resource_scope_elapsed_allowed_within_budget",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "b47f29b13cd365ad2fedcc217aab142aef6e4c3d28fd25ee80cd309e57c723b0"
+    },
+    {
+      "actual_accept": true,
+      "classification": "NO_GATE_SCALE_ATTRIBUTION",
+      "cross_route_max_gap_exact_rational": "0",
+      "expected_accept": true,
+      "name": "separate_resource_scope_rss_allowed_within_budget",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "84059249695a9c3b216f03c2f73bf88c13444abdc0003546d1d4b4b89e5a6711"
+    },
+    {
+      "actual_accept": false,
+      "error": "Scientific values must be decimal strings",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "scientific_scalar_float",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "29c2c7b304b58ecb9e31111be4a61318e78283a90aaec033419e59d04f3ac457"
+    },
+    {
+      "actual_accept": false,
+      "error": "Scientific values must be decimal strings",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "scientific_scalar_boolean",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "dfd050a5a96e066f53241170b508303b8efcfacfd0b87b277a04fb9beb4ad3e0"
+    },
+    {
+      "actual_accept": false,
+      "error": "Nonfinite scientific decimal",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "scientific_scalar_nan",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "b76f783d6480ca564479a00724c8dca1ffaf724207b2d250e892595bef957d6f"
+    },
+    {
+      "actual_accept": false,
+      "error": "Nonfinite scientific decimal",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "scientific_scalar_infinity",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "b5783a9a11f974f1313615e3c521adc041a43b288185974ad58966c9b4325a4d"
+    },
+    {
+      "actual_accept": false,
+      "error": "Nonfinite scientific decimal",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "scientific_scalar_negative_infinity",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "1a70854dd8550437e1ca0ef6c82c4d92f33062a6a4fe2e5f68eee3cc59b635b0"
+    },
+    {
+      "actual_accept": false,
+      "error": "[<class 'decimal.ConversionSyntax'>]",
+      "error_type": "InvalidOperation",
+      "expected_accept": false,
+      "name": "scientific_scalar_fraction",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "ee0d2321b1a5b1f9389a83fef304cfa8486930db6b7ea14186bc373f5c2b6aea"
+    },
+    {
+      "actual_accept": false,
+      "error": "[<class 'decimal.ConversionSyntax'>]",
+      "error_type": "InvalidOperation",
+      "expected_accept": false,
+      "name": "scientific_scalar_text",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "4806f7d6072ad0fce12c6169b694acb316c702b02f76135742627ff3fd768649"
+    },
+    {
+      "actual_accept": false,
+      "error": "Scientific values must be decimal strings",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "scientific_profile_nondecimal",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "6cd70f2669ffd8e13acd0d35a945a6571b88d0285c3ce4684a2a5f985f61479d"
+    },
+    {
+      "actual_accept": false,
+      "error": "Nonfinite scientific decimal",
+      "error_type": "ValueError",
+      "expected_accept": false,
+      "name": "scientific_profile_nonfinite",
+      "status": "PASS",
+      "synthetic_fixture_sha256": "68b5954255dc02d71cd10f637e20468e5714e125d6c7c7c10fd87085eadbe1c1"
+    }
+  ],
+  "counts": {
+    "fail": 2,
+    "pass": 82,
+    "total": 84
+  },
+  "failed_checks": [
+    {
+      "actual_accept": true,
+      "classification": "NO_GATE_SCALE_ATTRIBUTION",
+      "cross_route_max_gap_exact_rational": "0",
+      "expected_accept": false,
+      "name": "true_signed_decomposition_overrun_laundered_by_reported_residual",
+      "status": "FAIL",
+      "synthetic_fixture_sha256": "1c06560e4117e385d85aa4b9c560d4e20f2c79787ac4081415654cef8afc0f1e"
+    },
+    {
+      "actual_accept": true,
+      "classification": "CONSISTENCY_FAILURE",
+      "cross_route_max_gap_exact_rational": "0",
+      "expected_accept": false,
+      "name": "scientific_failure_value_lie",
+      "status": "FAIL",
+      "synthetic_fixture_sha256": "5d9ebeb78e85ed61479be94aedbcec0cc21e37a01c9cb145b9eddc25dffdfe4b"
+    }
+  ],
+  "physical_files_loaded": false,
+  "physical_route_executed": false,
+  "python_executable": "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+  "python_optimization": 1,
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "schema_version": 1,
+  "scope": "SYNTHETIC_ONLY_cross_validate_SCHEMA_AND_MUTATIONS",
+  "source": "/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_SOURCE_FREE_LEDGER/code/validate_ledger.py",
+  "source_sha256_after": "463cd80c46a44d92f21b04329304f9b17df49c58d1b47d36669f8de81fd297fa",
+  "source_sha256_before": "31bf3042a55f1c16247fcac3ca11481cf89551ad02fb96cca0eab993cc24d6c3",
+  "source_unchanged": false,
+  "status": "BLOCKED_MUTATION_GAPS",
+  "test_script_sha256": "31db52a5b7825d6b62e34fd72e83d27ccb1973046a31cef98ed656b008febafc"
+}
