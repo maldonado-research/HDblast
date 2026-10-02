@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "name": "fixed_geometry_retarded_variance_calibration",
+  "stationary_source_commit": "a109360b840bc1387221dd7d04d002176443a1a9",
+  "geometry": {"H": 1.0, "r": 2.0, "xi": 0.0, "eta_i": -6.0, "eta_f": -1.5},
+  "source": {"epsilon": 0.0001, "center": -4.0, "half_width": 1.0, "support": [-5.0, -3.0], "bump": "exp(1-1/(1-u*u)) for abs(u)<1, else 0", "ids": ["positive_B", "signed_uB"]},
+  "observations": [-5.5, -4.5, -4.0, -3.5, -2.5, -1.5],
+  "cutoffs": [64, 128, 256],
+  "normalization": "y = a(eta)^2 * delta_Q / epsilon",
+  "primary_quadrature": {"epsabs": 1e-13, "epsrel": 1e-12, "limit": 250, "finite_k_max_tau_panel_width": "pi/(2*K)", "endpoint": "QUADPACK algebraic-log endpoint weight for log memory; regular difference quotient for finite part"},
+  "gates": {"primary_normalized_quadrature_estimate_max": 1e-11, "primary_memory_forms_absolute_agreement": 1e-10, "roundoff_allowance": 1e-10, "mode_cross_route_absolute": 2e-9, "mode_refinement_absolute": 2e-10, "mode_wronskian_over_epsilon": 1e-10, "largest_cutoff_analytic_tail_bound_max": 5e-6, "analytic_stationary_absolute": 1e-14, "positive_postpulse_negative_response_margin": 0.004, "state_extra_kernel_margin": 1e-6, "initial_beta_margin": 1e-5},
+  "state_controls": {"occupation_amplitude": 0.01, "beta_amplitude": 0.01, "k_center": 1.0, "k_half_width": 0.25, "separations": [0.1, 0.4], "state_is_primary": false},
+  "scope": "Fixed-geometry linear variance response only. No shell evolution, stress response, stability, particle yield or heating claim.",
+  "execution": {"output_directory_must_not_exist": true, "public_freeze_required_before_any_source_or_mode_response": true, "preserve_failed_runs": true, "wall_time_budget_seconds": 900, "error_estimates_are_not_certified_integration_bounds": true}
+}

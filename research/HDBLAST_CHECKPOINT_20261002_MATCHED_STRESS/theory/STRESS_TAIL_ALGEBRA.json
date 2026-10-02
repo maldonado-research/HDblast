@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "scope": "Pure analytic preparation; no source/response/mode numerical evaluation",
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "executable": "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+  "optimization": 0,
+  "source_sha256": "9d8c54550b53fb42dae53653516969efc9931b63f85f29c43a26f0f481ef3a59",
+  "pins_sha256": "933f752c124968d1ca9dfbd909d612349e8b38bb5af05198babd5c84ac77555d",
+  "identities": [
+    "cutoff_second_scale_derivative",
+    "cutoff_first_scale_derivative",
+    "first_derivative_contact_difference",
+    "second_derivative_contact_difference",
+    "positive_second_contact_factor",
+    "positive_first_contact_factor",
+    "momentum_tail_factor",
+    "subtraction_inequality_certificate",
+    "stable_one_minus_cutoff_ratio",
+    "positive_reference_variance_tail",
+    "reference_variance_continuum_limit",
+    "reference_variance_time_derivative",
+    "moment_5_primitive",
+    "moment_5_positive_tail",
+    "moment_7_primitive",
+    "moment_7_positive_tail",
+    "moment_9_primitive",
+    "moment_9_positive_tail",
+    "normalized_anomaly_continuum",
+    "normalized_anomaly_tail",
+    "normalized_pressure_contact",
+    "combined_pressure_contact_tail",
+    "normalized_density_variance_part",
+    "normalized_pressure_variance_part",
+    "exact_finite_cutoff_Ward"
+  ],
+  "mutations": [
+    {
+      "name": "continuum_reference_in_finite_cutoff_Ward",
+      "residual": "-H**2*dx_dot*(v - 1)**2*(v + 2)*(3*v**3 + 3*v**2 + 10*v + 4)/(192*pi**2*(v + 1))"
+    },
+    {
+      "name": "continuum_anomaly_in_finite_cutoff_pressure",
+      "residual": "-H*(v - 1)*(15*H**2*dx*v**6 + 15*H**2*dx*v**5 + 3*H**2*dx*v**4 + 3*H**2*dx*v**3 - 24*H**2*dx*v**2 - 24*H**2*dx*v - 24*H**2*dx + 6*H*dx_dot*v**4 + 6*H*dx_dot*v**3 + 6*H*dx_dot*v**2 + 6*H*dx_dot*v + 6*H*dx_dot + 2*dx_ddot*v**2 + 2*dx_ddot*v + 2*dx_ddot)/(192*pi**2)"
+    },
+    {
+      "name": "omit_moving_scale_first_derivative_contact",
+      "residual": "-L*f*(v - 1)*(v**2 + v + 1)/(8*pi**2)"
+    },
+    {
+      "name": "omit_moving_scale_second_derivative_contact",
+      "residual": "-L**2*f*(v - 1)*(3*v**4 + 3*v**3 + v**2 + v + 1)/(8*pi**2)"
+    },
+    {
+      "name": "omit_density_contact_cutoff_factor",
+      "residual": "-L*(v - 1)*(3*L*f - f1)*(v**2 + v + 1)/(96*pi**2)"
+    },
+    {
+      "name": "omit_reference_tail_from_current",
+      "residual": "H**2*f*(v - 1)**2*(v + 2)*(3*v**3 + 3*v**2 + 10*v + 4)/(384*pi**2*(v + 1))"
+    }
+  ],
+  "input_pins": [
+    {
+      "repository_relative_path": "research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/COMMON_ACTION_SMOOTH_FRW.md",
+      "sha256": "4896a6f83c4d63ac8300608bba923c7a7e45b0459d70aad621b400c001ee302f",
+      "actual_sha256": "4896a6f83c4d63ac8300608bba923c7a7e45b0459d70aad621b400c001ee302f"
+    },
+    {
+      "repository_relative_path": "research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/code/derive_local_trace.py",
+      "sha256": "25a9703f720fe068e97b1fd6731808751d66d90960fd40b0607e79a48276e0f0",
+      "actual_sha256": "25a9703f720fe068e97b1fd6731808751d66d90960fd40b0607e79a48276e0f0"
+    },
+    {
+      "repository_relative_path": "research/HDBLAST_CHECKPOINT_20261002_CAUSAL_RESPONSE/theory/PROSPECTIVE_MATCHED_STRESS_RESPONSE.md",
+      "sha256": "c41e4523bca76012ec1cd8f3089ff1b534e519f2d33d98c98258708160a6d22e",
+      "actual_sha256": "c41e4523bca76012ec1cd8f3089ff1b534e519f2d33d98c98258708160a6d22e"
+    },
+    {
+      "repository_relative_path": "research/HDBLAST_CHECKPOINT_20261002_CAUSAL_RESPONSE/theory/verify_matched_stress_proposal.py",
+      "sha256": "6441ab97c1cdf708ba46f3cdf3a7042c3c41a7bb96429c7ccef9f3d7b9b2bddf",
+      "actual_sha256": "6441ab97c1cdf708ba46f3cdf3a7042c3c41a7bb96429c7ccef9f3d7b9b2bddf"
+    },
+    {
+      "repository_relative_path": "research/HDBLAST_CHECKPOINT_20261002_CAUSAL_RESPONSE/theory/tail_bounds.py",
+      "sha256": "642fe91d3c241d38db0c874599edb49217a5ef05f266dff3a830141fb9e27b35",
+      "actual_sha256": "642fe91d3c241d38db0c874599edb49217a5ef05f266dff3a830141fb9e27b35"
+    }
+  ],
+  "proof_scope": "Exact coefficient, factorization and finite-cutoff Ward identities; functional IBP bound and triangle inequalities are documented in STRESS_TAIL_DERIVATION.md; pulse root completeness is checked separately.",
+  "identity_count": 25,
+  "mutation_count": 6
+}

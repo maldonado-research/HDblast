@@ -1,0 +1,599 @@
+{
+  "classification": "actual_final_extracted_zip_replay",
+  "command_log_sha256": {
+    "figures.log": "99f1bbbf05dab233a4164d0009c6b94bc11c5c26e0103747881faed89d79c56f",
+    "finite_cutoff_ward_algebra.log": "d972bea6cbaa320bf653a80e480bf6646cae316d182b4e7b4ecc1b3d5aa402e6",
+    "finite_cutoff_ward_algebra_optimized.log": "d972bea6cbaa320bf653a80e480bf6646cae316d182b4e7b4ecc1b3d5aa402e6",
+    "independent_modes.log": "13f61831d1812e2fa54c46a5533d24356d74fe3e5ee901e65d45f33694d534f4",
+    "postrun_stress_audit.log": "dada2591ba6a44fe0a7d3ae5a4fcead7ac5ab344caf671ffc066a4c835bb3223",
+    "postrun_stress_audit_optimized.log": "dada2591ba6a44fe0a7d3ae5a4fcead7ac5ab344caf671ffc066a4c835bb3223",
+    "primary.log": "216b6b05ed78d834d91581bb37a8edbc82490b8ce39735d8ae45d30bed133919",
+    "primary_algebra.log": "5435b68895227661df5aa70969cde1b22cc8029a62625832e5c3221ad24943b8",
+    "primary_algebra_optimized.log": "5435b68895227661df5aa70969cde1b22cc8029a62625832e5c3221ad24943b8",
+    "pulse_exact_proof.log": "a4311f71bd048325e8c159b824651bd85bbc909a415b535e763f3ed45daef694",
+    "pulse_exact_proof_optimized.log": "8399af56ee5c229cbf8ebea5c3abbd33b66be0c3a276fdfe4e66f61a7dd62fc6",
+    "second_order_analytic_proof.log": "3376650bcfde2f2f5baeb19414c23c36b5ab1a46c688d14a999aa861f02345ff",
+    "second_order_analytic_proof_optimized.log": "3376650bcfde2f2f5baeb19414c23c36b5ab1a46c688d14a999aa861f02345ff",
+    "source_jet_bridge.log": "90082c151bdda909d14c23134edb623228232151e3f7d5e3c2cdb41ae3771798",
+    "source_jet_bridge_optimized.log": "90082c151bdda909d14c23134edb623228232151e3f7d5e3c2cdb41ae3771798",
+    "stress_tail_algebra.log": "a1f53dfcb19e144c36fd5af23bcfd1922bbe2c5740cb748d303c7d16f5b2f694",
+    "stress_tail_algebra_optimized.log": "7883eebd5e42f491eb302493febcd907db86c64abacde95a270620ca38782798",
+    "summary.log": "7f1a95c7132236dbabfaf6387c30b0629647e68ae3b575afd9384f81f8b6f802",
+    "validation.log": "d343fe71fef148006dca8a3afb6d64e49e21a6f1898c66db1abd54ff8039860c",
+    "validation_optimized.log": "d343fe71fef148006dca8a3afb6d64e49e21a6f1898c66db1abd54ff8039860c",
+    "validator_guards.log": "abbe0ccf6ff12e4a866d0d093f298e7a6be2e00e8a4d2b788a1f8774b3a0abb7",
+    "validator_guards_optimized.log": "abbe0ccf6ff12e4a866d0d093f298e7a6be2e00e8a4d2b788a1f8774b3a0abb7"
+  },
+  "execution": {
+    "attempted_commands": 22,
+    "certified_total_numerical_error": false,
+    "commands": [
+      {
+        "check": "primary_algebra",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "code/verify_primary_algebra.py",
+          "--output",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/PRIMARY_ALGEBRA.json"
+        ],
+        "completed_utc": "2026-10-02T17:16:26.833985+00:00",
+        "elapsed_seconds": 2.1203184199985117,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:16:24.713590+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "source_jet_bridge",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "code/verify_source_jet_bridge.py",
+          "--tail-module",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/checkpoint/theory/pulse-norms/pulse_derivative_budgets.py",
+          "--output",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/SOURCE_JET_BRIDGE.json"
+        ],
+        "completed_utc": "2026-10-02T17:16:27.306722+00:00",
+        "elapsed_seconds": 0.31497718099853955,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:16:26.991391+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "stress_tail_algebra",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "theory/verify_stress_tail_algebra.py",
+          "--repo-root",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/source_pin_mirror",
+          "--output",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/STRESS_TAIL_ALGEBRA.json"
+        ],
+        "completed_utc": "2026-10-02T17:16:28.970072+00:00",
+        "elapsed_seconds": 1.518737937003607,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:16:27.451112+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "pulse_exact_proof",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "theory/pulse-norms/verify_pulse_derivative_budgets.py",
+          "--output",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/PULSE_EXACT_PROOF.json"
+        ],
+        "completed_utc": "2026-10-02T17:16:29.523989+00:00",
+        "elapsed_seconds": 0.4153495290011051,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:16:29.108361+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "finite_cutoff_ward_algebra",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "theory/independent_review/derive_finite_cutoff_ward.py"
+        ],
+        "completed_utc": "2026-10-02T17:16:30.091138+00:00",
+        "elapsed_seconds": 0.4153496389990323,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:16:29.675549+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "validator_guards",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "code/test_validator_guards.py"
+        ],
+        "completed_utc": "2026-10-02T17:16:30.346946+00:00",
+        "elapsed_seconds": 0.11426177200337406,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:16:30.232398+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "primary_algebra_optimized",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "-O",
+          "code/verify_primary_algebra.py",
+          "--output",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/PRIMARY_ALGEBRA_optimized.json"
+        ],
+        "completed_utc": "2026-10-02T17:16:32.758854+00:00",
+        "elapsed_seconds": 2.2702114089988754,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:16:30.488275+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "source_jet_bridge_optimized",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "-O",
+          "code/verify_source_jet_bridge.py",
+          "--tail-module",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/checkpoint/theory/pulse-norms/pulse_derivative_budgets.py",
+          "--output",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/SOURCE_JET_BRIDGE_optimized.json"
+        ],
+        "completed_utc": "2026-10-02T17:16:33.362667+00:00",
+        "elapsed_seconds": 0.4652729899971746,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:16:32.897138+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "stress_tail_algebra_optimized",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "-O",
+          "theory/verify_stress_tail_algebra.py",
+          "--repo-root",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/source_pin_mirror",
+          "--output",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/STRESS_TAIL_ALGEBRA_optimized.json"
+        ],
+        "completed_utc": "2026-10-02T17:16:35.020105+00:00",
+        "elapsed_seconds": 1.5187476059945766,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:16:33.501086+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "pulse_exact_proof_optimized",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "-O",
+          "theory/pulse-norms/verify_pulse_derivative_budgets.py",
+          "--output",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/PULSE_EXACT_PROOF_optimized.json"
+        ],
+        "completed_utc": "2026-10-02T17:16:35.660468+00:00",
+        "elapsed_seconds": 0.5157353980030166,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:16:35.144454+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "finite_cutoff_ward_algebra_optimized",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "-O",
+          "theory/independent_review/derive_finite_cutoff_ward.py"
+        ],
+        "completed_utc": "2026-10-02T17:16:36.359000+00:00",
+        "elapsed_seconds": 0.5654889030047343,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:16:35.793207+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "validator_guards_optimized",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "-O",
+          "code/test_validator_guards.py"
+        ],
+        "completed_utc": "2026-10-02T17:16:36.762479+00:00",
+        "elapsed_seconds": 0.2647863509992021,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:16:36.497373+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "primary",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "code/stress_primary.py",
+          "--output",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/primary",
+          "--registration-sha256",
+          "4a1533fa7bf9df41cc635d76fa61a22b3aa119d8fbf215349fe09cf3ee54c893",
+          "--public-freeze-commit",
+          "4a5dad8dda6d0a57a9cf88cc8b4a9b8feeaea45d"
+        ],
+        "completed_utc": "2026-10-02T17:16:38.830548+00:00",
+        "elapsed_seconds": 1.9214745720018982,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:16:36.908655+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "independent_modes",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "independent/forced_stress.py",
+          "--output-dir",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/independent",
+          "--freeze-commit",
+          "4a5dad8dda6d0a57a9cf88cc8b4a9b8feeaea45d",
+          "--manifest-sha256",
+          "4933c5fe2bd9d3fc2ea154371ce0fdf9d8066e3546a672975d1e007a9151cf42"
+        ],
+        "completed_utc": "2026-10-02T17:21:19.672690+00:00",
+        "elapsed_seconds": 280.69983990000037,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:16:38.972523+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "validation",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "code/validate_stress.py",
+          "--primary",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/primary/results.json",
+          "--modes",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/independent/results.json",
+          "--registration-sha256",
+          "4a1533fa7bf9df41cc635d76fa61a22b3aa119d8fbf215349fe09cf3ee54c893",
+          "--public-freeze-commit",
+          "4a5dad8dda6d0a57a9cf88cc8b4a9b8feeaea45d",
+          "--output",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/validation"
+        ],
+        "completed_utc": "2026-10-02T17:21:22.670908+00:00",
+        "elapsed_seconds": 2.872748410998611,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:21:19.797813+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "validation_optimized",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "-O",
+          "code/validate_stress.py",
+          "--primary",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/primary/results.json",
+          "--modes",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/independent/results.json",
+          "--registration-sha256",
+          "4a1533fa7bf9df41cc635d76fa61a22b3aa119d8fbf215349fe09cf3ee54c893",
+          "--public-freeze-commit",
+          "4a5dad8dda6d0a57a9cf88cc8b4a9b8feeaea45d",
+          "--output",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/validation_optimized"
+        ],
+        "completed_utc": "2026-10-02T17:21:25.717559+00:00",
+        "elapsed_seconds": 2.9231575439989683,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:21:22.794064+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "summary",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "postrun/summarize_stress.py",
+          "--checkpoint",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/checkpoint",
+          "--primary",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/primary/results.json",
+          "--modes",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/independent/results.json",
+          "--checks",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/validation/CHECKS.json",
+          "--checks-optimized",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/validation_optimized/CHECKS.json",
+          "--output",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/report"
+        ],
+        "completed_utc": "2026-10-02T17:21:25.964129+00:00",
+        "elapsed_seconds": 0.11442138399434043,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:21:25.849339+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "figures",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "postrun/plot_stress.py",
+          "--summary",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/report/SUMMARY.json",
+          "--output",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/figures"
+        ],
+        "completed_utc": "2026-10-02T17:21:30.268781+00:00",
+        "elapsed_seconds": 4.177659550005046,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:21:26.090778+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "postrun_stress_audit",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "review/archive_audit/audit_saved_stress.py",
+          "--checkpoint",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/checkpoint",
+          "--modes",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/independent/results.json",
+          "--output",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/POSTRUN_STRESS_AUDIT.json"
+        ],
+        "completed_utc": "2026-10-02T17:21:31.163825+00:00",
+        "elapsed_seconds": 0.7663110089997645,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:21:30.397130+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "second_order_analytic_proof",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "theory/second_order/verify_second_order_energy_algebra.py",
+          "--output",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/SECOND_ORDER_ANALYTIC_PROOF.json"
+        ],
+        "completed_utc": "2026-10-02T17:21:31.968728+00:00",
+        "elapsed_seconds": 0.6666315749971545,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:21:31.301722+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "postrun_stress_audit_optimized",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "-O",
+          "review/archive_audit/audit_saved_stress.py",
+          "--checkpoint",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/checkpoint",
+          "--modes",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/independent/results.json",
+          "--output",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/POSTRUN_STRESS_AUDIT_optimized.json"
+        ],
+        "completed_utc": "2026-10-02T17:21:33.030239+00:00",
+        "elapsed_seconds": 0.9170767429968691,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:21:32.112710+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      },
+      {
+        "check": "second_order_analytic_proof_optimized",
+        "command": [
+          "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+          "-O",
+          "theory/second_order/verify_second_order_energy_algebra.py",
+          "--output",
+          "/workspace/hdblast-research-work/stress-final-zip-replay-001/fresh/SECOND_ORDER_ANALYTIC_PROOF_optimized.json"
+        ],
+        "completed_utc": "2026-10-02T17:21:33.985639+00:00",
+        "elapsed_seconds": 0.8166372959967703,
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "started_utc": "2026-10-02T17:21:33.168611+00:00",
+        "status": "PASS",
+        "timed_out": false,
+        "timeout_seconds": 1000
+      }
+    ],
+    "completed_utc": "2026-10-02T17:21:34.360939+00:00",
+    "counts": {
+      "additional_postrun": {
+        "future_second_order_proposal": {
+          "algebraic_mutations_rejected": 8,
+          "classification": "UNREGISTERED_AND_NUMERICALLY_UNEXECUTED",
+          "exact_identities": 21,
+          "local_source_pins": 9,
+          "normal_and_optimized": "PASS",
+          "optimization_modes_recorded_in": "EXECUTION.json commands; the exact proof JSON does not include an optimization flag",
+          "physical_evaluations": 0
+        },
+        "saved_mode_audit": {
+          "classification": "post_run_saved_data_audit",
+          "counts": {
+            "mode_snapshots": 24,
+            "panel_polynomial_moments": 98304,
+            "reconstructed_quantity_sums": 576,
+            "registered_ward_endpoints": 72,
+            "ward_refinements": 36
+          },
+          "normal_and_optimized": "PASS"
+        }
+      },
+      "analytic_checks_by_mode": {
+        "_optimized": {
+          "primary_algebra": 30,
+          "pulse_identities": 18,
+          "pulse_mutations": 7,
+          "pulse_root_certificates": 6,
+          "source_jet_bridge": 12,
+          "synthetic_guards": 21,
+          "tail_identities": 25,
+          "tail_mutations": 6
+        },
+        "normal": {
+          "primary_algebra": 30,
+          "pulse_identities": 18,
+          "pulse_mutations": 7,
+          "pulse_root_certificates": 6,
+          "source_jet_bridge": 12,
+          "synthetic_guards": 21,
+          "tail_identities": 25,
+          "tail_mutations": 6
+        }
+      },
+      "independent_runs": 4,
+      "presentation": {
+        "figure_files": 9,
+        "matplotlib": "3.10.1",
+        "summary_finite_band_points": 36,
+        "summary_raw_presentation_hashes": 13,
+        "summary_registered_rows": 12
+      },
+      "response_points": 12,
+      "validator": {
+        "Ward_refinement_points": 36,
+        "continuum_comparisons": 288,
+        "controls": 20,
+        "core_comparisons": 180,
+        "core_refinement_comparisons": 180,
+        "direct_stress_closed": 72,
+        "extras": 108,
+        "finite_K_trace": 36,
+        "raw_Ward_endpoints": 72,
+        "raw_reconstructed_observation_K_points": 72
+      }
+    },
+    "coupled_geometry_executed": false,
+    "driver_sha256": "09bf3965f50fb621b6a49fd2530fda66cde96ba72f0db32592ae28e8132a0c00",
+    "executed_commands": 22,
+    "fresh_output_sha256": {
+      "POSTRUN_STRESS_AUDIT.json": "6da7b36a56a72d481314aa94815e6d304273d8d5de039c2250c0e74f13921326",
+      "POSTRUN_STRESS_AUDIT_optimized.json": "b47452fda19e8ae6bf14f2c32da96e458d9c599546af17ff5d136d56fe358a42",
+      "PRIMARY_ALGEBRA.json": "dc9bfdeb0b391c907cbf7379a8df7811cadb7cbd6f63446f36d53c69867c7a48",
+      "PRIMARY_ALGEBRA_optimized.json": "7b4b892385b4d769c2b35498c06e604b3372d2aca8aa533ea350a2b0632401cd",
+      "PULSE_EXACT_PROOF.json": "a4311f71bd048325e8c159b824651bd85bbc909a415b535e763f3ed45daef694",
+      "PULSE_EXACT_PROOF_optimized.json": "8399af56ee5c229cbf8ebea5c3abbd33b66be0c3a276fdfe4e66f61a7dd62fc6",
+      "SECOND_ORDER_ANALYTIC_PROOF.json": "3376650bcfde2f2f5baeb19414c23c36b5ab1a46c688d14a999aa861f02345ff",
+      "SECOND_ORDER_ANALYTIC_PROOF_optimized.json": "3376650bcfde2f2f5baeb19414c23c36b5ab1a46c688d14a999aa861f02345ff",
+      "SOURCE_JET_BRIDGE.json": "3099fc352acda675fcb6d1a7a8c03fd520cb8d46524a72302523e9f014889cd8",
+      "SOURCE_JET_BRIDGE_optimized.json": "be16faaabaa72ab47437f602946018babedc52ce4a5a1402c18e7000e7a4ffe5",
+      "STRESS_TAIL_ALGEBRA.json": "a1f53dfcb19e144c36fd5af23bcfd1922bbe2c5740cb748d303c7d16f5b2f694",
+      "STRESS_TAIL_ALGEBRA_optimized.json": "7883eebd5e42f491eb302493febcd907db86c64abacde95a270620ca38782798",
+      "figures/FIGURE_PROVENANCE.json": "6802f3cbfcb4f572551a384cb354a684c8b1f5e5a8d36f694fdee309c92cbfb9",
+      "figures/stress_checks.pdf": "05ccfa0b1231e2cdb574afb1b2b4a9aff37f1650da3f2b6532b03bc30e15598b",
+      "figures/stress_checks.png": "61091aa22663f893ce4f75a745f428089ee224c9dea943a012cb38f7eac982cf",
+      "figures/stress_checks.svg": "6f6219cf75f717a7c1895a18676eb7955ba136665816ef2d99878a39353a821c",
+      "figures/stress_response.pdf": "0e10e62f86f435c40cc2b9ea21ad462aea27da635e602c4a6e608ba51a764c60",
+      "figures/stress_response.png": "e4222e40ef68b4dacd1847042561f6a0e9e5acd87bc551e799f4cbcba771a2eb",
+      "figures/stress_response.svg": "f25d4c115b4ce6c66a1d5d832695348d537b274039aa71b6c28f1454c40598a9",
+      "figures/stress_uv_bounds.pdf": "02dceb3144483164fae4df98d77c14f26ddb9204049af4ee378854b4416085a7",
+      "figures/stress_uv_bounds.png": "fbf1e71b1f6ac53e1e200479ba398beb2c0530905f40c490bd716e22fef38901",
+      "figures/stress_uv_bounds.svg": "b729357cfad303078c699df0538a0baeb5f5bfbce986599491804bf045e56145",
+      "independent/results.json": "82edcec9a066791ae8edb8b8bd456923d4fe77ad290dee3679e8360f8587cded",
+      "independent/stress_modes_positive_B_coarse.npz": "b1e8e2e48bbfc338d2865c57dc373a2bcfa13f079c3dfdf3131354d64e0a8bf7",
+      "independent/stress_modes_positive_B_fine.npz": "034ea58fc6999d0e8a62b6b22eda55f1c0a067246c9561bfee125d71f00f9c55",
+      "independent/stress_modes_signed_uB_coarse.npz": "986980f12e2cc63ceaf6734338873a0163f048625526bcf9f693216e8b2a80b1",
+      "independent/stress_modes_signed_uB_fine.npz": "5193eeb2097f67056c5ee23c3c7d2b7353e0e9a9d2cc802077e2a8d987098f29",
+      "primary/EXECUTION.json": "06a879dc1b3bec7fa63315fc0080f0f860ec057c370d2d788d0e37458cfc0be1",
+      "primary/partial_results.json": "72344fa46199b8458bffa4e36ce3414a3a8a8ab2b5ea89e77e8cfc933a0093c0",
+      "primary/results.json": "92e90b7bd1084fc1f9624d6329d07978820dc34516151dce45c7dab56a931e1a",
+      "primary/started.json": "b7c2478f2c328588a9013de0d4388aaec1550d59e651da9c846e55362e634326",
+      "report/NUMERICAL_RESULTS.md": "c3fe2fc3d3a56c0f6e2b1bc70c9eb1bd5ffd04a59f733585ee9c130453a2c7b6",
+      "report/SUMMARY.json": "2b7640e270623e56369d2c408df877c50840a5477baaeabaaaa40d30f24628f8",
+      "validation/CHECKS.json": "9f2fd67d527c33573fe7fa4373796c499ec8edb3b040fb4d814342024618a9cf",
+      "validation_optimized/CHECKS.json": "915b1c89f7096dc24330d1499f90cca7e578d88086927018e53fed64168a71d1"
+    },
+    "heating_established": false,
+    "independent_manifest_sha256": "4933c5fe2bd9d3fc2ea154371ce0fdf9d8066e3546a672975d1e007a9151cf42",
+    "physical_producer_commands_attempted": 2,
+    "physical_producer_commands_completed": 2,
+    "physical_producer_commands_executed": 2,
+    "planned_commands": 22,
+    "public_freeze_commit": "4a5dad8dda6d0a57a9cf88cc8b4a9b8feeaea45d",
+    "registration_sha256": "4a1533fa7bf9df41cc635d76fa61a22b3aa119d8fbf215349fe09cf3ee54c893",
+    "scope": "Fixed geometry, linear homogeneous minimal stress/current only",
+    "source_verification_after": "PASS",
+    "source_verification_before": "PASS",
+    "stability_established": false,
+    "started_utc": "2026-10-02T17:16:24.534259+00:00",
+    "status": "PASS",
+    "successful_commands": 22
+  },
+  "full_registration_sha256": "4a1533fa7bf9df41cc635d76fa61a22b3aa119d8fbf215349fe09cf3ee54c893",
+  "original_frozen_payload_files_unchanged": 85,
+  "package": {
+    "all_members_equal_source_bytes": true,
+    "package_files": 235,
+    "payload_files": 232,
+    "repeat_build_identical": true,
+    "status": "PASS",
+    "zip_bytes": 37909703,
+    "zip_sha256": "351483ac6529bbe7a7c2fbac0401af83dafdfc6ec8df754f60551862224faa3c"
+  },
+  "public_freeze_commit": "4a5dad8dda6d0a57a9cf88cc8b4a9b8feeaea45d",
+  "receipt_is_outside_archive_to_avoid_self_reference": true,
+  "recorded_at_utc": "2026-10-02T17:23:20.230974+00:00",
+  "schema_version": 1,
+  "status": "PASS"
+}
