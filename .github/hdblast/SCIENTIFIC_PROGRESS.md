@@ -18,6 +18,8 @@ The gravitational screen is a sampled diagnostic, not a proved EFT cutoff. Among
 
 Compare independently implemented forced modes, combined momentum response with its actual explicit tail bound, and the matched logarithmic memory formula. Keep quadrature/arithmetic error, initial conditions/Wronskians, strict causality, signed post-pulse memory, stationary `Q_x`, matching/local contacts, wrong sign/Wick/frequency, changed state/initial-boundary and conformal-factor controls distinct. Preserve failures without unregistered tuning.
 
+The unchanged scheduler publishes its one result PR at round end. If an earlier public numerical registration is absent, prepare its pulse/implementation/error-budget package as a reviewable BLOCKED prerequisite and stop before causal numerical evaluation. A registration first published together with results is not prior public registration. Numerical execution needs that earlier public record and explicit queue/input-pin refresh; it must not follow from a blind retry.
+
 A PASS supplies only fixed-reference scalar susceptibility. Matched stress-current, metric-scalar and metric-metric retarded kernels, contact/Ward constraints, bulk/boundary and quantum initial data, and the actual stationary-root propagator remain prerequisites for coupled evolution-ready data or stability. The subsequent initial-data task must stop BLOCKED if those are unavailable. There is no causal numerical, stability, dissipation, heating or thermalization result in this refresh.
 
 ## Scheduler status
