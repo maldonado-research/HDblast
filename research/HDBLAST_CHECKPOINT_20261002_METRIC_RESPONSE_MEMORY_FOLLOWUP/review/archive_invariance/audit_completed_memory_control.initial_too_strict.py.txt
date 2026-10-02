@@ -1,0 +1,174 @@
+#!/usr/bin/env python3
+"""Authenticate saved third-control inputs/outputs and recompute JSON gates only.
+
+No scientific producer, mode equation, source evaluator, quadrature or
+cross-route validator is imported or executed.
+"""
+import argparse
+from collections import Counter
+from datetime import datetime, timezone
+import hashlib
+import json
+import math
+from pathlib import Path
+import resource
+import subprocess
+
+SOURCES = ('positive_B', 'signed_uB')
+TIMES = (-5.5, -4.5, -4.0, -3.5, -2.5, -1.5)
+CUTOFFS = (64, 128, 256)
+QUANTITIES = ('q', 'q_prime', 'q_second', 'rho', 'p', 'Q0', 'rho0', 'p0', 'current')
+
+def require(ok, message):
+    if not ok:
+        raise RuntimeError(message)
+
+def read(path):
+    return json.loads(path.read_text())
+
+def sha(path):
+    h = hashlib.sha256()
+    with path.open('rb') as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b''):
+            h.update(block)
+    return h.hexdigest()
+
+def git_blob_sha(repo, commit, path):
+    process = subprocess.Popen(['git', '-C', str(repo), 'cat-file', 'blob', commit + ':' + path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    h = hashlib.sha256()
+    for block in iter(lambda: process.stdout.read(1024 * 1024), b''):
+        h.update(block)
+    error = process.stderr.read().decode()
+    require(process.wait() == 0, 'Frozen Git blob missing: ' + path + ': ' + error)
+    return h.hexdigest()
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--control', type=Path, required=True)
+    parser.add_argument('--repository', type=Path, required=True)
+    parser.add_argument('--checkpoint-relative', required=True)
+    parser.add_argument('--output', type=Path, required=True)
+    args = parser.parse_args()
+    require(not args.output.exists(), 'Refusing overwrite')
+    control_dir = args.control
+    replay = control_dir / 'replay'
+    checkpoint = replay / 'checkpoint'
+    fresh = replay / 'fresh'
+    receipt = read(control_dir / 'EXPECTED_SCIENTIFIC_FAILURE.json')
+    registration = read(checkpoint / 'FULL_REGISTRATION.json')
+    inputs = read(replay / 'INPUT_MANIFEST.json')
+    ledger = read(replay / 'VALIDATION.json')
+    plan = read(replay / 'COMMAND_PLAN.json')
+    experiment = read(checkpoint / 'EXPERIMENT.json')
+    primary = read(fresh / 'primary/results.json')
+    modes = read(fresh / 'independent/results.json')
+    bindings = receipt['explicit_public_bindings']
+    freeze = bindings['public_freeze_commit']
+    require(receipt['status'] == 'PASS_EXPECTED_SCIENTIFIC_FAILURE_CONTROL' and receipt['underlying_scientific_status'] == 'FAIL' and receipt['registered_metric_calibration_passed'] is False, 'Wrong completed-control/scientific status')
+    require(ledger['status'] == 'FAIL' and ledger['source_verification_before'] == ledger['source_verification_after'] == 'PASS', 'Wrong underlying replay/source status')
+    require(sha(checkpoint / 'FULL_REGISTRATION.json') == inputs['registration_sha256'] == bindings['registration_sha256'], 'Registration binding changed')
+    require(inputs['frozen_files'] == registration['files'] and len(registration['files']) == 370, '370-file frozen inventory differs')
+    require(all(inputs[k] == bindings[k] for k in ('public_freeze_commit', 'registration_sha256', 'independent_manifest_sha256')), 'Public bindings differ')
+    frozen = []
+    for name, pin in sorted(registration['files'].items()):
+        local = sha(checkpoint / name)
+        public_blob = git_blob_sha(args.repository, freeze, args.checkpoint_relative.rstrip('/') + '/' + name)
+        frozen.append({'path': name, 'registered_sha256': pin, 'replay_copy_sha256': local, 'frozen_git_blob_sha256': public_blob, 'all_equal': local == pin == public_blob})
+    require(all(f['all_equal'] for f in frozen), 'Frozen input changed; every input finding retained in memory')
+    require(git_blob_sha(args.repository, freeze, args.checkpoint_relative + '/FULL_REGISTRATION.json') == inputs['registration_sha256'], 'Public registration blob differs')
+    output_records = []
+    actual = {p.relative_to(fresh).as_posix() for p in fresh.rglob('*') if p.is_file()}
+    require(actual == set(ledger['fresh_output_sha256']), 'Fresh output inventory differs')
+    for name, pin in sorted(ledger['fresh_output_sha256'].items()):
+        value = sha(fresh / name)
+        output_records.append({'path': name, 'registered_capture_sha256': pin, 'actual_sha256': value, 'equal': pin == value})
+    require(all(r['equal'] for r in output_records), 'Saved fresh output changed')
+    expected_rows = [(s, t) for s in SOURCES for t in TIMES]
+    require(primary['status'] == 'completed' and [(r['source'], r['eta']) for r in primary['rows']] == expected_rows, 'Primary coverage differs')
+    require([(r['source'], r['setting']) for r in modes['runs']] == [(s, g) for s in SOURCES for g in ('coarse', 'fine')], 'Four-run coverage differs')
+    require(modes['status'] == 'failed' and modes['active_run'] is None and [(r['source'], r['eta']) for r in modes['rows']] == expected_rows, 'Combined independent coverage/status differs')
+    require(modes['configuration'] == experiment['independent_configuration'], 'Physical configuration changed')
+    require(ledger['planned_commands'] == len(plan) == 32 and ledger['attempted_commands'] == len(ledger['commands']) == 28 and ledger['successful_commands'] == 27, 'Command accounting differs')
+    commands = ledger['commands']
+    require([c['check'] for c in commands] == [c['check'] for c in plan[:28]], 'Executed prefix differs')
+    require(all(c['status'] == 'PASS' and c['exit_code'] == 0 and c['timed_out'] is False for c in commands[:-1]), 'Prerequisite/primary failure')
+    require(commands[-1]['check'] == 'independent_modes' and commands[-1]['status'] == 'FAIL' and commands[-1]['exit_code'] == 1 and commands[-1]['timed_out'] is False, 'Failure class differs')
+    require(sum(not c['physical_producer'] for c in commands) == 26, 'Pure command accounting differs')
+    absent = ['validation', 'validation_optimized', 'report', 'figures']
+    require(all(not (fresh / name).exists() for name in absent), 'Unexpected post-failure calibration output')
+    gates = experiment['gates']['independent']
+    require(gates['ward_endpoint'] == 2e-6 and gates['ward_refinement'] == 1e-6 and gates['wronskian'] == 1e-10, 'Frozen gates differ')
+    resources = modes['resources']
+    require(resources['elapsed_seconds'] <= 900 and resources['peak_rss_kib'] <= 262144 and resources == receipt['resources'], 'Resource failure or receipt disagreement')
+    run_lookup = {(r['source'], r['setting']): r for r in modes['runs']}
+    maxima = {q: 0.0 for q in QUANTITIES}
+    failures, point_records = [], []
+    wronskian_max = physical_wronskian_max = 0.0
+    for run in modes['runs']:
+        require([(r['source'], r['eta']) for r in run['rows']] == [(run['source'], t) for t in TIMES], 'Run observation coverage differs')
+        wronskian_max = max(wronskian_max, run['wronskian_max_scaled'])
+        physical_wronskian_max = max(physical_wronskian_max, run['physical_wronskian_max_scaled'])
+    require(max(wronskian_max, physical_wronskian_max) <= gates['wronskian'], 'Wronskian gate failed')
+    for source in SOURCES:
+        for coarse, fine in zip(run_lookup[(source, 'coarse')]['rows'], run_lookup[(source, 'fine')]['rows']):
+            require([p['K'] for p in coarse['finite_k']] == [p['K'] for p in fine['finite_k']] == list(CUTOFFS), 'Cutoff coverage differs')
+            for c, f in zip(coarse['finite_k'], fine['finite_k']):
+                differences = {}
+                for q in QUANTITIES:
+                    require(math.isfinite(c['values'][q]) and math.isfinite(f['values'][q]), 'Nonfinite observable')
+                    differences[q] = abs(f['values'][q] - c['values'][q])
+                    maxima[q] = max(maxima[q], differences[q])
+                    if q in gates['refinement'] and differences[q] > gates['refinement'][q]:
+                        failures.append(f"{source}/{fine['eta']}/{f['K']}/{q} refinement")
+                endpoint = abs(f['ward']['ledger'] - f['ward']['direct_endpoint'])
+                require(math.isclose(endpoint, f['ward']['endpoint_difference'], rel_tol=1e-12, abs_tol=1e-18), 'Saved Ward endpoint mismatch')
+                refinement = abs(f['ward']['ledger'] - c['ward']['ledger'])
+                if endpoint > gates['ward_endpoint']:
+                    failures.append(f"{source}/{fine['eta']}/{f['K']} Ward endpoint")
+                if refinement > gates['ward_refinement']:
+                    failures.append(f"{source}/{fine['eta']}/{f['K']} Ward refinement")
+                point_records.append({'source': source, 'eta': fine['eta'], 'K': f['K'],
+                                      'observable_refinement_differences': differences,
+                                      'coarse_ward': c['ward'], 'fine_ward': f['ward'],
+                                      'fine_endpoint_difference_recomputed': endpoint,
+                                      'ward_refinement_difference_recomputed': refinement,
+                                      'endpoint_gate': gates['ward_endpoint'], 'refinement_gate': gates['ward_refinement'],
+                                      'endpoint_passed': endpoint <= gates['ward_endpoint'],
+                                      'refinement_passed': refinement <= gates['ward_refinement']})
+    require(failures == modes['gate_failures'] == receipt['gate_failures'], 'Saved failure list differs from independently recomputed gates')
+    require(maxima == modes['maximum_refinement_differences'] == receipt['maximum_refinement_differences'], 'Observable refinement maxima differ')
+    endpoint_max = max(p['fine_endpoint_difference_recomputed'] for p in point_records)
+    refinement_max = max(p['ward_refinement_difference_recomputed'] for p in point_records)
+    require(endpoint_max == receipt['maximum_ward_endpoint_difference'] and refinement_max == receipt['maximum_ward_refinement_difference'], 'Ward maxima differ')
+    kinds = Counter('Ward endpoint' if s.endswith('Ward endpoint') else 'Ward refinement' if s.endswith('Ward refinement') else 'observable refinement' for s in failures)
+    report = {'status': 'PASS_READ_ONLY_COMPLETED_FAILURE_AUDIT', 'underlying_scientific_status': 'FAIL',
+              'control_status': receipt['control_status'], 'metric_calibration_passed': False,
+              'cross_route_calibration_status': 'NOT_ESTABLISHED', 'new_physical_evaluations': 0,
+              'mode_source_quadrature_or_validator_executed': False,
+              'recorded_utc': datetime.now(timezone.utc).isoformat(),
+              'bindings': bindings, 'public_freeze_verification_scope': 'All 370 registered replay-copy and pinned Git-object blobs verified. Remote publication was not queried by this audit.',
+              'frozen_input_files_verified': len(frozen), 'fresh_output_files_verified': len(output_records),
+              'planned_commands': 32, 'attempted_commands': 28, 'successful_commands': 27,
+              'pure_commands_passed': 26, 'primary_completed_rows': len(primary['rows']),
+              'primary_finite_K_points': sum(len(r['finite_k']) for r in primary['rows']),
+              'primary_elapsed_seconds': primary['elapsed_seconds'],
+              'independent_runs_completed': 4, 'independent_per_run_observation_rows': 6,
+              'independent_per_run_finite_K_points': 18, 'combined_independent_rows': len(modes['rows']),
+              'resources': resources, 'registered_resources': {'wall_seconds': 900, 'rss_kib': 262144},
+              'gate_failure_count': len(failures), 'failure_type_counts': dict(kinds), 'gate_failures': failures,
+              'maximum_observable_refinement_differences': maxima,
+              'maximum_ward_endpoint_difference': endpoint_max, 'maximum_ward_refinement_difference': refinement_max,
+              'maximum_wronskian_scaled': wronskian_max, 'maximum_physical_wronskian_scaled': physical_wronskian_max,
+              'post_failure_outputs_not_reached': absent, 'unattempted_commands': [c['check'] for c in plan[28:]],
+              'interpretation': 'All four independent evolutions completed within frozen resource budgets, then the unchanged internal Ward gates failed. Expected-failure control success and archival invariance are engineering/reproducibility results; they do not establish metric calibration, physical instability, heating or coupled stability. Gate recomputation uses saved JSON, not an independent raw-operator or Ward-identity derivation.',
+              'pins': {'completion_receipt_sha256': sha(control_dir / 'EXPECTED_SCIENTIFIC_FAILURE.json'),
+                       'underlying_ledger_sha256': sha(replay / 'VALIDATION.json'),
+                       'producer_results_sha256': sha(fresh / 'independent/results.json'),
+                       'audit_source_sha256': sha(Path(__file__))},
+              'frozen_inputs': frozen, 'fresh_outputs': output_records, 'all_combined_gate_points': point_records,
+              'audit_peak_rss_kib': resource.getrusage(resource.RUSAGE_SELF).ru_maxrss}
+    args.output.write_text(json.dumps(report, indent=2, sort_keys=True) + '\n')
+    print(json.dumps({k: report[k] for k in ('status', 'frozen_input_files_verified', 'fresh_output_files_verified', 'gate_failure_count', 'failure_type_counts', 'resources', 'audit_peak_rss_kib')}))
+
+if __name__ == '__main__':
+    main()

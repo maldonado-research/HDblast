@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "scope": "Synthetic arrays only; no source, mode, stress, quadrature or physical calls.",
+  "physical_evaluations": 0,
+  "checks": [
+    "synthetic extended precision witness differs from binary64",
+    "exact synthetic NPY bytes real.npy",
+    "exact synthetic NPY bytes complex.npy",
+    "exact synthetic NPY bytes integer.npy",
+    "exact synthetic NPY bytes labels.npy",
+    "exact synthetic NPY bytes scalar.npy",
+    "exact synthetic NPY bytes empty.npy",
+    "exact synthetic NPY bytes fortran.npy",
+    "exact synthetic NPY bytes strided.npy",
+    "exact synthetic NPY bytes extended_precision.npy",
+    "exact synthetic NPY bytes extended_complex_precision.npy",
+    "numpy.load synthetic dtype/shape/value real",
+    "numpy.load synthetic dtype/shape/value complex",
+    "numpy.load synthetic dtype/shape/value integer",
+    "numpy.load synthetic dtype/shape/value labels",
+    "numpy.load synthetic dtype/shape/value scalar",
+    "numpy.load synthetic dtype/shape/value empty",
+    "numpy.load synthetic dtype/shape/value fortran",
+    "numpy.load synthetic dtype/shape/value strided",
+    "numpy.load synthetic dtype/shape/value extended_precision",
+    "numpy.load synthetic dtype/shape/value extended_complex_precision",
+    "exact bounded SHA equality",
+    "duplicate member rejected",
+    "object dtype rejected",
+    "path member rejected",
+    "writer releases exact synthetic array reference",
+    "completed synthetic member survives interruption"
+  ],
+  "check_count": 27,
+  "peak_rss_kib": 31860,
+  "runtime": {
+    "numpy": "2.2.6",
+    "longdouble_nmant": 63
+  },
+  "stream_module_sha256": "a91eff3aafb6de10ecfc9807159bde04a5e3613bda7847fec4a13d2ae77d620d"
+}

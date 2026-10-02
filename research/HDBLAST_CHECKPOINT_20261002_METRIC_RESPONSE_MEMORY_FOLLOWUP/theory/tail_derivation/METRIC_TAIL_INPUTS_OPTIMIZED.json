@@ -1,0 +1,856 @@
+{
+  "baseline_specs": {
+    "Q0": {
+      "denominator_coefficients": [
+        "96",
+        "96"
+      ],
+      "expression": "(v - 1)**2*(v + 2)*(3*v**3 + 3*v**2 + 10*v + 4)/(96*pi**2*(v + 1))",
+      "numerator": [
+        {
+          "L_power": 0,
+          "coefficient": "3",
+          "h_index": null,
+          "v_power": 4
+        },
+        {
+          "L_power": 0,
+          "coefficient": "9",
+          "h_index": null,
+          "v_power": 3
+        },
+        {
+          "L_power": 0,
+          "coefficient": "16",
+          "h_index": null,
+          "v_power": 2
+        },
+        {
+          "L_power": 0,
+          "coefficient": "24",
+          "h_index": null,
+          "v_power": 1
+        },
+        {
+          "L_power": 0,
+          "coefficient": "8",
+          "h_index": null,
+          "v_power": 0
+        }
+      ],
+      "one_minus_v_power": 2
+    },
+    "p0": {
+      "denominator_coefficients": [
+        "7680",
+        "15360",
+        "7680"
+      ],
+      "expression": "-(v - 1)**2*(525*v**11 + 2100*v**10 + 1715*v**9 - 3640*v**8 - 9465*v**7 - 11260*v**6 - 9983*v**5 - 6592*v**4 - 2784*v**3 - 256*v**2 + 352*v + 88)/(7680*pi**2*(v + 1)**2)",
+      "numerator": [
+        {
+          "L_power": 0,
+          "coefficient": "-525",
+          "h_index": null,
+          "v_power": 11
+        },
+        {
+          "L_power": 0,
+          "coefficient": "-2100",
+          "h_index": null,
+          "v_power": 10
+        },
+        {
+          "L_power": 0,
+          "coefficient": "-1715",
+          "h_index": null,
+          "v_power": 9
+        },
+        {
+          "L_power": 0,
+          "coefficient": "3640",
+          "h_index": null,
+          "v_power": 8
+        },
+        {
+          "L_power": 0,
+          "coefficient": "9465",
+          "h_index": null,
+          "v_power": 7
+        },
+        {
+          "L_power": 0,
+          "coefficient": "11260",
+          "h_index": null,
+          "v_power": 6
+        },
+        {
+          "L_power": 0,
+          "coefficient": "9983",
+          "h_index": null,
+          "v_power": 5
+        },
+        {
+          "L_power": 0,
+          "coefficient": "6592",
+          "h_index": null,
+          "v_power": 4
+        },
+        {
+          "L_power": 0,
+          "coefficient": "2784",
+          "h_index": null,
+          "v_power": 3
+        },
+        {
+          "L_power": 0,
+          "coefficient": "256",
+          "h_index": null,
+          "v_power": 2
+        },
+        {
+          "L_power": 0,
+          "coefficient": "-352",
+          "h_index": null,
+          "v_power": 1
+        },
+        {
+          "L_power": 0,
+          "coefficient": "-88",
+          "h_index": null,
+          "v_power": 0
+        }
+      ],
+      "one_minus_v_power": 2
+    },
+    "rho0": {
+      "denominator_coefficients": [
+        "7680",
+        "15360",
+        "7680"
+      ],
+      "expression": "(v - 1)**2*(175*v**9 + 700*v**8 + 485*v**7 - 1560*v**6 - 4043*v**5 - 5572*v**4 - 5249*v**3 - 2176*v**2 + 352*v + 88)/(7680*pi**2*(v + 1)**2)",
+      "numerator": [
+        {
+          "L_power": 0,
+          "coefficient": "175",
+          "h_index": null,
+          "v_power": 9
+        },
+        {
+          "L_power": 0,
+          "coefficient": "700",
+          "h_index": null,
+          "v_power": 8
+        },
+        {
+          "L_power": 0,
+          "coefficient": "485",
+          "h_index": null,
+          "v_power": 7
+        },
+        {
+          "L_power": 0,
+          "coefficient": "-1560",
+          "h_index": null,
+          "v_power": 6
+        },
+        {
+          "L_power": 0,
+          "coefficient": "-4043",
+          "h_index": null,
+          "v_power": 5
+        },
+        {
+          "L_power": 0,
+          "coefficient": "-5572",
+          "h_index": null,
+          "v_power": 4
+        },
+        {
+          "L_power": 0,
+          "coefficient": "-5249",
+          "h_index": null,
+          "v_power": 3
+        },
+        {
+          "L_power": 0,
+          "coefficient": "-2176",
+          "h_index": null,
+          "v_power": 2
+        },
+        {
+          "L_power": 0,
+          "coefficient": "352",
+          "h_index": null,
+          "v_power": 1
+        },
+        {
+          "L_power": 0,
+          "coefficient": "88",
+          "h_index": null,
+          "v_power": 0
+        }
+      ],
+      "one_minus_v_power": 2
+    }
+  },
+  "checks": [
+    {
+      "name": "q_contact_derivative_0",
+      "status": "PASS"
+    },
+    {
+      "name": "q_contact_derivative_1",
+      "status": "PASS"
+    },
+    {
+      "name": "q_contact_derivative_2",
+      "status": "PASS"
+    }
+  ],
+  "coefficient_derivative_rule": "D=L\u00b2 partial_L+sum h_(j+1) partial_hj; differentiated denominator contributes -2nL\u00b3 c_n at power n+2.",
+  "contact_inventory": {
+    "p": {
+      "11": [
+        {
+          "L_power": 12,
+          "coefficient": "2653/4",
+          "h_index": 0
+        },
+        {
+          "L_power": 11,
+          "coefficient": "105/4",
+          "h_index": 1
+        },
+        {
+          "L_power": 10,
+          "coefficient": "-77/4",
+          "h_index": 2
+        }
+      ],
+      "13": [
+        {
+          "L_power": 14,
+          "coefficient": "4389/8",
+          "h_index": 0
+        },
+        {
+          "L_power": 13,
+          "coefficient": "385/2",
+          "h_index": 1
+        }
+      ],
+      "15": [
+        {
+          "L_power": 16,
+          "coefficient": "-5005/4",
+          "h_index": 0
+        }
+      ],
+      "5": [
+        {
+          "L_power": 6,
+          "coefficient": "25/12",
+          "h_index": 0
+        },
+        {
+          "L_power": 5,
+          "coefficient": "3/4",
+          "h_index": 1
+        },
+        {
+          "L_power": 4,
+          "coefficient": "-7/24",
+          "h_index": 2
+        },
+        {
+          "L_power": 3,
+          "coefficient": "-5/24",
+          "h_index": 3
+        },
+        {
+          "L_power": 2,
+          "coefficient": "-1/24",
+          "h_index": 4
+        }
+      ],
+      "7": [
+        {
+          "L_power": 8,
+          "coefficient": "110/3",
+          "h_index": 0
+        },
+        {
+          "L_power": 7,
+          "coefficient": "143/6",
+          "h_index": 1
+        },
+        {
+          "L_power": 6,
+          "coefficient": "227/24",
+          "h_index": 2
+        },
+        {
+          "L_power": 5,
+          "coefficient": "23/24",
+          "h_index": 3
+        },
+        {
+          "L_power": 4,
+          "coefficient": "-1/24",
+          "h_index": 4
+        }
+      ],
+      "9": [
+        {
+          "L_power": 10,
+          "coefficient": "-9457/24",
+          "h_index": 0
+        },
+        {
+          "L_power": 9,
+          "coefficient": "-392/3",
+          "h_index": 1
+        },
+        {
+          "L_power": 8,
+          "coefficient": "-35/4",
+          "h_index": 2
+        },
+        {
+          "L_power": 7,
+          "coefficient": "7/6",
+          "h_index": 3
+        }
+      ]
+    },
+    "q": {
+      "5": [
+        {
+          "L_power": 4,
+          "coefficient": "3/2",
+          "h_index": 0
+        },
+        {
+          "L_power": 3,
+          "coefficient": "-1",
+          "h_index": 1
+        },
+        {
+          "L_power": 2,
+          "coefficient": "-1/4",
+          "h_index": 2
+        }
+      ],
+      "7": [
+        {
+          "L_power": 6,
+          "coefficient": "25/2",
+          "h_index": 0
+        },
+        {
+          "L_power": 5,
+          "coefficient": "5/2",
+          "h_index": 1
+        }
+      ],
+      "9": [
+        {
+          "L_power": 8,
+          "coefficient": "-35/2",
+          "h_index": 0
+        }
+      ]
+    },
+    "q_prime": {
+      "11": [
+        {
+          "L_power": 11,
+          "coefficient": "315",
+          "h_index": 0
+        }
+      ],
+      "5": [
+        {
+          "L_power": 5,
+          "coefficient": "6",
+          "h_index": 0
+        },
+        {
+          "L_power": 4,
+          "coefficient": "-3/2",
+          "h_index": 1
+        },
+        {
+          "L_power": 3,
+          "coefficient": "-3/2",
+          "h_index": 2
+        },
+        {
+          "L_power": 2,
+          "coefficient": "-1/4",
+          "h_index": 3
+        }
+      ],
+      "7": [
+        {
+          "L_power": 7,
+          "coefficient": "60",
+          "h_index": 0
+        },
+        {
+          "L_power": 6,
+          "coefficient": "35",
+          "h_index": 1
+        },
+        {
+          "L_power": 5,
+          "coefficient": "5",
+          "h_index": 2
+        }
+      ],
+      "9": [
+        {
+          "L_power": 9,
+          "coefficient": "-315",
+          "h_index": 0
+        },
+        {
+          "L_power": 8,
+          "coefficient": "-105/2",
+          "h_index": 1
+        }
+      ]
+    },
+    "q_second": {
+      "11": [
+        {
+          "L_power": 12,
+          "coefficient": "9135",
+          "h_index": 0
+        },
+        {
+          "L_power": 11,
+          "coefficient": "1260",
+          "h_index": 1
+        }
+      ],
+      "13": [
+        {
+          "L_power": 14,
+          "coefficient": "-6930",
+          "h_index": 0
+        }
+      ],
+      "5": [
+        {
+          "L_power": 6,
+          "coefficient": "30",
+          "h_index": 0
+        },
+        {
+          "L_power": 4,
+          "coefficient": "-6",
+          "h_index": 2
+        },
+        {
+          "L_power": 3,
+          "coefficient": "-2",
+          "h_index": 3
+        },
+        {
+          "L_power": 2,
+          "coefficient": "-1/4",
+          "h_index": 4
+        }
+      ],
+      "7": [
+        {
+          "L_power": 8,
+          "coefficient": "360",
+          "h_index": 0
+        },
+        {
+          "L_power": 7,
+          "coefficient": "285",
+          "h_index": 1
+        },
+        {
+          "L_power": 6,
+          "coefficient": "75",
+          "h_index": 2
+        },
+        {
+          "L_power": 5,
+          "coefficient": "15/2",
+          "h_index": 3
+        }
+      ],
+      "9": [
+        {
+          "L_power": 10,
+          "coefficient": "-3675",
+          "h_index": 0
+        },
+        {
+          "L_power": 9,
+          "coefficient": "-1225",
+          "h_index": 1
+        },
+        {
+          "L_power": 8,
+          "coefficient": "-245/2",
+          "h_index": 2
+        }
+      ]
+    },
+    "rho": {
+      "11": [
+        {
+          "L_power": 12,
+          "coefficient": "-21/2",
+          "h_index": 0
+        },
+        {
+          "L_power": 11,
+          "coefficient": "105/4",
+          "h_index": 1
+        }
+      ],
+      "13": [
+        {
+          "L_power": 14,
+          "coefficient": "-1155/8",
+          "h_index": 0
+        }
+      ],
+      "5": [
+        {
+          "L_power": 6,
+          "coefficient": "-5/4",
+          "h_index": 0
+        },
+        {
+          "L_power": 5,
+          "coefficient": "-1/4",
+          "h_index": 1
+        },
+        {
+          "L_power": 4,
+          "coefficient": "3/8",
+          "h_index": 2
+        },
+        {
+          "L_power": 3,
+          "coefficient": "1/8",
+          "h_index": 3
+        }
+      ],
+      "7": [
+        {
+          "L_power": 8,
+          "coefficient": "-35/2",
+          "h_index": 0
+        },
+        {
+          "L_power": 7,
+          "coefficient": "-43/2",
+          "h_index": 1
+        },
+        {
+          "L_power": 6,
+          "coefficient": "-17/8",
+          "h_index": 2
+        },
+        {
+          "L_power": 5,
+          "coefficient": "1/8",
+          "h_index": 3
+        }
+      ],
+      "9": [
+        {
+          "L_power": 10,
+          "coefficient": "833/8",
+          "h_index": 0
+        },
+        {
+          "L_power": 9,
+          "coefficient": "35/2",
+          "h_index": 1
+        },
+        {
+          "L_power": 8,
+          "coefficient": "-7/4",
+          "h_index": 2
+        }
+      ]
+    }
+  },
+  "generator_sha256": "a1511538b49f892999fd598198c879e2e26afcb3974f41f5f4405f9f84667863",
+  "moment_inequality": "For n>=5, integral_K^infinity k\u00b2/(k\u00b2+2L\u00b2)^(n/2) dk <= K^(3-n)/(n-3).",
+  "q_reference_derivative_specs": [
+    {
+      "denominator_coefficients": [
+        "48",
+        "48"
+      ],
+      "expression": "-L**2*h0*(v - 1)**2*(v + 2)*(3*v**3 + 3*v**2 + 10*v + 4)/(48*pi**2*(v + 1))",
+      "numerator": [
+        {
+          "L_power": 2,
+          "coefficient": "-3",
+          "h_index": 0,
+          "v_power": 4
+        },
+        {
+          "L_power": 2,
+          "coefficient": "-9",
+          "h_index": 0,
+          "v_power": 3
+        },
+        {
+          "L_power": 2,
+          "coefficient": "-16",
+          "h_index": 0,
+          "v_power": 2
+        },
+        {
+          "L_power": 2,
+          "coefficient": "-24",
+          "h_index": 0,
+          "v_power": 1
+        },
+        {
+          "L_power": 2,
+          "coefficient": "-8",
+          "h_index": 0,
+          "v_power": 0
+        }
+      ],
+      "one_minus_v_power": 2
+    },
+    {
+      "denominator_coefficients": [
+        "48",
+        "48"
+      ],
+      "expression": "-L**2*(v - 1)**2*(15*L*h0*v**6 + 45*L*h0*v**5 + 69*L*h0*v**4 + 87*L*h0*v**3 + 80*L*h0*v**2 + 48*L*h0*v + 16*L*h0 + 3*h1*v**4 + 9*h1*v**3 + 16*h1*v**2 + 24*h1*v + 8*h1)/(48*pi**2*(v + 1))",
+      "numerator": [
+        {
+          "L_power": 3,
+          "coefficient": "-15",
+          "h_index": 0,
+          "v_power": 6
+        },
+        {
+          "L_power": 3,
+          "coefficient": "-45",
+          "h_index": 0,
+          "v_power": 5
+        },
+        {
+          "L_power": 3,
+          "coefficient": "-69",
+          "h_index": 0,
+          "v_power": 4
+        },
+        {
+          "L_power": 3,
+          "coefficient": "-87",
+          "h_index": 0,
+          "v_power": 3
+        },
+        {
+          "L_power": 3,
+          "coefficient": "-80",
+          "h_index": 0,
+          "v_power": 2
+        },
+        {
+          "L_power": 3,
+          "coefficient": "-48",
+          "h_index": 0,
+          "v_power": 1
+        },
+        {
+          "L_power": 3,
+          "coefficient": "-16",
+          "h_index": 0,
+          "v_power": 0
+        },
+        {
+          "L_power": 2,
+          "coefficient": "-3",
+          "h_index": 1,
+          "v_power": 4
+        },
+        {
+          "L_power": 2,
+          "coefficient": "-9",
+          "h_index": 1,
+          "v_power": 3
+        },
+        {
+          "L_power": 2,
+          "coefficient": "-16",
+          "h_index": 1,
+          "v_power": 2
+        },
+        {
+          "L_power": 2,
+          "coefficient": "-24",
+          "h_index": 1,
+          "v_power": 1
+        },
+        {
+          "L_power": 2,
+          "coefficient": "-8",
+          "h_index": 1,
+          "v_power": 0
+        }
+      ],
+      "one_minus_v_power": 2
+    },
+    {
+      "denominator_coefficients": [
+        "48",
+        "48"
+      ],
+      "expression": "-L**2*(v - 1)**2*(105*L**2*h0*v**8 + 315*L**2*h0*v**7 + 435*L**2*h0*v**6 + 465*L**2*h0*v**5 + 432*L**2*h0*v**4 + 336*L**2*h0*v**3 + 240*L**2*h0*v**2 + 144*L**2*h0*v + 48*L**2*h0 + 30*L*h1*v**6 + 90*L*h1*v**5 + 138*L*h1*v**4 + 174*L*h1*v**3 + 160*L*h1*v**2 + 96*L*h1*v + 32*L*h1 + 3*h2*v**4 + 9*h2*v**3 + 16*h2*v**2 + 24*h2*v + 8*h2)/(48*pi**2*(v + 1))",
+      "numerator": [
+        {
+          "L_power": 4,
+          "coefficient": "-105",
+          "h_index": 0,
+          "v_power": 8
+        },
+        {
+          "L_power": 4,
+          "coefficient": "-315",
+          "h_index": 0,
+          "v_power": 7
+        },
+        {
+          "L_power": 4,
+          "coefficient": "-435",
+          "h_index": 0,
+          "v_power": 6
+        },
+        {
+          "L_power": 4,
+          "coefficient": "-465",
+          "h_index": 0,
+          "v_power": 5
+        },
+        {
+          "L_power": 4,
+          "coefficient": "-432",
+          "h_index": 0,
+          "v_power": 4
+        },
+        {
+          "L_power": 4,
+          "coefficient": "-336",
+          "h_index": 0,
+          "v_power": 3
+        },
+        {
+          "L_power": 4,
+          "coefficient": "-240",
+          "h_index": 0,
+          "v_power": 2
+        },
+        {
+          "L_power": 4,
+          "coefficient": "-144",
+          "h_index": 0,
+          "v_power": 1
+        },
+        {
+          "L_power": 4,
+          "coefficient": "-48",
+          "h_index": 0,
+          "v_power": 0
+        },
+        {
+          "L_power": 3,
+          "coefficient": "-30",
+          "h_index": 1,
+          "v_power": 6
+        },
+        {
+          "L_power": 3,
+          "coefficient": "-90",
+          "h_index": 1,
+          "v_power": 5
+        },
+        {
+          "L_power": 3,
+          "coefficient": "-138",
+          "h_index": 1,
+          "v_power": 4
+        },
+        {
+          "L_power": 3,
+          "coefficient": "-174",
+          "h_index": 1,
+          "v_power": 3
+        },
+        {
+          "L_power": 3,
+          "coefficient": "-160",
+          "h_index": 1,
+          "v_power": 2
+        },
+        {
+          "L_power": 3,
+          "coefficient": "-96",
+          "h_index": 1,
+          "v_power": 1
+        },
+        {
+          "L_power": 3,
+          "coefficient": "-32",
+          "h_index": 1,
+          "v_power": 0
+        },
+        {
+          "L_power": 2,
+          "coefficient": "-3",
+          "h_index": 2,
+          "v_power": 4
+        },
+        {
+          "L_power": 2,
+          "coefficient": "-9",
+          "h_index": 2,
+          "v_power": 3
+        },
+        {
+          "L_power": 2,
+          "coefficient": "-16",
+          "h_index": 2,
+          "v_power": 2
+        },
+        {
+          "L_power": 2,
+          "coefficient": "-24",
+          "h_index": 2,
+          "v_power": 1
+        },
+        {
+          "L_power": 2,
+          "coefficient": "-8",
+          "h_index": 2,
+          "v_power": 0
+        }
+      ],
+      "one_minus_v_power": 2
+    }
+  ],
+  "scope": "Exact symbolic moment inventories and baseline difference factorization; no physical evaluation.",
+  "source_contact_sha256": "b625715cd0181055b90e58fbd00d19e144066ef1c28127dde5d93ac03c29ac01",
+  "status": "PASS"
+}

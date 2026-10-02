@@ -1,0 +1,658 @@
+[
+  {
+    "arguments": [
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/derive_metric_contacts.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/primary_algebra"
+    ],
+    "check": "primary_algebra",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/derive_metric_contacts.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/primary_algebra"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/verify_primary_preflight.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/PRIMARY_PREFLIGHT.json",
+      "--algebra",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/primary_algebra/METRIC_CONTACT_ALGEBRA.json",
+      "--independent-inventory",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/independent/FINITE_K_CONTACT_INVENTORY.json",
+      "--experiment",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/EXPERIMENT.json"
+    ],
+    "check": "primary_preflight",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/verify_primary_preflight.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/PRIMARY_PREFLIGHT.json",
+      "--algebra",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/primary_algebra/METRIC_CONTACT_ALGEBRA.json",
+      "--independent-inventory",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/independent/FINITE_K_CONTACT_INVENTORY.json",
+      "--experiment",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/EXPERIMENT.json"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/primary/metric_contact_algebra.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/primary_contact_action.json"
+    ],
+    "check": "primary_contact_action",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/primary/metric_contact_algebra.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/primary_contact_action.json"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/primary/verify_metric_ward_trace.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/primary_ward_trace.json"
+    ],
+    "check": "primary_ward_trace",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/primary/verify_metric_ward_trace.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/primary_ward_trace.json"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/independent/verify_metric_response.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/independent_generic_wkb.json"
+    ],
+    "check": "independent_generic_wkb",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/independent/verify_metric_response.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/independent_generic_wkb.json"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/independent/verify_primary_inventory_agreement.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/independent_inventory_agreement.json"
+    ],
+    "check": "independent_inventory_agreement",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/independent/verify_primary_inventory_agreement.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/independent_inventory_agreement.json"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/independent/verify_cse_specialization.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/generic_cse_agreement.json"
+    ],
+    "check": "generic_cse_agreement",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/independent/verify_cse_specialization.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/generic_cse_agreement.json"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/actual_root/verify_prerequisites.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/actual_root_algebra.json"
+    ],
+    "check": "actual_root_algebra",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/actual_root/verify_prerequisites.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/actual_root_algebra.json"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/tail_derivation/verify_metric_tail_algebra.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/metric_tail_algebra.json"
+    ],
+    "check": "metric_tail_algebra",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/tail_derivation/verify_metric_tail_algebra.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/metric_tail_algebra.json"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/test_metric_validator_guards.py"
+    ],
+    "check": "validator_guards",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/test_metric_validator_guards.py"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/verify_raw_metric_baselines.py"
+    ],
+    "check": "raw_baseline_algebra",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/verify_raw_metric_baselines.py"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/verify_inherited_sources.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/INHERITED_SOURCES.json"
+    ],
+    "check": "inherited_source_pins",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/verify_inherited_sources.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/INHERITED_SOURCES.json"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/derive_metric_contacts.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/primary_algebra_optimized"
+    ],
+    "check": "primary_algebra_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/derive_metric_contacts.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/primary_algebra_optimized"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/verify_primary_preflight.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/PRIMARY_PREFLIGHT_optimized.json",
+      "--algebra",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/primary_algebra_optimized/METRIC_CONTACT_ALGEBRA.json",
+      "--independent-inventory",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/independent/FINITE_K_CONTACT_INVENTORY.json",
+      "--experiment",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/EXPERIMENT.json"
+    ],
+    "check": "primary_preflight_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/verify_primary_preflight.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/PRIMARY_PREFLIGHT_optimized.json",
+      "--algebra",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/primary_algebra_optimized/METRIC_CONTACT_ALGEBRA.json",
+      "--independent-inventory",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/independent/FINITE_K_CONTACT_INVENTORY.json",
+      "--experiment",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/EXPERIMENT.json"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/primary/metric_contact_algebra.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/primary_contact_action_optimized.json"
+    ],
+    "check": "primary_contact_action_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/primary/metric_contact_algebra.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/primary_contact_action_optimized.json"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/primary/verify_metric_ward_trace.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/primary_ward_trace_optimized.json"
+    ],
+    "check": "primary_ward_trace_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/primary/verify_metric_ward_trace.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/primary_ward_trace_optimized.json"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/independent/verify_metric_response.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/independent_generic_wkb_optimized.json"
+    ],
+    "check": "independent_generic_wkb_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/independent/verify_metric_response.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/independent_generic_wkb_optimized.json"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/independent/verify_primary_inventory_agreement.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/independent_inventory_agreement_optimized.json"
+    ],
+    "check": "independent_inventory_agreement_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/independent/verify_primary_inventory_agreement.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/independent_inventory_agreement_optimized.json"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/independent/verify_cse_specialization.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/generic_cse_agreement_optimized.json"
+    ],
+    "check": "generic_cse_agreement_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/independent/verify_cse_specialization.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/generic_cse_agreement_optimized.json"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/actual_root/verify_prerequisites.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/actual_root_algebra_optimized.json"
+    ],
+    "check": "actual_root_algebra_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/actual_root/verify_prerequisites.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/actual_root_algebra_optimized.json"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/tail_derivation/verify_metric_tail_algebra.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/metric_tail_algebra_optimized.json"
+    ],
+    "check": "metric_tail_algebra_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/tail_derivation/verify_metric_tail_algebra.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/metric_tail_algebra_optimized.json"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/test_metric_validator_guards.py"
+    ],
+    "check": "validator_guards_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/test_metric_validator_guards.py"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/verify_raw_metric_baselines.py"
+    ],
+    "check": "raw_baseline_algebra_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/verify_raw_metric_baselines.py"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/verify_inherited_sources.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/INHERITED_SOURCES_optimized.json"
+    ],
+    "check": "inherited_source_pins_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/verify_inherited_sources.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/INHERITED_SOURCES_optimized.json"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/independent/forced_metric.py",
+      "--preflight"
+    ],
+    "check": "independent_preflight",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/independent/forced_metric.py",
+      "--preflight"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/tail_derivation/certify_metric_derivative_bounds.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/DERIVATIVE_CERTIFICATE.json"
+    ],
+    "check": "metric_derivative_certificate",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/theory/tail_derivation/certify_metric_derivative_bounds.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/proofs/DERIVATIVE_CERTIFICATE.json"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/metric_primary.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/primary",
+      "--registration-sha256",
+      "1c5bc9b21b34b1d036b7a7d12ccdb6766ac2ba7835ea04182dba868843866607",
+      "--public-freeze-commit",
+      "19fde76912af6e2f30d6f55e066b27d88cc7e34b"
+    ],
+    "check": "primary",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/metric_primary.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/primary",
+      "--registration-sha256",
+      "1c5bc9b21b34b1d036b7a7d12ccdb6766ac2ba7835ea04182dba868843866607",
+      "--public-freeze-commit",
+      "19fde76912af6e2f30d6f55e066b27d88cc7e34b"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": true,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/independent/forced_metric.py",
+      "--output-dir",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/independent",
+      "--registration",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/FULL_REGISTRATION.json",
+      "--registration-sha256",
+      "1c5bc9b21b34b1d036b7a7d12ccdb6766ac2ba7835ea04182dba868843866607",
+      "--manifest-sha256",
+      "71830eb8aaf31bccd2cb628efeb9735490e41a7d7e5b5bffc527177f7c70e075",
+      "--freeze-commit",
+      "19fde76912af6e2f30d6f55e066b27d88cc7e34b"
+    ],
+    "check": "independent_modes",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/independent/forced_metric.py",
+      "--output-dir",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/independent",
+      "--registration",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/FULL_REGISTRATION.json",
+      "--registration-sha256",
+      "1c5bc9b21b34b1d036b7a7d12ccdb6766ac2ba7835ea04182dba868843866607",
+      "--manifest-sha256",
+      "71830eb8aaf31bccd2cb628efeb9735490e41a7d7e5b5bffc527177f7c70e075",
+      "--freeze-commit",
+      "19fde76912af6e2f30d6f55e066b27d88cc7e34b"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": true,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/validate_metric.py",
+      "--primary",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/primary/results.json",
+      "--modes",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/independent/results.json",
+      "--registration-sha256",
+      "1c5bc9b21b34b1d036b7a7d12ccdb6766ac2ba7835ea04182dba868843866607",
+      "--public-freeze-commit",
+      "19fde76912af6e2f30d6f55e066b27d88cc7e34b",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/validation"
+    ],
+    "check": "validation",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/validate_metric.py",
+      "--primary",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/primary/results.json",
+      "--modes",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/independent/results.json",
+      "--registration-sha256",
+      "1c5bc9b21b34b1d036b7a7d12ccdb6766ac2ba7835ea04182dba868843866607",
+      "--public-freeze-commit",
+      "19fde76912af6e2f30d6f55e066b27d88cc7e34b",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/validation"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/validate_metric.py",
+      "--primary",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/primary/results.json",
+      "--modes",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/independent/results.json",
+      "--registration-sha256",
+      "1c5bc9b21b34b1d036b7a7d12ccdb6766ac2ba7835ea04182dba868843866607",
+      "--public-freeze-commit",
+      "19fde76912af6e2f30d6f55e066b27d88cc7e34b",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/validation_optimized"
+    ],
+    "check": "validation_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/code/validate_metric.py",
+      "--primary",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/primary/results.json",
+      "--modes",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/independent/results.json",
+      "--registration-sha256",
+      "1c5bc9b21b34b1d036b7a7d12ccdb6766ac2ba7835ea04182dba868843866607",
+      "--public-freeze-commit",
+      "19fde76912af6e2f30d6f55e066b27d88cc7e34b",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/validation_optimized"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/postrun/summarize_metric.py",
+      "--checkpoint",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+      "--primary",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/primary/results.json",
+      "--modes",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/independent/results.json",
+      "--checks",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/validation/CHECKS.json",
+      "--checks-optimized",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/validation_optimized/CHECKS.json",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/report"
+    ],
+    "check": "summary",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/postrun/summarize_metric.py",
+      "--checkpoint",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+      "--primary",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/primary/results.json",
+      "--modes",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/independent/results.json",
+      "--checks",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/validation/CHECKS.json",
+      "--checks-optimized",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/validation_optimized/CHECKS.json",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/report"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "arguments": [
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/postrun/plot_metric.py",
+      "--summary",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/report/SUMMARY.json",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/figures"
+    ],
+    "check": "figures",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint/postrun/plot_metric.py",
+      "--summary",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/report/SUMMARY.json",
+      "--output",
+      "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/fresh/figures"
+    ],
+    "cwd": "/workspace/hdblast-research-work/metric-memory-complete-control-001/replay/checkpoint",
+    "physical_producer": false,
+    "timeout_seconds": 1000
+  }
+]

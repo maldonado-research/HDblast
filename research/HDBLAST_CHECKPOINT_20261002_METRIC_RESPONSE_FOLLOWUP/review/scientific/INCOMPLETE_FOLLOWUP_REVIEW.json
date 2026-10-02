@@ -1,0 +1,335 @@
+{
+  "declared_fine_Ward_exceeds_frozen_gate": {
+    "archive_only_repair_preserves_computed_numerical_values": true,
+    "comparison_is_saved_metadata_only": true,
+    "frozen_gate": 2e-06,
+    "official_scientific_validator_executed": false,
+    "value": {
+      "K": 256,
+      "eta": -1.5,
+      "setting": "fine",
+      "source": "positive_B",
+      "value": 1.9552444892255006e-05
+    }
+  },
+  "evidence_pins": {
+    "EXECUTION.json": {
+      "bytes": 29980,
+      "sha256": "7ec54cc6354f3056e1d1d302e9e35473243184853681c0079f08fa0c83950432"
+    },
+    "VALIDATION.json": {
+      "bytes": 36269,
+      "sha256": "89eec7ac7f80a52224703af50253b60edf07e6a632809b3351e7a2cfeea7c360"
+    },
+    "checkpoint/EXPERIMENT.json": {
+      "bytes": 7416,
+      "sha256": "e1bdf0f596d6419c5758f509eb6aeac25888822004bb33c40fcf160f5a2778c0"
+    },
+    "checkpoint/FREEZE_RECEIPT.json": {
+      "bytes": 267,
+      "sha256": "b94dd29d6bc1b0792cc648abb33d8295b145ab825d77f175b29ebc389ff98a13"
+    },
+    "checkpoint/FULL_REGISTRATION.json": {
+      "bytes": 52799,
+      "sha256": "e9eee4aa5d0db84e84039d177a1ae12e8bf7ac1d41bb9ae032287daa8a667a3b"
+    },
+    "checkpoint/code/raw_metric_audit.py": {
+      "bytes": 22046,
+      "sha256": "f0b3c3a2479d02312a1bbad35be66ae808d2753ad831fa73e13049a5bd2ee9d2"
+    },
+    "checkpoint/code/validate_metric.py": {
+      "bytes": 27711,
+      "sha256": "358d695644b0e639589f7dfe05de53f72a50a1119d2f0da1d5eef3272927b863"
+    },
+    "checkpoint/independent/forced_metric.py": {
+      "bytes": 32750,
+      "sha256": "a9f6afdb4c1d484299e5bc09b99597560f266a4769133a09c8a388c2e7d8a147"
+    },
+    "fresh/independent/results.json": {
+      "bytes": 39977,
+      "sha256": "0acc6c57f63327fc9999d77649c37ecef025026a0e225ebc90b2efc4a322b2a0"
+    },
+    "fresh/primary/EXECUTION.json": {
+      "bytes": 156,
+      "sha256": "9163b7185f404d1d87e7dffef4382b23af74c8a855d1649f7047f7f7b1598e31"
+    },
+    "fresh/primary/results.json": {
+      "bytes": 189782,
+      "sha256": "3ebb2fe671404b3e314b65541d9d7313a014dd58ab565d6348efefa285620dc2"
+    },
+    "logs/independent_modes.exit.json": {
+      "bytes": 104,
+      "sha256": "5cc8ee614cb1d096818c50d3713976999a8106f075bce23b2c51b913ae51a3da"
+    },
+    "logs/independent_modes.stderr.log": {
+      "bytes": 881,
+      "sha256": "e1230aea4b48d6a78a3d4f44e45cdc65f8ec922843f136805307a539297e2127"
+    }
+  },
+  "failure": {
+    "active_run": null,
+    "elapsed_seconds": 153.80774093999935,
+    "message": "Frozen 256-MiB peak-memory budget exceeded",
+    "peak_rss_kib": 306088,
+    "producer_status": "failed",
+    "resource_failure_precedes_combine_and_validators": true,
+    "rss_budget_kib": 262144,
+    "run_metadata_count": 2,
+    "signed_uB_attempted": false,
+    "type": "RuntimeError"
+  },
+  "freeze_commit": "5ff571cdb7729398834ff3c025b50191c4ee29f2",
+  "new_physical_evaluations": 0,
+  "not_completed": [
+    "signed_uB coarse/fine modes",
+    "combined independent refinements/internal gates",
+    "normal scientific cross-route/raw archive validator",
+    "optimized scientific cross-route/raw archive validator",
+    "deterministic package replay steps"
+  ],
+  "original_experiment": {
+    "attempted_commands": 27,
+    "failure_stage": "primary SciPy weighted-log roundoff warning at positive_B eta=-4.5",
+    "freeze_commit": "57668b8fadd75df8738565e0bbd1eb852c1ebae8",
+    "registration_sha256": "f8d6bbd17b540b46c5e4382ab21fd74e15f0b283956991a250f49994553a476d",
+    "status": "FAIL",
+    "successful_commands": 26,
+    "unchanged_original_failure_status": true
+  },
+  "partial_independent_producer_declarations": [
+    {
+      "archive": {
+        "path": "metric_modes_positive_B_coarse.npz",
+        "sha256": "0b366d473a672fa110a499759aa61fb8e879b36a7104f9049fee1c5147337102"
+      },
+      "maximum_declared_Ward_endpoint": {
+        "K": 256,
+        "eta": -2.5,
+        "setting": "coarse",
+        "source": "positive_B",
+        "value": 0.02107360235728546
+      },
+      "observation_cutoff_points": 18,
+      "physical_wronskian_max_scaled": 1.6651202777754923e-17,
+      "raw_audited": false,
+      "saved_rows": 6,
+      "setting": "coarse",
+      "source": "positive_B",
+      "wronskian_max_scaled": 1.0579640034553224e-17
+    },
+    {
+      "archive": {
+        "path": "metric_modes_positive_B_fine.npz",
+        "sha256": "8bd8daac59d12cf0af5acfc7ff33185e0a18bd6910a27c7e30963fea1c89ac35"
+      },
+      "maximum_declared_Ward_endpoint": {
+        "K": 256,
+        "eta": -1.5,
+        "setting": "fine",
+        "source": "positive_B",
+        "value": 1.9552444892255006e-05
+      },
+      "observation_cutoff_points": 18,
+      "physical_wronskian_max_scaled": 3.420190439646004e-17,
+      "raw_audited": false,
+      "saved_rows": 6,
+      "setting": "fine",
+      "source": "positive_B",
+      "wronskian_max_scaled": 2.477612729749456e-17
+    }
+  ],
+  "primary": {
+    "completed_all_registered_source_time_rows": true,
+    "continuum_algorithm": {
+      "decimal_precisions": [
+        50,
+        70
+      ],
+      "error_policy": "max_precision_gap_quad_estimates_and_float_conversion",
+      "maxdegree": 10,
+      "method": "mpmath_tanh_sinh_endpoint_subtraction_squared",
+      "panels": [
+        "0",
+        "0.5",
+        "1"
+      ],
+      "reported_precision": 70,
+      "source_arithmetic": "analytic_integer_polynomials_mpmath_only"
+    },
+    "elapsed_seconds": 37.52687140800117,
+    "independently_validated": false,
+    "maximum_declared_density_derivative_estimate": {
+      "K": 64,
+      "eta": -2.5,
+      "source": "positive_B",
+      "value": 3.8640698661404397e-13
+    },
+    "maximum_declared_normalized_quadrature_estimate": {
+      "K": 64,
+      "eta": -2.5,
+      "quantity": "q_second",
+      "source": "positive_B",
+      "value": 1.9193656658868163e-12
+    },
+    "producer_status": "completed",
+    "quantity_maxima": {
+      "Q0": {
+        "K": null,
+        "eta": -5.5,
+        "quantity": "Q0",
+        "source": "positive_B",
+        "value": 0.0
+      },
+      "current": {
+        "K": 256,
+        "eta": -4.5,
+        "quantity": "current",
+        "source": "signed_uB",
+        "value": 4.408057544249176e-15
+      },
+      "p": {
+        "K": 64,
+        "eta": -2.5,
+        "quantity": "p",
+        "source": "positive_B",
+        "value": 3.2288137886571305e-13
+      },
+      "p0": {
+        "K": null,
+        "eta": -5.5,
+        "quantity": "p0",
+        "source": "positive_B",
+        "value": 0.0
+      },
+      "q": {
+        "K": 256,
+        "eta": -4.5,
+        "quantity": "q",
+        "source": "signed_uB",
+        "value": 4.408057544249176e-15
+      },
+      "q_prime": {
+        "K": 256,
+        "eta": -4.5,
+        "quantity": "q_prime",
+        "source": "signed_uB",
+        "value": 2.4497479647958552e-14
+      },
+      "q_second": {
+        "K": 64,
+        "eta": -2.5,
+        "quantity": "q_second",
+        "source": "positive_B",
+        "value": 1.9193656658868163e-12
+      },
+      "rho": {
+        "K": 64,
+        "eta": -2.5,
+        "quantity": "rho",
+        "source": "positive_B",
+        "value": 3.1673167958508237e-15
+      },
+      "rho0": {
+        "K": null,
+        "eta": -5.5,
+        "quantity": "rho0",
+        "source": "positive_B",
+        "value": 0.0
+      }
+    },
+    "rows": 12,
+    "saved_quantity_estimate_entries": 432
+  },
+  "registration_sha256": "e9eee4aa5d0db84e84039d177a1ae12e8bf7ac1d41bb9ae032287daa8a667a3b",
+  "replay": {
+    "attempted_commands": 28,
+    "completed_utc": "2026-10-02T19:31:02.686896+00:00",
+    "physical_producer_commands_attempted": 2,
+    "physical_producer_commands_completed": 1,
+    "planned_commands": 32,
+    "source_verification_after": "PASS",
+    "source_verification_before": "PASS",
+    "started_utc": "2026-10-02T19:26:53.564014+00:00",
+    "status": "FAIL",
+    "successful_commands": 27
+  },
+  "replay_directory": "/workspace/hdblast-research-work/metric-followup-complete-replay-001",
+  "review_status": "READ_ONLY_INCOMPLETE_FAILURE_CONFIRMED",
+  "scientific_experiment_status": "FAIL_INCOMPLETE",
+  "scientific_invariance_against_original": {
+    "exact_experiment_fields": {
+      "continuum_gate_policy": true,
+      "cutoffs": true,
+      "final_eta": true,
+      "gates": true,
+      "geometry": true,
+      "independent": true,
+      "independent_configuration": true,
+      "initial_eta": true,
+      "normalization": true,
+      "observation_eta": true,
+      "runtime": true,
+      "source": true,
+      "ward_acceptance": true
+    },
+    "exact_source_files": {
+      "code/metric_contact_coefficients.py": {
+        "identical": true,
+        "sha256": "a1bb42a81c3ed5d49a77d366045e771144f94fb9df1673f875d9ebe761d82336"
+      },
+      "code/raw_metric_audit.py": {
+        "identical": true,
+        "sha256": "f0b3c3a2479d02312a1bbad35be66ae808d2753ad831fa73e13049a5bd2ee9d2"
+      },
+      "code/source_jet.py": {
+        "identical": true,
+        "sha256": "6428f404032acf4824f93d38a4467e495a56b06434e796f5ac338f3addee0205"
+      },
+      "code/validate_metric.py": {
+        "identical": true,
+        "sha256": "358d695644b0e639589f7dfe05de53f72a50a1119d2f0da1d5eef3272927b863"
+      },
+      "independent/forced_metric.py": {
+        "identical": true,
+        "sha256": "a9f6afdb4c1d484299e5bc09b99597560f266a4769133a09c8a388c2e7d8a147"
+      },
+      "independent/metric_wkb.py": {
+        "identical": true,
+        "sha256": "710d2d9bf0f1927c19d1ff9519f5b0fa8bb1a8706c69d10ad80e23be666fc7ec"
+      },
+      "independent/stable_baselines.py": {
+        "identical": true,
+        "sha256": "5f756842922d17faa507ce2f17bfe25e4978c309dff3df4067970715dc10c73b"
+      },
+      "theory/DERIVATIVE_CERTIFICATE.json": {
+        "identical": true,
+        "sha256": "f83d9e7e0ec82b1937782d1ed4d8697be3853d491185b18fca3dbc82e87bb99d"
+      },
+      "theory/METRIC_TAIL_INPUTS.json": {
+        "identical": true,
+        "sha256": "f78e001f0ff4f701f52811923f9db33ad3c07f8e659ceede318a4061c994a15d"
+      },
+      "theory/metric_tail_bounds.py": {
+        "identical": true,
+        "sha256": "b9071da7408c977a58fd2225d66ea7a40413c67a24a38dbb7413e090fbb7aa97"
+      },
+      "theory/metric_wkb.py": {
+        "identical": true,
+        "sha256": "00ca16a8d96527a116f4e29dbd2f2514d59c7ebcc8282ce214697382d27b25ad"
+      }
+    },
+    "top_level_experiment_changed_fields": [
+      "followup",
+      "primary"
+    ]
+  },
+  "scope_limits": [
+    "Special conformal-point homogeneous response on prescribed de Sitter geometry at fixed physical x=r=2 and incoming BD state.",
+    "No completed finite-K cross-route/refinement/Ward calibration and no raw-audited partial declarations.",
+    "The UV module analytically encloses omitted k>K bands only; this failed replay did not execute its post-run continuum comparisons.",
+    "No total numerical error certificate or continuum stress/sign determination.",
+    "Actual shifted-root propagators/contact variations, lapse plus scale response and coordinate pullback, bulk/boundary completion and initial-state specification remain prerequisites.",
+    "No coupled evolution, constraint closure, stability, particle yield, heating, Big Bang origin validation or discovery claim."
+  ],
+  "source_configuration_or_gate_edits": 0
+}

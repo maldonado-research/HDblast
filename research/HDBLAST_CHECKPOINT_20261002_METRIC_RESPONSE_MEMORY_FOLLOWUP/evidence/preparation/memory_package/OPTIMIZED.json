@@ -1,0 +1,106 @@
+{
+  "check_count": 25,
+  "checks": [
+    "single complete deterministic builds byte-identical",
+    "single all original payload unchanged",
+    "single canonical exclusions accepted by unchanged32command driver",
+    "single all tracked files64MiB maximum",
+    "single correct storage policy",
+    "single standalone fresh ZIP byte-identical and fully verified",
+    "split complete deterministic builds byte-identical",
+    "split all original payload unchanged",
+    "split canonical exclusions accepted by unchanged32command driver",
+    "split all tracked files64MiB maximum",
+    "split correct storage policy",
+    "split standalone fresh ZIP byte-identical and fully verified",
+    "wrong_logical_SHA rejected",
+    "wrong_part_SHA rejected",
+    "wrong_part_order rejected",
+    "wrong_manifest_SHA rejected",
+    "wrong_public_freeze rejected",
+    "unsafe_part_path rejected",
+    "oversized_part rejected",
+    "missing_part rejected",
+    "corrupt physical part rejected",
+    "missing_receipt rejected",
+    "mutated_frozen_source rejected",
+    "payload_symlink rejected",
+    "payload_cache rejected"
+  ],
+  "child_science_producers": 0,
+  "large_fixture_executed": true,
+  "physical_evaluations": 0,
+  "python_optimization": 1,
+  "replay_driver_sha256": "bb4980e49e30a3167220eebc546d21e6e65aa9c464e821bbb2437f4486766cd3",
+  "results": [
+    {
+      "all_members_equal_manifest_hashes": true,
+      "archive_crc_verified": true,
+      "freeze_receipt_included_and_hashed": true,
+      "freeze_receipt_sha256": "9c6cd3111e47a472989e167f8883eb596448d5a93604bda3d3a39b3f17ed23b4",
+      "frozen_inputs_unchanged": true,
+      "independent_manifest_sha256": "00b7d081ee314457c15d9c1d4a1c8d69aa57ac6f109698e5953d565c121652c9",
+      "package_manifest_sha256": "f864588e097378eef198f4578f0b5bd7b8e099da22c683e6874797dd6d38479d",
+      "part_bytes": 67108864,
+      "payload_files": 8,
+      "public_freeze_commit": "1111111111111111111111111111111111111111",
+      "registration_sha256": "10971ef86bbffbd82c390f21d08e0ff83de02bd63b8f7f2882dbe01f63cddd1d",
+      "repeat_build_identical": true,
+      "science_evaluated": false,
+      "status": "PASS_PACKAGING_ONLY",
+      "tracked_parts": [
+        {
+          "bytes": 10325,
+          "path": "HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP.zip",
+          "sha256": "6f3319e15539db408183537f5cb7cbe28b2b6d7eb06492d95900e9c3e23de2f4"
+        }
+      ],
+      "tracked_storage": "single",
+      "tracked_zip_present": true,
+      "zip_bytes": 10325,
+      "zip_members": 9,
+      "zip_path": "/workspace/hdblast-research-work/metric-memory-package/proof/OPTIMIZED_FULL/single_external_first/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP.zip",
+      "zip_sha256": "6f3319e15539db408183537f5cb7cbe28b2b6d7eb06492d95900e9c3e23de2f4"
+    },
+    {
+      "all_members_equal_manifest_hashes": true,
+      "archive_crc_verified": true,
+      "freeze_receipt_included_and_hashed": true,
+      "freeze_receipt_sha256": "9c6cd3111e47a472989e167f8883eb596448d5a93604bda3d3a39b3f17ed23b4",
+      "frozen_inputs_unchanged": true,
+      "independent_manifest_sha256": "00b7d081ee314457c15d9c1d4a1c8d69aa57ac6f109698e5953d565c121652c9",
+      "package_manifest_sha256": "9f10b7caf6b863c65050fe266573171a1cfa62bd2da8a194a069252345058101",
+      "part_bytes": 67108864,
+      "payload_files": 9,
+      "public_freeze_commit": "1111111111111111111111111111111111111111",
+      "registration_sha256": "10971ef86bbffbd82c390f21d08e0ff83de02bd63b8f7f2882dbe01f63cddd1d",
+      "repeat_build_identical": true,
+      "science_evaluated": false,
+      "status": "PASS_PACKAGING_ONLY",
+      "tracked_parts": [
+        {
+          "bytes": 67108864,
+          "path": "HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP.zip.part0001",
+          "sha256": "01826909323018fbf0d72418040ad37388956c638a49629173d977c8ae8adbfd"
+        },
+        {
+          "bytes": 1080034,
+          "path": "HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP.zip.part0002",
+          "sha256": "ead5599756bc263febdcb2e5ed70adbf4dd987be5fcd28b287a49993b6573622"
+        }
+      ],
+      "tracked_storage": "split",
+      "tracked_zip_present": false,
+      "zip_bytes": 68188898,
+      "zip_members": 10,
+      "zip_path": "/workspace/hdblast-research-work/metric-memory-package/proof/OPTIMIZED_FULL/split_external_first/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP.zip",
+      "zip_sha256": "e4f7a947f7b9aa3e89600bf5d20a8d5ee1e2d7f629d753191bb00c20b35f1c83"
+    }
+  ],
+  "source_pins": {
+    "build_package.py": "79214f2d98618e04380ebc41d748bd84df8fdab70db27e06221bf06eff1285a5",
+    "reassemble_package.py": "3eed73161a442aa02b4440abdd132b8fb0c795878adb8e727066183b735d8b03",
+    "test_package_parts.py": "4eaa5db531e3876c5256358c59fda4fd54e270a13ccc382d4a0ee84341fd3a9e"
+  },
+  "status": "PASS_SYNTHETIC_PACKAGING_ONLY"
+}

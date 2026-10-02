@@ -1,0 +1,59 @@
+{
+  "status": "COMPATIBLE_READ_ONLY_NO_PHYSICAL_EVALUATION",
+  "original_public_freeze": "57668b8fadd75df8738565e0bbd1eb852c1ebae8",
+  "original_failed_science_commit": "5d4e92c90331808e2baf6d26d69717bf2d0a5590",
+  "followup_source_hashes": {
+    "code/metric_primary.py": "a9a387108042ad0350fa1be21d795a207bdc0b8e84149e30c0d9c0d30013b35e",
+    "code/continuum_metric_mp.py": "3f56906cad28258f988d7002ca66b8cbf4d249ea6121774591fc701393d2d8ae",
+    "code/verify_continuum_mp_algebra.py": "23b5dfb25d7f38a21196d68100f90fd87b5bac1fd398b2046e22c8fc4fe9ace6"
+  },
+  "followup_experiment_sha256": "e1bdf0f596d6419c5758f509eb6aeac25888822004bb33c40fcf160f5a2778c0",
+  "changed_configuration_top_level_keys": [
+    "followup",
+    "primary"
+  ],
+  "primary_legacy_configuration_identical": true,
+  "inherited_physical_function_sources_identical": [
+    "metric_jet",
+    "canonical_forcing_jet",
+    "forcing_jet",
+    "integrate",
+    "finite_history",
+    "finite_q_jet",
+    "direct_response"
+  ],
+  "inherited_algebra_source_files_identical": [
+    "code/source_jet.py",
+    "code/metric_contact_coefficients.py",
+    "code/derive_metric_contacts.py"
+  ],
+  "validator_raw_audit_guard_baseline_and_independent_manifest_bytes_identical": {
+    "code/validate_metric.py": "358d695644b0e639589f7dfe05de53f72a50a1119d2f0da1d5eef3272927b863",
+    "code/raw_metric_audit.py": "f0b3c3a2479d02312a1bbad35be66ae808d2753ad831fa73e13049a5bd2ee9d2",
+    "code/test_metric_validator_guards.py": "e0619f097423d4bb4454f9701fa60a5eb88a101b990ad5c4bea9c8959f5c6c14",
+    "code/verify_raw_metric_baselines.py": "d821a28c2184bacb7d801adc34b6ef0239b0c9d1073b4d4e31342d4439756c02",
+    "independent/MANIFEST.json": "4760f2a7e864dbe81ad8911797499dcd9fcc9e37a45421a607a101d35e6ce507"
+  },
+  "continuum_contract": {
+    "method": "mpmath_tanh_sinh_endpoint_subtraction_squared",
+    "decimal_precisions": [
+      50,
+      70
+    ],
+    "maxdegree": 10,
+    "panels": [
+      "0",
+      "0.5",
+      "1"
+    ],
+    "reported_precision": 70,
+    "error_policy": "max_precision_gap_quad_estimates_and_float_conversion",
+    "source_arithmetic": "analytic_integer_polynomials_mpmath_only"
+  },
+  "legacy_route_quantity_normalization_and_saved_memory_schema_retained": true,
+  "original_validator_extra_precision_receipt_coverage": "Full registered helper hash verified by registration; existing scientific validator does not separately inspect newly added helper provenance/config/decimal precision receipts. Producer enforces exact contract and receipt finiteness; receipt checks are separate preflight evidence.",
+  "scientific_followup_outcome": "UNEXECUTED",
+  "full_metric_prerequisite": "BLOCKED",
+  "new_physical_evaluations": 0,
+  "checkout_index_refs_remotes_untouched": true
+}

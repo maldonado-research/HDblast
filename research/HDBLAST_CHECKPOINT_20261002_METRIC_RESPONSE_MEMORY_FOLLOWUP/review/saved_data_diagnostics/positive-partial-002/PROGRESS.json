@@ -1,0 +1,28 @@
+{
+  "audited_runs": 0,
+  "created_at_utc": "2026-10-02T20:03:01.998700+00:00",
+  "diagnostic_status": "STARTED",
+  "full_metric_prerequisite": "BLOCKED",
+  "physical_evolution_or_response_quadratures": 0,
+  "python_optimization": 0,
+  "raw_audit_errors": [
+    {
+      "archive_sha256": "0b366d473a672fa110a499759aa61fb8e879b36a7104f9049fee1c5147337102",
+      "audit_error": "RuntimeError('Complete finite-band baseline histories: raw mismatch, residual=1.283694347524729309e-12 allowance=1.0000555111512312578e-12')",
+      "reconstructed_values_accepted": false,
+      "setting": "coarse",
+      "source": "positive_B",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/hdblast-research-work/metric-saved-diagnostics/diagnose_saved_metric.py\", line 168, in main\n    audit,points=reconstructed_run(raw,run,args.modes.parent,experiment);audits.append(audit);values[ident]=points\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/hdblast-research-work/metric-saved-diagnostics/diagnose_saved_metric.py\", line 121, in reconstructed_run\n    try:report=raw.audit_run(run,directory,experiment)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/hdblast-research-work/metric-followup-complete-replay-001/checkpoint/code/raw_metric_audit.py\", line 269, in audit_run\n    near_array(history[:,:,[5,6,7]],baseline_primitives(time,experiment['cutoffs']),'Complete finite-band baseline histories')\n  File \"/workspace/hdblast-research-work/metric-followup-complete-replay-001/checkpoint/code/raw_metric_audit.py\", line 33, in near_array\n    require(residual<=allowance,label+': raw mismatch, residual='+str(residual)+' allowance='+str(allowance))\n  File \"/workspace/hdblast-research-work/metric-followup-complete-replay-001/checkpoint/code/raw_metric_audit.py\", line 22, in require\n    if not condition: raise RuntimeError(message)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Complete finite-band baseline histories: raw mismatch, residual=1.283694347524729309e-12 allowance=1.0000555111512312578e-12\n"
+    },
+    {
+      "archive_sha256": "8bd8daac59d12cf0af5acfc7ff33185e0a18bd6910a27c7e30963fea1c89ac35",
+      "audit_error": "RuntimeError('Saved mode/operator/subtraction C_1: raw mismatch, residual=0.0120210368144252441775 allowance=1.0000555111512312578e-12')",
+      "reconstructed_values_accepted": false,
+      "setting": "fine",
+      "source": "positive_B",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/hdblast-research-work/metric-saved-diagnostics/diagnose_saved_metric.py\", line 168, in main\n    audit,points=reconstructed_run(raw,run,args.modes.parent,experiment);audits.append(audit);values[ident]=points\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/hdblast-research-work/metric-saved-diagnostics/diagnose_saved_metric.py\", line 121, in reconstructed_run\n    try:report=raw.audit_run(run,directory,experiment)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/hdblast-research-work/metric-followup-complete-replay-001/checkpoint/code/raw_metric_audit.py\", line 294, in audit_run\n    target=f'{name}_{i}';expected_names.add(target);near_array(arc[target],array,'Saved mode/operator/subtraction '+name)\n                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/hdblast-research-work/metric-followup-complete-replay-001/checkpoint/code/raw_metric_audit.py\", line 33, in near_array\n    require(residual<=allowance,label+': raw mismatch, residual='+str(residual)+' allowance='+str(allowance))\n  File \"/workspace/hdblast-research-work/metric-followup-complete-replay-001/checkpoint/code/raw_metric_audit.py\", line 22, in require\n    if not condition: raise RuntimeError(message)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Saved mode/operator/subtraction C_1: raw mismatch, residual=0.0120210368144252441775 allowance=1.0000555111512312578e-12\n"
+    }
+  ],
+  "scientific_validator_PASS": false,
+  "underlying_science_status": "FAIL"
+}

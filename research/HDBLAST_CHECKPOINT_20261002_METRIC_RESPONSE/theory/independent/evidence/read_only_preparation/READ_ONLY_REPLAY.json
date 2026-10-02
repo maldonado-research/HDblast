@@ -1,0 +1,126 @@
+{
+  "status": "PASS",
+  "scope": "Pure symbolic proofs only; zero physical evaluations",
+  "python": "3.12.14",
+  "runs": [
+    {
+      "script": "verify_metric_response.py",
+      "optimized": false,
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "-B",
+        "/workspace/hdblast-research-work/metric-independent-readonly-verification/run_readonly_proof.py",
+        "--proof",
+        "/workspace/hdblast-research-work/metric-independent-theory/verify_metric_response.py",
+        "--output",
+        "/workspace/hdblast-research-work/metric-independent-readonly-verification/EXACT_PROOF.json"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "identity_count": 55,
+      "receipt_sha256": "a76cb0e87d03cc337d778be931c02d48dad0250f6a2c6fb4d015dc60cea444c5",
+      "log_sha256": "2f6f6fbd41fef711197e828506c481140e73dde63b5d7ed210645d41b08d6582"
+    },
+    {
+      "script": "verify_metric_response.py",
+      "optimized": true,
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "-B",
+        "-O",
+        "/workspace/hdblast-research-work/metric-independent-readonly-verification/run_readonly_proof.py",
+        "--proof",
+        "/workspace/hdblast-research-work/metric-independent-theory/verify_metric_response.py",
+        "--output",
+        "/workspace/hdblast-research-work/metric-independent-readonly-verification/EXACT_PROOF_OPTIMIZED.json"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "identity_count": 55,
+      "receipt_sha256": "a76cb0e87d03cc337d778be931c02d48dad0250f6a2c6fb4d015dc60cea444c5",
+      "log_sha256": "2f6f6fbd41fef711197e828506c481140e73dde63b5d7ed210645d41b08d6582"
+    },
+    {
+      "script": "verify_cse_specialization.py",
+      "optimized": false,
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "-B",
+        "/workspace/hdblast-research-work/metric-independent-readonly-verification/run_readonly_proof.py",
+        "--proof",
+        "/workspace/hdblast-research-work/metric-independent-theory/verify_cse_specialization.py",
+        "--output",
+        "/workspace/hdblast-research-work/metric-independent-readonly-verification/CSE_AGREEMENT.json"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "identity_count": 38,
+      "receipt_sha256": "b66c06cf99eeb031044a4cc0cbc937a17f36bb285098b3768d861fc3daa8874d",
+      "log_sha256": "500e7641ffb337469fa9b27b49f3d0ff3f512ab2d6c1f7d4b7b84cfd7284aa7a"
+    },
+    {
+      "script": "verify_cse_specialization.py",
+      "optimized": true,
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "-B",
+        "-O",
+        "/workspace/hdblast-research-work/metric-independent-readonly-verification/run_readonly_proof.py",
+        "--proof",
+        "/workspace/hdblast-research-work/metric-independent-theory/verify_cse_specialization.py",
+        "--output",
+        "/workspace/hdblast-research-work/metric-independent-readonly-verification/CSE_AGREEMENT_OPTIMIZED.json"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "identity_count": 38,
+      "receipt_sha256": "b66c06cf99eeb031044a4cc0cbc937a17f36bb285098b3768d861fc3daa8874d",
+      "log_sha256": "500e7641ffb337469fa9b27b49f3d0ff3f512ab2d6c1f7d4b7b84cfd7284aa7a"
+    },
+    {
+      "script": "verify_primary_inventory_agreement.py",
+      "optimized": false,
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "-B",
+        "/workspace/hdblast-research-work/metric-independent-readonly-verification/run_readonly_proof.py",
+        "--proof",
+        "/workspace/hdblast-research-work/metric-independent-theory/verify_primary_inventory_agreement.py",
+        "--output",
+        "/workspace/hdblast-research-work/metric-independent-readonly-verification/PRIMARY_INVENTORY_AGREEMENT.json"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "identity_count": 14,
+      "receipt_sha256": "8c7173456b3d8383763dc47dcdbd930a300f5d4e6a8b1cf7d9a4fda75666ce54",
+      "log_sha256": "d55bc577d20931da727857dd6bcd9c2373a99009f1bae7562d629f145a4833fa"
+    },
+    {
+      "script": "verify_primary_inventory_agreement.py",
+      "optimized": true,
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "-B",
+        "-O",
+        "/workspace/hdblast-research-work/metric-independent-readonly-verification/run_readonly_proof.py",
+        "--proof",
+        "/workspace/hdblast-research-work/metric-independent-theory/verify_primary_inventory_agreement.py",
+        "--output",
+        "/workspace/hdblast-research-work/metric-independent-readonly-verification/PRIMARY_INVENTORY_AGREEMENT_OPTIMIZED.json"
+      ],
+      "exit_code": 0,
+      "status": "PASS",
+      "identity_count": 14,
+      "receipt_sha256": "8c7173456b3d8383763dc47dcdbd930a300f5d4e6a8b1cf7d9a4fda75666ce54",
+      "log_sha256": "d55bc577d20931da727857dd6bcd9c2373a99009f1bae7562d629f145a4833fa"
+    }
+  ],
+  "source_tree_identical_before_after": true,
+  "protected_source_files": 63,
+  "source_write_audit_guard_active": true,
+  "bytecode_writes_disabled": true,
+  "explicit_external_inventory_export_matches_legacy_bytes": true,
+  "inventory_sha256": "37fe2be5d2683c81a70513cdf3c48bb999a235f9d74f1a1ad567a91a6e27622b",
+  "runner_sha256": "2a86986e44d0cc7895c316821333698289eb1ab624bc5f43bb5546cfe3e6e589",
+  "orchestrator_sha256": "05237b112ab9e2d282910b97dd8d908794a562150d56994e3ab4ee1d6bb673c1"
+}

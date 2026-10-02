@@ -1,0 +1,105 @@
+{
+  "status": "pure_input_preflight_passed",
+  "physical_evaluations": 0,
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.2.6",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "python_optimization": 0,
+    "real_dtype": "float128",
+    "complex_dtype": "complex256",
+    "longdouble_nmant": 63,
+    "longdouble_eps": "1.084202172485504434e-19"
+  },
+  "configuration": {
+    "epsilon": "0.0001",
+    "eta_initial": "-6",
+    "eta_final": "-1.5",
+    "observations": [
+      -5.5,
+      -4.5,
+      -4.0,
+      -3.5,
+      -2.5,
+      -1.5
+    ],
+    "cutoffs": [
+      64,
+      128,
+      256
+    ],
+    "sources": [
+      "positive_B",
+      "signed_uB"
+    ],
+    "settings": [
+      {
+        "name": "coarse",
+        "steps_per_unit": 128,
+        "momentum_panel_width": "0.5"
+      },
+      {
+        "name": "fine",
+        "steps_per_unit": 256,
+        "momentum_panel_width": "0.25"
+      }
+    ],
+    "momentum_gauss_nodes": 16,
+    "local_time_gauss_nodes": 8,
+    "mass_squared": 2,
+    "xi": 0,
+    "a0": "-1/eta",
+    "H": 1,
+    "state": "incoming_BD",
+    "phi": "fixed",
+    "mass_law_b": 1,
+    "wronskian_projection": false,
+    "quantities": [
+      "q",
+      "q_prime",
+      "q_second",
+      "rho",
+      "p",
+      "Q0",
+      "rho0",
+      "p0",
+      "current"
+    ],
+    "wall_budget_seconds": 900.0,
+    "rss_budget_kib": 262144
+  },
+  "scheduled_runs": [
+    {
+      "source": "positive_B",
+      "setting": "coarse",
+      "time_steps": 576,
+      "momentum_nodes": 8192,
+      "local_time_momentum_pairs": 37748736
+    },
+    {
+      "source": "positive_B",
+      "setting": "fine",
+      "time_steps": 1152,
+      "momentum_nodes": 16384,
+      "local_time_momentum_pairs": 150994944
+    },
+    {
+      "source": "signed_uB",
+      "setting": "coarse",
+      "time_steps": 576,
+      "momentum_nodes": 8192,
+      "local_time_momentum_pairs": 37748736
+    },
+    {
+      "source": "signed_uB",
+      "setting": "fine",
+      "time_steps": 1152,
+      "momentum_nodes": 16384,
+      "local_time_momentum_pairs": 150994944
+    }
+  ],
+  "limits": [
+    "Timing is not measured before public freeze.",
+    "All physical source values, contacts, modes and integrals remain unexecuted."
+  ]
+}
