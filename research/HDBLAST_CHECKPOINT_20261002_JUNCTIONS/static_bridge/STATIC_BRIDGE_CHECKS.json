@@ -1,0 +1,266 @@
+{
+  "status": "EXACT_ALGEBRA_AND_ARCHIVED_DATA_REANALYSIS_ONLY",
+  "source_commit": "e17a01b428bb8049e919c42376ab0359e41d613c",
+  "observed_git_head": "e17a01b428bb8049e919c42376ab0359e41d613c",
+  "all_source_hashes_match_pin": true,
+  "checks": [
+    {
+      "name": "model_plus_vacuum_U",
+      "passed": true
+    },
+    {
+      "name": "model_plus_vacuum_U_phi",
+      "passed": true
+    },
+    {
+      "name": "model_plus_vacuum_U_phiphi",
+      "passed": true
+    },
+    {
+      "name": "constant_phi_failure_delta_c_over_two",
+      "passed": true
+    },
+    {
+      "name": "static_metric_compatibility_p_minus_rho",
+      "passed": true
+    },
+    {
+      "name": "static_constraint_with_both_sources",
+      "passed": true
+    },
+    {
+      "name": "jacobian_endpoint_metric_column_is_minus_H2",
+      "passed": true
+    },
+    {
+      "name": "jacobian_endpoint_scalar_column_is_B_w",
+      "passed": true
+    },
+    {
+      "name": "local_static_density",
+      "passed": true
+    },
+    {
+      "name": "local_static_mass_source",
+      "passed": true
+    },
+    {
+      "name": "constant_R2_Euler_no_static_sources",
+      "passed": true
+    },
+    {
+      "name": "static_common_action_cross_derivative",
+      "passed": true
+    },
+    {
+      "name": "general_static_common_action_cross_derivative",
+      "passed": true
+    },
+    {
+      "name": "paired_scalar_source_xphi_Q_over_two",
+      "passed": true
+    },
+    {
+      "name": "static_heat_kernel_trace_anomaly",
+      "passed": true
+    },
+    {
+      "name": "S4_low_harmonic_degeneracies",
+      "passed": true
+    },
+    {
+      "name": "PV_moment_0",
+      "passed": true
+    },
+    {
+      "name": "PV_reference_moment_0",
+      "passed": true
+    },
+    {
+      "name": "PV_moment_1",
+      "passed": true
+    },
+    {
+      "name": "PV_reference_moment_1",
+      "passed": true
+    },
+    {
+      "name": "PV_moment_2",
+      "passed": true
+    },
+    {
+      "name": "PV_reference_moment_2",
+      "passed": true
+    },
+    {
+      "name": "PV_log_leading_tail_lambda_minus_three",
+      "passed": true
+    },
+    {
+      "name": "PV_Q_leading_tail_lambda_minus_four",
+      "passed": true
+    },
+    {
+      "name": "regular_AdS_scalar_leading_match",
+      "passed": true
+    },
+    {
+      "name": "frozen_source_H2_second_order",
+      "passed": true
+    },
+    {
+      "name": "source_free_registered_second_order",
+      "passed": true
+    },
+    {
+      "name": "action_paired_linear_potential_second_order",
+      "passed": true
+    },
+    {
+      "name": "frozen_current_linear_cross_term_cancels",
+      "passed": true
+    },
+    {
+      "name": "archived_Jacobian_nonsingular_float",
+      "passed": true
+    },
+    {
+      "name": "archived_inverse_algebra_reconstruction",
+      "passed": true
+    },
+    {
+      "name": "archived_endpoint_metric_column_consistency",
+      "passed": true
+    },
+    {
+      "name": "archived_endpoint_scalar_column_consistency",
+      "passed": true
+    }
+  ],
+  "negative_controls": [
+    {
+      "name": "drop_scalar_source_factor_half",
+      "detected": true,
+      "residual": "gbar**2*(phi - phistar)"
+    },
+    {
+      "name": "drop_Fphi_current",
+      "detected": true,
+      "residual": "-6*H**2*Derivative(F(x), x)"
+    },
+    {
+      "name": "use_R2_as_static_vacuum_density",
+      "detected": true,
+      "residual": "144*H**4*alpha"
+    },
+    {
+      "name": "freeze_density_when_absorbing_linear_potential",
+      "detected": true,
+      "residual": "nu*t/192"
+    },
+    {
+      "name": "flip_scalar_source_sign",
+      "detected": true,
+      "residual": "nu"
+    }
+  ],
+  "archived_response": {
+    "coordinates": [
+      "log10(abs(eta_h))",
+      "y_b"
+    ],
+    "forcing_columns": [
+      "kappa5_squared*rho",
+      "kappa5_squared*J_phi"
+    ],
+    "vacuum_delta": 0.001,
+    "J_raw": [
+      [
+        -6.938893903907228e-12,
+        -5.924014057079319e-05
+      ],
+      [
+        -0.0006879322173491877,
+        -0.00046460663028142276
+      ]
+    ],
+    "determinant": -4.075319803508716e-08,
+    "condition_number": 16.9364181840799,
+    "du_d_source": [
+      [
+        1900.0824993800122,
+        726.8158503755865
+      ],
+      [
+        -2813.4079062821843,
+        -8.513312130661574e-05
+      ]
+    ],
+    "unresolved_components": [
+      "dy_b_d_kappa_squared_J_phi: numerical-floor dominated; driven by archived J[0,0]"
+    ],
+    "source_row_shell": {
+      "rho_b": 129.9247628496815,
+      "phi_b": 0.9999159473169134,
+      "eta_b": -8.405268308664359e-05,
+      "phi_y_b": -0.00013069916619424455,
+      "H2_brane": 5.924014794328964e-05,
+      "g_b": 1.5549469408125516,
+      "sigma2_b": 3.9996637892676534,
+      "B": 3.5547788354463785,
+      "metric_junction": 0.0,
+      "scalar_junction": 8.944667923005412e-18
+    },
+    "scope": "Matrix inversion of archived vacuum data only; no state expectation, sensitivity integration, mode evolution, or BVP."
+  },
+  "sources": {
+    "hdblast/checkpoints/2026-09-22_scalar-profile-branch-and-matter_zenodo-22922928/HDBLAST_SCALAR_PROFILE_BRANCH_AND_MATTER_20260922/matter/MATTER_EXTENSION_AND_RESIDUAL_VACUUM.md": {
+      "sha256": "22ce8354faa19f11a198cfc9fefe4380bb5ec8de95c61284e31d02aac52c6787",
+      "bytes": 22731
+    },
+    "hdblast/checkpoints/2026-09-22_scalar-profile-branch-and-matter_zenodo-22922928/HDBLAST_SCALAR_PROFILE_BRANCH_AND_MATTER_20260922/static_branch/solve_plus_branch.py": {
+      "sha256": "b81f79cbdb089f41b3c6ad8280c3be4f113b8fe29a9e8a0b9cc81854363c6f7d",
+      "bytes": 3887
+    },
+    "hdblast/checkpoints/2026-09-22_scalar-profile-branch-and-matter_zenodo-22922928/HDBLAST_SCALAR_PROFILE_BRANCH_AND_MATTER_20260922/static_branch/PLUS_BRANCH_RESULTS.json": {
+      "sha256": "b03e1c5569afb3567873fa990d16af9321b06e12a80ed89f9088a1bc00cd4fc7",
+      "bytes": 13784
+    },
+    "hdblast/checkpoints/2026-09-22_scalar-profile-branch-and-matter_zenodo-22922928/HDBLAST_SCALAR_PROFILE_BRANCH_AND_MATTER_20260922/static_branch/PLUS_BRANCH_PROFILES.npz": {
+      "sha256": "15d668f629b896564d77a936e5b2dd161553ba294f3104ebde8ea33f824d5d45",
+      "bytes": 752816
+    },
+    "hdblast/checkpoints/2026-09-22_scalar-profile-branch-and-matter_zenodo-22922928/HDBLAST_SCALAR_PROFILE_BRANCH_AND_MATTER_20260922/static_branch/INDEPENDENT_BRANCH_REVIEW.md": {
+      "sha256": "961809b2454161c35e155c802495a6852685e1964c2057354defb0ecd4c8b2de",
+      "bytes": 6900
+    },
+    "research/HDBLAST_CHECKPOINT_20260927/stability_gauge_invariant/gi_core.py": {
+      "sha256": "0b920c4c23316bd7d5929a501fa9281a6e893ef9e52e0de33c9330e1ac6cebb1",
+      "bytes": 11293
+    },
+    "research/HDBLAST_CHECKPOINT_20260927/stability_gauge_invariant/spectrum.py": {
+      "sha256": "ebd2f86ace5f6bc0aba71a5c329e3b09804ea1cbd2b76d944a33c1865a7af21e",
+      "bytes": 9678
+    },
+    "research/HDBLAST_CHECKPOINT_20260927/stability_gauge_invariant/SPECTRUM_RESULTS.json": {
+      "sha256": "02b13437f022a0537710597f706cd7991409c3027b57618bfdee711baa8a7ac7",
+      "bytes": 65047
+    },
+    "research/HDBLAST_CHECKPOINT_20260927/stability_gauge_invariant/README.md": {
+      "sha256": "8093849ad109ea3ae34e777ad4eb3919fca44060c2dfc809b8785ab1428856fa",
+      "bytes": 18431
+    },
+    "research/HDBLAST_CHECKPOINT_20260927/stability_gauge_invariant/VERIFICATION.md": {
+      "sha256": "7f8bb5ad99f5a1cce706216a3f4fe7822ff3474c9bb2df44e2fa0ea40a3f1554",
+      "bytes": 12431
+    },
+    "research/HDBLAST_CHECKPOINT_20260927/RESULTS_SUMMARY.json": {
+      "sha256": "a83714fd39c0c842fb0962c62fe736200240fb526333b3b93916013976bf9a2f",
+      "bytes": 39737
+    },
+    "research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/COMMON_ACTION_SMOOTH_FRW.md": {
+      "sha256": "4896a6f83c4d63ac8300608bba923c7a7e45b0459d70aad621b400c001ee302f",
+      "bytes": 23497
+    }
+  }
+}
