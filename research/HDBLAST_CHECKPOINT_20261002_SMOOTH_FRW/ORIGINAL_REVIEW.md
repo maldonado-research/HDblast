@@ -127,3 +127,5 @@ verified implementation and a passing flat benchmark, with curved pressure
 requiring a separately specified follow-up. It does not support claiming a
 fully resolved curved continuum source, changing the archived shell, or asserting
 self-consistent backreaction, decay, thermalization or cosmological success.
+
+Public evidence: [original matrix](outputs/original_matrix/summary.json), [read-only artifact audit](outputs/original_matrix_integrity.json), [independent modes](outputs/independent_radau.json), and [repaired-source comparison](outputs/independent_comparison_repaired.json). The separately registered continuation is reviewed in [FOLLOWUP_REVIEW.md](FOLLOWUP_REVIEW.md).

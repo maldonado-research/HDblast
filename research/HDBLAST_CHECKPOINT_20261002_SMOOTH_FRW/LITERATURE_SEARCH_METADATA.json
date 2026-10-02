@@ -1,0 +1,81 @@
+{
+  "recorded_at_utc": "2026-10-02T04:30:36.067468+00:00",
+  "submission_date_window_utc": [
+    "2022-01-01",
+    "2026-10-02"
+  ],
+  "source": "arXiv Atom metadata API",
+  "scope": "Bounded focused methods search; returned totals include irrelevant terminology matches; no exhaustive survey or absence claim.",
+  "raw_responses_included": false,
+  "response_hash_scope": "SHA-256 records locally retrieved Atom response bytes; full response bodies are not included.",
+  "initial_access": "HTTP/tunnel403 before a later network change; successful primary/metadata access after the change; initial failure retained in work records.",
+  "rate_limit_policy": "Stopped after timeout/429 rather than repeating unchanged rate-limited requests.",
+  "queries": [
+    {
+      "query": "all:\"adiabatic\" AND all:\"renormalization\" AND submittedDate:[202201010000 TO 202610022359]",
+      "url": "https://export.arxiv.org/api/query?search_query=all:%22adiabatic%22+AND+all:%22renormalization%22+AND+submittedDate:[202201010000+TO+202610022359]&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+      "status": 200,
+      "start": 0,
+      "max_results": 20,
+      "total_results": 123,
+      "returned_results": 20,
+      "atom_response_sha256": "84868d32fc28722a8ea41ce731a2d8184650ec8fa2457c09862d54fdbd4f6295",
+      "evidence": "metadata_and_abstract_screening_only"
+    },
+    {
+      "query": "all:\"time-dependent mass\" AND all:\"renormalization\" AND submittedDate:[202201010000 TO 202610022359]",
+      "url": "https://export.arxiv.org/api/query?search_query=all:%22time-dependent+mass%22+AND+all:%22renormalization%22+AND+submittedDate:[202201010000+TO+202610022359]&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+      "status": 200,
+      "start": 0,
+      "max_results": 20,
+      "total_results": 1,
+      "returned_results": 1,
+      "atom_response_sha256": "2889bbb10851258cb3e6569001cfbac074a66413e962eea7ebf4f024dc1361b4",
+      "evidence": "metadata_and_abstract_screening_only"
+    },
+    {
+      "query": "all:\"stress\" AND all:\"particle production\" AND submittedDate:[202201010000 TO 202610022359]",
+      "url": "https://export.arxiv.org/api/query?search_query=all:%22stress%22+AND+all:%22particle+production%22+AND+submittedDate:[202201010000+TO+202610022359]&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending",
+      "status": 200,
+      "start": 0,
+      "max_results": 15,
+      "total_results": 5,
+      "returned_results": 5,
+      "atom_response_sha256": "cf339509a989e8219f234a659b1adb93dca34e3817e81e29a2f4a43f49a0cc5d",
+      "evidence": "metadata_and_abstract_screening_only"
+    },
+    {
+      "query": "(cat:gr-qc OR cat:hep-th) AND (ti:adiabatic OR ti:renormalization OR ti:renormalisation) AND (all:scalar OR all:cosmological) AND submittedDate:[202201010000 TO 202610022359]",
+      "url": "https://export.arxiv.org/api/query?search_query=%28cat%3Agr-qc+OR+cat%3Ahep-th%29+AND+%28ti%3Aadiabatic+OR+ti%3Arenormalization+OR+ti%3Arenormalisation%29+AND+%28all%3Ascalar+OR+all%3Acosmological%29+AND+submittedDate%3A%5B202201010000+TO+202610022359%5D&start=0&max_results=30&sortBy=submittedDate&sortOrder=descending",
+      "status": 200,
+      "start": 0,
+      "max_results": 30,
+      "total_results": 199,
+      "returned_results": 30,
+      "atom_response_sha256": "36b114927425fb5860b96aa592801c4fb5349c60b1019b3a6227036cbd5c86ad",
+      "evidence": "metadata_and_abstract_screening_only"
+    },
+    {
+      "query": "(cat:gr-qc OR cat:hep-th) AND (all:\"time-dependent mass\" OR all:\"variable mass\" OR all:Yukawa) AND (all:renormalization OR all:regularization) AND submittedDate:[202201010000 TO 202610022359]",
+      "url": "https://export.arxiv.org/api/query?search_query=%28cat%3Agr-qc+OR+cat%3Ahep-th%29+AND+%28all%3A%22time-dependent+mass%22+OR+all%3A%22variable+mass%22+OR+all%3AYukawa%29+AND+%28all%3Arenormalization+OR+all%3Aregularization%29+AND+submittedDate%3A%5B202201010000+TO+202610022359%5D&start=0&max_results=30&sortBy=submittedDate&sortOrder=descending",
+      "outcome": "timeout",
+      "evidence": "failed_request_no_scientific_result"
+    },
+    {
+      "query": "(cat:gr-qc OR cat:hep-th) AND all:coherence AND all:\"particle production\" AND submittedDate:[202201010000 TO 202610022359]",
+      "url": "https://export.arxiv.org/api/query?search_query=%28cat%3Agr-qc+OR+cat%3Ahep-th%29+AND+all%3Acoherence+AND+all%3A%22particle+production%22+AND+submittedDate%3A%5B202201010000+TO+202610022359%5D&start=0&max_results=30&sortBy=submittedDate&sortOrder=descending",
+      "outcome": "HTTP429_rate_limited",
+      "evidence": "failed_request_no_scientific_result"
+    },
+    {
+      "query": "ti:\"adiabatic regularization\" AND submittedDate:[202201010000 TO 202610022359]",
+      "url": "https://export.arxiv.org/api/query?search_query=ti%3A%22adiabatic+regularization%22+AND+submittedDate%3A%5B202201010000+TO+202610022359%5D&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+      "outcome": "HTTP429_rate_limited",
+      "evidence": "failed_request_no_scientific_result"
+    }
+  ],
+  "primary_selected_new_leads": [
+    "2607.06042v1",
+    "2308.11040v1"
+  ]
+}
