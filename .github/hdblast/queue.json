@@ -19,7 +19,14 @@
       "source_commit": "e24643d579f7560db719775b2998c0ffa22898b0",
       "outcome": "PASS for the declared common-action construction and registered pointwise checks; the physical stationary quantum correction remains unexecuted.",
       "boundary": "Four dimensionless massive de Sitter points and resolved classical susceptibility; physical mass law, gravitational normalization and source amplitudes remain unselected. No coupled stationary solution, causal evolution, heating or hot epoch is inferred.",
-      "next_step": "Prospectively register physical/dimensionless matching and a constrained stationary weak quantum correction using both rho and J_phi."
+      "next_step": "Completed by the externally reviewed stationary checkpoint; retain the inherited fixed-reference action and classical sensitivity as inputs."
+    },
+    {
+      "path": "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM",
+      "source_commit": "a109360b840bc1387221dd7d04d002176443a1a9",
+      "outcome": "48 primary roots; original validator FAIL with 48 TypeErrors; separately repaired validation PASS at 1584 checks; independent audit 564 and proper-time 48 checks; theory 51 identities and 20 wrong formulas.",
+      "boundary": "Declared formal stationary family. Only positive gamma=.01 passes the sampled tenfold gravitational screen; resolved nonlinear feedback at gamma=1e6 fails it. No causal numerical response, stability, heating or hot epoch.",
+      "next_step": "Prospectively register a bounded fixed-geometry retarded variance calibration from the analytic causal-response proposal."
     }
   ],
   "items": [
@@ -38,14 +45,35 @@
     },
     {
       "id": "constrained-stationary-weak-quantum-correction",
-      "status": "pending",
+      "status": "completed",
       "depends_on": [],
       "goal": "Register and independently validate one constrained stationary weak quantum correction consuming the paired de Sitter sources and the resolved inherited classical branch susceptibility.",
-      "acceptance": "Before selecting numerical values or executing the stationary calculation, write the bulk length and gravitational normalization, the relation of reference mass r to those units, scalar normalization, an explicit mass law x(phi) and derivative, fixed finite local couplings and resulting dimensionless source amplitudes. The inherited benchmark grid is not a physical parameter choice: label newly selected values as prospective research choices, never measurements, and report BLOCKED if required physical matching cannot be supplied. Pin the new DESITTER source plus inherited JUNCTIONS, smooth-FRW and classical sensitivity input hashes. Register finite resources, fixed tolerances, response-scale and EFT stop rules before execution. At leading loop order evaluate rho and J_phi=x_phi Q/2 consistently on the classical branch and solve both junction corrections, checking the radial constraint, moving endpoint, residuals and small-response conditions. A finite-amplitude solve must retain mass/curvature derivatives of both sources and solve the constrained boundary-value problem. Compare refined radial solutions with the resolved derivatives, obtain a separate internal derivation or implementation check, and preserve failures. No stability, attraction, causal time evolution, particle-production, thermalization or hot-epoch claim follows from a stationary result.",
+      "acceptance": "Before selecting numerical values or executing the stationary calculation, write the bulk length and gravitational normalization, the relation of reference mass r to those units, scalar normalization, an explicit mass law x(phi) and derivative, fixed finite local couplings and resulting dimensionless source amplitudes. The inherited benchmark grid is not a physical parameter choice: label newly selected values as prospective research choices, never measurements, and report BLOCKED if required physical matching cannot be supplied. Pin the new DESITTER source plus inherited JUNCTIONS, smooth-FRW and classical sensitivity input hashes. Register finite resources, fixed tolerances, response-scale and EFT stop rules before execution. At leading loop order evaluate rho and J_phi=x_phi Q/2 consistently on the classical branch and solve both junction corrections, checking the radial constraint, moving endpoint, residuals and small-response conditions. A finite-amplitude solve must retain mass/curvature derivatives of both sources and solve the constrained boundary-value problem. Compare refined radial solutions with the resolved derivatives, obtain a separate internal derivation or implementation check, and preserve failures. No stability, attraction, causal time evolution, particle-production, thermalization or hot-epoch claim follows from a stationary result. Externally completed within the declared formal stationary family, with original validator FAIL and repaired PASS both retained. Do not repeat it to obtain an automated ledger entry.",
       "external_prerequisite": {
         "task_id": "massive-de-sitter-common-reference",
         "source_commit": "e24643d579f7560db719775b2998c0ffa22898b0",
         "path": "research/HDBLAST_CHECKPOINT_20261002_DESITTER",
+        "enforced_by": "preflight required_sources digest checks"
+      },
+      "completed_from": {
+        "kind": "reviewed_external_checkpoint",
+        "source_commit": "a109360b840bc1387221dd7d04d002176443a1a9",
+        "path": "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM",
+        "public_registration_commit": "b4f77f5826e0a603400513832aa53b0673df7533",
+        "validator_repair_commit": "d8a0b28fa7440215108ddfff51355816c932b541",
+        "evidence": "SCIENTIFIC_PROGRESS.md and required_sources pin external scientific evidence; no automated invocation or ledger PASS is invented."
+      }
+    },
+    {
+      "id": "fixed-geometry-causal-response-calibration",
+      "status": "pending",
+      "depends_on": [],
+      "goal": "Publicly register and independently validate the matched retarded scalar-variance response on one prescribed de Sitter geometry using the stationary checkpoint analytic proposal.",
+      "acceptance": "Consume theory/PROSPECTIVE_CAUSAL_RESPONSE_PROTOCOL.md as an analytic proposal, not a numerical registration or completed experiment. Before any evaluation publicly freeze implementation/input hashes, compact smooth pulses, amplitude, domain eta_i<eta_f<0, observation times, precision, cutoff ladder, tolerances and stop rules. Fix minimal coupling xi=0, x0=r=2H\u00b2, prescribed geometry, fixed positive reference r and the unchanged incoming Euclidean/BD state; s=a\u00b2 delta x and its initial derivatives vanish near eta_i. Compare separately implemented forced linearized canonical modes, the combined momentum response and matched logarithmic memory formula within the existing maximum three documented meaningful evaluations and finite round budget. Record the actual combined ultraviolet tail bound, finite-momentum/time quadrature and arithmetic errors, initial conditions and Wronskian checks. Require strict causality, signed post-pulse memory, exact fixed-r stationary Q_x=-(2EulerGamma+ln2)/(16pi\u00b2), normalization/sign/Wick/frequency mutations, finite matching/contact checks, occupied-state and initial-Bogoliubov controls, conformal factors, and both quadratic mass-law delta-j terms. Preserve every failure and provenance; bounded diagnostic only, with no state, counterterm, tolerance or mass-law tuning. PASS establishes only fixed-reference scalar susceptibility: stress/current and metric response, full Ward/contact constraints, the actual finite-gamma root propagator, bulk/boundary and quantum initial data remain required before causal shell stability or evolution. No dissipation, particle yield, heating or thermalization inference.",
+      "external_prerequisite": {
+        "task_id": "constrained-stationary-weak-quantum-correction",
+        "source_commit": "a109360b840bc1387221dd7d04d002176443a1a9",
+        "path": "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM",
         "enforced_by": "preflight required_sources digest checks"
       }
     },
@@ -53,10 +81,10 @@
       "id": "constrained-smooth-initial-data",
       "status": "pending",
       "depends_on": [
-        "constrained-stationary-weak-quantum-correction"
+        "fixed-geometry-causal-response-calibration"
       ],
       "goal": "Construct and prospectively validate a smooth state and bulk/shell initial data satisfying the actual coupled model constraints.",
-      "acceptance": "Require independently checked bulk constraints, all three junctions, admissible UV state, and a well-defined zero-source control. Stop with a negative result if these cannot be satisfied; do not substitute the prescribed exp(A B) benchmark geometry. Before treating this as evolution-ready data, separately register and construct the causal in-in source/response including its state and memory terms, the same finite local convention and the coupled scalar/metric conservation identity. The Euclidean equilibrium action alone is not a complete source for arbitrary FRW histories. Stop BLOCKED if that causal construction or physical matching is unavailable."
+      "acceptance": "Require independently checked bulk constraints, all three junctions, admissible UV state, and a well-defined zero-source control. Stop with a negative result if these cannot be satisfied; do not substitute the prescribed exp(A B) benchmark geometry. Before treating this as evolution-ready data, separately register and construct the causal in-in source/response including its state and memory terms, the same finite local convention and the coupled scalar/metric conservation identity. The Euclidean equilibrium action alone is not a complete source for arbitrary FRW histories. Stop BLOCKED if that causal construction or physical matching is unavailable. A passed fixed-geometry variance calibration supplies only one causal component. Require the matched stress-current, metric-scalar and metric-metric retarded kernels and local/contact Ward constraints, specified bulk perturbation/boundary and quantum initial data, and a valid response at the actual stationary root before declaring coupled evolution-ready data; otherwise stop BLOCKED."
     },
     {
       "id": "weak-source-evolution-registration",
@@ -99,6 +127,38 @@
     "research/HDBLAST_CHECKPOINT_20261002_DESITTER/sensitivity/STATIC_SENSITIVITY.md": "10145ca3f47b799d3b57183ba136cc8eb5731395c8d87f79212305f065d21f0a",
     "research/HDBLAST_CHECKPOINT_20261002_DESITTER/sensitivity/CHECKS.json": "3aa097aeec6b5d0b00935c07c759c44642ba80bf8a8028353871e57e99d673aa",
     "research/HDBLAST_CHECKPOINT_20261002_DESITTER/sensitivity/INPUT_PINS.json": "8a6928993f188b534f0b4087451c1b2e922986b4595bfa3f25fb763825d38b43",
-    "research/HDBLAST_CHECKPOINT_20261002_DESITTER/sensitivity/MANIFEST.json": "e9f989834bac7531cb96b96d67a37ff9a4e091842699e10dbbfb61c19effda42"
+    "research/HDBLAST_CHECKPOINT_20261002_DESITTER/sensitivity/MANIFEST.json": "e9f989834bac7531cb96b96d67a37ff9a4e091842699e10dbbfb61c19effda42",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/00_READ_FIRST.md": "51effd459c788abc95ee406ce6fcff7752924f2755f1f8f047793f26db9bd85c",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/CLAIMS_AND_NEXT_STEPS.md": "3762375fefdd2e80bfdf4a66107be818a7941a89c87486f86c5641d9c818fe81",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/MANIFEST.json": "76f4a3bdd79dc80d55e938a665f8fb4ef6ad7a541a35b901b88acb3554a48dd6",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/REGISTRATION.md": "d86302ab8cca57cdc92560bed5d1f38cac6820caa5fbcd91c4b76160746a24d7",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/PREREGISTRATION.json": "cc92741008b31a80c85d0facfb50a44baff2e752ee1b90f4c026d0b56676294b",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/FULL_REGISTRATION.json": "8e286b407514b5e2e6c5f4565b53b33a507e8da6c6cc2d1c798d93ddaf331029",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/PROSPECTIVE_RECORD.md": "885df8c2c4ff5d9c6936d7e1b5b6e202dc5f40c43b12e7b1dfadb162848eeb92",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/FIXED_MODEL.json": "ab82a94cc39e08eebabda0d4aeb8a09d68dcf61cfcaf0905cf336ef24e4710be",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/EXPERIMENT.json": "cedd635b7e7c1257f3306e1254e9052d301c76b995a504a748ac361357e25b3b",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/amendments/VALIDATOR_IMPLEMENTATION_AMENDMENT.json": "6287070e6b9709f8f5c2215287567b23e4d65a5070cba06321bc3b02c67611be",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/stationary_shell.py": "1e40d32301c18ac278695e0e58212f961269b66a9c4d8be4965f0ad3878f9ea4",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary.py": "ed703b219679fc0978bab3e6a13f35a90d8364e672dd8c4766cd94ac31898e6d",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/validate_stationary_v2.py": "3cc9fbe7d9d7e318c439463cff5da1c6dacc41780e3f132074acf94fdc118c45",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/outputs/primary/results.json": "486b120a11c01404a9b4bc244d57a51aa436a353ae17d9243a1bc01b7b66fcc1",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/outputs/primary/EXECUTION.json": "974a951143678949381e6f01fe2e04923d24bf387535112cab8821a452b024cd",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/outputs/primary/CHECKS.json": "a7ae0944bae52cae384c380370e0bb9bb2bf35018b8fb8675126aa6ce55e404a",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/outputs/primary/CHECKS_v2.json": "839e1883aa51b0d2ea3a699fde52f5411d37cd8890af76f7c86344017aa21148",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/outputs/summary/NUMERICAL_RESULTS.md": "d605216878b1259f37d50237638fa47e38ae1b23cacbc2e627360498c1daf7be",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/outputs/summary/SUMMARY.json": "9653077c5787221b24c840f66ce44f4d85af079875e0e95ed29d00eee51100f5",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/independent/INDEPENDENT_STATIONARY_REVIEW.md": "31f0d40b25c7e3d27d1eada3e73077eab323fc0af16c33dcff5c2378f9dddd1a",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/independent/REGISTRATION.md": "60813c5b4ecc881263915c7caed35bfc1e90ca9c0183bf60448c5b8b6da2bb0a",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/independent/ROOTS.json": "f46682cd4fe954e415ef422c9063451876c866b795f16bc7ec09305a1bbc094c",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/independent/PROPER_TIME.json": "0dd7920477cfff129d535ad93681c99bb0194eb26b9f9b23f8bde29ad9f4cb61",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/independent/PRIMARY_CROSS_AUDIT_V2.json": "5a4f3f0213ddb8dd377e14b72ed8e877910c9279c9d81a1c42256bf4cd76ace6",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/independent/DEVELOPMENT_FAILURES.json": "254be34196d0aaaaf935d3bc663cfe525ee2fbca8555defeffb905d552828886",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/independent/audit_primary.py": "eb3e41452040b7754d37524500919cad62c067c342b91021e4e9611e929ff337",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/independent/primary_cross_audit.log": "99829609a3b796822fe6465a1ed909a760760082854e43bbfb7b490f449baf90",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/theory/STATIONARY_COMMON_ACTION_MODEL.md": "84364b8271fc73ced365202e820908bca2d23ab0760a6ea067e7c775cf2dddf5",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/theory/FINAL_SYMBOLIC_CHECKS.json": "64a20e81e1895e3f10d9768768031572617d6670ec22b9901e7c3b4ee416913d",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/theory/FINAL_SYMBOLIC_CHECKS_OPTIMIZED.json": "478b08c4924091386e003fb45d919445127e1e95ffa9e6b64f4b626eac90b517",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/theory/PROSPECTIVE_CAUSAL_RESPONSE_PROTOCOL.md": "2bcc72013110d14f4c076f8270ee6b83057a960405f47a27b7d8c4445f82083e",
+    "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/literature/EFT_DIMENSIONAL_SCREEN.md": "82d7d909f89ed2222b19144fbf1b2c726c224ad9e044628ba9ea7d523f1b5922"
   }
 }
