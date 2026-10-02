@@ -33,10 +33,6 @@ OBS = ("rho", "p", "Q")
 class Jet:
     """Ordinary Taylor coefficients through order five, evaluated in long double."""
 
-    # NumPy-left arithmetic must dispatch to reflected Jet operators, not form
-    # an object array containing separate Jet instances.
-    __array_priority__ = 1000
-
     def __init__(self, coefficients):
         self.c = np.asarray(coefficients, dtype=LD)
         if self.c.shape[0] != ORDER + 1:
