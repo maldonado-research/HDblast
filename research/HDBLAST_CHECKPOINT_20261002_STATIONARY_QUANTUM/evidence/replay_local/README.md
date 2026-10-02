@@ -1,0 +1,3 @@
+# Fresh local replay evidence
+
+The eleven-command replay used the payload pinned in INPUT_MANIFEST.json before adding this evidence directory. The original validator intentionally returned FAIL with its 48 documented implementation exceptions; the separately amended validator and all required scientific checks passed. Original archived independent runs used different dependency versions; this fresh complete replay uses NumPy 2.2.6 and SciPy 1.15.3. Absolute execution paths and timestamps describe the actual local run. This record is local execution evidence, not a hosted CI result or an EFT/stability certificate.

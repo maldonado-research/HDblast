@@ -1,0 +1,28 @@
+{
+  "created_utc": "2026-10-02T07:24:49.981501+00:00",
+  "failed_attempt": {
+    "script": "audit_primary.py",
+    "script_sha256": "eb3e41452040b7754d37524500919cad62c067c342b91021e4e9611e929ff337",
+    "log": "primary_cross_audit.log",
+    "exit_file": "primary_cross_audit.exit",
+    "issue": "JSON writer could not serialize numpy.bool_ for a wrong-control detection value; aggregate output not emitted."
+  },
+  "correction": {
+    "script": "audit_primary_v2.py",
+    "script_sha256": "c466446f9380f7dc81e3ee75312821687b1487de796fa2edbbf0a61451aa9f07",
+    "changes": [
+      "Convert computed scalar comparison metadata to ordinary float/bool for JSON.",
+      "Replace fixed local input/output paths with required portable CLI arguments; refuse overwrite."
+    ],
+    "scientific_changes": false,
+    "numerical_gate_changes": false,
+    "parameter_changes": false,
+    "frozen_source_changes": false
+  },
+  "rerun": {
+    "log": "primary_cross_audit_v2.log",
+    "exit_file": "primary_cross_audit_v2.exit",
+    "output": "PRIMARY_CROSS_AUDIT_V2.json",
+    "status": "PASS"
+  }
+}
