@@ -1,0 +1,72 @@
+{
+  "kind": "exact symbolic action/source checks",
+  "assertions": 37,
+  "passed": [
+    "reference derivative of subtraction",
+    "metric subtraction polynomial",
+    "scalar subtraction polynomial",
+    "UV action cancellation through s2",
+    "potential reference match order 0",
+    "potential reference match order 1",
+    "potential reference match order 2",
+    "curvature reference match order 0",
+    "curvature reference match order 1",
+    "flat reference trace",
+    "flat Q",
+    "S4 geometric heat coefficient",
+    "full local reference derivative",
+    "spectral scalar variation",
+    "spectral independent metric variation",
+    "spectral reference derivative",
+    "exact matched trace after independent metric variation",
+    "cross derivative integrability",
+    "reference current derivative",
+    "regular exact-mode current point",
+    "regular exact-mode metric point",
+    "current mass derivative",
+    "current metric derivative",
+    "Hurwitz zeta value at minus one",
+    "spectral zeta zero coefficient",
+    "spectral zeta residue derivative",
+    "independent resolvent finite part",
+    "Mellin reference polynomial finite part",
+    "heat coefficient a0",
+    "heat coefficient a1",
+    "heat coefficient a2",
+    "heat coefficient a3",
+    "heat coefficient a4",
+    "general local metric variation",
+    "general local scalar variation",
+    "constant R2 stress vanishes",
+    "general local cross derivative"
+  ],
+  "negative_controls_detected": 6,
+  "negative_controls": [
+    {
+      "name": "density incorrectly equals action density",
+      "nonzero_residual": "-6*z*(24*alpha*z + F(x))"
+    },
+    {
+      "name": "reference tracks x during scalar variation",
+      "nonzero_residual": "-(15*r**2 - 30*r*x + 60*r*z + 15*x**2 - 60*x*z + 58*z**2)/(480*pi**2*r)"
+    },
+    {
+      "name": "drop curvature scalar current",
+      "nonzero_residual": "-6*z*Derivative(F(x), x)"
+    },
+    {
+      "name": "double count finite F metric source",
+      "nonzero_residual": "-6*z*F(x)"
+    },
+    {
+      "name": "replace resolvent constant by wrong -2/3",
+      "nonzero_residual": "1/3"
+    },
+    {
+      "name": "flip scalar current sign",
+      "nonzero_residual": "-2*(6*z*Derivative(F(x), x) - Derivative(V(x), x))"
+    }
+  ],
+  "no_physical_numerical_benchmark": true,
+  "sympy_version": "1.14.0"
+}

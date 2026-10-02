@@ -1,0 +1,127 @@
+[
+  {
+    "check": "theory",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "theory/verify_desitter_action.py",
+      "--output",
+      "/workspace/hdblast-research-work/desitter-clean-complete-replay/fresh/THEORY.json"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "theory_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "theory/verify_desitter_action.py",
+      "--output",
+      "/workspace/hdblast-research-work/desitter-clean-complete-replay/fresh/THEORY_OPTIMIZED.json"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "primary",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "code/desitter_sources.py",
+      "--repo",
+      "/workspace/HDblast",
+      "--output",
+      "/workspace/hdblast-research-work/desitter-clean-complete-replay/fresh/primary"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "primary_validator",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "code/validate_sources.py",
+      "/workspace/hdblast-research-work/desitter-clean-complete-replay/fresh/primary"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "proper_time",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "independent/independent_proper_time.py",
+      "--output",
+      "/workspace/hdblast-research-work/desitter-clean-complete-replay/fresh/PROPER_TIME.json"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "exact_modes",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "independent/exact_mode_bridge.py",
+      "--output",
+      "/workspace/hdblast-research-work/desitter-clean-complete-replay/fresh/EXACT_MODES.json"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "exact_modes_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "independent/exact_mode_bridge.py",
+      "--output",
+      "/workspace/hdblast-research-work/desitter-clean-complete-replay/fresh/EXACT_MODES_OPTIMIZED.json"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "independent_audit",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "independent/audit_independent_sources.py",
+      "--producer",
+      "/workspace/hdblast-research-work/desitter-clean-complete-replay/fresh/primary/results.json",
+      "--proper",
+      "/workspace/hdblast-research-work/desitter-clean-complete-replay/fresh/PROPER_TIME.json",
+      "--output",
+      "/workspace/hdblast-research-work/desitter-clean-complete-replay/fresh/AUDIT.json"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "summary",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "code/summarize_sources.py",
+      "--primary",
+      "/workspace/hdblast-research-work/desitter-clean-complete-replay/fresh/primary/results.json",
+      "--independent",
+      "/workspace/hdblast-research-work/desitter-clean-complete-replay/fresh/PROPER_TIME.json",
+      "--output",
+      "/workspace/hdblast-research-work/desitter-clean-complete-replay/fresh/summary"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "sensitivity",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "sensitivity/compute_sensitivity.py",
+      "--repo",
+      "/workspace/HDblast",
+      "--output",
+      "/workspace/hdblast-research-work/desitter-clean-complete-replay/fresh/RUNS.json"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "sensitivity_validator",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "sensitivity/verify_sensitivity.py",
+      "--runs",
+      "/workspace/hdblast-research-work/desitter-clean-complete-replay/fresh/RUNS.json",
+      "--output",
+      "/workspace/hdblast-research-work/desitter-clean-complete-replay/fresh/SENSITIVITY.json"
+    ],
+    "exit_code": 0
+  }
+]

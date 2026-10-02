@@ -1,0 +1,30 @@
+# Claims, limits and the next calculation
+
+## Supported results
+
+1. **A common-action massive de Sitter source exists in the declared finite convention.** The convergent Euclidean sphere action retains the homogeneous mode and every reference subtraction term. At fixed `r`, mass and metric variations independently give `Q=2W_x` and `rho=W−H² W_(H²)/2`. The derived trace remainder agrees with the previously conditional JUNCTIONS expression. No amendment of that conditional formula is required for this action.
+2. **The four registered source points pass the prescribed checks.** The primary calculation passes 57 gates and detects three negative controls. A separate proper-time implementation performs eight evaluations, passes 12 refinement comparisons, and agrees in all 12 refined cross-method comparisons. Thirty-seven symbolic assertions and six deliberately wrong-formula tests also pass. These results cover the registered positive-mass points, with no extrapolation over the full mass/curvature domain.
+3. **One exact curved-point mode calculation independently checks all three observables.** At `x=r=2H²`, separate energy, pressure and variance integrals give `rho=11H⁴/(960pi²)`, `p=−rho`, and `Q=H²/(12pi²)`. Pressure is evaluated directly. This is one point, not a general numerical mode-integral survey.
+4. **The small classical metric derivative has a resolved positive sign.** Nineteen integrations, including two complex-step checks, give `E1_ell≈+9.63825e−14` on the inherited `delta=0.001` branch. Eleven numerical gates pass and three wrong-formula controls are detected. An integral identity and differentiated endpoint constraint support the source-response coefficients. This updates small inverse-matrix entries without reversing the branch's nonsingularity conclusion.
+
+## What the evidence does not establish
+
+The finite convention is declared matching data, not a determination of physical couplings. A sphere alone cannot resolve every coefficient of a general covariant action. The full curved vacuum sources need not vanish at `x=r`, and their signs depend on the finite convention. `J_phi=x_phi Q/2` remains symbolic until a physical scalar normalization and mass law are supplied.
+
+Tail bounds and high-precision cross-method agreement provide strong evidence at the specified gates. They do not globally certify arithmetic or bound all proper-time ultraviolet and quadrature errors. The tiny trace residual is a consequence of a shared action identity and is not an independent precision certificate. The sensitivity error scales are empirical run envelopes, and its nonlinear response remainder is not bounded.
+
+The review, symbolic work and separate implementations are internal AI-assisted cross-checks, not external peer review. The original independent aggregator omitted saved trace checks from aggregate acceptance; the post-run audit restores enforcement of all eight originally registered gates and rejects five corrupted records. That correction and the initial failed sensitivity symbolic verifier remain visible in the archive.
+
+Only the primary producer was publicly preregistered before its execution: commit `85aea9955b99bba911a0e66e5869c184dd86a660`. The independent proper-time and sensitivity work had local prospective registrations and began before that commit. The exact-mode bridge and record audit are later diagnostics, and are not retroactively described as preregistered.
+
+No physical mass, gravitational coupling or finite source amplitude is chosen. There is no quantum-corrected radial boundary-value solution, causal in-in kernel, dynamic attraction result, quantum-stability result, heating calculation or hot-universe prediction. The massive invariant state does not resolve the massless zero-mode obstruction. Literature verification provides context and formula checks; it does not establish priority or novelty.
+
+## Next priority: a constrained stationary quantum correction
+
+1. **State the physical and dimensionless matching.** Specify the bulk length and gravitational normalization, the relation of `r` to those units, the scalar normalization and mass law `x(phi)`, its derivative, and the fixed finite local couplings. Identify the resulting dimensionless source amplitudes before inserting numbers. The four benchmark grid points alone supply none of these choices.
+2. **Register a bounded stationary calculation that consumes both sources.** Use the inherited regular classical branch, its resolved sensitivity and the common-action `rho` and `J_phi`. At leading loop order evaluate the sources consistently on the classical background and solve both junction corrections. Check the radial constraint, moving endpoint, residuals and the small-response requirements. A finite-amplitude stationary solve must retain the mass and curvature derivatives of the paired sources and solve the constrained boundary-value problem.
+3. **Test perturbative validity and branch continuation.** Refine the radial integrations, compare the direct constrained solve with the resolved first derivatives, preserve failures, and report the allowed response scale. A formal linear displacement without physical matching is not a physical prediction; a static solution alone proves neither stability nor an attractor.
+4. **Construct causal evolution as a separate problem.** Specify the initial state, derive the in-in response with its memory terms, maintain the same local finite convention, and enforce the coupled scalar/metric conservation identity. Then solve shell and bulk evolution with controlled state and numerical errors. The Euclidean equilibrium action cannot simply be inserted as the complete quantum source for arbitrary FRW histories.
+5. **Evaluate particle production and energy transfer only after that construction.** Define observables, track the complete energy budget, and supply an interaction/thermalization model before making a heating or hot Big Bang claim.
+
+The source calculation and resolved classical susceptibility make the stationary step concrete. They do not supply the missing physical matching or time-dependent response.

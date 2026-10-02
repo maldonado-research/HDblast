@@ -1,0 +1,27 @@
+{
+  "recorded_utc": "2026-10-02T06:21:45.456009+00:00",
+  "original_computation_source": {
+    "path": "registered_sources/compute_sensitivity.py",
+    "sha256": "43b223dea0dffaec955ac56613c0ca8fdb9f739abd3192d0ab2de5c9db8f42f6",
+    "matches_archived_run_source": true
+  },
+  "original_corrected_verifier": {
+    "path": "registered_sources/verify_sensitivity.py",
+    "sha256": "7e5a9242300dbaba969aa785e5965edef9673373eea06c1457c80ca9b972043e",
+    "matches_archived_check_source": true
+  },
+  "portable_sources": {
+    "compute_sensitivity.py": "aba680a97e988b06874882c005ab032f475a8500b06850c51d61b8aaecfcebb8",
+    "verify_sensitivity.py": "c567f435232c40007edf1cd491897c88a88dabe8f30c5b7ba876a6d874dc1c4e"
+  },
+  "changes": [
+    "Replace hardcoded repository default by ancestor detection and explicit --repo override.",
+    "Require explicit output file and create its parent directory.",
+    "Keep all numerical constants, initial series, solver sequence, scientific functions, gates, and controls unchanged."
+  ],
+  "all_non_main_computation_functions_AST_equal": true,
+  "scientific_ODE_reexecution": false,
+  "portable_verifier_status": "PASS",
+  "portable_verifier_output": "portability_checks/CHECKS.json",
+  "notes": "Full19-run portable replay delegated to root; this change was mechanically verified and archived-data checker rerun."
+}

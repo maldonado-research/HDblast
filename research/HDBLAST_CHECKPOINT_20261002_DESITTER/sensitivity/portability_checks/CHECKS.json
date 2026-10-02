@@ -1,0 +1,294 @@
+{
+  "status": "PASS",
+  "scope": "classical local differential response; empirical floating-point evidence, no interval error certification",
+  "symbolic": {
+    "constraint_to_weighted_variation_identity": true,
+    "shifted_potential_coefficients": true,
+    "regular_cone_series_orders_checked": [
+      "R y^3,y^5",
+      "phi y^2,y^4"
+    ]
+  },
+  "gates": {
+    "phi_ell_absolute": true,
+    "H2_ell_absolute": true,
+    "ordinary_J_absolute": true,
+    "tiny_J00_identity": true,
+    "tiny_J00_independent_methods": true,
+    "tiny_J00_positive_all": true,
+    "phi_response_absolute": true,
+    "H2_response_absolute": true,
+    "constraint_response_absolute": true,
+    "negative_controls_detected": true,
+    "no_run_failures": true
+  },
+  "reference": {
+    "method": "DOP853",
+    "rtol": 3e-14,
+    "y0": 1e-05,
+    "max_step": 0.05,
+    "nfev": 7538,
+    "seconds": 0.1135399341583252,
+    "R": 129.9247628496816,
+    "phi": 0.9999159473169132,
+    "eta": -8.405268308670538e-05,
+    "w": -0.00013069916619434056,
+    "H2": 5.924014794328956e-05,
+    "q": 0.1113773709169247,
+    "residual": [
+      2.7755575615628914e-17,
+      -2.1060627200530924e-16
+    ],
+    "phi_ell": -0.00019352708252824284,
+    "H2_ell": 3.2121171004481907e-13,
+    "R_ell": -3.522387831649665e-07,
+    "E1_ell_direct": 9.638251455920017e-14,
+    "E1_ell_integral": 9.638251456423781e-14,
+    "integral": -1.3732071286563314e-05,
+    "integral_identity_error": -5.037640497192414e-24,
+    "endpoint_exact_identities": [
+      -5.924014794328956e-05,
+      -0.0004646066297981307
+    ],
+    "J": [
+      [
+        9.638251456423781e-14,
+        -5.9240147943289565e-05
+      ],
+      [
+        -0.0006879322168142164,
+        -0.0004646066297981307
+      ]
+    ],
+    "output_J": [
+      [
+        -0.00019352708252824284,
+        -0.00013069916619434056
+      ],
+      [
+        3.2121171004481907e-13,
+        -1.3196023861306511e-05
+      ]
+    ],
+    "coordinate_response": [
+      [
+        1900.082110016634,
+        726.8157926460746
+      ],
+      [
+        -2813.4073304996045,
+        1.182514496541927e-06
+      ]
+    ],
+    "observable_response": [
+      [
+        -7.35505428310765e-06,
+        -0.14065854004080075
+      ],
+      [
+        0.03712579087517606,
+        2.178572541307181e-10
+      ]
+    ],
+    "constraint_response": [
+      0.037125790875176055,
+      2.178572618054893e-10
+    ],
+    "constraint_response_error": [
+      6.938893903907228e-18,
+      -7.674771199326054e-18
+    ],
+    "determinant": -4.0753206343809304e-08,
+    "condition_number": 16.93641469926657
+  },
+  "refinement_statistics": {
+    "phi_ell": {
+      "full_span": 3.3434084494021743e-15,
+      "max_difference_from_reference": 3.343137398859053e-15,
+      "conservative_empirical_error_scale": 3.343408449402174e-14
+    },
+    "H2_ell": {
+      "full_span": 1.108454332563735e-23,
+      "max_difference_from_reference": 1.1082422867524115e-23,
+      "conservative_empirical_error_scale": 1.108454332563735e-22
+    },
+    "E1_ell_integral": {
+      "full_span": 3.330811091226408e-19,
+      "max_difference_from_reference": 3.330618758102473e-19,
+      "conservative_empirical_error_scale": 3.330811091226408e-18
+    },
+    "E1_ell_direct": {
+      "full_span": 3.3303118641997447e-19,
+      "max_difference_from_reference": 3.3302456897507405e-19,
+      "conservative_empirical_error_scale": 3.3303118641997447e-18
+    },
+    "J": {
+      "full_span": [
+        [
+          3.330811091226408e-19,
+          2.4936649967166602e-18
+        ],
+        [
+          1.1883723172179117e-14,
+          8.027812355843045e-15
+        ]
+      ],
+      "max_difference_from_reference": [
+        [
+          3.330618758102473e-19,
+          1.938011383317839e-18
+        ],
+        [
+          1.1882638970006631e-14,
+          8.02737867497405e-15
+        ]
+      ],
+      "conservative_empirical_error_scale": [
+        [
+          3.330811091226408e-18,
+          2.4936649967166602e-17
+        ],
+        [
+          1.1883723172179117e-13,
+          8.027812355843045e-14
+        ]
+      ]
+    },
+    "coordinate_response": {
+      "full_span": [
+        [
+          4.092726157978177e-11,
+          1.2552732187032234e-08
+        ],
+        [
+          1.1368683772161603e-10,
+          4.086583650168751e-12
+        ]
+      ],
+      "max_difference_from_reference": [
+        [
+          4.092726157978177e-11,
+          1.2551595318655018e-08
+        ],
+        [
+          9.185896487906575e-11,
+          4.0863476737776675e-12
+        ]
+      ],
+      "conservative_empirical_error_scale": [
+        [
+          4.092726157978177e-10,
+          1.2552732187032234e-07
+        ],
+        [
+          1.1368683772161603e-09,
+          4.086583650168751e-11
+        ]
+      ]
+    },
+    "observable_response": {
+      "full_span": [
+        [
+          7.591795285277021e-14,
+          1.27675647831893e-14
+        ],
+        [
+          1.3877787807814457e-17,
+          5.3930679801373843e-17
+        ]
+      ],
+      "max_difference_from_reference": [
+        [
+          7.577105108169495e-14,
+          1.2545520178264269e-14
+        ],
+        [
+          6.938893903907228e-18,
+          5.392756466503636e-17
+        ]
+      ],
+      "conservative_empirical_error_scale": [
+        [
+          7.591795285277021e-13,
+          1.27675647831893e-13
+        ],
+        [
+          1.3877787807814457e-16,
+          5.393067980137384e-16
+        ]
+      ]
+    }
+  },
+  "complex_step_max_difference": {
+    "phi_ell": 1.916327339868129e-17,
+    "H2_ell": 6.432056276810042e-26,
+    "E1_ell": 1.995864500473936e-21,
+    "E2_ell": 6.808789643208968e-17
+  },
+  "finest_start_spread": {
+    "phi_ell": 1.4365678785432934e-18,
+    "H2_ell": 7.472090494253424e-27,
+    "E1_ell_integral": 1.765986179154532e-22,
+    "observable_response": [
+      [
+        1.799801017314355e-16,
+        2.7755575615628914e-17
+      ],
+      [
+        0.0,
+        2.8595401131410886e-20
+      ]
+    ]
+  },
+  "baseline_newton_correction_estimate_ell_y": [
+    -6.225711651303698e-13,
+    4.685264388973889e-13
+  ],
+  "negative_controls": {
+    "drop_scalar_junction_metric_column": {
+      "wrong": -8.43117972496008e-09,
+      "identity_discrepancy": 8.431276107474644e-09
+    },
+    "reverse_current_sign": {
+      "target_residual_discrepancy": 1.0
+    },
+    "omit_moving_endpoint": {
+      "wrong_observable_response": [
+        [
+          -0.36771734731562694,
+          -0.1406585398862471
+        ],
+        [
+          6.103286237840111e-10,
+          2.3346174364342623e-10
+        ]
+      ],
+      "absolute_discrepancy": [
+        [
+          0.3677099922613438,
+          1.5455364765770696e-10
+        ],
+        [
+          0.03712579026484744,
+          1.560448951270813e-11
+        ]
+      ]
+    }
+  },
+  "small_response_coefficients": {
+    "absolute_phi": [
+      7.35505428310765e-06,
+      0.14065854004080075
+    ],
+    "relative_H2": [
+      626.6998338815171,
+      3.6775271786841634e-06
+    ]
+  },
+  "run_count": 19,
+  "failures": [],
+  "inputs": {
+    "runs_sha256": "f9139977b72c74a13c1a72ca578c95be7466a0ba9df98e2fd572d0bad643480f",
+    "verifier_sha256": "c567f435232c40007edf1cd491897c88a88dabe8f30c5b7ba876a6d874dc1c4e"
+  }
+}
