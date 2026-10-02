@@ -1,8 +1,8 @@
-# HDBLAST: separately registered metric-response followup
+# HDBLAST: separately registered memory-only metric followup
 
 Ricardo Maldonado · 2 October 2026 · ORCID 0009-0009-3937-6527
 
-The original metric calibration remains FAIL after a fatal continuum quadrature roundoff warning. Its sources and partial execution evidence are preserved in the original checkpoint. This follow-up changes continuum arithmetic under a separate public registration.
+The original metric calibration remains FAIL after a fatal continuum roundoff warning. The separate high-precision followup remains FAIL from its peak-memory budget. This third registration preserves all physical calculations, grids and gates and changes only archive I/O, array lifetime and bounded hashing. It expects a scientific Ward-gate failure while seeking complete four-run data. Wrapper/control PASS never means scientific calibration PASS.
 
 This checkpoint prepares a separately registered test of quantum variance, minimal density, pressure, and scalar current under a smooth homogeneous perturbation of prescribed de Sitter geometry. The physical mass, finite reference, and scalar background are held fixed. Full metric variations of the operators and renormalization subtractions are essential.
 
