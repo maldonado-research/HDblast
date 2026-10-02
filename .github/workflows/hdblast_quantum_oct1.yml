@@ -1,0 +1,61 @@
+name: HDBLAST quantum-source experiment
+on:
+  push:
+    branches: ["research/20261001-quantum-source"]
+    paths:
+      - "research/HDBLAST_CHECKPOINT_20261001_QFT/code/**"
+      - "research/HDBLAST_CHECKPOINT_20261001_QFT/REGISTRATION.md"
+      - "research/HDBLAST_CHECKPOINT_20261001_QFT/INPUTS.json"
+      - "research/HDBLAST_CHECKPOINT_20261001_QFT/data/**"
+      - ".github/workflows/hdblast_quantum_oct1.yml"
+
+permissions:
+  contents: read
+jobs:
+  quantum_modes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: research/HDBLAST_CHECKPOINT_20261001_QFT
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile saved source
+        working-directory: research/HDBLAST_CHECKPOINT_20261001_QFT
+        run: python -m py_compile code/quantum_source.py code/verify_inputs.py code/publish_diagnostics.py code/verify_independent.py code/verify_package.py
+      - name: Verify curated download
+        working-directory: research/HDBLAST_CHECKPOINT_20261001_QFT
+        run: python code/verify_package.py
+      - name: Install numeric and plotting dependencies
+        run: python -m pip install numpy==2.2.6 scipy==1.15.3 matplotlib==3.10.1
+      - name: Verify pinned scientific inputs
+        working-directory: research/HDBLAST_CHECKPOINT_20261001_QFT
+        run: python code/verify_inputs.py
+      - name: Run registered quantum modes
+        working-directory: research/HDBLAST_CHECKPOINT_20261001_QFT
+        run: python code/quantum_source.py --registration REGISTRATION.md --registration-sha256 481cbe98c642fc4821ec1f244c3b8db680f5935604800b8a75df07bcdad623c6 --source-ref "${GITHUB_SHA}"
+      - name: Independently replay modes and coherent observables
+        working-directory: research/HDBLAST_CHECKPOINT_20261001_QFT
+        run: |
+          mkdir -p outputs/replay
+          node code/coherence_controls.js > outputs/replay/coherence_controls.json
+          node code/independent_modes.js > outputs/replay/independent_rk4.json
+          node code/endpoint_basis_check.js > outputs/replay/endpoint_basis_check.json
+          python code/verify_independent.py
+          node code/matching_diagnostic.js > outputs/replay/matching_diagnostic.json
+      - name: Export numerical curves and figures
+        if: always()
+        working-directory: research/HDBLAST_CHECKPOINT_20261001_QFT
+        run: python code/publish_diagnostics.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hdblast-quantum-source
+          path: research/HDBLAST_CHECKPOINT_20261001_QFT/outputs/
+          if-no-files-found: error
