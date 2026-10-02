@@ -1,0 +1,202 @@
+{
+  "checks": [
+    {
+      "name": "serialized_q_moment_5",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_q_moment_7",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_q_moment_9",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_rho_moment_11",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_rho_moment_13",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_rho_moment_5",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_rho_moment_7",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_rho_moment_9",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_p_moment_11",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_p_moment_13",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_p_moment_15",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_p_moment_5",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_p_moment_7",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_p_moment_9",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_differentiated_q_prime",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_differentiated_q_second",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_factored_Q0_tail",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_factored_p0_tail",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_factored_rho0_tail",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_q_reference_derivative_0",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_q_reference_derivative_1",
+      "status": "PASS"
+    },
+    {
+      "name": "serialized_q_reference_derivative_2",
+      "status": "PASS"
+    },
+    {
+      "name": "mass_proxy_J5_tail",
+      "status": "PASS"
+    },
+    {
+      "name": "mass_proxy_J7_tail",
+      "status": "PASS"
+    },
+    {
+      "name": "mass_proxy_J9_tail",
+      "status": "PASS"
+    },
+    {
+      "name": "moment_power_primitive_5",
+      "status": "PASS"
+    },
+    {
+      "name": "moment_power_primitive_7",
+      "status": "PASS"
+    },
+    {
+      "name": "moment_power_primitive_9",
+      "status": "PASS"
+    },
+    {
+      "name": "moment_power_primitive_11",
+      "status": "PASS"
+    },
+    {
+      "name": "moment_power_primitive_13",
+      "status": "PASS"
+    },
+    {
+      "name": "moment_power_primitive_15",
+      "status": "PASS"
+    },
+    {
+      "name": "canonical_forcing_Leibniz_0",
+      "status": "PASS"
+    },
+    {
+      "name": "canonical_forcing_Leibniz_1",
+      "status": "PASS"
+    },
+    {
+      "name": "canonical_forcing_Leibniz_2",
+      "status": "PASS"
+    },
+    {
+      "name": "canonical_forcing_Leibniz_3",
+      "status": "PASS"
+    },
+    {
+      "name": "canonical_forcing_Leibniz_4",
+      "status": "PASS"
+    },
+    {
+      "name": "canonical_forcing_Leibniz_5",
+      "status": "PASS"
+    },
+    {
+      "name": "positive_B_certificate_orders_and_positive_caps",
+      "status": "PASS"
+    },
+    {
+      "name": "signed_uB_certificate_orders_and_positive_caps",
+      "status": "PASS"
+    }
+  ],
+  "identity_count": 39,
+  "input_sha256": {
+    "DERIVATIVE_CERTIFICATE.json": "f83d9e7e0ec82b1937782d1ed4d8697be3853d491185b18fca3dbc82e87bb99d",
+    "METRIC_TAIL_INPUTS.json": "f78e001f0ff4f701f52811923f9db33ad3c07f8e659ceede318a4061c994a15d",
+    "reference_inputs/METRIC_CONTACT_ALGEBRA.json": "b625715cd0181055b90e58fbd00d19e144066ef1c28127dde5d93ac03c29ac01"
+  },
+  "mutation_count": 6,
+  "mutations": [
+    {
+      "name": "missing_second_moment_reference_factor",
+      "rational_residual": "-7/48",
+      "status": "DETECTED"
+    },
+    {
+      "name": "wrong_J7_tail_denominator",
+      "rational_residual": "-47/640",
+      "status": "DETECTED"
+    },
+    {
+      "name": "wrong_J9_tail_denominator",
+      "rational_residual": "-617/15360",
+      "status": "DETECTED"
+    },
+    {
+      "name": "omit_q_reference_metric_prefactor",
+      "rational_residual": "-45/(512*pi**2)",
+      "status": "DETECTED"
+    },
+    {
+      "name": "freeze_reference_denominator_under_time_derivative",
+      "rational_residual": "-465/2048",
+      "status": "DETECTED"
+    },
+    {
+      "name": "omit_highest_metric_source_derivative",
+      "rational_residual": "1",
+      "status": "DETECTED"
+    }
+  ],
+  "scope": "Exact omitted-band algebra and synthetic formula mutations only; no deferred runtime physical evaluation.",
+  "source_sha256": "8ea6f7f6a804840e2745a49247e9f79dc8322ca3cef467718a935e719ff2417f",
+  "status": "PASS"
+}
