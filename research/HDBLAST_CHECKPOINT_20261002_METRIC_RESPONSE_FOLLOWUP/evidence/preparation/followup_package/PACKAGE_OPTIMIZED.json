@@ -1,0 +1,29 @@
+{
+  "builder_sha256": "94e58399bfdd8522d9f6d4a5d2eb2fd80414b91be078fa9fa636fc80976a4384",
+  "check_count": 16,
+  "checks": [
+    "two full builds byte-identical",
+    "freeze receipt included and hashed",
+    "only three package bookkeeping paths excluded",
+    "all original inputs and receipt bytes unchanged",
+    "exact membership and every source byte retained",
+    "portable replay accepts authenticated synthetic package",
+    "missing_freeze_receipt rejected",
+    "mutated_registered_input rejected",
+    "unregistered_symlink_file rejected",
+    "unregistered_symlink_directory rejected",
+    "bytecode_cache rejected",
+    "wrong_registration_receipt_hash rejected",
+    "wrong_independent_receipt_hash rejected",
+    "invalid_freeze_commit rejected",
+    "registered_path_escape rejected",
+    "independent_input_omitted_from_registration rejected"
+  ],
+  "child_producers_executed": 0,
+  "physical_evaluations": 0,
+  "python_optimization": 1,
+  "replay_driver_sha256": "bb4980e49e30a3167220eebc546d21e6e65aa9c464e821bbb2437f4486766cd3",
+  "scope": "Synthetic inert files only; deterministic archive, membership, receipt binding, no input mutation, and rejection guards.",
+  "status": "PASS",
+  "test_source_sha256": "eee81b4c58481a54709d8966e3c767654f3f1b7970be042098c0f7ea22fa1b2c"
+}

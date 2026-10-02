@@ -1,0 +1,9 @@
+# Separately registered metric-response followup
+
+The original experiment was publicly frozen at `57668b8fadd75df8738565e0bbd1eb852c1ebae8`, registration SHA256 `f8d6bbd17b540b46c5e4382ab21fd74e15f0b283956991a250f49994553a476d`. Its original replay passed 26 pure/preflight commands, then stopped with a fatal SciPy weighted-log continuum quadrature roundoff warning during positive_B at eta=-4.5. Exactly one pre-source zero-response row completed. Neither independent modes nor cross-route validation ran. That result remains FAIL and its sources, partial outputs, logs and public freeze are preserved in the original checkpoint.
+
+This is a new prospective numerical experiment. It changes only the continuum integration algorithm to genuine arbitrary-precision arithmetic with an exact endpoint subtraction and squared endpoint coordinate. Fixed 50/70 decimal precisions, tanh-sinh degree and panel settings are specified in EXPERIMENT.json before execution. The finite-cutoff SciPy algorithm and strict warning policy, physical geometry/state/source/amplitude/mass/reference, observation times, cutoffs, independent implementation/resolutions, resource limits and all scientific pass thresholds remain unchanged.
+
+All followup source, input, proof, validator, recipe and gate bytes must be publicly committed and remotely verified before any new physical evaluation. The prior registration does not authorize the changed algorithm. Original failures are not overwritten or reclassified as PASS. The new FULL_REGISTRATION.json and external public freeze receipt authenticate this separate test.
+
+The main claim remains finite-cutoff calibration of one homogeneous conformal metric direction at x=2H². Conservative UV bounds cover only omitted bands, and finite errors remain empirical. Actual shifted-root, lapse, bulk/shell and state response remain incomplete prerequisites for coupled evolution, stability or heating.
