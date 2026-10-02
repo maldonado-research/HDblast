@@ -1,0 +1,76 @@
+name: Registered smooth FRW control
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/**'
+      - '.github/workflows/hdblast_smooth_frw.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/**'
+      - '.github/workflows/hdblast_smooth_frw.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: smooth-frw-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  registered-matrix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONOPTIMIZE: '0'
+      MPLBACKEND: Agg
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW
+            research/HDBLAST_CHECKPOINT_20261002_PV
+            research/HDBLAST_CHECKPOINT_20261002_FRW
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/requirements.txt
+      - name: Install exact scientific requirements
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python -m pip install --only-binary=:all: --disable-pip-version-check -r research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/requirements.txt
+          python -m pip check
+      - name: Verify frozen prerequisite packages
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          python research/HDBLAST_CHECKPOINT_20261002_PV/code/verify_package.py research/HDBLAST_CHECKPOINT_20261002_PV/HDBLAST_CHECKPOINT_20261002_PV.zip
+          python research/HDBLAST_CHECKPOINT_20261002_FRW/code/verify_package.py research/HDBLAST_CHECKPOINT_20261002_FRW/HDBLAST_CHECKPOINT_20261002_FRW.zip
+      - name: Full registered matrix and independent verification
+        shell: bash
+        env:
+          HDBLAST_PYTHON: python
+        run: |
+          set -Eeuo pipefail
+          bash research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/code/replay_smooth_frw.sh research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW "$RUNNER_TEMP/smooth-frw-replay"
+      - name: Retain all executed evidence, including failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smooth-frw-${{ github.sha }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/smooth-frw-replay/logs/
+            ${{ runner.temp }}/smooth-frw-replay/exit-codes.tsv
+            ${{ runner.temp }}/smooth-frw-replay/runtime/
+          if-no-files-found: warn
+          retention-days: 7
+          compression-level: 1

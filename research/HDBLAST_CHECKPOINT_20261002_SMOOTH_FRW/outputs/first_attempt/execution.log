@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/code/smooth_frw_control.py", line 587, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/code/smooth_frw_control.py", line 578, in main
+    return execute(output,args.protocol,args.protocol_sha256)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/code/smooth_frw_control.py", line 504, in execute
+    runs = {setting.label:run_case(output,amplitude,setting) for setting in (PRIMARY,TIGHT,QUADRATURE)}
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/code/smooth_frw_control.py", line 394, in run_case
+    ct = counterterms(k,t[sl],amplitude,static)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/code/smooth_frw_control.py", line 177, in counterterms
+    w = (k*k+a*a*R).sqrt()
+        ^^^^^^^^^^^^^^^^
+AttributeError: 'numpy.ndarray' object has no attribute 'sqrt'. Did you mean: 'sort'?
