@@ -1,0 +1,273 @@
+{
+  "label": "A0.2_tight_K96",
+  "amplitude": 0.2,
+  "static": false,
+  "cutoff": 96.0,
+  "mode_count": 384,
+  "solver": {
+    "nfev": 16805,
+    "rtol": 2e-13,
+    "atol": 2e-15,
+    "max_step": 0.0010417602366654772,
+    "solver": "complex scipy.integrate.solve_ivp DOP853"
+  },
+  "wronskian_max": 3.430589146091734e-14,
+  "wronskian_limit": 2e-10,
+  "wronskian_passed": true,
+  "counterterm_exchange_pointwise_max": 1.9260682187615535e-17,
+  "finite": true,
+  "cutoffs": {
+    "24": {
+      "exchange_fine": {
+        "ledger_residual_max": 5.979939064759687e-09,
+        "ledger_scale": 0.30989992051323095,
+        "ledger_limit": 0.0015594996025661547,
+        "ledger_passed": true,
+        "local_residual_max": 3.010235713474252e-07,
+        "local_scale": 0.9796976355948352,
+        "local_limit": 0.009996976355948354,
+        "local_passed": true,
+        "source_omission_ledger_residual_max": 0.2125731673423607,
+        "source_work_cumulative_max": 0.21257316945026405,
+        "time_nodes": 801
+      },
+      "exchange_coarse": {
+        "ledger_residual_max": 9.565492842950052e-08,
+        "ledger_scale": 0.3098867772489448,
+        "ledger_limit": 0.0015594338862447241,
+        "ledger_passed": true,
+        "local_residual_max": 4.803661957208938e-06,
+        "local_scale": 0.9796889993827853,
+        "local_limit": 0.009996889993827853,
+        "local_passed": true,
+        "source_omission_ledger_residual_max": 0.2125717333462091,
+        "source_work_cumulative_max": 0.21257172865873888,
+        "time_nodes": 401
+      },
+      "trace": {
+        "direct_derivatives": {
+          "absolute_difference": 4.4796255593837486e-10,
+          "signal_scale": 6.707036992418329,
+          "normalized_difference": 6.678993368379422e-11,
+          "limit": 3.553518496209165e-05,
+          "passed": true
+        },
+        "sampled_derivatives": [
+          {
+            "time_nodes": 801,
+            "absolute_difference": 3.763927119398991e-05,
+            "signal_scale": 6.70703699203857,
+            "normalized_difference": 5.6119074993426636e-06,
+            "limit": 0.06727036992038571,
+            "passed": true
+          },
+          {
+            "time_nodes": 401,
+            "absolute_difference": 0.00028213548644683006,
+            "signal_scale": 6.700326351967557,
+            "normalized_difference": 4.2107723060979074e-05,
+            "limit": 0.06720326351967558,
+            "passed": true
+          }
+        ],
+        "direct_scope": "Physical equation Q derivatives plus subtraction jets, compared with independently integrated analytic finite-K trace moments."
+      },
+      "ode_bare_work_residual_max": 1.5434875599851239e-12,
+      "ode_bare_work_limit": 0.0015594996024230151,
+      "ode_bare_work_passed": true,
+      "ode_bare_work_scope": "Independent accumulated bare work versus energy; subtraction cancels algebraically here. Renormalized Simpson ledger separately tests subtraction/current pairing.",
+      "future_spectral_energy": {
+        "absolute_difference": 6.278033648499104e-13,
+        "signal_scale": 0.13688820897621948,
+        "normalized_difference": 4.586248658998627e-12,
+        "limit": 0.0007044410448810974,
+        "passed": true
+      },
+      "future_coherent_pressure_max": 0.16946082650356903,
+      "future_coherent_Q_max": 0.02321363455062936,
+      "maxima": {
+        "rho": 0.13996563200302847,
+        "p": 2.2341457900904924,
+        "Q": 0.06331477281276654
+      },
+      "crossing": {
+        "rho": -0.023133968943117582,
+        "p": 0.10682858673253373,
+        "Q": 0.026219806270994805
+      },
+      "endpoint": {
+        "rho": 0.13688820897569268,
+        "p": 0.013910585064183264,
+        "Q": 0.005203746642524924
+      }
+    },
+    "48": {
+      "exchange_fine": {
+        "ledger_residual_max": 5.402447881414085e-09,
+        "ledger_scale": 0.3104765314276409,
+        "ledger_limit": 0.0015623826571382047,
+        "ledger_passed": true,
+        "local_residual_max": 3.7574137665141727e-07,
+        "local_scale": 0.9930469879456951,
+        "local_limit": 0.010130469879456951,
+        "local_passed": true,
+        "source_omission_ledger_residual_max": 0.21212172534431423,
+        "source_work_cumulative_max": 0.21212172504071067,
+        "time_nodes": 801
+      },
+      "exchange_coarse": {
+        "ledger_residual_max": 8.411484499551425e-08,
+        "ledger_scale": 0.3104765313503137,
+        "ledger_limit": 0.0015623826567515687,
+        "ledger_passed": true,
+        "local_residual_max": 5.939430303927851e-06,
+        "local_scale": 0.9930478332758599,
+        "local_limit": 0.0101304783327586,
+        "local_passed": true,
+        "source_omission_ledger_residual_max": 0.21212172852172345,
+        "source_work_cumulative_max": 0.212121723046592,
+        "time_nodes": 401
+      },
+      "trace": {
+        "direct_derivatives": {
+          "absolute_difference": 4.4796255593837486e-10,
+          "signal_scale": 7.013443714620015,
+          "normalized_difference": 6.387198274715822e-11,
+          "limit": 3.706721857310008e-05,
+          "passed": true
+        },
+        "sampled_derivatives": [
+          {
+            "time_nodes": 801,
+            "absolute_difference": 8.159595822167937e-05,
+            "signal_scale": 7.013443714228963,
+            "normalized_difference": 1.1634221581637057e-05,
+            "limit": 0.07033443714228964,
+            "passed": true
+          },
+          {
+            "time_nodes": 401,
+            "absolute_difference": 0.0005685484488341525,
+            "signal_scale": 7.013443714228963,
+            "normalized_difference": 8.10655181677261e-05,
+            "limit": 0.07033443714228964,
+            "passed": true
+          }
+        ],
+        "direct_scope": "Physical equation Q derivatives plus subtraction jets, compared with independently integrated analytic finite-K trace moments."
+      },
+      "ode_bare_work_residual_max": 6.417361086974438e-11,
+      "ode_bare_work_limit": 0.0015623826569773223,
+      "ode_bare_work_passed": true,
+      "ode_bare_work_scope": "Independent accumulated bare work versus energy; subtraction cancels algebraically here. Renormalized Simpson ledger separately tests subtraction/current pairing.",
+      "future_spectral_energy": {
+        "absolute_difference": 2.912733942928014e-11,
+        "signal_scale": 0.13695248800452584,
+        "normalized_difference": 2.1268207575986189e-10,
+        "limit": 0.0007047624400226293,
+        "passed": true
+      },
+      "future_coherent_pressure_max": 0.07474062535283407,
+      "future_coherent_Q_max": 0.023465435330153515,
+      "maxima": {
+        "rho": 0.1402705830600536,
+        "p": 2.3378007204584077,
+        "Q": 0.06351190040892717
+      },
+      "crossing": {
+        "rho": -0.023490897361932116,
+        "p": 0.16217874547706657,
+        "Q": 0.026428693928590815
+      },
+      "endpoint": {
+        "rho": 0.1369524879757431,
+        "p": 0.038177733206429205,
+        "Q": 0.005101582570030023
+      }
+    },
+    "96": {
+      "exchange_fine": {
+        "ledger_residual_max": 7.580218452929444e-09,
+        "ledger_scale": 0.31053961304342875,
+        "ledger_limit": 0.001562698065217144,
+        "ledger_passed": true,
+        "local_residual_max": 9.432796974473406e-06,
+        "local_scale": 0.9976404195285129,
+        "local_limit": 0.01017640419528513,
+        "local_passed": true,
+        "source_omission_ledger_residual_max": 0.21200828887142353,
+        "source_work_cumulative_max": 0.21200829355713993,
+        "time_nodes": 801
+      },
+      "exchange_coarse": {
+        "ledger_residual_max": 6.889607273574683e-08,
+        "ledger_scale": 0.3105396080786773,
+        "ledger_limit": 0.0015626980403933865,
+        "ledger_passed": true,
+        "local_residual_max": 3.1583122965606406e-06,
+        "local_scale": 0.9976405914189589,
+        "local_limit": 0.01017640591418959,
+        "local_passed": true,
+        "source_omission_ledger_residual_max": 0.21200829183271921,
+        "source_work_cumulative_max": 0.21200829156103007,
+        "time_nodes": 401
+      },
+      "trace": {
+        "direct_derivatives": {
+          "absolute_difference": 4.4797321407941126e-10,
+          "signal_scale": 6.727669789488426,
+          "normalized_difference": 6.658668277378032e-11,
+          "limit": 3.5638348947442136e-05,
+          "passed": true
+        },
+        "sampled_derivatives": [
+          {
+            "time_nodes": 801,
+            "absolute_difference": 1.593471473482211e-05,
+            "signal_scale": 6.727669789107132,
+            "normalized_difference": 2.3685340146483167e-06,
+            "limit": 0.06747669789107133,
+            "passed": true
+          },
+          {
+            "time_nodes": 401,
+            "absolute_difference": 0.000248468887429798,
+            "signal_scale": 6.721193568289178,
+            "normalized_difference": 3.696797077859545e-05,
+            "limit": 0.06741193568289179,
+            "passed": true
+          }
+        ],
+        "direct_scope": "Physical equation Q derivatives plus subtraction jets, compared with independently integrated analytic finite-K trace moments."
+      },
+      "ode_bare_work_residual_max": 7.567466597802053e-09,
+      "ode_bare_work_limit": 0.0015626980653048132,
+      "ode_bare_work_passed": true,
+      "ode_bare_work_scope": "Independent accumulated bare work versus energy; subtraction cancels algebraically here. Renormalized Simpson ledger separately tests subtraction/current pairing.",
+      "future_spectral_energy": {
+        "absolute_difference": 3.4082353050912673e-09,
+        "signal_scale": 0.13695272804964584,
+        "normalized_difference": 2.4886216971565327e-08,
+        "limit": 0.0007047636402482293,
+        "passed": true
+      },
+      "future_coherent_pressure_max": 0.05117631969152571,
+      "future_coherent_Q_max": 0.023477156150781973,
+      "maxima": {
+        "rho": 0.1403109140878288,
+        "p": 2.242545683022562,
+        "Q": 0.0635302264037029
+      },
+      "crossing": {
+        "rho": -0.02368434002405095,
+        "p": 0.16324326660976116,
+        "Q": 0.026524953058582084
+      },
+      "endpoint": {
+        "rho": 0.1369527261584275,
+        "p": 0.0360190249004297,
+        "Q": 0.005104305113517862
+      }
+    }
+  }
+}
