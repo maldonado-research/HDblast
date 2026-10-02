@@ -1,0 +1,54 @@
+name: HDBLAST matched quantum-source benchmark
+on:
+  push:
+    branches: ["research/20261002-renormalized-source"]
+    paths:
+      - "research/HDBLAST_CHECKPOINT_20261002_PV/code/**"
+      - "research/HDBLAST_CHECKPOINT_20261002_PV/analysis/**"
+      - "research/HDBLAST_CHECKPOINT_20261002_PV/HDBLAST_CHECKPOINT_20261002_PV.zip"
+      - "research/HDBLAST_CHECKPOINT_20261002_PV/REGISTRATION.md"
+      - "research/HDBLAST_CHECKPOINT_20261002_PV/PROTOCOL_ADDENDUM.md"
+      - ".github/workflows/hdblast_pv_oct2.yml"
+permissions:
+  contents: read
+jobs:
+  matched_source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: research/HDBLAST_CHECKPOINT_20261002_PV
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile and pin the prospective protocol
+        working-directory: research/HDBLAST_CHECKPOINT_20261002_PV
+        run: |
+          python -m py_compile code/pv_crossing.py code/verify_matching.py code/verify_protocol.py code/verify_package.py analysis/summarize_results.py analysis/plot_results.py
+          python code/verify_protocol.py
+          python code/verify_package.py
+      - name: Install numerical dependencies
+        run: python -m pip install numpy==2.2.6 scipy==1.15.3 mpmath==1.3.0 matplotlib==3.10.1
+      - name: Independently verify analytic matching and state functions
+        working-directory: research/HDBLAST_CHECKPOINT_20261002_PV
+        run: python code/verify_matching.py
+      - name: Execute registered matched-source experiment
+        working-directory: research/HDBLAST_CHECKPOINT_20261002_PV
+        run: python code/pv_crossing.py --registration REGISTRATION.md --registration-sha256 fc72bf086bb7747af0a51848ef997bf11d9d4451ee894aef899ea0ea8ca2888d --source-ref "${GITHUB_SHA}"
+      - name: Analyze saved arrays and render scientific figures
+        working-directory: research/HDBLAST_CHECKPOINT_20261002_PV
+        run: |
+          python analysis/summarize_results.py
+          python analysis/plot_results.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hdblast-matched-source
+          path: research/HDBLAST_CHECKPOINT_20261002_PV/outputs/
+          if-no-files-found: warn
