@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "frozen_sources": [
+    {
+      "path": "research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW",
+      "source_commit": "e17a01b428bb8049e919c42376ab0359e41d613c",
+      "original_outcome": "FAIL: curved pressure cutoff at K192",
+      "separate_followup_outcome": "PASS: all 13 registered K384 groups",
+      "boundary": "Prescribed smooth FRW, finite-cutoff quantum-source control; no coupled shell solution or hot epoch"
+    },
+    {
+      "path": "research/HDBLAST_CHECKPOINT_20261002_JUNCTIONS",
+      "source_commit": "0205cc651bfb614c32e39dfe833d93d957264229",
+      "boundary": "Reviewed action/junction specification and static de Sitter bridge; coupled evolution remains unexecuted",
+      "next_step": "Massive de Sitter rho/Q construction using the declared common reference and matching convention"
+    }
+  ],
+  "items": [
+    {
+      "id": "massive-de-sitter-common-reference",
+      "status": "pending",
+      "depends_on": [],
+      "goal": "Construct and validate massive de Sitter rho and Q in one common reference prescription, consuming the completed action/junction specification and independently reviewed static de Sitter bridge.",
+      "acceptance": "Pin the newest HDBLAST_CHECKPOINT_20261002_JUNCTIONS source and the prior smooth-FRW convention. Prospectively declare the massive state, reference mass, matching conditions and finite couplings as research choices, never measured values. Independently check the action-derived stress/source pairing, flat/reference-null limit, de Sitter stress/trace or mass derivative identities, and numerical precision where used. Retain any obstruction; do not redo the completed junction derivation or infer a coupled solution from this construction."
+    },
+    {
+      "id": "constrained-smooth-initial-data",
+      "status": "pending",
+      "depends_on": [
+        "massive-de-sitter-common-reference"
+      ],
+      "goal": "Construct and prospectively validate a smooth state and bulk/shell initial data satisfying the actual coupled model constraints.",
+      "acceptance": "Require independently checked bulk constraints, all three junctions, admissible UV state, and a well-defined zero-source control. Stop with a negative result if these cannot be satisfied; do not substitute the prescribed exp(A B) benchmark geometry."
+    },
+    {
+      "id": "weak-source-evolution-registration",
+      "status": "pending",
+      "depends_on": [
+        "constrained-smooth-initial-data"
+      ],
+      "goal": "Register one short coupled weak-source experiment with fixed parameters, matched finite terms, validation gates and resource budget before execution.",
+      "acceptance": "Record all source hashes, planned duration and refinement comparisons, zero/wrong/omitted-source controls, quantum and compensating bulk energy ledgers, independent solver or derivation check, and explicit cutoff/EFT stop conditions. No post-hoc tolerance repair."
+    },
+    {
+      "id": "short-coupled-weak-source-experiment",
+      "status": "pending",
+      "depends_on": [
+        "weak-source-evolution-registration"
+      ],
+      "goal": "Execute only the registered short coupled weak-source experiment, retaining failures and unresolved numerical limitations.",
+      "acceptance": "Require simultaneous constraints/junction/energy-ledger checks and registered independent refinement. State PASS, FAIL, BLOCKED or INCONCLUSIVE with actual evidence. A free Gaussian source does not demonstrate thermalization; no radiation-era or breakthrough claim follows from one positive signal."
+    }
+  ],
+  "required_sources": {
+    "research/HDBLAST_CHECKPOINT_20261002_JUNCTIONS/ACTION_AND_JUNCTION_SPECIFICATION.md": "b95844df95546c581149dfbf6c4ab194aff1580101ed3b4553c39cbfd381fdf8",
+    "research/HDBLAST_CHECKPOINT_20261002_JUNCTIONS/review/INDEPENDENT_ACTION_AND_JUNCTION_REVIEW.md": "f6fd38ccfa37b4245404ae94eb245b04ea89388273130f82499ad3a2f821f5cb",
+    "research/HDBLAST_CHECKPOINT_20261002_JUNCTIONS/static_bridge/STATIC_DESITTER_SOURCE_BRIDGE.md": "2d8f9843af206ee692c38c2dae5240e5d884d9429b35d481cb9ebd109d98eddf",
+    "research/HDBLAST_CHECKPOINT_20261002_JUNCTIONS/review/STATIC_BRIDGE_AND_SPEC_CROSS_REVIEW.md": "fc8bb3f3b095d2e4fe1b899172bd67bda53f5e782f1d313496fb71f0a74d712a"
+  }
+}
