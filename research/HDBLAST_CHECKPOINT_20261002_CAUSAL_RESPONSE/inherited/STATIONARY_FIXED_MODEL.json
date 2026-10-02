@@ -1,0 +1,47 @@
+{
+  "baseline_commit": "e24643d579f7560db719775b2998c0ffa22898b0",
+  "prior_sensitivity_sha256": "3aa097aeec6b5d0b00935c07c759c44642ba80bf8a8028353871e57e99d673aa",
+  "prior_sensitivity_path": "research/HDBLAST_CHECKPOINT_20261002_DESITTER/sensitivity/CHECKS.json",
+  "eta_ref": "-0.00008405268308670538",
+  "phi_ref_definition": "1 + eta_ref",
+  "z_ref": "0.00005924014794328956",
+  "r_ref": "0.00011848029588657912",
+  "e_h_ref": "-1.3366923651588084e-23",
+  "y_b_ref": "30.276680395885563",
+  "delta": "0.001",
+  "c": "0.5975949350280132",
+  "number_of_fields": 1,
+  "positive_gamma_definition": "kappa5_squared / L_cubed",
+  "gamma_zero_definition": "classical supplied-source control",
+  "mass_law": "x_hat = r_ref * [1 + b * (eta_b - eta_ref) / 2]^2",
+  "slopes": [
+    "-1",
+    "0",
+    "1"
+  ],
+  "gamma": [
+    "0",
+    "0.01",
+    "1",
+    "100",
+    "10000",
+    "1000000"
+  ],
+  "hierarchy_screen": {
+    "energy_definition": "max(sqrt(z_b),sqrt(x_b),abs(q_b),max_sampled sqrt(abs(kT)),max_sampled sqrt(abs(kN)))",
+    "kT": "U/6 - w_squared/12",
+    "kN": "U/6 + w_squared/4",
+    "M5L": "gamma^(-1/3)",
+    "tenfold_hierarchy_gate": "Ehat * gamma^(1/3) <= 0.1",
+    "warning": "sampled conservative scale diagnostic; not proved EFT cutoff or certification; no sup of slicing q at cone"
+  },
+  "mass_derivatives": {
+    "x_phi": "b * r_ref * [1 + b*(eta_b-eta_ref)/2]",
+    "x_phi_phi": "b^2 * r_ref / 2"
+  },
+  "original_matter_interaction_match": {
+    "nonzero_b": "m0_squared=0, G_hat_squared=r_ref/4, phi_chi=1+eta_ref-2/b",
+    "zero_b": "m0_squared=r_ref, G_hat=0",
+    "interpretation": "Declared parameter family within the original positive quadratic interaction form; reference and parameters are not measurements. Local positive-gap domain excludes any zero at phi_chi."
+  }
+}

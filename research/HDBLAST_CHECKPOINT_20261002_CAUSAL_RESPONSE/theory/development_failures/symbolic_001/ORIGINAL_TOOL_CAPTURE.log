@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspace/hdblast-research-work/causal-theory/verify_causal_theory.py", line 144, in <module>
+    main()
+  File "/workspace/hdblast-research-work/causal-theory/verify_causal_theory.py", line 136, in main
+    result=run_checks()
+           ^^^^^^^^^^^^
+  File "/workspace/hdblast-research-work/causal-theory/verify_causal_theory.py", line 38, in run_checks
+    equal("wick_spatial_commutator", 2*(S.exp(-2*S.I*k*tau)-S.exp(2*S.I*k*tau))/(8*pi**2), -S.I*S.sin(2*k*tau)/(2*pi**2))
+  File "/workspace/hdblast-research-work/causal-theory/verify_causal_theory.py", line 21, in equal
+    raise RuntimeError(f"Exact identity failed: {name}: {residual}")
+RuntimeError: Exact identity failed: wick_spatial_commutator: (-exp(4*I*k*tau) + 2*I*exp(2*I*k*tau)*sin(2*k*tau) + 1)*exp(-2*I*k*tau)/(4*pi**2)

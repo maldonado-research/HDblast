@@ -1,0 +1,14 @@
+{
+  "scope": "Analytic verifier development before numeric registration; no source or mode evaluation",
+  "failures": [
+    {
+      "id": "symbolic_001",
+      "check": "wick_spatial_commutator",
+      "cause": "SymPy simplify did not automatically rewrite mixed exponential/trigonometric representations to a common basis",
+      "correction": "After ordinary exact simplification, retry exact simplification in the exponential basis",
+      "physical_formula_changed": false,
+      "evidence": "development_failures/symbolic_001/PROVENANCE.json",
+      "source_preservation": "reconstructed original, explicitly labeled; original tool output copied verbatim and analytic failure replay preserved"
+    }
+  ]
+}
