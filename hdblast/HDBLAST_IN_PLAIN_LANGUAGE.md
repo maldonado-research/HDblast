@@ -1,5 +1,7 @@
 # HDBLAST in plain language (September 2026)
 
+> **Dated guide:** this preserves the September 2026 explanation. For the completed October calculations, unchanged negative results, and current GitHub/Zenodo publication state, read [Current research status](CURRENT_STATUS.md), updated 2 October 2026 (Pacific).
+
 **By Ricardo Maldonado, independent researcher.** This updates the
 [July 2026 public guide](guides/HDBLAST_GENERAL_PUBLIC_GUIDE_V20.md) with the September 2026 results.
 

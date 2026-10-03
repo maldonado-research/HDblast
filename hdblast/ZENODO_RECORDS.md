@@ -23,38 +23,36 @@ published and when**. It does not mean the content was peer reviewed.
 | 2026-09-03 | [22287013](https://zenodo.org/records/22287013) | v23: rank-two registered linear response, det M ∈ [2.1987, 2.4615] | Certified (conditional) |
 | 2026-09-05 | [22347452](https://zenodo.org/records/22347452) | v24: conditional global adjoint certification | Certified (conditional) |
 | **2026-09-23** | [**22922928**](https://zenodo.org/records/22922928) | **Scalar junction consistency and a corrected static de Sitter branch**, companion version **1.0**, separate concept **22922927**. Live API metadata and two-file inventory checked on 2 Oct 2026 | Numerical / Exact / Negative / Conditional |
-| 2026-10-02 | [Main-family draft 23112891](https://zenodo.org/deposit/23112891) | Prepared v25 candidate: three failed metric-response experiments, matched-stress control and completed source-free ledger diagnosis; nine new attachments prepared locally | **Unsubmitted; metadata staging HTTP500; no new files uploaded** |
-| 2026-10-03 | [23112891](https://zenodo.org/records/23112891) | Latest main-family published version appeared during the active-source round with the inherited v24 title and same ten files; explicit version field absent | **Published inherited snapshot; this round made no publish request** |
-| 2026-10-03 | [Main-family draft 23114217](https://zenodo.org/deposit/23114217) | Verified new version from current latest23112891, preserving the ten inherited files; reviewed v25 extension adds twelve files, including completed active-source diagnosis and exact fresh replay | **Unsubmitted; scientific additions not yet published** |
+| 2026-10-02 (Pacific) | [23112891](https://zenodo.org/records/23112891) | Owner-removed test upload: it repeated the inherited v24 title and ten-file inventory and omitted the twelve intended additions | **Removed; public archival tombstone** |
+| 2026-10-02 (Pacific) | [Static companion 23111008](https://zenodo.org/records/23111008) | Published original two-file static-branch study, separate concept 22922927; current metadata/inventory match original 22922928 | **Published and preserved; inventory checked** |
+| 2026-10-02 (Pacific) | Main-family draft 23114217 | Existing owned replacement draft survived removal; twelve reviewed additions are prepared for 22 total files, including the completed active-source diagnosis and exact fresh replay | **Unsubmitted; new results not yet published** |
 
 All records before v20 (17088133 through 20313949) are marked in the author's 29 Aug 2026 audit as
 affected by the v20 correction, and should be read together with that correction.
 
-The September static-branch study is a **separate companion record**. Its all-version identifier is
-[10.5281/zenodo.22922927](https://doi.org/10.5281/zenodo.22922927), not the program identifier above.
-Authenticated live checks earlier on 3 October UTC confirmed record22347452 as the latest
-published v24. Later read-only reconciliation confirmed that former draft23112891 had become
-published with identical inherited files and creator/license metadata. The latest
-delegated browser check supersedes the earlier integration-enable report: automatic GitHub
-archiving is **OFF for all eight public repositories**, with empty release histories.
-Publication uses the existing token/API workflow, preserving the established DOI families.
-Do not re-enable automatic archiving or create a test release.
+The September static-branch study is a **separate companion record**, concept
+[10.5281/zenodo.22922927](https://doi.org/10.5281/zenodo.22922927). Latest published
+record [23111008](https://zenodo.org/records/23111008) preserves its original two files;
+absence of unrelated later additions is not a content failure.
 
-The historical **2026.10.02-v25** candidate targeted main-family draft **23112891**, created
-from v24's verified new-version link. Its ten inherited v24 files remain unchanged. A single
-documented JSON metadata update returned HTTP500; authenticated readback stayed unchanged.
-No binary upload or publish action followed. The separate companion draft **23111008** remains
-untouched. That target is now published and must not be reused as a draft. This round checked
-the complete owned deposition inventory, found no reusable main-family draft, and created
-**23114217** from current published23112891's documented newversion link. Authenticated readback
-verified owner1386319, concept17088132, unsubmitted state and all ten inherited files. The
-**2026.10.03-v25** extension requires twelve additions and all22 exact filename/size/checksum
-checks, plus saved-metadata readback, before publication.
+Live read-only checks after the author's removal confirm that the **main concept DOI
+now resolves to preserved v24 [22347452](https://zenodo.org/records/22347452)**. Removed
+record23112891 returns a public tombstone; its legacy deposition API still retains an
+archival response, which is not evidence that it remains published. The main and companion
+DOI families and the valid replacement draft23114217 are preserved.
 
-[Candidate metadata, complete file hashes and browser-upload instructions](../research/HDBLAST_ZENODO_V25_CANDIDATE_20261002/README.md)
-preserve the earlier candidate snapshot. The updated same-family candidate and fallback are
-published with the [active-source distribution](../research/HDBLAST_ACTIVE_SOURCE_LEDGER_PACKAGE_20261002/RESULTS_READ_FIRST.md). The completed ledger diagnosis does not change the earlier
-metric calibration's **FAIL** verdict or validate the proposed cosmological mechanism.
+The prepared replacement keeps all ten inherited files and adds twelve reviewed artifacts
+for22 total. Its newer metric-response and source-free/active-source ledger calculations
+are available on GitHub and **not yet published on Zenodo**. Saved metadata and the complete
+filename, byte-size and checksum inventory must match the reviewed candidate before publication.
+Prepared or reserved identifiers do not establish a published version.
+
+Automatic GitHub archiving remains **OFF for all eight public repositories** so a website
+update does not create duplicate records. Publication uses the existing account workflow
+and established DOI families. The [current research summary](CURRENT_STATUS.md) identifies
+the latest verified result, its limits and the actual publication state. Older candidate
+and checkpoint snapshots retain their historical targets and dates; use current verified
+ownership, family and draft state before publication.
 
 Companion 2025 concepts: 16866883 (brane-world two-link packs), 16929972 (HDBC reproducibility
 bundles), 17069899 (cross-PTA/LISA/CMB pipeline).
