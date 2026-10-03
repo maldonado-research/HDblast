@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "scope": "Fabricated saved-response controls only; not evidence of remote metadata, uploads or publication. No source calculation or archive decoding.",
+  "guard_sha256": "a05af063d490d208f23292d11da68bb023fd69c639cff7b0f31a91666b8d47db",
+  "candidate_manifest_sha256": "00f0ed73c27e846603680fdc52667392935e59bbe18ac942f30e8e66248937bb",
+  "controls_count": 25,
+  "controls": [
+    {
+      "name": "fabricated_exact_complete_baseline",
+      "expected": "PASS_COMPLETE_SAVED_DRAFT",
+      "actual": "PASS_COMPLETE_SAVED_DRAFT",
+      "matched": true,
+      "failures": []
+    },
+    {
+      "name": "fabricated_exact_metadata_only_baseline",
+      "expected": "PASS_EXACT_SAVED_DRAFT_METADATA",
+      "actual": "PASS_EXACT_SAVED_DRAFT_METADATA",
+      "matched": true,
+      "failures": []
+    },
+    {
+      "name": "wrong_http",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Expected direct successful saved GET at the selected endpoint"
+      ]
+    },
+    {
+      "name": "unauthenticated",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Deposition proof is not an authenticated GET"
+      ]
+    },
+    {
+      "name": "redirect",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Expected direct successful saved GET at the selected endpoint"
+      ]
+    },
+    {
+      "name": "wrong_endpoint",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Expected direct successful saved GET at the selected endpoint"
+      ]
+    },
+    {
+      "name": "wrong_owner",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Record owner differs from the authorized owner"
+      ]
+    },
+    {
+      "name": "boolean_id",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Record ID differs from the explicitly selected existing draft/record"
+      ]
+    },
+    {
+      "name": "wrong_concept",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Record belongs to the wrong concept DOI family"
+      ]
+    },
+    {
+      "name": "submitted_draft",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Expected the selected unsubmitted draft"
+      ]
+    },
+    {
+      "name": "tombstone",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Record has a removal tombstone"
+      ]
+    },
+    {
+      "name": "missing_last_zip",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Remote inventory differs: missing=HDBLAST_CHECKPOINT_20261003_VERIFIED_SOURCE_OPERATOR.zip; extra="
+      ]
+    },
+    {
+      "name": "extra_file",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Remote inventory differs: missing=; extra=extra.zip"
+      ]
+    },
+    {
+      "name": "duplicate_file",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Malformed or duplicate remote filename"
+      ]
+    },
+    {
+      "name": "wrong_zip_md5",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Remote MD5 differs: HDBLAST_CHECKPOINT_20261003_VERIFIED_SOURCE_OPERATOR.zip"
+      ]
+    },
+    {
+      "name": "boolean_size",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Remote byte count differs: HDBLAST_CHECKPOINT_20261003_VERIFIED_SOURCE_OPERATOR.zip"
+      ]
+    },
+    {
+      "name": "conflicting_size_fields",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Remote byte count differs: HDBLAST_CHECKPOINT_20261003_VERIFIED_SOURCE_OPERATOR.zip"
+      ]
+    },
+    {
+      "name": "conflicting_md5_fields",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Remote MD5 differs: HDBLAST_CHECKPOINT_20261003_VERIFIED_SOURCE_OPERATOR.zip"
+      ]
+    },
+    {
+      "name": "stale_version",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Saved metadata differs in: version"
+      ]
+    },
+    {
+      "name": "broadened_unsupported_claim",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Saved metadata differs in: description"
+      ]
+    },
+    {
+      "name": "fabricated_exact_published_baseline",
+      "expected": "PASS_VERIFIED_PUBLISHED_RECORD",
+      "actual": "PASS_VERIFIED_PUBLISHED_RECORD",
+      "matched": true,
+      "failures": []
+    },
+    {
+      "name": "published_without_direct_public_witness",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Public witness: Response is not a JSON object",
+        "Public witness identity/family/publication state differs",
+        "Public witness parent/latest record links differ",
+        "Public witness metadata differs: access_right",
+        "Public witness metadata differs: creators",
+        "Public witness metadata differs: description",
+        "Public witness metadata differs: keywords",
+        "Public witness metadata differs: language",
+        "Public witness metadata differs: license",
+        "Public witness metadata differs: notes",
+        "Public witness metadata differs: publication_date",
+        "Public witness metadata differs: references",
+        "Public witness metadata differs: related_identifiers",
+        "Public witness metadata differs: title",
+        "Public witness metadata differs: upload_type",
+        "Public witness metadata differs: version",
+        "Public witness: Remote file list is absent"
+      ]
+    },
+    {
+      "name": "public_tombstone",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Public witness: Record has a removal tombstone"
+      ]
+    },
+    {
+      "name": "public_missing_zip",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Public witness: Remote inventory differs: missing=HDBLAST_CHECKPOINT_20261003_VERIFIED_SOURCE_OPERATOR.zip; extra="
+      ]
+    },
+    {
+      "name": "metadata_only_cannot_authorize_publication",
+      "expected": "FAIL_SAVED_RECORD_VALIDATION",
+      "actual": "FAIL_SAVED_RECORD_VALIDATION",
+      "matched": true,
+      "failures": [
+        "Metadata-only checking cannot verify publication",
+        "Remote inventory differs: missing=; extra=HDBLAST_ACTIVE_SOURCE_LEDGER_FRESH_ZIP_REPLAY_20261003.json,HDBLAST_ACTIVE_SOURCE_LEDGER_REPORT_20261003.md,HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER.zip,HDBLAST_CHECKPOINT_20261002_MATCHED_STRESS.zip,HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE.zip,HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_FOLLOWUP.zip,HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP.zip,HDBLAST_CHECKPOINT_20261002_SOURCE_FREE_LEDGER.zip,HDBLAST_CHECKPOINT_20261003_VERIFIED_SOURCE_OPERATOR.zip,HDBLAST_METRIC_RESPONSE_ROUND_REPORT_20261002.md,HDBLAST_SOURCE_FREE_LEDGER_FRESH_ZIP_REPLAY_20261002.json,HDBLAST_SOURCE_FREE_LEDGER_REPORT_20261002.md,HDBLAST_V25_PUBLICATION_OVERVIEW_20261002.md"
+      ]
+    }
+  ],
+  "metadata_sha256": "d96514fa7d8723706f2bd7fd3dcf8a5928ce58505c09bdd911b98f68c3c772af"
+}

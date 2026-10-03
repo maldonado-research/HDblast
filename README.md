@@ -2,7 +2,7 @@
 
 [Readable project overview](https://maldonado-research.github.io/projects/hdblast/) · [All research projects](https://maldonado-research.github.io/)
 
-**Current research and publication status (3 October 2026, Pacific):** [Start here](hdblast/CURRENT_STATUS.md). Two independent methods pass the conditional source-operator integration certificate at nine registered momenta; the full pressure and conservation certificate remains unresolved. The latest published main Zenodo version remains verified v24 [22347452](https://zenodo.org/records/22347452). Owner-removed upload 23112891 stays removed; linked replacement draft 23114217 remains unsubmitted after metadata HTTP 500. The new checkpoint is available on GitHub, with no new Zenodo publication.
+**Current research and publication status (3 October 2026, Pacific):** [Start here](hdblast/CURRENT_STATUS.md). Two independent methods pass the conditional source-operator integration certificate at nine registered momenta; the full pressure and conservation certificate remains unresolved. The latest published main Zenodo version remains verified v24 [22347452](https://zenodo.org/records/22347452). Owner-removed upload 23112891 stays removed; linked replacement draft 23114217 remains unsubmitted after metadata HTTP 500. The new checkpoint is available on GitHub, with no new Zenodo publication. The [revised same-family upload packet](hdblast/publication/2026.10.03-verified-source-operator/README.md) preserves the ten historical files and prepares thirteen verified additions.
 
 
 **Ricardo Maldonado · independent researcher · research program 2025–2026**
@@ -11,7 +11,7 @@
 **Zenodo (all versions):** [10.5281/zenodo.17088132](https://doi.org/10.5281/zenodo.17088132) ·
 **Static-branch companion:** [Zenodo 23111008](https://zenodo.org/records/23111008), preserving the original two-file study from [22922928](https://zenodo.org/records/22922928),
 separate concept [10.5281/zenodo.22922927](https://doi.org/10.5281/zenodo.22922927).
-Latest record, concept, owner, metadata and original filename/size/MD5 inventory checked through the live API on 2 October 2026, Pacific. This inventory check is not a new physical rerun or external peer review.
+Latest record, concept, owner, metadata and original filename/size/MD5 inventory checked through the live API on 3 October 2026, Pacific. This inventory check is not a new physical rerun or external peer review.
 
 > HDBLAST asks whether a violent gravitational event in a fifth dimension, the "blast", could have
 > transferred energy into our four-dimensional universe and started the hot Big Bang.
