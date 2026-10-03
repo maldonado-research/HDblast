@@ -22,20 +22,34 @@ published and when**. It does not mean the content was peer reviewed.
 | 2026-09-03 | [22285737](https://zenodo.org/records/22285737) | v22: Riemann preconditioning; two sources and two detectors registered | Certified bounds |
 | 2026-09-03 | [22287013](https://zenodo.org/records/22287013) | v23: rank-two registered linear response, det M ∈ [2.1987, 2.4615] | Certified (conditional) |
 | 2026-09-05 | [22347452](https://zenodo.org/records/22347452) | v24: conditional global adjoint certification | Certified (conditional) |
-| **2026-09-23** | [**22922928**](https://zenodo.org/records/22922928) | **Scalar junction consistency and a corrected static de Sitter branch**, companion version **1.0**, separate concept **22922927**. Title, date, version and concept verified from the author-provided Zenodo screenshot on 1 Oct 2026; file list not independently checked | Numerical / Exact / Negative / Conditional |
+| **2026-09-23** | [**22922928**](https://zenodo.org/records/22922928) | **Scalar junction consistency and a corrected static de Sitter branch**, companion version **1.0**, separate concept **22922927**. Live API metadata and two-file inventory checked on 2 Oct 2026 | Numerical / Exact / Negative / Conditional |
+| 2026-10-02 | [Main-family draft 23112891](https://zenodo.org/deposit/23112891) | Prepared v25 candidate: three failed metric-response experiments, matched-stress control and completed source-free ledger diagnosis; nine new attachments prepared locally | **Unsubmitted; metadata staging HTTP500; no new files uploaded** |
 
 All records before v20 (17088133 through 20313949) are marked in the author's 29 Aug 2026 audit as
 affected by the v20 correction, and should be read together with that correction.
 
 The September static-branch study is a **separate companion record**. Its all-version identifier is
 [10.5281/zenodo.22922927](https://doi.org/10.5281/zenodo.22922927), not the program identifier above.
-This screenshot verification is not a live API check. The 1 October checkpoint is available on
-GitHub; no new Zenodo record or version has been created by this research session.
+Authenticated live checks on 2 October 2026 (3 October UTC) confirm that the latest published
+main-family version remains **2026.09.05-v24**, record **22347452**. Its main concept resolves
+to that record, and it appears in the author's owned deposition inventory. The public GitHub
+connection was enabled in the author's signed-in Zenodo account; that integration repair does
+not establish a publication or automatically join a GitHub-generated record to this manual family.
+
+The reviewed **2026.10.02-v25** candidate now has one main-family draft, **23112891**, created
+from v24's verified new-version link. Its ten inherited v24 files remain unchanged. A single
+documented JSON metadata update returned HTTP500; authenticated readback stayed unchanged.
+No binary upload or publish action followed. The separate companion draft **23111008** remains
+untouched. Reuse the correct existing draft; never publish an inherited-only clone.
+
+[Candidate metadata, complete file hashes and browser-upload instructions](../research/HDBLAST_ZENODO_V25_CANDIDATE_20261002/README.md)
+provide the concrete fallback. The completed ledger diagnosis does not change the earlier
+metric calibration's **FAIL** verdict or validate the proposed cosmological mechanism.
 
 Companion 2025 concepts: 16866883 (brane-world two-link packs), 16929972 (HDBC reproducibility
 bundles), 17069899 (cross-PTA/LISA/CMB pipeline).
 
 *Source: the author's 29 Aug 2026 provenance audit and later local records; see
 [PROGRAM_MAP.md §3 and §7](PROGRAM_MAP.md#3-dated-chronology). The record list was compiled from
-local files. Zenodo itself could not be queried from the build environment, so the record
-numbers should be spot-checked on zenodo.org.*
+local files. The latest main record and static-branch companion were subsequently checked
+through the live API as described above; the rest of the historical list has not been rechecked.*
