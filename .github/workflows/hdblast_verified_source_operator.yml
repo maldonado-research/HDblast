@@ -1,0 +1,82 @@
+name: Registered source and operator exact replay
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_CHECKPOINT_20261003_VERIFIED_SOURCE_OPERATOR/**'
+      - 'research/HDBLAST_VERIFIED_SOURCE_OPERATOR_PACKAGE_20261003/**'
+      - '.github/workflows/hdblast_verified_source_operator.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_CHECKPOINT_20261003_VERIFIED_SOURCE_OPERATOR/**'
+      - 'research/HDBLAST_VERIFIED_SOURCE_OPERATOR_PACKAGE_20261003/**'
+      - '.github/workflows/hdblast_verified_source_operator.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  fresh-exact-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: research/HDBLAST_VERIFIED_SOURCE_OPERATOR_PACKAGE_20261003
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - name: Install the registered numerical library
+        run: |
+          python -m pip install --only-binary=:all: python-flint==0.9.0
+          python -m pip check
+      - name: Authenticate and extract the standalone archive
+        run: |
+          python -B - <<'PY'
+          import hashlib, os, pathlib, stat, zipfile
+          name = 'HDBLAST_CHECKPOINT_20261003_VERIFIED_SOURCE_OPERATOR'
+          archive = pathlib.Path('research/HDBLAST_VERIFIED_SOURCE_OPERATOR_PACKAGE_20261003') / (name + '.zip')
+          if hashlib.sha256(archive.read_bytes()).hexdigest() != 'dfc8c6c6144fa1d9039390bcbaa7a9bd062355863c0fe1494d63824721193cd7':
+              raise SystemExit('Standalone archive SHA256 differs')
+          target = pathlib.Path(os.environ['RUNNER_TEMP']) / 'source-operator-extracted'
+          target.mkdir()
+          with zipfile.ZipFile(archive) as package:
+              members = package.infolist()
+              if package.testzip() is not None or len(members) != 175 or len({x.filename for x in members}) != 175:
+                  raise SystemExit('Archive membership or CRC differs')
+              for member in members:
+                  path = pathlib.PurePosixPath(member.filename)
+                  if path.is_absolute() or path.parts[0] != name or any(x in ('', '.', '..') for x in member.filename.split('/')) or not stat.S_ISREG(member.external_attr >> 16):
+                      raise SystemExit('Unsafe archive member')
+              package.extractall(target)
+          PY
+      - name: Replay both methods and preserve the exact scientific result
+        run: |
+          root="$RUNNER_TEMP/source-operator-extracted/HDBLAST_CHECKPOINT_20261003_VERIFIED_SOURCE_OPERATOR"
+          python -B -O "$root/execution/replay_checkpoint.py" \
+            --checkpoint "$root" \
+            --expected-manifest-sha256 d870a76e15fe49da9f624a55258f3f6aa93933ea19860b9bff7c4f2da3ec93f6 \
+            --python "$(command -v python)" \
+            --receipt-sha256 89045e40e6f17a01a6a102b6fce4a4abb03b0e07cc498b02d7bfc22359560238 \
+            --registration-sha256 f47a3419970005c39231b76b08e8bf3cc9468a2b3e24d482114889a6ffa3dddc \
+            --output-directory "$RUNNER_TEMP/source-operator-fresh-runs" \
+            --optimized > "$RUNNER_TEMP/source-operator-replay.log" 2>&1
+      - name: Retain full numerical results and execution receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: registered-source-operator-${{ github.sha }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/source-operator-replay.log
+            ${{ runner.temp }}/source-operator-fresh-runs/
+          if-no-files-found: warn
+          retention-days: 14

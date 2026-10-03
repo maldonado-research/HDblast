@@ -1,0 +1,1087 @@
+{
+  "scope": "Exact DOI lookup and bounded three-result title/author search; title matching required before DOI inclusion.",
+  "records": [
+    {
+      "label": "crossref_arb",
+      "url": "https://api.crossref.org/works/10.1145/3095149",
+      "requested_at_utc": "2026-10-03T06:13:49.138052+00:00",
+      "error": "HTTPError: HTTP Error 404: Not Found",
+      "retrieved_at_utc": "2026-10-03T06:13:49.763757+00:00"
+    },
+    {
+      "label": "crossref_integration",
+      "url": "https://api.crossref.org/works?query.title=Numerical+integration+in+arbitrary-precision+ball+arithmetic&query.author=Johansson&rows=3",
+      "requested_at_utc": "2026-10-03T06:13:49.763960+00:00",
+      "status": 200,
+      "final_url": "https://api.crossref.org/works?query.title=Numerical+integration+in+arbitrary-precision+ball+arithmetic&query.author=Johansson&rows=3",
+      "content_type": "application/json",
+      "response_date": "Sat, 03 Oct 2026 06:13:50 GMT",
+      "retrieved_at_utc": "2026-10-03T06:13:50.648441+00:00",
+      "bytes": 20050,
+      "sha256": "109d408478391085b072aa218bdfe27301cd95aef49a6146f0eb632401b137e9",
+      "saved_path": "raw/crossref_integration.json",
+      "record": {
+        "status": "ok",
+        "message-type": "work-list",
+        "message-version": "1.0.0",
+        "message": {
+          "facets": {},
+          "total-results": 450,
+          "items": [
+            {
+              "indexed": {
+                "date-parts": [
+                  [
+                    2026,
+                    9,
+                    22
+                  ]
+                ],
+                "date-time": "2026-09-22T21:30:11Z",
+                "timestamp": 1790112611397,
+                "version": "4.0.1"
+              },
+              "publisher-location": "Cham",
+              "reference-count": 11,
+              "publisher": "Springer International Publishing",
+              "isbn-type": [
+                {
+                  "value": "9783319964171",
+                  "type": "print"
+                },
+                {
+                  "value": "9783319964188",
+                  "type": "electronic"
+                }
+              ],
+              "license": [
+                {
+                  "start": {
+                    "date-parts": [
+                      [
+                        2018,
+                        1,
+                        1
+                      ]
+                    ],
+                    "date-time": "2018-01-01T00:00:00Z",
+                    "timestamp": 1514764800000
+                  },
+                  "content-version": "unspecified",
+                  "delay-in-days": 0,
+                  "URL": "http://www.springer.com/tdm"
+                }
+              ],
+              "content-domain": {
+                "domain": [
+                  "link.springer.com"
+                ],
+                "crossmark-restriction": false
+              },
+              "published-print": {
+                "date-parts": [
+                  [
+                    2018
+                  ]
+                ]
+              },
+              "DOI": "10.1007/978-3-319-96418-8_30",
+              "type": "book-chapter",
+              "created": {
+                "date-parts": [
+                  [
+                    2018,
+                    7,
+                    13
+                  ]
+                ],
+                "date-time": "2018-07-13T06:57:13Z",
+                "timestamp": 1531465033000
+              },
+              "page": "255-263",
+              "update-policy": "https://doi.org/10.1007/springer_crossmark_policy",
+              "source": "Crossref",
+              "is-referenced-by-count": 10,
+              "title": [
+                "Numerical Integration in Arbitrary-Precision Ball Arithmetic"
+              ],
+              "prefix": "10.1007",
+              "author": [
+                {
+                  "given": "Fredrik",
+                  "family": "Johansson",
+                  "sequence": "first",
+                  "affiliation": [],
+                  "role": [
+                    {
+                      "vocabulary": "crossref",
+                      "role": "author"
+                    }
+                  ]
+                }
+              ],
+              "member": "297",
+              "published-online": {
+                "date-parts": [
+                  [
+                    2018,
+                    7,
+                    14
+                  ]
+                ]
+              },
+              "reference": [
+                {
+                  "issue": "7",
+                  "key": "30_CR1",
+                  "doi-asserted-by": "publisher",
+                  "first-page": "741",
+                  "DOI": "10.1016/j.jsc.2010.08.010",
+                  "volume": "46",
+                  "author": "DH Bailey",
+                  "year": "2011",
+                  "unstructured": "Bailey, D.H., Borwein, J.M.: High-precision numerical integration: progress and challenges. J. Symbolic Comput. 46(7), 741\u2013754 (2011)",
+                  "journal-title": "J. Symbolic Comput."
+                },
+                {
+                  "issue": "2",
+                  "key": "30_CR2",
+                  "doi-asserted-by": "publisher",
+                  "first-page": "189",
+                  "DOI": "10.1093/comjnl/14.2.189",
+                  "volume": "14",
+                  "author": "R Cranley",
+                  "year": "1971",
+                  "unstructured": "Cranley, R., Patterson, T.N.L.: On the automatic numerical evaluation of definite integrals. Comput. J. 14(2), 189\u2013198 (1971)",
+                  "journal-title": "Comput. J."
+                },
+                {
+                  "key": "30_CR3",
+                  "unstructured": "Hale, N.: Spike integral (2010). \nhttp://www.chebfun.org/examples/quad/SpikeIntegral.html"
+                },
+                {
+                  "key": "30_CR4",
+                  "doi-asserted-by": "publisher",
+                  "first-page": "1281",
+                  "DOI": "10.1109/TC.2017.2690633",
+                  "volume": "66",
+                  "author": "F Johansson",
+                  "year": "2017",
+                  "unstructured": "Johansson, F.: Arb: efficient arbitrary-precision midpoint-radius interval arithmetic. IEEE Trans. Comput. 66, 1281\u20131292 (2017)",
+                  "journal-title": "IEEE Trans. Comput."
+                },
+                {
+                  "key": "30_CR5",
+                  "unstructured": "Johansson, F.: mpmath version 1.0 (2017). \nhttp://mpmath.org/"
+                },
+                {
+                  "key": "30_CR6",
+                  "unstructured": "Johansson, F., Mezzarobba, M.: Fast and rigorous arbitrary-precision computation of Gauss-Legendre quadrature nodes and weights (2018). \narXiv:1802.03948"
+                },
+                {
+                  "key": "30_CR7",
+                  "series-title": "Lecture Notes in Computer Science",
+                  "doi-asserted-by": "publisher",
+                  "first-page": "274",
+                  "DOI": "10.1007/978-3-319-43144-4_17",
+                  "volume-title": "Interactive Theorem Proving",
+                  "author": "A Mahboubi",
+                  "year": "2016",
+                  "unstructured": "Mahboubi, A., Melquiond, G., Sibut-Pinote, T.: Formally verified approximations of definite integrals. In: Blanchette, J.C., Merz, S. (eds.) ITP 2016. LNCS, vol. 9807, pp. 274\u2013289. Springer, Cham (2016). \nhttps://doi.org/10.1007/978-3-319-43144-4_17"
+                },
+                {
+                  "issue": "2",
+                  "key": "30_CR8",
+                  "doi-asserted-by": "publisher",
+                  "first-page": "345",
+                  "DOI": "10.1016/S0377-0427(01)00586-6",
+                  "volume": "145",
+                  "author": "K Petras",
+                  "year": "2002",
+                  "unstructured": "Petras, K.: Self-validating integration and approximation of piecewise analytic functions. J. Comp. Appl. Math. 145(2), 345\u2013359 (2002)",
+                  "journal-title": "J. Comp. Appl. Math."
+                },
+                {
+                  "key": "30_CR9",
+                  "doi-asserted-by": "publisher",
+                  "first-page": "287",
+                  "DOI": "10.1017/S096249291000005X",
+                  "volume": "19",
+                  "author": "SM Rump",
+                  "year": "2010",
+                  "unstructured": "Rump, S.M.: Verification methods: rigorous results using floating-point arithmetic. Acta Numerica 19, 287\u2013449 (2010)",
+                  "journal-title": "Acta Numerica"
+                },
+                {
+                  "key": "30_CR10",
+                  "unstructured": "The Pari group. Pari/GP version 2.9.4 (2017). \nhttp://pari.math.u-bordeaux.fr/"
+                },
+                {
+                  "key": "30_CR11",
+                  "unstructured": "The SageMath developers. SageMath version 8.2 (2018). \nhttp://sagemath.org/"
+                }
+              ],
+              "container-title": [
+                "Lecture Notes in Computer Science",
+                "Mathematical Software \u2013 ICMS 2018"
+              ],
+              "link": [
+                {
+                  "URL": "http://link.springer.com/content/pdf/10.1007/978-3-319-96418-8_30",
+                  "content-type": "unspecified",
+                  "content-version": "vor",
+                  "intended-application": "similarity-checking"
+                }
+              ],
+              "deposited": {
+                "date-parts": [
+                  [
+                    2018,
+                    7,
+                    13
+                  ]
+                ],
+                "date-time": "2018-07-13T07:11:41Z",
+                "timestamp": 1531465901000
+              },
+              "score": 63.75123,
+              "resource": {
+                "primary": {
+                  "URL": "http://link.springer.com/10.1007/978-3-319-96418-8_30"
+                }
+              },
+              "issued": {
+                "date-parts": [
+                  [
+                    2018
+                  ]
+                ]
+              },
+              "ISBN": [
+                "9783319964171",
+                "9783319964188"
+              ],
+              "references-count": 11,
+              "URL": "https://doi.org/10.1007/978-3-319-96418-8_30",
+              "ISSN": [
+                "0302-9743",
+                "1611-3349"
+              ],
+              "issn-type": [
+                {
+                  "value": "0302-9743",
+                  "type": "print"
+                },
+                {
+                  "value": "1611-3349",
+                  "type": "electronic"
+                }
+              ],
+              "published": {
+                "date-parts": [
+                  [
+                    2018
+                  ]
+                ]
+              }
+            },
+            {
+              "indexed": {
+                "date-parts": [
+                  [
+                    2026,
+                    9,
+                    27
+                  ]
+                ],
+                "date-time": "2026-09-27T13:39:41Z",
+                "timestamp": 1790516381019,
+                "version": "4.1.0"
+              },
+              "reference-count": 37,
+              "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+              "issue": "8",
+              "license": [
+                {
+                  "start": {
+                    "date-parts": [
+                      [
+                        2017,
+                        8,
+                        1
+                      ]
+                    ],
+                    "date-time": "2017-08-01T00:00:00Z",
+                    "timestamp": 1501545600000
+                  },
+                  "content-version": "vor",
+                  "delay-in-days": 0,
+                  "URL": "https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html"
+                }
+              ],
+              "funder": [
+                {
+                  "DOI": "10.13039/501100000781",
+                  "name": "ERC",
+                  "doi-asserted-by": "publisher",
+                  "award": [
+                    "ANTICS 278537"
+                  ],
+                  "award-info": [
+                    {
+                      "award-number": [
+                        "ANTICS 278537"
+                      ]
+                    }
+                  ],
+                  "id": [
+                    {
+                      "id": "10.13039/501100000781",
+                      "id-type": "DOI",
+                      "asserted-by": "publisher"
+                    }
+                  ]
+                },
+                {
+                  "DOI": "10.13039/501100002428",
+                  "name": "Austrian Science Fund (FWF)",
+                  "doi-asserted-by": "publisher",
+                  "award": [
+                    "Y464-N18"
+                  ],
+                  "award-info": [
+                    {
+                      "award-number": [
+                        "Y464-N18"
+                      ]
+                    }
+                  ],
+                  "id": [
+                    {
+                      "id": "10.13039/501100002428",
+                      "id-type": "DOI",
+                      "asserted-by": "publisher"
+                    }
+                  ]
+                }
+              ],
+              "content-domain": {
+                "domain": [],
+                "crossmark-restriction": false
+              },
+              "short-container-title": [
+                "IEEE Trans. Comput."
+              ],
+              "published-print": {
+                "date-parts": [
+                  [
+                    2017,
+                    8,
+                    1
+                  ]
+                ]
+              },
+              "DOI": "10.1109/tc.2017.2690633",
+              "type": "journal-article",
+              "created": {
+                "date-parts": [
+                  [
+                    2017,
+                    4,
+                    4
+                  ]
+                ],
+                "date-time": "2017-04-04T22:41:38Z",
+                "timestamp": 1491345698000
+              },
+              "page": "1281-1292",
+              "source": "Crossref",
+              "is-referenced-by-count": 170,
+              "title": [
+                "Arb: Efficient Arbitrary-Precision Midpoint-Radius Interval Arithmetic"
+              ],
+              "prefix": "10.1109",
+              "volume": "66",
+              "author": [
+                {
+                  "given": "Fredrik",
+                  "family": "Johansson",
+                  "sequence": "first",
+                  "affiliation": [],
+                  "role": [
+                    {
+                      "vocabulary": "crossref",
+                      "role": "author"
+                    }
+                  ]
+                }
+              ],
+              "member": "263",
+              "reference": [
+                {
+                  "key": "ref33",
+                  "article-title": "Making fast multiplication of polynomials numerically stable",
+                  "author": "van der hoeven",
+                  "year": "2008"
+                },
+                {
+                  "key": "ref32",
+                  "doi-asserted-by": "crossref",
+                  "first-page": "475",
+                  "DOI": "10.1090/S0025-5718-2014-02857-3",
+                  "article-title": "A fast algorithm for reversion of power series",
+                  "volume": "84",
+                  "author": "johansson",
+                  "year": "2015",
+                  "journal-title": "Math Comput"
+                },
+                {
+                  "key": "ref31",
+                  "doi-asserted-by": "publisher",
+                  "DOI": "10.1145/322092.322099"
+                },
+                {
+                  "key": "ref30",
+                  "doi-asserted-by": "publisher",
+                  "DOI": "10.1007/978-3-642-23568-9_16"
+                },
+                {
+                  "key": "ref37",
+                  "doi-asserted-by": "publisher",
+                  "DOI": "10.1109/ARITH.2016.18"
+                },
+                {
+                  "key": "ref36",
+                  "first-page": "142",
+                  "article-title": "Evaluating straight-line programs over balls",
+                  "author": "van der hoeven",
+                  "year": "2016",
+                  "journal-title": "Proc IEEE 23rd Symp Comput Arithmetic"
+                },
+                {
+                  "key": "ref35",
+                  "first-page": "75",
+                  "article-title": "Faster FFTs in medium precision",
+                  "author": "van der hoeven",
+                  "year": "2015",
+                  "journal-title": "Proc 22nd Int Symp Comput Arithmetic"
+                },
+                {
+                  "key": "ref34",
+                  "article-title": "MPFRCX: A library for univariate polynomials over arbitrary precision real or complex numbers",
+                  "author": "enge",
+                  "year": "2012"
+                },
+                {
+                  "key": "ref10",
+                  "doi-asserted-by": "publisher",
+                  "DOI": "10.1145/2110170.2110180"
+                },
+                {
+                  "key": "ref11",
+                  "doi-asserted-by": "publisher",
+                  "DOI": "10.1007/978-3-642-15582-6_52"
+                },
+                {
+                  "key": "ref12",
+                  "doi-asserted-by": "publisher",
+                  "DOI": "10.1007/3-540-45335-0_14"
+                },
+                {
+                  "key": "ref13",
+                  "doi-asserted-by": "publisher",
+                  "DOI": "10.3390/math3020337"
+                },
+                {
+                  "key": "ref14",
+                  "doi-asserted-by": "publisher",
+                  "DOI": "10.1109/ARITH.2015.16"
+                },
+                {
+                  "key": "ref15",
+                  "doi-asserted-by": "publisher",
+                  "DOI": "10.1007/s11075-014-9893-1"
+                },
+                {
+                  "key": "ref16",
+                  "article-title": "Computing hypergeometric functions rigorously",
+                  "author": "johansson",
+                  "year": "2016"
+                },
+                {
+                  "key": "ref17",
+                  "doi-asserted-by": "crossref",
+                  "first-page": "166",
+                  "DOI": "10.1145/2576802.2576828",
+                  "article-title": "Arb: A C library for ball arithmetic",
+                  "volume": "47",
+                  "author": "johansson",
+                  "year": "2013",
+                  "journal-title": "ACM Commun Comput Algebra"
+                },
+                {
+                  "key": "ref18",
+                  "article-title": "GMP: The GNU multiple precision arithmetic library",
+                  "year": "2016"
+                },
+                {
+                  "key": "ref19",
+                  "article-title": "MPIR: Multiple precision integers and rationals",
+                  "year": "2016"
+                },
+                {
+                  "key": "ref28",
+                  "doi-asserted-by": "publisher",
+                  "DOI": "10.1080/10586458.2014.976801"
+                },
+                {
+                  "key": "ref4",
+                  "doi-asserted-by": "publisher",
+                  "DOI": "10.1007/s002080010018"
+                },
+                {
+                  "key": "ref27",
+                  "article-title": "Zeros of Dirichlet L-functions on the critical line with the accuracy of 40000 decimal places",
+                  "author": "beliakov",
+                  "year": "2014"
+                },
+                {
+                  "key": "ref3",
+                  "article-title": "The ternary Goldbach problem",
+                  "author": "helfgott",
+                  "year": "2015"
+                },
+                {
+                  "key": "ref6",
+                  "doi-asserted-by": "publisher",
+                  "DOI": "10.1145/1236463.1236468"
+                },
+                {
+                  "key": "ref29",
+                  "article-title": "mpmath: A Python library for arbitrary-precision floating-point arithmetic",
+                  "author": "johansson",
+                  "year": "2015"
+                },
+                {
+                  "key": "ref5",
+                  "doi-asserted-by": "publisher",
+                  "DOI": "10.1007/s11155-005-6891-y"
+                },
+                {
+                  "key": "ref8",
+                  "first-page": "379",
+                  "article-title": "Taylor models and other validated functional inclusion methods",
+                  "volume": "4",
+                  "author": "makino",
+                  "year": "2003",
+                  "journal-title": "Int J Pure Appl Math"
+                },
+                {
+                  "key": "ref7",
+                  "article-title": "MPC: A library for multiprecision complex arithmetic with exact rounding",
+                  "author": "enge",
+                  "year": "2011"
+                },
+                {
+                  "key": "ref2",
+                  "doi-asserted-by": "publisher",
+                  "DOI": "10.1007/978-1-4614-1129-1_9"
+                },
+                {
+                  "key": "ref9",
+                  "article-title": "Ball arithmetic",
+                  "author": "van der hoeven",
+                  "year": "2009",
+                  "journal-title": "HAL"
+                },
+                {
+                  "key": "ref1",
+                  "doi-asserted-by": "crossref",
+                  "DOI": "10.2307/j.ctvcm4g18",
+                  "author": "tucker",
+                  "year": "2011",
+                  "journal-title": "Validated Numerics A Short Introduction to Rigorous Computations"
+                },
+                {
+                  "key": "ref20",
+                  "doi-asserted-by": "publisher",
+                  "DOI": "10.1007/978-3-642-15582-6_18"
+                },
+                {
+                  "key": "ref22",
+                  "doi-asserted-by": "publisher",
+                  "DOI": "10.1145/1273442.1250746"
+                },
+                {
+                  "key": "ref21",
+                  "year": "2016",
+                  "journal-title": "SageMath the Sage Mathematics Software System (Version 7 2 0)"
+                },
+                {
+                  "key": "ref24",
+                  "doi-asserted-by": "publisher",
+                  "DOI": "10.1112/S1461157012001088"
+                },
+                {
+                  "key": "ref23",
+                  "article-title": "OEIS A110375",
+                  "author": "sloane",
+                  "year": "2008"
+                },
+                {
+                  "key": "ref26",
+                  "doi-asserted-by": "publisher",
+                  "DOI": "10.1112/S1461157016000115"
+                },
+                {
+                  "key": "ref25",
+                  "doi-asserted-by": "publisher",
+                  "DOI": "10.1090/S0025-5718-08-02200-X"
+                }
+              ],
+              "container-title": [
+                "IEEE Transactions on Computers"
+              ],
+              "link": [
+                {
+                  "URL": "http://xplorestaging.ieee.org/ielx7/12/7972690/07891956.pdf?arnumber=7891956",
+                  "content-type": "unspecified",
+                  "content-version": "vor",
+                  "intended-application": "similarity-checking"
+                }
+              ],
+              "deposited": {
+                "date-parts": [
+                  [
+                    2022,
+                    1,
+                    12
+                  ]
+                ],
+                "date-time": "2022-01-12T16:15:28Z",
+                "timestamp": 1642004128000
+              },
+              "score": 38.74048,
+              "resource": {
+                "primary": {
+                  "URL": "http://ieeexplore.ieee.org/document/7891956/"
+                }
+              },
+              "issued": {
+                "date-parts": [
+                  [
+                    2017,
+                    8,
+                    1
+                  ]
+                ]
+              },
+              "references-count": 37,
+              "journal-issue": {
+                "issue": "8"
+              },
+              "URL": "https://doi.org/10.1109/tc.2017.2690633",
+              "ISSN": [
+                "0018-9340"
+              ],
+              "issn-type": [
+                {
+                  "value": "0018-9340",
+                  "type": "print"
+                }
+              ],
+              "published": {
+                "date-parts": [
+                  [
+                    2017,
+                    8,
+                    1
+                  ]
+                ]
+              }
+            },
+            {
+              "indexed": {
+                "date-parts": [
+                  [
+                    2026,
+                    2,
+                    23
+                  ]
+                ],
+                "date-time": "2026-02-23T17:47:52Z",
+                "timestamp": 1771868872105,
+                "version": "3.50.1"
+              },
+              "reference-count": 19,
+              "publisher": "Springer Science and Business Media LLC",
+              "issue": "1",
+              "license": [
+                {
+                  "start": {
+                    "date-parts": [
+                      [
+                        2019,
+                        2,
+                        18
+                      ]
+                    ],
+                    "date-time": "2019-02-18T00:00:00Z",
+                    "timestamp": 1550448000000
+                  },
+                  "content-version": "tdm",
+                  "delay-in-days": 0,
+                  "URL": "http://www.springer.com/tdm"
+                }
+              ],
+              "content-domain": {
+                "domain": [
+                  "link.springer.com"
+                ],
+                "crossmark-restriction": false
+              },
+              "short-container-title": [
+                "Numer Algor"
+              ],
+              "published-print": {
+                "date-parts": [
+                  [
+                    2020,
+                    1
+                  ]
+                ]
+              },
+              "DOI": "10.1007/s11075-019-00678-x",
+              "type": "journal-article",
+              "created": {
+                "date-parts": [
+                  [
+                    2019,
+                    2,
+                    18
+                  ]
+                ],
+                "date-time": "2019-02-18T12:47:06Z",
+                "timestamp": 1550494026000
+              },
+              "page": "221-242",
+              "update-policy": "https://doi.org/10.1007/springer_crossmark_policy",
+              "source": "Crossref",
+              "is-referenced-by-count": 11,
+              "title": [
+                "Computing the Lambert W function in arbitrary-precision complex interval arithmetic"
+              ],
+              "prefix": "10.1007",
+              "volume": "83",
+              "author": [
+                {
+                  "given": "Fredrik",
+                  "family": "Johansson",
+                  "sequence": "first",
+                  "affiliation": [],
+                  "role": [
+                    {
+                      "role": "author",
+                      "vocabulary": "crossref"
+                    }
+                  ]
+                }
+              ],
+              "member": "297",
+              "published-online": {
+                "date-parts": [
+                  [
+                    2019,
+                    2,
+                    18
+                  ]
+                ]
+              },
+              "reference": [
+                {
+                  "key": "678_CR1",
+                  "unstructured": "Agrawal, N., Bikineev, A., Bristow, P.A., Guazzone, M., Kormanyos, C., Holin, H., Lalande, B., Maddock, J., Murphy, J., R\u00e5ade, J., Sewani, G., Sobotta, B., Thompson, N., van den Berg, T., Walker, D., Zhang, X.: BOOST C++ Libraries: Lambert W function \nhttps://www.boost.org/doc/libs/develop/libs/math/doc/html/math_toolkit/lambert_w.html\n\n (2017)"
+                },
+                {
+                  "issue": "2",
+                  "key": "678_CR2",
+                  "doi-asserted-by": "publisher",
+                  "first-page": "161",
+                  "DOI": "10.1145/203082.203084",
+                  "volume": "21",
+                  "author": "DA Barry",
+                  "year": "1995",
+                  "unstructured": "Barry, D.A., Culligan-Hensley, P.J., Barry, S.J.: Real values of the W-function. ACM Trans. Math. Softw. 21(2), 161\u2013171 (1995)",
+                  "journal-title": "ACM Trans. Math. Softw."
+                },
+                {
+                  "issue": "9",
+                  "key": "678_CR3",
+                  "doi-asserted-by": "publisher",
+                  "first-page": "2160",
+                  "DOI": "10.1109/TSP.2002.801912",
+                  "volume": "50",
+                  "author": "F Chapeau-Blondeau",
+                  "year": "2002",
+                  "unstructured": "Chapeau-Blondeau, F., Monir, A.: Numerical evaluation of the Lambert W function and application to generation of generalized Gaussian noise with exponent 1/2. IEEE Trans. Signal Process. 50(9), 2160\u20132165 (2002)",
+                  "journal-title": "IEEE Trans. Signal Process."
+                },
+                {
+                  "issue": "1",
+                  "key": "678_CR4",
+                  "doi-asserted-by": "publisher",
+                  "first-page": "329",
+                  "DOI": "10.1007/BF02124750",
+                  "volume": "5",
+                  "author": "RM Corless",
+                  "year": "1996",
+                  "unstructured": "Corless, R.M., Gonnet, G.H., Hare, D.E.G., Jeffrey, D.J., Knuth, D.E.: On the Lambert W function. Adv. Comput. Math. 5(1), 329\u2013359 (1996)",
+                  "journal-title": "Adv. Comput. Math."
+                },
+                {
+                  "issue": "2",
+                  "key": "678_CR5",
+                  "doi-asserted-by": "publisher",
+                  "first-page": "123",
+                  "DOI": "10.1145/361952.361970",
+                  "volume": "16",
+                  "author": "FN Fitsch",
+                  "year": "1973",
+                  "unstructured": "Fitsch, F.N., Shafer, R.E., Crowley, W.P.: Algorithm 443: Solution of the transcendental equation wew = x. Commun. ACM 16(2), 123\u2013124 (1973)",
+                  "journal-title": "Commun. ACM"
+                },
+                {
+                  "key": "678_CR6",
+                  "doi-asserted-by": "publisher",
+                  "first-page": "77",
+                  "DOI": "10.1016/j.cam.2012.11.021",
+                  "volume": "244",
+                  "author": "T Fukushima",
+                  "year": "2013",
+                  "unstructured": "Fukushima, T.: Precise and fast computation of Lambert W-functions without transcendental function evaluations. J. Comput. Appl. Math. 244, 77\u201389 (2013)",
+                  "journal-title": "J. Comput. Appl. Math."
+                },
+                {
+                  "key": "678_CR7",
+                  "unstructured": "van der Hoeven, J.: Ball arithmetic. Tech. rep., HAL. \nhttp://hal.archives-ouvertes.fr/hal-00432152/fr/\n\n (2009)"
+                },
+                {
+                  "key": "678_CR8",
+                  "unstructured": "Jeffrey, D.J.: Celebrating 20 years of the Lambert W function \nhttp://www.apmaths.uwo.ca/~djeffrey/LambertW/LambertW.html\n\n (2016)"
+                },
+                {
+                  "key": "678_CR9",
+                  "doi-asserted-by": "publisher",
+                  "unstructured": "Johansson, F.: Efficient implementation of elementary functions in the medium-precision range. In: 22Nd IEEE Symposium on Computer Arithmetic, ARITH22, pp. 83\u201389. \nhttps://doi.org/10.1109/ARITH.2015.16\n\n (2015)",
+                  "DOI": "10.1109/ARITH.2015.16"
+                },
+                {
+                  "key": "678_CR10",
+                  "doi-asserted-by": "publisher",
+                  "first-page": "1281",
+                  "DOI": "10.1109/TC.2017.2690633",
+                  "volume": "66",
+                  "author": "F Johansson",
+                  "year": "2017",
+                  "unstructured": "Johansson, F.: Arb: efficient arbitrary-precision midpoint-radius interval arithmetic. IEEE Trans. Comput. 66, 1281\u20131292 (2017). \nhttps://doi.org/10.1109/TC.2017.2690633",
+                  "journal-title": "IEEE Trans. Comput."
+                },
+                {
+                  "key": "678_CR11",
+                  "unstructured": "Johansson, F., et al.: mpmath: a Python library for arbitrary-precision floating-point arithmetic (version 1.1) \nhttp://mpmath.org\n\n (2018)"
+                },
+                {
+                  "key": "678_CR12",
+                  "unstructured": "Kalugin, G.A., Jeffrey, D.J.: Convergence in C of series for the Lambert W function. arXiv:\n1208.0754\n\n (2012)"
+                },
+                {
+                  "issue": "3",
+                  "key": "678_CR13",
+                  "doi-asserted-by": "publisher",
+                  "first-page": "20",
+                  "DOI": "10.1145/2168773.2168779",
+                  "volume": "38",
+                  "author": "PW Lawrence",
+                  "year": "2012",
+                  "unstructured": "Lawrence, P.W., Corless, R.M., Jeffrey, D.J.: Algorithm 917: complex double-precision evaluation of the Wright \u03c9 function. ACM Trans. Math. Softw. 38(3), 20 (2012)",
+                  "journal-title": "ACM Trans. Math. Softw."
+                },
+                {
+                  "key": "678_CR14",
+                  "unstructured": "Maplesoft: Productlog \u2013 Maple Programming Help \nhttps://www.maplesoft.com/support/help/maple/view.aspx?path=LambertW\n\n (2019)"
+                },
+                {
+                  "key": "678_CR15",
+                  "doi-asserted-by": "crossref",
+                  "unstructured": "Moore, R.E.: Methods and applications of interval analysis. SIAM (1979)",
+                  "DOI": "10.1137/1.9781611970906"
+                },
+                {
+                  "key": "678_CR16",
+                  "volume-title": "NIST Handbook of Mathematical Functions",
+                  "author": "FJ Olver",
+                  "year": "2010",
+                  "unstructured": "Olver, F.J., Lozier, D.W., Boisvert, R.F., Clark, C.W.: NIST Handbook of Mathematical Functions. Cambridge University Press, Cambridge (2010)"
+                },
+                {
+                  "issue": "12",
+                  "key": "678_CR17",
+                  "doi-asserted-by": "publisher",
+                  "first-page": "2622",
+                  "DOI": "10.1016/j.cpc.2012.07.008",
+                  "volume": "183",
+                  "author": "D Veberi\u010d",
+                  "year": "2012",
+                  "unstructured": "Veberi\u010d, D.: Lambert W function for applications in physics. Comput. Phys. Commun. 183(12), 2622\u20132628 (2012)",
+                  "journal-title": "Comput. Phys. Commun."
+                },
+                {
+                  "key": "678_CR18",
+                  "unstructured": "Wolfram Research: Productlog \u2013 Wolfram Language Documentation \nhttps://reference.wolfram.com/language/ref/ProductLog.html\n\n (2019)"
+                },
+                {
+                  "issue": "3",
+                  "key": "678_CR19",
+                  "doi-asserted-by": "publisher",
+                  "first-page": "410",
+                  "DOI": "10.1145/114697.116813",
+                  "volume": "17",
+                  "author": "A Ziv",
+                  "year": "1991",
+                  "unstructured": "Ziv, A.: Fast evaluation of elementary mathematical functions with correctly rounded last bit. ACM Trans. Math. Softw. 17(3), 410\u2013423 (1991)",
+                  "journal-title": "ACM Trans. Math. Softw."
+                }
+              ],
+              "container-title": [
+                "Numerical Algorithms"
+              ],
+              "language": "en",
+              "link": [
+                {
+                  "URL": "http://link.springer.com/article/10.1007/s11075-019-00678-x/fulltext.html",
+                  "content-type": "text/html",
+                  "content-version": "vor",
+                  "intended-application": "text-mining"
+                },
+                {
+                  "URL": "http://link.springer.com/content/pdf/10.1007/s11075-019-00678-x.pdf",
+                  "content-type": "application/pdf",
+                  "content-version": "vor",
+                  "intended-application": "text-mining"
+                },
+                {
+                  "URL": "http://link.springer.com/content/pdf/10.1007/s11075-019-00678-x.pdf",
+                  "content-type": "application/pdf",
+                  "content-version": "vor",
+                  "intended-application": "similarity-checking"
+                }
+              ],
+              "deposited": {
+                "date-parts": [
+                  [
+                    2020,
+                    2,
+                    18
+                  ]
+                ],
+                "date-time": "2020-02-18T16:03:25Z",
+                "timestamp": 1582041805000
+              },
+              "score": 35.816315,
+              "resource": {
+                "primary": {
+                  "URL": "http://link.springer.com/10.1007/s11075-019-00678-x"
+                }
+              },
+              "issued": {
+                "date-parts": [
+                  [
+                    2019,
+                    2,
+                    18
+                  ]
+                ]
+              },
+              "references-count": 19,
+              "journal-issue": {
+                "issue": "1",
+                "published-print": {
+                  "date-parts": [
+                    [
+                      2020,
+                      1
+                    ]
+                  ]
+                }
+              },
+              "alternative-id": [
+                "678"
+              ],
+              "URL": "https://doi.org/10.1007/s11075-019-00678-x",
+              "ISSN": [
+                "1017-1398",
+                "1572-9265"
+              ],
+              "issn-type": [
+                {
+                  "value": "1017-1398",
+                  "type": "print"
+                },
+                {
+                  "value": "1572-9265",
+                  "type": "electronic"
+                }
+              ],
+              "published": {
+                "date-parts": [
+                  [
+                    2019,
+                    2,
+                    18
+                  ]
+                ]
+              },
+              "assertion": [
+                {
+                  "value": "18 June 2018",
+                  "order": 1,
+                  "name": "received",
+                  "label": "Received",
+                  "group": {
+                    "name": "ArticleHistory",
+                    "label": "Article History"
+                  }
+                },
+                {
+                  "value": "11 February 2019",
+                  "order": 2,
+                  "name": "accepted",
+                  "label": "Accepted",
+                  "group": {
+                    "name": "ArticleHistory",
+                    "label": "Article History"
+                  }
+                },
+                {
+                  "value": "18 February 2019",
+                  "order": 3,
+                  "name": "first_online",
+                  "label": "First Online",
+                  "group": {
+                    "name": "ArticleHistory",
+                    "label": "Article History"
+                  }
+                }
+              ]
+            }
+          ],
+          "items-per-page": 3,
+          "query": {
+            "start-index": 0,
+            "search-terms": null
+          }
+        }
+      }
+    }
+  ]
+}
