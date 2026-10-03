@@ -32,6 +32,8 @@ The [source-free ledger diagnosis](../research/HDBLAST_CHECKPOINT_20261002_SOURC
 | Replacement in the same main DOI family | Prepared for existing draft **23114217**, which remains unsubmitted. Twelve additions are required for 22 total files; these newer research results are **not yet published on Zenodo** |
 | [Static companion 23111008](https://zenodo.org/records/23111008), concept [10.5281/zenodo.22922927](https://doi.org/10.5281/zenodo.22922927) | Published and preserved; original two-file inventory and metadata match the verified baseline [22922928](https://zenodo.org/records/22922928) |
 
+Metadata saving still returns HTTP 500. The [reviewed browser fallback](publication/2026.10.02-ledger-checkpoint/README.md) preserves the exact fields, inventory and source links for existing draft 23114217. Its new files and complete metadata must be verified before publication; the attempted GitHub binary release is also unpublished.
+
 The public record tombstone confirms removal even though the legacy deposition endpoint retains an archival response. Each new Zenodo publication requires saved-metadata readback and exact filename, size and checksum verification. A prepared draft or reserved DOI is not proof of publication. The [dated Zenodo record list](ZENODO_RECORDS.md) preserves earlier versions and corrections. Automatic GitHub archiving stays off so updating a website does not create a duplicate Zenodo record.
 
 ## Next scientific step
