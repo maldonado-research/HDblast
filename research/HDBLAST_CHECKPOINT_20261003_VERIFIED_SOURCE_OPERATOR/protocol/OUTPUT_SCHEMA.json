@@ -1,0 +1,366 @@
+{
+  "$defs": {
+    "complex_interval": {
+      "additionalProperties": false,
+      "properties": {
+        "imag": {
+          "$ref": "#/$defs/interval"
+        },
+        "real": {
+          "$ref": "#/$defs/interval"
+        }
+      },
+      "required": [
+        "real",
+        "imag"
+      ],
+      "type": "object"
+    },
+    "interval": {
+      "additionalProperties": false,
+      "properties": {
+        "hi": {
+          "$ref": "#/$defs/rational"
+        },
+        "lo": {
+          "$ref": "#/$defs/rational"
+        }
+      },
+      "required": [
+        "lo",
+        "hi"
+      ],
+      "type": "object"
+    },
+    "panel_row": {
+      "additionalProperties": false,
+      "properties": {
+        "interval": {
+          "items": false,
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "$ref": "#/$defs/rational"
+            },
+            {
+              "$ref": "#/$defs/rational"
+            }
+          ],
+          "type": "array"
+        },
+        "moments": {
+          "additionalProperties": false,
+          "properties": {
+            "M0": {
+              "$ref": "#/$defs/complex_interval"
+            },
+            "Mexp": {
+              "$ref": "#/$defs/complex_interval"
+            },
+            "Mu": {
+              "$ref": "#/$defs/complex_interval"
+            }
+          },
+          "required": [
+            "M0",
+            "Mexp",
+            "Mu"
+          ],
+          "type": "object"
+        },
+        "momentum": {
+          "enum": [
+            "0/1",
+            "1/1099511627776",
+            "1/4096",
+            "1/4",
+            "1/1",
+            "16/1",
+            "64/1",
+            "128/1",
+            "256/1"
+          ]
+        },
+        "panel": {
+          "maximum": 63,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "source": {
+          "enum": [
+            "positive_B",
+            "signed_uB"
+          ]
+        },
+        "total_absolute_radii": {
+          "additionalProperties": false,
+          "properties": {
+            "M0": {
+              "$ref": "#/$defs/rational"
+            },
+            "Mexp": {
+              "$ref": "#/$defs/rational"
+            },
+            "Mu": {
+              "$ref": "#/$defs/rational"
+            }
+          },
+          "required": [
+            "M0",
+            "Mexp",
+            "Mu"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "source",
+        "momentum",
+        "interval",
+        "moments",
+        "total_absolute_radii",
+        "panel"
+      ],
+      "type": "object"
+    },
+    "rational": {
+      "description": "Exact reduced rational; production validator additionally checks canonical reduction and ordering.",
+      "pattern": "^-?(0|[1-9][0-9]*)/[1-9][0-9]*$",
+      "type": "string"
+    },
+    "source_work_panel_row": {
+      "additionalProperties": false,
+      "properties": {
+        "interval": {
+          "items": false,
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "$ref": "#/$defs/rational"
+            },
+            {
+              "$ref": "#/$defs/rational"
+            }
+          ],
+          "type": "array"
+        },
+        "moment": {
+          "$ref": "#/$defs/complex_interval"
+        },
+        "panel": {
+          "maximum": 63,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "source": {
+          "enum": [
+            "positive_B",
+            "signed_uB"
+          ]
+        },
+        "total_absolute_radius": {
+          "$ref": "#/$defs/rational"
+        }
+      },
+      "required": [
+        "source",
+        "interval",
+        "moment",
+        "total_absolute_radius",
+        "panel"
+      ],
+      "type": "object"
+    },
+    "source_work_whole_row": {
+      "additionalProperties": false,
+      "properties": {
+        "interval": {
+          "items": false,
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "$ref": "#/$defs/rational"
+            },
+            {
+              "$ref": "#/$defs/rational"
+            }
+          ],
+          "type": "array"
+        },
+        "moment": {
+          "$ref": "#/$defs/complex_interval"
+        },
+        "source": {
+          "enum": [
+            "positive_B",
+            "signed_uB"
+          ]
+        },
+        "total_absolute_radius": {
+          "$ref": "#/$defs/rational"
+        }
+      },
+      "required": [
+        "source",
+        "interval",
+        "moment",
+        "total_absolute_radius"
+      ],
+      "type": "object"
+    },
+    "whole_row": {
+      "additionalProperties": false,
+      "properties": {
+        "interval": {
+          "items": false,
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "$ref": "#/$defs/rational"
+            },
+            {
+              "$ref": "#/$defs/rational"
+            }
+          ],
+          "type": "array"
+        },
+        "moments": {
+          "additionalProperties": false,
+          "properties": {
+            "M0": {
+              "$ref": "#/$defs/complex_interval"
+            },
+            "Mexp": {
+              "$ref": "#/$defs/complex_interval"
+            },
+            "Mu": {
+              "$ref": "#/$defs/complex_interval"
+            }
+          },
+          "required": [
+            "M0",
+            "Mexp",
+            "Mu"
+          ],
+          "type": "object"
+        },
+        "momentum": {
+          "enum": [
+            "0/1",
+            "1/1099511627776",
+            "1/4096",
+            "1/4",
+            "1/1",
+            "16/1",
+            "64/1",
+            "128/1",
+            "256/1"
+          ]
+        },
+        "source": {
+          "enum": [
+            "positive_B",
+            "signed_uB"
+          ]
+        },
+        "total_absolute_radii": {
+          "additionalProperties": false,
+          "properties": {
+            "M0": {
+              "$ref": "#/$defs/rational"
+            },
+            "Mexp": {
+              "$ref": "#/$defs/rational"
+            },
+            "Mu": {
+              "$ref": "#/$defs/rational"
+            }
+          },
+          "required": [
+            "M0",
+            "Mexp",
+            "Mu"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "source",
+        "momentum",
+        "interval",
+        "moments",
+        "total_absolute_radii"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "urn:hdblast:uniform-source-duhamel-operator-output:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Final route output shape. Outer registered bootstrap separately authenticates source/proof/runtime/freeze/resource evidence. Semantic validator checks exact ordered membership, rational endpoints, real-target identities and completecomplexL1radius.",
+  "properties": {
+    "archive_arrays_decoded": {
+      "const": 0
+    },
+    "configuration": {
+      "enum": [
+        "PRIMARY_ARB256_SOURCE24_PHASE96",
+        "INDEPENDENT_DYADIC512_SOURCE24_ODE96"
+      ]
+    },
+    "panel_rows": {
+      "items": {
+        "$ref": "#/$defs/panel_row"
+      },
+      "maxItems": 1152,
+      "minItems": 1152,
+      "type": "array"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "scope": {
+      "const": "UNIFORM_ANALYTIC_MODEL_PLUS_FIXED_RATIONAL_MOMENT_PROBES"
+    },
+    "source_work_panel_rows": {
+      "items": {
+        "$ref": "#/$defs/source_work_panel_row"
+      },
+      "maxItems": 128,
+      "minItems": 128,
+      "type": "array"
+    },
+    "source_work_whole_rows": {
+      "items": {
+        "$ref": "#/$defs/source_work_whole_row"
+      },
+      "maxItems": 2,
+      "minItems": 2,
+      "type": "array"
+    },
+    "whole_rows": {
+      "items": {
+        "$ref": "#/$defs/whole_row"
+      },
+      "maxItems": 18,
+      "minItems": 18,
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "scope",
+    "configuration",
+    "panel_rows",
+    "whole_rows",
+    "archive_arrays_decoded",
+    "source_work_panel_rows",
+    "source_work_whole_rows"
+  ],
+  "title": "HDBLAST uniform source and Duhamel operator output",
+  "type": "object"
+}

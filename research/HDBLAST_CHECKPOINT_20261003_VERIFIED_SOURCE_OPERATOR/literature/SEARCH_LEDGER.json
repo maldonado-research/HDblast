@@ -1,0 +1,1397 @@
+{
+  "schema_version": 1,
+  "scope": "Five bounded first-page arXiv metadata searches (maximum 55 hits including duplicates), one selected-ID check, and two FLINT public release/ref checks; selected primary documents are a separate reading stage. No entire-web coverage claim.",
+  "client_cutoff_date": "2026-10-02 America/Los_Angeles",
+  "completed_at_utc": "2026-10-03T06:11:46.730480+00:00",
+  "queries": [
+    {
+      "label": "ball_integration",
+      "url": "https://export.arxiv.org/api/query?search_query=ti%3A%22integration%22+AND+all%3A%22ball+arithmetic%22&start=0&max_results=10&sortBy=submittedDate&sortOrder=descending",
+      "requested_at_utc": "2026-10-03T06:11:45.430518+00:00",
+      "status": 200,
+      "final_url": "https://export.arxiv.org/api/query?search_query=ti%3A%22integration%22+AND+all%3A%22ball+arithmetic%22&start=0&max_results=10&sortBy=submittedDate&sortOrder=descending",
+      "content_type": "application/atom+xml; charset=utf-8",
+      "response_date": "Sat, 03 Oct 2026 06:11:45 GMT",
+      "retrieved_at_utc": "2026-10-03T06:11:45.823150+00:00",
+      "bytes": 7769,
+      "sha256": "c72d4d03c50e76ef2d6129fc7e1042f3d0ea8bbdf8271262fb15e004a908b783",
+      "saved_path": "raw/ball_integration.xml",
+      "total_hits": "4",
+      "records": [
+        {
+          "id": "http://arxiv.org/abs/2609.26119v1",
+          "title": "Boyd's conductor-11 Mahler measure conjecture: proof of the split-integral identity (C3), with an exact structural analysis of the family S_k",
+          "authors": [
+            "Huimin Zheng"
+          ],
+          "published": "2026-08-06T09:04:41Z",
+          "updated": "2026-08-06T09:04:41Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "Boyd's 1998 tables of conjectural identities $m(P)=r\\,|L'(E,0)|$ between Mahler measures of two-variable polynomials and $L$-values of elliptic curves begin with the smallest possible conductor, $N=11$. The third conductor-$11$ identity, (C3), concerns the polynomial $S_0=y^2+(x^2+1)y+x^3$, which vanishes on the unit torus, and asserts that a signed split integral $I_{\\mathrm{split}}$ of $\\log|y|$ around the branch cut equals $b_{11}=L'(E_{11},0)$. We prove (C3). The proof identifies the split integral with a regulator integral along Samart's signed open chain $\\tildeγ$, closed by a small-branch arc $β_0$ into a closed anti-invariant cycle $C'$, and proves its homology class is $2γ^-$ with $γ^-$ generating $H_1(E,\\mathbb{Z})^-$: the period ratio is a-priori integral, and ball arithmetic (Arb) pins it to $2$. A direct regulator computation via Brunault's proved Siegel-unit formula---the symbol $\\{x,y\\}$ being a pair of modular units on $X_1(11)$, so Bloch's diamond theorem is not needed---then yields $I_{\\mathrm{split}}=b_{11}$; the sign is certified in interval arithmetic, and the identity agrees with the numerical value to $366$ digits. For the family $S_k=y^2+(x^2+kx+1)y+x^3$ we determine exactly the torus intersections and the modular-unit/tempered cases; further Boyd-type evaluations are recorded as conjectures. At $k=-1$ (conductor $53$) the mechanism provably fails; an appendix treats Samart's conductor-$17$ analogue conditionally. All computations are reproducible from the accompanying code; every certification step is carried out within interval arithmetic.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2609.26119v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2609.26119v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/1806.06725v1",
+          "title": "Numerical Evaluation of Elliptic Functions, Elliptic Integrals and Modular Forms",
+          "authors": [
+            "Fredrik Johansson"
+          ],
+          "published": "2018-06-18T14:19:18Z",
+          "updated": "2018-06-18T14:19:18Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "We describe algorithms to compute elliptic functions and their relatives (Jacobi theta functions, modular forms, elliptic integrals, and the arithmetic-geometric mean) numerically to arbitrary precision with rigorous error bounds for arbitrary complex variables. Implementations in ball arithmetic are available in the open source Arb library. We discuss the algorithms from a concrete implementation point of view, with focus on performance at tens to thousands of digits of precision.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/1806.06725v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/1806.06725v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/1804.01679v3",
+          "title": "Computing Stieltjes constants using complex integration",
+          "authors": [
+            "Fredrik Johansson",
+            "Iaroslav Blagouchine"
+          ],
+          "published": "2018-04-05T06:21:14Z",
+          "updated": "2018-08-13T09:51:21Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "The generalized Stieltjes constants $γ\\_n(v)$ are, up to a simple scaling factor, the Laurent series coefficients of the Hurwitz zeta function $ζ(s,v)$ about its unique pole $s = 1$. In this work, we devise an efficient algorithm to compute these constants to arbitrary precision with rigorous error bounds, for the first time achieving this with low complexity with respect to the order~$n$. Our computations are based on an integral representation with a hyperbolic kernel that decays exponentially fast. The algorithm consists of locating an approximate steepest descent contour and then evaluating the integral numerically in ball arithmetic using the Petras algorithm with a Taylor expansion for bounds near the saddle point. An implementation is provided in the Arb library. We can, for example, compute $γ\\_n(1)$ to 1000 digits in a minute for any $n$ up to $n=10^{100}$. We also provide other interesting integral representations for $γ\\_n(v)$, $ζ(s)$, $ζ(s,v)$, some polygamma functions and the Lerch transcendent.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/1804.01679v3",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/1804.01679v3",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/1802.07942v1",
+          "title": "Numerical integration in arbitrary-precision ball arithmetic",
+          "authors": [
+            "Fredrik Johansson"
+          ],
+          "published": "2018-02-22T08:46:14Z",
+          "updated": "2018-02-22T08:46:14Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "We present an implementation of arbitrary-precision numerical integration with rigorous error bounds in the Arb library. Rapid convergence is ensured for piecewise complex analytic integrals by use of the Petras algorithm, which combines adaptive bisection with adaptive Gaussian quadrature where error bounds are determined via complex magnitudes without evaluating derivatives. The code is general, easy to use, and efficient, often outperforming existing non-rigorous software.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/1802.07942v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/1802.07942v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "recent_verified_oscillatory",
+      "url": "https://export.arxiv.org/api/query?search_query=submittedDate%3A%5B202401010000+TO+202610022359%5D+AND+all%3A%22oscillatory%22+AND+%28all%3A%22validated%22+OR+all%3A%22rigorous%22+OR+all%3A%22certified%22%29&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending",
+      "requested_at_utc": "2026-10-03T06:11:45.431086+00:00",
+      "status": 200,
+      "final_url": "https://export.arxiv.org/api/query?search_query=submittedDate%3A%5B202401010000+TO+202610022359%5D+AND+all%3A%22oscillatory%22+AND+%28all%3A%22validated%22+OR+all%3A%22rigorous%22+OR+all%3A%22certified%22%29&start=0&max_results=15&sortBy=submittedDate&sortOrder=descending",
+      "content_type": "application/atom+xml; charset=utf-8",
+      "response_date": "Sat, 03 Oct 2026 06:11:45 GMT",
+      "retrieved_at_utc": "2026-10-03T06:11:45.991186+00:00",
+      "bytes": 36320,
+      "sha256": "9f6004971d45c38b2d76bc80d47df366b825fe050414a65ae87dab3377640741",
+      "saved_path": "raw/recent_verified_oscillatory.xml",
+      "total_hits": "363",
+      "records": [
+        {
+          "id": "http://arxiv.org/abs/2609.34073v1",
+          "title": "dS/CFT Holography including Fermionic Fields",
+          "authors": [
+            "Akashdeep Roy"
+          ],
+          "published": "2026-09-28T01:06:17Z",
+          "updated": "2026-09-28T01:06:17Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "We investigate some aspects of holography in de Sitter space, pertaining to the proposal for the dual theory residing on the late-time boundary [arXiv:astro-ph/0210603v5], including a Fermionic field that satisfies the Dirac equation. The modes of the solutions near the boundary are found to possess equal and oscillatory fall-off, similar to the scalar field belonging to the principal series representation of the isometry group of de Sitter space. We evaluate, by suitably adding a boundary term to the Dirac action, the wavefunctional of the Bunch Davies vacuum in path integral formalism in terms of the projections of the field on the eigenspaces of the time-like $γ$-matrix. We validate our path-integral construction of the wavefunctional by reproducing the two-point function between the field operators in the vacuum state as computed in the canonical formalism. By appropriately identifying the boundary sources in terms of the projected components of the bulk field, we find that a single Dirac field in the bulk corresponds to a pair of primary spinor fields in the boundary theory and show that the resulting wavefunction coefficients satisfy the conformal Ward identities. We check the robustness of our holographic map under the addition of a Yukawa interaction considering the two cases where the scalar field in the interaction term belongs to the complementary series and the principal series representations of the isometry group of de Sitter space respectively.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2609.34073v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2609.34073v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2609.28914v1",
+          "title": "Turning-Point Count Discrepancy as a Diagnostic of Relativistic Orbital Chaos",
+          "authors": [
+            "Wenfu Cao",
+            "Ying Wang",
+            "Hongsheng Zhang"
+          ],
+          "published": "2026-09-24T01:45:39Z",
+          "updated": "2026-09-24T01:45:39Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "We propose the turning-point count-discrepancy indicator (TPCD) for diagnosing orbital chaos from a single trajectory in relativistic Hamiltonian systems with two oscillatory degrees of freedom. TPCD measures the largest cumulative departure of one turning-event count from its mean rate per reference cycle, requiring neither a neighboring orbit nor a phase-space partition and applying to both massive particles and photons. We establish its long-time behavior under explicit event--phase assumptions. Rigid phases with an exact event--phase correspondence obey a strict discrepancy bound of unity, and linearizable regular tori with bounded degree-one phase deformations obey a finite, orbit-dependent bound; both imply that the normalized indicator decays to zero as the record grows. A diffusive fluctuation mechanism instead yields a Brownian-bridge scaling and a finite statistical scale. Integrable Kerr motion validates the construction, recovering prescribed frequency ratios from event counts to within $2.6\\times10^{-5}$ for six targets, including an irrational ratio. In charged-particle scans around a Kerr black hole in an external test magnetic field, TPCD and the fast Lyapunov indicator agree for all 80 sampled trajectories. In the Schwarzschild--Melvin photon model, a trajectory with elevated finite-time TPCD but low fast-Lyapunov values is identified as regular once its indicator trends downward over an extended integration, showing that finite-time values must be read together with their long-time trend.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2609.28914v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2609.28914v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2609.26431v1",
+          "title": "Linear and nonlinear active microrheology of viscous, viscoelastic, and elastic media: A fluid particle dynamics approach",
+          "authors": [
+            "Muhammed Muhsin Abdul Azeez",
+            "Henning Reinken",
+            "Andreas M. Menzel"
+          ],
+          "published": "2026-09-22T13:56:33Z",
+          "updated": "2026-09-22T13:56:33Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "Active microrheology is an effective tool to determine the rheological properties of viscous, viscoelastic, or elastic materials on microscopic length scales. The positional response of an embedded probe particle to an externally applied oscillating driving force allows to indirectly characterize the properties of the surrounding media. We aim to explore the linear and nonlinear response of probe particles in a microrheological setup of planar geometry. For this purpose, we extend the computational method of fluid particle dynamics from viscous fluid-like to viscoelastic and elastic media, including nonlinear regimes. We consider a system confined by solid walls. In this case, we validate the approach by quantifying the linear response in terms of a Jeffreys model. Increasing the amplitude of the driving force, we observe distinct nonlinear effects. They include distorted stress-strain curves and a gradual net drift of probe particles initially positioned close to a wall. This drift vanishes in the viscous fluid-like and elastic solid-like limits, but is manifest for intermediate viscoelastic systems. We further address a setup of two probe particles in the absence of walls. They experience reciprocal pairwise oscillatory forcing. Here, nonlinearities in viscoelastic systems induce a net drift gradually moving the particles further apart from each other. Comparing with real setups, our implementation of the driving force is in line with experimental setups of optical tweezers or active magnetic microrheology.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2609.26431v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2609.26431v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2609.26327v1",
+          "title": "Escape, Oscillatory Relapse or Elimination: A Geometric Blow-up Analysis of a Tumour Model with Singular Bifurcations",
+          "authors": [
+            "Timothy Earl Figueroa Lapuz",
+            "Martin Wechselberger"
+          ],
+          "published": "2026-09-22T12:40:19Z",
+          "updated": "2026-09-22T12:40:19Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "The five-compartment tumour-immune model introduced by Kuznetsov et al. captures critical clinical phenomena, including tumour dormancy, immune evasion (`sneaking through'), and immunostimulation. Recent studies by Osojnik et al. highlighted the model's excitable and oscillatory dynamics, providing a mechanism for tumour relapse. In this paper, we recast these findings through the lens of geometric singular perturbation theory (GSPT) and the blow-up method, establishing a formal mathematical foundation for these phenomena. Because the model features a multiple-time-scale structure with dynamics separated by up to three orders of magnitude, standard Tikhonov-Fenichel theory is insufficient. To resolve this, we employ the parametrisation method to systematically compute higher-order approximations of the slow vector fields. We introduce a methodological novelty by demonstrating that the parametrisation method is indispensable within the geometric blow-up analysis. Specifically, we show that higher-order correction terms to the local centre manifolds are required to match the vector field on the corresponding slow manifold. Using these combined tools, we rigorously prove the existence of stable relaxation oscillations and transient large excursions. We uncover a rich collection of singular bifurcations, including a saddle-node on invariant circle and two distinct singular Andronov-Hopf bifurcations that drive complete and incomplete canard explosions. At the highly degenerate origin, our blow-up analysis reveals the spatial collision of a singular transcritical bifurcation and a nilpotent pseudo-singularity. We conjecture that this collision forms a novel singular transcritical Bogdanov-Takens organising centre. Ultimately, these geometric findings yield a precise bifurcation diagram in the parameter space of effector cell supply and death rates.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2609.26327v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2609.26327v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2609.25236v1",
+          "title": "Higher derivative Hořava-Lifshitz fermions: from superconductivity to atomic spectroscopy",
+          "authors": [
+            "A. A. Araújo Filho",
+            "K. E. L. de Farias",
+            "N. Heidari",
+            "M. Paganelly",
+            "A. F. Santos"
+          ],
+          "published": "2026-09-21T18:01:10Z",
+          "updated": "2026-09-21T18:01:10Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "We investigate an isotropic Hořava-Lifshitz fermion theory supplemented by a dimension-six spatial derivative operator, preserving first order time evolution while modifying the ultraviolet dispersion relation. Within the regime of validity of the derivative expansion, we develop three complementary consequences of the $z=2$ sector. First, a Bardeen-Cooper-Schrieffer/Nambu-Jona-Lasinio (BCS/NJL) mean field treatment of fermion pairing yields the particle and antiparticle quasiparticle spectra, the finite temperature gap equation, and the gauge invariant criterion for a stable superconducting phase. The modified dispersion alters both the density of states governing the pairing scale and the electromagnetic vertices entering the Meissner response. Second, using the scalar pole denominator as a minimal spin independent exchange kernel, we derive an exponentially damped and oscillatory massive potential and obtain the corresponding Born scattering amplitudes. The quartic momentum dependence renders both the forward and total cross sections finite and produces a large transfer behavior distinct from Rutherford scattering. Finally, we evaluate the induced shifts of the hydrogenic $1S$, $2S$, and $2P$ levels in closed form, retaining the full dependence on the interaction range. In other words, these latter results gives direct spectroscopic constraints on the product of nuclear and leptonic couplings, with muonic atoms, showing the respective sensitivity to the short distance Hořava-Lifshitz sector.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2609.25236v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2609.25236v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2609.24805v1",
+          "title": "Stabilizing temporal quantum-enhanced sensitivity via sub-optimal measurements",
+          "authors": [
+            "Wangsheng Zheng",
+            "Yaoling Yang",
+            "Abolfazl Bayat"
+          ],
+          "published": "2026-09-21T16:02:04Z",
+          "updated": "2026-09-21T16:02:04Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "In non-equilibrium probes, quantum-enhanced sensitivity is quantified through super-linear scaling of precision with respect to time, as a central metrology resource. However, this requires optimal measurements, which are often complex and time-dependent, making it challenging in practice. Sub-optimal measurements typically fail to retain robust super-linear scaling and show oscillations. Here, we begin by establishing a universal temporal scaling law in a general multi-parameter non-equilibrium quantum sensing framework. Within this setting, we identify the universal behavior of the sensing precision with sub-optimal measurements which shows quadratic scaling modulated by an additional bounded oscillatory function. To remove the oscillatory part, we propose a protocol in which measurements are partitioned into different groups, each performed at different times. The collective precision obtained from this protocol stabilizes a robust quadratic scaling even for sub-optimal measurements in the multi-parameter regime. We validate our protocol through three distinct examples as well as Bayesian estimation. Our protocol is applicable to every informative measurement and takes a key step towards practical realization of quantum-enhanced sensitivity.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2609.24805v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2609.24805v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2609.18888v1",
+          "title": "Designing Grid-Aware Dynamic Specifications for Large Data Center Loads",
+          "authors": [
+            "Ashutossh Gupta",
+            "Vassilis Kekatos"
+          ],
+          "published": "2026-09-16T16:22:19Z",
+          "updated": "2026-09-16T16:22:19Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "As data center (DC) loads increasingly penetrate the power grid, there is an urgent need for grid operators to provide clear dynamic specifications to DC owners to ensure safe grid operation. To this end, we study two salient behaviors of large language model (LLM) training loads: abrupt ramps at job initiation and termination, which induce transient frequency excursions, and sustained periodic oscillations during training, which result in oscillatory steady-state behavior. For ramping loads, we show that nodal rotor frequencies can be accurately approximated by the center-of-inertia (COI) frequency and derive analytical expressions for its nadir and rate of change of frequency (RoCoF). These expressions determine allowable combinations of ramp times and steady-state load demands satisfying prescribed frequency limits. For oscillatory loads, we derive spectral specifications on their Fourier coefficients and show that the admissible coefficient set can be approximated by a polytope. We further obtain a compact representation via its maximum-volume inscribed ellipsoid, which we show is axis-aligned. Numerical tests on the WECC 179-bus system demonstrate that the resulting specifications remain valid for higher-order nonlinear dynamics. The proposed framework provides actionable specifications for regulating the dynamic behavior of large DC loads and informing load-shaping mechanisms within the data center ecosystem.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2609.18888v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2609.18888v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2609.18055v1",
+          "title": "Control of axial dispersion in polymeric flows: magnetic effect versus electroosmotic effect",
+          "authors": [
+            "Xiaoping Wang",
+            "Mengqi Zhang",
+            "Haitao Qi"
+          ],
+          "published": "2026-09-16T02:58:46Z",
+          "updated": "2026-09-16T02:58:46Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "Since Taylor's seminal work on the dispersion of soluble matter, the modeling and control of solute dispersion have received considerable attention. This study investigates the solute dispersion in polymer solutions driven by unsteady magnetohydrodynamic-oscillatory electroosmotic flow within a microtube, aiming to reveal the transport mechanisms in complex rheological media through microscale flow. Firstly, based on the Debye-Hückel approximation, analytical solutions for the electric potential and velocity distributions of mixed magnetohydrodynamic-electrohydrodynamic flows are rigorously derived. Subsequently, using Sankarasubramanian \\& Gill's generalized dispersion model, mathematical models are developed to systematically investigate the temporal evolution of hydrodynamic dispersion. By investigating the synergistic modulation of electrokinetic and magnetic fields, we identify three distinct flow regimes, namely the electric-field-dominant, competitive transition, and magnetic-field-limited regimes, and quantitatively define their boundaries and evolution with oscillatory Reynolds number $Re$ and Deborah number $De$, thus allowing accurate flow regime classification. Moreover, a non-monotonic critical response governing solute dispersion is observed over a wide range of oscillatory Reynolds numbers, which provides a novel control paradigm for microfluidic mixing and separation. Additionally, through a comparative analysis of fractional Maxwell, classical Maxwell, and Newtonian fluids, we show that microscopic structural relaxation plays a crucial role in macroscopic solute transport under multi-field coupling. Our findings help to reveal flow mechanisms for precise mass transport control in electro-magnetically coupled systems, advancing the development of microfluidic devices and biomedical detection technologies.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2609.18055v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2609.18055v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2609.15918v1",
+          "title": "Decision-Related Cognitive Signatures from Fast-Slow Dynamics: A Low-Dimensional Observation-Operator Framework",
+          "authors": [
+            "Furkan Emre Isik",
+            "Ali Demirci"
+          ],
+          "published": "2026-09-14T17:30:06Z",
+          "updated": "2026-09-14T17:30:06Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "Repeated decisions exhibit temporal structures such as persistence, direction-dependent switching, recurrent alternation, and abrupt transitions. We examine the generative sufficiency of a two-dimensional fast-slow dynamical system. The system combines a cubic fast equation with linear slow feedback and is analyzed through its equilibrium geometry, trace-determinant structure, equilibrium-fold loci, candidate Hopf boundaries, and singular critical manifold. An explicit observation operator projects continuous trajectories to a scalar signal and applies a binary readout, separating latent state-space dynamics from observable behavior. The analysis establishes a unique-equilibrium regime and, for suitable parameters, a three-equilibrium wedge with a central saddle. The outer equilibria are attracting only where their traces are negative. The analysis also identifies the simple-zero condition required for ordinary saddle-nodes, trace-zero positive-determinant spectral boundaries compatible with oscillatory instability, and the attracting and repelling branches of the critical manifold. Prescribed nonautonomous sweeps numerically illustrate direction-dependent switching (T1), transient episodic recurrent switching (T2), and an abrupt localized regime shift (T3). The attracting-equilibrium regime associated with prolonged state retention (T4) is characterized analytically. The resulting correspondence is intended as a test of generative sufficiency at the level of observable temporal organization, rather than as an identification or empirical validation of latent cognitive mechanisms.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2609.15918v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2609.15918v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2609.10673v1",
+          "title": "On the Numerical Integration of One-Loop Cosmological Collider Signals",
+          "authors": [
+            "Michael Borinsky",
+            "Aidan Herderschee",
+            "Qianshu Lu"
+          ],
+          "published": "2026-09-09T18:00:00Z",
+          "updated": "2026-09-09T18:00:00Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "In a broad class of inflationary models, the leading non-Gaussian bispectrum arises from one-loop rather than tree-level processes. However, realistic one-loop contributions remain largely unexplored for phenomenologically relevant masses beyond the simplest bubble diagrams. This is insufficient for observational purposes because, for generic masses and couplings, triangle contributions need not be suppressed relative to their bubble counterparts. We present a numerical method for evaluating scalar one-loop in-in diagrams contributing to the inflationary bispectrum at fully general external momenta and masses. First, the Witten-Feynman parameterization reduces de Sitter loop integrals to generalized Euler-Mellin integrals governed by Symanzik graph polynomials. Unfortunately, the exponents of the polynomials in the integrand become complex for sufficiently heavy masses, leading to sign problems when evaluating the integral using standard numerical techniques. To remedy this problem, we introduce the reduced Schwinger method, which evaluates a highly oscillatory subintegral analytically to obtain a Gauss hypergeometric kernel, leaving the remaining integrals to standard numerical quadrature. We validate the algorithm by reproducing known analytic results for the tree-level bispectrum in terms of ${}_3F_2$ functions, and then apply it to the one-loop bubble and triangle contributions at general kinematics. This yields the first direct numerical evaluation of the complete one-loop bispectrum, valid across the full kinematic range. Using these numerical results, we construct bispectrum templates and compare them with CMB data.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2609.10673v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2609.10673v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2609.10045v2",
+          "title": "A machine-learned dynamical phase diagram of the one-dimensional nonlinear Schrödinger equation with quasiperiodic disorder and a static field",
+          "authors": [
+            "Marcos Pérez"
+          ],
+          "published": "2026-09-09T11:18:08Z",
+          "updated": "2026-09-11T15:24:42Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "We map the transport regimes of a wave packet evolving under the one-dimensional discrete nonlinear Schrödinger (Gross-Pitaevskii) equation with a quasiperiodic Aubry-André potential and a static (Stark) field, as a function of self-interaction $g$, field $F$, and quasiperiodic strength $λ$, for two initial states (delta and Gaussian). Instead of one expensive long-time simulation per grid point, we run 3600 short simulations, reduce each to eight dynamical features, and cluster parameter space with a Gaussian mixture model. Clustering finds the boundaries between regimes unsupervised; each cluster's name is then assigned by a hand-calibrated rule, and an ablation shows clustering measurably smooths those boundaries rather than merely relabeling them. The five resulting regimes (ballistic, localized, oscillatory-localized, subdiffusive, and self-trapped) are validated against 100 long runs on a lattice eight times larger than the short sweep, so the validation window is longer than the training window even for the fastest-spreading regime. The short-time clusters predict the long-time asymptotic spreading exponent ($α_\\infty = 2.01\\pm0.07$ ballistic, $0.28\\pm0.16$ subdiffusive, consistent with the weak-chaos prediction $α=1/3$) and, independently, a long-time retention $Π_0=0.72\\pm0.32$ for the self-trapped cluster, whose exponent alone is not diagnostic. The initial-state contrast is striking: the delta state develops a broad self-trapping wedge (onset at $g=3.907\\pm0.017$ at $λ=0$) that invades the ballistic and localized regions as $g$ grows, while the Gaussian state shows no self-trapping, instead opening a subdiffusive corridor along the Aubry-André critical line that widens with $g$. The scheme yields a full $15\\times15$ phase map in minutes per slice, where direct asymptotic simulation ($t\\gtrsim10^6$ per point) is prohibitive.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2609.10045v2",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2609.10045v2",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2609.09739v1",
+          "title": "Dynamics Creation through Neural Dynamical Transfer Learning",
+          "authors": [
+            "He Ma",
+            "Qiyang Ge",
+            "Yu Meng",
+            "Celso Grebogi",
+            "Wei Lin"
+          ],
+          "published": "2026-09-09T05:28:31Z",
+          "updated": "2026-09-09T05:28:31Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "Data-driven machine learning has established a robust foundation for reconstructing nonlinear dynamical systems from observations, primarily for the purposes of forecasting and control. However, most existing efforts focus on recovering specific observed dynamics rather than the generative synthesis of new ones. Inspired by image fusion and style transfer, we introduce a neural network framework termed Neural Dynamical Transfer Learning (NDTL) to create new systems with prescribed dynamics from pairs of parent nonlinear dynamical systems. By computing fundamental dynamical signatures, including the intrinsic dimension, the Kaplan-Yorke dimension, the invariant measure statistics, and the Lyapunov spectrum, we demonstrate that NDTL preserves key features inherited from the parent models while simultaneously generating novel dynamics. Beyond these validation examples, NDTL induces a criterion for dynamics classification, creates stable oscillatory coexistence in the Hastings-Powell food chain model, produces interpretable epidemiological models, and provides a chaotic source for image encryption.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2609.09739v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2609.09739v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2609.08651v1",
+          "title": "Closed-Form Solution for Oscillatory Flow and Wall Shear Stress in Axisymmetric Corrugated Tubes",
+          "authors": [
+            "Frederik Keil",
+            "Paolo Malgaretti",
+            "Othmane Aouane",
+            "Jens Harting"
+          ],
+          "published": "2026-09-08T12:21:24Z",
+          "updated": "2026-09-08T12:21:24Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "Pulsatile flow in corrugated tubes arises in hemodynamics and microfluidics, where oscillatory forcing and geometric constrictions jointly determine transport and wall loading. We extend Womersley's classical solution for oscillatory flow in a rigid circular tube to rigid axisymmetric tubes of slowly varying radius. Within the lubrication approximation, we derive closed-form expressions for the axial velocity profile, volumetric flow rate, phase lag, and wall shear stress at an arbitrary Womersley number. Three-dimensional lattice Boltzmann simulations are used to assess the regime of validity of the theory. The analysis shows that the local velocity profile varies strongly along the tube, ranging from plug-like in wide sections to more parabolic near bottlenecks. The cycle-maximum flow rate decreases with increasing corrugation, but this reduction weakens as pulsatility increases, reflecting a crossover from the quasi-steady scaling $\\langle R^{-4}\\rangle^{-1}$ to the high-frequency scaling $\\langle R^{-2}\\rangle^{-1}$. The wall shear stress is maximal at the bottleneck and decreases with Womersley number. For sinusoidal corrugations, the bottleneck wall shear stress depends non-monotonically on the corrugation because of the competition between local shear amplification and global hydraulic resistance. Closed-form expressions for the time-averaged wall shear stress and oscillatory shear index further connect the theory to standard hemodynamic metrics.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2609.08651v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2609.08651v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2609.02374v1",
+          "title": "Static and breathing dynamics of optical bullets in nonlinear GRIN fibers",
+          "authors": [
+            "Sonali Maity",
+            "Tiyas Das",
+            "Anuj P. Lara",
+            "Ashis Paul",
+            "Samudra Roy"
+          ],
+          "published": "2026-09-02T09:45:45Z",
+          "updated": "2026-09-02T09:45:45Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "We explore the properties of spatiotemporal solitons within nonlinear graded-index (GRIN) optical fibers, specifically addressing their formation, stability, and breathing dynamics. We solve the (3+1)-dimensional nonlinear Schrödinger equation employing a semi-analytical variational approach, which leads to a set of reduced coupled ordinary differential equations describing the bistable bullet dynamics. The stability of these states is assessed using the Vakhitov-Kolokolov criterion and linear stability analysis within the Kantorovich optimization framework. The breathing dynamics of the optical bullets are investigated adopting the potential formalism, revealing an oscillatory behavior and self-imaging dynamics in GRIN fibers. The analytical results demonstrate strong agreement with full numerical simulations, validating the robustness of our theoretical model. Our research enhances the understanding of stabilizing self-repeated 3D optical structures, which is beneficial for the development of advanced photonic technologies.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2609.02374v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2609.02374v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2608.31030v1",
+          "title": "Damping Oscillations in a Spherical Pendulum Inclinometer Using Vector-Based Control",
+          "authors": [
+            "Fernando Capes",
+            "Mikael Andreas Bianchi",
+            "Roberto Gardenghi",
+            "Manuel Alò"
+          ],
+          "published": "2026-08-31T16:10:33Z",
+          "updated": "2026-08-31T16:10:33Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "This paper addresses disturbance-induced oscillations in high-precision pendulum-based inclinometers, which reduce measurement availability despite the long-term stability of gravity-referenced sensing. To actively suppress these oscillations, a contactless six-coil electromagnetic actuation system is developed, together with a control framework that generates, in real time, the planar damping force required by the controller despite the nonlinear, unilateral, and bounded nature of magnetic actuation. The proposed approach combines a control-oriented nonlinear model of the spherical pendulum, observer-based feedback control, and a constrained force-allocation scheme that maps the desired vector force into feasible coil currents. Experimental validation on a prototype demonstrates attenuation of the dominant oscillatory mode up to 31.11 dB and a marked reduction in transient duration, with the 50\\% decay time decreasing from 11.10 s without control to 1.01 s at the most favorable operating point. The results also highlight a trade-off between transient speed and residual oscillation, demonstrating both the effectiveness of the proposed damping strategy and its value as a practical design framework for high-precision inclinometer systems.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2608.31030v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2608.31030v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "recent_taylor_integration",
+      "url": "https://export.arxiv.org/api/query?search_query=submittedDate%3A%5B202401010000+TO+202610022359%5D+AND+all%3A%22Taylor+models%22+AND+all%3A%22integration%22&start=0&max_results=10&sortBy=submittedDate&sortOrder=descending",
+      "requested_at_utc": "2026-10-03T06:11:45.431525+00:00",
+      "status": 200,
+      "final_url": "https://export.arxiv.org/api/query?search_query=submittedDate%3A%5B202401010000+TO+202610022359%5D+AND+all%3A%22Taylor+models%22+AND+all%3A%22integration%22&start=0&max_results=10&sortBy=submittedDate&sortOrder=descending",
+      "content_type": "application/atom+xml; charset=utf-8",
+      "response_date": "Sat, 03 Oct 2026 06:11:45 GMT",
+      "retrieved_at_utc": "2026-10-03T06:11:45.826823+00:00",
+      "bytes": 2597,
+      "sha256": "1f1ea7ea6dc1e4dcdf25541b2c821147acff7ba7042fb50257e9d76190e9634d",
+      "saved_path": "raw/recent_taylor_integration.xml",
+      "total_hits": "1",
+      "records": [
+        {
+          "id": "http://arxiv.org/abs/2411.13448v1",
+          "title": "Taylor Modeling and Comparative Research Containing Aspect-Ratio Dependent Optimization of Three-Dimensional Hk Superjunction MOSFETs",
+          "authors": [
+            "Zhentao Xiao",
+            "Haimeng Huang",
+            "Zonghao Zhang",
+            "Chenxing Wang"
+          ],
+          "published": "2024-11-20T16:42:21Z",
+          "updated": "2024-11-20T16:42:21Z",
+          "doi": "10.1016/j.mejo.2025.106623",
+          "journal_ref": null,
+          "summary": "This paper presents a comprehensive study on aspect-ratio dependent optimization for specific on-resistance of three-dimensional high-k superjunction MOSFETs. The research introduces a Taylor modeling method, overcoming the computational limitations of the Bessel method. It also employs the Chynoweth model for more accurate breakdown voltage determination. The study provides a comparative analysis of four different superjunction structures, across five aspects: electric field, impact ionization integral, aspect ratio dependent optimization, charge imbalance effect and temperature. The findings offer valuable insights for the manufacturing guidance of superjunction structure selection",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2411.13448v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2411.13448v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            },
+            {
+              "rel": "related",
+              "href": "https://doi.org/10.1016/j.mejo.2025.106623",
+              "title": "doi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "recent_brane_reheating",
+      "url": "https://export.arxiv.org/api/query?search_query=submittedDate%3A%5B202501010000+TO+202610022359%5D+AND+all%3A%22brane%22+AND+%28all%3A%22reheating%22+OR+all%3A%22particle+production%22%29&start=0&max_results=10&sortBy=submittedDate&sortOrder=descending",
+      "requested_at_utc": "2026-10-03T06:11:45.823654+00:00",
+      "status": 200,
+      "final_url": "https://export.arxiv.org/api/query?search_query=submittedDate%3A%5B202501010000+TO+202610022359%5D+AND+all%3A%22brane%22+AND+%28all%3A%22reheating%22+OR+all%3A%22particle+production%22%29&start=0&max_results=10&sortBy=submittedDate&sortOrder=descending",
+      "content_type": "application/atom+xml; charset=utf-8",
+      "response_date": "Sat, 03 Oct 2026 06:11:46 GMT",
+      "retrieved_at_utc": "2026-10-03T06:11:46.225381+00:00",
+      "bytes": 13659,
+      "sha256": "7f938a2595522e0cf29a348c07ab1e1c90aaaf4c2d65853f9a5323ade8071345",
+      "saved_path": "raw/recent_brane_reheating.xml",
+      "total_hits": "6",
+      "records": [
+        {
+          "id": "http://arxiv.org/abs/2609.37346v1",
+          "title": "Relic of the Kink Shape Mode in a Topological Thick Brane - some implications",
+          "authors": [
+            "Gahan Chattopadhyay",
+            "Soumitra Sengupta"
+          ],
+          "published": "2026-09-29T12:14:37Z",
+          "updated": "2026-09-29T12:14:37Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "The kink soliton provides a simple construction of a topological thick 3-brane sourced by a minimally coupled canonical scalar field in five-dimensional general relativity. Although the flat-space kink is a solution of $\\varphi^4$ theory, the gravitating configuration requires $M_*$-suppressed $\\varphi^6$ corrections to support a stable warped geometry. Unlike its flat-space counterpart, the scalar perturbation spectrum contains no normalizable bound state. We nevertheless identify a single quasi-bound, or resonant, mode. Using a time-independent relative-probability analysis, direct time evolution, and a four-turning-point WKB calculation, we establish a direct connection between this resonance and the massive bound shape mode of the flat-space $\\varphi^4$ kink. We also show that, within an EFT-consistent parameter window, the resonance can transfer energy from bulk geometric fluctuations to localized matter, thereby allowing the possibility of high-scale reheating in the early universe.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2609.37346v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2609.37346v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2607.27314v1",
+          "title": "The Dark Dimension meets the Axiverse",
+          "authors": [
+            "Kevin Langhoff",
+            "Maria Ramos",
+            "Mario Reig"
+          ],
+          "published": "2026-07-29T18:00:00Z",
+          "updated": "2026-07-29T18:00:00Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "We explore the cosmological implications of combining dark dimension scenarios with an axiverse. If gauge sectors are realized on branes, towers of Kaluza-Klein (KK) excitations of closed string axions can propagate through the dark dimension in addition to the tower of graviton excitations. This modifies cosmology in two ways. First, if any of these axion towers interact with the standard model (SM) plasma, they can significantly alter the freeze-in production of the cosmological abundance of tower states. Freeze-in to graviton and axion towers can provide all of dark matter (DM) for an axion decay constant in $10^{12} \\text{ GeV }\\lesssim f_a\\lesssim 10^{16}\\,\\text{ GeV }$ and reheating temperatures $5\\text{ MeV }\\lesssim T_{\\rm RH} \\lesssim O(1)\\,\\text{ GeV }$. Second, different towers fragment into each other and redistribute energy; each tower's fraction of energy at late times is fixed by their interactions. If there are $N\\gg1$ axion towers, the energy visibly injected into the SM by any decaying tower is diluted by a factor of $N$. This suppression offers a simple realization of how dark dimension dark matter can avoid strong cosmological constraints which rule out the simplest models. In the process of this exploration we develop a continuum approach to evaluating tower fragmentation which offers insight and aids numerical calculations by reducing the problem to quadrature.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2607.27314v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2607.27314v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2607.07295v2",
+          "title": "Massive Graviton Dark Matter from a Gapped Continuum",
+          "authors": [
+            "Eugenio Megias",
+            "Miguel Prieto",
+            "Mariano Quiros"
+          ],
+          "published": "2026-07-08T11:37:14Z",
+          "updated": "2026-08-03T14:13:05Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "We consider the possibility of dark matter in a warped extra-dimensional theory in presence of a linear dilaton background, with a gapped continuum spectrum, in a brane-world cosmological scenario. Firstly, triggered by self-energy radiative corrections, we study the existence of an isolated resonance of massive gravitons, and its realization as a long-lived feebly interacting dark matter candidate, produced by the freeze-in mechanism. This massive graviton is proved to satisfy all theoretical and experimental constraints, in the sub-MeV mass range. We further consider the close relationship between the existence of this component of dark matter and the presence of an inflaton localized on the brane, with a mass around $10^{11}$ GeV and a sub-TeV reheating temperature, in a brane inflationary scenario that allows to reproduce the most recent cosmological observables. Secondly, the gapped continuum of gravitons, a particular five dimensional realization of the physics of unparticles, is identified as a holographic fluid which can play the role of holographic dark matter. The production of the holographic fluid goes by an ultra-violet freeze-in mechanism, with an abundance mainly depending on the reheating temperature. Depending on the values of the mass gap and the reheating temperature, one or both components of dark matter can be present.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2607.07295v2",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2607.07295v2",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2601.13315v2",
+          "title": "Baryon-dark matter coincidence in Randall-Sundrum Model",
+          "authors": [
+            "Basabendu Barman",
+            "Ashmita Das",
+            "Partha Kumar Paul",
+            "Narendra Sahu",
+            "Rakesh Kumar SivaKumar"
+          ],
+          "published": "2026-01-19T19:00:05Z",
+          "updated": "2026-05-25T16:03:33Z",
+          "doi": "10.1103/qjwc-snqq",
+          "journal_ref": null,
+          "summary": "Within the framework of the extra-dimensional Randall-Sundrum set-up, we investigate the freeze-in production of Standard Model (SM) gauge-singlet scalar, fermionic, and massive vector dark matter (DM). Assuming that both the DM and SM fields reside on the IR brane and interact solely through the graviton and radion portal, we demonstrate that the Planck-observed DM relic abundance can be achieved across a wide range of reheating temperatures, all while naturally addressing the hierarchy problem, satisfying constraints from collider and early Universe cosmology. We further show that the same set-up can accommodate TeV-scale leptogenesis capable of generating the observed baryon asymmetry of the Universe. Interestingly, we find that current graviton searches at the Large Hadron Collider (LHC) already impose strong constraints on the reheating temperature in this scenario, providing a complementarity between cosmological and collider probes.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2601.13315v2",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2601.13315v2",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            },
+            {
+              "rel": "related",
+              "href": "https://doi.org/10.1103/qjwc-snqq",
+              "title": "doi"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2507.23321v1",
+          "title": "Observational Restrictions and Slow-Roll D-brane Inflation in the Special $F(φ,T)$ Gravity",
+          "authors": [
+            "Feyzollah Younesizadeh",
+            "Davoud Kamani"
+          ],
+          "published": "2025-07-31T08:03:59Z",
+          "updated": "2025-07-31T08:03:59Z",
+          "doi": "10.1007/s10714-025-03448-4",
+          "journal_ref": "Gen. Relativ. Gravit. 57, 114 (2025)",
+          "summary": "We shall investigate the inflation for the D-brane model, motivated by the modified gravity $F(φ,T)$. This gravity has been recently introduced in the literature. The feasibility of the D-brane inflation theory in the $F(φ,T)$-gravity has been studied in conjunction with the most recent Planck data. We shall analyze the slow-roll inflation in the context of the $F(φ)T$-gravity, via the D-brane model. Then, we shall calculate the inflation dynamics to obtain the scalar spectral index ``$n_s$'' and the tensor-to-scalar ratio ``$r$''. Besides, we investigate the dynamics of the reheating for this model. Our model accurately covers the left-hand side of the Planck data and the D-brane inflation.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2507.23321v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2507.23321v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            },
+            {
+              "rel": "related",
+              "href": "https://doi.org/10.1007/s10714-025-03448-4",
+              "title": "doi"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2506.09135v2",
+          "title": "Light PIDM in Warped Extra Dimensions",
+          "authors": [
+            "Mathew T Arun",
+            "Prachiti P. Athalye",
+            "Basabendu Barman"
+          ],
+          "published": "2025-06-10T18:00:13Z",
+          "updated": "2025-08-14T03:53:12Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "Traditional Planckian Interacting Dark Matter (PIDM), which interacts exclusively through gravity, typically requires heavy DM candidates (with mass $10^3-10^{15}$ GeV) and very high reheating temperature ($T_{\\rm rh}\\gtrsim 10^{15}$ GeV). In this article, we explore a novel realization of PIDM in warped five-dimensions, consisting of an \"Ultra Violet\"$-$\"Dark\"$-$\"Infra Red\" (UV-DB-IR) brane setup, where the DM can be a Dark brane composite light state with mass 1 MeV $-$ 1 TeV. The DM sector is assumed to interact solely via gravity in five-dimensions. After orbifolding and performing a Kaluza-Klein (KK) decomposition, the DM is assumed to be localized onto the DB, which is positioned in the extra-dimension such that the DM interacts with both the massless graviton and its massive KK excitations, with suppressed couplings to remain consistent with the ethos of the PIDM framework. The light (heavy) Standard Model matter is assumed to be localized near UV (IR) branes for the geometric Froggatt-Nielsen mechanism, while their KK modes are localized close to the IR brane. We show that this construction allows for a viable and efficient freeze-in production mechanism for light composite PIDM, consistent with TeV-scale reheating temperature.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2506.09135v2",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2506.09135v2",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "recent_ward_scalar",
+      "url": "https://export.arxiv.org/api/query?search_query=submittedDate%3A%5B202605010000+TO+202610022359%5D+AND+all%3A%22Ward%22+AND+all%3A%22scalar%22+AND+%28all%3A%22gravity%22+OR+all%3A%22stress%22%29&start=0&max_results=10&sortBy=submittedDate&sortOrder=descending",
+      "requested_at_utc": "2026-10-03T06:11:45.826945+00:00",
+      "status": 200,
+      "final_url": "https://export.arxiv.org/api/query?search_query=submittedDate%3A%5B202605010000+TO+202610022359%5D+AND+all%3A%22Ward%22+AND+all%3A%22scalar%22+AND+%28all%3A%22gravity%22+OR+all%3A%22stress%22%29&start=0&max_results=10&sortBy=submittedDate&sortOrder=descending",
+      "content_type": "application/atom+xml; charset=utf-8",
+      "response_date": "Sat, 03 Oct 2026 06:11:46 GMT",
+      "retrieved_at_utc": "2026-10-03T06:11:46.397822+00:00",
+      "bytes": 22801,
+      "sha256": "7277e29e91c116002c9033ee0eca0c4e928bbc0295825da9bdf5c2e5cf742cea",
+      "saved_path": "raw/recent_ward_scalar.xml",
+      "total_hits": "10",
+      "records": [
+        {
+          "id": "http://arxiv.org/abs/2609.38308v1",
+          "title": "Bootstrapping Weakly Broken Gauge Theories in (A)dS",
+          "authors": [
+            "Daniel Baumann",
+            "Kurt Hinterbichler",
+            "Callum R. T. Jones",
+            "Nathan Meurrens"
+          ],
+          "published": "2026-09-29T18:00:01Z",
+          "updated": "2026-09-29T18:00:01Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "We develop a bootstrap approach for weakly broken gauge theories in (anti-)de Sitter space, focusing on cases in which the conservation of the dual boundary current is broken by a double-trace operator. Integrating the corresponding Ward identity, we derive pseudo-charge conservation identities that contain fixed nonlocal contributions as integrals of three-point functions. These identities impose consistency conditions on the space of allowed theories. As an illustrative example, we study Yang-Mills theory in AdS with symmetry-breaking boundary conditions for charged matter and show that the pseudo-charge conservation identities constrain the mixing between the two quantization sectors. We then apply the framework to the Higgs mechanism for gravity in two AdS spaces with a common boundary, coupled so that the corresponding stress tensors are not separately conserved. In this setting, the ordinary charge conservation identities recover the factorization into two independent CFTs, whereas the pseudo-charge conservation identities hold for arbitrary values of the symmetry-breaking parameter. Finally, for conformal gravity in de Sitter space, we constrain the interactions between the graviton and the partially massless spin-2 field, both in the minimal theory and in the presence of additional scalar or vector matter, finding agreement with the predictions of the corresponding bulk theories.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2609.38308v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2609.38308v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2609.02351v2",
+          "title": "Nonequilibrium corrections to conserved Ising criticality in scalar active matter: Ward identities, spectrum, and long crossovers",
+          "authors": [
+            "Piotr Zdybel"
+          ],
+          "published": "2026-09-02T09:24:34Z",
+          "updated": "2026-09-10T13:41:29Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "We identify the slowest-decaying nonequilibrium perturbations near the three-dimensional conserved Ising critical point and determine their impact on finite-size observables. We study two classes of perturbations: a field-dependent noise-to-mobility ratio $Θ(φ)=D(φ)/M(φ)$ and the gradient activity of Active Model B+. Starting from the Martin-Siggia-Rose-Janssen-De Dominicis action, we compute the linearized flow using the functional renormalization group. The transport sector is block triangular, with leading odd eigenvalue $y_{Θ_1}=-Δ_φ$, where $Δ_φ=(d-2+η)/2$. In the gradient sector, removing the detailed-balance direction leaves two genuinely nonequilibrium modes, chemical and current-like. Two smooth regulators give $y_{Θ_1}\\simeq-0.52$, $y_J\\simeq-0.56$, and $y_{\\rm ch}\\simeq-0.89$. A translation Ward identity expresses the current operator as the divergence of the stress tensor. Together with conservation and Itô causality, this forbids chemical operators from generating the current mode, making the nonequilibrium stability matrix triangular; an independent two-loop calculation in $d=4-\\varepsilon$ finds no additional current contact counterterm. Within the FRG truncation, $y_J-y_{Θ_1}=-η$; beyond it, this relation requires the absence of an additional contact anomaly. Using the 3D Ising value $η=0.0362978(20)$ [Kos et al., 2016] gives $y_{Θ_1}\\simeq-0.5181$ and $y_J\\simeq-0.5544$. Because these exponents nearly coincide, single-power fits yield amplitude-dependent apparent exponents and crossover lengths may exceed accessible system sizes. We derive the resulting finite-size scaling rules: odd block observables respond linearly to activity, while even observables receive only quadratic corrections.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2609.02351v2",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2609.02351v2",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2608.13319v2",
+          "title": "Holographic Renormalization of String-Derived Lovelock--Horndeski Theory",
+          "authors": [
+            "Tianhao Wu"
+          ],
+          "published": "2026-08-13T14:45:20Z",
+          "updated": "2026-09-13T18:28:52Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "String-derived higher-curvature scalar--tensor gravities encode microscopic coupling data in boundary response, raising the question of whether holographic observables can reconstruct the underlying higher-dimensional parameters. We answer this question for the five-dimensional string-derived Lovelock--Horndeski (SDLH) theory on its exact linear-dilaton asymptotically locally AdS branch, constructing the renormalized generating functional for an arbitrary boundary metric and spacetime-dependent scalar source. A boundary-covariant radial hierarchy unifies the variational problem, local backreaction, logarithmic obstruction, finite one-point functions, and Ward identities. Two response determinants organize the recursion, resonant obstructions, and metric--scalar mixing. The Weyl anomaly condenses into an Euler density, a Weyl-squared density, and a single curvature--scalar square whose paired variations generate the metric and scalar obstructions. The resulting renormalized functional carries string-selected coupling data into boundary geometry, operator response, anomaly coefficients, and a calculable interface with gravitational observables. On the regular branch, four scalar-normalization-invariant holographic combinations admit a global rational inverse to the continuous reduced couplings. At fixed compactification dimension the map has maximal rank, while the curvature-anomaly sum reconstructs the higher-dimensional Gauss--Bonnet coefficient without sign ambiguity. Holographic response thus provides an explicit, overdetermined boundary fingerprint of the underlying string reduction.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2608.13319v2",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2608.13319v2",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2608.12210v1",
+          "title": "On divergences in a four-derivative scalar field theory",
+          "authors": [
+            "Maegan Anderson",
+            "Sam Bateman",
+            "Franz Herzog",
+            "Neil Turok"
+          ],
+          "published": "2026-08-12T16:03:38Z",
+          "updated": "2026-08-12T16:03:38Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "We perform a detailed diagrammatic analysis of the renormalisation of a family of asymptotically free, shift-symmetric four-derivative scalar field theories introduced by Holdom in arXiv:2303.06723 and arXiv:2402.09223. We extend the renormalisation of the theory from one to three loops using both an $R^*$ method and an asymptotic expansion in momenta. We prove that the Euclidean correlators (or off-shell amplitudes) are IR finite, to all orders in perturbation theory, and derive a non-renormalisation theorem describing the all-order structure of the renormalisation constants. In particular, a purely cubic interaction is RG invariant and a perfect square Lagrangian density is preserved under renormalisation. The latter result is due to a Ward identity in a related $\\textit{ gravitational}$ theory $-$ the conformally flat limit of quadratic gravity (CFQG). We show that the beta function for the perfect square theory maps exactly to that of an $O(2)$-symmetric, two-derivative, massless $φ^4$ theory at negative coupling. We verify this relationship explicitly up to three loops and thus determine the beta function and anomalous dimension for both the perfect square theory and CFQG to six loops.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2608.12210v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2608.12210v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2607.21514v1",
+          "title": "Revealing the conformal symmetry of the discrete series scalars in dS${}_2$",
+          "authors": [
+            "Lukas W. Lindwasser"
+          ],
+          "published": "2026-07-23T17:00:13Z",
+          "updated": "2026-07-23T17:00:13Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "On two-dimensional manifolds with nonzero constant Ricci curvature, there exists an infinite sequence of scalar fields with nonzero mass parameter that admit a pair of (anti)-holomorphic currents. After suitably defining the theory in de Sitter space ($\\mathrm{dS}_2$), correlation functions of these currents obey global conformal Ward identities. We address the question of how this global conformal symmetry manifests as an action on the scalar field. An essential step is in leveraging an equivalent description of the scalar field in terms of a conformal Killing tensor. Through this, we find a conformal symmetry transformation that acts locally on the conformal Killing tensor, but non-locally on the scalar field. We show that the equation of motion transforms covariantly with respect to these conformal transformations, and further find a traceless stress tensor in both $\\mathrm{dS}_2$ and $\\mathrm{AdS}_2$, locally defined in terms of the conformal Killing tensor, which generates the global conformal isometry transformations.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2607.21514v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2607.21514v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2607.18180v1",
+          "title": "Gravitational Vacuum Polarization: Decoupling and the Conformal Anomaly",
+          "authors": [
+            "Emil Mottola"
+          ],
+          "published": "2026-07-20T17:16:44Z",
+          "updated": "2026-07-20T17:16:44Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "A compact form of the stress tensor $\\langle T^{ab}T^{cd}\\rangle$ correlation function of a quantum scalar field of arbitrary mass $m$ and curvature coupling $ξ$ is presented, with particular emphasis on decoupling in the $m\\to\\infty$ limit and infrared origin of the conformal anomaly as $m \\to 0$. The Ward Identity (WI) of covariant conservation is verified for the full second order metric variation of the one-loop effective action, of which $\\langle T^{ab}T^{cd}\\rangle$ is part, including local contact terms. This WI is satisfied by two tensors, one spin-2 (traceless) and the second spin-0 (traceful), each multiplied by a Lorentz invariant form factor computed in $n$-dimensional regularization. Minimal subtraction of pole terms at $n =4$ produces form factors that fail to satisfy decoupling for general $ξ\\neq 1/6$, but can be simply amended to do so. Particular interest attaches to the $ξ=1/6$ case, in which the spin-0 form factor at $n =4$ is completely finite, requires no UV regularization or subtractions, and satisfies decoupling directly. Its imaginary part defines a spectral function that obeys a UV finite sum rule for any $m$, while its real part unambiguously determines the $\\square R$ in the massless limit. Its $m^2$ dependence describes a Wilsonian renormalization group flow to an effective field theory limit at large distances. At $m= 0$ the spin-0 spectral function becomes a Dirac $δ$-function at zero energy, demonstrating the existence of a massless scalar Goldstone collective excitation due to the conformal anomaly in the low energy effective theory of gravity.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2607.18180v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2607.18180v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2606.26163v3",
+          "title": "Large-$N$ Carrollian Thermodynamics from AdS Black-Hole Phase-Space Contractions",
+          "authors": [
+            "Yingnan Xu",
+            "Shuangshuang Chu"
+          ],
+          "published": "2026-06-24T06:24:41Z",
+          "updated": "2026-09-14T05:46:07Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "We develop the boundary large-rank interpretation of finite Carrollian black-hole thermodynamics and its sourced stress, scalar spectral and interacting thermal observables. Correlated scaling of the time generator and Newton coupling preserves the extended Hamiltonian differential while the generator temperature vanishes and the holographic normalization grows. The Brown--York source variation fixes the relative weights of energy density, momentum density and spatial stress, giving Ward equations on the Carrollian and thermal time scales. Boundary volume and normalization variations reproduce the bulk pressure work and characterize the Hawking--Page crossing through a chemical potential. Source coupling fixes the scalar operator map and spectral clock Jacobian. Numerical solutions in four-dimensional Schwarzschild-AdS determine angular transmission and finite-frequency absorption. In the type IIB family, the logarithmic scrambling interval imposes an additional hierarchy between rank and 't Hooft coupling. We derive a correlated limit in which the string length vanishes while a finite transverse Regge kernel survives in the normalized four-point functional. Its integrated attenuation and spatial width obey a common relation. This interacting observable distinguishes large-rank sequences with the same leading thermodynamics and asymptotic Regge growth rate. Thermal Fourier--Mellin moments retain the scalar spectrum in a contracting frequency window. Time translations shift their weights with angular source terms retained. The BTZ dictionary supplies the corresponding large-central-charge equilibrium example.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2606.26163v3",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2606.26163v3",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2606.19321v1",
+          "title": "Spectral Functions of Lorentzian Quantum Gravity",
+          "authors": [
+            "Gabriel Assant",
+            "Daniel F. Litim",
+            "Manuel Reichert"
+          ],
+          "published": "2026-06-17T17:47:50Z",
+          "updated": "2026-06-17T17:47:50Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "We compute spectral functions of graviton modes in Lorentzian quantum gravity, interpolating between classical general relativity and an asymptotically safe ultraviolet fixed point. Using functional renormalisation adapted for theories in Lorentzian signature, and enhanced by new symmetry conditions to account for underlying Ward identities, we derive and solve flow equations directly for the Källén-Lehmann representation of propagators. Consistent results are found for several sets of renormalisation conditions yielding normalisable spectral functions for the graviton and the scalar graviton mode, in agreement with effective theory in the infrared. We further calculate the full quantum effective action to quadratic order in curvature, extract graviton-induced form factors, and discuss implications for unitarity of quantum gravity.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2606.19321v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2606.19321v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2606.03106v1",
+          "title": "Holographic reconstruction for defect CFTs from $\\mathrm{AdS}_p \\times S^q$ spacetimes",
+          "authors": [
+            "Federico Faedo",
+            "Nicolò Petri",
+            "Alessia Segati"
+          ],
+          "published": "2026-06-02T03:47:22Z",
+          "updated": "2026-06-02T03:47:22Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "We study defects in superconformal field theories using holography, focusing on the precise derivation of the defect observables from supergravity. We consider $\\mathrm{AdS}_p \\times S^q$ spacetimes fibered over an interval and coupled to higher-form gauge fields as well as scalar fields. We determine the coordinate system in which the defect geometry admits an asymptotically flat boundary and, in this setup, we systematically apply holographic renormalization to compute the fundamental observables of the defect theory. In particular, we derive the one-point correlators of the bulk fields, the holographic stress tensor, and its Ward identities. We implement explicitly this procedure for line and surface defects in five- and six-dimensional Romans supergravity. The relevant geometries are $\\mathrm{AdS}_2\\times S^2$, $\\mathrm{AdS}_2\\times S^3$ and $\\mathrm{AdS}_3\\times S^2$ backgrounds warped over an interval, preserving four supercharges and asymptotically $\\mathrm{AdS}_5$ and $\\mathrm{AdS}_6$. In each case, we discuss the implications of our results and compare them with the standard literature on defects in conformal field theory.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2606.03106v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2606.03106v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2605.27125v1",
+          "title": "Diffeomorphism-Like Symmetry in Gravitoelectromagnetism",
+          "authors": [
+            "L. A. S. Evangelista",
+            "A. F. Santos"
+          ],
+          "published": "2026-05-26T14:58:23Z",
+          "updated": "2026-05-26T14:58:23Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "Gravitoelectromagnetism in the Weyl formalism is investigated through an analysis of the consequences of a restricted gauge symmetry acting on the tensor field $A_{μν}$. The propagator associated with the GEM field is explicitly derived and decomposed within the Barnes--Rivers formalism, revealing contributions from the spin-2, spin-1, and scalar spin-0 sectors. By coupling the theory to conserved sources, it is shown that only the spin-2 and scalar sectors contribute to physical processes, while the spin-1 component decouples. The resulting effective propagator can then be written in a compact metric form closely resembling the graviton propagator of linearized General Relativity. The role of gauge fixing is also analyzed by considering both Lorentz-like and de Donder-type gauge conditions. It is shown that the Lorentz-like gauge is consistent with the restricted gauge symmetry of the theory and leads to gauge-independent physical amplitudes, whereas the de Donder gauge introduces residual gauge-dependent scalar contributions, signaling an incompatibility with the underlying symmetry structure. The gauge symmetry is further extended to the fermionic and electromagnetic sectors through diffeomorphism-like transformations. In both cases, conserved currents are derived and shown to coincide with the corresponding energy-momentum tensors, implying that the GEM field couples to matter in the same manner as in linearized gravity. Finally, the associated Ward identities are verified, providing a nontrivial consistency check of the gauge structure and interaction vertices of the theory.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2605.27125v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2605.27125v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "selected_method_ids",
+      "url": "https://export.arxiv.org/api/query?id_list=1610.01503%2C1802.07946%2C2404.11448%2C2503.08169%2C2607.13580&max_results=10",
+      "requested_at_utc": "2026-10-03T06:11:45.992145+00:00",
+      "status": 200,
+      "final_url": "https://export.arxiv.org/api/query?id_list=1610.01503%2C1802.07946%2C2404.11448%2C2503.08169%2C2607.13580&max_results=10",
+      "content_type": "application/atom+xml; charset=utf-8",
+      "response_date": "Sat, 03 Oct 2026 06:11:46 GMT",
+      "retrieved_at_utc": "2026-10-03T06:11:46.308674+00:00",
+      "bytes": 9103,
+      "sha256": "411c85ca55e8733c7f1c388d6cd3ca29645f246520bba59e4ebc6b40563a0aed",
+      "saved_path": "raw/selected_method_ids.xml",
+      "total_hits": "5",
+      "records": [
+        {
+          "id": "http://arxiv.org/abs/1802.07946v1",
+          "title": "SecDec: a toolbox for the numerical evaluation of multi-scale integrals",
+          "authors": [
+            "Stephan Jahn"
+          ],
+          "published": "2018-02-22T09:05:23Z",
+          "updated": "2018-02-22T09:05:23Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "We present a new version of $\\texttt{SecDec}$, a program for the numerical computation of parametric integrals in the context of dimensional regularization. By its modular structure, the $\\texttt{python}$ rewrite $\\texttt{pySecDec}$ is much more customizable than earlier versions of $\\texttt{SecDec}$. The numerical integration is accelerated using code optimization available in $\\texttt{FORM}$. With the new $\\texttt{C++}$ interface, $\\texttt{pySecDec}$ can provide numerical solutions of analytically unknown integrals in user-defined code.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/1802.07946v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/1802.07946v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/1610.01503v2",
+          "title": "On the $h \\to V \\ell^+ \\ell^-$ decays",
+          "authors": [
+            "Pietro Santorelli"
+          ],
+          "published": "2016-10-05T16:20:04Z",
+          "updated": "2016-12-13T16:47:27Z",
+          "doi": "10.1051/epjconf/201612900015",
+          "journal_ref": null,
+          "summary": "A set of exclusive decays of the Higgs boson into a vector meson and a dilepton pair ($h\\to V \\ell^+ \\ell^-$, with $V=Υ, J/ψ,φ$, and $\\ell=μ, τ$) are studied in the framework of the Standard Model. We have evaluated the decay rates, the dilepton mass spectra and the $V$ longitudinal helicity fraction distributions. In the same framework, we considered the exclusive modes $h\\to V ν\\bar ν$ and the implications of the CMS and ATLAS results for the lepton flavor-changing process $h\\to τ^+ μ^-$ on the $h\\to V τ^+ μ^-$ decay modes.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/1610.01503v2",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/1610.01503v2",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            },
+            {
+              "rel": "related",
+              "href": "https://doi.org/10.1051/epjconf/201612900015",
+              "title": "doi"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2607.13580v1",
+          "title": "Filon Methods for Highly Oscillatory Controlled Quantum Systems",
+          "authors": [
+            "Spencer Lee",
+            "Daniel Appelö"
+          ],
+          "published": "2026-07-15T08:22:58Z",
+          "updated": "2026-07-15T08:22:58Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "Fast and accurate classical simulation of quantum systems is a central challenge in the design and control of quantum computers, but the highly oscillatory dynamics of these systems severely limit the efficiency of standard numerical methods. To address this, we adapt Filon quadrature for oscillatory integrals into two numerical methods, called Filon and Controlled Filon, for solving linear systems of ODEs with highly oscillatory solutions. We tailor both methods for efficient implementation in controlled quantum systems, and the Controlled Filon method additionally accounts for the oscillatory structure of the control pulses. We show by numerical experiments that these methods significantly reduce the computational cost of accurately simulating systems of superconducting transmon qubits by decreasing the number of timesteps needed to reach a given level of precision, with only a modest increase in the cost per timestep. For a realistic simulation of the dynamics of a CNOT gate, the Controlled Filon method is the most efficient method tested at every target accuracy, outperforming the best Hermite method by up to 6x and the Hermite method of the same order by up to 500x.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2607.13580v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2607.13580v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2503.08169v3",
+          "title": "Fast and stable computation of highly oscillatory and/or exponentially decaying integrals using a Clenshaw-Curtis product-integration rule",
+          "authors": [
+            "Victor Dominguez"
+          ],
+          "published": "2025-03-11T08:32:25Z",
+          "updated": "2026-02-09T06:06:16Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "We propose, analyze, and implement a quadrature method for evaluating integrals of the form $\\int_0^2 f(s)\\exp(zs)\\, {\\rm d}s$, where $z$ is a complex number with a possibly large negative real part. The integrand may exhibit exponential decay, highly oscillatory behavior, or both simultaneously, making standard quadrature rules computationally expensive. Our approach is based on a Clenshaw-Curtis product-integration rule: the smooth part of the integrand is interpolated using a polynomial at Chebyshev nodes, and the resulting integral is computed exactly. We analyze the convergence of the method with respect to both the number of nodes and the parameter $z$. Additionally, we provide a stable and efficient implementation whose computational cost is essentially independent of $z$ and scales linearly with $L$. Notably, our approach avoids the use of special functions, enhancing its numerical robustness.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2503.08169v3",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2503.08169v3",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2404.11448v2",
+          "title": "An accelerated Levin-Clenshaw-Curtis method for the evaluation of highly oscillatory integrals",
+          "authors": [
+            "Arieh Iserles",
+            "Georg Maierhofer"
+          ],
+          "published": "2024-04-17T14:55:11Z",
+          "updated": "2025-03-12T11:52:48Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "The efficient approximation of highly oscillatory integrals plays an important role in a wide range of applications. Whilst traditional quadrature becomes prohibitively expensive in the high-frequency regime, Levin methods provide a way to approximate these integrals in many settings at uniform cost. In this work, we present an accelerated version of Levin methods that can be applied to a wide range of physically important oscillatory integrals, by exploiting the banded action of certain differential operators on a Chebyshev polynomial basis. Our proposed version of the Levin method can be computed essentially in just $\\mathcal{O}(ν\\logν)$ operations, where $ν$ is the number of quadrature points and the dependence of the cost on a number of additional parameters is made explicit in the manuscript. This presents a significant speed-up over the direct computation of the Levin method in current state-of-the-art. We outline the construction of this accelerated method for a fairly broad class of integrals and support our theoretical description with a number of illustrative numerical examples.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2404.11448v2",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2404.11448v2",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "flint_latest_release",
+      "url": "https://api.github.com/repos/flintlib/flint/releases/latest",
+      "requested_at_utc": "2026-10-03T06:11:46.225998+00:00",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/flintlib/flint/releases/latest",
+      "content_type": "application/json; charset=utf-8",
+      "response_date": "Sat, 03 Oct 2026 06:11:46 GMT",
+      "retrieved_at_utc": "2026-10-03T06:11:46.653950+00:00",
+      "bytes": 7105,
+      "sha256": "3c0b11323608df7df5036f1abeec77dd0c4baaee12b3d31326ed4d6be8e13dc2",
+      "saved_path": "raw/flint_latest_release.json",
+      "record": {
+        "url": "https://api.github.com/repos/flintlib/flint/releases/346140936",
+        "assets_url": "https://api.github.com/repos/flintlib/flint/releases/346140936/assets",
+        "upload_url": "https://uploads.github.com/repos/flintlib/flint/releases/346140936/assets{?name,label}",
+        "html_url": "https://github.com/flintlib/flint/releases/tag/v3.6.0",
+        "id": 346140936,
+        "author": {
+          "login": "github-actions[bot]",
+          "id": 41898282,
+          "node_id": "MDM6Qm90NDE4OTgyODI=",
+          "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+          "html_url": "https://github.com/apps/github-actions",
+          "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+          "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+          "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+          "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+          "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+          "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+          "type": "Bot",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "node_id": "RE_kwDOAC8YHs4UobEI",
+        "tag_name": "v3.6.0",
+        "target_commitish": "8d5454b96761fafe4d5a9da76a369a602f500f49",
+        "name": "\"FLINT v3.6.0\"",
+        "draft": false,
+        "immutable": false,
+        "prerelease": false,
+        "created_at": "2026-06-29T08:18:13Z",
+        "updated_at": "2026-06-29T08:24:37Z",
+        "published_at": "2026-06-29T08:24:37Z",
+        "assets": [
+          {
+            "url": "https://api.github.com/repos/flintlib/flint/releases/assets/460921414",
+            "id": 460921414,
+            "node_id": "RA_kwDOAC8YHs4beRpG",
+            "name": "flint-3.6.0.tar.gz",
+            "label": "",
+            "uploader": {
+              "login": "github-actions[bot]",
+              "id": 41898282,
+              "node_id": "MDM6Qm90NDE4OTgyODI=",
+              "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+              "html_url": "https://github.com/apps/github-actions",
+              "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+              "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+              "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+              "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+              "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+              "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+              "type": "Bot",
+              "user_view_type": "public",
+              "site_admin": false
+            },
+            "content_type": "application/x-gtar",
+            "state": "uploaded",
+            "size": 9313139,
+            "digest": "sha256:b95e2c7792f5eea4a1c8d2d42c4098434756832e57a094b295eb5dfdc9b4c36b",
+            "download_count": 4869,
+            "created_at": "2026-06-29T08:24:36Z",
+            "updated_at": "2026-06-29T08:24:37Z",
+            "browser_download_url": "https://github.com/flintlib/flint/releases/download/v3.6.0/flint-3.6.0.tar.gz"
+          },
+          {
+            "url": "https://api.github.com/repos/flintlib/flint/releases/assets/460921416",
+            "id": 460921416,
+            "node_id": "RA_kwDOAC8YHs4beRpI",
+            "name": "flint-3.6.0.tar.xz",
+            "label": "",
+            "uploader": {
+              "login": "github-actions[bot]",
+              "id": 41898282,
+              "node_id": "MDM6Qm90NDE4OTgyODI=",
+              "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+              "html_url": "https://github.com/apps/github-actions",
+              "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+              "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+              "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+              "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+              "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+              "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+              "type": "Bot",
+              "user_view_type": "public",
+              "site_admin": false
+            },
+            "content_type": "application/x-xz",
+            "state": "uploaded",
+            "size": 6565572,
+            "digest": "sha256:134d39731a6dd926254625d646d85bf5990c68a3f2326cd54d2a6983e3e11dd8",
+            "download_count": 388,
+            "created_at": "2026-06-29T08:24:36Z",
+            "updated_at": "2026-06-29T08:24:37Z",
+            "browser_download_url": "https://github.com/flintlib/flint/releases/download/v3.6.0/flint-3.6.0.tar.xz"
+          },
+          {
+            "url": "https://api.github.com/repos/flintlib/flint/releases/assets/460921412",
+            "id": 460921412,
+            "node_id": "RA_kwDOAC8YHs4beRpE",
+            "name": "flint-3.6.0.zip",
+            "label": "",
+            "uploader": {
+              "login": "github-actions[bot]",
+              "id": 41898282,
+              "node_id": "MDM6Qm90NDE4OTgyODI=",
+              "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+              "html_url": "https://github.com/apps/github-actions",
+              "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+              "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+              "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+              "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+              "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+              "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+              "type": "Bot",
+              "user_view_type": "public",
+              "site_admin": false
+            },
+            "content_type": "application/zip",
+            "state": "uploaded",
+            "size": 15792875,
+            "digest": "sha256:7aa047dcd19f684997f4d0eb067905d958ec403dff30a4be75fe0f21509625c1",
+            "download_count": 46,
+            "created_at": "2026-06-29T08:24:36Z",
+            "updated_at": "2026-06-29T08:24:37Z",
+            "browser_download_url": "https://github.com/flintlib/flint/releases/download/v3.6.0/flint-3.6.0.zip"
+          }
+        ],
+        "tarball_url": "https://api.github.com/repos/flintlib/flint/tarball/v3.6.0",
+        "zipball_url": "https://api.github.com/repos/flintlib/flint/zipball/v3.6.0",
+        "body": "Version 3.6.0\n\n## SHA256 Checksums\n```\nb95e2c7792f5eea4a1c8d2d42c4098434756832e57a094b295eb5dfdc9b4c36b  flint-3.6.0.tar.gz\n134d39731a6dd926254625d646d85bf5990c68a3f2326cd54d2a6983e3e11dd8  flint-3.6.0.tar.xz\n7aa047dcd19f684997f4d0eb067905d958ec403dff30a4be75fe0f21509625c1  flint-3.6.0.zip\n```\n"
+      }
+    },
+    {
+      "label": "flint_main_ref",
+      "url": "https://api.github.com/repos/flintlib/flint/git/ref/heads/main",
+      "requested_at_utc": "2026-10-03T06:11:46.309027+00:00",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/flintlib/flint/git/ref/heads/main",
+      "content_type": "application/json; charset=utf-8",
+      "response_date": "Sat, 03 Oct 2026 06:11:46 GMT",
+      "retrieved_at_utc": "2026-10-03T06:11:46.730073+00:00",
+      "bytes": 331,
+      "sha256": "d02c85ac14e0b919347a6b16dbe80d66a1fb2c8cedba435d096066efa2506ca6",
+      "saved_path": "raw/flint_main_ref.json",
+      "record": {
+        "ref": "refs/heads/main",
+        "node_id": "MDM6UmVmMzA4NjM2NjpyZWZzL2hlYWRzL21haW4=",
+        "url": "https://api.github.com/repos/flintlib/flint/git/refs/heads/main",
+        "object": {
+          "sha": "00cc19b350b5302876b4fa8c877df5a676c2061c",
+          "type": "commit",
+          "url": "https://api.github.com/repos/flintlib/flint/git/commits/00cc19b350b5302876b4fa8c877df5a676c2061c"
+        }
+      }
+    }
+  ]
+}

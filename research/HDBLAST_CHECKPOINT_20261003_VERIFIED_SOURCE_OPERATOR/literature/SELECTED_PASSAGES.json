@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "status": "PASS_SHORT_PASSAGES_MATCH_RETRIEVED_TEXT",
+  "scope": "A few supported passages from the selected review, not full-paper or API correctness verification.",
+  "passages": [
+    {
+      "source_path": "raw/flint_v3_6_0_arb.rst",
+      "source_sha256": "33065363d2271cac45be98e47fe44b1d42da5ba00822a504f8290562eef16d86",
+      "locator": "opening enclosure contract",
+      "short_excerpt": "The result of an (approximate) operation done on :type:`arb_t` variables is a ball which contains the result of the (mathematically exact) operation applied to any choice of points in the input balls.",
+      "quote_normalization": "Whitespace only; punctuation and document markup retained",
+      "word_count": 32,
+      "supported_point": "Enclosure applies to declared input balls, not an unrepresented ideal input."
+    },
+    {
+      "source_path": "raw/flint_v3_6_0_arb.rst",
+      "source_sha256": "33065363d2271cac45be98e47fe44b1d42da5ba00822a504f8290562eef16d86",
+      "locator": "arb_set_d note",
+      "short_excerpt": "Be cautious when using :func:`arb_set_d` as it does not impose any error bounds and will only convert a ``double`` to an ``arb_t``.",
+      "quote_normalization": "Whitespace only; punctuation and document markup retained",
+      "word_count": 22,
+      "supported_point": "Native-double promotion does not add a decimal-real input error bound."
+    },
+    {
+      "source_path": "raw/flint_v3_6_0_acb_calc.rst",
+      "source_sha256": "c57859a8a3b05fd0dc95a4f8a3f2448f04d70e5655a83bf944faab1d6fcde171",
+      "locator": "acb_calc_integrate order=1 contract",
+      "short_excerpt": "*func* must verify that *f* is holomorphic on this domain (and output a non-finite value if it is not).",
+      "quote_normalization": "Whitespace only; punctuation and document markup retained",
+      "word_count": 19,
+      "supported_point": "An integrand's domain validation is a caller obligation."
+    },
+    {
+      "source_path": "raw/flint_v3_6_0_acb_calc.rst",
+      "source_sha256": "c57859a8a3b05fd0dc95a4f8a3f2448f04d70e5655a83bf944faab1d6fcde171",
+      "locator": "integration accuracy goals",
+      "short_excerpt": "These parameters are only guidelines; the cumulative error may be larger than both the prescribed absolute and relative error goals, depending on the number of subdivisions, cancellation between segments of the integral, and numerical errors in the evaluation of the integrand.",
+      "quote_normalization": "Whitespace only; punctuation and document markup retained",
+      "word_count": 41,
+      "supported_point": "Accept the actual returned enclosure radius, not the configured tolerance alone."
+    },
+    {
+      "source_path": "raw/johansson_integration_1802_07942v1.txt",
+      "source_sha256": "04aee90ae7088560f495b85a63a9d51bdbae31596c20f80234806c481519d03d",
+      "locator": "Sec.3.2, printed p.6",
+      "short_excerpt": "Tail bounds must then be added based on symbolic knowledge about f .",
+      "quote_normalization": "Whitespace only; punctuation and document markup retained",
+      "word_count": 13,
+      "supported_point": "Manual truncation requires independently justified omitted-integral bounds."
+    },
+    {
+      "source_path": "raw/mottola_ward_2607_18180v1.txt",
+      "source_sha256": "f475c9eda162e7888d569444e8bef67753ac593e4f1c7e5ec83f6a16572f6015",
+      "locator": "Sec.II, printed p.7, after Eq.(2.21)",
+      "short_excerpt": "which contains a second δ-function contact term, in addition to that in (2.13).",
+      "quote_normalization": "Whitespace only; punctuation and document markup retained",
+      "word_count": 13,
+      "supported_point": "The complete response has more than the nonlocal stress correlator."
+    },
+    {
+      "source_path": "raw/borinsky_collider_2609_10673v1.txt",
+      "source_sha256": "6121bed42ee69295a60d2db332908ccf5d08d49c895ca2531a6f3885a8d245d1",
+      "locator": "Sec.3.2, printed p.14, footnote12",
+      "short_excerpt": "We use deterministic tensor-product tanh–sinh quadrature, monitor convergence under successive refinement, and compare with the independent tropical Monte Carlo calculation of Appendix B at moderate squeezing.",
+      "quote_normalization": "Whitespace only; punctuation and document markup retained",
+      "word_count": 26,
+      "supported_point": "The inspected validation protocol is empirical, not an interval certificate."
+    },
+    {
+      "source_path": "raw/chattopadhyay_brane_2609_37346v1.txt",
+      "source_sha256": "6ffb21d0d54b990ca7167a6fa8a1a464abd30aad41c6a0667a837e37f5f884cd",
+      "locator": "Sec.8.1, printed p.25",
+      "short_excerpt": "This is not by itself a prediction of the reheating temperature: the actual value depends on the brane decay width, the initial abundance of the resonance, and the subsequent thermalization history.",
+      "quote_normalization": "Whitespace only; punctuation and document markup retained",
+      "word_count": 31,
+      "supported_point": "The recent thick-brane reheating estimate has explicit missing cosmological premises."
+    }
+  ],
+  "quoted_words_by_source": {
+    "raw/flint_v3_6_0_arb.rst": 54,
+    "raw/flint_v3_6_0_acb_calc.rst": 60,
+    "raw/johansson_integration_1802_07942v1.txt": 13,
+    "raw/mottola_ward_2607_18180v1.txt": 13,
+    "raw/borinsky_collider_2609_10673v1.txt": 26,
+    "raw/chattopadhyay_brane_2609_37346v1.txt": 31
+  }
+}

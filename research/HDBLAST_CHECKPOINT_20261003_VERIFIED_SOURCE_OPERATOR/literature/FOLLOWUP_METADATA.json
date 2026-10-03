@@ -1,0 +1,188 @@
+{
+  "scope": "One correction to unverified recalled IDs, one primary-Arb title/author lookup, and selected recent-paper metadata checks; recalled unrelated IDs are excluded from bibliography.",
+  "records": [
+    {
+      "label": "arb_library_primary",
+      "url": "https://export.arxiv.org/api/query?search_query=ti%3A%22Arb%22+AND+au%3A%22Johansson%22&max_results=5",
+      "requested_at_utc": "2026-10-03T06:12:27.198915+00:00",
+      "status": 200,
+      "final_url": "https://export.arxiv.org/api/query?search_query=ti%3A%22Arb%22+AND+au%3A%22Johansson%22&max_results=5",
+      "content_type": "application/atom+xml; charset=utf-8",
+      "response_date": "Sat, 03 Oct 2026 06:12:27 GMT",
+      "retrieved_at_utc": "2026-10-03T06:12:27.601683+00:00",
+      "bytes": 2209,
+      "sha256": "d698466c1df52546dfcf7448afc1988cf5cd357c48fd44e294e9caf9d3b8440b",
+      "saved_path": "raw/arb_library_primary.xml",
+      "total_hits": "1",
+      "records": [
+        {
+          "id": "http://arxiv.org/abs/1611.02831v1",
+          "title": "Arb: Efficient Arbitrary-Precision Midpoint-Radius Interval Arithmetic",
+          "authors": [
+            "Fredrik Johansson"
+          ],
+          "published": "2016-11-09T06:23:37Z",
+          "updated": "2016-11-09T06:23:37Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "Arb is a C library for arbitrary-precision interval arithmetic using the midpoint-radius representation, also known as ball arithmetic. It supports real and complex numbers, polynomials, power series, matrices, and evaluation of many special functions. The core number types are designed for versatility and speed in a range of scenarios, allowing performance that is competitive with non-interval arbitrary-precision types such as MPFR and MPC floating-point numbers. We discuss the low-level number representation, strategies for precision and error bounds, and the implementation of efficient polynomial arithmetic with interval coefficients.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/1611.02831v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/1611.02831v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "corrected_selected_ids",
+      "url": "https://export.arxiv.org/api/query?id_list=1802.07942%2C2609.10673%2C2607.18180%2C2609.37346&max_results=10",
+      "requested_at_utc": "2026-10-03T06:12:27.601982+00:00",
+      "status": 200,
+      "final_url": "https://export.arxiv.org/api/query?id_list=1802.07942%2C2609.10673%2C2607.18180%2C2609.37346&max_results=10",
+      "content_type": "application/atom+xml; charset=utf-8",
+      "response_date": "Sat, 03 Oct 2026 06:12:27 GMT",
+      "retrieved_at_utc": "2026-10-03T06:12:28.005793+00:00",
+      "bytes": 8809,
+      "sha256": "e7dbc041e7eab165356eaa28b945ec463abb0c20369a82746606befaaa8fca6c",
+      "saved_path": "raw/corrected_selected_ids.xml",
+      "total_hits": "4",
+      "records": [
+        {
+          "id": "http://arxiv.org/abs/1802.07942v1",
+          "title": "Numerical integration in arbitrary-precision ball arithmetic",
+          "authors": [
+            "Fredrik Johansson"
+          ],
+          "published": "2018-02-22T08:46:14Z",
+          "updated": "2018-02-22T08:46:14Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "We present an implementation of arbitrary-precision numerical integration with rigorous error bounds in the Arb library. Rapid convergence is ensured for piecewise complex analytic integrals by use of the Petras algorithm, which combines adaptive bisection with adaptive Gaussian quadrature where error bounds are determined via complex magnitudes without evaluating derivatives. The code is general, easy to use, and efficient, often outperforming existing non-rigorous software.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/1802.07942v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/1802.07942v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2609.10673v1",
+          "title": "On the Numerical Integration of One-Loop Cosmological Collider Signals",
+          "authors": [
+            "Michael Borinsky",
+            "Aidan Herderschee",
+            "Qianshu Lu"
+          ],
+          "published": "2026-09-09T18:00:00Z",
+          "updated": "2026-09-09T18:00:00Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "In a broad class of inflationary models, the leading non-Gaussian bispectrum arises from one-loop rather than tree-level processes. However, realistic one-loop contributions remain largely unexplored for phenomenologically relevant masses beyond the simplest bubble diagrams. This is insufficient for observational purposes because, for generic masses and couplings, triangle contributions need not be suppressed relative to their bubble counterparts. We present a numerical method for evaluating scalar one-loop in-in diagrams contributing to the inflationary bispectrum at fully general external momenta and masses. First, the Witten-Feynman parameterization reduces de Sitter loop integrals to generalized Euler-Mellin integrals governed by Symanzik graph polynomials. Unfortunately, the exponents of the polynomials in the integrand become complex for sufficiently heavy masses, leading to sign problems when evaluating the integral using standard numerical techniques. To remedy this problem, we introduce the reduced Schwinger method, which evaluates a highly oscillatory subintegral analytically to obtain a Gauss hypergeometric kernel, leaving the remaining integrals to standard numerical quadrature. We validate the algorithm by reproducing known analytic results for the tree-level bispectrum in terms of ${}_3F_2$ functions, and then apply it to the one-loop bubble and triangle contributions at general kinematics. This yields the first direct numerical evaluation of the complete one-loop bispectrum, valid across the full kinematic range. Using these numerical results, we construct bispectrum templates and compare them with CMB data.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2609.10673v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2609.10673v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2607.18180v1",
+          "title": "Gravitational Vacuum Polarization: Decoupling and the Conformal Anomaly",
+          "authors": [
+            "Emil Mottola"
+          ],
+          "published": "2026-07-20T17:16:44Z",
+          "updated": "2026-07-20T17:16:44Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "A compact form of the stress tensor $\\langle T^{ab}T^{cd}\\rangle$ correlation function of a quantum scalar field of arbitrary mass $m$ and curvature coupling $\u03be$ is presented, with particular emphasis on decoupling in the $m\\to\\infty$ limit and infrared origin of the conformal anomaly as $m \\to 0$. The Ward Identity (WI) of covariant conservation is verified for the full second order metric variation of the one-loop effective action, of which $\\langle T^{ab}T^{cd}\\rangle$ is part, including local contact terms. This WI is satisfied by two tensors, one spin-2 (traceless) and the second spin-0 (traceful), each multiplied by a Lorentz invariant form factor computed in $n$-dimensional regularization. Minimal subtraction of pole terms at $n =4$ produces form factors that fail to satisfy decoupling for general $\u03be\\neq 1/6$, but can be simply amended to do so. Particular interest attaches to the $\u03be=1/6$ case, in which the spin-0 form factor at $n =4$ is completely finite, requires no UV regularization or subtractions, and satisfies decoupling directly. Its imaginary part defines a spectral function that obeys a UV finite sum rule for any $m$, while its real part unambiguously determines the $\\square R$ in the massless limit. Its $m^2$ dependence describes a Wilsonian renormalization group flow to an effective field theory limit at large distances. At $m= 0$ the spin-0 spectral function becomes a Dirac $\u03b4$-function at zero energy, demonstrating the existence of a massless scalar Goldstone collective excitation due to the conformal anomaly in the low energy effective theory of gravity.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2607.18180v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2607.18180v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        },
+        {
+          "id": "http://arxiv.org/abs/2609.37346v1",
+          "title": "Relic of the Kink Shape Mode in a Topological Thick Brane - some implications",
+          "authors": [
+            "Gahan Chattopadhyay",
+            "Soumitra Sengupta"
+          ],
+          "published": "2026-09-29T12:14:37Z",
+          "updated": "2026-09-29T12:14:37Z",
+          "doi": null,
+          "journal_ref": null,
+          "summary": "The kink soliton provides a simple construction of a topological thick 3-brane sourced by a minimally coupled canonical scalar field in five-dimensional general relativity. Although the flat-space kink is a solution of $\\varphi^4$ theory, the gravitating configuration requires $M_*$-suppressed $\\varphi^6$ corrections to support a stable warped geometry. Unlike its flat-space counterpart, the scalar perturbation spectrum contains no normalizable bound state. We nevertheless identify a single quasi-bound, or resonant, mode. Using a time-independent relative-probability analysis, direct time evolution, and a four-turning-point WKB calculation, we establish a direct connection between this resonance and the massive bound shape mode of the flat-space $\\varphi^4$ kink. We also show that, within an EFT-consistent parameter window, the resonance can transfer energy from bulk geometric fluctuations to localized matter, thereby allowing the possibility of high-scale reheating in the early universe.",
+          "links": [
+            {
+              "href": "https://arxiv.org/abs/2609.37346v1",
+              "rel": "alternate",
+              "type": "text/html"
+            },
+            {
+              "href": "https://arxiv.org/pdf/2609.37346v1",
+              "rel": "related",
+              "type": "application/pdf",
+              "title": "pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "flint_release_tag",
+      "url": "https://api.github.com/repos/flintlib/flint/git/ref/tags/v3.6.0",
+      "requested_at_utc": "2026-10-03T06:12:28.006265+00:00",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/flintlib/flint/git/ref/tags/v3.6.0",
+      "content_type": "application/json; charset=utf-8",
+      "response_date": "Sat, 03 Oct 2026 06:12:28 GMT",
+      "retrieved_at_utc": "2026-10-03T06:12:28.413983+00:00",
+      "bytes": 333,
+      "sha256": "92cbaf47b0cdd5d810fb1b1a9011c02599bf3f22af322cdb0dcef9b8d5173b54",
+      "saved_path": "raw/flint_release_tag.json",
+      "record": {
+        "ref": "refs/tags/v3.6.0",
+        "node_id": "MDM6UmVmMzA4NjM2NjpyZWZzL3RhZ3MvdjMuNi4w",
+        "url": "https://api.github.com/repos/flintlib/flint/git/refs/tags/v3.6.0",
+        "object": {
+          "sha": "8d5454b96761fafe4d5a9da76a369a602f500f49",
+          "type": "commit",
+          "url": "https://api.github.com/repos/flintlib/flint/git/commits/8d5454b96761fafe4d5a9da76a369a602f500f49"
+        }
+      }
+    }
+  ]
+}
