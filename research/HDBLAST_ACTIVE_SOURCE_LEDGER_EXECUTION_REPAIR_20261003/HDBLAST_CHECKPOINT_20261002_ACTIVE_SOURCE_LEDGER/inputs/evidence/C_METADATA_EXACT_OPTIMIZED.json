@@ -1,0 +1,76 @@
+{
+  "proof_status": "EXACT_METADATA_IDENTITY_PROOF",
+  "python_optimization": 1,
+  "formula": "C_n=2*(n+1)!*a^(n+2)",
+  "identity_count": 13,
+  "checks": [
+    {
+      "name": "C0_equals_a_double_prime_over_a",
+      "exact": true
+    },
+    {
+      "name": "all_n_derivative_recurrence",
+      "exact": true
+    },
+    {
+      "name": "direct_eta_derivative_0",
+      "exact": true
+    },
+    {
+      "name": "direct_eta_derivative_1",
+      "exact": true
+    },
+    {
+      "name": "direct_eta_derivative_2",
+      "exact": true
+    },
+    {
+      "name": "direct_eta_derivative_3",
+      "exact": true
+    },
+    {
+      "name": "direct_eta_derivative_4",
+      "exact": true
+    },
+    {
+      "name": "direct_eta_derivative_5",
+      "exact": true
+    },
+    {
+      "name": "direct_eta_derivative_6",
+      "exact": true
+    },
+    {
+      "name": "direct_eta_derivative_7",
+      "exact": true
+    },
+    {
+      "name": "wrong_formula_witness_1",
+      "exact": true
+    },
+    {
+      "name": "wrong_formula_witness_2",
+      "exact": true
+    },
+    {
+      "name": "only_C_metadata_expression_changed",
+      "exact": true
+    }
+  ],
+  "wrong_formula_witnesses": [
+    {
+      "n": 1,
+      "old_minus_correct": "2*a**3",
+      "nonzero_for_a_positive": true
+    },
+    {
+      "n": 2,
+      "old_minus_correct": "12*a**4",
+      "nonzero_for_a_positive": true
+    }
+  ],
+  "original_auditor_sha256": "f0b3c3a2479d02312a1bbad35be66ae808d2753ad831fa73e13049a5bd2ee9d2",
+  "v2_auditor_sha256": "b4b98361d2ecfa86e0dfd6644adcebb007d1a0a6b6c8975d88505fd57fb1e3ca",
+  "physical_evaluations": 0,
+  "scientific_calibration_status": "FAIL_UNCHANGED"
+}

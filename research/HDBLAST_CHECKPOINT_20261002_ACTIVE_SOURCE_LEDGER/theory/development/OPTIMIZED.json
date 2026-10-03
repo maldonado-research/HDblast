@@ -1,0 +1,70 @@
+{
+  "identities": [
+    "unrestricted real-forcing invariant",
+    "mode stress constant plus primitive",
+    "mode primitive derivative with forcing work",
+    "direct metric contact derivative with canonical source work",
+    "full bare Ward including general source mismatch",
+    "primitive differentiates to independently defined direct F",
+    "on-action full Ward",
+    "direct background Ward",
+    "subtraction contact contribution to fixed-band Ward",
+    "renormalized contact work cancels forcing work",
+    "polynomial rational forcing inventory",
+    "polynomial phase moment recurrence degree 1",
+    "polynomial phase moment recurrence degree 2",
+    "polynomial phase moment recurrence degree 3",
+    "polynomial phase moment recurrence degree 4",
+    "polynomial phase moment recurrence degree 5",
+    "first inverse-power phase primitive",
+    "second inverse-power phase primitive"
+  ],
+  "identity_count": 18,
+  "mpmath_version": "1.3.0",
+  "mutation_count": 6,
+  "mutations_rejected": [
+    "omit fixed comoving cutoff baseline work",
+    "force sign inversion",
+    "drop metric D operator from density",
+    "drop physical volume contacts",
+    "drop source mismatch work",
+    "project arbitrary retained real invariant"
+  ],
+  "physical_evaluations": 0,
+  "python_optimization": 1,
+  "saved_scientific_values_loaded": 0,
+  "scope": "Generic action/ODE/primitive identities and fabricated rational polynomial source only. Generic full subtraction Ward identities are inherited pinned inputs, not independently rederived in this verifier.",
+  "source_sha256": "94ae8d623ac203c83ef86bb122ed565d40a7b7898f433198e729428675a27eae",
+  "status": "PASS_PURE_SYMBOLIC_AND_SYNTHETIC",
+  "sympy_version": "1.14.0",
+  "synthetic_passes": [
+    {
+      "criterion": "absolute 1e-55",
+      "decimal_digits": 80,
+      "fabricated_source": "degree5 rational polynomial, no study-source evaluation",
+      "gaps": {
+        "arbitrary_invariant_retained": "0.0",
+        "direct_F_integral_vs_primitive": "3.37350334183376743179154369641e-79",
+        "direct_density_vs_integrand_primitive": "1.34940133673350697271661747856e-78",
+        "nonoscillatory_moment": "1.6867516709168837158957718482e-80",
+        "oscillatory_moment": "2.31928354751071510935668629128e-80",
+        "u_ODE_derivative": "3.7272298271345884730840941489e-82",
+        "w_ODE_derivative": "1.49089193085383538923363765956e-81"
+      }
+    },
+    {
+      "criterion": "absolute 1e-55",
+      "decimal_digits": 100,
+      "fabricated_source": "degree5 rational polynomial, no study-source evaluation",
+      "gaps": {
+        "arbitrary_invariant_retained": "8.92958899439277329856080897114e-103",
+        "direct_F_integral_vs_primitive": "4.57194956512909992886313419322e-100",
+        "direct_density_vs_integrand_primitive": "1.09726789563098398292715220637e-98",
+        "nonoscillatory_moment": "1.14298739128227498221578354831e-100",
+        "oscillatory_moment": "3.61444349330607238366513703438e-100",
+        "u_ODE_derivative": "2.5256691724575574790516330844e-102",
+        "w_ODE_derivative": "7.98686720103849180227949907526e-102"
+      }
+    }
+  ]
+}

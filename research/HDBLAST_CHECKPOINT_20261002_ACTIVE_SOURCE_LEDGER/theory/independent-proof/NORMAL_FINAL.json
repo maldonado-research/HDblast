@@ -1,0 +1,91 @@
+{
+  "identities": [
+    "minimal_action_nonlinear_bare_stress_Ward_arbitrary_state",
+    "minimal_action_arbitrary_state_Wronskian_is_constant",
+    "metric_directional_canonical_potential_g",
+    "BD_bare_background_density",
+    "BD_bare_background_pressure",
+    "direct_quadratic_Taylor_density_mode_operator_mass_scale",
+    "direct_quadratic_Taylor_pressure_mode_operator_mass_scale",
+    "density_contact_simplification",
+    "pressure_contact_simplification",
+    "real_imag_forced_ODE",
+    "amplitude_Wronskian_unprojected_constant",
+    "finite_K_bare_background_Ward",
+    "active_mode_only_Ward_force_term",
+    "active_local_contacts_cancel_force_term",
+    "full_active_bare_Ward_arbitrary_unprojected_amplitudes",
+    "forcing_first_derivative",
+    "forcing_second_derivative",
+    "direct_active_bare_Ward_integrand_contacts_expanded",
+    "active_bare_integrand_direct_action_match",
+    "full_bare_Ward_projects_continuous_ODE_defects_exactly",
+    "variation_of_constants_d_ODE",
+    "variation_of_constants_c_ODE",
+    "real_constant_unprojected_mode_coefficient",
+    "rotating_w_ODE",
+    "physical_subtraction_metric_Ward_from_separate_operator_premises",
+    "renormalized_Ward_preserves_finite_K_baseline_difference"
+  ],
+  "identity_count": 26,
+  "mutation_count": 12,
+  "mutations_rejected": [
+    {
+      "name": "hold_canonical_M_constant_despite_fixed_physical_mass",
+      "nonzero_symbolic_residue": "-M*ell*(v_I**2 + v_R**2)"
+    },
+    {
+      "name": "omit_finite_K_baseline_contact",
+      "nonzero_symbolic_residue": "-h1*(3*L**2 + 4*k**2)/(2*k)"
+    },
+    {
+      "name": "reverse_forcing_sign",
+      "nonzero_symbolic_residue": "-L*(4*L**2*h0 - 2*L*h1 - h2)/k"
+    },
+    {
+      "name": "omit_operator_contact_from_both_stresses",
+      "nonzero_symbolic_residue": "-L*(3*L*h1 + h2)/(2*k)"
+    },
+    {
+      "name": "omit_fixed_mass_contact_from_both_stresses",
+      "nonzero_symbolic_residue": "L**2*(2*L*h0 - h1)/k"
+    },
+    {
+      "name": "omit_a_minus_four_scale_contact_from_both_stresses",
+      "nonzero_symbolic_residue": "h1*(3*L**2 + 2*k**2)/k"
+    },
+    {
+      "name": "omit_metric_contact_only_from_pressure",
+      "nonzero_symbolic_residue": "L*(-3*L*h1 + 4*h0*k**2)/(2*k)"
+    },
+    {
+      "name": "incorrectly_treat_L_as_constant",
+      "nonzero_symbolic_residue": "L**2*(8*L*epsilon*h0 - 6*L*u_R - epsilon*h1 + w_R)/(2*epsilon*k)"
+    },
+    {
+      "name": "force_Wronskian_zero_in_direct_density",
+      "nonzero_symbolic_residue": "-(3*L**2 + 2*k**2)*(2*k*u_R - w_I)/(4*epsilon*k**2)"
+    },
+    {
+      "name": "use_source_free_rotating_w_ODE_inside_source",
+      "nonzero_symbolic_residue": "-epsilon*(cos_phase - I*sin_phase)*(4*L**2*h0 - 2*L*h1 - h2)"
+    },
+    {
+      "name": "omit_mode_only_force_term",
+      "nonzero_symbolic_residue": "L*(4*L**2*h0 - 2*L*h1 - h2)/(2*k)"
+    },
+    {
+      "name": "pretend_arbitrary_ODE_defects_imply_Ward_accuracy",
+      "nonzero_symbolic_residue": "(3*L**2*defect_u_R - L*defect_w_R + 2*defect_u_R*k**2 - defect_w_I*k)/(2*epsilon*k)"
+    }
+  ],
+  "numeric_profile_values_evaluated": 0,
+  "physical_arrays_loaded": 0,
+  "physical_evaluations": 0,
+  "physical_source_integrals_evaluated": 0,
+  "python_optimization": 0,
+  "scope": "Exact symbolic action/ODE identities. No physical archive, trajectory, source value, or quadrature is read or evaluated. Renormalized subtraction transfer is conditional on its separately proved operator premises.",
+  "source_sha256": "93aefc211703804320dc4506c864cfcba40b4c085d7ec388ed2458c51e5ce68d",
+  "status": "PASS_PURE_ACTION_IDENTITIES",
+  "sympy_version": "1.14.0"
+}

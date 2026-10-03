@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "status": "PASS_INDEPENDENT_FULL_PACKAGE_REPLAY_REVIEW",
+  "scope": "Read-only existing advisory verification on actual completed fresh outputs and actual extracted package. No physics producer or input array interpretation.",
+  "authoritative_classification": "LEDGER_ERROR_DEMONSTRATED",
+  "old_metric_status": "FAIL",
+  "normal_optimized_validation_equal_except_flag": true,
+  "all_registered_fresh_bytes_authenticated": true,
+  "fresh_outer_numerical_executions": [
+    {
+      "route": "primary",
+      "status": "PASS_EXECUTION",
+      "exit_code": 0,
+      "elapsed_seconds": 233.51393519100384,
+      "peak_rss_kib": 178208
+    },
+    {
+      "route": "independent",
+      "status": "PASS_EXECUTION",
+      "exit_code": 0,
+      "elapsed_seconds": 478.1982810900081,
+      "peak_rss_kib": 132380
+    }
+  ],
+  "fresh_package_manifest_authentication": {
+    "manifest_sha256": "0e27d490c3451e7325028dce453d290d3fbdb5e55af8015ee3f1ff0a329d30eb",
+    "payload_files_verified": 237,
+    "registration_sha256": "d2f79779669d0867cb9b21b627b01ea674245e99e819826fb7bcd90357e00542",
+    "freeze_receipt_sha256": "092dcea445c68f5effb2e5de8182de13f99346075748faf98fd8ff88400c8226",
+    "scope": "Actual manifest bytes and every listed payload byte verified; frozen registration/input/source family preserved."
+  },
+  "fresh_replay_comparison": [
+    {
+      "kind": "primary",
+      "science_equal": true,
+      "original_scientific_sha256": "e018796a96c7d6c215c0bc7f55b9ad89202d2e30bc89a9d06e32b05f4092f263",
+      "fresh_scientific_sha256": "e018796a96c7d6c215c0bc7f55b9ad89202d2e30bc89a9d06e32b05f4092f263",
+      "stable_frame_equal": true,
+      "original_stable_full_frame_sha256": "122a7fa2d9e4c6c259823f75683b439a6083bde94eb3bfdfa6879a81d23419a0",
+      "fresh_stable_full_frame_sha256": "122a7fa2d9e4c6c259823f75683b439a6083bde94eb3bfdfa6879a81d23419a0",
+      "allowed_package_manifest_transition": null,
+      "ignored_top_level_fields": [
+        "resources",
+        "producer_sha256",
+        "source_unchanged_during_execution",
+        "registration_sha256",
+        "freeze_commit",
+        "input_manifest_sha256"
+      ],
+      "original_raw_sha256": "a487bddc29ab898287a825db9892852d03e31b0c23596a4d7b1bcd8cd379e2d9",
+      "fresh_raw_sha256": "6a9d2d20ca0de90ec27c9ffab528e733b28d813b3206ffe5afe18b13fa3b7dc5"
+    },
+    {
+      "kind": "independent",
+      "science_equal": true,
+      "original_scientific_sha256": "9d115c1e05cd853ac1a9f97b12819ba3c5ef970173c56fa69e375af044617b8c",
+      "fresh_scientific_sha256": "9d115c1e05cd853ac1a9f97b12819ba3c5ef970173c56fa69e375af044617b8c",
+      "stable_frame_equal": true,
+      "original_stable_full_frame_sha256": "16b889c18330e8fbe69ed0edb4a0a966309af816e55df1d3f06879d30adb71c5",
+      "fresh_stable_full_frame_sha256": "16b889c18330e8fbe69ed0edb4a0a966309af816e55df1d3f06879d30adb71c5",
+      "allowed_package_manifest_transition": {
+        "original": null,
+        "fresh": "0e27d490c3451e7325028dce453d290d3fbdb5e55af8015ee3f1ff0a329d30eb",
+        "scope": "Package-manifest protection added; all other frozen provenance must be identical."
+      },
+      "ignored_top_level_fields": [
+        "resources",
+        "producer_sha256",
+        "provenance",
+        "input_manifest_sha256"
+      ],
+      "original_raw_sha256": "ebb5aa8eb1d13fbdf559e761c6cd2568252416031ad79423094635f7015c2e97",
+      "fresh_raw_sha256": "fb4182e0e7d70b089503112115f4d341ff4c18e7857839b0891d32413981c238"
+    },
+    {
+      "kind": "validation",
+      "science_equal": true,
+      "original_scientific_sha256": "c9f0b2443980cd0048fab08b66604db3186e847bd6ff9594f693e9f36403dae0",
+      "fresh_scientific_sha256": "c9f0b2443980cd0048fab08b66604db3186e847bd6ff9594f693e9f36403dae0",
+      "stable_frame_equal": true,
+      "original_stable_full_frame_sha256": null,
+      "fresh_stable_full_frame_sha256": null,
+      "allowed_package_manifest_transition": null,
+      "ignored_top_level_fields": [
+        "executions",
+        "registration_sha256",
+        "public_freeze_commit",
+        "result_sha256",
+        "python_optimization"
+      ],
+      "original_raw_sha256": "f994022533c1e505d2073c0d575b751d9ad8b2e0f6b28edb80bd68a569ce7857",
+      "fresh_raw_sha256": "cce46a123c6645141276e87e49e0fce89e327edf2fe2266e3843f1dbe394aa10"
+    }
+  ],
+  "toolkit_manifest_sha256": "16104627bfed1144225203b0e1af2727a784d2a5052bf571c93a36b6a6df0a3a",
+  "advisory_review_tool_sha256": "ee57d5bc3d26e52c080019f42e343dc5ff42398be9031491d1845c5b7a9484e7",
+  "physical_source_reevaluations_by_review": 0,
+  "input_array_values_interpreted_by_review": false,
+  "raw_fresh_result_sha256": {
+    "primary": "6a9d2d20ca0de90ec27c9ffab528e733b28d813b3206ffe5afe18b13fa3b7dc5",
+    "independent": "fb4182e0e7d70b089503112115f4d341ff4c18e7857839b0891d32413981c238",
+    "validation": "cce46a123c6645141276e87e49e0fce89e327edf2fe2266e3843f1dbe394aa10",
+    "validation_optimized": "76b887d4bd5b77826d52b9c36701c73e27588c2d9a66bc958c09d83c6abd8a71",
+    "execution": "0eb82bc26d64c82df3f62b06b9a4ceb41ebcb5a0c0a0a1130c412014b8efd52d"
+  },
+  "remaining_scope_limit": "Remote public verification comes from root supplied public receipts. This review checks authenticated local bytes and full fresh execution evidence, not independent network downloads."
+}

@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/workspace/hdblast-research-work/active-source-20261002/original-replay/checkpoint/independent/diagnostic_independent.py", line 69, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/hdblast-research-work/active-source-20261002/original-replay/checkpoint/independent/diagnostic_independent.py", line 57, in main
+    core.main()
+  File "/workspace/hdblast-research-work/active-source-20261002/original-replay/checkpoint/independent/run_independent.py", line 134, in main
+    provenance=verify(args);check()
+               ^^^^^^^^^^^^
+  File "/workspace/hdblast-research-work/active-source-20261002/original-replay/checkpoint/independent/run_independent.py", line 52, in verify
+    require(reg.get('physical_diagnostic_evaluations_before_freeze')==0,'Prospective evaluation marker mismatch')
+  File "/workspace/hdblast-research-work/active-source-20261002/original-replay/checkpoint/independent/run_independent.py", line 27, in require
+    if not test:raise RuntimeError(message)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Prospective evaluation marker mismatch

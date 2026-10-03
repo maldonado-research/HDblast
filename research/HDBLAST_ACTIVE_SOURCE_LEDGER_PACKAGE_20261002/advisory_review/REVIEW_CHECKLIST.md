@@ -1,0 +1,26 @@
+# Independent post-freeze result review
+
+This is an advisory audit of serialized outputs. It neither evaluates source values nor opens mode/input arrays. It does not replace the frozen authoritative validator or introduce new acceptance gates. Run it only after root supplies the public freeze and completed output paths.
+
+1. Authenticate the explicit registration SHA256, public freeze receipt, input-manifest lineage, producer-source hashes and result hashes. Confirm the normal and optimized validator reports differ only in their optimization metadata. Accept a scientific classification only when both authoritative reports say `VERIFIED_COMPLETE_DIAGNOSTIC` and the two complete numerical executions exit zero within their original budgets.
+2. Confirm twelve distinct source/setting/cutoff cases, the fixed interval [-4.5,-3.5], midpoint -4, both final accumulation contexts and all predefined quadrature controls. Preserve every failed control and the historical metric status FAIL.
+3. Recompute the canonical signed ledger decomposition from serialized decimal strings using exact rational arithmetic. Audit raw analytic and matched discrete primary variants separately. Verify the momentum-correction signs: I_d=I_A+E_momentum, D_cont,A=D_cont,d+E_momentum, and E_Q,d=E_Q,A+E_momentum.
+4. Recompute the signed operator brackets at both endpoints and midpoint. Audit endpoint flow, operator and reconstruction contributions separately. Report the source/contact primitive residual and canonical invariant drift independently; a small sum can hide compensating terms. Do not use exact accounting closure as an accuracy certificate.
+5. Quantify all primary-to-independent canonical integral gaps and the full cross-control mode-profile matrix. Remove each route's own contact from mode profiles before comparing them. Compare retained direct discrete contacts and baselines at all three fixed knots after converting physical primary baseline values with L^4. Retain raw full-history analytic/discrete contact differences without interpreting them as algorithm disagreement.
+6. Report the three independent forcing/ledger controls separately. Forcing order changes at fixed GL24 ledger; ledger order changes at fixed GL16 forcing. Their empirical differences do not rigorously bound exact-source quadrature or native phase arithmetic. MP80/100 differences test final accumulation only.
+7. Report signed flow projections with their triangle envelopes and the fraction |signed|/envelope. Cancellation can make a signed projection much smaller than its envelope. Neither quantity bounds error inherited before the saved anchor.
+8. For each canonical case and route, record all three attribution margins: |D_S|-2e-6, 0.1|D_S|-|D_cont|, and |E_Q|-0.9|D_S|. The first condition is strict. A witness is accepted only in the same case in both routes, after every registered consistency control passes. A large Simpson defect alone is insufficient.
+9. Use actual outer execution receipts for wall time, peak memory, exit codes and containment. Fabricated preparation timings are feasibility evidence only. Compare original and fresh standalone replay science separately from runtime differences.
+10. Present the authoritative outcome using the interpretation below. Publication should preserve failed experiments and their fixed gates. An unresolved Zenodo transport error remains separate from numerical evidence.
+
+## Outcome interpretation
+
+**LEDGER_ERROR_DEMONSTRATED:** On this one prescribed active-source interval, the unchanged sampled Simpson ledger has at least one gate-scale defect, and both registered methods empirically attribute most of that defect to ledger sampling while all specified consistency controls pass. This local anchored result supports replacing this ledger integration method in a separately registered future implementation.
+
+**NO_GATE_SCALE_ATTRIBUTION:** The registered consistency controls pass, but no same-case canonical witness meets all three attribution conditions in both routes. The round has not demonstrated an active-source ledger defect at the specified scale. It does not prove Simpson generally accurate.
+
+**CONSISTENCY_FAILURE:** At least one specified native numerical, cross-route, flow, contact, operator or reconstruction control fails. Preserve all values and identify the largest failing controls. The round cannot establish its requested attribution even if individual cases look favorable.
+
+**Execution/validation failure:** Integrity, resource, schema, arithmetic closure, final-precision or serialization failure prevents accepted classification. Preserve partial output and exact failure evidence. A revised method needs a new prospective registration.
+
+Every outcome leaves the earlier full metric calibration FAIL. The test reuses an inherited initial state and one fixed background, mass law and prescribed source. It supplies no rigorous total error bound, full-history contact equivalence, continuum-momentum convergence, particle/heating yield, coupled Einstein evolution, lapse/bulk/boundary/state completion, stability result, or evidence for a higher-dimensional origin of the Big Bang. The identities are established field-theory and numerical-analysis tools; these calculations alone do not establish novel fundamental mathematics.

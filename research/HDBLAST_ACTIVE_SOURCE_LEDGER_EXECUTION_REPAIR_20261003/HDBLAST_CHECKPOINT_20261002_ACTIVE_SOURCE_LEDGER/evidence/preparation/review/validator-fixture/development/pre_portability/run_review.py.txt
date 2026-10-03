@@ -1,0 +1,55 @@
+#!/usr/bin/env python3
+"""Measure only fabricated guard processes with stdlib wait4, in normal/-O."""
+import hashlib
+import json
+import os
+from pathlib import Path
+import signal
+import sys
+import time
+
+HERE = Path(__file__).resolve().parent
+sys.dont_write_bytecode = True
+records = []
+for label, flags in (('NORMAL', []), ('OPTIMIZED', ['-O'])):
+    receipt = HERE / ('FINAL_' + label + '.json')
+    stdout = HERE / ('FINAL_' + label + '.stdout.txt')
+    stderr = HERE / ('FINAL_' + label + '.stderr.txt')
+    command = [sys.executable, *flags, '-B', str(HERE / 'fixture_guard.py'), '--receipt', str(receipt)]
+    started = time.monotonic()
+    pid = os.fork()
+    if pid == 0:
+        os.setsid()
+        with stdout.open('w') as out, stderr.open('w') as err:
+            os.dup2(out.fileno(), 1)
+            os.dup2(err.fileno(), 2)
+            os.execv(command[0], command)
+    timed_out = False
+    while True:
+        waited, status, usage = os.wait4(pid, os.WNOHANG)
+        if waited:
+            break
+        if time.monotonic() - started > 900:
+            os.killpg(pid, signal.SIGKILL)
+            waited, status, usage = os.wait4(pid, 0)
+            timed_out = True
+            break
+        time.sleep(0.05)
+    record = {
+        'name': label, 'scope': 'FABRICATED GUARD EXECUTION ONLY; NO PHYSICAL ROUTE',
+        'executor_uid': os.getuid(), 'elapsed_seconds': time.monotonic() - started,
+        'wait4_peak_rss_kib': usage.ru_maxrss, 'exit_code': os.waitstatus_to_exitcode(status),
+        'timed_out': timed_out, 'command': command,
+        'stdout_file': stdout.name, 'stderr_file': stderr.name,
+        'receipt_sha256': hashlib.sha256(receipt.read_bytes()).hexdigest() if receipt.exists() else None,
+    }
+    records.append(record)
+    (HERE / 'GUARD_EXECUTION_RECEIPTS.json').write_text(json.dumps({
+        'scope': 'MEASURED SYNTHETIC GUARD PROCESSES; FABRICATED ROUTE RECEIPTS ARE SEPARATE',
+        'physical_routes_run': False, 'physical_arrays_read': False,
+        'runner_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        'executions': records}, indent=2, sort_keys=True) + '\n')
+    print(json.dumps(record), flush=True)
+    if record['exit_code'] != 0 or timed_out or not 0 < usage.ru_maxrss <= 262144 or os.getuid() <= 0:
+        sys.exit(1)
+sys.exit(0)

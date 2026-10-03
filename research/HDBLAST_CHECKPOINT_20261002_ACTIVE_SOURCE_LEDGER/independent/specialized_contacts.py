@@ -1,0 +1,63 @@
+"""Pure-symbolic specialized independent Pair inventory; no physical evaluations."""
+import numpy as np
+LD=np.longdouble
+
+def directional_subtractions(k,L,jet):
+    W=np.sqrt(k*k+2*L*L)
+    h0,h1,h2,h3,h4,h5=jet
+    iw1=1/W
+    iw2=iw1*iw1
+    iw3=iw1*iw2
+    iw5=iw3*iw2
+    iw7=iw5*iw2
+    iw9=iw7*iw2
+    iw11=iw9*iw2
+    iw13=iw11*iw2
+    iw15=iw13*iw2
+    l2=L*L
+    l3=l2*L
+    l4=l3*L
+    l5=l4*L
+    l6=l5*L
+    l7=l6*L
+    l8=l7*L
+    l9=l8*L
+    l10=l9*L
+    l11=l10*L
+    l12=l11*L
+    l13=l12*L
+    l14=l13*L
+    l15=l14*L
+    l16=l15*L
+    a0=iw3
+    a1=((LD(1)/LD(8)))*h3
+    a2=iw1
+    a3=l2
+    a4=a2*a3*h0
+    a5=a0*a3*h2
+    a6=l3
+    a7=iw5
+    a8=((LD(1)/LD(4)))*a6*a7*h3
+    a9=a0*a6*h1
+    a10=l4
+    a11=((LD(1)/LD(2)))*a10
+    a12=a7*h2
+    a13=iw7
+    a14=l5
+    a15=a13*a14
+    a16=a14*a7*h1
+    a17=l6
+    a18=a13*a17*h2
+    a19=l7
+    a20=a13*a19*h1
+    a21=l8
+    a22=iw9
+    a23=a13*a21*h0
+    a24=l9
+    a25=l10
+    a26=iw11
+    a27=((LD(105)/LD(4)))*l11*a26*h1
+    a28=l12*a26*h0
+    a29=iw13
+    a30=l14*a29*h0
+    return -L*a0*a1 + ((LD(1)/LD(2)))*L*a2*h1 + a0*a11*h0 - a1*a15 + a11*a12 + ((LD(7)/LD(2)))*a16 - (LD(3)/LD(4))*a17*a7*h0 + ((LD(17)/LD(8)))*a18 + ((LD(81)/LD(4)))*a20 + ((LD(7)/LD(4)))*a21*a22*h2 - (LD(35)/LD(2))*a22*a24*h1 - (LD(833)/LD(8))*a22*a25*h0 + 15*a23 - a27 + ((LD(21)/LD(2)))*a28 + ((LD(1155)/LD(8)))*a30 + a4 + ((LD(1)/LD(8)))*a5 - a8 + ((LD(3)/LD(2)))*a9,((LD(5005)/LD(4)))*l16*h0/W**15 - (LD(385)/LD(2))*l13*a29*h1 - (LD(1)/LD(24))*L*a0*h3 + ((LD(1)/LD(6)))*L*a2*h1 + ((LD(1)/LD(6)))*a0*a10*h0 + ((LD(1)/LD(24)))*a0*h4 - (LD(17)/LD(12))*a10*a12 + ((LD(1)/LD(24)))*a10*a13*h4 - (LD(11)/LD(8))*a15*h3 - (LD(2)/LD(3))*a16 + ((LD(9)/LD(4)))*a17*a7*h0 - (LD(69)/LD(8))*a18 - (LD(7)/LD(6))*a19*a22*h3 - (LD(1)/LD(6))*a2*h2 - (LD(251)/LD(12))*a20 + ((LD(35)/LD(3)))*a21*a22*h2 + ((LD(273)/LD(2)))*a22*a24*h1 + ((LD(3059)/LD(8)))*a22*a25*h0 - (LD(75)/LD(2))*a23 + ((LD(77)/LD(4)))*a25*a26*h2 - a27 - (LD(2653)/LD(4))*a28 + ((LD(1)/LD(12)))*a3*a7*h4 - (LD(4389)/LD(8))*a30 - (LD(1)/LD(3))*a4 - (LD(13)/LD(24))*a5 - a8 - (LD(1)/LD(3))*a9
