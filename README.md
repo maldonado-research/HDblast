@@ -168,3 +168,9 @@ invited to check the work and report errors by opening a GitHub issue.
 *Research assistance: parts of the 2025–2026 calculations and documents were prepared with AI
 assistants under the author's direction: Claude (Anthropic) and OpenAI ChatGPT/Codex. The October checkpoints were prepared with AI
 assistance and independent internal computational checks. Verification steps are recorded in each checkpoint.*
+
+## Separate FTL research program
+
+The Einstein Audit for Faster-Than-Light Hidden Sectors continues in the [dedicated FTL repository](https://github.com/maldonado-research/faster-than-light). Start with its [readable project overview](https://maldonado-research.github.io/projects/faster-than-light/) or the repository's [FTL README](https://github.com/maldonado-research/faster-than-light#readme).
+
+The [September 30 documentation edition](research/FTL_EINSTEIN_AUDIT_20260930/) remains here as a historical copy of the September 8 research snapshot, with its equations, assumptions, history, evidence limits, and sources. It is a distinct working-hypothesis/methods program; HDBLAST results do not validate it. No empirical FTL detection or external peer review is documented. Its original [FTL overview](research/FTL_EINSTEIN_AUDIT_20260930/README.md) remains available.
