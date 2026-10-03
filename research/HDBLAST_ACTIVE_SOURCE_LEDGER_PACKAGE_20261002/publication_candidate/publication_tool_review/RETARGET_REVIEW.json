@@ -1,0 +1,102 @@
+{
+  "acceptance_limits": [
+    "Scientific completion supplied by separately reviewed evidence; no physical evaluation in this review",
+    "Saved record checks requested metadata fields and permits unrelated response fields; exponent overflow in unchecked extras is not rejected"
+  ],
+  "authorized_owner": 1386319,
+  "checks": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_extension"
+      ],
+      "cwd": "/workspace/hdblast-research-work/active-source-20261002/publication_extension",
+      "exit_code": 0,
+      "name": "extension_normal",
+      "outcome": "PASS",
+      "tests_completed": 14
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-O",
+        "-m",
+        "unittest",
+        "-v",
+        "test_extension"
+      ],
+      "cwd": "/workspace/hdblast-research-work/active-source-20261002/publication_extension",
+      "exit_code": 0,
+      "name": "extension_optimized",
+      "outcome": "PASS",
+      "tests_completed": 14
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "test_independent_extension.py"
+      ],
+      "cwd": "/workspace/hdblast-research-work/active-source-20261002/publication_extension/independent_review",
+      "exit_code": 0,
+      "name": "independent_normal",
+      "outcome": "PASS",
+      "tests_completed": 16
+    },
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-O",
+        "test_independent_extension.py"
+      ],
+      "cwd": "/workspace/hdblast-research-work/active-source-20261002/publication_extension/independent_review",
+      "exit_code": 0,
+      "name": "independent_optimized",
+      "outcome": "PASS",
+      "tests_completed": 16
+    }
+  ],
+  "concept_doi": "10.5281/zenodo.17088132",
+  "current_main_draft": 23114217,
+  "current_publish_go": false,
+  "current_published_record": 23112891,
+  "exact_zip_checkpoint_prefix_authenticated": true,
+  "full_zip_manifest_membership_and_streaming_payload_sha256_authenticated": true,
+  "network_requests": 0,
+  "old_candidate_baseline_sha256": {
+    "FILE_MANIFEST.json": "2ac71c9b14d459aa239bc7ed5e7ed04c058d50ed9af97c6781b987bb8a636144",
+    "HDBLAST_V25_PUBLICATION_OVERVIEW_20261002.md": "fe07611933d8156401f0ff529c8fa9a8c669d17313c09b928f8dc85e8347a9a1",
+    "METADATA.json": "e2eed4d5da15c227a18d73964acd129b6857180d4767a8644c111b029b8978a9"
+  },
+  "old_candidate_edited": false,
+  "peer_source_review": "GO for requested helper contracts; reviewed builder/prepare/verifier/inventory SHA256 match final receipt",
+  "physical_array_accesses": 0,
+  "prior_target_is_historical_snapshot": true,
+  "real_candidate_builds": 0,
+  "remaining_defects": [],
+  "remote_mutations": 0,
+  "retarget_mutation_guards_pass": true,
+  "reviewed_sha256": {
+    "CANDIDATE_README.md": "3ca18ac55603316691df74630ee69e240e5b747e1099e6a8a46ef94647dcb102",
+    "TEMPLATE_SOURCE_FREE_MANIFEST.json": "2ac71c9b14d459aa239bc7ed5e7ed04c058d50ed9af97c6781b987bb8a636144",
+    "build_extension.py": "0da9b56e091b75b0ca6296e524d44d00f6a154e6229de561cc5e90b0ed1f25f7",
+    "helpers/extension_inventory.py": "d393be6d6f4089e5a17c15f0d5657218f423a094a1c3dbd32296a2ee51c43736",
+    "helpers/prepare_candidate.py": "659ea416bcd91bd43c62418700e03199a6b79c4935787f0bc81b63ed2f5a2163",
+    "helpers/verify_saved_record.py": "afd6f5c7ac6037f6734d50707289dd0da27498b455aa8917a0a80042a14988f7",
+    "independent_review/test_independent_extension.py": "f82e620814a16eba91cea7741eb2a020ebd78861c1fb6a235ee6fe6c0d94667e",
+    "test_extension.py": "17bf9d9f1cbaee77394571d5a4a19362159562b3271fc85c792f8da5428466c8"
+  },
+  "reviewed_source_stable": true,
+  "reviewed_utc": "2026-10-03T04:05:00.762898+00:00",
+  "reviewer_edited_helpers": false,
+  "schema_version": 1,
+  "scientific_evaluations": 0,
+  "scope": "Fabricated local retarget helper review only; no API writes or current publish GO",
+  "verdict": "GO_RECONCILED_LOCAL_TOOLS_ONLY_NO_CURRENT_PUBLISH_GO"
+}

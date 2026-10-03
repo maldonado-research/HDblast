@@ -1,0 +1,313 @@
+#!/usr/bin/env python3
+"""Offline manufactured ZIP guards; never decode study arrays or call networks."""
+from __future__ import annotations
+import argparse
+import copy
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+import stat
+import subprocess
+import sys
+import tempfile
+import zipfile
+
+HERE = Path(__file__).resolve().parent
+SOURCE = HERE / 'reassemble.py'
+CHECKPOINT = 'HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER'
+checks = []
+
+
+def require(condition, message):
+    if not condition:
+        raise RuntimeError(message)
+
+
+def check(name, condition):
+    require(condition, name)
+    checks.append(name)
+
+
+def sha(raw):
+    return hashlib.sha256(raw).hexdigest()
+
+
+def load():
+    spec = importlib.util.spec_from_file_location('fabricated_reassembler', SOURCE)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def write_zip(path, entries, compression=zipfile.ZIP_DEFLATED):
+    with zipfile.ZipFile(path, 'x') as archive:
+        for name, raw, mode in entries:
+            info = zipfile.ZipInfo(name, date_time=(2026, 10, 2, 0, 0, 0))
+            info.create_system = 3
+            info.external_attr = mode << 16
+            info.compress_type = compression
+            archive.writestr(info, raw)
+
+
+def fixture(root, count=2, entries=None, payload=None, compression=zipfile.ZIP_DEFLATED, transform=None):
+    root.mkdir()
+    files = {'FREEZE_RECEIPT.json': b'{"fabricated":true}\n', 'README.md': b'Fabricated fixture only.\n',
+             'nested/empty.txt': b''}
+    if payload is None:
+        payload = {'schema_version': 1, 'files': {name: sha(raw) for name, raw in files.items()},
+                   'excluded': ['MANIFEST.json']}
+    raw_manifest = payload if isinstance(payload, bytes) else (json.dumps(payload, sort_keys=True) + '\n').encode()
+    if entries is None:
+        entries = [(CHECKPOINT + '/' + name, raw, stat.S_IFREG | 0o644) for name, raw in files.items()]
+        entries.append((CHECKPOINT + '/MANIFEST.json', raw_manifest, stat.S_IFREG | 0o644))
+    archive = root / 'fixture.zip'
+    write_zip(archive, entries, compression)
+    raw = archive.read_bytes()
+    if transform is not None:
+        raw = transform(raw)
+        archive.write_bytes(raw)
+    parts = []
+    cuts = [len(raw) * i // count for i in range(count + 1)]
+    for i, (start, end) in enumerate(zip(cuts[:-1], cuts[1:], strict=True)):
+        part = raw[start:end]
+        name = 'fixture.zip.part' + str(i + 1).zfill(3)
+        (root / name).write_bytes(part)
+        parts.append({'path': name, 'bytes': len(part), 'sha256': sha(part)})
+    manifest = {'schema_version': 1, 'checkpoint': CHECKPOINT, 'zip_bytes': len(raw),
+                'zip_sha256': sha(raw), 'package_manifest_sha256': sha(raw_manifest), 'parts': parts}
+    path = root / 'PARTS_MANIFEST.json'
+    path.write_text(json.dumps(manifest) + '\n')
+    return path, manifest, archive
+
+
+def save(path, manifest):
+    path.write_text(json.dumps(manifest) + '\n')
+
+
+def rejected(module, label, path, manifest, output, expected=None):
+    try:
+        module.reconstruct(path, expected or manifest['zip_sha256'], output)
+    except (ValueError, RuntimeError, OSError, zipfile.BadZipFile, KeyError, TypeError):
+        pass
+    else:
+        raise RuntimeError('Guard accepted ' + label)
+    check('reject_' + label, not output.exists() and not output.is_symlink())
+    check('cleanup_' + label, not list(output.parent.glob('.verified-hdblast-zip-*')))
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--output', type=Path, required=True)
+    args = parser.parse_args()
+    require(not args.output.exists(), 'Fresh guard receipt required')
+    source_pin = sha(SOURCE.read_bytes())
+    module = load()
+    with tempfile.TemporaryDirectory(prefix='hdblast-synthetic-distribution-', dir='/tmp') as temporary:
+        root = Path(temporary)
+        for count in (1, 2, 3):
+            path, manifest, archive = fixture(root / ('success' + str(count)), count=count)
+            output = path.parent / 'rebuilt.zip'
+            result = module.reconstruct(path, manifest['zip_sha256'], output)
+            check('byte_exact_' + str(count) + '_parts', output.read_bytes() == archive.read_bytes())
+            check('full_inventory_' + str(count) + '_parts', result['zip_members_verified'] == 4
+                  and result['complete_payload_membership_verified'] is True
+                  and result['physical_evaluations'] == 0 and result['parts_verified'] == count)
+        mutations = {
+            'boolean_schema': lambda m: m.update(schema_version=True),
+            'unknown_schema': lambda m: m.update(schema_version=2),
+            'boolean_zip_bytes': lambda m: m.update(zip_bytes=True),
+            'float_zip_bytes': lambda m: m.update(zip_bytes=float(m['zip_bytes'])),
+            'wrong_archive_hash': lambda m: m.update(zip_sha256='0' * 64),
+            'uppercase_archive_hash': lambda m: m.update(zip_sha256=m['zip_sha256'].upper()),
+            'unsafe_checkpoint': lambda m: m.update(checkpoint='../checkpoint'),
+            'nested_checkpoint': lambda m: m.update(checkpoint='a/b'),
+            'empty_parts': lambda m: m.update(parts=[]),
+            'duplicate_parts': lambda m: m['parts'].append(copy.deepcopy(m['parts'][0])),
+            'unsafe_part': lambda m: m['parts'][0].update(path='../part'),
+            'backslash_part': lambda m: m['parts'][0].update(path='bad\\part'),
+            'colon_part': lambda m: m['parts'][0].update(path='bad:part'),
+            'boolean_part_bytes': lambda m: m['parts'][0].update(bytes=True),
+            'zero_part_bytes': lambda m: m['parts'][0].update(bytes=0),
+            'oversize_part_bytes': lambda m: m['parts'][0].update(bytes=module.MAX_PART_BYTES + 1),
+            'invalid_part_hash': lambda m: m['parts'][0].update(sha256='bad'),
+            'wrong_part_hash': lambda m: m['parts'][0].update(sha256='0' * 64),
+            'wrong_embedded_hash': lambda m: m.update(package_manifest_sha256='0' * 64),
+            'wrong_total_size': lambda m: m.update(zip_bytes=m['zip_bytes'] + 1),
+            'reversed_parts': lambda m: m['parts'].reverse(),
+        }
+        for label, change in mutations.items():
+            path, manifest, _ = fixture(root / label)
+            explicit_pin = manifest['zip_sha256']
+            change(manifest)
+            save(path, manifest)
+            rejected(module, label, path, manifest, path.parent / 'output.zip', expected=explicit_pin)
+        for label in ('missing_part', 'changed_part', 'wrong_part_size', 'symlink_part', 'symlink_manifest'):
+            path, manifest, _ = fixture(root / label)
+            part = path.parent / manifest['parts'][0]['path']
+            if label == 'missing_part':
+                part.unlink()
+            elif label == 'changed_part':
+                raw = part.read_bytes()
+                part.write_bytes(bytes([raw[0] ^ 1]) + raw[1:])
+            elif label == 'wrong_part_size':
+                part.write_bytes(part.read_bytes() + b'x')
+            elif label == 'symlink_part':
+                renamed = part.with_suffix('.saved')
+                part.rename(renamed)
+                part.symlink_to(renamed)
+            else:
+                renamed = path.with_suffix('.saved')
+                path.rename(renamed)
+                path.symlink_to(renamed)
+            rejected(module, label, path, manifest, path.parent / 'output.zip')
+        path, manifest, _ = fixture(root / 'json_duplicate')
+        raw = path.read_text()
+        path.write_text('{"schema_version":1,' + raw[1:])
+        rejected(module, 'duplicate_JSON_key', path, manifest, path.parent / 'output.zip')
+        path, manifest, _ = fixture(root / 'json_nonfinite')
+        path.write_text(path.read_text().replace('{', '{"irrelevant":NaN,', 1))
+        rejected(module, 'nonfinite_JSON', path, manifest, path.parent / 'output.zip')
+        path, manifest, _ = fixture(root / 'json_overflow_float')
+        path.write_text(path.read_text().replace('{', '{"irrelevant":1e999,', 1))
+        rejected(module, 'overflow_JSON_float', path, manifest, path.parent / 'output.zip')
+        ordinary_payload = {'schema_version': 1, 'files': {'FREEZE_RECEIPT.json': sha(b'{}')}, 'excluded': []}
+        ordinary_manifest = json.dumps(ordinary_payload).encode()
+        ordinary_entries = [(CHECKPOINT + '/FREEZE_RECEIPT.json', b'{}', stat.S_IFREG | 0o644),
+                            (CHECKPOINT + '/MANIFEST.json', ordinary_manifest, stat.S_IFREG | 0o644)]
+        zip_mutations = {
+            'wrong_prefix': [(name.replace(CHECKPOINT, 'OTHER'), raw, mode) for name, raw, mode in ordinary_entries],
+            'zip_symlink': [(ordinary_entries[0][0], b'{}', stat.S_IFLNK | 0o777), ordinary_entries[1]],
+            'zip_duplicate': ordinary_entries + [ordinary_entries[0]],
+            'zip_extra': ordinary_entries + [(CHECKPOINT + '/extra.txt', b'x', stat.S_IFREG | 0o644)],
+            'zip_missing_payload': ordinary_entries[1:],
+            'zip_missing_manifest': ordinary_entries[:1],
+            'zip_unsafe_path': ordinary_entries + [(CHECKPOINT + '/../escape', b'x', stat.S_IFREG | 0o644)],
+            'zip_backslash_path': ordinary_entries + [(CHECKPOINT + '/bad\\path', b'x', stat.S_IFREG | 0o644)],
+            'wrong_payload_hash': [(ordinary_entries[0][0], b'xx', ordinary_entries[0][2]), ordinary_entries[1]],
+        }
+        for label, entries in zip_mutations.items():
+            path, manifest, _ = fixture(root / label, entries=entries, payload=ordinary_manifest)
+            rejected(module, label, path, manifest, path.parent / 'output.zip')
+        marker = CHECKPOINT + '/FREEZE_RECEIPT.json\x01suffix'
+        raw_nul_entries = [(marker, b'{}', stat.S_IFREG | 0o644), ordinary_entries[1]]
+        def raw_nul(raw):
+            before = marker.encode()
+            after = before.replace(b'\x01', b'\0')
+            require(raw.count(before) == 2, 'Manufactured local/central filename coverage')
+            return raw.replace(before, after)
+        path, manifest, _ = fixture(root / 'zip_raw_NUL', entries=raw_nul_entries,
+                                     payload=ordinary_manifest, transform=raw_nul)
+        rejected(module, 'raw_NUL_ZIP_filename', path, manifest, path.parent / 'output.zip')
+        def encrypted(raw):
+            value = bytearray(raw)
+            local = value.index(b'PK\x03\x04')
+            central = value.index(b'PK\x01\x02')
+            value[local + 6] |= 1
+            value[central + 8] |= 1
+            return bytes(value)
+        path, manifest, _ = fixture(root / 'zip_encrypted', entries=ordinary_entries,
+                                     payload=ordinary_manifest, transform=encrypted)
+        rejected(module, 'encrypted_ZIP_flag', path, manifest, path.parent / 'output.zip')
+        def bad_crc(raw):
+            value = bytearray(raw)
+            local = value.index(b'PK\x03\x04')
+            central = value.index(b'PK\x01\x02')
+            value[local + 14] ^= 1
+            value[central + 16] ^= 1
+            return bytes(value)
+        path, manifest, _ = fixture(root / 'zip_bad_CRC', entries=ordinary_entries,
+                                     payload=ordinary_manifest, transform=bad_crc)
+        rejected(module, 'bad_member_CRC', path, manifest, path.parent / 'output.zip')
+        for label, payload in (
+            ('embedded_boolean_schema', {**ordinary_payload, 'schema_version': True}),
+            ('embedded_no_freeze', {'schema_version': 1, 'files': {'other': sha(b'x')}}),
+            ('embedded_self_inventory', {'schema_version': 1, 'files': {'FREEZE_RECEIPT.json': sha(b'{}'), 'MANIFEST.json': '0' * 64}}),
+            ('embedded_duplicate_key', b'{"schema_version":1,"schema_version":1,"files":{"FREEZE_RECEIPT.json":"' + sha(b'{}').encode() + b'"}}'),
+        ):
+            payload_raw = payload if isinstance(payload, bytes) else json.dumps(payload).encode()
+            entries = [ordinary_entries[0], (ordinary_entries[1][0], payload_raw, stat.S_IFREG | 0o644)]
+            path, manifest, _ = fixture(root / label, entries=entries, payload=payload_raw)
+            rejected(module, label, path, manifest, path.parent / 'output.zip')
+        path, manifest, _ = fixture(root / 'zip_compression', compression=zipfile.ZIP_BZIP2)
+        rejected(module, 'unsupported_compression', path, manifest, path.parent / 'output.zip')
+        for i, explicit in enumerate(('bad', 'A' * 64, '0' * 63)):
+            path, manifest, _ = fixture(root / ('malformed_pin' + str(i)))
+            rejected(module, 'malformed_explicit_pin_' + str(i), path, manifest,
+                     path.parent / 'output.zip', expected=explicit)
+        limit = module.MAX_MANIFEST_BYTES
+        path, manifest, _ = fixture(root / 'outer_manifest_limit')
+        module.MAX_MANIFEST_BYTES = 1
+        try:
+            rejected(module, 'outer_manifest_limit', path, manifest, path.parent / 'output.zip')
+        finally:
+            module.MAX_MANIFEST_BYTES = limit
+        payload = {**ordinary_payload, 'irrelevant_padding': 'x' * 5000}
+        payload_raw = json.dumps(payload).encode()
+        entries = [ordinary_entries[0], (ordinary_entries[1][0], payload_raw, stat.S_IFREG | 0o644)]
+        path, manifest, _ = fixture(root / 'embedded_manifest_limit', entries=entries, payload=payload_raw)
+        module.MAX_MANIFEST_BYTES = 2000
+        try:
+            rejected(module, 'embedded_manifest_limit', path, manifest, path.parent / 'output.zip')
+        finally:
+            module.MAX_MANIFEST_BYTES = limit
+        path, manifest, _ = fixture(root / 'existing_output')
+        output = path.parent / 'output.zip'
+        output.write_bytes(b'preserved')
+        try: module.reconstruct(path, manifest['zip_sha256'], output)
+        except ValueError: pass
+        else: raise RuntimeError('Overwrote existing output')
+        check('existing_output_preserved', output.read_bytes() == b'preserved')
+        path, manifest, _ = fixture(root / 'dangling_output')
+        output = path.parent / 'output.zip'
+        output.symlink_to(path.parent / 'nonexistent')
+        try: module.reconstruct(path, manifest['zip_sha256'], output)
+        except ValueError: pass
+        else: raise RuntimeError('Accepted dangling output symlink')
+        check('dangling_output_symlink_preserved', output.is_symlink())
+        path, manifest, _ = fixture(root / 'ancestor_symlink')
+        link = root / 'alias'
+        link.symlink_to(path.parent, target_is_directory=True)
+        rejected(module, 'symlink_ancestry', link / path.name, manifest, root / 'ancestor-output.zip')
+        path, manifest, _ = fixture(root / 'race')
+        original = module.verify_zip
+        output = path.parent / 'output.zip'
+        def race(*values):
+            result = original(*values)
+            output.write_bytes(b'concurrent owner')
+            return result
+        module.verify_zip = race
+        try: module.reconstruct(path, manifest['zip_sha256'], output)
+        except ValueError: pass
+        else: raise RuntimeError('Accepted output appearing before atomic publication')
+        finally: module.verify_zip = original
+        check('concurrent_output_preserved', output.read_bytes() == b'concurrent owner')
+        check('concurrent_failure_temp_cleaned', not list(output.parent.glob('.verified-hdblast-zip-*')))
+        path, manifest, _ = fixture(root / 'CLI')
+        output = path.parent / 'output.zip'
+        receipt = path.parent / 'RECEIPT.json'
+        command = [sys.executable] + (['-O'] if sys.flags.optimize else []) + [str(SOURCE),
+                   '--parts-manifest', str(path), '--expected-sha256', manifest['zip_sha256'],
+                   '--output', str(output), '--receipt', str(receipt)]
+        process = subprocess.run(command, capture_output=True)
+        check('CLI_receipt_success', process.returncode == 0 and json.loads(receipt.read_text())['physical_evaluations'] == 0)
+        blocked = path.parent / 'blocked.zip'
+        command[command.index('--output') + 1] = str(blocked)
+        process = subprocess.run(command, capture_output=True)
+        check('CLI_existing_receipt_blocks_before_output', process.returncode != 0 and not blocked.exists())
+        alias = path.parent / 'alias-output.zip'
+        command[command.index('--output') + 1] = str(alias)
+        command[command.index('--receipt') + 1] = str(alias)
+        process = subprocess.run(command, capture_output=True)
+        check('CLI_receipt_output_alias_rejected_before_output', process.returncode != 0 and not alias.exists())
+    check('source_unchanged', sha(SOURCE.read_bytes()) == source_pin)
+    receipt = {'status': 'PASS_SYNTHETIC_REASSEMBLY_GUARDS', 'python_optimization': sys.flags.optimize,
+               'check_count': len(checks), 'checks': checks, 'reassembler_sha256': source_pin,
+               'test_source_sha256': sha(Path(__file__).read_bytes()), 'physical_evaluations': 0,
+               'real_network_calls': 0, 'frozen_checkpoint_changes': False}
+    args.output.write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+    print(json.dumps({key: receipt[key] for key in ('status', 'check_count', 'python_optimization')}, sort_keys=True))
+
+
+if __name__ == '__main__':
+    main()
