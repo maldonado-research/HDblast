@@ -32,9 +32,11 @@ The September static-branch study is a **separate companion record**. Its all-ve
 [10.5281/zenodo.22922927](https://doi.org/10.5281/zenodo.22922927), not the program identifier above.
 Authenticated live checks on 2 October 2026 (3 October UTC) confirm that the latest published
 main-family version remains **2026.09.05-v24**, record **22347452**. Its main concept resolves
-to that record, and it appears in the author's owned deposition inventory. The public GitHub
-connection was enabled in the author's signed-in Zenodo account; that integration repair does
-not establish a publication or automatically join a GitHub-generated record to this manual family.
+to that record, and it appears in the author's owned deposition inventory. The latest
+delegated browser check supersedes the earlier integration-enable report: automatic GitHub
+archiving is **OFF for all eight public repositories**, with empty release histories.
+Publication uses the existing token/API workflow, preserving the established DOI families.
+Do not re-enable automatic archiving or create a test release.
 
 The reviewed **2026.10.02-v25** candidate now has one main-family draft, **23112891**, created
 from v24's verified new-version link. Its ten inherited v24 files remain unchanged. A single

@@ -1,0 +1,512 @@
+#!/usr/bin/env python3
+"""Authoritative active-source exact-decimal validation, with retained negative science.
+
+No numerical producer or array reader is imported. All result mathematics uses
+Fraction(Decimal(string)); native-LD errors are scientific outcomes, not schema
+or arithmetic execution failures. CLI authenticates registered bytes first.
+"""
+from __future__ import annotations
+import argparse
+from decimal import Decimal, InvalidOperation
+from fractions import Fraction as Q
+import hashlib
+from functools import lru_cache
+import importlib.util
+import json
+from pathlib import Path
+import re
+import sys
+
+ARITHMETIC=Q('1e-12'); SCIENCE=Q('2e-7'); ATTRIBUTION=Q('2e-6')
+SOURCES=('positive_B','signed_uB'); SETTINGS=('coarse','fine'); KS=(64,128,256)
+LEVELS=('80','100'); PRIMARY_CONTROLS=(24,32); INDEPENDENT_CONTROLS=('16_16','16_24','24_24')
+CLASSIFICATIONS={'LEDGER_ERROR_DEMONSTRATED','NO_GATE_SCALE_ATTRIBUTION','CONSISTENCY_FAILURE'}
+PRIMARY_PROFILES=('F', 'G', 'P', 'R', 'baseline_contact', 'canonical_constant', 'contact_F', 'contact_P', 'contact_R', 'p0', 'rho0', 'stored_F', 'stored_P', 'stored_R', 'stored_baseline_contact', 'times')
+PRIMARY_ANCHORS=('analytic_p0_anchors', 'analytic_rho0_anchors', 'discrete_baseline_contact_residual_anchors', 'discrete_contact_P_anchors', 'discrete_contact_P_minus_analytic_anchors', 'discrete_contact_R_anchors', 'discrete_contact_R_minus_analytic_anchors', 'discrete_operator_P_residual_anchors', 'discrete_operator_R_residual_anchors', 'discrete_p0_anchors', 'discrete_rho0_anchors')
+PRIMARY_SCALARS=('I_ab', 'source_work_integral', 'full_contact_ledger_integral', 'E_flow', 'predicted_delta_R', 'predicted_Ward_residual', 'canonical_constant_drift', 'discrete_source_moment', 'analytic_source_moment', 'mixed_momentum_work', 'moment_quantization_only_bound', 'E_flow_signed_projection', 'E_flow_triangle_bound', 'flow_exact_projection_gap', 'primitive_contact_identity_gap', 'DeltaR', 'S_ab', 'S_direct_reset', 'D_S', 'D_cont', 'E_Q', 'S_global_minus_reset', 'decomposition_error', 'contact_endpoint_defect', 'flow_operator_closure', 'flow_contact_decomposition_error', 'R_profile_max_error', 'P_profile_max_error', 'F_profile_max_error', 'baseline_contact_profile_max_error', 'midpoint_contact_plus_flow_density_gap', 'contact_momentum_endpoint_difference', 'E_momentum', 'E_operator', 'source_primitive_residual', 'E_reconstruction', 'complete_flow_momentum_operator_decomposition_error', 'midpoint_E_flow', 'midpoint_E_momentum', 'midpoint_E_operator', 'midpoint_decomposition_error', 'midpoint_flow_triangle_bound', 'midpoint_flow_exact_projection_gap', 'E_operator_initial', 'E_operator_end', 'source_jet_profile_max_error', 'forcing_jet_profile_max_error', 'I_A', 'D_cont_A', 'E_Q_A', 'matched_decomposition_error', 'matched_integral_correction', 'raw_analytic_decomposition_error')
+FINE_SCALARS=('S_ab_double_global','S_native_minus_double')
+INDEPENDENT_CONTROL_SCALARS=('I_mode', 'I_contacts', 'I_ab', 'baseline_work_integral', 'J_Lg', 'M_discrete', 'Lg_projection', 'E_flow', 'triangle_bound', 'midpoint_E_flow', 'midpoint_triangle_bound')
+INDEPENDENT_FIELDS=('I_mode', 'I_contacts', 'I_ab', 'baseline_work_integral', 'J_Lg', 'M_discrete', 'Lg_projection', 'E_flow', 'triangle_bound', 'midpoint_E_flow', 'midpoint_triangle_bound', 'S_ab', 'S_direct_reset', 'DeltaR', 'D_S', 'D_cont', 'E_Q', 'decomposition_error', 'E_operator', 'E_evolution_ledger', 'forcing_control_gap', 'ledger_control_gap', 'joint_control_gap', 'R_profile_max_error', 'P_profile_max_error', 'F_profile_max_error', 'midpoint_E_operator', 'midpoint_density_gap', 'midpoint_projection_closure', 'initial_R_reconstruction_error', 'endpoint_R_reconstruction_error')
+PRIMARY_SCIENCE_SCALARS=('R_profile_max_error', 'P_profile_max_error', 'F_profile_max_error', 'D_cont', 'E_flow', 'E_operator', 'E_momentum', 'E_reconstruction', 'midpoint_E_flow', 'midpoint_E_operator', 'midpoint_E_momentum', 'baseline_contact_profile_max_error', 'canonical_constant_drift', 'source_primitive_residual', 'primitive_contact_identity_gap', 'source_jet_profile_max_error', 'forcing_jet_profile_max_error')
+PRIMARY_SCIENCE_ANCHORS=('discrete_operator_R_residual_anchors','discrete_operator_P_residual_anchors','discrete_baseline_contact_residual_anchors','discrete_contact_R_minus_analytic_anchors','discrete_contact_P_minus_analytic_anchors')
+INDEPENDENT_SCIENCE_SCALARS=('R_profile_max_error','P_profile_max_error','F_profile_max_error','D_cont','E_flow',
+ 'E_operator','E_evolution_ledger','midpoint_E_flow','midpoint_E_operator')
+
+class FatalValidation(ValueError):
+    pass
+
+
+def require(ok,message):
+    if not ok:raise FatalValidation(message)
+
+
+def keys(obj,expected,label):
+    require(type(obj) is dict and set(obj)==set(expected),label+' field membership differs')
+
+
+def integer(x,label):
+    require(type(x) is int,label+' must be an integer')
+    return x
+
+
+def number(value):
+    require(type(value) is str and 0<len(value)<=4096,'Scientific values must be bounded decimal strings')
+    return decimal_fraction(value)
+
+
+@lru_cache(maxsize=16384)
+def decimal_fraction(value):
+    try:d=Decimal(value)
+    except InvalidOperation as exc:raise FatalValidation('Invalid scientific decimal') from exc
+    require(d.is_finite() and abs(d.as_tuple().exponent)<=10000,'Nonfinite/out-of-range scientific decimal')
+    return Q(d)
+
+
+def rational(value):
+    require(type(value) is str and 0<len(value)<=4096,'Exact rational metadata must be a bounded string')
+    require(re.fullmatch(r'[+-]?[0-9]+(?:/[0-9]+)?',value) is not None,'Malformed exact rational metadata')
+    try:return Q(value)
+    except (ValueError,ZeroDivisionError) as exc:raise FatalValidation('Invalid exact rational metadata') from exc
+
+
+def vector(v,length,label):
+    require(type(v) is list and len(v)==length,label+' profile length differs')
+    return [number(x) for x in v]
+
+
+def close(actual,expected,label):
+    require(abs(actual-expected)<=ARITHMETIC,'Definitional arithmetic closure failed: '+label)
+
+
+def maximum_gap(a,b):
+    require(type(a) is type(b),'Scientific precision/control type differs')
+    if type(a) is str:return abs(number(a)-number(b))
+    if type(a) is int:return Q(0) if a==b else (_ for _ in ()).throw(FatalValidation('Scientific metadata integer differs'))
+    if type(a) is list:
+        require(len(a)==len(b),'Scientific precision/control length differs')
+        return max((maximum_gap(x,y) for x,y in zip(a,b)),default=Q(0))
+    if type(a) is dict:
+        require(set(a)==set(b),'Scientific precision/control field universe differs')
+        return max((maximum_gap(a[k],b[k]) for k in a),default=Q(0))
+    raise FatalValidation('Unknown scientific precision/control value type')
+
+
+def science(failures,identity,gate,value,threshold=SCIENCE):
+    if abs(value)>threshold:
+        failures.append({**identity,'gate':gate,'exact_rational_value':str(value),'threshold':str(threshold)})
+
+
+def witness(row):
+    ds=abs(number(row['D_S']))
+    return ds>ATTRIBUTION and abs(number(row['D_cont']))<=ds/10 and abs(number(row['E_Q']))>=9*ds/10
+
+
+def grid(setting):
+    divisor=128 if setting=='coarse' else 256
+    return [Q(-9,2)+Q(j,divisor) for j in range(divisor+1)]
+
+
+def check_primary_row(row,setting):
+    expected={'K',*PRIMARY_PROFILES,*PRIMARY_ANCHORS,*PRIMARY_SCALARS}
+    if setting=='fine':expected.update(FINE_SCALARS)
+    keys(row,expected,'primary row');integer(row['K'],'primary K');require(row['K'] in KS,'Unknown cutoff')
+    n=len(grid(setting));p={key:vector(row[key],n,'primary '+key) for key in PRIMARY_PROFILES}
+    require(p['times']==grid(setting),'Primary fixed time grid differs')
+    for j,t in enumerate(p['times']):
+        L=-1/t
+        close(p['R'][j],p['G'][j]+p['canonical_constant'][j]+p['contact_R'][j],'Primary direct MP density definition')
+        close(p['F'][j],L*(p['R'][j]-3*p['P'][j])-p['baseline_contact'][j],'Primary direct MP Ward integrand definition')
+        close(p['contact_F'][j],L*(p['contact_R'][j]-3*p['contact_P'][j])-p['baseline_contact'][j],'Primary direct MP contact integrand definition')
+    anchors={key:vector(row[key],3,key) for key in PRIMARY_ANCHORS}
+    v={key:number(row[key]) for key in PRIMARY_SCALARS+(FINE_SCALARS if setting=='fine' else ())}
+    mid=n//2
+    for name in ('R','P','F'):
+        close(v[name+'_profile_max_error'],max(abs(x-y) for x,y in zip(p[name],p['stored_'+name])),name+' profile maximum')
+    definitions={
+      'DeltaR':p['stored_R'][-1]-p['stored_R'][0],
+      'D_S':v['DeltaR']-v['S_ab'], 'D_cont_A':v['DeltaR']-v['I_A'], 'E_Q_A':v['I_A']-v['S_ab'],
+      'I_ab':v['I_A']+v['E_momentum'],'D_cont':v['DeltaR']-v['I_ab'],'E_Q':v['I_ab']-v['S_ab'],
+      'decomposition_error':v['D_S']-v['D_cont']-v['E_Q'],
+      'raw_analytic_decomposition_error':v['D_S']-v['D_cont_A']-v['E_Q_A'],
+      'S_global_minus_reset':v['S_ab']-v['S_direct_reset'],
+      'predicted_delta_R':p['R'][-1]-p['R'][0],
+      'predicted_Ward_residual':p['R'][-1]-p['R'][0]-v['I_A'],
+      'canonical_constant_drift':p['canonical_constant'][-1]-p['canonical_constant'][0],
+      'mixed_momentum_work':(v['analytic_source_moment']-v['discrete_source_moment'])*v['source_work_integral'],
+      'I_A':p['G'][-1]-p['G'][0]-v['discrete_source_moment']*v['source_work_integral']+v['full_contact_ledger_integral'],
+      'primitive_contact_identity_gap':v['I_A']-(p['G'][-1]-p['G'][0]+p['contact_R'][-1]-p['contact_R'][0]+v['mixed_momentum_work']),
+      'contact_momentum_endpoint_difference':(anchors['discrete_contact_R_anchors'][-1]-p['contact_R'][-1])-(anchors['discrete_contact_R_anchors'][0]-p['contact_R'][0]),
+      'E_momentum':v['contact_momentum_endpoint_difference']-v['mixed_momentum_work'],
+      'matched_integral_correction':v['E_momentum'],
+      'E_operator':v['E_operator_end']-v['E_operator_initial'],
+      'E_operator_initial':p['stored_R'][0]-p['R'][0]-(anchors['discrete_contact_R_anchors'][0]-p['contact_R'][0]),
+      'E_operator_end':p['stored_R'][-1]-p['R'][-1]-v['E_flow']-(anchors['discrete_contact_R_anchors'][-1]-p['contact_R'][-1]),
+      'flow_exact_projection_gap':v['E_flow_signed_projection']-v['E_flow'],
+      'baseline_contact_profile_max_error':max(abs(x-y) for x,y in zip(p['baseline_contact'],p['stored_baseline_contact'])),
+      'contact_endpoint_defect':v['E_operator']+v['contact_momentum_endpoint_difference'],
+      'source_primitive_residual':v['predicted_Ward_residual']-v['canonical_constant_drift']+v['mixed_momentum_work'],
+      'E_reconstruction':v['canonical_constant_drift']+v['source_primitive_residual'],
+      'complete_flow_momentum_operator_decomposition_error':v['D_cont_A']-v['E_flow']-v['E_momentum']-v['E_operator']-v['E_reconstruction'],
+      'matched_decomposition_error':v['D_cont']-v['E_flow']-v['E_operator']-v['E_reconstruction'],
+      'flow_operator_closure':v['D_cont_A']-v['E_flow'],
+      'flow_contact_decomposition_error':v['D_cont_A']-v['E_flow']-v['contact_endpoint_defect']-v['predicted_Ward_residual'],
+      'midpoint_contact_plus_flow_density_gap':p['stored_R'][mid]-p['R'][mid],
+      'midpoint_E_momentum':anchors['discrete_contact_R_anchors'][1]-p['contact_R'][mid],
+      'midpoint_E_operator':p['stored_R'][mid]-p['R'][mid]-v['midpoint_E_flow']-v['midpoint_E_momentum'],
+      'midpoint_decomposition_error':p['stored_R'][mid]-p['R'][mid]-v['midpoint_E_flow']-v['midpoint_E_momentum']-v['midpoint_E_operator'],
+    }
+    if setting=='fine':definitions['S_native_minus_double']=v['S_ab']-v['S_ab_double_global']
+    knot=(0,mid,n-1)
+    for j,ti in enumerate(knot):
+        close(anchors['analytic_rho0_anchors'][j],p['rho0'][ti],'analytic physical rho0 anchor')
+        close(anchors['analytic_p0_anchors'][j],p['p0'][ti],'analytic physical p0 anchor')
+        close(anchors['discrete_contact_R_minus_analytic_anchors'][j],anchors['discrete_contact_R_anchors'][j]-p['contact_R'][ti],'density contact anchor gap')
+        close(anchors['discrete_contact_P_minus_analytic_anchors'][j],anchors['discrete_contact_P_anchors'][j]-p['contact_P'][ti],'pressure contact anchor gap')
+    close(v['E_operator_initial'],anchors['discrete_operator_R_residual_anchors'][0],'initial operator bracket')
+    close(v['E_operator_end'],anchors['discrete_operator_R_residual_anchors'][-1],'final operator bracket')
+    close(v['midpoint_E_operator'],anchors['discrete_operator_R_residual_anchors'][1],'midpoint operator bracket')
+    for key,value in definitions.items():close(v[key],value,'primary '+key)
+    for key in ('decomposition_error','raw_analytic_decomposition_error','flow_contact_decomposition_error',
+                'complete_flow_momentum_operator_decomposition_error','matched_decomposition_error','midpoint_decomposition_error','flow_exact_projection_gap','midpoint_flow_exact_projection_gap'):
+        require(abs(v[key])<=ARITHMETIC,'Nonzero arithmetic identity: '+key)
+    pi=Q(14488038916154245685,4611686018427387904)
+    close(v['analytic_source_moment'],Q(row['K']**2)/(8*pi*pi),'Analytic fixed-K source moment')
+    require(v['discrete_source_moment']>0,'Nonpositive discrete source moment')
+    require(v['moment_quantization_only_bound']>=0,'Negative moment-only quantization bound')
+    require(v['E_flow_triangle_bound']>=0 and abs(v['E_flow_signed_projection'])<=v['E_flow_triangle_bound']+ARITHMETIC,'Primary endpoint flow triangle failed')
+    require(v['midpoint_flow_triangle_bound']>=0 and abs(v['midpoint_E_flow']+v['midpoint_flow_exact_projection_gap'])<=v['midpoint_flow_triangle_bound']+ARITHMETIC,'Primary midpoint flow triangle failed')
+    for key in ('R_profile_max_error','P_profile_max_error','F_profile_max_error','baseline_contact_profile_max_error','source_jet_profile_max_error','forcing_jet_profile_max_error'):require(v[key]>=0,'Negative declared error maximum')
+    return v,p,anchors
+
+
+def serialization_receipt(receipt,label):
+    keys(receipt,LEVELS,label+' serialization levels')
+    for dps in LEVELS:require(0<=rational(receipt[dps])<=ARITHMETIC,label+' serialization error exceeds threshold')
+
+
+def resource_result(resources,route):
+    require(type(resources) is dict,'Missing route resources')
+    seconds=resources['seconds'] if route=='primary' else resources['elapsed_seconds']
+    require(type(seconds) in (int,float) and type(seconds) is not bool and 0<=seconds<=900,'Inner route time budget failed')
+    require(type(resources['peak_rss_kib']) is int and 0<resources['peak_rss_kib']<=262144,'Inner route memory budget failed')
+    require(resources['limit_seconds']==900 and resources['limit_peak_rss_kib']==262144,'Inner resource limits differ')
+
+
+PRIMARY_TOP=('schema_version','route','status','records','old_metric_status','fixed_cases','interval','registration_sha256','freeze_commit','input_manifest_sha256','classification','failures','fatal_failures','attribution_cases','precision_gap_max_exact_rational','quadrature_control_gap_max_exact_rational','producer_sha256','source_unchanged_during_execution','resources','arithmetic')
+INDEPENDENT_TOP=('schema_version','old_metric_status','fixed_cases','input_manifest_sha256','resource_limits','route','status','provenance','interval','midpoint','controls','canonical_control','reduction_decimal_digits','source_phase_arithmetic','quadrature_constants','high_precision_scope','units','momentum_target','rows','serialization_max_error_by_dps','native_profile_serialization_max_error','native_profile_serialization_scope','limits','resources')
+
+def check_primary(result):
+    keys(result,PRIMARY_TOP,'Primary result')
+    require(result['source_unchanged_during_execution'] is True,'Primary source changed during execution')
+    keys(result['resources'],('seconds','peak_rss_kib','scope','limit_seconds','limit_peak_rss_kib'),'Primary resources')
+    keys(result['arithmetic'],('phase_source','quadrature_contact_integrands','decimal_precisions','fractional_bits','MP_scope','quad_error','moment_quantization_bound_scope','gap_universe'),'Primary arithmetic metadata')
+    require(result['arithmetic']['decimal_precisions']==[80,100] and result['arithmetic']['fractional_bits']==[266,333],'Primary arithmetic contexts differ')
+    require(result.get('schema_version')==1 and result.get('fixed_cases')==12,'Primary schema/case count differs')
+    require(result.get('route')=='primary_phase_green_primitive_integer_reductions','Primary route identity differs')
+    require(result.get('status')=='COMPLETED_SAVED_DATA_DIAGNOSTIC' and result.get('fatal_failures')==[],'Primary incomplete/fatal')
+    require(result.get('old_metric_status')=='FAIL' and result.get('interval')==['-4.5','-3.5'],'Primary lineage/interval differs')
+    resource_result(result['resources'],'primary')
+    records=result['records'];require(type(records) is list,'Primary records must be a list')
+    require([(r['source'],r['setting']) for r in records]==[(s,t) for s in SOURCES for t in SETTINGS],'Primary case membership/order differs')
+    failures=[];lookup={};precision_max=Q(0);control_max=Q(0)
+    for record in records:
+        keys(record,('source','setting','controls'),'primary case')
+        source,setting=record['source'],record['setting'];controls=record['controls']
+        require(type(controls) is list and [c['quadrature_order'] for c in controls]==list(PRIMARY_CONTROLS),'Primary control membership differs')
+        for control in controls:
+            keys(control,('quadrature_order','levels','serialization_max_error_by_dps'),'primary control')
+            integer(control['quadrature_order'],'primary control order');keys(control['levels'],LEVELS,'primary precision')
+            serialization_receipt(control['serialization_max_error_by_dps'],'primary')
+            for dps in LEVELS:
+                rows=control['levels'][dps]
+                require(type(rows) is list and [r['K'] for r in rows]==list(KS),'Primary cutoff membership/order differs')
+                for row in rows:
+                    v,p,a=check_primary_row(row,setting)
+                    ident={'route':'primary','source':source,'setting':setting,'K':row['K'],'control':str(control['quadrature_order']),'dps':dps}
+                    for field in PRIMARY_SCIENCE_SCALARS:science(failures,ident,field,v[field])
+                    for field in PRIMARY_SCIENCE_ANCHORS:science(failures,ident,field,max(abs(x) for x in a[field]))
+                    lookup[(source,setting,str(control['quadrature_order']),dps,row['K'])]=(row,v,p,a)
+            pgap=maximum_gap(control['levels']['80'],control['levels']['100'])
+            require(pgap<=ARITHMETIC,'Primary complete numeric precision universe failed')
+            precision_max=max(precision_max,pgap)
+        for dps in LEVELS:
+            cg=maximum_gap(controls[0]['levels'][dps],controls[1]['levels'][dps]);control_max=max(control_max,cg)
+            science(failures,{'route':'primary','source':source,'setting':setting,'dps':dps},'quadrature_control_gap',cg)
+    require(rational(result['precision_gap_max_exact_rational'])==precision_max,'Primary declared precision universe differs')
+    require(rational(result['quadrature_control_gap_max_exact_rational'])==control_max,'Primary declared control universe differs')
+    canonical=[(s,t,lookup[(s,t,'32','100',k)][0]) for s in SOURCES for t in SETTINGS for k in KS]
+    return lookup,failures,canonical,{'precision_gap':str(precision_max),'control_gap':str(control_max)}
+
+
+def check_independent(result):
+    keys(result,INDEPENDENT_TOP,'Independent result')
+    keys(result['resources'],('elapsed_seconds','peak_rss_kib'),'Independent resources')
+    keys(result['provenance'],('freeze_commit','registration_sha256','registered_files_checked','input_manifest_sha256'),'Independent provenance')
+    keys(result['units'],('profiles_R_P','F','baseline_r0_p0','contact_F','baseline_work_integral'),'Independent units')
+    require(result['units']['baseline_r0_p0']=='a0^4 times physical renormalized baseline rho0,p0','Independent conformal baseline units differ')
+    require(result.get('schema_version')==1 and result.get('fixed_cases')==12,'Independent schema/case count differs')
+    require(result.get('route')=='independent_direct_F_nested_Duhamel','Independent route identity differs')
+    require(result.get('status')=='COMPLETED_DIAGNOSTIC_WITHOUT_RECLASSIFYING_OLD_FAIL','Independent incomplete/fatal')
+    require(result.get('old_metric_status')=='FAIL' and result.get('interval')==['-4.5','-3.5'] and result.get('midpoint')=='-4','Independent lineage/interval differs')
+    require(result['controls']==[[16,16],[16,24],[24,24]] and result['canonical_control']==[24,24]
+            and result['reduction_decimal_digits']==[80,100],'Independent declared controls/precisions differ')
+    keys(result['resource_limits'],('wall_seconds','peak_rss_kib'),'Independent resource limit')
+    limits=result['resource_limits'];resource_result({**result['resources'],'limit_seconds':limits['wall_seconds'],'limit_peak_rss_kib':limits['peak_rss_kib']},'independent')
+    serialization_receipt(result['serialization_max_error_by_dps'],'independent')
+    require(0<=rational(result['native_profile_serialization_max_error'])<=ARITHMETIC,'Independent native serialization error failed')
+    rows=result['rows'];require(type(rows) is list,'Independent rows must be a list')
+    expected=[(s,t,k) for t in SETTINGS for s in SOURCES for k in KS]
+    require([(r['source'],r['setting'],r['K']) for r in rows]==expected,'Independent case membership/order differs')
+    lookup={};failures=[];precision_max=Q(0);control_max=Q(0)
+    for row in rows:
+        keys(row,('source','setting','K','times','profiles','contact_profiles','baseline_profiles','stored_profiles','control_profiles','anchor_recomputed','precisions'),'independent row')
+        source,setting,k=row['source'],row['setting'],integer(row['K'],'independent K');n=len(grid(setting));mid=n//2
+        times=vector(row['times'],n,'Independent time');require(times==grid(setting),'Independent fixed time grid differs')
+        parsed={}
+        for key,fields in (('profiles',('R','P','F')),('contact_profiles',('R','P','F')),('baseline_profiles',('r0','p0')),('stored_profiles',('R','P','F'))):
+            keys(row[key],fields,'independent '+key)
+            parsed[key]={f:vector(row[key][f],n,key+' '+f) for f in fields}
+        keys(row['control_profiles'],INDEPENDENT_CONTROLS,'independent control profiles')
+        for control in INDEPENDENT_CONTROLS:
+            keys(row['control_profiles'][control],('R','P','F'),'independent control profile')
+            parsed[control]={f:vector(row['control_profiles'][control][f],n,'control '+f) for f in ('R','P','F')}
+        for f in ('R','P','F'):require(parsed['24_24'][f]==parsed['profiles'][f],'Independent canonical control profile differs')
+        for control in INDEPENDENT_CONTROLS:
+            for j,t in enumerate(times):
+                # Native-LD operator arithmetic is an empirical scientific check.
+                # Contact F already includes signed negative baseline work.
+                native_definition_gap=parsed[control]['F'][j]-(-1/t)*(parsed[control]['R'][j]-3*parsed[control]['P'][j])
+                native_definition_gap-=parsed['contact_profiles']['F'][j]-(-1/t)*(parsed['contact_profiles']['R'][j]-3*parsed['contact_profiles']['P'][j])
+                science(failures,{'route':'independent','source':source,'setting':setting,'K':k,'control':control},'native_direct_F_definition',native_definition_gap)
+        keys(row['anchor_recomputed'],('initial','midpoint','endpoint'),'independent measured anchors')
+        anchors={}
+        for knot in ('initial','midpoint','endpoint'):
+            keys(row['anchor_recomputed'][knot],('R','P','F'),'independent measured anchor')
+            anchors[knot]={f:number(row['anchor_recomputed'][knot][f]) for f in ('R','P','F')}
+        keys(row['precisions'],LEVELS,'independent precision')
+        for dps in LEVELS:
+            level=row['precisions'][dps];keys(level,('K','fields','controls'),'independent precision row')
+            require(type(level['K']) is int and level['K']==k,'Independent level cutoff differs')
+            fields=INDEPENDENT_FIELDS+(FINE_SCALARS if setting=='fine' else ())
+            keys(level['fields'],fields,'independent scientific fields')
+            v={f:number(level['fields'][f]) for f in fields}
+            keys(level['controls'],INDEPENDENT_CONTROLS,'independent scientific controls');c={}
+            for control in INDEPENDENT_CONTROLS:
+                keys(level['controls'][control],INDEPENDENT_CONTROL_SCALARS,'independent control scalar')
+                c[control]={f:number(level['controls'][control][f]) for f in INDEPENDENT_CONTROL_SCALARS}
+                cv=c[control];require(cv['M_discrete']>0,'Nonpositive independent source moment');close(cv['I_ab'],cv['I_mode']+cv['I_contacts'],'independent direct mode+contact I')
+                close(cv['Lg_projection'],cv['M_discrete']*cv['J_Lg'],'independent source projection')
+                for fl,tr in (('E_flow','triangle_bound'),('midpoint_E_flow','midpoint_triangle_bound')):
+                    require(cv[tr]>=0 and abs(cv[fl])<=cv[tr]+ARITHMETIC,'Independent flow triangle failed')
+                ident={'route':'independent','source':source,'setting':setting,'K':k,'control':control,'dps':dps}
+                science(failures,ident,'D_cont',v['DeltaR']-cv['I_ab'])
+                science(failures,ident,'E_flow',cv['E_flow']);science(failures,ident,'midpoint_E_flow',cv['midpoint_E_flow'])
+                science(failures,ident,'E_evolution_ledger',v['DeltaR']-cv['I_ab']-cv['E_flow']-v['E_operator'])
+                for f in ('R','P','F'):
+                    science(failures,ident,f+'_profile_max_error',max(abs(a-b) for a,b in zip(parsed[control][f],parsed['stored_profiles'][f])))
+            for f in INDEPENDENT_CONTROL_SCALARS:close(v[f],c['24_24'][f],'independent canonical scalar '+f)
+            sr=parsed['stored_profiles']['R'];pr=parsed['profiles']['R']
+            definitions={
+             'DeltaR':sr[-1]-sr[0], 'D_S':v['DeltaR']-v['S_ab'],'D_cont':v['DeltaR']-v['I_ab'],'E_Q':v['I_ab']-v['S_ab'],
+             'decomposition_error':v['D_S']-v['D_cont']-v['E_Q'],
+             'initial_R_reconstruction_error':sr[0]-anchors['initial']['R'],
+             'endpoint_R_reconstruction_error':sr[-1]-anchors['endpoint']['R'],
+             'E_operator':v['endpoint_R_reconstruction_error']-v['initial_R_reconstruction_error'],
+             'E_evolution_ledger':v['D_cont']-v['E_flow']-v['E_operator'],
+             'midpoint_E_operator':sr[mid]-anchors['midpoint']['R'],
+             'midpoint_density_gap':sr[mid]-pr[mid],
+             'midpoint_projection_closure':v['midpoint_density_gap']-v['midpoint_E_flow']-v['midpoint_E_operator'],
+             'forcing_control_gap':c['24_24']['I_ab']-c['16_24']['I_ab'],
+             'ledger_control_gap':c['16_24']['I_ab']-c['16_16']['I_ab'],
+             'joint_control_gap':c['24_24']['I_ab']-c['16_16']['I_ab']}
+            for f in ('R','P','F'):
+                definitions[f+'_profile_max_error']=max(abs(a-b) for a,b in zip(parsed['profiles'][f],parsed['stored_profiles'][f]))
+            if setting=='fine':definitions['S_native_minus_double']=v['S_ab']-v['S_ab_double_global']
+            for key,value in definitions.items():close(v[key],value,'independent '+key)
+            require(abs(v['decomposition_error'])<=ARITHMETIC and abs(v['midpoint_projection_closure'])<=ARITHMETIC,'Independent signed arithmetic identity failed')
+            for key in ('R_profile_max_error','P_profile_max_error','F_profile_max_error'):require(v[key]>=0,'Negative independent profile error maximum')
+            ident={'route':'independent','source':source,'setting':setting,'K':k,'control':'24_24','dps':dps}
+            for f in ('E_operator','midpoint_E_operator','initial_R_reconstruction_error','endpoint_R_reconstruction_error'):science(failures,ident,f,v[f])
+            for knot,ti in (('initial',0),('midpoint',mid),('endpoint',n-1)):
+                for f in ('R','P','F'):
+                    science(failures,{**ident,'knot':knot},'measured_'+f+'_operator_gap',parsed['stored_profiles'][f][ti]-anchors[knot][f])
+            # Both paths differ in one registered algorithm component. Retain all
+            # scalar controls and all their full native profiles in the universe.
+            for left,right,label in (('16_16','16_24','ledger_control_universe'),('16_24','24_24','forcing_control_universe')):
+                cg=max(maximum_gap(level['controls'][left],level['controls'][right]),maximum_gap(row['control_profiles'][left],row['control_profiles'][right]));control_max=max(control_max,cg)
+                science(failures,ident,label,cg)
+            lookup[(source,setting,dps,k)]=(row,v,parsed,anchors,c)
+        pg=maximum_gap(row['precisions']['80'],row['precisions']['100']);precision_max=max(precision_max,pg)
+        require(pg<=ARITHMETIC,'Independent complete reported MP precision universe failed')
+    canonical=[(s,t,{'K':k,**lookup[(s,t,'100',k)][0]['precisions']['100']['fields']}) for s in SOURCES for t in SETTINGS for k in KS]
+    return lookup,failures,canonical,{'precision_gap':str(precision_max),'control_gap':str(control_max),'shared_native_profiles_precision_scope':'Retained once as exact represented native values; no independent MP evaluation of source/phase/profile arrays.'}
+
+def check_execution(receipts):
+    require(type(receipts) is list,'Outer execution receipts must be a list')
+    physical=[r for r in receipts if r.get('physical_route') is True]
+    require([r['name'] for r in physical]==['primary','independent'],'Exactly two ordered physical executions required')
+    for r in physical:
+        require(r['status']=='PASS_EXECUTION' and type(r['exit_code']) is int and r['exit_code']==0
+                and r['timed_out'] is False and r['memory_exceeded'] is False,'Outer route exit/resource failure')
+        require('exception' not in r and 'surviving_descendant_pids' not in r and 'descendant_cleanup_error' not in r,'Outer containment failure')
+        require(type(r.get('executor_uid')) is int and r['executor_uid']>0,'Nonroot containment witness missing')
+        require(r['timeout_seconds']==900 and r['memory_limit_kib']==262144 and r['process_creation_limit']==0,'Outer resource/containment limits differ')
+        require(type(r['elapsed_seconds']) in (int,float) and type(r['elapsed_seconds']) is not bool
+                and 0<=r['elapsed_seconds']<=900,'Actual complete-route time budget failed')
+        require(type(r['peak_rss_kib']) is int and 0<r['peak_rss_kib']<=262144,'Actual complete-route RSS failed')
+        require(type(r['wait4_peak_rss_kib']) is int and 0<r['wait4_peak_rss_kib']<=r['peak_rss_kib'],'wait4 authoritative RSS witness differs')
+        require(type(r['observed_peak_group_rss_kib']) is int and 0<=r['observed_peak_group_rss_kib']<=r['peak_rss_kib'],'Group RSS witness differs')
+    return [{key:r[key] for key in ('name','elapsed_seconds','peak_rss_kib','exit_code','process_creation_limit')} for r in physical]
+
+
+def classification(failures,canonical):
+    if failures:return 'CONSISTENCY_FAILURE',[]
+    cases=[{'source':s,'setting':t,'K':row['K']} for s,t,row in canonical if witness(row)]
+    return ('LEDGER_ERROR_DEMONSTRATED' if cases else 'NO_GATE_SCALE_ATTRIBUTION'),cases
+
+
+def check_primary_declaration(result,failures,canonical):
+    expected,attrib=classification(failures,canonical)
+    require(result['classification']==expected and result['attribution_cases']==attrib,'Primary classification/witness declaration differs from independently recomputed gates')
+    reported=result['failures'];require(type(reported) is list,'Primary scientific failures must be a list')
+    def ident(f,reported=False):
+        return (f.get('source'),f.get('setting'),f.get('K'),str(f.get('order')) if reported and 'order' in f else f.get('control'),f.get('dps'),f.get('gate'))
+    actual={ident(f):f for f in failures};require(len(actual)==len(failures),'Duplicate authoritative primary failure identity')
+    require(len(reported)==len(actual) and {ident(f,True) for f in reported}==set(actual),'Primary scientific failure membership differs')
+    for f in reported:
+        target=actual[ident(f,True)];gate=f['gate']
+        if gate=='quadrature_control_gap':
+            keys(f,('source','setting','dps','gate','exact_gap'),'Primary quadrature failure')
+            require(rational(f['exact_gap'])==rational(target['exact_rational_value']),'Primary control gap value differs')
+        elif gate in PRIMARY_SCIENCE_ANCHORS:
+            keys(f,('source','setting','K','order','dps','gate','values'),'Primary knot failure')
+            values=vector(f['values'],3,'Primary failed knot values')
+            require(max(abs(x) for x in values)==rational(target['exact_rational_value']),'Primary knot failure value differs')
+        else:
+            keys(f,('source','setting','K','order','dps','gate','value'),'Primary scalar failure')
+            require(number(f['value'])==rational(target['exact_rational_value']),'Primary scalar failure value differs')
+
+
+def cross_validate(primary,independent,receipts):
+    executions=check_execution(receipts)
+    p,pf,pc,pm=check_primary(primary);i,inf,ic,im=check_independent(independent)
+    check_primary_declaration(primary,pf,pc)
+    for result,name in ((primary,'primary'),(independent,'independent')):
+        outer=next(r for r in receipts if r.get('physical_route') is True and r['name']==name)
+        inner=result['resources'];secs=inner['seconds'] if name=='primary' else inner['elapsed_seconds']
+        require(secs<=outer['elapsed_seconds']+0.001 and inner['peak_rss_kib']<=outer['peak_rss_kib'],'Inner resources exceed authoritative actual outer execution')
+    failures=pf+inf;cross_failures=[];raw=[];cross_max=Q(0);stored_max=Q(0)
+    for source in SOURCES:
+        for setting in SETTINGS:
+            for k in KS:
+                for dps in LEVELS:
+                    ir,iv,ip,ia,icontrols=i[(source,setting,dps,k)]
+                    n=len(grid(setting));mid=n//2;knot=(0,mid,n-1)
+                    for order in ('24','32'):
+                        pr,pv,pp,pa=p[(source,setting,order,dps,k)]
+                        ident={'route':'cross','source':source,'setting':setting,'K':k,'primary_control':order,'dps':dps}
+                        for f in ('R','P','F'):
+                            sg=max(abs(a-b) for a,b in zip(pp['stored_'+f],ip['stored_profiles'][f]));stored_max=max(stored_max,sg)
+                            require(sg<=ARITHMETIC,'Identical stored '+f+' values differ between readers')
+                        require(pp['times']==[number(x) for x in ir['times']],'Common time grids differ')
+                        for f in ('DeltaR','S_ab','S_direct_reset')+(FINE_SCALARS if setting=='fine' else ()):
+                            sg=abs(pv[f]-iv[f]);stored_max=max(stored_max,sg);require(sg<=ARITHMETIC,'Identical stored scalar differs: '+f)
+                        for control in INDEPENDENT_CONTROLS:
+                            cv=icontrols[control];cid={**ident,'independent_control':control}
+                            derived={'I_ab':cv['I_ab'],'D_S':iv['DeltaR']-iv['S_ab'],
+                                     'D_cont':iv['DeltaR']-cv['I_ab'],'E_Q':cv['I_ab']-iv['S_ab'],
+                                     'E_flow':cv['E_flow'],'midpoint_E_flow':cv['midpoint_E_flow']}
+                            for f,other in derived.items():
+                                cg=abs(pv[f]-other);cross_max=max(cross_max,cg);science(cross_failures,cid,'matched_'+f,cg)
+                            for f in ('R','P','F'):
+                                cg=max(abs((a-c)-(b-d)) for a,c,b,d in zip(pp[f],pp['contact_'+f],ip[control][f],ip['contact_profiles'][f]));cross_max=max(cross_max,cg)
+                                science(cross_failures,cid,'mode_profile_'+f,cg)
+                        for j,ti in enumerate(knot):
+                            for f in ('R','P'):
+                                cg=pa['discrete_contact_'+f+'_anchors'][j]-ip['contact_profiles'][f][ti]
+                                cross_max=max(cross_max,abs(cg));science(cross_failures,{**ident,'knot':j},'discrete_contact_'+f,cg)
+                            L=-1/grid(setting)[ti]
+                            for pfkey,ikey in (('discrete_rho0_anchors','r0'),('discrete_p0_anchors','p0')):
+                                cg=L**4*pa[pfkey][j]-ip['baseline_profiles'][ikey][ti];cross_max=max(cross_max,abs(cg))
+                                science(cross_failures,{**ident,'knot':j},'scaled_discrete_baseline_'+ikey,cg)
+                    # Raw full-history differences are reports of distinct contact
+                    # targets. They are not automatically cross-agreement gates.
+                    pr,pv,pp,pa=p[(source,setting,'32',dps,k)]
+                    raw_profiles={f:[a-b for a,b in zip(pp[f],ip['profiles'][f])] for f in ('R','P','F')}
+                    raw_contacts={f:[a-b for a,b in zip(pp['contact_'+f],ip['contact_profiles'][f])] for f in ('R','P','F')}
+                    raw_baselines={}
+                    for pk,ik in (('rho0','r0'),('p0','p0')):
+                        raw_baselines[ik]=[(-1/t)**4*a-b for t,a,b in zip(grid(setting),pp[pk],ip['baseline_profiles'][ik])]
+                    raw.append({'source':source,'setting':setting,'K':k,'dps':dps,
+                        'raw_profile_differences_exact_rational':{f:[str(x) for x in a] for f,a in raw_profiles.items()},
+                        'raw_contact_differences_exact_rational':{f:[str(x) for x in a] for f,a in raw_contacts.items()},
+                        'raw_scaled_baseline_differences_exact_rational':{f:[str(x) for x in a] for f,a in raw_baselines.items()},
+                        'raw_profile_max_gaps_exact_rational':{f:str(max(abs(x) for x in a)) for f,a in raw_profiles.items()},
+                        'raw_contact_max_gaps_exact_rational':{f:str(max(abs(x) for x in a)) for f,a in raw_contacts.items()},
+                        'I_A_minus_independent_I_exact_rational':str(pv['I_A']-iv['I_ab']),
+                        'matched_I_minus_independent_I_exact_rational':str(pv['I_ab']-iv['I_ab']),
+                        'E_momentum_exact_rational':str(pv['E_momentum']),
+                        'scope':'Full raw target differences retained; own discrete contact reconstruction audited at only initial/midpoint/endpoint.'})
+    failures+=cross_failures
+    pclass,pw=classification(pf,pc);iclass,iw=classification(inf,ic)
+    witnesses=[]
+    if not failures:
+        iwset={(r['source'],r['setting'],r['K']) for r in iw}
+        witnesses=[r for r in pw if (r['source'],r['setting'],r['K']) in iwset]
+    verdict='CONSISTENCY_FAILURE' if failures else ('LEDGER_ERROR_DEMONSTRATED' if witnesses else 'NO_GATE_SCALE_ATTRIBUTION')
+    return {'schema_version':1,'status':'VERIFIED_COMPLETE_DIAGNOSTIC','classification':verdict,
+            'old_metric_status':'FAIL','fixed_cases':12,'interval':['-4.5','-3.5'],
+            'attribution_cases':witnesses,'failures':failures,'fatal_failures':[],
+            'routes':{'primary':{'classification':pclass,'attribution_cases':pw,**pm},
+                      'independent':{'classification':iclass,'attribution_cases':iw,**im}},
+            'cross_route_max_scientific_gap_exact_rational':str(cross_max),
+            'identical_stored_max_gap_exact_rational':str(stored_max),'executions':executions,
+            'raw_target_comparison':raw,
+            'interpretation':'Registered local anchored active-source ledger diagnostic only. Native source/phase/GL controls remain empirical; prior metric calibration FAIL and higher-dimensional hypothesis status are unchanged.'}
+
+def read_json(path):
+    def unique(items):
+        out={}
+        for key,value in items:
+            require(key not in out,'Duplicate JSON object key')
+            out[key]=value
+        return out
+    return json.loads(Path(path).read_text(),object_pairs_hook=unique)
+
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    for name in ('checkpoint-root','primary','independent','execution-receipts','output-dir'):
+        parser.add_argument('--'+name,type=Path,required=True)
+    parser.add_argument('--registration-sha256',required=True);parser.add_argument('--freeze-commit',required=True)
+    args=parser.parse_args();root=args.checkpoint_root.absolute()
+    require(not (root/'FULL_REGISTRATION.json').is_symlink(),'Registration symlink forbidden')
+    for parent in (root,*root.parents):require(not parent.is_symlink(),'Checkpoint root ancestry symlink forbidden')
+    require(not (root/'code').is_symlink(),'Checkpoint code directory symlink forbidden')
+    require(Path(__file__).absolute()==root/'code/validate_active.py','Validator must execute its exact registered entry path')
+    raw=(root/'FULL_REGISTRATION.json').read_bytes();require(hashlib.sha256(raw).hexdigest()==args.registration_sha256,'Registration SHA differs')
+    registration=read_json(root/'FULL_REGISTRATION.json');helper_path=root/'code/active_integrity.py'
+    require(not Path(__file__).is_symlink() and hashlib.sha256(Path(__file__).read_bytes()).hexdigest()==registration['files']['code/validate_active.py'],'Validator self-source differs before helper import')
+    require(not helper_path.is_symlink() and hashlib.sha256(helper_path.read_bytes()).hexdigest()==registration['files']['code/active_integrity.py'],'Unregistered integrity helper')
+    spec=importlib.util.spec_from_file_location('authenticated_active_integrity',helper_path);helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+    evidence=helper.verify_frozen(root,args.registration_sha256,args.freeze_commit)
+    require(helper.file_sha(Path(__file__))==evidence['frozen_files']['code/validate_active.py'],'Validator source differs')
+    output=helper.fresh_external(root,args.output_dir);output.mkdir()
+    try:
+        for path in (args.primary,args.independent,args.execution_receipts):require(path.is_file() and not path.is_symlink(),'Result/receipt file symlink or absence')
+        primary,independent=read_json(args.primary),read_json(args.independent)
+        for result in (primary,independent):
+            require(result['input_manifest_sha256']==evidence['frozen_files']['inputs/INPUT_MANIFEST.json'],'Wrong input lineage manifest')
+        require(primary['producer_sha256']==evidence['frozen_files']['code/diagnostic_primary.py'] and primary['source_unchanged_during_execution'] is True,'Primary executed source pin differs')
+        require(primary['registration_sha256']==args.registration_sha256 and primary['freeze_commit']==args.freeze_commit,'Primary registration/freeze differs')
+        require(independent['provenance']['registration_sha256']==args.registration_sha256 and independent['provenance']['freeze_commit']==args.freeze_commit,'Independent registration/freeze differs')
+        report=cross_validate(primary,independent,read_json(args.execution_receipts))
+        report.update(registration_sha256=args.registration_sha256,public_freeze_commit=args.freeze_commit,
+                      result_sha256={'primary':helper.file_sha(args.primary),'independent':helper.file_sha(args.independent)},python_optimization=sys.flags.optimize)
+        require(helper.verify_frozen(root,args.registration_sha256,args.freeze_commit)==evidence,'Frozen inputs changed during validation')
+        helper.write_json(output/'VALIDATION.json',report)
+        print(json.dumps({'status':report['status'],'classification':report['classification']}));return 0
+    except Exception as error:
+        helper.write_json(output/'FAILED_VALIDATION.json',{'error_type':type(error).__name__,'error':str(error),'old_metric_status':'FAIL'})
+        raise
+if __name__=='__main__':sys.exit(main())
