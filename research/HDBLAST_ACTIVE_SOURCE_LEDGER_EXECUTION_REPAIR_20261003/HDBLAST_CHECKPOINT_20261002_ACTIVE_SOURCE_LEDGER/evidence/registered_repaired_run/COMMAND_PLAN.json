@@ -1,0 +1,91 @@
+[
+  {
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/checkpoint/code/diagnostic_primary.py",
+      "--checkpoint-root",
+      "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/checkpoint",
+      "--registration-sha256",
+      "d2f79779669d0867cb9b21b627b01ea674245e99e819826fb7bcd90357e00542",
+      "--freeze-commit",
+      "79342726f097affa0c38d7726105d109f9b52a5c",
+      "--output-dir",
+      "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/fresh/primary"
+    ],
+    "cwd": "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/checkpoint",
+    "memory_limit_kib": 262144,
+    "name": "primary",
+    "physical_route": true,
+    "timeout_seconds": 900
+  },
+  {
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/checkpoint/independent/diagnostic_independent.py",
+      "--checkpoint-root",
+      "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/checkpoint",
+      "--registration-sha256",
+      "d2f79779669d0867cb9b21b627b01ea674245e99e819826fb7bcd90357e00542",
+      "--freeze-commit",
+      "79342726f097affa0c38d7726105d109f9b52a5c",
+      "--output-dir",
+      "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/fresh/independent"
+    ],
+    "cwd": "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/checkpoint",
+    "memory_limit_kib": 262144,
+    "name": "independent",
+    "physical_route": true,
+    "timeout_seconds": 900
+  },
+  {
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/checkpoint/code/validate_active.py",
+      "--checkpoint-root",
+      "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/checkpoint",
+      "--registration-sha256",
+      "d2f79779669d0867cb9b21b627b01ea674245e99e819826fb7bcd90357e00542",
+      "--freeze-commit",
+      "79342726f097affa0c38d7726105d109f9b52a5c",
+      "--primary",
+      "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/fresh/primary/diagnostic.json",
+      "--independent",
+      "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/fresh/independent/diagnostic.json",
+      "--execution-receipts",
+      "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/EXECUTION.json",
+      "--output-dir",
+      "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/fresh/validation"
+    ],
+    "cwd": "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/checkpoint",
+    "memory_limit_kib": 262144,
+    "name": "validation",
+    "physical_route": false,
+    "timeout_seconds": 900
+  },
+  {
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/checkpoint/code/validate_active.py",
+      "--checkpoint-root",
+      "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/checkpoint",
+      "--registration-sha256",
+      "d2f79779669d0867cb9b21b627b01ea674245e99e819826fb7bcd90357e00542",
+      "--freeze-commit",
+      "79342726f097affa0c38d7726105d109f9b52a5c",
+      "--primary",
+      "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/fresh/primary/diagnostic.json",
+      "--independent",
+      "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/fresh/independent/diagnostic.json",
+      "--execution-receipts",
+      "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/EXECUTION.json",
+      "--output-dir",
+      "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/fresh/validation_optimized"
+    ],
+    "cwd": "/workspace/hdblast-research-work/active-source-20261002/repair-original-replay/checkpoint",
+    "memory_limit_kib": 262144,
+    "name": "validation_optimized",
+    "physical_route": false,
+    "timeout_seconds": 900
+  }
+]
