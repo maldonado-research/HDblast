@@ -1,0 +1,264 @@
+{
+  "checks": [
+    {
+      "name": "exact_canonical_plane_wave_frequency",
+      "passed": true
+    },
+    {
+      "name": "physical_interaction_conformal_factors",
+      "passed": true
+    },
+    {
+      "name": "wick_spatial_commutator",
+      "passed": true
+    },
+    {
+      "name": "kubo_sign_and_normalization",
+      "passed": true
+    },
+    {
+      "name": "independent_mode_interference",
+      "passed": true
+    },
+    {
+      "name": "mode_measure_reproduces_kubo",
+      "passed": true
+    },
+    {
+      "name": "fixed_reference_subtraction_variation",
+      "passed": true
+    },
+    {
+      "name": "finite_cutoff_local_primitive",
+      "passed": true
+    },
+    {
+      "name": "finite_cutoff_memory_primitive",
+      "passed": true
+    },
+    {
+      "name": "local_primitive_logarithmic_asymptotic_constant",
+      "passed": true
+    },
+    {
+      "name": "finite_part_log_memory_endpoint",
+      "passed": true
+    },
+    {
+      "name": "stationary_history_primitive",
+      "passed": true
+    },
+    {
+      "name": "fixed_r_stationary_susceptibility",
+      "passed": true
+    },
+    {
+      "name": "reference_stationary_susceptibility",
+      "passed": true
+    },
+    {
+      "name": "independent_common_action_reference",
+      "passed": true
+    },
+    {
+      "name": "positive_B_derivative_1",
+      "passed": true
+    },
+    {
+      "name": "positive_B_derivative_2",
+      "passed": true
+    },
+    {
+      "name": "positive_B_derivative_3",
+      "passed": true
+    },
+    {
+      "name": "signed_uB_derivative_1",
+      "passed": true
+    },
+    {
+      "name": "signed_uB_derivative_2",
+      "passed": true
+    },
+    {
+      "name": "signed_uB_derivative_3",
+      "passed": true
+    },
+    {
+      "name": "positive_B_second_halfpoint",
+      "passed": true
+    },
+    {
+      "name": "signed_uB_second_halfpoint",
+      "passed": true
+    },
+    {
+      "name": "positive_B_critical_root_count_above_one",
+      "passed": true
+    },
+    {
+      "name": "signed_uB_critical_root_count_above_one",
+      "passed": true
+    },
+    {
+      "name": "positive_B_extrema_primitive_derivative",
+      "passed": true
+    },
+    {
+      "name": "signed_uB_extrema_primitive_derivative",
+      "passed": true
+    },
+    {
+      "name": "mass_law_first_derivative",
+      "passed": true
+    },
+    {
+      "name": "mass_law_second_derivative",
+      "passed": true
+    },
+    {
+      "name": "mass_law_current_contact",
+      "passed": true
+    },
+    {
+      "name": "zero_coupling_current",
+      "passed": true
+    },
+    {
+      "name": "fixed_occupation_commutator_factor",
+      "passed": true
+    },
+    {
+      "name": "occupied_state_extra_kernel_factor",
+      "passed": true
+    },
+    {
+      "name": "initial_state_interference",
+      "passed": true
+    },
+    {
+      "name": "initial_state_momentum_measure",
+      "passed": true
+    },
+    {
+      "name": "initial_bogoliubov_wronskian_linear_term",
+      "passed": true
+    },
+    {
+      "name": "coordinate_scale_a_invariance",
+      "passed": true
+    },
+    {
+      "name": "logarithm_dimensionless",
+      "passed": true
+    },
+    {
+      "name": "response_mass_dimension_two",
+      "passed": true
+    },
+    {
+      "name": "Ward_energy_dimension",
+      "passed": true
+    },
+    {
+      "name": "Ward_linear_variance_excludes_deltaQ",
+      "passed": true
+    },
+    {
+      "name": "conformal_Ward_conversion",
+      "passed": true
+    },
+    {
+      "name": "reference_drift_contact_derivative",
+      "passed": true
+    },
+    {
+      "name": "de_Sitter_reference_drift",
+      "passed": true
+    },
+    {
+      "name": "finite_cutoff_reference_drift",
+      "passed": true
+    },
+    {
+      "name": "canonical_pair_energy_change_of_frequency",
+      "passed": true
+    }
+  ],
+  "identity_count": 46,
+  "mutation_count": 14,
+  "mutations": [
+    {
+      "detected": true,
+      "exact_residual": "1/(2*pi**2)",
+      "name": "reversed_Kubo_sign"
+    },
+    {
+      "detected": true,
+      "exact_residual": "1/(8*pi**2)",
+      "name": "missing_Wick_factor_two"
+    },
+    {
+      "detected": true,
+      "exact_residual": "sin(k*tau) - sin(2*k*tau)",
+      "name": "wrong_frequency_k_instead_of_2k"
+    },
+    {
+      "detected": true,
+      "exact_residual": "1/(8*pi**2)",
+      "name": "omitted_finite_contact_one"
+    },
+    {
+      "detected": true,
+      "exact_residual": "EulerGamma/(8*pi**2)",
+      "name": "omitted_Euler_contact"
+    },
+    {
+      "detected": true,
+      "exact_residual": "1/(16*pi**2)",
+      "name": "moving_reference_r_equals_x"
+    },
+    {
+      "detected": true,
+      "exact_residual": "-H**2*b**2*dphi*r/(48*pi**2)",
+      "name": "omitted_mass_law_contact"
+    },
+    {
+      "detected": true,
+      "exact_residual": "-2*n",
+      "name": "omitted_occupation_state_factor"
+    },
+    {
+      "detected": true,
+      "exact_residual": "(betaI*sin(2*Delta*k) - betaR*cos(2*Delta*k))/k",
+      "name": "omitted_initial_Bogoliubov_term"
+    },
+    {
+      "detected": true,
+      "exact_residual": "(1 - a_initial**2)/a_observed**2",
+      "name": "omitted_input_scale_factor"
+    },
+    {
+      "detected": true,
+      "exact_residual": "a_initial**2 - a_initial**2/a_observed**2",
+      "name": "omitted_output_scale_factor"
+    },
+    {
+      "detected": true,
+      "exact_residual": "1",
+      "name": "advanced_support_at_negative_separation"
+    },
+    {
+      "detected": true,
+      "exact_residual": "1/(8*pi**2*a_observed**2*tau)",
+      "name": "instantaneous_only_post_pulse_memory"
+    },
+    {
+      "detected": true,
+      "exact_residual": "1/(32*pi**2*eta)",
+      "name": "omitted_time_dependent_reference_work"
+    }
+  ],
+  "passed": true,
+  "scope": "Exact analytic identities only; no source or mode numerical evaluation"
+}

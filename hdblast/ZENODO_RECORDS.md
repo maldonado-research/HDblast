@@ -3,7 +3,7 @@
 Zenodo preserves each release with a date and a permanent identifier. A record shows **what was
 published and when**. It does not mean the content was peer reviewed.
 
-**Concept DOI (all versions):** [10.5281/zenodo.17088132](https://doi.org/10.5281/zenodo.17088132)
+**Research-program concept DOI (all versions of that record):** [10.5281/zenodo.17088132](https://doi.org/10.5281/zenodo.17088132)
 
 | Date | Record | Content | Status label |
 |---|---|---|---|
@@ -22,15 +22,42 @@ published and when**. It does not mean the content was peer reviewed.
 | 2026-09-03 | [22285737](https://zenodo.org/records/22285737) | v22: Riemann preconditioning; two sources and two detectors registered | Certified bounds |
 | 2026-09-03 | [22287013](https://zenodo.org/records/22287013) | v23: rank-two registered linear response, det M ∈ [2.1987, 2.4615] | Certified (conditional) |
 | 2026-09-05 | [22347452](https://zenodo.org/records/22347452) | v24: conditional global adjoint certification | Certified (conditional) |
-| **2026-09-23** | [**22922928**](https://zenodo.org/records/22922928) | **Scalar junction consistency and a corrected static de Sitter branch** (title and date from site data; appears to correspond to the 22 Sept checkpoint, but its file list and version number are unverified) | Numerical / Exact / Negative / Conditional |
+| **2026-09-23** | [**22922928**](https://zenodo.org/records/22922928) | **Scalar junction consistency and a corrected static de Sitter branch**, companion version **1.0**, separate concept **22922927**. Live API metadata and two-file inventory checked on 2 Oct 2026 | Numerical / Exact / Negative / Conditional |
+| 2026-10-02 (Pacific) | [23112891](https://zenodo.org/records/23112891) | Owner-removed test upload: it repeated the inherited v24 title and ten-file inventory and omitted the twelve intended additions | **Removed; public archival tombstone** |
+| 2026-10-02 (Pacific) | [Static companion 23111008](https://zenodo.org/records/23111008) | Published original two-file static-branch study, separate concept 22922927; current metadata/inventory match original 22922928 | **Published and preserved; inventory checked** |
+| 2026-10-02 (Pacific) | Main-family draft 23114217 | Existing owned replacement draft survived removal; twelve reviewed additions are prepared for 22 total files, including the completed active-source diagnosis and exact fresh replay | **Unsubmitted; new results not yet published** |
 
 All records before v20 (17088133 through 20313949) are marked in the author's 29 Aug 2026 audit as
 affected by the v20 correction, and should be read together with that correction.
+
+The September static-branch study is a **separate companion record**, concept
+[10.5281/zenodo.22922927](https://doi.org/10.5281/zenodo.22922927). Latest published
+record [23111008](https://zenodo.org/records/23111008) preserves its original two files;
+absence of unrelated later additions is not a content failure.
+
+Live read-only checks after the author's removal confirm that the **main concept DOI
+now resolves to preserved v24 [22347452](https://zenodo.org/records/22347452)**. Removed
+record23112891 returns a public tombstone; its legacy deposition API still retains an
+archival response, which is not evidence that it remains published. The main and companion
+DOI families and the valid replacement draft23114217 are preserved.
+
+The prepared replacement keeps all ten inherited files and adds twelve reviewed artifacts
+for22 total. Its newer metric-response and source-free/active-source ledger calculations
+are available on GitHub and **not yet published on Zenodo**. Saved metadata and the complete
+filename, byte-size and checksum inventory must match the reviewed candidate before publication.
+Prepared or reserved identifiers do not establish a published version.
+
+Automatic GitHub archiving remains **OFF for all eight public repositories** so a website
+update does not create duplicate records. Publication uses the existing account workflow
+and established DOI families. The [current research summary](CURRENT_STATUS.md) identifies
+the latest verified result, its limits and the actual publication state. Older candidate
+and checkpoint snapshots retain their historical targets and dates; use current verified
+ownership, family and draft state before publication.
 
 Companion 2025 concepts: 16866883 (brane-world two-link packs), 16929972 (HDBC reproducibility
 bundles), 17069899 (cross-PTA/LISA/CMB pipeline).
 
 *Source: the author's 29 Aug 2026 provenance audit and later local records; see
 [PROGRAM_MAP.md §3 and §7](PROGRAM_MAP.md#3-dated-chronology). The record list was compiled from
-local files. Zenodo itself could not be queried from the build environment, so the record
-numbers should be spot-checked on zenodo.org.*
+local files. The latest main record and static-branch companion were subsequently checked
+through the live API as described above; the rest of the historical list has not been rechecked.*

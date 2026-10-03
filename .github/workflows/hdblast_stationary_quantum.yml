@@ -1,0 +1,56 @@
+name: Stationary quantum shell continuation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/**'
+      - 'research/HDBLAST_CHECKPOINT_20261002_DESITTER/**'
+      - 'research/HDBLAST_CHECKPOINT_20261002_JUNCTIONS/**'
+      - '.github/workflows/hdblast_stationary_quantum.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/**'
+      - 'research/HDBLAST_CHECKPOINT_20261002_DESITTER/**'
+      - 'research/HDBLAST_CHECKPOINT_20261002_JUNCTIONS/**'
+      - '.github/workflows/hdblast_stationary_quantum.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  roots-and-independent-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONOPTIMIZE: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            research
+            hdblast
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install exact replay dependencies
+        run: |
+          python -m pip install --only-binary=:all: -r research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/requirements-replay.txt
+      - name: Replay registered roots, preserved failure and independent validation
+        run: |
+          python research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/code/replay_checkpoint.py --repo "$GITHUB_WORKSPACE" --output "$RUNNER_TEMP/stationary-quantum-replay"
+      - name: Retain actual execution evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stationary-quantum-${{ github.sha }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/stationary-quantum-replay/
+          if-no-files-found: warn
+          retention-days: 7

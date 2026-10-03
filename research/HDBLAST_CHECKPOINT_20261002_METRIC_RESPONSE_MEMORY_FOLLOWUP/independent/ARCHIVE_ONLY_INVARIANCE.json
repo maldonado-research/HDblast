@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "scope": "Read-only source/AST identity; no source values, modes, stresses or physical integrals evaluated.",
+  "physical_evaluations": 0,
+  "prior_failed_producer_sha256": "a9f6afdb4c1d484299e5bc09b99597560f266a4769133a09c8a388c2e7d8a147",
+  "new_producer_sha256": "4fa625f2b534d741e2a48d6f0bfe84a89ee17bf306805906f962a8552e005906",
+  "byte_identical_functions": [
+    "require",
+    "runtime_preflight",
+    "frozen_configuration",
+    "add_poly",
+    "multiply_poly",
+    "bump_derivative_polynomials",
+    "source_jet",
+    "forcing_jet",
+    "oscillatory_propagator",
+    "momentum_rule",
+    "resource_check",
+    "frequency_jets",
+    "direct_observables",
+    "cutoff_sums",
+    "simpson_to",
+    "combine_runs",
+    "preflight",
+    "main"
+  ],
+  "model_grid_gates_budgets_exact_AST_identity": true,
+  "evolution_numerical_and_retained_field_AST_identity": true,
+  "old_storage_nodes_removed": [
+    "in-memory archive grid dict",
+    "retained archived_* ndarray aliases",
+    "NPZ output path placement",
+    "bulk savez-compressed archive serialization"
+  ],
+  "new_storage_nodes_removed": [
+    "NPZ output path placement",
+    "StreamingNpz archive lifetime context",
+    "streamed archive grid initialization",
+    "release streamed observation-only dictionaries",
+    "stream close replaces bulk savez"
+  ],
+  "provenance_only_addition": "stream_npz.py must be present in frozen manifest",
+  "hash_only_change": "bounded 1MiB SHA256 chunks; identical digest",
+  "stream_module_sha256": "a91eff3aafb6de10ecfc9807159bde04a5e3613bda7847fec4a13d2ae77d620d",
+  "audit_source_sha256": "55dfc782f12fb69863555fbe351a7db8af4ef698d145641a63303327b0e97784"
+}

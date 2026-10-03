@@ -1,0 +1,141 @@
+{
+  "scope": "independent static algebra and archived matrix reanalysis; no BVP, spectral sum or quantum expectation evaluated",
+  "checks_passed": 16,
+  "negative_controls_rejected": 2,
+  "checks": [
+    {
+      "name": "regular cone polynomial solves linear scalar equation",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "regular cone polynomial unit vertex normalization",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "regular AdS asymptotic scalar logarithmic derivative",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "static H squared expansion including unknown second scalar coefficient",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "unknown second scalar coefficient cancels through second order",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "linear normal scalar matching",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "frozen source expansion",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "paired linear potential special result",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "Euclidean metric scaling reproduces Lorentzian local density",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "Euclidean mass variation reproduces local variance",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "static mixed source identity",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "static mixed source identity for arbitrary common W",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "reference de Sitter heat-kernel anomaly",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "vacuum endpoint metric Jacobian column",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "vacuum endpoint scalar Jacobian column",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "archived matrix algebra reconstruction",
+      "passed": true,
+      "max_absolute_residual": 5.172762604530833e-17
+    }
+  ],
+  "negative_controls": [
+    {
+      "name": "apply potential formula to frozen shell density",
+      "rejected": true,
+      "residual": "-epsilon**2*nu*(d - nu)/192"
+    },
+    {
+      "name": "replace local current by fixed-H density derivative",
+      "rejected": true,
+      "residual": "-6*H**2*Derivative(F(x), x)"
+    }
+  ],
+  "archived_matrix": {
+    "source": "/workspace/HDblast/research/HDBLAST_CHECKPOINT_20260927/stability_gauge_invariant/SPECTRUM_RESULTS.json",
+    "source_sha256": "02b13437f022a0537710597f706cd7991409c3027b57618bfdee711baa8a7ac7",
+    "coordinates": [
+      "log10(abs(eta_h))",
+      "y_b"
+    ],
+    "centered_difference_step": 1e-06,
+    "J": [
+      [
+        -6.938893903907228e-12,
+        -5.924014057079319e-05
+      ],
+      [
+        -0.0006879322173491877,
+        -0.00046460663028142276
+      ]
+    ],
+    "forcing_diagonal": [
+      0.16666666666666666,
+      -0.5
+    ],
+    "response_matrix": [
+      [
+        1900.0824993800122,
+        726.8158503755865
+      ],
+      [
+        -2813.4079062821843,
+        -8.513312130661574e-05
+      ]
+    ],
+    "condition_number": 16.9364181840799,
+    "endpoint_column_absolute_error": [
+      7.372496452846995e-12,
+      -4.836334241073437e-13
+    ],
+    "J00_underlying_residual_difference": -1.3877787807814457e-17,
+    "roundoff_warning": "Tiny y_b response to scalar source is driven entirely by tiny J00; no component error certificate or derivative-refinement study is supplied."
+  },
+  "script_sha256": "093837a3381f3047837a421dcec9a9ef9aa14374c7f980d03439c19b03f353eb",
+  "sympy_version": "1.14.0"
+}

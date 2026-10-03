@@ -1,0 +1,102 @@
+name: Metric stored-package integrity and expected scientific failures
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE/**'
+      - 'research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_FOLLOWUP/**'
+      - 'research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/**'
+      - '.github/workflows/hdblast_metric_response_memory_followup.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE/**'
+      - 'research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_FOLLOWUP/**'
+      - 'research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/**'
+      - '.github/workflows/hdblast_metric_response_memory_followup.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  stored-package-and-expected-failures:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONOPTIMIZE: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+      VECLIB_MAXIMUM_THREADS: '1'
+      BLIS_NUM_THREADS: '1'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE
+            research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_FOLLOWUP
+            research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reassemble and verify standalone stored third package
+        run: |
+          python - <<'PY'
+          import json, os, pathlib, subprocess, sys, zipfile
+          name = 'HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP'
+          source = pathlib.Path('research') / name
+          temporary = pathlib.Path(os.environ['RUNNER_TEMP'])
+          archive = temporary / 'metric-memory-standalone.zip'
+          trusted_sha = (source / (name + '.zip.sha256')).read_text().split()[0]
+          result = subprocess.run([sys.executable, str(source / 'code/reassemble_package.py'),
+              '--parts-manifest', str(source / 'PACKAGE_PARTS.json'), '--output', str(archive),
+              '--expected-sha256', trusted_sha], capture_output=True, text=True)
+          (temporary / 'metric-memory-assembly.stdout.log').write_text(result.stdout)
+          (temporary / 'metric-memory-assembly.stderr.log').write_text(result.stderr)
+          (temporary / 'metric-memory-assembly.exit.json').write_text(json.dumps({'exit_code': result.returncode})+'\n')
+          result.check_returncode()
+          receipt = json.loads(result.stdout)
+          (temporary / 'metric-memory-package-integrity.json').write_text(json.dumps(receipt, indent=2)+'\n')
+          with zipfile.ZipFile(archive) as package:
+              package.extractall(temporary / 'metric-memory-standalone')
+          print(json.dumps({'status': receipt['status'], 'scope': 'Stored package integrity only; no physical replay yet.'}))
+          PY
+      - name: Install exact replay dependencies
+        run: |
+          python -m pip install --only-binary=:all: -r research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/requirements-replay.txt
+      - name: Confirm original quadrature failure as recorded
+        run: |
+          python research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/code/reproduce_original_expected_failure.py --original-checkpoint research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE --output "$RUNNER_TEMP/metric-original-failure-control"
+      - name: Complete standalone third data and confirm registered scientific FAIL
+        if: always()
+        run: |
+          python - <<'PY'
+          import json, os, pathlib, subprocess, sys
+          temporary = pathlib.Path(os.environ['RUNNER_TEMP'])
+          checkpoint = temporary / 'metric-memory-standalone' / 'HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP'
+          receipt = json.loads((checkpoint / 'FREEZE_RECEIPT.json').read_text())
+          subprocess.run([sys.executable, str(checkpoint / 'code/reproduce_metric_expected_scientific_failure.py'),
+              '--checkpoint', str(checkpoint), '--output', str(temporary / 'metric-memory-scientific-failure-control'),
+              '--public-freeze-commit', receipt['public_freeze_commit'],
+              '--registration-sha256', receipt['registration_sha256'],
+              '--independent-manifest-sha256', receipt['independent_manifest_sha256']], check=True)
+          PY
+      - name: Retain integrity and both expected-failure execution records
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: metric-expected-failures-${{ github.sha }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/metric-memory-package-integrity.json
+            ${{ runner.temp }}/metric-memory-assembly.stdout.log
+            ${{ runner.temp }}/metric-memory-assembly.stderr.log
+            ${{ runner.temp }}/metric-memory-assembly.exit.json
+            ${{ runner.temp }}/metric-original-failure-control/
+            ${{ runner.temp }}/metric-memory-scientific-failure-control/
+          if-no-files-found: warn
+          retention-days: 7

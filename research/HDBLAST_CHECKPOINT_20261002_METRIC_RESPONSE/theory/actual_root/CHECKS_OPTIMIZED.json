@@ -1,0 +1,133 @@
+{
+  "identities": [
+    {
+      "exact_residual": "0",
+      "name": "general_lapse_scale_canonical_frequency",
+      "status": "PASS"
+    },
+    {
+      "exact_residual": "0",
+      "name": "conformal_gauge_frequency",
+      "status": "PASS"
+    },
+    {
+      "exact_residual": "0",
+      "name": "arbitrary_root_conformal_frequency",
+      "status": "PASS"
+    },
+    {
+      "exact_residual": "0",
+      "name": "exact_plane_wave_calibration_frequency",
+      "status": "PASS"
+    },
+    {
+      "exact_residual": "0",
+      "name": "arbitrary_background_time_diffeomorphism_frequency",
+      "status": "PASS"
+    },
+    {
+      "exact_residual": "0",
+      "name": "time_diffeomorphism_mode_solution",
+      "status": "PASS"
+    },
+    {
+      "exact_residual": "0",
+      "name": "bare_or_finite_band_variance_covariance",
+      "status": "PASS"
+    },
+    {
+      "exact_residual": "0",
+      "name": "retarded_green_unit_jump",
+      "status": "PASS"
+    },
+    {
+      "exact_residual": "0",
+      "name": "retarded_green_jump_from_unit_wronskian",
+      "status": "PASS"
+    },
+    {
+      "exact_residual": "0",
+      "name": "proper_time_metric_and_mass_trace_remainder",
+      "status": "PASS"
+    },
+    {
+      "exact_residual": "0",
+      "name": "complete_metric_variation_order_two_subtraction",
+      "status": "PASS"
+    },
+    {
+      "exact_residual": "0",
+      "name": "complete_metric_variation_variance_subtraction",
+      "status": "PASS"
+    },
+    {
+      "exact_residual": "0",
+      "name": "fixed_geometry_subtraction_reduction",
+      "status": "PASS"
+    },
+    {
+      "exact_residual": "0",
+      "name": "linear_static_root_ward_has_no_metric_background_term",
+      "status": "PASS"
+    },
+    {
+      "exact_residual": "0",
+      "name": "moving_shell_scalar_radial_gauge_invariant",
+      "status": "PASS"
+    },
+    {
+      "exact_residual": "0",
+      "name": "moving_shell_induced_metric_radial_gauge_invariant",
+      "status": "PASS"
+    }
+  ],
+  "identity_count": 16,
+  "mutation_count": 8,
+  "mutations": [
+    {
+      "exact_nonzero_residual": "8*eta**2*(1 - eta)",
+      "name": "omit_lapse_gradient_channel",
+      "status": "DETECTED"
+    },
+    {
+      "exact_nonzero_residual": "3 - 3*eta",
+      "name": "omit_canonical_metric_second_derivative",
+      "status": "DETECTED"
+    },
+    {
+      "exact_nonzero_residual": "-3*eta**2 - eta + 1",
+      "name": "replace_general_canonical_rescaling_by_h",
+      "status": "DETECTED"
+    },
+    {
+      "exact_nonzero_residual": "-2*eta*(eta + 1)",
+      "name": "wrong_time_pullback_mode_contact",
+      "status": "DETECTED"
+    },
+    {
+      "exact_nonzero_residual": "2*eta*(1 - eta**2)",
+      "name": "drop_variance_metric_prefactor",
+      "status": "DETECTED"
+    },
+    {
+      "exact_nonzero_residual": "(4*eta**2*(eta + 2)**2 + 3*eta - 12)/(8*(eta + 2)**4)",
+      "name": "move_reference_with_metric_subtraction",
+      "status": "DETECTED"
+    },
+    {
+      "exact_nonzero_residual": "36*eta**2/5 + 42*eta/5 + 6/5",
+      "name": "drop_box_curvature_trace_term",
+      "status": "DETECTED"
+    },
+    {
+      "exact_nonzero_residual": "-6",
+      "name": "omit_brane_bending_scalar",
+      "status": "DETECTED"
+    }
+  ],
+  "python": "3.12.14",
+  "scope": "Exact symbolic prerequisite identities and synthetic formula mutations only. No physical evaluation or registered response experiment.",
+  "source_sha256": "dc13bd1528c086b24015cdf27cc7b68ab95a71a8e2adc98475b7fdbe7e5f59e1",
+  "status": "PASS",
+  "sympy": "1.14.0"
+}

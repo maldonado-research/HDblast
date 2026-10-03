@@ -1,0 +1,12 @@
+{
+  "status": "FAIL_OVERLY_STRICT_JSON_SERIALIZATION_CONSISTENCY_CHECK",
+  "new_physical_evaluations": 0,
+  "underlying_scientific_status": "FAIL",
+  "script_sha256": "f6ec8b2b8adec4ab6d58ff22018d246c152878a33e9ede76094aa980ee2404e4",
+  "exit_code": 1,
+  "exception": "RuntimeError: Saved Ward endpoint mismatch",
+  "initial_consistency_abs_tolerance": 1e-18,
+  "maximum_saved_endpoint_vs_binary64_difference": 1.0537089863843496e-17,
+  "frozen_wrapper_consistency_abs_tolerance": 1e-15,
+  "interpretation": "The audit consistency tolerance was stricter than the frozen expected-failure wrapper and saved JSON binary64 serialization permits. Preserve this read-only audit failure; correct the audit to the frozen wrapper serialization consistency tolerance and require unchanged Ward gate classifications. No source, physical value, numerical producer or scientific gate is altered."
+}

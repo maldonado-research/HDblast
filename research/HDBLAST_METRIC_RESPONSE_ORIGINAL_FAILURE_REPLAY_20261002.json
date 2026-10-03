@@ -1,0 +1,56 @@
+{
+  "actual_control_exit_code": 0,
+  "actual_control_stdout": "{\"status\": \"PASS_EXPECTED_FAILURE_CONTROL\", \"control_status\": \"EXPECTED_FAILURE_CONFIRMED\", \"original_scientific_status\": \"ORIGINAL_EXPERIMENT_FAILED\", \"followup_scientific_status\": \"NOT_TESTED_BY_THIS_CONTROL\"}\n",
+  "control": {
+    "active_eta": -4.5,
+    "active_source": "positive_B",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/metric-original-zip-extracted-001/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE/code/metric_primary.py",
+      "--output",
+      "/workspace/hdblast-research-work/metric-original-zip-failure-control-001/primary",
+      "--registration-sha256",
+      "f8d6bbd17b540b46c5e4382ab21fd74e15f0b283956991a250f49994553a476d",
+      "--public-freeze-commit",
+      "57668b8fadd75df8738565e0bbd1eb852c1ebae8"
+    ],
+    "completed_original_rows": 1,
+    "completed_utc": "2026-10-02T19:27:29.130887+00:00",
+    "control_status": "EXPECTED_FAILURE_CONFIRMED",
+    "expected_original_pins": {
+      "independent_manifest_sha256": "4760f2a7e864dbe81ad8911797499dcd9fcc9e37a45421a607a101d35e6ce507",
+      "public_freeze_commit": "57668b8fadd75df8738565e0bbd1eb852c1ebae8",
+      "registration_sha256": "f8d6bbd17b540b46c5e4382ab21fd74e15f0b283956991a250f49994553a476d"
+    },
+    "failure_class": "IntegrationWarning",
+    "failure_kind": "weighted-log quadrature roundoff",
+    "failure_sha256": "13379084b25def3d4d67cc4dbd6539d952055b8c164f7c40b55cb730789fb8c2",
+    "followup_scientific_status": "NOT_TESTED_BY_THIS_CONTROL",
+    "helper_sha256": "9196a0694a1baf774c30e36ef297efdacc65fd4462d62baa58f7698d87681e4a",
+    "original_scientific_status": "ORIGINAL_EXPERIMENT_FAILED",
+    "output_sha256": {
+      "ORIGINAL_INPUT_MANIFEST.json": "0cc5ef9c66bc22bbf8f2c7ed0b2b5fede4c7361874c05731ea4b4d0c7f3bac1f",
+      "original-primary.exit.json": "9e5dc32f8b7546620796114184f9a43be656778531ffe04733ce39b5cbe9929b",
+      "original-primary.stderr.log": "0d73cfdb328467a77d803aec9f6c7eefbd896a6abb323e246a6428dcf932f97a",
+      "original-primary.stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "primary/failure.json": "13379084b25def3d4d67cc4dbd6539d952055b8c164f7c40b55cb730789fb8c2",
+      "primary/partial_results.json": "b33a2a21ebba58c539deb1b1f1a1d211a46d9c4054d7252e52314e645d8df004",
+      "primary/started.json": "9df491fa5052017ba65fbb01ce9c2eaa5b94d44fe4a81c3b33111eb5e9862847"
+    },
+    "partial_results_sha256": "b33a2a21ebba58c539deb1b1f1a1d211a46d9c4054d7252e52314e645d8df004",
+    "reproduced_physical_producer": "original primary only; no original independent-mode rerun",
+    "source_verification_after": "PASS",
+    "source_verification_before": "PASS",
+    "started_sha256": "9df491fa5052017ba65fbb01ce9c2eaa5b94d44fe4a81c3b33111eb5e9862847",
+    "started_utc": "2026-10-02T19:27:28.260798+00:00",
+    "status": "PASS_EXPECTED_FAILURE_CONTROL"
+  },
+  "original_archive_bytes": 673226,
+  "original_archive_package_files": 391,
+  "original_archive_payload_files": 388,
+  "original_archive_sha256": "b034a68ca928eceb4ceab09b05070f2aae111bf2f398db9d75e55c0f2fafa762",
+  "original_scientific_status": "FAIL",
+  "schema_version": 1,
+  "scope": "Fresh standalone original archive source authentication and exact original primary failure reproduction; no independent original modes rerun. Original experiment remains FAIL.",
+  "status": "PASS_EXPECTED_ORIGINAL_FAILURE_REPRODUCTION"
+}

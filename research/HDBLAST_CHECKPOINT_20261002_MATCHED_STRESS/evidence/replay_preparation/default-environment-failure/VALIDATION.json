@@ -1,0 +1,24 @@
+{
+  "attempted_commands": 0,
+  "certified_total_numerical_error": false,
+  "commands": [],
+  "completed_utc": "2026-10-02T16:56:42.806159+00:00",
+  "coupled_geometry_executed": false,
+  "driver_sha256": "b1bd4f717c07e6b5df9ed4dfdfa4b12c39e14e76d12b401271bbcdf81f2baca1",
+  "failure": {
+    "exception": "RuntimeError('Pinned dependency mismatch: numpy')",
+    "traceback": "Traceback (most recent call last):\n  File \"/workspace/hdblast-research-work/stress-replay/preflight-package/code/replay_stress.py\", line 146, in main\n    for name,version in {'numpy':'2.2.6','scipy':'1.15.3','sympy':'1.14.0','mpmath':'1.3.0'}.items():require(importlib.metadata.version(name)==version,'Pinned dependency mismatch: '+name)\n                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/hdblast-research-work/stress-replay/preflight-package/code/replay_stress.py\", line 40, in require\n    if not condition:raise RuntimeError(message)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Pinned dependency mismatch: numpy\n"
+  },
+  "heating_established": false,
+  "independent_manifest_sha256": "4933c5fe2bd9d3fc2ea154371ce0fdf9d8066e3546a672975d1e007a9151cf42",
+  "physical_producer_commands_attempted": 0,
+  "physical_producer_commands_completed": 0,
+  "public_freeze_commit": "4a5dad8dda6d0a57a9cf88cc8b4a9b8feeaea45d",
+  "registration_sha256": "4a1533fa7bf9df41cc635d76fa61a22b3aa119d8fbf215349fe09cf3ee54c893",
+  "scope": "Fixed geometry, linear homogeneous minimal stress/current only",
+  "source_verification_after": "NOT_STARTED; dependency or initial input validation failed before execution",
+  "stability_established": false,
+  "started_utc": "2026-10-02T16:56:42.802207+00:00",
+  "status": "FAIL",
+  "successful_commands": 0
+}

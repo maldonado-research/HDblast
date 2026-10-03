@@ -1,0 +1,189 @@
+{
+  "status": "PASS",
+  "completed_utc": "2026-10-02T07:43:06.698049+00:00",
+  "original_validator_status": "FAIL preserved",
+  "amended_validator_status": "PASS",
+  "scope": "registered stationary quantum-action model; sampled hierarchy reported separately",
+  "dynamical_evolution_executed": false,
+  "eft_certified": false,
+  "manifest_sha256": "be65502702d07ac9ced2abbf7ec0032c1886012a6f11e398335a8d6fa938b767",
+  "commands": [
+    {
+      "check": "theory",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "theory/verify_stationary_model.py",
+        "--output",
+        "/workspace/hdblast-research-work/stationary-complete-replay/fresh/THEORY.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "theory_optimized",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "-O",
+        "theory/verify_stationary_model.py",
+        "--output",
+        "/workspace/hdblast-research-work/stationary-complete-replay/fresh/THEORY_OPTIMIZED.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "primary",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "code/stationary_shell.py",
+        "--repo",
+        "/workspace/HDblast",
+        "--public-freeze",
+        "b4f77f5826e0a603400513832aa53b0673df7533",
+        "--output",
+        "/workspace/hdblast-research-work/stationary-complete-replay/fresh/primary"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "original_validator",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "code/validate_stationary.py",
+        "--repo",
+        "/workspace/HDblast",
+        "--runs",
+        "/workspace/hdblast-research-work/stationary-complete-replay/fresh/primary/results.json",
+        "--output",
+        "/workspace/hdblast-research-work/stationary-complete-replay/fresh/ORIGINAL_CHECKS.json"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1
+    },
+    {
+      "check": "amended_validator",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "code/validate_stationary_v2.py",
+        "--repo",
+        "/workspace/HDblast",
+        "--runs",
+        "/workspace/hdblast-research-work/stationary-complete-replay/fresh/primary/results.json",
+        "--output",
+        "/workspace/hdblast-research-work/stationary-complete-replay/fresh/CHECKS_V2.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "amended_validator_optimized",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "-O",
+        "code/validate_stationary_v2.py",
+        "--repo",
+        "/workspace/HDblast",
+        "--runs",
+        "/workspace/hdblast-research-work/stationary-complete-replay/fresh/primary/results.json",
+        "--output",
+        "/workspace/hdblast-research-work/stationary-complete-replay/fresh/CHECKS_V2_OPTIMIZED.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "independent_roots",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "independent/independent_stationary.py",
+        "--registration",
+        "/workspace/hdblast-research-work/stationary-complete-replay/checkpoint/independent/REGISTRATION.md",
+        "--registration-sha256",
+        "60813c5b4ecc881263915c7caed35bfc1e90ca9c0183bf60448c5b8b6da2bb0a",
+        "--amplitudes=0,100,1000000",
+        "--slopes=-1,1",
+        "--reference=0.00011848029588657912",
+        "--eta-ref=-0.00008405268308670538",
+        "--output",
+        "/workspace/hdblast-research-work/stationary-complete-replay/fresh/ROOTS.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "independent_proper_time",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "independent/check_proper_time.py",
+        "--registration",
+        "/workspace/hdblast-research-work/stationary-complete-replay/checkpoint/independent/REGISTRATION.md",
+        "--registration-sha256",
+        "60813c5b4ecc881263915c7caed35bfc1e90ca9c0183bf60448c5b8b6da2bb0a",
+        "--roots",
+        "/workspace/hdblast-research-work/stationary-complete-replay/fresh/ROOTS.json",
+        "--output",
+        "/workspace/hdblast-research-work/stationary-complete-replay/fresh/PROPER_TIME.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "independent_audit",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "independent/audit_primary_v2.py",
+        "--checkpoint",
+        "/workspace/hdblast-research-work/stationary-complete-replay/checkpoint",
+        "--primary",
+        "/workspace/hdblast-research-work/stationary-complete-replay/fresh/primary/results.json",
+        "--roots",
+        "/workspace/hdblast-research-work/stationary-complete-replay/fresh/ROOTS.json",
+        "--output",
+        "/workspace/hdblast-research-work/stationary-complete-replay/fresh/AUDIT.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "summary",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "code/summarize_stationary.py",
+        "--runs",
+        "/workspace/hdblast-research-work/stationary-complete-replay/fresh/primary/results.json",
+        "--checks",
+        "/workspace/hdblast-research-work/stationary-complete-replay/fresh/CHECKS_V2.json",
+        "--output",
+        "/workspace/hdblast-research-work/stationary-complete-replay/fresh/summary"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    },
+    {
+      "check": "figure",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "code/plot_stationary.py",
+        "--summary",
+        "/workspace/hdblast-research-work/stationary-complete-replay/fresh/summary/SUMMARY.json",
+        "--output",
+        "/workspace/hdblast-research-work/stationary-complete-replay/fresh/figures"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0
+    }
+  ],
+  "counts": {
+    "primary_roots": 48,
+    "wrong_model_controls": 3,
+    "amended_gates": 1584,
+    "preserved_original_exceptions": 48,
+    "symbolic_checks": 51,
+    "symbolic_controls": 20,
+    "independent_roots": 12,
+    "proper_time_evaluations": 8,
+    "proper_time_gates": 48,
+    "independent_audit_gates": 564
+  }
+}

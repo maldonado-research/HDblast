@@ -1,0 +1,51 @@
+{
+  "automatic_retries": false,
+  "browser_fallback": "Owner Manage -> Delete record -> reason duplicate -> Delete immediately, only for an identified incomplete recent intended release. Recheck family latest and draft afterward.",
+  "companion_action": "Preserve; no further removal request.",
+  "companion_record": 23111008,
+  "companion_verification": "Published two-file inventory matches the reviewed companion baseline; preserve this verified study.",
+  "concept_doi_families_preserved": [
+    "10.5281/zenodo.17088132",
+    "10.5281/zenodo.22922927"
+  ],
+  "main_record": 23112891,
+  "main_verification": "Valid inherited ten-file content; incomplete intended v25 update, missing twelve prepared additions.",
+  "post_action_checks": {
+    "active_main_draft": 23114217,
+    "active_main_draft_files": 10,
+    "active_main_draft_submitted": false,
+    "companion_record_http_status": 200,
+    "companion_record_submitted": true,
+    "main_record_http_status": 200,
+    "main_record_submitted": true
+  },
+  "removal_confirmed": false,
+  "removal_requests_before_user_scope_narrowing": [
+    {
+      "conceptrecid": "17088132",
+      "http_status": 500,
+      "method": "POST",
+      "reason": "duplicate",
+      "record_id": 23112891,
+      "request_bytes": 210,
+      "request_sha256": "42940f68937df78103769b611fbc7da0af30ce159260717f64c1229840481249",
+      "response_sha256": "013d9e0b05f8a50fa3c5fc8af8aeeed3df78cf72d9cf2cc9d765b5bb5c2f5024",
+      "started_utc": "2026-10-03T04:09:16.129480+00:00",
+      "url": "https://zenodo.org/api/records/23112891/request-deletion"
+    },
+    {
+      "conceptrecid": "22922927",
+      "http_status": 500,
+      "method": "POST",
+      "reason": "duplicate",
+      "record_id": 23111008,
+      "request_bytes": 210,
+      "request_sha256": "42940f68937df78103769b611fbc7da0af30ce159260717f64c1229840481249",
+      "response_sha256": "27cf011d1ed8b735b08d4c7df3c5384040f10d6358726d6361ff8034f71e1961",
+      "started_utc": "2026-10-03T04:09:16.887394+00:00",
+      "url": "https://zenodo.org/api/records/23111008/request-deletion"
+    }
+  ],
+  "status": "REMOVAL_TRANSPORT_BLOCKED_PRESERVE_VERIFIED_PUBLICATIONS",
+  "user_latest_scope": "Only recent publications not verified against their intended reviewed package may be removed; preserve verified publications."
+}

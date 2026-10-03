@@ -1,0 +1,10 @@
+{
+  "passed": false,
+  "exception": "RuntimeError('metric_potential_second_derivative: -2*L*h3')",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspace/hdblast-research-work/metric-primary-theory/metric_contact_algebra.py\", line 185, in main\n    data,closed,result=audit();result['provenance']=provenance\n                       ^^^^^^^\n  File \"/workspace/hdblast-research-work/metric-primary-theory/metric_contact_algebra.py\", line 144, in audit\n    equal('metric_potential_second_derivative',data['g_second'],24*L**4*H[0]+12*L**3*H[1]-H[4])\n  File \"/workspace/hdblast-research-work/metric-primary-theory/metric_contact_algebra.py\", line 101, in equal\n    if residue != 0:raise RuntimeError(name+': '+str(residue))\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: metric_potential_second_derivative: -2*L*h3\n",
+  "provenance": {
+    "verifier_sha256": "e08bc775f8f83a81bbc2d6a976d7beaafbedd329831b7211bc925cc1d4327229",
+    "sympy_version": "1.14.0",
+    "python_optimization": 0
+  }
+}

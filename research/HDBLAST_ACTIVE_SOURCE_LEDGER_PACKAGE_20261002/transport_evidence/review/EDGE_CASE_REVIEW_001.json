@@ -1,0 +1,73 @@
+{
+  "checkout_edits": false,
+  "checks": [
+    {
+      "exception": "ValueError",
+      "message": "Expected archive hash requires complete lowercase SHA256",
+      "name": "invalid_explicit_pin"
+    },
+    {
+      "exception": "ValueError",
+      "message": "Expected archive hash requires complete lowercase SHA256",
+      "name": "boolean_explicit_pin"
+    },
+    {
+      "exception": "ValueError",
+      "message": "Expected archive hash requires complete lowercase SHA256",
+      "name": "uppercase_explicit_pin"
+    },
+    {
+      "exception": "BadZipFile",
+      "message": "Bad CRC-32 for file 'HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/FREEZE_RECEIPT.json'",
+      "name": "bad_member_crc"
+    },
+    {
+      "exception": "ValueError",
+      "message": "Encrypted ZIP member rejected",
+      "name": "encrypted_member"
+    },
+    {
+      "exception": "ValueError",
+      "message": "Embedded manifest missing or too large",
+      "name": "oversized_embedded_manifest"
+    },
+    {
+      "exception": "ValueError",
+      "message": "Parts manifest too large",
+      "name": "oversized_parts_manifest"
+    }
+  ],
+  "observations": [
+    {
+      "accepted": true,
+      "name": "raw_nul_member",
+      "names": [
+        {
+          "filename": "HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/FREEZE_RECEIPT.json",
+          "orig_filename": "HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/FREEZE_RECEIPT.json\u0000suffix"
+        },
+        {
+          "filename": "HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/MANIFEST.json",
+          "orig_filename": "HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/MANIFEST.json"
+        }
+      ]
+    },
+    {
+      "name": "cli_receipt_output_alias",
+      "returncode": 1,
+      "stderr_last_line": "ValueError: Fresh output required: /tmp/hdblast-review-fabricated-w7eny20i/cli_receipt_output_alias/same.zip",
+      "stdout": "",
+      "verified_output_left": true
+    },
+    {
+      "accepted": true,
+      "name": "json_exponent_overflow",
+      "nonfinite_value_created": true
+    }
+  ],
+  "physical_evaluations": 0,
+  "real_network_calls": 0,
+  "reassembler_sha256": "fc947aed75882fe859708ae8fc6d0fdd8542992fc4421f41bda093d53801ea24",
+  "status": "COMPLETE_INDEPENDENT_FABRICATED_EDGE_REVIEW",
+  "test_source_sha256": "881ab1bbcfcff26f1f511eaa650ccb464f375ce3bbf2d8d5dd06db44e18087be"
+}

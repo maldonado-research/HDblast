@@ -1,0 +1,57 @@
+{
+  "actionlint": {
+    "exit_code": 0,
+    "version": "1.7.12",
+    "workflow_sha256": "13da1deb2812cf145e4e134d4514e99b26dc2140c077a6683fd86296915d1dc9"
+  },
+  "actual64MiB_split_path_tested_normal_and_optimized": true,
+  "cycle_policy": "MANIFEST includes FREEZE_RECEIPT and excludes only fixed package bookkeeping; final replay/publication receipt remains outside ZIP payload.",
+  "integration": "Copy both package modules plus test and exact requirements before FULL_REGISTRATION; freeze workflow as inactive template, activate identical bytes only after final parts verified. Copy guard CHECKS JSON receipts only, not their large synthetic fixture directories.",
+  "package_guard_counts": {
+    "normal": 25,
+    "optimized": 25
+  },
+  "physical_evaluations": 0,
+  "source_edits_in_science_checkout": 0,
+  "source_pins": {
+    "PACKAGE_AND_CI.md": {
+      "bytes": 3437,
+      "sha256": "8780dda528c681da0d3ea239e38b4b22228fd95eebbcfc029d2b4feb006a4bb4"
+    },
+    "code/build_package.py": {
+      "bytes": 9389,
+      "sha256": "79214f2d98618e04380ebc41d748bd84df8fdab70db27e06221bf06eff1285a5"
+    },
+    "code/reassemble_package.py": {
+      "bytes": 8747,
+      "sha256": "3eed73161a442aa02b4440abdd132b8fb0c795878adb8e727066183b735d8b03"
+    },
+    "code/test_package_parts.py": {
+      "bytes": 8229,
+      "sha256": "4eaa5db531e3876c5256358c59fda4fd54e270a13ccc382d4a0ee84341fd3a9e"
+    },
+    "proof/NORMAL/CHECKS.json": {
+      "bytes": 4887,
+      "sha256": "4ba947753d423d1dd538285cb5cca385250ba908e0e83906107895438d23270f"
+    },
+    "proof/OPTIMIZED/CHECKS.json": {
+      "bytes": 2560,
+      "sha256": "5cfe935867b2e72c6b4d3097ac2fe99a9c05103af48c2d95708af733f8f94382"
+    },
+    "proof/OPTIMIZED_FULL/CHECKS.json": {
+      "bytes": 4903,
+      "sha256": "93da10f9ef1175153c2a3a4e9ae56289b8902ba9370ec65df1e612c0bbcb0c5e"
+    },
+    "requirements-replay.txt": {
+      "bytes": 74,
+      "sha256": "572039e6018b17be7c1271a8504e763388eb46f26bf54d4649cb67431444e492"
+    },
+    "workflows/hdblast_metric_response_memory_followup.yml": {
+      "bytes": 5335,
+      "sha256": "13da1deb2812cf145e4e134d4514e99b26dc2140c077a6683fd86296915d1dc9"
+    }
+  },
+  "standalone_reassembly_tested_normal_and_optimized": true,
+  "status": "PASS_PREFREEZE_PURE_PACKAGING_PREPARATION",
+  "unchanged32command_input_verifier_accepts_split_package": true
+}

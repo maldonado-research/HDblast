@@ -1,0 +1,1541 @@
+{
+  "status": "post-hoc read-only saved-trajectory diagnostic",
+  "source_ref": "5d37bbf18ddc24b5218dd89d9e22be7a26c7c567",
+  "input_baseline": "8f67197b730d4e1c43554b86f224c29cc72629eb",
+  "script_sha256": "9e37f073f0027b98994f1600903cf3a294dd07c96f1940443da5bf49dc3c6605",
+  "target_tags": [
+    "main_Y0.5_dc1e-2_dzf5e-4",
+    "main_Y0.7_dc1e-2_dzf5e-4",
+    "main_Y1.5_dc1e-2_dzf5e-4",
+    "fine_Y2_dc1e-4_dzf2.5e-4",
+    "fine_Y2_dc1e-2_dzf2.5e-4",
+    "fine_Y3_dc1e-2_dzf1.25e-4",
+    "fine_Y5_dc1e-2_dzf1.25e-4_cfl0.25",
+    "main_Y2_dc1e-2_dzf5e-4",
+    "main_Y2_dc1e-4_dzf5e-4"
+  ],
+  "definitions": {
+    "linear_radiation": "rb^2 sigma(phi) R / 18",
+    "Q": "rb^2 R^2/36",
+    "F0": "linear/(linear+Q+abs(V)+abs(W)); scalar-free UPPER BOUND",
+    "F_abs": "linear/(linear+Q+abs(V)+abs(W)+vhat^2/12+abs(sigma_phi*Y*rb*vhat)/24+Y^2*vhat^2/48)",
+    "gate": "F_abs>=0.9, abs(W)/linear<=0.03, H>0, linear>0, finite saved diagnostics, historical reliability prefix",
+    "interval": "longest contiguous passing saved-point block with strictly increasing ln_a and proper time",
+    "limits": "Saved-point diagnostic only; no guarantee between samples, no independent resolution convergence; fine restarts share ancestors."
+  },
+  "runs": {
+    "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/fine/fine_Y2_dc1e-2_dzf2.5e-4_summary.json": {
+      "tag": "fine_Y2_dc1e-2_dzf2.5e-4",
+      "params": {
+        "delta": 0.1,
+        "c": 0.5975949350280132,
+        "d": -3.106933495673783,
+        "dc": 0.01,
+        "Y": 2,
+        "dzf": 0.00025,
+        "dzc": 0.001,
+        "zfine": 0.4,
+        "width": 0.02,
+        "L": 10,
+        "xc": 4.6,
+        "chart_kind": "bounded",
+        "T_switch": null,
+        "kappa": 10,
+        "damp_off": [
+          0.02,
+          0.05
+        ],
+        "project": null,
+        "cfl": 0.5,
+        "order": 4
+      },
+      "rho_b": 7.838285538073243,
+      "sources": [
+        {
+          "summary": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y2_dc1e-2_dzf5e-4_summary.json",
+          "summary_sha256": "16cda7ce1ee8352649000fd838202dab0442ee84c7250bf80a15e25634e7accd",
+          "npz": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y2_dc1e-2_dzf5e-4_timeseries.npz",
+          "npz_sha256": "8744bc182c0c64651cd1666c64ccb7cdd7aba7ba98fbd39a3bc42808d840b44d"
+        },
+        {
+          "summary": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/fine/fine_Y2_dc1e-2_dzf2.5e-4_summary.json",
+          "summary_sha256": "3bd1c6bd1cefa77f51b587c2c2b67bab48d9496677dee99242dd29ecdb1e5858",
+          "npz": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/fine/fine_Y2_dc1e-2_dzf2.5e-4_timeseries.npz",
+          "npz_sha256": "74526055ee928427b690300a5a8d3bd639e68c2b0a459788b0fec4c481622302"
+        }
+      ],
+      "n_saved": 743,
+      "stop_reason": "non-finite",
+      "restart_info": {
+        "parent_state_basename": "main_Y2_dc1e-2_dzf5e-4_state_T4.75.npz",
+        "T": 4.7500000000000595
+      },
+      "reliability": {
+        "last_index": 742,
+        "first_bad_constraint_index": null,
+        "last_H0tau": 55.48286242462584,
+        "checked_records": 75,
+        "inherited_cutoff": "first near-shell H or M residual > 0.05",
+        "note": "Residuals are archived intermittently; unchecked records inherit the historical prefix cutoff."
+      },
+      "longest_F_abs": {
+        "start_index": 529,
+        "end_index": 595,
+        "n_saved": 67,
+        "Delta_N": 0.31446340736608747,
+        "start_H0tau": 7.397523901922649,
+        "end_H0tau": 11.220520380640787,
+        "start_T": 5.289999999998801,
+        "end_T": 5.949999999997263,
+        "passes_Delta_N_0p5": false
+      },
+      "longest_F0_upper_bound": {
+        "start_index": 529,
+        "end_index": 595,
+        "n_saved": 67,
+        "Delta_N": 0.31446340736608747,
+        "start_H0tau": 7.397523901922649,
+        "end_H0tau": 11.220520380640787,
+        "start_T": 5.289999999998801,
+        "end_T": 5.949999999997263,
+        "passes_Delta_N_0p5": false
+      },
+      "longest_legacy_point_gate": {
+        "start_index": 529,
+        "end_index": 727,
+        "n_saved": 199,
+        "Delta_N": 0.9261993640078003,
+        "start_H0tau": 7.397523901922649,
+        "end_H0tau": 45.34354615714385,
+        "start_T": 5.289999999998801,
+        "end_T": 7.2699999999941864,
+        "passes_Delta_N_0p5": true
+      },
+      "F_abs_expanding_reliable": {
+        "n": 727,
+        "max": 0.9416382931240115,
+        "median": 0.029666137201414314,
+        "p95": 0.9332619926289462
+      },
+      "F0_expanding_reliable": {
+        "n": 727,
+        "max": 0.9418422527916172,
+        "median": 0.05826235345184539,
+        "p95": 0.9335794975523307
+      },
+      "algebra": {
+        "rad_reconstruction_abs": {
+          "n": 743,
+          "max": 3.5561831257524545e-17,
+          "median": 1.4484263398048536e-19,
+          "p95": 8.315830662963812e-18
+        },
+        "kin_reconstruction_abs": {
+          "n": 743,
+          "max": 6.938893903907228e-18,
+          "median": 1.925929944387236e-34,
+          "p95": 1.734723475976807e-18
+        },
+        "fric_reconstruction_abs": {
+          "n": 743,
+          "max": 1.5178830414797062e-16,
+          "median": 8.673617379884035e-19,
+          "p95": 5.551115123125783e-17
+        },
+        "closure_relative": {
+          "n": 743,
+          "max": 4.1505762548919185e-13,
+          "median": 6.108491979970709e-16,
+          "p95": 7.99421716339306e-14
+        },
+        "near_shell_H": {
+          "n": 75,
+          "max": 0.004372411054994648,
+          "median": 0.0000011691762016600637,
+          "p95": 0.00006630586278684332
+        },
+        "near_shell_M": {
+          "n": 75,
+          "max": 0.011729399851677952,
+          "median": 0.000006714488594364337,
+          "p95": 0.00022228892241245575
+        }
+      },
+      "radiation_source_ledger": {
+        "Delta_Ra4": 3954704.4492600258,
+        "integral_Y_vhat2_a4_over_rb": 3954752.382709504,
+        "relative_endpoint_residual": 0.000006060270698312722,
+        "endpoint_ratio": 0.9999878795320567,
+        "differential_relative_interior": {
+          "n": 737,
+          "max": 0.002944448578255835,
+          "median": 0.000056871558884811414,
+          "p95": 0.00031512463119168156
+        },
+        "note": "Trapezoidal integration/finite-difference diagnostic of archived points, not an exact certificate."
+      },
+      "historical_savedpoint_comparison": [
+        {
+          "label": "plateau",
+          "target_H0tau": 18.20157110470227,
+          "nearest_H0tau": 18.20157110470227,
+          "index": 650,
+          "reliable": true,
+          "H_over_H0": 0.029663180305346936,
+          "F0": 0.7654491662636436,
+          "F_abs": 0.7654491546246199,
+          "abs_W_over_linear_radiation": 0.021307993305375264,
+          "Omega_r_legacy": 1.3574158351536791,
+          "conservative_point_pass": false
+        },
+        {
+          "label": "at_max_Omega_r",
+          "target_H0tau": 45.94852077068564,
+          "nearest_H0tau": 45.94852077068564,
+          "index": 728,
+          "reliable": true,
+          "H_over_H0": -0.00013299376386912668,
+          "F0": 0.4876600431389152,
+          "F_abs": 0.48765734401136557,
+          "abs_W_over_linear_radiation": 0.025226334781123502,
+          "Omega_r_legacy": 18806.464844748487,
+          "conservative_point_pass": false
+        }
+      ]
+    },
+    "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/fine/fine_Y2_dc1e-4_dzf2.5e-4_summary.json": {
+      "tag": "fine_Y2_dc1e-4_dzf2.5e-4",
+      "params": {
+        "delta": 0.1,
+        "c": 0.5975949350280132,
+        "d": -3.106933495673783,
+        "dc": 0.0001,
+        "Y": 2,
+        "dzf": 0.00025,
+        "dzc": 0.001,
+        "zfine": 0.4,
+        "width": 0.02,
+        "L": 10,
+        "xc": 8.1,
+        "chart_kind": "bounded",
+        "T_switch": null,
+        "kappa": 10,
+        "damp_off": [
+          0.02,
+          0.05
+        ],
+        "project": null,
+        "cfl": 0.5,
+        "order": 4
+      },
+      "rho_b": 7.838285538073243,
+      "sources": [
+        {
+          "summary": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y2_dc1e-4_dzf5e-4_summary.json",
+          "summary_sha256": "de4f8f609c8b85b1635fff11c0da9429b942eaad381e0a1dc723b0c66bfee96a",
+          "npz": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y2_dc1e-4_dzf5e-4_timeseries.npz",
+          "npz_sha256": "8b9c9202692436d5d1f09655ef6439f04d9de49614ae8746753817060dfba46a"
+        },
+        {
+          "summary": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/fine/fine_Y2_dc1e-4_dzf2.5e-4_summary.json",
+          "summary_sha256": "17ca3d1622dc52eba375645bfec13d23fd1897ae01894a3fbff66e59cc14d41e",
+          "npz": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/fine/fine_Y2_dc1e-4_dzf2.5e-4_timeseries.npz",
+          "npz_sha256": "8478335b2f96cdc3ee1ab5a700d6e37bde77a314b9c176da4f47051b04f7313a"
+        }
+      ],
+      "n_saved": 1047,
+      "stop_reason": "step failed at T=10.4696 (ValueError: w outside the static table (sgn=-1, max x=5.3786 > 5.3786))",
+      "restart_info": {
+        "parent_state_basename": "main_Y2_dc1e-4_dzf5e-4_state_T8.25.npz",
+        "T": 8.250000000003448
+      },
+      "reliability": {
+        "last_index": 1046,
+        "first_bad_constraint_index": null,
+        "last_H0tau": 33.62909561734263,
+        "checked_records": 106,
+        "inherited_cutoff": "first near-shell H or M residual > 0.05",
+        "note": "Residuals are archived intermittently; unchecked records inherit the historical prefix cutoff."
+      },
+      "longest_F_abs": {
+        "start_index": 880,
+        "end_index": 946,
+        "n_saved": 67,
+        "Delta_N": 0.31304259944474744,
+        "start_H0tau": 10.886351776804348,
+        "end_H0tau": 14.689513422515862,
+        "start_T": 8.800000000006074,
+        "end_T": 9.460000000009225,
+        "passes_Delta_N_0p5": false
+      },
+      "longest_F0_upper_bound": {
+        "start_index": 880,
+        "end_index": 946,
+        "n_saved": 67,
+        "Delta_N": 0.31304259944474744,
+        "start_H0tau": 10.886351776804348,
+        "end_H0tau": 14.689513422515862,
+        "start_T": 8.800000000006074,
+        "end_T": 9.460000000009225,
+        "passes_Delta_N_0p5": false
+      },
+      "longest_legacy_point_gate": {
+        "start_index": 880,
+        "end_index": 1046,
+        "n_saved": 167,
+        "Delta_N": 0.838236007896608,
+        "start_H0tau": 10.886351776804348,
+        "end_H0tau": 33.62909561734263,
+        "start_T": 8.800000000006074,
+        "end_T": 10.460000000014,
+        "passes_Delta_N_0p5": true
+      },
+      "F_abs_expanding_reliable": {
+        "n": 1046,
+        "max": 0.9416383488040175,
+        "median": 0.00023687927199483253,
+        "p95": 0.9248640986184591
+      },
+      "F0_expanding_reliable": {
+        "n": 1046,
+        "max": 0.9418420159219192,
+        "median": 0.0002461847245556024,
+        "p95": 0.9251443865893558
+      },
+      "algebra": {
+        "rad_reconstruction_abs": {
+          "n": 1047,
+          "max": 3.3176586478056436e-17,
+          "median": 1.467542483760954e-20,
+          "p95": 5.854691731421724e-18
+        },
+        "kin_reconstruction_abs": {
+          "n": 1047,
+          "max": 6.938893903907228e-18,
+          "median": 2.0194839173657902e-28,
+          "p95": 1.734723475976807e-18
+        },
+        "fric_reconstruction_abs": {
+          "n": 1047,
+          "max": 1.457167719820518e-16,
+          "median": 1.5737607462188883e-19,
+          "p95": 3.8966226079129015e-17
+        },
+        "closure_relative": {
+          "n": 1047,
+          "max": 1.8881441088195405e-13,
+          "median": 5.006264289546235e-16,
+          "p95": 2.856314238204857e-14
+        },
+        "near_shell_H": {
+          "n": 106,
+          "max": 0.000037801173262585424,
+          "median": 1.519113748955991e-8,
+          "p95": 0.000005563070947145656
+        },
+        "near_shell_M": {
+          "n": 106,
+          "max": 0.00013273583556524838,
+          "median": 9.524859286223401e-8,
+          "p95": 0.00003833635510443318
+        }
+      },
+      "radiation_source_ledger": {
+        "Delta_Ra4": 4472232962089.702,
+        "integral_Y_vhat2_a4_over_rb": 4472286589442.555,
+        "relative_endpoint_residual": 0.000005995554321679841,
+        "endpoint_ratio": 0.9999880089632496,
+        "differential_relative_interior": {
+          "n": 1041,
+          "max": 0.0028715590631682164,
+          "median": 0.000023056626241247865,
+          "p95": 0.0001901131847019163
+        },
+        "note": "Trapezoidal integration/finite-difference diagnostic of archived points, not an exact certificate."
+      },
+      "historical_savedpoint_comparison": [
+        {
+          "label": "plateau",
+          "target_H0tau": 21.65883094452056,
+          "nearest_H0tau": 21.65883094452056,
+          "index": 1001,
+          "reliable": true,
+          "H_over_H0": 0.029730324616866127,
+          "F0": 0.7659922423451347,
+          "F_abs": 0.7659922308297967,
+          "abs_W_over_linear_radiation": 0.02130790869064111,
+          "Omega_r_legacy": 1.3557093051324265,
+          "conservative_point_pass": false
+        },
+        {
+          "label": "at_max_Omega_r",
+          "target_H0tau": 33.62909561734263,
+          "nearest_H0tau": 33.62909561734263,
+          "index": 1046,
+          "reliable": true,
+          "H_over_H0": 0.011929111244323042,
+          "F0": 0.5739425508236913,
+          "F_abs": 0.5739419817142598,
+          "abs_W_over_linear_radiation": 0.02174513913461404,
+          "Omega_r_legacy": 3.317630777420545,
+          "conservative_point_pass": false
+        }
+      ]
+    },
+    "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/fine/fine_Y3_dc1e-2_dzf1.25e-4_summary.json": {
+      "tag": "fine_Y3_dc1e-2_dzf1.25e-4",
+      "params": {
+        "delta": 0.1,
+        "c": 0.5975949350280132,
+        "d": -3.106933495673783,
+        "dc": 0.01,
+        "Y": 3,
+        "dzf": 0.000125,
+        "dzc": 0.001,
+        "zfine": 0.4,
+        "width": 0.02,
+        "L": 10,
+        "xc": 6.1,
+        "chart_kind": "bounded",
+        "T_switch": null,
+        "kappa": 10,
+        "damp_off": [
+          0.02,
+          0.05
+        ],
+        "project": null,
+        "cfl": 0.5,
+        "order": 4
+      },
+      "rho_b": 7.838285538073243,
+      "sources": [
+        {
+          "summary": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y3_dc1e-2_dzf5e-4_summary.json",
+          "summary_sha256": "dc95e35959fe2e45a5ceb1539f69d6162e7416d0b28e49c4e13df2554abaeb91",
+          "npz": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y3_dc1e-2_dzf5e-4_timeseries.npz",
+          "npz_sha256": "c4ae136ef41d1248cab2939b0fbc39dcecee2b3c0f4a6a1e99da341c017c2151"
+        },
+        {
+          "summary": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/fine/fine_Y3_dc1e-2_dzf1.25e-4_summary.json",
+          "summary_sha256": "18ef1acb983bc0c5b0ed2187a6060dffa8353235241bb0f7c7af5a7703c0ab70",
+          "npz": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/fine/fine_Y3_dc1e-2_dzf1.25e-4_timeseries.npz",
+          "npz_sha256": "fe8693c76a008fd0b716b2d6841bf000a50d8aac858301fc35a35f5e870b2757"
+        }
+      ],
+      "n_saved": 905,
+      "stop_reason": "non-finite",
+      "restart_info": {
+        "parent_state_basename": "main_Y3_dc1e-2_dzf5e-4_state_T6.25.npz",
+        "T": 6.250000000001893
+      },
+      "reliability": {
+        "last_index": 884,
+        "first_bad_constraint_index": 885,
+        "last_H0tau": 58.80532818523892,
+        "checked_records": 91,
+        "inherited_cutoff": "first near-shell H or M residual > 0.05",
+        "note": "Residuals are archived intermittently; unchecked records inherit the historical prefix cutoff."
+      },
+      "longest_F_abs": {
+        "start_index": 682,
+        "end_index": 744,
+        "n_saved": 63,
+        "Delta_N": 0.34942699826627077,
+        "start_H0tau": 9.135075450974876,
+        "end_H0tau": 13.522531218310098,
+        "start_T": 6.820000000004614,
+        "end_T": 7.440000000007575,
+        "passes_Delta_N_0p5": false
+      },
+      "longest_F0_upper_bound": {
+        "start_index": 682,
+        "end_index": 744,
+        "n_saved": 63,
+        "Delta_N": 0.34942699826627077,
+        "start_H0tau": 9.135075450974876,
+        "end_H0tau": 13.522531218310098,
+        "start_T": 6.820000000004614,
+        "end_T": 7.440000000007575,
+        "passes_Delta_N_0p5": false
+      },
+      "longest_legacy_point_gate": {
+        "start_index": 681,
+        "end_index": 865,
+        "n_saved": 185,
+        "Delta_N": 0.936128314577676,
+        "start_H0tau": 9.087304255637992,
+        "end_H0tau": 47.15818188614589,
+        "start_T": 6.810000000004567,
+        "end_T": 8.650000000013351,
+        "passes_Delta_N_0p5": true
+      },
+      "F_abs_expanding_reliable": {
+        "n": 865,
+        "max": 0.9467643575739909,
+        "median": 0.006984797241663808,
+        "p95": 0.9285784624989961
+      },
+      "F0_expanding_reliable": {
+        "n": 865,
+        "max": 0.9471118694722732,
+        "median": 0.009366815882911293,
+        "p95": 0.928778561362972
+      },
+      "algebra": {
+        "rad_reconstruction_abs": {
+          "n": 885,
+          "max": 4.7488055154865094e-17,
+          "median": 1.0994884702054844e-19,
+          "p95": 7.342759213158072e-18
+        },
+        "kin_reconstruction_abs": {
+          "n": 885,
+          "max": 3.469446951953614e-18,
+          "median": 4.81482486096809e-35,
+          "p95": 1.734723475976807e-18
+        },
+        "fric_reconstruction_abs": {
+          "n": 885,
+          "max": 2.3592239273284576e-16,
+          "median": 1.734723475976807e-18,
+          "p95": 6.938893903907228e-17
+        },
+        "closure_relative": {
+          "n": 885,
+          "max": 2.6283539513659244e-13,
+          "median": 5.077014851339622e-16,
+          "p95": 7.171439490321507e-14
+        },
+        "near_shell_H": {
+          "n": 89,
+          "max": 0.007300127074583786,
+          "median": 0.000001267138949909023,
+          "p95": 0.00007053125151828005
+        },
+        "near_shell_M": {
+          "n": 89,
+          "max": 0.04556166073541936,
+          "median": 0.000006504590845455854,
+          "p95": 0.0005426162949371302
+        }
+      },
+      "radiation_source_ledger": {
+        "Delta_Ra4": 3638297572.090369,
+        "integral_Y_vhat2_a4_over_rb": 3638371132.101717,
+        "relative_endpoint_residual": 0.000010109023007381495,
+        "endpoint_ratio": 0.9999797821583679,
+        "differential_relative_interior": {
+          "n": 879,
+          "max": 0.0034406119052270852,
+          "median": 0.000016504249196153458,
+          "p95": 0.00029917196736003836
+        },
+        "note": "Trapezoidal integration/finite-difference diagnostic of archived points, not an exact certificate."
+      },
+      "historical_savedpoint_comparison": [
+        {
+          "label": "plateau",
+          "target_H0tau": 23.54814560408794,
+          "nearest_H0tau": 23.54814560408794,
+          "index": 805,
+          "reliable": true,
+          "H_over_H0": 0.022436036086624606,
+          "F0": 0.70538043088125,
+          "F_abs": 0.705380322734891,
+          "abs_W_over_linear_radiation": 0.010118769476762442,
+          "Omega_r_legacy": 1.6585125391359155,
+          "conservative_point_pass": false
+        },
+        {
+          "label": "at_max_Omega_r",
+          "target_H0tau": 47.72368373307577,
+          "nearest_H0tau": 47.72368373307577,
+          "index": 866,
+          "reliable": true,
+          "H_over_H0": -0.00015813443856383202,
+          "F0": 0.4948612756338915,
+          "F_abs": 0.4948611843266662,
+          "abs_W_over_linear_radiation": 0.010309869183971851,
+          "Omega_r_legacy": 13457.728516913457,
+          "conservative_point_pass": false
+        }
+      ]
+    },
+    "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/fine/fine_Y5_dc1e-2_dzf1.25e-4_cfl0.25_summary.json": {
+      "tag": "fine_Y5_dc1e-2_dzf1.25e-4_cfl0.25",
+      "params": {
+        "delta": 0.1,
+        "c": 0.5975949350280132,
+        "d": -3.106933495673783,
+        "dc": 0.01,
+        "Y": 5,
+        "dzf": 0.000125,
+        "dzc": 0.001,
+        "zfine": 0.4,
+        "width": 0.02,
+        "L": 10,
+        "xc": 8.7,
+        "chart_kind": "bounded",
+        "T_switch": null,
+        "kappa": 10,
+        "damp_off": [
+          0.02,
+          0.05
+        ],
+        "project": null,
+        "cfl": 0.25,
+        "order": 4
+      },
+      "rho_b": 7.838285538073243,
+      "sources": [
+        {
+          "summary": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y5_dc1e-2_dzf5e-4_cfl0.25_summary.json",
+          "summary_sha256": "e53a11a577523c41273f64372cceea81eccd2e2b63cf6d573318e1882ad9c190",
+          "npz": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y5_dc1e-2_dzf5e-4_cfl0.25_timeseries.npz",
+          "npz_sha256": "d97fc03c3b17bcba22cc3f620433e971efda1660ba05798e62b2b2923f3ad371"
+        },
+        {
+          "summary": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/fine/fine_Y5_dc1e-2_dzf1.25e-4_cfl0.25_summary.json",
+          "summary_sha256": "2257e07839926b4335cfbb57dc4b5d17833e1401d2513052d7f59fbcf1e0fb71",
+          "npz": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/fine/fine_Y5_dc1e-2_dzf1.25e-4_cfl0.25_timeseries.npz",
+          "npz_sha256": "1f8e4d43b55bf668fa368d56cf7432d2e16c8ab0664db6f3650684b4ec24e7ef"
+        }
+      ],
+      "n_saved": 1076,
+      "stop_reason": "step failed at T=10.7532 (ValueError: w outside the static table (sgn=-1, max x=5.3786 > 5.3786))",
+      "restart_info": {
+        "parent_state_basename": "main_Y5_dc1e-2_dzf5e-4_cfl0.25_state_T8.75.npz",
+        "T": 8.749999999996273
+      },
+      "reliability": {
+        "last_index": 1034,
+        "first_bad_constraint_index": 1035,
+        "last_H0tau": 37.948865789816644,
+        "checked_records": 109,
+        "inherited_cutoff": "first near-shell H or M residual > 0.05",
+        "note": "Residuals are archived intermittently; unchecked records inherit the historical prefix cutoff."
+      },
+      "longest_F_abs": {
+        "start_index": 939,
+        "end_index": 969,
+        "n_saved": 31,
+        "Delta_N": 0.32628303262920433,
+        "start_H0tau": 13.051253869958046,
+        "end_H0tau": 17.36004408911037,
+        "start_T": 9.38999999998114,
+        "end_T": 9.689999999974045,
+        "passes_Delta_N_0p5": false
+      },
+      "longest_F0_upper_bound": {
+        "start_index": 939,
+        "end_index": 969,
+        "n_saved": 31,
+        "Delta_N": 0.32628303262920433,
+        "start_H0tau": 13.051253869958046,
+        "end_H0tau": 17.36004408911037,
+        "start_T": 9.38999999998114,
+        "end_T": 9.689999999974045,
+        "passes_Delta_N_0p5": false
+      },
+      "longest_legacy_point_gate": {
+        "start_index": 939,
+        "end_index": 1034,
+        "n_saved": 96,
+        "Delta_N": 0.8326218879342608,
+        "start_H0tau": 13.051253869958046,
+        "end_H0tau": 37.948865789816644,
+        "start_T": 9.38999999998114,
+        "end_T": 10.339999999958675,
+        "passes_Delta_N_0p5": true
+      },
+      "F_abs_expanding_reliable": {
+        "n": 1034,
+        "max": 0.9432254350500919,
+        "median": 0.0008836504909659186,
+        "p95": 0.8343447876284058
+      },
+      "F0_expanding_reliable": {
+        "n": 1034,
+        "max": 0.9438654322242397,
+        "median": 0.0009863877814980408,
+        "p95": 0.8390893071314101
+      },
+      "algebra": {
+        "rad_reconstruction_abs": {
+          "n": 1035,
+          "max": 1.8756697583999227e-17,
+          "median": 4.5925067608944097e-20,
+          "p95": 3.917357974461686e-18
+        },
+        "kin_reconstruction_abs": {
+          "n": 1035,
+          "max": 3.469446951953614e-18,
+          "median": 5.293955920339377e-23,
+          "p95": 4.336808689942018e-19
+        },
+        "fric_reconstruction_abs": {
+          "n": 1035,
+          "max": 2.636779683484747e-16,
+          "median": 3.3610267347050637e-18,
+          "p95": 7.632783294297951e-17
+        },
+        "closure_relative": {
+          "n": 1035,
+          "max": 2.9844966714725433e-13,
+          "median": 4.4341033876157646e-16,
+          "p95": 1.383833512970307e-14
+        },
+        "near_shell_H": {
+          "n": 104,
+          "max": 0.003314947915713473,
+          "median": 0.0000011063091218173157,
+          "p95": 0.000013995352754960664
+        },
+        "near_shell_M": {
+          "n": 104,
+          "max": 0.021485560370629854,
+          "median": 0.00000629113722624206,
+          "p95": 0.0001271324580761906
+        }
+      },
+      "radiation_source_ledger": {
+        "Delta_Ra4": 3745052010119889.5,
+        "integral_Y_vhat2_a4_over_rb": 3745457800789587.5,
+        "relative_endpoint_residual": 0.00005417397212496675,
+        "endpoint_ratio": 0.9998916579250706,
+        "differential_relative_interior": {
+          "n": 1029,
+          "max": 0.008152341129420643,
+          "median": 0.0000027164459338230124,
+          "p95": 0.0005139884121658469
+        },
+        "note": "Trapezoidal integration/finite-difference diagnostic of archived points, not an exact certificate."
+      },
+      "historical_savedpoint_comparison": [
+        {
+          "label": "plateau",
+          "target_H0tau": 35.08091613831256,
+          "nearest_H0tau": 35.08091613831256,
+          "index": 1028,
+          "reliable": true,
+          "H_over_H0": 0.012343731506890523,
+          "F0": 0.5888470242081484,
+          "F_abs": 0.5888468331597687,
+          "abs_W_over_linear_radiation": 0.004409001299968547,
+          "Omega_r_legacy": 3.2169010916082157,
+          "conservative_point_pass": false
+        },
+        {
+          "label": "at_max_Omega_r",
+          "target_H0tau": 37.948865789816644,
+          "nearest_H0tau": 37.948865789816644,
+          "index": 1034,
+          "reliable": true,
+          "H_over_H0": 0.00969735100590375,
+          "F0": 0.5581904324500834,
+          "F_abs": 0.5581901973930581,
+          "abs_W_over_linear_radiation": 0.004447405544339832,
+          "Omega_r_legacy": 4.594611909824675,
+          "conservative_point_pass": false
+        }
+      ]
+    },
+    "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y0.5_dc1e-2_dzf5e-4_summary.json": {
+      "tag": "main_Y0.5_dc1e-2_dzf5e-4",
+      "params": {
+        "delta": 0.1,
+        "c": 0.5975949350280132,
+        "d": -3.106933495673783,
+        "dc": 0.01,
+        "Y": 0.5,
+        "dzf": 0.0005,
+        "dzc": 0.002,
+        "zfine": 0.4,
+        "width": 0.02,
+        "L": 10,
+        "xc": 2.5,
+        "chart_kind": "bounded",
+        "T_switch": null,
+        "kappa": 10,
+        "damp_off": [
+          0.02,
+          0.05
+        ],
+        "project": 9.9,
+        "cfl": 0.5,
+        "order": 4
+      },
+      "rho_b": 7.838285538073243,
+      "sources": [
+        {
+          "summary": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y0.5_dc1e-2_dzf5e-4_summary.json",
+          "summary_sha256": "05ec563f823df70b78d8c2894993a4a3789e63b88365bf00b9f21e4df5a1be46",
+          "npz": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y0.5_dc1e-2_dzf5e-4_timeseries.npz",
+          "npz_sha256": "5b40f1131bf26e7ad92be7071b4633e7f23a9743880878d147610a1a74339416"
+        }
+      ],
+      "n_saved": 440,
+      "stop_reason": "non-finite",
+      "restart_info": null,
+      "reliability": {
+        "last_index": 439,
+        "first_bad_constraint_index": null,
+        "last_H0tau": 15.105999802637895,
+        "checked_records": 44,
+        "inherited_cutoff": "first near-shell H or M residual > 0.05",
+        "note": "Residuals are archived intermittently; unchecked records inherit the historical prefix cutoff."
+      },
+      "longest_F_abs": {
+        "Delta_N": 0,
+        "n_saved": 0,
+        "passes_Delta_N_0p5": false
+      },
+      "longest_F0_upper_bound": {
+        "Delta_N": 0,
+        "n_saved": 0,
+        "passes_Delta_N_0p5": false
+      },
+      "longest_legacy_point_gate": {
+        "Delta_N": 0,
+        "n_saved": 0,
+        "passes_Delta_N_0p5": false
+      },
+      "F_abs_expanding_reliable": {
+        "n": 439,
+        "max": 0.7939043837436989,
+        "median": 0.12787294091443707,
+        "p95": 0.7923813260743338
+      },
+      "F0_expanding_reliable": {
+        "n": 439,
+        "max": 0.7939403018911722,
+        "median": 0.15470116418416838,
+        "p95": 0.7924708811562845
+      },
+      "algebra": {
+        "rad_reconstruction_abs": {
+          "n": 440,
+          "max": 1.349831704744453e-17,
+          "median": 3.426248271643645e-19,
+          "p95": 4.8380827881271005e-18
+        },
+        "kin_reconstruction_abs": {
+          "n": 440,
+          "max": 2.7755575615628914e-17,
+          "median": 7.703719777548943e-34,
+          "p95": 6.938893903907228e-18
+        },
+        "fric_reconstruction_abs": {
+          "n": 440,
+          "max": 6.591949208711867e-17,
+          "median": 1.5108950196648582e-19,
+          "p95": 2.2594773274597873e-17
+        },
+        "closure_relative": {
+          "n": 440,
+          "max": 5.883219599603102e-14,
+          "median": 7.479636612888539e-16,
+          "p95": 1.951711600674514e-14
+        },
+        "near_shell_H": {
+          "n": 44,
+          "max": 0.000016198158820447312,
+          "median": 0.000002178207624152812,
+          "p95": 0.0000094126679779057
+        },
+        "near_shell_M": {
+          "n": 44,
+          "max": 0.00009350474666496283,
+          "median": 0.000015194090576492047,
+          "p95": 0.00006010365338071681
+        }
+      },
+      "radiation_source_ledger": {
+        "Delta_Ra4": 166.9104065055181,
+        "integral_Y_vhat2_a4_over_rb": 166.91010891857786,
+        "relative_endpoint_residual": 8.914579137138623e-7,
+        "endpoint_ratio": 1.0000017829174168,
+        "differential_relative_interior": {
+          "n": 434,
+          "max": 0.0011764039430774225,
+          "median": 0.00010749417127196272,
+          "p95": 0.0004667772145088851
+        },
+        "note": "Trapezoidal integration/finite-difference diagnostic of archived points, not an exact certificate."
+      },
+      "historical_savedpoint_comparison": [
+        {
+          "label": "plateau",
+          "target_H0tau": 10.529955723450618,
+          "nearest_H0tau": 10.529955723450618,
+          "index": 411,
+          "reliable": true,
+          "H_over_H0": 0.04694018819872893,
+          "F0": 0.7203773577073681,
+          "F_abs": 0.7203773125848777,
+          "abs_W_over_linear_radiation": 0.22380513464817645,
+          "Omega_r_legacy": 0.9433102843484779,
+          "conservative_point_pass": false
+        },
+        {
+          "label": "at_max_Omega_r",
+          "target_H0tau": 15.105999802637895,
+          "nearest_H0tau": 15.105999802637895,
+          "index": 439,
+          "reliable": true,
+          "H_over_H0": 0.03054690232755469,
+          "F0": 0.6443096861429598,
+          "F_abs": 0.6443086496684862,
+          "abs_W_over_linear_radiation": 0.22437002462010608,
+          "Omega_r_legacy": 1.1147409717240133,
+          "conservative_point_pass": false
+        }
+      ]
+    },
+    "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y0.7_dc1e-2_dzf5e-4_summary.json": {
+      "tag": "main_Y0.7_dc1e-2_dzf5e-4",
+      "params": {
+        "delta": 0.1,
+        "c": 0.5975949350280132,
+        "d": -3.106933495673783,
+        "dc": 0.01,
+        "Y": 0.7,
+        "dzf": 0.0005,
+        "dzc": 0.002,
+        "zfine": 0.4,
+        "width": 0.02,
+        "L": 10,
+        "xc": 2.7,
+        "chart_kind": "bounded",
+        "T_switch": null,
+        "kappa": 10,
+        "damp_off": [
+          0.02,
+          0.05
+        ],
+        "project": 9.9,
+        "cfl": 0.5,
+        "order": 4
+      },
+      "rho_b": 7.838285538073243,
+      "sources": [
+        {
+          "summary": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y0.7_dc1e-2_dzf5e-4_summary.json",
+          "summary_sha256": "093733fe9a26d062e47679d242bacd9959ee93efa907a9585f3ee027d927e996",
+          "npz": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y0.7_dc1e-2_dzf5e-4_timeseries.npz",
+          "npz_sha256": "269efc673d2d2a5772355eae2ec1cb940a99379ceff0bf5ad6f44b73950412ba"
+        }
+      ],
+      "n_saved": 477,
+      "stop_reason": "non-finite",
+      "restart_info": null,
+      "reliability": {
+        "last_index": 476,
+        "first_bad_constraint_index": null,
+        "last_H0tau": 20.004612703763243,
+        "checked_records": 48,
+        "inherited_cutoff": "first near-shell H or M residual > 0.05",
+        "note": "Residuals are archived intermittently; unchecked records inherit the historical prefix cutoff."
+      },
+      "longest_F_abs": {
+        "Delta_N": 0,
+        "n_saved": 0,
+        "passes_Delta_N_0p5": false
+      },
+      "longest_F0_upper_bound": {
+        "Delta_N": 0,
+        "n_saved": 0,
+        "passes_Delta_N_0p5": false
+      },
+      "longest_legacy_point_gate": {
+        "Delta_N": 0,
+        "n_saved": 0,
+        "passes_Delta_N_0p5": false
+      },
+      "F_abs_expanding_reliable": {
+        "n": 476,
+        "max": 0.8564742240677551,
+        "median": 0.10327962023639975,
+        "p95": 0.8542753254992486
+      },
+      "F0_expanding_reliable": {
+        "n": 476,
+        "max": 0.8565278723749998,
+        "median": 0.15871004365231595,
+        "p95": 0.8543992321714097
+      },
+      "algebra": {
+        "rad_reconstruction_abs": {
+          "n": 477,
+          "max": 1.962405932198763e-17,
+          "median": 3.290723000082957e-19,
+          "p95": 6.4564239371511755e-18
+        },
+        "kin_reconstruction_abs": {
+          "n": 477,
+          "max": 2.0816681711721685e-17,
+          "median": 1.232595164407831e-32,
+          "p95": 6.938893903907228e-18
+        },
+        "fric_reconstruction_abs": {
+          "n": 477,
+          "max": 8.196568423990414e-17,
+          "median": 1.7957098481791167e-19,
+          "p95": 2.9837243786801075e-17
+        },
+        "closure_relative": {
+          "n": 477,
+          "max": 1.4753321037833476e-13,
+          "median": 6.684036720369927e-16,
+          "p95": 3.124540392598675e-14
+        },
+        "near_shell_H": {
+          "n": 48,
+          "max": 0.0000718085438305182,
+          "median": 0.000001929882376264427,
+          "p95": 0.000010077337255360403
+        },
+        "near_shell_M": {
+          "n": 48,
+          "max": 0.00015063093049602096,
+          "median": 0.000011119513875162406,
+          "p95": 0.00006829597428465563
+        }
+      },
+      "radiation_source_ledger": {
+        "Delta_Ra4": 656.9786746557972,
+        "integral_Y_vhat2_a4_over_rb": 656.9792532970932,
+        "relative_endpoint_residual": 4.4038038332729807e-7,
+        "endpoint_ratio": 0.9999991192396213,
+        "differential_relative_interior": {
+          "n": 471,
+          "max": 0.0014159118573327226,
+          "median": 0.00009923414780183939,
+          "p95": 0.00042129652570844643
+        },
+        "note": "Trapezoidal integration/finite-difference diagnostic of archived points, not an exact certificate."
+      },
+      "historical_savedpoint_comparison": [
+        {
+          "label": "plateau",
+          "target_H0tau": 11.47604028476125,
+          "nearest_H0tau": 11.47604028476125,
+          "index": 433,
+          "reliable": true,
+          "H_over_H0": 0.044302570029942916,
+          "F0": 0.7688404970018341,
+          "F_abs": 0.7688404332673088,
+          "abs_W_over_linear_radiation": 0.1326681357353135,
+          "Omega_r_legacy": 1.035868251747044,
+          "conservative_point_pass": false
+        },
+        {
+          "label": "at_max_Omega_r",
+          "target_H0tau": 20.004612703763243,
+          "nearest_H0tau": 20.004612703763243,
+          "index": 476,
+          "reliable": true,
+          "H_over_H0": 0.021507737226908633,
+          "F0": 0.6175288669922527,
+          "F_abs": 0.6175226800034377,
+          "abs_W_over_linear_radiation": 0.13620605003599917,
+          "Omega_r_legacy": 1.530562305191351,
+          "conservative_point_pass": false
+        }
+      ]
+    },
+    "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y1.5_dc1e-2_dzf5e-4_summary.json": {
+      "tag": "main_Y1.5_dc1e-2_dzf5e-4",
+      "params": {
+        "delta": 0.1,
+        "c": 0.5975949350280132,
+        "d": -3.106933495673783,
+        "dc": 0.01,
+        "Y": 1.5,
+        "dzf": 0.0005,
+        "dzc": 0.002,
+        "zfine": 0.4,
+        "width": 0.02,
+        "L": 10,
+        "xc": 3.9,
+        "chart_kind": "bounded",
+        "T_switch": null,
+        "kappa": 10,
+        "damp_off": [
+          0.02,
+          0.05
+        ],
+        "project": 9.9,
+        "cfl": 0.5,
+        "order": 4
+      },
+      "rho_b": 7.838285538073243,
+      "sources": [
+        {
+          "summary": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y1.5_dc1e-2_dzf5e-4_summary.json",
+          "summary_sha256": "498f6f0d72c4caf92690cbcaaf1dac1bc71dcffa8c94aac10c2fa3324b684ee1",
+          "npz": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y1.5_dc1e-2_dzf5e-4_timeseries.npz",
+          "npz_sha256": "13b4c3279b131a988408bbe0fdb072dd4aecdddb02dcfd62f9eb7b74f9742b22"
+        }
+      ],
+      "n_saved": 666,
+      "stop_reason": "non-finite",
+      "restart_info": null,
+      "reliability": {
+        "last_index": 659,
+        "first_bad_constraint_index": 660,
+        "last_H0tau": 43.07502682324176,
+        "checked_records": 67,
+        "inherited_cutoff": "first near-shell H or M residual > 0.05",
+        "note": "Residuals are archived intermittently; unchecked records inherit the historical prefix cutoff."
+      },
+      "longest_F_abs": {
+        "Delta_N": 0,
+        "n_saved": 0,
+        "passes_Delta_N_0p5": false
+      },
+      "longest_F0_upper_bound": {
+        "Delta_N": 0,
+        "n_saved": 0,
+        "passes_Delta_N_0p5": false
+      },
+      "longest_legacy_point_gate": {
+        "Delta_N": 0,
+        "n_saved": 0,
+        "passes_Delta_N_0p5": false
+      },
+      "F_abs_expanding_reliable": {
+        "n": 659,
+        "max": 0.931181802749178,
+        "median": 0.07249576399783161,
+        "p95": 0.9258803127424513
+      },
+      "F0_expanding_reliable": {
+        "n": 659,
+        "max": 0.9313281177712694,
+        "median": 0.1376819763553237,
+        "p95": 0.9260197850839945
+      },
+      "algebra": {
+        "rad_reconstruction_abs": {
+          "n": 660,
+          "max": 2.6454533008646308e-17,
+          "median": 2.326892150336169e-19,
+          "p95": 7.646335821454018e-18
+        },
+        "kin_reconstruction_abs": {
+          "n": 660,
+          "max": 1.3877787807814457e-17,
+          "median": 3.944304526105059e-31,
+          "p95": 3.469446951953614e-18
+        },
+        "fric_reconstruction_abs": {
+          "n": 660,
+          "max": 1.3530843112619095e-16,
+          "median": 5.840292171318401e-19,
+          "p95": 5.121771062821519e-17
+        },
+        "closure_relative": {
+          "n": 660,
+          "max": 3.3544108969123386e-13,
+          "median": 6.488115316694516e-16,
+          "p95": 7.654319677341084e-14
+        },
+        "near_shell_H": {
+          "n": 66,
+          "max": 0.0025376836368094548,
+          "median": 0.0000015406856538806458,
+          "p95": 0.000033980079717638825
+        },
+        "near_shell_M": {
+          "n": 66,
+          "max": 0.0034727845818022,
+          "median": 0.00000885130029939788,
+          "p95": 0.0001224399511057188
+        }
+      },
+      "radiation_source_ledger": {
+        "Delta_Ra4": 136439.14050998425,
+        "integral_Y_vhat2_a4_over_rb": 136440.13362812815,
+        "relative_endpoint_residual": 0.000003639404813865585,
+        "endpoint_ratio": 0.9999927212168627,
+        "differential_relative_interior": {
+          "n": 654,
+          "max": 0.0024967399397323223,
+          "median": 0.0000686907500876581,
+          "p95": 0.00031280081948640236
+        },
+        "note": "Trapezoidal integration/finite-difference diagnostic of archived points, not an exact certificate."
+      },
+      "historical_savedpoint_comparison": [
+        {
+          "label": "plateau",
+          "target_H0tau": 15.442739568636451,
+          "nearest_H0tau": 15.442739568636451,
+          "index": 577,
+          "reliable": true,
+          "H_over_H0": 0.03481894473279056,
+          "F0": 0.7914172123910155,
+          "F_abs": 0.7914169518237271,
+          "abs_W_over_linear_radiation": 0.036039779711860745,
+          "Omega_r_legacy": 1.2359184721023289,
+          "conservative_point_pass": false
+        },
+        {
+          "label": "at_max_Omega_r",
+          "target_H0tau": 43.07502682324176,
+          "nearest_H0tau": 43.07502682324176,
+          "index": 659,
+          "reliable": true,
+          "H_over_H0": 0.0016667776974771081,
+          "F0": 0.43994734536632646,
+          "F_abs": 0.43987280386434385,
+          "abs_W_over_linear_radiation": 0.14084318837226856,
+          "Omega_r_legacy": 117.40658566944725,
+          "conservative_point_pass": false
+        }
+      ]
+    },
+    "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y2_dc1e-2_dzf5e-4_summary.json": {
+      "tag": "main_Y2_dc1e-2_dzf5e-4",
+      "params": {
+        "delta": 0.1,
+        "c": 0.5975949350280132,
+        "d": -3.106933495673783,
+        "dc": 0.01,
+        "Y": 2,
+        "dzf": 0.0005,
+        "dzc": 0.002,
+        "zfine": 0.4,
+        "width": 0.02,
+        "L": 10,
+        "xc": 4.6,
+        "chart_kind": "bounded",
+        "T_switch": null,
+        "kappa": 10,
+        "damp_off": [
+          0.02,
+          0.05
+        ],
+        "project": 9.9,
+        "cfl": 0.5,
+        "order": 4
+      },
+      "rho_b": 7.838285538073243,
+      "sources": [
+        {
+          "summary": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y2_dc1e-2_dzf5e-4_summary.json",
+          "summary_sha256": "16cda7ce1ee8352649000fd838202dab0442ee84c7250bf80a15e25634e7accd",
+          "npz": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y2_dc1e-2_dzf5e-4_timeseries.npz",
+          "npz_sha256": "8744bc182c0c64651cd1666c64ccb7cdd7aba7ba98fbd39a3bc42808d840b44d"
+        }
+      ],
+      "n_saved": 743,
+      "stop_reason": "non-finite",
+      "restart_info": null,
+      "reliability": {
+        "last_index": 729,
+        "first_bad_constraint_index": 730,
+        "last_H0tau": 46.46477834720023,
+        "checked_records": 75,
+        "inherited_cutoff": "first near-shell H or M residual > 0.05",
+        "note": "Residuals are archived intermittently; unchecked records inherit the historical prefix cutoff."
+      },
+      "longest_F_abs": {
+        "start_index": 529,
+        "end_index": 595,
+        "n_saved": 67,
+        "Delta_N": 0.3144638170146514,
+        "start_H0tau": 7.397524000090644,
+        "end_H0tau": 11.220526541887237,
+        "start_T": 5.2900000000007195,
+        "end_T": 5.950000000001526,
+        "passes_Delta_N_0p5": false
+      },
+      "longest_F0_upper_bound": {
+        "start_index": 529,
+        "end_index": 595,
+        "n_saved": 67,
+        "Delta_N": 0.3144638170146514,
+        "start_H0tau": 7.397524000090644,
+        "end_H0tau": 11.220526541887237,
+        "start_T": 5.2900000000007195,
+        "end_T": 5.950000000001526,
+        "passes_Delta_N_0p5": false
+      },
+      "longest_legacy_point_gate": {
+        "start_index": 529,
+        "end_index": 698,
+        "n_saved": 170,
+        "Delta_N": 0.8516791952237863,
+        "start_H0tau": 7.397524000090644,
+        "end_H0tau": 31.269167733721478,
+        "start_T": 5.2900000000007195,
+        "end_T": 6.980000000002785,
+        "passes_Delta_N_0p5": true
+      },
+      "F_abs_expanding_reliable": {
+        "n": 728,
+        "max": 0.9416381060942425,
+        "median": 0.030050336854255358,
+        "p95": 0.933249313300789
+      },
+      "F0_expanding_reliable": {
+        "n": 728,
+        "max": 0.9418420746569051,
+        "median": 0.05944278260787718,
+        "p95": 0.9335454421910844
+      },
+      "algebra": {
+        "rad_reconstruction_abs": {
+          "n": 730,
+          "max": 3.5561831257524545e-17,
+          "median": 1.4418750693534336e-19,
+          "p95": 7.551468131361524e-18
+        },
+        "kin_reconstruction_abs": {
+          "n": 730,
+          "max": 6.938893903907228e-18,
+          "median": 4.930380657631324e-32,
+          "p95": 1.734723475976807e-18
+        },
+        "fric_reconstruction_abs": {
+          "n": 730,
+          "max": 1.5178830414797062e-16,
+          "median": 9.706997575534282e-19,
+          "p95": 5.741934705483216e-17
+        },
+        "closure_relative": {
+          "n": 730,
+          "max": 2.9876715778006893e-13,
+          "median": 5.750040801986341e-16,
+          "p95": 8.952050849842186e-14
+        },
+        "near_shell_H": {
+          "n": 73,
+          "max": 0.011047222629261146,
+          "median": 0.0000014160395059815222,
+          "p95": 0.00019079786353161295
+        },
+        "near_shell_M": {
+          "n": 73,
+          "max": 0.036105305452077505,
+          "median": 0.000007628907097894375,
+          "p95": 0.000544036321135613
+        }
+      },
+      "radiation_source_ledger": {
+        "Delta_Ra4": 3954704.4666529354,
+        "integral_Y_vhat2_a4_over_rb": 3954752.39296034,
+        "relative_endpoint_residual": 0.000006059367698069362,
+        "endpoint_ratio": 0.9999878813380353,
+        "differential_relative_interior": {
+          "n": 724,
+          "max": 0.002944448578255835,
+          "median": 0.000050252088044382866,
+          "p95": 0.0002840028985451527
+        },
+        "note": "Trapezoidal integration/finite-difference diagnostic of archived points, not an exact certificate."
+      },
+      "historical_savedpoint_comparison": [
+        {
+          "label": "plateau",
+          "target_H0tau": 18.201621334300786,
+          "nearest_H0tau": 18.201621334300786,
+          "index": 650,
+          "reliable": true,
+          "H_over_H0": 0.029664079486994236,
+          "F0": 0.765276506191562,
+          "F_abs": 0.7652758162931359,
+          "abs_W_over_linear_radiation": 0.021483884656892212,
+          "Omega_r_legacy": 1.3573129487138913,
+          "conservative_point_pass": false
+        },
+        {
+          "label": "at_max_Omega_r",
+          "target_H0tau": 46.46477834720023,
+          "nearest_H0tau": 46.46477834720023,
+          "index": 729,
+          "reliable": true,
+          "H_over_H0": -0.00013640734485649165,
+          "F0": 0.46384882644219433,
+          "F_abs": 0.4638202120236679,
+          "abs_W_over_linear_radiation": 0.07792274508322547,
+          "Omega_r_legacy": 17719.33833884588,
+          "conservative_point_pass": false
+        }
+      ]
+    },
+    "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y2_dc1e-4_dzf5e-4_summary.json": {
+      "tag": "main_Y2_dc1e-4_dzf5e-4",
+      "params": {
+        "delta": 0.1,
+        "c": 0.5975949350280132,
+        "d": -3.106933495673783,
+        "dc": 0.0001,
+        "Y": 2,
+        "dzf": 0.0005,
+        "dzc": 0.002,
+        "zfine": 0.4,
+        "width": 0.02,
+        "L": 10,
+        "xc": 8.1,
+        "chart_kind": "bounded",
+        "T_switch": null,
+        "kappa": 10,
+        "damp_off": [
+          0.02,
+          0.05
+        ],
+        "project": 9.9,
+        "cfl": 0.5,
+        "order": 4
+      },
+      "rho_b": 7.838285538073243,
+      "sources": [
+        {
+          "summary": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y2_dc1e-4_dzf5e-4_summary.json",
+          "summary_sha256": "de4f8f609c8b85b1635fff11c0da9429b942eaad381e0a1dc723b0c66bfee96a",
+          "npz": "research/HDBLAST_CHECKPOINT_20260930/B3_Y_scan/runs/main/main_Y2_dc1e-4_dzf5e-4_timeseries.npz",
+          "npz_sha256": "8b9c9202692436d5d1f09655ef6439f04d9de49614ae8746753817060dfba46a"
+        }
+      ],
+      "n_saved": 1047,
+      "stop_reason": "step failed at T=10.4695 (ValueError: w outside the static table (sgn=-1, max x=5.3787 > 5.3786))",
+      "restart_info": null,
+      "reliability": {
+        "last_index": 1046,
+        "first_bad_constraint_index": null,
+        "last_H0tau": 33.62835360106133,
+        "checked_records": 105,
+        "inherited_cutoff": "first near-shell H or M residual > 0.05",
+        "note": "Residuals are archived intermittently; unchecked records inherit the historical prefix cutoff."
+      },
+      "longest_F_abs": {
+        "start_index": 880,
+        "end_index": 946,
+        "n_saved": 67,
+        "Delta_N": 0.31304302304987,
+        "start_H0tau": 10.886351887984713,
+        "end_H0tau": 14.689519783630404,
+        "start_T": 8.800000000002166,
+        "end_T": 9.460000000000628,
+        "passes_Delta_N_0p5": false
+      },
+      "longest_F0_upper_bound": {
+        "start_index": 880,
+        "end_index": 946,
+        "n_saved": 67,
+        "Delta_N": 0.31304302304987,
+        "start_H0tau": 10.886351887984713,
+        "end_H0tau": 14.689519783630404,
+        "start_T": 8.800000000002166,
+        "end_T": 9.460000000000628,
+        "passes_Delta_N_0p5": false
+      },
+      "longest_legacy_point_gate": {
+        "start_index": 880,
+        "end_index": 1046,
+        "n_saved": 167,
+        "Delta_N": 0.8383417393622796,
+        "start_H0tau": 10.886351887984713,
+        "end_H0tau": 33.62835360106133,
+        "start_T": 8.800000000002166,
+        "end_T": 10.459999999998297,
+        "passes_Delta_N_0p5": true
+      },
+      "F_abs_expanding_reliable": {
+        "n": 1046,
+        "max": 0.9416381400330106,
+        "median": 0.00023687927199483253,
+        "p95": 0.9248637919154714
+      },
+      "F0_expanding_reliable": {
+        "n": 1046,
+        "max": 0.9418418161370669,
+        "median": 0.0002461847245556024,
+        "p95": 0.9251434432974978
+      },
+      "algebra": {
+        "rad_reconstruction_abs": {
+          "n": 1047,
+          "max": 3.3176586478056436e-17,
+          "median": 1.3706589545156807e-20,
+          "p95": 6.364266752489904e-18
+        },
+        "kin_reconstruction_abs": {
+          "n": 1047,
+          "max": 6.938893903907228e-18,
+          "median": 2.524354896707238e-29,
+          "p95": 1.734723475976807e-18
+        },
+        "fric_reconstruction_abs": {
+          "n": 1047,
+          "max": 1.457167719820518e-16,
+          "median": 1.555893644987743e-19,
+          "p95": 3.8966226079129015e-17
+        },
+        "closure_relative": {
+          "n": 1047,
+          "max": 1.5910432308480132e-13,
+          "median": 5.006264289546235e-16,
+          "p95": 2.5238634249796183e-14
+        },
+        "near_shell_H": {
+          "n": 105,
+          "max": 0.000286136939850077,
+          "median": 1.514773814461663e-8,
+          "p95": 0.000004161821796628216
+        },
+        "near_shell_M": {
+          "n": 105,
+          "max": 0.0008273133329084385,
+          "median": 9.421598455300712e-8,
+          "p95": 0.000014922690515382672
+        }
+      },
+      "radiation_source_ledger": {
+        "Delta_Ra4": 4472232962437.343,
+        "integral_Y_vhat2_a4_over_rb": 4472286581697.791,
+        "relative_endpoint_residual": 0.000005994649593381459,
+        "endpoint_ratio": 0.9999880107726844,
+        "differential_relative_interior": {
+          "n": 1041,
+          "max": 0.0028715590631682164,
+          "median": 0.000023056626241247865,
+          "p95": 0.00019016513069688306
+        },
+        "note": "Trapezoidal integration/finite-difference diagnostic of archived points, not an exact certificate."
+      },
+      "historical_savedpoint_comparison": [
+        {
+          "label": "plateau",
+          "target_H0tau": 21.658882830926558,
+          "nearest_H0tau": 21.658882830926558,
+          "index": 1001,
+          "reliable": true,
+          "H_over_H0": 0.029731215973757833,
+          "F0": 0.7658198766673479,
+          "F_abs": 0.7658191849762621,
+          "abs_W_over_linear_radiation": 0.021483192568083124,
+          "Omega_r_legacy": 1.3556072226603448,
+          "conservative_point_pass": false
+        },
+        {
+          "label": "at_max_Omega_r",
+          "target_H0tau": 33.62835360106133,
+          "nearest_H0tau": 33.62835360106133,
+          "index": 1046,
+          "reliable": true,
+          "H_over_H0": 0.011957738387358953,
+          "F0": 0.5702292493973576,
+          "F_abs": 0.5702200440539162,
+          "abs_W_over_linear_radiation": 0.02821986240432312,
+          "Omega_r_legacy": 3.300368852858821,
+          "conservative_point_pass": false
+        }
+      ]
+    }
+  },
+  "errors": {}
+}

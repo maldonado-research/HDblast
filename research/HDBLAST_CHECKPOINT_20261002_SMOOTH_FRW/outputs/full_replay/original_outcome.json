@@ -1,0 +1,110 @@
+{
+  "validation_status": "EXPECTED_SCIENTIFIC_FAILURE_CONFIRMED",
+  "scientific_status": "FAIL",
+  "original_command_exit_code": 1,
+  "original_summary_sha256": "aca4ffeb14db506c1d1fc4f617d89bfcc6240c59efa65bb0db912d1ec3032db7",
+  "protocol_sha256": "37fda5b30332d0079ec44db708e266788fdf5859303707bb709750fdcf59d898",
+  "primary_source_sha256": "32f6632bb84cc10dd6cef22c2311941acdbe223d846eb7157a2f1e9459fb160a",
+  "failed_acceptance_gate": "A=0.2 final K96-to-K192 pressure cutoff change",
+  "all_other_acceptance_gates_passed": true,
+  "diagnostic_runs_checked": 13,
+  "amplitudes": [
+    {
+      "amplitude": 0.0,
+      "scientific_status": "PASS",
+      "final_cutoff_gate": {
+        "rho": {
+          "absolute_difference": 9.533246990767186e-06,
+          "signal_scale": 0.12779007341606669,
+          "normalized_difference": 7.460084133239568e-05,
+          "limit": 0.0006589503670803335,
+          "passed": true
+        },
+        "p": {
+          "absolute_difference": 0.0008291984982207179,
+          "signal_scale": 0.6035298489851696,
+          "normalized_difference": 0.0013739146450088729,
+          "limit": 0.003037649244925848,
+          "passed": true
+        },
+        "Q": {
+          "absolute_difference": 2.268147323287832e-05,
+          "signal_scale": 0.05771463416568025,
+          "normalized_difference": 0.0003929934506344971,
+          "limit": 0.00030857317082840126,
+          "passed": true
+        }
+      },
+      "reported_coarse_exchange": {
+        "ledger_residual_max": 1.817687923788558e-07,
+        "ledger_scale": 0.12779007492587455,
+        "ledger_limit": 0.0006489503746293728,
+        "ledger_passed": true,
+        "local_residual_max": 3.332174266290622e-05,
+        "local_scale": 0.5050429005036742,
+        "local_limit": 0.005250429005036742,
+        "local_passed": true,
+        "source_omission_ledger_residual_max": 0.1277899427787289,
+        "source_work_cumulative_max": 0.12779007492587455,
+        "time_nodes": 401
+      },
+      "reported_coarse_trace": {
+        "time_nodes": 401,
+        "absolute_difference": 1.6581067499021884e-06,
+        "signal_scale": 1.9124134991034736,
+        "normalized_difference": 8.670231363036799e-07,
+        "limit": 0.019324134991034737,
+        "passed": true
+      }
+    },
+    {
+      "amplitude": 0.2,
+      "scientific_status": "FAIL",
+      "final_cutoff_gate": {
+        "rho": {
+          "absolute_difference": 7.396845585623535e-05,
+          "signal_scale": 0.14032133605247868,
+          "normalized_difference": 0.0005271361999330731,
+          "limit": 0.0007216066802623935,
+          "passed": true
+        },
+        "p": {
+          "absolute_difference": 0.02262428337688216,
+          "signal_scale": 2.2425456839149036,
+          "normalized_difference": 0.01008866108688855,
+          "limit": 0.011232728419574517,
+          "passed": false
+        },
+        "Q": {
+          "absolute_difference": 6.201905082282334e-05,
+          "signal_scale": 0.06353522243109587,
+          "normalized_difference": 0.0009761365184497966,
+          "limit": 0.00033767611215547937,
+          "passed": true
+        }
+      },
+      "reported_coarse_exchange": {
+        "ledger_residual_max": 1.6481679127045012e-07,
+        "ledger_scale": 0.31055443753583817,
+        "ledger_limit": 0.0015627721876791908,
+        "ledger_passed": true,
+        "local_residual_max": 3.326860138486154e-06,
+        "local_scale": 0.9980146651029367,
+        "local_limit": 0.010180146651029367,
+        "local_passed": true,
+        "source_omission_ledger_residual_max": 0.21197987677806446,
+        "source_work_cumulative_max": 0.2119799700457504,
+        "time_nodes": 401
+      },
+      "reported_coarse_trace": {
+        "time_nodes": 401,
+        "absolute_difference": 0.00023391778262338292,
+        "signal_scale": 6.654341342686683,
+        "normalized_difference": 3.515265757751749e-05,
+        "limit": 0.06674341342686683,
+        "passed": true
+      }
+    }
+  ],
+  "limitation": "This recognizes the original failure as prerequisite evidence only; a separate prospective follow-up is required and may fail."
+}

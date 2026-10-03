@@ -1,0 +1,367 @@
+#!/usr/bin/env python3
+"""Independent fabricated cross-validator review; no producer/array imports.
+
+This exercises schema and exact-decimal policy only. Even receipt objects marked
+physical_route are invented validator inputs, never evidence of physical runs.
+"""
+from __future__ import annotations
+
+import argparse
+import copy
+from decimal import Decimal, localcontext
+from fractions import Fraction
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+import resource
+import sys
+import time
+
+sys.dont_write_bytecode = True
+HERE = Path(__file__).resolve().parent
+STAGE = HERE.parent.parent
+NOTICE = 'ENTIRELY FABRICATED SCHEMA POLICY INPUT; NO SCIENTIFIC OR EXECUTION EVIDENCE'
+SOURCES = ('positive_B', 'signed_uB')
+SETTINGS = ('coarse', 'fine')
+KS = (64, 128, 256)
+LEVELS = ('80', '100')
+P_CONTROLS = (24, 32)
+I_CONTROLS = ('16_16', '16_24', '24_24')
+P_PROFILES = tuple('F G P R baseline_contact canonical_constant contact_F contact_P contact_R p0 rho0 stored_F stored_P stored_R stored_baseline_contact times'.split())
+P_ANCHORS = tuple('analytic_p0_anchors analytic_rho0_anchors discrete_baseline_contact_residual_anchors discrete_contact_P_anchors discrete_contact_P_minus_analytic_anchors discrete_contact_R_anchors discrete_contact_R_minus_analytic_anchors discrete_operator_P_residual_anchors discrete_operator_R_residual_anchors discrete_p0_anchors discrete_rho0_anchors'.split())
+P_SCALARS = tuple('I_ab source_work_integral full_contact_ledger_integral E_flow predicted_delta_R predicted_Ward_residual canonical_constant_drift discrete_source_moment analytic_source_moment mixed_momentum_work moment_quantization_only_bound E_flow_signed_projection E_flow_triangle_bound flow_exact_projection_gap primitive_contact_identity_gap DeltaR S_ab S_direct_reset D_S D_cont E_Q S_global_minus_reset decomposition_error contact_endpoint_defect flow_operator_closure flow_contact_decomposition_error R_profile_max_error P_profile_max_error F_profile_max_error baseline_contact_profile_max_error midpoint_contact_plus_flow_density_gap contact_momentum_endpoint_difference E_momentum E_operator source_primitive_residual E_reconstruction complete_flow_momentum_operator_decomposition_error midpoint_E_flow midpoint_E_momentum midpoint_E_operator midpoint_decomposition_error midpoint_flow_triangle_bound midpoint_flow_exact_projection_gap E_operator_initial E_operator_end source_jet_profile_max_error forcing_jet_profile_max_error I_A D_cont_A E_Q_A matched_decomposition_error matched_integral_correction raw_analytic_decomposition_error'.split())
+I_CONTROLS_FIELDS = tuple('I_mode I_contacts I_ab baseline_work_integral J_Lg M_discrete Lg_projection E_flow triangle_bound midpoint_E_flow midpoint_triangle_bound'.split())
+I_FIELDS = tuple('I_mode I_contacts I_ab baseline_work_integral J_Lg M_discrete Lg_projection E_flow triangle_bound midpoint_E_flow midpoint_triangle_bound S_ab S_direct_reset DeltaR D_S D_cont E_Q decomposition_error E_operator E_evolution_ledger forcing_control_gap ledger_control_gap joint_control_gap R_profile_max_error P_profile_max_error F_profile_max_error midpoint_E_operator midpoint_density_gap midpoint_projection_closure initial_R_reconstruction_error endpoint_R_reconstruction_error'.split())
+FINE = ('S_ab_double_global', 'S_native_minus_double')
+
+
+def insist(condition, message):
+    if not condition:
+        raise RuntimeError(message)
+
+
+def sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def encoded_q(value):
+    with localcontext() as ctx:
+        ctx.prec = 120
+        return format(Decimal(value.numerator) / Decimal(value.denominator), 'f')
+
+
+def fabricated_grid(setting):
+    divisor = 128 if setting == 'coarse' else 256
+    return [encoded_q(Fraction(-9, 2) + Fraction(j, divisor)) for j in range(divisor + 1)]
+
+
+def schema_moment(k):
+    # This satisfies the validator's fixed metadata identity only. No physical
+    # source quadrature, producer, bump, derivative, or array is evaluated.
+    represented_pi = Fraction(14488038916154245685, 4611686018427387904)
+    return encoded_q(Fraction(k * k, 1) / (8 * represented_pi * represented_pi))
+
+
+def build_fixture():
+    records = []
+    for source in SOURCES:
+        for setting in SETTINGS:
+            times = fabricated_grid(setting)
+            rows = []
+            for k in KS:
+                row = {'K': k, **{f: ['0'] * len(times) for f in P_PROFILES},
+                       **{f: ['0'] * 3 for f in P_ANCHORS}, **{f: '0' for f in P_SCALARS}}
+                row['times'] = times.copy()
+                row['analytic_source_moment'] = schema_moment(k)
+                row['discrete_source_moment'] = schema_moment(k)
+                if setting == 'fine':
+                    row.update({f: '0' for f in FINE})
+                rows.append(row)
+            records.append({'source': source, 'setting': setting, 'controls': [
+                {'quadrature_order': order,
+                 'levels': {d: copy.deepcopy(rows) for d in LEVELS},
+                 'serialization_max_error_by_dps': {d: '0' for d in LEVELS}}
+                for order in P_CONTROLS]})
+    primary = {
+        'schema_version': 1, 'route': 'primary_phase_green_primitive_integer_reductions',
+        'status': 'COMPLETED_SAVED_DATA_DIAGNOSTIC', 'records': records,
+        'old_metric_status': 'FAIL', 'fixed_cases': 12, 'interval': ['-4.5', '-3.5'],
+        'registration_sha256': '0' * 64, 'freeze_commit': '0' * 40,
+        'input_manifest_sha256': '0' * 64, 'producer_sha256': '0' * 64,
+        'classification': 'NO_GATE_SCALE_ATTRIBUTION', 'failures': [], 'fatal_failures': [],
+        'attribution_cases': [], 'precision_gap_max_exact_rational': '0',
+        'quadrature_control_gap_max_exact_rational': '0',
+        'source_unchanged_during_execution': True,
+        'resources': {'seconds': 1, 'peak_rss_kib': 32, 'scope': NOTICE,
+                      'limit_seconds': 900, 'limit_peak_rss_kib': 262144},
+        'arithmetic': {'phase_source': NOTICE, 'quadrature_contact_integrands': NOTICE,
+                       'decimal_precisions': [80, 100], 'fractional_bits': [266, 333],
+                       'MP_scope': NOTICE, 'quad_error': NOTICE,
+                       'moment_quantization_bound_scope': NOTICE, 'gap_universe': NOTICE},
+    }
+    rows = []
+    for setting in SETTINGS:
+        for source in SOURCES:
+            for k in KS:
+                times = fabricated_grid(setting)
+                zeros = lambda names: {f: ['0'] * len(times) for f in names}
+                fields = {f: '0' for f in I_FIELDS + (FINE if setting == 'fine' else ())}
+                fields['M_discrete'] = '1'
+                controls = {c: {f: '0' for f in I_CONTROLS_FIELDS} for c in I_CONTROLS}
+                for values in controls.values():
+                    values['M_discrete'] = '1'
+                rows.append({'source': source, 'setting': setting, 'K': k, 'times': times,
+                             'profiles': zeros(('R', 'P', 'F')),
+                             'contact_profiles': zeros(('R', 'P', 'F')),
+                             'baseline_profiles': zeros(('r0', 'p0')),
+                             'stored_profiles': zeros(('R', 'P', 'F')),
+                             'control_profiles': {c: zeros(('R', 'P', 'F')) for c in I_CONTROLS},
+                             'anchor_recomputed': {a: {f: '0' for f in ('R', 'P', 'F')}
+                                                   for a in ('initial', 'midpoint', 'endpoint')},
+                             'precisions': {d: {'K': k, 'fields': copy.deepcopy(fields),
+                                               'controls': copy.deepcopy(controls)} for d in LEVELS}})
+    independent = {
+        'schema_version': 1, 'old_metric_status': 'FAIL', 'fixed_cases': 12,
+        'input_manifest_sha256': '0' * 64,
+        'resource_limits': {'wall_seconds': 900, 'peak_rss_kib': 262144},
+        'route': 'independent_direct_F_nested_Duhamel',
+        'status': 'COMPLETED_DIAGNOSTIC_WITHOUT_RECLASSIFYING_OLD_FAIL',
+        'provenance': {'freeze_commit': '0' * 40, 'registration_sha256': '0' * 64,
+                       'registered_files_checked': NOTICE, 'input_manifest_sha256': '0' * 64},
+        'interval': ['-4.5', '-3.5'], 'midpoint': '-4',
+        'controls': [[16, 16], [16, 24], [24, 24]], 'canonical_control': [24, 24],
+        'reduction_decimal_digits': [80, 100], 'source_phase_arithmetic': NOTICE,
+        'quadrature_constants': NOTICE, 'high_precision_scope': NOTICE,
+        'units': {'profiles_R_P': NOTICE, 'F': NOTICE,
+                  'baseline_r0_p0': 'a0^4 times physical renormalized baseline rho0,p0',
+                  'contact_F': NOTICE, 'baseline_work_integral': NOTICE},
+        'momentum_target': NOTICE, 'rows': rows,
+        'serialization_max_error_by_dps': {d: '0' for d in LEVELS},
+        'native_profile_serialization_max_error': '0',
+        'native_profile_serialization_scope': NOTICE, 'limits': NOTICE,
+        'resources': {'elapsed_seconds': 1, 'peak_rss_kib': 32},
+    }
+    # These are deliberate invented input objects; measured guard execution
+    # resources are recorded separately by the runner and cannot be confused.
+    receipts = [{'name': name, 'physical_route': True, 'fixture_notice': NOTICE,
+                 'status': 'PASS_EXECUTION', 'exit_code': 0, 'timed_out': False,
+                 'memory_exceeded': False, 'executor_uid': 1000,
+                 'timeout_seconds': 900, 'memory_limit_kib': 262144,
+                 'process_creation_limit': 0, 'elapsed_seconds': 2,
+                 'peak_rss_kib': 64, 'wait4_peak_rss_kib': 64,
+                 'observed_peak_group_rss_kib': 32} for name in ('primary', 'independent')]
+    return primary, independent, receipts
+
+
+def primary_row(primary, source='positive_B', setting='coarse', k=64, order=24, dps='80'):
+    record = next(r for r in primary['records'] if (r['source'], r['setting']) == (source, setting))
+    control = next(c for c in record['controls'] if c['quadrature_order'] == order)
+    return next(r for r in control['levels'][dps] if r['K'] == k)
+
+
+def independent_row(independent, source='positive_B', setting='coarse', k=64):
+    return next(r for r in independent['rows'] if (r['source'], r['setting'], r['K']) == (source, setting, k))
+
+
+def add_ledger_case(primary, independent, case, p_s, i_s):
+    source, setting, k = case
+    for order in P_CONTROLS:
+        for dps in LEVELS:
+            row = primary_row(primary, source, setting, k, order, dps)
+            row['S_ab'] = row['S_direct_reset'] = p_s
+            for field in ('D_S', 'E_Q', 'E_Q_A'):
+                row[field] = encoded_q(-Fraction(Decimal(p_s)))
+            if setting == 'fine':
+                row['S_ab_double_global'] = p_s
+    for dps in LEVELS:
+        fields = independent_row(independent, source, setting, k)['precisions'][dps]['fields']
+        fields['S_ab'] = fields['S_direct_reset'] = i_s
+        fields['D_S'] = fields['E_Q'] = encoded_q(-Fraction(Decimal(i_s)))
+        if setting == 'fine':
+            fields['S_ab_double_global'] = i_s
+
+
+def declare_primary_witnesses(primary):
+    cases = []
+    for source in SOURCES:
+        for setting in SETTINGS:
+            for k in KS:
+                row = primary_row(primary, source, setting, k, 32, '100')
+                ds = abs(Fraction(Decimal(row['D_S'])))
+                dc = abs(Fraction(Decimal(row['D_cont'])))
+                eq = abs(Fraction(Decimal(row['E_Q'])))
+                if ds > Fraction('2e-6') and dc <= ds / 10 and eq >= 9 * ds / 10:
+                    cases.append({'source': source, 'setting': setting, 'K': k})
+    primary['attribution_cases'] = cases
+    primary['classification'] = 'LEDGER_ERROR_DEMONSTRATED' if cases else 'NO_GATE_SCALE_ATTRIBUTION'
+
+
+def contract_comparison(validator):
+    p = json.loads((STAGE / 'primary/SYNTHETIC_SCHEMA_FINAL.json').read_text())
+    i = json.loads((STAGE / 'independent/OUTPUT_SCHEMA.json').read_text())
+    g = json.loads((STAGE / 'global/OUTPUT_SCHEMA.json').read_text())
+    checks = {
+        'explicit_primary_profiles_and_anchors': set(p['scientific_profile_lengths']) == set(P_PROFILES + P_ANCHORS),
+        'explicit_primary_scientific_scalars': set(p['scientific_scalar_keys']) == set(P_SCALARS),
+        'explicit_independent_fields': set(i['canonical_numeric_fields']) == set(I_FIELDS),
+        'explicit_independent_controls': set(i['control_numeric_fields']) == set(I_CONTROLS_FIELDS),
+        'primary_validator_fields': set(validator.PRIMARY_SCALARS) == set(P_SCALARS),
+        'primary_validator_profiles': set(validator.PRIMARY_PROFILES) == set(P_PROFILES),
+        'independent_validator_fields': set(validator.INDEPENDENT_FIELDS) == set(I_FIELDS),
+        'global_complete_constants': all(set(values) == set(getattr(validator, name))
+                                         for name, values in g['source_constants'].items()),
+        'global_profile_counts': g['profile_counts'] == {'coarse': 129, 'fine': 257},
+    }
+    insist(all(checks.values()), 'Explicit contracts/independent fixture/validator mismatch')
+    return checks
+
+
+def summary(report):
+    return {'status': report['status'], 'classification': report['classification'],
+            'attribution_cases': report['attribution_cases'],
+            'route_attribution_cases': {k: v['attribution_cases'] for k, v in report['routes'].items()},
+            'failure_count': len(report['failures']),
+            'failure_gates': sorted({f['gate'] for f in report['failures']}),
+            'cross_route_max_scientific_gap_exact_rational': report['cross_route_max_scientific_gap_exact_rational'],
+            'identical_stored_max_gap_exact_rational': report['identical_stored_max_gap_exact_rational'],
+            'raw_comparison_rows': len(report['raw_target_comparison'])}
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--validator', type=Path, default=STAGE / 'validation/validate_active.py')
+    parser.add_argument('--receipt', type=Path, required=True)
+    parser.add_argument('--write-fixture', action='store_true')
+    parser.add_argument('--metadata-gap-only', action='store_true')
+    args = parser.parse_args()
+    start = time.monotonic()
+    before = sha(args.validator)
+    spec = importlib.util.spec_from_file_location('fabricated_review_validator', args.validator)
+    validator = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(validator)
+    fixture = build_fixture()
+    if args.write_fixture:
+        for name, obj in zip(('FABRICATED_PRIMARY.json', 'FABRICATED_INDEPENDENT.json', 'FABRICATED_EXECUTION_INPUTS.json'), fixture):
+            (HERE / name).write_text(json.dumps(obj, sort_keys=True, separators=(',', ':')) + '\n')
+    records = []
+
+    def run(name, mutate=None, fatal=None, classification=None, gates=None, known_gap=False):
+        p, i, r = copy.deepcopy(fixture)
+        if mutate:
+            mutate(p, i, r)
+        started = time.monotonic()
+        try:
+            report = validator.cross_validate(p, i, r)
+        except validator.FatalValidation as error:
+            if known_gap:
+                records.append({'test': name, 'outcome': 'REJECTED_POLICY_MUTATION', 'message': str(error), 'seconds': time.monotonic() - started})
+                return
+            insist(fatal is not None and fatal in str(error), name + ': unexpected fatal: ' + str(error))
+            records.append({'test': name, 'outcome': 'EXPECTED_FATAL', 'message': str(error), 'seconds': time.monotonic() - started})
+            return
+        insist(fatal is None, name + ': expected fatal mutation accepted')
+        if classification:
+            insist(report['classification'] == classification, name + ': wrong classification')
+        if gates:
+            insist(set(gates) <= {f['gate'] for f in report['failures']}, name + ': retained scientific gate absent')
+            insist(all(f['route'] == 'cross' for f in report['failures']), name + ': expected cross-only failure')
+        records.append({'test': name, 'outcome': 'ACCEPTED_POLICY_GAP' if known_gap else 'PASS',
+                        'report': summary(report), 'seconds': time.monotonic() - started})
+
+    run('baseline_complete_12_cases', classification='NO_GATE_SCALE_ATTRIBUTION')
+    run('independent_float_control_orders', lambda p, i, r: i.update(controls=[[16.0, 16.0], [16.0, 24.0], [24.0, 24.0]]), known_gap=True)
+    run('independent_float_canonical_orders', lambda p, i, r: i.update(canonical_control=[24.0, 24.0]), known_gap=True)
+    run('primary_boolean_schema_version', lambda p, i, r: p.update(schema_version=True), known_gap=True)
+    run('independent_boolean_schema_version', lambda p, i, r: i.update(schema_version=True), known_gap=True)
+    run('boolean_process_creation_limit', lambda p, i, r: r[0].update(process_creation_limit=False), known_gap=True)
+    if not args.metadata_gap_only:
+        contracts = contract_comparison(validator)
+        def cross_baseline(p, i, r):
+            independent_row(i)['baseline_profiles']['r0'][64] = '0.000001'
+        run('retained_cross_route_numeric_failure', cross_baseline, classification='CONSISTENCY_FAILURE', gates=('scaled_discrete_baseline_r0',))
+        run('omitted_primary_control', lambda p, i, r: p['records'][0]['controls'].pop(), fatal='Primary control membership differs')
+        run('omitted_independent_control', lambda p, i, r: independent_row(i)['control_profiles'].pop('16_24'), fatal='field membership differs')
+        run('omitted_primary_context', lambda p, i, r: p['records'][0]['controls'][0]['levels'].pop('80'), fatal='field membership differs')
+        run('omitted_independent_context', lambda p, i, r: independent_row(i)['precisions'].pop('80'), fatal='field membership differs')
+        run('omitted_primary_scalar', lambda p, i, r: primary_row(p).pop('source_work_integral'), fatal='field membership differs')
+        run('extra_independent_schema_field', lambda p, i, r: independent_row(i).update(undeclared='0'), fatal='field membership differs')
+        run('truncated_primary_full_profile', lambda p, i, r: primary_row(p)['F'].pop(), fatal='profile length differs')
+        run('truncated_independent_fine_profile', lambda p, i, r: independent_row(i, setting='fine')['profiles']['P'].pop(), fatal='profile length differs')
+        run('wrong_primary_exact_closure', lambda p, i, r: primary_row(p).update(decomposition_error='0.000000000002'), fatal='Definitional arithmetic closure failed')
+        run('wrong_independent_exact_closure', lambda p, i, r: independent_row(i)['precisions']['80']['fields'].update(D_S='0.000000000002'), fatal='Definitional arithmetic closure failed')
+        run('wrong_primary_complete_precision', lambda p, i, r: primary_row(p, dps='100').update(source_jet_profile_max_error='0.000000000005'), fatal='complete numeric precision universe failed')
+        def independent_precision(p, i, r):
+            level = independent_row(i)['precisions']['100']
+            level['fields']['baseline_work_integral'] = '0.000000000005'
+            for values in level['controls'].values():
+                values['baseline_work_integral'] = '0.000000000005'
+        run('wrong_independent_complete_precision', independent_precision, fatal='complete reported MP precision universe failed')
+        run('serialization_error', lambda p, i, r: i['serialization_max_error_by_dps'].update({'80': '1/100000000000'}), fatal='serialization error exceeds threshold')
+        run('nondecimal_scientific_value', lambda p, i, r: primary_row(p).update(moment_quantization_only_bound=0.0), fatal='bounded decimal strings')
+        run('nonfinite_scientific_value', lambda p, i, r: primary_row(p).update(moment_quantization_only_bound='NaN'), fatal='Nonfinite/out-of-range scientific decimal')
+        run('identical_stored_reader_failure', lambda p, i, r: independent_row(i)['stored_profiles']['P'].__setitem__(1, '0.000000000002'), fatal='Identical stored P values differ')
+        def strict_boundary(p, i, r):
+            add_ledger_case(p, i, ('positive_B', 'coarse', 64), '-0.000002', '-0.000002')
+            declare_primary_witnesses(p)
+        run('strict_witness_magnitude_equality_fails', strict_boundary, classification='NO_GATE_SCALE_ATTRIBUTION')
+        def intersection(p, i, r):
+            add_ledger_case(p, i, ('positive_B', 'coarse', 64), '-0.00000200000025', '-0.00000199999975')
+            add_ledger_case(p, i, ('signed_uB', 'fine', 128), '-0.00000199999975', '-0.00000200000025')
+            add_ledger_case(p, i, ('positive_B', 'fine', 256), '-0.000003', '-0.000003')
+            declare_primary_witnesses(p)
+        run('same_case_strict_witness_intersection', intersection, classification='LEDGER_ERROR_DEMONSTRATED')
+        intersect_record = records[-1]['report']
+        common = [{'source': 'positive_B', 'setting': 'fine', 'K': 256}]
+        insist(intersect_record['attribution_cases'] == common, 'Witness intersection admitted unmatched cases')
+        insist(all(len(x) == 2 for x in intersect_record['route_attribution_cases'].values()), 'Fixture failed to produce distinct route witness sets')
+        for name, field, value, message in (
+            ('outer_root_uid', 'executor_uid', 0, 'Nonroot containment witness missing'),
+            ('outer_time_budget', 'elapsed_seconds', 901, 'Actual complete-route time budget failed'),
+            ('outer_rss_budget', 'peak_rss_kib', 262145, 'Actual complete-route RSS failed'),
+            ('outer_nonzero_exit', 'exit_code', 1, 'Outer route exit/resource failure'),
+            ('outer_timeout', 'timed_out', True, 'Outer route exit/resource failure'),
+            ('outer_memory_exceeded', 'memory_exceeded', True, 'Outer route exit/resource failure'),
+            ('outer_wait4_rss', 'wait4_peak_rss_kib', 65, 'wait4 authoritative RSS witness differs'),
+            ('outer_group_rss', 'observed_peak_group_rss_kib', 65, 'Group RSS witness differs'),
+            ('outer_descendant_survives', 'surviving_descendant_pids', [], 'Outer containment failure'),
+            ('outer_child_creation_limit', 'process_creation_limit', 1, 'Outer resource/containment limits differ'),
+        ):
+            run(name, lambda p, i, r, f=field, v=value: r[0].update({f: v}), fatal=message)
+        run('inner_time_exceeds_outer', lambda p, i, r: p['resources'].update(seconds=3), fatal='Inner resources exceed authoritative actual outer execution')
+        run('inner_rss_exceeds_outer', lambda p, i, r: i['resources'].update(peak_rss_kib=65), fatal='Inner resources exceed authoritative actual outer execution')
+        run('missing_ordered_execution', lambda p, i, r: r.pop(), fatal='Exactly two ordered physical executions required')
+    else:
+        contracts = {'omitted_in_metadata_only_probe': True}
+    insist(sha(args.validator) == before, 'Validator source changed during guard run; repeat on stable bytes')
+    receipt = {
+        'scope': NOTICE, 'physical_routes_run': False, 'physical_arrays_read': False,
+        'actual_source_or_jet_evaluated': False,
+        'receipt_objects_are_fabricated': True,
+        'validator_cli_freeze_authentication_exercised': False,
+        'python': sys.version, 'python_optimization': sys.flags.optimize,
+        'measured_guard_elapsed_seconds': time.monotonic() - start,
+        'measured_guard_peak_rss_kib': resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
+        'validator_sha256': before, 'guard_sha256': sha(__file__),
+        'contract_sha256': {str(p.relative_to(STAGE)): sha(p) for p in (
+            STAGE / 'primary/SYNTHETIC_SCHEMA_FINAL.json', STAGE / 'independent/OUTPUT_SCHEMA.json',
+            STAGE / 'global/OUTPUT_SCHEMA.json', STAGE / 'global/EXPERIMENT.json')},
+        'contract_checks': contracts,
+        'coverage': {'fixed_cases': 12, 'primary_rows_across_controls_contexts': 48,
+                     'independent_levels_across_cases': 24,
+                     'independent_control_contexts': 72,
+                     'primary_controls': [24, 32], 'independent_controls': list(I_CONTROLS),
+                     'decimal_contexts': list(LEVELS), 'profile_lengths': {'coarse': 129, 'fine': 257}},
+        'tests': records,
+        'accepted_policy_gaps': [x['test'] for x in records if x['outcome'] == 'ACCEPTED_POLICY_GAP'],
+        'outcome': 'COMPLETED_FABRICATED_POLICY_REVIEW',
+    }
+    args.receipt.write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+    print(json.dumps({'receipt': str(args.receipt), 'tests': len(records),
+                      'accepted_policy_gaps': receipt['accepted_policy_gaps'],
+                      'validator_sha256': before, 'optimization': sys.flags.optimize}))
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())

@@ -1,0 +1,256 @@
+{
+  "checks": [
+    {
+      "name": "lapse_variation_density",
+      "negative_control": false,
+      "note": "N varied before fixing N=1; no Ward equation used to infer pressure",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "scale_factor_variation_pressure",
+      "negative_control": false,
+      "note": "",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "mass_variation_current",
+      "negative_control": false,
+      "note": "",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "nonlinear_V_F_and_R2_Ward",
+      "negative_control": false,
+      "note": "",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "consistently_doubled_local_action_also_conserves",
+      "negative_control": false,
+      "note": "Intentional positive identity: conservation cannot select the action coefficient",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "nonlinear_F_pressure_requires_Fxx",
+      "negative_control": true,
+      "note": "Residual if the 2 F_xx xdot^2 pressure term is omitted",
+      "passed": true,
+      "residual": "-6*H*f2*z**2"
+    },
+    {
+      "name": "R2_pressure_requires_H_triple_dot",
+      "negative_control": true,
+      "note": "",
+      "passed": true,
+      "residual": "-72*H*alpha*f"
+    },
+    {
+      "name": "local_current_requires_curvature_piece",
+      "negative_control": true,
+      "note": "",
+      "passed": true,
+      "residual": "6*z*(-2*H**2*f1 - 2*H**2*f2*xx - d*f1 - d*f2*xx)"
+    },
+    {
+      "name": "regular_at_H_zero",
+      "negative_control": false,
+      "note": "",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "mass_coupling_chain_rule",
+      "negative_control": false,
+      "note": "",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "half_factor_omission_detected",
+      "negative_control": true,
+      "note": "",
+      "passed": true,
+      "residual": "G**2*Q*(phi - phi_star)"
+    },
+    {
+      "name": "trace_reversed_Israel_spatial",
+      "negative_control": false,
+      "note": "",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "trace_reversed_Israel_time",
+      "negative_control": false,
+      "note": "",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "doubled_scalar_boundary_variation",
+      "negative_control": false,
+      "note": "",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "single_copy_scalar_variation_fails",
+      "negative_control": true,
+      "note": "",
+      "passed": true,
+      "residual": "(-J*kappa5sq - sigma_phi)/(2*kappa5sq)"
+    },
+    {
+      "name": "double_shell_count_fails",
+      "negative_control": true,
+      "note": "",
+      "passed": true,
+      "residual": "-J - sigma_phi/kappa5sq"
+    },
+    {
+      "name": "tension_only_time_junction_fails",
+      "negative_control": true,
+      "note": "",
+      "passed": true,
+      "residual": "kappa5sq*(3*p + 2*rho)/6"
+    },
+    {
+      "name": "Codazzi_all_sources",
+      "negative_control": false,
+      "note": "",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "paired_tension_matter_bulk_flux",
+      "negative_control": false,
+      "note": "",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "wrong_flux_orientation_detected",
+      "negative_control": true,
+      "note": "",
+      "passed": true,
+      "residual": "2*v*(J*kappa5sq + sigma_phi)/kappa5sq"
+    },
+    {
+      "name": "omitted_scalar_source_detected",
+      "negative_control": true,
+      "note": "",
+      "passed": true,
+      "residual": "J*v"
+    },
+    {
+      "name": "wrong_scalar_source_sign_detected",
+      "negative_control": true,
+      "note": "",
+      "passed": true,
+      "residual": "2*J*v"
+    },
+    {
+      "name": "shell_momentum_constraint_equals_Ward_residual",
+      "negative_control": false,
+      "note": "",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "bulk_scalar_flux_normalization",
+      "negative_control": false,
+      "note": "",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "Gauss_scalar_projection_time",
+      "negative_control": false,
+      "note": "",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "Gauss_scalar_projection_space",
+      "negative_control": false,
+      "note": "",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "Gauss_spatial_projection_Raychaudhuri",
+      "negative_control": false,
+      "note": "",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "paired_Weyl_balance",
+      "negative_control": false,
+      "note": "",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "wrong_Weyl_redshift_detected",
+      "negative_control": true,
+      "note": "",
+      "passed": true,
+      "residual": "-H*W"
+    },
+    {
+      "name": "potential_absorption_spatial",
+      "negative_control": false,
+      "note": "",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "double_count_local_density_detected",
+      "negative_control": true,
+      "note": "",
+      "passed": true,
+      "residual": "Vloc*kappa5sq/6"
+    },
+    {
+      "name": "mode_clock_first_derivative",
+      "negative_control": false,
+      "note": "",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "mode_clock_frequency",
+      "negative_control": false,
+      "note": "",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "using_T_as_eta_is_wrong",
+      "negative_control": true,
+      "note": "Generic inherited chart has nonconstant d eta/dT",
+      "passed": true,
+      "residual": "A_T - B_T"
+    },
+    {
+      "name": "inherited_scalar_velocity_helper_missing_piece",
+      "negative_control": true,
+      "note": "B1 omission in gFt helper only; current constraints consume gAt, not gFt",
+      "passed": true,
+      "residual": "-jprod_T*exp(B)/2"
+    }
+  ],
+  "negative_controls": 14,
+  "positive_checks": 21,
+  "python": "3.12.14",
+  "scope": "Exact algebra and lapse variation only; no coupled experiment",
+  "source_sha256": "ca34cd1470d322b45a1b24ef391cf25dc6b31a068eec69dfab13669d3b5aa821",
+  "status": "PASS",
+  "sympy": "1.14.0"
+}

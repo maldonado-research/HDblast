@@ -1,0 +1,61 @@
+{
+  "canonical_candidate": {
+    "package_manifest_sha256": "0e27d490c3451e7325028dce453d290d3fbdb5e55af8015ee3f1ff0a329d30eb",
+    "part_bytes": [
+      25165824,
+      7029436
+    ],
+    "parts_manifest_sha256": "3458de5878bafc33712106a499c64c170364ef3c9e49599724adb9a0ce89ec2e",
+    "protocol_reassembly_receipt": "CANONICAL_REASSEMBLY_FINAL_RECEIPT.json",
+    "protocol_reassembly_receipt_sha256": "5a7c22c74a715d5e87558c211f23eb4a12f2377b449ffd97824e2353d76e6073",
+    "reviewer_real_payload_reassembly": false,
+    "zip_bytes": 32195260,
+    "zip_members_verified": 238,
+    "zip_sha256": "0cd3dd2da604444541c06e98167f537f769c0ce430108bf02354e5090f328c4f"
+  },
+  "checkout_edits": false,
+  "documentation_review": {
+    "active_source_readme_present_at_review": false,
+    "existing_source_free_readme_command_pattern": "Explicit --parts-manifest, --expected-sha256, --output command shape reviewed.",
+    "root_documentation_requirement": "Final active-source distribution README must state the canonical ZIP pin and keep byte verification distinct from extraction and fresh physical replay."
+  },
+  "earlier_review": "DISTRIBUTION_REVIEW_001.json",
+  "independent_reexecuted_guard_receipts": {
+    "INDEPENDENT_FINAL_GUARDS_NORMAL.json": {
+      "check_count": 118,
+      "python_optimization": 0,
+      "sha256": "7d226ca9d7233deb26f0d31b664a823711184b0ddb6ad52fc7e131471bb88f66",
+      "status": "PASS_SYNTHETIC_REASSEMBLY_GUARDS"
+    },
+    "INDEPENDENT_FINAL_GUARDS_OPTIMIZED.json": {
+      "check_count": 118,
+      "python_optimization": 1,
+      "sha256": "b555d97cca36b06612d63bbc013a7c8efd5b86a87ed6f94251789f63e0bef29e",
+      "status": "PASS_SYNTHETIC_REASSEMBLY_GUARDS"
+    }
+  },
+  "physical_evaluations": 0,
+  "real_network_calls": 0,
+  "reassembler_sha256": "138ffd51569050b435f3864772acd485840ddd49980674865f9c7db41d8ef5b8",
+  "remaining_blocking_findings": [],
+  "required_contract_review": {
+    "complete_embedded_manifest_payload_membership": true,
+    "explicit_whole_zip_sha256_pin": true,
+    "fresh_atomic_output_and_cleanup_on_verification_failure": true,
+    "member_sha256_and_crc": true,
+    "no_extraction_or_study_code_imports": true,
+    "part_limit_24_MiB_and_ordered_part_sha256": true,
+    "raw_and_logical_zip_member_names_checked": true,
+    "regular_zip_member_mode": true,
+    "schema_1_required_fields_and_strict_integer_types": true
+  },
+  "resolved_findings": [
+    "RAW_NUL_ZIP_MEMBER",
+    "CLI_OUTPUT_RECEIPT_ALIAS",
+    "JSON_EXPONENT_OVERFLOW"
+  ],
+  "scope": "Exact source-pinned offline transport integrity review. Scientific result and fresh physical replay are reviewed separately.",
+  "staged_review_artifacts_only": true,
+  "status": "GO_DISTRIBUTION_HELPER_AND_CANONICAL_SPLIT",
+  "test_source_sha256": "c6550a5fe29773fbe2948bb02d2f482ffc3d2b581157d1a581b8dc84141e9ce2"
+}

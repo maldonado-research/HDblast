@@ -1,0 +1,271 @@
+#!/usr/bin/env python3
+"""Read completed JSON reports and receipts; never load NPZ or rerun routes."""
+from __future__ import annotations
+import argparse
+from decimal import Decimal
+from fractions import Fraction as Q
+import hashlib
+import json
+from pathlib import Path
+import subprocess
+import sys
+
+FREEZE='06984aa6b142499c592850e6b4afd49c28ced394'
+REGISTRATION='e7a8fe5f6991bad9304440b037ce2eefafdfbaf9c011e177eb9b364b3239bba1'
+SOURCE_COMMIT='71d00cc423e9049c8166b7ee7afbefbac28d8a18'
+TOL=Q('1e-12'); SCIENCE=Q('2e-7'); ATTRIBUTION=Q('2e-6')
+COMMON=('times R P F stored_R stored_P stored_F I_ab E_flow triangle_bound S_ab '
+        'S_direct_reset DeltaR S_global_minus_reset D_S D_cont E_Q decomposition_error '
+        'flow_operator_closure R_profile_max_error P_profile_max_error F_profile_max_error').split()
+FINE=['S_ab_double_global','S_native_minus_double']
+ROUTE_NAMES=['primary','independent']
+ORDER=[(s,t) for s in ('positive_B','signed_uB') for t in ('coarse','fine')]
+
+def n(v):
+    if not isinstance(v,str):raise ValueError('Scientific value is not decimal text')
+    value=Decimal(v)
+    if not value.is_finite():raise ValueError('Nonfinite scientific decimal')
+    return Q(value)
+
+def gap(a,b):
+    if isinstance(a,list):
+        if not isinstance(b,list) or len(a)!=len(b):raise ValueError('Profile shape mismatch')
+        return max((gap(x,y) for x,y in zip(a,b)),default=Q(0))
+    return abs(n(a)-n(b))
+
+def main():
+    p=argparse.ArgumentParser()
+    p.add_argument('--replay',type=Path,default=Path('/workspace/hdblast-research-work/ledger-root-20261002/original-replay'))
+    p.add_argument('--checkpoint',type=Path,default=Path('/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_SOURCE_FREE_LEDGER'))
+    p.add_argument('--output',type=Path,required=True)
+    args=p.parse_args()
+    checks=[]; hashes={}; parsed={}; summaries={}; max_arithmetic=Q(0)
+    def check(name,ok,**details):
+        checks.append({'name':name,'status':'PASS' if ok else 'FAIL',**details})
+    def sha(path):
+        key=str(path)
+        if key not in hashes:
+            h=hashlib.sha256()
+            with path.open('rb') as f:
+                for chunk in iter(lambda:f.read(1024*1024),b''):h.update(chunk)
+            hashes[key]=h.hexdigest()
+        return hashes[key]
+    def read(path):
+        if path.suffix != '.json':raise ValueError('Only recorded JSON report parsing is allowed')
+        sha(path)
+        raw=json.loads(path.read_text())
+        parsed[str(path)]=raw
+        return raw
+    replay=read(args.replay/'REPLAY.json')
+    if replay['status']=='RUNNING':
+        print(json.dumps({'status':'NOT_READY_REPLAY_RUNNING'}))
+        return 2
+    try:
+        check('completed_actual_replay',replay['status']=='COMPLETED_REPLAY' and replay['plan_only'] is False)
+        check('preserved_prior_metric_FAIL',replay['old_metric_status']=='FAIL')
+        check('exactly_two_complete_physical_routes',
+              replay['physical_routes_planned']==replay['physical_routes_attempted']==replay['physical_routes_completed']==2)
+        check('all_four_commands_complete',replay['planned_commands']==replay['attempted_commands']==replay['successful_commands']==4)
+        check('source_authentication_before_after',replay['source_verification_before']==replay['source_verification_after']=='PASS')
+        registration=read(args.checkpoint/'FULL_REGISTRATION.json')
+        check('canonical_registration_hash',sha(args.checkpoint/'FULL_REGISTRATION.json')==REGISTRATION)
+        copied=read(args.replay/'checkpoint/FULL_REGISTRATION.json')
+        check('copied_registration_identical',copied==registration and sha(args.replay/'checkpoint/FULL_REGISTRATION.json')==REGISTRATION)
+        rel=args.checkpoint.relative_to(Path('/workspace/HDblast')).as_posix()+'/FULL_REGISTRATION.json'
+        blob=subprocess.check_output(['git','-C','/workspace/HDblast','show',FREEZE+':'+rel])
+        check('registration_exact_public_freeze_blob',hashlib.sha256(blob).hexdigest()==REGISTRATION)
+        for source in ('code/validate_ledger.py','code/replay_ledger.py','code/diagnostic_primary.py','independent/diagnostic_independent.py'):
+            check('pinned_source_'+source,sha(args.checkpoint/source)==sha(args.replay/'checkpoint'/source)==registration['files'][source])
+        check('driver_receipt_bound_source',replay['driver_sha256']==registration['files']['code/replay_ledger.py'])
+        evidence=read(args.replay/'INPUT_MANIFEST.json')
+        check('recorded_input_manifest_provenance',evidence['registration_sha256']==REGISTRATION and evidence['public_freeze_commit']==FREEZE)
+        input_sha=evidence['frozen_files']['inputs/INPUT_MANIFEST.json']
+        execution=read(args.replay/'EXECUTION.json')
+        check('execution_receipts_exact_replay',execution==replay['commands'])
+        check('ordered_execution_receipts',[r['name'] for r in execution]==['primary','independent','validation','validation_optimized'])
+        for receipt in execution:
+            name=receipt['name']
+            check('complete_outer_execution_'+name,receipt['status']=='PASS_EXECUTION' and type(receipt['exit_code']) is int
+                  and receipt['exit_code']==0 and receipt['timed_out'] is False and receipt['memory_exceeded'] is False
+                  and not any(k in receipt for k in ('exception','surviving_descendant_pids','descendant_cleanup_error')))
+            check('outer_resource_budget_'+name,0<=receipt['elapsed_seconds']<=900 and 0<receipt['peak_rss_kib']<=262144
+                  and receipt['timeout_seconds']==900 and receipt['memory_limit_kib']==262144
+                  and receipt['process_creation_limit']==0,
+                  elapsed_seconds=receipt['elapsed_seconds'],peak_rss_kib=receipt['peak_rss_kib'])
+            check('authoritative_peak_RSS_'+name,receipt['peak_rss_kib']==max(receipt['wait4_peak_rss_kib'],receipt['observed_peak_group_rss_kib']))
+            check('saved_outer_exit_receipt_'+name,read(args.replay/'logs'/(name+'.exit.json'))==receipt)
+            command=receipt['command']
+            check('frozen_command_arguments_'+name,command[0]=='/workspace/hdblast-cloud-setup/venv-frw/bin/python'
+                  and command[command.index('--registration-sha256')+1]==REGISTRATION
+                  and command[command.index('--freeze-commit')+1]==FREEZE
+                  and ('-O' in command)==(name=='validation_optimized'))
+        results=[read(args.replay/'fresh'/name/'diagnostic.json') for name in ROUTE_NAMES]
+        lookups=[]
+        for ri,result in enumerate(results):
+            name=ROUTE_NAMES[ri]
+            check(name+'_complete_result',result['schema_version']==1 and result['fixed_cases']==12
+                  and result['status']=='COMPLETED_SAVED_DATA_DIAGNOSTIC' and result['fatal_failures']==[]
+                  and result['old_metric_status']=='FAIL')
+            check(name+'_route_identity',result['route']==('primary_integer_three_moment' if ri==0 else 'independent_mpf_bare_bilinear_fourier'))
+            check(name+'_input_lineage',result['input_manifest_sha256']==input_sha and result['input_lineage_public_commit']==SOURCE_COMMIT)
+            if ri==0:
+                check(name+'_freeze_lineage',result['registration_sha256']==REGISTRATION and result['freeze_commit']==FREEZE)
+            else:
+                prov=result['provenance']
+                check(name+'_freeze_lineage',prov['registration_sha256']==REGISTRATION and prov['public_freeze_commit']==FREEZE
+                      and prov['shared_integrity_receipt_before']==prov['shared_integrity_receipt_after']==evidence)
+            resource=result['resources']
+            check(name+'_whole_route_budget',0<=resource['seconds']<=900 and 0<resource['peak_rss_kib']<=262144
+                  and resource['limit_seconds']==900 and resource['limit_peak_rss_kib']==262144,
+                  seconds=resource['seconds'],peak_rss_kib=resource['peak_rss_kib'],scope=resource['scope'])
+            check(name+'_registered_gates',{k:n(v) for k,v in result['gates'].items()}==
+                  {'profile':SCIENCE,'D_cont':SCIENCE,'E_flow':SCIENCE,'attribution':ATTRIBUTION,
+                   'decomposition':TOL,'precision_gap':TOL,'serialization':TOL})
+            check(name+'_ordered_four_records',[(r['source'],r['setting']) for r in result['records']]==ORDER)
+            lookup={}; precision_max=Q(0); flow_gap_max=Q(0); row_evidence=[]
+            failures=[]; witnesses=[]
+            for record in result['records']:
+                source,setting=record['source'],record['setting']
+                label=name+'_'+source+'_'+setting
+                check(label+'_two_precision_levels',set(record['levels'])=={'80','100'})
+                record_gap=Q(0)
+                for level in ('80','100'):
+                    rr=record['levels'][level]
+                    check(label+'_'+level+'_ordered_cutoffs',tuple(row['K'] for row in rr)==(64,128,256) and all(type(row['K']) is int for row in rr))
+                    for row in rr:
+                        identity=(source,setting,level,row['K']); lookup[identity]=row
+                        errors=[]; nn=129 if setting=='coarse' else 257; divisor=nn-1
+                        required=set(COMMON+FINE if setting=='fine' else COMMON)|{'K'}
+                        if not required<=row.keys():errors.append('required fields missing')
+                        v={k:n(x) for k,x in row.items() if k!='K' and not isinstance(x,list)}
+                        for k in ('times','R','P','F','stored_R','stored_P','stored_F'):
+                            if not isinstance(row[k],list) or len(row[k])!=nn:errors.append(k+' shape')
+                            for x in row[k]:n(x)
+                        if [n(x) for x in row['times']] != [Q(-5,2)+Q(j,divisor) for j in range(nn)]:errors.append('grid')
+                        actual_max={c:max(abs(n(a)-n(b)) for a,b in zip(row[c],row['stored_'+c])) for c in ('R','P','F')}
+                        delta=n(row['stored_R'][-1])-n(row['stored_R'][0])
+                        residuals={c+'_profile_max_error':abs(v[c+'_profile_max_error']-m) for c,m in actual_max.items()}
+                        residuals['DeltaR']=abs(v['DeltaR']-delta)
+                        for k,value in {'D_S':v['DeltaR']-v['S_ab'],'D_cont':v['DeltaR']-v['I_ab'],
+                                        'E_Q':v['I_ab']-v['S_ab'],'decomposition_error':v['D_S']-v['D_cont']-v['E_Q'],
+                                        'flow_operator_closure':v['D_cont']-v['E_flow'],
+                                        'S_global_minus_reset':v['S_ab']-v['S_direct_reset']}.items():residuals[k]=abs(v[k]-value)
+                        if setting=='fine':residuals['S_native_minus_double']=abs(v['S_native_minus_double']-(v['S_ab']-v['S_ab_double_global']))
+                        if ri==0:
+                            residuals['canonical_direct_phase']=abs(v['I_ab']-v['independent_phase_primitive'])
+                            recurrence=v['recurrence_phase_primitive']-v['I_ab']
+                            residuals['reported_recurrence_difference']=abs(v['recurrence_primitive_gap']-recurrence)
+                            if abs(v['recurrence_primitive_gap'])>TOL or v['quantization_only_RP_bound']<0:errors.append('primary recurrence/quantization')
+                        else:
+                            recurrence=v['I_recurrence']-v['I_ab']
+                            residuals['reported_recurrence_difference']=abs(v['I_recurrence_minus_direct']-recurrence)
+                            if abs(v['I_recurrence_minus_direct'])>TOL:errors.append('independent recurrence')
+                        if abs(recurrence)>TOL:errors.append('actual recurrence')
+                        if max(residuals.values())>TOL:errors.append('arithmetic/profile identity')
+                        if abs(v['decomposition_error'])>TOL or abs(v['D_S']-v['D_cont']-v['E_Q'])>TOL:errors.append('signed decomposition')
+                        if v['triangle_bound']<0 or abs(v['E_flow'])>v['triangle_bound']+TOL:errors.append('triangle bound')
+                        max_arithmetic=max(max_arithmetic,*residuals.values())
+                        exact_gates={'R_profile_max_error':actual_max['R'],'P_profile_max_error':actual_max['P'],
+                                     'D_cont':delta-v['I_ab'],'E_flow':v['E_flow']}
+                        ident={'source':source,'setting':setting,'K':row['K']}
+                        if level=='100':
+                            for gate,value in exact_gates.items():
+                                if abs(value)>SCIENCE:failures.append({**ident,'gate':gate,'exact_rational_value':str(value)})
+                            ds=abs(delta-v['S_ab'])
+                            if ds>ATTRIBUTION and abs(delta-v['I_ab'])<=ds/10 and abs(v['I_ab']-v['S_ab'])>=9*ds/10:witnesses.append(ident)
+                        check(label+'_'+level+'_'+str(row['K'])+'_all_internal_gates',not errors,errors=errors)
+                        row_evidence.append({**ident,'decimal_digits':int(level),'science_exact_values':{k:str(x) for k,x in exact_gates.items()},
+                                             'D_S_exact_rational':str(delta-v['S_ab']),'E_Q_exact_rational':str(v['I_ab']-v['S_ab']),
+                                             'recurrence_gap_exact_rational':str(recurrence),
+                                             'maximum_identity_gap_exact_rational':str(max(residuals.values()))})
+                for lo,hi in zip(record['levels']['80'],record['levels']['100']):
+                    check(label+'_'+str(lo['K'])+'_full_precision_field_universe',lo.keys()==hi.keys())
+                    for key in lo:
+                        if key!='K':record_gap=max(record_gap,gap(lo[key],hi[key]))
+                reported=Q(record['precision_gap_exact_rational'])
+                check(label+'_exact_full_profile_precision_gate',record_gap<=reported<=TOL,
+                      measured_exact_rational=str(record_gap),reported_exact_rational=str(reported))
+                precision_max=max(precision_max,record_gap)
+                if ri==0:
+                    check(label+'_serialization_evidence',set(record['serialization_max_error'])=={'80','100'} and
+                          all(0<=n(x)<=TOL for x in record['serialization_max_error'].values()))
+                else:
+                    fg=Q(record['flow_precision_gap_exact_rational']); flow_gap_max=max(flow_gap_max,fg)
+                    check(label+'_streamed_flow_precision_gate',0<=fg<=reported<=TOL,reported_exact_rational=str(fg))
+            check(name+'_all_24_precision_rows',len(lookup)==24)
+            check(name+'_overall_precision_gate',precision_max<=Q(result['precision_gap_max_exact_rational'])<=TOL,
+                  measured_profile_exact_rational=str(precision_max),reported_exact_rational=result['precision_gap_max_exact_rational'])
+            classification='CONSISTENCY_FAILURE' if failures else 'LEDGER_ERROR_DEMONSTRATED' if witnesses else 'NO_GATE_SCALE_ATTRIBUTION'
+            accepted_witnesses=[] if failures else witnesses
+            check(name+'_exact_derived_classification',result['classification']==classification and result['attribution_cases']==accepted_witnesses)
+            actual_keys={(x['source'],x['setting'],x['K'],x['gate']) for x in failures}
+            reported_keys={(x['source'],x['setting'],x['K'],x['gate']) for x in result['failures']}
+            check(name+'_scientific_failure_membership',actual_keys==reported_keys and len(result['failures'])==len(actual_keys))
+            for f in result['failures']:
+                row=lookup[(f['source'],f['setting'],'100',f['K'])]
+                check(name+'_failure_evidence_'+str((f['source'],f['setting'],f['K'],f['gate'])),n(f['value'])==n(row[f['gate']]) and n(f['threshold'])==SCIENCE)
+            summaries[name]={'classification':classification,'failures':failures,'attribution_cases':accepted_witnesses,
+                             'profile_precision_gap_exact_rational':str(precision_max),'flow_precision_gap_exact_rational':str(flow_gap_max),
+                             'resources':resource,'rows':row_evidence}
+            lookups.append(lookup)
+        check('both_routes_scientific_verdict_match',summaries['primary']['classification']==summaries['independent']['classification']
+              and summaries['primary']['attribution_cases']==summaries['independent']['attribution_cases'])
+        cross_max=Q(0)
+        check('all_cross_route_identical_case_membership',lookups[0].keys()==lookups[1].keys())
+        for identity,row in lookups[0].items():
+            other=lookups[1][identity]
+            for key in COMMON+(FINE if identity[1]=='fine' else []):cross_max=max(cross_max,gap(row[key],other[key]))
+        check('all_common_scalar_and_profile_cross_route_gate',cross_max<=TOL,measured_exact_rational=str(cross_max))
+        validations=[read(args.replay/'fresh'/name/'VALIDATION.json') for name in ('validation','validation_optimized')]
+        check('normal_and_optimized_validator_modes',[r['python_optimization'] for r in validations]==[0,1])
+        check('normal_and_optimized_reports_identical',{k:v for k,v in validations[0].items() if k!='python_optimization'}==
+              {k:v for k,v in validations[1].items() if k!='python_optimization'})
+        for vi,report in enumerate(validations):
+            label='validation_'+str(vi)
+            check(label+'_complete_verdict',report['status']=='VERIFIED_COMPLETE_DIAGNOSTIC' and report['fixed_cases']==12
+                  and report['old_metric_status']=='FAIL' and report['classification']==replay['classification']==summaries['primary']['classification'])
+            check(label+'_freeze_provenance',report['registration_sha256']==REGISTRATION and report['public_freeze_commit']==FREEZE)
+            check(label+'_exact_cross_route_gap',report['cross_route_max_gap_exact_rational']==str(cross_max))
+            for name in ROUTE_NAMES:
+                expected={k:summaries[name][k] for k in ('classification','failures','attribution_cases','profile_precision_gap_exact_rational')}
+                check(label+'_'+name+'_independent_exact_audit',report['routes'][name]==expected)
+                check(label+'_'+name+'_result_hash_binding',report['result_sha256'][name]==sha(args.replay/'fresh'/name/'diagnostic.json'))
+            physical=[{k:r[k] for k in ('name','elapsed_seconds','peak_rss_kib','exit_code')} for r in execution if r['physical_route'] is True]
+            check(label+'_actual_outer_execution_binding',report['executions']==physical)
+            check(label+'_reported_stream_precision',report['streamed_flow_precision_gap_exact_rational']==summaries['independent']['flow_precision_gap_exact_rational']
+                  and Q(report['streamed_flow_precision_gap_exact_rational'])<=TOL)
+        flow_entries=results[1]['flow_files']
+        expected_flow={f'flow_{s}_{t}_{d}.jsonl' for s,t in ORDER for d in (80,100)}
+        check('eight_exact_streamed_flow_reports',len(flow_entries)==8 and {x['path'] for x in flow_entries}==expected_flow)
+        for item in flow_entries:
+            path=args.replay/'fresh/independent'/item['path']
+            check('flow_report_byte_authentication_'+item['path'],path.is_file() and not path.is_symlink()
+                  and path.stat().st_size==item['bytes'] and sha(path)==item['sha256'])
+        inventory=replay['fresh_output_sha256']
+        actual={path.relative_to(args.replay/'fresh').as_posix():path for path in (args.replay/'fresh').rglob('*') if path.is_file()}
+        check('complete_fresh_report_inventory',set(inventory)==set(actual))
+        check('complete_fresh_report_hash_authentication',all(not path.is_symlink() and sha(path)==inventory[name] for name,path in actual.items()),files=len(actual))
+    except Exception as error:
+        check('audit_completed_without_missing_or_invalid_report',False,error_type=type(error).__name__,error=str(error))
+    failed=[x for x in checks if x['status']=='FAIL']
+    report={'schema_version':1,'status':'PASS_READ_ONLY_RECORDED_RESULT_AUDIT' if not failed else 'BLOCKED_RECORDED_RESULT_AUDIT',
+            'replay_status':replay['status'],'classification':replay['classification'],'old_metric_status':'FAIL',
+            'public_freeze_commit':FREEZE,'registration_sha256':REGISTRATION,
+            'scope':'Recorded JSON reports/profiles, streamed report hashes and execution receipts only; no NPZ or physical input arrays loaded, no route or validator rerun.',
+            'physical_arrays_loaded':False,'physical_route_rerun':False,'validator_rerun':False,'source_or_remote_mutations':False,
+            'counts':{'total':len(checks),'pass':len(checks)-len(failed),'fail':len(failed)},
+            'failed_checks':failed,'checks':checks,'routes':summaries,
+            'maximum_reported_identity_gap_exact_rational':str(max_arithmetic),
+            'report_and_source_sha256':hashes,
+            'audit_script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+            'python_executable':sys.executable,'python_version':sys.version,
+            'limitations':['Report consistency does not independently establish raw source-data truth.',
+                           'Streamed flow evidence is byte-authenticated with recorded exact precision receipts; stream physical values are not recalculated.',
+                           'Earlier metric scientific failure is unchanged; no higher-dimensional evidence or original calibration acceptance follows.']}
+    args.output.parent.mkdir(parents=True,exist_ok=True)
+    args.output.write_text(json.dumps(report,indent=2,sort_keys=True)+'\n')
+    print(json.dumps({'status':report['status'],'classification':report['classification'],'counts':report['counts'],
+                      'failures':[x['name'] for x in failed]},sort_keys=True))
+    return 0 if not failed else 1
+
+if __name__=='__main__':raise SystemExit(main())

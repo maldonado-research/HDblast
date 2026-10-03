@@ -1,0 +1,191 @@
+{
+  "scope": "exact local variation and boundary compatibility only; no physical evolution or certified bulk closure",
+  "checks_passed": 21,
+  "negative_controls_rejected": 9,
+  "checks": [
+    {
+      "name": "lapse variation independently yields local energy density",
+      "passed": true,
+      "residual": "0",
+      "note": ""
+    },
+    {
+      "name": "scale-factor variation independently yields local pressure",
+      "passed": true,
+      "residual": "0",
+      "note": ""
+    },
+    {
+      "name": "scalar variation independently yields V_phi-F_phi R",
+      "passed": true,
+      "residual": "0",
+      "note": ""
+    },
+    {
+      "name": "variational local Ward identity",
+      "passed": true,
+      "residual": "0",
+      "note": ""
+    },
+    {
+      "name": "covariant R_squared 00 variation agrees with lapse variation",
+      "passed": true,
+      "residual": "0",
+      "note": ""
+    },
+    {
+      "name": "covariant R_squared spatial variation agrees with scale variation",
+      "passed": true,
+      "residual": "0",
+      "note": ""
+    },
+    {
+      "name": "shell momentum residual equals minus kappa_squared Ward residual /2",
+      "passed": true,
+      "residual": "0",
+      "note": "Coordinate conformal-gauge momentum residual has an extra e^(2 B_b)."
+    },
+    {
+      "name": "doubled bulk signed flux budget",
+      "passed": true,
+      "residual": "0",
+      "note": ""
+    },
+    {
+      "name": "radiation temporal junction reduces to inherited A1 path",
+      "passed": true,
+      "residual": "0",
+      "note": ""
+    },
+    {
+      "name": "vacuum junctions recover identical metric normal derivatives",
+      "passed": true,
+      "residual": "0",
+      "note": ""
+    },
+    {
+      "name": "mass-current chain rule J_phi=x_phi Q/2",
+      "passed": true,
+      "residual": "0",
+      "note": ""
+    },
+    {
+      "name": "quadratic mass current",
+      "passed": true,
+      "residual": "0",
+      "note": ""
+    },
+    {
+      "name": "paired double counting can evade the Ward test",
+      "passed": true,
+      "residual": "0",
+      "note": "PASS is intentional: coefficient bookkeeping is required to detect model change."
+    },
+    {
+      "name": "static instant hides a pressure-only error in Ward",
+      "passed": true,
+      "residual": "0",
+      "note": "Use direct spatial junction and a separately evaluated trace check at H=0."
+    },
+    {
+      "name": "energy contains scale-factor third derivative",
+      "passed": true,
+      "residual": "0",
+      "note": ""
+    },
+    {
+      "name": "pressure contains scale-factor fourth derivative",
+      "passed": true,
+      "residual": "0",
+      "note": ""
+    },
+    {
+      "name": "F pressure contains scalar acceleration",
+      "passed": true,
+      "residual": "0",
+      "note": ""
+    },
+    {
+      "name": "F scalar current contains scale-factor acceleration",
+      "passed": true,
+      "residual": "0",
+      "note": ""
+    },
+    {
+      "name": "reference pressure subtraction has fourth conformal scale derivative",
+      "passed": true,
+      "residual": "0",
+      "note": ""
+    },
+    {
+      "name": "reference pressure subtraction has second conformal mass derivative",
+      "passed": true,
+      "residual": "0",
+      "note": ""
+    },
+    {
+      "name": "reference Q subtraction has second conformal scale derivative",
+      "passed": true,
+      "residual": "0",
+      "note": ""
+    }
+  ],
+  "negative_controls": [
+    {
+      "name": "reverse scalar-source sign",
+      "rejected": true,
+      "residual": "-2*(-a(tau)**2*Derivative(V(phi(tau)), phi(tau)) + 6*a(tau)*Derivative(F(phi(tau)), phi(tau))*Derivative(a(tau), (tau, 2)) + 6*Derivative(F(phi(tau)), phi(tau))*Derivative(a(tau), tau)**2)*Derivative(phi(tau), tau)/a(tau)**2",
+      "note": ""
+    },
+    {
+      "name": "omit F_phi R current but retain F metric variation",
+      "rejected": true,
+      "residual": "-6*(a(tau)*Derivative(a(tau), (tau, 2)) + Derivative(a(tau), tau)**2)*Derivative(F(phi(tau)), phi(tau))*Derivative(phi(tau), tau)/a(tau)**2",
+      "note": ""
+    },
+    {
+      "name": "omit F_ddot spatial variation",
+      "rejected": true,
+      "residual": "-6*(Derivative(F(phi(tau)), phi(tau))*Derivative(phi(tau), (tau, 2)) + Derivative(F(phi(tau)), (phi(tau), 2))*Derivative(phi(tau), tau)**2)*Derivative(a(tau), tau)/a(tau)",
+      "note": ""
+    },
+    {
+      "name": "omit R_squared H_triple_dot pressure term",
+      "rejected": true,
+      "residual": "72*alpha*(-a(tau)**3*Derivative(a(tau), (tau, 4)) + 4*a(tau)**2*Derivative(a(tau), tau)*Derivative(a(tau), (tau, 3)) + 3*a(tau)**2*Derivative(a(tau), (tau, 2))**2 - 12*a(tau)*Derivative(a(tau), tau)**2*Derivative(a(tau), (tau, 2)) + 6*Derivative(a(tau), tau)**4)*Derivative(a(tau), tau)/a(tau)**5",
+      "note": ""
+    },
+    {
+      "name": "double local metric terms while leaving current single",
+      "rejected": true,
+      "residual": "-(-a(tau)**2*Derivative(V(phi(tau)), phi(tau)) + 6*a(tau)*Derivative(F(phi(tau)), phi(tau))*Derivative(a(tau), (tau, 2)) + 6*Derivative(F(phi(tau)), phi(tau))*Derivative(a(tau), tau)**2)*Derivative(phi(tau), tau)/a(tau)**2",
+      "note": ""
+    },
+    {
+      "name": "drop scalar matter source from junction",
+      "rejected": true,
+      "residual": "-kappa5_squared*J_total(tau)*Derivative(phi(tau), tau)/2",
+      "note": "For a physical Ward source jt, removing it leaves -kappa_squared jt v/2."
+    },
+    {
+      "name": "source duplication changes spatial junction by kappa_squared rho_local/6",
+      "rejected": true,
+      "residual": "-kappa5_squared*(72*alpha*a(tau)**2*Derivative(a(tau), tau)*Derivative(a(tau), (tau, 3)) - 36*alpha*a(tau)**2*Derivative(a(tau), (tau, 2))**2 + 72*alpha*a(tau)*Derivative(a(tau), tau)**2*Derivative(a(tau), (tau, 2)) - 108*alpha*Derivative(a(tau), tau)**4 + 6*F(phi(tau))*a(tau)**2*Derivative(a(tau), tau)**2 - V(phi(tau))*a(tau)**4 + 6*a(tau)**3*Derivative(F(phi(tau)), phi(tau))*Derivative(a(tau), tau)*Derivative(phi(tau), tau))/(6*a(tau)**4)",
+      "note": ""
+    },
+    {
+      "name": "source duplication changes temporal junction",
+      "rejected": true,
+      "residual": "-kappa5_squared*(72*alpha*a(tau)**3*Derivative(a(tau), (tau, 4)) + 180*alpha*a(tau)**2*Derivative(a(tau), (tau, 2))**2 - 576*alpha*a(tau)*Derivative(a(tau), tau)**2*Derivative(a(tau), (tau, 2)) + 324*alpha*Derivative(a(tau), tau)**4 + 12*F(phi(tau))*a(tau)**3*Derivative(a(tau), (tau, 2)) - 6*F(phi(tau))*a(tau)**2*Derivative(a(tau), tau)**2 - V(phi(tau))*a(tau)**4 + 6*a(tau)**4*Derivative(F(phi(tau)), phi(tau))*Derivative(phi(tau), (tau, 2)) + 6*a(tau)**4*Derivative(F(phi(tau)), (phi(tau), 2))*Derivative(phi(tau), tau)**2)/(6*a(tau)**4)",
+      "note": ""
+    },
+    {
+      "name": "temporal junction detects static pressure-only error",
+      "rejected": true,
+      "residual": "-delta_pressure*kappa5_squared/2",
+      "note": ""
+    }
+  ],
+  "sympy_version": "1.14.0",
+  "script_sha256": "562a24fc43b242bc63f4143dd08172a20acedd39510e30633cc4fe65d3c3a43a"
+}

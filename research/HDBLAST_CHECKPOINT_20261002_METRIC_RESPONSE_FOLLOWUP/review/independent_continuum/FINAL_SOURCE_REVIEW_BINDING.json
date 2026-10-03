@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "scope": "Final static review and source binding before public freeze; no physical evaluations",
+  "final_helper_sha256": "3f56906cad28258f988d7002ca66b8cbf4d249ea6121774591fc701393d2d8ae",
+  "final_primary_producer_sha256": "a9a387108042ad0350fa1be21d795a207bdc0b8e84149e30c0d9c0d30013b35e",
+  "original_helper_sha256": "9817c89c756245b73e40eb5b13b98f7dfdbbd7a0d386bcb88c8d0201662f9a49",
+  "original_validator_sha256": "358d695644b0e639589f7dfe05de53f72a50a1119d2f0da1d5eef3272927b863",
+  "unchanged_mathematical_ast_checks": {
+    "source_jet_mp": true,
+    "canonical_forcing_jet_mp": true,
+    "forcing_jet_mp": true,
+    "log_history_mp": true,
+    "complete_qjet_expression": true
+  },
+  "error_serializer_review": {
+    "validator_denominator": "8*math.pi**2, exact binary64 division",
+    "normalization_postcondition": "mp.mpf(normalized allowance) >= requested empirical allowance",
+    "maximum_adjacent_float_steps": 4,
+    "failure_behavior": "Explicit RuntimeError if upward serialization does not meet its postcondition",
+    "legacy_memory_error_field": "Complete empirical raw-memory-equivalent allowance, explicitly labeled in saved_memory_error_scope",
+    "actual_raw_quad_errors": "Retained as raw_log_history_quad_errors_decimal within precision_runs",
+    "uncertainty_scope": "Empirical diagnostics, not a certified integration-error interval"
+  },
+  "normal_and_optimized_source_review_identity_count": 20,
+  "physical_evaluations": 0
+}

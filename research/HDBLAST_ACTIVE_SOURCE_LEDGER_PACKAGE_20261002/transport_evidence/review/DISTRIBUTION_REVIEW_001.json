@@ -1,0 +1,64 @@
+{
+  "additional_verified_guard_count": 7,
+  "advisory_findings": [
+    {
+      "id": "JSON_EXPONENT_OVERFLOW",
+      "observation": "strict_json rejects named nonfinite JSON constants but accepts exponent 1e999 as float infinity in unused metadata.",
+      "recommendation": "If strict finite JSON is claimed, reject nonfinite parse_float results and guard exponent overflow; otherwise narrow documentation."
+    }
+  ],
+  "blocking_findings": [
+    {
+      "id": "RAW_NUL_ZIP_MEMBER",
+      "observation": "ZipInfo.filename silently truncates the raw member at NUL. A fabricated central/local name FREEZE_RECEIPT.json\\0suffix is accepted against a FREEZE_RECEIPT.json inventory.",
+      "recommendation": "Validate ZipInfo.orig_filename and require equality with filename before prefix and inventory checks; guard with fabricated raw central/local NUL names.",
+      "source_lines": [
+        109,
+        110,
+        112
+      ]
+    },
+    {
+      "id": "CLI_OUTPUT_RECEIPT_ALIAS",
+      "observation": "Identical fresh --output and --receipt paths pass preflight. Reconstruction creates the ZIP, then receipt preflight raises, leaving a verified output with exit 1 and no printed receipt.",
+      "recommendation": "Reject equal normalized output/receipt paths before reconstruct; guard absence of output on this preflight failure.",
+      "source_lines": [
+        194,
+        195,
+        198
+      ]
+    }
+  ],
+  "canonical_candidate_reported_verification": {
+    "part_bytes": [
+      25165824,
+      7029436
+    ],
+    "scope": "Read manifest and protocol-produced receipt only; reviewer did not reconstruct real payload.",
+    "zip_bytes": 32195260,
+    "zip_members_verified": 238,
+    "zip_sha256": "0cd3dd2da604444541c06e98167f537f769c0ce430108bf02354e5090f328c4f"
+  },
+  "checkout_edits": false,
+  "edge_evidence": "EDGE_CASE_REVIEW_001.json",
+  "physical_evaluations": 0,
+  "real_network_calls": 0,
+  "reassembler_sha256": "fc947aed75882fe859708ae8fc6d0fdd8542992fc4421f41bda093d53801ea24",
+  "required_contract_review": {
+    "complete_embedded_manifest_payload_membership": true,
+    "explicit_whole_zip_sha256_pin": true,
+    "fresh_atomic_output_and_cleanup_on_verification_failure": true,
+    "member_sha256_and_crc": true,
+    "no_extraction_or_study_code_imports": true,
+    "part_limit_24_MiB_and_ordered_part_sha256": true,
+    "regular_zip_member_mode": true,
+    "schema_1_required_fields_and_strict_integer_types": true
+  },
+  "scope": "Independent distribution helper review; not a physical or scientific evaluation",
+  "source_pinned_guard_receipts": {
+    "GUARDS_NORMAL.json": 99,
+    "GUARDS_OPTIMIZED.json": 99
+  },
+  "status": "NO_GO_PENDING_MEMBER_NAME_AND_CLI_PREFLIGHT_FIXES",
+  "test_source_sha256": "881ab1bbcfcff26f1f511eaa650ccb464f375ce3bbf2d8d5dd06db44e18087be"
+}

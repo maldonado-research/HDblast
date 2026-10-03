@@ -1,0 +1,174 @@
+{
+  "alias_zero_integral": "theta=m*pi!=0, evenN: I=0; Q=A*N*Delta if m even, Q=-A*N*Delta/3 if m odd",
+  "cutoff_frequency_bounds": [
+    {
+      "K": 64,
+      "dt": "1/128",
+      "not_actual_saved_mode_or_error": true,
+      "pure_exponential_T_at_nominal_bound": "1.006294275830191045176539630447789209095",
+      "setting": "coarse",
+      "theta_nominal_cutoff": "1.0"
+    },
+    {
+      "K": 128,
+      "dt": "1/128",
+      "not_actual_saved_mode_or_error": true,
+      "pure_exponential_T_at_nominal_bound": "1.161228524152631446508744922413719011259",
+      "setting": "coarse",
+      "theta_nominal_cutoff": "2.0"
+    },
+    {
+      "K": 256,
+      "dt": "1/128",
+      "not_actual_saved_mode_or_error": true,
+      "pure_exponential_T_at_nominal_bound": "-2.372008350894917521929425555739882915145",
+      "setting": "coarse",
+      "theta_nominal_cutoff": "4.0"
+    },
+    {
+      "K": 64,
+      "dt": "1/256",
+      "not_actual_saved_mode_or_error": true,
+      "pure_exponential_T_at_nominal_bound": "1.00035783459657138180217046498123287128",
+      "setting": "fine",
+      "theta_nominal_cutoff": "0.5"
+    },
+    {
+      "K": 128,
+      "dt": "1/256",
+      "not_actual_saved_mode_or_error": true,
+      "pure_exponential_T_at_nominal_bound": "1.006294275830191045176539630447789209095",
+      "setting": "fine",
+      "theta_nominal_cutoff": "1.0"
+    },
+    {
+      "K": 256,
+      "dt": "1/256",
+      "not_actual_saved_mode_or_error": true,
+      "pure_exponential_T_at_nominal_bound": "1.161228524152631446508744922413719011259",
+      "setting": "fine",
+      "theta_nominal_cutoff": "2.0"
+    }
+  ],
+  "exact_identities": [
+    "composite_weight_block_identity_N2",
+    "finite_geometric_identity_N2",
+    "composite_weight_block_identity_N4",
+    "finite_geometric_identity_N4",
+    "composite_weight_block_identity_N6",
+    "finite_geometric_identity_N6",
+    "composite_weight_block_identity_N8",
+    "finite_geometric_identity_N8",
+    "composite_weight_block_identity_N12",
+    "finite_geometric_identity_N12",
+    "composite_weight_block_identity_N18",
+    "finite_geometric_identity_N18",
+    "formal_even_N_transfer_cancellation",
+    "divide_numerator_denominator_by_q",
+    "Euler_cos_numerator",
+    "Euler_sin_denominator",
+    "transfer_is_even",
+    "constant_frequency_limit_is_one",
+    "series_leading_error_theta4_over180",
+    "constant_Q_N2",
+    "odd_pi_alias_Q_N2",
+    "even_nonzero_pi_alias_Q_N2",
+    "constant_Q_N8",
+    "odd_pi_alias_Q_N8",
+    "even_nonzero_pi_alias_Q_N8",
+    "constant_Q_N18",
+    "odd_pi_alias_Q_N18",
+    "even_nonzero_pi_alias_Q_N18",
+    "nonalias_global_null_Q",
+    "nonalias_global_null_exact_integral_numerator",
+    "nonalias_null_transfer_extension_finite"
+  ],
+  "exact_identities_passed": 31,
+  "fabricated_cases": [
+    {
+      "N": 2,
+      "abs_Q_minus_T_I": "0.0",
+      "case": "nonnull_exponential",
+      "theta": "0.3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333"
+    },
+    {
+      "N": 8,
+      "abs_Q_minus_T_I": "7.143671195514218638848647176908380996574437467642491632594536520172703974417113722971550136626075185e-102",
+      "case": "nonnull_exponential",
+      "theta": "0.5"
+    },
+    {
+      "N": 18,
+      "abs_Q_minus_T_I": "4.398729043578173499578281167182078040805410495211589266659685752653740592830953349711659126888869184e-102",
+      "case": "nonnull_exponential",
+      "theta": "1.0"
+    },
+    {
+      "N": 8,
+      "abs_Q_minus_T_I": "8.929588994392773298560808971135476245718046834553114540743170650215879968021392153714437670782593982e-102",
+      "case": "nonnull_exponential",
+      "theta": "2.0"
+    },
+    {
+      "N": 12,
+      "abs_Q_minus_T_I": "5.647567958290738099476776616226405149446666855515591037215526706503747889535478797767897690552812668e-102",
+      "case": "nonnull_exponential",
+      "theta": "4.0"
+    },
+    {
+      "N": 6,
+      "abs_Q_minus_T_I": "2.823783979145369049738388308113202574723333427757795518607763353251873944767739398883948845276406334e-102",
+      "case": "nonnull_exponential",
+      "theta": "-2.0"
+    },
+    {
+      "N": 8,
+      "abs_Q_minus_expected": "7.143671195514218638848647176908380996574437467642491632594536520172703974417113722971550136626075185e-102",
+      "case": "constant",
+      "ratio_divided_by_zero": false,
+      "theta": "0.0"
+    },
+    {
+      "N": 8,
+      "abs_Q_minus_expected": "6.586139417532596835647802022681795296083530930077015502815548112412996568190947683710235340048663404e-101",
+      "case": "odd_pi_alias",
+      "ratio_divided_by_zero": false,
+      "theta": "3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117068"
+    },
+    {
+      "N": 8,
+      "abs_Q_minus_expected": "9.036108733265180959162842585962248239114666968824945659544842730405996623256766076428636304884500269e-101",
+      "case": "even_nonzero_pi_alias",
+      "ratio_divided_by_zero": false,
+      "theta": "6.283185307179586476925286766559005768394338798750211641949889184615632812572417997256069650684234136"
+    },
+    {
+      "N": 8,
+      "abs_Q_minus_expected": "1.485906037606612738452668698895481810410746699118547727276891861137216969744163377388929795447983446e-101",
+      "case": "nonalias_global_null",
+      "ratio_divided_by_zero": false,
+      "theta": "0.785398163397448309615660845819875721049292349843776455243736148076954101571552249657008706335529267"
+    }
+  ],
+  "fabricated_max_abs_identity_error": "9.036108733265180959162842585962248239114666968824945659544842730405996623256766076428636304884500269e-101",
+  "interpretation_limit": "The rational L(t) envelope, momentum superposition, signed cancellation and inherited LD globalprefix arithmetic prevent this pure exponential transfer from quantitatively proving the actual ledger error.",
+  "literal_ratio_domain": "even N>0, theta!=0, sin(theta)!=0, exp(i*N*theta)!=1",
+  "new_criteria_or_gate_changes": 0,
+  "no_novelty_claim": true,
+  "nonalias_global_null": "sin(theta)!=0 and exp(i*N*theta)=1 gives Q=I=0; literal Q/I undefined, analytic transfer extension finite",
+  "normalized_transfer": "theta*(2+cos(theta))/(3*sin(theta))",
+  "optimized": true,
+  "physical_array_reruns": 0,
+  "physical_arrays_loaded": false,
+  "physical_source_or_modes_evaluated": false,
+  "post_hoc": true,
+  "proof_script_sha256": "ba01a22ecbcb6423736e3dbe220be9ac65d21d88694603c8e5b653d21a582ca7",
+  "removable_constant_limit": "T(0)=1, I=Q=A*N*Delta",
+  "schema_version": 1,
+  "series": "1 + theta**4/180 + theta**6/1512 + theta**8/14400 + 17*theta**10/2395008 + O(theta**12)",
+  "status": "PASS_POST_HOC_ANALYTICAL_INTERPRETATION_ONLY",
+  "versions": {
+    "mpmath": "1.3.0",
+    "sympy": "1.14.0"
+  }
+}

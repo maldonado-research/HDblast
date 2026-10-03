@@ -1,0 +1,118 @@
+{
+  "status": "PASS",
+  "scope": "Exact algebra only; no numerical source/response/mode evaluation",
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "executable": "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+  "optimization_level": 1,
+  "script_sha256": "6441ab97c1cdf708ba46f3cdf3a7042c3c41a7bb96429c7ccef9f3d7b9b2bddf",
+  "repo_root": "/workspace/HDblast",
+  "inherited_source_pins": [
+    {
+      "path": "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/theory/PROSPECTIVE_CAUSAL_RESPONSE_PROTOCOL.md",
+      "resolved_path": "/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/theory/PROSPECTIVE_CAUSAL_RESPONSE_PROTOCOL.md",
+      "expected_sha256": "2bcc72013110d14f4c076f8270ee6b83057a960405f47a27b7d8c4445f82083e",
+      "actual_sha256": "2bcc72013110d14f4c076f8270ee6b83057a960405f47a27b7d8c4445f82083e"
+    },
+    {
+      "path": "research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/COMMON_ACTION_SMOOTH_FRW.md",
+      "resolved_path": "/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/COMMON_ACTION_SMOOTH_FRW.md",
+      "expected_sha256": "4896a6f83c4d63ac8300608bba923c7a7e45b0459d70aad621b400c001ee302f",
+      "actual_sha256": "4896a6f83c4d63ac8300608bba923c7a7e45b0459d70aad621b400c001ee302f"
+    },
+    {
+      "path": "research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/code/derive_local_trace.py",
+      "resolved_path": "/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/code/derive_local_trace.py",
+      "expected_sha256": "25a9703f720fe068e97b1fd6731808751d66d90960fd40b0607e79a48276e0f0",
+      "actual_sha256": "25a9703f720fe068e97b1fd6731808751d66d90960fd40b0607e79a48276e0f0"
+    },
+    {
+      "path": "research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/code/verify_local_identities.py",
+      "resolved_path": "/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/code/verify_local_identities.py",
+      "expected_sha256": "d392740bc1926474c33fe37503c9c1c3406b63b0f7907218857c5d6af940daf0",
+      "actual_sha256": "d392740bc1926474c33fe37503c9c1c3406b63b0f7907218857c5d6af940daf0"
+    },
+    {
+      "path": "research/HDBLAST_CHECKPOINT_20261002_DESITTER/theory/DESITTER_COMMON_ACTION_DERIVATION.md",
+      "resolved_path": "/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_DESITTER/theory/DESITTER_COMMON_ACTION_DERIVATION.md",
+      "expected_sha256": "fe84d5c108dc688b8d261f078786ac7a1483510381052c95ecc827013b89214b",
+      "actual_sha256": "fe84d5c108dc688b8d261f078786ac7a1483510381052c95ecc827013b89214b"
+    },
+    {
+      "path": "research/HDBLAST_CHECKPOINT_20261002_DESITTER/independent/exact_mode_bridge.py",
+      "resolved_path": "/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_DESITTER/independent/exact_mode_bridge.py",
+      "expected_sha256": "501a2dc5edbf3aed7bbf64d407c2acc8174b3479a555e344bb61508b85f333aa",
+      "actual_sha256": "501a2dc5edbf3aed7bbf64d407c2acc8174b3479a555e344bb61508b85f333aa"
+    },
+    {
+      "path": "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/theory/STATIONARY_COMMON_ACTION_MODEL.md",
+      "resolved_path": "/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/theory/STATIONARY_COMMON_ACTION_MODEL.md",
+      "expected_sha256": "84364b8271fc73ced365202e820908bca2d23ab0760a6ea067e7c775cf2dddf5",
+      "actual_sha256": "84364b8271fc73ced365202e820908bca2d23ab0760a6ea067e7c775cf2dddf5"
+    }
+  ],
+  "exact_identities": [
+    "bare_minimal_density",
+    "bare_minimal_pressure",
+    "bare_density_variance_reduction",
+    "bare_pressure_variance_reduction",
+    "bare_minimal_trace",
+    "bare_source_Ward_identity",
+    "full_fourth_order_density_variation_cancellation",
+    "direct_density_local_integrand",
+    "direct_pressure_local_integrand",
+    "integrated_density_contact",
+    "integrated_pressure_contact",
+    "matched_continuum_Ward_identity",
+    "matched_continuum_trace_identity",
+    "finite_cutoff_moment_primitive_n5",
+    "finite_cutoff_moment_primitive_n7",
+    "finite_cutoff_moment_primitive_n9",
+    "finite_cutoff_anomaly_continuum_limit",
+    "finite_cutoff_density_contact",
+    "stationary_rhox_common_action",
+    "stationary_rhox_closed_value",
+    "stationary_pressure_deSitter_invariance"
+  ],
+  "detected_mutations": [
+    {
+      "name": "omit_explicit_stress_mass_contacts",
+      "exact_residual": "(4*L*s - sp)/(4*a**4*k)"
+    },
+    {
+      "name": "omit_reference_specialization_r_equals_2H_squared",
+      "exact_residual": "-dx*(-2*H**2 + r)/12"
+    },
+    {
+      "name": "drop_density_contact",
+      "exact_residual": "-H*(3*H**2*dx - 2*H*dx_dot - dx_ddot)/(96*pi**2)"
+    },
+    {
+      "name": "drop_pressure_contact",
+      "exact_residual": "H*(11*H**2*dx - 2*H*dx_dot - dx_ddot)/(96*pi**2)"
+    },
+    {
+      "name": "reverse_boxQ_sign",
+      "exact_residual": "3*H*deltaQ_dot + deltaQ_ddot"
+    },
+    {
+      "name": "omit_explicit_Q0_density_term",
+      "exact_residual": "-H**2*(3*H*dx + dx_dot)/(24*pi**2)"
+    },
+    {
+      "name": "use_continuum_anomaly_at_finite_cutoff",
+      "exact_residual": "(cutoff_ratio - 1)*(15*H**2*cutoff_ratio**6*dx + 15*H**2*cutoff_ratio**5*dx + 3*H**2*cutoff_ratio**4*dx + 3*H**2*cutoff_ratio**3*dx - 24*H**2*cutoff_ratio**2*dx - 24*H**2*cutoff_ratio*dx - 24*H**2*dx + 6*H*cutoff_ratio**4*dx_dot + 6*H*cutoff_ratio**3*dx_dot + 6*H*cutoff_ratio**2*dx_dot + 6*H*cutoff_ratio*dx_dot + 6*H*dx_dot + 2*cutoff_ratio**2*dx_ddot + 2*cutoff_ratio*dx_ddot + 2*dx_ddot)/(192*pi**2)"
+    },
+    {
+      "name": "moving_reference_static_derivative",
+      "exact_residual": "H**2/(32*pi**2)"
+    }
+  ],
+  "derived_contacts": {
+    "delta_rho": "H*(H*dx - dx_dot)/(96*pi**2)",
+    "delta_p": "(-11*H**2*dx/144 + H*dx_dot/72 + dx_ddot/144)/(2*pi**2)"
+  },
+  "stationary_rho_x": "H**2*(-2*EulerGamma - log(2))/(32*pi**2) + 5*H**2/(96*pi**2)",
+  "exact_identity_count": 21,
+  "detected_mutation_count": 8
+}

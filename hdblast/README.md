@@ -2,8 +2,11 @@
 
 **Higher-dimensional blast research program · Ricardo Maldonado**
 
+**Current status, 2 October 2026 (Pacific):** read [the latest research and publication summary](CURRENT_STATUS.md). The registered active-source ledger diagnosis and exact standalone replay are complete. Earlier metric tests retain FAIL; the higher-dimensional cause of the Big Bang remains unestablished. The dated September guides below retain their historical scope.
+
 | Read | For |
 |---|---|
+| [Current research and publication status](CURRENT_STATUS.md) | Latest verified results, reproducible archive, limits, next study and actual Zenodo publication state |
 | [HDBLAST in plain language (Sept 2026)](HDBLAST_IN_PLAIN_LANGUAGE.md) | Anyone: the idea, what has been found, what has failed, and what comes next |
 | [Program map](PROGRAM_MAP.md) | Researchers: model definition, dated chronology, full claims ledger, falsification tests, file index |
 | [Zenodo records](ZENODO_RECORDS.md) | The dated public record of every HDBLAST release |

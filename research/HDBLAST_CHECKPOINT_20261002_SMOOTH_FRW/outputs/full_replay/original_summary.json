@@ -1,0 +1,701 @@
+{
+  "provenance": {
+    "protocol": "/workspace/hdblast-research-work/full-replay-final-001/source/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/REGISTRATION.md",
+    "protocol_sha256": "37fda5b30332d0079ec44db708e266788fdf5859303707bb709750fdcf59d898",
+    "source_sha256": "32f6632bb84cc10dd6cef22c2311941acdbe223d846eb7157a2f1e9459fb160a",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "longdouble_epsilon": 1.0842021724855044e-19,
+    "created": "2026-10-02T04:41:35.695633+00:00",
+    "scope": "Prescribed C-infinity background control only; no shell change, backreaction, decay, or thermal radiation.",
+    "finite_action": "Positive-reference subtraction baseline; interpretation subject to registered finite-action matching document."
+  },
+  "amplitudes": {
+    "0.0": {
+      "status": "PASS",
+      "selected": "A0_quadrature_K192",
+      "initial_cutoff_K24_to_K48": {
+        "rho": {
+          "absolute_difference": 0.0001606912902348684,
+          "signal_scale": 0.12779007486425556,
+          "normalized_difference": 0.0012574629947244495,
+          "limit": 0.0006589503743212779,
+          "passed": true
+        },
+        "p": {
+          "absolute_difference": 0.025227262722402333,
+          "signal_scale": 0.6074223275058573,
+          "normalized_difference": 0.04153166846202088,
+          "limit": 0.0030571116375292867,
+          "passed": false
+        },
+        "Q": {
+          "absolute_difference": 0.0003722029922200859,
+          "signal_scale": 0.05778130918322895,
+          "normalized_difference": 0.0064415811528223035,
+          "limit": 0.00030890654591614477,
+          "passed": false
+        }
+      },
+      "initial_cutoff_K48_to_K96": {
+        "rho": {
+          "absolute_difference": 3.876419095420747e-05,
+          "signal_scale": 0.12779007486425556,
+          "normalized_difference": 0.0003033427360879517,
+          "limit": 0.0006589503743212779,
+          "passed": true
+        },
+        "p": {
+          "absolute_difference": 0.0041612844306595925,
+          "signal_scale": 0.6045908777159343,
+          "normalized_difference": 0.006882810482322167,
+          "limit": 0.003042954388579672,
+          "passed": false
+        },
+        "Q": {
+          "absolute_difference": 9.082458997389936e-05,
+          "signal_scale": 0.05772636625228531,
+          "normalized_difference": 0.0015733640599680694,
+          "limit": 0.0003086318312614266,
+          "passed": true
+        }
+      },
+      "cutoff_increment_shrink_ratios": {
+        "rho": 0.2412339268516,
+        "p": 0.16495188068756605,
+        "Q": 0.24401896780075918
+      },
+      "final_cutoff_gate": {
+        "rho": {
+          "absolute_difference": 9.533246990767186e-06,
+          "signal_scale": 0.12779007341606669,
+          "normalized_difference": 7.460084133239568e-05,
+          "limit": 0.0006589503670803335,
+          "passed": true
+        },
+        "p": {
+          "absolute_difference": 0.0008291984982207179,
+          "signal_scale": 0.6035298489851696,
+          "normalized_difference": 0.0013739146450088729,
+          "limit": 0.003037649244925848,
+          "passed": true
+        },
+        "Q": {
+          "absolute_difference": 2.268147323287832e-05,
+          "signal_scale": 0.05771463416568025,
+          "normalized_difference": 0.0003929934506344971,
+          "limit": 0.00030857317082840126,
+          "passed": true
+        }
+      },
+      "solver_refinement": {
+        "rho": {
+          "absolute_difference": 1.3613197397399635e-06,
+          "signal_scale": 0.12779025551032883,
+          "normalized_difference": 1.065276639680819e-05,
+          "limit": 0.0006589512775516442,
+          "passed": true
+        },
+        "p": {
+          "absolute_difference": 4.535206567790606e-07,
+          "signal_scale": 0.6035301055346347,
+          "normalized_difference": 7.514466181886837e-07,
+          "limit": 0.0030376505276731736,
+          "passed": true
+        },
+        "Q": {
+          "absolute_difference": 1.7576884999565e-10,
+          "signal_scale": 0.057714634164969546,
+          "normalized_difference": 3.045481489031678e-09,
+          "limit": 0.00030857317082484773,
+          "passed": true
+        }
+      },
+      "quadrature_refinement": {
+        "rho": {
+          "absolute_difference": 5.982894790701465e-08,
+          "signal_scale": 0.12778995275858696,
+          "normalized_difference": 4.681819393113e-07,
+          "limit": 0.0006589497637929349,
+          "passed": true
+        },
+        "p": {
+          "absolute_difference": 2.1729222671185155e-08,
+          "signal_scale": 0.6032431890139612,
+          "normalized_difference": 3.6020668060426724e-08,
+          "limit": 0.0030362159450698064,
+          "passed": true
+        },
+        "Q": {
+          "absolute_difference": 4.505374372187898e-12,
+          "signal_scale": 0.05771170253465406,
+          "normalized_difference": 7.806691146362495e-11,
+          "limit": 0.00030855851267327033,
+          "passed": true
+        }
+      },
+      "time_refinement": {
+        "absolute_difference": 5.86442210070981e-09,
+        "signal_scale": 0.12779007492587455,
+        "normalized_difference": 4.5891060820736707e-08,
+        "limit": 0.0006489503746293728,
+        "passed": true
+      },
+      "exchange_fine": {
+        "ledger_residual_max": 1.8207958069060837e-07,
+        "ledger_scale": 0.12779007492586394,
+        "ledger_limit": 0.0006489503746293198,
+        "ledger_passed": true,
+        "local_residual_max": 6.682383685148403e-05,
+        "local_scale": 0.5050758147533804,
+        "local_limit": 0.005250758147533803,
+        "local_passed": true,
+        "source_omission_ledger_residual_max": 0.1277899427787289,
+        "source_work_cumulative_max": 0.12779007492586394,
+        "time_nodes": 801
+      },
+      "exchange_coarse": {
+        "ledger_residual_max": 1.817687923788558e-07,
+        "ledger_scale": 0.12779007492587455,
+        "ledger_limit": 0.0006489503746293728,
+        "ledger_passed": true,
+        "local_residual_max": 3.332174266290622e-05,
+        "local_scale": 0.5050429005036742,
+        "local_limit": 0.005250429005036742,
+        "local_passed": true,
+        "source_omission_ledger_residual_max": 0.1277899427787289,
+        "source_work_cumulative_max": 0.12779007492587455,
+        "time_nodes": 401
+      },
+      "contingency": {
+        "trigger": "K48-to-K96 cutoff gate failed",
+        "continuity_at_K96": {
+          "rho": {
+            "absolute_difference": 6.165576243999382e-09,
+            "signal_scale": 0.12779007341606669,
+            "normalized_difference": 4.8247693104652384e-08,
+            "limit": 0.0006589503670803335,
+            "passed": true
+          },
+          "p": {
+            "absolute_difference": 2.158982770339435e-09,
+            "signal_scale": 0.6035298508322051,
+            "normalized_difference": 3.57725929771729e-09,
+            "limit": 0.003037649254161026,
+            "passed": true
+          },
+          "Q": {
+            "absolute_difference": 8.980576698958131e-13,
+            "signal_scale": 0.05771463416568025,
+            "normalized_difference": 1.5560311225707104e-11,
+            "limit": 0.00030857317082840126,
+            "passed": true
+          }
+        },
+        "cutoff_K96_to_K192": {
+          "rho": {
+            "absolute_difference": 9.533246990767186e-06,
+            "signal_scale": 0.12779007341606669,
+            "normalized_difference": 7.460084133239568e-05,
+            "limit": 0.0006589503670803335,
+            "passed": true
+          },
+          "p": {
+            "absolute_difference": 0.0008291984982207179,
+            "signal_scale": 0.6035298489851696,
+            "normalized_difference": 0.0013739146450088729,
+            "limit": 0.003037649244925848,
+            "passed": true
+          },
+          "Q": {
+            "absolute_difference": 2.268147323287832e-05,
+            "signal_scale": 0.05771463416568025,
+            "normalized_difference": 0.0003929934506344971,
+            "limit": 0.00030857317082840126,
+            "passed": true
+          }
+        },
+        "quadrature_at_K192": {
+          "rho": {
+            "absolute_difference": 5.982894790701465e-08,
+            "signal_scale": 0.12778995275858696,
+            "normalized_difference": 4.681819393113e-07,
+            "limit": 0.0006589497637929349,
+            "passed": true
+          },
+          "p": {
+            "absolute_difference": 2.1729222671185155e-08,
+            "signal_scale": 0.6032431890139612,
+            "normalized_difference": 3.6020668060426724e-08,
+            "limit": 0.0030362159450698064,
+            "passed": true
+          },
+          "Q": {
+            "absolute_difference": 4.505374372187898e-12,
+            "signal_scale": 0.05771170253465406,
+            "normalized_difference": 7.806691146362495e-11,
+            "limit": 0.00030855851267327033,
+            "passed": true
+          }
+        },
+        "solver_step_refinement_at_K192": {
+          "rho": {
+            "absolute_difference": 1.1283886122703812e-07,
+            "signal_scale": 0.12779003513400586,
+            "normalized_difference": 8.830020361815432e-07,
+            "limit": 0.0006589501756700294,
+            "passed": true
+          },
+          "p": {
+            "absolute_difference": 4.016643484483495e-08,
+            "signal_scale": 0.6032431890139612,
+            "normalized_difference": 6.658414976966339e-08,
+            "limit": 0.0030362159450698064,
+            "passed": true
+          },
+          "Q": {
+            "absolute_difference": 4.088108324085127e-12,
+            "signal_scale": 0.05771170253678518,
+            "normalized_difference": 7.083673058301105e-11,
+            "limit": 0.0003085585126839259,
+            "passed": true
+          }
+        },
+        "all_extended_wronskians_passed": true
+      },
+      "selected_diagnostics": {
+        "exchange_fine": {
+          "ledger_residual_max": 1.8207958069060837e-07,
+          "ledger_scale": 0.12779007492586394,
+          "ledger_limit": 0.0006489503746293198,
+          "ledger_passed": true,
+          "local_residual_max": 6.682383685148403e-05,
+          "local_scale": 0.5050758147533804,
+          "local_limit": 0.005250758147533803,
+          "local_passed": true,
+          "source_omission_ledger_residual_max": 0.1277899427787289,
+          "source_work_cumulative_max": 0.12779007492586394,
+          "time_nodes": 801
+        },
+        "exchange_coarse": {
+          "ledger_residual_max": 1.817687923788558e-07,
+          "ledger_scale": 0.12779007492587455,
+          "ledger_limit": 0.0006489503746293728,
+          "ledger_passed": true,
+          "local_residual_max": 3.332174266290622e-05,
+          "local_scale": 0.5050429005036742,
+          "local_limit": 0.005250429005036742,
+          "local_passed": true,
+          "source_omission_ledger_residual_max": 0.1277899427787289,
+          "source_work_cumulative_max": 0.12779007492587455,
+          "time_nodes": 401
+        },
+        "trace": {
+          "direct_derivatives": {
+            "absolute_difference": 2.318145675417327e-13,
+            "signal_scale": 1.9124134991035278,
+            "normalized_difference": 1.2121571388739894e-13,
+            "limit": 1.1562067495517639e-05,
+            "passed": true
+          },
+          "sampled_derivatives": [
+            {
+              "time_nodes": 801,
+              "absolute_difference": 1.0119500241378976e-06,
+              "signal_scale": 1.9124134991034736,
+              "normalized_difference": 5.291481285884527e-07,
+              "limit": 0.019324134991034737,
+              "passed": true
+            },
+            {
+              "time_nodes": 401,
+              "absolute_difference": 1.6581067499021884e-06,
+              "signal_scale": 1.9124134991034736,
+              "normalized_difference": 8.670231363036799e-07,
+              "limit": 0.019324134991034737,
+              "passed": true
+            }
+          ],
+          "direct_scope": "Physical equation Q derivatives plus subtraction jets, compared with independently integrated analytic finite-K trace moments."
+        },
+        "ode_bare_work_residual_max": 1.8208126370544697e-07,
+        "ode_bare_work_limit": 0.0006489503746377531,
+        "ode_bare_work_passed": true,
+        "ode_bare_work_scope": "Independent accumulated bare work versus energy; subtraction cancels algebraically here. Renormalized Simpson ledger separately tests subtraction/current pairing.",
+        "future_spectral_energy": {
+          "absolute_difference": 1.8200040305393905e-07,
+          "signal_scale": 0.12779007493004216,
+          "normalized_difference": 1.4242139160930454e-06,
+          "limit": 0.0006589503746502109,
+          "passed": true
+        },
+        "future_coherent_pressure_max": 0.14742105397873567,
+        "future_coherent_Q_max": 0.01562626707297658,
+        "maxima": {
+          "rho": 0.1277899428620847,
+          "p": 0.6032431772145207,
+          "Q": 0.05771170253465406
+        },
+        "crossing": {
+          "rho": 0.03125835096653399,
+          "p": 0.12540926437000632,
+          "Q": 0.011302844381542547
+        },
+        "endpoint": {
+          "rho": 0.1277899428620847,
+          "p": 0.08605578476452706,
+          "Q": -0.00433345047501103
+        }
+      }
+    },
+    "0.2": {
+      "status": "FAIL",
+      "selected": "A0.2_quadrature_K192",
+      "initial_cutoff_K24_to_K48": {
+        "rho": {
+          "absolute_difference": 0.0030996917512206863,
+          "signal_scale": 0.1402705830600536,
+          "normalized_difference": 0.02209794586719316,
+          "limit": 0.0007213529153002681,
+          "passed": false
+        },
+        "p": {
+          "absolute_difference": 0.6176240033024976,
+          "signal_scale": 2.3378007204584077,
+          "normalized_difference": 0.2641901843461622,
+          "limit": 0.011709003602292038,
+          "passed": false
+        },
+        "Q": {
+          "absolute_difference": 0.0015137434803476207,
+          "signal_scale": 0.06351190040892717,
+          "normalized_difference": 0.023834013320357998,
+          "limit": 0.0003375595020446358,
+          "passed": false
+        }
+      },
+      "initial_cutoff_K48_to_K96": {
+        "rho": {
+          "absolute_difference": 0.00036242226421020346,
+          "signal_scale": 0.1403109140878288,
+          "normalized_difference": 0.0025829941068115495,
+          "limit": 0.0007215545704391441,
+          "passed": true
+        },
+        "p": {
+          "absolute_difference": 0.18255638077680936,
+          "signal_scale": 2.3378007204584077,
+          "normalized_difference": 0.07808894025022492,
+          "limit": 0.011709003602292038,
+          "passed": false
+        },
+        "Q": {
+          "absolute_difference": 0.0003186366279114205,
+          "signal_scale": 0.0635302264037029,
+          "normalized_difference": 0.005015512236437561,
+          "limit": 0.0003376511320185145,
+          "passed": true
+        }
+      },
+      "cutoff_increment_shrink_ratios": {
+        "rho": 0.11692203396272495,
+        "p": 0.29557850698914234,
+        "Q": 0.21049578878334646
+      },
+      "final_cutoff_gate": {
+        "rho": {
+          "absolute_difference": 7.396845585623535e-05,
+          "signal_scale": 0.14032133605247868,
+          "normalized_difference": 0.0005271361999330731,
+          "limit": 0.0007216066802623935,
+          "passed": true
+        },
+        "p": {
+          "absolute_difference": 0.02262428337688216,
+          "signal_scale": 2.2425456839149036,
+          "normalized_difference": 0.01008866108688855,
+          "limit": 0.011232728419574517,
+          "passed": false
+        },
+        "Q": {
+          "absolute_difference": 6.201905082282334e-05,
+          "signal_scale": 0.06353522243109587,
+          "normalized_difference": 0.0009761365184497966,
+          "limit": 0.00033767611215547937,
+          "passed": true
+        }
+      },
+      "solver_refinement": {
+        "rho": {
+          "absolute_difference": 8.336775957096547e-07,
+          "signal_scale": 0.14031108750393922,
+          "normalized_difference": 5.941637332732164e-06,
+          "limit": 0.0007215554375196962,
+          "passed": true
+        },
+        "p": {
+          "absolute_difference": 2.778729402130864e-07,
+          "signal_scale": 2.2425456896863287,
+          "normalized_difference": 1.2390960036669455e-07,
+          "limit": 0.011232728448431643,
+          "passed": true
+        },
+        "Q": {
+          "absolute_difference": 1.0844557196687532e-10,
+          "signal_scale": 0.0635302264037029,
+          "normalized_difference": 1.7069917440205203e-09,
+          "limit": 0.0003376511320185145,
+          "passed": true
+        }
+      },
+      "quadrature_refinement": {
+        "rho": {
+          "absolute_difference": 3.7975529929012986e-08,
+          "signal_scale": 0.14032136356019437,
+          "normalized_difference": 2.706325606130704e-07,
+          "limit": 0.0007216068178009719,
+          "passed": true
+        },
+        "p": {
+          "absolute_difference": 1.6034246680396436e-08,
+          "signal_scale": 2.220379334021237,
+          "normalized_difference": 7.2213997107230655e-09,
+          "limit": 0.011121896670106185,
+          "passed": true
+        },
+        "Q": {
+          "absolute_difference": 3.017660557200208e-12,
+          "signal_scale": 0.06353522243162868,
+          "normalized_difference": 4.749586830277588e-11,
+          "limit": 0.0003376761121581434,
+          "passed": true
+        }
+      },
+      "time_refinement": {
+        "absolute_difference": 6.426990012409206e-08,
+        "signal_scale": 0.31055444244374486,
+        "normalized_difference": 2.0695211962950485e-07,
+        "limit": 0.0015627722122187244,
+        "passed": true
+      },
+      "exchange_fine": {
+        "ledger_residual_max": 1.4580614476900067e-07,
+        "ledger_scale": 0.31055444244374486,
+        "ledger_limit": 0.0015627722122187244,
+        "ledger_passed": true,
+        "local_residual_max": 6.735046151718284e-06,
+        "local_scale": 0.9980148270950001,
+        "local_limit": 0.010180148270950002,
+        "local_passed": true,
+        "source_omission_ledger_residual_max": 0.2119798738144743,
+        "source_work_cumulative_max": 0.21197997204277533,
+        "time_nodes": 801
+      },
+      "exchange_coarse": {
+        "ledger_residual_max": 1.6481679127045012e-07,
+        "ledger_scale": 0.31055443753583817,
+        "ledger_limit": 0.0015627721876791908,
+        "ledger_passed": true,
+        "local_residual_max": 3.326860138486154e-06,
+        "local_scale": 0.9980146651029367,
+        "local_limit": 0.010180146651029367,
+        "local_passed": true,
+        "source_omission_ledger_residual_max": 0.21197987677806446,
+        "source_work_cumulative_max": 0.2119799700457504,
+        "time_nodes": 401
+      },
+      "contingency": {
+        "trigger": "K48-to-K96 cutoff gate failed",
+        "continuity_at_K96": {
+          "rho": {
+            "absolute_difference": 2.765518976432423e-09,
+            "signal_scale": 0.14031091574249224,
+            "normalized_difference": 1.9709934624814824e-08,
+            "limit": 0.0007215545787124613,
+            "passed": true
+          },
+          "p": {
+            "absolute_difference": 9.684499868711782e-10,
+            "signal_scale": 2.2425456839149036,
+            "normalized_difference": 4.3185295792080167e-10,
+            "limit": 0.011232728419574517,
+            "passed": true
+          },
+          "Q": {
+            "absolute_difference": 5.681583675753998e-13,
+            "signal_scale": 0.06353022640403001,
+            "normalized_difference": 8.943118885837292e-12,
+            "limit": 0.0003376511320201501,
+            "passed": true
+          }
+        },
+        "cutoff_K96_to_K192": {
+          "rho": {
+            "absolute_difference": 7.396845585623535e-05,
+            "signal_scale": 0.14032133605247868,
+            "normalized_difference": 0.0005271361999330731,
+            "limit": 0.0007216066802623935,
+            "passed": true
+          },
+          "p": {
+            "absolute_difference": 0.02262428337688216,
+            "signal_scale": 2.2425456839149036,
+            "normalized_difference": 0.01008866108688855,
+            "limit": 0.011232728419574517,
+            "passed": false
+          },
+          "Q": {
+            "absolute_difference": 6.201905082282334e-05,
+            "signal_scale": 0.06353522243109587,
+            "normalized_difference": 0.0009761365184497966,
+            "limit": 0.00033767611215547937,
+            "passed": true
+          }
+        },
+        "quadrature_at_K192": {
+          "rho": {
+            "absolute_difference": 3.7975529929012986e-08,
+            "signal_scale": 0.14032136356019437,
+            "normalized_difference": 2.706325606130704e-07,
+            "limit": 0.0007216068178009719,
+            "passed": true
+          },
+          "p": {
+            "absolute_difference": 1.6034246680396436e-08,
+            "signal_scale": 2.220379334021237,
+            "normalized_difference": 7.2213997107230655e-09,
+            "limit": 0.011121896670106185,
+            "passed": true
+          },
+          "Q": {
+            "absolute_difference": 3.017660557200208e-12,
+            "signal_scale": 0.06353522243162868,
+            "normalized_difference": 4.749586830277588e-11,
+            "limit": 0.0003376761121581434,
+            "passed": true
+          }
+        },
+        "solver_step_refinement_at_K192": {
+          "rho": {
+            "absolute_difference": 6.281830993229431e-08,
+            "signal_scale": 0.14032139143396302,
+            "normalized_difference": 4.4767450842915415e-07,
+            "limit": 0.0007216069571698152,
+            "passed": true
+          },
+          "p": {
+            "absolute_difference": 2.3807512350426663e-08,
+            "signal_scale": 2.220379334021237,
+            "normalized_difference": 1.0722272534986111e-08,
+            "limit": 0.011121896670106185,
+            "passed": true
+          },
+          "Q": {
+            "absolute_difference": 3.0845326293160724e-12,
+            "signal_scale": 0.06353522243389023,
+            "normalized_difference": 4.854838798314738e-11,
+            "limit": 0.00033767611216945116,
+            "passed": true
+          }
+        },
+        "all_extended_wronskians_passed": true
+      },
+      "selected_diagnostics": {
+        "exchange_fine": {
+          "ledger_residual_max": 1.4580614476900067e-07,
+          "ledger_scale": 0.31055444244374486,
+          "ledger_limit": 0.0015627722122187244,
+          "ledger_passed": true,
+          "local_residual_max": 6.735046151718284e-06,
+          "local_scale": 0.9980148270950001,
+          "local_limit": 0.010180148270950002,
+          "local_passed": true,
+          "source_omission_ledger_residual_max": 0.2119798738144743,
+          "source_work_cumulative_max": 0.21197997204277533,
+          "time_nodes": 801
+        },
+        "exchange_coarse": {
+          "ledger_residual_max": 1.6481679127045012e-07,
+          "ledger_scale": 0.31055443753583817,
+          "ledger_limit": 0.0015627721876791908,
+          "ledger_passed": true,
+          "local_residual_max": 3.326860138486154e-06,
+          "local_scale": 0.9980146651029367,
+          "local_limit": 0.010180146651029367,
+          "local_passed": true,
+          "source_omission_ledger_residual_max": 0.21197987677806446,
+          "source_work_cumulative_max": 0.2119799700457504,
+          "time_nodes": 401
+        },
+        "trace": {
+          "direct_derivatives": {
+            "absolute_difference": 8.459899447643693e-13,
+            "signal_scale": 6.661170486947482,
+            "normalized_difference": 1.2700319657364735e-13,
+            "limit": 3.530585243473741e-05,
+            "passed": true
+          },
+          "sampled_derivatives": [
+            {
+              "time_nodes": 801,
+              "absolute_difference": 1.4855508014610663e-05,
+              "signal_scale": 6.661170486947482,
+              "normalized_difference": 2.2301648101816236e-06,
+              "limit": 0.06681170486947483,
+              "passed": true
+            },
+            {
+              "time_nodes": 401,
+              "absolute_difference": 0.00023391778262338292,
+              "signal_scale": 6.654341342686683,
+              "normalized_difference": 3.515265757751749e-05,
+              "limit": 0.06674341342686683,
+              "passed": true
+            }
+          ],
+          "direct_scope": "Physical equation Q derivatives plus subtraction jets, compared with independently integrated analytic finite-K trace moments."
+        },
+        "ode_bare_work_residual_max": 1.455930295768404e-07,
+        "ode_bare_work_limit": 0.0015627722174529242,
+        "ode_bare_work_passed": true,
+        "ode_bare_work_scope": "Independent accumulated bare work versus energy; subtraction cancels algebraically here. Renormalized Simpson ledger separately tests subtraction/current pairing.",
+        "future_spectral_energy": {
+          "absolute_difference": 6.548014522267387e-08,
+          "signal_scale": 0.13695272808100806,
+          "normalized_difference": 4.781222407190174e-07,
+          "limit": 0.0007047636404050404,
+          "passed": true
+        },
+        "future_coherent_pressure_max": 0.050550225894431214,
+        "future_coherent_Q_max": 0.02347707984853751,
+        "maxima": {
+          "rho": 0.14032136356019437,
+          "p": 2.2203793329384207,
+          "Q": 0.06353522243162868
+        },
+        "crossing": {
+          "rho": -0.02370504178815459,
+          "p": 0.1633811133098048,
+          "Q": 0.026549395190793395
+        },
+        "endpoint": {
+          "rho": 0.13695266759298427,
+          "p": 0.03582415370746105,
+          "Q": 0.005104351476172397
+        }
+      }
+    }
+  },
+  "status": "FAIL",
+  "static_negative_control": {
+    "passed": true,
+    "absolute_limit": 2e-05,
+    "maxima": {
+      "rho": 7.924592155835815e-09,
+      "p": 2.7364711447607837e-09,
+      "Q": 1.1739025081185094e-12
+    },
+    "interpretation": "Exact physical and subtracted rho,p,Q vanish; finite residual diagnoses solver/cancellation floor."
+  }
+}

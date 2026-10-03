@@ -1,0 +1,205 @@
+#!/usr/bin/env python3
+"""Reassemble and verify checkpoint ZIP bytes; no physical data evaluation.
+
+Compatible with the schema-1 source-free ledger parts manifest. The expected
+whole-ZIP SHA256 is an explicit caller pin. No extraction or imports of study
+code occur. Failed verification never creates the final output filename.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import os
+from pathlib import Path
+import re
+import stat
+import tempfile
+import zipfile
+
+MAX_PART_BYTES = 24 * 1024 * 1024
+MAX_MANIFEST_BYTES = 16 * 1024 * 1024
+BLOCK_BYTES = 1024 * 1024
+
+
+def require(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+
+def sha_pin(value, label):
+    require(type(value) is str and re.fullmatch(r'[0-9a-f]{64}', value) is not None,
+            label + ' requires complete lowercase SHA256')
+    return value
+
+
+def positive_int(value, label):
+    require(type(value) is int and value > 0, label + ' requires a positive integer')
+    return value
+
+
+def relative_name(value, single=False):
+    require(type(value) is str and value and '\\' not in value and ':' not in value
+            and '\0' not in value and not value.startswith('/')
+            and all(part and part not in ('.', '..') for part in value.split('/')),
+            'Unsafe relative name: ' + repr(value))
+    require(not single or '/' not in value, 'Single-component name required')
+    return value
+
+
+def safe_path(value, regular=False, fresh=False):
+    path = Path(value).absolute()
+    require('..' not in path.parts, 'Parent traversal in filesystem path')
+    require(not path.is_symlink() and all(not parent.is_symlink() for parent in path.parents),
+            'Symlink path or ancestry rejected')
+    if regular:
+        require(path.is_file() and stat.S_ISREG(path.stat().st_mode), 'Regular file required: ' + str(path))
+    if fresh:
+        require(not path.exists(), 'Fresh output required: ' + str(path))
+        require(path.parent.is_dir(), 'Existing output directory required')
+    return path
+
+
+def strict_json(raw):
+    def pairs(entries):
+        result = {}
+        for key, value in entries:
+            require(key not in result, 'Duplicate JSON key: ' + key)
+            result[key] = value
+        return result
+    def invalid(value):
+        raise ValueError('Nonfinite JSON constant: ' + value)
+    return json.loads(raw, object_pairs_hook=pairs, parse_constant=invalid)
+
+
+def read_manifest(path, expected_sha256):
+    sha_pin(expected_sha256, 'Expected archive hash')
+    require(path.stat().st_size <= MAX_MANIFEST_BYTES, 'Parts manifest too large')
+    manifest = strict_json(path.read_bytes())
+    require(type(manifest) is dict and type(manifest.get('schema_version')) is int
+            and manifest['schema_version'] == 1, 'Unknown parts manifest schema')
+    require(sha_pin(manifest.get('zip_sha256'), 'Manifest archive hash') == expected_sha256,
+            'Manifest archive hash differs from explicit pin')
+    positive_int(manifest.get('zip_bytes'), 'Archive byte count')
+    relative_name(manifest.get('checkpoint'), single=True)
+    sha_pin(manifest.get('package_manifest_sha256'), 'Embedded manifest hash')
+    parts = manifest.get('parts')
+    require(type(parts) is list and parts, 'Nonempty ordered parts list required')
+    names = set()
+    for part in parts:
+        require(type(part) is dict, 'Part entry must be an object')
+        name = relative_name(part.get('path'), single=True)
+        require(name not in names, 'Duplicate part filename')
+        names.add(name)
+        count = positive_int(part.get('bytes'), 'Part byte count')
+        require(count <= MAX_PART_BYTES, 'Part exceeds 24 MiB')
+        sha_pin(part.get('sha256'), 'Part hash')
+    require(sum(part['bytes'] for part in parts) == manifest['zip_bytes'],
+            'Declared part lengths differ from complete archive length')
+    return manifest
+
+
+def verify_zip(path, manifest):
+    prefix = manifest['checkpoint'] + '/'
+    with zipfile.ZipFile(path) as archive:
+        items = archive.infolist()
+        names = [item.filename for item in items]
+        require(len(names) == len(set(names)), 'Duplicate ZIP member')
+        members = {}
+        for item in items:
+            relative_name(item.filename)
+            require(item.filename.startswith(prefix), 'Wrong checkpoint prefix')
+            name = relative_name(item.filename[len(prefix):])
+            require(not item.is_dir() and stat.S_IFMT(item.external_attr >> 16) == stat.S_IFREG,
+                    'ZIP member must be a regular file')
+            require(not item.flag_bits & 1, 'Encrypted ZIP member rejected')
+            require(item.compress_type in (zipfile.ZIP_STORED, zipfile.ZIP_DEFLATED),
+                    'Unsupported ZIP compression')
+            members[name] = item
+        require('MANIFEST.json' in members and members['MANIFEST.json'].file_size <= MAX_MANIFEST_BYTES,
+                'Embedded manifest missing or too large')
+        raw = archive.read(members['MANIFEST.json'])
+        require(hashlib.sha256(raw).hexdigest() == manifest['package_manifest_sha256'],
+                'Embedded payload manifest hash differs')
+        payload = strict_json(raw)
+        require(type(payload) is dict and type(payload.get('schema_version')) is int
+                and payload['schema_version'] == 1, 'Unknown embedded manifest schema')
+        files = payload.get('files')
+        require(type(files) is dict and files and 'FREEZE_RECEIPT.json' in files,
+                'Complete checkpoint file inventory with freeze receipt required')
+        require('MANIFEST.json' not in files and set(members) == set(files) | {'MANIFEST.json'},
+                'Complete ZIP membership differs from embedded manifest')
+        for name, pin in files.items():
+            relative_name(name)
+            sha_pin(pin, 'Payload member hash')
+            hasher = hashlib.sha256()
+            with archive.open(members[name]) as source:
+                for block in iter(lambda: source.read(BLOCK_BYTES), b''):
+                    hasher.update(block)
+            # Reading each member through EOF also checks its ZIP CRC.
+            require(hasher.hexdigest() == pin, 'Payload member hash differs: ' + name)
+    return len(items)
+
+
+def reconstruct(parts_manifest, expected_sha256, output):
+    parts_manifest = safe_path(parts_manifest, regular=True)
+    output = safe_path(output, fresh=True)
+    manifest = read_manifest(parts_manifest, expected_sha256)
+    paths = []
+    for part in manifest['parts']:
+        path = safe_path(parts_manifest.parent / part['path'], regular=True)
+        require(path.stat().st_size == part['bytes'], 'Part size differs: ' + part['path'])
+        paths.append(path)
+    descriptor, name = tempfile.mkstemp(prefix='.verified-hdblast-zip-', dir=output.parent)
+    temporary = Path(name)
+    try:
+        total = 0
+        whole_hash = hashlib.sha256()
+        with os.fdopen(descriptor, 'wb') as destination:
+            for entry, path in zip(manifest['parts'], paths, strict=True):
+                count = 0
+                part_hash = hashlib.sha256()
+                with path.open('rb') as source:
+                    for block in iter(lambda: source.read(BLOCK_BYTES), b''):
+                        count += len(block)
+                        require(count <= entry['bytes'], 'Part grew during read')
+                        part_hash.update(block)
+                        whole_hash.update(block)
+                        destination.write(block)
+                require(count == entry['bytes'] and part_hash.hexdigest() == entry['sha256'],
+                        'Part hash/length differs: ' + entry['path'])
+                total += count
+        require(total == manifest['zip_bytes'] and whole_hash.hexdigest() == expected_sha256,
+                'Complete archive hash/length differs')
+        member_count = verify_zip(temporary, manifest)
+        safe_path(output, fresh=True)
+        # Atomic creation refuses both existing files and dangling symlinks.
+        os.link(temporary, output)
+        return {'status': 'PASS_REASSEMBLED_PACKAGE', 'zip_bytes': total,
+                'zip_sha256': expected_sha256, 'package_manifest_sha256': manifest['package_manifest_sha256'],
+                'checkpoint': manifest['checkpoint'], 'parts_verified': len(paths),
+                'zip_members_verified': member_count, 'complete_payload_membership_verified': True,
+                'physical_evaluations': 0, 'output': str(output)}
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--parts-manifest', type=Path, required=True)
+    parser.add_argument('--expected-sha256', required=True)
+    parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--receipt', type=Path)
+    args = parser.parse_args()
+    receipt = safe_path(args.receipt, fresh=True) if args.receipt is not None else None
+    result = reconstruct(args.parts_manifest, args.expected_sha256, args.output)
+    text = json.dumps(result, indent=2, sort_keys=True) + '\n'
+    if receipt is not None:
+        safe_path(receipt, fresh=True)
+        with receipt.open('x') as stream:
+            stream.write(text)
+    print(text, end='')
+
+
+if __name__ == '__main__':
+    main()

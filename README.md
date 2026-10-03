@@ -2,13 +2,16 @@
 
 [Readable project overview](https://maldonado-research.github.io/projects/hdblast/) · [All research projects](https://maldonado-research.github.io/)
 
+**Current research and publication status (2 October 2026, Pacific):** [Start here](hdblast/CURRENT_STATUS.md). The complete active-source ledger diagnosis and exact fresh reproduction are available on GitHub. The latest published main Zenodo version is verified v24 [22347452](https://zenodo.org/records/22347452); incomplete upload 23112891 was removed by the owner. Its accurate replacement is prepared but not yet published.
+
 
 **Ricardo Maldonado · independent researcher · research program 2025–2026**
 
 **Website:** <https://maldonado-research.github.io/HDblast/> ·
 **Zenodo (all versions):** [10.5281/zenodo.17088132](https://doi.org/10.5281/zenodo.17088132) ·
-**Newest record located:** [Zenodo 22922928](https://zenodo.org/records/22922928) (23 Sept 2026;
-its version number and file list are still to be confirmed on zenodo.org)
+**Static-branch companion:** [Zenodo 23111008](https://zenodo.org/records/23111008), preserving the original two-file study from [22922928](https://zenodo.org/records/22922928),
+separate concept [10.5281/zenodo.22922927](https://doi.org/10.5281/zenodo.22922927).
+Latest record, concept, owner, metadata and original filename/size/MD5 inventory checked through the live API on 2 October 2026, Pacific. This inventory check is not a new physical rerun or external peer review.
 
 > HDBLAST asks whether a violent gravitational event in a fifth dimension, the "blast", could have
 > transferred energy into our four-dimensional universe and started the hot Big Bang.
@@ -37,7 +40,11 @@ standard Big Bang story, not replace it.
 instability rate from full five-dimensional theory agrees with a closed-form four-dimensional
 formula. Floating-point calculations in the model; not observations.*
 
-## Where the research stands (September 2026)
+**Latest diagnostic (2 October Pacific; checkpoint dated 3 October UTC):** Two independent implementations diagnose ledger-sampling error during the active-source interval. All twelve consistency cases pass; eight meet the fixed attribution threshold. A full standalone archive replay reproduces every registered scientific value exactly. Earlier metric calibration remains **FAIL**; continuum accuracy, the inherited quantum state, coupled evolution and the higher-dimensional hypothesis remain unresolved. [Measured result and limits](research/HDBLAST_ACTIVE_SOURCE_LEDGER_PACKAGE_20261002/FINAL_RESULT.md), [independent review](research/HDBLAST_ACTIVE_SOURCE_LEDGER_PACKAGE_20261002/advisory_review/completed_original_001/INTERPRETATION.md), and [fresh reproduction evidence](research/HDBLAST_ACTIVE_SOURCE_LEDGER_PACKAGE_20261002/FRESH_REPRODUCTION.json).
+
+**Previous source-free diagnostic (2 October):** Two independent implementations identify a time-integration error after source support. All twelve consistency cases pass, and eight cross the fixed error-attribution threshold. [Preserved result and evidence](research/HDBLAST_CHECKPOINT_20261002_SOURCE_FREE_LEDGER/reports/RESULTS.md).
+
+## Where the research stands (2 October 2026)
 
 | Result | Status |
 |---|---|
@@ -48,7 +55,7 @@ formula. Floating-point calculations in the model; not observations.*
 | Full nonlinear 5D evolution: the shell rolls off toward one of **two fates**, relaxation toward an empty de Sitter brane (endpoint not yet reached in the simulations) or reversal and collapse | **Numerical** |
 | Neither fate produces a radiation-filled (hot Big Bang) universe **in the homogeneous, classical roll-off of this model with no added matter** | **Negative result** |
 | The earlier late-time endpoint (constant φ=1) fails a boundary condition; a corrected static solution was found | **Exact** (the failure) / **Numerical** (the new solution) |
-| A proposed extension adds a new matter field to the shell, with an exact energy-exchange law; no particle production has been computed yet | **Exact**, as a proposal |
+| A proposed extension adds a new matter field to the shell, with an exact energy-exchange law; later checkpoints test particle production under stated approximations | **Exact**, as a proposal |
 | An earlier (July 2026) gravitational-radiation claim was **withdrawn** after an audit | **Published correction** |
 | A pulsar-timing "knee" signature was proposed and screened against public data | **Screening only**; not derived from the 5D model; the strict registered test failed on pilot data |
 | **New (27 Sept):** the corrected end state (the "+1 branch") is linearly stable in the sectors tested; two independent methods agree, each first calibrated on the known instability | **Numerical**, independently audited (not a proof) |
@@ -59,6 +66,21 @@ formula. Floating-point calculations in the model; not observations.*
 | **New (30 Sept):** at Y = 2 the dark radiation falls to 2.1%, within the strict current limit (3%). The phase lasts under half an expansion e-fold before leftover negative vacuum energy recollapses the shell, needs the tuning to about 1 part in 10⁴, and still uses the stand-in formula | **Numerical**, model-internal, conditional |
 | **New (30 Sept):** replacing the stand-in with particle production derived from the matter extension: with particle masses below the 5D gravity scale, dark radiation stays far larger than the radiation; no steady state in 32 runs | **Inconclusive**, leaning negative |
 | **New (30 Sept):** the same test at the registered δ = 0.001 is not completed; the numerical breakdown is diagnosed but not fixed. A simple 4D model does not reproduce the 5D dark-radiation numbers | **Inconclusive** / **Negative** (4D shortcut) |
+| **New (1 Oct):** a single-cohort energy envelope includes radiation and undecayed particles. The two locally screened archived crossing cases remain far below the radiation target at the tested endpoint, even with optimistically timed decay. This uses a fixed history and a cutoff screen, not a complete quantum calculation | **Analytical bound + exploratory numerical application**, conditional |
+| **New (1 Oct):** an executed audit of saved trajectories finds an earlier radiation-dominated sampled interval of about **0.314 e-fold** in the finer Y=2 run under a new cancellation-resistant diagnostic. Its later plateau fails this diagnostic. The original registered verdict is unchanged | **Post hoc saved-data diagnostic**; stand-in source, sampled duration |
+| **New (1 Oct):** the particle-mode solver passes 90 exact pulse occupation checks, including reflectionless cases, and 30 fine-resolution Wronskian checks | **Registered numerical control**; not a coupled 5D matter result |
+| **New (1 Oct, quantum modes):** actual scalar modes on the archived source-free tuned shell give a particle count 0.0503% below the earlier corrected estimate for the declared finite-band state. Coherence adds 10.96% to the particle-only scalar current and reverses the relative pressure's sign. Ten registered variants and independent RK4 checks pass | **Numerical**, prescribed background and relative stress; not a radiation era |
+| **New (1 Oct, quantum matching):** the proposed scalar loop requires additional quartic-potential and intrinsic-curvature terms in the shell action | **Analytical EFT requirement**; curved-shell matching coefficients and absolute source unresolved |
+| **New (1 Oct Pacific / 2 Oct UTC, curved-source readiness):** all eight reconstruction controls pass after a preserved numerical repair; the archived interpolation and initial state have distinct ultraviolet obstructions. Smooth fits show initial-boundary derivative sensitivity. Exact-rational subtraction checks and 18 independent toy evolutions pass | **Readiness audit**; absolute curved source remains unestablished |
+| **New (2 Oct):** a flat-background quantum source through a smooth mass-zero crossing passes eight registered variants, exact scattering, energy/work and independent pressure-trace checks. Potential and curvature matching are fixed at a stated reference | **Numerical benchmark**, prescribed Minkowski background; not coupled shell evolution |
+| **New (2 Oct):** omitting curvature matching makes pressure drift with the regulator even though energy conservation passes. A direct physical-mode representation has the expected cutoff convergence and an exact finite-cutoff trace identity | **Analytical and numerical checks**; finite-PV sources retain several-percent regulator effects |
+| **New (1 Oct Pacific / 2 Oct UTC, smooth curved source):** the original flat control passes and original curved pressure cutoff fails; a separately registered K384 follow-up passes all 13 groups, with a 0.2291% pressure cutoff change. Stress and paired source use one finite action | **Finite-cutoff numerical benchmark**, prescribed smooth FRW geometry; not coupled shell evolution |
+| **New (2 Oct, coupled-source prerequisites):** action-derived energy, pressure and scalar-current junctions pass separate exact checks. A stationary de Sitter bridge gives a conditional small-source expansion and identifies an unresolved tiny archived response | **Algebra and archived-data reanalysis**; at that checkpoint, de Sitter quantum expectations and coupled evolution were uncomputed |
+| **New (2 Oct, massive de Sitter sources):** four registered common-reference quantum-vacuum cases pass 57 checks and a separate proper-time calculation; direct mode subtraction independently checks pressure at one curved point. Nineteen classical integrations resolve the previously roundoff-limited stationary response, including its positive sign | **Exact algebra + numerical**, internal independent implementations; no coupled evolution or heating |
+| **New (2 Oct, stationary quantum closure):** both quantum sources now enter a regular stationary bulk-and-shell solve. Forty-eight registered roots pass 1,584 corrected checks and independent endpoint/source comparisons. Resolved nonlinear feedback occurs only at a coupling that fails the declared gravity hierarchy screen | **Numerical stationary closure**, declared model; no established physical EFT, stability or heating |
+| **New (2 Oct, causal response):** independent forced modes agree with the matched memory formula at 36 finite-cutoff comparisons. Both registered pulses retain negative variance response after the source vanishes; 17 wrong-formula controls are detected | **Numerical fixed-geometry calibration**; stress response, coupled evolution, stability and heating remain untested |
+| **New (2 Oct, matched stress):** independently calculated density and pressure pass all 180 registered core comparisons, trace/contact/current checks, raw-mode reconstruction and a separate energy ledger. Higher-derivative stress tail bounds are included | **Numerical linear response**, fixed geometry; no coupled evolution, stability or heating |
+| **New (2 Oct, metric response):** three separate registrations preserve continuum roundoff, memory-budget and conservation failures. The memory-only repair completes all four mode evolutions within 256 MiB; 59 Ward checks fail under unchanged thresholds | **Scientific FAIL**, complete saved data; full metric prerequisite remains blocked |
 
 ![Two fates of the unstable shell at the registered parameters](hdblast/figures/two_fates_registered_detuning.png)
 
@@ -66,16 +88,29 @@ formula. Floating-point calculations in the model; not observations.*
 toward an empty de Sitter brane (blue) or reverses and collapses (orange). Neither branch
 contains a hot radiation era.*
 
-**Bottom line today:** the mathematics of the model is unusually well controlled for an
-independent project. In its registered form, the five-dimensional event ends in a **stable but
-empty** expanding universe: self-consistent, but not our universe. With a tuned model change and
-a stand-in energy-transfer formula, the simulations now show a **short** hot, radiation-dominated
-phase with dark radiation inside current limits. It requires severe fine-tuning (the
-cosmological-constant problem restated, not solved), ends in recollapse, and has not yet been
-reproduced with derived particle production or at the registered parameters. Nothing here is
-observational evidence or peer reviewed. Latest checkpoint:
-[`research/HDBLAST_CHECKPOINT_20260930/`](research/HDBLAST_CHECKPOINT_20260930/)
-([read first](research/HDBLAST_CHECKPOINT_20260930/00_READ_FIRST.md)).
+The registered homogeneous model has not produced a hot Big Bang. Tuned variants with a stand-in transfer formula meet the earlier radiation-fraction criterion briefly and then recollapse. The first 1 October checkpoint bounds the energy budget and diagnoses a sampled 0.314-e-fold interval. The new quantum-mode calculation tests the proposed matter field on the source-free tuned geometry: its integrated count agrees closely with the corrected crossing estimate, but coherent stress/current matter and the endpoint excitations are not radiation. The 2 October checkpoint now provides an absolute source in a fixed matching convention for a flat-space pulse, including the curvature contribution to pressure. The curved-source readiness audit now quantifies interpolation and initial-state obstructions and finds high-derivative sensitivity at the initial boundary. Its numerical controls pass, but an unchanged extension of the archived finite-band surrogate is not justified. A separately registered smooth FRW follow-up now passes its cutoff, pressure, trace and paired-source controls in a declared finite-action convention; the original curved cutoff failure remains preserved. Smooth initial data for the actual shell, physical matching data, coupled evolution, decay and thermalization remain unresolved.
+
+Earlier metric calibration: [registered memory-only metric followup](research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/00_READ_FIRST.md), [complete failure evidence](research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/NUMERICAL_RESULTS.md), and [standalone expected-failure reproduction](research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/REPRODUCE.md). All 12 primary observations and four independent evolutions completed. Peak memory is 103,400 KiB; conservation endpoints/refinement fail 59 unchanged checks. Passing the reproduction control preserves scientific FAIL. The completed source-free and active-source diagnostics attribute a sampled-ledger discrepancy; the next study targets certified integration and convergence bounds before another unchanged metric calibration. Actual-root, lapse, bulk/state response, stability and heating remain unresolved.
+
+Previous: [registered matched minimal stress response](research/HDBLAST_CHECKPOINT_20261002_MATCHED_STRESS/00_READ_FIRST.md), [actual numerical evidence](research/HDBLAST_CHECKPOINT_20261002_MATCHED_STRESS/outputs/NUMERICAL_RESULTS.md), and [self-contained reproduction](research/HDBLAST_CHECKPOINT_20261002_MATCHED_STRESS/REPRODUCE.md). Independent direct density and pressure pass 180 core comparisons, finite-cutoff trace and separate energy-ledger checks with explicit stress tail bounds. After-pulse relative density is negative; pressure need not keep one sign. This is coherent first-order polarization on fixed geometry. Positive canonical excitation energy, metric response, coupled evolution, stability and heating remain open.
+
+Previous: [registered fixed-geometry causal response](research/HDBLAST_CHECKPOINT_20261002_CAUSAL_RESPONSE/00_READ_FIRST.md), [independent scientific review](research/HDBLAST_CHECKPOINT_20261002_CAUSAL_RESPONSE/review/INDEPENDENT_SCIENTIFIC_REVIEW.md), and [self-contained fresh reproduction](research/HDBLAST_CHECKPOINT_20261002_CAUSAL_RESPONSE/REPRODUCE.md). Independent forced modes pass 36 finite-cutoff comparisons and 17 controls; both tested pulses retain negative scalar-variance memory after the source vanishes. The [matched stress proposal](research/HDBLAST_CHECKPOINT_20261002_CAUSAL_RESPONSE/theory/PROSPECTIVE_MATCHED_STRESS_RESPONSE.md) is analytic follow-up, with no new stress experiment. That variance-only checkpoint preceded the separately registered stress test below.
+
+Previous: [stationary quantum shell closure and its limits](research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/00_READ_FIRST.md), [independent internal review](research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/independent/INDEPENDENT_STATIONARY_REVIEW.md), and [fresh reproduction](research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/REPRODUCE.md). The only tested positive coupling that passes the sampled gravity hierarchy screen gives a tiny curvature correction. A [derived causal-response protocol](research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/theory/PROSPECTIVE_CAUSAL_RESPONSE_PROTOCOL.md) specified the subsequent causal experiment, now completed in the separate checkpoint below.
+
+Previous: [massive de Sitter sources and resolved stationary sensitivities](research/HDBLAST_CHECKPOINT_20261002_DESITTER/00_READ_FIRST.md), [independent scientific review](research/HDBLAST_CHECKPOINT_20261002_DESITTER/independent/INDEPENDENT_SCIENTIFIC_REVIEW.md), and [fresh reproduction](research/HDBLAST_CHECKPOINT_20261002_DESITTER/REPRODUCE.md). The sources use a declared finite-action convention; physical mass/coupling choices and causal time-dependent backreaction remain open.
+
+Previous: [coupled-source junctions and stationary initialization bridge](research/HDBLAST_CHECKPOINT_20261002_JUNCTIONS/00_READ_FIRST.md), [independent review](research/HDBLAST_CHECKPOINT_20261002_JUNCTIONS/review/INDEPENDENT_ACTION_AND_JUNCTION_REVIEW.md), and [reproduction](research/HDBLAST_CHECKPOINT_20261002_JUNCTIONS/REPRODUCE.md).
+
+Previous: [smooth curved-background source control](research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/00_READ_FIRST.md), [original results](research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/outputs/original_matrix/NUMERICAL_RESULTS.md), [separate passing follow-up](research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/outputs/followup/FOLLOWUP_RESULTS.md), [reproduction](research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/REPRODUCE.md), [eight checked primary papers](research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/LITERATURE_REVIEW.md), and [self-contained scientific ZIP](research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW.zip).
+
+Previous: [curved-source readiness and ultraviolet audit](research/HDBLAST_CHECKPOINT_20261002_FRW/00_READ_FIRST.md), [measured results](research/HDBLAST_CHECKPOINT_20261002_FRW/NUMERICAL_RESULTS.md), [reproduction](research/HDBLAST_CHECKPOINT_20261002_FRW/REPRODUCE.md), and [self-contained scientific ZIP](research/HDBLAST_CHECKPOINT_20261002_FRW/HDBLAST_CHECKPOINT_20261002_FRW.zip).
+
+Previous: [matched quantum source and pressure checks](research/HDBLAST_CHECKPOINT_20261002_PV/00_READ_FIRST.md), [reproduction](research/HDBLAST_CHECKPOINT_20261002_PV/REPRODUCE.md), [scientific ZIP](research/HDBLAST_CHECKPOINT_20261002_PV/HDBLAST_CHECKPOINT_20261002_PV.zip), and [targeted literature review, including 2026 papers](research/HDBLAST_CHECKPOINT_20261002_PV/LITERATURE_20261002.md).
+
+Previous: [quantum modes, results and limitations](research/HDBLAST_CHECKPOINT_20261001_QFT/00_READ_FIRST.md), [reproduction](research/HDBLAST_CHECKPOINT_20261001_QFT/REPRODUCE.md), and [downloadable scientific package](research/HDBLAST_CHECKPOINT_20261001_QFT/HDBLAST_CHECKPOINT_20261001_QFT.zip).
+
+Earlier: [energy bounds and exact pulse controls](research/HDBLAST_CHECKPOINT_20261001/00_READ_FIRST.md), including a [targeted review of five recent primary papers](research/HDBLAST_CHECKPOINT_20261001/LITERATURE_REVIEW_20261001.md). The new checkpoint adds [five foundational sources on stress/current renormalization and states](research/HDBLAST_CHECKPOINT_20261001_QFT/LITERATURE_AND_RENORMALIZATION.md).
 
 ## What would count for or against the hypothesis
 
@@ -96,6 +131,18 @@ For the hypothesis to become credible, all of the following must happen, and it 
 | [`research/HDBLAST_CHECKPOINT_20260927/`](research/HDBLAST_CHECKPOINT_20260927/) | The 27 Sept 2026 checkpoint: stability, exact series, particle production, simulation-error control, new mechanisms and a 2022–2026 literature review, each with an internal audit report. Start with `00_READ_FIRST.md` or `PUBLIC_SUMMARY.md`. Raw simulation arrays (`.npz`) are not included. |
 | [`research/HDBLAST_CHECKPOINT_20260928/`](research/HDBLAST_CHECKPOINT_20260928/) | The 28 Sept 2026 tuned-vacuum test (A1): pre-registration, solver, analysis and verdict. |
 | [`research/HDBLAST_CHECKPOINT_20260930/`](research/HDBLAST_CHECKPOINT_20260930/) | The 30 Sept 2026 checkpoint: derived particle production, the δ = 0.001 diagnosis, the transfer-rate scan, a 4D cross-check and a fine-tuning measure, each with an independent audit and a final critic pass. Start with `00_READ_FIRST.md`. Raw arrays (`.npz`, `.pkl`) are not included. |
+| [`research/HDBLAST_CHECKPOINT_20261001/`](research/HDBLAST_CHECKPOINT_20261001/) | The 1 October checkpoint: cohort bounds, radiation diagnostics, exact mode controls, executable code and internal audits. |
+| [`research/HDBLAST_CHECKPOINT_20261001_QFT/`](research/HDBLAST_CHECKPOINT_20261001_QFT/) | Quantum modes on the archived source-free shell, coherent stress/current, EFT matching, raw inputs, figures and independent replay. |
+| [`research/HDBLAST_CHECKPOINT_20261002_PV/`](research/HDBLAST_CHECKPOINT_20261002_PV/) | Matched flat-background quantum stress/current, regulator and cutoff tests, exact finite-cutoff trace, figures and reproducible package. |
+| [`research/HDBLAST_CHECKPOINT_20261002_FRW/`](research/HDBLAST_CHECKPOINT_20261002_FRW/) | Curved-source readiness, knot/state UV diagnostics, native-spline repair, exact-rational subtraction checks, independent oscillator controls and reproducible package. |
+| [`research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/`](research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/) | Common-action smooth FRW stress/source, preserved original failure, separately registered passing K384 follow-up, compact arrays, figures, primary literature and complete replay. |
+| [`research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/`](research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/) | Registered paired-source stationary roots, preserved validator failure and repair, independent checks, sampled gravity hierarchy, causal-response proposal and full replay. |
+| [`research/HDBLAST_CHECKPOINT_20261002_CAUSAL_RESPONSE/`](research/HDBLAST_CHECKPOINT_20261002_CAUSAL_RESPONSE/) | Registered retarded scalar response, independent forced modes and raw arrays, tail bounds, targeted literature, matched stress proposal and self-contained replay. |
+| [`research/HDBLAST_CHECKPOINT_20261002_MATCHED_STRESS/`](research/HDBLAST_CHECKPOINT_20261002_MATCHED_STRESS/) | Registered direct minimal stress/current, independent extended-precision modes, stress tails, separate Ward ledger, raw evidence and self-contained replay. |
+| [`research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/`](research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/) | Registered memory-only metric followup, complete four-run archives, preserved prior failures and explicit expected-scientific-failure replay. |
+| [`research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/`](research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/) | Original prospective active-source registration and preserved initial execution failure. |
+| [`research/HDBLAST_ACTIVE_SOURCE_LEDGER_EXECUTION_REPAIR_20261003/`](research/HDBLAST_ACTIVE_SOURCE_LEDGER_EXECUTION_REPAIR_20261003/) | Disclosed guard-only repair, unchanged scientific methods and complete registered original results. |
+| [`research/HDBLAST_ACTIVE_SOURCE_LEDGER_PACKAGE_20261002/`](research/HDBLAST_ACTIVE_SOURCE_LEDGER_PACKAGE_20261002/) | Complete standalone archive, exact fresh physical reproduction, independent attribution/cancellation review and next-study proposal. |
 | [`site/`](site/) | Source of the website |
 
 Most checkpoints can be re-run with Python 3 (`numpy`, `scipy`, `sympy`, `mpmath`). Each
@@ -121,9 +168,8 @@ place yet.** Specialists in general relativity, numerical relativity and cosmolo
 invited to check the work and report errors by opening a GitHub issue.
 
 *Research assistance: parts of the 2025–2026 calculations and documents were prepared with AI
-assistants under the author's direction: Claude (Anthropic) for Chats 9–14 and the current
-research round, and OpenAI ChatGPT/Codex for the 22 Sept packages and earlier work.
-Verification steps are recorded in each checkpoint.*
+assistants under the author's direction: Claude (Anthropic) and OpenAI ChatGPT/Codex. The October checkpoints were prepared with AI
+assistance and independent internal computational checks. Verification steps are recorded in each checkpoint.*
 
 ## Separate FTL research program
 

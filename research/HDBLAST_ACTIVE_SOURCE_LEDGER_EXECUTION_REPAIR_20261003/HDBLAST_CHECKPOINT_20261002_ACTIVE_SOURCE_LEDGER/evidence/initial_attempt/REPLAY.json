@@ -1,0 +1,105 @@
+{
+  "attempted_commands": 2,
+  "classification": "UNCOMPUTED",
+  "commands": [
+    {
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "/workspace/hdblast-research-work/active-source-20261002/original-replay/checkpoint/code/diagnostic_primary.py",
+        "--checkpoint-root",
+        "/workspace/hdblast-research-work/active-source-20261002/original-replay/checkpoint",
+        "--registration-sha256",
+        "8c772f5ef14970cee8e941bdbdb49a6b709e6aa4364f30afc9211f236e6f8791",
+        "--freeze-commit",
+        "2e7dfddaa6b7aa2b43bcb12c7ce60a17eed39d3c",
+        "--output-dir",
+        "/workspace/hdblast-research-work/active-source-20261002/original-replay/fresh/primary"
+      ],
+      "completed_utc": "2026-10-03T02:46:29.368186+00:00",
+      "cwd": "/workspace/hdblast-research-work/active-source-20261002/original-replay/checkpoint",
+      "elapsed_seconds": 231.6714289169904,
+      "executor_uid": 1000,
+      "exit_code": 0,
+      "memory_exceeded": false,
+      "memory_limit_kib": 262144,
+      "name": "primary",
+      "observed_peak_group_rss_kib": 193064,
+      "peak_rss_kib": 193064,
+      "physical_route": true,
+      "pid": 150775,
+      "process_creation_limit": 0,
+      "started_utc": "2026-10-03T02:42:37.696723+00:00",
+      "status": "PASS_EXECUTION",
+      "system_seconds": 0.170065,
+      "timed_out": false,
+      "timeout_seconds": 900,
+      "user_seconds": 231.45213999999999,
+      "wait4_peak_rss_kib": 192892
+    },
+    {
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "/workspace/hdblast-research-work/active-source-20261002/original-replay/checkpoint/independent/diagnostic_independent.py",
+        "--checkpoint-root",
+        "/workspace/hdblast-research-work/active-source-20261002/original-replay/checkpoint",
+        "--registration-sha256",
+        "8c772f5ef14970cee8e941bdbdb49a6b709e6aa4364f30afc9211f236e6f8791",
+        "--freeze-commit",
+        "2e7dfddaa6b7aa2b43bcb12c7ce60a17eed39d3c",
+        "--output-dir",
+        "/workspace/hdblast-research-work/active-source-20261002/original-replay/fresh/independent"
+      ],
+      "completed_utc": "2026-10-03T02:46:29.898917+00:00",
+      "cwd": "/workspace/hdblast-research-work/active-source-20261002/original-replay/checkpoint",
+      "elapsed_seconds": 0.26686713700473774,
+      "executor_uid": 1000,
+      "exit_code": 1,
+      "memory_exceeded": false,
+      "memory_limit_kib": 262144,
+      "name": "independent",
+      "observed_peak_group_rss_kib": 36084,
+      "peak_rss_kib": 36176,
+      "physical_route": true,
+      "pid": 151147,
+      "process_creation_limit": 0,
+      "started_utc": "2026-10-03T02:46:29.632013+00:00",
+      "status": "FAIL_EXECUTION",
+      "system_seconds": 0.044633,
+      "timed_out": false,
+      "timeout_seconds": 900,
+      "user_seconds": 0.210279,
+      "wait4_peak_rss_kib": 36176
+    }
+  ],
+  "completed_utc": "2026-10-03T02:46:30.422799+00:00",
+  "driver_sha256": "8e1581ce8c9dbb912c7861b5f8eff0be94dfedc1ebd9f69adeb93bf0d985fafb",
+  "failure": {
+    "exception": "RuntimeError('Replay command failed; actual logs, receipts and progress retained')",
+    "traceback": "Traceback (most recent call last):\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/code/replay_active_source.py\", line 283, in replay\n    require(len(state['commands']) == len(commands)\n  File \"/workspace/HDblast/research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/code/active_integrity.py\", line 36, in require\n    raise RuntimeError(message)\nRuntimeError: Replay command failed; actual logs, receipts and progress retained\n"
+  },
+  "fresh_output_sha256": {
+    "primary/diagnostic.json": "711cb00fd542c4c099651bba871008df10fbb99836749662c32ba91187447ff9",
+    "primary/progress.jsonl": "ff2b506f91107ec1a94a831901b68eb1db4ae253e0148629f83cf3e0a7fb64f3"
+  },
+  "old_metric_status": "FAIL",
+  "physical_routes_attempted": 2,
+  "physical_routes_completed": 1,
+  "physical_routes_planned": 2,
+  "plan_only": false,
+  "planned_commands": 4,
+  "skipped_commands": [
+    {
+      "name": "validation",
+      "reason": "Physical route execution failed"
+    },
+    {
+      "name": "validation_optimized",
+      "reason": "Physical route execution failed"
+    }
+  ],
+  "source_verification_after": "PASS",
+  "source_verification_before": "PASS",
+  "started_utc": "2026-10-03T02:42:37.369025+00:00",
+  "status": "FAIL_REPLAY",
+  "successful_commands": 1
+}

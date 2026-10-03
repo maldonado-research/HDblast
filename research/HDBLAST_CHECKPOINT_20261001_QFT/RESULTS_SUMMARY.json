@@ -1,0 +1,60 @@
+{
+  "status": "EXECUTED_FINITE_BAND_BENCHMARK",
+  "date": "2026-10-01",
+  "first_source_commit": "c71054d10c4ecd6fd993251946a0e9d02119903b",
+  "registration_commit": "99dd818755c493127ae4b4e0cad7bbf21fd141de",
+  "registration_sha256": "481cbe98c642fc4821ec1f244c3b8db680f5935604800b8a75df07bcdad623c6",
+  "first_workflow_run": 36938696104,
+  "summary": {
+    "a_final": 7.916090992616013,
+    "actual_number": 0.7647428950440763,
+    "gaussian_same_band_number": 0.7799871967609954,
+    "actual_to_gaussian_number": 0.9804557026317572,
+    "actual_energy": 41.11687110562966,
+    "gaussian_same_band_energy": 41.931308289774,
+    "actual_to_gaussian_energy": 0.9805768716178369,
+    "previous_local_correction_factor": 0.9809491460159282,
+    "actual_to_corrected_gaussian": 0.9994969735320377,
+    "coherence_J_over_particle_J": 0.10961851182946342,
+    "relative_endpoint_equation_of_state": -0.10663196464107934,
+    "gas_equation_of_state": 0.0019220972553912296,
+    "max_all_case_path_ward": 1.7309964720908865e-7,
+    "max_all_case_raw_path_ward": 1.1923857798844845e-9
+  },
+  "independent": {
+    "status": "PASS",
+    "scope": "independent 32-node RK4 endpoint physical-stress reconstruction minus identical Hamiltonian endpoint reference",
+    "rho": 41.116871136814396,
+    "P": -4.384372744953309,
+    "J": 84.6125236566238,
+    "DOP853": {
+      "rho": 41.11687110194089,
+      "P": -4.384372745887319,
+      "J": 84.61252359620448
+    },
+    "absolute_differences": {
+      "rho": 3.487350852537929e-8,
+      "P": 9.34010202513491e-10,
+      "J": 6.041931044364901e-8
+    },
+    "max_occupation_difference": 1.883981859407413e-11,
+    "comoving_number_Hamiltonian": 379.3567217680891,
+    "comoving_number_WKB_out": 379.1156962101592,
+    "relative_change_out_basis": -0.0006353533339452655,
+    "final_rho_per_particle": 53.76561374036678
+  },
+  "band_scale_screen": {
+    "peak_physical_momentum_edge": 137.3777884972959,
+    "peak_mass": 53.61022428500208,
+    "peak_physical_frequency_edge_sampled": 146.0921588288384,
+    "conditional_b_max_using_energy_edge": 3.207150052539574e-7,
+    "meaning": "If all represented physical mode energies are required <=M5 over this recorded interval, b=(H0/M5)^3 satisfies this necessary screen. This is not an EFT validity certificate or a source affordability result."
+  },
+  "limits": [
+    "prescribed tuned delta=0.1 source-free geometry",
+    "finite momentum band and explicitly chosen finite-time states",
+    "relative stress/current, not absolute renormalized source",
+    "no backreaction, decay, thermalization or new 5D evolution",
+    "no observational evidence, external peer review or novelty claim"
+  ]
+}

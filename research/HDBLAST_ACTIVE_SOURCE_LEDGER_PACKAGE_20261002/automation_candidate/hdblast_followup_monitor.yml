@@ -1,0 +1,192 @@
+# REVIEW CANDIDATE: scientific target is deliberately pending; no activation performed.
+# Deploy this workflow to .github/workflows/hdblast_followup_monitor.yml.
+name: HDBLAST bounded reproducibility and literature monitor
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Offline guards, metadata watch, completed-checkpoint replay, or both'
+        type: choice
+        options: [guards, watch, replay, all]
+        default: guards
+  schedule:
+    - cron: '23 3 * * *'
+  push:
+    branches: [main]
+    paths:
+      - '.github/hdblast-followup/**'
+      - '.github/workflows/hdblast_followup_monitor.yml'
+  pull_request:
+    paths:
+      - '.github/hdblast-followup/**'
+      - '.github/workflows/hdblast_followup_monitor.yml'
+
+permissions:
+  contents: read
+
+env:
+  MONITOR_START_UTC: ${{ vars.HDBLAST_FOLLOWUP_START_UTC }}
+  MONITOR_UNTIL_UTC: ${{ vars.HDBLAST_FOLLOWUP_UNTIL_UTC }}
+
+concurrency:
+  group: hdblast-followup-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  offline-guards:
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          sparse-checkout: .github/hdblast-followup
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12.14'
+      - name: Offline synthetic guards in normal Python
+        run: |
+          python .github/hdblast-followup/test_monitor.py > "$RUNNER_TEMP/monitor-guards.stdout.log" 2> "$RUNNER_TEMP/monitor-guards.stderr.log"
+      - name: Offline synthetic guards in optimized Python
+        if: always()
+        run: |
+          python -O .github/hdblast-followup/test_monitor.py > "$RUNNER_TEMP/monitor-guards-optimized.stdout.log" 2> "$RUNNER_TEMP/monitor-guards-optimized.stderr.log"
+      - name: Retain all guard results
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: followup-guards-${{ github.sha }}-${{ github.run_id }}
+          path: ${{ runner.temp }}/monitor-guards*.log
+          retention-days: 7
+          if-no-files-found: warn
+
+  bounded-gate:
+    if: >-
+      github.repository == 'maldonado-research/HDblast' &&
+      github.ref_name == github.event.repository.default_branch && github.run_attempt == 1 &&
+      ((github.event_name == 'schedule' && vars.HDBLAST_FOLLOWUP_ENABLED == 'true') ||
+       (github.event_name == 'workflow_dispatch' && inputs.mode != 'guards'))
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    outputs:
+      ready: ${{ steps.gate.outputs.ready }}
+      do_watch: ${{ steps.gate.outputs.do_watch }}
+      do_replay: ${{ steps.gate.outputs.do_replay }}
+      science_commit: ${{ steps.gate.outputs.science_commit }}
+      checkpoint_relative_path: ${{ steps.gate.outputs.checkpoint_relative_path }}
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      MONITOR_ENABLED: ${{ vars.HDBLAST_FOLLOWUP_ENABLED }}
+      MONITOR_START_UTC: ${{ vars.HDBLAST_FOLLOWUP_START_UTC }}
+      MONITOR_UNTIL_UTC: ${{ vars.HDBLAST_FOLLOWUP_UNTIL_UTC }}
+      MONITOR_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+      MONITOR_MODE: ${{ inputs.mode || 'watch' }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: .github/hdblast-followup
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12.14'
+      - name: Validate reviewed completed target and bounded campaign
+        id: gate
+        run: |
+          python .github/hdblast-followup/monitor.py gate --target .github/hdblast-followup/TARGET.json --output "$RUNNER_TEMP/followup-gate" --github-output "$GITHUB_OUTPUT" --summary "$GITHUB_STEP_SUMMARY"
+      - name: Retain gate outcome
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: followup-gate-${{ github.sha }}-${{ github.run_id }}
+          path: ${{ runner.temp }}/followup-gate/
+          retention-days: 7
+          if-no-files-found: warn
+
+  metadata-watch:
+    needs: bounded-gate
+    if: needs.bounded-gate.outputs.ready == 'true' && needs.bounded-gate.outputs.do_watch == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      MONITOR_BASELINE_SHA256: 'd90b93a46179dd1fdb4f32422fd3564994c1d62a4676e6af04782444818de14c'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: .github/hdblast-followup
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12.14'
+      - name: Read two fixed public first-page queries once each
+        run: |
+          python .github/hdblast-followup/monitor.py watch --target .github/hdblast-followup/TARGET.json --baseline .github/hdblast-followup/SOURCE_BASELINE.json --baseline-sha256 "$MONITOR_BASELINE_SHA256" --output "$RUNNER_TEMP/followup-watch" --summary "$GITHUB_STEP_SUMMARY"
+      - name: Retain metadata, provenance and baseline diff including failures
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: followup-watch-${{ github.sha }}-${{ github.run_id }}
+          path: ${{ runner.temp }}/followup-watch/
+          retention-days: 7
+          if-no-files-found: warn
+
+  completed-replay:
+    needs: bounded-gate
+    if: needs.bounded-gate.outputs.ready == 'true' && needs.bounded-gate.outputs.do_replay == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONOPTIMIZE: '0'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+      VECLIB_MAXIMUM_THREADS: '1'
+      BLIS_NUM_THREADS: '1'
+      MPLBACKEND: Agg
+    steps:
+      - name: Read the reviewed monitor at the workflow commit
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          path: controls
+          persist-credentials: false
+          sparse-checkout: .github/hdblast-followup
+      - name: Read all checkpoint files at the immutable completed science commit
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ needs.bounded-gate.outputs.science_commit }}
+          path: science
+          persist-credentials: false
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout: ${{ needs.bounded-gate.outputs.checkpoint_relative_path }}
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12.14'
+      - name: Authenticate all frozen bytes before dependency installation or science code
+        run: |
+          python controls/.github/hdblast-followup/monitor.py verify-source --target controls/.github/hdblast-followup/TARGET.json --source science --output "$RUNNER_TEMP/followup-sourcecheck" --summary "$GITHUB_STEP_SUMMARY"
+      - name: Install exact checkpoint replay dependencies without data caching
+        run: |
+          python -m pip install --only-binary=:all: -r science/research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/requirements-replay.txt
+      - name: Reproduce the full completed registered checkpoint once
+        run: |
+          python controls/.github/hdblast-followup/monitor.py replay --target controls/.github/hdblast-followup/TARGET.json --source science --output "$RUNNER_TEMP/followup-replay" --summary "$GITHUB_STEP_SUMMARY"
+      - name: Retain every numerical output, failure, log and comparison receipt
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: followup-replay-${{ needs.bounded-gate.outputs.science_commit }}-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/followup-sourcecheck/
+            ${{ runner.temp }}/followup-replay/
+          retention-days: 7
+          if-no-files-found: warn

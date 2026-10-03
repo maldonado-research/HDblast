@@ -1,5 +1,7 @@
 # HDBLAST program map
 
+> **Current navigation:** this map preserves its 27 September 2026 audit. The completed October ledger diagnostics, reproducible packages, next study and actual publication state are summarized in [Current research status](CURRENT_STATUS.md), updated 2 October 2026 (Pacific). Historical `LATEST` and private-archive shorthand below refer to the original map's date.
+
 > **About this map.** Compiled 27 September 2026 from the author's research archive. Paths are relative to this `hdblast/` folder. Paths under `../new-files/` (`DB3` = `../new-files/D-Blast 3`) refer to the author's private research archive and are not part of this public repository; the published checkpoints are in [`checkpoints/`](checkpoints/). The recomputation script and its output are in [`../research/HDBLAST_CHECKPOINT_20260927/program_map/`](../research/HDBLAST_CHECKPOINT_20260927/program_map/).
 
 

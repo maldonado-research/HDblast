@@ -1,0 +1,13 @@
+# Separately registered memory-only metric followup
+
+The original registered experiment remains FAIL from a fatal SciPy weighted-log continuum roundoff warning. The separately registered high-precision followup remains FAIL from peak memory306088KiB exceeding262144KiB after all12 primary observations and two positive-pulse independent archives. Their immutable public bindings are recorded in FAILURE_LINEAGE.json; complete evidence is retained in separate checkpoints.
+
+This third registration preserves the high-precision primary, finite-cutoff algorithms, independent numerical operations, full raw operators, physics, source profiles, grids, observations, reference subtraction, scientific thresholds and resource budgets. Only NPZ member streaming, temporary array lifetime and bounded file hashing change. The archive manifest and complete631-member schema are frozen with the independent source. Pure normal/optimized equivalence and format tests run before new physical evaluation.
+
+Saved prior positive-pulse fine Ward endpoint declarations already exceed the unchanged2e-6 gate, with maximum1.9552444892255006e-5. That previous round never ran a raw-mode auditor. We prospectively expect the internal scientific gates to fail after all four evolutions are collected. The unchanged32-command replay must still stop at failure. A separately frozen wrapper accepts only complete primary/allfour independent runs, intact archives and sources, successful original resource budgets, and the precisely reconstructed declared internal gate failure including the positive_B fine endpoint witness. Timeout, resource failure, incomplete data, unexpected success, altered sources or unsupported failure do not pass this control.
+
+A passing failure-reproduction control means that the scientific FAIL was reproduced; it never marks metric calibration PASS. Optional later saved-data comparisons and figures may diagnose the failed outputs under the unchanged thresholds, with explicit failed status. They are post-run diagnostics and do not create a new physical experiment or replace the frozen acceptance policy.
+
+Publicly commit every prospective source/configuration/proof/recipe/gate and verify its exact remote tree before any new physical evaluation. Add the three-pin FREEZE_RECEIPT only after verification. The deterministic full ZIP includes all curated raw evidence; packages larger than64MiB use verified parts and external reassembly.
+
+The full metric/actual shifted-root/lapse/bulk/state prerequisite remains BLOCKED. Omitted-band UV bounds and empirical integration diagnostics establish no full continuum error enclosure, coupled stability, heating, cosmological origin or discovery.

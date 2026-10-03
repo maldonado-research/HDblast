@@ -1,0 +1,351 @@
+[
+  {
+    "check": "primary_algebra",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "code/verify_primary_algebra.py",
+      "--output",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/PRIMARY_ALGEBRA.json"
+    ],
+    "completed_utc": "2026-10-02T17:04:58.740368+00:00",
+    "elapsed_seconds": 2.069841712997004,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "started_utc": "2026-10-02T17:04:56.670448+00:00",
+    "status": "PASS",
+    "timed_out": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "check": "source_jet_bridge",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "code/verify_source_jet_bridge.py",
+      "--tail-module",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/checkpoint/theory/pulse-norms/pulse_derivative_budgets.py",
+      "--output",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/SOURCE_JET_BRIDGE.json"
+    ],
+    "completed_utc": "2026-10-02T17:04:59.233958+00:00",
+    "elapsed_seconds": 0.36506809699494625,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "started_utc": "2026-10-02T17:04:58.868694+00:00",
+    "status": "PASS",
+    "timed_out": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "check": "stress_tail_algebra",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "theory/verify_stress_tail_algebra.py",
+      "--repo-root",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/source_pin_mirror",
+      "--output",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/STRESS_TAIL_ALGEBRA.json"
+    ],
+    "completed_utc": "2026-10-02T17:05:00.760842+00:00",
+    "elapsed_seconds": 1.4178851510005188,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "started_utc": "2026-10-02T17:04:59.342742+00:00",
+    "status": "PASS",
+    "timed_out": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "check": "pulse_exact_proof",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "theory/pulse-norms/verify_pulse_derivative_budgets.py",
+      "--output",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/PULSE_EXACT_PROOF.json"
+    ],
+    "completed_utc": "2026-10-02T17:05:01.283924+00:00",
+    "elapsed_seconds": 0.4152722229991923,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "started_utc": "2026-10-02T17:05:00.868394+00:00",
+    "status": "PASS",
+    "timed_out": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "check": "finite_cutoff_ward_algebra",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "theory/independent_review/derive_finite_cutoff_ward.py"
+    ],
+    "completed_utc": "2026-10-02T17:05:01.804078+00:00",
+    "elapsed_seconds": 0.41513844700239133,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "started_utc": "2026-10-02T17:05:01.388713+00:00",
+    "status": "PASS",
+    "timed_out": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "check": "validator_guards",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "code/test_validator_guards.py"
+    ],
+    "completed_utc": "2026-10-02T17:05:02.023010+00:00",
+    "elapsed_seconds": 0.1142679059994407,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "started_utc": "2026-10-02T17:05:01.908501+00:00",
+    "status": "PASS",
+    "timed_out": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "check": "primary_algebra_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "code/verify_primary_algebra.py",
+      "--output",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/PRIMARY_ALGEBRA_optimized.json"
+    ],
+    "completed_utc": "2026-10-02T17:05:04.402292+00:00",
+    "elapsed_seconds": 2.2701727579988074,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "started_utc": "2026-10-02T17:05:02.131864+00:00",
+    "status": "PASS",
+    "timed_out": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "check": "source_jet_bridge_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "code/verify_source_jet_bridge.py",
+      "--tail-module",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/checkpoint/theory/pulse-norms/pulse_derivative_budgets.py",
+      "--output",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/SOURCE_JET_BRIDGE_optimized.json"
+    ],
+    "completed_utc": "2026-10-02T17:05:04.974154+00:00",
+    "elapsed_seconds": 0.4653525680041639,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "started_utc": "2026-10-02T17:05:04.508541+00:00",
+    "status": "PASS",
+    "timed_out": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "check": "stress_tail_algebra_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "theory/verify_stress_tail_algebra.py",
+      "--repo-root",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/source_pin_mirror",
+      "--output",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/STRESS_TAIL_ALGEBRA_optimized.json"
+    ],
+    "completed_utc": "2026-10-02T17:05:06.746684+00:00",
+    "elapsed_seconds": 1.6683674710002379,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "started_utc": "2026-10-02T17:05:05.077963+00:00",
+    "status": "PASS",
+    "timed_out": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "check": "pulse_exact_proof_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "theory/pulse-norms/verify_pulse_derivative_budgets.py",
+      "--output",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/PULSE_EXACT_PROOF_optimized.json"
+    ],
+    "completed_utc": "2026-10-02T17:05:07.419509+00:00",
+    "elapsed_seconds": 0.565532783002709,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "started_utc": "2026-10-02T17:05:06.853610+00:00",
+    "status": "PASS",
+    "timed_out": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "check": "finite_cutoff_ward_algebra_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "theory/independent_review/derive_finite_cutoff_ward.py"
+    ],
+    "completed_utc": "2026-10-02T17:05:08.042424+00:00",
+    "elapsed_seconds": 0.5153764690039679,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "started_utc": "2026-10-02T17:05:07.526764+00:00",
+    "status": "PASS",
+    "timed_out": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "check": "validator_guards_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "code/test_validator_guards.py"
+    ],
+    "completed_utc": "2026-10-02T17:05:08.465572+00:00",
+    "elapsed_seconds": 0.31486019500152906,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "started_utc": "2026-10-02T17:05:08.150382+00:00",
+    "status": "PASS",
+    "timed_out": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "check": "primary",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "code/stress_primary.py",
+      "--output",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/primary",
+      "--registration-sha256",
+      "4a1533fa7bf9df41cc635d76fa61a22b3aa119d8fbf215349fe09cf3ee54c893",
+      "--public-freeze-commit",
+      "4a5dad8dda6d0a57a9cf88cc8b4a9b8feeaea45d"
+    ],
+    "completed_utc": "2026-10-02T17:05:10.406646+00:00",
+    "elapsed_seconds": 1.8201122930040583,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "started_utc": "2026-10-02T17:05:08.586057+00:00",
+    "status": "PASS",
+    "timed_out": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "check": "independent_modes",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "independent/forced_stress.py",
+      "--output-dir",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/independent",
+      "--freeze-commit",
+      "4a5dad8dda6d0a57a9cf88cc8b4a9b8feeaea45d",
+      "--manifest-sha256",
+      "4933c5fe2bd9d3fc2ea154371ce0fdf9d8066e3546a672975d1e007a9151cf42"
+    ],
+    "completed_utc": "2026-10-02T17:09:46.156362+00:00",
+    "elapsed_seconds": 275.64414346999547,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "started_utc": "2026-10-02T17:05:10.511925+00:00",
+    "status": "PASS",
+    "timed_out": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "check": "validation",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "code/validate_stress.py",
+      "--primary",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/primary/results.json",
+      "--modes",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/independent/results.json",
+      "--registration-sha256",
+      "4a1533fa7bf9df41cc635d76fa61a22b3aa119d8fbf215349fe09cf3ee54c893",
+      "--public-freeze-commit",
+      "4a5dad8dda6d0a57a9cf88cc8b4a9b8feeaea45d",
+      "--output",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/validation"
+    ],
+    "completed_utc": "2026-10-02T17:09:49.150839+00:00",
+    "elapsed_seconds": 2.8735021259999485,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "started_utc": "2026-10-02T17:09:46.277006+00:00",
+    "status": "PASS",
+    "timed_out": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "check": "validation_optimized",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "code/validate_stress.py",
+      "--primary",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/primary/results.json",
+      "--modes",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/independent/results.json",
+      "--registration-sha256",
+      "4a1533fa7bf9df41cc635d76fa61a22b3aa119d8fbf215349fe09cf3ee54c893",
+      "--public-freeze-commit",
+      "4a5dad8dda6d0a57a9cf88cc8b4a9b8feeaea45d",
+      "--output",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/validation_optimized"
+    ],
+    "completed_utc": "2026-10-02T17:09:52.428366+00:00",
+    "elapsed_seconds": 3.1740605029990547,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "started_utc": "2026-10-02T17:09:49.253979+00:00",
+    "status": "PASS",
+    "timed_out": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "check": "summary",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "postrun/summarize_stress.py",
+      "--checkpoint",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/checkpoint",
+      "--primary",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/primary/results.json",
+      "--modes",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/independent/results.json",
+      "--checks",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/validation/CHECKS.json",
+      "--checks-optimized",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/validation_optimized/CHECKS.json",
+      "--output",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/report"
+    ],
+    "completed_utc": "2026-10-02T17:09:52.677264+00:00",
+    "elapsed_seconds": 0.1148898140017991,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "started_utc": "2026-10-02T17:09:52.562029+00:00",
+    "status": "PASS",
+    "timed_out": false,
+    "timeout_seconds": 1000
+  },
+  {
+    "check": "figures",
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "postrun/plot_stress.py",
+      "--summary",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/report/SUMMARY.json",
+      "--output",
+      "/workspace/hdblast-research-work/stress-complete-replay-001/fresh/figures"
+    ],
+    "completed_utc": "2026-10-02T17:09:56.961476+00:00",
+    "elapsed_seconds": 4.1768055759966956,
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "started_utc": "2026-10-02T17:09:52.784243+00:00",
+    "status": "PASS",
+    "timed_out": false,
+    "timeout_seconds": 1000
+  }
+]

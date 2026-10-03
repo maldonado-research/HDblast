@@ -1,0 +1,50 @@
+name: Action and junction prerequisite checks
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_CHECKPOINT_20261002_JUNCTIONS/**'
+      - '.github/workflows/hdblast_junctions.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_CHECKPOINT_20261002_JUNCTIONS/**'
+      - '.github/workflows/hdblast_junctions.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  algebra-and-archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            research
+            hdblast
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned algebra dependencies
+        run: |
+          python -m pip install --only-binary=:all: -r research/HDBLAST_CHECKPOINT_20261002_JUNCTIONS/requirements.txt
+      - name: Verify input hashes and replay independent checks
+        run: |
+          python research/HDBLAST_CHECKPOINT_20261002_JUNCTIONS/code/replay_junctions.py --repo "$GITHUB_WORKSPACE" --output "$RUNNER_TEMP/junction-replay"
+      - name: Retain actual execution evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: junction-evidence-${{ github.sha }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/junction-replay/
+          if-no-files-found: warn
+          retention-days: 7

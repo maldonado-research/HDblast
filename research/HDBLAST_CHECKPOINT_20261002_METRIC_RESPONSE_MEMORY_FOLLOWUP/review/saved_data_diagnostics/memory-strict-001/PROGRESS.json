@@ -1,0 +1,31 @@
+{
+  "archive_consistency": "UNVERIFIED",
+  "audited_runs": 2,
+  "created_at_utc": "2026-10-02T20:14:17.006653+00:00",
+  "diagnostic_status": "STARTED",
+  "diagnostic_version": 2,
+  "full_metric_prerequisite": "BLOCKED",
+  "physical_evolution_or_response_quadratures": 0,
+  "python_optimization": 0,
+  "raw_audit_errors": [
+    {
+      "archive_sha256": "978e7b985ea67644563649d6617884daafeda67046209e7f9ccabe79d5259ea6",
+      "audit_error": "RuntimeError('Complete finite-band baseline histories: raw mismatch, residual=1.283694347524729309e-12 allowance=1.0000555111512312578e-12')",
+      "reconstructed_values_accepted": false,
+      "setting": "coarse",
+      "source": "positive_B",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/hdblast-research-work/metric-saved-diagnostics/diagnose_saved_metric_v2.py\", line 206, in main\n    audit,points=reconstructed_run(raw,run,args.modes.parent,experiment,args.record_numeric_mismatches);audits.append(audit);values[ident]=points\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/hdblast-research-work/metric-saved-diagnostics/diagnose_saved_metric_v2.py\", line 151, in reconstructed_run\n    try:report=raw.audit_run(run,directory,experiment)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/hdblast-research-work/metric-saved-diagnostics/raw_metric_audit_v2.py\", line 269, in audit_run\n    near_array(history[:,:,[5,6,7]],baseline_primitives(time,experiment['cutoffs']),'Complete finite-band baseline histories')\n  File \"/workspace/hdblast-research-work/metric-saved-diagnostics/raw_metric_audit_v2.py\", line 33, in near_array\n    require(residual<=allowance,label+': raw mismatch, residual='+str(residual)+' allowance='+str(allowance))\n  File \"/workspace/hdblast-research-work/metric-saved-diagnostics/raw_metric_audit_v2.py\", line 22, in require\n    if not condition: raise RuntimeError(message)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Complete finite-band baseline histories: raw mismatch, residual=1.283694347524729309e-12 allowance=1.0000555111512312578e-12\n"
+    },
+    {
+      "archive_sha256": "75f2693af6bc56d5f91d0d7d7bb543c25e47c22e8b3c0da243927f1271d17790",
+      "audit_error": "RuntimeError('Complete finite-band baseline histories: raw mismatch, residual=1.283694347524729309e-12 allowance=1.0000555111512312578e-12')",
+      "reconstructed_values_accepted": false,
+      "setting": "coarse",
+      "source": "signed_uB",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/hdblast-research-work/metric-saved-diagnostics/diagnose_saved_metric_v2.py\", line 206, in main\n    audit,points=reconstructed_run(raw,run,args.modes.parent,experiment,args.record_numeric_mismatches);audits.append(audit);values[ident]=points\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/hdblast-research-work/metric-saved-diagnostics/diagnose_saved_metric_v2.py\", line 151, in reconstructed_run\n    try:report=raw.audit_run(run,directory,experiment)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/hdblast-research-work/metric-saved-diagnostics/raw_metric_audit_v2.py\", line 269, in audit_run\n    near_array(history[:,:,[5,6,7]],baseline_primitives(time,experiment['cutoffs']),'Complete finite-band baseline histories')\n  File \"/workspace/hdblast-research-work/metric-saved-diagnostics/raw_metric_audit_v2.py\", line 33, in near_array\n    require(residual<=allowance,label+': raw mismatch, residual='+str(residual)+' allowance='+str(allowance))\n  File \"/workspace/hdblast-research-work/metric-saved-diagnostics/raw_metric_audit_v2.py\", line 22, in require\n    if not condition: raise RuntimeError(message)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Complete finite-band baseline histories: raw mismatch, residual=1.283694347524729309e-12 allowance=1.0000555111512312578e-12\n"
+    }
+  ],
+  "record_numeric_mismatches": false,
+  "scientific_validator_PASS": false,
+  "underlying_science_status": "FAIL"
+}

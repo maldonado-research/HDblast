@@ -1,0 +1,74 @@
+{
+  "classification": "prefreeze exact symbolic implementation audit only",
+  "physical_source_or_response_evaluations": 0,
+  "records": [
+    {
+      "name": "algebra",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "/workspace/hdblast-research-work/stress-primary/code/verify_primary_algebra.py",
+        "--output",
+        "/workspace/hdblast-research-work/stress-primary/symbolic-final-001/algebra.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "algebra_optimized",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "-O",
+        "/workspace/hdblast-research-work/stress-primary/code/verify_primary_algebra.py",
+        "--output",
+        "/workspace/hdblast-research-work/stress-primary/symbolic-final-001/algebra_optimized.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "jet_bridge",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "/workspace/hdblast-research-work/stress-primary/code/verify_source_jet_bridge.py",
+        "--tail-module",
+        "/workspace/hdblast-research-work/stress-theory/pulse-norms/pulse_derivative_budgets.py",
+        "--output",
+        "/workspace/hdblast-research-work/stress-primary/symbolic-final-001/jet_bridge.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "jet_bridge_optimized",
+      "command": [
+        "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+        "-O",
+        "/workspace/hdblast-research-work/stress-primary/code/verify_source_jet_bridge.py",
+        "--tail-module",
+        "/workspace/hdblast-research-work/stress-theory/pulse-norms/pulse_derivative_budgets.py",
+        "--output",
+        "/workspace/hdblast-research-work/stress-primary/symbolic-final-001/jet_bridge_optimized.json"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "files_sha256": {
+    "PRIMARY_DESIGN.md": "c96fae5ad393274febf10785079b65efb49cc91a20992191b73149e095081e83",
+    "PRIMARY_SETTINGS.json": "1b4a89344ce440ad52000c6860636ef00c846a382a9373f14d8c53c61b1aaf6a",
+    "PRIMARY_SYMBOLIC.json": "dc9bfdeb0b391c907cbf7379a8df7811cadb7cbd6f63446f36d53c69867c7a48",
+    "PRIMARY_SYMBOLIC_OPTIMIZED.json": "7b4b892385b4d769c2b35498c06e604b3372d2aca8aa533ea350a2b0632401cd",
+    "code/source_jet.py": "6428f404032acf4824f93d38a4467e495a56b06434e796f5ac338f3addee0205",
+    "code/stress_primary.py": "8cd3270f6d38114c9ca363131aea34eb4a543652d33f404a41bbfe6f29dc3cdd",
+    "code/verify_primary_algebra.py": "71f7f12a3f2d8b7762cec3678276f1461a0fe83ea2a60e9423f939f70ac49a71",
+    "code/verify_source_jet_bridge.py": "221f279ea007502bd171d61e15f311a4565a67052bb09522ac65fb3a0c9d08b1",
+    "symbolic-final-001/algebra.exit": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "symbolic-final-001/algebra.json": "dc9bfdeb0b391c907cbf7379a8df7811cadb7cbd6f63446f36d53c69867c7a48",
+    "symbolic-final-001/algebra.log": "5435b68895227661df5aa70969cde1b22cc8029a62625832e5c3221ad24943b8",
+    "symbolic-final-001/algebra_optimized.exit": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "symbolic-final-001/algebra_optimized.json": "7b4b892385b4d769c2b35498c06e604b3372d2aca8aa533ea350a2b0632401cd",
+    "symbolic-final-001/algebra_optimized.log": "5435b68895227661df5aa70969cde1b22cc8029a62625832e5c3221ad24943b8",
+    "symbolic-final-001/jet_bridge.exit": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "symbolic-final-001/jet_bridge.json": "3099fc352acda675fcb6d1a7a8c03fd520cb8d46524a72302523e9f014889cd8",
+    "symbolic-final-001/jet_bridge.log": "90082c151bdda909d14c23134edb623228232151e3f7d5e3c2cdb41ae3771798",
+    "symbolic-final-001/jet_bridge_optimized.exit": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa",
+    "symbolic-final-001/jet_bridge_optimized.json": "be16faaabaa72ab47437f602946018babedc52ce4a5a1402c18e7000e7a4ffe5",
+    "symbolic-final-001/jet_bridge_optimized.log": "90082c151bdda909d14c23134edb623228232151e3f7d5e3c2cdb41ae3771798"
+  }
+}

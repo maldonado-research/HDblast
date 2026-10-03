@@ -1,0 +1,465 @@
+{
+  "schema_version": 1,
+  "status": "PASS_SYNTHETIC_BINARY_RATIONAL_CONVERSION_GUARDS",
+  "prepared_utc": "2026-10-02T22:30:32.972453+00:00",
+  "scope": {
+    "synthetic_only": true,
+    "saved_scientific_arrays_or_results_loaded": false,
+    "physical_calculations_executed": false,
+    "external_calls": false,
+    "source_or_repository_files_changed": false,
+    "scientific_status_changed": false
+  },
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "executable": "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+    "numpy": "2.2.6",
+    "mpmath": "1.3.0",
+    "longdouble_storage_bits": 128,
+    "longdouble_significand_bits": 64,
+    "longdouble_minexp": -16382,
+    "longdouble_maxexp": 16384,
+    "optimizer_enabled": true
+  },
+  "checks_passed": 103,
+  "checks_total": 103,
+  "checks": [
+    {
+      "name": "Pinned significand has 64 bits",
+      "passed": true
+    },
+    {
+      "name": "Beyond-binary64 exact ratio",
+      "passed": true
+    },
+    {
+      "name": "Default 53-bit context demonstrably loses source bit",
+      "passed": true
+    },
+    {
+      "name": "Converter refuses inadequate context",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: positive_zero; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: negative_zero; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: one; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: negative_one; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: successor_of_one; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: predecessor_of_one; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: maximum_64bit_integer; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: tiny_normal; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: largest_subnormal; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: smallest_subnormal; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: negative_smallest_subnormal; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: second_subnormal; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: maximum_finite; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: negative_maximum_finite; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: eps; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: epsneg; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_-16445; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_-16382; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_-1024; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_-63; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_-1; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_0; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_1; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_63; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_1024; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_16320; precision 64",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: positive_zero; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: negative_zero; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: one; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: negative_one; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: successor_of_one; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: predecessor_of_one; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: maximum_64bit_integer; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: tiny_normal; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: largest_subnormal; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: smallest_subnormal; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: negative_smallest_subnormal; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: second_subnormal; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: maximum_finite; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: negative_maximum_finite; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: eps; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: epsneg; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_-16445; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_-16382; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_-1024; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_-63; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_-1; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_0; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_1; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_63; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_1024; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_16320; precision 166",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: positive_zero; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: negative_zero; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: one; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: negative_one; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: successor_of_one; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: predecessor_of_one; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: maximum_64bit_integer; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: tiny_normal; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: largest_subnormal; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: smallest_subnormal; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: negative_smallest_subnormal; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: second_subnormal; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: maximum_finite; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: negative_maximum_finite; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: eps; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: epsneg; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_-16445; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_-16382; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_-1024; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_-63; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_-1; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_0; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_1; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_63; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_1024; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Exact ratio and numerical roundtrip: power_two_16320; precision 236",
+      "passed": true
+    },
+    {
+      "name": "Finite guard rejects NaN",
+      "passed": true
+    },
+    {
+      "name": "Finite guard rejects positive infinity",
+      "passed": true
+    },
+    {
+      "name": "Finite guard rejects negative infinity",
+      "passed": true
+    },
+    {
+      "name": "Source guard rejects Python float",
+      "passed": true
+    },
+    {
+      "name": "Source guard rejects binary64 scalar",
+      "passed": true
+    },
+    {
+      "name": "Complex component types stay longdouble: both_components_beyond_binary64",
+      "passed": true
+    },
+    {
+      "name": "Complex exact component ratios: both_components_beyond_binary64",
+      "passed": true
+    },
+    {
+      "name": "Complex component numerical roundtrip with zero signs: both_components_beyond_binary64",
+      "passed": true
+    },
+    {
+      "name": "Complex component types stay longdouble: extreme_components",
+      "passed": true
+    },
+    {
+      "name": "Complex exact component ratios: extreme_components",
+      "passed": true
+    },
+    {
+      "name": "Complex component numerical roundtrip with zero signs: extreme_components",
+      "passed": true
+    },
+    {
+      "name": "Complex component types stay longdouble: both_signed_zero",
+      "passed": true
+    },
+    {
+      "name": "Complex exact component ratios: both_signed_zero",
+      "passed": true
+    },
+    {
+      "name": "Complex component numerical roundtrip with zero signs: both_signed_zero",
+      "passed": true
+    },
+    {
+      "name": "Complex finite guard rejects nonfinite real",
+      "passed": true
+    },
+    {
+      "name": "Complex finite guard rejects nonfinite imaginary",
+      "passed": true
+    },
+    {
+      "name": "Complex source guard rejects Python complex",
+      "passed": true
+    },
+    {
+      "name": "Complex source guard rejects binary64 complex scalar",
+      "passed": true
+    },
+    {
+      "name": "Synthetic arithmetic retains source perturbation",
+      "passed": true
+    },
+    {
+      "name": "Synthetic dyadic multiplication identity",
+      "passed": true
+    },
+    {
+      "name": "Signed zero normalizes in mpf but side channel records sign",
+      "passed": true
+    }
+  ],
+  "scalar_cases_per_precision": {
+    "64": 26,
+    "166": 26,
+    "236": 26
+  },
+  "benchmark": {
+    "iterations": 4000,
+    "precision_dps": 50,
+    "elapsed_seconds": 0.8867271310009528,
+    "conversions_per_second": 4510.970579511571,
+    "synthetic_only": true,
+    "includes_exact_ratio_verification": true,
+    "interpretation": "Indicative conversion overhead; no archive-wide performance extrapolation."
+  },
+  "requirements": [
+    "Keep source scalar as numpy.longdouble; split numpy.clongdouble into native .real and .imag components.",
+    "Reject NaN and infinities before calling as_integer_ratio.",
+    "Use at least numpy.finfo(longdouble).nmant + 1 bits of mpmath precision, with existing 50/70 decimal digit contexts satisfying the 64-bit requirement.",
+    "Construct mpf from exact integer numerator and denominator; do not pass the source through float(), complex(), float64, decimal display formatting, or padding bytes.",
+    "Verify exact mpf rational representation against the original as_integer_ratio pair; numerical roundtrip can use a small exact mantissa and numpy.ldexp.",
+    "Retain a separate negative-zero flag if bit-sign-sensitive roundtrip validation is required; mpf treats both signed zeros as mathematical zero.",
+    "Treat this as conversion infrastructure evidence only, with no change to original registration, scientific thresholds, or failure receipts."
+  ],
+  "blockers": [],
+  "source_sha256": "1c28141fff46e72dafbd4c2304f6f044612f5b5074d7c3d11dc3f7446b61be81"
+}

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspace/hdblast-research-work/metric-followup-complete-replay-001/checkpoint/independent/forced_metric.py", line 590, in <module>
+    main()
+  File "/workspace/hdblast-research-work/metric-followup-complete-replay-001/checkpoint/independent/forced_metric.py", line 552, in main
+    report["resources"] = resource_check(started)
+                          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hdblast-research-work/metric-followup-complete-replay-001/checkpoint/independent/forced_metric.py", line 214, in resource_check
+    require(peak <= RSS_BUDGET_KIB, "Frozen 256-MiB peak-memory budget exceeded")
+  File "/workspace/hdblast-research-work/metric-followup-complete-replay-001/checkpoint/independent/forced_metric.py", line 41, in require
+    raise RuntimeError(message)
+RuntimeError: Frozen 256-MiB peak-memory budget exceeded
