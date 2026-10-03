@@ -1,0 +1,45 @@
+name: Zenodo saved-response publication checks
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'hdblast/publication/2026.10.03-verified-source-operator/**'
+      - '.github/workflows/hdblast_publication_receipt_guard.yml'
+  pull_request:
+    paths:
+      - 'hdblast/publication/2026.10.03-verified-source-operator/**'
+      - '.github/workflows/hdblast_publication_receipt_guard.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  saved-response-controls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: hdblast/publication/2026.10.03-verified-source-operator
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - name: Check incomplete, duplicate and mismatched saved responses
+        run: |
+          packet=hdblast/publication/2026.10.03-verified-source-operator
+          python -B "$packet/test_saved_record_controls.py" --output "$RUNNER_TEMP/publication-guard-normal.json"
+          python -B -O "$packet/test_saved_record_controls.py" --output "$RUNNER_TEMP/publication-guard-optimized.json"
+      - name: Retain the synthetic control evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: publication-guard-${{ github.sha }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/publication-guard-*.json
+          if-no-files-found: warn
+          retention-days: 14

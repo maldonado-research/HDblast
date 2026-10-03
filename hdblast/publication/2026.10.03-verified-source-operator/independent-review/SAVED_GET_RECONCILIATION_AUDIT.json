@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "scope": "Verification of saved redacted GET-only reconciliation; no new remote requests or mutation. Automatic integrations OFF and prior transport failures are carried-forward handoff evidence, not newly tested.",
+  "reconciliation_sha256": "b17032f51a8e2107be274e59ac06e93607204c2a799e9c9233444edb6a349561",
+  "main_checks": [
+    {
+      "label": "main-concept-public",
+      "method_get": true,
+      "http200": true,
+      "inherited_exact": true,
+      "id_correct": true,
+      "family_correct": true,
+      "state_correct": true
+    },
+    {
+      "label": "main-latest-public",
+      "method_get": true,
+      "http200": true,
+      "inherited_exact": true,
+      "id_correct": true,
+      "family_correct": true,
+      "state_correct": true
+    },
+    {
+      "label": "main-published-owned",
+      "method_get": true,
+      "http200": true,
+      "inherited_exact": true,
+      "id_correct": true,
+      "family_correct": true,
+      "state_correct": true
+    },
+    {
+      "label": "main-draft-owned",
+      "method_get": true,
+      "http200": true,
+      "inherited_exact": true,
+      "id_correct": true,
+      "family_correct": true,
+      "state_correct": true
+    }
+  ],
+  "removed_record_23112891_http_status": 410,
+  "companion_23111008_both_get200": true,
+  "companion_22922927_family_both_correct": true,
+  "companion_two_original_files_exact": true,
+  "new_candidate_metadata_saved": false,
+  "new_candidate_uploads_observed": false,
+  "candidate_publication_observed": false
+}
