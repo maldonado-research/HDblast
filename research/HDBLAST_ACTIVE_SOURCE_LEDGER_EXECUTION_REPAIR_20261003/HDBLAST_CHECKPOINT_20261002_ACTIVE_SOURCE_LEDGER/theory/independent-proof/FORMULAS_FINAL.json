@@ -1,0 +1,21 @@
+{
+  "Fcontact": "-(4*L**3*h0 + 5*L**2*h1 + 4*h1*k**2)/(2*k)",
+  "Fmode": "L*(3*L**2*u_R + L*w_R + k*w_I)/(epsilon*k)",
+  "ODE_defect_definition": "defect_u=u'-w; defect_w=w'-2*i*k*w+epsilon*g",
+  "ODE_defect_density_projection": "(-L*defect_w_R/k + defect_u_R*(3*L**2 + 2*k**2)/k - defect_w_I)/(2*epsilon)",
+  "P0": "-L**2/(4*k) + k/6",
+  "Pcontact": "-(-3*L*h1 + 4*h0*k**2)/(6*k)",
+  "Pmode": "(-L*w_R/k - w_I + u_R*(-L**2 + 2*k**2/3)/k)/(2*epsilon)",
+  "R0": "3*L**2/(4*k) + k/2",
+  "Rcontact": "-(4*L**2*h0 - L*h1 + 4*h0*k**2)/(2*k)",
+  "Rmode": "(-L*w_R/k - w_I + u_R*(3*L**2 + 2*k**2)/k)/(2*epsilon)",
+  "action_canonical_mode_ODE": "v''+(k^2+a^2*m^2-a''/a)*v=0",
+  "c_coordinate": "c=u-w/(2*i*k); c'=-i*epsilon*g/(2*k); Re(c)'=0",
+  "contact_Ward": "Rcontact'=L*(Rcontact-3*Pcontact)-3*h1*(R0+P0)-L*g/(2*k)",
+  "convention": "Per mode; multiply by k^2/(2*pi^2) and fixed momentum weights. R=a0^4*delta_rho/epsilon, P=a0^4*delta_p/epsilon; u,w retain epsilon.",
+  "d_coordinate": "d=w/(2*i*k); d'=2*i*k*d+i*epsilon*g/(2*k)",
+  "full_bare_Ward": "R'=L*(R-3*P)-3*h1*(R0+P0)",
+  "g": "4*L**2*h0 - 2*L*h1 - h2",
+  "mode_Ward": "Rmode'=L*(Rmode-3*Pmode)+L*g/(2*k)",
+  "rotating_w": "[w*exp(-2*i*k*(t-a))]'=-epsilon*g*exp(-2*i*k*(t-a))"
+}

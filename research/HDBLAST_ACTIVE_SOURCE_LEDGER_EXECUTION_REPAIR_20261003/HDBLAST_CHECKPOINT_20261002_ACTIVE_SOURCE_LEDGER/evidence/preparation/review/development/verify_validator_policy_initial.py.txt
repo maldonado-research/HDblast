@@ -1,0 +1,83 @@
+#!/usr/bin/env python3
+"""Independent fixed-gate/serialization/outer-budget probes; no physical data."""
+import argparse
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+import sys
+import tempfile
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--validator', type=Path, required=True)
+    parser.add_argument('--output', type=Path, required=True)
+    args = parser.parse_args()
+    spec = importlib.util.spec_from_file_location('review_validator', args.validator)
+    v = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(v)
+    checks = []
+
+    def expect(name, condition):
+        if not condition:
+            raise RuntimeError(name)
+        checks.append(name)
+
+    def rejected(name, fn):
+        try:
+            fn()
+        except v.FatalValidation:
+            checks.append(name)
+        else:
+            raise RuntimeError(name + ': accepted')
+
+    for sign in ('', '-'):
+        def row(ds, dc, eq):
+            return {'D_S': sign + ds, 'D_cont': sign + dc, 'E_Q': sign + eq}
+        expect('strict_threshold_' + str(bool(sign)), not v.witness(row('0.000002', '0', '0.000002')))
+        expect('inclusive_ratios_' + str(bool(sign)), v.witness(row('0.000003', '0.0000003', '0.0000027')))
+        expect('continuous_ratio_above_' + str(bool(sign)), not v.witness(row('0.000003', '0.0000003000001', '0.0000027')))
+        expect('ledger_ratio_below_' + str(bool(sign)), not v.witness(row('0.000003', '0.0000003', '0.0000026999999')))
+    failures = []
+    v.science(failures, {}, 'boundary', v.Q('0.0000002'))
+    expect('science_threshold_inclusive', not failures)
+    v.science(failures, {}, 'negative_above', v.Q('-0.0000002000001'))
+    expect('negative_failure_retained', len(failures) == 1)
+    expect('failure_blocks_witness', v.classification(failures, [('positive_B', 'fine', {'K': 64, **row('0.000003', '0', '0.000003')})]) == ('CONSISTENCY_FAILURE', []))
+    for value in ('NaN', 'Infinity', '-Infinity'):
+        rejected('nonfinite_' + value, lambda value=value: v.number(value))
+    rejected('binary64_science_rejected', lambda: v.number(0.1))
+    rejected('invalid_rational_zero_denominator', lambda: v.rational('1/0'))
+    expect('exact_decimal_transfer', v.number('0.1') == v.Q(1, 10))
+    expect('whole_profile_precision_universe', v.maximum_gap({'late': ['0', '0.000000000002']}, {'late': ['0', '0']}) == v.Q('2e-12'))
+    rejected('precision_profile_membership', lambda: v.maximum_gap({'late': ['0']}, {'late': ['0', '0']}))
+    with tempfile.TemporaryDirectory(dir='/tmp') as td:
+        p = Path(td) / 'duplicate.json'
+        p.write_text('{"route":1,"route":2}\n')
+        rejected('duplicate_result_json', lambda: v.read_json(p))
+    outer = {'physical_route': True, 'status': 'PASS_EXECUTION', 'exit_code': 0,
+             'timed_out': False, 'memory_exceeded': False, 'executor_uid': 1001,
+             'timeout_seconds': 900, 'memory_limit_kib': 262144, 'process_creation_limit': 0,
+             'elapsed_seconds': 899.99, 'peak_rss_kib': 262144,
+             'wait4_peak_rss_kib': 262144, 'observed_peak_group_rss_kib': 262144}
+    receipts = [{**outer, 'name': name} for name in ('primary', 'independent')]
+    expect('fixed_two_route_outer_budget', len(v.check_execution(receipts)) == 2)
+    for key, value in [('executor_uid', 0), ('elapsed_seconds', 900.001),
+                       ('peak_rss_kib', 262145), ('timed_out', True),
+                       ('exit_code', 2), ('process_creation_limit', 1)]:
+        altered = [dict(r) for r in receipts]
+        altered[1][key] = value
+        rejected('outer_' + key, lambda altered=altered: v.check_execution(altered))
+    result = {'status': 'PASS_INDEPENDENT_VALIDATOR_POLICY_PROBES',
+              'python_optimization': sys.flags.optimize, 'checks': checks,
+              'validator_sha256': hashlib.sha256(args.validator.read_bytes()).hexdigest(),
+              'review_source_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+              'physical_evaluations': 0, 'physical_arrays_loaded': 0,
+              'scope': 'Exact fixed witness and scientific/fatal gate policy, precision universe, decimal transfer, outer-budget receipt semantics; not a full schema fixture.'}
+    args.output.write_text(json.dumps(result, indent=2, sort_keys=True) + '\n')
+    print(json.dumps({'status': result['status'], 'checks': len(checks), 'physical_evaluations': 0}))
+
+
+if __name__ == '__main__':
+    main()

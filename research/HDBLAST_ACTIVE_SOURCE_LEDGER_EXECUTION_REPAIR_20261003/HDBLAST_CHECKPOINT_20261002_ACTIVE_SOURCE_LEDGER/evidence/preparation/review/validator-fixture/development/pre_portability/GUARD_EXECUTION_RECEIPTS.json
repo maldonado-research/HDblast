@@ -1,0 +1,47 @@
+{
+  "executions": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "/workspace/hdblast-research-work/active-source-20261002/review/validator-fixture/fixture_guard.py",
+        "--receipt",
+        "/workspace/hdblast-research-work/active-source-20261002/review/validator-fixture/FINAL_NORMAL.json"
+      ],
+      "elapsed_seconds": 13.188413190000574,
+      "executor_uid": 1000,
+      "exit_code": 0,
+      "name": "NORMAL",
+      "receipt_sha256": "ecbdb89bb9b104e6ab7b1a5def8e9ad449378add76d80abffb4adcea7019c92b",
+      "scope": "FABRICATED GUARD EXECUTION ONLY; NO PHYSICAL ROUTE",
+      "stderr_file": "FINAL_NORMAL.stderr.txt",
+      "stdout_file": "FINAL_NORMAL.stdout.txt",
+      "timed_out": false,
+      "wait4_peak_rss_kib": 26752
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-O",
+        "-B",
+        "/workspace/hdblast-research-work/active-source-20261002/review/validator-fixture/fixture_guard.py",
+        "--receipt",
+        "/workspace/hdblast-research-work/active-source-20261002/review/validator-fixture/FINAL_OPTIMIZED.json"
+      ],
+      "elapsed_seconds": 13.187596340998425,
+      "executor_uid": 1000,
+      "exit_code": 0,
+      "name": "OPTIMIZED",
+      "receipt_sha256": "702db52be195e37792e508f6433d9ea875c1985a1144f8d4a995f2001dfc2d85",
+      "scope": "FABRICATED GUARD EXECUTION ONLY; NO PHYSICAL ROUTE",
+      "stderr_file": "FINAL_OPTIMIZED.stderr.txt",
+      "stdout_file": "FINAL_OPTIMIZED.stdout.txt",
+      "timed_out": false,
+      "wait4_peak_rss_kib": 26464
+    }
+  ],
+  "physical_arrays_read": false,
+  "physical_routes_run": false,
+  "runner_sha256": "6c51bdeb62e7115c3f59db3ec2d3c5b7a18d3dc7a4f95bf4c4682c05c07b3e75",
+  "scope": "MEASURED SYNTHETIC GUARD PROCESSES; FABRICATED ROUTE RECEIPTS ARE SEPARATE"
+}

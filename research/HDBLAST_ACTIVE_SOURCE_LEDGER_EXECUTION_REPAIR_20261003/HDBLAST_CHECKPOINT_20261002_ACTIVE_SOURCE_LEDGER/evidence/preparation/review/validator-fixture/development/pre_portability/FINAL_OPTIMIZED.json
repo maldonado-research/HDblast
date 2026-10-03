@@ -1,0 +1,414 @@
+{
+  "accepted_policy_gaps": [],
+  "actual_source_or_jet_evaluated": false,
+  "contract_checks": {
+    "explicit_independent_controls": true,
+    "explicit_independent_fields": true,
+    "explicit_primary_profiles_and_anchors": true,
+    "explicit_primary_scientific_scalars": true,
+    "global_complete_constants": true,
+    "global_profile_counts": true,
+    "independent_validator_fields": true,
+    "primary_validator_fields": true,
+    "primary_validator_profiles": true
+  },
+  "contract_sha256": {
+    "global/EXPERIMENT.json": "8ebb2e31bdd74d06655161221e6d7b1bb7e2d8bee9af6fca66cdf9674b013b61",
+    "global/OUTPUT_SCHEMA.json": "d4208d537065438fa95384984fe718cbbd01f36317eaab26b1091af3e5b91438",
+    "independent/OUTPUT_SCHEMA.json": "01b2f8d8605037cad5bfff5300e7abab411bb770044f15fc01fed591b0f74d56",
+    "primary/SYNTHETIC_SCHEMA_FINAL.json": "4914d2910d5c341986d45ee069754cc28914983486f25d3c6a25affba6e09d20"
+  },
+  "coverage": {
+    "decimal_contexts": [
+      "80",
+      "100"
+    ],
+    "fixed_cases": 12,
+    "independent_control_contexts": 72,
+    "independent_controls": [
+      "16_16",
+      "16_24",
+      "24_24"
+    ],
+    "independent_levels_across_cases": 24,
+    "primary_controls": [
+      24,
+      32
+    ],
+    "primary_rows_across_controls_contexts": 48,
+    "profile_lengths": {
+      "coarse": 129,
+      "fine": 257
+    }
+  },
+  "guard_sha256": "5e8899bc84597e8dc7d6923d670e66a75443cf94ff5e971890a10d42a2cf30d2",
+  "measured_guard_elapsed_seconds": 13.031349871002021,
+  "measured_guard_executor_uid": 1000,
+  "measured_guard_peak_rss_kib": 26464,
+  "outcome": "COMPLETED_FABRICATED_POLICY_REVIEW",
+  "physical_arrays_read": false,
+  "physical_routes_run": false,
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "python_optimization": 1,
+  "receipt_objects_are_fabricated": true,
+  "scope": "ENTIRELY FABRICATED SCHEMA POLICY INPUT; NO SCIENTIFIC OR EXECUTION EVIDENCE",
+  "tests": [
+    {
+      "outcome": "PASS",
+      "report": {
+        "attribution_cases": [],
+        "classification": "NO_GATE_SCALE_ATTRIBUTION",
+        "cross_route_max_scientific_gap_exact_rational": "0",
+        "failure_count": 0,
+        "failure_gates": [],
+        "identical_stored_max_gap_exact_rational": "0",
+        "raw_comparison_rows": 24,
+        "route_attribution_cases": {
+          "independent": [],
+          "primary": []
+        },
+        "status": "VERIFIED_COMPLETE_DIAGNOSTIC"
+      },
+      "seconds": 0.8436154009978054,
+      "test": "baseline_complete_12_cases"
+    },
+    {
+      "message": "Independent quadrature controls integer sequence differs",
+      "outcome": "REJECTED_POLICY_MUTATION",
+      "seconds": 0.3785970730095869,
+      "test": "independent_float_control_orders"
+    },
+    {
+      "message": "Independent canonical controls integer sequence differs",
+      "outcome": "REJECTED_POLICY_MUTATION",
+      "seconds": 0.39260859800560866,
+      "test": "independent_float_canonical_orders"
+    },
+    {
+      "message": "Primary schema/case count differs",
+      "outcome": "REJECTED_POLICY_MUTATION",
+      "seconds": 3.0495997634716332e-05,
+      "test": "primary_boolean_schema_version"
+    },
+    {
+      "message": "Independent schema/case count differs",
+      "outcome": "REJECTED_POLICY_MUTATION",
+      "seconds": 0.39857671000936534,
+      "test": "independent_boolean_schema_version"
+    },
+    {
+      "message": "Outer resource/containment limits differ",
+      "outcome": "REJECTED_POLICY_MUTATION",
+      "seconds": 9.034003596752882e-06,
+      "test": "boolean_process_creation_limit"
+    },
+    {
+      "message": "Independent resource limits must be integers",
+      "outcome": "REJECTED_POLICY_MUTATION",
+      "seconds": 0.3863614639994921,
+      "test": "independent_float_declared_resource_limits"
+    },
+    {
+      "outcome": "PASS",
+      "report": {
+        "attribution_cases": [],
+        "classification": "CONSISTENCY_FAILURE",
+        "cross_route_max_scientific_gap_exact_rational": "1/1000000",
+        "failure_count": 4,
+        "failure_gates": [
+          "scaled_discrete_baseline_r0"
+        ],
+        "identical_stored_max_gap_exact_rational": "0",
+        "raw_comparison_rows": 24,
+        "route_attribution_cases": {
+          "independent": [],
+          "primary": []
+        },
+        "status": "VERIFIED_COMPLETE_DIAGNOSTIC"
+      },
+      "seconds": 0.8536246889998438,
+      "test": "retained_cross_route_numeric_failure"
+    },
+    {
+      "outcome": "PASS",
+      "report": {
+        "attribution_cases": [],
+        "classification": "CONSISTENCY_FAILURE",
+        "cross_route_max_scientific_gap_exact_rational": "0",
+        "failure_count": 2,
+        "failure_gates": [
+          "joint_control_universe"
+        ],
+        "identical_stored_max_gap_exact_rational": "0",
+        "raw_comparison_rows": 24,
+        "route_attribution_cases": {
+          "independent": [],
+          "primary": []
+        },
+        "status": "VERIFIED_COMPLETE_DIAGNOSTIC"
+      },
+      "seconds": 0.8453429640067043,
+      "test": "retained_joint_control_universe_failure"
+    },
+    {
+      "message": "Primary control membership differs",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 4.282500594854355e-05,
+      "test": "omitted_primary_control"
+    },
+    {
+      "message": "independent control profiles field membership differs",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 0.38950950000435114,
+      "test": "omitted_independent_control"
+    },
+    {
+      "message": "primary precision field membership differs",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 5.058699753135443e-05,
+      "test": "omitted_primary_context"
+    },
+    {
+      "message": "independent precision field membership differs",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 0.3853966429887805,
+      "test": "omitted_independent_context"
+    },
+    {
+      "message": "primary row field membership differs",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 9.317100921180099e-05,
+      "test": "omitted_primary_scalar"
+    },
+    {
+      "message": "independent row field membership differs",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 0.38397738500498235,
+      "test": "extra_independent_schema_field"
+    },
+    {
+      "message": "Independent result field membership differs",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 0.3800649750046432,
+      "test": "missing_independent_producer_pin"
+    },
+    {
+      "message": "Independent post-run frozen verification absent",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 0.3838298429909628,
+      "test": "wrong_independent_postrun_receipt"
+    },
+    {
+      "message": "Independent opaque capsule inventory differs",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 0.3838640450121602,
+      "test": "wrong_independent_opaque_inventory"
+    },
+    {
+      "message": "primary F profile length differs",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 0.0002452400076435879,
+      "test": "truncated_primary_full_profile"
+    },
+    {
+      "message": "profiles P profile length differs",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 0.43913990900909994,
+      "test": "truncated_independent_fine_profile"
+    },
+    {
+      "message": "Definitional arithmetic closure failed: primary decomposition_error",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 0.002394267008639872,
+      "test": "wrong_primary_exact_closure"
+    },
+    {
+      "message": "Definitional arithmetic closure failed: independent D_S",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 0.41301238498999737,
+      "test": "wrong_independent_exact_closure"
+    },
+    {
+      "message": "Primary complete numeric precision universe failed",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 0.0238095459935721,
+      "test": "wrong_primary_complete_precision"
+    },
+    {
+      "message": "Independent complete reported MP precision universe failed",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 0.3909522019966971,
+      "test": "wrong_independent_complete_precision"
+    },
+    {
+      "message": "independent serialization error exceeds threshold",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 0.38431839099212084,
+      "test": "serialization_error"
+    },
+    {
+      "message": "Scientific values must be bounded decimal strings",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 0.001979110005777329,
+      "test": "nondecimal_scientific_value"
+    },
+    {
+      "message": "Nonfinite/out-of-range scientific decimal",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 0.0018380270048510283,
+      "test": "nonfinite_scientific_value"
+    },
+    {
+      "message": "Identical stored P values differ between readers",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 0.5553711730026407,
+      "test": "identical_stored_reader_failure"
+    },
+    {
+      "outcome": "PASS",
+      "report": {
+        "attribution_cases": [],
+        "classification": "NO_GATE_SCALE_ATTRIBUTION",
+        "cross_route_max_scientific_gap_exact_rational": "0",
+        "failure_count": 0,
+        "failure_gates": [],
+        "identical_stored_max_gap_exact_rational": "0",
+        "raw_comparison_rows": 24,
+        "route_attribution_cases": {
+          "independent": [],
+          "primary": []
+        },
+        "status": "VERIFIED_COMPLETE_DIAGNOSTIC"
+      },
+      "seconds": 0.8550133719982114,
+      "test": "strict_witness_magnitude_equality_fails"
+    },
+    {
+      "outcome": "PASS",
+      "report": {
+        "attribution_cases": [
+          {
+            "K": 256,
+            "setting": "fine",
+            "source": "positive_B"
+          }
+        ],
+        "classification": "LEDGER_ERROR_DEMONSTRATED",
+        "cross_route_max_scientific_gap_exact_rational": "3/4000000000000",
+        "failure_count": 0,
+        "failure_gates": [],
+        "identical_stored_max_gap_exact_rational": "3/4000000000000",
+        "raw_comparison_rows": 24,
+        "route_attribution_cases": {
+          "independent": [
+            {
+              "K": 256,
+              "setting": "fine",
+              "source": "positive_B"
+            },
+            {
+              "K": 128,
+              "setting": "fine",
+              "source": "signed_uB"
+            }
+          ],
+          "primary": [
+            {
+              "K": 64,
+              "setting": "coarse",
+              "source": "positive_B"
+            },
+            {
+              "K": 256,
+              "setting": "fine",
+              "source": "positive_B"
+            }
+          ]
+        },
+        "status": "VERIFIED_COMPLETE_DIAGNOSTIC"
+      },
+      "seconds": 0.8732736960082548,
+      "test": "same_case_strict_witness_intersection"
+    },
+    {
+      "message": "Nonroot containment witness missing",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 9.784998837858438e-06,
+      "test": "outer_root_uid"
+    },
+    {
+      "message": "Actual complete-route time budget failed",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 1.1487005394883454e-05,
+      "test": "outer_time_budget"
+    },
+    {
+      "message": "Actual complete-route RSS failed",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 1.0566000128164887e-05,
+      "test": "outer_rss_budget"
+    },
+    {
+      "message": "Outer route exit/resource failure",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 8.35300306789577e-06,
+      "test": "outer_nonzero_exit"
+    },
+    {
+      "message": "Outer route exit/resource failure",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 9.10299422685057e-06,
+      "test": "outer_timeout"
+    },
+    {
+      "message": "Outer route exit/resource failure",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 7.360999006778002e-06,
+      "test": "outer_memory_exceeded"
+    },
+    {
+      "message": "wait4 authoritative RSS witness differs",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 1.2127988156862557e-05,
+      "test": "outer_wait4_rss"
+    },
+    {
+      "message": "Group RSS witness differs",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 2.4316992494277656e-05,
+      "test": "outer_group_rss"
+    },
+    {
+      "message": "Outer containment failure",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 9.804003639146686e-06,
+      "test": "outer_descendant_survives"
+    },
+    {
+      "message": "Outer resource/containment limits differ",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 8.49299249239266e-06,
+      "test": "outer_child_creation_limit"
+    },
+    {
+      "message": "Inner resources exceed authoritative actual outer execution",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 0.5515355989919044,
+      "test": "inner_time_exceeds_outer"
+    },
+    {
+      "message": "Inner resources exceed authoritative actual outer execution",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 0.5604989190032938,
+      "test": "inner_rss_exceeds_outer"
+    },
+    {
+      "message": "Exactly two ordered physical executions required",
+      "outcome": "EXPECTED_FATAL",
+      "seconds": 8.032002369873226e-06,
+      "test": "missing_ordered_execution"
+    }
+  ],
+  "validator_cli_freeze_authentication_exercised": false,
+  "validator_sha256": "7389f8e6ea4befc58582de01f36b99b0874fb85d9135a0f836a347d90f7e24e8"
+}
