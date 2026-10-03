@@ -1,0 +1,91 @@
+[
+  {
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/checkpoint/code/diagnostic_primary.py",
+      "--checkpoint-root",
+      "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/checkpoint",
+      "--registration-sha256",
+      "e7a8fe5f6991bad9304440b037ce2eefafdfbaf9c011e177eb9b364b3239bba1",
+      "--freeze-commit",
+      "06984aa6b142499c592850e6b4afd49c28ced394",
+      "--output-dir",
+      "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/fresh/primary"
+    ],
+    "cwd": "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/checkpoint",
+    "memory_limit_kib": 262144,
+    "name": "primary",
+    "physical_route": true,
+    "timeout_seconds": 900
+  },
+  {
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/checkpoint/independent/diagnostic_independent.py",
+      "--checkpoint-root",
+      "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/checkpoint",
+      "--registration-sha256",
+      "e7a8fe5f6991bad9304440b037ce2eefafdfbaf9c011e177eb9b364b3239bba1",
+      "--freeze-commit",
+      "06984aa6b142499c592850e6b4afd49c28ced394",
+      "--output-dir",
+      "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/fresh/independent"
+    ],
+    "cwd": "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/checkpoint",
+    "memory_limit_kib": 262144,
+    "name": "independent",
+    "physical_route": true,
+    "timeout_seconds": 900
+  },
+  {
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/checkpoint/code/validate_ledger.py",
+      "--checkpoint-root",
+      "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/checkpoint",
+      "--registration-sha256",
+      "e7a8fe5f6991bad9304440b037ce2eefafdfbaf9c011e177eb9b364b3239bba1",
+      "--freeze-commit",
+      "06984aa6b142499c592850e6b4afd49c28ced394",
+      "--primary",
+      "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/fresh/primary/diagnostic.json",
+      "--independent",
+      "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/fresh/independent/diagnostic.json",
+      "--execution-receipts",
+      "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/EXECUTION.json",
+      "--output-dir",
+      "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/fresh/validation"
+    ],
+    "cwd": "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/checkpoint",
+    "memory_limit_kib": 262144,
+    "name": "validation",
+    "physical_route": false,
+    "timeout_seconds": 900
+  },
+  {
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/checkpoint/code/validate_ledger.py",
+      "--checkpoint-root",
+      "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/checkpoint",
+      "--registration-sha256",
+      "e7a8fe5f6991bad9304440b037ce2eefafdfbaf9c011e177eb9b364b3239bba1",
+      "--freeze-commit",
+      "06984aa6b142499c592850e6b4afd49c28ced394",
+      "--primary",
+      "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/fresh/primary/diagnostic.json",
+      "--independent",
+      "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/fresh/independent/diagnostic.json",
+      "--execution-receipts",
+      "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/EXECUTION.json",
+      "--output-dir",
+      "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/fresh/validation_optimized"
+    ],
+    "cwd": "/workspace/hdblast-research-work/ledger-root-20261002/original-replay/checkpoint",
+    "memory_limit_kib": 262144,
+    "name": "validation_optimized",
+    "physical_route": false,
+    "timeout_seconds": 900
+  }
+]
