@@ -1,0 +1,91 @@
+[
+  {
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/active-source-20261002/plan-only/checkpoint/code/diagnostic_primary.py",
+      "--checkpoint-root",
+      "/workspace/hdblast-research-work/active-source-20261002/plan-only/checkpoint",
+      "--registration-sha256",
+      "8c772f5ef14970cee8e941bdbdb49a6b709e6aa4364f30afc9211f236e6f8791",
+      "--freeze-commit",
+      "2e7dfddaa6b7aa2b43bcb12c7ce60a17eed39d3c",
+      "--output-dir",
+      "/workspace/hdblast-research-work/active-source-20261002/plan-only/fresh/primary"
+    ],
+    "cwd": "/workspace/hdblast-research-work/active-source-20261002/plan-only/checkpoint",
+    "memory_limit_kib": 262144,
+    "name": "primary",
+    "physical_route": true,
+    "timeout_seconds": 900
+  },
+  {
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/active-source-20261002/plan-only/checkpoint/independent/diagnostic_independent.py",
+      "--checkpoint-root",
+      "/workspace/hdblast-research-work/active-source-20261002/plan-only/checkpoint",
+      "--registration-sha256",
+      "8c772f5ef14970cee8e941bdbdb49a6b709e6aa4364f30afc9211f236e6f8791",
+      "--freeze-commit",
+      "2e7dfddaa6b7aa2b43bcb12c7ce60a17eed39d3c",
+      "--output-dir",
+      "/workspace/hdblast-research-work/active-source-20261002/plan-only/fresh/independent"
+    ],
+    "cwd": "/workspace/hdblast-research-work/active-source-20261002/plan-only/checkpoint",
+    "memory_limit_kib": 262144,
+    "name": "independent",
+    "physical_route": true,
+    "timeout_seconds": 900
+  },
+  {
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "/workspace/hdblast-research-work/active-source-20261002/plan-only/checkpoint/code/validate_active.py",
+      "--checkpoint-root",
+      "/workspace/hdblast-research-work/active-source-20261002/plan-only/checkpoint",
+      "--registration-sha256",
+      "8c772f5ef14970cee8e941bdbdb49a6b709e6aa4364f30afc9211f236e6f8791",
+      "--freeze-commit",
+      "2e7dfddaa6b7aa2b43bcb12c7ce60a17eed39d3c",
+      "--primary",
+      "/workspace/hdblast-research-work/active-source-20261002/plan-only/fresh/primary/diagnostic.json",
+      "--independent",
+      "/workspace/hdblast-research-work/active-source-20261002/plan-only/fresh/independent/diagnostic.json",
+      "--execution-receipts",
+      "/workspace/hdblast-research-work/active-source-20261002/plan-only/EXECUTION.json",
+      "--output-dir",
+      "/workspace/hdblast-research-work/active-source-20261002/plan-only/fresh/validation"
+    ],
+    "cwd": "/workspace/hdblast-research-work/active-source-20261002/plan-only/checkpoint",
+    "memory_limit_kib": 262144,
+    "name": "validation",
+    "physical_route": false,
+    "timeout_seconds": 900
+  },
+  {
+    "command": [
+      "/workspace/hdblast-cloud-setup/venv-frw/bin/python",
+      "-O",
+      "/workspace/hdblast-research-work/active-source-20261002/plan-only/checkpoint/code/validate_active.py",
+      "--checkpoint-root",
+      "/workspace/hdblast-research-work/active-source-20261002/plan-only/checkpoint",
+      "--registration-sha256",
+      "8c772f5ef14970cee8e941bdbdb49a6b709e6aa4364f30afc9211f236e6f8791",
+      "--freeze-commit",
+      "2e7dfddaa6b7aa2b43bcb12c7ce60a17eed39d3c",
+      "--primary",
+      "/workspace/hdblast-research-work/active-source-20261002/plan-only/fresh/primary/diagnostic.json",
+      "--independent",
+      "/workspace/hdblast-research-work/active-source-20261002/plan-only/fresh/independent/diagnostic.json",
+      "--execution-receipts",
+      "/workspace/hdblast-research-work/active-source-20261002/plan-only/EXECUTION.json",
+      "--output-dir",
+      "/workspace/hdblast-research-work/active-source-20261002/plan-only/fresh/validation_optimized"
+    ],
+    "cwd": "/workspace/hdblast-research-work/active-source-20261002/plan-only/checkpoint",
+    "memory_limit_kib": 262144,
+    "name": "validation_optimized",
+    "physical_route": false,
+    "timeout_seconds": 900
+  }
+]
