@@ -75,7 +75,8 @@
       if (!expected || typeof expected !== "object" || Array.isArray(expected)) return false;
       const expanded = new Set(["title", "props", "links", "icon"]);
       return Object.keys(actual).every(key => Object.hasOwn(expected, key)
-        ? approvedPartial(actual[key], expected[key]) : expanded.has(key) || empty(actual[key]));
+        ? approvedPartial(actual[key], expected[key])
+        : (Object.hasOwn(expected, "id") && expanded.has(key)) || empty(actual[key]));
     }
     return actual === expected;
   }
@@ -185,7 +186,10 @@
     result.reason = error?.hdblastCode || "BROWSER_REQUEST_OR_CAPABILITY_ERROR";
     window.HDBLAST_METADATA_REPAIR_RESULT = result;
     console.info("HDBLAST metadata recovery result:", result);
-    alert("HDBLAST recovery stopped.\n\n" + result.reason + "\n\nReturn to Codex with this message. Leave the draft unpublished; a recorded write must be reconciled before another attempt.");
+    const next = writeStarted
+      ? "A save may have applied. Close this editor tab without clicking Save draft or Publish, and return to Codex with this message. Reopen it after the saved state is reconciled."
+      : "Return to Codex with this message. Leave the draft unpublished; a recorded write must be reconciled before another attempt.";
+    alert("HDBLAST recovery stopped.\n\n" + result.reason + "\n\n" + next);
   } finally {
     window[LOCK] = false;
   }

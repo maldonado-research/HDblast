@@ -79,7 +79,7 @@ async function run(options={}) {
   assert.equal(result.publication_ready,false);
   assert.equal(result.uploads,0);assert.equal(result.publications,0);assert.equal(result.deletions,0);
   assert.equal(context.window.HDBLAST_METADATA_REPAIR_IN_FLIGHT,false);
-  return {result,puts:requests.filter(x=>x.config.method==="PUT").length,gets,reloads};
+  return {result,puts:requests.filter(x=>x.config.method==="PUT").length,gets,reloads,alerts};
 }
 (async()=>{
   const cases=[];
@@ -89,6 +89,9 @@ async function run(options={}) {
     assert.equal(observed.puts,puts,name);
     if(reason) assert.equal(observed.result.reason,reason,name);
     assert.equal(observed.reloads,status.startsWith("PASS_")?1:0,name);
+    if (status === "BLOCKED_RECONCILE_BROWSER_WRITE_BEFORE_RETRY") {
+      assert.ok(observed.alerts.some(message => message.includes("Close this editor tab without clicking Save draft or Publish")), name);
+    }
     cases.push({name,status,metadata_puts:observed.puts});
   }
   await check("exact approved save and expanded/reordered readback",{},"PASS_BROWSER_SAVED_METADATA_READBACK",1);
@@ -103,6 +106,8 @@ async function run(options={}) {
   await check("changed inherited checksum",{before:d=>{d.files.entries[inherited[0].filename].checksum="md5:wrong";}},"BLOCKED_NO_METADATA_WRITE",0,"INHERITED_FILE_BYTES_OR_CHECKSUM_CHANGED");
   await check("changed file membership",{before:d=>{d.files.count=11;}},"BLOCKED_NO_METADATA_WRITE",0,"INHERITED_FILE_INVENTORY_CHANGED");
   await check("owner's unreviewed title is preserved",{before:d=>{d.metadata.title="Another owner's change";}},"BLOCKED_NO_METADATA_WRITE",0,"UNREVIEWED_EXISTING_METADATA_REQUIRES_REVIEW");
+  await check("unreviewed creator props are preserved",{before:d=>{d.metadata.creators=clone(wanted.metadata.creators);d.metadata.creators[0].props={unreviewed:"owner-added-data"};}},"BLOCKED_NO_METADATA_WRITE",0,"UNREVIEWED_EXISTING_METADATA_REQUIRES_REVIEW");
+  await check("unreviewed personal title is preserved",{before:d=>{d.metadata.creators=clone(wanted.metadata.creators);d.metadata.creators[0].person_or_org.title="Dr";}},"BLOCKED_NO_METADATA_WRITE",0,"UNREVIEWED_EXISTING_METADATA_REQUIRES_REVIEW");
   await check("prior attempt stops repeat",{priorWrite:true},"BLOCKED_NO_METADATA_WRITE",0,"EARLIER_BROWSER_WRITE_RECORDED_RECONCILE_BEFORE_RETRY");
   await check("HTTP200 with empty metadata is failure",{blankAfter:true},"BLOCKED_RECONCILE_BROWSER_WRITE_BEFORE_RETRY",1,"WRITE_READBACK_DID_NOT_VERIFY_ALL_APPROVED_METADATA");
   await check("conditional write conflict",{putStatus:412},"BLOCKED_RECONCILE_BROWSER_WRITE_BEFORE_RETRY",1,"WRITE_READBACK_DID_NOT_VERIFY_ALL_APPROVED_METADATA");
@@ -116,6 +121,7 @@ async function run(options={}) {
     actual_browser_execution:false,live_network_requests:0,live_metadata_writes:0,
     script_sha256:crypto.createHash("sha256").update(script).digest("hex"),
     metadata_body_sha256:crypto.createHash("sha256").update(bodyText).digest("hex"),results:cases};
-  fs.writeFileSync(path.join(root,"OFFLINE_CHECKS.json"),JSON.stringify(receipt,null,2)+"\n",{flag:"wx"});
+  const output=process.argv[2]?path.resolve(process.argv[2]):path.join(root,"OFFLINE_CHECKS.json");
+  fs.writeFileSync(output,JSON.stringify(receipt,null,2)+"\n",{flag:"wx"});
   console.log(JSON.stringify({status:receipt.status,cases:receipt.cases,actual_browser_execution:false,live_network_requests:0}));
 })().catch(error=>{console.error("Offline browser guard simulation failed: " + String(error.stack).replaceAll(testCookie,"[REDACTED_SYNTHETIC_VALUE]"));process.exitCode=1;});
