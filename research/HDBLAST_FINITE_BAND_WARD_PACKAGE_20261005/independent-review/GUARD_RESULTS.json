@@ -1,0 +1,209 @@
+{
+  "all_mutations_confined_to_new_temporary_copies": true,
+  "archive_sha256": "dbd69f253b7a6d444253496ee769b2b5942ead17eb432a95a4c06ddfde669812",
+  "check_count": 31,
+  "checks": [
+    {
+      "expected": "PASS",
+      "name": "trusted_original_manifest_membership",
+      "observed": "PASS"
+    },
+    {
+      "expected": "REJECT",
+      "name": "tampered_payload_checksum",
+      "observed": "REJECT",
+      "reason": "Payload bytes differ: RESULTS.md"
+    },
+    {
+      "expected": "REJECT",
+      "name": "missing_payload",
+      "observed": "REJECT",
+      "reason": "Payload is not a regular file: RESULTS.md"
+    },
+    {
+      "expected": "REJECT",
+      "name": "extra_payload",
+      "observed": "REJECT",
+      "reason": "Complete payload membership differs"
+    },
+    {
+      "expected": "REJECT",
+      "name": "symlink_payload_leaf",
+      "observed": "REJECT",
+      "reason": "Payload is not a regular file: RESULTS.md"
+    },
+    {
+      "expected": "REJECT",
+      "name": "symlink_payload_directory",
+      "observed": "REJECT",
+      "reason": "Symlink in checkpoint"
+    },
+    {
+      "expected": "REJECT",
+      "name": "special_file_payload",
+      "observed": "REJECT",
+      "reason": "Special file in checkpoint"
+    },
+    {
+      "expected": "REJECT",
+      "name": "external_manifest_pin_mismatch",
+      "observed": "REJECT",
+      "reason": "Manifest hash differs from the external pin"
+    },
+    {
+      "expected": "REJECT",
+      "name": "manifest-path-traversal",
+      "observed": "REJECT",
+      "reason": "Unsafe manifest path"
+    },
+    {
+      "expected": "REJECT",
+      "name": "duplicate-manifest-entry",
+      "observed": "REJECT",
+      "reason": "Duplicate/self manifest entry"
+    },
+    {
+      "expected": "REJECT",
+      "name": "self-manifest-entry",
+      "observed": "REJECT",
+      "reason": "Duplicate/self manifest entry"
+    },
+    {
+      "expected": "REJECT",
+      "name": "manifest-wrong-size",
+      "observed": "REJECT",
+      "reason": "Payload bytes differ: EXACT_CHECKS_FINAL_NORMAL.json"
+    },
+    {
+      "expected": "REJECT",
+      "name": "manifest-wrong-file-pin",
+      "observed": "REJECT",
+      "reason": "Payload bytes differ: EXACT_CHECKS_FINAL_NORMAL.json"
+    },
+    {
+      "exit_code": 1,
+      "expected": "REJECT",
+      "name": "checkpoint_output_overlap",
+      "observed": "REJECT",
+      "reason_fragment": "outside and disjoint"
+    },
+    {
+      "exit_code": 1,
+      "expected": "REJECT",
+      "name": "checkpoint_existing_output",
+      "observed": "REJECT",
+      "reason_fragment": "Fresh output directory required"
+    },
+    {
+      "exit_code": 1,
+      "expected": "REJECT",
+      "name": "archive_byte_pin",
+      "observed": "REJECT",
+      "reason_fragment": "Archive byte size or SHA256 differs"
+    },
+    {
+      "exit_code": 1,
+      "expected": "REJECT",
+      "name": "archive-traversal",
+      "observed": "REJECT",
+      "reason_fragment": "Unsafe or encrypted archive member"
+    },
+    {
+      "exit_code": 1,
+      "expected": "REJECT",
+      "name": "archive-absolute",
+      "observed": "REJECT",
+      "reason_fragment": "Unsafe or encrypted archive member"
+    },
+    {
+      "exit_code": 1,
+      "expected": "REJECT",
+      "name": "archive-wrong-prefix",
+      "observed": "REJECT",
+      "reason_fragment": "Unsafe or encrypted archive member"
+    },
+    {
+      "exit_code": 1,
+      "expected": "REJECT",
+      "name": "archive-backslash",
+      "observed": "REJECT",
+      "reason_fragment": "Unsafe or encrypted archive member"
+    },
+    {
+      "exit_code": 1,
+      "expected": "REJECT",
+      "name": "archive_symlink",
+      "observed": "REJECT",
+      "reason_fragment": "Unsafe or encrypted archive member"
+    },
+    {
+      "exit_code": 1,
+      "expected": "REJECT",
+      "name": "archive_duplicate_member",
+      "observed": "REJECT",
+      "reason_fragment": "Archive member count or uniqueness differs"
+    },
+    {
+      "exit_code": 1,
+      "expected": "REJECT",
+      "name": "archive_member_limit",
+      "observed": "REJECT",
+      "reason_fragment": "exceeds declared extraction safety limit"
+    },
+    {
+      "exit_code": 1,
+      "expected": "REJECT",
+      "name": "archive_uncompressed_size_limit",
+      "observed": "REJECT",
+      "reason_fragment": "exceeds declared extraction safety limit"
+    },
+    {
+      "exit_code": 1,
+      "expected": "REJECT",
+      "name": "archive_crc_mismatch",
+      "observed": "REJECT",
+      "reason_fragment": "Archive CRC differs"
+    },
+    {
+      "exit_code": 1,
+      "expected": "REJECT",
+      "name": "archive_output_overlap",
+      "observed": "REJECT",
+      "reason_fragment": "outside and disjoint"
+    },
+    {
+      "exit_code": 1,
+      "expected": "REJECT",
+      "name": "changed_scientific_reference_rejected",
+      "observed": "REJECT",
+      "reason_fragment": "Scientific receipt differs: primary/normal"
+    },
+    {
+      "expected": "PASS",
+      "name": "named_runtime_flag_only_accepted",
+      "observed": "PASS"
+    },
+    {
+      "expected": "PASS",
+      "name": "runtime_flag_only_all_payload_unchanged",
+      "observed": "PASS"
+    },
+    {
+      "expected": "PASS",
+      "name": "original_final_manifest_membership",
+      "observed": "PASS"
+    },
+    {
+      "expected": "PASS",
+      "name": "original_final_archive_pin",
+      "observed": "PASS"
+    }
+  ],
+  "full_twelve_case_pressure_contact_certificate": "UNRESOLVED",
+  "manifest_sha256": "562a38390e2c995e75b5992493095ec151d9c227e6fa5e00d4d9608f743d9e38",
+  "physical_arrays_decoded": 0,
+  "physical_source_callbacks": 0,
+  "remote_writes": 0,
+  "replay_scientific_comparison_exclusions": "Only the explicitly named runtime Python-version/optimization fields; no scientific data excluded.",
+  "status": "PASS_BOUNDED_PORTABLE_REPLAY_GUARD_REVIEW"
+}

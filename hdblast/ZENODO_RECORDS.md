@@ -27,6 +27,8 @@ published and when**. It does not mean the content was peer reviewed.
 | 2026-10-02 (Pacific) | [Static companion 23111008](https://zenodo.org/records/23111008) | Published original two-file static-branch study, separate concept 22922927; current metadata/inventory match original 22922928 | **Published and preserved; inventory checked** |
 | 2026-10-02 (Pacific) | Main-family draft 23114217 | Existing owned replacement draft survived removal; twelve reviewed additions are prepared for 22 total files, including the completed active-source diagnosis and exact fresh replay | **Unsubmitted; new results not yet published** |
 
+**5 October 2026 UTC reconciliation:** the main concept still resolves to published 22347452 and the separate companion 23111008 remains published. Draft 23114217 is unsubmitted, holds the ten inherited files and lacks descriptive metadata after the 4 October save attempts. The 3 October candidate superseded the earlier 22-file preparation with **23 intended files**; neither that candidate nor the new 5 October mathematics is published on Zenodo. [Current read-only status and recovery requirement](publication/2026.10.05-reconciliation/README.md).
+
 All records before v20 (17088133 through 20313949) are marked in the author's 29 Aug 2026 audit as
 affected by the v20 correction, and should be read together with that correction.
 
@@ -41,8 +43,9 @@ record23112891 returns a public tombstone; its legacy deposition API still retai
 archival response, which is not evidence that it remains published. The main and companion
 DOI families and the valid replacement draft23114217 are preserved.
 
-The prepared replacement keeps all ten inherited files and adds twelve reviewed artifacts
-for22 total. Its newer metric-response and source-free/active-source ledger calculations
+The earlier 22-file preparation is preserved as a historical snapshot. The reviewed
+3 October replacement keeps all ten inherited files and adds thirteen artifacts for
+23 total, but metadata and additions are not saved in the active draft. Its newer metric-response and source-free/active-source ledger calculations
 are available on GitHub and **not yet published on Zenodo**. Saved metadata and the complete
 filename, byte-size and checksum inventory must match the reviewed candidate before publication.
 Prepared or reserved identifiers do not establish a published version.
