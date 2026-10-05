@@ -1,0 +1,68 @@
+# Primary literature for the action-derived Ward ledger
+
+Review cutoff: **October 5, 2026, UTC**. The actual metadata search ended at the timestamp in `SEARCH_SUMMARY.json`. This is a bounded, selected-passage review of six primary papers. It reads no project numerical arrays, evaluates no source or mode callbacks, and changes no prior checkpoint.
+
+The useful advance in this review is a clearer conservation contract and one additional recent comparison: Lai and Ota's real-time response calculation, [2606.16296v1](https://arxiv.org/abs/2606.16296v1). Its discussion of response/tadpole matching helps identify which background and contact terms must be audited. It does not supply a HDBLAST repair coefficient, a completed causal kernel, or a higher-dimensional origin of the Big Bang.
+
+| Primary source and exact version | Passages inspected | Contribution and boundary |
+| --- | --- | --- |
+| S. A. Fulling, T. E. Settlemyre and K. A. Milton, [Renormalization for a Scalar Field in an External Scalar Potential, 1802.02883v1](https://arxiv.org/abs/1802.02883v1), submitted **2018-02-05**; [journal DOI](https://doi.org/10.3390/sym10030054) | Sec.II.B, Eq.(15); Sec.III.D, Eq.(34); Sec.IV.A, Eq.(35), printed pp.7, 11–12 | The stress comes from metric variation. Stress and the field-square/source observable must be renormalized as a pair; a local stress term need not be conserved separately. The worked potential is static in flat spacetime. Its finite constants and source normalization do not transfer to the present time-dependent metric experiment. |
+| Stefan Hollands and Robert M. Wald, [Conservation of the stress tensor in perturbative interacting quantum field theory in curved spacetimes, gr-qc/0404074v2](https://arxiv.org/abs/gr-qc/0404074v2), submitted **2004-04-16**, revised **2005-01-18**; [journal DOI](https://doi.org/10.1142/S0129055X05002340) | Secs.4.3–4.4, Eqs.(112), (122), printed pp.36–39; Theorems 5.1 and 5.3, pp.40, 47–51; Theorem 6.1, p.52 | The metric-response identity includes the explicit metric dependence of the inserted observables in addition to a retarded stress insertion. Compatible time-ordered products can be chosen to give conservation in dimensions greater than two under their axioms. This is an established renormalization result, not a validation of a specific finite momentum-band subtraction. Their external-potential condition T11c is stated separately; the paper does not prove all its consequences by the T11a/b theorem alone. |
+| Tomislav Prokopec, [Gravitational Noether-Ward identities for scalar field, 2512.22958v2](https://arxiv.org/abs/2512.22958v2), submitted **2025-12-28**, revised **2026-03-07** | Eq.(95), printed p.25; Eqs.(96)–(99), pp.25–27; discussion, pp.46–48 | The general variation retains scalar and metric variations. After a metric expansion, individual response kernels have divergences tied to connection variations and background one-point functions. Their cancellation in the full gravitational equation uses its background equation. The worked presentation is primarily in-out, with an in-in extension discussed. It supplies no project-specific retarded kernel or interval bound. |
+| Emil Mottola, [Gravitational Vacuum Polarization: Decoupling and the Conformal Anomaly, 2607.18180v1](https://arxiv.org/abs/2607.18180v1), submitted **2026-07-20** | Sec.II, Eqs.(2.14)–(2.21), printed pp.7–8; Sec.III, Eqs.(3.30)–(3.31), printed p.13 | Differentiating the conservation identity produces an explicit connection/background term. In the flat Lorentz-invariant vacuum, two local contact contributions combine with the nonlocal stress correlator to give the conserved response. The calculation uses dimensional regularization around Minkowski space. Its flat-space form factors are not the forced FLRW source response or the finite-band ledger. |
+| Beatrice Costeri, Claudio Dappiaggi and Michele Goi, [Conservation Law and Trace Anomaly for the Stress Energy Tensor of a Self-Interacting Scalar Field, 2411.07109v2](https://arxiv.org/abs/2411.07109v2), submitted **2024-11-11**, revised **2025-04-08** | Remark 3.3 and Theorem 3.4, printed pp.20–21; Eq.(4.11) and Corollary 4.5, pp.25–26 | Local covariance alone does not ensure quantum conservation because the Hadamard parametrix solves the field equation only up to a remainder. A classically vanishing equation-of-motion insertion can survive composite-operator renormalization. The free `eta=1/3` and interacting `eta=1/n` choices are specific to the authors' prescription and hypotheses. They are not corrections to adopt in HDBLAST. |
+| Han Lai and Atsuhisa Ota, [Ultraviolet Structure of Real-time Gravitational Wave Linear Response in a Resonant Scalar Field, 2606.16296v1](https://arxiv.org/abs/2606.16296v1), arXiv submission **2026-06-15**; PDF title page dated **2026-06-16** | Sec. 2.2, Eqs.(2.9)–(2.13), printed pp.3–4; Sec. 3.2, p.7; Sec. 5, Eqs.(5.1)–(5.23), pp.15–18; Sec. 6, pp.18–19 | The Schwinger–Keldysh calculation distinguishes unequal-time UV asymptotics from adiabatic order. The authors find different tadpole and response counterterms beyond leading order in a fixed time-dependent Minkowski toy model and discuss a covariant completion. They leave the finite nonlocal kernel and backreacting completion open. The TT contact simplification in their particular inverse-metric convention does not remove the contacts of a scale-factor perturbation. |
+
+The current arXiv metadata gives no journal DOI for the Costeri, Prokopec, Mottola or Lai–Ota versions checked here. This is a statement about those metadata records, not an assertion that none has a journal publication. No external peer-review or whole-paper verification is claimed for this review.
+
+## What the next derivation should retain
+
+**Define the stress and every perturbation from the same action.** The previous project derivation fixes a physical mass and varies the scale factor, the mode derivative operator, and the physical-volume factor. A metric-dependent oscillator forcing obtained by changing canonical variables is not automatically an additional independent scalar background. A real external scalar source, if introduced in a later model, brings its own observable and exchange term. Mixing these two cases changes the Ward identity.
+
+For example, Fulling and coauthors' actual external-potential convention gives
+
+\[
+\partial_\mu T^\mu{}_{\nu}
++\frac12(\partial_\nu V)\phi^2=0.
+\]
+
+Their paired renormalization preserves this identity. Translating it into a density/work convention requires the actual signature, source normalization, and index placement. It does not assign this exchange term to a fixed-mass field solely because its conformally rescaled mode equation is forced.
+
+**Differentiate the full identity.** For a contravariant stress tensor with no independent scalar source, linearizing matter conservation gives
+
+\[
+\nabla_\mu\delta\langle T^{\mu\nu}\rangle
++\delta\Gamma^\mu{}_{\mu\lambda}\langle T_0^{\lambda\nu}\rangle
++\delta\Gamma^\nu{}_{\mu\lambda}\langle T_0^{\mu\lambda}\rangle=0.
+\]
+
+Here `delta T` must include the index and operator convention actually varied. If independent background sources are present, their variation and exchange terms belong on the corresponding side of the identity. The formula is the ordinary variation of covariant conservation; it is not new mathematics or a new project certificate. A stress-stress correlator alone is insufficient when metric dependence of the stress, subtraction, or one-point function contributes local terms.
+
+**Keep matter conservation separate from the background Einstein equation.** Covariantly coupled matter satisfying its field equation can obey its matter Ward identity on a prescribed metric. It does not require that this metric solve the semiclassical Einstein equation. In contrast, the homogeneous transversality of the complete gravitational perturbation equation can depend on that background equation, as Prokopec shows. Lai and Ota explicitly prescribe a time-dependent mass and a fixed off-shell gravitational background; their counterterm mismatch is a warning about completing that different model. It is not a reason to excuse HDBLAST's old conservation failures or to delete the connection/background terms from the new test.
+
+**Vary the renormalized operators before imposing an equation-of-motion simplification.** Hollands–Wald's metric insertion identity includes explicit variations of the inserted quantities. Their remark after Theorem 5.3 also excludes the general inference that every composite expression proportional to a classical field equation must vanish quantum mechanically. Costeri and coauthors give a concrete local remainder example. In a finite-band calculation, the density subtraction, pressure subtraction, and their metric contacts must therefore come from the declared inventory and remain independently checkable. Pressure or source work inferred from the measured final density would make the conservation check circular.
+
+**State exactly what the momentum regulator holds fixed.** Under justified differentiation and integration assumptions, a fixed comoving band obeys
+
+\[
+\frac{d}{d\eta}\int_0^K F(\eta,k)\,dk
+=\int_0^K\partial_\eta F(\eta,k)\,dk.
+\]
+
+A time-dependent upper endpoint instead contributes `K'(eta) F(eta,K(eta))`. This is the ordinary Leibniz rule. It explains why a physical cutoff, a fixed comoving cutoff, and a saved quadrature rule need different bookkeeping. If a pointwise mode identity holds and all paired terms use the same fixed weights, summing it preserves that identity; comparing the resulting weighted sum with an analytic continuum primitive still requires a separate quadrature enclosure. None of the six sources proves the particular HDBLAST finite-band remainder or licenses changing its cutoff after a result is seen. Regularity at `k=0`, infrared limits, subtraction asymptotics, and any later `K -> infinity` limit need their own analysis.
+
+**Treat a causal response as a separate completed object.** The new source/operator interval certificate does not by itself construct the full retarded stress kernel. Lai–Ota's Sec. 3.2 demonstrates why an unequal-time kernel needs correlated large-momentum and short-separation bookkeeping, beyond a single equal-time mode expansion. A later construction needs its state, contour/retarded support, contact prescription, finite terms, and error budget fixed explicitly. The toy model's UV coefficients and resonance parameters are not project predictions.
+
+## Cosmological energy transfer and the novelty boundary
+
+A consistent stress identity is a prerequisite for interpreting energy transfer. It is not evidence of heating, particle yield, thermalization, or a bulk-to-brane blast. The immediate useful calculation remains an independently formed density/pressure/contact ledger under the unchanged fixed-band convention. A later dynamical hypothesis would need a source-sector action, its normalized coupling to matter, backreaction and total energy/flux accounting, followed by particle-production and thermalization calculations and comparison with cosmological data.
+
+The prior review of Paul–Paban's time-dependent compact dimension remains context; its identifier [2603.12444v3](https://arxiv.org/abs/2603.12444v3), revision **2026-09-18**, and DOI [10.1007/JHEP09(2026)188](https://doi.org/10.1007/JHEP09(2026)188) were freshly confirmed in metadata here. No primary passages in that paper were reread in this round, and it is not a seventh primary reading. Its independent internal pressure illustrates why a dimensional reduction must retain the stress of a changing compact scale. It supplies no blast, shell flux, or transfer rate for HDBLAST.
+
+The established action variation, retarded insertion identity, paired source renormalization, connection terms, and Leibniz rule are not discoveries. A rigorously checked implementation of the specific project stress/pressure/contact enclosure could be a useful computational result; external mathematical novelty remains **NOT_ASSESSED**. A higher-dimensional cause of the Big Bang, nonlinear persistence, reheating, and observational viability remain **NOT_ESTABLISHED**.
+
+## Bounded search and access record
+
+Three first-page arXiv searches were capped at eight records each. They returned twelve records including duplicates. A six-identifier request confirmed the five inherited physics leads plus Hollands–Wald; a search supplied the additional Lai–Ota lead. Six selected PDFs were fetched over public read-only HTTPS and inspected in selected passages. Five sources are useful for operator/identity structure; the sixth contributes the real-time UV comparison. Later records in the search sample were screened at title/abstract level and not imported merely because they mention gravity or Ward identities.
+
+`BIBLIOGRAPHY.json` records exact submission/revision timestamps, versions and PDF/text hashes. `PRIMARY_ACCESS_PROVENANCE.json` preserves exact URLs, HTTP statuses, retrieval timestamps, byte counts and extraction diagnostics. `SELECTED_PASSAGES.json` verifies brief excerpts against the retrieved text and gives locations. `SEARCH_SUMMARY.json` lists the actual bounded queries and returned identifiers without reproducing abstracts. `REVIEW_LIMITS.json` records the absence of numerical execution and remote mutation. The raw third-party PDFs and texts remain an external working cache and should not be copied into a public research payload. The source documents contain different signatures, perturbation conventions and renormalization schemes; extracted text is used to locate passages, not to certify every displayed equation.

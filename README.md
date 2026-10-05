@@ -2,7 +2,7 @@
 
 [Readable project overview](https://maldonado-research.github.io/projects/hdblast/) · [All research projects](https://maldonado-research.github.io/)
 
-**Current research and publication status (3 October 2026, Pacific):** [Start here](hdblast/CURRENT_STATUS.md). Two independent methods pass the conditional source-operator integration certificate at nine registered momenta; the full pressure and conservation certificate remains unresolved. The latest published main Zenodo version remains verified v24 [22347452](https://zenodo.org/records/22347452). Owner-removed upload 23112891 stays removed; linked replacement draft 23114217 remains unsubmitted after metadata HTTP 500. The new checkpoint is available on GitHub, with no new Zenodo publication. The [revised same-family upload packet](hdblast/publication/2026.10.03-verified-source-operator/README.md) preserves the ten historical files and prepares thirteen verified additions.
+**Current research and publication status (5 October 2026 UTC):** [Start here](hdblast/CURRENT_STATUS.md). The new [finite-band mathematical checkpoint](research/HDBLAST_CHECKPOINT_20261005_FINITE_BAND_WARD/RESULTS.md) derives exact stress/error kernels and uniform bounds for analytic source truncation alone. A normalized between-probe state counterexample shows why the incoming state needs a separate bound. The full twelve-case pressure/contact certificate remains unresolved and metric calibration remains FAIL. Latest published main Zenodo version: [22347452](https://zenodo.org/records/22347452). Existing same-family draft 23114217 is unsubmitted with ten inherited files and missing descriptive metadata; owner-editor recovery is pending. The reviewed prior [23-file upload candidate](hdblast/publication/2026.10.03-verified-source-operator/README.md) remains unpublished. No new Zenodo version was published.
 
 
 **Ricardo Maldonado · independent researcher · research program 2025–2026**
@@ -40,7 +40,9 @@ standard Big Bang story, not replace it.
 instability rate from full five-dimensional theory agrees with a closed-form four-dimensional
 formula. Floating-point calculations in the model; not observations.*
 
-**Latest result (3 October 2026, Pacific): conditional source-operator certificate.** Two independently implemented enclosure methods pass all 1,170 moment rows and 130 source-primitive rows per route for two declared smooth sources, 64 panels and nine exact rational momenta. The largest conservative whole-interval enclosure radius across both implementations is below **1.373 × 10⁻²⁸**, within the fixed **10⁻²⁶** limit. The analytic model bounds cover real momentum k ∈ [0,256]; computed complete enclosure widths are certified at the nine probes. The full twelve-case action-derived pressure/contact conservation certificate remains **unresolved**, and earlier metric calibration stays **FAIL**. A higher-dimensional cause of the Big Bang is **NOT_ESTABLISHED**; external mathematical novelty is **NOT_ASSESSED**. [Research manuscript, result and limits](research/HDBLAST_CHECKPOINT_20261003_VERIFIED_SOURCE_OPERATOR/RESULTS.md) · [Standalone archive replay](research/HDBLAST_VERIFIED_SOURCE_OPERATOR_PACKAGE_20261003/RESULTS_READ_FIRST.md). A fresh standalone archive replay reproduces both numerical payloads and scientific frames exactly.
+**Latest result (5 October 2026 UTC): exact finite-band stress kernels and error bounds.** The source Taylor-truncation contribution throughout the declared time interval and continuous momentum band k ∈ [0,256] is below **5.5 × 10⁻²⁸** in scaled density and **2.2 × 10⁻²⁵** in scaled pressure, conditional on the inherited analytic premises. These are bounds for one error component. Exact state/residual/contact identities retain the other terms, and a smooth normalized state change can evade all nine probes while changing integrated stress. Three exact implementations pass 41, 55 and 42 checks with mutation controls and a clean six-run archive replay. The full numerical certificate remains **UNRESOLVED**; no physical breakthrough or external novelty is established. [Result, proof and limits](research/HDBLAST_CHECKPOINT_20261005_FINITE_BAND_WARD/RESULTS.md) · [Standalone reproduction](research/HDBLAST_FINITE_BAND_WARD_PACKAGE_20261005/RESULTS_READ_FIRST.md).
+
+**Previous result (3 October 2026, Pacific): conditional source-operator certificate.** Two independently implemented enclosure methods pass all 1,170 moment rows and 130 source-primitive rows per route for two declared smooth sources, 64 panels and nine exact rational momenta. The largest conservative whole-interval enclosure radius across both implementations is below **1.373 × 10⁻²⁸**, within the fixed **10⁻²⁶** limit. The analytic model bounds cover real momentum k ∈ [0,256]; computed complete enclosure widths are certified at the nine probes. The full twelve-case action-derived pressure/contact conservation certificate remains **unresolved**, and earlier metric calibration stays **FAIL**. A higher-dimensional cause of the Big Bang is **NOT_ESTABLISHED**; external mathematical novelty is **NOT_ASSESSED**. [Research manuscript, result and limits](research/HDBLAST_CHECKPOINT_20261003_VERIFIED_SOURCE_OPERATOR/RESULTS.md) · [Standalone archive replay](research/HDBLAST_VERIFIED_SOURCE_OPERATOR_PACKAGE_20261003/RESULTS_READ_FIRST.md). A fresh standalone archive replay reproduces both numerical payloads and scientific frames exactly.
 
 [Fresh archive reproduction evidence](research/HDBLAST_VERIFIED_SOURCE_OPERATOR_PACKAGE_20261003/FRESH_REPRODUCTION.json).
 
@@ -48,7 +50,7 @@ formula. Floating-point calculations in the model; not observations.*
 
 **Previous source-free diagnostic (2 October):** Two independent implementations identify a time-integration error after source support. All twelve consistency cases pass, and eight cross the fixed error-attribution threshold. [Preserved result and evidence](research/HDBLAST_CHECKPOINT_20261002_SOURCE_FREE_LEDGER/reports/RESULTS.md).
 
-## Where the research stands (3 October 2026)
+## Where the research stands (5 October 2026 UTC)
 
 | Result | Status |
 |---|---|
@@ -86,6 +88,7 @@ formula. Floating-point calculations in the model; not observations.*
 | **New (2 Oct, matched stress):** independently calculated density and pressure pass all 180 registered core comparisons, trace/contact/current checks, raw-mode reconstruction and a separate energy ledger. Higher-derivative stress tail bounds are included | **Numerical linear response**, fixed geometry; no coupled evolution, stability or heating |
 | **New (2 Oct, metric response):** three separate registrations preserve continuum roundoff, memory-budget and conservation failures. The memory-only repair completes all four mode evolutions within 256 MiB; 59 Ward checks fail under unchanged thresholds | **Scientific FAIL**, complete saved data; full metric prerequisite remains blocked |
 | **New (3 Oct, source-operator prerequisite):** uniform analytic source and phase bounds, independently computed moment/source-primitive enclosures at nine registered momenta; whole-interval hull radius below 1.373 × 10⁻²⁸ | **Conditional certificate**, narrower than full stress/conservation certification; no physical heating result |
+| **New (5 Oct, finite-band error theorem):** exact retarded density/pressure kernels, conditional continuous-band source-truncation bounds, complete residual/contact budget and a normalized hidden-state counterexample | **Exact conditional mathematics**, one error component; full numerical certificate unresolved |
 
 ![Two fates of the unstable shell at the registered parameters](hdblast/figures/two_fates_registered_detuning.png)
 
@@ -149,6 +152,8 @@ For the hypothesis to become credible, all of the following must happen, and it 
 | [`research/HDBLAST_ACTIVE_SOURCE_LEDGER_EXECUTION_REPAIR_20261003/`](research/HDBLAST_ACTIVE_SOURCE_LEDGER_EXECUTION_REPAIR_20261003/) | Disclosed guard-only repair, unchanged scientific methods and complete registered original results. |
 | [`research/HDBLAST_ACTIVE_SOURCE_LEDGER_PACKAGE_20261002/`](research/HDBLAST_ACTIVE_SOURCE_LEDGER_PACKAGE_20261002/) | Complete standalone archive, exact fresh physical reproduction, independent attribution/cancellation review and next-study proposal. |
 | [`research/HDBLAST_CHECKPOINT_20261003_VERIFIED_SOURCE_OPERATOR/`](research/HDBLAST_CHECKPOINT_20261003_VERIFIED_SOURCE_OPERATOR/) | Frozen source/operator registration, conditional analytic proofs, two independent complete enclosure routes, measured results and standalone replay. |
+| [`research/HDBLAST_CHECKPOINT_20261005_FINITE_BAND_WARD/`](research/HDBLAST_CHECKPOINT_20261005_FINITE_BAND_WARD/) | Exact finite-band stress/error kernels, analytic truncation bounds, state counterexample, three proof routes and pinned premises. |
+| [`research/HDBLAST_FINITE_BAND_WARD_PACKAGE_20261005/`](research/HDBLAST_FINITE_BAND_WARD_PACKAGE_20261005/) | Sealed standalone mathematical archive and fresh exact replay. |
 | [`site/`](site/) | Source of the website |
 
 Most checkpoints can be re-run with Python 3 (`numpy`, `scipy`, `sympy`, `mpmath`). Each

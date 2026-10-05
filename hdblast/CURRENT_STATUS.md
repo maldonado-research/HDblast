@@ -1,10 +1,26 @@
 # HDBLAST: current research and publication status
 
-Updated **3 October 2026, Pacific time**. Frozen archive names and registrations retain their UTC dates, including 3 October. This page distinguishes the latest completed research on GitHub from the versions actually published on Zenodo.
+Updated **5 October 2026 UTC**. Frozen archive names and registrations retain their UTC dates, including 3 October. This page distinguishes the latest completed research on GitHub from the versions actually published on Zenodo.
 
 HDBLAST asks whether an event in a higher-dimensional space could have supplied the hot initial state of our universe. That cause remains **unestablished**. The work has no external peer review or observational confirmation. Internal independent implementations and AI-assisted reviews are documented computational checks.
 
-## Latest completed result: conditional source-operator certificate
+## Latest completed result: finite-band stress/error mathematics
+
+The new mathematical checkpoint integrates the forcing-error kernels for direct density and pressure over momentum exactly and gives a complete state/residual/source/contact error identity. Under the inherited source Cauchy proof, the degree-24 analytic truncation contribution at K=256 is below **5.5 × 10⁻²⁸** for scaled density, **2.2 × 10⁻²⁵** for scaled pressure and **5.5 × 10⁻²⁸** for integrated source-mismatch work, uniformly throughout [−4.5,−3.5]. These continuous-band bounds certify that component alone, rather than rounded coefficients, the incoming state, contacts or the numerical ledger.
+
+A smooth homogeneous state perturbation between registered momentum probes can preserve normalization and conservation while changing integrated stress. This constructive counterexample shows why the next certificate needs an independently justified incoming-state bound. No probe or acceptance threshold was changed.
+
+Three exact routes pass in normal and optimized Python: **41** standard-library checks, **55** symbolic checks with **12** rejected mutations, and **42** independent action/subtraction checks with **10** omission controls. Clean archive extraction reproduces all six scientific receipts and preserves the 57-file payload. No physical source callback, saved quantum-array decode or trajectory rerun occurs in this mathematical checkpoint. Internal reviews are not external peer review.
+
+- [Result, bounds and limitations](../research/HDBLAST_CHECKPOINT_20261005_FINITE_BAND_WARD/RESULTS.md)
+- [Detailed proof](../research/HDBLAST_CHECKPOINT_20261005_FINITE_BAND_WARD/theory/FINITE_BAND_ERROR_TRANSPORT.md)
+- [Independent action derivation](../research/HDBLAST_CHECKPOINT_20261005_FINITE_BAND_WARD/independent/INDEPENDENT_WARD_DERIVATION.md)
+- [Standalone archive and fresh reproduction](../research/HDBLAST_FINITE_BAND_WARD_PACKAGE_20261005/RESULTS_READ_FIRST.md)
+- [Bounded primary-literature review](../research/HDBLAST_CHECKPOINT_20261005_FINITE_BAND_WARD/literature/PRIMARY_LITERATURE_REVIEW.md)
+
+The full twelve-case numerical pressure/contact certificate and inherited 2 × 10⁻⁸ integral gate remain **UNRESOLVED**. Earlier metric calibration remains **FAIL**. Heating, coupled evolution, observations and a higher-dimensional cause of the Big Bang remain **NOT_ESTABLISHED**; external novelty remains **NOT_ASSESSED**.
+
+## Previous completed result: conditional source-operator certificate
 
 Two independently implemented enclosure methods pass the separately registered integration prerequisite for two declared smooth source functions. Each route returns all **1,170 moment rows and 130 source-primitive rows**, covering 64 panels and nine exact rational momenta on the fixed interval [−4.5,−3.5]. The largest conservative whole-interval enclosure radius across both implementations is below **1.373 × 10⁻²⁸**, within the unchanged **10⁻²⁶** gate. The archived analytic bounds apply to all 64 panels and real momentum k ∈ [0,256]; computed complete arithmetic enclosure widths are certified at the nine registered probes. A fresh standalone archive replay reproduces both numerical payloads and scientific frames exactly, preserving the frozen files byte for byte.
 
@@ -40,16 +56,16 @@ The [source-free ledger diagnosis](../research/HDBLAST_CHECKPOINT_20261002_SOURC
 |---|---|
 | [Main concept DOI 10.5281/zenodo.17088132](https://doi.org/10.5281/zenodo.17088132) | Resolves to preserved published v24 [22347452](https://zenodo.org/records/22347452), with its ten inherited files |
 | [Removed upload 23112891](https://zenodo.org/records/23112891) | Owner-removed test upload; its archival tombstone remains. It lacked the twelve new attachments |
-| Replacement in the same main DOI family | Prepared for existing draft **23114217**, which remains unsubmitted. The revised candidate retains the ten historical files and adds thirteen verified files for **23 total**; it includes the new source/operator checkpoint and remains **unpublished on Zenodo** |
+| Replacement in the same main DOI family | Existing draft **23114217** is unsubmitted with ten inherited files. Read-only API check on **5 October 2026 UTC** confirms descriptive metadata is missing. The prior 23-file candidate is prepared but unsaved/unuploaded; this new mathematical checkpoint is GitHub-only |
 | [Static companion 23111008](https://zenodo.org/records/23111008), concept [10.5281/zenodo.22922927](https://doi.org/10.5281/zenodo.22922927) | Published and preserved; original two-file inventory and metadata match the verified baseline [22922928](https://zenodo.org/records/22922928) |
 
-Earlier metadata-saving requests returned HTTP 500 and binary uploads returned HTTP 400. Fresh authenticated checks on 3 October confirm the existing draft is still unsubmitted with ten inherited files. No new Zenodo version has been published for this checkpoint. The [reviewed browser fallback](publication/2026.10.03-verified-source-operator/README.md) supplies the revised exact fields, 23-file inventory and immutable source links for existing draft 23114217; the [earlier packet](publication/2026.10.02-ledger-checkpoint/README.md) is preserved unchanged. Its new files and complete metadata must be verified before publication; the attempted GitHub binary release is also unpublished.
+Earlier requests returned metadata HTTP 500 and binary-upload HTTP 400. On 4 October UTC, two later metadata-save attempts returned HTTP 200 but actual saved metadata readback was empty; the attempted save removed the draft descriptive fields. Read-only checks on **5 October UTC** confirm draft 23114217 remains unsubmitted with only access/reserved-DOI metadata and the same ten inherited files. Both published records remain intact. **Do not publish this incomplete draft.** Restore the reviewed descriptive fields through the signed-in Zenodo editor and Save draft first. The [dated reconciliation](publication/2026.10.05-reconciliation/README.md) records the recovery requirement; the prior [reviewed 23-file candidate](publication/2026.10.03-verified-source-operator/README.md) remains immutable. No API metadata retry, file upload or publication occurred in this round.
 
 The public record tombstone confirms removal even though the legacy deposition endpoint retains an archival response. Each new Zenodo publication requires saved-metadata readback and exact filename, size and checksum verification. A prepared draft or reserved DOI is not proof of publication. The [dated Zenodo record list](ZENODO_RECORDS.md) preserves earlier versions and corrections. Automatic GitHub archiving stays off so updating a website does not create a duplicate Zenodo record.
 
 ## Next scientific step
 
-The narrow source-operator prerequisite above is complete under its listed premises. The next task is the full twelve-case action-derived pressure/contact conservation certificate, including its inherited 2 × 10⁻⁸ integral gate, before another unchanged metric calibration. Those full-integral and convergence bounds remain **unresolved**. The [earlier next-study proposal](../research/HDBLAST_ACTIVE_SOURCE_LEDGER_PACKAGE_20261002/post_result_design_review/NEXT_REGISTERED_STUDY.md) retains its original scope. Time, momentum and initial-state errors require separate analysis; coupled gravity and cosmological predictions remain later work.
+The source-operator prerequisite is complete under its listed premises, and the analytic source-truncation contribution now has exact continuous-band stress bounds. Next enclose the actual incoming state, coefficient/arithmetic uncertainty, full contacts, and time/momentum integrals for the unchanged twelve cases. Preserve their inherited 2 × 10⁻⁸ gate before another unchanged metric calibration. The [new error theorem](../research/HDBLAST_CHECKPOINT_20261005_FINITE_BAND_WARD/theory/FINITE_BAND_ERROR_TRANSPORT.md) identifies the remaining terms; the [earlier next-study proposal](../research/HDBLAST_ACTIVE_SOURCE_LEDGER_PACKAGE_20261002/post_result_design_review/NEXT_REGISTERED_STUDY.md) retains its original scope. Coupled gravity and cosmological predictions remain later work.
 
 The [automation proposal](../research/HDBLAST_ACTIVE_SOURCE_LEDGER_PACKAGE_20261002/automation_candidate/) is inactive. No continuous 24/7 AI research service is running.
 
