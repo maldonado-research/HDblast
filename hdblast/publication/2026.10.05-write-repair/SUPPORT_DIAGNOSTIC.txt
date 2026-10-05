@@ -1,0 +1,24 @@
+Zenodo existing-draft write/readback mismatch — 5 October 2026
+
+Target: PUT https://zenodo.org/api/records/23114217/draft
+Parent concept: 10.5281/zenodo.17088132. Draft belongs to the authenticated owner,
+is unsubmitted and keeps ten inherited files. Published main 22347452 and separate
+companion 23111008 are preserved. No new record or publication was created.
+
+Three conditional restorations were tested: HTTP/1.1 chunked urllib, independent
+HTTPx JSON serialization, and the Go-based native API CLI with exact reviewed JSON
+input. Each write returned HTTP 200, incremented the draft revision and left saved
+metadata empty. Fresh authenticated GETs verify the empty readback and unchanged
+filenames, sizes and MD5. The final observed revision is 12. Earlier Python and
+curl HTTP/2 attempts showed the same behavior. The credential is correctly bound
+to zenodo.org and authenticated ownership GETs succeed. New credentials are not
+indicated. The outgoing body includes metadata.title, publisher, creators,
+publication_date and resource_type, matching official Zenodo JSON examples.
+
+Please investigate request-body delivery/parsing across the environment proxy
+and the Zenodo draft resource. The public DIAGNOSTICS.json provides timestamps,
+body hashes, framing/client details and write/readback receipt hashes, with no
+authorization values. We cannot identify the responsible layer without server
+or proxy evidence. Please do not request or disclose the token in a support post.
+
+This text is prepared only. No support message has been sent.

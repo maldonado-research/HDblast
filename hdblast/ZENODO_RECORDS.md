@@ -29,6 +29,8 @@ published and when**. It does not mean the content was peer reviewed.
 
 **5 October 2026 UTC reconciliation:** the main concept still resolves to published 22347452 and the separate companion 23111008 remains published. Draft 23114217 is unsubmitted, holds the ten inherited files and lacks descriptive metadata after the 4 October save attempts. The 3 October candidate superseded the earlier 22-file preparation with **23 intended files**; neither that candidate nor the new 5 October mathematics is published on Zenodo. [Current read-only status and recovery requirement](publication/2026.10.05-reconciliation/README.md).
 
+**Later 5 October 2026 UTC repair retry:** three diagnosed metadata restoration transports returned HTTP 200, but fresh saved fields remain empty at draft revision 12. The saved-metadata guard blocks publication. Authentication works; the published main and companion metadata and file inventories are preserved, and all thirteen prepared additions passed fresh local checksum checks. No upload, publication, deletion or new record occurred. [Latest repair evidence and existing-draft recovery guide](publication/2026.10.05-write-repair/README.md).
+
 All records before v20 (17088133 through 20313949) are marked in the author's 29 Aug 2026 audit as
 affected by the v20 correction, and should be read together with that correction.
 
