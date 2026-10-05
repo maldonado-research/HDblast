@@ -1,0 +1,111 @@
+{
+  "status": "PASS_OFFLINE_DOWNLOADER_CHECKS",
+  "cases": 24,
+  "results": [
+    {
+      "name": "SHA256 standard and boundary vectors match native crypto",
+      "status": "PASS"
+    },
+    {
+      "name": "CRC32 known vector and chunk continuation",
+      "status": "PASS"
+    },
+    {
+      "name": "ordinary stored ZIP headers and determinism",
+      "status": "PASS"
+    },
+    {
+      "name": "raw-host, repository, immutable-commit and URL boundaries",
+      "status": "PASS"
+    },
+    {
+      "name": "all 17 mocked transports, split reconstruction and verified ZIP",
+      "status": "PASS"
+    },
+    {
+      "name": "oversized response stops early and cancels the reader",
+      "status": "PASS"
+    },
+    {
+      "name": "truncated response blocks preparation",
+      "status": "PASS"
+    },
+    {
+      "name": "same-size corrupted transport blocks preparation",
+      "status": "PASS"
+    },
+    {
+      "name": "valid pieces with incorrect complete-file SHA block preparation",
+      "status": "PASS"
+    },
+    {
+      "name": "complete ZIP hash mismatch offers no result",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTP failure stops and cancels the response",
+      "status": "PASS"
+    },
+    {
+      "name": "unexpected response URL stops and cancels the response",
+      "status": "PASS"
+    },
+    {
+      "name": "redirected response stops and cancels the response",
+      "status": "PASS"
+    },
+    {
+      "name": "opaque response stops and cancels the response",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid manifest fails before requests",
+      "status": "PASS"
+    },
+    {
+      "name": "ZIP builder rejects paths, duplicate names and oversized names",
+      "status": "PASS"
+    },
+    {
+      "name": "cancellation before requests is read-only",
+      "status": "PASS"
+    },
+    {
+      "name": "cancellation during collection cancels the reader",
+      "status": "PASS"
+    },
+    {
+      "name": "cancellation during final ZIP verification blocks its result",
+      "status": "PASS"
+    },
+    {
+      "name": "streamed Blob SHA equals native crypto",
+      "status": "PASS"
+    },
+    {
+      "name": "UI enables Download only after verified completion",
+      "status": "PASS"
+    },
+    {
+      "name": "UI integrity failure offers no Blob URL",
+      "status": "PASS"
+    },
+    {
+      "name": "UI cancellation rejects a late resolved preparation",
+      "status": "PASS"
+    },
+    {
+      "name": "new preparation revokes the preceding download",
+      "status": "PASS"
+    }
+  ],
+  "actual_browser_execution": false,
+  "live_network_requests": 0,
+  "source_hashes": {
+    "core.mjs": "dd89caedf5a4d5787eac5e61596136a0664a58f3b9c4d2ced679b57de433ea6d",
+    "app.mjs": "3829353d9f99ec4b3ee7a8bff91f9e063a7b3ac77dec4453900e726dd139b96b",
+    "manifest.mjs": "a92449663e4ee7e6953267007d38b3e193af7f21884bfddfaafa4cfa51462abf",
+    "index.html": "d04612e2b13ac4f8265d09a3aaed500c3ac5a899b072407fdfd9a3775046fdfc",
+    "style.css": "fe4c98248da75ad0c28fa3b6261d86b5c09eb18ad7be6f3ed424bde855605d87"
+  }
+}
