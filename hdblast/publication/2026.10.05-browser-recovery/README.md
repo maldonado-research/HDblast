@@ -15,7 +15,7 @@ remains pending saved-metadata and complete 23-file verification.
 
 1. Open [draft 23114217](https://zenodo.org/uploads/23114217) in Safari, signed in
    as the owner. Keep that draft tab available.
-2. Open the [script as plain text](https://raw.githubusercontent.com/maldonado-research/HDblast/main/hdblast/publication/2026.10.05-browser-recovery/RESTORE_HDBLAST_METADATA.js)
+2. Open the [script as plain text](https://raw.githubusercontent.com/maldonado-research/HDblast/19f28373b5dc87a384ebd6eebe22cbb8c07852b6/hdblast/publication/2026.10.05-browser-recovery/RESTORE_HDBLAST_METADATA.js)
    and copy all its text. Return to the Safari Zenodo draft tab.
 3. Choose **Develop → Show JavaScript Console**, paste the copied script and
    press **Return**. The screenshot supplied by the user already shows Safari's
@@ -28,8 +28,10 @@ it prevents the old blank form from overwriting the recovered values. Codex must
 then authenticate a fresh GET and run the existing saved-record guard before
 any of the thirteen additions are uploaded.
 
-If it stops, return the message to Codex. A recorded write must be reconciled
-before another attempt. The helper records a small credential-free attempt marker
+If a write stops, close the Zenodo editor tab **without clicking Save draft or
+Publish** and return the message to Codex. A save may have applied while the form
+still shows the old fields. Reopen the editor after the saved state is reconciled.
+A recorded write must be reconciled before another attempt. The helper records a small credential-free attempt marker
 in this tab's session storage so another paste cannot repeat an uncertain save.
 If the metadata already matches, it performs only a read and refreshes the form.
 
@@ -56,9 +58,11 @@ checkpoint remains GitHub-only and is not silently added to this candidate.
 
 ## Offline validation and provenance
 
-Run `node test_browser_restore.cjs` from a writable copy of this directory.
-The output file is created once; preserve existing receipts and use a fresh copy
-for another run. The [21-case receipt](OFFLINE_CHECKS.json) reports synthetic
+The plain-text execution link above is pinned to the reviewed code commit.
+
+Run `node test_browser_restore.cjs /path/to/a-new-receipt.json` from this directory,
+using an existing writable parent directory and a new output filename.
+The output file is created once; preserve existing receipts. The [23-case receipt](OFFLINE_CHECKS.json) reports synthetic
 browser control flow only: **zero live requests or live metadata writes**.
 It exercises successful/reordered readback, already-saved and partial states,
 wrong origin/path/owner/family, published state, changed checksums/membership,
