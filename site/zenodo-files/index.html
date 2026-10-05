@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https://raw.githubusercontent.com; base-uri 'none'; object-src 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>HDBLAST upload files</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <main>
+    <h1>HDBLAST upload files</h1>
+    <p>Prepare one verified ZIP containing the thirteen missing files for existing draft <strong>23114217</strong>.</p>
+    <p>The download is about 425 MB. Keep this tab open while the files are collected and checked.</p>
+    <div class="actions">
+      <button id="prepare" type="button">Prepare download</button>
+      <button id="cancel" type="button" hidden>Cancel</button>
+      <a id="download" class="download" hidden>Download ZIP</a>
+    </div>
+    <section aria-label="Download progress">
+      <p id="status" role="status" aria-live="polite">Ready to prepare the files.</p>
+      <progress id="progress" value="0" max="1" aria-label="Preparation progress" hidden></progress>
+      <p id="detail"></p>
+    </section>
+    <p>After the saved metadata has passed verification, extract this delivery ZIP and upload the thirteen files inside <strong>additions</strong> to the existing draft. Keep the contained research ZIP files intact.</p>
+    <p>The outer ZIP is a delivery container. Its contents are the intended attachments. Keep the draft unpublished for the saved-file check.</p>
+  </main>
+</body>
+</html>

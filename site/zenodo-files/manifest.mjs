@@ -1,0 +1,222 @@
+export const MANIFEST = {
+  "schema_version": 1,
+  "record_id": 23114217,
+  "total_bytes": 424668350,
+  "zip": {
+    "filename": "HDBLAST_ZENODO_UPLOAD_ADDITIONS_23114217.zip",
+    "bytes": 424670960,
+    "sha256": "7b498e7aaa9cd201e2826f06032143e28252424b9e9723268a366fe378016d8a"
+  },
+  "files": [
+    {
+      "filename": "HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE.zip",
+      "bytes": 673226,
+      "sha256": "b034a68ca928eceb4ceab09b05070f2aae111bf2f398db9d75e55c0f2fafa762",
+      "md5": "dcad5ce3058fa92c3106305697953487",
+      "parts": [
+        {
+          "bytes": 673226,
+          "sha256": "b034a68ca928eceb4ceab09b05070f2aae111bf2f398db9d75e55c0f2fafa762",
+          "url": "https://raw.githubusercontent.com/maldonado-research/HDblast/8aeb771e7f754b2950bfb0296c53cc3b4483b57b/research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE.zip"
+        }
+      ]
+    },
+    {
+      "filename": "HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_FOLLOWUP.zip",
+      "bytes": 100136791,
+      "sha256": "eadc5961e5dc037d770b10155d432209f93839f3a7ef15dd52e5c7f1e8ce56f9",
+      "md5": "00659f83a90a326b28f1f0556fb7b29a",
+      "parts": [
+        {
+          "bytes": 100136791,
+          "sha256": "eadc5961e5dc037d770b10155d432209f93839f3a7ef15dd52e5c7f1e8ce56f9",
+          "url": "https://raw.githubusercontent.com/maldonado-research/HDblast/8aeb771e7f754b2950bfb0296c53cc3b4483b57b/research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_FOLLOWUP/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_FOLLOWUP.zip"
+        }
+      ]
+    },
+    {
+      "filename": "HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP.zip",
+      "bytes": 199892039,
+      "sha256": "f2ffd199a79f15b5ccb48598532530a99695488cf5b51d91766c8e28d51a3049",
+      "md5": "7282729564b4d93dce70b10aa0381584",
+      "parts": [
+        {
+          "bytes": 67108864,
+          "sha256": "d324ff1d924a668b714ac2800a8dad9b02969f611a5c40263a8385bfb7406e2f",
+          "url": "https://raw.githubusercontent.com/maldonado-research/HDblast/8aeb771e7f754b2950bfb0296c53cc3b4483b57b/research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP.zip.part0001"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "ea632b35d1e64a384f45b3b55b759929dcd824aa477e314bc0ebcb969df9f70d",
+          "url": "https://raw.githubusercontent.com/maldonado-research/HDblast/8aeb771e7f754b2950bfb0296c53cc3b4483b57b/research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP.zip.part0002"
+        },
+        {
+          "bytes": 65674311,
+          "sha256": "1ad7204f71c3ef3a282e5d170bfe91d1d10f7f9128ada2fa6d68d179daced702",
+          "url": "https://raw.githubusercontent.com/maldonado-research/HDblast/8aeb771e7f754b2950bfb0296c53cc3b4483b57b/research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP.zip.part0003"
+        }
+      ]
+    },
+    {
+      "filename": "HDBLAST_CHECKPOINT_20261002_MATCHED_STRESS.zip",
+      "bytes": 37909703,
+      "sha256": "351483ac6529bbe7a7c2fbac0401af83dafdfc6ec8df754f60551862224faa3c",
+      "md5": "f1054a28f1decb7e9e18f47d1cf21427",
+      "parts": [
+        {
+          "bytes": 37909703,
+          "sha256": "351483ac6529bbe7a7c2fbac0401af83dafdfc6ec8df754f60551862224faa3c",
+          "url": "https://raw.githubusercontent.com/maldonado-research/HDblast/8aeb771e7f754b2950bfb0296c53cc3b4483b57b/research/HDBLAST_CHECKPOINT_20261002_MATCHED_STRESS/HDBLAST_CHECKPOINT_20261002_MATCHED_STRESS.zip"
+        }
+      ]
+    },
+    {
+      "filename": "HDBLAST_METRIC_RESPONSE_ROUND_REPORT_20261002.md",
+      "bytes": 7160,
+      "sha256": "81f50f3e5fae9ad149a34135345fde5bece633bce75a5495b4e0dd2e642942e7",
+      "md5": "462c336587f61ba41c5fecd8ed62495d",
+      "parts": [
+        {
+          "bytes": 7160,
+          "sha256": "81f50f3e5fae9ad149a34135345fde5bece633bce75a5495b4e0dd2e642942e7",
+          "url": "https://raw.githubusercontent.com/maldonado-research/HDblast/8aeb771e7f754b2950bfb0296c53cc3b4483b57b/research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/NUMERICAL_RESULTS.md"
+        }
+      ]
+    },
+    {
+      "filename": "HDBLAST_CHECKPOINT_20261002_SOURCE_FREE_LEDGER.zip",
+      "bytes": 48470467,
+      "sha256": "b98291b7d8a2a40d5ddf79d877bb0177c03b748becc726d63a94456adc4830a0",
+      "md5": "87b8c826b54d36f88ab5e1659ff420e0",
+      "parts": [
+        {
+          "bytes": 25165824,
+          "sha256": "e9c666b21cb5572b6e200b006179722a09dbc7f30305b459e9e9e0b5a0535d62",
+          "url": "https://raw.githubusercontent.com/maldonado-research/HDblast/8aeb771e7f754b2950bfb0296c53cc3b4483b57b/research/HDBLAST_SOURCE_FREE_LEDGER_PACKAGE_20261002/payload.part01"
+        },
+        {
+          "bytes": 23304643,
+          "sha256": "cd84c1b953643192cf30c9feb477048da10793f4397e78963e1728c585a7905f",
+          "url": "https://raw.githubusercontent.com/maldonado-research/HDblast/8aeb771e7f754b2950bfb0296c53cc3b4483b57b/research/HDBLAST_SOURCE_FREE_LEDGER_PACKAGE_20261002/payload.part02"
+        }
+      ]
+    },
+    {
+      "filename": "HDBLAST_SOURCE_FREE_LEDGER_REPORT_20261002.md",
+      "bytes": 7374,
+      "sha256": "52202befa4d77e1021acf709d9c8bd08b6d5b3a7fd5b4fc6ab4460beabc6ba44",
+      "md5": "8dcab32317d938e191ec0883db8e733f",
+      "parts": [
+        {
+          "bytes": 7374,
+          "sha256": "52202befa4d77e1021acf709d9c8bd08b6d5b3a7fd5b4fc6ab4460beabc6ba44",
+          "url": "https://raw.githubusercontent.com/maldonado-research/HDblast/8aeb771e7f754b2950bfb0296c53cc3b4483b57b/research/HDBLAST_CHECKPOINT_20261002_SOURCE_FREE_LEDGER/reports/RESULTS.md"
+        }
+      ]
+    },
+    {
+      "filename": "HDBLAST_SOURCE_FREE_LEDGER_FRESH_ZIP_REPLAY_20261002.json",
+      "bytes": 20107,
+      "sha256": "b136a074a726d61afd66ecd5597f2c5feb7deebc2ec8a287ef2d3c47fb270c27",
+      "md5": "7b2eb99b83ede811e97b7effbd3aea4f",
+      "parts": [
+        {
+          "bytes": 20107,
+          "sha256": "b136a074a726d61afd66ecd5597f2c5feb7deebc2ec8a287ef2d3c47fb270c27",
+          "url": "https://raw.githubusercontent.com/maldonado-research/HDblast/8aeb771e7f754b2950bfb0296c53cc3b4483b57b/research/HDBLAST_SOURCE_FREE_LEDGER_PACKAGE_20261002/FRESH_ZIP_REPLAY.json"
+        }
+      ]
+    },
+    {
+      "filename": "HDBLAST_V25_PUBLICATION_OVERVIEW_20261002.md",
+      "bytes": 5837,
+      "sha256": "fe07611933d8156401f0ff529c8fa9a8c669d17313c09b928f8dc85e8347a9a1",
+      "md5": "f4991b41fd2a243d5413257fe2a39d49",
+      "parts": [
+        {
+          "bytes": 5837,
+          "sha256": "fe07611933d8156401f0ff529c8fa9a8c669d17313c09b928f8dc85e8347a9a1",
+          "url": "https://raw.githubusercontent.com/maldonado-research/HDblast/8aeb771e7f754b2950bfb0296c53cc3b4483b57b/research/HDBLAST_ZENODO_V25_CANDIDATE_20261002/HDBLAST_V25_PUBLICATION_OVERVIEW_20261002.md"
+        }
+      ]
+    },
+    {
+      "filename": "HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER.zip",
+      "bytes": 32195260,
+      "sha256": "0cd3dd2da604444541c06e98167f537f769c0ce430108bf02354e5090f328c4f",
+      "md5": "e961d36a2d54e88b34be00a56884b6b2",
+      "parts": [
+        {
+          "bytes": 25165824,
+          "sha256": "740aab293cd4807cf1bb585f5b14dfa447ae727d03f64409300432b8c86c2c24",
+          "url": "https://raw.githubusercontent.com/maldonado-research/HDblast/8aeb771e7f754b2950bfb0296c53cc3b4483b57b/research/HDBLAST_ACTIVE_SOURCE_LEDGER_PACKAGE_20261002/payload.part01"
+        },
+        {
+          "bytes": 7029436,
+          "sha256": "543755fd3aba0943513899923ad5a280ea7fc78499563513e9fe8f267462a083",
+          "url": "https://raw.githubusercontent.com/maldonado-research/HDblast/8aeb771e7f754b2950bfb0296c53cc3b4483b57b/research/HDBLAST_ACTIVE_SOURCE_LEDGER_PACKAGE_20261002/payload.part02"
+        }
+      ]
+    },
+    {
+      "filename": "HDBLAST_ACTIVE_SOURCE_LEDGER_REPORT_20261003.md",
+      "bytes": 6852,
+      "sha256": "c2a52c30b0333c50488a90b045b0781e603122eb593d17f6a8779dd82c6087d4",
+      "md5": "35a5b2421064f627fc8f7e1e44e6a2a2",
+      "parts": [
+        {
+          "bytes": 6852,
+          "sha256": "c2a52c30b0333c50488a90b045b0781e603122eb593d17f6a8779dd82c6087d4",
+          "url": "https://raw.githubusercontent.com/maldonado-research/HDblast/8aeb771e7f754b2950bfb0296c53cc3b4483b57b/research/HDBLAST_ACTIVE_SOURCE_LEDGER_PACKAGE_20261002/FINAL_RESULT.md"
+        }
+      ]
+    },
+    {
+      "filename": "HDBLAST_ACTIVE_SOURCE_LEDGER_FRESH_ZIP_REPLAY_20261003.json",
+      "bytes": 11910,
+      "sha256": "c2ef4b93320f1b9b1e9106239d9ce627a0bdeef7e5e6f653b439c8e6fba05c45",
+      "md5": "09a0cec14cd0b568aea7373c0272e450",
+      "parts": [
+        {
+          "bytes": 11910,
+          "sha256": "c2ef4b93320f1b9b1e9106239d9ce627a0bdeef7e5e6f653b439c8e6fba05c45",
+          "url": "https://raw.githubusercontent.com/maldonado-research/HDblast/8aeb771e7f754b2950bfb0296c53cc3b4483b57b/research/HDBLAST_ACTIVE_SOURCE_LEDGER_PACKAGE_20261002/FRESH_REPRODUCTION.json"
+        }
+      ]
+    },
+    {
+      "filename": "HDBLAST_CHECKPOINT_20261003_VERIFIED_SOURCE_OPERATOR.zip",
+      "bytes": 5331624,
+      "sha256": "dfc8c6c6144fa1d9039390bcbaa7a9bd062355863c0fe1494d63824721193cd7",
+      "md5": "b6515d6e27aee9d6f13aa9863670527c",
+      "parts": [
+        {
+          "bytes": 5331624,
+          "sha256": "dfc8c6c6144fa1d9039390bcbaa7a9bd062355863c0fe1494d63824721193cd7",
+          "url": "https://raw.githubusercontent.com/maldonado-research/HDblast/5a851f22c84f14b454d398cebc6a4cbfa21d19da/research/HDBLAST_VERIFIED_SOURCE_OPERATOR_PACKAGE_20261003/HDBLAST_CHECKPOINT_20261003_VERIFIED_SOURCE_OPERATOR.zip"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "file_manifest_sha256": "00f0ed73c27e846603680fdc52667392935e59bbe18ac942f30e8e66248937bb",
+    "public_source_files_sha256": "da3ee69ff578126583b573b10f876cadba0ea2a875c60e6affa9924c5dca85c8",
+    "transport_manifests": [
+      {
+        "path": "research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/PACKAGE_PARTS.json",
+        "sha256": "03394994c5100d2ba97c864dfd1279b3a6b8979eca64b0588e67e9af981d29eb",
+        "commit": "8aeb771e7f754b2950bfb0296c53cc3b4483b57b"
+      },
+      {
+        "path": "research/HDBLAST_SOURCE_FREE_LEDGER_PACKAGE_20261002/PACKAGE.json",
+        "sha256": "f21d6503c22558dafee86b704a20921c0e6034898ed3ecba46df3ce43b7849aa",
+        "commit": "8aeb771e7f754b2950bfb0296c53cc3b4483b57b"
+      },
+      {
+        "path": "research/HDBLAST_ACTIVE_SOURCE_LEDGER_PACKAGE_20261002/PACKAGE.json",
+        "sha256": "3458de5878bafc33712106a499c64c170364ef3c9e49599724adb9a0ce89ec2e",
+        "commit": "8aeb771e7f754b2950bfb0296c53cc3b4483b57b"
+      }
+    ]
+  }
+};

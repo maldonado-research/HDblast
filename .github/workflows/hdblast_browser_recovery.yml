@@ -1,0 +1,48 @@
+name: HDBLAST browser recovery checks
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'hdblast/publication/2026.10.05-saved-metadata/**'
+      - 'site/zenodo-files/**'
+      - '.github/workflows/hdblast_browser_recovery.yml'
+  pull_request:
+    paths:
+      - 'hdblast/publication/2026.10.05-saved-metadata/**'
+      - 'site/zenodo-files/**'
+      - '.github/workflows/hdblast_browser_recovery.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  offline-controls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: |
+            hdblast/publication/2026.10.05-saved-metadata
+            site/zenodo-files
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check bounded metadata recovery and verified file delivery
+        run: |
+          node hdblast/publication/2026.10.05-saved-metadata/test_notes_correction.cjs "$RUNNER_TEMP/notes-controls.json"
+          node hdblast/publication/2026.10.05-saved-metadata/test_downloader.mjs "$RUNNER_TEMP/download-controls.json"
+      - name: Retain offline control evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-recovery-${{ github.sha }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/notes-controls.json
+            ${{ runner.temp }}/download-controls.json
+          if-no-files-found: warn
+          retention-days: 14
