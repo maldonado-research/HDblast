@@ -1,0 +1,116 @@
+{
+  "status": "PASS_OFFLINE_BROWSER_CONTROL_SIMULATIONS",
+  "cases": 21,
+  "actual_browser_execution": false,
+  "live_network_requests": 0,
+  "live_metadata_writes": 0,
+  "script_sha256": "6374b65c13530c172e96c98becc1c88e84779ef81782a8781458271a887f23fe",
+  "metadata_body_sha256": "816a22d1ebfc3b0ef7b831764a37e305866c46485000b3a0cba5d8e4d7b95314",
+  "results": [
+    {
+      "name": "exact approved save and expanded/reordered readback",
+      "status": "PASS_BROWSER_SAVED_METADATA_READBACK",
+      "metadata_puts": 1
+    },
+    {
+      "name": "already saved metadata is read-only",
+      "status": "PASS_ALREADY_SAVED_METADATA_READBACK",
+      "metadata_puts": 0
+    },
+    {
+      "name": "approved partial title can be completed",
+      "status": "PASS_BROWSER_SAVED_METADATA_READBACK",
+      "metadata_puts": 1
+    },
+    {
+      "name": "wrong origin stops before network",
+      "status": "BLOCKED_NO_METADATA_WRITE",
+      "metadata_puts": 0
+    },
+    {
+      "name": "wrong editor stops before network",
+      "status": "BLOCKED_NO_METADATA_WRITE",
+      "metadata_puts": 0
+    },
+    {
+      "name": "wrong family",
+      "status": "BLOCKED_NO_METADATA_WRITE",
+      "metadata_puts": 0
+    },
+    {
+      "name": "wrong owner",
+      "status": "BLOCKED_NO_METADATA_WRITE",
+      "metadata_puts": 0
+    },
+    {
+      "name": "published record",
+      "status": "BLOCKED_NO_METADATA_WRITE",
+      "metadata_puts": 0
+    },
+    {
+      "name": "unexpected self link",
+      "status": "BLOCKED_NO_METADATA_WRITE",
+      "metadata_puts": 0
+    },
+    {
+      "name": "changed inherited checksum",
+      "status": "BLOCKED_NO_METADATA_WRITE",
+      "metadata_puts": 0
+    },
+    {
+      "name": "changed file membership",
+      "status": "BLOCKED_NO_METADATA_WRITE",
+      "metadata_puts": 0
+    },
+    {
+      "name": "owner's unreviewed title is preserved",
+      "status": "BLOCKED_NO_METADATA_WRITE",
+      "metadata_puts": 0
+    },
+    {
+      "name": "prior attempt stops repeat",
+      "status": "BLOCKED_NO_METADATA_WRITE",
+      "metadata_puts": 0
+    },
+    {
+      "name": "HTTP200 with empty metadata is failure",
+      "status": "BLOCKED_RECONCILE_BROWSER_WRITE_BEFORE_RETRY",
+      "metadata_puts": 1
+    },
+    {
+      "name": "conditional write conflict",
+      "status": "BLOCKED_RECONCILE_BROWSER_WRITE_BEFORE_RETRY",
+      "metadata_puts": 1
+    },
+    {
+      "name": "file mutation after save prevents success",
+      "status": "BLOCKED_RECONCILE_BROWSER_WRITE_BEFORE_RETRY",
+      "metadata_puts": 1
+    },
+    {
+      "name": "reserved DOI mutation prevents success",
+      "status": "BLOCKED_RECONCILE_BROWSER_WRITE_BEFORE_RETRY",
+      "metadata_puts": 1
+    },
+    {
+      "name": "network exception does not expose cookie",
+      "status": "BLOCKED_RECONCILE_BROWSER_WRITE_BEFORE_RETRY",
+      "metadata_puts": 1
+    },
+    {
+      "name": "read authentication failure",
+      "status": "BLOCKED_NO_METADATA_WRITE",
+      "metadata_puts": 0
+    },
+    {
+      "name": "unexpected response URL",
+      "status": "BLOCKED_NO_METADATA_WRITE",
+      "metadata_puts": 0
+    },
+    {
+      "name": "body mutation prevents all requests",
+      "status": "BLOCKED_NO_METADATA_WRITE",
+      "metadata_puts": 0
+    }
+  ]
+}
