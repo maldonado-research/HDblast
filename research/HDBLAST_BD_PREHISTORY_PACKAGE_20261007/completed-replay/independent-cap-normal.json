@@ -1,0 +1,101 @@
+{
+  "actual_incoming_state": "NOT_ENCLOSED",
+  "cap_rows": [
+    {
+      "K": 64,
+      "common_signed_source_Ccap": "352235976568813976541635993676042309601059/28577466831551095262854393704408330033225938834099950675243827200",
+      "density_cap_upper": "8884174075680085852772374507162400475493377/43759246085812614621245790359875255363377218839715549471467110400",
+      "pressure_cap_less_than_2e_minus18": true,
+      "pressure_cap_upper": "1745755425944198485488511044064545843410789367/87518492171625229242491580719750510726754437679431098942934220800"
+    },
+    {
+      "K": 128,
+      "common_signed_source_Ccap": "373596074909952100260125153874471180020259/28577466831551095262854393704408330033225938834099950675243827200",
+      "density_cap_upper": "18721314420487599690812938266376278021015201/21879623042906307310622895179937627681688609419857774735733555200",
+      "pressure_cap_less_than_2e_minus18": true,
+      "pressure_cap_upper": "7405859565101076030733049095033324208906042103/43759246085812614621245790359875255363377218839715549471467110400"
+    },
+    {
+      "K": 256,
+      "common_signed_source_Ccap": "448331368167648037429975812113696508500259/28577466831551095262854393704408330033225938834099950675243827200",
+      "density_cap_upper": "44783322220301731738838695010023684571303649/10939811521453153655311447589968813840844304709928887367866777600",
+      "pressure_cap_less_than_2e_minus18": true,
+      "pressure_cap_upper": "35548653583291305662972247426351853403555974647/21879623042906307310622895179937627681688609419857774735733555200"
+    }
+  ],
+  "check_count": 32,
+  "checks": [
+    "phase derivative in lag",
+    "drift derivative in lag",
+    "drift continuous at zero momentum",
+    "real drift equals imaginary phase over2k",
+    "imaginary drift equals1\u2212realphase over2k",
+    "real source atom canonical invariant",
+    "real source atom phase real part",
+    "real source atom phase imaginary part",
+    "source atom p finite limit",
+    "source atom imaginary residue",
+    "canonical invariant for arbitrary paired propagator",
+    "wrong zero phase still preserves canonical invariant",
+    "weighted density kernel",
+    "weighted pressure kernel",
+    "weighted density vanishes at k0",
+    "weighted pressure vanishes at k0",
+    "weighted density linear coefficient",
+    "weighted pressure linear coefficient",
+    "direct homogeneous Ward source-atom identity",
+    "direct pressure primitive source-atom identity",
+    "integrated correlated density majorant",
+    "integrated correlated pressure majorant",
+    "twice integrated source identity",
+    "twice integrated nested drift source identity",
+    "bump first derivative algebra",
+    "bump second derivative numerator",
+    "rational e lower bound and endpoint exponent",
+    "three exact rational cap pressure thresholds",
+    "candidate cap density coefficient",
+    "candidate cap pressure coefficient",
+    "exact canonical Bogoliubov identity",
+    "arbitrary beta is a normalized tangent"
+  ],
+  "full_twelve_case_certificate": "UNRESOLVED",
+  "higher_dimensional_Big_Bang_origin": "NOT_ESTABLISHED",
+  "metric_calibration": "FAIL",
+  "negative_control_count": 8,
+  "negative_controls": [
+    {
+      "name": "generic source atom is not bounded A at k0",
+      "nonzero_witness": "I*f/2"
+    },
+    {
+      "name": "normalization does not impose phase unitarity",
+      "nonzero_witness": "C**2 + T**2 - 1"
+    },
+    {
+      "name": "wrong zero phase fails exact propagation",
+      "nonzero_witness": "-exp(2*I*k*tau)"
+    },
+    {
+      "name": "omitting real prehistory gives nonzero direct density",
+      "nonzero_witness": "L*(-3*L*sin(2*k*tau) + 2*k*cos(2*k*tau))/4"
+    },
+    {
+      "name": "omitting real prehistory gives nonzero direct pressure",
+      "nonzero_witness": "L**2*sin(2*k*tau)/4 + L*k*cos(2*k*tau)/2 + k**2*sin(2*k*tau)/3"
+    },
+    {
+      "name": "wrong imaginary interior sign",
+      "nonzero_witness": "-8*I*k*h(s)*exp(2*I*k*(a - s))/s"
+    },
+    {
+      "name": "omitted boundary derivative",
+      "nonzero_witness": "(4*k**2*s**2*h(s) + 4*I*k*s*h(s) + s**2*Derivative(h(s), (s, 2)) - 2*s*Derivative(h(s), s) + 2*h(s))*exp(2*I*k*(a - s))/s**2"
+    },
+    {
+      "name": "normalization does not set beta to zero",
+      "nonzero_witness": "beta"
+    }
+  ],
+  "scope": "Exact symbolic identities and rational analytic cap bounds only. No physical callback, no saved quantum array decoding, no runtime physical mode or source evaluation. Mathematical proof accompanies these checks.",
+  "status": "PASS"
+}

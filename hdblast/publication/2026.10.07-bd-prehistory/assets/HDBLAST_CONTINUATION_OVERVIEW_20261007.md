@@ -1,0 +1,29 @@
+# HDBLAST continuation: prescribed incoming-state target
+
+Scientific checkpoint date:7 October2026, Pacific time. Main concept DOI:10.5281/zenodo.17088132. This additive edition preserves all23 files from published record23114217 and adds the October5 finite-band Ward archive, October7 incoming-state transfer archive, completed BD-prehistory archive and this overview. The old October3 edition and its original metadata-guard outcomes remain unchanged.
+
+The new calculation encloses the uniquely prescribed Bunch-Davies retarded prehistory target at eta=-9/2 for two compact source profiles and nine exact rational momenta. Both independent implementations export18 rows/36 complex rectangles, meet the fixed1e-20 actual L1 radius gate and pass all36 pairwise/72 component intersections. Maximum radii are below1.555e-21 and3.138e-23 model units. These are normalized linear response values, not physical temperatures or observational predictions.
+
+The exact continuum source and zero-past condition determine the target. Entire U/W kernels have removable k=0 limits. Certified nonzero W(a,0) for both sources gives a genuine simple pole in A=W/(2ik). Opposite poles appear in matching-time first-order Bogoliubov coefficients; they are not uniformly small as k approaches zero at fixed represented epsilon, although their combination in the relative field variation stays finite. This does not certify the higher-order epsilon remainder or establish failure of a linear stress approximation.
+
+The continuous source-and-real-coefficient representation certificate is separate from full numerical arithmetic. On0<k<=256 and eta in[-4.5,-3.5], the source-representation difference propagated under identical subsequent forcing has scaled density upper4.094e-21 and pressure upper1.625e-18. These exact rational bounds exclude continuous numerical phase/ODE arithmetic, stored binary80 state comparison, time/momentum quadrature, contacts and ultraviolet tails. The source remains active during that interval; only the response DIFFERENCE propagates homogeneously.
+
+The prospective public freeze is commit a253f50158051881f18bbdec81c12dbbb4f49eba. All56 frozen public files were downloaded and byte/SHA256/Git-blob verified before real source callbacks. FULL_REGISTRATION SHA256:1d55b6310631fcf600a8165ec1d326b9880a0de346b531c9d9659336778f765a. The completed checkpoint contains101 externally pinned leaves; payload-manifest SHA256:1bb65ecadc6ea11b9ffc58c4e88021b82728bb3696f50a7941468b4428a1b83a. Replay-pins SHA256:a839dc8ccd4efb2be41711093987eabd2e7ee39bdf4fc2fd9be646db82c72243. Final helper SHA256:37df86c5850c71b8c8cc4cb1926dbf21a6e841ff42358a272e5eb2f6bf293c22.
+
+Fresh extraction replay passes both routes in ordinary and optimized Python, with exact original DATA and scientific-budget equality, all36/72 intersections per mode, ten proof/control receipt comparisons and continuous-certificate core equality. The independently reviewed saved outputs retain full execution evidence. Replay receipt SHA256:56a5b7cba57564c50bae99ce527482763238d9f2f15534cb618535e706633a21; independent saved-review SHA256:5a9c25535a3887d6f63dcace6db447da2f536062b0e209b53347c73e36a52ba7. This full replay records88 registered source constructions and zero saved-array decodes; the saved-output review performs zero source callbacks.
+
+The first standalone replay failed on a preparation-reference mismatch: its preserved cap receipt recorded31 checks while the unchanged frozen verifier executed32. Both normal numerical routes had passed. The failed run, original31-check receipt and original helper remain archived. Additive32-check receipts corrected the helper reference; no frozen mathematical source or numerical gate changed. The final BD ZIP retains both sibling directories, full successful and failed replay evidence, scoped results, licenses and reviews.
+
+Original stored binary80 state error remains NOT_ENCLOSED. The full twelve-case2e-8 pressure/contact continuum certificate remains UNRESOLVED; metric calibration remains FAIL. Coupled gravity, physical energy normalization, heating, thermalization, a sustained hot radiation era, observational agreement and a higher-dimensional Big Bang cause remain NOT_ESTABLISHED. External novelty is NOT_ASSESSED. Internal AI-assisted checks are not external peer review or proof-assistant formalization.
+
+Selected archived D-Blast study material and six other public research repositories contributed methodological controls, not evidence for the proposed cause. New literature access was bounded: direct arXiv/INSPIRE/Crossref routes were blocked; accessible Zenodo metadata, existing checked bibliography and numerical-method documentation were reviewed. No exhaustive web search or verified new2025-26 discovery is claimed.
+
+Reports/data retain CC BY4.0; code retains its included MIT license; third-party material retains its own license. Automatic GitHub-to-Zenodo archiving remains OFF under the last account-side observation and was not changed in this continuation. Preserve main record22347452, previous edition23114217 and companion23111008/concept10.5281/zenodo.22922927.
+
+| Added checkpoint archive | Bytes | SHA256 |
+| --- | ---: | --- |
+| HDBLAST_CHECKPOINT_20261005_FINITE_BAND_WARD.zip | 173211 | dbd69f253b7a6d444253496ee769b2b5942ead17eb432a95a4c06ddfde669812 |
+| HDBLAST_CHECKPOINT_20261007_BD_PREHISTORY.zip | 7921842 | 515548abbc33b032d21f33705035ab92d63a43416fcd6fd80fe230d8276f17d9 |
+| HDBLAST_CHECKPOINT_20261007_INCOMING_STATE.zip | 63990 | 0ba2f09605f55bdb843f2c4ab1f7d2814575a98802400bbd7c6295086087ed6e |
+
+Start with HDBLAST_CHECKPOINT_20261007_BD_PREHISTORY/RESULTS.md and the sibling replay-package README.md. Verify archive bytes before extraction and authenticate helper/pins before execution. The exact final complete inventory, saved metadata and public DOI readback are separate publication receipts.
