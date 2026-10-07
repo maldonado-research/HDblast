@@ -1,0 +1,184 @@
+{
+  "check_count": 54,
+  "format": "HDBLAST independent SymPy exact-state receipt v1",
+  "mutation_count": 17,
+  "python": "3.12.14",
+  "python_optimization": 0,
+  "scientific": {
+    "checks": [
+      "direct forced continuity operator",
+      "homogeneous continuity operator",
+      "pressure primitive with L=-1/t",
+      "forced pressure primitive with L=-1/t",
+      "homogeneous U real evolution",
+      "homogeneous U imaginary evolution",
+      "homogeneous W real evolution",
+      "homogeneous W imaginary evolution",
+      "canonical incoming U real",
+      "canonical incoming U imaginary",
+      "canonical incoming W real",
+      "canonical incoming W imaginary",
+      "normalization defect invariant",
+      "canonical invariant equals c",
+      "exact oscillator Wronskian expression",
+      "first order Wronskian normalization defect",
+      "Wronskian quadratic remainder",
+      "canonical direct density",
+      "canonical direct pressure",
+      "density oscillatory Euclidean norm",
+      "pressure oscillatory Euclidean norm",
+      "pressure positive majorant square gap",
+      "density positive majorant square gap",
+      "density exact amplitude integral derivative",
+      "density exact amplitude integral lower endpoint",
+      "density rational bound integral derivative",
+      "pressure rational bound integral derivative",
+      "density c integral derivative",
+      "pressure c triangle integral derivative",
+      "endpoint work cancellation of leading k c",
+      "endpoint work c integral derivative",
+      "endpoint A triangle sum",
+      "endpoint A rational Pi floor",
+      "time-integrated-pressure canonical signed coefficient",
+      "time-integrated-pressure canonical triangle integral derivative",
+      "time-integrated-pressure A rational Pi floor",
+      "explicit canonical work derivative",
+      "explicit canonical pressure primitive",
+      "IR bounded-c density weighted coefficient",
+      "IR bounded-A density weighted amplitude",
+      "IR bounded-A pressure weighted amplitude",
+      "IR bounded-W density leading weighted coefficient",
+      "IR sufficient power p=0",
+      "IR sufficient power p=1",
+      "IR sufficient power p=3/2",
+      "paired canonical geometry omission passes Ward",
+      "rational coefficient R_c",
+      "rational coefficient R_A",
+      "rational coefficient P_c",
+      "rational coefficient P_A",
+      "rational coefficient work_c",
+      "rational coefficient work_A",
+      "rational coefficient int_pressure_c",
+      "rational coefficient int_pressure_A"
+    ],
+    "full_12_case_pressure_contact_certificate": "UNRESOLVED",
+    "higher_dimensional_big_bang_origin": "NOT_ESTABLISHED",
+    "historical_metric": "FAIL",
+    "hypotheses": [
+      "same forcing and contacts; delta g=0",
+      "fixed displayed linear direct-stress operators",
+      "t in [-9/2,-7/2], L=-1/t, k>0, same Pi>=3",
+      "sufficient spectral integrability or stated uniform chi,sigma bounds"
+    ],
+    "incoming_state_error": "NOT_MEASURED",
+    "mutation_controls": [
+      {
+        "name": "IR p=2 is not integrable",
+        "nonzero_residual": "-oo"
+      },
+      {
+        "name": "wrong pressure geometry sign",
+        "nonzero_residual": "-1/16"
+      },
+      {
+        "name": "dropping density geometry contribution",
+        "nonzero_residual": "9/32"
+      },
+      {
+        "name": "wrong Im W density sign",
+        "nonzero_residual": "-3"
+      },
+      {
+        "name": "wrong real W density sign",
+        "nonzero_residual": "-1/2"
+      },
+      {
+        "name": "wrong direct-work pressure coefficient",
+        "nonzero_residual": "139/384"
+      },
+      {
+        "name": "paired geometry omission changes direct density",
+        "nonzero_residual": "3/32"
+      },
+      {
+        "name": "paired geometry omission changes direct pressure",
+        "nonzero_residual": "-1/32"
+      },
+      {
+        "name": "missing forced real source term",
+        "nonzero_residual": "5/8"
+      },
+      {
+        "name": "missing canonical incoming shift",
+        "nonzero_residual": "1"
+      },
+      {
+        "name": "wrong canonical A imaginary sign",
+        "nonzero_residual": "-2"
+      },
+      {
+        "name": "wrong oscillator phase sign",
+        "nonzero_residual": "4"
+      },
+      {
+        "name": "wrong first-order norm sign",
+        "nonzero_residual": "-6"
+      },
+      {
+        "name": "pressure amplitude underbound",
+        "nonzero_residual": "-1/16"
+      },
+      {
+        "name": "density rational majorant wrong factor",
+        "nonzero_residual": "-207/256"
+      },
+      {
+        "name": "canonical work cancellation omitted",
+        "nonzero_residual": "-29/27"
+      },
+      {
+        "name": "pressure primitive wrong factor",
+        "nonzero_residual": "-139/96"
+      }
+    ],
+    "physical_source_evaluations": 0,
+    "physical_trajectory_evaluations": 0,
+    "rational_sensitivity": {
+      "128": {
+        "P_A": "3288395776/1323",
+        "P_c": "1644191744/1323",
+        "R_A": "102762176/9261",
+        "R_c": "1644191744/441",
+        "int_pressure_A": "308285504/11907",
+        "int_pressure_c": "704651264/567",
+        "work_A": "4932570112/250047",
+        "work_c": "262144/11907"
+      },
+      "256": {
+        "P_A": "52613595136/1323",
+        "P_c": "26306772992/1323",
+        "R_A": "822087040/9261",
+        "R_c": "26306772992/441",
+        "int_pressure_A": "2466259072/11907",
+        "int_pressure_c": "11274321920/567",
+        "work_A": "39460149248/250047",
+        "work_c": "1048576/11907"
+      },
+      "64": {
+        "P_A": "205536256/1323",
+        "P_c": "102766592/1323",
+        "R_A": "12845920/9261",
+        "R_c": "102766592/441",
+        "int_pressure_A": "38537248/11907",
+        "int_pressure_c": "44042240/567",
+        "work_A": "616596992/250047",
+        "work_c": "65536/11907"
+      }
+    },
+    "result": "PASS_CONDITIONAL_LINEAR_INCOMING_STATE_PROPAGATION",
+    "saved_array_decodes": 0
+  },
+  "scientific_sha256": "f37114569eab847c17ac2afb6b2b888151763d81296eccefe30f2841f546051a",
+  "script_sha256": "32e506d94b27774d49d8d54c420d0af50e06b7493f21efd4f4a7714d9f8514a5",
+  "sympy": "1.14.0"
+}

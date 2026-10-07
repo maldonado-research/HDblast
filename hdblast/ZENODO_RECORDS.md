@@ -5,6 +5,8 @@ published and when**. It does not mean the content was peer reviewed.
 
 **Research-program concept DOI (all versions of that record):** [10.5281/zenodo.17088132](https://doi.org/10.5281/zenodo.17088132)
 
+**7 October 2026, Pacific continuation:** the last independent authenticated check on 5 October UTC found main record 22347452 and static companion 23111008 published and preserved. Existing same-family draft 23114217 was unsubmitted at revision 18 with ten inherited files, saved descriptive fields and one Notes apostrophe mismatch. On 7 October the author reported correcting Notes and uploading thirteen additions. Fresh authenticated readback is unavailable in this new task; the reported changes, complete remote inventory and any new publication remain unverified. Require exact saved metadata, all **23 files / 440,222,994 bytes** and pinned checksums before publication in concept **10.5281/zenodo.17088132**. The frozen 3 October candidate is unchanged; the newer 5 and 7 October mathematics stays GitHub-only. Preserve the separate companion family and automatic GitHub archiving OFF. Historical entries and prior reconciliation notes below retain their original observation dates; the [current status](CURRENT_STATUS.md) distinguishes them from the author’s report.
+
 | Date | Record | Content | Status label |
 |---|---|---|---|
 | 2025-09-09 → 2025-11-22 | [17088133](https://zenodo.org/records/17088133), [17136572](https://zenodo.org/records/17136572), [17211812](https://zenodo.org/records/17211812), [17335636](https://zenodo.org/records/17335636), [17547897](https://zenodo.org/records/17547897), [17683486](https://zenodo.org/records/17683486) | Early releases: PTA→LISA pipeline, toolkits | Screening |

@@ -1,0 +1,49 @@
+name: Incoming-state exact mathematical replay
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_CHECKPOINT_20261007_INCOMING_STATE/**'
+      - '.github/workflows/hdblast_incoming_state.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_CHECKPOINT_20261007_INCOMING_STATE/**'
+      - '.github/workflows/hdblast_incoming_state.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  exact-replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: research/HDBLAST_CHECKPOINT_20261007_INCOMING_STATE
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - name: Install the registered symbolic dependencies
+        run: |
+          python -m pip install --only-binary=:all: -r research/HDBLAST_CHECKPOINT_20261007_INCOMING_STATE/requirements-replay.txt
+          python -m pip check
+      - name: Authenticate and replay both exact implementations in both Python modes
+        run: |
+          python -B research/HDBLAST_CHECKPOINT_20261007_INCOMING_STATE/replay.py \
+            --expected-manifest-sha256 a137b7439fc10f5c91f6da7e6a8b0093e2115874bdf56afae7f987a829187547 \
+            --output-directory "$RUNNER_TEMP/incoming-state-replay"
+      - name: Preserve exact replay evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: incoming-state-exact-${{ github.sha }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/incoming-state-replay/
+          if-no-files-found: warn
+          retention-days: 14
