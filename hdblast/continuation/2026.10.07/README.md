@@ -1,3 +1,15 @@
+# Verified publication follow-up — 7 October 2026, Pacific
+
+The existing same-family record [23114217](https://zenodo.org/records/23114217) is now published, independently verified on **7 October 2026, Pacific time**, with **23 files / 440,222,994 bytes**. Version DOI: **10.5281/zenodo.23114217**; concept DOI: **10.5281/zenodo.17088132**. Its semantic version **2026.10.03-verified-source-operator** and declared publication date **2026-10-03** retain the frozen packet's labels. Authenticated and direct public GETs returned HTTP 200 and published state; every attachment was independently streamed before publication and matched its frozen size, MD5 and SHA256.
+
+The [publication proof](../../publication/2026.10.07-verified-publication/README.md) distinguishes the retained original literal Notes failure from the separately pinned exact reviewed serialization. The 5/7 October proofs remain GitHub-only; the actual incoming state remains NOT_ENCLOSED, full certificate UNRESOLVED, metric FAIL and Big Bang origin NOT_ESTABLISHED.
+
+Actual PRs are open: [public #34](https://github.com/maldonado-research/HDblast/pull/34), [private #34](https://github.com/maldonado-research/HDblast-archive/pull/34) and [shared-site #15](https://github.com/maldonado-research/maldonado-research.github.io/pull/15). Hosted exact-replay runs passed on the original public/private science candidates. Final documentation and publication evidence require reviewed integration; candidate commits and PR checks do not establish live website deployment. Required attachment calls were made but their application persistence was unconfirmed.
+
+## Earlier 7 October preparation snapshot
+
+The original text below predates restored authentication, fresh attachment downloads, PR creation and verified publication. Its token/access blockers, inherited-payload limits and draft instructions describe that earlier preparation state. Preserve it as provenance and use the verified proof guide above for current publication facts.
+
 # HDBLAST continuation — 7 October 2026, Pacific time
 
 The [incoming-state mathematical checkpoint](../../../research/HDBLAST_CHECKPOINT_20261007_INCOMING_STATE/RESULTS.md) derives exact direct density/pressure state transfer, conditional finite-band error bounds and signed pressure/work primitives. It supplies no enclosure for the actual incoming state. The twelve-case pressure/contact certificate remains **UNRESOLVED**, metric calibration **FAIL**, and a higher-dimensional Big Bang origin **NOT_ESTABLISHED**. External novelty remains **NOT_ASSESSED**.
