@@ -29,7 +29,8 @@ jobs:
         with:
           python-version: '3.12.14'
       - name: Install the declared calculation dependencies
-        run: python -I -B -m pip install --only-binary=:all: -r research/HDBLAST_SCALAR_BOUNDARY_CURVATURE_20261008/requirements.txt
+        run: |
+          python -I -B -m pip install --only-binary=:all: -r research/HDBLAST_SCALAR_BOUNDARY_CURVATURE_20261008/requirements.txt
       - name: Reproduce exact bounds and numerical diagnostics
         run: python -I -B research/HDBLAST_SCALAR_BOUNDARY_CURVATURE_20261008/reproduce.py --output "$RUNNER_TEMP/scalar-boundary-replay" --numerical
       - name: Retain checks and numerical diagnostics
