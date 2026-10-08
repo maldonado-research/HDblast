@@ -1,0 +1,73 @@
+{
+  "status": "PASS_CORRECTED_PUBLIC_READBACK_HELPER_INDEPENDENT_OFFLINE_REVIEW",
+  "reviewed_source_sha256": "e29336fb951c766ed7c8d34c4cdd1cc6401850a1d8cac858179bf0b3089ff200",
+  "current_source_matches_snapshot": true,
+  "remaining_blockers": [],
+  "normal": {
+    "tests_run": 18,
+    "passed": 18,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "optimized": {
+    "tests_run": 18,
+    "passed": 18,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "resolved_findings": [
+    {
+      "id": "REVIEW_ZERO_COUNTS_NOT_STRICT_INTEGERS",
+      "resolution": "Pinned guard.zero_counts validates exact dict keys and integer-zero values."
+    },
+    {
+      "id": "REVIEW_DECISION_NOT_BOUND_TO_REGISTERED_DOWNLOADED_BYTES",
+      "resolution": "Cached review bytes must match registered length/SHA256; decoded GO/typed counters/exact Python map derive from that cached data; downloaded review must be byte-identical and independently support the same decision."
+    }
+  ],
+  "preserved_first_review": {
+    "source_sha256": "4525986b206408b25d2e195905d55bdabdb19e139e1186a414cf73750b808f68",
+    "normal": "16PASS_2FAIL_NO_ERRORS",
+    "optimized": "16PASS_2FAIL_NO_ERRORS",
+    "report_path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/replay-delivery/public-readback-review/PUBLIC_READBACK_REVIEW.json"
+  },
+  "source_and_receipt_pins": [
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/replay-delivery/public-readback-review/public_readback_go_corrected_e29336fb_snapshot.py",
+      "bytes": 7733,
+      "sha256": "e29336fb951c766ed7c8d34c4cdd1cc6401850a1d8cac858179bf0b3089ff200"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/replay-delivery/public-readback-review/offline_readback_acceptance_tests.py",
+      "bytes": 16870,
+      "sha256": "6663fb87f52b563a2266b3c6184c36565ce6fc217cb59dc941d61a91d7eee029"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/execution/registration_guard.py",
+      "bytes": 17364,
+      "sha256": "1d77d01a15dd16e32f5a02c921633d6853d5239aa73963f697549610a0939f55"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/replay-delivery/public-readback-review/READBACK_ACCEPTANCE_RESULTS_normal.json",
+      "bytes": 695,
+      "sha256": "e1e2724755167f1787ab1de6cb2e09cbdceb481cfbfd2f13a5b63653dc65fd6f"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/replay-delivery/public-readback-review/READBACK_ACCEPTANCE_RESULTS_optimized.json",
+      "bytes": 695,
+      "sha256": "e1e2724755167f1787ab1de6cb2e09cbdceb481cfbfd2f13a5b63653dc65fd6f"
+    }
+  ],
+  "real_network": "FORBIDDEN_BY_SOCKET_AND_URLLIB_SENTINELS",
+  "remote_mutations": 0,
+  "credential_access": "NONE_SYNTHETIC_ENVIRONMENT_ONLY",
+  "scientific_callbacks": "NOT_IMPORTED_OR_CALLED",
+  "actual_arrays": "NOT_READ_OR_DECODED",
+  "manufactured_public_go_receipts": "EPHEMERAL_DELETED_NEVER_AUTHORIZATION_EVIDENCE",
+  "review_scope": "Manufactured source/contract/GET metadata/blob fixtures and stdlib-only pinned guard; no live availability or scientific execution verification.",
+  "server_atomicity_claim": false,
+  "real_study_status": "UNCOMPUTED",
+  "real_public_GO_assets_results_and_seal": "PENDING"
+}

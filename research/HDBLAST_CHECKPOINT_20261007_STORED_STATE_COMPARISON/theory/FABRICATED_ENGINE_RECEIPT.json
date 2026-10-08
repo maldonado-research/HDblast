@@ -1,0 +1,67 @@
+{
+  "benchmark": {
+    "complex_rectangles": 98304,
+    "largest_exact_exported_L1_radius": "1/79228162514264337593543950336",
+    "node_count": 49152,
+    "peak_rss_kib": 22116,
+    "source_summaries": [
+      {
+        "build_seconds": 1.8646660750018782,
+        "evaluate_and_export_seconds": 11.103710365998268,
+        "source": "fabricated_positive",
+        "source_L1_majorant": "860066471176434570398941765996231450548568573435752144266441153582542506033735006953/75132196384073453653251637724899392919386187279894577744359571363955159859200"
+      },
+      {
+        "build_seconds": 1.8086599220005155,
+        "evaluate_and_export_seconds": 10.995541893000336,
+        "source": "fabricated_alternating",
+        "source_L1_majorant": "860066471176434570398941765996231450548568573435752144266441153582542506033735006953/75132196384073453653251637724899392919386187279894577744359571363955159859200"
+      }
+    ],
+    "wall_seconds": 25.772847854001157
+  },
+  "bits": 512,
+  "controls": {
+    "passed_control_count": 19,
+    "passed_controls": [
+      "constant finite-source exact U at 0/1",
+      "constant finite-source exact W at 0/1",
+      "constant finite-source exact U at 1/1099511627776",
+      "constant finite-source exact W at 1/1099511627776",
+      "constant finite-source exact U at 1/4",
+      "constant finite-source exact W at 1/4",
+      "constant finite-source exact U at 1/1",
+      "constant finite-source exact W at 1/1",
+      "constant finite-source exact U at 16/1",
+      "constant finite-source exact W at 16/1",
+      "constant finite-source exact U at 128/1",
+      "constant finite-source exact W at 128/1",
+      "constant finite-source exact U at 256/1",
+      "constant finite-source exact W at 256/1",
+      "highest coefficient112 exact W moment retained",
+      "highest coefficient112 exact U moment retained",
+      "nonzero exact stored canonical defect retained",
+      "epsilon scaling retained in Wronskian defect",
+      "stable kA sign and half factor"
+    ],
+    "rejected_mutation_count": 9,
+    "rejected_mutations": [
+      "degree111 source model",
+      "negative source certificate radius",
+      "changed exact panel geometry",
+      "missing source parent",
+      "node exceeds fixed momentum band",
+      "nonrational node",
+      "gate cannot be relaxed by export",
+      "negative analytic tail",
+      "arithmetic precision change"
+    ]
+  },
+  "export_bits": 96,
+  "fixed_exported_L1_gate": "1/1000000000000000000",
+  "momentum_degree": 832,
+  "physical_source_callbacks": 0,
+  "saved_array_decodes": 0,
+  "scope": "FABRICATED_ONLY",
+  "source_degree": 112
+}

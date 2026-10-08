@@ -1,0 +1,25 @@
+{
+  "status": "PASS_FABRICATED_BOUNDED_CONTROLS",
+  "tests_run": 14,
+  "failures": 0,
+  "errors": 0,
+  "observed_exit_code": 0,
+  "observed_elapsed_seconds": 2.419,
+  "command": "HDBLAST_COMPARISON_TEST_OUTPUT=/workspace/hdblast-research-work/continuation-state-comparison-20261007/execution/held-directory-controls-20261008 python -I -B /workspace/hdblast-research-work/continuation-state-comparison-20261007/execution/test_bounded_launcher.py",
+  "scope": "ISOLATED_MANUFACTURED_WORKERS_ONLY",
+  "physical_source_callbacks": 0,
+  "retained_array_decodes": 0,
+  "public_go_created": false,
+  "held_directory_regressions": [
+    "repeated_scan_preserves_caller_descriptor",
+    "wrong_root_descriptor_rejected",
+    "swap_open_replacement_restore_attack_rejected",
+    "live_and_final_launcher_inspection_use_held_descriptor"
+  ],
+  "review": "READ_ONLY_AUTHOR_REVIEW_NO_CRITICAL_ISSUE_FOUND",
+  "source_sha256": {
+    "bounded_launcher.py": "86f238b07e260f6153fdbd58fafd8e266c0b67dd784eb21637de7d7453a7245f",
+    "kernel_guard.py": "886a0bc7148e7c49d57b68303f8113c657a455601713c974513a90abd0bf2b43",
+    "test_bounded_launcher.py": "c1595f27cdba2ef2b78c3a55651f09216e21889df7967738bbd3966c4288d3ea"
+  }
+}
