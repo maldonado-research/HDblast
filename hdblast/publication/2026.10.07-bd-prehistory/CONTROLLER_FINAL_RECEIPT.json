@@ -1,0 +1,429 @@
+{
+  "utc": "2026-10-08T00:00:13.498277+00:00",
+  "status": "PASS_STAGED_CONTROLLER_PREPARED",
+  "controller": {
+    "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/new_edition_controller.py",
+    "bytes": 41968,
+    "sha256": "7dade987e77ff166e5849db06cd47d019f6ab16d67bd18a22c2120564c480110"
+  },
+  "staged_commands": {
+    "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/CONTROLLER_STAGED_COMMANDS.md",
+    "bytes": 10128,
+    "sha256": "fd32bcb615491464538ac619a5d2f9bfd51b2dceb09e95ee57c35d77451b095f"
+  },
+  "independent_review": {
+    "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-review/FINAL_EXECUTION_RECEIPT.json",
+    "bytes": 3473,
+    "sha256": "ca97c87126920897efff711180d02525868f722d5b1b56d43ed297e7eb9d0414"
+  },
+  "independent_review_manifest": {
+    "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-review/REVIEW_MANIFEST.json",
+    "bytes": 4284,
+    "sha256": "4ba2f66d7641970cd060cb43e31615186c8f38cd45722356fa4e2aeade5c247b"
+  },
+  "offline_controls": {
+    "flow_cases": 42,
+    "boundary_cases": 37,
+    "python_modes": [
+      "normal",
+      "optimized"
+    ],
+    "case_executions": 158,
+    "real_sockets": "FORBIDDEN_IN_FULL_FLOW_FIXTURES",
+    "fixtures": "SYNTHETIC_23_FILE_BASELINE_AND_FAKE_TOKEN",
+    "independent_recovery_case_executions": 44,
+    "independent_scope_checks": "66 retained checks rebound to unchanged logic plus12 fresh header checks",
+    "independent_http_error_capture_checks": 20,
+    "independent_revision_header_checks": 60
+  },
+  "read_only_live_smoke": {
+    "status": "PASS",
+    "current_latest_record": "23114217",
+    "concept_id": "17088132",
+    "published_metadata_custom_fields_access": "MATCH_PINNED_BASELINE",
+    "inherited_files": 23,
+    "inherited_file_bytes": 440222994,
+    "original_immutable_file_and_content_ids": "ALL_23_MATCH_PRIOR_COMPLETE_MD5_SHA256_STREAM_RECEIPT",
+    "owned_list_exhausted": true,
+    "owned_entries": 12,
+    "existing_same_family_unpublished_drafts": 0,
+    "evidence": [
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-readonly-smoke/STATE.json",
+        "bytes": 64,
+        "sha256": "65ffafe3d6941f4e05241a4efc0dc71a61273d2036e01dabe6b16706ed460365"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-readonly-smoke/JOURNAL.jsonl",
+        "bytes": 5843,
+        "sha256": "2e44a280dc4af126f3c77fcbe29319acbaf6e5fa2aa7ab01c61fe48a0cdfacc7"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-readonly-smoke/CURRENT_PRIOR.json",
+        "bytes": 66016,
+        "sha256": "22e29714487cf00cec0143d7a91aa85d82c15ac1de206d745c6aa2f3053e23cf"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-readonly-smoke/CURRENT_LATEST.json",
+        "bytes": 66016,
+        "sha256": "22e29714487cf00cec0143d7a91aa85d82c15ac1de206d745c6aa2f3053e23cf"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-readonly-smoke/CURRENT_PRIOR_FILES.json",
+        "bytes": 22920,
+        "sha256": "653a709b129cb4df87b7f4f6382b2f41f8e8fd613671d4f474d1ca717a1b3c79"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-readonly-smoke/owner_page_1.json",
+        "bytes": 29935,
+        "sha256": "f4c4b495784340758c5b4d7af8b700ce4ab591cefbb8a3b36fe6690f2b8997ff"
+      }
+    ]
+  },
+  "production_input_pins": {
+    "inventory_baseline_sha256": "6c54a28fe50097a53df7dcf5803c443284bf9a7edbf58313e641f23ac7a94169",
+    "published_modern_metadata_baseline_sha256": "817c30d77b464876b7e302aa96cfc6a8eefc413534b7662aee77d0a92280ad2c",
+    "prior_full_stream_receipt_sha256": "f3cb8d3c5280fe90307c98988bb2bf97de252bc2bebfbc20aef296612deb96ff"
+  },
+  "execution_requirements": [
+    "Root must supply final sealed four-asset inventory and full modern metadata with exact SHA256 arguments.",
+    "Use one evidence directory and CLI process lock for all stages.",
+    "Writable stages require --mutate.",
+    "Publication additionally requires explicit --publish and a verified draft receipt.",
+    "Critical POST attempts are durable; uncertain outcomes require GET-only reconciliation."
+  ],
+  "remote_mutations_by_preparer": 0,
+  "actual_new_record_id_generated": null,
+  "token_values_output_or_saved": false,
+  "publish_verification_binding": {
+    "full_final_metadata_and_27_file_pins_rechecked": true,
+    "final_etag_required_equal_to_fresh_complete_verification_etag": true,
+    "metadata_completed_file_and_etag_only_races": "ALL_STOP_BEFORE_LATCH_AND_PUBLISH_POST",
+    "historical_regression_sensitivity": {
+      "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-review/TOCTOU_REGRESSION_SENSITIVITY.json",
+      "bytes": 656,
+      "sha256": "5928607c28548e31b8942cb2a5335107c3d064beefe71e117480df4fdc653ec3"
+    },
+    "matching_decimal_revision_sent_in_publish_if_match": true,
+    "raw_etag_retained_and_compared_before_conversion": true,
+    "atomic_server_publication_cas_guarantee": false
+  },
+  "superseded_review_preserved": {
+    "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/fe5f8efad616422f7ac19b1f9079eeda271c4b8376f7e2880c2b3994c8a2a135/PRESERVED_REVISION_MANIFEST.json",
+    "bytes": 3303,
+    "sha256": "c638e3fae7352eeadb504477b1c50dd6d4ff3643c66bf1f806e8b19f0387c0e4"
+  },
+  "change_reason": "Actual provider rejected quoted If-Match as invalid integer. Strict canonical quoted-decimal to matching integer revision headers for metadata/publish; raw preflight ETag equality retained, server publication CAS not claimed.",
+  "independent_406_recovery_audit": [
+    {
+      "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/RECOVERY_406_OFFLINE_NORMAL.json",
+      "bytes": 5823,
+      "sha256": "2af14b6f8762e01d1e640d5775852626406fb657141c9c42cbc5f8c3fe1fe7d1"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/RECOVERY_406_OFFLINE_OPTIMIZED.json",
+      "bytes": 5822,
+      "sha256": "6e243cb0b084123b703211ef272c07a75f0221c8f34fded6311905aa039268b8"
+    }
+  ],
+  "reviewed_406_recovery": {
+    "legacy_accept": "application/json",
+    "explicit_flag": "--retry-create-406",
+    "same_live_evidence_directory": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/new-edition-execution",
+    "current_reconciliation": "PASS_PRIOR_UNCHANGED_OWNER_LIST_EXHAUSTED_NO_DRAFT",
+    "current_state": {
+      "pending": null,
+      "draft_id": null,
+      "published": false,
+      "inventory_sha256": "a78c80160a48e0171e8bee61e0455aa9b283b8c20e4c17e6e461c5c5fdb45153",
+      "metadata_sha256": "72415e84db788b8dec0c421012c1d264fc669e6f8e5d08d93e80f0075e3485ba",
+      "create_post_attempted": true
+    },
+    "evidence": [
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/first-406-attempt/STATE.json",
+        "bytes": 276,
+        "sha256": "4ca2447874986dafd19a22b459707430ed920b6c52250d2c1b1a8ce010eb31e2"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/receipt-history/JOURNAL_406_PRESERVED_PREFIX_b24fcc0361012d076d0cfc6fb9d8a5eebb13f2106f51825268c32a6f10a0b102.jsonl",
+        "bytes": 6352,
+        "sha256": "b24fcc0361012d076d0cfc6fb9d8a5eebb13f2106f51825268c32a6f10a0b102"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/first-406-attempt/CURRENT_PRIOR.json",
+        "bytes": 66016,
+        "sha256": "22e29714487cf00cec0143d7a91aa85d82c15ac1de206d745c6aa2f3053e23cf"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/first-406-attempt/CURRENT_LATEST.json",
+        "bytes": 66016,
+        "sha256": "22e29714487cf00cec0143d7a91aa85d82c15ac1de206d745c6aa2f3053e23cf"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/new-edition-execution/CURRENT_PRIOR_FILES.json",
+        "bytes": 22920,
+        "sha256": "653a709b129cb4df87b7f4f6382b2f41f8e8fd613671d4f474d1ca717a1b3c79"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/first-406-attempt/owner_page_1.json",
+        "bytes": 29935,
+        "sha256": "f4c4b495784340758c5b4d7af8b700ce4ab591cefbb8a3b36fe6690f2b8997ff"
+      }
+    ],
+    "original_intent_identity": "EXACT_EMPTY_BODY_CURRENT_LEGACY_NEWVERSION_ACTION",
+    "allowed_last_outcome": "DEFINITIVE_HTTP406_ONLY",
+    "separate_retry_latch": "SAVED_BEFORE_POST",
+    "retry_executed_by_author": false
+  },
+  "superseded_a261_review_and_live_evidence": {
+    "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/a261c5f732a5e5b2bee3267d73d82ae8f6066bd901abcd51f6fe756c691d4cf5/PRESERVED_REVISION_MANIFEST.json",
+    "bytes": 5426,
+    "sha256": "64603f5fdc87b2e2ef5eb603e482a9289eb168819c9013fdeed9f14dae61140b"
+  },
+  "independent_latest_only_and_file_header_audit": {
+    "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/RELEASE_LATEST_ONLY_SCOPE_FINAL.json",
+    "bytes": 4609,
+    "sha256": "6bcb4916524c7a88f3b4c0fb1e68030ee23a4451bb18d4f62975e9baaf45776e"
+  },
+  "file_write_source_evidence": {
+    "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/FILE_WRITE_ACCEPT_EVIDENCE.json",
+    "bytes": 1691,
+    "sha256": "6a310d03036c2fce9f03045351df949d8551d3c52cb7b3fea56848d944de7892"
+  },
+  "known_new_version": {
+    "record_id": "23225288",
+    "concept_id": "17088132",
+    "published": false,
+    "created_by": "ROOT_CORRECTED_REVIEWED_LEGACY_POST",
+    "prepare_not_yet_executed_by_author": true,
+    "reconcile": "PASS_KNOWN_LATEST_ONLY_OWNED_DRAFT_PRIOR_UNCHANGED",
+    "state": {
+      "pending": null,
+      "draft_id": "23225288",
+      "published": false,
+      "inventory_sha256": "a78c80160a48e0171e8bee61e0455aa9b283b8c20e4c17e6e461c5c5fdb45153",
+      "metadata_sha256": "72415e84db788b8dec0c421012c1d264fc669e6f8e5d08d93e80f0075e3485ba",
+      "create_post_attempted": true,
+      "create_406_retry_attempted": true
+    },
+    "evidence": [
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/f13a167aaf753a0b04d73f3812fb6ffd9d90ea40bb033844295a105f8b8b4070/live-27-files-before-metadata-error-diagnostic-fix/STATE.json",
+        "bytes": 320,
+        "sha256": "5e74cc88cc0ac92f4002160a9eee758cf59228c436a21178d278f0049958a6f5"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/receipt-history/JOURNAL_KNOWN_23_PRESERVED_PREFIX_5ea286e070d1967f70b3d6fdc80b78ec7b7382fd85cdab5cd0c71608dc789c97.jsonl",
+        "bytes": 12693,
+        "sha256": "5ea286e070d1967f70b3d6fdc80b78ec7b7382fd85cdab5cd0c71608dc789c97"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/f13a167aaf753a0b04d73f3812fb6ffd9d90ea40bb033844295a105f8b8b4070/live-27-files-before-metadata-error-diagnostic-fix/CURRENT_PRIOR.json",
+        "bytes": 66018,
+        "sha256": "f202b09485ecc147ab9874ec155c8a28e9ea4709846b02037061a189e7c18cca"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/f13a167aaf753a0b04d73f3812fb6ffd9d90ea40bb033844295a105f8b8b4070/live-27-files-before-metadata-error-diagnostic-fix/CURRENT_LATEST.json",
+        "bytes": 66018,
+        "sha256": "f202b09485ecc147ab9874ec155c8a28e9ea4709846b02037061a189e7c18cca"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/f13a167aaf753a0b04d73f3812fb6ffd9d90ea40bb033844295a105f8b8b4070/live-27-files-before-metadata-error-diagnostic-fix/CURRENT_PRIOR_FILES.json",
+        "bytes": 22920,
+        "sha256": "653a709b129cb4df87b7f4f6382b2f41f8e8fd613671d4f474d1ca717a1b3c79"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/f13a167aaf753a0b04d73f3812fb6ffd9d90ea40bb033844295a105f8b8b4070/live-27-files-before-metadata-error-diagnostic-fix/owner_page_1.json",
+        "bytes": 17395,
+        "sha256": "0fc4a146746104ad64d9beadd1db1ac97c3ad46b42b9ac2886dda7ab568a092d"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/553885c93e297c55cd9606e66483b955adaecfce3dfc9f92a7f46b516b8e3244/live-successful-creation-before-owner-list-fix/DRAFT_23225288.json",
+        "bytes": 57604,
+        "sha256": "7710d4eb5ea625fcd25511bdd63e7538dc68d4f9be22343f34584e6b3fa49948"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/553885c93e297c55cd9606e66483b955adaecfce3dfc9f92a7f46b516b8e3244/live-successful-creation-before-owner-list-fix/DRAFT_FILES_23225288.json",
+        "bytes": 26262,
+        "sha256": "3d5afa992b2636f244da7872e635e144202bfabc69abeb15122876bafdc7f3b6"
+      }
+    ],
+    "observation_stage": "HISTORICAL_23_FILE_POST_CREATE_BEFORE_ROOT_UPLOADS"
+  },
+  "superseded_553_review_and_successful_creation_preserved": {
+    "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/553885c93e297c55cd9606e66483b955adaecfce3dfc9f92a7f46b516b8e3244/PRESERVED_REVISION_MANIFEST.json",
+    "bytes": 6133,
+    "sha256": "12d4a613c4c269684066d6e76cff44499959a568bde5be8ce0c5c1cef4aec3b6"
+  },
+  "actual_new_record_id_created_by_root": "23225288",
+  "historical_406_evidence_path_correction": {
+    "reason": "Retained precreation evidence pins now point to exact preserved historical snapshots rather than changed live execution paths. The journal is the hash-matched historical append-only prefix.",
+    "superseded_aggregate": {
+      "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/receipt-history/CONTROLLER_FINAL_RECEIPT_67f4a5019df1b398573582bfbcdcc888a513b68375bbdb0764e5ce70546233f2.json",
+      "bytes": 12919,
+      "sha256": "67f4a5019df1b398573582bfbcdcc888a513b68375bbdb0764e5ce70546233f2"
+    },
+    "remapped_artifacts": [
+      {
+        "original_path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/new-edition-execution/STATE.json",
+        "preserved_path": "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/first-406-attempt/STATE.json",
+        "bytes": 276,
+        "sha256": "4ca2447874986dafd19a22b459707430ed920b6c52250d2c1b1a8ce010eb31e2"
+      },
+      {
+        "original_path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/new-edition-execution/JOURNAL.jsonl",
+        "preserved_path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/receipt-history/JOURNAL_406_PRESERVED_PREFIX_b24fcc0361012d076d0cfc6fb9d8a5eebb13f2106f51825268c32a6f10a0b102.jsonl",
+        "bytes": 6352,
+        "sha256": "b24fcc0361012d076d0cfc6fb9d8a5eebb13f2106f51825268c32a6f10a0b102"
+      },
+      {
+        "original_path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/new-edition-execution/CURRENT_PRIOR.json",
+        "preserved_path": "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/first-406-attempt/CURRENT_PRIOR.json",
+        "bytes": 66016,
+        "sha256": "22e29714487cf00cec0143d7a91aa85d82c15ac1de206d745c6aa2f3053e23cf"
+      },
+      {
+        "original_path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/new-edition-execution/CURRENT_LATEST.json",
+        "preserved_path": "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/first-406-attempt/CURRENT_LATEST.json",
+        "bytes": 66016,
+        "sha256": "22e29714487cf00cec0143d7a91aa85d82c15ac1de206d745c6aa2f3053e23cf"
+      },
+      {
+        "original_path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/new-edition-execution/owner_page_1.json",
+        "preserved_path": "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/first-406-attempt/owner_page_1.json",
+        "bytes": 29935,
+        "sha256": "f4c4b495784340758c5b4d7af8b700ce4ab591cefbb8a3b36fe6690f2b8997ff"
+      }
+    ],
+    "code_and_test_evidence_unchanged": true
+  },
+  "independent_http_error_diagnostic_audit": [
+    {
+      "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/HTTP_ERROR_CAPTURE_NORMAL.json",
+      "bytes": 2624,
+      "sha256": "1a7bfe52c427d507754535973a76e0d12928fe962f177a7dae0ab66f364a70af"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/HTTP_ERROR_CAPTURE_OPTIMIZED.json",
+      "bytes": 2623,
+      "sha256": "0807a5e2a68fe5cfb69c210d09e66ba99febfe360e2217abc06222424bafded6"
+    }
+  ],
+  "metadata_400_diagnostic_checkpoint": {
+    "record_id": "23225288",
+    "published": false,
+    "files_uploaded_committed": 27,
+    "filename_size_md5": "PASS_ROOT_PREPARE_LISTING",
+    "content_stream_verification": "NOT_YET_RUN",
+    "last_metadata_put_status": 400,
+    "provider_error_reason": "NOT_YET_KNOWN_OLD_TRANSPORT_DISCARDED_BODY",
+    "metadata_body_candidate_unchanged": true,
+    "metadata_sha256": "72415e84db788b8dec0c421012c1d264fc669e6f8e5d08d93e80f0075e3485ba",
+    "author_live_requests": 0,
+    "author_live_writes": 0,
+    "evidence": [
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/f13a167aaf753a0b04d73f3812fb6ffd9d90ea40bb033844295a105f8b8b4070/live-27-files-before-metadata-error-diagnostic-fix/STATE.json",
+        "bytes": 320,
+        "sha256": "5e74cc88cc0ac92f4002160a9eee758cf59228c436a21178d278f0049958a6f5"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/f13a167aaf753a0b04d73f3812fb6ffd9d90ea40bb033844295a105f8b8b4070/live-27-files-before-metadata-error-diagnostic-fix/JOURNAL.jsonl",
+        "bytes": 27159,
+        "sha256": "90ddf4a345776e714ad48f9c42032b9ac195d06a35fbd158582f93e836fe2bca"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/f13a167aaf753a0b04d73f3812fb6ffd9d90ea40bb033844295a105f8b8b4070/live-27-files-before-metadata-error-diagnostic-fix/CURRENT_PRIOR.json",
+        "bytes": 66018,
+        "sha256": "f202b09485ecc147ab9874ec155c8a28e9ea4709846b02037061a189e7c18cca"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/f13a167aaf753a0b04d73f3812fb6ffd9d90ea40bb033844295a105f8b8b4070/live-27-files-before-metadata-error-diagnostic-fix/CURRENT_LATEST.json",
+        "bytes": 66018,
+        "sha256": "f202b09485ecc147ab9874ec155c8a28e9ea4709846b02037061a189e7c18cca"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/f13a167aaf753a0b04d73f3812fb6ffd9d90ea40bb033844295a105f8b8b4070/live-27-files-before-metadata-error-diagnostic-fix/CURRENT_PRIOR_FILES.json",
+        "bytes": 22920,
+        "sha256": "653a709b129cb4df87b7f4f6382b2f41f8e8fd613671d4f474d1ca717a1b3c79"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/f13a167aaf753a0b04d73f3812fb6ffd9d90ea40bb033844295a105f8b8b4070/live-27-files-before-metadata-error-diagnostic-fix/owner_page_1.json",
+        "bytes": 17395,
+        "sha256": "0fc4a146746104ad64d9beadd1db1ac97c3ad46b42b9ac2886dda7ab568a092d"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/f13a167aaf753a0b04d73f3812fb6ffd9d90ea40bb033844295a105f8b8b4070/live-27-files-before-metadata-error-diagnostic-fix/DRAFT_23225288.json",
+        "bytes": 59355,
+        "sha256": "3fade7f9a81322cb76708b9c9c7d77e8c67468e1329e8fba7cefa4de3261267c"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/f13a167aaf753a0b04d73f3812fb6ffd9d90ea40bb033844295a105f8b8b4070/live-27-files-before-metadata-error-diagnostic-fix/DRAFT_FILES_23225288.json",
+        "bytes": 30976,
+        "sha256": "3d70910fcfdcdeb2cf0460d764f56355e4d725eccb5e09caf66362a1e2621850"
+      }
+    ]
+  },
+  "superseded_f13_and_27_upload_metadata400_history": {
+    "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/f13a167aaf753a0b04d73f3812fb6ffd9d90ea40bb033844295a105f8b8b4070/PRESERVED_REVISION_MANIFEST.json",
+    "bytes": 9338,
+    "sha256": "1451f159fac21a5e3781eee2ba840db3281d099b28f62a71bc5e8b34d4a9504e"
+  },
+  "superseded_aggregate_before_diagnostic": {
+    "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/receipt-history/CONTROLLER_FINAL_RECEIPT_8f66fc1b47920214bfad415fe41f87029ce1fcf0bc17b9b5afd195b99758f1f9.json",
+    "bytes": 15774,
+    "sha256": "8f66fc1b47920214bfad415fe41f87029ce1fcf0bc17b9b5afd195b99758f1f9"
+  },
+  "direct_independent_metadata_diagnostic_acceptance": {
+    "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/FINAL_METADATA_DIAGNOSTIC_ACCEPTANCE.json",
+    "bytes": 5132,
+    "sha256": "72df47c6d2b8f6ae22bf59370cb4d7a155a6ffef2a50ff0e1ba4b00e04219e95"
+  },
+  "superseded_aggregate_before_direct_diagnostic_acceptance": {
+    "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/receipt-history/CONTROLLER_FINAL_RECEIPT_a8e1b3c07fee16c0fc9ef22803eeec361214389942b87aec7fa22604bb8cd12c.json",
+    "bytes": 21629,
+    "sha256": "a8e1b3c07fee16c0fc9ef22803eeec361214389942b87aec7fa22604bb8cd12c"
+  },
+  "independent_revision_header_acceptance": {
+    "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/FINAL_IF_MATCH_ACCEPTANCE.json",
+    "bytes": 4636,
+    "sha256": "9f566597f5b5250f57abd996c7b756151e468b78883063617a8516d4a3f9d6c8"
+  },
+  "revision_header_source_schema": {
+    "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/IF_MATCH_SCHEMA_REVIEW.json",
+    "bytes": 5012,
+    "sha256": "4bca1c737af468f5af6c6613e508e7738b22d6a0276e36c9b490976c0764ec77"
+  },
+  "if_match_provider_rejection_and_correction": {
+    "provider_error": {
+      "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/672931f9d8cd023d41e32518ec06f9a32359c7bd0f133567bccbde2366754d48/live-definitive-if-match-400-diagnostic/error_save_metadata_1791417157440369626.json",
+      "bytes": 480,
+      "sha256": "d110de4ac66215477f138d51ee95ef944db33c45516170204501786e0ec565bd"
+    },
+    "read_only_raw_etag_and_revision_witness": {
+      "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/if-match-rejection/IF_MATCH_READONLY_HEADER_WITNESS.json",
+      "bytes": 260,
+      "sha256": "4bc24a0e2dd63fe41556a48a5113c5995d41688feda865e806e8495c4d6facfa"
+    },
+    "raw_etag": "\"7\"",
+    "record_revision_id": 7,
+    "outgoing_if_match": "7",
+    "metadata_body_sha256_unchanged": "72415e84db788b8dec0c421012c1d264fc669e6f8e5d08d93e80f0075e3485ba",
+    "metadata_update_revision_check": "CONFIRMED_FROM_PRIMARY_SOURCE",
+    "server_publication_cas": "NOT_ESTABLISHED",
+    "client_publication_raw_etag_comparison_before_conversion": true,
+    "author_live_requests": 0,
+    "author_live_writes": 0
+  },
+  "superseded_672_diagnostic_and_actual_integer_if_match_rejection": {
+    "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/controller-revisions/672931f9d8cd023d41e32518ec06f9a32359c7bd0f133567bccbde2366754d48/PRESERVED_REVISION_MANIFEST.json",
+    "bytes": 9110,
+    "sha256": "142a98d2ac4b1be2b24fd6ae833580e7b40d0c5cfda2c3d3be6d115ae4dec363"
+  },
+  "superseded_aggregate_before_if_match_serialization": {
+    "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/receipt-history/CONTROLLER_FINAL_RECEIPT_3dde31b24661045a6531481b070b4dd0302079fbdc22407b03a5b3d6b2d480b9.json",
+    "bytes": 22295,
+    "sha256": "3dde31b24661045a6531481b070b4dd0302079fbdc22407b03a5b3d6b2d480b9"
+  }
+}

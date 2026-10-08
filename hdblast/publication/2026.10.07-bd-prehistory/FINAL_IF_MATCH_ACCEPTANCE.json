@@ -1,0 +1,76 @@
+{
+  "status": "PASS_STRICT_IF_MATCH_SERIALIZATION_ACCEPTANCE",
+  "checks": [
+    {
+      "check": "frozen input new_edition_controller.py",
+      "pass": true
+    },
+    {
+      "check": "frozen input FINAL_UPLOAD_INVENTORY.json",
+      "pass": true
+    },
+    {
+      "check": "frozen input FINAL_METADATA_MODERN.json",
+      "pass": true
+    },
+    {
+      "check": "frozen input FINAL_METADATA_DIAGNOSTIC_ACCEPTANCE.json",
+      "pass": true
+    },
+    {
+      "check": "frozen input SNAPSHOT.json",
+      "pass": true
+    },
+    {
+      "check": "frozen input IF_MATCH_SCHEMA_REVIEW.json",
+      "pass": true
+    },
+    {
+      "check": "independent strict conversion and flow controls NORMAL",
+      "pass": true
+    },
+    {
+      "check": "independent strict conversion and flow controls OPTIMIZED",
+      "pass": true
+    },
+    {
+      "check": "definitive400 identifies only integer If-Match field",
+      "pass": true
+    },
+    {
+      "check": "observed quoted decimal agrees with integer revision",
+      "pass": true
+    },
+    {
+      "check": "raw ETag equality checked before conversion and attempt latch",
+      "pass": true
+    },
+    {
+      "check": "same known unambiguous unpublished draft and input pins",
+      "pass": true
+    }
+  ],
+  "input_sha256": {
+    "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/new_edition_controller.py": "7dade987e77ff166e5849db06cd47d019f6ab16d67bd18a22c2120564c480110",
+    "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/FINAL_UPLOAD_INVENTORY.json": "a78c80160a48e0171e8bee61e0455aa9b283b8c20e4c17e6e461c5c5fdb45153",
+    "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/FINAL_METADATA_MODERN.json": "72415e84db788b8dec0c421012c1d264fc669e6f8e5d08d93e80f0075e3485ba",
+    "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/FINAL_METADATA_DIAGNOSTIC_ACCEPTANCE.json": "72df47c6d2b8f6ae22bf59370cb4d7a155a6ffef2a50ff0e1ba4b00e04219e95",
+    "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/if-match-rejection/SNAPSHOT.json": "63910c0eead94f20f41f0dc13eb527055b8bcbd0301ca2b5a0d796b9fb41a084",
+    "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/IF_MATCH_SCHEMA_REVIEW.json": "4bca1c737af468f5af6c6613e508e7738b22d6a0276e36c9b490976c0764ec77",
+    "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/REVISION_HEADER_NORMAL.json": "058b9b59cdbf6a43e8114dc97457f9f40ddbaf1af55d8eccbb9798decbcec34d",
+    "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/REVISION_HEADER_OPTIMIZED.json": "b100d3cbba2a9b131960ab8261302844a563446c96aed3e6047299e0e5290c7f",
+    "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/REVISION_HEADER_CONTROLLER_7dade987.py": "7dade987e77ff166e5849db06cd47d019f6ab16d67bd18a22c2120564c480110"
+  },
+  "scope": "Resume prepare for the existing draft23225288 using unchanged complete frozen metadata and inventory. Only outgoing If-Match serialization changes: canonical quoted ASCII decimal ETag must exactly agree with nonnegative integer revision_id, and its unquoted decimal is sent. No create request or completed-file upload is repeated.",
+  "publication_header": "The same strict conversion is accepted for a later publish request only after the raw verified ETag and final fresh draft ETag compare equal and all metadata/inventory checks pass. Raw ETags remain in verification receipts.",
+  "publication_preconditions": "Metadata save, complete27-file content verification and independent prepared-release review remain prerequisites to publication. This receipt is not evidence that those steps or publication have completed.",
+  "provider_limit": "Pinned source confirms integer revision parsing/enforcement for metadata update. Pinned publication handler does not establish server-side enforcement of If-Match; the local raw-ETag equality check and later exact public readback must not be described as an atomic server-side publication compare-and-swap guarantee.",
+  "independent_execution": "26 converter cases and4 flow cases passed normally and with Python-O;60 independent case executions.",
+  "preserved_history": "Original672 diagnostic source, prior acceptances,27 committed-file journal, definitive400 body, and rawETag/revision witness remain pinned and unchanged.",
+  "remote_requests_by_this_converter_review": 0,
+  "remote_mutations_by_this_audit": 0,
+  "real_credentials_read": false,
+  "scientific_source_evaluations": 0,
+  "retained_array_decodes": 0,
+  "remaining_substantive_findings": []
+}

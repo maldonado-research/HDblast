@@ -1,0 +1,158 @@
+name: Offline HDBLAST publication witnesses
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'hdblast/publication/**'
+      - '.github/workflows/hdblast_publication_offline.yml'
+  pull_request:
+    paths:
+      - 'hdblast/publication/**'
+      - '.github/workflows/hdblast_publication_offline.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  offline-publication-proof:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    env:
+      # Root replaces the manifest hash and record ID only after verified publication.
+      PROOF_DIRECTORY: 'hdblast/publication/2026.10.07-bd-prehistory'
+      WITNESS_MANIFEST_SHA256: '78091f586756f5401be460f5a615e1a89dce49376a32cffd40cdac5ef0150bbf'
+      EXPECTED_RECORD_ID: '23225288'
+      VERIFIER_SHA256: 'bf97e2f8526eadae12366b76de1bf3ad84086bec5089b33cb7e584e75417478c'
+      CONTROLS_SHA256: 'a7369fe95d524d5778f9e6667efa95ee17b35950ef49f721f35ce0037263dcc8'
+      INVENTORY_SHA256: 'a78c80160a48e0171e8bee61e0455aa9b283b8c20e4c17e6e461c5c5fdb45153'
+      METADATA_SHA256: '72415e84db788b8dec0c421012c1d264fc669e6f8e5d08d93e80f0075e3485ba'
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+    steps:
+      - name: Prepare the additive receipt directory
+        shell: bash
+        run: mkdir -p "$RUNNER_TEMP/publication-offline"
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: ${{ env.PROOF_DIRECTORY }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+          architecture: 'x64'
+          check-latest: false
+      - name: Authenticate all executable and witness inputs before imports
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -S -B - <<'PY' > "$RUNNER_TEMP/publication-offline/authentication.log" 2>&1
+          import hashlib, json, os, pathlib, re, sys
+          if sys.version_info[:3] != (3, 12, 14):
+              raise SystemExit('Pinned standard-library Python 3.12.14 required')
+          checkout = pathlib.Path.cwd().resolve()
+          relative = os.environ['PROOF_DIRECTORY']
+          parts = pathlib.PurePosixPath(relative)
+          if parts.is_absolute() or parts.as_posix() != relative or any(p in ('', '.', '..') for p in relative.split('/')):
+              raise SystemExit('Real relative proof directory required')
+          root = checkout / relative
+          if not root.is_dir() or root.resolve() != root or any(p.is_symlink() for p in (root, *root.parents)):
+              raise SystemExit('Real saved-proof root required')
+          expected = {
+              'verify_publication.py': os.environ['VERIFIER_SHA256'],
+              'test_saved_publication_witnesses.py': os.environ['CONTROLS_SHA256'],
+              'proof/WITNESS_MANIFEST.json': os.environ['WITNESS_MANIFEST_SHA256'],
+          }
+          for name, pin in expected.items():
+              path = root / name
+              if not re.fullmatch('[0-9a-f]{64}', pin) or not path.is_file() or any(p.is_symlink() for p in (path, *path.parents)):
+                  raise SystemExit('Unfilled or unsafe external authentication input: ' + name)
+              if hashlib.sha256(path.read_bytes()).hexdigest() != pin:
+                  raise SystemExit('External SHA256 differs before import: ' + name)
+          def unique(items):
+              value = {}
+              for key, item in items:
+                  if key in value:
+                      raise ValueError('Duplicate JSON manifest key')
+                  value[key] = item
+              return value
+          witness_root = root / 'proof'
+          manifest = json.loads((witness_root / 'WITNESS_MANIFEST.json').read_bytes(), object_pairs_hook=unique)
+          for name, pin in manifest['files'].items():
+              parts = pathlib.PurePosixPath(name)
+              path = witness_root / name
+              if parts.is_absolute() or parts.as_posix() != name or any(p in ('', '.', '..') for p in name.split('/')) or '\\' in name:
+                  raise SystemExit('Unsafe witness path')
+              if not path.is_file() or any(p.is_symlink() for p in (path, *path.parents)):
+                  raise SystemExit('Real saved witness required')
+              raw = path.read_bytes()
+              if type(pin['bytes']) is not int or len(raw) != pin['bytes'] or hashlib.sha256(raw).hexdigest() != pin['sha256']:
+                  raise SystemExit('Saved witness byte pin differs: ' + name)
+          for role, envname in [('inventory', 'INVENTORY_SHA256'), ('metadata', 'METADATA_SHA256')]:
+              raw = (witness_root / manifest['witnesses'][role]).read_bytes()
+              pin = os.environ[envname]
+              if not re.fullmatch('[0-9a-f]{64}', pin) or hashlib.sha256(raw).hexdigest() != pin:
+                  raise SystemExit('Separately pinned edition input differs: ' + role)
+          if not re.fullmatch('[1-9][0-9]*', os.environ['EXPECTED_RECORD_ID']):
+              raise SystemExit('Actual externally verified publication identity required')
+          receipt = {
+              'status': 'PASS_OFFLINE_PUBLICATION_CI_INPUT_AUTHENTICATION',
+              'python': sys.version,
+              'external_source_and_manifest_sha256': expected,
+              'inventory_sha256': os.environ['INVENTORY_SHA256'],
+              'metadata_sha256': os.environ['METADATA_SHA256'],
+              'witness_files_authenticated': len(manifest['files']),
+              'network_calls': 0, 'controller_imports': 0, 'numeric_imports': 0, 'source_callbacks': 0,
+          }
+          target = pathlib.Path(os.environ['RUNNER_TEMP']) / 'publication-offline' / 'AUTHENTICATION.json'
+          target.write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+          print(receipt['status'])
+          PY
+      - name: Verify publication and mutation controls in isolated network namespaces
+        shell: bash
+        run: |
+          set -euo pipefail
+          python_path="$(command -v python)"
+          proof="$GITHUB_WORKSPACE/$PROOF_DIRECTORY"
+          witness="$proof/proof"
+          evidence="$RUNNER_TEMP/publication-offline"
+          for mode in normal optimized; do
+            flags=(-I -S -B)
+            if [[ "$mode" == optimized ]]; then flags+=(-O); fi
+            sudo unshare --net -- "$python_path" "${flags[@]}" "$proof/verify_publication.py" \
+              --root "$witness" \
+              --witness-manifest "$witness/WITNESS_MANIFEST.json" \
+              --witness-manifest-sha256 "$WITNESS_MANIFEST_SHA256" \
+              --expected-record-id "$EXPECTED_RECORD_ID" \
+              --inventory-sha256 "$INVENTORY_SHA256" \
+              --metadata-sha256 "$METADATA_SHA256" \
+              --output "$evidence/PUBLICATION_${mode}.json" \
+              > "$evidence/verification_${mode}.log" 2>&1
+            sudo unshare --net -- "$python_path" "${flags[@]}" "$proof/test_saved_publication_witnesses.py" \
+              --verifier "$proof/verify_publication.py" \
+              --verifier-sha256 "$VERIFIER_SHA256" \
+              --root "$witness" \
+              --witness-manifest "$witness/WITNESS_MANIFEST.json" \
+              --witness-manifest-sha256 "$WITNESS_MANIFEST_SHA256" \
+              --expected-record-id "$EXPECTED_RECORD_ID" \
+              --inventory-sha256 "$INVENTORY_SHA256" \
+              --metadata-sha256 "$METADATA_SHA256" \
+              --output "$evidence/CONTROLS_${mode}.json" \
+              > "$evidence/controls_${mode}.log" 2>&1
+          done
+      - name: Require identical normal and optimized receipts
+        shell: bash
+        run: |
+          set -euo pipefail
+          cmp "$RUNNER_TEMP/publication-offline/PUBLICATION_normal.json" "$RUNNER_TEMP/publication-offline/PUBLICATION_optimized.json"
+          cmp "$RUNNER_TEMP/publication-offline/CONTROLS_normal.json" "$RUNNER_TEMP/publication-offline/CONTROLS_optimized.json"
+      - name: Preserve authentication, controls and failed-step evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: publication-offline-${{ github.sha }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/publication-offline/
+          if-no-files-found: warn
+          retention-days: 14
