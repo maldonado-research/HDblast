@@ -1,0 +1,141 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array,hyperref,xcolor}
+\hypersetup{colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=blue}
+\newcommand{\dd}{\mathrm{d}}
+\title{A conditional second-order curvature susceptibility\newline for a regular Einstein--scalar brane branch}
+\author{Research draft prepared for Ricardo Maldonado}
+\date{8 October 2026}
+\begin{document}
+\maketitle
+\noindent\textbf{Status.} AI-assisted working note, not submitted or endorsed. External novelty, a global branch-existence proof and a uniform remainder bound remain unresolved. Numerical residuals below are floating-point diagnostics, not certified solution-error bounds. The scope is a static boundary problem within the HDBLAST research program, not confirmation of its cosmological hypothesis.
+
+\begin{abstract}
+For a doubled-interior Einstein--scalar model with potential $U=W_\phi^2/2-2W^2/3$ and tension $\sigma=2W+\delta f$, we derive a conditional curvature-response coefficient about a scalar stationary point. With $W(\phi_0)=3k>0$, $W_\phi(\phi_0)=0$, $W_{\phi\phi}(\phi_0)=w>4k$ and a specified regular growing-mode branch, scalar adjustment changes the second-order curvature coefficient by $-k f_\phi(\phi_0)^2/[24(w-2k)]$. A fresh second-order shooting implementation tests six polynomial families at three positive detunings and two numerical resolutions. The leading numerical errors in the inferred coefficient decrease approximately linearly with detuning. This supports a useful local consistency diagnostic. It does not yet establish a substantive advance over established curved scalar-brane constructions.
+\end{abstract}
+
+\section{Physical question and relation to prior work}
+A brane tension depending on a dynamical bulk scalar imposes both metric and scalar boundary conditions. A constant-scalar geometry that satisfies the metric condition can fail the scalar condition. The question here is how the induced de Sitter curvature changes when the scalar is allowed to adjust on a specified regular interior branch.
+
+The established starting points include scalar-gravity superpotential constructions and curved detuned branes \cite{dfgk}, generalized scalar junction conditions \cite{bv}, tension-induced brane curvature \cite{bdl}, and global curved scalar-brane matching \cite{gknw}. These precedents prevent interpreting the construction itself as a new mechanism. The HDBLAST companion \cite{maldonado} already derives the particular coefficient for $k=1/9$, $w=2$, $f=1+c\phi$. An archived September 27 project calculation also has higher-order expansions through eighth order for that model. Neither those coefficients nor the registered-model repair are newly discovered here. This note generalizes the local second-order expression and supplies fresh diagnostics across different functions; priority and practical significance of that general expression need further assessment.
+
+\section{Conventions and boundary problem}
+All quantities below are in dimensionless model units with no assigned physical length scale. There are two identical interior copies, signature $(-++++)$, one shell action, and an outward normal from each interior to the shell. The action is
+\begin{align}
+ S={}&\frac{1}{2\kappa_5^2}\sum_{a=1}^2\int_{M_a}\sqrt{-g}
+ [R-(\nabla\phi)^2-2U(\phi)]\,\dd^5x \\
+ &+\frac{1}{\kappa_5^2}\sum_{a=1}^2\int_\Sigma\sqrt{-h}K_a\,\dd^4x
+ -\frac{1}{\kappa_5^2}\int_\Sigma\sqrt{-h}\sigma(\phi)\,\dd^4x.\nonumber
+\end{align}
+The bulk equations are $R_{AB}=\partial_A\phi\partial_B\phi+2Ug_{AB}/3$ and $\Box\phi=U_\phi$. For $\dd s^2=\dd y^2+\rho(y)^2\dd s^2_{\mathrm{dS},1}$, with unit-curvature de Sitter slices, these become
+\begin{align}
+ \phi_{yy}+4\frac{\rho_y}{\rho}\phi_y&=U_\phi,&
+ \rho_{yy}&=-\rho\left(\frac{\phi_y^2}{4}+\frac{U}{6}\right),\label{eq:radial}\\
+ \rho_y^2&=1+\rho^2\left(\frac{\phi_y^2}{12}-\frac{U}{6}\right).\label{eq:constraint}
+\end{align}
+At the regular cone, $\rho(0)=0$, $\rho_y(0)=1$, $\phi(0)=\phi_h$, $\phi_y(0)=0$. At an outward shell $y_b$, variation gives
+\begin{equation}
+ \frac{\rho_y}{\rho}=\frac{\sigma}{6},\qquad
+ \phi_y=-\frac{\sigma_\phi}{2},\qquad H^2=\rho_b^{-2}.\label{eq:junction}
+\end{equation}
+The scalar boundary variation is proportional to $-2n\phi-\sigma_\phi$, fixing the factor and sign. Reversing the normal requires reversing both metric and scalar conventions.
+
+\section{Conditional response law}
+Let $\eta=\phi-\phi_0$, $f_0=f(\phi_0)$ and $f_1=f_\phi(\phi_0)$. Take smooth $W,f$ near $\phi_0$ with
+\begin{equation}
+ W_0=3k>0,\quad W_{\phi,0}=0,\quad W_{\phi\phi,0}=w>4k,\quad f_0>0.
+\end{equation}
+Consider $\delta\to0^+$. \textbf{Assumption:} there is a nearby regular, large-radius branch with $\eta_b=O(\delta)$, $H^2=O(\delta)$ and boundary logarithmic derivative inherited from the regular growing linear mode, including an $O(\delta^2)$ correction to $\phi_y=\lambda\eta_b$. This statement is a branch assumption, not a conclusion of the following algebra.
+
+The bulk scalar mass is $m^2=U_{\phi\phi,0}=w(w-4k)$. Linearization on $\rho=\sinh(ky)/k$ gives
+\begin{equation}
+ \eta_{yy}+4k\coth(ky)\eta_y-m^2\eta=0.
+\end{equation}
+Its positive asymptotic exponent is $\lambda=w-4k$, from $\lambda^2+4k\lambda-m^2=0$. The regular solution has the growing component in this positive-mass regime. Linear matching in Eq.~\eqref{eq:junction} then yields
+\begin{equation}
+ \lambda\eta_b=-w\eta_b-\frac{\delta f_1}{2}+O(\delta^2),\qquad
+ \eta_b=-\frac{f_1\delta}{4(w-2k)}+O(\delta^2).\label{eq:shift}
+\end{equation}
+
+Substituting both junctions into Eq.~\eqref{eq:constraint} gives an exact identity at any such shell:
+\begin{align}
+ H^2&=\frac{\sigma^2}{36}-\frac{\sigma_\phi^2}{48}+\frac{U}{6}\\
+ &=\delta\left(\frac{Wf}{9}-\frac{W_\phi f_\phi}{12}\right)
+ +\delta^2\left(\frac{f^2}{36}-\frac{f_\phi^2}{48}\right).\label{eq:exact}
+\end{align}
+The $\delta^0$ terms cancel identically. The derivative at $\phi_0$ of the coefficient of $\delta$ is $f_1(4k-w)/12$. Inserting Eq.~\eqref{eq:shift} therefore gives
+\begin{equation}
+ \boxed{H^2=\frac{kf_0}{3}\delta+
+ \left[\frac{f_0^2}{36}-\frac{k f_1^2}{24(w-2k)}\right]\delta^2+O(\delta^3).}\label{eq:main}
+\end{equation}
+The coefficient is independent of $W_{\phi\phi\phi,0}$ and $f_{\phi\phi,0}$ at this order. The scalar term is nonpositive for the stated assumptions. The reference
+\begin{equation}
+ H_{\mathrm{metric}}^2=\frac{kf_0\delta}{3}+\frac{f_0^2\delta^2}{36}
+\end{equation}
+is an exact constant-scalar solution when $f_1=0$; otherwise it generally fails the scalar junction and is only a comparison. The denominator in Eq.~\eqref{eq:main} is bounded away from zero when $w>4k$: no resonance is established by this formula. The cases $f_0=0$, $w\le4k$, different normal conventions, other global branches and negative detuning are not covered by this argument.
+
+For the registered model, $\phi_0=1$, $k=1/9$, $w=2$, $f_0=1+c$, $f_1=c$ with $c=0.5975949350280132$, Eq.~\eqref{eq:main} reduces to the already reported correction $-c^2\delta^2/384$ \cite{maldonado}.
+
+\section{Fresh numerical diagnostics}
+The new program \texttt{family\_benchmark.py} integrates Eq.~\eqref{eq:radial}, rather than imposing the first integral as the evolution equation. No archived numerical producer is imported. Write
+\begin{equation}
+ W=3k+\frac{w}{2}\eta^2+\frac{v}{6}\eta^3,\qquad
+ f=f_0+f_1\eta+\frac{f_2}{2}\eta^2.
+\end{equation}
+The six analyst-selected exploratory families are shown in Table~\ref{tab:families}. They are not a preregistered or exhaustive sample.
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{lrrrrrr}\toprule
+Family & $k$ & $w$ & $v$ & $f_0$ & $f_1$ & $f_2$\\\midrule
+Registered & $1/9$ & 2 & 2 & $1+c$ & $c$ & 0\\
+Changed cubic/tension & $1/9$ & 2 & $-3$ & 1.3 & 0.4 & 1.2\\
+Negative scalar coupling & 0.2 & 1.3 & 0.5 & 0.8 & $-0.4$ & 0.6\\
+Small bulk curvature & 0.05 & 0.7 & $-1$ & 1.1 & 0.8 & $-0.5$\\
+Zero scalar coupling & $1/9$ & 2 & 2 & 1.4 & 0 & 0.3\\
+Stronger tension curvature & 0.15 & 1 & 4 & 1 & 0.5 & 2\\\bottomrule
+\end{tabular}
+\caption{Polynomial coefficients in dimensionless model units.}\label{tab:families}
+\end{table}
+
+Each family is solved at $\delta=0.002,0.001,0.0005$ with two DOP853 configurations (36 integrations after shooting convergence). In variables $t=ky$, $r=k\rho$, the cone series through $t^5$ for $r$ and $t^4$ for $\eta$ initializes the integration. Two shooting parameters, $\log|\eta_h|$ and $t_b$, impose both junctions. The zero-coupling control uses its exact constant-scalar branch. Standard/refined relative tolerances are $3\times10^{-11}$ and $2\times10^{-12}$, maximum steps $0.01$ and $0.005$, and initial coordinates $10^{-5}$ and $5\times10^{-6}$. Settings vary together; this is a combined refinement check, not a separate error estimate for each source.
+
+Across this sweep, maximum absolute junction residual is $1.13\times10^{-15}$, maximum relative constraint residual sampled at 257 radial locations is $3.91\times10^{-15}$, and maximum absolute difference between the two computed $H^2$ values is $8.15\times10^{-17}$. These are observed diagnostics and do not certify errors between sample points or solution existence.
+
+Define $Q(\delta)=(H^2-H_{\mathrm{metric}}^2)/\delta^2$ and $Q_0=-k f_1^2/[24(w-2k)]$. For the five nonzero-coupling families, the ratio $|Q(0.002)-Q_0|/|Q(0.001)-Q_0|$ and the subsequent halving ratio lie between 1.99956 and 2.00043, consistent with an $O(\delta)$ error in $Q$. At the smallest detuning, relative coefficient errors are 0.0264--0.1909 percent. For the zero-coupling control the relevant comparison is absolute error; dividing roundoff by $\delta^3$ would be misleading.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{lrr}\toprule
+Family & Predicted $Q_0$ & Computed $Q(0.0005)$\\\midrule
+Registered & $-0.0009299992$ & $-0.0009311613$\\
+Changed cubic/tension & $-0.0004166667$ & $-0.0004170427$\\
+Negative scalar coupling & $-0.0014814815$ & $-0.0014818730$\\
+Small bulk curvature & $-0.0022222222$ & $-0.0022264645$\\
+Zero scalar coupling & $0$ & $1.63\times10^{-13}$\\
+Stronger tension curvature & $-0.0022321429$ & $-0.0022331251$\\\bottomrule
+\end{tabular}
+\caption{Refined floating-point solutions. Differences in nonzero rows have the expected leading higher-order scaling; equality at finite detuning is not expected.}
+\end{table}
+
+Two additional matched variants hold the registered $k,w,f_0,f_1$ fixed: one changes only $v$ from 2 to $-3$, and the other changes only $f_2$ from 0 to 1.2. The same detunings and numerical settings add 12 configurations, all satisfying the numerical checks. Their coefficient errors again halve with detuning, and the relative errors at $\delta=0.0005$ are 0.12085 and 0.11652 percent. The changes in $H^2$ begin consistently at third order: the observed differences divided by $\delta^3$ are approximately $7.64\times10^{-5}$ and $1.57\times10^{-4}$. These controlled comparisons test the predicted second-order independence. They use the same solver as the main sweep and are not independent-software replication. The combined exercise contains 48 final configurations, including six integrations of the exact zero-coupling control; shooting also requires intermediate trial integrations.
+
+\section{What would turn this into a stronger research contribution?}
+The response law is a conditional perturbative calculation. Its scalar-decoupled part is standard tension detuning. The specific scalar-adjusted coefficient could be useful as a benchmark, but this bounded literature assessment does not establish external novelty. One possible substantial extension is an a posteriori existence and local-uniqueness result for the coupled regular-cone boundary problem, with a bounded inverse of its linearization and a uniform remainder for a stated class of $W,f$. That work has not been completed. A separate physical route would require a gauge-consistent coupled stability result explaining which candidates can be reached dynamically. A static curvature coefficient supplies neither stability nor thermalization, reheating, a Big Bang mechanism, an observable spectrum, nor a physical energy scale.
+
+The term $O(\delta^3)$ in Eq.~\eqref{eq:main} is formal under the stated branch and smoothness assumptions, not a numerically certified inequality. The finite sweep is consistent with that behavior but cannot establish it uniformly. Independent algebra checks and separate numerical implementations are internal AI-assisted checks, not external peer review.
+
+\section{Reproduction, data and author verification}
+The companion files \texttt{family\_benchmark.py} and \texttt{family-benchmark-results.json} contain model parameters, settings, all results and the executed source SHA256. Matched variations are in \texttt{matched\_pair\_benchmark.py} and \texttt{matched-pair-results.json}. Runtime: Python 3.12.14, NumPy 2.3.5, SciPy 1.18.1. The script's optional local temporary dependency path can be removed when SciPy is installed normally. In the adjacent \texttt{scalar-junction} directory, \texttt{independent\_susceptibility.py} verifies nine exact identities; its JSON records paths and hashes of the September 27 \texttt{analytic\_structure} archive used for comparisons. Those comparisons are not fresh solves and require the archived inputs. The main new numerical programs are self-contained apart from ordinary numerical dependencies. The public starting files at the DOI in Ref.~\cite{maldonado} have filenames, byte counts and hashes recorded in \texttt{public-source-provenance.json} in the same companion directory. Those original sources are not altered by this note.
+
+For a portable algebra-only reproduction without archived inputs, \texttt{verify\_response\_algebra.py} uses SymPy 1.14.0 and verifies nine identities, retaining generic cubic/quartic terms in $W$ and quadratic/cubic terms in $f$. Its results and executed source hash are in \texttt{portable-algebra-results.json}. All nine checks pass. These checks confirm algebra under the stated branch assumptions, not the assumptions themselves.
+
+Substantive AI assistance through OpenAI Codex was used for literature assessment, mathematical derivation, coding, diagnostics and drafting this note. Exact backend identifiers have not been verified in this note. Ricardo's prior statement that he read the September manuscript and report does not establish review of this new material. Before any submission, the author should record actual checks of the new derivation, code/results and claim limits, correct remaining issues and complete an accurate tool/version disclosure. No personal rerun, expert endorsement or author verification of this new note is asserted here.
+
+\begin{thebibliography}{9}
+\bibitem{dfgk} O. DeWolfe, D. Z. Freedman, S. S. Gubser and A. Karch, Modeling the fifth dimension with scalars and gravity, \emph{Phys. Rev. D} \textbf{62}, 046008 (2000), \href{https://doi.org/10.1103/PhysRevD.62.046008}{doi:10.1103/PhysRevD.62.046008}.
+\bibitem{bv} C. Barcel\'o and M. Visser, Moduli fields and brane tensions: Generalizing the junction conditions, \emph{Phys. Rev. D} \textbf{63}, 024004 (2001), \href{https://doi.org/10.1103/PhysRevD.63.024004}{doi:10.1103/PhysRevD.63.024004}.
+\bibitem{bdl} P. Bin\'etruy, C. Deffayet, U. Ellwanger and D. Langlois, Brane cosmological evolution in a bulk with cosmological constant, \emph{Phys. Lett. B} \textbf{477}, 285--291 (2000), \href{https://arxiv.org/abs/hep-th/9910219}{arXiv:hep-th/9910219}.
+\bibitem{gknw} J. K. Ghosh, E. Kiritsis, F. Nitti and L. T. Witkowski, De Sitter and Anti-de Sitter branes in self-tuning models, \emph{JHEP} \textbf{11}, 128 (2018), \href{https://arxiv.org/abs/1807.09794}{arXiv:1807.09794}.
+\bibitem{maldonado} R. Maldonado, HDBLAST: Scalar Junction Consistency and a Corrected Static de Sitter Branch, Zenodo companion, declared 2 October 2026; manuscript dated 23 September, \href{https://doi.org/10.5281/zenodo.23111008}{doi:10.5281/zenodo.23111008}.
+\end{thebibliography}
+\end{document}

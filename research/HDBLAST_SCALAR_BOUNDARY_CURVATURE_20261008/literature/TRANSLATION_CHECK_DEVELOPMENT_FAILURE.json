@@ -1,0 +1,7 @@
+{
+  "stage": "initial symbolic normalization",
+  "check": "George_reflection_matrix",
+  "observed": "SymPy factor(together(...)) retained the structurally nonzero object 0*I; strict residual != 0 failed",
+  "correction": "Use simplify(cancel(together(...))) before exact zero comparison. No mathematical formula was changed.",
+  "scope": "Development of algebraic translation script; no production/research output altered."
+}

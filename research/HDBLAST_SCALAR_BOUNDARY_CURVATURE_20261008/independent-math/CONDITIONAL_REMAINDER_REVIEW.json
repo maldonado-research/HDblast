@@ -1,0 +1,20 @@
+{
+  "status": "PASS_INDEPENDENT_CONDITIONAL_PROOF_TRANSCRIPTION_REVIEW",
+  "reviewed_source": "numerical-audit/conditional_remainder.py",
+  "reviewed_source_sha256": "f9756d478b3a8f8f02c830fcade4c62c5f8857b8ea8417a31549383874c35430",
+  "proof": "With |eta-a*delta| <= K*delta^2 and 0<delta<=D, E=|a|+K*D bounds |eta|<=E*delta. The exact subtracted residual is delta*A1*(eta-a*delta)+sum(n>=2) A_n*delta*eta^n+sum(n>=1) B_n*delta^2*eta^n. Termwise triangle inequalities give the implemented C_H*delta^3, with D powers n-2 and n-1 respectively.",
+  "checks": [
+    "Exact boundary-polynomial coefficients match the displayed model",
+    "Scalar-shift and curvature coefficients match the conditional response law",
+    "All exponent and delta_max powers agree with the triangle-inequality proof",
+    "Nonnegative K including zero is a valid input domain",
+    "Exact binary64 rationalization is explicitly identified as nearby polynomial models"
+  ],
+  "scope": "Read-only independent source and mathematical proof review; no producer execution or numerical boundary-value computation was performed for this review.",
+  "limitations": [
+    "The scalar error-bound premise is not established by this code or review",
+    "K=1 examples are conditional, not branch certificates",
+    "Point controls do not supply the continuum argument; the analytic polynomial inequality does",
+    "No numerical ODE existence, local uniqueness or physical claim is certified"
+  ]
+}

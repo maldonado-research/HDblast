@@ -1,0 +1,542 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dS}{\mathrm{dS}}
+\title{Controlled scalar boundary response\newline of regular de Sitter branes}
+\author{Research draft prepared for Ricardo Maldonado}
+\date{8 October 2026}
+\begin{document}
+\maketitle
+\noindent\textbf{Draft status.} For author and external mathematical review. The proofs and algebra have received internal AI-assisted checks, not external peer review. Originality relative to the complete literature, journal significance, and the author's verification of this manuscript remain to be established. Quantitative bounds apply only on the explicit small parameter interval for which their sufficient conditions hold. This draft concerns a static boundary-value problem; a higher-dimensional origin of the Big Bang remains unestablished.
+
+\begin{abstract}
+We study two identical regular five-dimensional Einstein--scalar interiors joined at a four-dimensional de Sitter brane, with $U=W_\phi^2/2-2W^2/3$ and tension $\sigma=2W+\delta f$. Near a stationary point $W_0=3k>0$, $W''_0=w>4k$, and $f_0>0$, a weighted Dirichlet construction gives a regular small-detuning branch, unique in a stated local tube, on intervals whose proper length diverges as $\delta\to0^+$. Explicit sufficient inequalities and derivative bounds imply
+\[
+\left|H^2-\frac{kf_0}{3}\delta
+-\left[\frac{f_0^2}{36}-\frac{kf_1^2}{24(w-2k)}\right]\delta^2\right|
+\le K_H\delta^3.
+\]
+A complementary theorem varies the scalar boundary coupling at each fixed positive detuning. It supplies a locally unique analytic branch and an exact quadratic susceptibility, whose sign is strictly negative for nonzero linear scalar coupling. A solvable $w=5k$ case gives a closed expression. The quantitative detuning theorem has conservative sufficient conditions; it does not certify larger numerical sweep values without separate evaluation there. We compare the construction to established scalar-brane junctions, curved regular interiors, and perturbative matching. External novelty, dynamical stability, and any cosmological origin claim are not established.
+\end{abstract}
+
+\section{Question, established framework, and scope}
+A scalar-dependent brane tension supplies a scalar boundary condition as well as a geometric junction condition. These conditions couple the scalar profile, the brane position, and the induced curvature. The primary question is whether a regular branch actually exists as tension detuning tends to zero, when the proper radial interval diverges, and whether its curvature expansion has a controlled error. A complementary question asks for the response to weak scalar boundary coupling at each fixed positive detuning. Both questions impose both junction conditions and regular interiors.
+
+Scalar backreaction, superpotential-generated bulk potentials, and curved detuned branes were developed by DeWolfe, Freedman, Gubser, and Karch (DFGK) \cite{dfgk}. The scalar and metric junction conditions used here are established variational conditions; Barcel\'o and Visser give a broader treatment \cite{bv}. Ghosh, Kiritsis, Nitti, and Witkowski analyze curved scalar-brane matching \cite{curvedbranes}, including a perturbative brane-position response in Appendix D. Their related work treats regular positive-curvature interior endpoints and the scalar linearization near an AdS minimum \cite{curvedflows}. Thus neither scalar adjustment nor its influence on curvature is, by itself, a new mechanism.
+
+The results formulated below are narrower: a local branch theorem in boundary coupling at each fixed positive detuning with a signed quadratic susceptibility, and a uniform small-detuning construction with an explicit cubic remainder under sufficient smallness conditions. ``Exact'' here refers to the coefficient of $\eps^2$, without expanding in $\delta$; it does not mean that the quadratic expression equals the full nonlinear solution at finite $\eps$. The finite-detuning branch theorem uses analyticity and a nonsingular shooting Jacobian at an explicitly known solution. The uniform theorem instead uses a weighted inverse on an expanding interval and a scalar/metric matching argument. No globally unique branch, dynamical stability, time-dependent creation process, or cosmological inference follows from it.
+
+This question arose in the HDBLAST research program. A previously released companion already gives the special small-detuning correction in its registered polynomial model \cite{companion}. An earlier working note generalized that coefficient under a branch assumption and tested it numerically. Section~\ref{sec:limits} distinguishes the two perturbation parameters, and Sec.~\ref{sec:uniform} supplies sufficient conditions that remove the earlier small-detuning branch assumption. The selected primary sources do not state the susceptibility in precisely the form used below, but that bounded comparison does not establish priority or sufficient journal significance.
+
+\section{Action and complete radial boundary problem}
+All quantities are in dimensionless model units; no physical length or energy scale is assigned. We use signature $(-++++)$, two identical interior copies $M_a$, one common brane $\Sigma$, and the outward normal from each interior toward the brane. The action is
+\begin{align}
+S={}&\frac{1}{2\kappa_5^2}\sum_{a=1}^2\int_{M_a}\sqrt{-g}
+ \left[R-(\nabla\phi)^2-2U(\phi)\right]\dd^5x \nonumber\\
+ &+\frac{1}{\kappa_5^2}\sum_{a=1}^2\int_\Sigma\sqrt{-h}K_a\dd^4x
+ -\frac{1}{\kappa_5^2}\int_\Sigma\sqrt{-h}\,\sigma(\phi)\dd^4x .
+\label{eq:action}
+\end{align}
+The bulk equations are $R_{AB}=\partial_A\phi\partial_B\phi+(2U/3)g_{AB}$ and $\Box\phi=U_\phi$. In proper-distance gauge,
+\begin{equation}
+\dd s^2=\dd y^2+\rho(y)^2\dd s^2_{\dS,1},
+\end{equation}
+where the four-dimensional slices have unit de Sitter curvature. A prime on a radial function denotes $\dd/\dd y$; subscripts $\phi$ denote scalar derivatives. The radial equations and constraint are
+\begin{align}
+\phi''+4\frac{\rho'}{\rho}\phi'&=U_\phi,
+ &\rho''&=-\rho\left(\frac{\phi'^2}{4}+\frac{U}{6}\right),\label{eq:evolution}\\
+\rho'^2&=1+\rho^2\left(\frac{\phi'^2}{12}-\frac{U}{6}\right).
+\label{eq:constraint}
+\end{align}
+At the regular radial origin we impose
+\begin{equation}
+\rho(0)=0,\qquad\rho'(0)=1,\qquad
+\phi(0)=\phi_h,\qquad\phi'(0)=0.\label{eq:cone}
+\end{equation}
+These conditions specify the regular cone in these coordinates. After Euclidean continuation of the slices they describe a smooth cap; in Lorentzian signature the vanishing warp factor is a coordinate horizon of the background \cite{curvedflows}. The radial construction alone does not establish a global Lorentzian cosmology.
+
+At $y=y_b>0$, the doubled-interior junction conditions are
+\begin{equation}
+\frac{\rho'_b}{\rho_b}=\frac{\sigma(\phi_b)}{6},\qquad
+\phi'_b=-\frac{\sigma_\phi(\phi_b)}{2},\qquad
+H^2=\frac{1}{\rho_b^2}.\label{eq:junctions}
+\end{equation}
+For example, the scalar boundary variation has coefficient
+$-\sum_a n_a\phi-\sigma_\phi=-2\phi'_b-\sigma_\phi$ in these conventions. The metric variation similarly includes both outward extrinsic curvatures. Changing orientation must change the junction conventions consistently.
+
+We assume real-analytic $W,g$ in a neighborhood of $\phi_0$, and set
+\begin{align}
+U(\phi)&=\tfrac12 W_\phi^2-\tfrac23 W^2,
+&\sigma(\phi;\eps)&=2W(\phi)+\delta[f_0+\eps g(\phi)],\label{eq:model}\\
+W(\phi_0)&=3k,&W_\phi(\phi_0)&=0,
+&W_{\phi\phi}(\phi_0)&=w>4k>0,\label{eq:hypotheses}\\
+g(\phi_0)&=0,&g_1&=g_\phi(\phi_0),
+&f_0&>0,\quad\delta>0.\nonumber
+\end{align}
+The independent expansion parameter is $\eps$, while $\delta$ is fixed. The condition $g_0=0$ holds the value of the tension at $\phi_0$ fixed as $\eps$ changes. The mass at the stationary point is
+\begin{equation}
+m^2=U_{\phi\phi}(\phi_0)=w(w-4k)>0.
+\end{equation}
+
+Combining the standard constraint and both standard junction conditions gives the useful shell identity
+\begin{equation}
+H^2=\frac{\sigma^2}{36}-\frac{\sigma_\phi^2}{48}+\frac{U}{6}.
+\label{eq:shellidentity}
+\end{equation}
+This identity is an established consequence of the Einstein--scalar system, rather than a new field equation. For any $f$ with $\sigma=2W+\delta f$, it is equivalently
+\begin{equation}
+H^2=\delta\left(\frac{Wf}{9}-\frac{W_\phi f_\phi}{12}\right)
++\delta^2\left(\frac{f^2}{36}-\frac{f_\phi^2}{48}\right).
+\label{eq:cancelledidentity}
+\end{equation}
+
+\section{A local solution branch at finite detuning}
+At $\eps=0$, the scalar is constant, and the solution is known:
+\begin{align}
+\phi(y)&=\phi_0,&\rho_0(y)&=k^{-1}\sinh(ky),\nonumber\\
+A&=k+\frac{\delta f_0}{6},&
+y_0&=\frac{1}{k}\operatorname{arccoth}\!\left(\frac{A}{k}\right),\label{eq:base}\\
+H_0^2&=A^2-k^2
+=\frac{kf_0}{3}\delta+\frac{f_0^2}{36}\delta^2>0.\nonumber
+\end{align}
+For every fixed positive detuning the proper radial interval has finite length.
+
+\begin{lemma}[Regular initial-value dependence]\label{lem:ivp}
+In a neighborhood of $\phi_h=\phi_0$, Eqs.~\eqref{eq:evolution}--\eqref{eq:cone} have a unique regular radial solution near $y=0$, depending real-analytically on $\phi_h$. This dependence extends to a neighborhood of the finite interval $[0,y_0]$. There $\rho(y)>0$ for $y>0$, and the constraint \eqref{eq:constraint} holds.
+\end{lemma}
+\begin{proof}
+The apparent singularity at the cone can be handled without assigning arbitrary data at a small positive cutoff. The integral equations are
+\begin{align}
+\rho(y)&=y-\int_0^y(y-s)\rho(s)
+ \left[\frac{\phi'(s)^2}{4}+\frac{U(\phi(s))}{6}\right]\dd s,\label{eq:volterra1}\\
+\phi(y)&=\phi_h+\int_0^y\rho(s)^{-4}
+ \int_0^s\rho(t)^4U_\phi(\phi(t))\dd t\,\dd s.
+\label{eq:volterra2}
+\end{align}
+To see regularity and a small contraction constant directly, write
+$r(y)=\rho(y)/y=1+y^2R(y)$ and $B(y)=\phi'(y)/y$. Then
+\begin{align}
+\phi(y)&=\phi_h+y^2\int_0^1uB(yu)\dd u,\nonumber\\
+R(y)&=-\int_0^1(1-u)u\,r(yu)
+\left[\frac{y^2u^2B(yu)^2}{4}+\frac{U(\phi(yu))}{6}\right]\dd u,\nonumber\\
+B(y)&=\int_0^1u^4\frac{r(yu)^4}{r(y)^4}U_\phi(\phi(yu))\dd u.
+\end{align}
+On a bounded ball of continuous $(R,B)$, with $r$ bounded away from zero, every functional variation in the last two right sides carries a factor $y^2$. A sufficiently short interval therefore gives an analytic contraction with analytic dependence on $\phi_h$. Its center values are $R(0)=-U(\phi_h)/36$ and $B(0)=U_\phi(\phi_h)/5$, and thus
+\begin{equation}
+\rho(y)=y-\frac{U(\phi_h)}{36}y^3+O(y^5),\qquad
+\phi(y)=\phi_h+\frac{U_\phi(\phi_h)}{10}y^2+O(y^4).
+\end{equation}
+Ordinary analytic dependence and continuation away from $y=0$ extend the nearby solutions along the finite, nonsingular background interval. Compactness permits a neighborhood of $\phi_h=\phi_0$ where positivity of $\rho$ persists away from the cone, while the local construction gives positivity at the cone.
+
+Finally, let $C=\rho'^2-1-\rho^2(\phi'^2/12-U/6)$. Substitution of both evolution equations gives $C'=0$ for $y>0$. The cone limit has $C=0$, so the constraint propagates. This argument establishes regular radial solutions locally in their initial data, not global continuation for arbitrary scalar excursions.
+\end{proof}
+
+Let $F$ be the regular linear scalar mode on the constant-scalar background:
+\begin{equation}
+F''+4k\coth(ky)F'-m^2F=0,\qquad F(0)=1,\quad F'(0)=0.
+\label{eq:F}
+\end{equation}
+It is strictly positive and increasing for $y>0$. Indeed,
+\begin{equation}
+\left[\sinh^4(ky)F'(y)\right]'=m^2\sinh^4(ky)F(y),
+\end{equation}
+so $F'$ becomes positive and cannot cease to be positive while $F$ is positive; hence $F$ cannot have a first zero. Define its logarithmic derivative
+\begin{equation}
+D(y)=\frac{F'(y)}{F(y)}>0\quad(y>0).
+\label{eq:Ddef}
+\end{equation}
+
+\begin{theorem}[Local analytic branch]\label{thm:branch}
+Under \eqref{eq:model}--\eqref{eq:hypotheses}, at every fixed $\delta>0$ there is $\eps_*>0$ and a locally unique real-analytic branch
+$(\phi_h(\eps),y_b(\eps),\rho(\cdot;\eps),\phi(\cdot;\eps))$
+for $|\eps|<\eps_*$, satisfying the regular cone conditions, both junction conditions, and the radial constraint, with base solution \eqref{eq:base}. Uniqueness is within a neighborhood of this solution, in the fixed proper-distance gauge and with the origin and normalization in \eqref{eq:cone}.
+\end{theorem}
+\begin{proof}
+Set $a=\phi_h-\phi_0$ and use Lemma~\ref{lem:ivp} to define the two analytic shell residuals
+\begin{equation}
+R_1(a,y_b,\eps)=\frac{\rho'(y_b)}{\rho(y_b)}-\frac{\sigma(\phi(y_b);\eps)}{6},
+\qquad
+R_2(a,y_b,\eps)=\phi'(y_b)+\frac{\sigma_\phi(\phi(y_b);\eps)}{2}.
+\end{equation}
+At the base solution, the linear scalar variation is $\partial_a\phi=F$. There is no linear metric variation because $U_\phi(\phi_0)=0$ and $\phi'_0=0$. Since $\sigma_\phi(\phi_0;0)=0$, the residual Jacobian is
+\begin{equation}
+\left.\frac{\partial(R_1,R_2)}{\partial(a,y_b)}\right|_{(0,y_0,0)}
+=\begin{pmatrix}
+0&-H_0^2\\
+F'(y_0)+wF(y_0)&0
+\end{pmatrix}.\label{eq:jacobian}
+\end{equation}
+Its determinant is $H_0^2[F'(y_0)+wF(y_0)]>0$. The analytic implicit-function theorem supplies the branch and its local uniqueness. Positivity of the shell radius and regularity of the interior follow by taking a smaller neighborhood if necessary.
+\end{proof}
+
+The theorem supplies a nonzero coupling neighborhood but no numerical value for its radius. It does not establish that any particular finite project parameter lies inside that neighborhood. It also does not exclude additional branches outside it.
+
+\section{Exact quadratic susceptibility and its sign}
+In this section $D$ without argument denotes $D(y_0)$, and $D'$ denotes its radial derivative at $y_0$. Differentiating the residual equations once with respect to $\eps$ gives
+\begin{equation}
+\left.\frac{\dd y_b}{\dd\eps}\right|_0=0,
+\qquad
+b:=\left.\frac{\dd\phi_b}{\dd\eps}\right|_0
+=-\frac{\delta g_1}{2(D+w)}.\label{eq:firstvariation}
+\end{equation}
+The first equality uses $g_0=0$. The second combines the response of the regular interior, $\partial_\eps\phi'_b=Db$, with the scalar junction condition.
+
+\begin{theorem}[Finite-detuning curvature susceptibility]\label{thm:response}
+The branch in Theorem~\ref{thm:branch} satisfies
+\begin{equation}
+H^2(\eps)=H_0^2+C_2\eps^2+O(\eps^3),\qquad
+\boxed{C_2=-\frac{\delta^2g_1^2}{48(D+w)^2}
+\left[4A(D+w)-D'\right].}\label{eq:C2}
+\end{equation}
+For all fixed $\delta>0$, $C_2<0$ if $g_1\ne0$. If $g_1=0$, the locally unique branch is the constant-scalar solution and $H^2=H_0^2$ exactly.
+\end{theorem}
+\begin{proof}
+Because $W_\phi(\phi_0)=U_\phi(\phi_0)=g_0=0$, the shell identity has no term linear in $\eps$. Write $\phi_b-\phi_0=b\eps+O(\eps^2)$. To quadratic order,
+\begin{align}
+\sigma_b&=6A+(wb^2+\delta g_1b)\eps^2+O(\eps^3),\nonumber\\
+\sigma_{\phi,b}&=(2wb+\delta g_1)\eps+O(\eps^2),\nonumber\\
+U_b&=-6k^2+\tfrac12 m^2b^2\eps^2+O(\eps^3).
+\end{align}
+Thus \eqref{eq:shellidentity} gives
+\begin{equation}
+C_2=\frac{A}{3}(wb^2+\delta g_1b)
+-\frac{(2wb+\delta g_1)^2}{48}+\frac{m^2b^2}{12}.
+\end{equation}
+Using $\delta g_1=-2(D+w)b$ and the Riccati equation implied by \eqref{eq:F},
+\begin{equation}
+D'=m^2-D^2-4AD,\label{eq:riccati}
+\end{equation}
+reduces this expression to $b^2[D'-4A(D+w)]/12$, proving \eqref{eq:C2}. No second derivative of the nonlinear solution branch is needed for this coefficient. In particular $W'''_0$ and $g''_0$ do not enter it.
+
+For the sign, introduce functions on the background interior,
+\begin{equation}
+\mathcal A(y)=k\coth(ky),\qquad
+E(y)=4\mathcal A(y)[D(y)+w]-D'(y).
+\end{equation}
+Here $\mathcal A'=-(\mathcal A^2-k^2)$ and
+$D=m^2y/5+O(y^3)$ at the cone. Therefore $E=4w/y+O(1)>0$ near zero. Differentiating the Riccati equation gives
+\begin{equation}
+E'=-4(\mathcal A^2-k^2)(2D+w)+(2D+8\mathcal A)D'.
+\end{equation}
+At a hypothetical first zero of $E$, one has $D'=4\mathcal A(D+w)$ and consequently
+\begin{equation}
+E'=4\left[
+2\mathcal A D^2+2\mathcal A Dw+6\mathcal A^2D
++7\mathcal A^2w+k^2(2D+w)\right]>0.\label{eq:barrier}
+\end{equation}
+A differentiable function that is positive before its first zero cannot have strictly positive derivative at that zero. Hence $E(y)>0$ throughout the regular background interior, proving the strict sign of $C_2$ when $g_1\ne0$.
+
+If $g_1=0$, $\phi=\phi_0$ satisfies both junctions at $y_0$ for every $\eps$ because $g_0=g_1=0$. Local uniqueness then selects that branch.
+\end{proof}
+
+For $g_1\ne0$, analyticity and the strict sign also imply $H^2(\eps)<H_0^2$ for every sufficiently small nonzero $\eps$. This compares complete solutions in a family of different boundary theories: the baseline is the admissible zero-coupling solution. It does not compare two distinct solutions of the same fixed nonzero-coupling theory. In that latter theory, imposing $\phi=\phi_0$ would generally violate the scalar junction.
+
+\subsection{A closed-form example}
+The choice $w=5k$ has $m^2=5k^2$ and the exact regular mode
+\begin{equation}
+F(y)=\cosh(ky),\qquad D(y)=k\tanh(ky).
+\end{equation}
+At the brane, $D=k^2/A$ and $D'=k^2-k^4/A^2$. The coefficient becomes
+\begin{equation}
+C_2=-\frac{\delta^2g_1^2
+\left(3k^2+20Ak+k^4/A^2\right)}
+{48\left(k^2/A+5k\right)^2}.\label{eq:example}
+\end{equation}
+All numerator terms are positive. With $x=A/k>1$, this can also be written
+\begin{equation}
+\frac{C_2}{\delta^2g_1^2}
+=-\frac{3+20x+x^{-2}}{48(5+x^{-1})^2}.
+\end{equation}
+This expression supplies a direct benchmark for implementations of the finite-detuning response. It remains a weak-coupling coefficient even when evaluated at large positive detuning.
+
+\section{Remainders and the singular small-detuning limit}\label{sec:limits}
+For a fixed detuning the analytic branch gives a genuine Taylor remainder. More generally, fix all model functions and choose a compact detuning interval
+$[\delta_-,\delta_+]\subset(0,\infty)$. The background interval length, residual map, and inverse Jacobian vary continuously there. By a finite covering of the interval and local uniqueness, the branch can be chosen on a common sufficiently small coupling interval. On a smaller closed interval $|\eps|\le\eps_*/2$, define
+\begin{equation}
+M_3=\frac16\sup_{\substack{\delta\in[\delta_-,\delta_+]\\|s|\le\eps_*/2}}
+\left|\partial_s^3 H^2(\delta,s)\right|<\infty.
+\end{equation}
+Taylor's theorem yields
+\begin{equation}
+\left|H^2(\delta,\eps)-H_0^2(\delta)-C_2(\delta)\eps^2\right|
+\le M_3|\eps|^3.\label{eq:remainder}
+\end{equation}
+This is an existential bound: neither $\eps_*$ nor $M_3$ has been numerically enclosed. It is not a computable certificate for a selected finite coupling. Computing a validated radius and bound would require explicit control of the nonlinear residual, its inverse, and the regular-origin truncation or integral equation.
+
+When $\delta\downarrow0$, $y_0\to\infty$ and $H_0^2\to0$. The metric entry of \eqref{eq:jacobian} vanishes, so its inverse has a factor $H_0^{-2}$. The preceding compact-interval argument cannot be continued to zero detuning.
+
+The coefficient nevertheless has a definite limit. Let $\lambda=w-4k>0$. The Riccati equation and positivity show $0<D(y)<\lambda$. In addition $D'(0)=m^2/5>0$, and at any first zero of $D'$ its derivative would be
+$D''=-4\mathcal A'D>0$. Thus $D'>0$. Its finite limit must solve $m^2-D^2-4kD=0$, and hence $D\to\lambda$ and $D'\to0$. It follows that
+\begin{equation}
+\lim_{\delta\downarrow0}\frac{C_2(\delta)}{\delta^2}
+=-\frac{kg_1^2}{24(w-2k)}.\label{eq:coefficientlimit}
+\end{equation}
+This takes the small-detuning limit of a derivative at $\eps=0$. It does not exchange the weak-coupling and small-detuning limits for the full nonlinear solution.
+
+For comparison, consider instead a fixed analytic $f$ in $\sigma=2W+\delta f$, writing $f_0=f(\phi_0)$ and $f_1=f_\phi(\phi_0)$. \emph{If} a regular small-detuning branch obeys
+\begin{equation}
+\phi_b-\phi_0=O(\delta),\qquad
+\phi'_b=(w-4k)(\phi_b-\phi_0)+O(\delta^2),
+\label{eq:conditionalbranch}
+\end{equation}
+then its scalar junction gives
+$\phi_b-\phi_0=-f_1\delta/[4(w-2k)]+O(\delta^2)$, and the exact shell identity gives
+\begin{equation}
+H^2=\frac{kf_0}{3}\delta+
+\left[\frac{f_0^2}{36}-\frac{kf_1^2}{24(w-2k)}\right]\delta^2
++O(\delta^3).\label{eq:conditionaldelta}
+\end{equation}
+Theorem~\ref{thm:branch} alone does not supply a coupling neighborhood uniform down to $\delta=0$ and therefore cannot remove \eqref{eq:conditionalbranch} at a fixed nonzero coupling. Section~\ref{sec:uniform} supplies a separate weighted construction that does establish the needed uniform estimates under explicit sufficient conditions. No resonance is implied by the denominator $w-2k$ within the stated range $w>4k$; regimes $w\le4k$, negative detuning, and $f_0=0$ need separate analysis.
+
+The registered project parameters $k=1/9$, $w=2$, $f_0=1+c$, $f_1=c$, with $c=0.5975949350280132$, make the scalar correction in \eqref{eq:conditionaldelta} equal to $-c^2\delta^2/384$. That specific coefficient is already present in the earlier companion \cite{companion}; it is not a new result of this draft. When applying the finite-detuning weak-coupling theorem to that model, $f_0$ must be held fixed: varying the original $c$ in $1+c\phi$ also varies $f_0=1+c$ and is a different parameter path.
+
+\section{A uniform small-detuning branch and explicit remainder}\label{sec:uniform}
+The fixed-detuning argument does not control an interval whose endpoint tends to infinity. We now construct that control directly. Shift $\phi_0$ to zero, write the scalar as $\eta$, and assume $W\in C^4([-r,r])$, $f\in C^3([-r,r])$, with $W(0)=3k$, $W'(0)=0$, $W''(0)=w>4k>0$, and $f(0)=f_0>0$. Here $f$ is fixed and $\sigma=2W+\delta f$. Supremum norms in this section are on $[-r,r]$.
+
+\subsection{An inverse uniform on expanding intervals}
+Set $r_0(y)=\sinh(ky)/k$, $a_0=k\coth(ky)$, and $\lambda=w-4k$. For $\nu>0$ let $F_\nu$ be the regular positive solution
+\begin{equation}
+F_\nu''+4a_0F_\nu'-\mu_\nu F_\nu=0,\quad
+\mu_\nu=\nu(\nu+4k),\quad F_\nu(0)=1,\quad F'_\nu(0)=0.
+\end{equation}
+The divergence form and first-crossing test give $0\le F'_\nu/F_\nu\le\nu$. Choose $\nu=\lambda/2$, $\Delta=m^2-\mu_\nu>0$, and define
+\begin{align}
+s_T(y)&=F_\nu(y)/F_\nu(T),&C_0&=4k\coth(1)+\nu,\nonumber\\
+\zeta&=\mu_\nu(1-e^{-C_0/k})/C_0,&J&=2/k+1/(2\zeta).
+\end{align}
+For $y\ge2/k$, restricting the divergence-form integral to $[y-1/k,y]$ gives $F'_\nu/F_\nu\ge\zeta$: the ratios of $r_0$ and $F_\nu$ are bounded below by $e^{-k\coth(1)(y-t)}$ and $e^{-\nu(y-t)}$. Therefore $\int_0^T s_T^2\dd y\le J$ for every $T$.
+
+Let $G_T$ invert $L_m=\partial_y^2+4a_0\partial_y-m^2$ with regular-center condition $v'(0)=0$ and $v(T)=0$. Since $L_ms_T=-\Delta s_T$, the maximum principle gives $|G_TN|\le\|N/s_T\|_\infty s_T/\Delta$. Integrating $(r_0^4v')'=r_0^4(m^2v+N)$ and using $r_0(t)/r_0(y)\le e^{-k(y-t)}$ gives
+\begin{align}
+\|v\|_T&=\max\left(\sup|v|/s_T,\sup|v'|/(ks_T)\right),\nonumber\\
+\|G_TN\|_T&\le C_G\|N/s_T\|_\infty,
+\qquad C_G=\max\left(\Delta^{-1},\frac{1+m^2/\Delta}{4k^2}\right).
+\end{align}
+Regularity at the center permits the even radial maximum principle. Comparison of logarithmic derivatives gives $\psi_T:=F_\lambda/F_\lambda(T)\le s_T$, so $\|\psi_T\|_T\le M:=\max(1,\lambda/k)$.
+
+\subsection{The nonlinear interior and endpoint estimates}
+Prescribe $\eta(T)=\beta$ and put $B=2M$. If $p=\eta'$, the metric has the exact Volterra representation
+\begin{align}
+\mathcal F&=p^2/4+[U(\eta)+6k^2]/6,\qquad R=\rho/r_0,\nonumber\\
+R(y)&=1-\int_0^yK(y,t)\mathcal F(t)R(t)\dd t,\nonumber\\
+K(y,t)&=\frac{\sinh(k(y-t))\sinh(kt)}{k\sinh(ky)},\quad
+0\le K\le\frac1{2k},\quad
+\partial_yK=[r_0(t)/r_0(y)]^2.
+\end{align}
+Define the finite constants
+\begin{align}
+M_2&=\|U''\|_\infty,&M_3&=\|U'''\|_\infty,&L_1&=M_3/2,&C_F&=k^2/4+M_2/12,\nonumber\\
+C_N&=L_1B^2+4C_FB^3b,&L_N&=2L_1Bb+20C_FB^2b^2.\label{eq:nonlinearconstants}
+\end{align}
+Choose $b>0$ so that
+\begin{equation}
+Bb\le r,\quad \frac{C_FB^2b^2J}{2k}\le\frac14,\quad
+C_GL_N\le\frac12,\quad C_GC_Nb\le M,\quad
+\frac{C_FB^2b^2}{k}\le\frac{k}{2}.\label{eq:bconditions}
+\end{equation}
+On $\|\eta\|_T\le B|\beta|$, $|\beta|\le b$, $|\mathcal F|\le C_FB^2\beta^2s_T^2$. The resolvent and the kernel derivative yield
+\begin{equation}
+\frac23\le R\le\frac43,\quad
+|a-a_0|\le\frac{C_FB^2\beta^2}{k}s_T^2,\quad
+|a_\eta-a_{\widetilde\eta}|\le\frac{4C_FB|\beta|}{k}d\,s_T^2,
+\label{eq:metricbounds}
+\end{equation}
+where $a=\rho'/\rho$ and $d=\|\eta-\widetilde\eta\|_T$. These estimates use absolute values and require no sign for $\mathcal F$. The scalar equation is equivalent to
+\begin{equation}
+\eta=\beta\psi_T+G_TN(\eta),\qquad
+N=U'(\eta)-m^2\eta-4(a-a_0)\eta'.
+\end{equation}
+Taylor estimates give $\|N/s_T\|_\infty\le C_N\beta^2$ and
+$\|[N(\eta)-N(\widetilde\eta)]/s_T\|_\infty\le L_Nd$. Thus the map preserves the tube and contracts by at most $1/2$, uniformly in $T$. Replacing $|\beta|$ by $b$ gives a common ball and $C^1$ dependence on $\beta$ through zero. The smaller-tube fixed points are its same unique solutions. Strict preservation inequalities may be chosen to give an open parameter neighborhood. The scaled regular-cone integral equations in Lemma~\ref{lem:ivp} give the required regularity and parameter dependence; the constraint propagates exactly.
+
+Set
+\begin{equation}
+C_D=kC_GC_N,\quad C_P=kC_GB(2L_1B+20C_FB^2b),\quad C_a=4C_FB^2/k.
+\end{equation}
+Differentiating the contraction gives $\|\eta_\beta\|_T\le B$ and, with $D_T=F'_\lambda(T)/F_\lambda(T)$,
+\begin{equation}
+|p(T)-D_T\beta|\le C_D\beta^2,\quad
+|p_\beta(T)-D_T|\le C_P|\beta|,\quad
+|a_\beta(T)|\le C_a|\beta|.\label{eq:endpointbounds}
+\end{equation}
+
+\subsection{Existence and uniqueness of the shell in the tube}
+Put $Y=1/k$, $f_1=f'(0)$, $L=(|f_1|+1)/w$, and $a_1=kf_0/3$. Denote $W_2=\|W''\|_\infty$, $W_3=\|W'''\|_\infty$, $F_1=\|f'\|_\infty$, $F_2=\|f''\|_\infty$. Take $b$ still smaller if needed so $(C_P+W_3)b<w/2$, and choose $\delta_*>0$ with
+\begin{equation}
+L\delta_*\le b,\qquad (C_P+W_3)b+\delta_*F_2/2\le w/2.\label{eq:scalarconditions}
+\end{equation}
+For each $T\ge Y$, the scalar-junction function
+$h_T(\beta,\delta)=p(T;\beta)+W'(\beta)+\delta f'(\beta)/2$
+has derivative at least $w/2$, while $h_T(0,\delta)=\delta f_1/2$. It has a unique root in the tube with $|\beta(T,\delta)|\le |f_1|\delta/w\le L\delta$.
+
+Define
+\begin{equation}
+P(x)=Wf/9-W'f'/12,\quad Q(x)=f^2/36-f'^2/48,\quad
+C_K=L\|P'\|_\infty+\|Q\|_\infty.
+\end{equation}
+Require also
+\begin{equation}
+C_K\delta_*\le a_1/2,\quad
+\tfrac32a_1\delta_*<\tfrac9{16}r_0(Y)^{-2},\quad
+k-W_2b^2/6-\delta_*\|f\|_\infty/6\ge k/2.
+\label{eq:metricconditions}
+\end{equation}
+On the scalar-junction locus, $\mathcal K=\delta P(\beta)+\delta^2Q(\beta)$ lies in $[a_1\delta/2,3a_1\delta/2]$, and the constraint gives
+\begin{equation}
+(a-\sigma/6)(a+\sigma/6)=H^2-\mathcal K.
+\end{equation}
+Both $a$ and $\sigma/6$ are positive. At $T=Y$, $H^2\ge9r_0(Y)^{-2}/16>\mathcal K$; at infinity, $H^2\le9r_0(T)^{-2}/4\to0$ uniformly. The metric residual therefore has a root.
+
+The moving-endpoint derivatives needed for uniqueness can be obtained at each finite $T$. Rescaling the contraction to $[0,1]$ gives local $C^1$ dependence on $T$. The cone parameterization and the chain rule at fixed endpoint scalar give
+\begin{equation}
+\partial_Tp|_\beta=U'(\beta)-4ap-pp_\beta,\qquad
+\partial_Ta|_\beta=-H^2-p^2/3-pa_\beta.
+\end{equation}
+The parameterization is nondegenerate: $\eta_\beta(T)=1$, while the regular cone IVP has one scalar parameter. Define
+\begin{align}
+\bar a&=k\coth(1)+C_FB^2b^2/k,\nonumber\\
+C_{Tp}&=M_2+4\bar a kB+kB(\lambda+C_Pb),&C_{T\beta}&=2C_{Tp}/w,\nonumber\\
+C_{\rm slope}&=kBC_aL^2+[(C_a+W_2/3)L+F_1/6]C_{T\beta}L.
+\end{align}
+Differentiating the scalar junction gives $|\beta_T|\le C_{T\beta}|\beta|$. At any root, the metric residual $\mathcal R=a-W(\beta)/3-\delta f(\beta)/6$ obeys
+\begin{equation}
+\mathcal R_T\le-a_1\delta/2+C_{\rm slope}\delta^2.
+\end{equation}
+The additional sufficient condition
+\begin{equation}
+C_{\rm slope}\delta_*\le a_1/4\label{eq:slopecondition}
+\end{equation}
+makes every root a strict downward crossing. Because the residual starts positive and ends negative, it has exactly one root: two downward crossings would require an intervening zero that is not a strict downward crossing. Ordinary implicit differentiation at each positive detuning then gives a $C^1$ branch. No implicit-function argument at an infinite endpoint is used.
+
+\subsection{A uniform cubic remainder}
+For $z=F'_\lambda/F_\lambda$, the difference $e=\lambda-z$ satisfies
+$e'=-(w+z)e+4(a_0-k)z$. Since $0\le z\le\lambda$, for $T\ge Y$ this gives
+\begin{equation}
+0\le\lambda-D_T\le C_Le^{-2kT},\qquad
+C_L=\lambda e^2+\frac{8k\lambda}{(1-e^{-2})(w-2k)}.
+\end{equation}
+Using $r_0(T)^{-2}\ge4k^2e^{-2kT}$ and
+$r_0(T)^{-2}=R(T)^2H^2\le16H^2/9$, Eq.~\eqref{eq:endpointbounds} implies
+\begin{equation}
+|p(T)-\lambda\beta|\le C_HH^2|\beta|+C_D\beta^2,\qquad C_H=4C_L/(9k^2).
+\end{equation}
+Set
+\begin{align}
+d_0&=2(w-2k),&\alpha&=-f_1/(2d_0),\nonumber\\
+K_\eta&=\frac{C_H(3a_1/2)L+(C_D+W_3/2)L^2+F_2L/2}{d_0},\nonumber\\
+K_H&=|P'(0)|K_\eta+\tfrac12\|P''\|_\infty L^2+\|Q'\|_\infty L.
+\label{eq:uniformconstants}
+\end{align}
+The scalar junction gives $|\beta-\alpha\delta|\le K_\eta\delta^2$. Taylor's theorem in the exact shell identity then proves the following result, using $P'(0)=f_1(4k-w)/12$ and $Q(0)=f_0^2/36-f_1^2/48$.
+
+\begin{theorem}[Controlled small-detuning branch]\label{thm:uniform}
+Choose $b$ and $\delta_*$ satisfying \eqref{eq:bconditions}, \eqref{eq:scalarconditions}, \eqref{eq:metricconditions}, and \eqref{eq:slopecondition}, including $(C_P+W_3)b<w/2$. For every $0<\delta\le\delta_*$ there is a regular doubled-interior solution at a shell $T\ge1/k$, unique in the constructed weighted Dirichlet tube. It obeys
+\begin{align}
+\left|\beta+\frac{f_1\delta}{4(w-2k)}\right|&\le K_\eta\delta^2,\\
+\left|H^2-\frac{kf_0}{3}\delta
+-\left(\frac{f_0^2}{36}-\frac{kf_1^2}{24(w-2k)}\right)\delta^2\right|
+&\le K_H\delta^3.\label{eq:uniformcurvature}
+\end{align}
+The branch is $C^1$ for positive detuning, and $T\to\infty$ as $\delta\to0^+$.
+\end{theorem}
+The preceding construction proves the statement. Its inequalities are feasible by first shrinking $b$ and then $\delta_*$. The constants use only bounded derivatives and displayed elementary functions. Uniformity is in detuning for fixed functions and parameters, not in a limit $w\downarrow4k$ or $k\downarrow0$. Other branches outside the tube are not excluded.
+
+For polynomial $P(\eta)=\sum_nP_n\eta^n$ and $Q(\eta)=\sum_nQ_n\eta^n$, a sharper remainder bound follows directly from $H^2=\delta P(\beta)+\delta^2Q(\beta)$. Put $E=|\alpha|+K_\eta\delta_*$, so $|\beta|\le E\delta$. Subtracting the quadratic approximation leaves $\delta P_1(\beta-\alpha\delta)$ and the higher polynomial terms. The triangle inequality therefore permits replacing $K_H$ in \eqref{eq:uniformcurvature} by the smaller of its previous value and
+\begin{equation}
+K_H^{\rm poly}=|P_1|K_\eta+
+\sum_{n\ge2}|P_n|E^n\delta_*^{n-2}
++\sum_{n\ge1}|Q_n|E^n\delta_*^{n-1}.
+\label{eq:polynomialbound}
+\end{equation}
+The sums are finite. This refinement uses the already proved scalar estimate and introduces no additional branch assumption.
+
+\subsection{Two conservative evaluated instances}
+The companion exact-arithmetic program bounds polynomial derivatives by rational coefficient bounds and bounds the elementary constants conservatively. It checks all sufficient inequalities by exact rational arithmetic. Table~\ref{tab:certified} reports readable outward bounds. The registered instance is
+\begin{equation}
+W=\tfrac13+\eta^2+\tfrac13\eta^3,\qquad f=1+c+c\eta,\qquad
+c=\frac{2}{1.0357712571566784}-\frac43,
+\end{equation}
+where the displayed terminating decimal is interpreted as an exact rational input. This parameter convention is distinguishable from a previously rounded binary64 value; the certificate concerns the stated exact model. The second instance, $W=3+(5/2)\eta^2$, $f=1+\eta$, is a new simple example, not one of the uploaded numerical families.
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{lrrrrr}\toprule
+Model & $r$ & $b$ & covered $\delta$ & $K_\eta$ bound & $K_H$ bound\\\midrule
+Registered & $0.01$ & $1/89600$ & $0<\delta\le10^{-7}$ & $4318$ & $335$\\
+Simple, $k=1,w=5$ & $0.01$ & $0.005$ & $0<\delta\le10^{-3}$ & $0.2042$ & $0.0236$\\\bottomrule
+\end{tabular}
+\caption{Conservative sufficient intervals and outward-rounded remainder bounds. The registered row uses \eqref{eq:uniformconstants}; the simple row uses \eqref{eq:polynomialbound} (its unrefined $K_H$ is about $0.0852381$). These are evaluated theorem bounds, not fitted numerical residuals.}\label{tab:certified}
+\end{table}
+The uploaded registered-model sweep starts at $\delta=0.0005$, so none of its detunings is covered by the first row. The simple example's different model must not be used to extend that coverage.
+
+There is a direct comparison of complete boundary models on these small intervals. The constant scalar with scalar-independent $f=f_0$ has
+$H_{\rm const}^2=kf_0\delta/3+f_0^2\delta^2/36$. Write $q=kf_1^2/[24(w-2k)]$. Theorem~\ref{thm:uniform} gives
+\begin{equation}
+H^2-H_{\rm const}^2\le-(q-K_H\delta_*)\delta^2.
+\end{equation}
+Exact arithmetic verifies $q-K_H\delta_*>0.00089$ on the displayed registered interval and $>0.0138$ for the simple model. The scalar-dependent boundary model therefore has strictly lower curvature throughout those intervals. The comparator is a distinct scalar-independent boundary theory, not an additional constant-scalar solution of the original theory with $f_1\ne0$.
+
+\section{Checks and comparison with earlier numerical evidence}
+The accompanying research package separates exact symbolic checks, floating-point diagnostics, and mathematical statements. A fresh independent SymPy program checks ten exact identities relevant to \eqref{eq:C2}, the Riccati equation, the exact shell identity, and the sign barrier. These checks verify algebraic reductions. They do not certify an implicit-function radius or replace the analytic arguments.
+
+The reference package supplied with this work contains nine earlier exact algebra checks and 48 final numerical configurations of the conditional small-detuning law \eqref{eq:conditionaldelta}. They cover six polynomial families at three detunings and two solver settings, together with two matched variations in higher derivatives. Small junction and sampled constraint residuals, agreement under refinement, and the expected detuning scaling are useful consistency diagnostics. They do not constitute outward-rounded solution-error bounds, a proof between sampled radial points, or evidence for global uniqueness. The finite-detuning theorem above does not infer its existence claim from those shooting results.
+
+A separate finite-detuning diagnostic study executes 72 final integrations: 36 parameter configurations from six models and three positive and negative coupling magnitudes, each at two solver settings. Its maximum absolute junction residual is $6.22\times10^{-15}$, maximum sampled relative constraint residual is $1.45\times10^{-15}$, and largest difference in $H^2$ between settings is $3.38\times10^{-14}$. Stable centered estimates of the quadratic coefficient approach the analytic value with approximately quadratic error in coupling. Direct subtraction of geometric curvatures reaches a floating-point cancellation floor in two cases; those cases must not be read as failed analytic scaling or as accuracy certificates. These are diagnostics, separate from the exact-arithmetic sufficient-inequality checks for Theorem~\ref{thm:uniform}.
+
+The new example \eqref{eq:example} permits a distinct analytic test of the coefficient at arbitrary fixed positive detuning. A nonlinear numerical solution at finite coupling must still establish that it lies on the local branch and account for the remainder before its discrepancy can be interpreted as an error bound. The reproducibility records accompanying this draft state which programs were actually executed, their dependencies, and the resulting diagnostics; no execution beyond those records is asserted here.
+
+\section{Precise comparison and remaining research questions}
+The relation to the primary precedents matters because much of the framework is established. In DFGK's conventions the normalization change
+\begin{equation}
+\phi_H=\sqrt{2}\phi_D,\qquad U_H=2V_D,\qquad
+\sigma_H=2\lambda_D,\qquad
+W_H(\phi_H)=W_D(\phi_H/\sqrt{2})
+\end{equation}
+maps their superpotential relation into \eqref{eq:model}, after accounting for signature and curvature conventions. Their Eqs.~(7) and (18), with consistent reflected normal orientations, imply \eqref{eq:shellidentity}. Their treatment of curved branes therefore supplies a direct baseline for the present equations, rather than merely a broad thematic precedent \cite{dfgk}.
+
+The scalar junction is also contained in the minimally coupled limit of Barcel\'o and Visser's Eqs.~(2.15)--(2.23) \cite{bv}. Ghosh et al.'s regular positive-curvature endpoints and scalar behavior near an AdS minimum, especially Sec.~4.1 and Appendix E of Ref.~\cite{curvedflows}, are direct precedents for the regular linear mode. Their Appendix D in Ref.~\cite{curvedbranes} explicitly derives a first correction to brane position and scalar value under a curvature perturbation. That problem glues a UV side to an IR side and can include an induced Einstein term. Here there are two identical regular interiors without that term, and the control parameter is boundary scalar coupling at fixed detuning. Those distinctions must be kept when comparing coefficients; they do not themselves prove novelty.
+
+The present calculation isolates a response coefficient and a sign statement for that specified boundary problem. Its useful mathematical content is that the reference solution has a nonsingular local matching problem for every $\delta>0$, and that the sign of the quadratic response follows without numerically solving a nonlinear branch. The expanding-interval estimates and the resulting controlled remainder make a more specific claim than formal perturbative matching alone. Whether these results constitute a substantive new contribution requires broader expert comparison, including equivalent response or variational formulations in later work. In particular, Charmousis, Kiritsis, and Nitti derive an effective interface action by integrating out the bulk in a related flat UV--IR setting \cite{selftuning}. Eliminating a positive quadratic scalar response can produce a negative relaxation term by an ordinary Schur complement. The sign alone must therefore not be presented as an unprecedented principle; exact equivalence to that setting is not claimed.
+
+Two further tasks would strengthen the result. A validated continuation could turn the existential weak-coupling neighborhood at larger positive detunings into an explicit coupling interval with an evaluated remainder. Sharper estimates could enlarge the conservative uniform-detuning interval of Sec.~\ref{sec:uniform}, potentially reaching the detunings in the numerical sweep. Neither conclusion follows merely from small floating-point residuals. Dynamical stability would require the coupled perturbation problem and admissible boundary conditions, not merely the positive mass of the regular scalar mode used in a static calculation. No blast, permanent energy transfer, reheating history, observational signature, or higher-dimensional cause of the Big Bang has been derived.
+
+\section{Data, assistance, and author verification}
+The draft is accompanied by the exact-check source and result records, internal mathematical reviews, the source-comparison report and access receipts, and numerical reproduction records. The full uniform-proof supplement is \texttt{branch-theorem/UNIFORM\_BRANCH\_THEOREM.md}; its reviewed source has SHA256 \texttt{544c6dbc}\ldots\texttt{98e76f51}. The exact constant evaluator and readable-bound checks are in \texttt{numerical-audit/uniform-constants/}. Full hashes and exact rational inputs are recorded in the accompanying provenance files. The manuscript gives the construction and all sufficient-inequality formulas without requiring those files to define the theorem. Third-party paper PDFs and private correspondence are not part of the proposed public manuscript evidence. These materials are research records; internal checks are not journal referee reports.
+
+Substantive OpenAI Codex assistance was used for mathematical derivation, literature comparison, programming, internal review, and drafting. Exact backend model and version identifiers for all contributing sessions have not been independently verified and are not asserted here. This draft records no personal rerun or completed review by Ricardo Maldonado. Before any submission, the author must actually review and take responsibility for the mathematical claims, references, source, results, and limits, and complete an accurate assistance disclosure. Earlier review of a different manuscript does not establish review of this one. No new submission or claim of editorial endorsement accompanies this draft.
+
+\begin{thebibliography}{9}
+\bibitem{dfgk} O. DeWolfe, D. Z. Freedman, S. S. Gubser, and A. Karch,
+Modeling the fifth dimension with scalars and gravity,
+\emph{Phys. Rev. D} \textbf{62}, 046008 (2000),
+\href{https://doi.org/10.1103/PhysRevD.62.046008}{doi:10.1103/PhysRevD.62.046008},
+\href{https://arxiv.org/abs/hep-th/9909134}{arXiv:hep-th/9909134}.
+\bibitem{bv} C. Barcel\'o and M. Visser,
+Moduli fields and brane tensions: generalizing the junction conditions,
+\emph{Phys. Rev. D} \textbf{63}, 024004 (2001),
+\href{https://doi.org/10.1103/PhysRevD.63.024004}{doi:10.1103/PhysRevD.63.024004},
+\href{https://arxiv.org/abs/gr-qc/0008008}{arXiv:gr-qc/0008008}.
+\bibitem{curvedbranes} J. K. Ghosh, E. Kiritsis, F. Nitti, and L. T. Witkowski,
+De Sitter and Anti-de Sitter branes in self-tuning models,
+\emph{JHEP} \textbf{11} (2018) 128,
+\href{https://arxiv.org/abs/1807.09794}{arXiv:1807.09794}.
+\bibitem{curvedflows} J. K. Ghosh, E. Kiritsis, F. Nitti, and L. T. Witkowski,
+Holographic RG flows on curved manifolds and quantum phase transitions,
+\emph{JHEP} \textbf{05} (2018) 034,
+\href{https://arxiv.org/abs/1711.08462}{arXiv:1711.08462}.
+\bibitem{selftuning} C. Charmousis, E. Kiritsis, and F. Nitti,
+Holographic self-tuning of the cosmological constant,
+\emph{JHEP} \textbf{09} (2017) 031,
+\href{https://arxiv.org/abs/1704.05075}{arXiv:1704.05075}.
+\bibitem{companion} R. Maldonado,
+HDBLAST: Scalar Junction Consistency and a Corrected Static de Sitter Branch,
+Zenodo research companion,
+\href{https://doi.org/10.5281/zenodo.23111008}{doi:10.5281/zenodo.23111008}.
+\end{thebibliography}
+\end{document}

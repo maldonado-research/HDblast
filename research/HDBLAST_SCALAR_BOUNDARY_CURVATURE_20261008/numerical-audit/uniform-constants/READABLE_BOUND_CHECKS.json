@@ -1,0 +1,33 @@
+{
+  "status": "PASS_EXACT_OUTWARD_PRESENTATION",
+  "input_sha256": "95923d9824f3f367385f67392ac10391b489337138851b642aa4553377d11ba1",
+  "source_sha256": "be78df26c619d71bd375cf6aa9d64e08ba0ae2ec55809c315d74e2a8a8e1a622",
+  "rows": [
+    {
+      "name": "registered_exact_decimal_model",
+      "delta_readable": "1/10000000",
+      "K_eta_upper": "4318",
+      "K_H_upper": "335",
+      "suppression_coefficient_lower": "89/100000",
+      "checks": {
+        "delta_shrunk": true,
+        "scalar_constant_rounded_up": true,
+        "curvature_constant_rounded_up": true,
+        "suppression_lower_bound": true
+      }
+    },
+    {
+      "name": "simple_polynomial_model",
+      "delta_readable": "1/1000",
+      "K_eta_upper": "1021/5000",
+      "K_H_upper": "59/2500",
+      "suppression_coefficient_lower": "69/5000",
+      "checks": {
+        "delta_shrunk": true,
+        "scalar_constant_rounded_up": true,
+        "curvature_constant_rounded_up": true,
+        "suppression_lower_bound": true
+      }
+    }
+  ]
+}

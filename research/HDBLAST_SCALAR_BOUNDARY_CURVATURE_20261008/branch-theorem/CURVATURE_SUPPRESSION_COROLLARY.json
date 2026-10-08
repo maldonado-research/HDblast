@@ -1,0 +1,39 @@
+{
+  "status": "PASS_EXACT_CURVATURE_SUPPRESSION_COROLLARY",
+  "source_sha256": "699d3849e71d79cc0776b548b6e25283f2c0351039b6844b15edde34863de35b",
+  "input_sha256": "95923d9824f3f367385f67392ac10391b489337138851b642aa4553377d11ba1",
+  "theorem_sha256": "544c6dbced51fbc68dccab3bbbe84210545849c6e7447e1b6bdae0fc98e76f51",
+  "arithmetic": "Exact fractions.Fraction; display_only fields are approximate.",
+  "implication": "For every 0 < delta <= delta_sign, the regular local branch satisfies -maximum_suppression_coefficient*delta^2 <= H^2-H_metric^2 <= -minimum_suppression_coefficient*delta^2 < 0, where H_metric^2=k*f0*delta/3+f0^2*delta^2/36.",
+  "scope": "Depends on the reviewed analytic theorem and exact sufficient-inequality certificate. The metric-only reference fails the scalar junction when f1 is nonzero. This is a static comparison, without a stability, novelty or cosmological-origin claim.",
+  "models": [
+    {
+      "name": "registered_exact_decimal_model",
+      "delta_sign": "161839258930731/1482649651195872051200",
+      "covers_entire_certified_interval": true,
+      "positive_scalar_coefficient": "584603748052004165717354929/628606697549956649794948664664",
+      "uniform_remainder_coefficient": "735272340212405765766097595977554106860521795228852336347469/2197438029152189474810739407804482810345210694400000000000",
+      "minimum_suppression_coefficient": "69567006446995425203865444794153463759104716597/77861136522898182511817718249223618560000000000000",
+      "maximum_suppression_coefficient": "75254588411235202912965279735694856240895283403/77861136522898182511817718249223618560000000000000",
+      "display_only": {
+        "delta_sign": 1.0915542913337286e-07,
+        "minimum_suppression_coefficient": 0.0008934753530927007,
+        "maximum_suppression_coefficient": 0.0009665231175902958
+      }
+    },
+    {
+      "name": "simple_polynomial_model",
+      "delta_sign": "1/1000",
+      "covers_entire_certified_interval": true,
+      "positive_scalar_coefficient": "1/72",
+      "uniform_remainder_coefficient": "683524037/8019000000",
+      "minimum_suppression_coefficient": "110691475963/8019000000000",
+      "maximum_suppression_coefficient": "112058524037/8019000000000",
+      "display_only": {
+        "delta_sign": 0.001,
+        "minimum_suppression_coefficient": 0.013803650824666417,
+        "maximum_suppression_coefficient": 0.01397412695311136
+      }
+    }
+  ]
+}
