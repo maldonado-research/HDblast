@@ -1,0 +1,88 @@
+{
+  "optimized": false,
+  "physical_source_evaluations": 0,
+  "records": [
+    {
+      "command": [
+        "/workspace/hdblast-research-work/environment/bin/python",
+        "-I",
+        "-B",
+        "/workspace/hdblast-research-work/continuation-trajectory-20261008/implementation/tests/test_registration_guard.py"
+      ],
+      "exit_code": 0,
+      "result": {
+        "cases": [
+          "complete manufactured source closure",
+          "reject omitted semantic InputSpec",
+          "reject unregistered non-Python source artifact",
+          "reject unregistered Python helper",
+          "reject unregistered empty directory roster",
+          "reject unreadable package directory",
+          "reject unreadable standalone source traversal",
+          "reject unreadable registered directory",
+          "reject propagated directory enumeration failure",
+          "reject directory replaced by symlink between stat and open",
+          "reject nonnormal registered file path",
+          "reject registered source byte changed",
+          "reject unregistered cached executable",
+          "reject native local executable alias",
+          "reject pure Python package alias",
+          "reject pure Python standard-library alias",
+          "reject fabricated subset root",
+          "reject actual branch without immutable GO",
+          "reject source authorization absent",
+          "reject decode authorization absent",
+          "reject legacy GO scope",
+          "reject independent review absent",
+          "reject registered payload symlink"
+        ],
+        "checks": 23,
+        "flint_imported": false,
+        "physical_callbacks": 0,
+        "retained_arrays_opened": 0,
+        "status": "PASS_PRE_NUMERIC_SEMANTIC_AND_GO_GUARDS"
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e1b9335e11a233f32f93b21522c54dc3de8913a204d8d1e6cbcfaa87a3565d51",
+      "test": "test_registration_guard.py"
+    },
+    {
+      "command": [
+        "/workspace/hdblast-research-work/environment/bin/python",
+        "-I",
+        "-B",
+        "/workspace/hdblast-research-work/continuation-trajectory-20261008/implementation/tests/test_worker_bootstrap.py"
+      ],
+      "exit_code": 0,
+      "result": {
+        "cases": [
+          "registration package",
+          "kernel package",
+          "ctypes sibling",
+          "resource sibling",
+          "guard byte changed",
+          "cached guard",
+          "nonisolated json sibling",
+          "no actual GO",
+          "unreadable source package",
+          "unreadable registered directory",
+          "empty unregistered directory",
+          "captured bytes survive source replacement without path exposure",
+          "captured dataclass dependency identity and file provenance",
+          "changed named source rejected on later pin capture"
+        ],
+        "checks": 14,
+        "physical_callbacks": 0,
+        "retained_array_reads": 0,
+        "status": "PASS_SOURCE_ONLY_WORKER_BOOTSTRAP",
+        "untrusted_markers_executed": 0
+      },
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "2f60ad9de53c93961b61461a6267ba10503b96ad27c5ca1e96cb11406fb6675d",
+      "test": "test_worker_bootstrap.py"
+    }
+  ],
+  "registration_sha256": "33eded898f47a96142f85002b896edd4c294180653f50f2b38e83f22d5a75796",
+  "retained_array_reads": 0,
+  "status": "PASS_FINAL005_GUARD_BOOTSTRAP_CONTROLS"
+}

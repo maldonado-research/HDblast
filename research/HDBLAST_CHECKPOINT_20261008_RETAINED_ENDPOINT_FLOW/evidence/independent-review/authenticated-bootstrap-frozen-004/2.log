@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/workspace/hdblast-research-work/continuation-trajectory-20261008/endpoint-independent-review/authenticated-bootstrap-frozen-004/2/execution/run_endpoint.py", line 93, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/hdblast-research-work/continuation-trajectory-20261008/endpoint-independent-review/authenticated-bootstrap-frozen-004/2/execution/run_endpoint.py", line 65, in main
+    v=guard.authenticate(root,args.registration,args.registration_sha256,args.manufactured_only,args.go,args.go_sha256)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hdblast-research-work/continuation-trajectory-20261008/endpoint-independent-review/authenticated-bootstrap-frozen-004/2/execution/registration_guard.py", line 80, in authenticate
+    require(source_tree(root)==set(files),'unregistered or omitted noncache source artifact')
+            ^^^^^^^^^^^^^^^^^
+  File "/workspace/hdblast-research-work/continuation-trajectory-20261008/endpoint-independent-review/authenticated-bootstrap-frozen-004/2/execution/registration_guard.py", line 31, in source_tree
+    require(not (p.suffix=='.py' and p.stem in sys.stdlib_module_names) and
+  File "/workspace/hdblast-research-work/continuation-trajectory-20261008/endpoint-independent-review/authenticated-bootstrap-frozen-004/2/execution/registration_guard.py", line 42, in require
+    if not ok:raise ValueError(text)
+              ^^^^^^^^^^^^^^^^^^^^^^
+ValueError: candidate standard-library aliases forbidden

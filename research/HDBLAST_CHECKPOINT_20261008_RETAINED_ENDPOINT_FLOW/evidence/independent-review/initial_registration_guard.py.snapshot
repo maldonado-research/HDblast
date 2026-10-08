@@ -1,0 +1,85 @@
+"""Stdlib-only candidate closure/GO guard. Numeric modules import afterward."""
+import hashlib
+import json
+from pathlib import Path
+import re
+import stat
+import sys
+import time
+import resource
+
+def require(ok,text):
+    if not ok:raise ValueError(text)
+
+def sha(raw):return hashlib.sha256(raw).hexdigest()
+
+def load(raw):
+    def pairs(items):
+        d={}
+        for k,v in items:
+            require(k not in d,'duplicate JSON key');d[k]=v
+        return d
+    return json.loads(raw,object_pairs_hook=pairs,parse_constant=lambda x:(_ for _ in ()).throw(ValueError('nonfinite JSON')))
+
+def safe_file(root,relative):
+    require(type(relative) is str and relative and '\\' not in relative,'safe relative path required')
+    p=Path(relative)
+    require(not p.is_absolute() and '..' not in p.parts and '.' not in p.parts,'unsafe path')
+    out=root
+    for component in p.parts:
+        out=out/component
+        require(not out.is_symlink(),'symlink forbidden')
+    require(out.is_file() and stat.S_ISREG(out.stat().st_mode),'regular file required')
+    require(out.resolve().is_relative_to(root.resolve()),'path escapes root')
+    return out
+
+def authenticate(root,registration_path,registration_sha,manufactured,go_path=None,go_sha=None):
+    require(type(manufactured) is bool,'explicit manufactured branch required')
+    root=Path(root).absolute()
+    require(root.is_dir() and not root.is_symlink(),'real candidate directory required')
+    raw=Path(registration_path).read_bytes()
+    require(re.fullmatch('[0-9a-f]{64}',registration_sha or '') and sha(raw)==registration_sha,'registration SHA mismatch')
+    registration=load(raw)
+    require(registration['schema_version']==1 and registration['scope']=='LATER_RETAINED_ENDPOINT_FLOW_CERTIFICATE',
+            'registration scope/schema differs')
+    files=registration['files'];require(type(files) is dict and files,'complete source closure required')
+    for relative,pin in files.items():
+        data=safe_file(root,relative).read_bytes()
+        require(len(data)==pin['bytes'] and sha(data)==pin['sha256'],'frozen source byte mismatch: '+relative)
+    executable={str(p.relative_to(root)) for p in root.rglob('*.py') if '__pycache__' not in p.parts}
+    require(executable=={p for p in files if p.endswith('.py')},'unregistered executable helper')
+    contract=registration['contract']
+    require(contract=={'arithmetic_bits':1024,'momentum_degree':2048,'source_degree':24,
+        'source_coefficient_bits':512,'source_cells':64,'export_bits':96,'export_gate':'1/1000000000000000000',
+        'anchor':'-9/2','endpoints':['-4','-7/2'],'selected_decode_members':['k.npy','momentum_weights.npy',
+        'observation_eta.npy','u_1.npy','w_1.npy','u_2.npy','w_2.npy','u_3.npy','w_3.npy'],
+        'wall_seconds':900,'rss_kib':524288,'output_bytes':134217728},'exact registered contract differs')
+    go=None
+    if not manufactured:
+        require(go_path is not None and go_sha is not None,'separate immutable public byte GO required')
+        goraw=Path(go_path).read_bytes()
+        require(re.fullmatch('[0-9a-f]{64}',go_sha) and sha(goraw)==go_sha,'GO receipt SHA mismatch')
+        go=load(goraw)
+        require(go['status']=='PASS_READBACK_PUBLIC_BYTE_GO' and
+                re.fullmatch('[0-9a-f]{40}',go['freeze_commit']) and go['registration_sha256']==registration_sha,
+                'public byte GO status/commit/registration differs')
+        require(go['scope']=='LATER_RETAINED_ENDPOINT_FLOW_CERTIFICATE' and
+                go['source_go'] is True and go['decode_go'] is True and
+                go['public_bytes_verified'] is True and go['independent_review_pass'] is True,
+                'complete explicit reviewed source/decode GO required')
+        require(go['registered_file_pins']==files,'public GO exact byte pins differ')
+    return {'root':root,'registration':registration,'registration_path':Path(registration_path),
+            'registration_sha256':registration_sha,'manufactured':manufactured,'go':go}
+
+def reauthenticate(v):
+    require(sha(v['registration_path'].read_bytes())==v['registration_sha256'],'registration changed')
+    for relative,pin in v['registration']['files'].items():
+        data=safe_file(v['root'],relative).read_bytes()
+        require(len(data)==pin['bytes'] and sha(data)==pin['sha256'],'frozen source changed')
+
+def resource_guard(started,output):
+    elapsed=time.monotonic()-started;rss=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+    require(elapsed<=900 and rss<=524288,'registered wall/RSS budget exceeded')
+    size=sum(p.stat().st_size for p in Path(output).rglob('*') if p.is_file())
+    require(size<=134217728,'registered output budget exceeded')
+    return {'wall_seconds':elapsed,'peak_rss_kib':rss,'output_bytes':size}

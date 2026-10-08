@@ -1,0 +1,30 @@
+{
+  "control_count": 24,
+  "evidence": {
+    "offline_public_readback_controls.py": {
+      "bytes": 9505,
+      "sha256": "341528e29c0b1deb006d1d9f747352b2156af04c1d1384d89f1c24ba4664e495"
+    },
+    "public-readback-controls-005/RESULT.json": {
+      "bytes": 5679,
+      "sha256": "f2088781d298cbcb29ba77a982b2147d29d5592de3d658ca8cdbff20c5ca3110"
+    },
+    "public-readback-controls-005/reviewed_helper.py.snapshot": {
+      "bytes": 14247,
+      "sha256": "f5269a494287a78defa6cf886c533d7cc081e5a9bbe3c7f4d8aa1537cb0c66b5"
+    }
+  },
+  "helper_path": "root/public_endpoint_readback_go.py",
+  "helper_sha256": "f5269a494287a78defa6cf886c533d7cc081e5a9bbe3c7f4d8aa1537cb0c66b5",
+  "network_requests": 0,
+  "notes": [
+    "All replies were fabricated in local fixtures; the positive output is explicitly named MOCK_GO_NOT_AUTHORIZATION.json.",
+    "Authenticates the external registration and review pins, exact source/parent-directory roster, unique supporting evidence roster, strict pins and zero pre-freeze counters.",
+    "Downloads and compares every registered public file and supporting evidence file through immutable contents/blob paths, plus anonymous immutable README bytes.",
+    "Final worker performs its own complete source authentication; this offline review neither publishes nor authorizes physical execution."
+  ],
+  "physical_source_calls": 0,
+  "real_public_GO_issued": false,
+  "retained_array_decodes": 0,
+  "status": "PASS_STATIC_REVIEW_AND_OFFLINE_PUBLIC_READBACK_CONTROLS"
+}

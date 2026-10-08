@@ -1,0 +1,21 @@
+usage: bounded_launcher.py [-h] --candidate CANDIDATE --output OUTPUT
+                           [--optimized] [--manufactured-only]
+                           ...
+
+Nonroot custodian for the registered, offline endpoint worker. The worker is
+exec'd before it installs seccomp after numeric imports. The custodian imports
+no numerical dependency, authenticates first, applies exact hard rlimits
+before exec, and records the authoritative Linux wait4 outcome. Aggregate
+output is polled and checked again after exit; it is an acceptance limit, not
+a filesystem quota. No physical authorization is created here.
+
+positional arguments:
+  worker_arguments      After --, supply registration and optional physical
+                        GO/repository arguments
+
+options:
+  -h, --help            show this help message and exit
+  --candidate CANDIDATE
+  --output OUTPUT
+  --optimized
+  --manufactured-only

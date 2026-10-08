@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/workspace/hdblast-research-work/continuation-trajectory-20261008/endpoint-independent-review/authenticated-bootstrap-frozen-005/4/execution/run_endpoint.py", line 112, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/hdblast-research-work/continuation-trajectory-20261008/endpoint-independent-review/authenticated-bootstrap-frozen-005/4/execution/run_endpoint.py", line 65, in main
+    v=guard.authenticate(root,args.registration,args.registration_sha256,args.manufactured_only,args.go,args.go_sha256)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hdblast-research-work/continuation-trajectory-20261008/endpoint-independent-review/authenticated-bootstrap-frozen-005/4/execution/registration_guard.py", line 123, in authenticate
+    require(source_tree(root,files)==set(files),'unregistered or omitted noncache source artifact')
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hdblast-research-work/continuation-trajectory-20261008/endpoint-independent-review/authenticated-bootstrap-frozen-005/4/execution/registration_guard.py", line 77, in source_tree
+    try:visit(fd,Path(),before)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hdblast-research-work/continuation-trajectory-20261008/endpoint-independent-review/authenticated-bootstrap-frozen-005/4/execution/registration_guard.py", line 68, in visit
+    try:visit(child,path,info)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hdblast-research-work/continuation-trajectory-20261008/endpoint-independent-review/authenticated-bootstrap-frozen-005/4/execution/registration_guard.py", line 53, in visit
+    require(not stat.S_ISLNK(info.st_mode),'symlink in candidate source tree')
+  File "/workspace/hdblast-research-work/continuation-trajectory-20261008/endpoint-independent-review/authenticated-bootstrap-frozen-005/4/execution/registration_guard.py", line 87, in require
+    if not ok:raise ValueError(text)
+              ^^^^^^^^^^^^^^^^^^^^^^
+ValueError: symlink in candidate source tree

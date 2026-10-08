@@ -1,0 +1,234 @@
+--- previous/test_manufactured_witnesses.py
++++ additive31/test_manufactured_witnesses.py
+@@ -60,12 +60,12 @@
+         raw = path.read_bytes()
+         require(len(raw) == pin['bytes'] and sha(raw) == pin['sha256'], 'Seed content pin differs')
+         seeds[name] = raw
+-    spec = importlib.util.spec_from_file_location('manufactured_29_witness_verifier', verifier)
++    spec = importlib.util.spec_from_file_location('manufactured_31_witness_verifier', verifier)
+     v = importlib.util.module_from_spec(spec)
+     spec.loader.exec_module(v)
+     socket.socket = no_network
+     socket.create_connection = no_network
+-    prior_raw = seeds['PRIOR27_CONTENT_RECEIPT.json']
++    prior_raw = seeds['PRIOR29_CONTENT_RECEIPT.json']
+     require(sha(prior_raw) == v.PRIOR_STREAM_PIN, 'Dated prior receipt pin differs')
+     prior = v.load(prior_raw)
+     old = [dict(filename=row['filename'], **row['observed']) for row in prior['rows']]
+@@ -75,13 +75,14 @@
+         new.append({'filename': name, 'bytes': len(raw), 'md5': hashlib.md5(raw).hexdigest(), 'sha256': sha(raw)})
+     inventory = {'sealed_upload_manifest': True, 'concept_doi': '10.5281/zenodo.' + v.PARENT,
+                  'scientific_replay_status': v.SCIENTIFIC_REPLAY_STATUS,
+-                 'inherited_files': old, 'new_files': new, 'expected_total_files_final': 29,
++                 'inherited_files': old, 'new_files': new, 'expected_total_files_final': 31,
+                  'total_bytes_final': sum(row['bytes'] for row in old + new)}
+-    seed_prior = v.load(seeds['23225288-record.json'])
++    seed_prior = v.load(seeds['23228395-record.json'])
+     metadata = {key: copy.deepcopy(seed_prior[key]) for key in ('metadata', 'custom_fields', 'access')}
+     metadata['access'].pop('status', None)
+-    metadata['metadata']['title'] = 'Explicitly fabricated 29-file verifier fixture'
+-    metadata['metadata']['version'] = 'FABRICATED_ONLY_29_FILE_CONTROL'
++    metadata['metadata']['title'] = 'Explicitly fabricated 31-file verifier fixture'
++    metadata['metadata']['version'] = v.EXPECTED_VERSION
++    metadata['metadata']['additional_descriptions'][0]['description'] = '<p>Manufactured current Notes only.</p>' + v.NOTES_HISTORY_MARKER + seed_prior['metadata']['additional_descriptions'][0]['description']
+     inventory_raw = canonical(inventory); metadata_raw = canonical(metadata)
+     inventory_sha = sha(inventory_raw); metadata_sha = sha(metadata_raw)
+ 
+@@ -100,14 +101,16 @@
+                     for item in entries}
+         for item in entries:
+             embedded[item['key']]['id'] = item['file_id']
+-        record = dict(copy.deepcopy(metadata), id=ID, parent={'id': v.PARENT},
++        record = dict(copy.deepcopy(metadata), id=ID, parent={'id': v.PARENT, 'access': {'owned_by': {'user': v.EXPECTED_OWNER}},
++                              'pids': {'doi': {'identifier': '10.5281/zenodo.' + v.PARENT}}},
++                      versions={'is_latest': True},
+                       is_published=True, is_draft=False,
+                       pids={'doi': {'identifier': '10.5281/zenodo.' + ID}},
+                       files={'entries': embedded}, links={'self': PREFIX, 'files': PREFIX + '/files'})
+         files = {'entries': copy.deepcopy(entries)}
+-        verified = {'status': 'PASS_COMPLETE_29_FILE_EDITION_READBACK', 'published': True,
++        verified = {'status': 'PASS_COMPLETE_31_FILE_EDITION_READBACK', 'published': True,
+                     'draft_id': ID, 'parent_id': v.PARENT, 'inventory_sha256': inventory_sha,
+-                    'metadata_sha256': metadata_sha, 'file_count': 29,
++                    'metadata_sha256': metadata_sha, 'file_count': 31,
+                     'total_bytes': inventory['total_bytes_final'], 'content': []}
+         journal = [{'kind': 'GET', 'url': PREFIX + '/files', 'status': 200,
+                     'authenticated_request': False}]
+@@ -123,20 +126,40 @@
+             source_files = v.load(seeds[rid + '-files.json'])
+             preserved[rid] = {'record': copy.deepcopy(source_record), 'baseline': copy.deepcopy(source_record),
+                              'files': copy.deepcopy(source_files), 'baseline_files': copy.deepcopy(source_files)}
++        draft = copy.deepcopy(record)
++        draft['is_draft'] = True; draft['is_published'] = False
++        draft['versions'] = {'is_latest_draft': True}; draft['pids'] = {}
++        draft['revision_id'] = 1
++        draft['links'] = {'self': PREFIX + '/draft', 'files': PREFIX + '/draft/files'}
++        draft_listing = copy.deepcopy(files)
++        for item in draft_listing['entries']:
++            item['links']['content'] = PREFIX + '/draft/files/' + v.quote(item['key'], safe='') + '/content'
++        for item in draft['files']['entries'].values():
++            item['links']['content'] = PREFIX + '/draft/files/' + v.quote(item['key'], safe='') + '/content'
++        draft_verified = copy.deepcopy(verified); draft_verified['published'] = False; draft_verified['etag'] = '"1"'
++        draft_journal = []
++        for round_index in range(2):
++            draft_journal.append({'kind': 'GET', 'url': PREFIX + '/draft/files', 'status': 200,
++                                  'authenticated_request': True})
++            for pin in old + new:
++                draft_journal.append({'kind': 'FULL_CONTENT_STREAM_VERIFIED', 'filename': pin['filename'],
++                                     'observed': {key: pin[key] for key in ('bytes', 'md5', 'sha256')}})
++        draft_journal.append({'kind': 'WRITE_INTENT', 'operation': 'publish', 'url': PREFIX + '/draft/actions/publish'})
+         return [copy.deepcopy(inventory), copy.deepcopy(metadata), record, files, copy.deepcopy(record),
+-                verified, copy.deepcopy(prior), journal, preserved, ID, inventory_sha, metadata_sha]
++                verified, copy.deepcopy(prior), draft_journal + journal, preserved, ID, inventory_sha, metadata_sha,
++                draft, draft_listing, draft_verified]
+ 
+     positives = []
+     rejected = []
+     def checked(values):
+         result = v.verify_values(*values)
+-        require(result['status'] == 'PASS_OFFLINE_29_FILE_PUBLICATION_WITNESSES'
+-                and result['fresh_complete_public_streams'] == 29
++        require(result['status'] == 'PASS_OFFLINE_31_FILE_PUBLICATION_WITNESSES'
++                and result['fresh_complete_public_streams'] == 31
+                 and result['prior_same_immutable_stream_reuses'] == 0
+                 and result['historical_original_literal_Notes_guard'] == 'FAIL_PRESERVED',
+                 'Manufactured positive failed')
+         return result
+-    checked(fixture()); positives.append('all29 manufactured fresh streams with distinct inherited new-edition IDs')
++    checked(fixture()); positives.append('all31 manufactured fresh streams with distinct inherited new-edition IDs')
+     decorated = fixture()
+     for index in (2, 4):
+         decorated[index]['metadata']['resource_type']['title'] = {'en': 'Software'}
+@@ -157,6 +180,8 @@
+             rejected.append(name)
+         else:
+             raise ValueError('Accepted corrupted manufactured witness: ' + name)
++    def public_marker(values):
++        return next(i for i, e in enumerate(values[7]) if e.get('url') == PREFIX + '/files')
+     def embedded(values, record_index=2):
+         return next(iter(values[record_index]['files']['entries'].values()))
+     def listed(values, record_id):
+@@ -231,20 +256,20 @@
+     reject('receipt version ID differs', lambda x: x[5]['content'][0].__setitem__('remote_version_id', 'wrong'))
+     reject('receipt file ID omitted', lambda x: x[5]['content'][0].pop('remote_file_id'))
+     reject('receipt version ID omitted', lambda x: x[5]['content'][0].pop('remote_version_id'))
+-    reject('terminal public GET absent', lambda x: x[7].pop(0))
+-    reject('terminal GET authenticated', lambda x: x[7][0].__setitem__('authenticated_request', True))
+-    reject('stream appears before latest listing', lambda x: x[7].append(copy.deepcopy(x[7][0])))
+-    reject('one inherited stream missing', lambda x: x[7].pop(1))
++    reject('terminal public GET absent', lambda x: x[7].pop(public_marker(x)))
++    reject('terminal GET authenticated', lambda x: x[7][public_marker(x)].__setitem__('authenticated_request', True))
++    reject('stream appears before latest listing', lambda x: x[7].append(copy.deepcopy(x[7][public_marker(x)])))
++    reject('one inherited stream missing', lambda x: x[7].pop(public_marker(x) + 1))
+     reject('one addition stream missing', lambda x: x[7].pop())
+     reject('stream duplicate', lambda x: x[7].append(copy.deepcopy(x[7][-1])))
+-    reject('stream wrong byte count', lambda x: x[7][1]['observed'].__setitem__('bytes', 1))
+-    reject('stream wrong MD5', lambda x: x[7][1]['observed'].__setitem__('md5', '0' * 32))
+-    reject('stream wrong SHA256', lambda x: x[7][1]['observed'].__setitem__('sha256', '0' * 64))
++    reject('stream wrong byte count', lambda x: x[7][public_marker(x) + 1]['observed'].__setitem__('bytes', 1))
++    reject('stream wrong MD5', lambda x: x[7][public_marker(x) + 1]['observed'].__setitem__('md5', '0' * 32))
++    reject('stream wrong SHA256', lambda x: x[7][public_marker(x) + 1]['observed'].__setitem__('sha256', '0' * 64))
+     reject('wrong streamed URL binding', lambda x: x[3]['entries'][0]['links'].__setitem__('content', PREFIX + '/draft/files/wrong/content'))
+-    reject('prior27 attestation incomplete', lambda x: x[6]['rows'].pop())
+-    reject('prior27 attestation status wrong', lambda x: x[6]['rows'][0].__setitem__('status', 'PASS_COMPLETE_REMOTE_BYTES_MD5_SHA256'))
+-    reject('prior27 attestation checksum changed', lambda x: x[6]['rows'][0]['observed'].__setitem__('sha256', '0' * 64))
+-    reject('prior27 attestation dated file ID changed', lambda x: x[6]['rows'][0].__setitem__('remote_file_id', 'wrong'))
++    reject('prior29 attestation incomplete', lambda x: x[6]['rows'].pop())
++    reject('prior29 attestation status wrong', lambda x: x[6]['rows'][0].__setitem__('status', 'PASS_COMPLETE_REMOTE_BYTES_MD5_SHA256'))
++    reject('prior29 attestation checksum changed', lambda x: x[6]['rows'][0]['observed'].__setitem__('sha256', '0' * 64))
++    reject('prior29 attestation dated file ID changed', lambda x: x[6]['rows'][0].__setitem__('remote_file_id', 'wrong'))
+     for rid in v.PRESERVED:
+         reject('preserved ' + rid + ' omitted', lambda x, rid=rid: x[8].pop(rid))
+         reject('preserved ' + rid + ' metadata changed', lambda x, rid=rid: x[8][rid]['record']['metadata'].__setitem__('title', 'Altered'))
+@@ -255,19 +280,71 @@
+     reject('preserved empty companion custom_fields omitted', lambda x: x[8]['23111008']['record'].pop('custom_fields'))
+     reject('inventory unsealed', lambda x: x[0].__setitem__('sealed_upload_manifest', False))
+     reject('inventory replay incomplete', lambda x: x[0].__setitem__('scientific_replay_status', 'PENDING'))
+-    reject('inventory count changes type', lambda x: x[0].__setitem__('expected_total_files_final', 29.0))
++    reject('inventory count changes type', lambda x: x[0].__setitem__('expected_total_files_final', 31.0))
+     reject('inventory byte total wrong', lambda x: x[0].__setitem__('total_bytes_final', 1))
+     reject('inventory inherited pin omitted', lambda x: x[0]['inherited_files'].pop())
+     reject('inventory addition duplicated', lambda x: x[0]['new_files'].append(copy.deepcopy(x[0]['new_files'][0])))
+     reject('inventory boolean bytes', lambda x: x[0]['new_files'][0].__setitem__('bytes', True))
+ 
+-    with tempfile.TemporaryDirectory(prefix='manufactured-29-publication-', dir=HERE) as temporary:
++    for index in (2, 4, 12):
++        reject('strict owner wrong at role' + str(index), lambda x, i=index: x[i]['parent']['access']['owned_by'].__setitem__('user', '1386318'))
++        reject('strict owner boolean at role' + str(index), lambda x, i=index: x[i]['parent']['access']['owned_by'].__setitem__('user', True))
++        reject('strict owner omitted at role' + str(index), lambda x, i=index: x[i]['parent'].pop('access'))
++        reject('strict concept DOI wrong at role' + str(index), lambda x, i=index: x[i]['parent']['pids']['doi'].__setitem__('identifier', '10.5281/zenodo.22922927'))
++        reject('strict latest flag false at role' + str(index), lambda x, i=index: x[i]['versions'].__setitem__('is_latest_draft' if i == 12 else 'is_latest', False))
++        reject('strict latest flag integer at role' + str(index), lambda x, i=index: x[i]['versions'].__setitem__('is_latest_draft' if i == 12 else 'is_latest', 1))
++    reject('wrong planned semantic version', lambda x: x[1]['metadata'].__setitem__('version', 'FABRICATED_WRONG_VERSION'))
++    reject('prior Notes exact suffix omitted', lambda x: x[1]['metadata']['additional_descriptions'][0].__setitem__('description', '<p>No historical Notes.</p>'))
++    reject('prior Notes suffix replaced', lambda x: x[1]['metadata']['additional_descriptions'][0].__setitem__('description', x[1]['metadata']['additional_descriptions'][0]['description'] + ' '))
++    reject('protected creator changed', lambda x: x[1]['metadata']['creators'][0]['person_or_org'].__setitem__('name', 'Other owner'))
++    reject('protected inherited relation changed', lambda x: x[1]['metadata']['related_identifiers'][0].__setitem__('identifier', '10.5281/zenodo.1'))
++    reject('unreviewed related URL appended', lambda x: x[1]['metadata']['related_identifiers'].append({'identifier': 'https://example.org', 'scheme': 'url', 'relation_type': {'id': 'references'}, 'resource_type': {'id': 'software'}}))
++    reject('draft ID wrong', lambda x: x[12].__setitem__('id', v.PRIOR))
++    reject('draft marked public', lambda x: x[12].__setitem__('is_published', True))
++    reject('draft URL wrong', lambda x: x[12]['links'].__setitem__('self', PREFIX))
++    reject('draft assigned DOI wrong', lambda x: x[12].__setitem__('pids', {'doi': {'identifier': '10.5281/zenodo.1'}}))
++    reject('draft revision floating', lambda x: x[12].__setitem__('revision_id', 1.0))
++    reject('draft revision boolean', lambda x: x[12].__setitem__('revision_id', True))
++    reject('draft ETag weak', lambda x: x[14].__setitem__('etag', 'W/"1"'))
++    reject('draft ETag padded', lambda x: x[14].__setitem__('etag', '"01"'))
++    reject('draft ETag revision disagrees', lambda x: x[14].__setitem__('etag', '"2"'))
++    reject('draft verification marked public', lambda x: x[14].__setitem__('published', True))
++    reject('draft verification wrong inventory pin', lambda x: x[14].__setitem__('inventory_sha256', '0' * 64))
++    reject('draft complete content row omitted', lambda x: x[14]['content'].pop())
++    reject('draft inherited stream reused', lambda x: x[14]['content'][0].__setitem__('basis', 'SAME_IMMUTABLE_FILE_AND_CONTENT_VERSION_AS_PRIOR_FULL_STREAM'))
++    reject('draft fresh row wrong version', lambda x: x[14]['content'][0].__setitem__('remote_version_id', 'wrong'))
++    reject('draft file listing wrong content URL', lambda x: x[13]['entries'][0]['links'].__setitem__('content', PREFIX + '/files/wrong/content'))
++    reject('draft file listing omitted entry', lambda x: x[13]['entries'].pop())
++    reject('draft first full round absent', lambda x: x[7].__delitem__(slice(0, 32)))
++    reject('draft second full round absent', lambda x: x[7].__delitem__(slice(32, 64)))
++    reject('draft first inherited stream absent', lambda x: x[7].pop(1))
++    reject('draft first complete stream wrong SHA', lambda x: x[7][1]['observed'].__setitem__('sha256', '0' * 64))
++    reject('publish intent absent', lambda x: x[7].__delitem__(64))
++    reject('publish intent repeated', lambda x: x[7].insert(64, copy.deepcopy(x[7][64])))
++    reject('publish intent wrong URL', lambda x: x[7][64].__setitem__('url', PREFIX + '/actions/publish'))
++    reject('mutation after last complete draft round', lambda x: x[7].insert(64, {'kind': 'WRITE_INTENT', 'operation': 'save_metadata', 'url': PREFIX + '/draft'}))
++    def later_partial_draft(x):
++        x[7][64:64] = [copy.deepcopy(x[7][0]), copy.deepcopy(x[7][1])]
++    reject('partial draft round after last complete round', later_partial_draft)
++    def missing_one_in_later_draft(x):
++        x[7][64:64] = copy.deepcopy(x[7][:31])
++    reject('latest draft round missing one after two older complete rounds', missing_one_in_later_draft)
++    empty_listing = fixture(); empty_listing[7].insert(64, copy.deepcopy(empty_listing[7][0]))
++    checked(empty_listing); positives.append('v2publish final identity-only draft listing after the full stream round')
++    assigned = fixture(); assigned[12]['pids'] = {'doi': {'identifier': '10.5281/zenodo.' + ID}}
++    checked(assigned); positives.append('draft permits matching assigned DOI or unassigned PID object')
++
++    with tempfile.TemporaryDirectory(prefix='manufactured-31-publication-', dir=HERE) as temporary:
+         root = Path(temporary); values = fixture(); files = {}; roles = {}; groups = {}
+         names = ['inventory', 'metadata', 'new_public_record', 'new_public_files', 'latest_public_record',
+                  'verified_public', 'prior_full_stream']
+         for role, value in zip(names, values[:7]):
+             name = role + '.json'
+             raw = prior_raw if role == 'prior_full_stream' else canonical(value)
++            (root / name).write_bytes(raw); roles[role] = name
++            files[name] = {'bytes': len(raw), 'sha256': sha(raw)}
++        for role, value in zip(('new_draft_record', 'new_draft_files', 'verified_draft'), values[12:]):
++            name = role + '.json'; raw = canonical(value)
+             (root / name).write_bytes(raw); roles[role] = name
+             files[name] = {'bytes': len(raw), 'sha256': sha(raw)}
+         name = 'journal.jsonl'; raw = b''.join(canonical(event) + b'\n' for event in values[7])
+@@ -287,7 +364,7 @@
+         manifest_path.write_bytes(manifest_raw); manifest_sha = sha(manifest_raw)
+         def directory(manifest_pin=manifest_sha, inventory_pin=inventory_sha, metadata_pin=metadata_sha):
+             return v.verify_directory(root, manifest_path, manifest_pin, ID, inventory_pin, metadata_pin)
+-        require(directory()['status'] == 'PASS_OFFLINE_29_FILE_PUBLICATION_WITNESSES', 'Directory positive failed')
++        require(directory()['status'] == 'PASS_OFFLINE_31_FILE_PUBLICATION_WITNESSES', 'Directory positive failed')
+         positives.append('complete externally pinned manufactured witness directory')
+         def directory_reject(name, operation):
+             try:
+@@ -326,7 +403,7 @@
+         directory_reject('overflowing finite JSON syntax', lambda: v.load('{"a":1e9999}'))
+         directory_reject('unsafe relative witness path', lambda: v.safe_file(root, '../escape.json'))
+     checked(fixture()); positives.append('controls preserve the original manufactured fixture')
+-    receipt = {'schema_version': 1, 'status': 'PASS_MANUFACTURED_OFFLINE_29_FILE_PUBLICATION_CONTROLS',
++    receipt = {'schema_version': 1, 'status': 'PASS_MANUFACTURED_OFFLINE_31_FILE_PUBLICATION_CONTROLS',
+                'positive_checks': len(positives), 'rejected_mutants': len(rejected),
+                'positives': positives, 'rejections': rejected,
+                'fixture_scope': 'FABRICATED_NEW_RECORD_WITNESSES_WITH_PINNED_DATED_PRIOR_SEEDS_ONLY',

@@ -1,0 +1,179 @@
+{
+  "cases": [
+    {
+      "case": "positive",
+      "error": null,
+      "mock_receipt_written": true,
+      "passed": true,
+      "rejected": false,
+      "simulated_api_calls": 92
+    },
+    {
+      "case": "registration_race",
+      "error": "ValueError: Public blob/size differs",
+      "mock_receipt_written": false,
+      "passed": true,
+      "rejected": true,
+      "simulated_api_calls": 17
+    },
+    {
+      "case": "review_race",
+      "error": "ValueError: Public blob/size differs",
+      "mock_receipt_written": false,
+      "passed": true,
+      "rejected": true,
+      "simulated_api_calls": 21
+    },
+    {
+      "case": "private_repository",
+      "error": "ValueError: Repository not public",
+      "mock_receipt_written": false,
+      "passed": true,
+      "rejected": true,
+      "simulated_api_calls": 1
+    },
+    {
+      "case": "anonymous_mismatch",
+      "error": "ValueError: Anonymous immutable README differs",
+      "mock_receipt_written": false,
+      "passed": true,
+      "rejected": true,
+      "simulated_api_calls": 2
+    },
+    {
+      "case": "wrong_remote_path",
+      "error": "ValueError: Public path differs",
+      "mock_receipt_written": false,
+      "passed": true,
+      "rejected": true,
+      "simulated_api_calls": 9
+    },
+    {
+      "case": "wrong_blob_bytes",
+      "error": "ValueError: Downloaded public bytes differ",
+      "mock_receipt_written": false,
+      "passed": true,
+      "rejected": true,
+      "simulated_api_calls": 18
+    },
+    {
+      "case": "wrong_blob_size",
+      "error": "ValueError: Downloaded public bytes differ",
+      "mock_receipt_written": false,
+      "passed": true,
+      "rejected": true,
+      "simulated_api_calls": 18
+    },
+    {
+      "case": "support_pin_mismatch",
+      "error": "ValueError: Reviewed supporting evidence differs",
+      "mock_receipt_written": false,
+      "passed": true,
+      "rejected": true,
+      "simulated_api_calls": 22
+    },
+    {
+      "case": "extra_support_pin",
+      "error": "ValueError: Exact unique supporting evidence closure required",
+      "mock_receipt_written": false,
+      "passed": true,
+      "rejected": true,
+      "simulated_api_calls": 0
+    },
+    {
+      "case": "duplicate_support_name",
+      "error": "ValueError: Exact unique supporting evidence closure required",
+      "mock_receipt_written": false,
+      "passed": true,
+      "rejected": true,
+      "simulated_api_calls": 0
+    },
+    {
+      "case": "bool_zero_counter",
+      "error": "ValueError: Premature actual work",
+      "mock_receipt_written": false,
+      "passed": true,
+      "rejected": true,
+      "simulated_api_calls": 0
+    },
+    {
+      "case": "positive_counter",
+      "error": "ValueError: Premature actual work",
+      "mock_receipt_written": false,
+      "passed": true,
+      "rejected": true,
+      "simulated_api_calls": 0
+    },
+    {
+      "case": "missing_mandatory_source",
+      "error": "ValueError: Mandatory source roles missing",
+      "mock_receipt_written": false,
+      "passed": true,
+      "rejected": true,
+      "simulated_api_calls": 0
+    },
+    {
+      "case": "empty_source",
+      "error": "ValueError: Mandatory source roles missing",
+      "mock_receipt_written": false,
+      "passed": true,
+      "rejected": true,
+      "simulated_api_calls": 0
+    },
+    {
+      "case": "bool_source_size",
+      "error": "ValueError: Invalid source pins",
+      "mock_receipt_written": false,
+      "passed": true,
+      "rejected": true,
+      "simulated_api_calls": 0
+    },
+    {
+      "case": "unlisted_core_file",
+      "error": "ValueError: Complete source closure differs",
+      "mock_receipt_written": false,
+      "passed": true,
+      "rejected": true,
+      "simulated_api_calls": 0
+    },
+    {
+      "case": "symlink_support",
+      "error": "ValueError: Local file ancestry link forbidden",
+      "mock_receipt_written": false,
+      "passed": true,
+      "rejected": true,
+      "simulated_api_calls": 18
+    },
+    {
+      "case": "hardlink_support",
+      "error": "ValueError: Bounded regular unaliased local file required",
+      "mock_receipt_written": false,
+      "passed": true,
+      "rejected": true,
+      "simulated_api_calls": 24
+    },
+    {
+      "case": "unsafe_support_path",
+      "error": "ValueError: Unsafe evidence path",
+      "mock_receipt_written": false,
+      "passed": true,
+      "rejected": true,
+      "simulated_api_calls": 18
+    },
+    {
+      "case": "output_inside_core",
+      "error": "ValueError: GO must remain outside frozen core",
+      "mock_receipt_written": false,
+      "passed": true,
+      "rejected": true,
+      "simulated_api_calls": 92
+    }
+  ],
+  "checks": 21,
+  "helper_sha256": "0d78c949e3b83d46f3f212dc735a030b9f964ca4543f259a5991b358830290d4",
+  "network_requests": 0,
+  "physical_source_calls": 0,
+  "real_public_GO_issued": false,
+  "retained_decodes": 0,
+  "status": "PASS_OFFLINE_PUBLIC_READBACK_CONTROLS"
+}

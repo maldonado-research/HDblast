@@ -1,0 +1,174 @@
+{
+  "auditor": {
+    "bytes": 24930,
+    "sha256": "5ecad7cef60c49e73b1e67e29c20a92a22cb1cb1e6434e850681b76a556be060"
+  },
+  "control_script": {
+    "bytes": 5957,
+    "sha256": "d3f2eda48c15076a6adc809540780fb052314cd41c8e6c38340418c105dea7dc"
+  },
+  "negative_cases": [
+    {
+      "artifacts": {
+        "SOURCE_ATTEMPTS.jsonl": {
+          "bytes": 13394,
+          "sha256": "b16a34ef2d2298915c03f0b14ac5e88b35659b3ff01ed3d2e36ed860db246158"
+        },
+        "SOURCE_CERTIFICATE.json": {
+          "bytes": 1879560,
+          "sha256": "78a0943ccbbf495aefaab63cdd29e39b3d6e90962a4207ad994f70275a4dde3a"
+        },
+        "TARGET_BUDGETS.json": {
+          "bytes": 6531,
+          "sha256": "7b2cf46be13335f136029eee5b9db9eb678cb1e230fbf08a548e49988231fbd6"
+        }
+      },
+      "error": "complete source error rounded upward exactly once",
+      "name": "source_rounding_omitted",
+      "status": "PASS_EXPECTED_REJECTION"
+    },
+    {
+      "artifacts": {
+        "SOURCE_ATTEMPTS.jsonl": {
+          "bytes": 13394,
+          "sha256": "b16a34ef2d2298915c03f0b14ac5e88b35659b3ff01ed3d2e36ed860db246158"
+        },
+        "SOURCE_CERTIFICATE.json": {
+          "bytes": 1885198,
+          "sha256": "7d31fc0038d13fa065bac16e2506e1831a83a500433b9d6b29e345c73944748c"
+        },
+        "TARGET_BUDGETS.json": {
+          "bytes": 6531,
+          "sha256": "7b2cf46be13335f136029eee5b9db9eb678cb1e230fbf08a548e49988231fbd6"
+        }
+      },
+      "error": "complete source error rounded upward exactly once",
+      "name": "source_rounding_doubled",
+      "status": "PASS_EXPECTED_REJECTION"
+    },
+    {
+      "artifacts": {
+        "SOURCE_ATTEMPTS.jsonl": {
+          "bytes": 13394,
+          "sha256": "b16a34ef2d2298915c03f0b14ac5e88b35659b3ff01ed3d2e36ed860db246158"
+        },
+        "SOURCE_CERTIFICATE.json": {
+          "bytes": 1882455,
+          "sha256": "f9bc7b2aa3e680a1d455313c2b9d0fc66d1e644e97d54e76eafcb726a9e2cf42"
+        },
+        "TARGET_BUDGETS.json": {
+          "bytes": 6375,
+          "sha256": "cdde647cdf43ae13c1b24ac539f2e310818fbaf4ec8d4069de2dfe50e16c150c"
+        }
+      },
+      "error": "recomputed complete target budget positive_B -4",
+      "name": "kernel_tail_erased",
+      "status": "PASS_EXPECTED_REJECTION"
+    },
+    {
+      "artifacts": {
+        "SOURCE_ATTEMPTS.jsonl": {
+          "bytes": 13289,
+          "sha256": "0f87f1e6252a111487362923c6e5d883b21b4ddd688eb0c8291a013957e8d66a"
+        },
+        "SOURCE_CERTIFICATE.json": {
+          "bytes": 1882455,
+          "sha256": "f9bc7b2aa3e680a1d455313c2b9d0fc66d1e644e97d54e76eafcb726a9e2cf42"
+        },
+        "TARGET_BUDGETS.json": {
+          "bytes": 6531,
+          "sha256": "7b2cf46be13335f136029eee5b9db9eb678cb1e230fbf08a548e49988231fbd6"
+        }
+      },
+      "error": "128 exact ordered source attempts",
+      "name": "source_journal_attempt_63_missing",
+      "status": "PASS_EXPECTED_REJECTION"
+    },
+    {
+      "artifacts": {
+        "DECODE_ATTEMPTS.jsonl": {
+          "bytes": 2332,
+          "sha256": "a6a470c6c0b856cd3690240c4155ba4cc144255e4a07bb8cb9ee70fe697c7e65"
+        },
+        "INPUT_AUTHENTICATION.json": {
+          "bytes": 1502,
+          "sha256": "51a4beddbe72d547e59e05dd36e66b002741c84fcdb4d10ad68525b62293bdd2"
+        }
+      },
+      "error": "input authentication canonical metadata bindings",
+      "name": "authenticated_member_count_lowered",
+      "status": "PASS_EXPECTED_REJECTION"
+    },
+    {
+      "artifacts": {
+        "DECODE_ATTEMPTS.jsonl": {
+          "bytes": 2332,
+          "sha256": "a6a470c6c0b856cd3690240c4155ba4cc144255e4a07bb8cb9ee70fe697c7e65"
+        },
+        "INPUT_AUTHENTICATION.json": {
+          "bytes": 1502,
+          "sha256": "cce7cd338516fc1d91959d7d8df2ad5c75de7899968e19da32edb13d349a5245"
+        }
+      },
+      "error": "input authentication canonical metadata bindings",
+      "name": "inputspec_digest_mismatch",
+      "status": "PASS_EXPECTED_REJECTION"
+    },
+    {
+      "artifacts": {
+        "ENTRY_RECEIPT.json": {
+          "bytes": 1681,
+          "sha256": "6be02cc9ce1ecdbaf31514f539226dbb1dff48a54fc6c37eba7870e96ce3f0a5"
+        }
+      },
+      "error": "entry external controls",
+      "name": "entry_go_digest_mismatch",
+      "status": "PASS_EXPECTED_REJECTION"
+    },
+    {
+      "artifacts": {
+        "ENTRY_RECEIPT.json": {
+          "bytes": 1681,
+          "sha256": "c1d1bdf7a680edb7d74ade9b5ff04c890ec6e15d75daab9ffe699032c1ddfb5f"
+        }
+      },
+      "error": "entry external controls",
+      "name": "entry_registration_digest_mismatch",
+      "status": "PASS_EXPECTED_REJECTION"
+    }
+  ],
+  "network_requests": 0,
+  "node_stream_opens": 0,
+  "optimized": true,
+  "original_small_artifact_pins": {
+    "DECODE_ATTEMPTS.jsonl": {
+      "bytes": 2332,
+      "sha256": "a6a470c6c0b856cd3690240c4155ba4cc144255e4a07bb8cb9ee70fe697c7e65"
+    },
+    "ENTRY_RECEIPT.json": {
+      "bytes": 1681,
+      "sha256": "6c0cd94f9fa24ece76b78ebeff0c0ebcfadee735709a8d71feda1a0936adb843"
+    },
+    "INPUT_AUTHENTICATION.json": {
+      "bytes": 1502,
+      "sha256": "91c4a3870419852038a680de177c1180ad8abcbdc8072c8bf2361bf42bce82dd"
+    },
+    "SOURCE_ATTEMPTS.jsonl": {
+      "bytes": 13394,
+      "sha256": "b16a34ef2d2298915c03f0b14ac5e88b35659b3ff01ed3d2e36ed860db246158"
+    },
+    "SOURCE_CERTIFICATE.json": {
+      "bytes": 1882455,
+      "sha256": "f9bc7b2aa3e680a1d455313c2b9d0fc66d1e644e97d54e76eafcb726a9e2cf42"
+    },
+    "TARGET_BUDGETS.json": {
+      "bytes": 6531,
+      "sha256": "7b2cf46be13335f136029eee5b9db9eb678cb1e230fbf08a548e49988231fbd6"
+    }
+  },
+  "physical_source_reconstructions": 0,
+  "positive_baselines": 3,
+  "production_modules_imported": 0,
+  "retained_archive_opens": 0,
+  "status": "PASS_EIGHT_SOURCE_FREE_NEGATIVE_CONTROLS"
+}

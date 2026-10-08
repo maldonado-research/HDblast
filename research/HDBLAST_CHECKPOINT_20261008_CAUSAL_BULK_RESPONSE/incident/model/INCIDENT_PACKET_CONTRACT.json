@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "model_id": "FLAT_HALFSPACE_ROBIN_SCALAR_20261008_V1",
+  "extension_id": "COHERENT_INCOMING_CONTINUUM_SCATTERING_20261008_V1",
+  "status": "PURE_ANALYTIC_EXTENSION_REVIEW_CANDIDATE",
+  "accepted_model_manifest_sha256": "d82d09d1786b1317dbd5fb8852e618a4ecd63b26bb70b729e9be4f041a5bc15c",
+  "accepted_model_sources_changed": false,
+  "action_and_domain": {
+    "geometry": "one-sided 4+1 Minkowski half-space y>=0 with one spacelike extra coordinate",
+    "boundary": "Phi_y(0)=c Phi_0-gq",
+    "brane_equation": "(d_t^2-Laplacian_x+m^2)q-g Phi_0=0; J=0",
+    "parameters": "M>0,c>0,m^2>0,g real,0<g^2<m^2(c+M)",
+    "dynamics": "autonomous quadratic scalar action; no new channel, interaction, time dependence or gravitational backreaction"
+  },
+  "scattering": {
+    "frequency": "omega=sqrt(k^2+M^2+p^2)>0, p>0",
+    "incoming_convention": "exp(-ipy-i omega t+i k.x)",
+    "outgoing_convention": "R exp(ipy-i omega t+i k.x)",
+    "D": "k^2+m^2-omega^2=m^2-M^2-p^2",
+    "denominator": "F=(ip-c)D+g^2; |F|^2=(g^2-cD)^2+p^2D^2>0",
+    "reflection": "R=[(ip+c)D-g^2]/F=-F*/F",
+    "brane_amplitude": "Q=2ipg/F",
+    "unitarity": "|R|^2=1 for all real p>0 with g nonzero",
+    "bare_resonance": "D=0 exists above gap only if m^2>M^2; then R=-1,Q=2ip/g,Phi_0=0, all finite for fixed g nonzero",
+    "decoupled_limit": "for fixed D nonzero, g->0 gives R0=(ip+c)/(ip-c),Q->0; g=0,D=0 is a separate free-oscillator degeneracy and not a value of the divided formula",
+    "response_compatibility": "Q=chi_R g(1+R0), R=R0+gG_RQ, G_R=1/(c-ip), chi_R=[D-g^2/(c-ip)]^-1"
+  },
+  "packet_hypotheses": {
+    "fixed_k": "a(p) in C_c^infinity((p0,p1)),0<p0<p1<infinity, using the full incoming-plus-reflected continuum modes in theorem equation (13)",
+    "bound_projection": "zero coupled bound projection for both position and velocity; automatic for the exact continuum expansion, not implied by q=q_dot=0 at finite starting time",
+    "finite_global_energy_version": "a(k,p) smooth compact in k and p,|k|<=K and common p interval away from zero; Fourier fiber alone is not global brane energy",
+    "quantum_version": "coherent continuum displacement of full coupled ground state; bound occupation above ground-state baseline zero; connected covariance unchanged",
+    "excluded_rate_claims": "no uniform estimate as p0->0 or g->0, and no rapid-decay claim for nonsmooth/nonvanishing endpoint amplitudes"
+  },
+  "derived_results": {
+    "stationary_flux": "incoming=-omega p|A|^2/2,outgoing=omega p|AR|^2/2,net=0",
+    "temporary_storage": "q and its bare energy can be nonzero during a pulse; stationary mean work into q is zero",
+    "local_packet_decay": "q,q_dot and fields/first derivatives on every bounded y interval are O(|t|^-N) for every N under the stated compact smooth support; quadratic local-energy majorant is O(|t|^-2N)",
+    "asymptotic_energy": "in the declared complex fiber norm, E_in=int dp omega^2|a|^2=E_out=int dp omega^2|aR|^2; global k packets integrate this relation over k",
+    "bound_no_capture": "continuum and bound spectral projections do not mix under the static self-adjoint linear evolution",
+    "reflection_interference": "direct Robin reflection and brane radiation must be combined coherently; radiation alone is not net absorption"
+  },
+  "decision_scope": {
+    "established_conditionally": "transient excitation followed by unit reflection and local decay for the declared continuum packet class",
+    "not_established": [
+      "dynamical origin of incoming packet energy",
+      "permanent brane capture of a pure incoming continuum packet",
+      "irreversible heating or thermalization",
+      "hot Big Bang history",
+      "geometric dimensional origin",
+      "exclusion of interacting, time-dependent or additional-channel HDBLAST models"
+    ],
+    "four_dimensional_replica": "accepted continuum-field representation reproduces the matched scattering preparation and brane observables"
+  },
+  "physical_source_callbacks": 0,
+  "physical_target_evaluations": 0,
+  "retained_array_reads": 0,
+  "retained_array_decodes": 0,
+  "observational_likelihood_evaluations": 0,
+  "network_calls": 0,
+  "project_statuses": {
+    "metric_calibration": "FAIL",
+    "full_continuous_certificate": "UNRESOLVED",
+    "higher_dimensional_cause": "NOT_ESTABLISHED",
+    "external_novelty": "NOT_ASSESSED"
+  }
+}

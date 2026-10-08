@@ -1,0 +1,56 @@
+"""Independent entry-boundary adversaries on copies of a frozen source tree."""
+from pathlib import Path
+import hashlib
+import importlib._bootstrap_external as bootstrap
+import importlib.util
+import json
+import shutil
+import subprocess
+import sys
+
+BASE=Path(__file__).resolve().parent
+def run(label,source_root):
+    source_root=Path(source_root);destination=BASE/label;destination.mkdir();cases=[]
+    plans=[('run_endpoint.py','package','registration_guard'),
+           ('bounded_launcher.py','package','kernel_guard'),
+           ('run_endpoint.py','stdlib','hashlib'),('bounded_launcher.py','stdlib','ctypes'),
+           ('run_endpoint.py','package_symlink','registration_guard'),
+           ('bounded_launcher.py','package_symlink','kernel_guard'),
+           ('run_endpoint.py','bytecode','registration_guard'),
+           ('bounded_launcher.py','bytecode','kernel_guard'),
+           ('run_endpoint.py','native','registration_guard'),
+           ('bounded_launcher.py','native','kernel_guard'),
+           ('run_endpoint.py','nonisolated_initial_stdlib','pathlib'),
+           ('bounded_launcher.py','nonisolated_initial_stdlib','pathlib')]
+    marker='UNREGISTERED_FINAL_BOOTSTRAP_MARKER'
+    for index,(entry,kind,module) in enumerate(plans):
+        root=destination/str(index);shutil.copytree(source_root,root)
+        execution=root/'execution';payload='raise RuntimeError("'+marker+'")\n'
+        if kind=='package':
+            package=execution/module;package.mkdir();(package/'__init__.py').write_text(payload)
+        elif kind=='package_symlink':
+            package=destination/('outside-package-'+str(index));package.mkdir()
+            (package/'__init__.py').write_text(payload);(execution/module).symlink_to(package,target_is_directory=True)
+        elif kind=='stdlib' or kind=='nonisolated_initial_stdlib':
+            (execution/(module+'.py')).write_text(payload)
+        elif kind=='bytecode':
+            source=execution/(module+'.py');metadata=source.stat()
+            cache=Path(importlib.util.cache_from_source(str(source)));cache.parent.mkdir()
+            cache.write_bytes(bootstrap._code_to_timestamp_pyc(compile(payload,str(source),'exec'),
+                                                               int(metadata.st_mtime),metadata.st_size))
+        elif kind=='native':(execution/(module+'.so')).write_bytes(b'fabricated invalid native alias')
+        flags=['-B'] if kind=='nonisolated_initial_stdlib' else ['-I','-B']
+        result=subprocess.run([sys.executable,*flags,str(execution/entry),'--help'],capture_output=True,text=True)
+        log=result.stdout+result.stderr;(destination/(str(index)+'.log')).write_text(log)
+        safe=(marker not in log and 'file too short' not in log)
+        if kind=='nonisolated_initial_stdlib':safe=safe and result.returncode!=0
+        cases.append({'entry':entry,'adversary':kind,'module':module,'flags':flags,
+                      'entry_sha256':hashlib.sha256((execution/entry).read_bytes()).hexdigest(),
+                      'unregistered_marker_executed':marker in log,'exit_code':result.returncode,
+                      'passed':safe,'child_log_sha256':hashlib.sha256(log.encode()).hexdigest()})
+    receipt={'status':'PASS_INDEPENDENT_FINAL_BOOTSTRAP_CONTROLS' if all(c['passed'] for c in cases) else 'FAIL_FINAL_BOOTSTRAP_CONTROLS',
+             'cases':cases,'checks':len(cases),'retained_decodes':0,'physical_source_calls':0}
+    with (destination/'RESULT.json').open('x') as out:json.dump(receipt,out,sort_keys=True,indent=2);out.write('\n')
+    print(json.dumps(receipt,sort_keys=True))
+    if not all(c['passed'] for c in cases):raise SystemExit(1)
+if __name__=='__main__':run(*sys.argv[1:])

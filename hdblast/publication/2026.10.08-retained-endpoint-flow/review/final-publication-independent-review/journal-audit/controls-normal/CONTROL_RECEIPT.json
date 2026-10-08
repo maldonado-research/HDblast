@@ -1,0 +1,97 @@
+{
+  "all_inputs_manufactured_from_saved_partial_journal": true,
+  "attachment_streams": 0,
+  "cases": 17,
+  "checker_sha256": "b3ca398b1fa9ee090ef41bc311669309d5b40302afc9dee958979e94372268ba",
+  "network_calls": 0,
+  "optimized": false,
+  "remote_mutations": 0,
+  "results": [
+    {
+      "case": "baseline-partial",
+      "control_passed": true,
+      "observed_error": null
+    },
+    {
+      "case": "wrong-md5",
+      "control_passed": true,
+      "observed_error": "ValueError: Incomplete/wrong bytes or checksum: HDBLAST_CONDITIONAL_GLOBAL_ADJOINT_RESPONSE_CERTIFICATION_20260904.zip"
+    },
+    {
+      "case": "wrong-sha256",
+      "control_passed": true,
+      "observed_error": "ValueError: Incomplete/wrong bytes or checksum: HDBLAST_CONDITIONAL_GLOBAL_ADJOINT_RESPONSE_CERTIFICATION_20260904.zip"
+    },
+    {
+      "case": "wrong-size",
+      "control_passed": true,
+      "observed_error": "ValueError: Incomplete/wrong bytes or checksum: HDBLAST_CONDITIONAL_GLOBAL_ADJOINT_RESPONSE_CERTIFICATION_20260904.zip"
+    },
+    {
+      "case": "bool-size",
+      "control_passed": true,
+      "observed_error": "ValueError: Incomplete/wrong bytes or checksum: HDBLAST_CONDITIONAL_GLOBAL_ADJOINT_RESPONSE_CERTIFICATION_20260904.zip"
+    },
+    {
+      "case": "unknown-stream-name",
+      "control_passed": true,
+      "observed_error": "ValueError: Unknown/duplicate stream filename"
+    },
+    {
+      "case": "duplicate-stream-name",
+      "control_passed": true,
+      "observed_error": "ValueError: Unknown/duplicate stream filename"
+    },
+    {
+      "case": "wrong-draft-list-endpoint",
+      "control_passed": true,
+      "observed_error": "ValueError: GET auth mode differs"
+    },
+    {
+      "case": "wrong-draft-list-authentication",
+      "control_passed": true,
+      "observed_error": "ValueError: GET auth mode differs"
+    },
+    {
+      "case": "unscoped-stream",
+      "control_passed": true,
+      "observed_error": "ValueError: GET auth mode differs"
+    },
+    {
+      "case": "wrong-upload-sha256",
+      "control_passed": true,
+      "observed_error": "ValueError: Write operation, target, body or order differs"
+    },
+    {
+      "case": "extra-publish-intent",
+      "control_passed": true,
+      "observed_error": "ValueError: Concurrent/extra remote write"
+    },
+    {
+      "case": "unknown-write-outcome",
+      "control_passed": true,
+      "observed_error": "ValueError: Unknown/failure/reconciliation event preserved; requires review"
+    },
+    {
+      "case": "truncated-write-response",
+      "control_passed": true,
+      "observed_error": "ValueError: Unsuccessful/unknown/truncated write outcome"
+    },
+    {
+      "case": "utc-order-regression",
+      "control_passed": true,
+      "observed_error": "ValueError: Journal UTC timestamps regressed"
+    },
+    {
+      "case": "truncated-jsonl-line",
+      "control_passed": true,
+      "observed_error": "ValueError: Truncated final JSONL line"
+    },
+    {
+      "case": "duplicate-json-key",
+      "control_passed": true,
+      "observed_error": "ValueError: Duplicate JSON key"
+    }
+  ],
+  "status": "PASS"
+}

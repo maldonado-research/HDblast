@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "title": "Conditional positive half-space scalar/brane testbed",
+  "model_id": "FLAT_HALFSPACE_ROBIN_SCALAR_20261008_V1",
+  "status": "ANALYTIC_TESTBED_DEFINED_NOT_PHYSICAL_ORIGIN_MODEL",
+  "current_HDBLAST_scalar_model_changed": false,
+  "definition": {
+    "dimension": "4+1 with one spacelike extra coordinate y>=0",
+    "signature": "+----",
+    "geometry": "fixed Minkowski half-space with static brane y=0; gravity nondynamical",
+    "fields": "real bulk Phi and real brane q",
+    "action": "HALF_SPACE_RESPONSE_THEOREM.md equation (1)",
+    "strict_parameter_domain": "M>0, m^2>0, c>0, g real, 0<g^2<m^2(c+M)",
+    "optional_no_bound_mode_subdomain": "m^2>M^2+g^2/c",
+    "canonical_units": "hbar=c_light=1; [Phi]=3/2, [q]=1, [c]=[M]=[m]=1, [g]=3/2, [J]=3 in mass units",
+    "Fourier_convention": "exp(-i omega t+i k.x)",
+    "retarded_branch": "sqrt(k^2+M^2-(omega+i0)^2), analytic for Im omega>0, Re sqrt>0 there; equals -i p at positive-frequency propagating threshold",
+    "state": "Gaussian full coupled ground or KMS state for equilibrium predictions; incoming scattering state requires explicit bound-mode occupation if a bound mode exists",
+    "observables": "smooth spacetime-smeared q response and covariance with specified common measurement protocol; time smearing is required for raw force noise"
+  },
+  "derived_relations": {
+    "boundary_condition": "Phi_y(0)=c Phi_0-g q",
+    "retarded_bath_kernel": "G_R=1/[c+sqrt(k^2+M^2-(omega+i0)^2)]",
+    "brane_susceptibility": "chi_R^-1=k^2+m^2-(omega+i0)^2-g^2 G_R",
+    "positive_bath_spectral_density": "rho_b(u)=sqrt(u-M^2)/[pi(c^2+u-M^2)] for u>M^2",
+    "damping": "Gamma=-Im chi_R^-1=g^2 p/(c^2+p^2), p=sqrt(omega^2-k^2-M^2)>0",
+    "affine_joint_restriction": "p/Gamma=(c^2+p^2)/g^2 with common parameters across k",
+    "equilibrium_covariance": "S_q=coth(beta omega/2) Im chi_R; includes bound-mode delta distributions",
+    "incoming_force_noise": "N_eta=g^2 coth(beta omega/2) Im G_R is the incoming bath continuum; any bound sector is added to q's homogeneous solution/covariance, not to N_eta",
+    "energy": "d(E_bulk+E_R+E_q+E_int)/dt=int J q_dot for finite-energy fields without omitted outer flux",
+    "outgoing_flux": "<S_y>=omega g^2 p |Q|^2/[2(c^2+p^2)]>=0",
+    "four_dimensional_replica": "continuous free species chi_p with mass^2=M^2+p^2 and coupling g u_p(0); exact unitary Robin spectral transformation"
+  },
+  "declared_rivals": [
+    {
+      "id": "FINITE_CLOSED_QUADRATIC_4D",
+      "definition": "finite fields, finite local derivative order, translation-invariant quadratic action and rational specified measurement response; no additional continuum",
+      "comparison": "rational susceptibility cannot equal nonzero-g M>0 square-root susceptibility on an open regular interval",
+      "limits": "ideal-function theorem only; no experimental finite-noise separation bound; finite real-axis spectral deltas do not pointwise approximate continuous absorption"
+    },
+    {
+      "id": "CONTINUUM_FREE_4D",
+      "definition": "equation (19), with matched Gaussian state, source and measurement protocol",
+      "comparison": "exact equality of smeared q quantum state/correlators and measurement outcomes; classical laws of smeared Gaussian random distributions coincide",
+      "limits": "infinite continuum of field species; a geometric extra dimension is not identified"
+    },
+    {
+      "id": "INTERACTING_4D",
+      "definition": "four-dimensional interacting local theories may possess multiparticle continuous spectra",
+      "comparison": "not excluded by branch-cut theorem",
+      "limits": "no specific interacting action or empirical comparison performed"
+    },
+    {
+      "id": "ENCOMPASSING_EFFECTIVE_INPUT",
+      "definition": "matched full causal/noise/state/contact/measurement input",
+      "comparison": "structural containment retains observational degeneracy",
+      "limits": "not every arbitrary effective kernel is claimed to have a local stable completion"
+    }
+  ],
+  "contract_field_assessment": [
+    {"id": "action", "status": "DEFINED_CONDITIONAL", "evidence": "equations (1),(6); scalar variational boundary sign controls"},
+    {"id": "background", "status": "EXACT_FIXED_FLAT_GEOMETRY_ONLY", "evidence": "Minkowski half-space is a model premise; no gravitational solution or cosmological approximation asserted"},
+    {"id": "bulk_boundary", "status": "DEFINED_CONDITIONAL", "evidence": "static half-space, positive Robin term, retarded no-incoming mean response"},
+    {"id": "source", "status": "NO_DYNAMICAL_BLAST_SOURCE", "evidence": "J is a declared infinitesimal probe; no selected B or zB pulse is reinterpreted as derived bulk dynamics"},
+    {"id": "vacuum_state", "status": "GAUSSIAN_STATE_CLASS_DEFINED", "evidence": "full coupled ground/KMS state; bound-mode occupation required; smooth observable smearing"},
+    {"id": "matching", "status": "EXACT_SCALAR_BOUNDARY_MATCHING", "evidence": "equations (6),(10); no Israel gravitational junction claimed"},
+    {"id": "effective_input", "status": "EXACT_JOINT_KERNEL_DERIVED", "evidence": "equations (3)-(5),(9),(12),(14)-(15)"},
+    {"id": "joint_observable", "status": "PROSPECTIVE_RESTRICTION_DEFINED", "evidence": "equation (18); calibrated response/covariance not currently observed"},
+    {"id": "parameter_priors", "status": "DOMAIN_ONLY_NO_PRIOR_OR_FIT", "evidence": "strict stable domain; sign of g not identifiable; no inferred values"},
+    {"id": "four_dimensional_rivals", "status": "EXPLICIT_EXACT_CONTINUUM_DEGENERACY", "evidence": "equation (19); narrow finite-free-sector rationality exclusion"},
+    {"id": "stability", "status": "POSITIVE_SCALAR_FORM_PROVED", "evidence": "equations (7)-(8); sharp strict stability domain and bound-mode analysis"},
+    {"id": "unitarity", "status": "POSITIVE_FREE_GAUSSIAN_SYSTEM", "evidence": "self-adjoint spatial operator and positive spectral measure; UV pointwise stress not defined"},
+    {"id": "energy", "status": "CLASSICAL_LEDGER_DERIVED_ORIGIN_UNRESOLVED", "evidence": "equations (16)-(17); no initial bulk energy supply, gravity or thermalization derived"},
+    {"id": "gw_data_admissibility", "status": "NOT_APPLICABLE_TO_SCALAR_TESTBED", "evidence": "no gravitational-wave propagation or source model; no GW likelihood admissibility claimed"},
+    {"id": "numerical_certificate", "status": "SYMBOLIC_CONTROLS_ONLY", "evidence": "manufactured symbolic/rational controls and non-certified quadrature diagnostics; no physical calculation"},
+    {"id": "measurement_test", "status": "NOT_SPECIFIED_FOR_PHYSICAL_DATA", "evidence": "actual probe/readout, filters, finite window, errors, nuisance, likelihood and holdout remain undeclared"},
+    {"id": "decision_scope", "status": "MODEL_RESTRICTION_WITH_EXACT_DIMENSIONAL_DEGENERACY", "evidence": "test of declared scalar action/premises relative to named rivals; no dimensional origin detection"}
+  ],
+  "prohibited_inferences": [
+    "Retarded outward flux derives a bulk-to-brane blast or its initial energy.",
+    "A KMS state derives thermalization or a hot Big Bang.",
+    "A square-root branch cut excludes all four-dimensional theories.",
+    "An exact ideal-function difference implies a finite-data likelihood separation without an error budget.",
+    "A stationary incoming thermal bath fixes an independently prepared bound normal mode.",
+    "An unsmeared equal-time bath noise variance is finite.",
+    "The current HDBLAST de Sitter mass or pulse amplitudes equal parameters of this new flat scalar action.",
+    "These analytic controls resolve the historical metric calibration or full continuous certificate."
+  ],
+  "physical_source_callbacks": 0,
+  "physical_target_evaluations": 0,
+  "retained_array_reads": 0,
+  "retained_array_decodes": 0,
+  "observational_likelihood_evaluations": 0,
+  "project_statuses": {
+    "metric_calibration": "FAIL",
+    "full_continuous_certificate": "UNRESOLVED",
+    "higher_dimensional_cause": "NOT_ESTABLISHED",
+    "external_novelty": "NOT_ASSESSED"
+  }
+}
