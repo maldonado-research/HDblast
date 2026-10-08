@@ -1,0 +1,229 @@
+{
+  "checks": [
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "boundary_variation_sign",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "brane_force_from_same_action",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "retarded_boundary_elimination",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "boundary_trace_square_completion",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "Robin_generalized_eigenfunction",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "Robin_mode_bulk_eigenvalue",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "Robin_boundary_spectral_weight",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "Stieltjes_partial_fractions",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "integrated_Stieltjes_identity",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "coincident_s_equals_c_limit",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "mass_squared_measure_Jacobian",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "retarded_cut_real_part",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "retarded_cut_imaginary_part",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "inverse_absorption_affine_restriction",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "response_real_imaginary_restriction",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "absorption_peak_derivative",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "absorption_peak_value",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "spectral_continuum_response_identity",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "complete_signed_energy_ledger",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "outgoing_bulk_energy_flux",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "flux_equals_minus_self_force_work",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "manufactured_bound_mode_mass",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "manufactured_bound_mode_residue",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "manufactured_tachyon_when_stability_fails",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_RATIONAL_SIGN_WITH_PI_POSITIVE",
+      "name": "manufactured_positive_spectral_weights",
+      "status": "PASS"
+    },
+    {
+      "eigenvalues_with_multiplicity": {
+        "0": 1,
+        "5/2": 2,
+        "8/3": 1
+      },
+      "kind": "EXACT_SYMBOLIC",
+      "name": "manufactured_spectral_covariance_Gram_positivity"
+    }
+  ],
+  "control_script_sha256": "0ef252757d4f12651e4111b2802f88a04084682d412e4b2212586d7a306b94ff",
+  "limitations": [
+    "Symbolic controls do not replace independent review of functional-analysis hypotheses.",
+    "Numerical diagnostics are not interval enclosures.",
+    "No real physical or observational input is opened.",
+    "No finite raw equal-time bath noise variance is asserted.",
+    "No physical source is derived from a prescribed pulse."
+  ],
+  "negative_controls": [
+    {
+      "name": "reject_tachyonic_domain",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "reject_marginal_massless_boundary",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "reject_decoupled_branch_cut_claim",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "imaginary_part": "-2/13",
+      "name": "wrong_outgoing_branch_has_negative_spectral_density",
+      "status": "EXPECTED_REJECTION"
+    }
+  ],
+  "observational_likelihood_evaluations": 0,
+  "physical_source_callbacks": 0,
+  "physical_target_evaluations": 0,
+  "project_statuses": {
+    "external_novelty": "NOT_ASSESSED",
+    "full_continuous_certificate": "UNRESOLVED",
+    "higher_dimensional_cause": "NOT_ESTABLISHED",
+    "metric_calibration": "FAIL"
+  },
+  "quadrature_diagnostics": {
+    "decimal_precision": 80,
+    "kind": "MPMATH_NON_CERTIFIED_DIAGNOSTIC",
+    "samples": [
+      {
+        "absolute_discrepancy": "0.0",
+        "c": "3",
+        "s": [
+          "1",
+          "0"
+        ]
+      },
+      {
+        "absolute_discrepancy": "2.6355495e-82",
+        "c": "3",
+        "s": [
+          "3",
+          "0"
+        ]
+      },
+      {
+        "absolute_discrepancy": "0.0",
+        "c": "3",
+        "s": [
+          "2",
+          "1"
+        ]
+      },
+      {
+        "absolute_discrepancy": "0.0",
+        "c": "3",
+        "s": [
+          "1",
+          "4"
+        ]
+      },
+      {
+        "absolute_discrepancy": "0.0",
+        "c": "3",
+        "s": [
+          "7",
+          "-2"
+        ]
+      }
+    ]
+  },
+  "retained_array_decodes": 0,
+  "retained_array_reads": 0,
+  "schema_version": 1,
+  "scope": "Exact symbolic identities and rational sign checks plus explicitly non-certified numerical diagnostics for a separate flat half-space scalar model.",
+  "status": "PASS_MANUFACTURED_CONTROLS_ONLY",
+  "versions": {
+    "mpmath": "1.3.0",
+    "sympy": "1.14.0"
+  }
+}

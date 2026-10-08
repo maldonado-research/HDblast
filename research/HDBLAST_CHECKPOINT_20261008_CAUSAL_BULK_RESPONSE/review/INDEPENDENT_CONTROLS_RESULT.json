@@ -1,0 +1,166 @@
+{
+  "status": "PASS",
+  "scope": "manufactured analytic controls only",
+  "protected_project_data_read": false,
+  "producer_code_imported": false,
+  "precision_decimal_digits": 65,
+  "versions": {
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "numerical_results_are_interval_certificates": false,
+  "checks": [
+    {
+      "name": "bound_mode_bulk_equation",
+      "kind": "exact_symbolic",
+      "residual": "0"
+    },
+    {
+      "name": "bound_mode_robin_equation",
+      "kind": "exact_symbolic",
+      "residual": "0"
+    },
+    {
+      "name": "bound_mode_brane_equation",
+      "kind": "exact_symbolic",
+      "residual": "0"
+    },
+    {
+      "name": "bound_residue_from_normalized_eigenvector",
+      "kind": "exact_symbolic",
+      "residual": "0"
+    },
+    {
+      "name": "bulk_energy_boundary_flux",
+      "kind": "exact_symbolic",
+      "residual": "0"
+    },
+    {
+      "name": "robin_reservoir_exchange",
+      "kind": "exact_symbolic",
+      "residual": "0"
+    },
+    {
+      "name": "brane_energy_exchange",
+      "kind": "exact_symbolic",
+      "residual": "0"
+    },
+    {
+      "name": "total_energy_constant",
+      "kind": "exact_symbolic",
+      "residual": "0"
+    },
+    {
+      "name": "wrong_robin_sign_detected",
+      "kind": "negative_control",
+      "rejected_residual": "-cos(sqrt(3)*t)/2"
+    },
+    {
+      "name": "omitted_interaction_energy_detected",
+      "kind": "negative_control",
+      "rejected_energy_drift": "-sqrt(3)*sin(2*sqrt(3)*t)/4"
+    },
+    {
+      "name": "sharp_static_schur_complement",
+      "kind": "exact_symbolic",
+      "residual": "0"
+    },
+    {
+      "name": "trace_saturation",
+      "kind": "exact_symbolic",
+      "residual": "0"
+    },
+    {
+      "name": "canonical_bound_spectral_moment_0",
+      "kind": "high_precision_diagnostic",
+      "got": "1.0",
+      "expected": "1.0",
+      "absolute_error": "0.0",
+      "tolerance": "1e-45"
+    },
+    {
+      "name": "canonical_bound_spectral_moment_1",
+      "kind": "high_precision_diagnostic",
+      "got": "3.25",
+      "expected": "3.25",
+      "absolute_error": "0.0",
+      "tolerance": "1e-45"
+    },
+    {
+      "name": "canonical_no_bound_spectral_moment_0",
+      "kind": "high_precision_diagnostic",
+      "got": "1.0",
+      "expected": "1.0",
+      "absolute_error": "0.0",
+      "tolerance": "1e-45"
+    },
+    {
+      "name": "canonical_no_bound_spectral_moment_1",
+      "kind": "high_precision_diagnostic",
+      "got": "9.0",
+      "expected": "9.0",
+      "absolute_error": "0.0",
+      "tolerance": "1e-45"
+    },
+    {
+      "name": "finite_slab_right_neumann",
+      "kind": "exact_symbolic",
+      "residual": "0"
+    },
+    {
+      "name": "finite_slab_boundary_denominator",
+      "kind": "exact_symbolic",
+      "residual": "0"
+    },
+    {
+      "name": "finite_slab_outgoing_limit",
+      "kind": "high_precision_diagnostic",
+      "got": "(0.20080554657740757353961747605625749367505581331301666269261944088 + 0.016037247743970758791888384093076940791803764456499170698279155874j)",
+      "expected": "(0.20080554657740757353961747605625749367505581331301666258048015925 + 0.016037247743970758791888384093076940791803764456499170684832398217j)",
+      "absolute_error": "1.1294261275179909598500176463885227572822818135788393091156542396e-55",
+      "tolerance": "1e-45"
+    },
+    {
+      "name": "finite_slab_convergence_sequence",
+      "kind": "high_precision_diagnostic",
+      "frequency": "(1.1 + 0.7j)",
+      "momentum": "0.6",
+      "values": [
+        {
+          "L": 1,
+          "absolute_error": "0.0032715892301733923140799428929321785047204244122874334869758326063"
+        },
+        {
+          "L": 2,
+          "absolute_error": "0.000066543677089279985384706197977314133015951984269300599390954079775"
+        },
+        {
+          "L": 4,
+          "absolute_error": "0.000000027441454102043042017386545810975080825295052671205995261845933816"
+        },
+        {
+          "L": 8,
+          "absolute_error": "0.0000000000000046670550477692055389394014220931845177171486520597610514008354704"
+        },
+        {
+          "L": 16,
+          "absolute_error": "1.349940288856920936534346854987749775022253380186043557341434589e-28"
+        },
+        {
+          "L": 32,
+          "absolute_error": "1.1294261275179909598500176463885227572822818135788393091156542396e-55"
+        }
+      ]
+    },
+    {
+      "name": "outgoing_noether_flux",
+      "kind": "exact_symbolic",
+      "residual": "0"
+    },
+    {
+      "name": "self_force_work_equals_negative_flux",
+      "kind": "exact_symbolic",
+      "residual": "0"
+    }
+  ]
+}
