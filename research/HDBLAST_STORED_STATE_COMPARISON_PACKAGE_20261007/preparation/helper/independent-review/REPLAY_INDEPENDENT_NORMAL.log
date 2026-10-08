@@ -1,0 +1,38 @@
+test_independent_actual_guard_precedes_reader_and_verified_context (__main__.Independent.test_independent_actual_guard_precedes_reader_and_verified_context) ... ok
+test_independent_changed_control_after_auth_rejects_before_import (__main__.Independent.test_independent_changed_control_after_auth_rejects_before_import) ... ok
+test_independent_changed_helper_bytes_reject_before_study_import (__main__.Independent.test_independent_changed_helper_bytes_reject_before_study_import) ... ok
+test_independent_custodian_subprocess_has_only_fixed_environment (__main__.Independent.test_independent_custodian_subprocess_has_only_fixed_environment) ... ok
+test_independent_failed_normal_never_launches_optimized (__main__.Independent.test_independent_failed_normal_never_launches_optimized) ... ok
+test_independent_first_fresh_science_mismatch_never_launches_optimized (__main__.Independent.test_independent_first_fresh_science_mismatch_never_launches_optimized) ... ok
+test_independent_fresh_modes_compare_to_saved_and_each_other (__main__.Independent.test_independent_fresh_modes_compare_to_saved_and_each_other) ... ok
+test_independent_fresh_output_inside_package_rejected (__main__.Independent.test_independent_fresh_output_inside_package_rejected) ... ok
+test_independent_interruption_signals_custodian_cleanup (__main__.Independent.test_independent_interruption_signals_custodian_cleanup) ... ok
+test_independent_isolated_mode_required_before_guard_import (__main__.Independent.test_independent_isolated_mode_required_before_guard_import) ... ok
+test_independent_manifested_native_code_rejected (__main__.Independent.test_independent_manifested_native_code_rejected) ... ok
+test_independent_package_change_during_saved_readback_blocks_fresh (__main__.Independent.test_independent_package_change_during_saved_readback_blocks_fresh) ... ok
+test_independent_saved_failed_custodian_must_block_saved_pass (__main__.Independent.test_independent_saved_failed_custodian_must_block_saved_pass) ... FAIL
+test_independent_saved_wrong_optimized_mode_must_block_saved_pass (__main__.Independent.test_independent_saved_wrong_optimized_mode_must_block_saved_pass) ... FAIL
+test_independent_scientific_identity_names_match_frozen_readback (__main__.Independent.test_independent_scientific_identity_names_match_frozen_readback) ... ok
+
+======================================================================
+FAIL: test_independent_saved_failed_custodian_must_block_saved_pass (__main__.Independent.test_independent_saved_failed_custodian_must_block_saved_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/hdblast-research-work/continuation-state-comparison-20261007/replay-delivery/replay-helper-independent-review/independent_replay_tests.py", line 171, in test_independent_saved_failed_custodian_must_block_saved_pass
+    with self.assertRaises(self.m.Stop,msg='SAVED_FAILED_CUSTODIAN_ACCEPTED'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Stop not raised : SAVED_FAILED_CUSTODIAN_ACCEPTED
+
+======================================================================
+FAIL: test_independent_saved_wrong_optimized_mode_must_block_saved_pass (__main__.Independent.test_independent_saved_wrong_optimized_mode_must_block_saved_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/hdblast-research-work/continuation-state-comparison-20261007/replay-delivery/replay-helper-independent-review/independent_replay_tests.py", line 179, in test_independent_saved_wrong_optimized_mode_must_block_saved_pass
+    with self.assertRaises(self.m.Stop,msg='SAVED_OPTIMIZED_MODE_NOT_ENFORCED'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Stop not raised : SAVED_OPTIMIZED_MODE_NOT_ENFORCED
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.406s
+
+FAILED (failures=2)

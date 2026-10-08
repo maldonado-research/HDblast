@@ -1,0 +1,91 @@
+{
+  "status": "BLOCKED_PENDING_SAVED_CUSTODIAN_AND_MODE_VALIDATION",
+  "reviewed_helper_sha256": "5d50ce6c24ebf7f9faeb0704201fee13bf3ce2dc94f5d56eaa7325c010ece0f0",
+  "normal": {
+    "tests_run": 15,
+    "passed": 13,
+    "failed": 2,
+    "errors": 0,
+    "skipped": 0
+  },
+  "optimized": {
+    "tests_run": 15,
+    "passed": 13,
+    "failed": 2,
+    "errors": 0,
+    "skipped": 0
+  },
+  "blockers": [
+    {
+      "id": "SAVED_CUSTODIAN_RECEIPT_NOT_VALIDATED",
+      "observed": "Saved EXECUTION_FAILED receipt is included and correctly sealed but verification still returns saved-package PASS under manufactured reader/guard stubs.",
+      "root_cause": "Package authentication only hashes saved EXECUTION.json; neither replay saved stage nor frozen readback validates its custodian status/mode/outcome."
+    },
+    {
+      "id": "SAVED_OPTIMIZED_MODE_NOT_ENFORCED",
+      "observed": "The optimized saved run receipt explicitly says optimized=False, but verification still returns saved normal/optimized PASS under manufactured reader/guard stubs."
+    }
+  ],
+  "recommended_change": "Validate every saved and fresh custodian receipt before reader/result: actual PASS, exact mode, strict zero exit/wrapper/wait outcome, fixed limits, no stop/monitor error, ENTRY_RECEIPT complete-byte linkage and actual child-log hashes.",
+  "confirmed_boundaries": [
+    "all manifested byte authentication before study import",
+    "reserved controls independently externally pinned",
+    "no extra files/directories/aliases/native code",
+    "reauthentication before imported study guard",
+    "actual guard before reader and verified context passed",
+    "package tampering during saved readback blocks fresh execution",
+    "isolated fixed custodian subprocess and stripped environment",
+    "fresh modes compare each to saved normal and then each other",
+    "normal failure or mismatch prevents optimized launch",
+    "SIGINT cleanup forwarding",
+    "exact seven science+OUTPUT_READBACK matches frozen reader"
+  ],
+  "source_and_receipt_pins": [
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/replay-delivery/replay-helper-independent-review/replay_checkpoint_5d50ce6c_snapshot.py",
+      "bytes": 20546,
+      "sha256": "5d50ce6c24ebf7f9faeb0704201fee13bf3ce2dc94f5d56eaa7325c010ece0f0"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/replay-delivery/replay-helper-independent-review/independent_replay_tests.py",
+      "bytes": 15013,
+      "sha256": "2dea0ac5c489a3635cc82ef489ced08f65d4f904d5e3efd1eacffdb63a13d5b9"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/replay-delivery/test_replay_checkpoint.py",
+      "bytes": 14602,
+      "sha256": "da36a537965d0c81714e51529f5246d6a9158de968b6c684196e8d2adf9c398e"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/execution/readback.py",
+      "bytes": 21793,
+      "sha256": "6d79d00750128a570f1ef4d592589130c63f872d4f20525e54508a77267a336d"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/execution/bounded_launcher.py",
+      "bytes": 23034,
+      "sha256": "86f238b07e260f6153fdbd58fafd8e266c0b67dd784eb21637de7d7453a7245f"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/replay-delivery/replay-helper-independent-review/REPLAY_INDEPENDENT_RESULTS_normal.json",
+      "bytes": 2170,
+      "sha256": "df59f3c900121153ed316de1cd7867ecef458906fb765aceaba36a0549048911"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/replay-delivery/replay-helper-independent-review/REPLAY_INDEPENDENT_RESULTS_optimized.json",
+      "bytes": 2170,
+      "sha256": "df59f3c900121153ed316de1cd7867ecef458906fb765aceaba36a0549048911"
+    }
+  ],
+  "real_network": "FORBIDDEN",
+  "real_subprocesses": 0,
+  "real_scientific_imports": 0,
+  "real_array_decodes": 0,
+  "real_source_callbacks": 0,
+  "fixture_public_go_status": "NOT_AN_AUTHORIZATION_RECEIPT",
+  "actual_authorization_and_readback": "NOT_EXECUTED_IN_SUCCESS_STUB_FLOWS",
+  "orchestration_scope": "IN_MEMORY_GUARD_READER_PROCESS_STUBS_ONLY",
+  "manufactured_flow_receipts": "TEMPORARY_DELETED_NOT_SCIENTIFIC_SUCCESS_OR_PUBLIC_GO",
+  "scientific_source_edits": 0,
+  "real_study_and_portable_replay": "UNCOMPUTED_PENDING_ROOT_ACTUAL_EXECUTION"
+}

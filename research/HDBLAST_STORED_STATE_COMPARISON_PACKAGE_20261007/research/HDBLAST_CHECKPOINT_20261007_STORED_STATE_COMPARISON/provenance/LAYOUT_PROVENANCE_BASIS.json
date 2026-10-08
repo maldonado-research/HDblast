@@ -1,0 +1,57 @@
+{
+  "actual_retained_encoding_validation": "NOT_RUN_NO_REAL_DECODE",
+  "constant_capture_runtime": {
+    "longdouble_nmant": 63,
+    "numpy": "2.2.6",
+    "python": "3.12.14"
+  },
+  "layout_basis": [
+    "Published producer ran on Linux x86_64, NumPy 2.2.6, Python 3.12.14.",
+    "Published producer reports longdouble_nmant=63 and epsilon=2^-63; float128 and complex256 are storage names.",
+    "Authenticated NPY descriptors are little-endian <f16 for real and <c32 for complex.",
+    "The inherited public active-source protocol explicitly requires the x87 binary80 ABI for physical routes at line 334.",
+    "NumPy x86_64 longdouble stores the x87 80-bit significand/exponent in the first 10 little-endian bytes of each 16-byte real slot; six bytes are padding.",
+    "NumPy clongdouble consists of a real longdouble slot then an imaginary longdouble slot.",
+    "The dtype descriptor alone does not establish binary80: explicit producer-platform evidence and fabricated native-platform reproducibility review are required."
+  ],
+  "manifest_sha256": "b70dea97bc7223a77f32c5e0964ee2a43812215d84bdac6393bedbb6601a291d",
+  "new_physical_callbacks": 0,
+  "producer_runtime_metadata": {
+    "complex_dtype": "complex256",
+    "longdouble_eps": "1.084202172485504434e-19",
+    "longdouble_nmant": 63,
+    "numpy": "2.2.6",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "python": "3.12.14",
+    "python_optimization": 0,
+    "real_dtype": "float128"
+  },
+  "producer_sha256": "4fa625f2b534d741e2a48d6f0bfe84a89ee17bf306805906f962a8552e005906",
+  "protocol_abi_premise": {
+    "bytes": 20935,
+    "line": 334,
+    "literal": "pinned dependency versions and x87 binary80 ABI, with one numeric thread and",
+    "repository_path": "research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/PROTOCOL.md",
+    "sha256": "09c2a55a4cb537966808e8eab7b34997d3e54f9ba191fd0dff79ba1cc493848e",
+    "status": "PUBLIC_PRIOR_ROUTE_ABI_PREMISE_NOT_A_CURRENT_PAYLOAD_DECODE"
+  },
+  "public_results_pin": {
+    "bytes": 162786,
+    "capsule_path": "original_results.json",
+    "copied_without_numerical_reanalysis": true,
+    "local_file_vs_pinned_Git_blob": "IDENTICAL",
+    "published_commit": "71d00cc423e9049c8166b7ee7afbefbac28d8a18",
+    "repository_path": "research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/results.json",
+    "sha256": "6ffd98ab0a18ba954cee7044d7d4f0581721eb8da6085c949be51f3785e16785"
+  },
+  "required_independent_checks_before_real_decode": [
+    "Authenticated producer/platform evidence reconciled with decoder layout contract.",
+    "Fabricated native NumPy longdouble/clongdouble serialization agrees with exact decoder on finite values, subnormals, signed zeros, and component order.",
+    "Fabricated unsupported/nonfinite encodings rejected and arbitrary padding numerically ignored while still byte-hashed.",
+    "Reader code independently reviewed and frozen with public readback; explicit GO separately recorded."
+  ],
+  "retained_values_decoded": 0,
+  "schema_version": 1,
+  "status": "CANDIDATE_LAYOUT_BASIS_STATIC_PUBLIC_METADATA_ONLY",
+  "storage_layout": "x87-binary80-little-endian-padded16-v1"
+}
