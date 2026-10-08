@@ -1,0 +1,122 @@
+name: Registered BD prehistory exact replay
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_CHECKPOINT_20261007_BD_PREHISTORY/**'
+      - 'research/HDBLAST_BD_PREHISTORY_PACKAGE_20261007/**'
+      - '.github/workflows/hdblast_bd_prehistory.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_CHECKPOINT_20261007_BD_PREHISTORY/**'
+      - 'research/HDBLAST_BD_PREHISTORY_PACKAGE_20261007/**'
+      - '.github/workflows/hdblast_bd_prehistory.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  fresh-exact-replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 70
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+    steps:
+      - name: Prepare the evidence directory
+        shell: bash
+        run: mkdir -p "$RUNNER_TEMP/bd-prehistory-ci"
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: |
+            research/HDBLAST_CHECKPOINT_20261007_BD_PREHISTORY
+            research/HDBLAST_BD_PREHISTORY_PACKAGE_20261007
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+          architecture: 'x64'
+          check-latest: false
+      - name: Authenticate the helper and sealed inputs before execution
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -B - <<'PY' > "$RUNNER_TEMP/bd-prehistory-ci/authentication.log" 2>&1
+          import ctypes, hashlib, json, os, pathlib, sys
+          if sys.version_info[:3] != (3, 12, 14):
+              raise SystemExit('Registered Python 3.12.14 required')
+          if os.getuid() == 0:
+              raise SystemExit('Existing nonroot runner required')
+          ctypes.CDLL('libseccomp.so.2', use_errno=True)
+          root = pathlib.Path.cwd().resolve()
+          checkpoint = 'research/HDBLAST_CHECKPOINT_20261007_BD_PREHISTORY/'
+          package = 'research/HDBLAST_BD_PREHISTORY_PACKAGE_20261007/'
+          expected = {
+              package + 'replay_checkpoint.py': '37df86c5850c71b8c8cc4cb1926dbf21a6e841ff42358a272e5eb2f6bf293c22',
+              package + 'REPLAY_PINS.json': 'a839dc8ccd4efb2be41711093987eabd2e7ee39bdf4fc2fd9be646db82c72243',
+              package + 'PAYLOAD_MANIFEST.json': '1bb65ecadc6ea11b9ffc58c4e88021b82728bb3696f50a7941468b4428a1b83a',
+              package + 'PUBLIC_GO.json': '5e28dbeb90b3eef8d3cf429aed69b6791e4c4529b1852928dfb72868642001d6',
+              checkpoint + 'FULL_REGISTRATION.json': '1d55b6310631fcf600a8165ec1d326b9880a0de346b531c9d9659336778f765a',
+              checkpoint + 'requirements-replay.txt': '7517bf2f0ffd9bdeac2c7681673f71bfd4620d55253ac55151a56e27ae1fe8af',
+          }
+          for relative, pin in expected.items():
+              path = root / relative
+              if not path.is_file() or any(item.is_symlink() for item in (path, *path.parents)):
+                  raise SystemExit('Real pinned file required: ' + relative)
+              if hashlib.sha256(path.read_bytes()).hexdigest() != pin:
+                  raise SystemExit('External SHA256 differs: ' + relative)
+          receipt = {
+              'status': 'PASS_CI_HELPER_AND_INPUT_AUTHENTICATION',
+              'verified_sha256': expected,
+              'sys_version': sys.version,
+              'libseccomp': 'libseccomp.so.2',
+              'uid': os.getuid(),
+              'numeric_route_launches': 0,
+              'source_callbacks': 0,
+          }
+          output = pathlib.Path(os.environ['RUNNER_TEMP']) / 'bd-prehistory-ci' / 'AUTHENTICATION.json'
+          output.write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+          print(receipt['status'])
+          PY
+      - name: Install the authenticated registered requirements
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --only-binary=:all: \
+            -r research/HDBLAST_CHECKPOINT_20261007_BD_PREHISTORY/requirements-replay.txt \
+            > "$RUNNER_TEMP/bd-prehistory-ci/install.log" 2>&1
+          python -m pip check >> "$RUNNER_TEMP/bd-prehistory-ci/install.log" 2>&1
+      - name: Verify the complete payload and saved authenticated science
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -B research/HDBLAST_BD_PREHISTORY_PACKAGE_20261007/replay_checkpoint.py \
+            --pins-sha256 a839dc8ccd4efb2be41711093987eabd2e7ee39bdf4fc2fd9be646db82c72243 \
+            --payload-manifest-sha256 1bb65ecadc6ea11b9ffc58c4e88021b82728bb3696f50a7941468b4428a1b83a \
+            --verify-only > "$RUNNER_TEMP/bd-prehistory-ci/verify-only.log" 2>&1
+      - name: Replay both registered routes in normal and optimized Python
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -B research/HDBLAST_BD_PREHISTORY_PACKAGE_20261007/replay_checkpoint.py \
+            --pins-sha256 a839dc8ccd4efb2be41711093987eabd2e7ee39bdf4fc2fd9be646db82c72243 \
+            --payload-manifest-sha256 1bb65ecadc6ea11b9ffc58c4e88021b82728bb3696f50a7941468b4428a1b83a \
+            --python "$(command -v python)" \
+            --output-directory "$RUNNER_TEMP/bd-prehistory-ci/fresh-replay" \
+            > "$RUNNER_TEMP/bd-prehistory-ci/full-replay.log" 2>&1
+      - name: Retain authentication, exact outputs, budgets and failed-step evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bd-prehistory-exact-${{ github.sha }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/bd-prehistory-ci/
+          if-no-files-found: warn
+          retention-days: 14

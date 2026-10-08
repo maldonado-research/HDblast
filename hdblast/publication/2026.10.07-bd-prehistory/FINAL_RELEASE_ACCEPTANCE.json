@@ -1,0 +1,173 @@
+{
+  "status": "PASS_FINAL_READ_ONLY_RELEASE_ACCEPTANCE",
+  "checks": [
+    {
+      "check": "frozen final input FINAL_UPLOAD_INVENTORY.json",
+      "pass": true
+    },
+    {
+      "check": "frozen final input FINAL_METADATA_MODERN.json",
+      "pass": true
+    },
+    {
+      "check": "frozen final input new_edition_controller.py",
+      "pass": true
+    },
+    {
+      "check": "frozen final input CONTROLLER_FINAL_RECEIPT.json",
+      "pass": true
+    },
+    {
+      "check": "full writable metadata top-level keys",
+      "pass": true
+    },
+    {
+      "check": "prior metadata field coverage",
+      "pass": true
+    },
+    {
+      "check": "preserved inherited creators",
+      "pass": true
+    },
+    {
+      "check": "preserved inherited resource_type",
+      "pass": true
+    },
+    {
+      "check": "preserved inherited rights",
+      "pass": true
+    },
+    {
+      "check": "preserved inherited copyright",
+      "pass": true
+    },
+    {
+      "check": "preserved inherited publisher",
+      "pass": true
+    },
+    {
+      "check": "preserved inherited languages",
+      "pass": true
+    },
+    {
+      "check": "preserved inherited references",
+      "pass": true
+    },
+    {
+      "check": "preserved inherited subjects",
+      "pass": true
+    },
+    {
+      "check": "preserved inherited related_identifiers",
+      "pass": true
+    },
+    {
+      "check": "preserved code custom fields",
+      "pass": true
+    },
+    {
+      "check": "preserved public access",
+      "pass": true
+    },
+    {
+      "check": "historical v24 description unchanged",
+      "pass": true
+    },
+    {
+      "check": "final scientific scope and limitations present",
+      "pass": true
+    },
+    {
+      "check": "final replay result distinguishes preserved failure",
+      "pass": true
+    },
+    {
+      "check": "no stale planning status in current description/notes",
+      "pass": true
+    },
+    {
+      "check": "new semantic version",
+      "pass": true
+    },
+    {
+      "check": "prior/family/companion preserved in final metadata",
+      "pass": true
+    },
+    {
+      "check": "final immutable report URI",
+      "pass": true
+    },
+    {
+      "check": "local immutable commit addition HDBLAST_CHECKPOINT_20261005_FINITE_BAND_WARD.zip",
+      "pass": true
+    },
+    {
+      "check": "local immutable commit addition HDBLAST_CHECKPOINT_20261007_BD_PREHISTORY.zip",
+      "pass": true
+    },
+    {
+      "check": "local immutable commit addition HDBLAST_CHECKPOINT_20261007_INCOMING_STATE.zip",
+      "pass": true
+    },
+    {
+      "check": "local immutable commit addition HDBLAST_CONTINUATION_OVERVIEW_20261007.md",
+      "pass": true
+    },
+    {
+      "check": "complete refreshed receipt hash chain CONTROLLER_FINAL_RECEIPT.json",
+      "pass": true,
+      "pinned_artifacts": 12
+    },
+    {
+      "check": "complete refreshed receipt hash chain controller-review/REVIEW_MANIFEST.json",
+      "pass": true,
+      "pinned_artifacts": 15
+    },
+    {
+      "check": "98 reviewed offline case executions both Python modes",
+      "pass": true
+    },
+    {
+      "check": "live prior unchanged/no existing draft read-only evidence",
+      "pass": true
+    },
+    {
+      "check": "independent re-execution of three corrected publish race controls",
+      "pass": true,
+      "tests_run": 3,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "check": "prior independent audit scientific-scope.json",
+      "pass": true
+    },
+    {
+      "check": "prior independent audit SEALED_ARCHIVE_AUDIT.json",
+      "pass": true
+    },
+    {
+      "check": "prior independent audit FINAL_INVENTORY_AUDIT.json",
+      "pass": true
+    }
+  ],
+  "input_sha256": {
+    "FINAL_UPLOAD_INVENTORY.json": "a78c80160a48e0171e8bee61e0455aa9b283b8c20e4c17e6e461c5c5fdb45153",
+    "FINAL_METADATA_MODERN.json": "72415e84db788b8dec0c421012c1d264fc669e6f8e5d08d93e80f0075e3485ba",
+    "new_edition_controller.py": "a261c5f732a5e5b2bee3267d73d82ae8f6066bd901abcd51f6fe756c691d4cf5",
+    "CONTROLLER_FINAL_RECEIPT.json": "e13a81071793b4dccf91db40917242caaf519aa3a4a72368eed90e9c94ee3db1"
+  },
+  "scientific_scope_receipt": {
+    "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/scientific-scope.json",
+    "sha256": "ff26ee0ee79321351ead156fa604dad53dd5c4f640112ee24d32e6334ba8e774"
+  },
+  "resolved_finding": "Publish final GET now rechecks frozen metadata/27 pins and requires its ETag equal the fresh complete-verification ETag; the same ETag is sent via If-Match.",
+  "accepted_scope": "One new edition of concept DOI 10.5281/zenodo.17088132 from unchanged 23114217, retaining 23 inherited files and adding four sealed assets. No authorization expansion or claim that publication has occurred.",
+  "publication_requirements": "Use one locked evidence directory, frozen inventory/metadata pins, explicit staged flags, GET-only recovery for ambiguous writes, and final complete public readback.",
+  "remote_requests_by_this_audit": 0,
+  "remote_mutations_by_this_audit": 0,
+  "credential_values_read": false,
+  "new_scientific_source_evaluations": 0,
+  "retained_array_decodes": 0,
+  "immutable_packet_edits": 0
+}

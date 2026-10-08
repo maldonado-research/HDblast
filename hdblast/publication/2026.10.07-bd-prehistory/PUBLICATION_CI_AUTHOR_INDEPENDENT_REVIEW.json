@@ -1,0 +1,142 @@
+{
+  "array_decodes": 0,
+  "authentication_rejections": [
+    "unfilled final witness manifest",
+    "unfilled actual publication identity",
+    "changed executable pin"
+  ],
+  "code_review": [
+    "External executable and witness-manifest pins are checked before imports",
+    "Each listed witness byte and separately pinned inventory/metadata is authenticated",
+    "Unfilled actual published identity and manifest placeholders fail closed",
+    "stdlib Python3.12.14 with -I -S -B, optional -O excludes site/package startup",
+    "Final verifier rechecks exact manifest schema and role coverage, 27-file inventory, all stream evidence and preserved older records",
+    "Controls mutate deep copies only; original saved witnesses must pass before and after controls",
+    "Workflow requests only contents:read and isolates verifier/control workers with sudo unshare --net",
+    "Artifact upload preserves auth/control failures; no numeric/controller/source workflow is invoked"
+  ],
+  "controlled_entries": [
+    {
+      "mode": "normal",
+      "positive_checks": null,
+      "receipt_sha256": "9ce7fa35593e92afc4d2b850cd9be83a13e1ed37ce8f8da3e9119734794f012a",
+      "rejected_mutants": null,
+      "role": "PUBLICATION",
+      "status": "PASS_OFFLINE_27_FILE_PUBLICATION_WITNESSES"
+    },
+    {
+      "mode": "normal",
+      "positive_checks": 2,
+      "receipt_sha256": "fa5b5e47638a3f4da89ba043f7336d04945b0fef4425c37aa1406fb07953cfd4",
+      "rejected_mutants": 48,
+      "role": "CONTROLS",
+      "status": "PASS_OFFLINE_AUTHENTICATED_SAVED_WITNESS_MUTATION_CONTROLS"
+    },
+    {
+      "mode": "optimized",
+      "positive_checks": null,
+      "receipt_sha256": "9ce7fa35593e92afc4d2b850cd9be83a13e1ed37ce8f8da3e9119734794f012a",
+      "rejected_mutants": null,
+      "role": "PUBLICATION",
+      "status": "PASS_OFFLINE_27_FILE_PUBLICATION_WITNESSES"
+    },
+    {
+      "mode": "optimized",
+      "positive_checks": 2,
+      "receipt_sha256": "fa5b5e47638a3f4da89ba043f7336d04945b0fef4425c37aa1406fb07953cfd4",
+      "rejected_mutants": 48,
+      "role": "CONTROLS",
+      "status": "PASS_OFFLINE_AUTHENTICATED_SAVED_WITNESS_MUTATION_CONTROLS"
+    }
+  ],
+  "controller_imports": 0,
+  "controls_sha256": "a7369fe95d524d5778f9e6667efa95ee17b35950ef49f721f35ce0037263dcc8",
+  "fixture_manifest_sha256": "5c2395ba95d44f52ef4c267461f51311f4bab51a7ad4ae60d0bb98f5d490959c",
+  "fixture_scope": "FABRICATED_NEW_RECORD_ID_90000001_WITH_REAL_PINNED_PRIOR_CAPTURES_ONLY",
+  "inline_authentication": "EXACT_YAML_BODY_EXECUTED_ON_MATCHING_FINAL_RELATIVE_LAYOUT",
+  "live_publication_assertion": false,
+  "namespace_isolation_validation": "PENDING_HOSTED_UBUNTU22_04_RUNNER; NO_LOCAL_SUDO_AVAILABLE",
+  "network_attempts_during_controlled_entries": 0,
+  "normal_optimized_receipts": "BYTE_IDENTICAL",
+  "numeric_imports": 0,
+  "remote_writes": 0,
+  "review_files": {
+    "AUTH_REJECT_1.log": {
+      "bytes": 78,
+      "sha256": "4901274bf2156f0bdbc13b66a2a9ab1e8f5c4a7bf3d83669c4a8f553d83ca9ba"
+    },
+    "AUTH_REJECT_2.log": {
+      "bytes": 57,
+      "sha256": "0dd5365670d324f1c6188c765a15eee38a0c8d27627960a4b97f621ebc49ed4d"
+    },
+    "AUTH_REJECT_3.log": {
+      "bytes": 75,
+      "sha256": "72c78dd7a9d488bee12f407134e76a0945af16f5db0e403024a7bc2f9b5e4046"
+    },
+    "CONTROLS_normal.json": {
+      "bytes": 2679,
+      "sha256": "fa5b5e47638a3f4da89ba043f7336d04945b0fef4425c37aa1406fb07953cfd4"
+    },
+    "CONTROLS_normal.json.guard.json": {
+      "bytes": 364,
+      "sha256": "36d43efbd18de9927c77f55ea6c5a2e4838c439da421a26bde6c45abc9ee66e1"
+    },
+    "CONTROLS_normal.log": {
+      "bytes": 139,
+      "sha256": "ae8242f58a02c1e01838c5efd8f5882b948b786b7a67e468e90728f5aed4be19"
+    },
+    "CONTROLS_optimized.json": {
+      "bytes": 2679,
+      "sha256": "fa5b5e47638a3f4da89ba043f7336d04945b0fef4425c37aa1406fb07953cfd4"
+    },
+    "CONTROLS_optimized.json.guard.json": {
+      "bytes": 364,
+      "sha256": "36d43efbd18de9927c77f55ea6c5a2e4838c439da421a26bde6c45abc9ee66e1"
+    },
+    "CONTROLS_optimized.log": {
+      "bytes": 139,
+      "sha256": "ae8242f58a02c1e01838c5efd8f5882b948b786b7a67e468e90728f5aed4be19"
+    },
+    "PUBLICATION_normal.json": {
+      "bytes": 1498,
+      "sha256": "9ce7fa35593e92afc4d2b850cd9be83a13e1ed37ce8f8da3e9119734794f012a"
+    },
+    "PUBLICATION_normal.json.guard.json": {
+      "bytes": 364,
+      "sha256": "2d504eafc26d5d79fb56180be7242cc8d6dcebdab08dde97b64a814844390530"
+    },
+    "PUBLICATION_normal.log": {
+      "bytes": 146,
+      "sha256": "f1562017199d1b344e26996bd908e9e48e8386af2d3b607fae56773a54f1fa68"
+    },
+    "PUBLICATION_optimized.json": {
+      "bytes": 1498,
+      "sha256": "9ce7fa35593e92afc4d2b850cd9be83a13e1ed37ce8f8da3e9119734794f012a"
+    },
+    "PUBLICATION_optimized.json.guard.json": {
+      "bytes": 364,
+      "sha256": "2d504eafc26d5d79fb56180be7242cc8d6dcebdab08dde97b64a814844390530"
+    },
+    "PUBLICATION_optimized.log": {
+      "bytes": 146,
+      "sha256": "f1562017199d1b344e26996bd908e9e48e8386af2d3b607fae56773a54f1fa68"
+    },
+    "authentication.log": {
+      "bytes": 49,
+      "sha256": "c4e5517bfe7ed8ff2e86e341d62cb319eb4d3156f50b749e2fb972c22ca62d25"
+    },
+    "extracted_authentication.py": {
+      "bytes": 3347,
+      "sha256": "ea99ad819e4c97097650b0dc597fc6b4279de3880373983b41c4afddf4e947b7"
+    },
+    "socket_guarded_offline_entry.py": {
+      "bytes": 1357,
+      "sha256": "4beefe90c9508877755bd67023505702c5f0039805d8be2c69b922083fd7b532"
+    }
+  },
+  "source_callbacks": 0,
+  "status": "GO_SCOPED_OFFLINE_PUBLICATION_CI_AUTHOR_INDEPENDENT_REVIEW",
+  "verifier_sha256": "bf97e2f8526eadae12366b76de1bf3ad84086bec5089b33cb7e584e75417478c",
+  "witness_files_authenticated": 17,
+  "workflow_sha256": "23c8d0b11550d0fb80d8681b5dfdb00f5638d29a416b40bc422c7339bf0b817e"
+}

@@ -1,0 +1,111 @@
+{
+  "status": "PASS_NARROW_HTTP406_RECOVERY_ACCEPTANCE",
+  "checks": [
+    {
+      "check": "pinned input new_edition_controller.py",
+      "pass": true
+    },
+    {
+      "check": "pinned input CONTROLLER_FINAL_RECEIPT.json",
+      "pass": true
+    },
+    {
+      "check": "pinned input FINAL_UPLOAD_INVENTORY.json",
+      "pass": true
+    },
+    {
+      "check": "pinned input FINAL_METADATA_MODERN.json",
+      "pass": true
+    },
+    {
+      "check": "pinned input FINAL_RELEASE_ACCEPTANCE.json",
+      "pass": true
+    },
+    {
+      "check": "pinned input SNAPSHOT.json",
+      "pass": true
+    },
+    {
+      "check": "final evidence chain CONTROLLER_FINAL_RECEIPT.json",
+      "pass": true,
+      "checked": 21,
+      "failures": []
+    },
+    {
+      "check": "final evidence chain controller-review/FINAL_EXECUTION_RECEIPT.json",
+      "pass": true,
+      "checked": 6,
+      "failures": []
+    },
+    {
+      "check": "final evidence chain controller-review/REVIEW_MANIFEST.json",
+      "pass": true,
+      "checked": 15,
+      "failures": []
+    },
+    {
+      "check": "real same-journal first-attempt state preserved",
+      "pass": true
+    },
+    {
+      "check": "real journal exactly one initial intent and definitive HTTP406",
+      "pass": true
+    },
+    {
+      "check": "initial failed journal remains exact append-only prefix",
+      "pass": true
+    },
+    {
+      "check": "metadata and inventory journal pins unchanged",
+      "pass": true
+    },
+    {
+      "check": "independent 22 offline recovery checks NORMAL",
+      "pass": true
+    },
+    {
+      "check": "independent 22 offline recovery checks OPTIMIZED",
+      "pass": true
+    },
+    {
+      "check": "author regressions pass both Python modes",
+      "pass": true
+    },
+    {
+      "check": "GET-only reconciliation establishes unchanged prior and no draft",
+      "pass": true
+    }
+  ],
+  "input_sha256": {
+    "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/new_edition_controller.py": "553885c93e297c55cd9606e66483b955adaecfce3dfc9f92a7f46b516b8e3244",
+    "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/CONTROLLER_FINAL_RECEIPT.json": "bd60abb735b170fb8e3cc0dbd13e6d2dfc147b62e3f4f3ac1400d4ae94fcd73e",
+    "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/FINAL_UPLOAD_INVENTORY.json": "a78c80160a48e0171e8bee61e0455aa9b283b8c20e4c17e6e461c5c5fdb45153",
+    "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/FINAL_METADATA_MODERN.json": "72415e84db788b8dec0c421012c1d264fc669e6f8e5d08d93e80f0075e3485ba",
+    "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/FINAL_RELEASE_ACCEPTANCE.json": "30eb3f022a836c3922126a86093fd7ece4fe001ad778c9b329ca8874b1e4a949",
+    "/workspace/hdblast-research-work/continuation-next-20261007/release-audit/first-406-attempt/SNAPSHOT.json": "5cef8842943426114dcb1cb0185b2026818606bb0a869837eb9faa91a84e4c79"
+  },
+  "scope": "Only a single explicitly selected corrected legacy new-version retry after the preserved definitive first HTTP406, in the original locked evidence directory. No fresh deposition, unrelated family operation, repeated publication, or uncertain-outcome retry is accepted.",
+  "code_review": {
+    "legacy_create_accept": "application/json",
+    "original_attempt_latch": "PRESERVED_TRUE",
+    "separate_retry_latch": "SAVED_BEFORE_CORRECTED_POST",
+    "prior_and_owned_drafts": "GET_RECONCILED_BEFORE_RETRY_GATE",
+    "unknown_or_500_outcomes": "BLOCKED_OR_GET_RECOVERED_WITHOUT_REPEAT_POST",
+    "previous_publish_ETag_fix": "UNCHANGED",
+    "metadata_inventory_scientific_acceptance": "UNCHANGED_AND_REFERENCED_BY_PRIOR_ACCEPTANCE_SHA256"
+  },
+  "independent_checks_per_mode": 22,
+  "independent_modes": [
+    "normal",
+    "optimized"
+  ],
+  "author_case_executions": 116,
+  "first_failed_attempt_snapshot_sha256": "5cef8842943426114dcb1cb0185b2026818606bb0a869837eb9faa91a84e4c79",
+  "remaining_substantive_findings": [],
+  "remote_requests_by_this_audit": 0,
+  "remote_mutations_by_this_audit": 0,
+  "real_credentials_read": false,
+  "scientific_source_evaluations": 0,
+  "retained_array_decodes": 0,
+  "immutable_packet_edits": 0
+}
