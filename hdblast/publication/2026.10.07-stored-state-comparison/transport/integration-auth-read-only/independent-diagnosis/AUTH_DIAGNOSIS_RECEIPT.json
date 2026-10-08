@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "status": "PASS_READ_ONLY_DIAGNOSIS_REVIEW_CAUSE_UNRESOLVED",
+  "observed_utc": "2026-10-08T04:29:25.098264+00:00",
+  "accepted_helper_sha256": "39ec701ae3133b699bbad1f74031c549a0aedbc2116109cf5be199d3c7b0916d",
+  "comparison": "All three owned-draft GETs HTTP200 with exact same response bytes; child env retention/removal does not reproduce auth failure.",
+  "GET200_shared_body_bytes": 42180,
+  "GET200_shared_body_sha256": "fc5fe357c2171567de78d5baa874a420e3c1a5782508097aebafe1997cb86035",
+  "curl_stdin_auth_representation": "WORKS_FOR_TESTED_GETS",
+  "removed_child_ZENODO_variable": "NOT_REPRODUCED_AS_FAILURE_CAUSE_FOR_TESTED_GET",
+  "PUT_final_status": 401,
+  "PUT_size_upload": 24051375,
+  "PUT_full_asset_bytes": 240135519,
+  "PUT_error_layer": "MANAGED_INTEGRATION_INDICATORS_IN_RESPONSE; INTERNAL_CAUSE_NOT_ESTABLISHED",
+  "exact_PUT_failure_cause": "UNRESOLVED",
+  "GET_vs_PUT_differences": [
+    "method",
+    "endpoint",
+    "request body/size",
+    "timing/integration processing"
+  ],
+  "new_secret_missing": "NOT_ESTABLISHED",
+  "accepted_source_or_failure_evidence_edits": 0,
+  "original_state_or_latch_edits": 0,
+  "reviewer_network_requests": 0,
+  "remote_mutations": 0,
+  "live_asset_reads": 0,
+  "scientific_callbacks": 0,
+  "credential_values_or_secret_headers_inspected": false,
+  "artifacts": {
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/integration-auth-read-only/independent-diagnosis/AUTH_DIAGNOSIS.md": {
+      "bytes": 3323,
+      "sha256": "c47b02b748c1d837b20d095226acbb2ffee2691b3ce0a00c5194586442b4050d"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/integration-auth-read-only/compare_get_auth.py": {
+      "bytes": 5147,
+      "sha256": "90412f4521955267a4a47bbc6f8702684d94f689b5a68eabe160864d5d9533d8"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/unknown-put-recovery/recover_put_once.py": {
+      "bytes": 19883,
+      "sha256": "39ec701ae3133b699bbad1f74031c549a0aedbc2116109cf5be199d3c7b0916d"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/unknown-put-recovery/live-attempt-001/RECOVERY_RESULT.json": {
+      "bytes": 924,
+      "sha256": "3a80c99cbec992aafd52de2a6b02502b8aa3bd4bc1296e35d9435b9eae4caa66"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/unknown-put-recovery/live-attempt-001/ONE_PUT_ATTEMPT_LATCH.json": {
+      "bytes": 1308,
+      "sha256": "cff9facf93b1bfcd76d866ee3169ec93ecda57645aebe4b14921f62dfd24b30e"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/unknown-put-recovery/live-attempt-001/curl_body.raw": {
+      "bytes": 76,
+      "sha256": "f8ac594b632063665f0991ca2c37e9b79e3bda1218c2404ad1d36a23134472c7"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/unknown-put-recovery/live-attempt-001/curl_headers.raw": {
+      "bytes": 335,
+      "sha256": "701269fc6372d58fbf1510d6628e07ece571908a853d5147b9dd8eb3c5475628"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/unknown-put-recovery/live-attempt-001/curl_stderr.raw": {
+      "bytes": 51,
+      "sha256": "ade9079bfa8a204a7cb71845bde729338c1e54b9d2f728302f27c91ba3c56519"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/integration-auth-read-only/urllib_vendor.receipt.json": {
+      "bytes": 507,
+      "sha256": "9cbc5d0b45a855e8f051b0d084f61510e202b043a33585ae6a7fdfca74c959c9"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/integration-auth-read-only/urllib_vendor.body": {
+      "bytes": 42180,
+      "sha256": "fc5fe357c2171567de78d5baa874a420e3c1a5782508097aebafe1997cb86035"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/integration-auth-read-only/urllib_vendor.headers": {
+      "bytes": 1058,
+      "sha256": "bb79b7d39ba20b8ef91200a2dfeed0e70c58d936ab2c055c5679ba53c97b0cb2"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/integration-auth-read-only/curl_vendor_z_retained.receipt.json": {
+      "bytes": 724,
+      "sha256": "fcc5f6866b92089b36bb5b314509519517f6349aa49c0bdb636cc941c71efb18"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/integration-auth-read-only/curl_vendor_z_retained.body": {
+      "bytes": 42180,
+      "sha256": "fc5fe357c2171567de78d5baa874a420e3c1a5782508097aebafe1997cb86035"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/integration-auth-read-only/curl_vendor_z_retained.headers": {
+      "bytes": 1043,
+      "sha256": "249f9c601642dfc516f2d0dddda7fa5dc03818d69ae746665bbc773369457330"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/integration-auth-read-only/curl_vendor_z_removed.receipt.json": {
+      "bytes": 724,
+      "sha256": "bbf21f5ce85812c16d89e99410647db4c6dd972c908bfac58b566abcb272628d"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/integration-auth-read-only/curl_vendor_z_removed.body": {
+      "bytes": 42180,
+      "sha256": "fc5fe357c2171567de78d5baa874a420e3c1a5782508097aebafe1997cb86035"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/integration-auth-read-only/curl_vendor_z_removed.headers": {
+      "bytes": 1043,
+      "sha256": "97a33d894c50d9b2082ee3728e29cabd54a4b9e91f4d8e9b8060a36b4ebb05b9"
+    }
+  }
+}

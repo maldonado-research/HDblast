@@ -1,0 +1,41 @@
+# HDBLAST: certified stored-state comparison
+
+Scientific checkpoint date: **October 7, 2026, Pacific time**. Preparation and execution journals use their actual UTC timestamps, beginning October 8. The platform records its publication timestamp separately.
+
+This checkpoint encloses the difference between the exact represented incoming first-order states saved in four source/resolution capsules and the prescribed Bunch–Davies prehistory target. It covers all **49,152 capsule-node occurrences**, the **20 selected exact-reader arrays**, and **12 registered finite weighted prefixes** at cutoffs K=64,128,256. Capsule identities remain separate even when momentum values coincide. All registered stored-minus-target error rectangles are enclosed; both actual normal and optimized executions passed, their eight stable scientific artifacts agree byte for byte, and independent saved-output review passed.
+
+The reader preserves represented binary80 values as exact rationals. It uses the saved momenta, weights and first-order components without regenerating quadrature or projecting the state. Normalized coordinates are U=u_1/epsilon_represented and W=w_1/epsilon_represented. The target engine uses the preregistered global degree 832 and Arb precision 512. The complete exported L1 radius of **each U rectangle and each W rectangle** passes the registered 1e-18 gate. That gate bounds target-enclosure uncertainty; it is not a threshold for the incoming mismatch or stress error.
+
+Certified positive lower and upper brackets resolve **nonzero incoming mismatch**. On the complete K=256 prefixes, the coarse capsules' maximum normalized Cartesian complex L1 W errors are approximately 1.91e-14, at retained momenta near 255.86 and 255.90; the fine capsules' maxima are approximately 5.3–5.8e-16. These decimals are display approximations. The exact outward error brackets and maximizing-node witnesses in the archived `research/HDBLAST_CHECKPOINT_20261007_STORED_STATE_COMPARISON/RESULTS.md` are authoritative. The locations and differences between grids do not establish a cause or a convergence theorem.
+
+The finite transport calculation encloses signed anchor differences and phase-uniform linear density/pressure differences on eta in [-4.5,-3.5]. It uses the exact positive retained measure mu=dk*k²/(2 Pi_represented²) and the inherited a_0(eta)^4/epsilon_represented scaled R/P response convention. The forcing remains active; the difference evolves homogeneously because the two exact evolutions use identical subsequent forcing and complete contacts. These are fixed finite weighted sums. They do not establish continuum interpolation or quadrature error, later retained numerical-trajectory accuracy, the full source/contact contribution, or ultraviolet completion.
+
+The full continuum pressure/contact certificate remains **UNRESOLVED**, historical metric calibration **FAIL**, higher-dimensional Big Bang causation **NOT_ESTABLISHED**, and external novelty **NOT_ASSESSED**. Internal AI-assisted review is not external peer review or proof-assistant formalization. Literature access includes 46 recorded TLS GET responses with status 200 and eight selected primary-source passage readings; it is bounded coverage, not an exhaustive search or full-paper/proof verification. Only original synthesis, typed citations and access provenance are delivered; private caches and third-party paper bodies are excluded.
+
+The source was publicly frozen before the actual scientific execution at Git commit [`bedcca7e86995da1230c12a20fae3755b31f4a94`](https://github.com/maldonado-research/HDblast/tree/bedcca7e86995da1230c12a20fae3755b31f4a94/research/HDBLAST_CHECKPOINT_20261007_STORED_STATE_COMPARISON). Its complete registration SHA256 is `05e9943f0b4c8134252a2fecef7631ddba8bd398d18553d6e126fbf50fc3aacc`, and the independently pinned immutable public-readback GO SHA256 is `27784552d9d7e10167066927d54f1757351b0f925b499e951b79849a44b62769`. The initial actual study and its independent review are distinct from the later portable extraction replay.
+
+The portable archive carries the complete unchanged registered checkpoint, original mathematics and literature synthesis, all four original archives and four compact capsules at their original repository paths, the producer/input-manifest/static-audit files, actual normal and optimized exports, target-node records, execution receipts/logs, original figures and their pinned generator, and the standalone guarded replay helper. The eight input archives occupy 212,975,098 raw bytes; final archive and release sizes must come from the sealed delivery record.
+
+Extract the archive and obtain its three nonsecret verification pins from the independently sealed external delivery record. With Linux, Python 3.12.14, python-flint 0.9.0, sympy 1.14.0 and mpmath 1.3.0 installed separately, use the captured-byte standard-library bootstrap in the extracted `README.md`. Before executing any helper code, that bootstrap captures `PAYLOAD_MANIFEST.json`, `replay_checkpoint.py` and `REPLAY_PINS.json`, checks all three against the externally supplied SHA256 values, then executes the authenticated captured helper bytes without loading the helper a second time. Do not start an unverified helper and rely on its own later self-check. The bootstrap's `--verify-only` argument verifies both saved outputs.
+
+Verification authenticates the complete package before study imports, requires the real public GO, validates each saved custody/readback record and compares all eight stable artifacts. It does not decode incoming arrays or construct a new source. A fresh replay additionally requires `libseccomp.so.2`, nonroot real/effective IDs and a nonexistent output directory outside the package. Replace `--verify-only` with `--output-root /absolute/external/new-replay-directory`. The registered launcher fixes 900 wall/CPU seconds, 512MiB address space/RSS and 128MiB per-file/aggregate accepted output per run; it exposes no numerical or resource overrides. The helper runs fresh normal and optimized modes and compares them with the saved outputs. Timing/RSS and custody path observations are new execution evidence, not scientific byte identities. The external fresh receipt establishes whether that portable replay completed.
+
+The archived `research/HDBLAST_CHECKPOINT_20261007_STORED_STATE_COMPARISON/NEXT_CALCULATION_CONTRACT.md` identifies the next calculation: certify trajectory residuals, then address the separate continuous momentum/time/contact/ultraviolet requirements. The finite bounds here do not establish the full inherited pressure/contact gate or the physical bulk/rival-model comparison.
+
+This is an additive same-family edition of concept DOI [`10.5281/zenodo.17088132`](https://doi.org/10.5281/zenodo.17088132), following record [`23225288`](https://doi.org/10.5281/zenodo.23225288). All 27 prior files are to be preserved and the portable archive plus this original overview are the two additions, giving 29 files after complete delivery verification. Historical release and failed-control evidence remain preserved. The previously recorded automatic GitHub-to-Zenodo archiving setting was OFF; this statement does not claim a fresh account-side configuration check.
+
+The following block is filled only from the root's final immutable delivery pins and completed portable replay evidence. It is outside the portable package and supplies no new publication DOI before that identity exists.
+
+```text
+ROOT_FINAL_PACKAGE_PINS.ARCHIVE_FILENAME = PENDING_ROOT_FINAL_SEAL
+ROOT_FINAL_PACKAGE_PINS.ARCHIVE_BYTES = PENDING_ROOT_FINAL_SEAL
+ROOT_FINAL_PACKAGE_PINS.ARCHIVE_MD5 = PENDING_ROOT_FINAL_SEAL
+ROOT_FINAL_PACKAGE_PINS.ARCHIVE_SHA256 = PENDING_ROOT_FINAL_SEAL
+ROOT_FINAL_PACKAGE_PINS.PAYLOAD_MANIFEST_SHA256 = PENDING_ROOT_FINAL_SEAL
+ROOT_FINAL_PACKAGE_PINS.HELPER_SHA256 = PENDING_ROOT_FINAL_SEAL
+ROOT_FINAL_PACKAGE_PINS.REPLAY_PINS_SHA256 = PENDING_ROOT_FINAL_SEAL
+ROOT_FINAL_PACKAGE_PINS.PORTABLE_REPLAY_STATUS = PENDING_ROOT_FIRST_ACTUAL_PORTABLE_REPLAY
+ROOT_FINAL_PACKAGE_PINS.PORTABLE_REPLAY_RECEIPT_SHA256 = PENDING_ROOT_FIRST_ACTUAL_PORTABLE_REPLAY
+```
+
+The complete 29-file release inventory and its final total are supplied externally. Its own hash is not embedded in this overview, which is one of the inventoried assets.

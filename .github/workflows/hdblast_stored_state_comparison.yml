@@ -1,0 +1,242 @@
+name: Registered stored-state comparison exact replay
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_CHECKPOINT_20261007_STORED_STATE_COMPARISON/**'
+      - 'research/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007/**'
+      - 'hdblast/continuation/2026.10.07-stored-state-comparison/**'
+      - 'hdblast/publication/2026.10.07-stored-state-comparison/**'
+      - 'handoff/HDBLAST*STORED_STATE*20261007*.md'
+      - 'README.md'
+      - 'site/index.html'
+      - 'site/es/index.html'
+      - 'site/zenodo-files/index.html'
+      - '.github/workflows/hdblast_stored_state_comparison.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_CHECKPOINT_20261007_STORED_STATE_COMPARISON/**'
+      - 'research/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007/**'
+      - 'hdblast/continuation/2026.10.07-stored-state-comparison/**'
+      - 'hdblast/publication/2026.10.07-stored-state-comparison/**'
+      - 'handoff/HDBLAST*STORED_STATE*20261007*.md'
+      - 'README.md'
+      - 'site/index.html'
+      - 'site/es/index.html'
+      - 'site/zenodo-files/index.html'
+      - '.github/workflows/hdblast_stored_state_comparison.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  fresh-exact-replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 70
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+      STORED_PACKAGE_PATH: research/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007
+      STORED_HELPER_SHA256: c4d04d22aff10d04dd93ee70ca94e45fcd04d9bbafd69fbcff3a919bafc10377
+      STORED_PAYLOAD_SHA256: '88e92065e25b1198983fb9bb72d533a1fd1f6b7335ffba714d02e1fb9abeb828'
+      STORED_REPLAY_PINS_SHA256: '89c86709e24764b25b6f4959f623c19565d64caffbfd1cf1b03bad59ffb08c68'
+    steps:
+      - name: Prepare the evidence directory
+        id: prepare_evidence
+        shell: bash
+        run: mkdir -p "$RUNNER_TEMP/stored-state-ci"
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: |
+            research/HDBLAST_CHECKPOINT_20261007_STORED_STATE_COMPARISON
+            research/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+          architecture: 'x64'
+          check-latest: false
+      - name: Authenticate the complete sealed package before installing study dependencies
+        id: authenticate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -S -B - <<'PY' > "$RUNNER_TEMP/stored-state-ci/authentication.log" 2>&1
+          import ctypes, hashlib, json, os, pathlib, re, stat, sys, types
+          if sys.version_info[:3] != (3, 12, 14) or sys.platform != 'linux':
+              raise SystemExit('Registered Linux Python 3.12.14 required')
+          if os.getuid() == 0 or os.geteuid() == 0:
+              raise SystemExit('Existing nonroot runner required')
+          ctypes.CDLL('libseccomp.so.2', use_errno=True)
+          package = pathlib.Path.cwd() / os.environ['STORED_PACKAGE_PATH']
+          if package.resolve() != package or any(p.is_symlink() for p in (package, *package.parents)):
+              raise SystemExit('Real package directory required')
+          expected = {
+              'replay_checkpoint.py': os.environ['STORED_HELPER_SHA256'],
+              'PAYLOAD_MANIFEST.json': os.environ['STORED_PAYLOAD_SHA256'],
+              'REPLAY_PINS.json': os.environ['STORED_REPLAY_PINS_SHA256'],
+          }
+          captured = {}
+          for name, pin in expected.items():
+              if re.fullmatch('[0-9a-f]{64}', pin) is None:
+                  raise SystemExit('Final external SHA256 required: ' + name)
+              path = package / name
+              fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK | os.O_CLOEXEC)
+              try:
+                  before = os.fstat(fd)
+                  if not stat.S_ISREG(before.st_mode) or before.st_nlink != 1 or before.st_size > 20 * 1024 * 1024:
+                      raise SystemExit('Bounded regular unaliased control file required: ' + name)
+                  raw = bytearray()
+                  while True:
+                      chunk = os.read(fd, 65536)
+                      if not chunk:
+                          break
+                      raw.extend(chunk)
+                      if len(raw) > 20 * 1024 * 1024:
+                          raise SystemExit('Growing control file: ' + name)
+                  after = os.fstat(fd)
+                  named = path.stat(follow_symlinks=False)
+                  identity = lambda value: (value.st_dev, value.st_ino, value.st_size, value.st_mtime_ns, value.st_ctime_ns, value.st_nlink)
+                  if identity(before) != identity(after) or identity(after) != identity(named):
+                      raise SystemExit('Control file changed while hashing: ' + name)
+              finally:
+                  os.close(fd)
+              if len(raw) != before.st_size or hashlib.sha256(raw).hexdigest() != pin:
+                  raise SystemExit('External SHA256 differs: ' + name)
+              captured[name] = bytes(raw)
+          # Execute the already authenticated helper bytes, avoiding a second source load.
+          helper_path = package / 'replay_checkpoint.py'
+          helper = types.ModuleType('hdblast_portable_bootstrap')
+          helper.__file__ = str(helper_path)
+          sys.modules[helper.__name__] = helper
+          exec(compile(captured['replay_checkpoint.py'], str(helper_path), 'exec'), helper.__dict__)
+          verified = helper.authenticate_package(package,
+              expected['PAYLOAD_MANIFEST.json'], expected['replay_checkpoint.py'], expected['REPLAY_PINS.json'])
+          requirements = package / verified['pins']['checkpoint_path'] / 'requirements-replay.txt'
+          if requirements.read_bytes() != b'python-flint==0.9.0\nsympy==1.14.0\nmpmath==1.3.0\n':
+              raise SystemExit('Registered exact requirement versions differ')
+          receipt = {
+              'status': 'PASS_CI_STDLIB_COMPLETE_PACKAGE_AUTHENTICATION',
+              'external_control_sha256': expected,
+              'manifest_file_count': len(verified['manifest']['files']),
+              'manifest_payload_bytes': sum(row['bytes'] for row in verified['manifest']['files'].values()),
+              'registration_sha256': verified['pins']['registration_sha256'],
+              'public_go_sha256': verified['pins']['public_go_sha256'],
+              'sys_version': sys.version,
+              'libseccomp': 'libseccomp.so.2',
+              'uid': os.getuid(),
+              'euid': os.geteuid(),
+              'new_array_decodes': 0,
+              'new_source_callbacks': 0,
+          }
+          output = pathlib.Path(os.environ['RUNNER_TEMP']) / 'stored-state-ci' / 'AUTHENTICATION.json'
+          output.write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+          print(receipt['status'])
+          PY
+      - name: Install the authenticated registered requirements
+        id: install_requirements
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --only-binary=:all: \
+            -r "$STORED_PACKAGE_PATH/research/HDBLAST_CHECKPOINT_20261007_STORED_STATE_COMPARISON/requirements-replay.txt" \
+            > "$RUNNER_TEMP/stored-state-ci/install.log" 2>&1
+          python -m pip check >> "$RUNNER_TEMP/stored-state-ci/install.log" 2>&1
+      - name: Verify both saved modes without decoding inputs or evaluating sources
+        id: verify_payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -B "$STORED_PACKAGE_PATH/replay_checkpoint.py" \
+            --package "$GITHUB_WORKSPACE/$STORED_PACKAGE_PATH" \
+            --payload-manifest-sha256 "$STORED_PAYLOAD_SHA256" \
+            --helper-sha256 "$STORED_HELPER_SHA256" \
+            --replay-pins-sha256 "$STORED_REPLAY_PINS_SHA256" \
+            --verify-only > "$RUNNER_TEMP/stored-state-ci/verify-only.log" 2>&1
+      - name: Replay the registered worker in fresh normal and optimized processes
+        id: replay
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -B "$STORED_PACKAGE_PATH/replay_checkpoint.py" \
+            --package "$GITHUB_WORKSPACE/$STORED_PACKAGE_PATH" \
+            --payload-manifest-sha256 "$STORED_PAYLOAD_SHA256" \
+            --helper-sha256 "$STORED_HELPER_SHA256" \
+            --replay-pins-sha256 "$STORED_REPLAY_PINS_SHA256" \
+            --output-root "$RUNNER_TEMP/stored-state-ci/fresh-replay" \
+            > "$RUNNER_TEMP/stored-state-ci/full-replay.log" 2>&1
+      - name: Retain compact private evidence in the job log and summary
+        if: ${{ always() && github.event.repository.private }}
+        env:
+          CHECK_STEP_STATES: ${{ toJSON(steps) }}
+          CHECK_JOB_STATUS: ${{ job.status }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -S -B - <<'PY_REPORT'
+          import base64, hashlib, json, os, pathlib, textwrap, zlib
+          root = pathlib.Path(os.environ['RUNNER_TEMP']) / 'stored-state-ci'
+          limit = 900 * 1024
+          parts = []
+          def add(label, text):
+              block = '\n### ' + label + '\n\n```text\n' + text + '\n```\n'
+              if sum(len(p.encode('utf-8')) for p in parts) + len(block.encode('utf-8')) <= limit:
+                  parts.append(block)
+              else:
+                  parts.append('\nOmitted oversized section: ' + label + '; original-file SHA256 is retained.\n')
+          add('Native check states', json.dumps({'job_status_before_reporting': os.environ['CHECK_JOB_STATUS'],
+              'steps': json.loads(os.environ['CHECK_STEP_STATES']),
+              'note': 'Reporting preserves earlier failures. Saved scientific DATA remains committed; fresh equality of all eight artifacts remains mandatory. Private uploads are skipped.'}, indent=2, sort_keys=True))
+          files = sorted(p for p in root.rglob('*') if p.is_file() and not p.is_symlink()) if root.is_dir() else []
+          manifest = []
+          for path in files:
+              digest = hashlib.sha256()
+              with path.open('rb') as stream:
+                  for chunk in iter(lambda: stream.read(65536), b''):
+                      digest.update(chunk)
+              manifest.append({'path': path.relative_to(root).as_posix(), 'bytes': path.stat().st_size,
+                  'sha256': digest.hexdigest()})
+          add('Complete generated-file SHA256 manifest', json.dumps(manifest, indent=2, sort_keys=True))
+          logs = sorted((p for p in files if p.suffix == '.log'),
+              key=lambda p: (p.name not in ('full-replay.log', 'authentication.log', 'install.log', 'verify-only.log', 'child.log'), str(p)))
+          for path in logs[:16]:
+              with path.open('rb') as stream:
+                  stream.seek(max(0, path.stat().st_size - 8192))
+                  tail = stream.read(8192)
+              add('Diagnostic tail ' + path.relative_to(root).as_posix(), tail.decode('utf-8', errors='replace'))
+          receipts = [p for p in files if p.suffix == '.json' and p.name not in ('DATA.json', 'SCIENCE_SUMMARY.json', 'SOURCE_CERTIFICATE.json')]
+          receipts.sort(key=lambda p: (p.name not in ('PORTABLE_REPLAY_RECEIPT.json', 'EXECUTION.json', 'OUTPUT_READBACK.json', 'AUTHENTICATION.json', 'ENTRY_RECEIPT.json'), str(p)))
+          for path in receipts:
+              if path.stat().st_size <= 65536:
+                  add('Receipt ' + path.relative_to(root).as_posix(), path.read_text(errors='replace'))
+          scientific = root / 'fresh-replay' / 'normal' / 'DATA.json'
+          if scientific.is_file() and not scientific.is_symlink() and scientific.stat().st_size <= 1024 * 1024:
+              raw = scientific.read_bytes()
+              payload = base64.b64encode(zlib.compress(raw, 9)).decode('ascii')
+              add('Complete fresh normal DATA.json (zlib/base64)',
+                  'Decoded original-file SHA256: ' + hashlib.sha256(raw).hexdigest() + '\n'
+                  + 'Every exact rational row and scientific field is retained. The optimized copy has its own file pin above.\n'
+                  + '\n'.join(textwrap.wrap(payload, 120)))
+          body = '# Compact private stored-state CI evidence\n' + ''.join(parts)
+          if len(body.encode('utf-8')) >= 1024 * 1024:
+              raise SystemExit('Compact job summary exceeded 1 MiB')
+          print(body)
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as stream:
+              stream.write(body)
+          PY_REPORT
+      - name: Retain complete public authentication, outputs and failed-step evidence
+        if: ${{ always() && !github.event.repository.private }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: stored-state-exact-${{ github.sha }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/stored-state-ci/
+          if-no-files-found: warn
+          retention-days: 14

@@ -1,0 +1,35 @@
+{
+  "failed": 0,
+  "manifest_sha256": "4c3331184089e7eb4cc546cec3c5a0e61d24ac91670ab3cfe47e842ac4071b74",
+  "optimized": false,
+  "passed": 6,
+  "scope": "No live adoption/main; original inputs copied into temporary fixtures; saved pre-adoption state and exact journal prefix used because root already adopted.",
+  "source_sha256": "f3cd239eba834806961a6ed246ab183ee63c149221f1fca2a9dba7a2cb5db4da",
+  "test_source_sha256": "50b1362200a8aa2f1038c15f05de51e50d45abff64e3ee938253f757c412b44f",
+  "tests": [
+    {
+      "name": "local_readonly_inputs_only_with_pinned_controller_bytes_never_imported",
+      "status": "PASS"
+    },
+    {
+      "name": "one_local_adoption_only_draft_id_and_append_only_journal_then_repeat_blocked",
+      "status": "PASS"
+    },
+    {
+      "name": "journal_failure_before_state_preserves_latch_state_prefix_and_blocks_repeat",
+      "status": "PASS"
+    },
+    {
+      "name": "atomic_replace_failure_keeps_prior_state_and_latch_no_automatic_repeat",
+      "status": "PASS"
+    },
+    {
+      "name": "failure_after_state_and_journal_completion_still_latched_and_not_repeated",
+      "status": "PASS"
+    },
+    {
+      "name": "source_has_no_network_controller_import_or_dynamic_execution",
+      "status": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="google-site-verification" content="Z1uuOtt-ur1MSHkjSs7VcJRRJ4k_HXkCF1YiS1si_M4" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HDBLAST — Ricardo Maldonado (español)</title>
+<meta name="description" content="HDBLAST: una hipótesis de investigación especulativa y comprobable que pregunta si un evento gravitacional en una dimensión superior pudo haber encendido el Big Bang caliente. Ecuaciones, código, resultados, resultados negativos y correcciones.">
+<link rel="canonical" href="https://maldonado-research.github.io/HDblast/es/">
+<link rel="alternate" hreflang="en" href="https://maldonado-research.github.io/HDblast/">
+<link rel="alternate" hreflang="es" href="https://maldonado-research.github.io/HDblast/es/">
+<meta name="author" content="Ricardo Maldonado">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HDBLAST">
+<meta property="og:title" content="¿Pudo una “explosión” en una dimensión superior encender nuestro Big Bang?">
+<meta property="og:locale" content="es_MX">
+<meta property="og:description" content="HDBLAST: una hipótesis especulativa y comprobable del investigador independiente Ricardo Maldonado — un modelo en cinco dimensiones, simulaciones, resultados negativos y correcciones, todo público y reproducible.">
+<meta property="og:url" content="https://maldonado-research.github.io/HDblast/es/">
+<meta property="og:image" content="https://maldonado-research.github.io/HDblast/figures/share-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="HDBLAST: Could a higher-dimensional blast have sparked our Big Bang? Speculative, testable hypothesis by Ricardo Maldonado.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="¿Pudo una “explosión” en una dimensión superior encender nuestro Big Bang?">
+<meta name="twitter:description" content="Un modelo en cinco dimensiones, simulaciones, resultados negativos y correcciones — todo público y reproducible.">
+<meta name="twitter:image" content="https://maldonado-research.github.io/HDblast/figures/share-card.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://maldonado-research.github.io/HDblast/#website",
+      "name": "HDBLAST",
+      "url": "https://maldonado-research.github.io/HDblast/",
+      "inLanguage": ["en", "es"],
+      "author": {"@id": "https://maldonado-research.github.io/HDblast/#author"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://maldonado-research.github.io/HDblast/#author",
+      "name": "Ricardo Maldonado",
+      "jobTitle": "Independent researcher",
+      "url": "https://maldonado-research.github.io/HDblast/",
+      "sameAs": ["https://github.com/maldonado-research"]
+    },
+    {
+      "@type": "Dataset",
+      "name": "HDBLAST: could a higher-dimensional blast have sparked the hot Big Bang? (research program, code and data)",
+      "description": "A speculative, testable research hypothesis asking whether a gravitational event in a fifth dimension could have transferred energy into our four-dimensional universe and started the hot Big Bang. Registered five-dimensional Einstein–scalar brane model with certified, exact and numerical results, negative results and published corrections. Not peer reviewed.",
+      "url": "https://maldonado-research.github.io/HDblast/",
+      "sameAs": ["https://github.com/maldonado-research/HDblast", "https://doi.org/10.5281/zenodo.17088132"],
+      "identifier": "https://doi.org/10.5281/zenodo.17088132",
+      "creator": {"@id": "https://maldonado-research.github.io/HDblast/#author"},
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "isAccessibleForFree": true,
+      "keywords": ["brane-world cosmology", "extra dimensions", "Big Bang", "five-dimensional gravity", "numerical relativity", "de Sitter brane", "Randall–Sundrum", "cosmology"],
+      "inLanguage": "en",
+      "version": "2026.10.07-stored-state-comparison",
+      "dateModified": "2026-10-07",
+      "subjectOf": [{"@type": "CreativeWork", "url": "https://zenodo.org/records/23225288", "name": "Latest verified published edition: BD prehistory; later comparison upload unresolved"}]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#fbfaf7; --surface:#ffffff; --ink:#1c1d21; --muted:#5b5f6a; --line:#e3e1dc;
+  --accent:#2a6fdb; --accent-ink:#ffffff; --warn:#a14a15; --ok:#1f7a4d; --chip:#eef2fb;
+  --maxw:980px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111317; --surface:#181b21; --ink:#e9eaee; --muted:#a4a9b5; --line:#2a2e37;
+    --accent:#7aa7ff; --accent-ink:#0d1320; --warn:#f0a068; --ok:#6fd3a0; --chip:#1f2633;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111317; --surface:#181b21; --ink:#e9eaee; --muted:#a4a9b5; --line:#2a2e37;
+  --accent:#7aa7ff; --accent-ink:#0d1320; --warn:#f0a068; --ok:#6fd3a0; --chip:#1f2633;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+header{border-bottom:1px solid var(--line);background:var(--surface)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;max-width:var(--maxw);margin:0 auto}
+.brand{font-weight:700;letter-spacing:.04em}
+nav a{margin-left:14px;text-decoration:none;color:var(--muted);font-size:15px}
+nav a:hover{color:var(--ink)}
+.hero{padding:56px 0 28px}
+.eyebrow{color:var(--muted);font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 14px}
+.lede{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:760px;margin:0 0 22px}
+.notice{border-left:4px solid var(--warn);background:var(--surface);padding:14px 16px;border-radius:6px;margin:0 0 26px;max-width:760px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;border:1px solid var(--line);color:var(--ink);background:var(--surface)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+section{padding:34px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(22px,3vw,28px);margin:0 0 14px}
+h3{font-size:18px;margin:0 0 6px}
+figure{margin:18px 0 6px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px}
+figure img{width:100%;height:auto;display:block;background:#fff;border-radius:6px}
+figcaption{font-size:14px;color:var(--muted);padding:8px 4px 0}
+.table{width:100%;overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600}
+.tag{display:inline-block;font-size:12.5px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--chip);white-space:nowrap}
+.tag.neg{color:var(--warn)} .tag.ok{color:var(--ok)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+ol li{margin:4px 0}
+code{font-size:.92em;background:var(--chip);padding:1px 5px;border-radius:4px}
+footer{padding:30px 0 50px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+.theme{background:none;border:1px solid var(--line);color:var(--muted);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:13px}
+@media (max-width:640px){nav a{margin-left:10px;font-size:14px} .hide-sm{display:none} th,td{padding:8px 6px;font-size:14px} .tag{white-space:normal;border-radius:8px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="top">
+    <div class="brand">HDBLAST</div>
+    <nav>
+      <a href="#results">Resultados</a>
+      <a href="#next" class="hide-sm">Siguiente</a>
+      <a href="https://github.com/maldonado-research/HDblast/tree/main/hdblast">Investigación</a>
+      <a href="#cite">Citar</a>
+      <a href="../" hreflang="en" lang="en">English</a>
+      <button class="theme" id="theme" aria-label="Cambiar tema de color">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <p class="eyebrow">Ricardo Maldonado · programa de investigación independiente · 2025–2026</p>
+    <h1>¿Pudo una “explosión” en una dimensión superior encender nuestro Big Bang?</h1>
+    <p class="lede">HDBLAST pregunta si un evento gravitacional violento en una quinta dimensión pudo haber transferido energía a nuestro universo de cuatro dimensiones e iniciado el Big Bang caliente. Las ecuaciones, el código, los resultados, los fracasos y las correcciones son todos públicos.</p>
+    <div class="notice"><strong>Estado honesto:</strong> esta es una hipótesis especulativa y comprobable, no un descubrimiento. No ha sido revisada por pares, no ha demostrado que existan dimensiones extra y ninguna observación la respalda todavía. Cada resultado de abajo indica qué tan bien está establecido.</div>
+    <div class="btns">
+      <a class="btn primary" href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/CURRENT_STATUS.md">Resultados y publicación actuales (inglés)</a>
+      <a class="btn" href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/HDBLAST_IN_PLAIN_LANGUAGE.md">Guía histórica en lenguaje sencillo (inglés)</a>
+      <a class="btn" href="https://github.com/maldonado-research/HDblast/tree/main/hdblast/checkpoints">Etapas de investigación y código</a>
+      <a class="btn" href="https://doi.org/10.5281/zenodo.17088132">Registros en Zenodo</a>
+    </div>
+  </div>
+
+  <section id="idea">
+    <h2>La idea</h2>
+    <p>Nuestro universo podría comportarse como una delgada <strong>membrana (una “brana”)</strong> dentro de un espacio más grande de cinco dimensiones, lleno de gravedad y de un campo escalar. Si la membrana está en un equilibrio inestable, como una pelota en la cima de una colina, puede rodar hacia abajo y liberar energía. HDBLAST pregunta si un evento así pudo haber producido el estado caliente y denso donde comienza la historia estándar del Big Bang. La <em>ampliaría</em>, no la reemplazaría.</p>
+    <figure>
+      <img src="../figures/shell_hilltop_and_spectrum.png" alt="Izquierda: la membrana registrada está en la cima de una colina de potencial. Derecha: la tasa de inestabilidad en cinco dimensiones coincide con una fórmula cerrada en cuatro dimensiones." loading="lazy">
+      <figcaption>La membrana registrada está en la cima de una colina (izquierda). Su tasa de inestabilidad en cinco dimensiones coincide con una fórmula cerrada en cuatro dimensiones (derecha). Cálculos del modelo, no observaciones. (Figura con rótulos en inglés.)</figcaption>
+    </figure>
+  </section>
+
+  <section id="results">
+    <h2>Lo que se ha encontrado (7 oct. 2026)</h2>
+    <div class="table">
+    <table>
+      <thead><tr><th>Resultado</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td>Se fija de antemano un modelo específico de Einstein–escalar en 5D: W(φ)=1−φ+φ³/3, tensión de la membrana σ=2W+δ(1+cφ), δ=0.001</td><td><span class="tag">Definición</span></td></tr>
+        <tr><td>Dentro del modelo, la solución de membrana registrada existe (prueba asistida por computadora, localmente única; es una afirmación sobre las ecuaciones, no sobre la naturaleza)</td><td><span class="tag ok">Certificado (condicional)</span></td></tr>
+        <tr><td>Un modo escalar inestable, m² ≈ −7.7179 H², crecimiento e<sup>1.657 Hτ</sup> (numéricamente el único). Ningún modo inestable en los sectores tensorial, vectorial ni de armónicos especiales (estabilidad de modos, no estabilidad lineal completa).</td><td><span class="tag ok">Certificado (modo) / Numérico (unicidad) / Exacto (otros sectores)</span></td></tr>
+        <tr><td>Una teoría 4D de forma cerrada coincide con el espectro 5D hasta ~10⁻⁶ y predijo el punto de retorno antes de que la simulación 5D lo confirmara</td><td><span class="tag ok">Exacto + Numérico</span></td></tr>
+        <tr><td>Evolución no lineal completa en 5D: dos destinos, relajación <em>hacia</em> una brana de de Sitter vacía (las simulaciones aún no alcanzan el estado final) o inversión y colapso</td><td><span class="tag">Numérico</span></td></tr>
+        <tr><td>El movimiento homogéneo y clásico de la membrana, sin materia añadida, no produce un universo caliente lleno de radiación</td><td><span class="tag neg">Negativo</span></td></tr>
+        <tr><td>Solución estática tardía corregida (numérica); una extensión propuesta con materia y una ley exacta de intercambio de energía</td><td><span class="tag">Numérico / Exacto (propuesta)</span></td></tr>
+        <tr><td>Afirmación de julio de 2026 sobre radiación gravitacional, retirada tras una auditoría</td><td><span class="tag neg">Retirada</span></td></tr>
+        <tr><td>Firma de “rodilla” en la sincronización de púlsares: evaluada de forma preliminar con datos públicos, no derivada del modelo 5D; la prueba estricta registrada falló</td><td><span class="tag neg">Preliminar / Negativo</span></td></tr>
+        <tr><td><strong>Nuevo (27 sept.):</strong> el estado final corregido es linealmente estable en los sectores probados; dos métodos independientes coinciden</td><td><span class="tag ok">Numérico (auditado)</span></td></tr>
+        <tr><td><strong>Nuevo (27 sept.):</strong> series exactas del estado final hasta octavo orden, confirmadas con 30–40 dígitos</td><td><span class="tag ok">Exacto</span></td></tr>
+        <tr><td><strong>Nuevo (27 sept.):</strong> la producción de partículas y otras seis vías de calentamiento no dan una era de radiación en el modelo registrado; el obstáculo es la energía del vacío sobrante</td><td><span class="tag neg">Negativo (condicional)</span></td></tr>
+        <tr><td><strong>Nuevo (27 sept.):</strong> un término adicional en la tensión cancela el vacío sobrante, pero la “radiación oscura” sigue por encima de los límites observacionales por ahora</td><td><span class="tag">No concluyente</span></td></tr>
+        <tr><td><strong>Nuevo (28 sept.):</strong> con la tensión ajustada para cancelar el vacío sobrante (un cambio de modelo) y una fórmula provisional de transferencia de energía, aparece una fase dominada por radiación; la “radiación oscura” es el 7,3% de la radiación con una tasa de transferencia, dentro del límite conservador</td><td><span class="tag">Numérico (condicional, ajuste fino)</span></td></tr>
+        <tr><td><strong>Nuevo (30 sept.):</strong> con una transferencia más fuerte la “radiación oscura” baja al 2,1%, dentro del límite estricto actual (3%). Pero la fase dura menos de medio e-fold de expansión antes de que el vacío negativo sobrante haga recolapsar la capa, exige ajustar la tensión a 1 parte en 10⁴ y aún usa la fórmula provisional</td><td><span class="tag">Numérico (interno al modelo, condicional)</span></td></tr>
+        <tr><td><strong>Nuevo (30 sept.):</strong> al sustituir la fórmula provisional por la producción de partículas derivada de la extensión de materia, con masas por debajo de la escala de gravedad en 5D, la “radiación oscura” sigue siendo mucho mayor que la radiación</td><td><span class="tag neg">No concluyente, tendiendo a negativo</span></td></tr>
+        <tr><td><strong>Nuevo (30 sept.):</strong> la misma prueba con el valor registrado δ = 0,001 no está terminada (fallo numérico diagnosticado, aún sin corregir)</td><td><span class="tag">No concluyente</span></td></tr>
+
+        <tr><td><strong>Nuevo (1 oct.):</strong> un límite de energía incluye tanto la radiación del decaimiento como las partículas que aún no han decaído. En dos cruces archivados que pasan la prueba local, el presupuesto sigue muy por debajo del objetivo de radiación en el instante evaluado.</td><td><span class="tag">Límite analítico / Cálculo exploratorio, condicional</span></td></tr>
+        <tr><td><strong>Nuevo (1 oct.):</strong> una auditoría ejecutada de las trayectorias guardadas encuentra un intervalo anterior de dominio de radiación de unos <strong>0,314 e-fold</strong> en la simulación más fina de Y = 2, según un nuevo diagnóstico que evita la cancelación por vacío negativo. La meseta posterior no cumple ese diagnóstico. Se conserva el veredicto registrado anterior.</td><td><span class="tag">Diagnóstico retrospectivo con datos guardados</span></td></tr>
+        <tr><td><strong>Nuevo (1 oct.):</strong> el integrador de modos de partículas pasa 90 controles con pulsos de solución exacta y 30 controles finos de normalización. Es una base verificada para la siguiente prueba física.</td><td><span class="tag ok">Control numérico registrado</span></td></tr>
+        <tr><td><strong>Nuevo (1 oct., modos cuánticos):</strong> los modos sobre la membrana ajustada y sin fuente archivada dan un conteo integrado 0,0503% menor que la estimación corregida, para el estado y la banda de momentos declarados. La coherencia cuántica añade un 10,96% a la corriente escalar estimada solo con partículas e invierte el signo de la presión relativa. Pasan diez variantes registradas y controles independientes de modos.</td><td><span class="tag">Numérico: geometría prescrita, tensor relativo</span></td></tr>
+        <tr><td><strong>Nuevo (1 oct., ajuste cuántico):</strong> el lazo de materia propuesto exige términos adicionales de potencial y curvatura intrínseca en la acción de la membrana. La fuente absoluta y los coeficientes finitos de ajuste para la membrana curva siguen sin determinarse.</td><td><span class="tag">Requisito analítico de teoría efectiva</span></td></tr>
+                <tr><td><strong>Nuevo (1 oct. Pacífico / 2 oct. UTC, fuente en geometría curva):</strong> pasan ocho controles de reconstrucción tras una reparación numérica documentada. La interpolación archivada y el estado inicial presentan obstáculos ultravioletas distintos; los ajustes más suaves muestran sensibilidad a derivadas en el límite inicial. Pasan los controles algebraicos exactos y 18 evoluciones independientes del modelo de prueba.</td><td><span class="tag">Auditoría: fuente absoluta en geometría curva pendiente</span></td></tr>
+        <tr><td><strong>Nuevo (2 oct.):</strong> una fuente cuántica sobre espacio plano atraviesa un cruce de masa nula y pasa ocho variantes registradas, controles exactos de dispersión, balance energético y traza de presión. El potencial y la curvatura se ajustan en una referencia declarada.</td><td><span class="tag">Prueba numérica: geometría prescrita y convención fija</span></td></tr>
+        <tr><td><strong>Nuevo (2 oct.):</strong> omitir el ajuste de curvatura hace que la presión dependa fuertemente del regulador aunque se conserve la energía. La formulación directa muestra convergencia con el corte de momentos y cumple una identidad exacta de traza a corte finito. Los resultados con regulador finito aún cambian varios por ciento.</td><td><span class="tag">Controles analíticos y numéricos</span></td></tr>
+        <tr><td><strong>Nuevo (2 oct., fuentes masivas en de Sitter):</strong> Cuatro casos de vacío cuántico con una referencia común pasan 57 controles, un cálculo separado de tiempo propio y una comprobación exacta de presión directa en un punto curvo. Diecinueve integraciones clásicas resuelven una respuesta estática diminuta y corrigen su signo, antes limitado por redondeo.</td><td><span class="tag">Álgebra exacta / Numérico, verificación interna</span></td></tr>
+        <tr><td><strong>Nuevo (2 oct., cierre cuántico estático):</strong> Ambas fuentes cuánticas entran en un cálculo regular del volumen y la brana: 48 soluciones pasan 1.584 controles corregidos y comparaciones independientes. La retroacción no lineal se resuelve solamente donde falla el criterio declarado de jerarquía gravitatoria.</td><td><span class="tag">Modelo estático numérico, límites físicos pendientes</span></td></tr>
+        <tr><td><strong>Nuevo (2 oct., respuesta causal):</strong> Los modos forzados independientes pasan 36 comparaciones a corte finito y 17 controles. Ambos pulsos conservan una respuesta negativa de la varianza cuando desaparece la fuente.</td><td><span class="tag">Geometría fija; tensor, estabilidad y calentamiento pendientes</span></td></tr>
+        <tr><td><strong>Nuevo (2 oct., tensor ajustado):</strong> La densidad y la presión calculadas independientemente pasan 180 comparaciones principales, controles de traza y contactos a corte finito y un balance energético separado. Se conservan las cotas de cola y los modos originales.</td><td><span class="tag">Respuesta lineal sobre geometría fija; calentamiento pendiente</span></td></tr>
+        <tr><td><strong>Nuevo (3 oct., requisito de integración):</strong> Dos métodos independientes certifican integrales de momentos y primitivas de la fuente en nueve valores registrados, con cotas analíticas uniformes del modelo y un radio conservador del intervalo completo que contiene ambos resultados menor que 1,373 × 10⁻²⁸.</td><td><span class="tag">Certificado condicional; conservación y tensor completos pendientes</span></td></tr>
+        <tr><td><strong>Nuevo (5 oct.):</strong> Los núcleos exactos de tensión y error de banda finita acotan la contribución de truncamiento analítico de la fuente durante todo el intervalo. Un cambio normalizado del estado entre las sondas muestra que el estado inicial necesita una cota independiente.</td><td><span class="tag">Matemáticas exactas condicionales; certificado numérico completo pendiente</span></td></tr>
+        <tr><td><strong>Nuevo (7 oct.):</strong> Dos métodos independientes acotan la respuesta del vacío prescrito en los nueve momentos registrados; los 36 recintos complejos se intersectan y cumplen el umbral de 10⁻²⁰.</td><td><span class="tag">Certificado del objetivo en los puntos registrados; certificado completo pendiente</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p><strong>Resultado más reciente (7 de octubre de 2026): error del estado inicial acotado en todos los nodos conservados.</strong> Cuatro archivos autenticados contienen <strong>49.152 apariciones de nodos</strong>. Sus valores binarios originales se decodifican exactamente y se comparan con un objetivo prescrito certificado en cada nodo. Para W = w/epsilon, la cota superior del error L1 cartesiano es menor que <strong>1,914 × 10⁻¹⁴</strong> en la malla gruesa y <strong>5,776 × 10⁻¹⁶</strong> en la fina; para U normalizada es menor que <strong>1,571 × 10⁻¹⁶</strong>. Los máximos de W en la malla gruesa aparecen cerca del corte superior de momento. Esta diferencia medida no demuestra convergencia al continuo ni explica su causa. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261007_STORED_STATE_COMPARISON/RESULTS.md">Resultado exacto, reproducción y límites (inglés)</a>.</p>
+    <p>El error original del estado inicial queda <strong>ENCLOSED en los nodos conservados</strong>. La transferencia exacta del error en tiempo continuo acota densidad, presión, trabajo e integral temporal de presión para <strong>doce sumas con pesos finitos fijos</strong>, bajo la condición de una fuente física posterior y contactos completos idénticos. No acota la trayectoria numérica posterior, la integral continua de momento, los defectos de contacto ni la cola ultravioleta. Ocho archivos científicos se reproducen byte por byte en Python normal y optimizado; una auditoría independiente revisa todos los resúmenes serializados. El certificado completo sigue <strong>UNRESOLVED</strong>, la calibración métrica <strong>FAIL</strong>, el origen del Big Bang <strong>NOT_ESTABLISHED</strong> y la novedad externa <strong>NOT_ASSESSED</strong>.</p>
+    <figure><img src="../assets/stored_state_bounds.png" alt="Cotas superiores condicionales del error del estado guardado y de densidad y presión con pesos finitos fijos" loading="lazy"><figcaption>Modelo prescrito de respuesta escalar; no son observaciones. U y W se normalizan por epsilon; densidad y presión usan la respuesta lineal escalada a0⁴/epsilon. La tabla de resultados conserva los valores racionales exactos.</figcaption></figure>
+    <p>La <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261007_STORED_STATE_COMPARISON/literature/LITERATURE_REFRESH_AND_MODEL_TEST.md">revisión bibliográfica acotada (inglés)</a> realiza 22 búsquedas y lee pasajes primarios seleccionados de ocho artículos. El <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261007_STORED_STATE_COMPARISON/physical-identifiability/STRUCTURAL_IDENTIFIABILITY.md">argumento condicional de identificabilidad dimensional (inglés)</a> muestra por qué entradas efectivas completas iguales pueden producir las mismas leyes observables. El siguiente modelo físico necesita una predicción derivada de la acción que se distinga de rivales especificados de cuatro dimensiones.</p>
+    <p><strong>Resultado anterior (7 de octubre de 2026): respuesta del vacío prescrito con cotas de error.</strong> Dos métodos independientes calculan la respuesta de dos fuentes suaves, partiendo de la condición de vacío de Bunch–Davies especificada antes de que actúen las fuentes. Cubren nueve valores de momento y dos cantidades de respuesta normalizadas: 18 casos y 36 recintos complejos. Los 36 recintos de ambos métodos se intersectan. Sus radios de error completos máximos son menores que <strong>1,555 × 10⁻²¹</strong> y <strong>3,138 × 10⁻²³</strong>, dentro del umbral fijo de <strong>10⁻²⁰</strong>. El valor de momento cero es la continuación analítica de la respuesta. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261007_BD_PREHISTORY/RESULTS.md">Resultado, reproducción y límites (inglés)</a>.</p>
+    <p>Un certificado separado acota solo el error de representación de la fuente previa y de sus coeficientes. Con la fuente posterior y todos los contactos idénticos, sus contribuciones a la presión y densidad escaladas son menores que <strong>1,625 × 10⁻¹⁸</strong> y <strong>4,094 × 10⁻²¹</strong> durante todo el intervalo de tiempo [−9/2, −7/2], para los cortes de momento 64, 128 y 256. Estas cotas continuas no incluyen la aritmética de fase ni del integrador para todos los momentos. En aquella etapa, los errores de los modos binarios conservados eran <strong>NOT_ENCLOSED</strong>; la comparación posterior ya los acota en cada nodo inicial, el certificado completo de doce casos sigue <strong>UNRESOLVED</strong> y la calibración métrica sigue <strong>FAIL</strong>. No se ha establecido un origen del Big Bang en dimensiones superiores.</p>
+    <p><strong>Resultado anterior (7 de octubre de 2026, hora del Pacífico): transferencia condicional del estado inicial.</strong> Las fórmulas exactas de densidad y presión conservan la fase de los errores homogéneos del estado cuando la fuente y todos los contactos son idénticos. La normalización de primer orden no acota la amplitud del estado. Con la desviación de normalización controlada de forma independiente, una cota demostrada de esa amplitud permite cotas condicionales del error de tensión-energía en banda finita. Los operadores directos también proporcionan una primitiva temporal exacta de la presión con signo. No se proporciona una cota del estado real, una trayectoria física ni el certificado completo de doce casos; la cola ultravioleta queda fuera del resultado. La calibración métrica mantiene <strong>FAIL</strong> y un origen del Big Bang en dimensiones superiores sigue <strong>NOT_ESTABLISHED</strong>. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261007_INCOMING_STATE/RESULTS.md">Resultado, prueba y límites (inglés)</a>.</p>
+    <p><strong>Resultado anterior (5 de octubre de 2026 UTC): matemáticas exactas de tensión y error de banda finita.</strong> A K=256, la contribución del truncamiento analítico de Taylor de la fuente es menor que <strong>5,5 × 10⁻²⁸</strong> para la densidad escalada y <strong>2,2 × 10⁻²⁵</strong> para la presión escalada durante todo el intervalo declarado. Son cotas condicionales de un solo componente del error. Siguen pendientes cotas independientes del estado inicial, la aritmética, los contactos y la cuadratura; un estado suave normalizado puede pasar las nueve sondas y la conservación mientras cambia la tensión integrada. Pasan tres verificaciones exactas y seis ejecuciones desde un archivo extraído de nuevo. El certificado completo de doce casos sigue <strong>sin resolver</strong> y la calibración métrica mantiene <strong>FAIL</strong>. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261005_FINITE_BAND_WARD/RESULTS.md">Resultado, prueba y límites (inglés)</a> · <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_FINITE_BAND_WARD_PACKAGE_20261005/RESULTS_READ_FIRST.md">Reproducción exacta autónoma (inglés)</a>.</p>
+    <p><strong>Resultado anterior (3 de octubre de 2026, hora del Pacífico): certificado condicional de integración de las fuentes y sus operadores.</strong> Dos métodos independientes de cotas pasan las 1.170 filas de momentos y 130 filas de primitivas de la fuente por método, para dos fuentes suaves, 64 paneles y nueve valores racionales exactos de k. El mayor radio conservador del intervalo completo que contiene ambos resultados es menor que <strong>1,373 × 10⁻²⁸</strong>, dentro del límite fijo de <strong>10⁻²⁶</strong>. Las cotas analíticas del modelo cubren k ∈ [0,256]; los anchos calculados completos se certifican en los nueve valores registrados. El certificado completo de los doce casos de presión, contactos y conservación sigue pendiente, y la calibración métrica conserva <strong>FAIL</strong>. Una causa del Big Bang en dimensiones superiores sigue <strong>NOT_ESTABLISHED</strong>; la novedad matemática externa está <strong>NOT_ASSESSED</strong>. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261003_VERIFIED_SOURCE_OPERATOR/RESULTS.md">Manuscrito: resultado, premisas y límites (inglés)</a> · <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_VERIFIED_SOURCE_OPERATOR_PACKAGE_20261003/RESULTS_READ_FIRST.md">Reproducción del archivo autónomo (inglés)</a>. Una reproducción nueva desde el archivo autónomo reproduce exactamente los datos numéricos y los resultados científicos de ambos métodos.</p>
+    <p><a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_VERIFIED_SOURCE_OPERATOR_PACKAGE_20261003/FRESH_REPRODUCTION.json">Evidencia de reproducción del archivo (inglés)</a>.</p>
+    <p><strong>Resultado anterior (2 de octubre de 2026, hora del Pacífico): diagnóstico del balance con fuente activa.</strong> Dos implementaciones independientes identifican un error de muestreo en el balance de conservación guardado durante el intervalo registrado con fuente activa. Pasan los doce casos de consistencia; ocho cumplen el umbral fijo de atribución. Una reproducción desde un archivo autónomo nuevo reproduce exactamente cada valor científico registrado. Los residuos pequeños con signo contienen cancelaciones y no son cotas certificadas del error total. La calibración métrica anterior sigue en <strong>FAIL</strong>; la precisión en el continuo, la evolución acoplada y una causa del Big Bang en dimensiones superiores siguen sin establecerse. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_ACTIVE_SOURCE_LEDGER_PACKAGE_20261002/FINAL_RESULT.md">Resultado medido y límites (inglés)</a> · <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_ACTIVE_SOURCE_LEDGER_PACKAGE_20261002/FRESH_REPRODUCTION.json">Reproducción exacta (inglés)</a>.</p>
+    <p><strong>Publicación anterior verificada (7 de octubre de 2026, hora del Pacífico):</strong> el <a href="https://zenodo.org/records/23114217">registro principal 23114217</a>, DOI <a href="https://doi.org/10.5281/zenodo.23114217">10.5281/zenodo.23114217</a>, está publicado con <strong>23 archivos / 440.222.994 bytes</strong>. Las lecturas autenticada y pública directa confirman el registro publicado; antes de publicar, todos los archivos coincidieron en tamaño, MD5 y SHA256. Su versión semántica <strong>2026.10.03-verified-source-operator</strong> archiva el paquete congelado del 3 de octubre. Ese archivo congelado no incluye las matemáticas posteriores del 5 y 7 de octubre. La <a href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/publication/2026.10.07-verified-publication/README.md">guía de verificación (inglés)</a> documenta la representación HTML exacta revisada de las notas y conserva el fallo de la comparación literal original. Se conservan el registro principal anterior 22347452 y el estudio separado 23111008. El archivo automático de GitHub sigue desactivado; no se afirma una nueva inspección de esa configuración.</p>
+    <p><strong>Diagnóstico anterior de conservación sin fuente:</strong> Dos implementaciones independientes identifican un error de integración temporal después de terminar la fuente compacta. Pasan los doce casos de consistencia; ocho cumplen el umbral fijo de atribución. La calibración métrica anterior sigue en FAIL. Ese resultado corresponde al intervalo posterior a la fuente; el intervalo con fuente activa se examina por separado arriba. La evolución acoplada y el calentamiento siguen sin resolverse. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261002_SOURCE_FREE_LEDGER/reports/RESULTS.md">Resultados y evidencia reproducible (inglés)</a>.</p>
+    <p><strong>Respuesta registrada de la métrica: resultado científico FAIL.</strong> La reparación de almacenamiento completa las doce observaciones primarias y cuatro evoluciones independientes con un máximo de 103.400 KiB, dentro del límite sin cambios de 256 MiB. Siguen fallando 59 controles de conservación y refinamiento. Se conservan los fallos anteriores de cuadratura y memoria. Reproducir correctamente el fallo no valida la calibración. Siguen pendientes la respuesta general de la métrica, la raíz desplazada, el volumen y el estado, la estabilidad y el calentamiento. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/NUMERICAL_RESULTS.md">Datos del fallo y próximos pasos (inglés)</a> · <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/REPRODUCE.md">Reproducción autónoma (inglés)</a>.</p>
+    <p><strong>Tensor ajustado registrado:</strong> La nueva prueba verifica la densidad y la presión físicas mínimas con sustracción completa en una referencia fija y un balance de conservación independiente. La variación negativa de densidad tras el pulso describe polarización coherente del vacío; no demuestra calentamiento ni energía total negativa. Siguen pendientes la respuesta de la métrica y la evolución acoplada. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261002_MATCHED_STRESS/00_READ_FIRST.md">Resultados y alcance (inglés)</a> · <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261002_MATCHED_STRESS/REPRODUCE.md">Reproducción autónoma (inglés)</a>.</p>
+    <p><strong>Calibración causal anterior:</strong> Aquel experimento verificó solamente la memoria de la varianza sobre geometría fija y propuso la prueba independiente del tensor ahora completada arriba. No calculó calentamiento. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261002_CAUSAL_RESPONSE/00_READ_FIRST.md">Resultados y límites</a> · <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261002_CAUSAL_RESPONSE/REPRODUCE.md">Reproducción autónoma</a>.</p>
+    <p>Las dos fuentes cuánticas cierran numéricamente un problema estático del volumen y la brana. Solo el menor acoplamiento positivo probado pasa el criterio muestreado de jerarquía gravitatoria; su cambio de curvatura es diminuto. Siguen pendientes la estabilidad, la evolución causal y el calentamiento. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/00_READ_FIRST.md">Resultados estáticos y límites (inglés)</a> · <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM/REPRODUCE.md">Reproducción (inglés)</a>.</p>
+    <p><strong>Nuevo (2 oct., fuentes masivas en de Sitter):</strong> Ambas fuentes cuánticas se derivan de una acción común con una convención finita declarada. Son pruebas de vacío estático y una respuesta diferencial clásica; siguen pendientes las masas y acoplamientos físicos, la retroacción causal dependiente del tiempo y el calentamiento. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261002_DESITTER/00_READ_FIRST.md">Resultados y alcance (inglés)</a> · <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261002_DESITTER/independent/INDEPENDENT_SCIENTIFIC_REVIEW.md">Revisión interna independiente (inglés)</a> · <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261002_DESITTER/REPRODUCE.md">Reproducción nueva (inglés)</a>.</p>
+    <figure>
+      <img src="../figures/two_fates_registered_detuning.png" alt="Dos paneles: la posición de la membrana y la tasa de Hubble de la brana en función del tiempo; una curva se relaja hacia una brana de de Sitter y la otra colapsa." loading="lazy">
+      <figcaption>Simulación completa en cinco dimensiones con los parámetros registrados: la membrana se dirige hacia una brana de de Sitter vacía (azul) o se invierte y colapsa (naranja). Ninguna contiene una era caliente de radiación. (Figura con rótulos en inglés.)</figcaption>
+    </figure>
+    <p><strong>Control de la fuente cuántica en un fondo curvo suave:</strong> un seguimiento separado hasta K384, registrado antes de su ejecución, supera los 13 grupos de comprobaciones. El cambio de presión de K192 a K384 es del 0,2291% de su escala global. El experimento original conserva FAIL: el control plano pasó, pero la presión curva superó su tolerancia original del corte. El cálculo conserva las contribuciones coherentes a la tensión-energía y la fuente escalar, y verifica su intercambio desde una acción común cuando la masa al cuadrado toca cero. Es evidencia con corte finito sobre un fondo prescrito; no establece evolución acoplada de la capa, retroacción ni radiación térmica. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/00_READ_FIRST.md">Resultados y registro original (inglés)</a> · <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/REPRODUCE.md">Reproducir el cálculo (inglés)</a> · <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/CLAIMS_AND_NEXT_STEPS.md">Alcance y próximos pasos (inglés)</a>.</p>
+    <p>La nueva <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261002_FRW/00_READ_FIRST.md">auditoría de preparación de la fuente curva</a> cuantifica dos obstáculos para ampliar el cálculo de banda finita: la interpolación de la geometría y la preparación del estado inicial. La coincidencia del campo y de la tasa de expansión no demuestra que las derivadas superiores sean fiables. Pasan los controles; siguen sin establecerse la fuente absoluta sobre la capa archivada, la retroacción y un Big Bang caliente. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261002_FRW/NUMERICAL_RESULTS.md">Resultados y limitaciones (inglés)</a>.</p>
+    <p>El modelo homogéneo registrado aún no ha producido un Big Bang caliente. Las variantes ajustadas con una fórmula provisional cumplen brevemente el criterio anterior de radiación y luego recolapsan. El nuevo cálculo de modos cuánticos reproduce de cerca el conteo integrado corregido para la configuración declarada, pero muestra que la coherencia importa para la fuerza escalar y la presión. Las excitaciones finales no son un fluido de radiación. La etapa del 2 de octubre calcula una fuente absoluta para un pulso en espacio plano con una convención fija e incluye el término de curvatura en la presión. Quedan pendientes la fuente en la membrana dependiente del tiempo, la evolución acoplada, el decaimiento y la termalización. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261002_PV/00_READ_FIRST.md">Fuente cuántica y controles de presión (inglés)</a>. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261001_QFT/00_READ_FIRST.md">Etapa de modos cuánticos (inglés)</a>; el <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261001/00_READ_FIRST.md">diagnóstico anterior del 1 de octubre</a> conserva su alcance original.</p>
+  </section>
+
+  <section id="next">
+    <h2>Lo que sigue</h2>
+    <p><strong>Siguiente estudio inmediato:</strong> certificar la aritmética de las trayectorias numéricas posteriores, los contactos completos, la integración temporal y la cuadratura continua de momento. El error del estado inicial ya está acotado en los nodos conservados; la transferencia de sumas finitas no certifica el continuo entre ellos ni la cola ultravioleta. Mantener los doce casos y su umbral heredado de 2 × 10⁻⁸ antes de repetir la calibración métrica sin cambios. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261007_STORED_STATE_COMPARISON/RESULTS.md">Resultado y términos pendientes (inglés)</a>.</p>
+    <div class="grid">
+      <div class="card"><h3>Estabilidad</h3><p>¿Es estable la solución tardía corregida y termina realmente ahí la explosión?</p></div>
+      <div class="card"><h3>Producción de partículas</h3><p>¿Puede la energía de la explosión convertirse en partículas y en una era duradera de radiación, incluyendo su efecto de retorno?</p></div>
+      <div class="card"><h3>Simulaciones confiables</h3><p>Controlar los errores numéricos en evoluciones largas en cinco dimensiones.</p></div>
+      <div class="card"><h3>Nuevos ingredientes</h3><p>Evaluar acoplamientos con materia, “radiación oscura” en el volumen extra, construcciones de universo-burbuja y una fase de contracción (colapso).</p></div>
+    </div>
+    <p>Para que la hipótesis sea creíble necesita un mecanismo que funcione, una predicción cuantitativa única, reproducción independiente, revisión por pares y pruebas observacionales. Puede fallar en cualquier paso, y los fracasos también se publicarán.</p>
+  </section>
+
+  <section id="explore">
+    <h2>Explora la investigación</h2>
+    <ol>
+      <li><a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261007_STORED_STATE_COMPARISON/RESULTS.md">Comparación del estado inicial en todos los nodos y transferencia exacta con pesos fijos (inglés)</a>: errores incluidos, reproducción y límites</li>
+      <li><a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261007_BD_PREHISTORY/RESULTS.md">Respuesta previa de Bunch–Davies y certificado continuo de representación (inglés)</a>: resultado de dos métodos independientes, errores incluidos y límites</li>
+      <li><a href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/CURRENT_STATUS.md">Estado actual (inglés)</a>: investigación verificada, límites y publicación real en Zenodo</li>
+      <li><a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261007_INCOMING_STATE/RESULTS.md">Teorema condicional del estado inicial</a>: transferencia exacta, cotas de banda finita y límites de normalización (inglés)</li>
+      <li><a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261005_FINITE_BAND_WARD/RESULTS.md">Teorema de tensión y error de banda finita (inglés)</a>: cotas condicionales, contraejemplo del estado inicial y reproducción exacta</li>
+      <li><a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261003_VERIFIED_SOURCE_OPERATOR/RESULTS.md">Certificado condicional de integración (inglés)</a>: cotas medidas, premisas y límites · <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_VERIFIED_SOURCE_OPERATOR_PACKAGE_20261003/RESULTS_READ_FIRST.md">reproducción del archivo autónomo (inglés)</a></li>
+      <li><a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_ACTIVE_SOURCE_LEDGER_PACKAGE_20261002/RESULTS_READ_FIRST.md">Diagnóstico completo con fuente activa y archivo autónomo (inglés)</a>: registro, fallo original, corrección documentada y reproducción exacta</li>
+      <li><a href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/HDBLAST_IN_PLAIN_LANGUAGE.md">Guía en lenguaje sencillo</a> (inglés)</li>
+      <li><a href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/PROGRAM_MAP.md">Mapa del programa</a>: modelo, cronología, registro de afirmaciones y pruebas de falsación (inglés)</li>
+      <li><a href="https://github.com/maldonado-research/HDblast/tree/main/hdblast/checkpoints">Etapas de investigación</a>: informes, código, datos y revisiones internas hechas con IA (no revisión externa por pares)</li>
+      <li><a href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/ZENODO_RECORDS.md">Todos los registros en Zenodo</a></li>
+      <li><a href="https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_CHECKPOINT_20260927">Etapa del 27 de sept. de 2026</a>: estabilidad, series exactas, producción de partículas, nuevos mecanismos (inglés)</li>
+      <li><a href="https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_CHECKPOINT_20260930">Etapa del 30 de sept. de 2026</a>: fase de radiación, límites de radiación oscura, ajuste fino (inglés)</li>
+      <li><a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261001/00_READ_FIRST.md">Etapa del 1 de octubre de 2026</a>: límites de energía, duración de la radiación y controles exactos de modos (inglés)</li>
+      <li><a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261001_QFT/00_READ_FIRST.md">Modos cuánticos del 1 de octubre</a>: resultados, coherencia, ajuste cuántico, datos y reproducción (inglés)</li>
+      <li><a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261002_PV/00_READ_FIRST.md">Fuente cuántica del 2 de octubre</a>: ajuste de presión, pruebas de regulador y corte, datos, figuras y reproducción (inglés)</li>
+    </ol>
+  </section>
+
+  <section id="cite">
+    <h2>Citar</h2>
+    <p data-hdb-stored-edition="publication-hold">La comparación completa y su reproducción independiente están disponibles en <a href="https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007">GitHub</a>. El archivo sellado para Zenodo tiene <strong>240.135.519 bytes</strong>, pero su carga íntegra sigue <strong>UNVERIFIED</strong> en el borrador propio de la misma familia <strong>23228395</strong>. El borrador sigue sin enviar; no se afirma una nueva edición publicada ni un DOI de versión nuevo. La última edición publicada y verificada sigue siendo <a href="https://zenodo.org/records/23225288">23225288</a>, con <strong>27 archivos / 448.387.915 bytes</strong>. <a href="https://github.com/maldonado-research/HDblast/tree/main/hdblast/publication/2026.10.07-stored-state-comparison">Preparación y publicación pendiente (inglés)</a>.</p>
+    <p data-hdb-new-edition="verified">La última edición principal publicada y verificada <a href="https://zenodo.org/records/23225288">23225288</a> (DOI <a href="https://doi.org/10.5281/zenodo.23225288">10.5281/zenodo.23225288</a>) contiene 27 archivos que suman 448.387.915 bytes. Se descargó íntegramente cada archivo y se verificaron su tamaño, MD5 y SHA256 antes y después de la publicación. Conserva los 23 archivos anteriores y añade los paquetes de Ward, estado entrante y prehistoria BD, junto con un resumen. La <a href="https://github.com/maldonado-research/HDblast/tree/main/hdblast/publication/2026.10.07-bd-prehistory">prueba de publicación y el verificador sin conexión</a> documentan los metadatos, las sumas de comprobación y las ediciones preservadas.</p>
+    <p>Maldonado, R. <em>HDBLAST: higher-dimensional blast research program.</em> Zenodo, <a href="https://doi.org/10.5281/zenodo.17088132">doi:10.5281/zenodo.17088132</a> (todas las versiones). Versión principal publicada anterior: <a href="https://zenodo.org/records/23114217">23114217, 2026.10.03-verified-source-operator</a>. Estudio estático separado: <a href="https://zenodo.org/records/23111008">23111008</a>, que conserva el <a href="https://zenodo.org/records/22922928">estudio original de septiembre</a>, concepto <a href="https://doi.org/10.5281/zenodo.22922927">22922927</a>. Cada registro de Zenodo indica su propia licencia.</p>
+    <p>Se invita a especialistas a revisar el trabajo y reportar errores en <a href="https://github.com/maldonado-research/HDblast/issues">GitHub issues</a>.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    © 2025–2026 Ricardo Maldonado · Investigador independiente · Parte de los cálculos y documentos de 2025–2026 se prepararon con asistentes de IA (Claude de Anthropic y ChatGPT/Codex de OpenAI) bajo la dirección del autor, con pasos de verificación registrados en cada etapa. · Texto, figuras y datos: CC BY 4.0 · Código: MIT.
+  </div>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement, key='hdblast-theme';
+  try{var saved=localStorage.getItem(key); if(saved){root.setAttribute('data-theme',saved);}}catch(e){}
+  document.getElementById('theme').addEventListener('click',function(){
+    var dark = root.getAttribute('data-theme') ? root.getAttribute('data-theme')==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem(key,next);}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>

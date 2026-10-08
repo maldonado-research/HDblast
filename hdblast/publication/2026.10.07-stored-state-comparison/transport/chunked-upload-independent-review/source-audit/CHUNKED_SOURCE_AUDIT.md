@@ -1,0 +1,27 @@
+# Chunked recovery helper source diff acceptance
+
+Accepted with no blocker in the assigned source-diff scope. Final chunked helper SHA256: `f76aeb162e6d1cad6f9d53afbf20bf68f7f4ee0f4b1504789f2880f97a4315eb`, 22,458 bytes. Accepted baseline SHA256: `39ec701ae3133b699bbad1f74031c549a0aedbc2116109cf5be199d3c7b0916d`, 19,883 bytes. Both complete sources are independently pinned and snapshotted alongside this report.
+
+Only two existing functions change: `curl_command` suppresses Content-Length with an empty header and adds `Transfer-Encoding: chunked`; `main` authenticates the prior failure before creating the new side directory and adds that proof plus the framing description to the intent. `verify_prior_failure` is new. The only changed existing constants are the original journal pin (`ad2b052940b711225dd7af7ef475b362f4cd6fdf866d429e89c5434ebc2b677a`) and fixed directory (`live-chunked-attempt-001`); four added constants locate and pin the old recovery source and five failure artifacts. The docstring identifies the whole-body chunked attempt. All imports and other execution code remain unchanged.
+
+Twenty existing function/class source segments are byte-identical to the accepted baseline. The main AST is identical after removing only the added prior-failure assignment and the two added intent fields. Exact hashes and source locations are retained in the receipt.
+
+## Prior failure is authenticated before any new attempt directory
+
+`verify_prior_failure` uses the unchanged bounded, no-follow, single-regular-link `read_pinned` primitive to authenticate the old 39ec source and old attempt latch, result, body, headers and stderr. It requires the old latch's exact operation/URL/asset/controller binding, unchanged original evidence and pending-not-cleared result, integer zero commits/publications, integer HTTP401 and observed uploaded byte count, verified TLS/no redirects, and exact known integration-auth failure body and status/header evidence. The raw hashes bind the entire observed artifacts. Main calls this proof before checking or creating the new SIDE. No old failure file is opened for writing, deleted or reinterpreted as a success. The proof does not explain the prior401 cause or itself authorize another attempt.
+
+## The reviewed guards and custody remain intact
+
+The external helper source pin and explicit attempt flag remain mandatory. The same fixed HTTPS draft/content URL, controller `aa7e6cfe…`, inventory `f6b7db33…`, metadata `0d089617…`, initialization receipt and unchanged original state `9927d046…` are bound. Only the current authenticated journal pin advances to the already reviewed read-only journal. The original pending PUT shape, byte count, SHA256, filename context, unpublished/create-attempt state and absent/false publish latch are still required.
+
+The same EvidenceLock encloses state validation, sealed complete-byte asset capture, fresh public current/latest and owned draft checks, exact inherited/ZIP membership and immutable file/version/bucket identities, exact content/commit links, definitive unavailable-content GET, immediate source/state/journal rechecks, the durable attempt latch and the sole curl call. The entire 240,135,519-byte asset is still authenticated by full SHA256 and MD5 and captured into an immutable sealed memfd before the fresh guard chain. Whole-body HTTP chunk framing wraps those same decoded bytes; this is one PUT of the complete sealed asset, with no multipart/resume/segment upload introduced.
+
+The fixed new directory is created exclusively and its parent is fsynced; the exclusive 0600 no-follow latch is flushed/fsynced and its directory fsynced before curl. Existing new SIDE refuses another invocation. The controller View's original save is suppressed, its event/capture output goes only to the new SIDE, and its write method always refuses. Original state/journal hashes are compared before and after transport. No pending clear, reinitialization, commit or publish is present.
+
+Curl still receives `-q` first, one fixed URL, HTTP/1.1, empty Expect, retry0, zero redirects, HTTPS-only protocols, verified TLS defaults, no auth negotiation/debug/insecure flags, and the bearer only in escaped stdin configuration. The child environment removes the bearer variable and TLS key-log hook while preserving required proxy/trust. Bounded response collection, redaction, strict metrics parsing, wall/pipe-drain deadlines and generic reconciliation-required receipts are unchanged.
+
+## Limits of this acceptance
+
+This is a strictly static source audit. It imports or executes neither helper, calls no network, reads no actual ZIP/body/state, and edits no production source, original state, old failure evidence, latch or repository. Only report/snapshot artifacts are written. Parent owns manufactured local curl controls and any separately authorized live invocation.
+
+Source comparison alone does not establish libcurl's emitted wire framing, prove decoded remote bytes, certify every proxy/internal resend path, explain the prior authentication failure, or validate a real upload. Parent's local curl controls supply framing/request-count observations. Curl upload metrics can include chunk framing bytes, so a successful uploaded counter is not the asset identity check. The original controller's complete GET size/MD5/SHA256 reconciliation is still necessary before any commit/publication. No such advance is performed by this helper.

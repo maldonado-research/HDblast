@@ -1,0 +1,75 @@
+{
+  "artifacts": {
+    "CLEANUP_CONTROLS_NORMAL.json": {
+      "bytes": 7446,
+      "sha256": "a6dccae5b873d6930abaecf1d8539be3c443f81185178893fb27dc1cff2cba81"
+    },
+    "CLEANUP_CONTROLS_OPTIMIZED.json": {
+      "bytes": 7445,
+      "sha256": "7d06d3c68dd88565b3a53774bbcddf96bbeb2bf464c829025228fe9eedb72b80"
+    },
+    "CLEANUP_PRE_ADAPTATION_NORMAL.json": {
+      "bytes": 6345,
+      "sha256": "72b19cc5069dd79dc2e438a30052340846b13c27f553775de894b54bfc6cd7fd"
+    },
+    "CLEANUP_PRE_ADAPTATION_OPTIMIZED.json": {
+      "bytes": 6344,
+      "sha256": "833f4dff731b4d11435ab2488ffd07614d1a90b7d7fad80c952c9f2cac9e4da1"
+    },
+    "CONTROL_PLAN.md": {
+      "bytes": 2889,
+      "sha256": "3f3794fa433c188fa7da47281e1187752823d16f0dd416d6f73571f5bd337abd"
+    },
+    "INDEPENDENT_CLEANUP_ACCEPTANCE.md": {
+      "bytes": 3465,
+      "sha256": "0d28d0460d2fa113a5b3af2caa7666a866516acabf803aac3011cd349d2343e4"
+    },
+    "delete_empty_archive_once_493c1486_snapshot.py": {
+      "bytes": 13116,
+      "sha256": "493c1486f90d6bbde3fa2a9588ef9b1a275e21334da47df1bd07b7c3ab6d80ab"
+    },
+    "delete_empty_archive_once_a4685ff6_snapshot.py": {
+      "bytes": 14478,
+      "sha256": "a4685ff65eab0dca73ecf8066a7710359979eeffea5dffcf8e2f3c4bdb2a1d60"
+    },
+    "independent_cleanup_controls.py": {
+      "bytes": 24268,
+      "sha256": "5dc84a666097492f825609b91d89275d54ed89e997d6b17341fb739cad749e2a"
+    },
+    "independent_cleanup_controls_before_native_adaptation.py": {
+      "bytes": 15718,
+      "sha256": "698aa8ac9f28230a783cc13398cb8ba23456afa41111089b8815ab51dd2fc2ca"
+    }
+  },
+  "blockers": [],
+  "limits": {
+    "authorization_receipt": false,
+    "live_transport_calls": 0,
+    "main_invoked": false,
+    "manufactured_only": true,
+    "original_transport_workflow_owned_by_separate_reviewer": true,
+    "real_state_journal_or_failure_files_read": false,
+    "scientific_callbacks": 0,
+    "server_conditional_delete_not_claimed": true,
+    "source_repository_package_asset_edits": false
+  },
+  "normal": {
+    "fail": 0,
+    "pass": 77
+  },
+  "notes": [
+    "Original493 source preserved; separate reviewer native version_id policy blocker fixed in a468.",
+    "Intermediate39PASS13FAIL each mode were fixture API mismatch during source-update binding; preserved as pre-adaptation evidence.",
+    "Omitted and null size/checksum accepted; all nonnull values including zero refused.",
+    "No upload size-cap inference; original pending remains untouched."
+  ],
+  "optimized": {
+    "fail": 0,
+    "pass": 77
+  },
+  "primitives_sha256": "f76aeb162e6d1cad6f9d53afbf20bf68f7f4ee0f4b1504789f2880f97a4315eb",
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "source_sha256": "a4685ff65eab0dca73ecf8066a7710359979eeffea5dffcf8e2f3c4bdb2a1d60",
+  "status": "PASS_OFFLINE_FOCUSED_CLEANUP_CONTROLS",
+  "total_executions": 154
+}

@@ -1,0 +1,820 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "optimized": false,
+  "helper_sha256": "f76aeb162e6d1cad6f9d53afbf20bf68f7f4ee0f4b1504789f2880f97a4315eb",
+  "suite_sha256": "08450f7e8f1659e66a05a46a03471493532fef4639daa1adf5787c0eaef9819c",
+  "case_count": 11,
+  "passed": 11,
+  "cases": [
+    {
+      "scenario": "success",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 0,
+        "metrics": {
+          "http_status": 200,
+          "uploaded_bytes": 88085,
+          "downloaded_bytes": 94,
+          "seconds": "0.001507",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": null,
+        "transfer_encoding": "chunked",
+        "received_bytes": 88064,
+        "chunk_count": 2,
+        "wire_body_bytes": 88085,
+        "terminal_chunk_seen": true,
+        "received_sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f"
+      },
+      "outputs": {
+        "body": {
+          "bytes": 94,
+          "sha256": "917e650a509f03c620a7fcf59e47efd1eadb5bd560fbb4246928cb7665b634ab"
+        },
+        "stderr": {
+          "bytes": 48,
+          "sha256": "5d853577ca1c9927d3dab515cdd9185239907c068f27c1d3f03f9fe9e7f94a84"
+        },
+        "headers": {
+          "bytes": 132,
+          "sha256": "a578089099713c8943cfb3699fe973525ad31645717bf6daf6dc43967a7de697"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          160619,
+          33152,
+          1,
+          88064,
+          1791434237530312285,
+          1791434237530312285
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    },
+    {
+      "scenario": "417",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 0,
+        "metrics": {
+          "http_status": 417,
+          "uploaded_bytes": 88085,
+          "downloaded_bytes": 37,
+          "seconds": "0.000979",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": null,
+        "transfer_encoding": "chunked",
+        "received_bytes": 0,
+        "chunk_count": 0,
+        "wire_body_bytes": 0,
+        "terminal_chunk_seen": false
+      },
+      "outputs": {
+        "body": {
+          "bytes": 37,
+          "sha256": "04a0835645d3ee833f5a420b2617fae0876907ff78988148107970612fdee506"
+        },
+        "stderr": {
+          "bytes": 48,
+          "sha256": "0bda3b6b1d41c418b7846cb394849d14c3e2cf21f5fca79fa4892f0199826cea"
+        },
+        "headers": {
+          "bytes": 148,
+          "sha256": "39430a51278e7a520defdbea7b558131f63c2243a5db56c73ade66a14a421de3"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          160619,
+          33152,
+          1,
+          88064,
+          1791434237530312285,
+          1791434237530312285
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    },
+    {
+      "scenario": "500",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 0,
+        "metrics": {
+          "http_status": 500,
+          "uploaded_bytes": 88085,
+          "downloaded_bytes": 37,
+          "seconds": "0.000693",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": null,
+        "transfer_encoding": "chunked",
+        "received_bytes": 0,
+        "chunk_count": 0,
+        "wire_body_bytes": 0,
+        "terminal_chunk_seen": false
+      },
+      "outputs": {
+        "body": {
+          "bytes": 37,
+          "sha256": "d4110ce6319714eebefae6e51de65cd1a6cb414f25df547ed725b027d1109b0f"
+        },
+        "stderr": {
+          "bytes": 48,
+          "sha256": "141cf9ec55b9de85e763e53ab5d8835f83ded91f25c76c7ddcde41d5c0cf09cd"
+        },
+        "headers": {
+          "bytes": 151,
+          "sha256": "36268dd935969de727d55ebea7e99cde64efbad45a5d5a90fe6ce869d331eabd"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          160619,
+          33152,
+          1,
+          88064,
+          1791434237530312285,
+          1791434237530312285
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    },
+    {
+      "scenario": "partial",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 18,
+        "metrics": {
+          "http_status": 200,
+          "uploaded_bytes": 88085,
+          "downloaded_bytes": 2,
+          "seconds": "0.001014",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": null,
+        "transfer_encoding": "chunked",
+        "received_bytes": 88064,
+        "chunk_count": 2,
+        "wire_body_bytes": 88085,
+        "terminal_chunk_seen": true,
+        "received_sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f"
+      },
+      "outputs": {
+        "body": {
+          "bytes": 2,
+          "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+        },
+        "stderr": {
+          "bytes": 97,
+          "sha256": "2da98b4214f4a53d3decfafd3455d4504a346dfeb13ca5141fdd5d59432c0e90"
+        },
+        "headers": {
+          "bytes": 60,
+          "sha256": "1bca744c47cf0679da82a84c4064584fb8e1e97d5c5483322c2792cbbda1833d"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          160619,
+          33152,
+          1,
+          88064,
+          1791434237530312285,
+          1791434237530312285
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    },
+    {
+      "scenario": "wrong-content-receipt",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 0,
+        "metrics": {
+          "http_status": 200,
+          "uploaded_bytes": 88085,
+          "downloaded_bytes": 94,
+          "seconds": "0.001019",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": null,
+        "transfer_encoding": "chunked",
+        "received_bytes": 88064,
+        "chunk_count": 2,
+        "wire_body_bytes": 88085,
+        "terminal_chunk_seen": true,
+        "received_sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f"
+      },
+      "outputs": {
+        "body": {
+          "bytes": 94,
+          "sha256": "0cbb89e493db1dbf318d2a03cf5312006c7ca4c47a765b7a2481889146e95037"
+        },
+        "stderr": {
+          "bytes": 48,
+          "sha256": "97d3b953f6d5dbdd697ec463934530bfd0b0cc805edfe21cee6869a83d1e623d"
+        },
+        "headers": {
+          "bytes": 132,
+          "sha256": "a578089099713c8943cfb3699fe973525ad31645717bf6daf6dc43967a7de697"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          160619,
+          33152,
+          1,
+          88064,
+          1791434237530312285,
+          1791434237530312285
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    },
+    {
+      "scenario": "redirect",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 0,
+        "metrics": {
+          "http_status": 307,
+          "uploaded_bytes": 88085,
+          "downloaded_bytes": 37,
+          "seconds": "0.000937",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": null,
+        "transfer_encoding": "chunked",
+        "received_bytes": 0,
+        "chunk_count": 0,
+        "wire_body_bytes": 0,
+        "terminal_chunk_seen": false
+      },
+      "outputs": {
+        "body": {
+          "bytes": 37,
+          "sha256": "a17b64846f587a9ef0dade8fa38b200535344e0e92dbcddc12636d5981af7cd3"
+        },
+        "stderr": {
+          "bytes": 48,
+          "sha256": "8799e6bd9a77a2e1ced36d88e5f251b5338de646c8b590d4040a1064431fc891"
+        },
+        "headers": {
+          "bytes": 178,
+          "sha256": "695a410df1de5f3f68289d6e792651a95292adec9a479a06671fdb3f03636378"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          160619,
+          33152,
+          1,
+          88064,
+          1791434237530312285,
+          1791434237530312285
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    },
+    {
+      "scenario": "disconnect",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 52,
+        "metrics": {
+          "http_status": 0,
+          "uploaded_bytes": 88085,
+          "downloaded_bytes": 0,
+          "seconds": "0.000939",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": null,
+        "transfer_encoding": "chunked",
+        "received_bytes": 88064,
+        "chunk_count": 2,
+        "wire_body_bytes": 88085,
+        "terminal_chunk_seen": true,
+        "received_sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f"
+      },
+      "outputs": {
+        "body": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "bytes": 82,
+          "sha256": "0ef4fdb65686c2d6614e1414b9bbd7e5da835f764543aab263b3c4df875e8b9a"
+        },
+        "headers": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          160619,
+          33152,
+          1,
+          88064,
+          1791434237530312285,
+          1791434237530312285
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    },
+    {
+      "scenario": "malformed",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 1,
+        "metrics": {
+          "http_status": 0,
+          "uploaded_bytes": 88085,
+          "downloaded_bytes": 0,
+          "seconds": "0.000924",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": null,
+        "transfer_encoding": "chunked",
+        "received_bytes": 88064,
+        "chunk_count": 2,
+        "wire_body_bytes": 88085,
+        "terminal_chunk_seen": true,
+        "received_sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f"
+      },
+      "outputs": {
+        "body": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "bytes": 92,
+          "sha256": "e2a4d271df7eb4dd027c34525433db81b767d626c3ce9f7f429a7ca073c054d4"
+        },
+        "headers": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          160619,
+          33152,
+          1,
+          88064,
+          1791434237530312285,
+          1791434237530312285
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    },
+    {
+      "scenario": "timeout",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 28,
+        "metrics": {
+          "http_status": 0,
+          "uploaded_bytes": 88085,
+          "downloaded_bytes": 0,
+          "seconds": "2.002790",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": null,
+        "transfer_encoding": "chunked",
+        "received_bytes": 88064,
+        "chunk_count": 2,
+        "wire_body_bytes": 88085,
+        "terminal_chunk_seen": true,
+        "received_sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f"
+      },
+      "outputs": {
+        "body": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "bytes": 124,
+          "sha256": "474a03c1837be794f9fd58f4937969705ae229040d9bd1f298ff58c36bb8d63d"
+        },
+        "headers": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          160619,
+          33152,
+          1,
+          88064,
+          1791434237530312285,
+          1791434237530312285
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    },
+    {
+      "scenario": "oversize",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 63,
+        "metrics": {
+          "http_status": 200,
+          "uploaded_bytes": 88085,
+          "downloaded_bytes": 0,
+          "seconds": "0.001512",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": null,
+        "transfer_encoding": "chunked",
+        "received_bytes": 88064,
+        "chunk_count": 2,
+        "wire_body_bytes": 88085,
+        "terminal_chunk_seen": true,
+        "received_sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f"
+      },
+      "outputs": {
+        "body": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "bytes": 85,
+          "sha256": "9280fbb0b8cca1e5b07e0f5275a5f1e3dd2e5b23c2a1342b5951853caf3c397f"
+        },
+        "headers": {
+          "bytes": 135,
+          "sha256": "67bf374d94a347bed5be1549832a64357e3b1e9aea47140cd9b7884a8347d2c6"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          160619,
+          33152,
+          1,
+          88064,
+          1791434237530312285,
+          1791434237530312285
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    },
+    {
+      "scenario": "reflected-token",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 0,
+        "metrics": {
+          "http_status": 200,
+          "uploaded_bytes": 88085,
+          "downloaded_bytes": 46,
+          "seconds": "0.001067",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": null,
+        "transfer_encoding": "chunked",
+        "received_bytes": 88064,
+        "chunk_count": 2,
+        "wire_body_bytes": 88085,
+        "terminal_chunk_seen": true,
+        "received_sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f"
+      },
+      "outputs": {
+        "body": {
+          "bytes": 28,
+          "sha256": "9150444f031314b18d479e77476b70dede10294088f31cedce590d2c35e897e4"
+        },
+        "stderr": {
+          "bytes": 48,
+          "sha256": "a32d9bb1cf6ea02c809ffc813e1797ba2d9d28e76630935db3b021f9a9629b4d"
+        },
+        "headers": {
+          "bytes": 132,
+          "sha256": "941abc9d13364daaeace9ba273797e5aed56707f4db6986325dc9b504f97af67"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          160619,
+          33152,
+          1,
+          88064,
+          1791434237530312285,
+          1791434237530312285
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    }
+  ],
+  "derived_command_guards": [
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fixed_content_length_removed": true,
+      "chunked_transfer": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    },
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fixed_content_length_removed": true,
+      "chunked_transfer": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    },
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fixed_content_length_removed": true,
+      "chunked_transfer": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    },
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fixed_content_length_removed": true,
+      "chunked_transfer": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    },
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fixed_content_length_removed": true,
+      "chunked_transfer": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    },
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fixed_content_length_removed": true,
+      "chunked_transfer": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    },
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fixed_content_length_removed": true,
+      "chunked_transfer": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    },
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fixed_content_length_removed": true,
+      "chunked_transfer": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    },
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fixed_content_length_removed": true,
+      "chunked_transfer": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    },
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fixed_content_length_removed": true,
+      "chunked_transfer": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    },
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fixed_content_length_removed": true,
+      "chunked_transfer": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    }
+  ],
+  "child_environment": "MINIMAL_NO_REAL_CREDENTIALS_NO_PROXY",
+  "network": "LOOPBACK_MANUFACTURED_HTTP_ONLY",
+  "real_api_requests": 0,
+  "live_helper_main_invocations": 0,
+  "live_state_edits": 0,
+  "scientific_callbacks": 0,
+  "limits": "Tests observe selected actual curl outcomes; source audit separately verifies production HTTPS/proxy/default TLS and persistent latch. No server CAS claim."
+}

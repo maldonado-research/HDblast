@@ -1,0 +1,35 @@
+test_independent_access_change_rejects (__main__.IndependentControls.test_independent_access_change_rejects) ... ok
+test_independent_all29_fresh_streams_both_states (__main__.IndependentControls.test_independent_all29_fresh_streams_both_states) ... ok
+test_independent_creator_change_rejects (__main__.IndependentControls.test_independent_creator_change_rejects) ... ok
+test_independent_current_prior_owner_change_rejects_pre_action (__main__.IndependentControls.test_independent_current_prior_owner_change_rejects_pre_action) ... ok
+test_independent_custom_field_change_rejects (__main__.IndependentControls.test_independent_custom_field_change_rejects) ... ok
+test_independent_exact_prior_reference_append_accepts (__main__.IndependentControls.test_independent_exact_prior_reference_append_accepts) ... ok
+test_independent_final_file_identity_change_must_block_publish (__main__.IndependentControls.test_independent_final_file_identity_change_must_block_publish)
+Critical guard reproduction: unchanged bytes, MD5, metadata and raw ETag. ... FAIL
+test_independent_first_note_language_change_rejects (__main__.IndependentControls.test_independent_first_note_language_change_rejects) ... ok
+test_independent_historical_note_change_rejects (__main__.IndependentControls.test_independent_historical_note_change_rejects) ... ok
+test_independent_missing_replay_marker_rejects_before_any_action (__main__.IndependentControls.test_independent_missing_replay_marker_rejects_before_any_action) ... ok
+test_independent_old_related_identifier_change_rejects (__main__.IndependentControls.test_independent_old_related_identifier_change_rejects) ... ok
+test_independent_orphan_journal_rejects_on_restart (__main__.IndependentControls.test_independent_orphan_journal_rejects_on_restart) ... ok
+test_independent_raw_etag_change_stops_before_decimal_conversion (__main__.IndependentControls.test_independent_raw_etag_change_stops_before_decimal_conversion) ... ok
+test_independent_rights_change_rejects (__main__.IndependentControls.test_independent_rights_change_rejects) ... ok
+test_independent_same_identity_inherited_bad_bytes_block_publish (__main__.IndependentControls.test_independent_same_identity_inherited_bad_bytes_block_publish) ... ok
+test_independent_stale_state_binding_rejects_on_restart (__main__.IndependentControls.test_independent_stale_state_binding_rejects_on_restart) ... ok
+test_independent_unreviewed_related_identifier_append_rejects (__main__.IndependentControls.test_independent_unreviewed_related_identifier_append_rejects) ... ok
+test_independent_wrong_draft_owner_cannot_be_adopted (__main__.IndependentControls.test_independent_wrong_draft_owner_cannot_be_adopted) ... ok
+test_independent_wrong_replay_marker_rejects (__main__.IndependentControls.test_independent_wrong_replay_marker_rejects) ... ok
+
+======================================================================
+FAIL: test_independent_final_file_identity_change_must_block_publish (__main__.IndependentControls.test_independent_final_file_identity_change_must_block_publish)
+Critical guard reproduction: unchanged bytes, MD5, metadata and raw ETag.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-planning/metadata-candidates/controller-independent-review/independent_tests.py", line 184, in test_independent_final_file_identity_change_must_block_publish
+    with self.assertRaises(M.Stop, msg='FINAL_IDENTITY_CHANGE_WAS_NOT_BLOCKED'):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Stop not raised : FINAL_IDENTITY_CHANGE_WAS_NOT_BLOCKED
+
+----------------------------------------------------------------------
+Ran 19 tests in 1.312s
+
+FAILED (failures=1)

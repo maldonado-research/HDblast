@@ -1,0 +1,754 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "optimized": true,
+  "helper_sha256": "39ec701ae3133b699bbad1f74031c549a0aedbc2116109cf5be199d3c7b0916d",
+  "suite_sha256": "b240e23d47b768eb34b25718b50aa2d35487a90eb44e62b6f72974a8937a7b1e",
+  "case_count": 11,
+  "passed": 11,
+  "cases": [
+    {
+      "scenario": "success",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 0,
+        "metrics": {
+          "http_status": 200,
+          "uploaded_bytes": 88064,
+          "downloaded_bytes": 94,
+          "seconds": "0.001209",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": "88064",
+        "received_bytes": 88064,
+        "received_sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f"
+      },
+      "outputs": {
+        "body": {
+          "bytes": 94,
+          "sha256": "917e650a509f03c620a7fcf59e47efd1eadb5bd560fbb4246928cb7665b634ab"
+        },
+        "stderr": {
+          "bytes": 48,
+          "sha256": "3c915223e781d660fec51fcf0e5d5f5c47f24a3cdf67b7f9dc868c9182a81924"
+        },
+        "headers": {
+          "bytes": 132,
+          "sha256": "e59d1ea4dfed411bc1a8654e17e0c59cb2c878a7effb802147b2dc8ae8e1cb50"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          158128,
+          33152,
+          1,
+          88064,
+          1791433159063725754,
+          1791433159063725754
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    },
+    {
+      "scenario": "417",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 0,
+        "metrics": {
+          "http_status": 417,
+          "uploaded_bytes": 88064,
+          "downloaded_bytes": 37,
+          "seconds": "0.000852",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": "88064",
+        "received_bytes": 0
+      },
+      "outputs": {
+        "body": {
+          "bytes": 37,
+          "sha256": "04a0835645d3ee833f5a420b2617fae0876907ff78988148107970612fdee506"
+        },
+        "stderr": {
+          "bytes": 48,
+          "sha256": "970cddf007d0a54342fb65525281fbac5c10cf160d5fa449b12c9ee381c79490"
+        },
+        "headers": {
+          "bytes": 148,
+          "sha256": "fffe5c06bb820473243a402a959909d219e519a5f5e8107c75bbf578c6a34a3f"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          158128,
+          33152,
+          1,
+          88064,
+          1791433159063725754,
+          1791433159063725754
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    },
+    {
+      "scenario": "500",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 0,
+        "metrics": {
+          "http_status": 500,
+          "uploaded_bytes": 88064,
+          "downloaded_bytes": 37,
+          "seconds": "0.000709",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": "88064",
+        "received_bytes": 0
+      },
+      "outputs": {
+        "body": {
+          "bytes": 37,
+          "sha256": "d4110ce6319714eebefae6e51de65cd1a6cb414f25df547ed725b027d1109b0f"
+        },
+        "stderr": {
+          "bytes": 48,
+          "sha256": "667e7270ee27dcd78ff9b5beb4527e66c09e2909e44bc70ed0bf45186a11ce5c"
+        },
+        "headers": {
+          "bytes": 151,
+          "sha256": "25cadac9e2cc24c566d39d90848c8efcfde6053f9bf69d817d9458454599330d"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          158128,
+          33152,
+          1,
+          88064,
+          1791433159063725754,
+          1791433159063725754
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    },
+    {
+      "scenario": "partial",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 18,
+        "metrics": {
+          "http_status": 200,
+          "uploaded_bytes": 88064,
+          "downloaded_bytes": 2,
+          "seconds": "0.000756",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": "88064",
+        "received_bytes": 88064,
+        "received_sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f"
+      },
+      "outputs": {
+        "body": {
+          "bytes": 2,
+          "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+        },
+        "stderr": {
+          "bytes": 97,
+          "sha256": "c45d8e763d532fe9f6db8e48fd3a42058548da42c7988ea33cb30e0be3d8042c"
+        },
+        "headers": {
+          "bytes": 60,
+          "sha256": "1bca744c47cf0679da82a84c4064584fb8e1e97d5c5483322c2792cbbda1833d"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          158128,
+          33152,
+          1,
+          88064,
+          1791433159063725754,
+          1791433159063725754
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    },
+    {
+      "scenario": "wrong-content-receipt",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 0,
+        "metrics": {
+          "http_status": 200,
+          "uploaded_bytes": 88064,
+          "downloaded_bytes": 94,
+          "seconds": "0.000842",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": "88064",
+        "received_bytes": 88064,
+        "received_sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f"
+      },
+      "outputs": {
+        "body": {
+          "bytes": 94,
+          "sha256": "0cbb89e493db1dbf318d2a03cf5312006c7ca4c47a765b7a2481889146e95037"
+        },
+        "stderr": {
+          "bytes": 48,
+          "sha256": "3ea5fc28f244bf5b568d919077a18993f6e5b0d7b3907326b65531719db1c39a"
+        },
+        "headers": {
+          "bytes": 132,
+          "sha256": "e59d1ea4dfed411bc1a8654e17e0c59cb2c878a7effb802147b2dc8ae8e1cb50"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          158128,
+          33152,
+          1,
+          88064,
+          1791433159063725754,
+          1791433159063725754
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    },
+    {
+      "scenario": "redirect",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 0,
+        "metrics": {
+          "http_status": 307,
+          "uploaded_bytes": 88064,
+          "downloaded_bytes": 37,
+          "seconds": "0.000889",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": "88064",
+        "received_bytes": 0
+      },
+      "outputs": {
+        "body": {
+          "bytes": 37,
+          "sha256": "a17b64846f587a9ef0dade8fa38b200535344e0e92dbcddc12636d5981af7cd3"
+        },
+        "stderr": {
+          "bytes": 48,
+          "sha256": "af87b4738b4b8dd33025e25ae0d639ac7a8d4a4e19a60cc3539a6c78346fa019"
+        },
+        "headers": {
+          "bytes": 178,
+          "sha256": "45a0af81c7d1a8e8ad7588e13b293094bed83dbd42ba3e147ac64d4a9e60e844"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          158128,
+          33152,
+          1,
+          88064,
+          1791433159063725754,
+          1791433159063725754
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    },
+    {
+      "scenario": "disconnect",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 52,
+        "metrics": {
+          "http_status": 0,
+          "uploaded_bytes": 88064,
+          "downloaded_bytes": 0,
+          "seconds": "0.000775",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": "88064",
+        "received_bytes": 88064,
+        "received_sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f"
+      },
+      "outputs": {
+        "body": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "bytes": 82,
+          "sha256": "889e33735fae4d2657155c6ab6f7e494b9da9db37382e051c8c62c4669f30bd7"
+        },
+        "headers": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          158128,
+          33152,
+          1,
+          88064,
+          1791433159063725754,
+          1791433159063725754
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    },
+    {
+      "scenario": "malformed",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 1,
+        "metrics": {
+          "http_status": 0,
+          "uploaded_bytes": 88064,
+          "downloaded_bytes": 0,
+          "seconds": "0.001074",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": "88064",
+        "received_bytes": 88064,
+        "received_sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f"
+      },
+      "outputs": {
+        "body": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "bytes": 92,
+          "sha256": "2a8277044f3bc2274d210ad66149b2c6cd24dddf80119a1b42ee15adc24a81ba"
+        },
+        "headers": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          158128,
+          33152,
+          1,
+          88064,
+          1791433159063725754,
+          1791433159063725754
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    },
+    {
+      "scenario": "timeout",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 28,
+        "metrics": {
+          "http_status": 0,
+          "uploaded_bytes": 88064,
+          "downloaded_bytes": 0,
+          "seconds": "2.002746",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": "88064",
+        "received_bytes": 88064,
+        "received_sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f"
+      },
+      "outputs": {
+        "body": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "bytes": 124,
+          "sha256": "281f51466090fa4629df0aef5a216d1aeb916a035c01b1c8b6cb78bfb3a85003"
+        },
+        "headers": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          158128,
+          33152,
+          1,
+          88064,
+          1791433159063725754,
+          1791433159063725754
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    },
+    {
+      "scenario": "oversize",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 63,
+        "metrics": {
+          "http_status": 200,
+          "uploaded_bytes": 88064,
+          "downloaded_bytes": 0,
+          "seconds": "0.001102",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": "88064",
+        "received_bytes": 88064,
+        "received_sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f"
+      },
+      "outputs": {
+        "body": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "bytes": 85,
+          "sha256": "838faaef514d57fb646abfbcc6759fa79fbb0561cbe40743640895a20c106faa"
+        },
+        "headers": {
+          "bytes": 135,
+          "sha256": "9f270ddc50ae0230657e64d6980b582f92dac1443eb4fd2788efa64eace18363"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          158128,
+          33152,
+          1,
+          88064,
+          1791433159063725754,
+          1791433159063725754
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    },
+    {
+      "scenario": "reflected-token",
+      "status": "PASS",
+      "outcome": {
+        "response_bound_exceeded": false,
+        "wall_deadline_exceeded": false,
+        "curl_exit": 0,
+        "metrics": {
+          "http_status": 200,
+          "uploaded_bytes": 88064,
+          "downloaded_bytes": 46,
+          "seconds": "0.001155",
+          "ssl_verify_result": 0,
+          "redirects": 0
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "path": "/manufactured-upload",
+        "expect_present": false,
+        "authorization_correct": true,
+        "content_length": "88064",
+        "received_bytes": 88064,
+        "received_sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f"
+      },
+      "outputs": {
+        "body": {
+          "bytes": 28,
+          "sha256": "9150444f031314b18d479e77476b70dede10294088f31cedce590d2c35e897e4"
+        },
+        "stderr": {
+          "bytes": 48,
+          "sha256": "851f89a6478859149c6eb7411e6bf8f638d3add3e8c4d0789f343458b1d49829"
+        },
+        "headers": {
+          "bytes": 132,
+          "sha256": "89df7227db8921522dc73510595c259b7daf76b5f3493453b5ac14dde9fa600c"
+        }
+      },
+      "capture": {
+        "bytes": 88064,
+        "sha256": "f75b3b2b0cc2f076d0578ce810e9925f38ecf7600addfd79b6e035a258c1482f",
+        "md5": "c3859b5dbb3a6f200048caeb7a751fd5",
+        "stat_identity": [
+          34,
+          158128,
+          33152,
+          1,
+          88064,
+          1791433159063725754,
+          1791433159063725754
+        ],
+        "memfd_seals": 15
+      },
+      "wire_puts": 1,
+      "helper_main_invoked": false
+    }
+  ],
+  "derived_command_guards": [
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    },
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    },
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    },
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    },
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    },
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    },
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    },
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    },
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    },
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    },
+    {
+      "curlrc_disabled": true,
+      "http1_1": true,
+      "empty_expect": true,
+      "retry_0": true,
+      "no_redirects": true,
+      "config_stdin": true,
+      "fabricated_loopback_url": true,
+      "production_https_override_for_test_only": true
+    }
+  ],
+  "child_environment": "MINIMAL_NO_REAL_CREDENTIALS_NO_PROXY",
+  "network": "LOOPBACK_MANUFACTURED_HTTP_ONLY",
+  "real_api_requests": 0,
+  "live_helper_main_invocations": 0,
+  "live_state_edits": 0,
+  "scientific_callbacks": 0,
+  "limits": "Tests observe selected actual curl outcomes; source audit separately verifies production HTTPS/proxy/default TLS and persistent latch. No server CAS claim."
+}

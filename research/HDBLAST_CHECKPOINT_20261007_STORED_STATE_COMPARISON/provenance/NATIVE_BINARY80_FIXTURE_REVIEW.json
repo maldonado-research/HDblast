@@ -1,0 +1,57 @@
+{
+  "codec_sha256": "6556d52228ce3aa2f8604d29e3dcc9d3a81ad947dc4f126300128162ce15bd87",
+  "coverage": [
+    "signed zeros",
+    "positive and negative finite normals",
+    "one binary80 ULP above one",
+    "minimum positive and negative subnormals",
+    "largest positive subnormal",
+    "smallest positive normal",
+    "maximum finite normal",
+    "real16-then-imag16 complex component order",
+    "native NPY header compatibility and exact integer-ratio agreement"
+  ],
+  "fixture_script_sha256": "8397164cb5dcd7b0461f045830ff0caa3aab00339142fcf18a6835548d15d945",
+  "fixtures": [
+    {
+      "descriptor": "<f16",
+      "file_bytes": 288,
+      "fixture_name": "fabricated_real.npy",
+      "sha256": "c959ea9a6c782cd56eeacb84d59423b13d81d20e95b0185e6d23abf91c0829f1",
+      "status": "PASS_NATIVE_SERIALIZATION_EXACT_RATIO_AGREEMENT",
+      "values": 10
+    },
+    {
+      "descriptor": "<c32",
+      "file_bytes": 256,
+      "fixture_name": "fabricated_complex.npy",
+      "sha256": "0260d9382d0730468126e45a4d99a70c24c1a7301527f6ac242d9c3f75b90a4d",
+      "status": "PASS_NATIVE_SERIALIZATION_EXACT_RATIO_AGREEMENT",
+      "values": 4
+    }
+  ],
+  "historical_layout_conclusion": "Supports the explicit Linux x86_64/nmant63 producer ABI premise with independently generated native serializations; actual retained encoding checks remain behind GO.",
+  "padding_observation": "Native padding can vary. Full generated file hashes record this execution; meaningful-slot hash records only the ten significant bytes per slot. Historical capsule padding remains fully hashed by the production reader.",
+  "physical_source_callbacks": 0,
+  "real_meaningful_10_byte_slot_sha256": "e06d00b11b8bfa1fc927e1675e662d40007150f5426d5edf0315a7659894e5aa",
+  "retained_paths_opened": 0,
+  "retained_values_decoded": 0,
+  "runtime": {
+    "byteorder": "little",
+    "complex_descriptor": "<c32",
+    "complex_itemsize": 32,
+    "longdouble_iexp": 15,
+    "longdouble_maxexp": 16384,
+    "longdouble_minexp": -16382,
+    "longdouble_nmant": 63,
+    "machine": "x86_64",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "python": "3.12.14",
+    "real_descriptor": "<f16",
+    "real_itemsize": 16
+  },
+  "schema_version": 1,
+  "scope": "FABRICATED_NATIVE_ARRAYS_ONLY",
+  "status": "PASS_INDEPENDENT_FABRICATED_NATIVE_BINARY80_REPRODUCTION"
+}

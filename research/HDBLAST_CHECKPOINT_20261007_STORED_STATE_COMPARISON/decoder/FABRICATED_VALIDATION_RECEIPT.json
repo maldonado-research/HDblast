@@ -1,0 +1,111 @@
+{
+  "benchmark": {
+    "archive_bytes": 1049312,
+    "archive_sha256": "f2bef6902513eeab718fbadf4f441bd4cc62866289d5d06f1d4bcc710b28ece8",
+    "checks": "every fabricated component independently compared to Fraction formula; resumable last record checked",
+    "complete_member_bytes": 1048960,
+    "complex_values": 16384,
+    "decode_and_exact_check_seconds": 2.591551466000965,
+    "fixture_scope": "FABRICATED_ONLY",
+    "input_spec_sha256": "f5eafaf93d640f538150f39f54ac839bd1559f74a97445d0a28c73d7e04c4dab",
+    "limits": {
+      "chunk_bytes": 65536,
+      "max_decompression_ratio": 64,
+      "max_dimensions": 3,
+      "max_elements": 65536,
+      "max_file_bytes": 8388608,
+      "max_header_bytes": 4096,
+      "max_member_bytes": 1048576,
+      "max_members": 32,
+      "max_total_member_bytes": 8388608,
+      "spool_memory_bytes": 65536
+    },
+    "peak_tracemalloc_bytes": 261234,
+    "physical_source_callbacks": 0,
+    "process_peak_rss_kib_linux": 19436,
+    "python": "3.12.14",
+    "rational_sum_checks": [
+      "-1/1125899906842624",
+      "-25179805660613605044225/73786976294838206464",
+      "18446744073709567999/4398046511104",
+      "18446744073709633531/1152921504606846976"
+    ],
+    "real_coordinate_values": 16384,
+    "real_weight_values": 16384,
+    "retained_payload_decodes": 0,
+    "scalar_binary80_components": 65536,
+    "total_seconds": 2.597167242998694,
+    "verification_seconds": 0.005615776997728972
+  },
+  "files": {
+    "FABRICATED_BENCHMARK.json": {
+      "bytes": 1359,
+      "sha256": "a17d376ba4254a76f991a52fa48f7d27645b5c15661253b7119d76a85106f95c"
+    },
+    "README.md": {
+      "bytes": 10510,
+      "sha256": "ae3c0670b124d4914f24110ede31ef1ec2bb6ad3de01fdbfc2c8d6bf8b751deb"
+    },
+    "benchmark_fabricated.py": {
+      "bytes": 4276,
+      "sha256": "913b42b5f2546d3c1d2ab4f4b693493b614e23e2a3569f6be03171586aeb7d8b"
+    },
+    "exact_binary80.py": {
+      "bytes": 24501,
+      "sha256": "6556d52228ce3aa2f8604d29e3dcc9d3a81ad947dc4f126300128162ce15bd87"
+    },
+    "fabricated_fixtures.py": {
+      "bytes": 2668,
+      "sha256": "82ded2a154601d9c8363850ebae9e9bec5f3e6fd6a6b663ad81d02e0e1655d0d"
+    },
+    "review_codec_independent.py": {
+      "bytes": 16835,
+      "sha256": "18dd8725ea8b4101b15ddb8f4e40dac0b82343696c99a35ecc00f4ad8edb87b6"
+    },
+    "test_exact_binary80.py": {
+      "bytes": 10812,
+      "sha256": "625b5e1dfaee5c873605ba7428f80ac16fb55d5358784de0fc3e80e20fd71b07"
+    }
+  },
+  "no_repository_edits_or_git_network_mutations": true,
+  "physical_source_callbacks": 0,
+  "recorded_utc": "2026-10-08T02:01:45.048405+00:00",
+  "retained_payload_files_opened_or_decoded": 0,
+  "runs": [
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-m",
+        "unittest",
+        "-v",
+        "test_exact_binary80.py",
+        "review_codec_independent.py"
+      ],
+      "executed_test_methods": 34,
+      "optimized": false,
+      "passed": true,
+      "returncode": 0,
+      "stderr": "test_complex_component_order_and_signed_zero (test_exact_binary80.FabricatedCodecTests.test_complex_component_order_and_signed_zero) ... ok\ntest_empty_scalar_multidimensional_and_checkpoints (test_exact_binary80.FabricatedCodecTests.test_empty_scalar_multidimensional_and_checkpoints) ... ok\ntest_hash_and_resource_caps (test_exact_binary80.FabricatedCodecTests.test_hash_and_resource_caps) ... ok\ntest_no_value_decode_during_complete_verification (test_exact_binary80.FabricatedCodecTests.test_no_value_decode_during_complete_verification) ... ok\ntest_noncanonical_and_special_are_rejected (test_exact_binary80.FabricatedCodecTests.test_noncanonical_and_special_are_rejected) ... ok\ntest_normal_sign_endian_and_ulp (test_exact_binary80.FabricatedCodecTests.test_normal_sign_endian_and_ulp) ... ok\ntest_opaque_pinned_members_verified_but_not_decoded (test_exact_binary80.FabricatedCodecTests.test_opaque_pinned_members_verified_but_not_decoded) ... ok\ntest_payload_lengths_and_trailing_bytes (test_exact_binary80.FabricatedCodecTests.test_payload_lengths_and_trailing_bytes) ... ok\ntest_signed_zero_and_arbitrary_padding (test_exact_binary80.FabricatedCodecTests.test_signed_zero_and_arbitrary_padding) ... ok\ntest_snapshot_prevents_path_replacement_and_symlink (test_exact_binary80.FabricatedCodecTests.test_snapshot_prevents_path_replacement_and_symlink) ... ok\ntest_strict_headers (test_exact_binary80.FabricatedCodecTests.test_strict_headers) ... ok\ntest_subnormal_and_extreme_boundaries (test_exact_binary80.FabricatedCodecTests.test_subnormal_and_extreme_boundaries) ... ok\ntest_zip_crc_and_local_metadata_mismatch (test_exact_binary80.FabricatedCodecTests.test_zip_crc_and_local_metadata_mismatch) ... ok\ntest_zip_roster_duplicate_unlisted_trailing (test_exact_binary80.FabricatedCodecTests.test_zip_roster_duplicate_unlisted_trailing) ... ok\ntest_zip_stored_deflated_and_local_zip64 (test_exact_binary80.FabricatedCodecTests.test_zip_stored_deflated_and_local_zip64) ... ok\ntest_actual_output_tail_rejected_before_decode (review_codec_independent.IndependentCodecReview.test_actual_output_tail_rejected_before_decode) ... ok\ntest_canonical_binary80_boundaries_and_signed_zero (review_codec_independent.IndependentCodecReview.test_canonical_binary80_boundaries_and_signed_zero) ... ok\ntest_deflate_compressed_junk_and_incomplete_stream_rejected (review_codec_independent.IndependentCodecReview.test_deflate_compressed_junk_and_incomplete_stream_rejected) ... ok\ntest_empty_and_scalar_shapes (review_codec_independent.IndependentCodecReview.test_empty_and_scalar_shapes) ... ok\ntest_end_to_end_complex_and_checkpoint (review_codec_independent.IndependentCodecReview.test_end_to_end_complex_and_checkpoint) ... ok\ntest_extra_central_records_rejected_before_zipfile_allocation (review_codec_independent.IndependentCodecReview.test_extra_central_records_rejected_before_zipfile_allocation) ... ok\ntest_full_file_mismatch_and_padding_change_rejected_before_decode (review_codec_independent.IndependentCodecReview.test_full_file_mismatch_and_padding_change_rejected_before_decode) ... ok\ntest_header_pin_and_version_mismatch_rejected_before_decode (review_codec_independent.IndependentCodecReview.test_header_pin_and_version_mismatch_rejected_before_decode) ... ok\ntest_later_header_failure_never_decodes_first_member (review_codec_independent.IndependentCodecReview.test_later_header_failure_never_decodes_first_member) ... ok\ntest_later_member_hash_failure_never_decodes_first_member (review_codec_independent.IndependentCodecReview.test_later_member_hash_failure_never_decodes_first_member) ... ok\ntest_malformed_literal_headers_rejected_before_decode (review_codec_independent.IndependentCodecReview.test_malformed_literal_headers_rejected_before_decode) ... ok\ntest_no_scalar_decode_during_successful_verification (review_codec_independent.IndependentCodecReview.test_no_scalar_decode_during_successful_verification) ... ok\ntest_noncanonical_and_nonfinite_slots_rejected (review_codec_independent.IndependentCodecReview.test_noncanonical_and_nonfinite_slots_rejected) ... ok\ntest_npy_version_types_strict (review_codec_independent.IndependentCodecReview.test_npy_version_types_strict) ... ok\ntest_padding_is_ignored_numerically (review_codec_independent.IndependentCodecReview.test_padding_is_ignored_numerically) ... ok\ntest_stored_deflated_and_local_zip64 (review_codec_independent.IndependentCodecReview.test_stored_deflated_and_local_zip64) ... ok\ntest_unpinned_source_changes_do_not_change_snapshot (review_codec_independent.IndependentCodecReview.test_unpinned_source_changes_do_not_change_snapshot) ... ok\ntest_verify_only_metadata_members_not_decodable (review_codec_independent.IndependentCodecReview.test_verify_only_metadata_members_not_decodable) ... ok\ntest_zip_roster_crc_trailing_and_cap_rejections (review_codec_independent.IndependentCodecReview.test_zip_roster_crc_trailing_and_cap_rejections) ... /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/zipfile/__init__.py:1625: UserWarning: Duplicate name: 'array.npy'\n  return self._open_to_write(zinfo, force_zip64=force_zip64)\nok\n\n----------------------------------------------------------------------\nRan 34 tests in 0.038s\n\nOK\n",
+      "stdout": ""
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-O",
+        "-m",
+        "unittest",
+        "-v",
+        "test_exact_binary80.py",
+        "review_codec_independent.py"
+      ],
+      "executed_test_methods": 34,
+      "optimized": true,
+      "passed": true,
+      "returncode": 0,
+      "stderr": "test_complex_component_order_and_signed_zero (test_exact_binary80.FabricatedCodecTests.test_complex_component_order_and_signed_zero) ... ok\ntest_empty_scalar_multidimensional_and_checkpoints (test_exact_binary80.FabricatedCodecTests.test_empty_scalar_multidimensional_and_checkpoints) ... ok\ntest_hash_and_resource_caps (test_exact_binary80.FabricatedCodecTests.test_hash_and_resource_caps) ... ok\ntest_no_value_decode_during_complete_verification (test_exact_binary80.FabricatedCodecTests.test_no_value_decode_during_complete_verification) ... ok\ntest_noncanonical_and_special_are_rejected (test_exact_binary80.FabricatedCodecTests.test_noncanonical_and_special_are_rejected) ... ok\ntest_normal_sign_endian_and_ulp (test_exact_binary80.FabricatedCodecTests.test_normal_sign_endian_and_ulp) ... ok\ntest_opaque_pinned_members_verified_but_not_decoded (test_exact_binary80.FabricatedCodecTests.test_opaque_pinned_members_verified_but_not_decoded) ... ok\ntest_payload_lengths_and_trailing_bytes (test_exact_binary80.FabricatedCodecTests.test_payload_lengths_and_trailing_bytes) ... ok\ntest_signed_zero_and_arbitrary_padding (test_exact_binary80.FabricatedCodecTests.test_signed_zero_and_arbitrary_padding) ... ok\ntest_snapshot_prevents_path_replacement_and_symlink (test_exact_binary80.FabricatedCodecTests.test_snapshot_prevents_path_replacement_and_symlink) ... ok\ntest_strict_headers (test_exact_binary80.FabricatedCodecTests.test_strict_headers) ... ok\ntest_subnormal_and_extreme_boundaries (test_exact_binary80.FabricatedCodecTests.test_subnormal_and_extreme_boundaries) ... ok\ntest_zip_crc_and_local_metadata_mismatch (test_exact_binary80.FabricatedCodecTests.test_zip_crc_and_local_metadata_mismatch) ... ok\ntest_zip_roster_duplicate_unlisted_trailing (test_exact_binary80.FabricatedCodecTests.test_zip_roster_duplicate_unlisted_trailing) ... ok\ntest_zip_stored_deflated_and_local_zip64 (test_exact_binary80.FabricatedCodecTests.test_zip_stored_deflated_and_local_zip64) ... ok\ntest_actual_output_tail_rejected_before_decode (review_codec_independent.IndependentCodecReview.test_actual_output_tail_rejected_before_decode) ... ok\ntest_canonical_binary80_boundaries_and_signed_zero (review_codec_independent.IndependentCodecReview.test_canonical_binary80_boundaries_and_signed_zero) ... ok\ntest_deflate_compressed_junk_and_incomplete_stream_rejected (review_codec_independent.IndependentCodecReview.test_deflate_compressed_junk_and_incomplete_stream_rejected) ... ok\ntest_empty_and_scalar_shapes (review_codec_independent.IndependentCodecReview.test_empty_and_scalar_shapes) ... ok\ntest_end_to_end_complex_and_checkpoint (review_codec_independent.IndependentCodecReview.test_end_to_end_complex_and_checkpoint) ... ok\ntest_extra_central_records_rejected_before_zipfile_allocation (review_codec_independent.IndependentCodecReview.test_extra_central_records_rejected_before_zipfile_allocation) ... ok\ntest_full_file_mismatch_and_padding_change_rejected_before_decode (review_codec_independent.IndependentCodecReview.test_full_file_mismatch_and_padding_change_rejected_before_decode) ... ok\ntest_header_pin_and_version_mismatch_rejected_before_decode (review_codec_independent.IndependentCodecReview.test_header_pin_and_version_mismatch_rejected_before_decode) ... ok\ntest_later_header_failure_never_decodes_first_member (review_codec_independent.IndependentCodecReview.test_later_header_failure_never_decodes_first_member) ... ok\ntest_later_member_hash_failure_never_decodes_first_member (review_codec_independent.IndependentCodecReview.test_later_member_hash_failure_never_decodes_first_member) ... ok\ntest_malformed_literal_headers_rejected_before_decode (review_codec_independent.IndependentCodecReview.test_malformed_literal_headers_rejected_before_decode) ... ok\ntest_no_scalar_decode_during_successful_verification (review_codec_independent.IndependentCodecReview.test_no_scalar_decode_during_successful_verification) ... ok\ntest_noncanonical_and_nonfinite_slots_rejected (review_codec_independent.IndependentCodecReview.test_noncanonical_and_nonfinite_slots_rejected) ... ok\ntest_npy_version_types_strict (review_codec_independent.IndependentCodecReview.test_npy_version_types_strict) ... ok\ntest_padding_is_ignored_numerically (review_codec_independent.IndependentCodecReview.test_padding_is_ignored_numerically) ... ok\ntest_stored_deflated_and_local_zip64 (review_codec_independent.IndependentCodecReview.test_stored_deflated_and_local_zip64) ... ok\ntest_unpinned_source_changes_do_not_change_snapshot (review_codec_independent.IndependentCodecReview.test_unpinned_source_changes_do_not_change_snapshot) ... ok\ntest_verify_only_metadata_members_not_decodable (review_codec_independent.IndependentCodecReview.test_verify_only_metadata_members_not_decodable) ... ok\ntest_zip_roster_crc_trailing_and_cap_rejections (review_codec_independent.IndependentCodecReview.test_zip_roster_crc_trailing_and_cap_rejections) ... /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/zipfile/__init__.py:1625: UserWarning: Duplicate name: 'array.npy'\n  return self._open_to_write(zinfo, force_zip64=force_zip64)\nok\n\n----------------------------------------------------------------------\nRan 34 tests in 0.040s\n\nOK\n",
+      "stdout": ""
+    }
+  ],
+  "scope": "FABRICATED_ONLY",
+  "status": "PASS_FABRICATED_NORMAL_AND_OPTIMIZED"
+}

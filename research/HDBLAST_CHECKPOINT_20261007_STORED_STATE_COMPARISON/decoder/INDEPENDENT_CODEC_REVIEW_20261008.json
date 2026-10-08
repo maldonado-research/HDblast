@@ -1,0 +1,72 @@
+{
+  "review_date": "2026-10-08",
+  "reviewer": "independent codec-review subagent",
+  "scope": "Declared exact binary80 storage codec; fabricated fixtures only",
+  "verdict": "NO_OUTSTANDING_BLOCKING_FINDINGS_FOR_DECLARED_STORAGE_CONTRACT",
+  "root_approval": false,
+  "retained_payload_decode_authorization": false,
+  "artifacts_sha256": {
+    "exact_binary80.py": "6556d52228ce3aa2f8604d29e3dcc9d3a81ad947dc4f126300128162ce15bd87",
+    "review_codec_independent.py": "18dd8725ea8b4101b15ddb8f4e40dac0b82343696c99a35ecc00f4ad8edb87b6",
+    "test_exact_binary80.py": "625b5e1dfaee5c873605ba7428f80ac16fb55d5358784de0fc3e80e20fd71b07"
+  },
+  "final_validation": [
+    {
+      "command": "python -m unittest -v test_exact_binary80.py review_codec_independent.py",
+      "exit_code": 0,
+      "test_methods_run": 34,
+      "author_methods": 15,
+      "independent_methods": 19,
+      "failed": 0,
+      "errored": 0,
+      "skipped": 0,
+      "runner_seconds": "0.064"
+    },
+    {
+      "command": "python -O -m unittest -v test_exact_binary80.py review_codec_independent.py",
+      "exit_code": 0,
+      "test_methods_run": 34,
+      "author_methods": 15,
+      "independent_methods": 19,
+      "failed": 0,
+      "errored": 0,
+      "skipped": 0,
+      "runner_seconds": "0.047"
+    }
+  ],
+  "resolved_findings": [
+    {
+      "issue": "Boolean and float NPY version tuple components accepted by equality",
+      "fix": "Exact tuple length and exact integer component types",
+      "regression": "test_npy_version_types_strict"
+    },
+    {
+      "issue": "Stored/deflated actual output tail hidden by ZipExtFile declared-size truncation",
+      "severity": "blocking",
+      "fix": "Independent raw compressed-region reading with actual output cap and exact count/hash/CRC",
+      "regression": "test_actual_output_tail_rejected_before_decode"
+    },
+    {
+      "issue": "Trailing compressed junk and incomplete raw-deflate stream accepted",
+      "fix": "Require inflater EOF and no unused or unconsumed trailing data",
+      "regression": "test_deflate_compressed_junk_and_incomplete_stream_rejected"
+    },
+    {
+      "issue": "Central-directory metadata allocation preceded explicit roster caps",
+      "fix": "Bounded manual exact-roster preflight before ZipFile construction",
+      "regression": "test_extra_central_records_rejected_before_zipfile_allocation"
+    }
+  ],
+  "activity": {
+    "retained_payload_files_opened": 0,
+    "retained_payload_values_decoded": 0,
+    "producer_or_scientific_source_callbacks": 0,
+    "git_operations": 0,
+    "network_operations": 0
+  },
+  "limits": [
+    "Verdict applies only to the recorded candidate bytes and declared storage contract",
+    "No producer ABI proof, registration authentication, scientific enclosure certification or live-comparison approval",
+    "Root approval and required public registration/freeze remain separate gates before retained payload decoding"
+  ]
+}

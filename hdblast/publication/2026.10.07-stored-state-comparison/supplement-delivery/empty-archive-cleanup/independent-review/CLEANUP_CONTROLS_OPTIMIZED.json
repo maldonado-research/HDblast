@@ -1,0 +1,323 @@
+{
+  "authorization_receipt": false,
+  "controls": [
+    {
+      "name": "guard_accepts_legitimate_omitted_size_checksum",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_accepts_explicit_null_size_checksum",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_file_id_'wrong'",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_version_id_'wrong'",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_bucket_id_'wrong'",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_status_'completed'",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_size_0",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_size_1",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_checksum_''",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_checksum_'md5:0'",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_key_'wrong'",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_self_link",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_content_link",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_wrong_owner_draft",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_publication_after_current",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_editable_metadata_change",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_original_pending_change",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_extra_user_file",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_missing_inherited_file",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_inherited_file_id",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_inherited_version_id",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_inherited_bucket_id",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_inherited_size",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_inherited_checksum",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_changed_initialized_target",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_inherited_target_id_collision",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_accepts_exact27_target_absence",
+      "status": "PASS"
+    },
+    {
+      "name": "probe_reject_status401",
+      "status": "PASS"
+    },
+    {
+      "name": "probe_reject_present200",
+      "status": "PASS"
+    },
+    {
+      "name": "probe_reject_truncated400",
+      "status": "PASS"
+    },
+    {
+      "name": "probe_reject_failed400",
+      "status": "PASS"
+    },
+    {
+      "name": "probe_reject_wrongbody400",
+      "status": "PASS"
+    },
+    {
+      "name": "probe_reject_wrong_native_version",
+      "status": "PASS"
+    },
+    {
+      "name": "valid_one_delete_after_both_probes_and_latch_preserves_state",
+      "status": "PASS"
+    },
+    {
+      "name": "delete_blocked_by_native_probe_failure",
+      "status": "PASS"
+    },
+    {
+      "name": "delete_blocked_by_final_target_change",
+      "status": "PASS"
+    },
+    {
+      "name": "delete_blocked_by_original_evidence_change",
+      "status": "PASS"
+    },
+    {
+      "name": "existing_file_latch_refuses_delete",
+      "status": "PASS"
+    },
+    {
+      "name": "existing_directory_latch_refuses_delete",
+      "status": "PASS"
+    },
+    {
+      "name": "existing_symlink_latch_refuses_delete",
+      "status": "PASS"
+    },
+    {
+      "name": "delete_reject_status_401_keeps_latch",
+      "status": "PASS"
+    },
+    {
+      "name": "delete_reject_status_429_keeps_latch",
+      "status": "PASS"
+    },
+    {
+      "name": "delete_reject_status_500_keeps_latch",
+      "status": "PASS"
+    },
+    {
+      "name": "delete_reject_status_200.0_keeps_latch",
+      "status": "PASS"
+    },
+    {
+      "name": "lost_delete_response_no_repeat",
+      "status": "PASS"
+    },
+    {
+      "name": "truncated_delete_success_is_unknown",
+      "status": "PASS"
+    },
+    {
+      "name": "GET_only_reconcile_exact_absence",
+      "status": "PASS"
+    },
+    {
+      "name": "reconcile_rejects_target_still_present",
+      "status": "PASS"
+    },
+    {
+      "name": "reconcile_rejects_missing_inherited",
+      "status": "PASS"
+    },
+    {
+      "name": "reconcile_rejects_extra_user_file",
+      "status": "PASS"
+    },
+    {
+      "name": "reconcile_rejects_changed_inherited_identity",
+      "status": "PASS"
+    },
+    {
+      "name": "reconcile_rejects_changed_editable_metadata",
+      "status": "PASS"
+    },
+    {
+      "name": "native_fixed_version_GET_HTTPError_body_bound",
+      "status": "PASS"
+    },
+    {
+      "name": "native_rejects_error_finalURL_change",
+      "status": "PASS"
+    },
+    {
+      "name": "native_rejects_success_finalURL_change",
+      "status": "PASS"
+    },
+    {
+      "name": "native_rejects_success_overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "native_HTTPError_overflow_cannot_prove_unavailable",
+      "status": "PASS"
+    },
+    {
+      "name": "native_HTTPError_failed_read_cannot_prove_unavailable",
+      "status": "PASS"
+    },
+    {
+      "name": "native_redirect_never_proves_unavailable",
+      "status": "PASS"
+    },
+    {
+      "name": "two_failures_valid_manufactured_chain_no_sizecap_claim",
+      "status": "PASS"
+    },
+    {
+      "name": "second_failure_reject_raw_pin_ONE_PUT_ATTEMPT_LATCH.json",
+      "status": "PASS"
+    },
+    {
+      "name": "second_failure_reject_raw_pin_RECOVERY_RESULT.json",
+      "status": "PASS"
+    },
+    {
+      "name": "second_failure_reject_raw_pin_curl_body.raw",
+      "status": "PASS"
+    },
+    {
+      "name": "second_failure_reject_raw_pin_curl_headers.raw",
+      "status": "PASS"
+    },
+    {
+      "name": "second_failure_reject_raw_pin_curl_stderr.raw",
+      "status": "PASS"
+    },
+    {
+      "name": "second_failure_reject_resealed_intent_url",
+      "status": "PASS"
+    },
+    {
+      "name": "second_failure_reject_resealed_intent_asset",
+      "status": "PASS"
+    },
+    {
+      "name": "second_failure_reject_resealed_intent_controller",
+      "status": "PASS"
+    },
+    {
+      "name": "second_failure_reject_resealed_framing",
+      "status": "PASS"
+    },
+    {
+      "name": "second_failure_reject_resealed_pending",
+      "status": "PASS"
+    },
+    {
+      "name": "second_failure_reject_resealed_commits",
+      "status": "PASS"
+    },
+    {
+      "name": "second_failure_reject_resealed_publishes",
+      "status": "PASS"
+    },
+    {
+      "name": "second_failure_reject_resealed_status",
+      "status": "PASS"
+    },
+    {
+      "name": "second_failure_reject_resealed_uploaded",
+      "status": "PASS"
+    },
+    {
+      "name": "second_failure_reject_resealed_body",
+      "status": "PASS"
+    },
+    {
+      "name": "second_failure_reject_resealed_headers",
+      "status": "PASS"
+    },
+    {
+      "name": "first_failure_rejection_blocks_second_chain",
+      "status": "PASS"
+    }
+  ],
+  "fail": 0,
+  "live_transport_calls": 0,
+  "main_invoked": false,
+  "manufactured_only": true,
+  "optimized": true,
+  "pass": 77,
+  "primitives_sha256": "f76aeb162e6d1cad6f9d53afbf20bf68f7f4ee0f4b1504789f2880f97a4315eb",
+  "real_state_or_prior_files_read": false,
+  "source_sha256": "a4685ff65eab0dca73ecf8066a7710359979eeffea5dffcf8e2f3c4bdb2a1d60",
+  "status": "PASS"
+}

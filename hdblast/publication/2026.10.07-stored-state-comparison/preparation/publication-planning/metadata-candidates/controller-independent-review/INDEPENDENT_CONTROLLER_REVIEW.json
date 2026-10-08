@@ -1,0 +1,168 @@
+{
+  "status": "PASS_CORRECTED_CONTROLLER_INDEPENDENT_OFFLINE_REVIEW",
+  "corrected_controller_sha256": "27fd844cc903a445688a177339b7af633c0a3581f71eeedf7e20bb015bee36a7",
+  "remaining_blockers": [],
+  "first_revision_finding": {
+    "controller_sha256": "f1a381d8d7c1eba81d1f6079647f6b63a8a86d9bccc9fb75cbadee490085dc98",
+    "finding": "FINAL_GET_CONTENT_IDENTITIES_NOT_BOUND_TO_ALL29_FRESH_STREAM_RECEIPT",
+    "trigger": "An inherited file_id/version_id changes after full verify while metadata, size, MD5 and raw ETag remain unchanged.",
+    "observed": "The first revision allowed the simulated publish instead of stopping before the latch.",
+    "normal": {
+      "tests_run": 19,
+      "passed": 18,
+      "failures": 1,
+      "errors": 0,
+      "skipped": 0
+    },
+    "optimized": {
+      "tests_run": 19,
+      "passed": 18,
+      "failures": 1,
+      "errors": 0,
+      "skipped": 0
+    },
+    "resolution": "Corrected revision requires nonempty identities for every fresh stream receipt and equality of all29 final identities before publish latch."
+  },
+  "corrected_acceptance": {
+    "normal": {
+      "tests_run": 23,
+      "passed": 23,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "optimized": {
+      "tests_run": 23,
+      "passed": 23,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "checked_boundaries": [
+      "first and historical Notes/type/language",
+      "creators and rights",
+      "custom_fields and access",
+      "historical and allowed appended references",
+      "completed scientific replay marker",
+      "stale state binding and orphan journal",
+      "current and draft owner",
+      "all29 fresh streams in draft/public states",
+      "corrupt inherited content even with unchanged identity",
+      "raw ETag comparison before decimal conversion",
+      "old/new final file_id/version_id changes before latch",
+      "empty/missing/nonstring immutable identities"
+    ]
+  },
+  "preserved_source_controls": [
+    {
+      "function": "revision_if_match",
+      "same_source_in_all_three_revisions": true,
+      "source_sha256": "74e2e16370cfd6ffd1c5a01b7013a9f9da43724bfaf3cc648bfccc75b44dbcf3"
+    },
+    {
+      "function": "Controller.create",
+      "same_source_in_all_three_revisions": true,
+      "source_sha256": "231950a7230f11442adf8126f122e80e05ca26c3d374697ddbd993d9a8117217"
+    },
+    {
+      "function": "Controller.write",
+      "same_source_in_all_three_revisions": true,
+      "source_sha256": "9b3502ba88402cf9c32ad6536d603c5d4623c4f4e83c160c35313af019c22675"
+    },
+    {
+      "function": "Controller.owner_list",
+      "same_source_in_all_three_revisions": true,
+      "source_sha256": "fa3d1e5e7a18f202cea1dc6252028af001f0baac54b96983c6d32d6742141c83"
+    },
+    {
+      "function": "Controller.reconcile",
+      "same_source_in_all_three_revisions": true,
+      "source_sha256": "7a3aff083387c64653dca614294047ea5877ca20f7ad3abedc2fbf50a39f3f7a"
+    },
+    {
+      "function": "main",
+      "same_source_in_all_three_revisions": true,
+      "source_sha256": "1f3fac97ab4d967e8ad8efdb4f35358d3aad65cca6ac26b88ede9c28f6d87127"
+    },
+    {
+      "function": "Transport.request",
+      "same_source_in_all_three_revisions": true,
+      "source_sha256": "eb8d7e45ba3040c3721419288ad9d35a82f0b7f57ebfb2e0e22b91a30f4d5905"
+    },
+    {
+      "function": "Transport.stream",
+      "same_source_in_all_three_revisions": true,
+      "source_sha256": "2f7063c6950f61c0478ab8c483e843fd79c48010d46274d673daa56b174d4517"
+    }
+  ],
+  "old_to_first_publish_function_exact": true,
+  "current_controller_matches_reviewed_snapshot": true,
+  "source_and_test_pins": [
+    {
+      "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/new_edition_controller.py",
+      "bytes": 41968,
+      "sha256": "7dade987e77ff166e5849db06cd47d019f6ab16d67bd18a22c2120564c480110"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-planning/metadata-candidates/controller-independent-review/candidate_f1a381d8_snapshot.py",
+      "bytes": 45355,
+      "sha256": "f1a381d8d7c1eba81d1f6079647f6b63a8a86d9bccc9fb75cbadee490085dc98"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-planning/metadata-candidates/controller-independent-review/candidate_27fd844c_snapshot.py",
+      "bytes": 46109,
+      "sha256": "27fd844cc903a445688a177339b7af633c0a3581f71eeedf7e20bb015bee36a7"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-planning/new_edition_controller.py",
+      "bytes": 46109,
+      "sha256": "27fd844cc903a445688a177339b7af633c0a3581f71eeedf7e20bb015bee36a7"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-planning/metadata-candidates/controller-independent-review/independent_tests.py",
+      "bytes": 10702,
+      "sha256": "e3dcf06ec99c8af74dd06ea3545f96923d44a1e8041b6ea02dc6ca54405dc664"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-planning/metadata-candidates/controller-independent-review/acceptance_tests.py",
+      "bytes": 13352,
+      "sha256": "22cae2ae0a86e46574e195ab8ba4502a8b7bb2fd6632f4cb47d8130cfebcb153"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-planning/controller-review/offline_tests.py",
+      "bytes": 46802,
+      "sha256": "323fa60e95b7c4196c30caf588101723b00df40f867ced6840852ab47273e112"
+    }
+  ],
+  "receipt_pins": [
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-planning/metadata-candidates/controller-independent-review/INDEPENDENT_RESULTS_normal.json",
+      "bytes": 1377,
+      "sha256": "cf368875a6e30192feb80ede343cd1a5cc982cc6524747a2adeb6840e831c3d4"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-planning/metadata-candidates/controller-independent-review/INDEPENDENT_RESULTS_optimized.json",
+      "bytes": 1377,
+      "sha256": "cf368875a6e30192feb80ede343cd1a5cc982cc6524747a2adeb6840e831c3d4"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-planning/metadata-candidates/controller-independent-review/ACCEPTANCE_RESULTS_normal.json",
+      "bytes": 641,
+      "sha256": "c8e3c5e6c400dbb2dfa6bcdacba5be6fc0142c16d4cc4cd9b985e962bf252f08"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-planning/metadata-candidates/controller-independent-review/ACCEPTANCE_RESULTS_optimized.json",
+      "bytes": 641,
+      "sha256": "c8e3c5e6c400dbb2dfa6bcdacba5be6fc0142c16d4cc4cd9b985e962bf252f08"
+    }
+  ],
+  "real_network": "FORBIDDEN_BY_SOCKET_AND_URLLIB_SENTINELS",
+  "remote_mutations": 0,
+  "credential_access": "NONE",
+  "scientific_callbacks": "NOT_IMPORTED_OR_CALLED",
+  "scope": "CONTROLLER_AND_FABRICATED_OFFLINE_CONTROL_FLOW_ONLY",
+  "server_cas_claim": false,
+  "real_study_status": "UNCOMPUTED",
+  "real_scientific_outputs": "PENDING",
+  "release_assets_metadata_seal_and_publication_authorization": "PENDING"
+}
