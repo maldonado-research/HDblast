@@ -1,5 +1,7 @@
 # HDBLAST: current research and publication status
 
+**New mathematical research draft — 8 October 2026:** a constructive regular-branch theorem and explicit uniform curvature-error bounds now replace the earlier branch assumption within stated small-detuning domains. Exact rational checks guarantee the registered exact-decimal model only through delta = 1.09155 × 10⁻⁷; the earlier numerical sweep starts at 0.0005 and remains outside that guarantee. A separate fixed-detuning theorem proves negative quadratic response to weak scalar coupling. [Draft, proofs, independent internal reviews and reproducible code](https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SCALAR_BOUNDARY_CURVATURE_20261008). Seven primary papers are compared directly. External novelty, APS suitability, stability and a higher-dimensional Big Bang origin remain unestablished. Zenodo 23244754 is unchanged; this draft is a later GitHub checkpoint.
+
 Updated **8 October 2026 UTC**. Frozen archive names and registrations retain their original dates and timezones, including 3 and 5 October UTC. This page distinguishes the latest completed research on GitHub from the versions actually published on Zenodo.
 
 HDBLAST asks whether an event in a higher-dimensional space could have supplied the hot initial state of our universe. That cause remains **unestablished**. The work has no external peer review or observational confirmation. Internal independent implementations and AI-assisted reviews are documented computational checks.

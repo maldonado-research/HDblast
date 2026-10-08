@@ -1,0 +1,43 @@
+name: Scalar boundary existence and curvature checks
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_SCALAR_BOUNDARY_CURVATURE_20261008/**'
+      - '.github/workflows/hdblast_scalar_boundary_curvature.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_SCALAR_BOUNDARY_CURVATURE_20261008/**'
+      - '.github/workflows/hdblast_scalar_boundary_curvature.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  proof-and-reproduction:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: research/HDBLAST_SCALAR_BOUNDARY_CURVATURE_20261008
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - name: Install the declared calculation dependencies
+        run: |
+          python -I -B -m pip install --only-binary=:all: -r research/HDBLAST_SCALAR_BOUNDARY_CURVATURE_20261008/requirements.txt
+      - name: Reproduce exact bounds and numerical diagnostics
+        run: python -I -B research/HDBLAST_SCALAR_BOUNDARY_CURVATURE_20261008/reproduce.py --output "$RUNNER_TEMP/scalar-boundary-replay" --numerical
+      - name: Retain checks and numerical diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scalar-boundary-replay-${{ github.sha }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/scalar-boundary-replay
+          if-no-files-found: warn
+          retention-days: 14

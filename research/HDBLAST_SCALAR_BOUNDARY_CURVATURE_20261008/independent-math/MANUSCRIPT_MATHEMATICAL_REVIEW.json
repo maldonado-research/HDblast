@@ -1,0 +1,50 @@
+{
+  "status": "PASS_INTERNAL_MANUSCRIPT_MATHEMATICAL_REVIEW",
+  "manuscript_path": "manuscript/scalar-boundary-curvature.tex",
+  "manuscript_sha256": "e84b5944e82fa62199884fd180e5b892e38252e88520b63d7e6ac8a8dc60baf0",
+  "accepted_uniform_proof_sha256": "544c6dbced51fbc68dccab3bbbe84210545849c6e7447e1b6bdae0fc98e76f51",
+  "exact_constants_report_sha256": "95923d9824f3f367385f67392ac10391b489337138851b642aa4553377d11ba1",
+  "reviewed_mathematics": [
+    "Uniform weighted Green inverse and nonlinear Volterra contraction match the accepted proof",
+    "Scalar and metric shell existence, local-tube uniqueness, moving-endpoint derivatives and explicit remainder constants match",
+    "Finite-positive-detuning analytic branch, susceptibility, strict sign and w=5k closed expression are correct",
+    "Both perturbation parameters and their distinct remainder scopes are stated explicitly",
+    "Polynomial remainder refinement is derived by the valid exact triangle inequality",
+    "Displayed table bounds and strict curvature comparisons verified using exact rational arithmetic"
+  ],
+  "table_checks": [
+    {
+      "model": "registered_exact_decimal_model",
+      "remainder_formula": "Taylor theorem",
+      "checks": {
+        "displayed_delta_covered": true,
+        "scalar_constant_outward": true,
+        "curvature_constant_outward": true,
+        "strict_displayed_sign_margin": true
+      }
+    },
+    {
+      "model": "simple_polynomial_model",
+      "remainder_formula": "finite polynomial refinement",
+      "checks": {
+        "displayed_delta_covered": true,
+        "scalar_constant_outward": true,
+        "curvature_constant_outward": true,
+        "strict_displayed_sign_margin": true
+      }
+    }
+  ],
+  "corrected_during_review": [
+    "Simple-model 0.0236 constant is now explicitly supported by the displayed polynomial-refinement formula; the larger unrefined constant is identified",
+    "Ten-check execution description now says exact shell identity rather than unexecuted symbolic constraint-propagation check"
+  ],
+  "claim_limits_preserved": [
+    "Uniqueness is restricted to the specified local or weighted tube",
+    "Registered exact-decimal model is distinguished from historical binary64 numerical parameters",
+    "The registered floating-point sweep lies outside the certified range",
+    "Finite-detuning weak-coupling radius and cubic remainder constant are existential, not numerically enclosed",
+    "External novelty, journal significance, author verification, dynamical stability and cosmological origin remain unestablished"
+  ],
+  "execution_scope": "Read-only manuscript/proof/code-result review plus exact rational table arithmetic; no ODE solve or numerical sweep rerun.",
+  "external_peer_review": false
+}

@@ -1,0 +1,28 @@
+{
+  "pass_all": true,
+  "checks": {
+    "exact_boundary_reduction": true,
+    "stationary_bulk": true,
+    "background_curvature": true,
+    "bulk_scalar_mass": true,
+    "growing_indicial_root": true,
+    "leading_scalar_junction": true,
+    "leading_curvature": true,
+    "second_order_curvature_with_higher_derivatives": true,
+    "higher_derivative_independence": true
+  },
+  "sympy": "1.14.0",
+  "scalar_shift": "-f1/(4*(-2*k + w))",
+  "second_order_curvature": "(-4*f0**2*k + 2*f0**2*w - 3*f1**2*k)/(72*(-2*k + w))",
+  "assumptions": [
+    "k>0,w>4k,f0>0,delta approaches zero from positive side",
+    "specified regular growing-mode branch exists, with eta_b=O(delta),H2=O(delta)",
+    "boundary scalar derivative=lambda*eta_b+O(delta**2); smooth local expansion"
+  ],
+  "limitations": [
+    "no global branch existence or remainder proof",
+    "no stability or physical detection",
+    "no external priority claim"
+  ],
+  "source_sha256": "25ba7482f21fe318de5c4b398a7f6846e44d58a502ebcb1980df1db819e69edd"
+}

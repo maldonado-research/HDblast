@@ -1,0 +1,65 @@
+{
+  "complete": true,
+  "pass_all": true,
+  "cases": [
+    {
+      "name": "matched_bulk_cubic",
+      "rows": [
+        {
+          "delta": 0.002,
+          "coefficient_relative_error": 0.00483435163753641,
+          "baseline_difference_over_delta3": 7.685176347843777e-05,
+          "formal_local_h3_difference": 7.645514511246668e-05
+        },
+        {
+          "delta": 0.001,
+          "coefficient_relative_error": 0.00241706446673604,
+          "baseline_difference_over_delta3": 7.666734407702977e-05,
+          "formal_local_h3_difference": 7.645514511246668e-05
+        },
+        {
+          "delta": 0.0005,
+          "coefficient_relative_error": 0.0012085148966055723,
+          "baseline_difference_over_delta3": 7.635501931245459e-05,
+          "formal_local_h3_difference": 7.645514511246668e-05
+        }
+      ],
+      "coefficient_error_halving_ratios": [
+        2.0000921382393373,
+        2.0000286910198564
+      ]
+    },
+    {
+      "name": "matched_tension_curvature",
+      "rows": [
+        {
+          "delta": 0.002,
+          "coefficient_relative_error": 0.004660458067756468,
+          "baseline_difference_over_delta3": 0.0001577122069415125,
+          "formal_local_h3_difference": 0.0001569373709638778
+        },
+        {
+          "delta": 0.001,
+          "coefficient_relative_error": 0.0023303369141904127,
+          "baseline_difference_over_delta3": 0.0001573239016275027,
+          "formal_local_h3_difference": 0.0001569373709638778
+        },
+        {
+          "delta": 0.0005,
+          "coefficient_relative_error": 0.001165221327581566,
+          "baseline_difference_over_delta3": 0.00015688099148751522,
+          "formal_local_h3_difference": 0.0001569373709638778
+        }
+      ],
+      "coefficient_error_halving_ratios": [
+        1.9999074122617018,
+        1.999909252456837
+      ]
+    }
+  ],
+  "formal_h3_dependence": {
+    "d_h3_d_v": "-k*f1**3/[96*(3*w-8*k)*(w-2*k)**2]",
+    "d_h3_d_f2": "k*f1**2/[96*(w-2*k)**2]",
+    "scope": "derived local formal sensitivities; no rigorous remainder bound or novelty claim"
+  }
+}
