@@ -1,0 +1,336 @@
+# Reviewed source005 replay with final independently authenticated actual-package controls.
+# Actual CI execution is witnessed by its workflow run, separately from local acceptance.
+name: Registered retained-endpoint source replay
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_CHECKPOINT_20261008_RETAINED_ENDPOINT_FLOW/**'
+      - 'research/HDBLAST_RETAINED_ENDPOINT_FLOW_PACKAGE_20261008/**'
+      - 'hdblast/continuation/2026.10.08-retained-endpoint-flow/**'
+      - 'hdblast/publication/2026.10.08-retained-endpoint-flow/**'
+      - 'handoff/HDBLAST*RETAINED_ENDPOINT*20261008*.md'
+      - 'README.md'
+      - 'site/index.html'
+      - 'site/es/index.html'
+      - 'site/zenodo-files/index.html'
+      - '.github/workflows/hdblast_retained_endpoint_flow.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_CHECKPOINT_20261008_RETAINED_ENDPOINT_FLOW/**'
+      - 'research/HDBLAST_RETAINED_ENDPOINT_FLOW_PACKAGE_20261008/**'
+      - 'hdblast/continuation/2026.10.08-retained-endpoint-flow/**'
+      - 'hdblast/publication/2026.10.08-retained-endpoint-flow/**'
+      - 'handoff/HDBLAST*RETAINED_ENDPOINT*20261008*.md'
+      - 'README.md'
+      - 'site/index.html'
+      - 'site/es/index.html'
+      - 'site/zenodo-files/index.html'
+      - '.github/workflows/hdblast_retained_endpoint_flow.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  fresh-exact-replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 70
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+      ENDPOINT_PACKAGE_PATH: research/HDBLAST_RETAINED_ENDPOINT_FLOW_PACKAGE_20261008
+      ENDPOINT_HELPER_SHA256: 5de25511aea5579b7e0ebe94208ee1584d0869ca248fa8939cdbb29ed25ff6fd
+      ENDPOINT_PAYLOAD_SHA256: '976e92a7a14ecb13ed04cbb9f7ed15fff3a285bd40175a28929dff53677d0752'
+      ENDPOINT_REPLAY_PINS_SHA256: '1407dc4bcf0a312d1bc23a29e93e3c1149071f4ce2705ccbbeef430e82446d68'
+    steps:
+      - name: Prepare the evidence directory
+        id: prepare_evidence
+        shell: bash
+        run: mkdir -p "$RUNNER_TEMP/retained-endpoint-ci"
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: |
+            research/HDBLAST_CHECKPOINT_20261008_RETAINED_ENDPOINT_FLOW
+            research/HDBLAST_RETAINED_ENDPOINT_FLOW_PACKAGE_20261008
+      - name: Checkout the immutable original input dependency without duplicating it in the new bundle
+        uses: actions/checkout@v4
+        with:
+          repository: maldonado-research/HDblast
+          ref: 13a30ef46f5c90c1b01ae83b609db65fd0f8a709
+          path: retained-inputs
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/INPUT_MANIFEST.json
+            /research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_positive_B_coarse.npz
+            /research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_positive_B_fine.npz
+            /research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_signed_uB_coarse.npz
+            /research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_signed_uB_fine.npz
+            /research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/independent/forced_metric.py
+            /research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_positive_B_coarse.npz
+            /research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_positive_B_fine.npz
+            /research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_signed_uB_coarse.npz
+            /research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_signed_uB_fine.npz
+            /research/HDBLAST_CHECKPOINT_20261007_BD_PREHISTORY/provenance/STATIC_PROVENANCE_AUDIT.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+          architecture: 'x64'
+          check-latest: false
+      - name: Authenticate the source replay bundle and all opaque input dependencies before installing study dependencies
+        id: authenticate
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > "$RUNNER_TEMP/retained-endpoint-ci/bootstrap.py" <<'PY_BOOTSTRAP'
+          """Review template: capture source-bundle controls and opaque input dependencies.
+          
+          This is workflow-authored bootstrap code, not a real replay receipt. The future
+          reviewed helper must satisfy BOOTSTRAP_CONTRACT.md. Pending external pins fail.
+          """
+          import sys
+          if not sys.flags.isolated or not sys.flags.dont_write_bytecode:
+              raise SystemExit('Trusted CI bootstrap requires Python -I -B before local-sensitive imports')
+          sys.dont_write_bytecode = True
+          import ctypes
+          import hashlib
+          import json
+          import os
+          import pathlib
+          import re
+          import stat
+          import types
+          
+          EXPECTED_CHECKPOINT = 'research/HDBLAST_CHECKPOINT_20261008_RETAINED_ENDPOINT_FLOW'
+          EXPECTED_INPUT_COMMIT = '13a30ef46f5c90c1b01ae83b609db65fd0f8a709'
+          STABLE = ['SOURCE_CERTIFICATE.json', 'TARGET_BUDGETS.json', 'NODE_CERTIFICATES.jsonl.gz',
+                    'DATA.json', 'SCIENCE_SUMMARY.json', 'SOURCE_ATTEMPTS.jsonl', 'DECODE_ATTEMPTS.jsonl',
+                    'INPUT_AUTHENTICATION.json', 'OUTPUT_READBACK.json']
+          LIMITS = {'wall_seconds': 900, 'cpu_seconds': 900, 'address_space_bytes': 536870912,
+                    'aggregate_output_bytes': 134217728, 'file_size_bytes': 134217728,
+                    'nonroot': True, 'single_threads': True, 'nproc': 0, 'core': 0,
+                    'network_allowed': False, 'child_processes_allowed': False}
+          RUNTIME = {'python_version': '3.12.14', 'platform': 'linux',
+                     'packages': {'python-flint': '0.9.0', 'sympy': '1.14.0', 'mpmath': '1.3.0'}}
+          
+          def require(ok, message):
+              if not ok:
+                  raise SystemExit(message)
+          
+          def directory(raw):
+              path = pathlib.Path(raw)
+              require(path.is_absolute() and path.is_dir() and path.resolve() == path and
+                      all(not p.is_symlink() for p in (path, *path.parents)), 'Real absolute directory required')
+              return path
+          
+          def pin(raw):
+              require(type(raw) is str and re.fullmatch('[0-9a-f]{64}', raw) is not None,
+                      'Final independently supplied external SHA256 required')
+              return raw
+          
+          def safe_relative(raw):
+              require(type(raw) is str and raw and '\\' not in raw and '\0' not in raw,
+                      'Safe relative dependency path required')
+              p = pathlib.PurePosixPath(raw)
+              require(not p.is_absolute() and p.as_posix() == raw and
+                      all(x not in ('', '.', '..') for x in raw.split('/')), 'Unsafe dependency path')
+              return p.parts
+          
+          def read_verified(root, relative, expected, limit, capture=False):
+              # Descriptor traversal rejects symlink components and special/hardlinked files.
+              parts = safe_relative(relative)
+              current = os.open(root, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW | os.O_CLOEXEC)
+              try:
+                  for name in parts[:-1]:
+                      child = os.open(name, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW | os.O_CLOEXEC,
+                                      dir_fd=current)
+                      os.close(current)
+                      current = child
+                  fd = os.open(parts[-1], os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK | os.O_CLOEXEC,
+                               dir_fd=current)
+                  try:
+                      before = os.fstat(fd)
+                      require(stat.S_ISREG(before.st_mode) and before.st_nlink == 1 and before.st_size <= limit,
+                              'Bounded regular single-link file required: ' + relative)
+                      digest = hashlib.sha256()
+                      captured = bytearray() if capture else None
+                      total = 0
+                      while chunk := os.read(fd, 65536):
+                          total += len(chunk)
+                          require(total <= limit, 'File grew beyond bound: ' + relative)
+                          digest.update(chunk)
+                          if capture:
+                              captured.extend(chunk)
+                      after = os.fstat(fd)
+                      named = os.stat(parts[-1], dir_fd=current, follow_symlinks=False)
+                      identity = lambda s: (s.st_dev, s.st_ino, s.st_size, s.st_mtime_ns, s.st_ctime_ns, s.st_nlink)
+                      require(identity(before) == identity(after) == identity(named), 'File changed while hashing: ' + relative)
+                      require(total == before.st_size and digest.hexdigest() == pin(expected), 'SHA256 mismatch: ' + relative)
+                      return bytes(captured) if capture else {'sha256': digest.hexdigest(), 'bytes': total}
+                  finally:
+                      os.close(fd)
+              finally:
+                  os.close(current)
+          
+          require(sys.version_info[:3] == (3, 12, 14) and sys.platform == 'linux', 'Registered Linux Python3.12.14 required')
+          require(sys.flags.isolated and sys.flags.dont_write_bytecode, 'Python -I -B required')
+          require(os.getuid() > 0 and os.geteuid() > 0, 'Existing nonroot runner required')
+          ctypes.CDLL('libseccomp.so.2', use_errno=True)
+          package = directory(pathlib.Path(os.environ['GITHUB_WORKSPACE']) / os.environ['ENDPOINT_PACKAGE_PATH'])
+          dependency = directory(pathlib.Path(os.environ['GITHUB_WORKSPACE']) / 'retained-inputs')
+          controls = {'replay_checkpoint.py': pin(os.environ['ENDPOINT_HELPER_SHA256']),
+                      'PAYLOAD_MANIFEST.json': pin(os.environ['ENDPOINT_PAYLOAD_SHA256']),
+                      'REPLAY_PINS.json': pin(os.environ['ENDPOINT_REPLAY_PINS_SHA256'])}
+          captured = {name: read_verified(package, name, expected, 20 * 1024 * 1024, True)
+                      for name, expected in controls.items()}
+          helper_path = package / 'replay_checkpoint.py'
+          helper = types.ModuleType('hdblast_endpoint_portable_bootstrap')
+          helper.__file__ = str(helper_path)
+          sys.modules[helper.__name__] = helper
+          # Execute captured helper bytes only after all three controls authenticate.
+          exec(compile(captured['replay_checkpoint.py'], str(helper_path), 'exec'), helper.__dict__)
+          verified = helper.authenticate_package(package, controls['PAYLOAD_MANIFEST.json'],
+                                                 controls['replay_checkpoint.py'], controls['REPLAY_PINS.json'])
+          pins = verified['pins']
+          require(pins['checkpoint_path'] == EXPECTED_CHECKPOINT and pins['runtime'] == RUNTIME and
+                  pins['stable_files'] == STABLE and pins['retained_inputs_commit'] == EXPECTED_INPUT_COMMIT,
+                  'New source-bundle runtime/scope/artifact/input-commit pins differ')
+          require(helper.LIMITS == LIMITS and helper.equal_json(pins['resource_limits'], LIMITS), 'Unchanged exact worker hardcaps required')
+          require(pins['core_path'] == EXPECTED_CHECKPOINT + '/core' and pins['registration_path'] == EXPECTED_CHECKPOINT + '/FULL_REGISTRATION.json' and pins['execution_scope'] == helper.ACTUAL_SCOPE, 'Final frozen-core/registration/actual-scope layout required')
+          candidate = package / EXPECTED_CHECKPOINT / 'core'
+          spec = helper.load((candidate / 'provenance_decoder' / 'INPUT_SPEC.json').read_bytes())
+          expected_dependencies = {spec['manifest_repository_path']: spec['manifest_sha256'],
+                                   spec['producer_repository_path']: spec['producer_sha256'],
+                                   spec['prior_static_audit']['repository_path']: spec['prior_static_audit']['sha256']}
+          require(type(spec['capsules']) is list and len(spec['capsules']) == 4, 'All four declared capsules required')
+          for capsule in spec['capsules']:
+              expected_dependencies[capsule['repository_path']] = capsule['reader_inputspec']['file_sha256']
+              expected_dependencies[capsule['original']['repository_path']] = capsule['original']['sha256']
+          require(len(expected_dependencies) == 11, 'All eight original/compact inputs and three provenance leaves required')
+          opaque_receipts = {name: read_verified(dependency, name, expected, 256 * 1024 * 1024)
+                            for name, expected in expected_dependencies.items()}
+          require(helper.equal_json(opaque_receipts, pins['retained_input_dependencies']), 'All opaque dependency byte pins must match final replay pins')
+          require(sum(item['bytes'] for item in opaque_receipts.values()) <= 1024 * 1024 * 1024,
+                  'Bounded original dependency closure required')
+          requirements = package / EXPECTED_CHECKPOINT / 'requirements-replay.txt'
+          require(requirements.read_bytes() == b'python-flint==0.9.0\nsympy==1.14.0\nmpmath==1.3.0\n',
+                  'Registered exact requirement versions differ')
+          output = directory(pathlib.Path(os.environ['RUNNER_TEMP']) / 'retained-endpoint-ci')
+          if sys.argv[1:] == ['--authenticate-only']:
+              receipt = {'status': 'PASS_CI_STDLIB_SOURCE_BUNDLE_AND_OPAQUE_DEPENDENCIES_AUTHENTICATION',
+                         'external_control_sha256': controls, 'input_dependency_commit': EXPECTED_INPUT_COMMIT,
+                         'opaque_input_files': opaque_receipts, 'manifest_file_count': len(verified['manifest']['files']),
+                         'registration_sha256': pins['registration_sha256'], 'public_go_sha256': pins['public_go_sha256'],
+                         'uid': os.getuid(), 'euid': os.geteuid(), 'new_array_decodes': 0, 'new_source_callbacks': 0}
+              (output / 'AUTHENTICATION.json').write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+              print(receipt['status'])
+          else:
+              require(sys.argv[1:] in (['--verify-only'], ['--fresh-replay']), 'Fixed bootstrap operation required')
+              argv = [str(helper_path), '--package', str(package), '--repository-root', str(dependency),
+                      '--payload-manifest-sha256', controls['PAYLOAD_MANIFEST.json'],
+                      '--helper-sha256', controls['replay_checkpoint.py'],
+                      '--replay-pins-sha256', controls['REPLAY_PINS.json']]
+              argv += ['--verify-only'] if sys.argv[1:] == ['--verify-only'] else ['--output-root', str(output / 'fresh-replay')]
+              sys.argv = argv
+              # Reviewed helper main must reauthenticate and validate GO/custody before numeric imports.
+              helper.main()
+          PY_BOOTSTRAP
+          python -I -S -B "$RUNNER_TEMP/retained-endpoint-ci/bootstrap.py" --authenticate-only             > "$RUNNER_TEMP/retained-endpoint-ci/authentication.log" 2>&1
+      - name: Install the authenticated registered requirements
+        id: install_requirements
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -B -m pip install --only-binary=:all: \
+            -r "$ENDPOINT_PACKAGE_PATH/research/HDBLAST_CHECKPOINT_20261008_RETAINED_ENDPOINT_FLOW/requirements-replay.txt" \
+            > "$RUNNER_TEMP/retained-endpoint-ci/install.log" 2>&1
+          python -I -B -m pip check >> "$RUNNER_TEMP/retained-endpoint-ci/install.log" 2>&1
+      - name: Verify both saved modes without decoding inputs or evaluating sources
+        id: verify_payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -B "$RUNNER_TEMP/retained-endpoint-ci/bootstrap.py" --verify-only             > "$RUNNER_TEMP/retained-endpoint-ci/verify-only.log" 2>&1
+      - name: Replay the fixed registered worker in fresh normal and optimized processes
+        id: replay
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -B "$RUNNER_TEMP/retained-endpoint-ci/bootstrap.py" --fresh-replay             > "$RUNNER_TEMP/retained-endpoint-ci/full-replay.log" 2>&1
+      - name: Retain compact private evidence in the job log and summary
+        if: ${{ always() && github.event.repository.private }}
+        env:
+          CHECK_STEP_STATES: ${{ toJSON(steps) }}
+          CHECK_JOB_STATUS: ${{ job.status }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -S -B - <<'PY_REPORT'
+          import base64, hashlib, json, os, pathlib, textwrap, zlib
+          root = pathlib.Path(os.environ['RUNNER_TEMP']) / 'retained-endpoint-ci'
+          limit = 900 * 1024
+          parts = []
+          def add(label, text):
+              block = '\n### ' + label + '\n\n```text\n' + text + '\n```\n'
+              if sum(len(p.encode('utf-8')) for p in parts) + len(block.encode('utf-8')) <= limit:
+                  parts.append(block)
+              else:
+                  parts.append('\nOmitted oversized section: ' + label + '; original-file SHA256 is retained.\n')
+          add('Native check states', json.dumps({'job_status_before_reporting': os.environ['CHECK_JOB_STATUS'],
+              'steps': json.loads(os.environ['CHECK_STEP_STATES']),
+              'note': 'Reporting preserves earlier failures. Saved scientific DATA remains committed; fresh equality of all nine stable artifacts remains mandatory. Private uploads are skipped.'}, indent=2, sort_keys=True))
+          files = sorted(p for p in root.rglob('*') if p.is_file() and not p.is_symlink()) if root.is_dir() else []
+          manifest = []
+          for path in files:
+              digest = hashlib.sha256()
+              with path.open('rb') as stream:
+                  for chunk in iter(lambda: stream.read(65536), b''):
+                      digest.update(chunk)
+              manifest.append({'path': path.relative_to(root).as_posix(), 'bytes': path.stat().st_size,
+                  'sha256': digest.hexdigest()})
+          add('Complete generated-file SHA256 manifest', json.dumps(manifest, indent=2, sort_keys=True))
+          logs = sorted((p for p in files if p.suffix == '.log'),
+              key=lambda p: (p.name not in ('full-replay.log', 'authentication.log', 'install.log', 'verify-only.log', 'child.log'), str(p)))
+          for path in logs[:16]:
+              with path.open('rb') as stream:
+                  stream.seek(max(0, path.stat().st_size - 8192))
+                  tail = stream.read(8192)
+              add('Diagnostic tail ' + path.relative_to(root).as_posix(), tail.decode('utf-8', errors='replace'))
+          receipts = [p for p in files if p.suffix == '.json' and p.name not in ('DATA.json', 'SCIENCE_SUMMARY.json', 'SOURCE_CERTIFICATE.json', 'TARGET_BUDGETS.json')]
+          receipts.sort(key=lambda p: (p.name not in ('PORTABLE_REPLAY_RECEIPT.json', 'EXECUTION.json', 'OUTPUT_READBACK.json', 'AUTHENTICATION.json', 'ENTRY_RECEIPT.json'), str(p)))
+          for path in receipts:
+              if path.stat().st_size <= 65536:
+                  add('Receipt ' + path.relative_to(root).as_posix(), path.read_text(errors='replace'))
+          scientific = root / 'fresh-replay' / 'normal' / 'DATA.json'
+          if scientific.is_file() and not scientific.is_symlink() and scientific.stat().st_size <= 1024 * 1024:
+              raw = scientific.read_bytes()
+              payload = base64.b64encode(zlib.compress(raw, 9)).decode('ascii')
+              add('Complete fresh normal DATA.json (zlib/base64)',
+                  'Decoded original-file SHA256: ' + hashlib.sha256(raw).hexdigest() + '\n'
+                  + 'Every exact rational row and scientific field is retained. The optimized copy has its own file pin above.\n'
+                  + '\n'.join(textwrap.wrap(payload, 120)))
+          body = '# Compact private retained-endpoint CI evidence\n' + ''.join(parts)
+          if len(body.encode('utf-8')) >= 1024 * 1024:
+              raise SystemExit('Compact job summary exceeded 1 MiB')
+          print(body)
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as stream:
+              stream.write(body)
+          PY_REPORT
+      - name: Retain complete public authentication, outputs and failed-step evidence
+        if: ${{ always() && !github.event.repository.private }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: retained-endpoint-exact-${{ github.sha }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/retained-endpoint-ci/
+          if-no-files-found: warn
+          retention-days: 14

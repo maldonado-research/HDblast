@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-08T16:59:47.539383+00:00",
+  "status": "ACCEPT_CONDITIONAL_ANALYTIC_INCIDENT_EXTENSION",
+  "accepted_incident_manifest_path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/physical-model-incident/SOURCE_MANIFEST.json",
+  "accepted_incident_manifest_sha256": "e7183b5c1b3e9a5c56e5a1542bfaec533c6f228699c6af805cf69113fbe13658",
+  "accepted_theorem_sha256": "2914c9f287f60398bbe36846d30f04a6c7743aab535750534d13b3697b3ae6e5",
+  "accepted_source_files": [
+    {
+      "bytes": 2119,
+      "path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/physical-model-incident/README.md",
+      "sha256": "657b80b2f41630393c0d697bfa92f3f7bca6d11baff0367053118bc98baf6c9f",
+      "snapshot_path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/bulk-incident-independent-review/reviewed-source/README.md"
+    },
+    {
+      "bytes": 14725,
+      "path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/physical-model-incident/INCIDENT_SCATTERING_THEOREM.md",
+      "sha256": "2914c9f287f60398bbe36846d30f04a6c7743aab535750534d13b3697b3ae6e5",
+      "snapshot_path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/bulk-incident-independent-review/reviewed-source/INCIDENT_SCATTERING_THEOREM.md"
+    },
+    {
+      "bytes": 4358,
+      "path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/physical-model-incident/INCIDENT_PACKET_CONTRACT.json",
+      "sha256": "8d6c3113c78e8af022a4b599052f8fc000331d00b8f29bf5bac51e49a9e31021",
+      "snapshot_path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/bulk-incident-independent-review/reviewed-source/INCIDENT_PACKET_CONTRACT.json"
+    },
+    {
+      "bytes": 8834,
+      "path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/physical-model-incident/verify_incident_controls.py",
+      "sha256": "4ca3c2a3485b3700ed80dd2dcc269a3fa85cf5aea5cc3563eed64d83b77fef46",
+      "snapshot_path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/bulk-incident-independent-review/reviewed-source/verify_incident_controls.py"
+    },
+    {
+      "bytes": 5056,
+      "path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/physical-model-incident/CONTROLS_NORMAL.json",
+      "sha256": "158a900592d4d8d406fa292719b5b91e9005997c83fc14cac421cdf53750a873",
+      "snapshot_path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/bulk-incident-independent-review/reviewed-source/CONTROLS_NORMAL.json"
+    },
+    {
+      "bytes": 5056,
+      "path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/physical-model-incident/CONTROLS_OPTIMIZED.json",
+      "sha256": "158a900592d4d8d406fa292719b5b91e9005997c83fc14cac421cdf53750a873",
+      "snapshot_path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/bulk-incident-independent-review/reviewed-source/CONTROLS_OPTIMIZED.json"
+    }
+  ],
+  "original_model_manifest_sha256": "d82d09d1786b1317dbd5fb8852e618a4ecd63b26bb70b729e9be4f041a5bc15c",
+  "original_model_six_files_and_manifest_reverified_unchanged": true,
+  "source_hashes_rechecked_after_all_replays": true,
+  "python_modes": [
+    "normal",
+    "optimized"
+  ],
+  "independent_controls": {
+    "total_per_mode": 35,
+    "exact_symbolic": 29,
+    "negative_controls": 4,
+    "exact_rank": 1,
+    "exact_finite_endpoint_expansion": 1,
+    "receipts_byte_identical": true,
+    "producer_code_imported": false
+  },
+  "producer_replay": {
+    "exact_controls_per_mode": 25,
+    "negative_controls_per_mode": 8,
+    "both_receipts_match_frozen_bytes": true
+  },
+  "total_manufactured_controls_per_mode": 68,
+  "unresolved_analytic_blockers": [],
+  "assumptions": [
+    "Same positive autonomous one-sided scalar model; M>0,c>0,m^2>0,0<g^2<m^2(c+M),J=0.",
+    "One bulk continuum channel, no extra interactions, damping or time dependence.",
+    "Exact smooth compact continuum packet with support away from p=0; bounded compact k support for global energy.",
+    "Zero bound projection for both position and velocity, automatically satisfied by the exact scattering expansion.",
+    "Quantum assertion limited to coherent continuum displacement of the coupled ground state."
+  ],
+  "scope_limits": [
+    "No original energy source, gravity, thermalization, cosmology or physical-origin result is established.",
+    "No exclusion of HDBLAST or models with additional channels/interactions/time dependence.",
+    "Fixed k is a Fourier fiber, not a globally finite-energy plane wave.",
+    "No all-N decay rate uniform at threshold or g=0 is asserted.",
+    "g=D=0 is an independent free-oscillator degeneracy, not a value of the divided scattering formula.",
+    "The explicit C2 polynomial packet control proves only its finite-order rate; the C-infinity theorem is separately reviewed analytically.",
+    "Exact four-dimensional continuum replica retains dimensional non-identifiability."
+  ],
+  "physical_execution_authorized_by_this_receipt": false,
+  "physical_source_callbacks": 0,
+  "physical_target_evaluations": 0,
+  "retained_array_reads": 0,
+  "retained_array_decodes": 0,
+  "observational_likelihood_evaluations": 0,
+  "network_calls": 0,
+  "remote_mutations": 0,
+  "existing_model_or_publication_edits": 0,
+  "project_statuses": {
+    "metric_calibration": "FAIL",
+    "full_continuous_certificate": "UNRESOLVED",
+    "higher_dimensional_cause": "NOT_ESTABLISHED",
+    "external_novelty": "NOT_ASSESSED"
+  },
+  "review_artifacts": [
+    {
+      "relative_path": "INDEPENDENT_REVIEW.md",
+      "path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/bulk-incident-independent-review/INDEPENDENT_REVIEW.md",
+      "bytes": 8958,
+      "sha256": "77875192359cc0053b59471d0aef3c16081f1aae097fda6ec1b0e91747d67d6f"
+    },
+    {
+      "relative_path": "REVIEWED_SOURCE_HASHES.json",
+      "path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/bulk-incident-independent-review/REVIEWED_SOURCE_HASHES.json",
+      "bytes": 2920,
+      "sha256": "a16198d97ce3fd88c22ca60db43e0aa54dbdc3299a87adaac41960329f7c52f3"
+    },
+    {
+      "relative_path": "independent_incident_controls.py",
+      "path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/bulk-incident-independent-review/independent_incident_controls.py",
+      "bytes": 6900,
+      "sha256": "98b0c65dc785f19ded601791e3f363289fe83a90bcf1d6cff0e6d72a122db966"
+    },
+    {
+      "relative_path": "INDEPENDENT_NORMAL.json",
+      "path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/bulk-incident-independent-review/INDEPENDENT_NORMAL.json",
+      "bytes": 5100,
+      "sha256": "82b9ceee5e4e3432b46b608984fa6c95b6c4d0b80ab252e83391692098ead5d9"
+    },
+    {
+      "relative_path": "INDEPENDENT_OPTIMIZED.json",
+      "path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/bulk-incident-independent-review/INDEPENDENT_OPTIMIZED.json",
+      "bytes": 5100,
+      "sha256": "82b9ceee5e4e3432b46b608984fa6c95b6c4d0b80ab252e83391692098ead5d9"
+    },
+    {
+      "relative_path": "PRODUCER_REPLAY_NORMAL.json",
+      "path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/bulk-incident-independent-review/PRODUCER_REPLAY_NORMAL.json",
+      "bytes": 5056,
+      "sha256": "158a900592d4d8d406fa292719b5b91e9005997c83fc14cac421cdf53750a873"
+    },
+    {
+      "relative_path": "PRODUCER_REPLAY_OPTIMIZED.json",
+      "path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/bulk-incident-independent-review/PRODUCER_REPLAY_OPTIMIZED.json",
+      "bytes": 5056,
+      "sha256": "158a900592d4d8d406fa292719b5b91e9005997c83fc14cac421cdf53750a873"
+    },
+    {
+      "relative_path": "packet-audit/PACKET_ANALYTIC_REVIEW.md",
+      "path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/bulk-incident-independent-review/packet-audit/PACKET_ANALYTIC_REVIEW.md",
+      "bytes": 9287,
+      "sha256": "1e8b45aa0a43a79504956c7f8607ef59418a8bb3270e312fe862676f575a30f7"
+    }
+  ]
+}

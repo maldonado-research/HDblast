@@ -1,0 +1,136 @@
+{
+  "cases": [
+    {
+      "case": "zero",
+      "expected": "accept exact representable scalar",
+      "passed": true
+    },
+    {
+      "case": "negative_zero",
+      "expected": "accept exact representable scalar",
+      "passed": true
+    },
+    {
+      "case": "minimum_subnormal",
+      "expected": "accept exact representable scalar",
+      "passed": true
+    },
+    {
+      "case": "maximum_subnormal",
+      "expected": "accept exact representable scalar",
+      "passed": true
+    },
+    {
+      "case": "minimum_normal",
+      "expected": "accept exact representable scalar",
+      "passed": true
+    },
+    {
+      "case": "maximum_finite",
+      "expected": "accept exact representable scalar",
+      "passed": true
+    },
+    {
+      "case": "negative_finite",
+      "expected": "accept exact representable scalar",
+      "passed": true
+    },
+    {
+      "case": "below_subnormal",
+      "error": "export is outside finite canonical binary80 representability",
+      "passed": true
+    },
+    {
+      "case": "above_maximum",
+      "error": "export is outside finite canonical binary80 representability",
+      "passed": true
+    },
+    {
+      "case": "excess_significand",
+      "error": "export is outside finite canonical binary80 representability",
+      "passed": true
+    },
+    {
+      "case": "nondyadic",
+      "error": "unnormalized represented scalar is not dyadic",
+      "passed": true
+    },
+    {
+      "case": "nonzero_negative_zero",
+      "error": "negative zero flag on nonzero value",
+      "passed": true
+    },
+    {
+      "case": "double_normalized",
+      "error": "unnormalized represented scalar is not dyadic",
+      "passed": true
+    },
+    {
+      "case": "noncanonical_2/2",
+      "passed": true
+    },
+    {
+      "case": "noncanonical_-0/1",
+      "passed": true
+    },
+    {
+      "case": "noncanonical_1.0",
+      "passed": true
+    },
+    {
+      "case": "noncanonical_+1/1",
+      "passed": true
+    },
+    {
+      "case": "noncanonical_01/1",
+      "passed": true
+    },
+    {
+      "case": "double_epsilon",
+      "error": "unnormalized represented scalar is not dyadic",
+      "passed": true
+    },
+    {
+      "case": "negative_zero_nonzero",
+      "error": "negative zero flag on nonzero value",
+      "passed": true
+    },
+    {
+      "case": "noncanonical_ratio",
+      "error": "noncanonical exact ratio",
+      "passed": true
+    },
+    {
+      "case": "overwide_target",
+      "error": "complete per-node target width gate fails",
+      "passed": true
+    },
+    {
+      "case": "canonical_drift",
+      "error": "canonical drift differs",
+      "passed": true
+    },
+    {
+      "case": "delta_tamper",
+      "error": "saved-minus-target serialization differs",
+      "passed": true
+    },
+    {
+      "case": "wrong_prefix",
+      "error": "exact cutoff/prefix mask differs",
+      "passed": true
+    },
+    {
+      "case": "manufactured_scope",
+      "error": "actual exact represented-anchor endpoint scope required",
+      "passed": true
+    }
+  ],
+  "checks": 26,
+  "input_source": "Existing exported first node only; no retained bytes or second evolution.",
+  "physical_source_calls": 0,
+  "production_modules_imported": 0,
+  "reader_sha256": "d2bbe34d238e1ec237f9d9e2f10b14572174e5eb6733db74a8bddc7c5a74ac6d",
+  "retained_arrays_opened": 0,
+  "status": "PASS_INDEPENDENT_ACTUAL_READER_CONTROLS"
+}

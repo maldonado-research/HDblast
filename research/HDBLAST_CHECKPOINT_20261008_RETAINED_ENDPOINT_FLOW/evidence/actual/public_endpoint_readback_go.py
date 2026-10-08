@@ -1,0 +1,242 @@
+"""Download immutable public source bytes before allowing any real endpoint work."""
+import argparse
+import base64
+from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime, timezone
+import hashlib
+import json
+import os
+from pathlib import Path
+import re
+import stat
+import urllib.request
+
+PREFIX = 'research/HDBLAST_CHECKPOINT_20261008_RETAINED_ENDPOINT_FLOW'
+API = 'https://api.github.com/repos/maldonado-research/HDblast/'
+MANDATORY_SOURCE_FILES = {
+    'execution/registration_guard.py', 'execution/run_endpoint.py', 'execution/endpoint_worker.py',
+    'execution/kernel_guard.py', 'execution/bounded_launcher.py', 'execution/validate_outputs.py',
+    'engine/endpoint_engine.py', 'engine/endpoint_aggregate.py', 'source/later_source.py',
+    'source/source_algebra_baseline.py', 'provenance_decoder/exact_binary80.py',
+    'provenance_decoder/fabricated_fixtures.py', 'provenance_decoder/input_spec_adapter.py',
+    'provenance_decoder/INPUT_SPEC.json', 'provenance_decoder/UPSTREAM_HASH_RECEIPT.json',
+    'provenance_decoder/LAYOUT_PROVENANCE_BASIS.json', 'provenance_decoder/ORIGINAL_ZIP_INVENTORIES.json',
+    'PROTOCOL.md', 'theory/SOURCE_AND_ENDPOINT_ENGINE_PROOF.md', 'theory/LATER_TRAJECTORY_THEOREM.md',
+    'theory/MATHEMATICAL_REVIEW_RECEIPT.json', 'theory/DYADIC_SOURCE_ERROR_UPDATE.md',
+    'theory/DYADIC_SOURCE_ERROR_UPDATE_RECEIPT.json',
+}
+
+def require(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+def digest(raw):
+    return hashlib.sha256(raw).hexdigest()
+
+def load(raw):
+    def pairs(items):
+        result = {}
+        for key, value in items:
+            require(key not in result, 'Duplicate JSON key')
+            result[key] = value
+        return result
+    return json.loads(raw, object_pairs_hook=pairs,
+        parse_constant=lambda value: (_ for _ in ()).throw(ValueError('Nonfinite JSON')))
+
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, request, fp, code, message, headers, newurl):
+        raise ValueError('Git API redirect refused')
+
+def get(path, anonymous=False):
+    token = os.environ.get('GH_TOKEN') or os.environ.get('GITHUB_TOKEN')
+    headers = {'Accept': 'application/vnd.github+json',
+               'User-Agent': 'HDBLAST-independent-endpoint-public-byte-review',
+               'X-GitHub-Api-Version': '2022-11-28'}
+    if token and not anonymous:
+        headers['Authorization'] = 'Bearer ' + token
+    request = urllib.request.Request(API + path if path else API.rstrip('/'), headers=headers)
+    with urllib.request.build_opener(NoRedirect()).open(request, timeout=60) as response:
+        require(response.status == 200, 'Git API response not 200')
+        raw = response.read(32 * 1024 * 1024 + 1)
+        require(len(raw) <= 32 * 1024 * 1024, 'Oversized Git API response')
+        return load(raw)
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--checkpoint', type=Path, required=True)
+    parser.add_argument('--commit', required=True)
+    parser.add_argument('--registration-sha256', required=True)
+    parser.add_argument('--review-sha256', required=True)
+    parser.add_argument('--output', type=Path, required=True)
+    args = parser.parse_args()
+    require(re.fullmatch('[0-9a-f]{40}', args.commit), 'Full immutable commit required')
+    for pin in (args.registration_sha256, args.review_sha256):
+        require(re.fullmatch('[0-9a-f]{64}', pin), 'External SHA256 pin required')
+    root = args.checkpoint.absolute()
+    require(root.is_dir() and root.resolve() == root and
+            not any(path.is_symlink() for path in (root, *root.parents)), 'Real checkpoint ancestry required')
+    def read_local(name):
+        relative = Path(name)
+        require(type(name) is str and bool(name) and not relative.is_absolute() and
+                '..' not in relative.parts and '\\' not in name, 'Safe relative local file required')
+        path = root
+        for part in relative.parts:
+            path = path / part
+            require(not path.is_symlink(), 'Local file ancestry link forbidden')
+        descriptor = os.open(path, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK | os.O_CLOEXEC)
+        try:
+            before = os.fstat(descriptor)
+            require(stat.S_ISREG(before.st_mode) and before.st_nlink == 1 and
+                    before.st_size <= 8 * 1024 * 1024, 'Bounded regular unaliased local file required')
+            chunks = []
+            size = 0
+            while True:
+                chunk = os.read(descriptor, 65536)
+                if not chunk:
+                    break
+                size += len(chunk)
+                require(size <= 8 * 1024 * 1024, 'Growing local file')
+                chunks.append(chunk)
+            after = os.fstat(descriptor)
+            named = path.stat(follow_symlinks=False)
+            identity = lambda value: (value.st_dev, value.st_ino, value.st_size,
+                value.st_mtime_ns, value.st_ctime_ns, value.st_nlink)
+            require(identity(before) == identity(after) == identity(named) and
+                    size == before.st_size, 'Local file changed during capture')
+            return b''.join(chunks)
+        finally:
+            os.close(descriptor)
+    registration_raw = read_local('FULL_REGISTRATION.json')
+    review_raw = read_local('evidence/FINAL_PRE_FREEZE_REVIEW.json')
+    readme_raw = read_local('README.md')
+    require(digest(registration_raw) == args.registration_sha256, 'Registration pin differs')
+    require(digest(review_raw) == args.review_sha256, 'Final independent acceptance pin differs')
+    registration = load(registration_raw)
+    review = load(review_raw)
+    require(registration['schema_version'] == 1 and
+            registration['scope'] == 'LATER_RETAINED_ENDPOINT_FLOW_CERTIFICATE', 'Scope differs')
+    files = registration['files']
+    require(type(files) is dict and MANDATORY_SOURCE_FILES <= set(files), 'Mandatory source roles missing')
+    def valid_pin(pin):
+        return (type(pin) is dict and set(pin) == {'bytes', 'sha256'} and
+                type(pin['bytes']) is int and 0 <= pin['bytes'] <= 8 * 1024 * 1024 and
+                type(pin['sha256']) is str and re.fullmatch('[0-9a-f]{64}', pin['sha256']) is not None)
+    require(all(type(name) is str and valid_pin(pin) for name, pin in files.items()), 'Invalid source pins')
+    support_names = review.get('supporting_evidence_files')
+    support_pins = review.get('supporting_evidence_pins')
+    require(type(support_names) is list and all(type(name) is str for name in support_names) and
+            len(support_names) == len(set(support_names)) and type(support_pins) is dict and
+            set(support_names) == set(support_pins) and all(valid_pin(pin) for pin in support_pins.values()),
+            'Exact unique supporting evidence closure required')
+    require(review['status'] == 'GO_FOR_PROSPECTIVE_PUBLIC_FREEZE' and
+            review['registration_sha256'] == args.registration_sha256 and
+            review['registered_file_pins'] == files and
+            review['independent_review_pass'] is True and
+            review['physical_execution_authorized_by_this_receipt'] is False,
+            'Final prospective review does not bind this source freeze')
+    counters = review['new_target_evaluations_before_freeze']
+    require(set(counters) == {'physical_source_callbacks', 'retained_array_decodes',
+            'stored_endpoint_comparisons', 'observational_likelihood_evaluations'} and
+            all(type(value) is int and value == 0 for value in counters.values()), 'Premature actual work')
+    core = root / 'core'
+    local_names = set()
+    local_directories = set()
+    require(core.is_dir() and not core.is_symlink(), 'Real core directory required')
+    def walk_core(descriptor, prefix=''):
+        # scandir errors propagate. No pathlib/glob error suppression and no
+        # link following are permitted at any directory boundary.
+        with os.scandir(descriptor) as entries:
+            for entry in entries:
+                name = prefix + entry.name
+                info = entry.stat(follow_symlinks=False)
+                require(not stat.S_ISLNK(info.st_mode), 'Source link forbidden')
+                require(entry.name != '__pycache__' and Path(entry.name).suffix not in
+                        ('.pyc', '.pyo', '.so', '.pyd', '.dll', '.dylib'), 'Executable alias forbidden')
+                if stat.S_ISREG(info.st_mode):
+                    require(info.st_nlink == 1, 'Source hardlink forbidden')
+                    local_names.add(name)
+                elif stat.S_ISDIR(info.st_mode):
+                    local_directories.add(name)
+                    child = os.open(entry.name, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW | os.O_CLOEXEC,
+                                    dir_fd=descriptor)
+                    try:
+                        walk_core(child, name + '/')
+                    finally:
+                        os.close(child)
+                else:
+                    raise ValueError('Source special file forbidden')
+    core_descriptor = os.open(core, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW | os.O_CLOEXEC)
+    try:
+        walk_core(core_descriptor)
+    finally:
+        os.close(core_descriptor)
+    require(local_names == set(files), 'Complete source closure differs')
+    expected_directories = {parent.as_posix() for name in files for parent in Path(name).parents
+                            if parent.as_posix() != '.'}
+    require(local_directories == expected_directories, 'Complete source directory closure differs')
+    repository = get('')
+    require(repository['full_name'] == 'maldonado-research/HDblast' and repository['private'] is False,
+            'Repository not public')
+    anonymous = get('contents/' + PREFIX + '/README.md?ref=' + args.commit, anonymous=True)
+    require(anonymous['encoding'] == 'base64' and
+            base64.b64decode(anonymous['content']) == readme_raw,
+            'Anonymous immutable README differs')
+    names = ['README.md', 'FULL_REGISTRATION.json', 'evidence/FINAL_PRE_FREEZE_REVIEW.json',
+             *review['supporting_evidence_files'], *('core/' + name for name in sorted(files))]
+    require(len(names) == len(set(names)), 'Duplicate public evidence path')
+    def download(name):
+        require(not Path(name).is_absolute() and '..' not in Path(name).parts, 'Unsafe evidence path')
+        # The initial externally pinned control bytes remain authoritative.
+        # A later path replacement cannot change what this download authenticates.
+        local = (registration_raw if name == 'FULL_REGISTRATION.json' else
+                 review_raw if name == 'evidence/FINAL_PRE_FREEZE_REVIEW.json' else
+                 readme_raw if name == 'README.md' else read_local(name))
+        meta = get('contents/' + PREFIX + '/' + name + '?ref=' + args.commit)
+        require(meta['type'] == 'file' and meta['path'] == PREFIX + '/' + name, 'Public path differs')
+        blob_sha = hashlib.sha1(b'blob ' + str(len(local)).encode() + b'\0' + local).hexdigest()
+        require(meta['sha'] == blob_sha and meta['size'] == len(local), 'Public blob/size differs')
+        blob = get('git/blobs/' + blob_sha)
+        require(blob['sha'] == blob_sha and blob['encoding'] == 'base64', 'Public encoding differs')
+        raw = base64.b64decode(blob['content'])
+        require(blob['size'] == len(raw) and raw == local, 'Downloaded public bytes differ')
+        pin = {'bytes': len(raw), 'sha256': digest(raw)}
+        if name == 'FULL_REGISTRATION.json':
+            require(pin['sha256'] == args.registration_sha256, 'Downloaded registration pin differs')
+        elif name == 'evidence/FINAL_PRE_FREEZE_REVIEW.json':
+            require(pin['sha256'] == args.review_sha256, 'Downloaded final review pin differs')
+        elif name.startswith('core/'):
+            require(pin == files[name[5:]], 'Registered source pin differs')
+        elif name in review['supporting_evidence_files']:
+            require(pin == review['supporting_evidence_pins'][name], 'Reviewed supporting evidence differs')
+        return name, {**pin, 'git_blob': blob_sha,
+                      'immutable_contents_url': API + 'contents/' + PREFIX + '/' + name + '?ref=' + args.commit}
+    downloaded = {}
+    with ThreadPoolExecutor(max_workers=6) as executor:
+        for index, (name, evidence) in enumerate(executor.map(download, names), 1):
+            downloaded[name] = evidence
+            if index % 20 == 0:
+                print(json.dumps({'public_files_downloaded_and_verified': index, 'total': len(names)}), flush=True)
+    receipt = {'schema_version': 1, 'status': 'PASS_READBACK_PUBLIC_BYTE_GO',
+               'scope': 'LATER_RETAINED_ENDPOINT_FLOW_CERTIFICATE',
+               'created_utc': datetime.now(timezone.utc).isoformat(),
+               'freeze_commit': args.commit, 'registration_sha256': args.registration_sha256,
+               'registered_file_pins': files, 'source_go': True, 'decode_go': True,
+               'public_bytes_verified': True, 'independent_review_pass': True,
+               'prospective_review_sha256': args.review_sha256,
+               'remote_files_verified': len(downloaded), 'remote_file_receipts': downloaded,
+               'public_visibility': {'repository_private': False, 'anonymous_immutable_README_verified': True},
+               'real_operations_before_readback': counters,
+               'external_peer_review': False,
+               'supported_scope': 'Finite saved endpoints from exact represented saved incoming state',
+               'full_continuous_certificate': 'UNRESOLVED', 'metric_calibration': 'FAIL',
+               'higher_dimensional_origin': 'NOT_ESTABLISHED', 'external_novelty': 'NOT_ASSESSED'}
+    raw = (json.dumps(receipt, sort_keys=True, indent=2) + '\n').encode()
+    require(not args.output.resolve().is_relative_to(core.resolve()), 'GO must remain outside frozen core')
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    with args.output.open('xb') as stream:
+        stream.write(raw)
+    print(json.dumps({'status': receipt['status'], 'files_verified': len(downloaded),
+                      'public_go_sha256': digest(raw)}), flush=True)
+
+if __name__ == '__main__':
+    main()

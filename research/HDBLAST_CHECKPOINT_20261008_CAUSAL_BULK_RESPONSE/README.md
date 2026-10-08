@@ -48,3 +48,12 @@ remains **UNRESOLVED**; higher-dimensional Big Bang origin remains
 **NOT_ESTABLISHED**; external novelty remains **NOT_ASSESSED**. Gravity,
 cosmological expansion, backreaction, reheating, a specified blast energy ledger,
 and an observational likelihood still need a coupled physical model.
+
+The independently reviewed [incident-pulse extension](incident/README.md)
+adds division-free reflection and boundary amplitudes, including the apparent
+brane resonance. Reflection has unit magnitude. Smooth continuum wave packets
+with both bound-mode projections absent lose their local boundary energy at
+late times; the pulse energy returns to the bulk. Thus this static, linear,
+one-port model supplies a precise conditional obstruction to permanent capture
+and reheating. Cosmological expansion, additional channels or nonlinear dynamics
+would require a separately specified action and energy ledger.

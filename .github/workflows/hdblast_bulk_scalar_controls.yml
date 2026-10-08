@@ -1,0 +1,43 @@
+name: Conditional bulk scalar mathematics
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_CHECKPOINT_20261008_CAUSAL_BULK_RESPONSE/**'
+      - '.github/workflows/hdblast_bulk_scalar_controls.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_CHECKPOINT_20261008_CAUSAL_BULK_RESPONSE/**'
+      - '.github/workflows/hdblast_bulk_scalar_controls.yml'
+permissions:
+  contents: read
+jobs:
+  analytic-controls:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: research/HDBLAST_CHECKPOINT_20261008_CAUSAL_BULK_RESPONSE
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - name: Install the declared analytic-control dependencies
+        run: python -I -B -m pip install --only-binary=:all: sympy==1.14.0 mpmath==1.3.0
+      - name: Check accepted source hashes and both interpreter modes
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd research/HDBLAST_CHECKPOINT_20261008_CAUSAL_BULK_RESPONSE
+          sha256sum --check <<'PINS'
+          0ef252757d4f12651e4111b2802f88a04084682d412e4b2212586d7a306b94ff  model/verify_half_space_controls.py
+          4ca3c2a3485b3700ed80dd2dcc269a3fa85cf5aea5cc3563eed64d83b77fef46  incident/model/verify_incident_controls.py
+          PINS
+          python -I -B model/verify_half_space_controls.py --output "$RUNNER_TEMP/bulk-normal.json"
+          python -I -B -O model/verify_half_space_controls.py --output "$RUNNER_TEMP/bulk-optimized.json"
+          cmp "$RUNNER_TEMP/bulk-normal.json" "$RUNNER_TEMP/bulk-optimized.json"
+          python -I -B incident/model/verify_incident_controls.py --output "$RUNNER_TEMP/incident-normal.json"
+          python -I -B -O incident/model/verify_incident_controls.py --output "$RUNNER_TEMP/incident-optimized.json"
+          cmp "$RUNNER_TEMP/incident-normal.json" "$RUNNER_TEMP/incident-optimized.json"

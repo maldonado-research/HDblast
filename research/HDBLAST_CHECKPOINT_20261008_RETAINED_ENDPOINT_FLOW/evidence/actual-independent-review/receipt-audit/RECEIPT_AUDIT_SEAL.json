@@ -1,0 +1,89 @@
+{
+  "accepted_auditor": {
+    "bytes": 24930,
+    "sha256": "5ecad7cef60c49e73b1e67e29c20a92a22cb1cb1e6434e850681b76a556be060"
+  },
+  "all_negative_control_artifact_pins_rechecked": true,
+  "artifacts": {
+    "ACTUAL_NORMAL_RECEIPT_AUDIT.json": {
+      "bytes": 24381,
+      "sha256": "6cbf458667434e3ad618371af2dad83123245cb6de272fe57755476de6249cf9"
+    },
+    "ACTUAL_PAIR_RECEIPT_AUDIT.json": {
+      "bytes": 39737,
+      "sha256": "ba825bcaeb312d9f0ad47ea921df89dd5fa4ff35dfa6dc4b83125c9c7d37000a"
+    },
+    "README.md": {
+      "bytes": 4559,
+      "sha256": "efcf455602f15635042bce3a98c8c90cbb817875f99e7ec9f0dc7fe428d94295"
+    },
+    "audit_actual_receipts.py": {
+      "bytes": 24930,
+      "sha256": "5ecad7cef60c49e73b1e67e29c20a92a22cb1cb1e6434e850681b76a556be060"
+    },
+    "negative-controls-final-normal/RESULT.json": {
+      "bytes": 5801,
+      "sha256": "ebbed181ec9cbb1a299ffb74b669d4f962a954b9b54fc1a4b4e9b54b4301842b"
+    },
+    "negative-controls-final-optimized/RESULT.json": {
+      "bytes": 5800,
+      "sha256": "de0bc35535700a7c038d071f69ae6c04fa5fe0a4d0351deea1ade8eed51581f1"
+    },
+    "negative_controls.py": {
+      "bytes": 5957,
+      "sha256": "d3f2eda48c15076a6adc809540780fb052314cd41c8e6c38340418c105dea7dc"
+    }
+  },
+  "audit_operations": {
+    "GO_issued": false,
+    "network_requests": 0,
+    "physical_source_callbacks": 0,
+    "producer_executions": 0,
+    "production_modules_imported": 0,
+    "retained_arrays_opened": 0,
+    "retained_values_decoded": 0
+  },
+  "authenticated_member_receipts_per_run": 76,
+  "decode_journal_attempts_per_run": 36,
+  "limits_of_review": [
+    "Original represented values cannot be independently checked without the prohibited duplicate retained-array decode.",
+    "Exported coefficient/error algebra is independently checked; physical coefficients and the coefficient-error premise are not reconstructed.",
+    "Reported complete input authentication relies on frozen worker/codec sequencing and successful pinned custody; archives are not reopened.",
+    "This audit does not independently evolve the target flow or verify all-node arithmetic; that is addressed separately.",
+    "Normal/optimized byte identity is a control diagnostic, not an independent mathematical proof.",
+    "GO public-readback evidence is checked offline against the pinned receipt; this audit performs no second public network readback."
+  ],
+  "negative_controls_normal": 8,
+  "negative_controls_optimized": 8,
+  "real_slots_from_frozen_selected_shapes_per_run": 688152,
+  "runs": {
+    "normal": {
+      "cpu_seconds_wait4": 204.021203,
+      "peak_rss_kib_wait4": 70188,
+      "wall_seconds": 204.34825958700094,
+      "worker_output": {
+        "bytes": 36279833,
+        "directory_count": 0,
+        "file_count": 12,
+        "tree_sha256": "87c26b3df78f9df795653d5505bcf7baf4f2ed908028e1c2baa70fa2813c5672"
+      }
+    },
+    "optimized": {
+      "cpu_seconds_wait4": 186.151813,
+      "peak_rss_kib_wait4": 70328,
+      "wall_seconds": 186.166841061,
+      "worker_output": {
+        "bytes": 36279832,
+        "directory_count": 0,
+        "file_count": 12,
+        "tree_sha256": "57682df9328432c5a1e82e08888a25a4938aadd08e205bdfb34ebf12c20f2040"
+      }
+    }
+  },
+  "scientific_files_identical_between_runs": 9,
+  "source_coefficients_checked_per_run": 3200,
+  "source_journal_attempts_per_run": 128,
+  "source_rows_checked_per_run": 128,
+  "status": "PASS_FINAL_SOURCE_FREE_ACTUAL_RECEIPT_AUDIT",
+  "target_budget_vectors_checked_per_run": 4
+}

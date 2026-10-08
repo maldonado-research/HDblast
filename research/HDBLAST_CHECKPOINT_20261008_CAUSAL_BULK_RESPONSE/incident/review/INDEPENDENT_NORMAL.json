@@ -1,0 +1,197 @@
+{
+  "status": "PASS_EXACT_INDEPENDENT_MANUFACTURED_CONTROLS",
+  "checks": [
+    {
+      "name": "uneliminated_matrix_solution_boundary",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "uneliminated_matrix_solution_brane",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "reflection_negative_conjugate_denominator",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "strict_denominator_real_imaginary_decomposition",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "g_sign_reflection_invariant",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "g_sign_brane_amplitude_reverses",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "direct_Noether_current_interference",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "full_scattering_flux_zero",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "unit_modulus_alone_does_not_validate_boundary",
+      "kind": "NEGATIVE_CONTROL",
+      "nonzero_witness": "-4 - 6*I"
+    },
+    {
+      "name": "wrong_phase_still_has_unit_modulus",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "D_zero_matrix_has_nonzero_determinant",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "D_zero_reflection",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "D_zero_brane_response",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "exact_g_zero_D_zero_is_underdetermined",
+      "kind": "EXACT_RANK",
+      "rank": 1
+    },
+    {
+      "name": "Robin_input_susceptibility_equivalence",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "outgoing_amplitude_superposition",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "full_bound_continuum_orthogonality",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "bulk_only_pairing_not_orthogonal",
+      "kind": "NEGATIVE_CONTROL",
+      "nonzero_witness": "608/5165 - 976*I/5165"
+    },
+    {
+      "name": "velocity_projection_also_zero",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "zero_initial_q_profile_satisfies_Robin_boundary",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "nonzero_bound_overlap_of_zero_initial_q",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "zero_q_and_velocity_do_not_imply_zero_bound_projection",
+      "kind": "NEGATIVE_CONTROL",
+      "nonzero_witness": "sqrt(66)/22"
+    },
+    {
+      "name": "persistent_q_component_from_preexisting_projection",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "packet_left_endpoint_derivative_0",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "packet_right_endpoint_derivative_0",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "packet_left_endpoint_derivative_1",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "packet_right_endpoint_derivative_1",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "packet_left_endpoint_derivative_2",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "packet_right_endpoint_derivative_2",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "packet_finite_smoothness_boundary",
+      "kind": "NEGATIVE_CONTROL",
+      "nonzero_witness": "6"
+    },
+    {
+      "name": "closed_packet_transform_time_derivative",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "nonzero_packet_transient_at_t_zero",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "packet_zero_time_frequency_moment",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "packet_closed_form_removable_zero_limit",
+      "kind": "EXACT_SYMBOLIC",
+      "residual": "0"
+    },
+    {
+      "name": "explicit_finite_order_packet_decay",
+      "kind": "EXACT_FINITE_BOUNDARY_EXPANSION",
+      "window_support_omega": [
+        "3",
+        "4"
+      ],
+      "window_regular_after_zero_extension": "C2",
+      "q_bound_for_abs_t_at_least_one": "2316*abs(t)^-4",
+      "qdot_bound_for_abs_t_at_least_one": "18186*abs(t)^-4",
+      "brane_energy_bound_for_abs_t_at_least_one": "174081564*abs(t)^-8",
+      "scope": "Manufactured finite-order packet; not a claim of the all-N C-infinity rate."
+    }
+  ],
+  "check_count": 35,
+  "script_sha256": "98b0c65dc785f19ded601791e3f363289fe83a90bcf1d6cff0e6d72a122db966",
+  "sympy_version": "1.14.0",
+  "producer_code_imported": false,
+  "protected_input_reads": 0,
+  "physical_source_callbacks": 0,
+  "physical_target_evaluations": 0,
+  "network_calls": 0,
+  "numerical_quadrature_or_interval_claim": false
+}

@@ -1,0 +1,193 @@
+{
+  "exact_controls": [
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "boundary_equation",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "brane_equation",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "boundary_trace",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "denominator_positive_sum_of_squares",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "reflection_phase_identity",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "unit_reflection",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "D_zero_reflection_finite",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "D_zero_brane_amplitude_finite",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "D_zero_trace",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "D_zero_derivative_boundary_condition",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "free_Robin_trace_phase",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "susceptibility_matches_incident_brane_motion",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "coherent_reflection_plus_radiation",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "decoupled_limit_away_from_D_zero_reflection",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "decoupled_limit_away_from_D_zero_brane",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "incoming_plus_outgoing_flux",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "stationary_work_into_brane",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "radiation_interference_cancellation",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "continuum_bound_orthogonality",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "closed_system_energy_ledger",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "packet_integration_by_parts_identity",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "positive_group_velocity_formula",
+      "residual": "0"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "complex_packet_Plancherel_energy_weight",
+      "residual": "0"
+    },
+    {
+      "Q": "1 - I",
+      "R": "-I",
+      "kind": "EXACT_RATIONAL_COMPLEX",
+      "name": "manufactured_scattering_values"
+    },
+    {
+      "kind": "EXACT_SYMBOLIC",
+      "name": "manufactured_bound_norm",
+      "residual": "0"
+    }
+  ],
+  "limitations": [
+    "Analytic packet-decay proof requires smooth compact support away from p=0 and zero bound projection.",
+    "Fixed-k energies are Fourier-fiber energies; finite global brane energy needs the stated smooth k packet.",
+    "No physical origin, thermalization, or finite-data model selection is established."
+  ],
+  "negative_controls": [
+    {
+      "name": "reject_threshold_packet",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "reject_decoupled_degenerate_formula",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "reject_unstable_scalar_action",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "wrong_boundary_coupling_sign",
+      "nonzero_residual": "-2 + 2*I",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "missing_Robin_incoming_phase",
+      "nonzero_residual": "1/4 + 5*I/4",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "omit_reflection_radiation_interference",
+      "spurious_unbalanced_flux": "6/13",
+      "status": "EXPECTED_REJECTION"
+    },
+    {
+      "name": "nonzero_initial_bound_projection",
+      "persistent_complex_fiber_energy": "99/1568",
+      "status": "EXPECTED_REJECTION_OF_UNCONDITIONAL_DECAY"
+    },
+    {
+      "boundary_term_at_t0": "-sqrt(2) + sqrt(5)/2",
+      "name": "nonvanishing_packet_endpoint_amplitude",
+      "status": "EXPECTED_REJECTION_OF_RAPID_DECAY_PROOF"
+    }
+  ],
+  "network_calls": 0,
+  "observational_likelihood_evaluations": 0,
+  "physical_source_callbacks": 0,
+  "physical_target_evaluations": 0,
+  "project_statuses": {
+    "external_novelty": "NOT_ASSESSED",
+    "full_continuous_certificate": "UNRESOLVED",
+    "higher_dimensional_cause": "NOT_ESTABLISHED",
+    "metric_calibration": "FAIL"
+  },
+  "retained_array_decodes": 0,
+  "retained_array_reads": 0,
+  "schema_version": 1,
+  "scope": "Algebra and hypothesis controls for the separate autonomous flat scalar half-space model; no sampled physical trajectories.",
+  "script_sha256": "4ca3c2a3485b3700ed80dd2dcc269a3fa85cf5aea5cc3563eed64d83b77fef46",
+  "status": "PASS_EXACT_MANUFACTURED_INCIDENT_CONTROLS",
+  "versions": {
+    "sympy": "1.14.0"
+  }
+}
