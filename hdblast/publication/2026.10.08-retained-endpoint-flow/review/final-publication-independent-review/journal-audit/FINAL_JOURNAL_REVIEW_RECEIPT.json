@@ -1,0 +1,126 @@
+{
+  "actual_partial_or_duplicate_stream_rounds": 0,
+  "actual_retries_or_reconciliations": 0,
+  "actual_unknown_or_failed_write_outcomes": 0,
+  "addition_commits": 2,
+  "addition_content_puts": 2,
+  "addition_initializations": 2,
+  "all_prior_partial_observations_preserved": true,
+  "audit_receipt": {
+    "bytes": 24527,
+    "path": "final-observation-001/AUDIT_RECEIPT.json",
+    "sha256": "fe51c288085ab4eec902d309f658c50e8d3571f1beab600f46d6c81b83868bec"
+  },
+  "bytes_per_round": 453646943,
+  "checker": {
+    "bytes": 21532,
+    "path": "audit_publication_journal.py",
+    "sha256": "b3ca398b1fa9ee090ef41bc311669309d5b40302afc9dee958979e94372268ba"
+  },
+  "control_evidence_manifest": {
+    "bytes": 48265,
+    "path": "CONTROL_EVIDENCE_MANIFEST.json",
+    "sha256": "964ebe520176e2643950958be95ea0719834ff60e7110875d09a3c7527a5c898"
+  },
+  "controls": [
+    {
+      "bytes": 3113,
+      "path": "controls-normal/CONTROL_RECEIPT.json",
+      "sha256": "0ad6ac985d1ee694a005bec86fcf0f2cdfb9e1a32785974224c4530f75eec3b9"
+    },
+    {
+      "bytes": 3112,
+      "path": "controls-optimized/CONTROL_RECEIPT.json",
+      "sha256": "dd9eeacfc43a4002d467b385b25486ad7d72eaf9f66e26d3e5c0d279297e6d13"
+    }
+  ],
+  "create_intents": 1,
+  "created_utc": "2026-10-08T17:55:55.943159+00:00",
+  "draft_rounds": 2,
+  "draft_streams": 62,
+  "files_per_round": 31,
+  "independent_attachment_streams": 0,
+  "independent_network_calls": 0,
+  "independent_publisher_or_scientific_source_executions": 0,
+  "independent_remote_mutations": 0,
+  "input_pins": {
+    "controller": {
+      "bytes": 54946,
+      "path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/publication-planning/new_edition_controller_v2.py",
+      "sha256": "4d6dfa5e9ca2add8654e5c1803f5b65fa25ecce87d71c3a7590fbb4d29f9f117"
+    },
+    "inventory": {
+      "bytes": 9671,
+      "path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/release-assets/sealed-candidate-001/SEALED_UPLOAD_INVENTORY.json",
+      "sha256": "2c6d0a3d4c4e227c3a8aa5f6e48dd3ff8494ac4e2f1b9045c603cf35617ced3c"
+    },
+    "metadata": {
+      "bytes": 35812,
+      "path": "/workspace/hdblast-research-work/continuation-trajectory-20261008/release-assets/sealed-candidate-001/SEALED_METADATA_MODERN.json",
+      "sha256": "43feec5ca6bd9ab8c5c6a2cd925f6f42ff13418bd90b334de7ab604367dc385c"
+    }
+  },
+  "journal_events": 197,
+  "metadata_puts": 1,
+  "new_record_id": "23244754",
+  "owner": 1386319,
+  "parent_id": "17088132",
+  "public_rounds": 1,
+  "public_streams": 31,
+  "publish_intents": 1,
+  "publisher_exit_zero": "Reported by root publisher; this audit independently verified final saved state and external journal/public-receipt pins.",
+  "record_dates": {
+    "draft": {
+      "created": "2026-10-08T17:39:20.820929+00:00",
+      "id": "23244754",
+      "owner": "1386319",
+      "parent_id": "17088132",
+      "publication_date": "2026-10-08",
+      "receipt_utc": "2026-10-08T17:49:15.541098+00:00",
+      "revision_id": 9,
+      "updated": "2026-10-08T17:40:51.839054+00:00"
+    },
+    "latest": {
+      "created": "2026-10-08T17:49:16.754647+00:00",
+      "id": "23244754",
+      "owner": "1386319",
+      "parent_id": "17088132",
+      "publication_date": "2026-10-08",
+      "revision_id": 3,
+      "updated": "2026-10-08T17:49:18.436726+00:00"
+    },
+    "public": {
+      "created": "2026-10-08T17:49:16.754647+00:00",
+      "id": "23244754",
+      "owner": "1386319",
+      "parent_id": "17088132",
+      "publication_date": "2026-10-08",
+      "receipt_utc": "2026-10-08T17:52:21.331322+00:00",
+      "revision_id": 3,
+      "updated": "2026-10-08T17:49:18.436726+00:00"
+    }
+  },
+  "review_notes": {
+    "bytes": 3984,
+    "path": "REVIEW_NOTES.md",
+    "sha256": "3df2605a41ee797f98616ebdaaf00abc3adef362d986a11823dd38c94d3b49d9"
+  },
+  "schema_version": 1,
+  "scope_limits": [
+    "This is local saved-evidence verification, not an independent fresh attachment fetch or remote attestation.",
+    "Stream events omit URL and HTTP headers; their endpoint/status semantics rely on the externally pinned controller and scoped listing sequence.",
+    "Journal is fsynced append-only by accepted source, but has no cryptographic hash chain or general forged/missing-history detection.",
+    "JSON captures are normalized/redacted reserializations, so their byte hashes do not generally equal raw HTTP response_sha256 journal fields.",
+    "Saved response filenames preserve per-write objects; repeated GET labels and verification receipts retain only their latest values, with earlier raw response hashes/times in journal.",
+    "No account-wide single-publisher exclusion is established; exact recorded writes are checked.",
+    "Complete editable metadata normalization and historical-record preservation are separate parent review obligations."
+  ],
+  "status": "PASS_INDEPENDENT_SAVED_PUBLICATION_JOURNAL_AUDIT",
+  "terminal_external_pins": {
+    "JOURNAL.jsonl": "20386fdd5734494bbb2dd92516af3099ab4c8eb8ade8d3a0da7d616e36cf6d1f",
+    "VERIFIED_PUBLIC.json": "71804ff951b4a0aa6643b939fc133afc3352f9545162a141443c1ab26d267e0b"
+  },
+  "total_bytes_in_93_recorded_verified_streams": 1360940829,
+  "write_intents": 9,
+  "write_responses": 9
+}

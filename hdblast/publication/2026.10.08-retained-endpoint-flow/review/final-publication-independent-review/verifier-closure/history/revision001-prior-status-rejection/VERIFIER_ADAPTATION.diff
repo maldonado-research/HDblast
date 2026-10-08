@@ -1,0 +1,270 @@
+--- previous/verify_publication.py
++++ additive31/verify_publication.py
+@@ -16,13 +16,20 @@
+ sys.dont_write_bytecode = True
+ MAX_INPUT = 20 * 1024 * 1024
+ PARENT = '17088132'
+-PRIOR = '23225288'
+-PRIOR_STREAM_PIN = '2664ec6a867d806e6146847fcf677d2e5c20061a400262acb8563d3ca552529c'
+-SCIENTIFIC_REPLAY_STATUS = 'PASS_COMPLETE_STORED_STATE_COMPARISON_REPLAY'
++PRIOR = '23228395'
++PRIOR_STREAM_PIN = '8577ff0f006a2ef5ad75d4132066c2b0fa784a569d221c47a723fd1e21081e99'
++SCIENTIFIC_REPLAY_STATUS = 'PASS_COMPLETE_LATER_STATE_AND_BULK_RESPONSE_REPLAY'
++EXPECTED_VERSION = '2026.10.08-later-state-and-bulk-response'
++EXPECTED_OWNER = '1386319'
++NOTES_HISTORY_MARKER = '\n<h3>Preserved Notes from published record 23228395 (2026.10.07-stored-state-comparison)</h3>\n'
+ ROLES = {'inventory', 'metadata', 'new_public_record', 'new_public_files',
+-         'latest_public_record', 'verified_public', 'controller_journal', 'prior_full_stream'}
+-PRESERVED = {PRIOR: PARENT, '23114217': PARENT, '22347452': PARENT, '23111008': '22922927'}
++         'latest_public_record', 'verified_public', 'controller_journal', 'prior_full_stream',
++         'new_draft_record', 'new_draft_files', 'verified_draft'}
++PRESERVED = {PRIOR: PARENT, '23225288': PARENT, '23114217': PARENT, '22347452': PARENT, '23111008': '22922927'}
+ BASELINE_PINS = {
++    '23228395': {
++        'baseline': '1f446fd3be07ea67ae2847dd0b09de6d844f62ca23ccf7523881cb65f2375c1c',
++        'baseline_files': 'd00686a403cee83988d4d02e7e6665135c3e7fe81d38805973ace200dcc66ece'},
+     '23225288': {
+         'baseline': '261d81302396c1683f5c0e1185b071189cf83bbb5fde5fb4a098ca64e8fe47ca',
+         'baseline_files': 'b9355b33cb3ba6e88dd15db52c53b85f51d68a122faccbacc5153880fc8b8276'},
+@@ -301,26 +308,142 @@
+                     'Preserved current embedded version identity differs')
+ 
+ 
++def new_identity(record, expected_id, *, draft=False):
++    require(type(record) is dict and record.get('id') == expected_id
++            and record.get('parent', {}).get('id') == PARENT, 'Strict modern new-record identity differs')
++    require(record.get('is_draft') is draft and record.get('is_published') is (not draft),
++            'Strict modern new-record state differs')
++    parent = record.get('parent', {})
++    owner = parent.get('access', {}).get('owned_by', {}).get('user')
++    require(type(owner) in (str, int) and str(owner) == EXPECTED_OWNER, 'Strict new-record owner differs')
++    require(parent.get('pids', {}).get('doi', {}).get('identifier') == '10.5281/zenodo.' + PARENT,
++            'Strict new-record concept DOI differs')
++    pids = record.get('pids')
++    require(type(pids) is dict, 'Strict new-record PIDs object required')
++    if not draft or 'doi' in pids:
++        require(type(pids.get('doi')) is dict and
++                pids['doi'].get('identifier') == '10.5281/zenodo.' + expected_id,
++                'Strict new-record version DOI differs')
++    require(record.get('versions', {}).get('is_latest_draft' if draft else 'is_latest') is True,
++            'Strict new-record latest state differs')
++
++
++def preserved_edition_contract(metadata, prior):
++    require(type(metadata) is dict and set(metadata) == {'metadata', 'custom_fields', 'access'},
++            'Full frozen edition contract required')
++    old = prior['metadata']; new = metadata['metadata']
++    require(type(new) is dict and set(new) == set(old) and new.get('version') == EXPECTED_VERSION,
++            'Exact new semantic version or inherited metadata fields differ')
++    for key in set(old) - {'title', 'description', 'additional_descriptions', 'publication_date', 'version', 'related_identifiers'}:
++        require(same(new[key], old[key], ('metadata', key)), 'Protected inherited metadata differs: ' + key)
++    for key in ('custom_fields', 'access'):
++        expected = prior[key]
++        if key == 'access': expected = {k: v for k, v in expected.items() if k != 'status'}
++        require(same(metadata[key], expected, (key,)), 'Protected inherited ' + key + ' differs')
++    before = old['additional_descriptions']; after = new['additional_descriptions']
++    require(type(after) is list and len(after) == len(before) > 0,
++            'Preserved Notes list shape differs')
++    require(same(after[1:], before[1:], ('metadata', 'additional_descriptions')),
++            'Older Notes descriptions differ')
++    require(type(after[0].get('description')) is str and
++            after[0]['description'].endswith(NOTES_HISTORY_MARKER + before[0]['description']),
++            'Complete prior Notes exact history suffix differs')
++    require(set(after[0]) == set(before[0]), 'Current Notes field set differs')
++    for key in set(before[0]) - {'description'}:
++        require(same(after[0][key], before[0][key], ('metadata', 'additional_descriptions', 0, key)),
++                'Current Notes type/language differs')
++    previous = old.get('related_identifiers', []); related = new.get('related_identifiers', [])
++    require(type(related) is list and len(related) in (len(previous), len(previous) + 1) and
++            same(related[:len(previous)], previous, ('metadata', 'related_identifiers')),
++            'Preserved DOI relations differ')
++    if len(related) > len(previous):
++        allowed = {'identifier': '10.5281/zenodo.' + PRIOR, 'relation_type': {'id': 'references'},
++                   'resource_type': {'id': 'software'}, 'scheme': 'doi'}
++        require(same(related[-1], allowed, ('metadata', 'related_identifiers', len(previous))),
++                'Unreviewed additional DOI relation')
++
++
++def draft_evidence(record, listing, receipt, pins, journal, expected_id, inventory_sha, metadata_sha, metadata):
++    new_identity(record, expected_id, draft=True)
++    metadata_equal(record, metadata)
++    prefix = 'https://zenodo.org/api/records/' + expected_id + '/draft'
++    require(record.get('links', {}).get('self') == prefix and
++            record.get('links', {}).get('files') == prefix + '/files', 'Draft URL binding differs')
++    files = file_map(listing); assert_pins(files, pins); assert_pins(file_map(record), pins)
++    identities = {name: (immutable_file_id(row), immutable_version_id(row)) for name, row in files.items()}
++    for name, row in file_map(record).items():
++        require(immutable_file_id(row) == identities[name][0], 'Draft embedded file identity differs')
++        if 'version_id' in row:
++            require(immutable_version_id(row) == identities[name][1], 'Draft embedded version identity differs')
++    require(receipt.get('status') == 'PASS_COMPLETE_31_FILE_EDITION_READBACK' and
++            receipt.get('published') is False and receipt.get('draft_id') == expected_id and
++            receipt.get('parent_id') == PARENT and receipt.get('inventory_sha256') == inventory_sha and
++            receipt.get('metadata_sha256') == metadata_sha and type(receipt.get('file_count')) is int and
++            receipt['file_count'] == 31 and type(receipt.get('total_bytes')) is int and
++            receipt['total_bytes'] == sum(row['bytes'] for row in pins.values()), 'Draft complete verification receipt differs')
++    etag = receipt.get('etag'); revision = record.get('revision_id')
++    require(type(etag) is str and re.fullmatch(r'"(0|[1-9][0-9]*)"', etag) is not None and
++            type(revision) is int and revision >= 0 and etag == '"' + str(revision) + '"',
++            'Canonical draft ETag/integer revision differs')
++    bases = {}
++    require(type(receipt.get('content')) is list and len(receipt['content']) == 31,
++            'Complete31 fresh draft basis rows required')
++    for row in receipt['content']:
++        name = row.get('filename')
++        require(name in pins and name not in bases and row.get('sha256') == pins[name]['sha256'] and
++                row.get('basis') == 'FRESH_COMPLETE_CONTENT_STREAM' and
++                (row.get('remote_file_id'), row.get('remote_version_id')) == identities[name],
++                'Draft fresh stream basis or identities differ')
++        require(files[name].get('links', {}).get('content') == prefix + '/files/' + quote(name, safe='') + '/content',
++                'Draft content URL differs')
++        bases[name] = row
++    publish = [i for i, event in enumerate(journal) if event.get('kind') == 'WRITE_INTENT' and
++               event.get('operation') == 'publish']
++    require(len(publish) == 1 and journal[publish[0]].get('url') == prefix + '/actions/publish',
++            'Exactly one bound publish intent required')
++    completed = []; current = None
++    for index, event in enumerate(journal[:publish[0]]):
++        if event.get('kind') == 'GET' and event.get('url') == prefix + '/files':
++            if current is not None and set(current) == set(pins): completed.append(current)
++            require(event.get('status') == 200 and event.get('authenticated_request') is True,
++                    'Draft file-list GET authentication/status differs')
++            current = {}
++        elif event.get('kind') == 'FULL_CONTENT_STREAM_VERIFIED' and current is not None:
++            name = event.get('filename')
++            require(name in pins and name not in current, 'Draft stream membership duplicate/unknown')
++            require(canonical(event.get('observed')) == canonical({k: pins[name][k] for k in ('bytes', 'md5', 'sha256')}),
++                    'Fresh draft content stream differs')
++            current[name] = event
++    if current is not None and set(current) == set(pins): completed.append(current)
++    require(len(completed) >= 2, 'Preparation and immediately-before-publish complete31 draft stream rounds required')
++    return len(completed)
++
++
+ def verify_values(inventory, metadata, public_record, public_files, latest, verified,
+-                  prior_stream, journal, preserved, expected_id, inventory_sha, metadata_sha):
++                  prior_stream, journal, preserved, expected_id, inventory_sha, metadata_sha,
++                  draft_record, draft_files, verified_draft):
+     require(re.fullmatch('[1-9][0-9]*', expected_id or '') and expected_id not in PRESERVED,
+             'Explicit distinct expected new record id required')
+     require(inventory.get('sealed_upload_manifest') is True
+             and inventory.get('concept_doi') == '10.5281/zenodo.' + PARENT, 'Frozen edition scope differs')
+     require(inventory.get('scientific_replay_status') == SCIENTIFIC_REPLAY_STATUS,
+-            'Completed stored-state scientific replay contract required')
+-    old = pin_rows(inventory.get('inherited_files'), 27)
++            'Completed later-state and bulk-response scientific replay contract required')
++    old = pin_rows(inventory.get('inherited_files'), 29)
+     new = pin_rows(inventory.get('new_files'), 2)
+     require(not (set(old) & set(new)), 'Inherited/new filename overlap')
+     pins = {**old, **new}
+-    require(sum(p['bytes'] for p in old.values()) == 448387915
++    require(sum(p['bytes'] for p in old.values()) == 451598148
+             and type(inventory.get('expected_total_files_final')) is int
+-            and inventory['expected_total_files_final'] == 29
++            and inventory['expected_total_files_final'] == 31
+             and type(inventory.get('total_bytes_final')) is int
+             and inventory['total_bytes_final'] == sum(p['bytes'] for p in pins.values()),
+             'Frozen count/byte totals differ')
+-    identity(public_record, expected_id, PARENT)
+-    identity(latest, expected_id, PARENT)
++    new_identity(public_record, expected_id)
++    new_identity(latest, expected_id)
++    require(set(preserved) == set(PRESERVED), 'All five preserved record groups required')
++    preserved_edition_contract(metadata, preserved[PRIOR]['baseline'])
++    complete_draft_rounds = draft_evidence(draft_record, draft_files, verified_draft, pins, journal,
++        expected_id, inventory_sha, metadata_sha, metadata)
+     for record in (public_record, latest):
+         metadata_equal(record, metadata)
+         assert_pins(file_map(record), pins)
+@@ -339,18 +462,18 @@
+     prefix = 'https://zenodo.org/api/records/' + expected_id
+     require(public_record.get('links', {}).get('self') == prefix
+             and public_record.get('links', {}).get('files') == prefix + '/files', 'Direct public URL binding differs')
+-    require(verified.get('status') == 'PASS_COMPLETE_29_FILE_EDITION_READBACK'
++    require(verified.get('status') == 'PASS_COMPLETE_31_FILE_EDITION_READBACK'
+             and verified.get('published') is True and str(verified.get('draft_id')) == expected_id
+             and str(verified.get('parent_id')) == PARENT
+             and verified.get('inventory_sha256') == inventory_sha
+             and verified.get('metadata_sha256') == metadata_sha
+-            and type(verified.get('file_count')) is int and verified['file_count'] == 29
++            and type(verified.get('file_count')) is int and verified['file_count'] == 31
+             and type(verified.get('total_bytes')) is int and verified['total_bytes'] == inventory['total_bytes_final'],
+             'Published verification receipt differs')
+     rows = prior_stream.get('rows')
+     require(prior_stream.get('status') == 'PRIOR_FULL_STREAM_ATTESTATION_WITH_FRESH_GET_IDENTITY',
+-            'Pinned dated prior27 attestation required')
+-    require(type(rows) is list and len(rows) == 27, 'Complete prior27 content receipt required')
++            'Pinned dated prior29 attestation required')
++    require(type(rows) is list and len(rows) == 29, 'Complete prior29 content receipt required')
+     prior = {}
+     for row in rows:
+         name = row.get('filename')
+@@ -363,7 +486,7 @@
+                 'Prior dated content attestation differs')
+         prior[name] = row
+     content = verified.get('content')
+-    require(type(content) is list and len(content) == 29, 'Complete29 SHA256 basis rows required')
++    require(type(content) is list and len(content) == 31, 'Complete31 SHA256 basis rows required')
+     bases = {}
+     markers = [i for i, item in enumerate(journal)
+                if item.get('kind') == 'GET' and item.get('url') == prefix + '/files'
+@@ -383,7 +506,7 @@
+         require(name in pins and name not in bases and row.get('sha256') == pins[name]['sha256'],
+                 'Published SHA256 basis identity differs')
+         basis = row.get('basis')
+-        require(basis == 'FRESH_COMPLETE_CONTENT_STREAM', 'Every one of all29 assets needs a fresh complete stream')
++        require(basis == 'FRESH_COMPLETE_CONTENT_STREAM', 'Every one of all31 assets needs a fresh complete stream')
+         require(name in streams, 'Fresh public stream evidence absent: ' + name)
+         require(files[name].get('links', {}).get('content') == prefix + '/files/' + quote(name, safe='') + '/content',
+                 'Stream content URL binding differs')
+@@ -392,7 +515,7 @@
+         bases[name] = basis
+     require(set(streams) == set(pins) == set(bases),
+             'Terminal streams and published basis disagree')
+-    require(set(preserved) == set(PRESERVED), 'All four preserved records required')
++    require(set(preserved) == set(PRESERVED), 'All five preserved records required')
+     for record_id, group in preserved.items():
+         identity(group['record'], record_id, PRESERVED[record_id])
+         identity(group['baseline'], record_id, PRESERVED[record_id])
+@@ -402,22 +525,23 @@
+     for name, row in prior.items():
+         require(immutable_file_id(dated_prior_files[name]) == row['remote_file_id']
+                 and immutable_version_id(dated_prior_files[name]) == row['remote_version_id'],
+-                'Dated prior27 receipt and preserved dated identities disagree')
+-    return {'status': 'PASS_OFFLINE_29_FILE_PUBLICATION_WITNESSES', 'record_id': expected_id,
++                'Dated prior29 receipt and preserved dated identities disagree')
++    return {'status': 'PASS_OFFLINE_31_FILE_PUBLICATION_WITNESSES', 'record_id': expected_id,
+             'version_doi': '10.5281/zenodo.' + expected_id, 'concept_id': PARENT,
+-            'file_count': 29, 'total_bytes': inventory['total_bytes_final'],
+-            'fresh_complete_public_streams': 29, 'prior_same_immutable_stream_reuses': 0,
+-            'all29_content_policy': 'MUST_FRESH_COMPLETE_CONTENT_STREAM',
++            'file_count': 31, 'total_bytes': inventory['total_bytes_final'],
++            'fresh_complete_public_streams': 31, 'fresh_complete_draft_stream_rounds': complete_draft_rounds,
++            'fresh_complete_draft_streams_per_round': 31, 'publish_intents': 1, 'prior_same_immutable_stream_reuses': 0,
++            'all31_content_policy': 'MUST_FRESH_COMPLETE_CONTENT_STREAM',
+             'preserved_records': sorted(PRESERVED),
+             'full_metadata_custom_fields_access': 'MATCH_SEPARATELY_PINNED_EDITION_CONTRACT',
+             'historical_original_literal_Notes_guard': 'FAIL_PRESERVED',
+             'metadata_normalization': 'Whitelisted RDM vocabulary decorations, decoded HTML structure/attributes/character references, and document-edge ASCII whitespace; exact JSON types, all interior whitespace, declarations and processing instructions retained; malformed closing tags rejected',
+             'trust_boundary': 'Externally supplied witness pins authenticate saved evidence; no live remote authentication occurs in this verifier',
+             'network_calls': 0, 'numeric_imports': 0, 'source_callbacks': 0, 'array_decodes': 0,
+-            'original_binary80_state_error': 'ENCLOSED_RETAINED_NODES',
+-            'state_error_scope': '49,152 saved capsule-node occurrences; conditional fixed-weight transport under identical subsequent forcing/contacts',
++            'later_saved_endpoint_error': 'ENCLOSED_RETAINED_NODES',
++            'state_error_scope': '49,152 saved capsule-node occurrences,98,304 endpoint comparisons and24 finite weighted cases; exact flow begins at the same represented incoming state; historical continuous path and full continuum pressure/contact/time/UV certificate remain unresolved',
+             'scientific_status_basis': 'Externally pinned edition contract; this publication verifier does not reprove the numerical enclosure',
+-            'full_twelve_case_certificate': 'UNRESOLVED',
++            'full_continuous_pressure_contact_certificate': 'UNRESOLVED',
+             'metric_calibration': 'FAIL', 'higher_dimensional_Big_Bang_origin': 'NOT_ESTABLISHED',
+             'external_novelty': 'NOT_ASSESSED'}
+ 
+@@ -467,7 +591,8 @@
+     require(all(type(item) is dict for item in journal), 'Controller journal object rows required')
+     result = verify_values(data['inventory'], data['metadata'], data['new_public_record'], data['new_public_files'],
+         data['latest_public_record'], data['verified_public'], data['prior_full_stream'], journal, preserved,
+-        expected_id, inventory_sha, metadata_sha)
++        expected_id, inventory_sha, metadata_sha, data['new_draft_record'], data['new_draft_files'],
++        data['verified_draft'])
+     result.update(witness_manifest_sha256=manifest_sha, inventory_sha256=inventory_sha,
+                   metadata_sha256=metadata_sha, verifier_sha256=sha(Path(__file__).read_bytes()))
+     return result

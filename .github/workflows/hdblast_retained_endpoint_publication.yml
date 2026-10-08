@@ -1,0 +1,291 @@
+name: Offline retained endpoint 31-file publication witnesses
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'hdblast/publication/2026.10.08-retained-endpoint-flow/**'
+      - '.github/workflows/hdblast_retained_endpoint_publication.yml'
+  pull_request:
+    paths:
+      - 'hdblast/publication/2026.10.08-retained-endpoint-flow/**'
+      - '.github/workflows/hdblast_retained_endpoint_publication.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  offline-publication-proof:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 7
+    env:
+      # Bound to the independently verified complete genuine publication witnesses.
+      PROOF_DIRECTORY: 'hdblast/publication/2026.10.08-retained-endpoint-flow'
+      WITNESS_MANIFEST_SHA256: '534a07bcd2d7e6c5ce1d21642724cccbb51fcdd93f47ff55ba5f526217bae398'
+      EXPECTED_RECORD_ID: '23244754'
+      VERIFIER_SHA256: 'a6d7e0db5f8a68cb893c37e24fde2aa2e37d12dad96ec13ad3c9983570b9e9bf'
+      CONTROLS_SHA256: 'e43bc23dd31edcf5769ace78db1b82e6a51158957b132106243991af2ffaede5'
+      SEED_MANIFEST_SHA256: '2be3648b113545837c0c6075b998b2defd0bca32ecef353367aa6073ff6f0042'
+      INVENTORY_SHA256: '2c6d0a3d4c4e227c3a8aa5f6e48dd3ff8494ac4e2f1b9045c603cf35617ced3c'
+      METADATA_SHA256: '43feec5ca6bd9ab8c5c6a2cd925f6f42ff13418bd90b334de7ab604367dc385c'
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+    steps:
+      - name: Prepare the additive receipt directory
+        id: prepare_evidence
+        shell: bash
+        run: mkdir -p "$RUNNER_TEMP/retained-publication-offline"
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: ${{ env.PROOF_DIRECTORY }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+          architecture: 'x64'
+          check-latest: false
+      - name: Authenticate all executable, seed and witness bytes before imports
+        id: authenticate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -S -B - <<'PY_AUTH' > "$RUNNER_TEMP/retained-publication-offline/authentication.log" 2>&1
+          import hashlib, json, os, pathlib, re, stat, sys
+          LIMIT = 20 * 1024 * 1024
+          def require(condition, reason):
+              if not condition:
+                  raise ValueError(reason)
+          def digest(value):
+              require(type(value) is str and re.fullmatch('[0-9a-f]{64}', value) is not None,
+                      'Filled external SHA256 required')
+              return value
+          def relative(name):
+              require(type(name) is str and name and '\\' not in name and '\0' not in name,
+                      'Safe relative path required')
+              path = pathlib.PurePosixPath(name)
+              require(not path.is_absolute() and path.as_posix() == name and
+                      all(part not in ('', '.', '..') for part in name.split('/')) and len(path.parts) <= 16,
+                      'Unsafe witness or seed path')
+              return path
+          def real_directory(path):
+              require(path.is_dir() and path.resolve() == path and
+                      all(not parent.is_symlink() for parent in (path, *path.parents)),
+                      'Real directory without symlink ancestors required')
+              return path
+          def identity(value):
+              return (value.st_dev, value.st_ino, value.st_size, value.st_mtime_ns,
+                      value.st_ctime_ns, value.st_nlink)
+          def read_file(directory, name, expected_sha, expected_bytes=None):
+              path = directory / relative(name)
+              require(all(not parent.is_symlink() for parent in (path, *path.parents)), 'Real pinned input required')
+              fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK | os.O_CLOEXEC)
+              try:
+                  before = os.fstat(fd)
+                  require(stat.S_ISREG(before.st_mode) and before.st_nlink == 1 and before.st_size <= LIMIT,
+                          'Bounded regular unaliased input required')
+                  raw = bytearray()
+                  while True:
+                      chunk = os.read(fd, 65536)
+                      if not chunk:
+                          break
+                      raw.extend(chunk); require(len(raw) <= LIMIT, 'Growing input exceeds bound')
+                  after = os.fstat(fd); named = path.stat(follow_symlinks=False)
+                  require(identity(before) == identity(after) == identity(named) and len(raw) == before.st_size,
+                          'Pinned input changed while reading')
+              finally:
+                  os.close(fd)
+              require(hashlib.sha256(raw).hexdigest() == digest(expected_sha), 'Input SHA256 differs: ' + name)
+              if expected_bytes is not None:
+                  require(type(expected_bytes) is int and 0 <= expected_bytes <= LIMIT and len(raw) == expected_bytes,
+                          'Input size pin differs: ' + name)
+              return bytes(raw)
+          def load(raw):
+              def unique(items):
+                  value = {}
+                  for key, item in items:
+                      require(key not in value, 'Duplicate JSON key')
+                      value[key] = item
+                  return value
+              def invalid(value):
+                  raise ValueError('Nonfinite JSON input')
+              value = json.loads(raw, object_pairs_hook=unique, parse_constant=invalid)
+              json.dumps(value, allow_nan=False)
+              return value
+          def complete_tree(directory, rows, control_name):
+              require(type(rows) is dict and rows and len(rows) <= 256, 'Bounded manifest file map required')
+              names = set(rows) | {control_name}; actual = set(); actual_dirs = set(); count = 0
+              expected_dirs = {parent.as_posix() for name in names for parent in relative(name).parents
+                               if parent.as_posix() != '.'}
+              def walk(current, prefix=''):
+                  nonlocal count
+                  with os.scandir(current) as entries:
+                      for item in entries:
+                          count += 1; require(count <= 512, 'Manifest tree entry limit')
+                          name = prefix + item.name; relative(name)
+                          value = item.stat(follow_symlinks=False)
+                          if stat.S_ISDIR(value.st_mode):
+                              actual_dirs.add(name); walk(pathlib.Path(item.path), name + '/')
+                          else:
+                              require(stat.S_ISREG(value.st_mode) and value.st_nlink == 1,
+                                      'Symlink, aliased or special manifest member forbidden')
+                              actual.add(name)
+              walk(directory)
+              require(actual == names and actual_dirs == expected_dirs, 'Complete manifest tree membership differs')
+              for name, pin in rows.items():
+                  require(type(pin) is dict and set(pin) == {'bytes', 'sha256'}, 'Exact byte-pin schema required')
+                  read_file(directory, name, pin['sha256'], pin['bytes'])
+          require(sys.version_info[:3] == (3, 12, 14) and sys.platform == 'linux',
+                  'Pinned standard-library Linux Python 3.12.14 required')
+          record_id = os.environ['EXPECTED_RECORD_ID']
+          require(re.fullmatch('[1-9][0-9]*', record_id) is not None and
+                  record_id not in ('23228395', '23225288', '23114217', '22347452', '23111008', '90000001'),
+                  'Actual independently verified new publication identity required')
+          expected = {'verify_publication.py': os.environ['VERIFIER_SHA256'],
+                      'test_manufactured_witnesses.py': os.environ['CONTROLS_SHA256'],
+                      'manufactured-seeds/SEED_MANIFEST.json': os.environ['SEED_MANIFEST_SHA256'],
+                      'proof/WITNESS_MANIFEST.json': os.environ['WITNESS_MANIFEST_SHA256']}
+          for pin in (*expected.values(), os.environ['INVENTORY_SHA256'], os.environ['METADATA_SHA256']):
+              digest(pin)
+          root = real_directory(pathlib.Path.cwd() / relative(os.environ['PROOF_DIRECTORY']))
+          captured = {name: read_file(root, name, pin) for name, pin in expected.items()}
+          seed_root = real_directory(root / 'manufactured-seeds')
+          seeds = load(captured['manufactured-seeds/SEED_MANIFEST.json'])
+          complete_tree(seed_root, seeds['files'], 'SEED_MANIFEST.json')
+          witness_root = real_directory(root / 'proof')
+          witnesses = load(captured['proof/WITNESS_MANIFEST.json'])
+          complete_tree(witness_root, witnesses['files'], 'WITNESS_MANIFEST.json')
+          for role, envname in [('inventory', 'INVENTORY_SHA256'), ('metadata', 'METADATA_SHA256')]:
+              name = witnesses['witnesses'][role]
+              require(name in witnesses['files'], 'Edition role outside authenticated witness map')
+              read_file(witness_root, name, os.environ[envname], witnesses['files'][name]['bytes'])
+          # Recheck the externally pinned controls after authenticating both closures.
+          for name, pin in expected.items():
+              require(read_file(root, name, pin) == captured[name], 'Bootstrap source or manifest changed')
+          receipt = {'status': 'PASS_OFFLINE_31_PUBLICATION_CI_INPUT_AUTHENTICATION',
+                     'python': sys.version, 'expected_record_id': record_id,
+                     'external_source_and_manifest_sha256': expected,
+                     'inventory_sha256': os.environ['INVENTORY_SHA256'],
+                     'metadata_sha256': os.environ['METADATA_SHA256'],
+                     'seed_files_authenticated': len(seeds['files']),
+                     'witness_files_authenticated': len(witnesses['files']),
+                     'network_calls': 0, 'controller_imports': 0, 'numeric_imports': 0,
+                     'source_callbacks': 0, 'array_decodes': 0}
+          target = pathlib.Path(os.environ['RUNNER_TEMP']) / 'retained-publication-offline' / 'AUTHENTICATION.json'
+          target.write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+          print(receipt['status'])
+          PY_AUTH
+      - name: Verify actual witnesses and manufactured controls in network namespaces
+        id: verify_publication
+        shell: bash
+        run: |
+          set -euo pipefail
+          python_path="$(command -v python)"
+          proof="$GITHUB_WORKSPACE/$PROOF_DIRECTORY"
+          witness="$proof/proof"
+          evidence="$RUNNER_TEMP/retained-publication-offline"
+          for mode in normal optimized; do
+            flags=(-I -S -B)
+            if [[ "$mode" == optimized ]]; then flags+=(-O); fi
+            sudo unshare --net -- "$python_path" "${flags[@]}" "$proof/verify_publication.py" \
+              --root "$witness" \
+              --witness-manifest "$witness/WITNESS_MANIFEST.json" \
+              --witness-manifest-sha256 "$WITNESS_MANIFEST_SHA256" \
+              --expected-record-id "$EXPECTED_RECORD_ID" \
+              --inventory-sha256 "$INVENTORY_SHA256" \
+              --metadata-sha256 "$METADATA_SHA256" \
+              --output "$evidence/PUBLICATION_${mode}.json" \
+              > "$evidence/verification_${mode}.log" 2>&1
+            sudo unshare --net -- "$python_path" "${flags[@]}" "$proof/test_manufactured_witnesses.py" \
+              --verifier-sha256 "$VERIFIER_SHA256" \
+              --seed-manifest-sha256 "$SEED_MANIFEST_SHA256" \
+              --output "$evidence/CONTROLS_${mode}.json" \
+              > "$evidence/controls_${mode}.log" 2>&1
+          done
+      - name: Require exact publication receipts and matching manufactured science
+        id: compare_receipts
+        shell: bash
+        run: |
+          set -euo pipefail
+          cmp "$RUNNER_TEMP/retained-publication-offline/PUBLICATION_normal.json" "$RUNNER_TEMP/retained-publication-offline/PUBLICATION_optimized.json"
+          python -I -S -B - <<'PY_COMPARE' > "$RUNNER_TEMP/retained-publication-offline/comparison.log" 2>&1
+          import hashlib, json, os, pathlib
+          root = pathlib.Path(os.environ['RUNNER_TEMP']) / 'retained-publication-offline'
+          receipts = {}
+          for mode in ('normal', 'optimized'):
+              value = json.loads((root / ('CONTROLS_' + mode + '.json')).read_bytes())
+              if value.get('status') != 'PASS_MANUFACTURED_OFFLINE_31_FILE_PUBLICATION_CONTROLS' or \
+                      type(value.get('positive_checks')) is not int or value['positive_checks'] != 7 or \
+                      type(value.get('rejected_mutants')) is not int or value['rejected_mutants'] != 175 or \
+                      value.get('optimized_python') is not (mode == 'optimized') or \
+                      value.get('actual_new_publication_readback_claim') is not False:
+                  raise SystemExit('Manufactured control status/count/mode/scope differs')
+              for key in ('network_calls', 'numeric_imports', 'source_callbacks', 'array_decodes', 'target_evaluations', 'remote_writes'):
+                  if type(value.get(key)) is not int or value[key] != 0:
+                      raise SystemExit('Manufactured controls exceeded declared scope')
+              value = dict(value); value.pop('optimized_python')
+              receipts[mode] = json.dumps(value, sort_keys=True, separators=(',', ':'), allow_nan=False).encode()
+          if receipts['normal'] != receipts['optimized']:
+              raise SystemExit('Control receipts differ beyond optimized_python')
+          result = {'status': 'PASS_NORMAL_OPTIMIZED_31_PUBLICATION_AND_CONTROL_IDENTITY',
+                    'actual_publication_receipts_byte_identical': True,
+                    'controls_ignored_fields': ['optimized_python'],
+                    'canonical_controls_sha256': hashlib.sha256(receipts['normal']).hexdigest(),
+                    'control_positives_each': 7, 'control_rejections_each': 175}
+          (root / 'COMPARISON.json').write_text(json.dumps(result, indent=2, sort_keys=True) + '\n')
+          print(result['status'])
+          PY_COMPARE
+      - name: Retain short private failure and receipt evidence in the job summary
+        if: ${{ always() && github.event.repository.private }}
+        env:
+          CHECK_STEP_STATES: ${{ toJSON(steps) }}
+          CHECK_JOB_STATUS: ${{ job.status }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -S -B - <<'PY_REPORT'
+          import hashlib, json, os, pathlib
+          root = pathlib.Path(os.environ['RUNNER_TEMP']) / 'retained-publication-offline'
+          limit = 128 * 1024; parts = []
+          def add(label, text):
+              block = '\n### ' + label + '\n\n```text\n' + text + '\n```\n'
+              if sum(len(part.encode()) for part in parts) + len(block.encode()) <= limit:
+                  parts.append(block)
+              else:
+                  parts.append('\nOversized section omitted: ' + label + '; its original-file hash remains below.\n')
+          add('Native step states', json.dumps({'job_status_before_reporting': os.environ['CHECK_JOB_STATUS'],
+              'steps': json.loads(os.environ['CHECK_STEP_STATES']),
+              'note': 'Reporting preserves earlier failures. Private artifact uploads are skipped.'}, indent=2, sort_keys=True))
+          files = sorted(path for path in root.rglob('*') if path.is_file() and not path.is_symlink()) if root.is_dir() else []
+          manifest = []
+          for path in files:
+              digest = hashlib.sha256()
+              with path.open('rb') as stream:
+                  for chunk in iter(lambda: stream.read(65536), b''):
+                      digest.update(chunk)
+              manifest.append({'path': path.relative_to(root).as_posix(), 'bytes': path.stat().st_size,
+                               'sha256': digest.hexdigest()})
+          add('All generated-file identities', json.dumps(manifest, indent=2, sort_keys=True))
+          for path in (path for path in files if path.suffix == '.log'):
+              with path.open('rb') as stream:
+                  stream.seek(max(0, path.stat().st_size - 4096)); tail = stream.read(4096)
+              add('Diagnostic tail ' + path.name, tail.decode(errors='replace'))
+          for path in (path for path in files if path.suffix == '.json'):
+              if path.stat().st_size <= 65536:
+                  add('Receipt ' + path.name, path.read_text(errors='replace'))
+          body = '# Private 31-file publication CI evidence\n' + ''.join(parts)
+          if len(body.encode()) >= 1024 * 1024:
+              raise SystemExit('Private job summary exceeded 1 MiB')
+          print(body)
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as stream:
+              stream.write(body)
+          PY_REPORT
+      - name: Preserve complete public authentication, receipts and failed-step evidence
+        if: ${{ always() && !github.event.repository.private }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: retained-publication-offline-${{ github.sha }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/retained-publication-offline/
+          if-no-files-found: warn
+          retention-days: 14

@@ -1,5 +1,7 @@
 # HDBLAST research checkpoints (September 2026)
 
+**Current release — 8 October 2026 UTC:** 98,304 endpoint comparisons, exact normal/optimized identity, independently accepted fresh portable replay and conditional bulk/incident models. Fresh normal/optimized portable replay and numerical/bulk-model CI passed; final-document-head CI and live site deployment are recorded separately in the final delivery receipt. Latest verified Zenodo publication is **[23244754](https://doi.org/10.5281/zenodo.23244754) / concept 17088132 / 31 files / 453,646,943 bytes**. [Publication proof](https://github.com/maldonado-research/HDblast/blob/main/hdblast/publication/2026.10.08-retained-endpoint-flow/README.md) · [Replay and CI evidence](https://github.com/maldonado-research/HDblast/blob/main/hdblast/continuation/2026.10.08-retained-endpoint-flow/README.md). Historical entries below retain their dated scope.
+
 Each folder is a research package extracted unchanged from its delivered archive (exceptions
 below). Each contains a report (`README.md`), the code, the numerical outputs, and internal
 referee or verification material produced with AI assistants. None has had external peer review. The original delivered archives are

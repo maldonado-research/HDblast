@@ -1,0 +1,160 @@
+--- preserved_28ea_candidate.py
++++ new_edition_controller_v2.py
+@@ -364,6 +364,33 @@
+             raise
+         except Exception:
+             raise Stop('CONTENT_STREAM_FAILED') from None
++
++def record_identity(document,expected_id,*,draft=False,require_latest=False,prefix='PUBLIC_NEW_RECORD'):
++    """Bind modern identity independently of metadata and attachment equality."""
++    require(type(document) is dict and type(expected_id) is str
++            and re.fullmatch(r'[1-9][0-9]*',expected_id) is not None
++            and document.get('id')==expected_id
++            and document.get('parent',{}).get('id')==PARENT_ID,
++            prefix+'_IDENTITY_DIFFERS')
++    require(document.get('is_draft') is draft and document.get('is_published') is (not draft),
++            prefix+'_STATE_DIFFERS')
++    require(str(document.get('parent',{}).get('access',{}).get('owned_by',{}).get('user'))==str(EXPECTED_OWNER),
++            prefix+'_OWNER_DIFFERS')
++    require(document.get('parent',{}).get('pids',{}).get('doi',{}).get('identifier')=='10.5281/zenodo.'+PARENT_ID,
++            prefix+'_CONCEPT_DOI_DIFFERS')
++    pids=document.get('pids',{})
++    require(type(pids) is dict,prefix+'_PIDS_SHAPE_DIFFERS')
++    if not draft or 'doi' in pids:
++        require(type(pids.get('doi')) is dict
++                and pids['doi'].get('identifier')=='10.5281/zenodo.'+expected_id,
++                prefix+'_VERSION_DOI_DIFFERS')
++    if draft:
++        require(document.get('versions',{}).get('is_latest_draft') is True,
++                prefix+'_NOT_LATEST_DRAFT')
++    elif require_latest:
++        require(document.get('versions',{}).get('is_latest') is True,
++                prefix+'_NOT_LATEST_PUBLIC')
++    return True
+ 
+ class Controller:
+     def __init__(self, evidence, transport, token='', inventory=None, metadata=None,
+@@ -551,6 +578,7 @@
+         require(o.get('id')==PRIOR_ID and o.get('parent',{}).get('id')==PARENT_ID
+                 and o.get('is_published') is True,'CURRENT_PRIOR_IDENTITY_DIFFERS')
+         require(str(o.get('parent',{}).get('access',{}).get('owned_by',{}).get('user'))==str(EXPECTED_OWNER),'CURRENT_PRIOR_OWNER_DIFFERS')
++        record_identity(o,PRIOR_ID,require_latest=False,prefix='CURRENT_PRIOR')
+         metadata_equal(o,{k:self.published_baseline[k] for k in ('metadata','custom_fields','access')})
+         latest_url=o['links']['latest']
+         require(latest_url==ORIGIN+'/api/records/'+PRIOR_ID+'/versions/latest','LATEST_LINK_DIFFERS')
+@@ -566,10 +594,12 @@
+             require(r.status==200,'GET_CURRENT_LATEST_FAILED')
+             latest,lh=r.json(),r.headers;self.capture('CURRENT_LATEST',latest)
+         if latest.get('id')==self.state.get('draft_id') and latest.get('is_published') is True and self.metadata:
++            record_identity(latest,self.state['draft_id'],require_latest=True)
+             metadata_equal(latest,self.metadata);assert_pins(file_map(latest),self.old+self.add)
+             self.state['published']=True;self.save()
+         if self.state.get('published'):
+             require(latest['id']==self.state['draft_id'],'LATEST_PUBLISHED_DIFFERENT')
++            record_identity(latest,self.state['draft_id'],require_latest=True)
+         else:
+             pending_publish=(self.state.get('pending') or {}).get('kind')=='publish'
+             require(latest['id']==PRIOR_ID or (pending_publish and latest['id']==self.state.get('draft_id')),'LATEST_CHANGED_FROM_FROZEN_PRIOR')
+@@ -588,6 +618,7 @@
+         require(o.get('id')==str(id_) and o.get('parent',{}).get('id')==PARENT_ID
+                 and o.get('is_draft') is True and o.get('is_published') is False,'DRAFT_FAMILY_OR_STATE_DIFFERS')
+         require(str(o.get('parent',{}).get('access',{}).get('owned_by',{}).get('user'))==str(EXPECTED_OWNER),'DRAFT_OWNER_DIFFERS')
++        record_identity(o,str(id_),draft=True,prefix='DRAFT')
+         require(o['links']['self']==ORIGIN+'/api/records/'+str(id_)+'/draft','DRAFT_SELF_LINK_DIFFERS')
+         require(o['links']['files']==o['links']['self']+'/files','DRAFT_FILES_LINK_DIFFERS')
+         if self.metadata:
+@@ -597,15 +628,61 @@
+             require(o.get('metadata',{}).get('version') in (None,'',PRIOR_SEMANTIC_VERSION,self.metadata['metadata']['version']),'OWNED_DRAFT_DIFFERENT_SEMANTIC_VERSION')
+         files,fh=self.get(o['links']['files'],'DRAFT_FILES_'+str(id_),accept='application/json')
+         return o,h,file_map(files)
++    def require_draft_adoption(self,id_):
++        bound=self.state.get('draft_id')
++        if bound:
++            require(bound==id_,'OWNED_DRAFT_ID_DIFFERS_FROM_JOURNAL')
++            return 'EXISTING_BOUND_DRAFT_ID'
++        pending=self.state.get('pending')
++        keys={'kind','url','body_sha256','body_bytes','context','utc'}
++        require(self.state.get('create_post_attempted') is True and type(pending) is dict
++                and set(pending)==keys and pending['kind']=='create_version'
++                and pending['url']==ORIGIN+'/api/deposit/depositions/'+PRIOR_ID+'/actions/newversion'
++                and pending['body_sha256']==sha(b'') and type(pending['body_bytes']) is int
++                and pending['body_bytes']==0 and pending['context']=={}
++                and type(pending['utc']) is str and bool(pending['utc']),
++                'UNJOURNALED_DRAFT_ADOPTION_FORBIDDEN')
++        path=self.dir/'JOURNAL.jsonl'
++        require(path.is_file(),'CREATE_ADOPTION_DURABLE_INTENT_REQUIRED')
++        try:
++            journal=[json.loads(line) for line in path.read_text().splitlines()]
++        except (ValueError,UnicodeError):
++            raise Stop('CREATE_ADOPTION_JOURNAL_INVALID') from None
++        intents=[(index,row) for index,row in enumerate(journal)
++                 if type(row) is dict and row.get('kind')=='WRITE_INTENT']
++        require(bool(intents),'CREATE_ADOPTION_DURABLE_INTENT_REQUIRED')
++        index,row=intents[-1]
++        expected={k:v for k,v in pending.items() if k!='kind'}
++        expected.update(kind='WRITE_INTENT',operation='create_version')
++        require(type(row.get('body_bytes')) is int and canonical_bytes(row)==canonical_bytes(expected),
++                'CREATE_ADOPTION_DURABLE_INTENT_DIFFERS')
++        for outcome in journal[index+1:]:
++            require(type(outcome) is dict,'CREATE_ADOPTION_JOURNAL_INVALID')
++            if outcome.get('kind') in ('WRITE_RESPONSE','WRITE_OUTCOME_UNKNOWN','WRITE_RECONCILED_FROM_GETS'):
++                require(outcome.get('operation')=='create_version',
++                        'CREATE_ADOPTION_JOURNAL_OUTCOME_DIFFERS')
++                require(outcome.get('kind')!='WRITE_RECONCILED_FROM_GETS',
++                        'CREATE_ADOPTION_ALREADY_RECONCILED')
++                if outcome.get('kind')=='WRITE_RESPONSE':
++                    status=outcome.get('status')
++                    require(type(status) is int and not (400<=status<500),
++                            'CREATE_ADOPTION_DEFINITIVE_REJECTION')
++        # A malformed 2xx response leaves this canonical pending intent unresolved.
++        # A parsed successful response clears pending before assigning an ID and
++        # therefore fails closed here if the process crashes in that gap.
++        return 'DURABLE_UNRESOLVED_CREATE_INTENT'
++
+     def reconcile(self):
+         current=self.current(); candidate=self.owner_list()
+         if candidate:
+-            id_=str(candidate['id']);o,h,files=self.draft(id_)
++            id_=str(candidate['id']);adoption_basis=self.require_draft_adoption(id_)
++            o,h,files=self.draft(id_)
+             allowed={p['filename'] for p in self.old+self.add}
+             require(set(files)<=allowed,'OWNED_DRAFT_HAS_UNEXPECTED_FILES')
+             assert_pins(files,self.old,exact=False)
+             require(not self.state.get('draft_id') or self.state['draft_id']==id_,'OWNED_DRAFT_ID_DIFFERS_FROM_JOURNAL')
+             self.state['draft_id']=id_;self.save()
++            self.event('OWNED_DRAFT_BOUND_FROM_GETS',record_id=id_,basis=adoption_basis)
+         else:
+             o=h=files=None
+             require(not self.state.get('draft_id') or self.state.get('published') or (self.state.get('pending') or {}).get('kind')=='publish','JOURNALED_DRAFT_NOT_IN_OWNED_LIST')
+@@ -625,6 +702,7 @@
+             elif kind=='publish' and self.state.get('draft_id'):
+                 p,ph=self.get(ORIGIN+'/api/records/'+self.state['draft_id'],'RECONCILE_PUBLISH',public=True)
+                 require(p.get('is_published') is True and p.get('parent',{}).get('id')==PARENT_ID,'PUBLISH_OUTCOME_STILL_UNKNOWN')
++                record_identity(p,self.state['draft_id'],require_latest=True)
+                 metadata_equal(p,self.metadata);assert_pins(file_map(p),self.old+self.add)
+                 self.state['published']=True;recovered=True
+             require(recovered,'AMBIGUOUS_WRITE_NOT_RECONCILED')
+@@ -718,7 +796,7 @@
+         self.current();id_=self.state['draft_id']
+         if published:
+             o,h=self.get(ORIGIN+'/api/records/'+id_,'NEW_PUBLIC_RECORD',public=True)
+-            require(o.get('is_published') is True and o.get('parent',{}).get('id')==PARENT_ID,'PUBLIC_NEW_RECORD_IDENTITY_DIFFERS')
++            record_identity(o,id_,require_latest=True)
+             require(o['links']['files']==ORIGIN+'/api/records/'+id_+'/files','NEW_PUBLIC_FILES_LINK_DIFFERS')
+             listing,lh=self.get(o['links']['files'],'NEW_PUBLIC_FILES',accept='application/json',public=True);files=file_map(listing)
+         else:
+@@ -757,11 +835,13 @@
+         revision_header=revision_if_match(etag,o)
+         self.state['publish_post_attempted']=True;self.save()
+         self.write('publish',url,headers={'If-Match':revision_header})
+-        self.state['published']=True;self.save()
++        # Do not mark publication from a successful POST alone. Validate the
++        # modern public identity before any publication state transition.
+         for attempt in range(20):
+             r=self.transport.request('GET',ORIGIN+'/api/records/'+self.state['draft_id'],headers={'Accept':VENDOR,'_public':True})
+             self.event('PUBLICATION_GET_POLL',attempt=attempt+1,status=r.status,response_sha256=sha(r.body))
+             if r.status==200 and r.json().get('is_published') is True:
++                record_identity(r.json(),self.state['draft_id'],require_latest=True)
+                 break
+             require(r.status in (200,404,503),'PUBLICATION_READBACK_HTTP_ERROR')
+             if attempt<19:

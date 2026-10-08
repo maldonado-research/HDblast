@@ -1,0 +1,49 @@
+{
+  "status": "PASS_ROOT_INDEPENDENT_31_FILE_VERIFIER_REVIEW",
+  "reviewed_utc": "2026-10-08T17:26:16.155476+00:00",
+  "verifier_sha256": "a6d7e0db5f8a68cb893c37e24fde2aa2e37d12dad96ec13ad3c9983570b9e9bf",
+  "closure_selected_files": 38,
+  "source_diff_reviewed": true,
+  "controls_basis": "Author manufactured suite independently rerun under normal and optimized Python; full source/diff and pinned seed closure independently inspected. This is internal review, not external peer review.",
+  "positives_per_mode": 7,
+  "rejections_per_mode": 175,
+  "scientific_controls_equal_between_modes": true,
+  "independent_finding": "The earlier draft-round counter allowed an incomplete later round after older complete rounds. Preserved source620aae was superseded by revieweda6d7. Latest partial rounds and later mutation intents now reject; a final empty file-list GET, genuinely used by the accepted controller to bind current draft identities/ETag, is allowed.",
+  "required_real_witness": "Full31draftstreams in preparation and immediately-before-publish verification, exact complete metadata/history/DOIfamilies and newowner/latest/DOI,31freshpublicstreams,5preservedhistoricalrecords. Real witnesses still pending.",
+  "pins": {
+    "release-assets/publication-verifier/MANIFEST.json": {
+      "bytes": 6484,
+      "sha256": "f0f094a5e68f2ed02b7d5810cb928ed178783327eadaaf4fac167976fbb34ca1"
+    },
+    "release-assets/publication-verifier/verify_publication.py": {
+      "bytes": 37342,
+      "sha256": "a6d7e0db5f8a68cb893c37e24fde2aa2e37d12dad96ec13ad3c9983570b9e9bf"
+    },
+    "release-assets/publication-verifier/test_manufactured_witnesses.py": {
+      "bytes": 31506,
+      "sha256": "e43bc23dd31edcf5769ace78db1b82e6a51158957b132106243991af2ffaede5"
+    },
+    "release-assets/publication-verifier/VERIFIER_ADAPTATION.diff": {
+      "bytes": 19907,
+      "sha256": "a36c12f35ca4183910721d740d73647e597fc862f539041e7935aebad2c3f8a5"
+    },
+    "release-assets/publication-verifier/manufactured-seeds/SEED_MANIFEST.json": {
+      "bytes": 1669,
+      "sha256": "2be3648b113545837c0c6075b998b2defd0bca32ecef353367aa6073ff6f0042"
+    },
+    "root/INDEPENDENT_VERIFIER_CONTROLS_NORMAL.json": {
+      "bytes": 8138,
+      "sha256": "92ba0a2b8a3f78b957a507c40b786e3ad76f4aae5db3b6e6064784042ebd57fb"
+    },
+    "root/INDEPENDENT_VERIFIER_CONTROLS_OPTIMIZED.json": {
+      "bytes": 8137,
+      "sha256": "462a2ea8d2836431d150046512cc5c4cc67f3e355062ea59cf48c708fc2cdce8"
+    }
+  },
+  "network_calls": 0,
+  "numeric_imports": 0,
+  "source_callbacks": 0,
+  "array_decodes": 0,
+  "actual_new_publication_claim": false,
+  "first_seed_pin_rejection_preserved": "VERIFIER_CONTROL_INVOCATION_FAILURE_001.json"
+}
