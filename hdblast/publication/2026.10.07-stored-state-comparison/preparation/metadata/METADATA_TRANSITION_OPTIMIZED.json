@@ -1,0 +1,158 @@
+{
+  "access_exact": true,
+  "all_old_related_references_exact": true,
+  "allowed_metadata_fields": [
+    "additional_descriptions",
+    "description",
+    "publication_date",
+    "related_identifiers",
+    "title",
+    "version"
+  ],
+  "baseline": {
+    "bytes": 17750,
+    "path": "/workspace/hdblast-research-work/continuation-next-20261007/release-planning/FINAL_METADATA_MODERN.json",
+    "sha256": "72415e84db788b8dec0c421012c1d264fc669e6f8e5d08d93e80f0075e3485ba"
+  },
+  "candidate_metadata": {
+    "bytes": 21019,
+    "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/metadata/FINAL_METADATA_MODERN_CANDIDATE.json",
+    "sha256": "1c3e6f974bd7a3705db7ce0a68a8e04772dd0dbe94028e208b30bd58fa7cc546"
+  },
+  "changed_metadata_fields": [
+    "additional_descriptions",
+    "description",
+    "related_identifiers",
+    "title",
+    "version"
+  ],
+  "checks": [
+    {
+      "case": "actual_candidate_complete_metadata_whitelist",
+      "expected": "PASS",
+      "status": "PASS"
+    },
+    {
+      "case": "creators_changed",
+      "expected": "REJECT",
+      "rejection": "INHERITED_METADATA_CREATORS_DIFFERS",
+      "status": "PASS"
+    },
+    {
+      "case": "license_changed",
+      "expected": "REJECT",
+      "rejection": "INHERITED_METADATA_RIGHTS_DIFFERS",
+      "status": "PASS"
+    },
+    {
+      "case": "historical_notes_changed",
+      "expected": "REJECT",
+      "rejection": "HISTORICAL_NOTES_DIFFERS",
+      "status": "PASS"
+    },
+    {
+      "case": "current_notes_type_changed",
+      "expected": "REJECT",
+      "rejection": "CURRENT_NOTES_TYPE_OR_LANGUAGE_DIFFERS",
+      "status": "PASS"
+    },
+    {
+      "case": "old_related_reference_changed",
+      "expected": "REJECT",
+      "rejection": "INHERITED_REFERENCES_DIFFERS",
+      "status": "PASS"
+    },
+    {
+      "case": "unreviewed_reference_added",
+      "expected": "REJECT",
+      "rejection": "UNREVIEWED_REFERENCE_ADDITION",
+      "status": "PASS"
+    },
+    {
+      "case": "custom_fields_changed",
+      "expected": "REJECT",
+      "rejection": "INHERITED_CUSTOM_FIELDS_DIFFERS",
+      "status": "PASS"
+    },
+    {
+      "case": "access_changed",
+      "expected": "REJECT",
+      "rejection": "INHERITED_ACCESS_DIFFERS",
+      "status": "PASS"
+    },
+    {
+      "case": "metadata_field_removed",
+      "expected": "REJECT",
+      "rejection": "INHERITED_METADATA_FIELD_SET_DIFFERS",
+      "status": "PASS"
+    },
+    {
+      "case": "server_assigned_field_added",
+      "expected": "REJECT",
+      "rejection": "FULL_METADATA_REQUIRED",
+      "status": "PASS"
+    },
+    {
+      "case": "previous_semantic_version_reused",
+      "expected": "REJECT",
+      "rejection": "NEW_SEMANTIC_VERSION_REQUIRED",
+      "status": "PASS"
+    }
+  ],
+  "controller_constructed": false,
+  "controller_state_reused": false,
+  "current_notes_type_and_language_exact": true,
+  "custom_fields_exact": true,
+  "future_asset_bytes_or_hashes_invented": false,
+  "historical_notes_exact": true,
+  "network_actions": 0,
+  "new_publication_DOI": "NOT_ASSIGNED",
+  "new_reference_count": 20,
+  "old_reference_count": 19,
+  "only_appended_reference": {
+    "identifier": "10.5281/zenodo.23225288",
+    "relation_type": {
+      "id": "references"
+    },
+    "resource_type": {
+      "id": "software"
+    },
+    "scheme": "doi"
+  },
+  "optimized": true,
+  "overview": {
+    "bytes": 8307,
+    "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/metadata/HDBLAST_STORED_STATE_COMPARISON_OVERVIEW_20261007.md",
+    "sha256": "85d11e0bd45b21352797120febe8c48fd37d9af11dba7b080db145b69daca905"
+  },
+  "passes": 12,
+  "prior_current_notes_preserved_verbatim_as_labeled_history": true,
+  "prospective_controller": {
+    "bytes": 46109,
+    "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-planning/new_edition_controller.py",
+    "sha256": "27fd844cc903a445688a177339b7af633c0a3581f71eeedf7e20bb015bee36a7"
+  },
+  "published_baseline": {
+    "bytes": 50502,
+    "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-planning/read-only-observation/CURRENT_PRIOR.raw.json",
+    "sha256": "261d81302396c1683f5c0e1185b071189cf83bbb5fde5fb4a098ca64e8fe47ca"
+  },
+  "repository_actions": 0,
+  "retained_array_decodes": 0,
+  "root_final_package_pins": "PENDING_ROOT_FINAL_SEAL_AND_PORTABLE_REPLAY",
+  "sealed_for_live_publication": false,
+  "skipped": 0,
+  "source_callbacks": 0,
+  "status": "PASS_ACTUAL_METADATA_WHITELIST_WITH_DELIVERY_PINS_PENDING",
+  "unchanged_metadata_fields_exact": {
+    "copyright": true,
+    "creators": true,
+    "languages": true,
+    "publisher": true,
+    "references": true,
+    "resource_type": true,
+    "rights": true,
+    "subjects": true
+  },
+  "verifier_scope": "metadata_only_AST_extracted_from_pinned_validate_inputs"
+}

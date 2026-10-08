@@ -1,0 +1,208 @@
+{
+  "archived_source_sha256": "493c1486f90d6bbde3fa2a9588ef9b1a275e21334da47df1bd07b7c3ab6d80ab",
+  "failed": 0,
+  "optimized": false,
+  "passed": 31,
+  "scope": "actual accepted aa7 Transport plus mocked opener and manufactured 27-file guards; no helper main/live network",
+  "source": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/empty-archive-cleanup/delete_empty_archive_once.py",
+  "source_sha256": "a4685ff65eab0dca73ecf8066a7710359979eeffea5dffcf8e2f3c4bdb2a1d60",
+  "test_source_sha256": "2010a8975c9ce1b7db78e4debe48f5dd75610c3e2a160f2639fd3e730680d484",
+  "tests": [
+    {
+      "details": [
+        [
+          "Stop",
+          "UNSAFE_QUERY"
+        ],
+        null
+      ],
+      "name": "archived_native_route_rejected_by_real_transport_before_opener",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        [
+          "Stop",
+          "UNSAFE_QUERY"
+        ],
+        null
+      ],
+      "name": "accepted_generic_transport_still_rejects_version_query",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "fixed_native_route_exact_400_with_real_response",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "fixed_native_route_normal_400_matching_response",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "native_redirect_302_not_followed_or_accepted",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "native_changed_final_url_rejected",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "native_changed_error_url_rejected",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "native_oversized_error_body_rejected",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "native_oversized_normal_body_rejected",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "native_error_body_read_failure_rejected",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "native_200_even_matching_error_body_rejected",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "native_float_status_body_rejected",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "native_malformed_json_rejected",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        [
+          "Stop",
+          "UNREVIEWED_UNAVAILABLE_PROBE_URL"
+        ],
+        null
+      ],
+      "name": "unreviewed_probe_url_refused_before_opener",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "accepted_no_redirect_handler_declines_redirect",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "both_real_401_failure_chains_and_source_pins_verify_read_only",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "real_transport_one_delete_after_two_probes_and_latch_preserves_pending",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "latch_preserved": true,
+        "wire_delete_calls": 1
+      },
+      "name": "unknown_before_effect_latched_no_retry",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "latch_preserved": true,
+        "wire_delete_calls": 1
+      },
+      "name": "unknown_after_effect_latched_no_retry",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "latch_preserved": true,
+        "wire_delete_calls": 1
+      },
+      "name": "delete_401_latched_no_advance",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "latch_preserved": true,
+        "wire_delete_calls": 1
+      },
+      "name": "delete_500_latched_no_advance",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "latch_preserved": true,
+        "wire_delete_calls": 1
+      },
+      "name": "delete_body_read_failure_latched_no_advance",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "unknown_after_effect_get_only_reconcile_preserves_latch_and_no_repeat",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "delete_204_without_absence_not_accepted",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "fresh_guard_after_probes_blocks_changed_inherited_version",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "non_null_zero_size_blocks_delete_before_probes",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "non_null_checksum_blocks_delete_before_probes",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "modern_available_body_blocks_delete",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "native_available_body_blocks_delete",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "name": "existing_exclusive_latch_blocks_delete_and_is_not_overwritten",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "added": [
+          "native_get"
+        ],
+        "changed": [
+          "unavailable"
+        ],
+        "remaining_definitions_unchanged": 11
+      },
+      "name": "narrow_source_diff_preserves_all_other_cleanup_definitions_and_constants",
+      "status": "PASS"
+    }
+  ]
+}

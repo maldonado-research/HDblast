@@ -1,0 +1,12 @@
+{
+  "status": "FIXTURE_SETUP_FAILURE",
+  "modes": [
+    "normal",
+    "optimized"
+  ],
+  "tests_run": 0,
+  "exception": "TypeError: function() argument code must be code, not str",
+  "cause": "Socket constructor sentinel installed before stdlib ssl defined SSLSocket(socket).",
+  "correction": "Import stdlib ssl before replacing socket.socket; source controller unchanged.",
+  "real_network_calls": 0
+}

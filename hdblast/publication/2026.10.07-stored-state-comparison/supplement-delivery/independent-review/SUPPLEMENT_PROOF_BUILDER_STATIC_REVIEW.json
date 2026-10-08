@@ -1,0 +1,210 @@
+{
+  "accepted_verifier": {
+    "bytes": 27742,
+    "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/verification/verify_publication.py",
+    "sha256": "e2f8be2a1bddbffb928cbf1b6b6b5546d0e33558793aaf2d799fd62cd3f4f02b"
+  },
+  "actual_publication_verified": false,
+  "allowed_additive_file_created": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/root/build_supplement_publication_proof.py",
+  "blocking_findings": [],
+  "candidate": {
+    "bytes": 7230,
+    "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/root/build_supplement_publication_proof.py",
+    "sha256": "9e4ec76da5bd9b283d04a9e69afb94cceaa48940666a28f00d622d9510d1bbb5"
+  },
+  "check_count": 23,
+  "checks": {
+    "all_baseline_origins_unchanged": true,
+    "candidate_explicit_expected_hash": true,
+    "contained_additive_fresh_output_writes": true,
+    "correct_total451598148": true,
+    "direct_TLS_no_redirect_no_credentials": true,
+    "eight_baseline_source_hashes_currently_match": true,
+    "exact_eight_distinct_roles": true,
+    "expected_history_marker_preserved": true,
+    "facts_are_outside_witness_manifest": true,
+    "facts_still_independently_false": true,
+    "five_key_manifest_exact": true,
+    "four_preserved_record_loop_unchanged": true,
+    "guard_runs_before_any_packet_output_creation": true,
+    "manifest_closure_authenticates_all_proof_leaves_except_manifest_self": true,
+    "only_default_GET_Request_no_body_or_method_override": true,
+    "original_genuine_receipt_guard_otherwise_unchanged": true,
+    "preserved_accepted_original_builder_exact": true,
+    "prior27_fixed_attestation_unchanged": true,
+    "priority_execution_and_input_sources_correct": true,
+    "priority_inventory_external_pin_matches_current_bytes": true,
+    "priority_metadata_external_pin_matches_current_bytes": true,
+    "raw_public_GET_capture_no_reserialization": true,
+    "unchanged_verifier_directory_copied": true
+  },
+  "diff_from_preserved_builder": [
+    "--- build_publication_proof.py",
+    "+++ build_supplement_publication_proof.py",
+    "@@ -1,5 +1,5 @@",
+    " #!/usr/bin/env python3",
+    "-\"\"\"Capture public preservation witnesses and assemble an additive offline packet.",
+    "+\"\"\"Capture public preservation witnesses for the scientific supplement edition.",
+    " ",
+    " This makes GET requests only. It must run after the controller's complete",
+    " post-publication content-stream receipt exists; it does not publish anything.",
+    "@@ -14,9 +14,10 @@",
+    " from datetime import datetime, timezone",
+    " ",
+    " W = Path('/workspace/hdblast-research-work/continuation-state-comparison-20261007')",
+    "+S = W/'publication-supplement-priority'",
+    " OLD = Path('/workspace/HDblast/hdblast/publication/2026.10.07-bd-prehistory/proof')",
+    "-INV = 'f6b7db33e1cefc22e9868569700f90969368f058d5c4fdc59251cdc810e45b21'",
+    "-META = '0d0896174064c4e5c796d2a14becd817467d457774a24e82f5ce61772b271ef8'",
+    "+INV = 'a3fc0d8e46713be72648568fcd7d8eec5cac2877ccedbe6d760dbb4761a331a7'",
+    "+META = '70d4eb5751e344323305a10187b89b6c1357744aa37b067aeee6da3aeb77b640'",
+    " ",
+    " def require(value, message):",
+    "     if not value:",
+    "@@ -41,12 +42,12 @@",
+    "     a = p.parse_args()",
+    "     out = Path(a.output).absolute()",
+    "     require(not out.exists(), 'Fresh packet directory required')",
+    "-    execution = W/'publication-final/new-edition-execution'",
+    "+    execution = S/'new-edition-execution'",
+    "     receipt = json.loads((execution/'VERIFIED_PUBLIC.json').read_bytes())",
+    "     require(receipt['status'] == 'PASS_COMPLETE_29_FILE_EDITION_READBACK' and",
+    "             receipt['published'] is True and receipt['draft_id'] == a.record_id and",
+    "             receipt['parent_id'] == '17088132' and receipt['file_count'] == 29 and",
+    "-            receipt['total_bytes'] == 688531967 and receipt['inventory_sha256'] == INV and",
+    "+            receipt['total_bytes'] == 451598148 and receipt['inventory_sha256'] == INV and",
+    "             receipt['metadata_sha256'] == META and len(receipt['content']) == 29 and",
+    "             all(r['basis'] == 'FRESH_COMPLETE_CONTENT_STREAM' for r in receipt['content']),",
+    "             'Complete genuine publication receipt required')",
+    "@@ -63,7 +64,7 @@",
+    "         'prior_full_stream': 'prior/PRIOR27_CONTENT_RECEIPT.json',",
+    "     }",
+    "     for role, relative in roles.items():",
+    "-        source = (W/'publication-final'/Path(relative).name if role in ('inventory', 'metadata')",
+    "+        source = (S/Path(relative).name if role in ('inventory', 'metadata')",
+    "                   else W/'publication-planning/read-only-observation/PRIOR27_CONTENT_RECEIPT.json'",
+    "                   if role == 'prior_full_stream' else execution/Path(relative).name)",
+    "         save(proof/relative, source.read_bytes())"
+  ],
+  "expected_packet_witness_leaf_count": 24,
+  "fixed_baseline_sources": [
+    {
+      "expected_sha256": "261d81302396c1683f5c0e1185b071189cf83bbb5fde5fb4a098ca64e8fe47ca",
+      "match": true,
+      "observed": {
+        "bytes": 50502,
+        "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-planning/read-only-observation/CURRENT_PRIOR.raw.json",
+        "sha256": "261d81302396c1683f5c0e1185b071189cf83bbb5fde5fb4a098ca64e8fe47ca"
+      },
+      "record_id": "23225288",
+      "role": "baseline"
+    },
+    {
+      "expected_sha256": "b9355b33cb3ba6e88dd15db52c53b85f51d68a122faccbacc5153880fc8b8276",
+      "match": true,
+      "observed": {
+        "bytes": 22545,
+        "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-planning/read-only-observation/CURRENT_FILES.raw.json",
+        "sha256": "b9355b33cb3ba6e88dd15db52c53b85f51d68a122faccbacc5153880fc8b8276"
+      },
+      "record_id": "23225288",
+      "role": "baseline_files"
+    },
+    {
+      "expected_sha256": "2e090396eb95ecd2f3a5bd5c1fb8305923827d4206600458f72f282b2b873623",
+      "match": true,
+      "observed": {
+        "bytes": 53756,
+        "path": "/workspace/HDblast/hdblast/publication/2026.10.07-bd-prehistory/proof/preserved/23114217-current-record.json",
+        "sha256": "2e090396eb95ecd2f3a5bd5c1fb8305923827d4206600458f72f282b2b873623"
+      },
+      "record_id": "23114217",
+      "role": "baseline"
+    },
+    {
+      "expected_sha256": "d7d90ef99d524647875ad3403b5eb608cd09e4088d819741f6063df637678dbb",
+      "match": true,
+      "observed": {
+        "bytes": 19111,
+        "path": "/workspace/HDblast/hdblast/publication/2026.10.07-bd-prehistory/proof/preserved/23114217-current-files.json",
+        "sha256": "d7d90ef99d524647875ad3403b5eb608cd09e4088d819741f6063df637678dbb"
+      },
+      "record_id": "23114217",
+      "role": "baseline_files"
+    },
+    {
+      "expected_sha256": "d3b310f3c5138c40720fdcc0ab6ce97da99c5e6395fb33fe98f09910053c8289",
+      "match": true,
+      "observed": {
+        "bytes": 30477,
+        "path": "/workspace/HDblast/hdblast/publication/2026.10.07-bd-prehistory/proof/preserved/22347452-current-record.json",
+        "sha256": "d3b310f3c5138c40720fdcc0ab6ce97da99c5e6395fb33fe98f09910053c8289"
+      },
+      "record_id": "22347452",
+      "role": "baseline"
+    },
+    {
+      "expected_sha256": "ded3b02e0c3523d01ade4e266eac7405bdaa02a24f94e666280b6b9460f95d8d",
+      "match": true,
+      "observed": {
+        "bytes": 7981,
+        "path": "/workspace/HDblast/hdblast/publication/2026.10.07-bd-prehistory/proof/preserved/22347452-current-files.json",
+        "sha256": "ded3b02e0c3523d01ade4e266eac7405bdaa02a24f94e666280b6b9460f95d8d"
+      },
+      "record_id": "22347452",
+      "role": "baseline_files"
+    },
+    {
+      "expected_sha256": "95b6ecf9b3f57af3857365712167ae2562aa9e5dd56c893b2e5cdacd2ecc5005",
+      "match": true,
+      "observed": {
+        "bytes": 13441,
+        "path": "/workspace/HDblast/hdblast/publication/2026.10.07-bd-prehistory/proof/preserved/23111008-current-record.json",
+        "sha256": "95b6ecf9b3f57af3857365712167ae2562aa9e5dd56c893b2e5cdacd2ecc5005"
+      },
+      "record_id": "23111008",
+      "role": "baseline"
+    },
+    {
+      "expected_sha256": "23482f413f563a4aca79f2df3f17ac062a6d9dc02223d290ba1caedde11fd3a7",
+      "match": true,
+      "observed": {
+        "bytes": 2433,
+        "path": "/workspace/HDblast/hdblast/publication/2026.10.07-bd-prehistory/proof/preserved/23111008-current-files.json",
+        "sha256": "23482f413f563a4aca79f2df3f17ac062a6d9dc02223d290ba1caedde11fd3a7"
+      },
+      "record_id": "23111008",
+      "role": "baseline_files"
+    }
+  ],
+  "network_actions": 0,
+  "original_array_reads_or_decodes": 0,
+  "pending": [
+    "root reports genuine publication success",
+    "builder assembles a fresh packet from genuine successful published29 receipt",
+    "root supplies new record ID and witness-manifest hash",
+    "independent actual normal/optimized verifier and custody review",
+    "final facts marked independently verified only after actual acceptance"
+  ],
+  "preserved_accepted_original": {
+    "bytes": 7230,
+    "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/root/build_publication_proof.py",
+    "sha256": "ece6f5e514b3bcc2b39fb853655b8ad68949abdcaa4747f1bfcbf56b27f1279b"
+  },
+  "schema_version": 1,
+  "scientific_source_callbacks": 0,
+  "script_executed": false,
+  "source_assets_or_repository_edits": 0,
+  "status": "PASS_STATIC_SUPPLEMENT_PROOF_BUILDER_PREPARATION",
+  "target_evaluations": 0,
+  "witness_roles": {
+    "controller_journal": "publication/JOURNAL.jsonl",
+    "inventory": "inventory/FINAL_UPLOAD_INVENTORY.json",
+    "latest_public_record": "publication/CURRENT_LATEST.json",
+    "metadata": "inventory/FINAL_METADATA_MODERN.json",
+    "new_public_files": "publication/NEW_PUBLIC_FILES.json",
+    "new_public_record": "publication/NEW_PUBLIC_RECORD.json",
+    "prior_full_stream": "prior/PRIOR27_CONTENT_RECEIPT.json",
+    "verified_public": "publication/VERIFIED_PUBLIC.json"
+  }
+}

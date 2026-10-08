@@ -1,0 +1,2483 @@
+{
+  "advisories": [
+    {
+      "blocking": false,
+      "observation": "FULL_REPLAY_REFERENCE.json directly lists the two excluded node payloads and pins the full package control manifest. The eight input paths, byte counts and SHA256 pins are explicitly enumerated in unchanged checkpoint/provenance/INPUT_SPEC.json and agree exactly with that pinned full manifest. README wording that the reference gives their exact pins is transitive rather than direct enumeration. This satisfies dependency integrity scope; explicit enumeration or a short wording clarification would improve convenience.",
+      "severity": "wording",
+      "topic": "Direct versus transitive input-pin enumeration"
+    }
+  ],
+  "blocking_findings": [],
+  "check_count": 746,
+  "checkpoint_summary": {
+    "all_registered_core_bytes_unchanged": true,
+    "all_retained_leaf_bytes_unchanged": true,
+    "changed_paths": [],
+    "extra_paths": [],
+    "omitted_exact_paths": [
+      "evidence/actual/normal/NODE_TARGETS.jsonl.gz",
+      "evidence/actual/optimized/NODE_TARGETS.jsonl.gz"
+    ],
+    "original_leaf_count": 161,
+    "registered_core_files_verified": 117,
+    "retained_leaf_count": 159
+  },
+  "checks": {
+    "actual_exact_replay_status": true,
+    "all_checkpoint_files_regular_non_symlink": true,
+    "eight_stable_scientific_artifacts": true,
+    "exact_three_full_package_control_pins": true,
+    "exactly_two_node_gzip_leaves_omitted": true,
+    "external_eight_inputs_four_original_four_compact": true,
+    "external_input_absent_from_supplement:research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_positive_B_coarse.npz": true,
+    "external_input_absent_from_supplement:research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_positive_B_fine.npz": true,
+    "external_input_absent_from_supplement:research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_signed_uB_coarse.npz": true,
+    "external_input_absent_from_supplement:research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_signed_uB_fine.npz": true,
+    "external_input_absent_from_supplement:research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_positive_B_coarse.npz": true,
+    "external_input_absent_from_supplement:research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_positive_B_fine.npz": true,
+    "external_input_absent_from_supplement:research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_signed_uB_coarse.npz": true,
+    "external_input_absent_from_supplement:research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_signed_uB_fine.npz": true,
+    "external_input_local_git_tree_metadata:research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_positive_B_coarse.npz": true,
+    "external_input_local_git_tree_metadata:research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_positive_B_fine.npz": true,
+    "external_input_local_git_tree_metadata:research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_signed_uB_coarse.npz": true,
+    "external_input_local_git_tree_metadata:research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_signed_uB_fine.npz": true,
+    "external_input_local_git_tree_metadata:research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_positive_B_coarse.npz": true,
+    "external_input_local_git_tree_metadata:research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_positive_B_fine.npz": true,
+    "external_input_local_git_tree_metadata:research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_signed_uB_coarse.npz": true,
+    "external_input_local_git_tree_metadata:research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_signed_uB_fine.npz": true,
+    "external_input_spec_full_manifest_pin:research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_positive_B_coarse.npz": true,
+    "external_input_spec_full_manifest_pin:research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_positive_B_fine.npz": true,
+    "external_input_spec_full_manifest_pin:research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_signed_uB_coarse.npz": true,
+    "external_input_spec_full_manifest_pin:research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_signed_uB_fine.npz": true,
+    "external_input_spec_full_manifest_pin:research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_positive_B_coarse.npz": true,
+    "external_input_spec_full_manifest_pin:research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_positive_B_fine.npz": true,
+    "external_input_spec_full_manifest_pin:research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_signed_uB_coarse.npz": true,
+    "external_input_spec_full_manifest_pin:research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_signed_uB_fine.npz": true,
+    "external_novelty_not_assessed": true,
+    "fresh_portable_replay_status": true,
+    "fresh_receipt_matches_prior_independent_acceptance": true,
+    "full_bootstrap_captures_authenticates_then_executes_helper": true,
+    "full_manifest_238_payloads": true,
+    "full_manifest_exact_leaf_names_metadata_only": true,
+    "full_package_241_leaves_metadata_only": true,
+    "full_package_control_local_git_pin:PAYLOAD_MANIFEST.json": true,
+    "full_package_control_local_git_pin:REPLAY_PINS.json": true,
+    "full_package_control_local_git_pin:replay_checkpoint.py": true,
+    "higher_dimensional_causation_not_established": true,
+    "immutable_commit_available_in_local_git": true,
+    "metric_calibration_fail_preserved": true,
+    "no_checkpoint_extra_leaves": true,
+    "node_payload_exact_omitted_role:evidence/actual/normal/NODE_TARGETS.jsonl.gz": true,
+    "node_payload_exact_omitted_role:evidence/actual/optimized/NODE_TARGETS.jsonl.gz": true,
+    "node_payload_immutable_url:evidence/actual/normal/NODE_TARGETS.jsonl.gz": true,
+    "node_payload_immutable_url:evidence/actual/optimized/NODE_TARGETS.jsonl.gz": true,
+    "node_payload_local_immutable_git_object:evidence/actual/normal/NODE_TARGETS.jsonl.gz": true,
+    "node_payload_local_immutable_git_object:evidence/actual/optimized/NODE_TARGETS.jsonl.gz": true,
+    "node_payload_reference_pin:evidence/actual/normal/NODE_TARGETS.jsonl.gz": true,
+    "node_payload_reference_pin:evidence/actual/optimized/NODE_TARGETS.jsonl.gz": true,
+    "original_checkpoint_161_leaves": true,
+    "prior_final_input_acceptance_pass": true,
+    "recorded_upload_http_401:publication-final/unknown-put-recovery/live-attempt-001/RECOVERY_RESULT.json": true,
+    "recorded_upload_http_401:publication-final/unknown-put-recovery/live-chunked-attempt-001/RECOVERY_RESULT.json": true,
+    "reference_exact_two_excluded_node_payloads": true,
+    "reference_full_archive_historical_seal_pin": true,
+    "reference_full_archive_not_delivered_claim": true,
+    "reference_immutable_package_url": true,
+    "reference_immutable_repository_commit": true,
+    "registered_core_117_files": true,
+    "registered_core_pin:ENVIRONMENT_PINS.json": true,
+    "registered_core_pin:README.md": true,
+    "registered_core_pin:REGISTRATION_CONTRACT.json": true,
+    "registered_core_pin:SOURCE_PINS.json": true,
+    "registered_core_pin:decoder/FABRICATED_BENCHMARK.json": true,
+    "registered_core_pin:decoder/FABRICATED_VALIDATION_RECEIPT.json": true,
+    "registered_core_pin:decoder/INDEPENDENT_CODEC_REVIEW_20261008.json": true,
+    "registered_core_pin:decoder/INDEPENDENT_CODEC_REVIEW_20261008.md": true,
+    "registered_core_pin:decoder/exact_binary80.py": true,
+    "registered_core_pin:decoder/fabricated_fixtures.py": true,
+    "registered_core_pin:decoder/review_codec_independent.py": true,
+    "registered_core_pin:decoder/test_exact_binary80.py": true,
+    "registered_core_pin:evidence/preparation/BOUNDED_KERNEL_CONTROLS_NORMAL_003.log": true,
+    "registered_core_pin:evidence/preparation/BOUNDED_KERNEL_CONTROLS_OPTIMIZED_003.log": true,
+    "registered_core_pin:evidence/preparation/EXECUTION_CONTRACT.md": true,
+    "registered_core_pin:evidence/preparation/EXECUTION_READY_REPORT.json": true,
+    "registered_core_pin:evidence/preparation/FABRICATED_EXACT_REPLAY_003.json": true,
+    "registered_core_pin:evidence/preparation/FINAL_PRE_FREEZE_REVIEW.json": true,
+    "registered_core_pin:evidence/preparation/INDEPENDENT_CONTROLS_NORMAL.json": true,
+    "registered_core_pin:evidence/preparation/INDEPENDENT_CONTROLS_OPTIMIZED.json": true,
+    "registered_core_pin:evidence/preparation/INDEPENDENT_EMPTY_RECEIPT_CONTROL.json": true,
+    "registered_core_pin:evidence/preparation/INDEPENDENT_ENTRY_AND_CUSTODIAN_REPLAY_003.json": true,
+    "registered_core_pin:evidence/preparation/INDEPENDENT_FINAL_EXECUTION_MATHEMATICAL_REVIEW.json": true,
+    "registered_core_pin:evidence/preparation/INDEPENDENT_FINAL_EXECUTION_MATHEMATICAL_REVIEW.md": true,
+    "registered_core_pin:evidence/preparation/INDEPENDENT_FINAL_REVIEW_MANIFEST.json": true,
+    "registered_core_pin:evidence/preparation/INDEPENDENT_PRIOR_BYTE_IDENTITY.json": true,
+    "registered_core_pin:evidence/preparation/INDEPENDENT_STANDALONE_READBACK_NORMAL_002.json": true,
+    "registered_core_pin:evidence/preparation/INDEPENDENT_STANDALONE_READBACK_NORMAL_003.json": true,
+    "registered_core_pin:evidence/preparation/PUBLIC_READBACK_ACCEPTANCE.json": true,
+    "registered_core_pin:evidence/preparation/README.md": true,
+    "registered_core_pin:evidence/preparation/ROOT_STATIC_LIBRARY_REVIEW.json": true,
+    "registered_core_pin:evidence/preparation/fabricated-normal-003/ENTRY_RECEIPT.json": true,
+    "registered_core_pin:evidence/preparation/fabricated-normal-003/EXECUTION.json": true,
+    "registered_core_pin:evidence/preparation/fabricated-normal-003/OUTPUT_READBACK.json": true,
+    "registered_core_pin:evidence/preparation/fabricated-normal-003/RESOURCE.json": true,
+    "registered_core_pin:evidence/preparation/fabricated-optimized-003/ENTRY_RECEIPT.json": true,
+    "registered_core_pin:evidence/preparation/fabricated-optimized-003/EXECUTION.json": true,
+    "registered_core_pin:evidence/preparation/fabricated-optimized-003/OUTPUT_READBACK.json": true,
+    "registered_core_pin:evidence/preparation/fabricated-optimized-003/RESOURCE.json": true,
+    "registered_core_pin:evidence/preparation/guard-payload-controls-normal-002/CONTROLS.json": true,
+    "registered_core_pin:evidence/preparation/guard-payload-controls-optimized-002/CONTROLS.json": true,
+    "registered_core_pin:evidence/preparation/held-directory-controls-20261008/CONTROLS_SUMMARY.json": true,
+    "registered_core_pin:evidence/preparation/public_readback_go.py": true,
+    "registered_core_pin:evidence/preparation/review-evidence/CONTROLS_NORMAL.json": true,
+    "registered_core_pin:evidence/preparation/review-evidence/CONTROLS_OPTIMIZED.json": true,
+    "registered_core_pin:evidence/preparation/review-evidence/EMPTY_RECEIPT_CONTROL.json": true,
+    "registered_core_pin:evidence/preparation/review-evidence/ENTRY_AND_CUSTODIAN_REPLAY_003.json": true,
+    "registered_core_pin:evidence/preparation/review-evidence/FINAL_EXECUTION_MATHEMATICAL_REVIEW.json": true,
+    "registered_core_pin:evidence/preparation/review-evidence/FINAL_EXECUTION_MATHEMATICAL_REVIEW.md": true,
+    "registered_core_pin:evidence/preparation/review-evidence/FINAL_REVIEW_MANIFEST.json": true,
+    "registered_core_pin:evidence/preparation/review-evidence/PRIOR_BYTE_IDENTITY.json": true,
+    "registered_core_pin:evidence/preparation/review-evidence/STANDALONE_READBACK_NORMAL_003.json": true,
+    "registered_core_pin:execution/EXECUTION_CONTRACT.md": true,
+    "registered_core_pin:execution/README.md": true,
+    "registered_core_pin:execution/bounded_launcher.py": true,
+    "registered_core_pin:execution/comparison_worker.py": true,
+    "registered_core_pin:execution/kernel_guard.py": true,
+    "registered_core_pin:execution/prepare_candidate.py": true,
+    "registered_core_pin:execution/readback.py": true,
+    "registered_core_pin:execution/registration_guard.py": true,
+    "registered_core_pin:execution/run_registered.py": true,
+    "registered_core_pin:execution/source_certificate.py": true,
+    "registered_core_pin:execution/test_bounded_launcher.py": true,
+    "registered_core_pin:execution/test_controls.py": true,
+    "registered_core_pin:literature/COVERAGE_AND_LIMITS.json": true,
+    "registered_core_pin:literature/EVIDENCE_VALIDATION.json": true,
+    "registered_core_pin:literature/LITERATURE_REFRESH_AND_MODEL_TEST.md": true,
+    "registered_core_pin:literature/PRIMARY_READING_EVIDENCE.json": true,
+    "registered_core_pin:literature/PUBLIC_DELIVERY_MANIFEST.json": true,
+    "registered_core_pin:literature/README.md": true,
+    "registered_core_pin:literature/RELATED_PROJECT_HEADS.json": true,
+    "registered_core_pin:literature/TMD_PRIMARY_READ_RECEIPTS.json": true,
+    "registered_core_pin:physical-identifiability/ARTIFACT_PINS.json": true,
+    "registered_core_pin:physical-identifiability/MANUFACTURED_NORMAL.json": true,
+    "registered_core_pin:physical-identifiability/MANUFACTURED_OPTIMIZED.json": true,
+    "registered_core_pin:physical-identifiability/MODEL_TEST_CONTRACT.json": true,
+    "registered_core_pin:physical-identifiability/MODEL_TEST_CONTRACT.md": true,
+    "registered_core_pin:physical-identifiability/PRIMARY_CITATION_PINS.json": true,
+    "registered_core_pin:physical-identifiability/STRUCTURAL_IDENTIFIABILITY.md": true,
+    "registered_core_pin:physical-identifiability/verify_structural_examples.py": true,
+    "registered_core_pin:prior/BUDGET.json": true,
+    "registered_core_pin:prior/independent_DATA.json": true,
+    "registered_core_pin:prior/primary_DATA.json": true,
+    "registered_core_pin:provenance/ENGINE_INDEPENDENT_REVIEW.md": true,
+    "registered_core_pin:provenance/INDEPENDENT_ENGINE_CONTROL_REEXECUTION.json": true,
+    "registered_core_pin:provenance/INPUT_SPEC.json": true,
+    "registered_core_pin:provenance/INPUT_SPEC_HYDRATION_REVIEW.json": true,
+    "registered_core_pin:provenance/INPUT_SPEC_REVIEW.md": true,
+    "registered_core_pin:provenance/LAYOUT_PROVENANCE_BASIS.json": true,
+    "registered_core_pin:provenance/NATIVE_BINARY80_FIXTURE_REVIEW.json": true,
+    "registered_core_pin:provenance/OPAQUE_AUTHENTICATION_RECEIPT.json": true,
+    "registered_core_pin:provenance/ORIGINAL_ZIP_INVENTORIES.json": true,
+    "registered_core_pin:provenance/READER_PROVENANCE_REVIEW.md": true,
+    "registered_core_pin:requirements-replay.txt": true,
+    "registered_core_pin:science-delivery-review/ARTIFACT_MANIFEST.json": true,
+    "registered_core_pin:science-delivery-review/DELIVERY_PLAN.md": true,
+    "registered_core_pin:science-delivery-review/REVIEW_RECEIPT.json": true,
+    "registered_core_pin:science-delivery-review/SCIENCE_REVIEW.md": true,
+    "registered_core_pin:science-delivery-review/SCIENCE_SYNTHESIS.md": true,
+    "registered_core_pin:source/generic_operator_baseline.py": true,
+    "registered_core_pin:source/route.py": true,
+    "registered_core_pin:source/source_algebra_baseline.py": true,
+    "registered_core_pin:theory/ENTIRE_TARGET_AND_DISCRETE_COMPARISON.md": true,
+    "registered_core_pin:theory/FABRICATED_ENGINE_RECEIPT.json": true,
+    "registered_core_pin:theory/INDEPENDENT_TRANSPORT_REVIEW.json": true,
+    "registered_core_pin:theory/INDEPENDENT_TRANSPORT_REVIEW.md": true,
+    "registered_core_pin:theory/PROSPECTIVE_ANALYTIC_BOUNDS.json": true,
+    "registered_core_pin:theory/TRANSPORT_REVIEW_NORMAL.json": true,
+    "registered_core_pin:theory/TRANSPORT_REVIEW_OPTIMIZED.json": true,
+    "registered_core_pin:theory/entire_target_engine.py": true,
+    "registered_core_pin:theory/test_entire_target_engine.py": true,
+    "registered_core_pin:transport/DISCRETE_ERROR_TRANSPORT.md": true,
+    "registered_core_pin:transport/FABRICATED_NORMAL.json": true,
+    "registered_core_pin:transport/FULL_FABRICATED_NORMAL.json": true,
+    "registered_core_pin:transport/FULL_FABRICATED_OPTIMIZED.json": true,
+    "registered_core_pin:transport/discrete_transport.py": true,
+    "registered_core_pin:transport/verify_transport.py": true,
+    "registration_file_unchanged": true,
+    "remaining_continuous_pressure_contacts_unresolved": true,
+    "retained_byte_identity:ENVIRONMENT_PINS.json": true,
+    "retained_byte_identity:FULL_REGISTRATION.json": true,
+    "retained_byte_identity:NEXT_CALCULATION_CONTRACT.md": true,
+    "retained_byte_identity:README.md": true,
+    "retained_byte_identity:REGISTRATION_CONTRACT.json": true,
+    "retained_byte_identity:RESULTS.md": true,
+    "retained_byte_identity:SOURCE_PINS.json": true,
+    "retained_byte_identity:decoder/FABRICATED_BENCHMARK.json": true,
+    "retained_byte_identity:decoder/FABRICATED_VALIDATION_RECEIPT.json": true,
+    "retained_byte_identity:decoder/INDEPENDENT_CODEC_REVIEW_20261008.json": true,
+    "retained_byte_identity:decoder/INDEPENDENT_CODEC_REVIEW_20261008.md": true,
+    "retained_byte_identity:decoder/exact_binary80.py": true,
+    "retained_byte_identity:decoder/fabricated_fixtures.py": true,
+    "retained_byte_identity:decoder/review_codec_independent.py": true,
+    "retained_byte_identity:decoder/test_exact_binary80.py": true,
+    "retained_byte_identity:evidence/ACTUAL_EXACT_REPLAY.json": true,
+    "retained_byte_identity:evidence/RESULTS_PRESENTATION_REVIEW.json": true,
+    "retained_byte_identity:evidence/actual/normal/DATA.json": true,
+    "retained_byte_identity:evidence/actual/normal/DECODE_ATTEMPTS.jsonl": true,
+    "retained_byte_identity:evidence/actual/normal/DIAGNOSTIC_CROSSCHECK.json": true,
+    "retained_byte_identity:evidence/actual/normal/ENTRY_RECEIPT.json": true,
+    "retained_byte_identity:evidence/actual/normal/EXECUTION.json": true,
+    "retained_byte_identity:evidence/actual/normal/OUTPUT_READBACK.json": true,
+    "retained_byte_identity:evidence/actual/normal/RESOURCE.json": true,
+    "retained_byte_identity:evidence/actual/normal/SCIENCE_SUMMARY.json": true,
+    "retained_byte_identity:evidence/actual/normal/SOURCE_ATTEMPTS.jsonl": true,
+    "retained_byte_identity:evidence/actual/normal/SOURCE_CERTIFICATE.json": true,
+    "retained_byte_identity:evidence/actual/normal/child.log": true,
+    "retained_byte_identity:evidence/actual/optimized/DATA.json": true,
+    "retained_byte_identity:evidence/actual/optimized/DECODE_ATTEMPTS.jsonl": true,
+    "retained_byte_identity:evidence/actual/optimized/DIAGNOSTIC_CROSSCHECK.json": true,
+    "retained_byte_identity:evidence/actual/optimized/ENTRY_RECEIPT.json": true,
+    "retained_byte_identity:evidence/actual/optimized/EXECUTION.json": true,
+    "retained_byte_identity:evidence/actual/optimized/OUTPUT_READBACK.json": true,
+    "retained_byte_identity:evidence/actual/optimized/RESOURCE.json": true,
+    "retained_byte_identity:evidence/actual/optimized/SCIENCE_SUMMARY.json": true,
+    "retained_byte_identity:evidence/actual/optimized/SOURCE_ATTEMPTS.jsonl": true,
+    "retained_byte_identity:evidence/actual/optimized/SOURCE_CERTIFICATE.json": true,
+    "retained_byte_identity:evidence/actual/optimized/child.log": true,
+    "retained_byte_identity:evidence/independent-actual/ACTUAL_OUTPUT_INDEPENDENT_REVIEW.json": true,
+    "retained_byte_identity:evidence/independent-actual/ACTUAL_OUTPUT_INDEPENDENT_REVIEW.md": true,
+    "retained_byte_identity:evidence/independent-actual/ARTIFACT_PINS.json": true,
+    "retained_byte_identity:evidence/independent-actual/FROZEN_ASSEMBLY_REVIEW.json": true,
+    "retained_byte_identity:evidence/independent-actual/INDEPENDENT_ACTUAL_REPLAY.json": true,
+    "retained_byte_identity:evidence/independent-actual/INDEPENDENT_SERIALIZED_NORMS_NORMAL_001.json": true,
+    "retained_byte_identity:evidence/independent-actual/INTERPRETATION_DERIVATION.md": true,
+    "retained_byte_identity:evidence/independent-actual/ROOT_ACTUAL_EXACT_REPLAY.json": true,
+    "retained_byte_identity:evidence/independent-actual/STRICT_READBACK_NORMAL_001.json": true,
+    "retained_byte_identity:evidence/preparation/BOUNDED_KERNEL_CONTROLS_NORMAL_003.log": true,
+    "retained_byte_identity:evidence/preparation/BOUNDED_KERNEL_CONTROLS_OPTIMIZED_003.log": true,
+    "retained_byte_identity:evidence/preparation/EXECUTION_CONTRACT.md": true,
+    "retained_byte_identity:evidence/preparation/EXECUTION_READY_REPORT.json": true,
+    "retained_byte_identity:evidence/preparation/FABRICATED_EXACT_REPLAY_003.json": true,
+    "retained_byte_identity:evidence/preparation/FINAL_PRE_FREEZE_REVIEW.json": true,
+    "retained_byte_identity:evidence/preparation/INDEPENDENT_CONTROLS_NORMAL.json": true,
+    "retained_byte_identity:evidence/preparation/INDEPENDENT_CONTROLS_OPTIMIZED.json": true,
+    "retained_byte_identity:evidence/preparation/INDEPENDENT_EMPTY_RECEIPT_CONTROL.json": true,
+    "retained_byte_identity:evidence/preparation/INDEPENDENT_ENTRY_AND_CUSTODIAN_REPLAY_003.json": true,
+    "retained_byte_identity:evidence/preparation/INDEPENDENT_FINAL_EXECUTION_MATHEMATICAL_REVIEW.json": true,
+    "retained_byte_identity:evidence/preparation/INDEPENDENT_FINAL_EXECUTION_MATHEMATICAL_REVIEW.md": true,
+    "retained_byte_identity:evidence/preparation/INDEPENDENT_FINAL_REVIEW_MANIFEST.json": true,
+    "retained_byte_identity:evidence/preparation/INDEPENDENT_PRIOR_BYTE_IDENTITY.json": true,
+    "retained_byte_identity:evidence/preparation/INDEPENDENT_STANDALONE_READBACK_NORMAL_002.json": true,
+    "retained_byte_identity:evidence/preparation/INDEPENDENT_STANDALONE_READBACK_NORMAL_003.json": true,
+    "retained_byte_identity:evidence/preparation/PUBLIC_READBACK_ACCEPTANCE.json": true,
+    "retained_byte_identity:evidence/preparation/README.md": true,
+    "retained_byte_identity:evidence/preparation/ROOT_STATIC_LIBRARY_REVIEW.json": true,
+    "retained_byte_identity:evidence/preparation/fabricated-normal-003/ENTRY_RECEIPT.json": true,
+    "retained_byte_identity:evidence/preparation/fabricated-normal-003/EXECUTION.json": true,
+    "retained_byte_identity:evidence/preparation/fabricated-normal-003/OUTPUT_READBACK.json": true,
+    "retained_byte_identity:evidence/preparation/fabricated-normal-003/RESOURCE.json": true,
+    "retained_byte_identity:evidence/preparation/fabricated-optimized-003/ENTRY_RECEIPT.json": true,
+    "retained_byte_identity:evidence/preparation/fabricated-optimized-003/EXECUTION.json": true,
+    "retained_byte_identity:evidence/preparation/fabricated-optimized-003/OUTPUT_READBACK.json": true,
+    "retained_byte_identity:evidence/preparation/fabricated-optimized-003/RESOURCE.json": true,
+    "retained_byte_identity:evidence/preparation/guard-payload-controls-normal-002/CONTROLS.json": true,
+    "retained_byte_identity:evidence/preparation/guard-payload-controls-optimized-002/CONTROLS.json": true,
+    "retained_byte_identity:evidence/preparation/held-directory-controls-20261008/CONTROLS_SUMMARY.json": true,
+    "retained_byte_identity:evidence/preparation/public_readback_go.py": true,
+    "retained_byte_identity:evidence/preparation/review-evidence/CONTROLS_NORMAL.json": true,
+    "retained_byte_identity:evidence/preparation/review-evidence/CONTROLS_OPTIMIZED.json": true,
+    "retained_byte_identity:evidence/preparation/review-evidence/EMPTY_RECEIPT_CONTROL.json": true,
+    "retained_byte_identity:evidence/preparation/review-evidence/ENTRY_AND_CUSTODIAN_REPLAY_003.json": true,
+    "retained_byte_identity:evidence/preparation/review-evidence/FINAL_EXECUTION_MATHEMATICAL_REVIEW.json": true,
+    "retained_byte_identity:evidence/preparation/review-evidence/FINAL_EXECUTION_MATHEMATICAL_REVIEW.md": true,
+    "retained_byte_identity:evidence/preparation/review-evidence/FINAL_REVIEW_MANIFEST.json": true,
+    "retained_byte_identity:evidence/preparation/review-evidence/PRIOR_BYTE_IDENTITY.json": true,
+    "retained_byte_identity:evidence/preparation/review-evidence/STANDALONE_READBACK_NORMAL_003.json": true,
+    "retained_byte_identity:evidence/public-readback/PUBLIC_GO.json": true,
+    "retained_byte_identity:evidence/public-readback/ROOT_FREEZE_ASSEMBLY.json": true,
+    "retained_byte_identity:execution/EXECUTION_CONTRACT.md": true,
+    "retained_byte_identity:execution/README.md": true,
+    "retained_byte_identity:execution/bounded_launcher.py": true,
+    "retained_byte_identity:execution/comparison_worker.py": true,
+    "retained_byte_identity:execution/kernel_guard.py": true,
+    "retained_byte_identity:execution/prepare_candidate.py": true,
+    "retained_byte_identity:execution/readback.py": true,
+    "retained_byte_identity:execution/registration_guard.py": true,
+    "retained_byte_identity:execution/run_registered.py": true,
+    "retained_byte_identity:execution/source_certificate.py": true,
+    "retained_byte_identity:execution/test_bounded_launcher.py": true,
+    "retained_byte_identity:execution/test_controls.py": true,
+    "retained_byte_identity:figures/EXACT_TABLE.csv": true,
+    "retained_byte_identity:figures/FIGURE_RECEIPT.json": true,
+    "retained_byte_identity:figures/stored_state_bounds.pdf": true,
+    "retained_byte_identity:figures/stored_state_bounds.png": true,
+    "retained_byte_identity:literature/COVERAGE_AND_LIMITS.json": true,
+    "retained_byte_identity:literature/EVIDENCE_VALIDATION.json": true,
+    "retained_byte_identity:literature/LITERATURE_REFRESH_AND_MODEL_TEST.md": true,
+    "retained_byte_identity:literature/PRIMARY_READING_EVIDENCE.json": true,
+    "retained_byte_identity:literature/PUBLIC_DELIVERY_MANIFEST.json": true,
+    "retained_byte_identity:literature/README.md": true,
+    "retained_byte_identity:literature/RELATED_PROJECT_HEADS.json": true,
+    "retained_byte_identity:literature/TMD_PRIMARY_READ_RECEIPTS.json": true,
+    "retained_byte_identity:physical-identifiability/ARTIFACT_PINS.json": true,
+    "retained_byte_identity:physical-identifiability/MANUFACTURED_NORMAL.json": true,
+    "retained_byte_identity:physical-identifiability/MANUFACTURED_OPTIMIZED.json": true,
+    "retained_byte_identity:physical-identifiability/MODEL_TEST_CONTRACT.json": true,
+    "retained_byte_identity:physical-identifiability/MODEL_TEST_CONTRACT.md": true,
+    "retained_byte_identity:physical-identifiability/PRIMARY_CITATION_PINS.json": true,
+    "retained_byte_identity:physical-identifiability/STRUCTURAL_IDENTIFIABILITY.md": true,
+    "retained_byte_identity:physical-identifiability/verify_structural_examples.py": true,
+    "retained_byte_identity:prior/BUDGET.json": true,
+    "retained_byte_identity:prior/independent_DATA.json": true,
+    "retained_byte_identity:prior/primary_DATA.json": true,
+    "retained_byte_identity:provenance/ENGINE_INDEPENDENT_REVIEW.md": true,
+    "retained_byte_identity:provenance/INDEPENDENT_ENGINE_CONTROL_REEXECUTION.json": true,
+    "retained_byte_identity:provenance/INPUT_SPEC.json": true,
+    "retained_byte_identity:provenance/INPUT_SPEC_HYDRATION_REVIEW.json": true,
+    "retained_byte_identity:provenance/INPUT_SPEC_REVIEW.md": true,
+    "retained_byte_identity:provenance/LAYOUT_PROVENANCE_BASIS.json": true,
+    "retained_byte_identity:provenance/NATIVE_BINARY80_FIXTURE_REVIEW.json": true,
+    "retained_byte_identity:provenance/OPAQUE_AUTHENTICATION_RECEIPT.json": true,
+    "retained_byte_identity:provenance/ORIGINAL_ZIP_INVENTORIES.json": true,
+    "retained_byte_identity:provenance/READER_PROVENANCE_REVIEW.md": true,
+    "retained_byte_identity:requirements-replay.txt": true,
+    "retained_byte_identity:science-delivery-review/ARTIFACT_MANIFEST.json": true,
+    "retained_byte_identity:science-delivery-review/DELIVERY_PLAN.md": true,
+    "retained_byte_identity:science-delivery-review/REVIEW_RECEIPT.json": true,
+    "retained_byte_identity:science-delivery-review/SCIENCE_REVIEW.md": true,
+    "retained_byte_identity:science-delivery-review/SCIENCE_SYNTHESIS.md": true,
+    "retained_byte_identity:source/generic_operator_baseline.py": true,
+    "retained_byte_identity:source/route.py": true,
+    "retained_byte_identity:source/source_algebra_baseline.py": true,
+    "retained_byte_identity:theory/ENTIRE_TARGET_AND_DISCRETE_COMPARISON.md": true,
+    "retained_byte_identity:theory/FABRICATED_ENGINE_RECEIPT.json": true,
+    "retained_byte_identity:theory/INDEPENDENT_TRANSPORT_REVIEW.json": true,
+    "retained_byte_identity:theory/INDEPENDENT_TRANSPORT_REVIEW.md": true,
+    "retained_byte_identity:theory/PROSPECTIVE_ANALYTIC_BOUNDS.json": true,
+    "retained_byte_identity:theory/TRANSPORT_REVIEW_NORMAL.json": true,
+    "retained_byte_identity:theory/TRANSPORT_REVIEW_OPTIMIZED.json": true,
+    "retained_byte_identity:theory/entire_target_engine.py": true,
+    "retained_byte_identity:theory/test_entire_target_engine.py": true,
+    "retained_byte_identity:transport/DISCRETE_ERROR_TRANSPORT.md": true,
+    "retained_byte_identity:transport/FABRICATED_NORMAL.json": true,
+    "retained_byte_identity:transport/FULL_FABRICATED_NORMAL.json": true,
+    "retained_byte_identity:transport/FULL_FABRICATED_OPTIMIZED.json": true,
+    "retained_byte_identity:transport/discrete_transport.py": true,
+    "retained_byte_identity:transport/verify_transport.py": true,
+    "retained_checkpoint_159_leaves": true,
+    "scientific_byte_identity:checkpoint_saved/normal/DATA.json": true,
+    "scientific_byte_identity:checkpoint_saved/normal/DECODE_ATTEMPTS.jsonl": true,
+    "scientific_byte_identity:checkpoint_saved/normal/DIAGNOSTIC_CROSSCHECK.json": true,
+    "scientific_byte_identity:checkpoint_saved/normal/NODE_TARGETS.jsonl.gz": true,
+    "scientific_byte_identity:checkpoint_saved/normal/OUTPUT_READBACK.json": true,
+    "scientific_byte_identity:checkpoint_saved/normal/SCIENCE_SUMMARY.json": true,
+    "scientific_byte_identity:checkpoint_saved/normal/SOURCE_ATTEMPTS.jsonl": true,
+    "scientific_byte_identity:checkpoint_saved/normal/SOURCE_CERTIFICATE.json": true,
+    "scientific_byte_identity:checkpoint_saved/optimized/DATA.json": true,
+    "scientific_byte_identity:checkpoint_saved/optimized/DECODE_ATTEMPTS.jsonl": true,
+    "scientific_byte_identity:checkpoint_saved/optimized/DIAGNOSTIC_CROSSCHECK.json": true,
+    "scientific_byte_identity:checkpoint_saved/optimized/NODE_TARGETS.jsonl.gz": true,
+    "scientific_byte_identity:checkpoint_saved/optimized/OUTPUT_READBACK.json": true,
+    "scientific_byte_identity:checkpoint_saved/optimized/SCIENCE_SUMMARY.json": true,
+    "scientific_byte_identity:checkpoint_saved/optimized/SOURCE_ATTEMPTS.jsonl": true,
+    "scientific_byte_identity:checkpoint_saved/optimized/SOURCE_CERTIFICATE.json": true,
+    "scientific_byte_identity:fresh_portable/normal/DATA.json": true,
+    "scientific_byte_identity:fresh_portable/normal/DECODE_ATTEMPTS.jsonl": true,
+    "scientific_byte_identity:fresh_portable/normal/DIAGNOSTIC_CROSSCHECK.json": true,
+    "scientific_byte_identity:fresh_portable/normal/NODE_TARGETS.jsonl.gz": true,
+    "scientific_byte_identity:fresh_portable/normal/OUTPUT_READBACK.json": true,
+    "scientific_byte_identity:fresh_portable/normal/SCIENCE_SUMMARY.json": true,
+    "scientific_byte_identity:fresh_portable/normal/SOURCE_ATTEMPTS.jsonl": true,
+    "scientific_byte_identity:fresh_portable/normal/SOURCE_CERTIFICATE.json": true,
+    "scientific_byte_identity:fresh_portable/optimized/DATA.json": true,
+    "scientific_byte_identity:fresh_portable/optimized/DECODE_ATTEMPTS.jsonl": true,
+    "scientific_byte_identity:fresh_portable/optimized/DIAGNOSTIC_CROSSCHECK.json": true,
+    "scientific_byte_identity:fresh_portable/optimized/NODE_TARGETS.jsonl.gz": true,
+    "scientific_byte_identity:fresh_portable/optimized/OUTPUT_READBACK.json": true,
+    "scientific_byte_identity:fresh_portable/optimized/SCIENCE_SUMMARY.json": true,
+    "scientific_byte_identity:fresh_portable/optimized/SOURCE_ATTEMPTS.jsonl": true,
+    "scientific_byte_identity:fresh_portable/optimized/SOURCE_CERTIFICATE.json": true,
+    "scientific_byte_identity:package_saved/normal/DATA.json": true,
+    "scientific_byte_identity:package_saved/normal/DECODE_ATTEMPTS.jsonl": true,
+    "scientific_byte_identity:package_saved/normal/DIAGNOSTIC_CROSSCHECK.json": true,
+    "scientific_byte_identity:package_saved/normal/NODE_TARGETS.jsonl.gz": true,
+    "scientific_byte_identity:package_saved/normal/OUTPUT_READBACK.json": true,
+    "scientific_byte_identity:package_saved/normal/SCIENCE_SUMMARY.json": true,
+    "scientific_byte_identity:package_saved/normal/SOURCE_ATTEMPTS.jsonl": true,
+    "scientific_byte_identity:package_saved/normal/SOURCE_CERTIFICATE.json": true,
+    "scientific_byte_identity:package_saved/optimized/DATA.json": true,
+    "scientific_byte_identity:package_saved/optimized/DECODE_ATTEMPTS.jsonl": true,
+    "scientific_byte_identity:package_saved/optimized/DIAGNOSTIC_CROSSCHECK.json": true,
+    "scientific_byte_identity:package_saved/optimized/NODE_TARGETS.jsonl.gz": true,
+    "scientific_byte_identity:package_saved/optimized/OUTPUT_READBACK.json": true,
+    "scientific_byte_identity:package_saved/optimized/SCIENCE_SUMMARY.json": true,
+    "scientific_byte_identity:package_saved/optimized/SOURCE_ATTEMPTS.jsonl": true,
+    "scientific_byte_identity:package_saved/optimized/SOURCE_CERTIFICATE.json": true,
+    "scientific_ci_references_exact_root_supplied_runs": true,
+    "scientific_scope_49152_occurrences_12_cases": true,
+    "seal_and_reference_external_node_payloads_exact": true,
+    "supplement_162_leaves": true,
+    "supplement_archive_exact_disk_leaf_set": true,
+    "supplement_archive_leaf_identity:FULL_REPLAY_REFERENCE.json": true,
+    "supplement_archive_leaf_identity:README.md": true,
+    "supplement_archive_leaf_identity:SUPPLEMENT_MANIFEST.json": true,
+    "supplement_archive_leaf_identity:checkpoint/ENVIRONMENT_PINS.json": true,
+    "supplement_archive_leaf_identity:checkpoint/FULL_REGISTRATION.json": true,
+    "supplement_archive_leaf_identity:checkpoint/NEXT_CALCULATION_CONTRACT.md": true,
+    "supplement_archive_leaf_identity:checkpoint/README.md": true,
+    "supplement_archive_leaf_identity:checkpoint/REGISTRATION_CONTRACT.json": true,
+    "supplement_archive_leaf_identity:checkpoint/RESULTS.md": true,
+    "supplement_archive_leaf_identity:checkpoint/SOURCE_PINS.json": true,
+    "supplement_archive_leaf_identity:checkpoint/decoder/FABRICATED_BENCHMARK.json": true,
+    "supplement_archive_leaf_identity:checkpoint/decoder/FABRICATED_VALIDATION_RECEIPT.json": true,
+    "supplement_archive_leaf_identity:checkpoint/decoder/INDEPENDENT_CODEC_REVIEW_20261008.json": true,
+    "supplement_archive_leaf_identity:checkpoint/decoder/INDEPENDENT_CODEC_REVIEW_20261008.md": true,
+    "supplement_archive_leaf_identity:checkpoint/decoder/exact_binary80.py": true,
+    "supplement_archive_leaf_identity:checkpoint/decoder/fabricated_fixtures.py": true,
+    "supplement_archive_leaf_identity:checkpoint/decoder/review_codec_independent.py": true,
+    "supplement_archive_leaf_identity:checkpoint/decoder/test_exact_binary80.py": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/ACTUAL_EXACT_REPLAY.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/RESULTS_PRESENTATION_REVIEW.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/normal/DATA.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/normal/DECODE_ATTEMPTS.jsonl": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/normal/DIAGNOSTIC_CROSSCHECK.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/normal/ENTRY_RECEIPT.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/normal/EXECUTION.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/normal/OUTPUT_READBACK.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/normal/RESOURCE.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/normal/SCIENCE_SUMMARY.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/normal/SOURCE_ATTEMPTS.jsonl": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/normal/SOURCE_CERTIFICATE.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/normal/child.log": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/optimized/DATA.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/optimized/DECODE_ATTEMPTS.jsonl": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/optimized/DIAGNOSTIC_CROSSCHECK.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/optimized/ENTRY_RECEIPT.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/optimized/EXECUTION.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/optimized/OUTPUT_READBACK.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/optimized/RESOURCE.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/optimized/SCIENCE_SUMMARY.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/optimized/SOURCE_ATTEMPTS.jsonl": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/optimized/SOURCE_CERTIFICATE.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/actual/optimized/child.log": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/independent-actual/ACTUAL_OUTPUT_INDEPENDENT_REVIEW.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/independent-actual/ACTUAL_OUTPUT_INDEPENDENT_REVIEW.md": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/independent-actual/ARTIFACT_PINS.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/independent-actual/FROZEN_ASSEMBLY_REVIEW.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/independent-actual/INDEPENDENT_ACTUAL_REPLAY.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/independent-actual/INDEPENDENT_SERIALIZED_NORMS_NORMAL_001.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/independent-actual/INTERPRETATION_DERIVATION.md": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/independent-actual/ROOT_ACTUAL_EXACT_REPLAY.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/independent-actual/STRICT_READBACK_NORMAL_001.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/BOUNDED_KERNEL_CONTROLS_NORMAL_003.log": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/BOUNDED_KERNEL_CONTROLS_OPTIMIZED_003.log": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/EXECUTION_CONTRACT.md": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/EXECUTION_READY_REPORT.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/FABRICATED_EXACT_REPLAY_003.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/FINAL_PRE_FREEZE_REVIEW.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/INDEPENDENT_CONTROLS_NORMAL.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/INDEPENDENT_CONTROLS_OPTIMIZED.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/INDEPENDENT_EMPTY_RECEIPT_CONTROL.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/INDEPENDENT_ENTRY_AND_CUSTODIAN_REPLAY_003.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/INDEPENDENT_FINAL_EXECUTION_MATHEMATICAL_REVIEW.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/INDEPENDENT_FINAL_EXECUTION_MATHEMATICAL_REVIEW.md": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/INDEPENDENT_FINAL_REVIEW_MANIFEST.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/INDEPENDENT_PRIOR_BYTE_IDENTITY.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/INDEPENDENT_STANDALONE_READBACK_NORMAL_002.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/INDEPENDENT_STANDALONE_READBACK_NORMAL_003.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/PUBLIC_READBACK_ACCEPTANCE.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/README.md": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/ROOT_STATIC_LIBRARY_REVIEW.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/fabricated-normal-003/ENTRY_RECEIPT.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/fabricated-normal-003/EXECUTION.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/fabricated-normal-003/OUTPUT_READBACK.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/fabricated-normal-003/RESOURCE.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/fabricated-optimized-003/ENTRY_RECEIPT.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/fabricated-optimized-003/EXECUTION.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/fabricated-optimized-003/OUTPUT_READBACK.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/fabricated-optimized-003/RESOURCE.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/guard-payload-controls-normal-002/CONTROLS.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/guard-payload-controls-optimized-002/CONTROLS.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/held-directory-controls-20261008/CONTROLS_SUMMARY.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/public_readback_go.py": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/review-evidence/CONTROLS_NORMAL.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/review-evidence/CONTROLS_OPTIMIZED.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/review-evidence/EMPTY_RECEIPT_CONTROL.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/review-evidence/ENTRY_AND_CUSTODIAN_REPLAY_003.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/review-evidence/FINAL_EXECUTION_MATHEMATICAL_REVIEW.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/review-evidence/FINAL_EXECUTION_MATHEMATICAL_REVIEW.md": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/review-evidence/FINAL_REVIEW_MANIFEST.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/review-evidence/PRIOR_BYTE_IDENTITY.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/preparation/review-evidence/STANDALONE_READBACK_NORMAL_003.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/public-readback/PUBLIC_GO.json": true,
+    "supplement_archive_leaf_identity:checkpoint/evidence/public-readback/ROOT_FREEZE_ASSEMBLY.json": true,
+    "supplement_archive_leaf_identity:checkpoint/execution/EXECUTION_CONTRACT.md": true,
+    "supplement_archive_leaf_identity:checkpoint/execution/README.md": true,
+    "supplement_archive_leaf_identity:checkpoint/execution/bounded_launcher.py": true,
+    "supplement_archive_leaf_identity:checkpoint/execution/comparison_worker.py": true,
+    "supplement_archive_leaf_identity:checkpoint/execution/kernel_guard.py": true,
+    "supplement_archive_leaf_identity:checkpoint/execution/prepare_candidate.py": true,
+    "supplement_archive_leaf_identity:checkpoint/execution/readback.py": true,
+    "supplement_archive_leaf_identity:checkpoint/execution/registration_guard.py": true,
+    "supplement_archive_leaf_identity:checkpoint/execution/run_registered.py": true,
+    "supplement_archive_leaf_identity:checkpoint/execution/source_certificate.py": true,
+    "supplement_archive_leaf_identity:checkpoint/execution/test_bounded_launcher.py": true,
+    "supplement_archive_leaf_identity:checkpoint/execution/test_controls.py": true,
+    "supplement_archive_leaf_identity:checkpoint/figures/EXACT_TABLE.csv": true,
+    "supplement_archive_leaf_identity:checkpoint/figures/FIGURE_RECEIPT.json": true,
+    "supplement_archive_leaf_identity:checkpoint/figures/stored_state_bounds.pdf": true,
+    "supplement_archive_leaf_identity:checkpoint/figures/stored_state_bounds.png": true,
+    "supplement_archive_leaf_identity:checkpoint/literature/COVERAGE_AND_LIMITS.json": true,
+    "supplement_archive_leaf_identity:checkpoint/literature/EVIDENCE_VALIDATION.json": true,
+    "supplement_archive_leaf_identity:checkpoint/literature/LITERATURE_REFRESH_AND_MODEL_TEST.md": true,
+    "supplement_archive_leaf_identity:checkpoint/literature/PRIMARY_READING_EVIDENCE.json": true,
+    "supplement_archive_leaf_identity:checkpoint/literature/PUBLIC_DELIVERY_MANIFEST.json": true,
+    "supplement_archive_leaf_identity:checkpoint/literature/README.md": true,
+    "supplement_archive_leaf_identity:checkpoint/literature/RELATED_PROJECT_HEADS.json": true,
+    "supplement_archive_leaf_identity:checkpoint/literature/TMD_PRIMARY_READ_RECEIPTS.json": true,
+    "supplement_archive_leaf_identity:checkpoint/physical-identifiability/ARTIFACT_PINS.json": true,
+    "supplement_archive_leaf_identity:checkpoint/physical-identifiability/MANUFACTURED_NORMAL.json": true,
+    "supplement_archive_leaf_identity:checkpoint/physical-identifiability/MANUFACTURED_OPTIMIZED.json": true,
+    "supplement_archive_leaf_identity:checkpoint/physical-identifiability/MODEL_TEST_CONTRACT.json": true,
+    "supplement_archive_leaf_identity:checkpoint/physical-identifiability/MODEL_TEST_CONTRACT.md": true,
+    "supplement_archive_leaf_identity:checkpoint/physical-identifiability/PRIMARY_CITATION_PINS.json": true,
+    "supplement_archive_leaf_identity:checkpoint/physical-identifiability/STRUCTURAL_IDENTIFIABILITY.md": true,
+    "supplement_archive_leaf_identity:checkpoint/physical-identifiability/verify_structural_examples.py": true,
+    "supplement_archive_leaf_identity:checkpoint/prior/BUDGET.json": true,
+    "supplement_archive_leaf_identity:checkpoint/prior/independent_DATA.json": true,
+    "supplement_archive_leaf_identity:checkpoint/prior/primary_DATA.json": true,
+    "supplement_archive_leaf_identity:checkpoint/provenance/ENGINE_INDEPENDENT_REVIEW.md": true,
+    "supplement_archive_leaf_identity:checkpoint/provenance/INDEPENDENT_ENGINE_CONTROL_REEXECUTION.json": true,
+    "supplement_archive_leaf_identity:checkpoint/provenance/INPUT_SPEC.json": true,
+    "supplement_archive_leaf_identity:checkpoint/provenance/INPUT_SPEC_HYDRATION_REVIEW.json": true,
+    "supplement_archive_leaf_identity:checkpoint/provenance/INPUT_SPEC_REVIEW.md": true,
+    "supplement_archive_leaf_identity:checkpoint/provenance/LAYOUT_PROVENANCE_BASIS.json": true,
+    "supplement_archive_leaf_identity:checkpoint/provenance/NATIVE_BINARY80_FIXTURE_REVIEW.json": true,
+    "supplement_archive_leaf_identity:checkpoint/provenance/OPAQUE_AUTHENTICATION_RECEIPT.json": true,
+    "supplement_archive_leaf_identity:checkpoint/provenance/ORIGINAL_ZIP_INVENTORIES.json": true,
+    "supplement_archive_leaf_identity:checkpoint/provenance/READER_PROVENANCE_REVIEW.md": true,
+    "supplement_archive_leaf_identity:checkpoint/requirements-replay.txt": true,
+    "supplement_archive_leaf_identity:checkpoint/science-delivery-review/ARTIFACT_MANIFEST.json": true,
+    "supplement_archive_leaf_identity:checkpoint/science-delivery-review/DELIVERY_PLAN.md": true,
+    "supplement_archive_leaf_identity:checkpoint/science-delivery-review/REVIEW_RECEIPT.json": true,
+    "supplement_archive_leaf_identity:checkpoint/science-delivery-review/SCIENCE_REVIEW.md": true,
+    "supplement_archive_leaf_identity:checkpoint/science-delivery-review/SCIENCE_SYNTHESIS.md": true,
+    "supplement_archive_leaf_identity:checkpoint/source/generic_operator_baseline.py": true,
+    "supplement_archive_leaf_identity:checkpoint/source/route.py": true,
+    "supplement_archive_leaf_identity:checkpoint/source/source_algebra_baseline.py": true,
+    "supplement_archive_leaf_identity:checkpoint/theory/ENTIRE_TARGET_AND_DISCRETE_COMPARISON.md": true,
+    "supplement_archive_leaf_identity:checkpoint/theory/FABRICATED_ENGINE_RECEIPT.json": true,
+    "supplement_archive_leaf_identity:checkpoint/theory/INDEPENDENT_TRANSPORT_REVIEW.json": true,
+    "supplement_archive_leaf_identity:checkpoint/theory/INDEPENDENT_TRANSPORT_REVIEW.md": true,
+    "supplement_archive_leaf_identity:checkpoint/theory/PROSPECTIVE_ANALYTIC_BOUNDS.json": true,
+    "supplement_archive_leaf_identity:checkpoint/theory/TRANSPORT_REVIEW_NORMAL.json": true,
+    "supplement_archive_leaf_identity:checkpoint/theory/TRANSPORT_REVIEW_OPTIMIZED.json": true,
+    "supplement_archive_leaf_identity:checkpoint/theory/entire_target_engine.py": true,
+    "supplement_archive_leaf_identity:checkpoint/theory/test_entire_target_engine.py": true,
+    "supplement_archive_leaf_identity:checkpoint/transport/DISCRETE_ERROR_TRANSPORT.md": true,
+    "supplement_archive_leaf_identity:checkpoint/transport/FABRICATED_NORMAL.json": true,
+    "supplement_archive_leaf_identity:checkpoint/transport/FULL_FABRICATED_NORMAL.json": true,
+    "supplement_archive_leaf_identity:checkpoint/transport/FULL_FABRICATED_OPTIMIZED.json": true,
+    "supplement_archive_leaf_identity:checkpoint/transport/discrete_transport.py": true,
+    "supplement_archive_leaf_identity:checkpoint/transport/verify_transport.py": true,
+    "supplement_archive_no_duplicate_members": true,
+    "supplement_archive_seal": true,
+    "supplement_controls_stable_during_review": true,
+    "supplement_documents_authenticate_before_execution": true,
+    "supplement_documents_external_replay_dependency": true,
+    "supplement_documents_manifest_containment_only": true,
+    "supplement_finite_conditional_transport_scope": true,
+    "supplement_internal_review_scope_explicit": true,
+    "supplement_manifest_161_payloads": true,
+    "supplement_manifest_exact_leaf_closure": true,
+    "supplement_manifest_pin:FULL_REPLAY_REFERENCE.json": true,
+    "supplement_manifest_pin:README.md": true,
+    "supplement_manifest_pin:checkpoint/ENVIRONMENT_PINS.json": true,
+    "supplement_manifest_pin:checkpoint/FULL_REGISTRATION.json": true,
+    "supplement_manifest_pin:checkpoint/NEXT_CALCULATION_CONTRACT.md": true,
+    "supplement_manifest_pin:checkpoint/README.md": true,
+    "supplement_manifest_pin:checkpoint/REGISTRATION_CONTRACT.json": true,
+    "supplement_manifest_pin:checkpoint/RESULTS.md": true,
+    "supplement_manifest_pin:checkpoint/SOURCE_PINS.json": true,
+    "supplement_manifest_pin:checkpoint/decoder/FABRICATED_BENCHMARK.json": true,
+    "supplement_manifest_pin:checkpoint/decoder/FABRICATED_VALIDATION_RECEIPT.json": true,
+    "supplement_manifest_pin:checkpoint/decoder/INDEPENDENT_CODEC_REVIEW_20261008.json": true,
+    "supplement_manifest_pin:checkpoint/decoder/INDEPENDENT_CODEC_REVIEW_20261008.md": true,
+    "supplement_manifest_pin:checkpoint/decoder/exact_binary80.py": true,
+    "supplement_manifest_pin:checkpoint/decoder/fabricated_fixtures.py": true,
+    "supplement_manifest_pin:checkpoint/decoder/review_codec_independent.py": true,
+    "supplement_manifest_pin:checkpoint/decoder/test_exact_binary80.py": true,
+    "supplement_manifest_pin:checkpoint/evidence/ACTUAL_EXACT_REPLAY.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/RESULTS_PRESENTATION_REVIEW.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/normal/DATA.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/normal/DECODE_ATTEMPTS.jsonl": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/normal/DIAGNOSTIC_CROSSCHECK.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/normal/ENTRY_RECEIPT.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/normal/EXECUTION.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/normal/OUTPUT_READBACK.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/normal/RESOURCE.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/normal/SCIENCE_SUMMARY.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/normal/SOURCE_ATTEMPTS.jsonl": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/normal/SOURCE_CERTIFICATE.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/normal/child.log": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/optimized/DATA.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/optimized/DECODE_ATTEMPTS.jsonl": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/optimized/DIAGNOSTIC_CROSSCHECK.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/optimized/ENTRY_RECEIPT.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/optimized/EXECUTION.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/optimized/OUTPUT_READBACK.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/optimized/RESOURCE.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/optimized/SCIENCE_SUMMARY.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/optimized/SOURCE_ATTEMPTS.jsonl": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/optimized/SOURCE_CERTIFICATE.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/actual/optimized/child.log": true,
+    "supplement_manifest_pin:checkpoint/evidence/independent-actual/ACTUAL_OUTPUT_INDEPENDENT_REVIEW.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/independent-actual/ACTUAL_OUTPUT_INDEPENDENT_REVIEW.md": true,
+    "supplement_manifest_pin:checkpoint/evidence/independent-actual/ARTIFACT_PINS.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/independent-actual/FROZEN_ASSEMBLY_REVIEW.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/independent-actual/INDEPENDENT_ACTUAL_REPLAY.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/independent-actual/INDEPENDENT_SERIALIZED_NORMS_NORMAL_001.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/independent-actual/INTERPRETATION_DERIVATION.md": true,
+    "supplement_manifest_pin:checkpoint/evidence/independent-actual/ROOT_ACTUAL_EXACT_REPLAY.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/independent-actual/STRICT_READBACK_NORMAL_001.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/BOUNDED_KERNEL_CONTROLS_NORMAL_003.log": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/BOUNDED_KERNEL_CONTROLS_OPTIMIZED_003.log": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/EXECUTION_CONTRACT.md": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/EXECUTION_READY_REPORT.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/FABRICATED_EXACT_REPLAY_003.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/FINAL_PRE_FREEZE_REVIEW.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/INDEPENDENT_CONTROLS_NORMAL.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/INDEPENDENT_CONTROLS_OPTIMIZED.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/INDEPENDENT_EMPTY_RECEIPT_CONTROL.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/INDEPENDENT_ENTRY_AND_CUSTODIAN_REPLAY_003.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/INDEPENDENT_FINAL_EXECUTION_MATHEMATICAL_REVIEW.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/INDEPENDENT_FINAL_EXECUTION_MATHEMATICAL_REVIEW.md": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/INDEPENDENT_FINAL_REVIEW_MANIFEST.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/INDEPENDENT_PRIOR_BYTE_IDENTITY.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/INDEPENDENT_STANDALONE_READBACK_NORMAL_002.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/INDEPENDENT_STANDALONE_READBACK_NORMAL_003.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/PUBLIC_READBACK_ACCEPTANCE.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/README.md": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/ROOT_STATIC_LIBRARY_REVIEW.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/fabricated-normal-003/ENTRY_RECEIPT.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/fabricated-normal-003/EXECUTION.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/fabricated-normal-003/OUTPUT_READBACK.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/fabricated-normal-003/RESOURCE.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/fabricated-optimized-003/ENTRY_RECEIPT.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/fabricated-optimized-003/EXECUTION.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/fabricated-optimized-003/OUTPUT_READBACK.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/fabricated-optimized-003/RESOURCE.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/guard-payload-controls-normal-002/CONTROLS.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/guard-payload-controls-optimized-002/CONTROLS.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/held-directory-controls-20261008/CONTROLS_SUMMARY.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/public_readback_go.py": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/review-evidence/CONTROLS_NORMAL.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/review-evidence/CONTROLS_OPTIMIZED.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/review-evidence/EMPTY_RECEIPT_CONTROL.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/review-evidence/ENTRY_AND_CUSTODIAN_REPLAY_003.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/review-evidence/FINAL_EXECUTION_MATHEMATICAL_REVIEW.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/review-evidence/FINAL_EXECUTION_MATHEMATICAL_REVIEW.md": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/review-evidence/FINAL_REVIEW_MANIFEST.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/review-evidence/PRIOR_BYTE_IDENTITY.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/preparation/review-evidence/STANDALONE_READBACK_NORMAL_003.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/public-readback/PUBLIC_GO.json": true,
+    "supplement_manifest_pin:checkpoint/evidence/public-readback/ROOT_FREEZE_ASSEMBLY.json": true,
+    "supplement_manifest_pin:checkpoint/execution/EXECUTION_CONTRACT.md": true,
+    "supplement_manifest_pin:checkpoint/execution/README.md": true,
+    "supplement_manifest_pin:checkpoint/execution/bounded_launcher.py": true,
+    "supplement_manifest_pin:checkpoint/execution/comparison_worker.py": true,
+    "supplement_manifest_pin:checkpoint/execution/kernel_guard.py": true,
+    "supplement_manifest_pin:checkpoint/execution/prepare_candidate.py": true,
+    "supplement_manifest_pin:checkpoint/execution/readback.py": true,
+    "supplement_manifest_pin:checkpoint/execution/registration_guard.py": true,
+    "supplement_manifest_pin:checkpoint/execution/run_registered.py": true,
+    "supplement_manifest_pin:checkpoint/execution/source_certificate.py": true,
+    "supplement_manifest_pin:checkpoint/execution/test_bounded_launcher.py": true,
+    "supplement_manifest_pin:checkpoint/execution/test_controls.py": true,
+    "supplement_manifest_pin:checkpoint/figures/EXACT_TABLE.csv": true,
+    "supplement_manifest_pin:checkpoint/figures/FIGURE_RECEIPT.json": true,
+    "supplement_manifest_pin:checkpoint/figures/stored_state_bounds.pdf": true,
+    "supplement_manifest_pin:checkpoint/figures/stored_state_bounds.png": true,
+    "supplement_manifest_pin:checkpoint/literature/COVERAGE_AND_LIMITS.json": true,
+    "supplement_manifest_pin:checkpoint/literature/EVIDENCE_VALIDATION.json": true,
+    "supplement_manifest_pin:checkpoint/literature/LITERATURE_REFRESH_AND_MODEL_TEST.md": true,
+    "supplement_manifest_pin:checkpoint/literature/PRIMARY_READING_EVIDENCE.json": true,
+    "supplement_manifest_pin:checkpoint/literature/PUBLIC_DELIVERY_MANIFEST.json": true,
+    "supplement_manifest_pin:checkpoint/literature/README.md": true,
+    "supplement_manifest_pin:checkpoint/literature/RELATED_PROJECT_HEADS.json": true,
+    "supplement_manifest_pin:checkpoint/literature/TMD_PRIMARY_READ_RECEIPTS.json": true,
+    "supplement_manifest_pin:checkpoint/physical-identifiability/ARTIFACT_PINS.json": true,
+    "supplement_manifest_pin:checkpoint/physical-identifiability/MANUFACTURED_NORMAL.json": true,
+    "supplement_manifest_pin:checkpoint/physical-identifiability/MANUFACTURED_OPTIMIZED.json": true,
+    "supplement_manifest_pin:checkpoint/physical-identifiability/MODEL_TEST_CONTRACT.json": true,
+    "supplement_manifest_pin:checkpoint/physical-identifiability/MODEL_TEST_CONTRACT.md": true,
+    "supplement_manifest_pin:checkpoint/physical-identifiability/PRIMARY_CITATION_PINS.json": true,
+    "supplement_manifest_pin:checkpoint/physical-identifiability/STRUCTURAL_IDENTIFIABILITY.md": true,
+    "supplement_manifest_pin:checkpoint/physical-identifiability/verify_structural_examples.py": true,
+    "supplement_manifest_pin:checkpoint/prior/BUDGET.json": true,
+    "supplement_manifest_pin:checkpoint/prior/independent_DATA.json": true,
+    "supplement_manifest_pin:checkpoint/prior/primary_DATA.json": true,
+    "supplement_manifest_pin:checkpoint/provenance/ENGINE_INDEPENDENT_REVIEW.md": true,
+    "supplement_manifest_pin:checkpoint/provenance/INDEPENDENT_ENGINE_CONTROL_REEXECUTION.json": true,
+    "supplement_manifest_pin:checkpoint/provenance/INPUT_SPEC.json": true,
+    "supplement_manifest_pin:checkpoint/provenance/INPUT_SPEC_HYDRATION_REVIEW.json": true,
+    "supplement_manifest_pin:checkpoint/provenance/INPUT_SPEC_REVIEW.md": true,
+    "supplement_manifest_pin:checkpoint/provenance/LAYOUT_PROVENANCE_BASIS.json": true,
+    "supplement_manifest_pin:checkpoint/provenance/NATIVE_BINARY80_FIXTURE_REVIEW.json": true,
+    "supplement_manifest_pin:checkpoint/provenance/OPAQUE_AUTHENTICATION_RECEIPT.json": true,
+    "supplement_manifest_pin:checkpoint/provenance/ORIGINAL_ZIP_INVENTORIES.json": true,
+    "supplement_manifest_pin:checkpoint/provenance/READER_PROVENANCE_REVIEW.md": true,
+    "supplement_manifest_pin:checkpoint/requirements-replay.txt": true,
+    "supplement_manifest_pin:checkpoint/science-delivery-review/ARTIFACT_MANIFEST.json": true,
+    "supplement_manifest_pin:checkpoint/science-delivery-review/DELIVERY_PLAN.md": true,
+    "supplement_manifest_pin:checkpoint/science-delivery-review/REVIEW_RECEIPT.json": true,
+    "supplement_manifest_pin:checkpoint/science-delivery-review/SCIENCE_REVIEW.md": true,
+    "supplement_manifest_pin:checkpoint/science-delivery-review/SCIENCE_SYNTHESIS.md": true,
+    "supplement_manifest_pin:checkpoint/source/generic_operator_baseline.py": true,
+    "supplement_manifest_pin:checkpoint/source/route.py": true,
+    "supplement_manifest_pin:checkpoint/source/source_algebra_baseline.py": true,
+    "supplement_manifest_pin:checkpoint/theory/ENTIRE_TARGET_AND_DISCRETE_COMPARISON.md": true,
+    "supplement_manifest_pin:checkpoint/theory/FABRICATED_ENGINE_RECEIPT.json": true,
+    "supplement_manifest_pin:checkpoint/theory/INDEPENDENT_TRANSPORT_REVIEW.json": true,
+    "supplement_manifest_pin:checkpoint/theory/INDEPENDENT_TRANSPORT_REVIEW.md": true,
+    "supplement_manifest_pin:checkpoint/theory/PROSPECTIVE_ANALYTIC_BOUNDS.json": true,
+    "supplement_manifest_pin:checkpoint/theory/TRANSPORT_REVIEW_NORMAL.json": true,
+    "supplement_manifest_pin:checkpoint/theory/TRANSPORT_REVIEW_OPTIMIZED.json": true,
+    "supplement_manifest_pin:checkpoint/theory/entire_target_engine.py": true,
+    "supplement_manifest_pin:checkpoint/theory/test_entire_target_engine.py": true,
+    "supplement_manifest_pin:checkpoint/transport/DISCRETE_ERROR_TRANSPORT.md": true,
+    "supplement_manifest_pin:checkpoint/transport/FABRICATED_NORMAL.json": true,
+    "supplement_manifest_pin:checkpoint/transport/FULL_FABRICATED_NORMAL.json": true,
+    "supplement_manifest_pin:checkpoint/transport/FULL_FABRICATED_OPTIMIZED.json": true,
+    "supplement_manifest_pin:checkpoint/transport/discrete_transport.py": true,
+    "supplement_manifest_pin:checkpoint/transport/verify_transport.py": true,
+    "supplement_preserves_prospective_historical_context": true,
+    "supplement_remaining_scientific_limits_explicit": true,
+    "supplement_scientific_identity:normal/DATA.json": true,
+    "supplement_scientific_identity:normal/DECODE_ATTEMPTS.jsonl": true,
+    "supplement_scientific_identity:normal/DIAGNOSTIC_CROSSCHECK.json": true,
+    "supplement_scientific_identity:normal/OUTPUT_READBACK.json": true,
+    "supplement_scientific_identity:normal/SCIENCE_SUMMARY.json": true,
+    "supplement_scientific_identity:normal/SOURCE_ATTEMPTS.jsonl": true,
+    "supplement_scientific_identity:normal/SOURCE_CERTIFICATE.json": true,
+    "supplement_scientific_identity:optimized/DATA.json": true,
+    "supplement_scientific_identity:optimized/DECODE_ATTEMPTS.jsonl": true,
+    "supplement_scientific_identity:optimized/DIAGNOSTIC_CROSSCHECK.json": true,
+    "supplement_scientific_identity:optimized/OUTPUT_READBACK.json": true,
+    "supplement_scientific_identity:optimized/SCIENCE_SUMMARY.json": true,
+    "supplement_scientific_identity:optimized/SOURCE_ATTEMPTS.jsonl": true,
+    "supplement_scientific_identity:optimized/SOURCE_CERTIFICATE.json": true,
+    "supplement_seal_archive_leaf_count": true,
+    "supplement_seal_checkpoint_leaf_count": true,
+    "supplement_seal_manifest_sha256": true
+  },
+  "full_package_reference": {
+    "controls": [
+      {
+        "bytes": 50336,
+        "git_object_bytes_match": true,
+        "local_git_commit": "13a30ef46f5c90c1b01ae83b609db65fd0f8a709",
+        "local_git_path": "research/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007/PAYLOAD_MANIFEST.json",
+        "path": "PAYLOAD_MANIFEST.json",
+        "sha256": "88e92065e25b1198983fb9bb72d533a1fd1f6b7335ffba714d02e1fb9abeb828"
+      },
+      {
+        "bytes": 1073,
+        "git_object_bytes_match": true,
+        "local_git_commit": "13a30ef46f5c90c1b01ae83b609db65fd0f8a709",
+        "local_git_path": "research/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007/REPLAY_PINS.json",
+        "path": "REPLAY_PINS.json",
+        "sha256": "89c86709e24764b25b6f4959f623c19565d64caffbfd1cf1b03bad59ffb08c68"
+      },
+      {
+        "bytes": 23494,
+        "git_object_bytes_match": true,
+        "local_git_commit": "13a30ef46f5c90c1b01ae83b609db65fd0f8a709",
+        "local_git_path": "research/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007/replay_checkpoint.py",
+        "path": "replay_checkpoint.py",
+        "sha256": "c4d04d22aff10d04dd93ee70ca94e45fcd04d9bbafd69fbcff3a919bafc10377"
+      }
+    ],
+    "external_inputs": [
+      {
+        "authentication_chain": "FULL_REPLAY_REFERENCE.json -> pinned full PAYLOAD_MANIFEST.json -> declared input byte/SHA256 pin",
+        "bytes": 33696626,
+        "capsule": "positive_B/coarse",
+        "enumeration_source": "checkpoint/provenance/INPUT_SPEC.json",
+        "immutable_package_url": "https://github.com/maldonado-research/HDblast/blob/13a30ef46f5c90c1b01ae83b609db65fd0f8a709/research/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007/research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_positive_B_coarse.npz",
+        "input_archive_bytes_read": false,
+        "local_git_blob_oid": "4907f1d1d008df72432eff29707facf50e67f298",
+        "local_git_blob_size_metadata_verified": true,
+        "path": "research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_positive_B_coarse.npz",
+        "role": "original",
+        "sha256": "978e7b985ea67644563649d6617884daafeda67046209e7f9ccabe79d5259ea6"
+      },
+      {
+        "authentication_chain": "FULL_REPLAY_REFERENCE.json -> pinned full PAYLOAD_MANIFEST.json -> declared input byte/SHA256 pin",
+        "bytes": 2339164,
+        "capsule": "positive_B/coarse",
+        "enumeration_source": "checkpoint/provenance/INPUT_SPEC.json",
+        "immutable_package_url": "https://github.com/maldonado-research/HDblast/blob/13a30ef46f5c90c1b01ae83b609db65fd0f8a709/research/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007/research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_positive_B_coarse.npz",
+        "input_archive_bytes_read": false,
+        "local_git_blob_oid": "6baca2edeced1b9ba459ea2cd531cb0b5a493bc5",
+        "local_git_blob_size_metadata_verified": true,
+        "path": "research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_positive_B_coarse.npz",
+        "role": "compact",
+        "sha256": "adb5728a77da58b99fb4009d1cb88c5298ff9c4a3bb59d5ad0cf9f4a2c81eb4e"
+      },
+      {
+        "authentication_chain": "FULL_REPLAY_REFERENCE.json -> pinned full PAYLOAD_MANIFEST.json -> declared input byte/SHA256 pin",
+        "bytes": 66386665,
+        "capsule": "positive_B/fine",
+        "enumeration_source": "checkpoint/provenance/INPUT_SPEC.json",
+        "immutable_package_url": "https://github.com/maldonado-research/HDblast/blob/13a30ef46f5c90c1b01ae83b609db65fd0f8a709/research/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007/research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_positive_B_fine.npz",
+        "input_archive_bytes_read": false,
+        "local_git_blob_oid": "aaeedc343d3a460c082264b4f5305847b4195367",
+        "local_git_blob_size_metadata_verified": true,
+        "path": "research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_positive_B_fine.npz",
+        "role": "original",
+        "sha256": "9f76ff2b57a33b1341f6763a71d10bda8f22fa86fb2d5f7968dffbb716cc517d"
+      },
+      {
+        "authentication_chain": "FULL_REPLAY_REFERENCE.json -> pinned full PAYLOAD_MANIFEST.json -> declared input byte/SHA256 pin",
+        "bytes": 4671836,
+        "capsule": "positive_B/fine",
+        "enumeration_source": "checkpoint/provenance/INPUT_SPEC.json",
+        "immutable_package_url": "https://github.com/maldonado-research/HDblast/blob/13a30ef46f5c90c1b01ae83b609db65fd0f8a709/research/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007/research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_positive_B_fine.npz",
+        "input_archive_bytes_read": false,
+        "local_git_blob_oid": "2d07d2fef4b1398ac823251528f33e86bf5c42a3",
+        "local_git_blob_size_metadata_verified": true,
+        "path": "research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_positive_B_fine.npz",
+        "role": "compact",
+        "sha256": "7f36f2be2b9c345b556668aaf1574bfa07ad01c394d5b1acd1c4b793fa0c2eaa"
+      },
+      {
+        "authentication_chain": "FULL_REPLAY_REFERENCE.json -> pinned full PAYLOAD_MANIFEST.json -> declared input byte/SHA256 pin",
+        "bytes": 33127950,
+        "capsule": "signed_uB/coarse",
+        "enumeration_source": "checkpoint/provenance/INPUT_SPEC.json",
+        "immutable_package_url": "https://github.com/maldonado-research/HDblast/blob/13a30ef46f5c90c1b01ae83b609db65fd0f8a709/research/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007/research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_signed_uB_coarse.npz",
+        "input_archive_bytes_read": false,
+        "local_git_blob_oid": "99cd2d3e10f3436fc469401bc3ffe142c8f7fdda",
+        "local_git_blob_size_metadata_verified": true,
+        "path": "research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_signed_uB_coarse.npz",
+        "role": "original",
+        "sha256": "75f2693af6bc56d5f91d0d7d7bb543c25e47c22e8b3c0da243927f1271d17790"
+      },
+      {
+        "authentication_chain": "FULL_REPLAY_REFERENCE.json -> pinned full PAYLOAD_MANIFEST.json -> declared input byte/SHA256 pin",
+        "bytes": 2339164,
+        "capsule": "signed_uB/coarse",
+        "enumeration_source": "checkpoint/provenance/INPUT_SPEC.json",
+        "immutable_package_url": "https://github.com/maldonado-research/HDblast/blob/13a30ef46f5c90c1b01ae83b609db65fd0f8a709/research/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007/research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_signed_uB_coarse.npz",
+        "input_archive_bytes_read": false,
+        "local_git_blob_oid": "4e15e890f22f5393b84f42f70236ff9bde401fc2",
+        "local_git_blob_size_metadata_verified": true,
+        "path": "research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_signed_uB_coarse.npz",
+        "role": "compact",
+        "sha256": "bb5b7ade887db7a9b86c29cbd5c88ebad8c3b0217a9db716ecb57ca05265db84"
+      },
+      {
+        "authentication_chain": "FULL_REPLAY_REFERENCE.json -> pinned full PAYLOAD_MANIFEST.json -> declared input byte/SHA256 pin",
+        "bytes": 65741857,
+        "capsule": "signed_uB/fine",
+        "enumeration_source": "checkpoint/provenance/INPUT_SPEC.json",
+        "immutable_package_url": "https://github.com/maldonado-research/HDblast/blob/13a30ef46f5c90c1b01ae83b609db65fd0f8a709/research/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007/research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_signed_uB_fine.npz",
+        "input_archive_bytes_read": false,
+        "local_git_blob_oid": "dab49f6b21281a31416c6f02e7c85c8c1843e54a",
+        "local_git_blob_size_metadata_verified": true,
+        "path": "research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP/outputs/fresh/independent/metric_modes_signed_uB_fine.npz",
+        "role": "original",
+        "sha256": "cdc4f857909d037055a9ca0dfc415d10e00e7002ae976d8b97cd4f527354a475"
+      },
+      {
+        "authentication_chain": "FULL_REPLAY_REFERENCE.json -> pinned full PAYLOAD_MANIFEST.json -> declared input byte/SHA256 pin",
+        "bytes": 4671836,
+        "capsule": "signed_uB/fine",
+        "enumeration_source": "checkpoint/provenance/INPUT_SPEC.json",
+        "immutable_package_url": "https://github.com/maldonado-research/HDblast/blob/13a30ef46f5c90c1b01ae83b609db65fd0f8a709/research/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007/research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_signed_uB_fine.npz",
+        "input_archive_bytes_read": false,
+        "local_git_blob_oid": "6f25e845a8ff3c15e85e29b598139ca60cec2d4b",
+        "local_git_blob_size_metadata_verified": true,
+        "path": "research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER/inputs/metric_modes_signed_uB_fine.npz",
+        "role": "compact",
+        "sha256": "16f271b8cb668adb151f48cf44788947339a1532e702ff41d7f0ad8456056d59"
+      }
+    ],
+    "external_node_payloads": [
+      {
+        "bytes": 7753789,
+        "gzip_decoded": false,
+        "local_git_blob_oid": "3a4944540d56470d6bc3740b470a90c30f65422b",
+        "local_git_object_identity_verified": true,
+        "path": "research/HDBLAST_CHECKPOINT_20261007_STORED_STATE_COMPARISON/evidence/actual/normal/NODE_TARGETS.jsonl.gz",
+        "sha256": "201045ffccab07c5694ee715fabf244be3b7b189b58fc74ce4e0d0926ab26bc3",
+        "url": "https://github.com/maldonado-research/HDblast/blob/13a30ef46f5c90c1b01ae83b609db65fd0f8a709/research/HDBLAST_CHECKPOINT_20261007_STORED_STATE_COMPARISON/evidence/actual/normal/NODE_TARGETS.jsonl.gz"
+      },
+      {
+        "bytes": 7753789,
+        "gzip_decoded": false,
+        "local_git_blob_oid": "3a4944540d56470d6bc3740b470a90c30f65422b",
+        "local_git_object_identity_verified": true,
+        "path": "research/HDBLAST_CHECKPOINT_20261007_STORED_STATE_COMPARISON/evidence/actual/optimized/NODE_TARGETS.jsonl.gz",
+        "sha256": "201045ffccab07c5694ee715fabf244be3b7b189b58fc74ce4e0d0926ab26bc3",
+        "url": "https://github.com/maldonado-research/HDblast/blob/13a30ef46f5c90c1b01ae83b609db65fd0f8a709/research/HDBLAST_CHECKPOINT_20261007_STORED_STATE_COMPARISON/evidence/actual/optimized/NODE_TARGETS.jsonl.gz"
+      }
+    ],
+    "full_archive": {
+      "bytes": 240135519,
+      "filename": "HDBLAST_CHECKPOINT_20261007_STORED_STATE_COMPARISON.zip",
+      "md5": "e424502f12dbaacd36abaaabdd3fb74e",
+      "sha256": "ead5ffa3987c760d99da7a79189ff5ad766fb9bef6e032c489f4efb2316cd189"
+    },
+    "full_archive_pin_source": "Preserved FINAL_RELEASE_INPUT_SEAL.json and prior independent final-input acceptance; full original-array-containing archive not reopened by this reviewer.",
+    "immutable_commit": "13a30ef46f5c90c1b01ae83b609db65fd0f8a709",
+    "local_git_access": "Read-only cat-file -t, show of three control blobs, ls-tree metadata and hash-object without -w for node-output files. No network operations; NPZ blobs were not read.",
+    "local_git_repository": "/workspace/HDblast",
+    "package_url": "https://github.com/maldonado-research/HDblast/tree/13a30ef46f5c90c1b01ae83b609db65fd0f8a709/research/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007",
+    "upload_refusal_local_captures": [
+      {
+        "bytes": 924,
+        "http_status": 401,
+        "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/unknown-put-recovery/live-attempt-001/RECOVERY_RESULT.json",
+        "proof_scope": "Captured local result only; no live request in this review.",
+        "sha256": "3a80c99cbec992aafd52de2a6b02502b8aa3bd4bc1296e35d9435b9eae4caa66"
+      },
+      {
+        "bytes": 924,
+        "http_status": 401,
+        "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/unknown-put-recovery/live-chunked-attempt-001/RECOVERY_RESULT.json",
+        "proof_scope": "Captured local result only; no live request in this review.",
+        "sha256": "93b432ec3ad3ef04bb9e04a0c52245af171d0647bab881aabf9bfd24d25109e5"
+      }
+    ]
+  },
+  "passed_check_count": 746,
+  "retained_checkpoint_leaves": [
+    {
+      "bytes": 1204,
+      "identical_to_full_checkpoint": true,
+      "path": "ENVIRONMENT_PINS.json",
+      "registered_core": true,
+      "sha256": "88a26d11d3f38283e9076a57a4ae6111a7c4a0f2f744107e68488e7ad826c1d1"
+    },
+    {
+      "bytes": 19367,
+      "identical_to_full_checkpoint": true,
+      "path": "FULL_REGISTRATION.json",
+      "registered_core": false,
+      "sha256": "05e9943f0b4c8134252a2fecef7631ddba8bd398d18553d6e126fbf50fc3aacc"
+    },
+    {
+      "bytes": 3014,
+      "identical_to_full_checkpoint": true,
+      "path": "NEXT_CALCULATION_CONTRACT.md",
+      "registered_core": false,
+      "sha256": "4a01bd41a11f335b9b0f7cc7e6cad3125b2e72198bb52cad5b9427d393552cc7"
+    },
+    {
+      "bytes": 3719,
+      "identical_to_full_checkpoint": true,
+      "path": "README.md",
+      "registered_core": true,
+      "sha256": "3928c9c7a7d38733838e0e4ddc25c2eeb9b01b51f3fdf74ca15e42178ae403ae"
+    },
+    {
+      "bytes": 2657,
+      "identical_to_full_checkpoint": true,
+      "path": "REGISTRATION_CONTRACT.json",
+      "registered_core": true,
+      "sha256": "ed006a707d8abaf93c4f29583caa1e0b5e5bd394ba5d660507ebfe447fed749d"
+    },
+    {
+      "bytes": 22147,
+      "identical_to_full_checkpoint": true,
+      "path": "RESULTS.md",
+      "registered_core": false,
+      "sha256": "02ad104b9cb6e69881ce4ea3040fcf674465f64688e1da1dd1e8df5e904109e4"
+    },
+    {
+      "bytes": 1174,
+      "identical_to_full_checkpoint": true,
+      "path": "SOURCE_PINS.json",
+      "registered_core": true,
+      "sha256": "8f3717c42652f9ada0ac034e14c7b23154ee79178b5cef5ecf130160f127c4e1"
+    },
+    {
+      "bytes": 1359,
+      "identical_to_full_checkpoint": true,
+      "path": "decoder/FABRICATED_BENCHMARK.json",
+      "registered_core": true,
+      "sha256": "a17d376ba4254a76f991a52fa48f7d27645b5c15661253b7119d76a85106f95c"
+    },
+    {
+      "bytes": 14091,
+      "identical_to_full_checkpoint": true,
+      "path": "decoder/FABRICATED_VALIDATION_RECEIPT.json",
+      "registered_core": true,
+      "sha256": "658c157fd8c1d3da79bbb5e8b4dd3708d877547060bf2a3de7ae64fe55a9d1a6"
+    },
+    {
+      "bytes": 2934,
+      "identical_to_full_checkpoint": true,
+      "path": "decoder/INDEPENDENT_CODEC_REVIEW_20261008.json",
+      "registered_core": true,
+      "sha256": "2d6344158bbfae93d69aedbc20a130dcd7b3ad220525204b60b02303fe888d52"
+    },
+    {
+      "bytes": 5161,
+      "identical_to_full_checkpoint": true,
+      "path": "decoder/INDEPENDENT_CODEC_REVIEW_20261008.md",
+      "registered_core": true,
+      "sha256": "c97aaa4421b6332971dcc915a8e9424323679fc027f5dddf80d6f86865fdeced"
+    },
+    {
+      "bytes": 24501,
+      "identical_to_full_checkpoint": true,
+      "path": "decoder/exact_binary80.py",
+      "registered_core": true,
+      "sha256": "6556d52228ce3aa2f8604d29e3dcc9d3a81ad947dc4f126300128162ce15bd87"
+    },
+    {
+      "bytes": 2668,
+      "identical_to_full_checkpoint": true,
+      "path": "decoder/fabricated_fixtures.py",
+      "registered_core": true,
+      "sha256": "82ded2a154601d9c8363850ebae9e9bec5f3e6fd6a6b663ad81d02e0e1655d0d"
+    },
+    {
+      "bytes": 16835,
+      "identical_to_full_checkpoint": true,
+      "path": "decoder/review_codec_independent.py",
+      "registered_core": true,
+      "sha256": "18dd8725ea8b4101b15ddb8f4e40dac0b82343696c99a35ecc00f4ad8edb87b6"
+    },
+    {
+      "bytes": 10812,
+      "identical_to_full_checkpoint": true,
+      "path": "decoder/test_exact_binary80.py",
+      "registered_core": true,
+      "sha256": "625b5e1dfaee5c873605ba7428f80ac16fb55d5358784de0fc3e80e20fd71b07"
+    },
+    {
+      "bytes": 2544,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/ACTUAL_EXACT_REPLAY.json",
+      "registered_core": false,
+      "sha256": "005b48d5c24613bbd11d746a64b1bb38de1d57535433cfa27d98918c4ac0f5c4"
+    },
+    {
+      "bytes": 2532,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/RESULTS_PRESENTATION_REVIEW.json",
+      "registered_core": false,
+      "sha256": "cd97a3f72f531b6ddfab3a1acedbd0735942c3336c64a466a33d113d8872edf8"
+    },
+    {
+      "bytes": 128185,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/normal/DATA.json",
+      "registered_core": false,
+      "sha256": "2618232d6a2f713ce335d9becea301c9d6f30a314b088834398dde6a9a0ff98e"
+    },
+    {
+      "bytes": 2273,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/normal/DECODE_ATTEMPTS.jsonl",
+      "registered_core": false,
+      "sha256": "029ff2e95fd5027b609643ef3fd27a4b328feb785888e0b993d5f57c1f153e1b"
+    },
+    {
+      "bytes": 8959,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/normal/DIAGNOSTIC_CROSSCHECK.json",
+      "registered_core": false,
+      "sha256": "39713be981f4a666318282873ee2cf67b3bf8d5b27cf2fde7c9bad98bf88825f"
+    },
+    {
+      "bytes": 2731,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/normal/ENTRY_RECEIPT.json",
+      "registered_core": false,
+      "sha256": "b3639fe747ce181e69f48ebb240d24729286c401622f3bc93d8c315a238f3a26"
+    },
+    {
+      "bytes": 2317,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/normal/EXECUTION.json",
+      "registered_core": false,
+      "sha256": "14c5fdaa8932021663ac43906a922a0068e968adc8f4d61d98fb0fe581ba52d6"
+    },
+    {
+      "bytes": 685,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/normal/OUTPUT_READBACK.json",
+      "registered_core": false,
+      "sha256": "6662aa01913b43b5c9f2b5590196e181b9a19fec16bdd0830c5b4b4968f1b8c9"
+    },
+    {
+      "bytes": 57,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/normal/RESOURCE.json",
+      "registered_core": false,
+      "sha256": "699fc71d0d87b6ae016a74d2d2572c987d573151e1393838e7a23622125ca317"
+    },
+    {
+      "bytes": 128185,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/normal/SCIENCE_SUMMARY.json",
+      "registered_core": false,
+      "sha256": "2618232d6a2f713ce335d9becea301c9d6f30a314b088834398dde6a9a0ff98e"
+    },
+    {
+      "bytes": 2910,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/normal/SOURCE_ATTEMPTS.jsonl",
+      "registered_core": false,
+      "sha256": "82af89c3a9f77425acc6a377615f4e47912fb03feaadc7b6e610b02770185f84"
+    },
+    {
+      "bytes": 994433,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/normal/SOURCE_CERTIFICATE.json",
+      "registered_core": false,
+      "sha256": "5fe04f4f8f7f6f7a29183dbc551d6e36ba2bf964025a89713e420d2c24864b52"
+    },
+    {
+      "bytes": 37,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/normal/child.log",
+      "registered_core": false,
+      "sha256": "fe28e93246201d55b8ad77286137f8f2f93283dc04cecad8f99d33a601dcd425"
+    },
+    {
+      "bytes": 128185,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/optimized/DATA.json",
+      "registered_core": false,
+      "sha256": "2618232d6a2f713ce335d9becea301c9d6f30a314b088834398dde6a9a0ff98e"
+    },
+    {
+      "bytes": 2273,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/optimized/DECODE_ATTEMPTS.jsonl",
+      "registered_core": false,
+      "sha256": "029ff2e95fd5027b609643ef3fd27a4b328feb785888e0b993d5f57c1f153e1b"
+    },
+    {
+      "bytes": 8959,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/optimized/DIAGNOSTIC_CROSSCHECK.json",
+      "registered_core": false,
+      "sha256": "39713be981f4a666318282873ee2cf67b3bf8d5b27cf2fde7c9bad98bf88825f"
+    },
+    {
+      "bytes": 2731,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/optimized/ENTRY_RECEIPT.json",
+      "registered_core": false,
+      "sha256": "509acaa68295db6b9c62aeb2090af77e52f3cbc08679649a4365160d4491f340"
+    },
+    {
+      "bytes": 2332,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/optimized/EXECUTION.json",
+      "registered_core": false,
+      "sha256": "2897d6c9681994993949d7e9280bcdf55b9fb81d1b2eeb15e956e3a4023a34c4"
+    },
+    {
+      "bytes": 685,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/optimized/OUTPUT_READBACK.json",
+      "registered_core": false,
+      "sha256": "6662aa01913b43b5c9f2b5590196e181b9a19fec16bdd0830c5b4b4968f1b8c9"
+    },
+    {
+      "bytes": 56,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/optimized/RESOURCE.json",
+      "registered_core": false,
+      "sha256": "ce5cb8e11d86ea908cfe02cfb6b20975d3242f71f59975e49a0bfb22cc7bdb8f"
+    },
+    {
+      "bytes": 128185,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/optimized/SCIENCE_SUMMARY.json",
+      "registered_core": false,
+      "sha256": "2618232d6a2f713ce335d9becea301c9d6f30a314b088834398dde6a9a0ff98e"
+    },
+    {
+      "bytes": 2910,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/optimized/SOURCE_ATTEMPTS.jsonl",
+      "registered_core": false,
+      "sha256": "82af89c3a9f77425acc6a377615f4e47912fb03feaadc7b6e610b02770185f84"
+    },
+    {
+      "bytes": 994433,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/optimized/SOURCE_CERTIFICATE.json",
+      "registered_core": false,
+      "sha256": "5fe04f4f8f7f6f7a29183dbc551d6e36ba2bf964025a89713e420d2c24864b52"
+    },
+    {
+      "bytes": 37,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/actual/optimized/child.log",
+      "registered_core": false,
+      "sha256": "fe28e93246201d55b8ad77286137f8f2f93283dc04cecad8f99d33a601dcd425"
+    },
+    {
+      "bytes": 25926,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/independent-actual/ACTUAL_OUTPUT_INDEPENDENT_REVIEW.json",
+      "registered_core": false,
+      "sha256": "aed51f8041b63db6f56991d49fda4f916ccea48a68c22b71dac522c9bfb06cf5"
+    },
+    {
+      "bytes": 6587,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/independent-actual/ACTUAL_OUTPUT_INDEPENDENT_REVIEW.md",
+      "registered_core": false,
+      "sha256": "26d652f3309ccc62c0de64dd10bd56dc7eb975934dc5e50cda6fb59a81a36e58"
+    },
+    {
+      "bytes": 1785,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/independent-actual/ARTIFACT_PINS.json",
+      "registered_core": false,
+      "sha256": "3a5e9d5ec854227d297fcae4b18fd2319764906de8a00e573bcf199bc83a0896"
+    },
+    {
+      "bytes": 4150,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/independent-actual/FROZEN_ASSEMBLY_REVIEW.json",
+      "registered_core": false,
+      "sha256": "a6578b19fa2225658be9c440745359d6fd12ce7670ab2931d593955e234d5abb"
+    },
+    {
+      "bytes": 3950,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/independent-actual/INDEPENDENT_ACTUAL_REPLAY.json",
+      "registered_core": false,
+      "sha256": "51687ccba1863624a9afb09239dc9a9058a19e2045ac135a18339d82163ff29b"
+    },
+    {
+      "bytes": 50144,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/independent-actual/INDEPENDENT_SERIALIZED_NORMS_NORMAL_001.json",
+      "registered_core": false,
+      "sha256": "7f669c692439d129d3a23d63a4a3e411d29cf57cd7f823b307988e39bba341ad"
+    },
+    {
+      "bytes": 4485,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/independent-actual/INTERPRETATION_DERIVATION.md",
+      "registered_core": false,
+      "sha256": "ad335ab3c2afae928003cc85c9e560969e586bc3af53bee51ad5e1218520347a"
+    },
+    {
+      "bytes": 2544,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/independent-actual/ROOT_ACTUAL_EXACT_REPLAY.json",
+      "registered_core": false,
+      "sha256": "005b48d5c24613bbd11d746a64b1bb38de1d57535433cfa27d98918c4ac0f5c4"
+    },
+    {
+      "bytes": 685,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/independent-actual/STRICT_READBACK_NORMAL_001.json",
+      "registered_core": false,
+      "sha256": "6662aa01913b43b5c9f2b5590196e181b9a19fec16bdd0830c5b4b4968f1b8c9"
+    },
+    {
+      "bytes": 2165,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/BOUNDED_KERNEL_CONTROLS_NORMAL_003.log",
+      "registered_core": true,
+      "sha256": "8bca2f02343fe69030e6fefcef085650b351df7c9680b899ec6546c3e61151e5"
+    },
+    {
+      "bytes": 2165,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/BOUNDED_KERNEL_CONTROLS_OPTIMIZED_003.log",
+      "registered_core": true,
+      "sha256": "e6544cc47d795ac40f970317a025d1b839737ec7f188d9275da5b38bc659084c"
+    },
+    {
+      "bytes": 4755,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/EXECUTION_CONTRACT.md",
+      "registered_core": true,
+      "sha256": "cf9a13912fe551a7623abbd1e4c7a97a37147451f5172d584f4c7e6bcac26845"
+    },
+    {
+      "bytes": 8897,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/EXECUTION_READY_REPORT.json",
+      "registered_core": true,
+      "sha256": "253aecf802e93aa195f1df163ddda84c02ecc3935b6e3c2c48e1cfdc71b00828"
+    },
+    {
+      "bytes": 1471,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/FABRICATED_EXACT_REPLAY_003.json",
+      "registered_core": true,
+      "sha256": "91fc736dbd9c65d1653735479ead0fbccbfc0669a88c790856efa6a252e05204"
+    },
+    {
+      "bytes": 6217,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/FINAL_PRE_FREEZE_REVIEW.json",
+      "registered_core": true,
+      "sha256": "d61e4e7c039fdad19a3702c250be444fd01cf4d661b68d442d9b066ef7abaa74"
+    },
+    {
+      "bytes": 1868,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/INDEPENDENT_CONTROLS_NORMAL.json",
+      "registered_core": true,
+      "sha256": "643c5e0ed47c6a5f7577665fbeeff9ddd5980b7b3c9550853b48a9fe7b3998d9"
+    },
+    {
+      "bytes": 1868,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/INDEPENDENT_CONTROLS_OPTIMIZED.json",
+      "registered_core": true,
+      "sha256": "69847aa1612bdc1843fa5c8593a354a22520fa98fb62e2e48eabd6971ae23c89"
+    },
+    {
+      "bytes": 364,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/INDEPENDENT_EMPTY_RECEIPT_CONTROL.json",
+      "registered_core": true,
+      "sha256": "9f5f7724731593b43416d7f7229343b718c1512b49aa27bdca2eaf38fc4ff56b"
+    },
+    {
+      "bytes": 1130,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/INDEPENDENT_ENTRY_AND_CUSTODIAN_REPLAY_003.json",
+      "registered_core": true,
+      "sha256": "df7934d72e2615650b494284a9eca58ccba13269815ff165238757aad38baf7d"
+    },
+    {
+      "bytes": 12862,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/INDEPENDENT_FINAL_EXECUTION_MATHEMATICAL_REVIEW.json",
+      "registered_core": true,
+      "sha256": "c1fb34320c2fe141949988ddb299d4d0e24c2468edaaf1f89c0330be746db26f"
+    },
+    {
+      "bytes": 3474,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/INDEPENDENT_FINAL_EXECUTION_MATHEMATICAL_REVIEW.md",
+      "registered_core": true,
+      "sha256": "18299d159d0b1a3527836519cf68bce4f07adbcb2a29cafbaa79a1ca94839dfc"
+    },
+    {
+      "bytes": 2177,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/INDEPENDENT_FINAL_REVIEW_MANIFEST.json",
+      "registered_core": true,
+      "sha256": "499b32616646327b58168d0735957bb8f69a2fcded68eb826d046d0b47c13a59"
+    },
+    {
+      "bytes": 1996,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/INDEPENDENT_PRIOR_BYTE_IDENTITY.json",
+      "registered_core": true,
+      "sha256": "bdf076476e17399486d967bc2ddfbb7ba801452ceac523fedac22b1f3f807bdd"
+    },
+    {
+      "bytes": 1080,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/INDEPENDENT_STANDALONE_READBACK_NORMAL_002.json",
+      "registered_core": true,
+      "sha256": "db06d5a872613bd88ea84a4ad8dd75cc50f0e16e47c88143ae3c194eeb9069f1"
+    },
+    {
+      "bytes": 1080,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/INDEPENDENT_STANDALONE_READBACK_NORMAL_003.json",
+      "registered_core": true,
+      "sha256": "db06d5a872613bd88ea84a4ad8dd75cc50f0e16e47c88143ae3c194eeb9069f1"
+    },
+    {
+      "bytes": 3397,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/PUBLIC_READBACK_ACCEPTANCE.json",
+      "registered_core": true,
+      "sha256": "9da7acd26defbaac9957c06aff78b28b8b307d6d7afce4c1e3bb0b918f34da8a"
+    },
+    {
+      "bytes": 6690,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/README.md",
+      "registered_core": true,
+      "sha256": "811c0593a13f772d1e51e32eb4beabd996ac19a2a752bb97c8d02e4490e602cf"
+    },
+    {
+      "bytes": 2533,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/ROOT_STATIC_LIBRARY_REVIEW.json",
+      "registered_core": true,
+      "sha256": "ada93cd660755aa60236f18469f0b90fdb133101b170b2abcf848812d18da830"
+    },
+    {
+      "bytes": 2620,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/fabricated-normal-003/ENTRY_RECEIPT.json",
+      "registered_core": true,
+      "sha256": "1aa67eefe25a8ddba972b866ab7c78e1eaa79f6f9a6c97130de466d157a7ef0c"
+    },
+    {
+      "bytes": 2051,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/fabricated-normal-003/EXECUTION.json",
+      "registered_core": true,
+      "sha256": "2651c5aba1f4cbca51a1b6fa56021d9bae5168cbbf43c8d32b9ff8bde3d9a7ea"
+    },
+    {
+      "bytes": 672,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/fabricated-normal-003/OUTPUT_READBACK.json",
+      "registered_core": true,
+      "sha256": "c1828257156b52c470d5cdca962567a419e9728044755551197e749171807dc4"
+    },
+    {
+      "bytes": 56,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/fabricated-normal-003/RESOURCE.json",
+      "registered_core": true,
+      "sha256": "632b89b7acc9aac46f23b4eac4e3571d9c2e4593ab4104216323de8eeff740d7"
+    },
+    {
+      "bytes": 2620,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/fabricated-optimized-003/ENTRY_RECEIPT.json",
+      "registered_core": true,
+      "sha256": "bc8084f8c7d555f2e1bebafb99ca23c8cee00af0642b97e6d3a2b0cb95dcd60f"
+    },
+    {
+      "bytes": 2066,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/fabricated-optimized-003/EXECUTION.json",
+      "registered_core": true,
+      "sha256": "d5d9035cb2f7a6dbefbb20dfab067d58c3cd281d6edf6d59991ccc32403fb0c1"
+    },
+    {
+      "bytes": 672,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/fabricated-optimized-003/OUTPUT_READBACK.json",
+      "registered_core": true,
+      "sha256": "c1828257156b52c470d5cdca962567a419e9728044755551197e749171807dc4"
+    },
+    {
+      "bytes": 56,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/fabricated-optimized-003/RESOURCE.json",
+      "registered_core": true,
+      "sha256": "f744ee30a0afcdbb77c6c957dda277867d9bf21e008cad1b095ea04a5b5efcd7"
+    },
+    {
+      "bytes": 1417,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/guard-payload-controls-normal-002/CONTROLS.json",
+      "registered_core": true,
+      "sha256": "ca4c2ea1af6426cf345ecdf3c2802805d8868ce1b84b1d4f13d25c58ded03008"
+    },
+    {
+      "bytes": 1417,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/guard-payload-controls-optimized-002/CONTROLS.json",
+      "registered_core": true,
+      "sha256": "ca4c2ea1af6426cf345ecdf3c2802805d8868ce1b84b1d4f13d25c58ded03008"
+    },
+    {
+      "bytes": 1206,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/held-directory-controls-20261008/CONTROLS_SUMMARY.json",
+      "registered_core": true,
+      "sha256": "876f2dee045f8afb9d824635b95c016cde173a4b8bfbb6d6ccb47ae7e2453654"
+    },
+    {
+      "bytes": 7733,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/public_readback_go.py",
+      "registered_core": true,
+      "sha256": "e29336fb951c766ed7c8d34c4cdd1cc6401850a1d8cac858179bf0b3089ff200"
+    },
+    {
+      "bytes": 1868,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/review-evidence/CONTROLS_NORMAL.json",
+      "registered_core": true,
+      "sha256": "643c5e0ed47c6a5f7577665fbeeff9ddd5980b7b3c9550853b48a9fe7b3998d9"
+    },
+    {
+      "bytes": 1868,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/review-evidence/CONTROLS_OPTIMIZED.json",
+      "registered_core": true,
+      "sha256": "69847aa1612bdc1843fa5c8593a354a22520fa98fb62e2e48eabd6971ae23c89"
+    },
+    {
+      "bytes": 364,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/review-evidence/EMPTY_RECEIPT_CONTROL.json",
+      "registered_core": true,
+      "sha256": "9f5f7724731593b43416d7f7229343b718c1512b49aa27bdca2eaf38fc4ff56b"
+    },
+    {
+      "bytes": 1130,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/review-evidence/ENTRY_AND_CUSTODIAN_REPLAY_003.json",
+      "registered_core": true,
+      "sha256": "df7934d72e2615650b494284a9eca58ccba13269815ff165238757aad38baf7d"
+    },
+    {
+      "bytes": 12862,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/review-evidence/FINAL_EXECUTION_MATHEMATICAL_REVIEW.json",
+      "registered_core": true,
+      "sha256": "c1fb34320c2fe141949988ddb299d4d0e24c2468edaaf1f89c0330be746db26f"
+    },
+    {
+      "bytes": 3474,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/review-evidence/FINAL_EXECUTION_MATHEMATICAL_REVIEW.md",
+      "registered_core": true,
+      "sha256": "18299d159d0b1a3527836519cf68bce4f07adbcb2a29cafbaa79a1ca94839dfc"
+    },
+    {
+      "bytes": 2177,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/review-evidence/FINAL_REVIEW_MANIFEST.json",
+      "registered_core": true,
+      "sha256": "499b32616646327b58168d0735957bb8f69a2fcded68eb826d046d0b47c13a59"
+    },
+    {
+      "bytes": 1996,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/review-evidence/PRIOR_BYTE_IDENTITY.json",
+      "registered_core": true,
+      "sha256": "bdf076476e17399486d967bc2ddfbb7ba801452ceac523fedac22b1f3f807bdd"
+    },
+    {
+      "bytes": 1080,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/preparation/review-evidence/STANDALONE_READBACK_NORMAL_003.json",
+      "registered_core": true,
+      "sha256": "db06d5a872613bd88ea84a4ad8dd75cc50f0e16e47c88143ae3c194eeb9069f1"
+    },
+    {
+      "bytes": 65003,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/public-readback/PUBLIC_GO.json",
+      "registered_core": false,
+      "sha256": "27784552d9d7e10167066927d54f1757351b0f925b499e951b79849a44b62769"
+    },
+    {
+      "bytes": 461,
+      "identical_to_full_checkpoint": true,
+      "path": "evidence/public-readback/ROOT_FREEZE_ASSEMBLY.json",
+      "registered_core": false,
+      "sha256": "2f6f332f17c5d162901f27b25414a41bc7af35224571ed2a503cea08d5bae269"
+    },
+    {
+      "bytes": 4755,
+      "identical_to_full_checkpoint": true,
+      "path": "execution/EXECUTION_CONTRACT.md",
+      "registered_core": true,
+      "sha256": "cf9a13912fe551a7623abbd1e4c7a97a37147451f5172d584f4c7e6bcac26845"
+    },
+    {
+      "bytes": 6690,
+      "identical_to_full_checkpoint": true,
+      "path": "execution/README.md",
+      "registered_core": true,
+      "sha256": "811c0593a13f772d1e51e32eb4beabd996ac19a2a752bb97c8d02e4490e602cf"
+    },
+    {
+      "bytes": 23034,
+      "identical_to_full_checkpoint": true,
+      "path": "execution/bounded_launcher.py",
+      "registered_core": true,
+      "sha256": "86f238b07e260f6153fdbd58fafd8e266c0b67dd784eb21637de7d7453a7245f"
+    },
+    {
+      "bytes": 21749,
+      "identical_to_full_checkpoint": true,
+      "path": "execution/comparison_worker.py",
+      "registered_core": true,
+      "sha256": "87351d3ea7b478dea005f3ec8374c756b73b7597310484447aa2035671f228a6"
+    },
+    {
+      "bytes": 11891,
+      "identical_to_full_checkpoint": true,
+      "path": "execution/kernel_guard.py",
+      "registered_core": true,
+      "sha256": "886a0bc7148e7c49d57b68303f8113c657a455601713c974513a90abd0bf2b43"
+    },
+    {
+      "bytes": 4067,
+      "identical_to_full_checkpoint": true,
+      "path": "execution/prepare_candidate.py",
+      "registered_core": true,
+      "sha256": "b701edff1eca96f55b7499ac69ec67eea436f426a349e12fc7eedda02fbc7697"
+    },
+    {
+      "bytes": 21793,
+      "identical_to_full_checkpoint": true,
+      "path": "execution/readback.py",
+      "registered_core": true,
+      "sha256": "6d79d00750128a570f1ef4d592589130c63f872d4f20525e54508a77267a336d"
+    },
+    {
+      "bytes": 17364,
+      "identical_to_full_checkpoint": true,
+      "path": "execution/registration_guard.py",
+      "registered_core": true,
+      "sha256": "1d77d01a15dd16e32f5a02c921633d6853d5239aa73963f697549610a0939f55"
+    },
+    {
+      "bytes": 3638,
+      "identical_to_full_checkpoint": true,
+      "path": "execution/run_registered.py",
+      "registered_core": true,
+      "sha256": "71007eb0c5fe6df70f2ab7fbe8f1cd05818b28ef484221a25fa95cb21bd96daa"
+    },
+    {
+      "bytes": 10020,
+      "identical_to_full_checkpoint": true,
+      "path": "execution/source_certificate.py",
+      "registered_core": true,
+      "sha256": "594ffcb5a04b6e190cc40f834cc680b652ca97c3fbdee4ef14b5bba9989eeefa"
+    },
+    {
+      "bytes": 18374,
+      "identical_to_full_checkpoint": true,
+      "path": "execution/test_bounded_launcher.py",
+      "registered_core": true,
+      "sha256": "c1595f27cdba2ef2b78c3a55651f09216e21889df7967738bbd3966c4288d3ea"
+    },
+    {
+      "bytes": 5242,
+      "identical_to_full_checkpoint": true,
+      "path": "execution/test_controls.py",
+      "registered_core": true,
+      "sha256": "28d741ee92247ccece311b727e0e1c3b05ba6253369e4133b8e7b1cc80e6b006"
+    },
+    {
+      "bytes": 14336,
+      "identical_to_full_checkpoint": true,
+      "path": "figures/EXACT_TABLE.csv",
+      "registered_core": false,
+      "sha256": "caed1c637a7b443c41b46a445dd0ce6c3015bc68d91a6adaa6996ad75f34c4a4"
+    },
+    {
+      "bytes": 714,
+      "identical_to_full_checkpoint": true,
+      "path": "figures/FIGURE_RECEIPT.json",
+      "registered_core": false,
+      "sha256": "f57a123a416fb227715173b7d7c4e5b7ecfead6737272b4b81a87e39080bb93f"
+    },
+    {
+      "bytes": 29467,
+      "identical_to_full_checkpoint": true,
+      "path": "figures/stored_state_bounds.pdf",
+      "registered_core": false,
+      "sha256": "b221144efa94a204e035340938a897c7de5a1c9859509d9bf03d07770c849ab4"
+    },
+    {
+      "bytes": 207207,
+      "identical_to_full_checkpoint": true,
+      "path": "figures/stored_state_bounds.png",
+      "registered_core": false,
+      "sha256": "fa1d5b939983ea6c5e73d4e3a8aae47c2afb6e0c6a5408207d25b0dac2eee9e8"
+    },
+    {
+      "bytes": 1275,
+      "identical_to_full_checkpoint": true,
+      "path": "literature/COVERAGE_AND_LIMITS.json",
+      "registered_core": true,
+      "sha256": "7e12794a61ff9c4340032eaae733799d55f961b5b453bbbd3d814c6e28975229"
+    },
+    {
+      "bytes": 8283,
+      "identical_to_full_checkpoint": true,
+      "path": "literature/EVIDENCE_VALIDATION.json",
+      "registered_core": true,
+      "sha256": "59ace1eb576d5263bed34b27998d4cae2a51ca1cffe6f86b45f48f8ef3df064e"
+    },
+    {
+      "bytes": 17132,
+      "identical_to_full_checkpoint": true,
+      "path": "literature/LITERATURE_REFRESH_AND_MODEL_TEST.md",
+      "registered_core": true,
+      "sha256": "eb86cbc7b0b52d04f858e232888301a52753e42871109120630f65b90426eff4"
+    },
+    {
+      "bytes": 35107,
+      "identical_to_full_checkpoint": true,
+      "path": "literature/PRIMARY_READING_EVIDENCE.json",
+      "registered_core": true,
+      "sha256": "03609ddb48524b58755dde6b972c07421d7e1a63a7dd522de2afaaa2d769f9ab"
+    },
+    {
+      "bytes": 1686,
+      "identical_to_full_checkpoint": true,
+      "path": "literature/PUBLIC_DELIVERY_MANIFEST.json",
+      "registered_core": true,
+      "sha256": "a4a3aa6e7bf6652518edff01fca950c0fdcd0689175fd277b4c909cb08142d69"
+    },
+    {
+      "bytes": 2005,
+      "identical_to_full_checkpoint": true,
+      "path": "literature/README.md",
+      "registered_core": true,
+      "sha256": "d69769a46b2e263e1e2c2e4dfd5fe8ab56fe4f765d0ca25a1e2772c5b3f9e884"
+    },
+    {
+      "bytes": 19254,
+      "identical_to_full_checkpoint": true,
+      "path": "literature/RELATED_PROJECT_HEADS.json",
+      "registered_core": true,
+      "sha256": "cede501ff7fb9cff8271222af6656733d19daadcbbcd2afabbbad9bb37379a3f"
+    },
+    {
+      "bytes": 6524,
+      "identical_to_full_checkpoint": true,
+      "path": "literature/TMD_PRIMARY_READ_RECEIPTS.json",
+      "registered_core": true,
+      "sha256": "2ec746a80ab7d246183211587fdff20f5363e2525d9e50512642e7a442459284"
+    },
+    {
+      "bytes": 1923,
+      "identical_to_full_checkpoint": true,
+      "path": "physical-identifiability/ARTIFACT_PINS.json",
+      "registered_core": true,
+      "sha256": "20805f11ecfcb4948196fc3c18be9cc306dea20caece40ac8b69450ab415e936"
+    },
+    {
+      "bytes": 1638,
+      "identical_to_full_checkpoint": true,
+      "path": "physical-identifiability/MANUFACTURED_NORMAL.json",
+      "registered_core": true,
+      "sha256": "bf1420ab8c96c875e60ad4ffbe70549de4476628d6611e9a6525254a799a1a48"
+    },
+    {
+      "bytes": 1638,
+      "identical_to_full_checkpoint": true,
+      "path": "physical-identifiability/MANUFACTURED_OPTIMIZED.json",
+      "registered_core": true,
+      "sha256": "e91e5a50889b736bf98c865a85e8d13c97f645cfc27c119c4427a8aa818e55b1"
+    },
+    {
+      "bytes": 12303,
+      "identical_to_full_checkpoint": true,
+      "path": "physical-identifiability/MODEL_TEST_CONTRACT.json",
+      "registered_core": true,
+      "sha256": "31b42ffd7a756ece36d999d9a45bc1b748ce1b344f458b7a588285b49081bf1a"
+    },
+    {
+      "bytes": 6904,
+      "identical_to_full_checkpoint": true,
+      "path": "physical-identifiability/MODEL_TEST_CONTRACT.md",
+      "registered_core": true,
+      "sha256": "223dd3ffee2fe37c1bb6f45b2cbbb89670ed71ba189b801336e4f86f26fd97e6"
+    },
+    {
+      "bytes": 5735,
+      "identical_to_full_checkpoint": true,
+      "path": "physical-identifiability/PRIMARY_CITATION_PINS.json",
+      "registered_core": true,
+      "sha256": "ebb363bd6bb6088775bd2f096a069e78e2a6ad07e0c3d15973276bd22af305b7"
+    },
+    {
+      "bytes": 14869,
+      "identical_to_full_checkpoint": true,
+      "path": "physical-identifiability/STRUCTURAL_IDENTIFIABILITY.md",
+      "registered_core": true,
+      "sha256": "5dc26a221ae0426a83ad634cf545181df944e76bb51887b8190430278b8f3f43"
+    },
+    {
+      "bytes": 4518,
+      "identical_to_full_checkpoint": true,
+      "path": "physical-identifiability/verify_structural_examples.py",
+      "registered_core": true,
+      "sha256": "34bc14a1039a8d74131a28cc9f0ea7fca3cad69437c3912f2df5cfb4ff2e542d"
+    },
+    {
+      "bytes": 3713581,
+      "identical_to_full_checkpoint": true,
+      "path": "prior/BUDGET.json",
+      "registered_core": true,
+      "sha256": "98b951cfda103a869204a4532b8b95fba2cf94df39e9f794f802864d55420eaa"
+    },
+    {
+      "bytes": 71595,
+      "identical_to_full_checkpoint": true,
+      "path": "prior/independent_DATA.json",
+      "registered_core": true,
+      "sha256": "2911e81bbc3a5bc0a33e87d20c56e6d287a0da922e3845b74beaa46f1193be33"
+    },
+    {
+      "bytes": 1849084,
+      "identical_to_full_checkpoint": true,
+      "path": "prior/primary_DATA.json",
+      "registered_core": true,
+      "sha256": "bf70ebf18845b03605752dfe07e9d374b548aea97bd104f28bbf8e204e8375db"
+    },
+    {
+      "bytes": 3759,
+      "identical_to_full_checkpoint": true,
+      "path": "provenance/ENGINE_INDEPENDENT_REVIEW.md",
+      "registered_core": true,
+      "sha256": "0edd726095e214785c4601b9ba0cb97f3dc254f36fdcd9dc5454843916905fed"
+    },
+    {
+      "bytes": 1835,
+      "identical_to_full_checkpoint": true,
+      "path": "provenance/INDEPENDENT_ENGINE_CONTROL_REEXECUTION.json",
+      "registered_core": true,
+      "sha256": "b026c79fec7313f9fec07e65cbce35adc6c944b8464edfd985aafc6cb0982d07"
+    },
+    {
+      "bytes": 104965,
+      "identical_to_full_checkpoint": true,
+      "path": "provenance/INPUT_SPEC.json",
+      "registered_core": true,
+      "sha256": "ce247a1204063ee9ecd173241a506ce770041da99e75db93f5a44958fc03faf7"
+    },
+    {
+      "bytes": 1862,
+      "identical_to_full_checkpoint": true,
+      "path": "provenance/INPUT_SPEC_HYDRATION_REVIEW.json",
+      "registered_core": true,
+      "sha256": "655a28dff26e0cc55a78e44ede75a8d52e443a38b7ba4ab1759a2b37d06565b4"
+    },
+    {
+      "bytes": 5513,
+      "identical_to_full_checkpoint": true,
+      "path": "provenance/INPUT_SPEC_REVIEW.md",
+      "registered_core": true,
+      "sha256": "73a75f07d31fad2c117c5492dfb3b11a268bbf681f7895e45accfc879ba03c43"
+    },
+    {
+      "bytes": 3177,
+      "identical_to_full_checkpoint": true,
+      "path": "provenance/LAYOUT_PROVENANCE_BASIS.json",
+      "registered_core": true,
+      "sha256": "6a3ae6a6b6efa4d85dd9b9c0b342aee5663c21e5c62720dcd60fd6ce9d5a973d"
+    },
+    {
+      "bytes": 2357,
+      "identical_to_full_checkpoint": true,
+      "path": "provenance/NATIVE_BINARY80_FIXTURE_REVIEW.json",
+      "registered_core": true,
+      "sha256": "edcf9a9d48c4958f8cd356648c2dbbce64c45d78a8646b2df5ceb3fe90fa68ca"
+    },
+    {
+      "bytes": 56759,
+      "identical_to_full_checkpoint": true,
+      "path": "provenance/OPAQUE_AUTHENTICATION_RECEIPT.json",
+      "registered_core": true,
+      "sha256": "d7c2875070645278dba09db953198082dd3a1b6693c40a46664988e47d3932a8"
+    },
+    {
+      "bytes": 1194601,
+      "identical_to_full_checkpoint": true,
+      "path": "provenance/ORIGINAL_ZIP_INVENTORIES.json",
+      "registered_core": true,
+      "sha256": "253840c524df1c6644f9231a4732a2e6aeee618a2173ab24e7807f8b3d0e3d03"
+    },
+    {
+      "bytes": 3933,
+      "identical_to_full_checkpoint": true,
+      "path": "provenance/READER_PROVENANCE_REVIEW.md",
+      "registered_core": true,
+      "sha256": "473ef7e8c5ad0a9257fc295cb0a2b49b21264fa880addc8dca07f11ec7b514f4"
+    },
+    {
+      "bytes": 48,
+      "identical_to_full_checkpoint": true,
+      "path": "requirements-replay.txt",
+      "registered_core": true,
+      "sha256": "7517bf2f0ffd9bdeac2c7681673f71bfd4620d55253ac55151a56e27ae1fe8af"
+    },
+    {
+      "bytes": 850,
+      "identical_to_full_checkpoint": true,
+      "path": "science-delivery-review/ARTIFACT_MANIFEST.json",
+      "registered_core": true,
+      "sha256": "6efb09cae1b8d656fcd4dc46665fa9fdf62485189e63a6b38b717be7b5cb876c"
+    },
+    {
+      "bytes": 6406,
+      "identical_to_full_checkpoint": true,
+      "path": "science-delivery-review/DELIVERY_PLAN.md",
+      "registered_core": true,
+      "sha256": "f50027ccb546b0221229a5ea6b9c6a1c44828d76e6723d597c80cf80958f17ec"
+    },
+    {
+      "bytes": 10779,
+      "identical_to_full_checkpoint": true,
+      "path": "science-delivery-review/REVIEW_RECEIPT.json",
+      "registered_core": true,
+      "sha256": "64b366fb62bb77f030069f33866fa7e04b279344d9c30da659e3176f4d6bb362"
+    },
+    {
+      "bytes": 6027,
+      "identical_to_full_checkpoint": true,
+      "path": "science-delivery-review/SCIENCE_REVIEW.md",
+      "registered_core": true,
+      "sha256": "1f6fc5776a4e0d257c80bdb0aa8dc545b6b24fc4c4e5acb3e4034e0a4505bec5"
+    },
+    {
+      "bytes": 3681,
+      "identical_to_full_checkpoint": true,
+      "path": "science-delivery-review/SCIENCE_SYNTHESIS.md",
+      "registered_core": true,
+      "sha256": "02b5330a3420dc1a34e26c97584f7bb161bdfe5157ab0685c23a8a99881a21b1"
+    },
+    {
+      "bytes": 14765,
+      "identical_to_full_checkpoint": true,
+      "path": "source/generic_operator_baseline.py",
+      "registered_core": true,
+      "sha256": "9250165a7058441d79467ad6f16d56e3dabbbb559368d9600d2c2c155d87c6c1"
+    },
+    {
+      "bytes": 14426,
+      "identical_to_full_checkpoint": true,
+      "path": "source/route.py",
+      "registered_core": true,
+      "sha256": "ba6610cfdea82e889308ba65ff385fd993c37cd6f65a0a372c47a72322326ceb"
+    },
+    {
+      "bytes": 4958,
+      "identical_to_full_checkpoint": true,
+      "path": "source/source_algebra_baseline.py",
+      "registered_core": true,
+      "sha256": "475822f5b251dbcbdb72beddb85e49775f25520eb8d68ca77848272b79defdb8"
+    },
+    {
+      "bytes": 11876,
+      "identical_to_full_checkpoint": true,
+      "path": "theory/ENTIRE_TARGET_AND_DISCRETE_COMPARISON.md",
+      "registered_core": true,
+      "sha256": "dbcb7470c57f2823ea363477a62f2c0aec749ae2ffb175616d7549a9dd466e56"
+    },
+    {
+      "bytes": 2633,
+      "identical_to_full_checkpoint": true,
+      "path": "theory/FABRICATED_ENGINE_RECEIPT.json",
+      "registered_core": true,
+      "sha256": "470b8e6e184f17d5099cd1140d3d50bebea6fb36d91685d1264d4f6d83e52bcd"
+    },
+    {
+      "bytes": 6651,
+      "identical_to_full_checkpoint": true,
+      "path": "theory/INDEPENDENT_TRANSPORT_REVIEW.json",
+      "registered_core": true,
+      "sha256": "bde1c8b8469b66a46bd4b03f344827cf9fc5aacce7ae61ce84b1a837a23fcfc3"
+    },
+    {
+      "bytes": 2776,
+      "identical_to_full_checkpoint": true,
+      "path": "theory/INDEPENDENT_TRANSPORT_REVIEW.md",
+      "registered_core": true,
+      "sha256": "e7b99da06b94ffaa363d418df293c4d91c9cec40b6e56030b41991a2bc2b8cc4"
+    },
+    {
+      "bytes": 39624,
+      "identical_to_full_checkpoint": true,
+      "path": "theory/PROSPECTIVE_ANALYTIC_BOUNDS.json",
+      "registered_core": true,
+      "sha256": "20727b5051aaff7bd546ca1c0ac08a4214e42dd2199f79b7c06407f16915c70d"
+    },
+    {
+      "bytes": 4066,
+      "identical_to_full_checkpoint": true,
+      "path": "theory/TRANSPORT_REVIEW_NORMAL.json",
+      "registered_core": true,
+      "sha256": "3060ddcf8a7e83d9257b71fc4ed0f6139f83f90e9ca992f12c7bb26ece6aade9"
+    },
+    {
+      "bytes": 4067,
+      "identical_to_full_checkpoint": true,
+      "path": "theory/TRANSPORT_REVIEW_OPTIMIZED.json",
+      "registered_core": true,
+      "sha256": "38d2d3f1dd17d0add813804ccae175449270aae489ee42fcec9930a7c8dbfea2"
+    },
+    {
+      "bytes": 7216,
+      "identical_to_full_checkpoint": true,
+      "path": "theory/entire_target_engine.py",
+      "registered_core": true,
+      "sha256": "41a5263aaf491102892ec8acfc86ce803e2500ed90ecd39db1deaab6fbd0d5cf"
+    },
+    {
+      "bytes": 5475,
+      "identical_to_full_checkpoint": true,
+      "path": "theory/test_entire_target_engine.py",
+      "registered_core": true,
+      "sha256": "55f25838909a6602594d856269f8d5df4c256b018e9363599fcdd4de5e176f82"
+    },
+    {
+      "bytes": 10914,
+      "identical_to_full_checkpoint": true,
+      "path": "transport/DISCRETE_ERROR_TRANSPORT.md",
+      "registered_core": true,
+      "sha256": "86822a2f92e1d239afaee00f6478ac5bfb4e6b63abe2fda52321e5cc38a5dfcb"
+    },
+    {
+      "bytes": 3697,
+      "identical_to_full_checkpoint": true,
+      "path": "transport/FABRICATED_NORMAL.json",
+      "registered_core": true,
+      "sha256": "22915f84e4d23d566fb05c7e8f50b0a15c410038c9b3c239c0b239175a44ad13"
+    },
+    {
+      "bytes": 4067,
+      "identical_to_full_checkpoint": true,
+      "path": "transport/FULL_FABRICATED_NORMAL.json",
+      "registered_core": true,
+      "sha256": "0a42af2afa0180a0b7c8a963ab326bfe88f86fe79cf2d2465df5eea7da8f9d6b"
+    },
+    {
+      "bytes": 4066,
+      "identical_to_full_checkpoint": true,
+      "path": "transport/FULL_FABRICATED_OPTIMIZED.json",
+      "registered_core": true,
+      "sha256": "12fa30f40a554d0e2f7e01789c066477d6dc3ca864326f47c45a011d552d7d52"
+    },
+    {
+      "bytes": 12043,
+      "identical_to_full_checkpoint": true,
+      "path": "transport/discrete_transport.py",
+      "registered_core": true,
+      "sha256": "e25b9cb9545c935bd8957793d33a24768133ce06f30b55126cbd97bdeba3c6e6"
+    },
+    {
+      "bytes": 14066,
+      "identical_to_full_checkpoint": true,
+      "path": "transport/verify_transport.py",
+      "registered_core": true,
+      "sha256": "1db011b7b170d3ab4ec3eea1d7de924315629340919355c5e8e6f86d661cbd8d"
+    }
+  ],
+  "review_actions": {
+    "NODE_TARGETS_gzip_decodes": 0,
+    "bootstrap_or_helper_executions": 0,
+    "input_NPZ_or_NPY_bytes_read": 0,
+    "network_requests": 0,
+    "original_array_decodes": 0,
+    "output_files_written": [
+      "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-supplement-priority/independent-review/SCOPE_CORE_REVIEW.json"
+    ],
+    "physical_trajectories": 0,
+    "production_or_target_module_imports": 0,
+    "repository_edits": 0,
+    "source_callbacks": 0,
+    "source_input_or_asset_edits": 0,
+    "target_evaluations": 0
+  },
+  "review_scope": "Independent local byte, registration, omission, manifest/seal, immutable local Git-object, external replay dependency and scientific scope review. No live publication or independently fetched CI verification.",
+  "reviewed_at_utc": "2026-10-08T05:09:19.355406+00:00",
+  "reviewed_inputs": {
+    "full_input_spec": {
+      "bytes": 104965,
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-supplement-priority/package/HDBLAST_STORED_STATE_COMPARISON_PUBLICATION_SUPPLEMENT_20261007/checkpoint/provenance/INPUT_SPEC.json",
+      "sha256": "ce247a1204063ee9ecd173241a506ce770041da99e75db93f5a44958fc03faf7"
+    },
+    "full_package_root": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/extraction-001/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007",
+    "full_registration": {
+      "bytes": 19367,
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/extraction-001/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007/research/HDBLAST_CHECKPOINT_20261007_STORED_STATE_COMPARISON/FULL_REGISTRATION.json",
+      "sha256": "05e9943f0b4c8134252a2fecef7631ddba8bd398d18553d6e126fbf50fc3aacc"
+    },
+    "full_replay_reference": {
+      "bytes": 2288,
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-supplement-priority/package/HDBLAST_STORED_STATE_COMPARISON_PUBLICATION_SUPPLEMENT_20261007/FULL_REPLAY_REFERENCE.json",
+      "sha256": "cee050fc6ff39210bbf3baa6c47f42a024dcd64f4041d6dfb56f0dc0348c9c33"
+    },
+    "original_full_checkpoint_root": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/extraction-001/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007/research/HDBLAST_CHECKPOINT_20261007_STORED_STATE_COMPARISON",
+    "portable_replay_receipt": {
+      "bytes": 6355,
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/root/portable-extraction-full-001/PORTABLE_REPLAY_RECEIPT.json",
+      "sha256": "0abe89a95cac5af9a0ebdf3afe736b8acc97c8bd5c4ff5729ef4a1b1aafd532a"
+    },
+    "prior_final_input_acceptance": {
+      "bytes": 31166,
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/final-input-independent-review/FINAL_INPUT_ACCEPTANCE.json",
+      "sha256": "3fd4e64290370eecfeb8b16141454c28a4025f1eabcca0edbb63c6b31390ad1c"
+    },
+    "supplement_archive": {
+      "bytes": 3201688,
+      "md5": "dc4376c45d07798316c3608de855689f",
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-supplement-priority/assets/HDBLAST_STORED_STATE_COMPARISON_PUBLICATION_SUPPLEMENT_20261007.zip",
+      "sha256": "73eccbe241a9293cb29154c5e4970f0f26910e89aa284511cc6738224f530485"
+    },
+    "supplement_manifest": {
+      "bytes": 28371,
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-supplement-priority/package/HDBLAST_STORED_STATE_COMPARISON_PUBLICATION_SUPPLEMENT_20261007/SUPPLEMENT_MANIFEST.json",
+      "sha256": "2902bcdeef4e6f14a60169c4ff29c8112302f8246f435c4bdbfe9ba3d716aaa9"
+    },
+    "supplement_readme": {
+      "bytes": 2146,
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-supplement-priority/package/HDBLAST_STORED_STATE_COMPARISON_PUBLICATION_SUPPLEMENT_20261007/README.md",
+      "sha256": "5badab1bbfc147b6d70617fbf652d5f74f6d09337e1b9aa701c27b346a5fc56f"
+    },
+    "supplement_root": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-supplement-priority/package/HDBLAST_STORED_STATE_COMPARISON_PUBLICATION_SUPPLEMENT_20261007",
+    "supplement_seal": {
+      "bytes": 1684,
+      "path": "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-supplement-priority/SUPPLEMENT_SEAL.json",
+      "sha256": "bf43c987f0e0c1452a520afbac7043462e5a9c70abb5bfe83069a352da612b1a"
+    }
+  },
+  "schema_version": 1,
+  "scientific_ci": {
+    "independently_fetched_or_network_fresh": false,
+    "network_requests": 0,
+    "runs": [
+      {
+        "reported_conclusion": "success",
+        "url": "https://github.com/maldonado-research/HDblast/actions/runs/37725943203",
+        "visibility": "public"
+      },
+      {
+        "reported_conclusion": "success",
+        "url": "https://github.com/maldonado-research/HDblast-archive/actions/runs/37726954445",
+        "visibility": "private"
+      }
+    ],
+    "success_evidence_provenance": "Root-supplied report in delegated review instructions. Limited relevant local evidence search found no captured run receipts."
+  },
+  "scientific_replay_identity": {
+    "all_initial_normal_optimized_package_saved_and_fresh_portable_bytes_match": true,
+    "artifacts": [
+      {
+        "bytes": 128185,
+        "path": "DATA.json",
+        "sha256": "2618232d6a2f713ce335d9becea301c9d6f30a314b088834398dde6a9a0ff98e",
+        "supplement_containment": "both retained modes",
+        "verified_replay_copies": [
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "checkpoint_saved"
+          },
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "package_saved"
+          },
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "fresh_portable"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "checkpoint_saved"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "package_saved"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "fresh_portable"
+          }
+        ]
+      },
+      {
+        "bytes": 2273,
+        "path": "DECODE_ATTEMPTS.jsonl",
+        "sha256": "029ff2e95fd5027b609643ef3fd27a4b328feb785888e0b993d5f57c1f153e1b",
+        "supplement_containment": "both retained modes",
+        "verified_replay_copies": [
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "checkpoint_saved"
+          },
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "package_saved"
+          },
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "fresh_portable"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "checkpoint_saved"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "package_saved"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "fresh_portable"
+          }
+        ]
+      },
+      {
+        "bytes": 8959,
+        "path": "DIAGNOSTIC_CROSSCHECK.json",
+        "sha256": "39713be981f4a666318282873ee2cf67b3bf8d5b27cf2fde7c9bad98bf88825f",
+        "supplement_containment": "both retained modes",
+        "verified_replay_copies": [
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "checkpoint_saved"
+          },
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "package_saved"
+          },
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "fresh_portable"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "checkpoint_saved"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "package_saved"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "fresh_portable"
+          }
+        ]
+      },
+      {
+        "bytes": 7753789,
+        "path": "NODE_TARGETS.jsonl.gz",
+        "sha256": "201045ffccab07c5694ee715fabf244be3b7b189b58fc74ce4e0d0926ab26bc3",
+        "supplement_containment": "external immutable node payload",
+        "verified_replay_copies": [
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "checkpoint_saved"
+          },
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "package_saved"
+          },
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "fresh_portable"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "checkpoint_saved"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "package_saved"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "fresh_portable"
+          }
+        ]
+      },
+      {
+        "bytes": 685,
+        "path": "OUTPUT_READBACK.json",
+        "sha256": "6662aa01913b43b5c9f2b5590196e181b9a19fec16bdd0830c5b4b4968f1b8c9",
+        "supplement_containment": "both retained modes",
+        "verified_replay_copies": [
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "checkpoint_saved"
+          },
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "package_saved"
+          },
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "fresh_portable"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "checkpoint_saved"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "package_saved"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "fresh_portable"
+          }
+        ]
+      },
+      {
+        "bytes": 128185,
+        "path": "SCIENCE_SUMMARY.json",
+        "sha256": "2618232d6a2f713ce335d9becea301c9d6f30a314b088834398dde6a9a0ff98e",
+        "supplement_containment": "both retained modes",
+        "verified_replay_copies": [
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "checkpoint_saved"
+          },
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "package_saved"
+          },
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "fresh_portable"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "checkpoint_saved"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "package_saved"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "fresh_portable"
+          }
+        ]
+      },
+      {
+        "bytes": 2910,
+        "path": "SOURCE_ATTEMPTS.jsonl",
+        "sha256": "82af89c3a9f77425acc6a377615f4e47912fb03feaadc7b6e610b02770185f84",
+        "supplement_containment": "both retained modes",
+        "verified_replay_copies": [
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "checkpoint_saved"
+          },
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "package_saved"
+          },
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "fresh_portable"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "checkpoint_saved"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "package_saved"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "fresh_portable"
+          }
+        ]
+      },
+      {
+        "bytes": 994433,
+        "path": "SOURCE_CERTIFICATE.json",
+        "sha256": "5fe04f4f8f7f6f7a29183dbc551d6e36ba2bf964025a89713e420d2c24864b52",
+        "supplement_containment": "both retained modes",
+        "verified_replay_copies": [
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "checkpoint_saved"
+          },
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "package_saved"
+          },
+          {
+            "matches": true,
+            "mode": "normal",
+            "role": "fresh_portable"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "checkpoint_saved"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "package_saved"
+          },
+          {
+            "matches": true,
+            "mode": "optimized",
+            "role": "fresh_portable"
+          }
+        ]
+      }
+    ],
+    "physical_target_truth_dependency": "Authenticated registered worker and analytic enclosure proof; this review checks serialized scope and byte identity.",
+    "review_executed_replay": false,
+    "review_imported_production_modules": false,
+    "stable_artifact_count": 8,
+    "timing_resource_and_custodian_provenance_excluded_from_scientific_identity": true
+  },
+  "scientific_scope": {
+    "capsule_node_occurrences": 49152,
+    "computational_reviews": "Internal; external peer review and observational confirmation not claimed.",
+    "continuous_time_transport": "Incoming contribution for fixed finite retained weights under identical subsequent forcing and complete contacts.",
+    "external_novelty": "NOT_ASSESSED",
+    "finite_prefix_cases": 12,
+    "full_continuous_stress_contact_time_momentum_UV_certificate": "UNRESOLVED",
+    "higher_dimensional_causation": "NOT_ESTABLISHED",
+    "later_numerical_trajectory_enclosures": "UNRESOLVED",
+    "metric_calibration": "FAIL"
+  },
+  "status": "PASS_INDEPENDENT_PUBLICATION_SUPPLEMENT_SCOPE_CORE_REVIEW"
+}

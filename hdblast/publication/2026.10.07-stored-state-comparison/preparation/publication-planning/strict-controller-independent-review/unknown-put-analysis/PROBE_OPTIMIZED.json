@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "status": "PASS_SOCKET_FREE_MANUFACTURED_MECHANISM",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "optimized": true,
+  "controller_sha256": "aa7e6cfe271559731ed3b45c5339f8eb612ebe6f017ddafa5fdadad9579e084b",
+  "synthetic_body_bytes": 240135519,
+  "case_count": 15,
+  "cases": [
+    {
+      "name": "urllib_queued_413_send_broken_pipe",
+      "status": "PASS",
+      "observed_exception": "URLError",
+      "reason_type": "BrokenPipeError",
+      "http_status_exposed": false,
+      "request_calls": 1,
+      "getresponse_calls": 0,
+      "makefile_calls": 0,
+      "send_lengths": [
+        218,
+        240135519
+      ],
+      "socket_close_calls": 1,
+      "manufactured_queued_response_bytes": 139
+    },
+    {
+      "name": "source_request_queued_413_send_broken_pipe",
+      "status": "PASS",
+      "observed_exception": "Stop",
+      "reason": "TRANSPORT_OUTCOME_UNKNOWN",
+      "http_status_exposed": false,
+      "request_calls": 1,
+      "getresponse_calls": 0,
+      "makefile_calls": 0,
+      "send_lengths": [
+        301,
+        240135519
+      ],
+      "socket_close_calls": 1,
+      "manufactured_queued_response_bytes": 139
+    },
+    {
+      "name": "direct_same_connection_rescue_broken_pipe",
+      "status": "PASS",
+      "http_status_exposed": 413,
+      "request_calls": 1,
+      "getresponse_calls": 1,
+      "makefile_calls": 1,
+      "send_lengths": [
+        167,
+        240135519
+      ],
+      "socket_close_calls": 1,
+      "manufactured_queued_response_bytes": 139
+    },
+    {
+      "name": "urllib_queued_413_send_connection_reset",
+      "status": "PASS",
+      "observed_exception": "URLError",
+      "reason_type": "ConnectionResetError",
+      "http_status_exposed": false,
+      "request_calls": 1,
+      "getresponse_calls": 0,
+      "makefile_calls": 0,
+      "send_lengths": [
+        218,
+        240135519
+      ],
+      "socket_close_calls": 1,
+      "manufactured_queued_response_bytes": 139
+    },
+    {
+      "name": "source_request_queued_413_send_connection_reset",
+      "status": "PASS",
+      "observed_exception": "Stop",
+      "reason": "TRANSPORT_OUTCOME_UNKNOWN",
+      "http_status_exposed": false,
+      "request_calls": 1,
+      "getresponse_calls": 0,
+      "makefile_calls": 0,
+      "send_lengths": [
+        301,
+        240135519
+      ],
+      "socket_close_calls": 1,
+      "manufactured_queued_response_bytes": 139
+    },
+    {
+      "name": "direct_same_connection_rescue_connection_reset",
+      "status": "PASS",
+      "http_status_exposed": 413,
+      "request_calls": 1,
+      "getresponse_calls": 1,
+      "makefile_calls": 1,
+      "send_lengths": [
+        167,
+        240135519
+      ],
+      "socket_close_calls": 1,
+      "manufactured_queued_response_bytes": 139
+    },
+    {
+      "name": "urllib_queued_413_send_tls_eof",
+      "status": "PASS",
+      "observed_exception": "URLError",
+      "reason_type": "SSLEOFError",
+      "http_status_exposed": false,
+      "request_calls": 1,
+      "getresponse_calls": 0,
+      "makefile_calls": 0,
+      "send_lengths": [
+        218,
+        240135519
+      ],
+      "socket_close_calls": 1,
+      "manufactured_queued_response_bytes": 139
+    },
+    {
+      "name": "source_request_queued_413_send_tls_eof",
+      "status": "PASS",
+      "observed_exception": "Stop",
+      "reason": "TRANSPORT_OUTCOME_UNKNOWN",
+      "http_status_exposed": false,
+      "request_calls": 1,
+      "getresponse_calls": 0,
+      "makefile_calls": 0,
+      "send_lengths": [
+        301,
+        240135519
+      ],
+      "socket_close_calls": 1,
+      "manufactured_queued_response_bytes": 139
+    },
+    {
+      "name": "direct_same_connection_rescue_tls_eof",
+      "status": "PASS",
+      "http_status_exposed": 413,
+      "request_calls": 1,
+      "getresponse_calls": 1,
+      "makefile_calls": 1,
+      "send_lengths": [
+        167,
+        240135519
+      ],
+      "socket_close_calls": 1,
+      "manufactured_queued_response_bytes": 139
+    },
+    {
+      "name": "urllib_queued_413_send_timeout",
+      "status": "PASS",
+      "observed_exception": "URLError",
+      "reason_type": "TimeoutError",
+      "http_status_exposed": false,
+      "request_calls": 1,
+      "getresponse_calls": 0,
+      "makefile_calls": 0,
+      "send_lengths": [
+        218,
+        240135519
+      ],
+      "socket_close_calls": 1,
+      "manufactured_queued_response_bytes": 139
+    },
+    {
+      "name": "source_request_queued_413_send_timeout",
+      "status": "PASS",
+      "observed_exception": "Stop",
+      "reason": "TRANSPORT_OUTCOME_UNKNOWN",
+      "http_status_exposed": false,
+      "request_calls": 1,
+      "getresponse_calls": 0,
+      "makefile_calls": 0,
+      "send_lengths": [
+        301,
+        240135519
+      ],
+      "socket_close_calls": 1,
+      "manufactured_queued_response_bytes": 139
+    },
+    {
+      "name": "direct_same_connection_rescue_timeout",
+      "status": "PASS",
+      "http_status_exposed": 413,
+      "request_calls": 1,
+      "getresponse_calls": 1,
+      "makefile_calls": 1,
+      "send_lengths": [
+        167,
+        240135519
+      ],
+      "socket_close_calls": 1,
+      "manufactured_queued_response_bytes": 139
+    },
+    {
+      "name": "source_request_complete_send_definitive_413",
+      "status": "PASS",
+      "http_status_exposed": 413,
+      "request_calls": 1,
+      "getresponse_calls": 1,
+      "makefile_calls": 1,
+      "send_lengths": [
+        301,
+        240135519
+      ],
+      "socket_close_calls": 1,
+      "manufactured_queued_response_bytes": 139
+    },
+    {
+      "name": "source_request_redirect_not_followed",
+      "status": "PASS",
+      "http_status_exposed": 302,
+      "request_calls": 1,
+      "getresponse_calls": 1,
+      "makefile_calls": 1,
+      "send_lengths": [
+        301,
+        240135519
+      ],
+      "socket_close_calls": 1,
+      "manufactured_queued_response_bytes": 106
+    },
+    {
+      "name": "direct_same_connection_no_response_remains_unknown",
+      "status": "PASS",
+      "http_status_exposed": false,
+      "request_calls": 1,
+      "getresponse_calls": 1,
+      "makefile_calls": 1,
+      "send_lengths": [
+        127,
+        240135519
+      ],
+      "socket_close_calls": 1,
+      "manufactured_queued_response_bytes": 0
+    }
+  ],
+  "scope": "No real sockets, TLS handshakes, uploads, controller imports/main, saved assets, or credentials. Manufactured queued 413 responses do not identify the real failure cause."
+}

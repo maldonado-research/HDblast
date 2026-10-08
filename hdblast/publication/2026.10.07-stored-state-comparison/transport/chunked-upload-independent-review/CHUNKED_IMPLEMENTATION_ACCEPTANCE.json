@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "status": "PASS_INDEPENDENT_CHUNKED_IMPLEMENTATION_REVIEW",
+  "observed_utc": "2026-10-08T04:41:39.395238+00:00",
+  "helper_sha256": "f76aeb162e6d1cad6f9d53afbf20bf68f7f4ee0f4b1504789f2880f97a4315eb",
+  "prior_preserved_helper_sha256": "39ec701ae3133b699bbad1f74031c549a0aedbc2116109cf5be199d3c7b0916d",
+  "source_audit_receipt_sha256": "4cecb474083ca8395c4cef4cba958bc9635e4c5c72f59f815b8ccf83c1fdc03d",
+  "blockers": [],
+  "scope": "Separately authorized identical sealed ZIP/same initialized file one chunked PUT attempt, preserving prior unknown+401 history; source diff and actual installed curl local HTTP tests.",
+  "actual_curl_controls": {
+    "normal_passed": 11,
+    "optimized_passed": 11,
+    "total_passed": 22,
+    "wire_PUTs_per_case": 1,
+    "Content_Length_present": false,
+    "Transfer_Encoding": "chunked",
+    "Expect_present": false,
+    "decoded_success_payload_bytes": 88064,
+    "encoded_success_body_bytes": 88085,
+    "terminal_zero_chunk": true,
+    "decoded_full_SHA256_match": true,
+    "HTTP417_resend_observed": false,
+    "HTTP307_followed": false
+  },
+  "size_upload_interpretation": "Includes chunk framing in these controls; not decoded asset byte count or server custody.",
+  "full_remote_readback_requirement": "Unchanged accepted controller complete authenticated GET size/MD5/SHA256 before original pending clear/commit.",
+  "provider_chunked_compatibility": "UNPROVEN",
+  "server_compare_and_swap": "NOT_ESTABLISHED",
+  "live_upload_or_publication_claim": false,
+  "network": "LOCAL_MANUFACTURED_LOOPBACK_HTTP_ONLY",
+  "real_API_requests": 0,
+  "live_helper_main_invocations": 0,
+  "real_asset_reads": 0,
+  "original_state_latch_or_failure_evidence_changes": 0,
+  "commits": 0,
+  "publishes": 0,
+  "scientific_callbacks": 0,
+  "parent_guard_controls": "Separate parent-owned232controls, not independently recounted in this receipt.",
+  "artifacts": {
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/unknown-put-recovery/recover_put_chunked_once.py": {
+      "bytes": 22458,
+      "sha256": "f76aeb162e6d1cad6f9d53afbf20bf68f7f4ee0f4b1504789f2880f97a4315eb"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/chunked-upload-independent-review/CHUNKED_IMPLEMENTATION_ACCEPTANCE.md": {
+      "bytes": 3092,
+      "sha256": "d87ededec37fadc1553fef1c75ccb2e5897632681bb578b04a1c9db497af37d1"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/chunked-upload-independent-review/source-audit/CHUNKED_SOURCE_AUDIT_RECEIPT.json": {
+      "bytes": 5830,
+      "sha256": "4cecb474083ca8395c4cef4cba958bc9635e4c5c72f59f815b8ccf83c1fdc03d"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/chunked-upload-independent-review/source-audit/CHUNKED_SOURCE_AUDIT.md": {
+      "bytes": 5443,
+      "sha256": "3d3506941007decf223040753bba7d1efe24a13c730e94b1f87c395ed11ffbc3"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/chunked-upload-independent-review/source-audit/candidate_f76aeb162e6d1cad6f9d53afbf20bf68f7f4ee0f4b1504789f2880f97a4315eb.py": {
+      "bytes": 22458,
+      "sha256": "f76aeb162e6d1cad6f9d53afbf20bf68f7f4ee0f4b1504789f2880f97a4315eb"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/chunked-upload-independent-review/transport-tests/local_chunked_curl_controls.py": {
+      "bytes": 13793,
+      "sha256": "08450f7e8f1659e66a05a46a03471493532fef4639daa1adf5787c0eaef9819c"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/chunked-upload-independent-review/transport-tests/CHUNKED_CURL_normal_001.json": {
+      "bytes": 23821,
+      "sha256": "f2fcfdac7985aea8421f3d4938b4cbb2377b88214e50b91b77366fd582d7778c"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/chunked-upload-independent-review/transport-tests/CHUNKED_CURL_optimized_001.json": {
+      "bytes": 23820,
+      "sha256": "844f3acb910e89bde885a746a7140ffe6c6b46917bba3d2486f467ef578f5eab"
+    },
+    "/workspace/hdblast-research-work/continuation-state-comparison-20261007/publication-final/chunked-upload-independent-review/transport-tests/helper_transport_snapshot_f76aeb162e6d1cad6f9d53afbf20bf68f7f4ee0f4b1504789f2880f97a4315eb.py": {
+      "bytes": 22458,
+      "sha256": "f76aeb162e6d1cad6f9d53afbf20bf68f7f4ee0f4b1504789f2880f97a4315eb"
+    }
+  }
+}

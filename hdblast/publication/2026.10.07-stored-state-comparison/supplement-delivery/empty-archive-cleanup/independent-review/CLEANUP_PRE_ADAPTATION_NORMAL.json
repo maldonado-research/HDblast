@@ -1,0 +1,249 @@
+{
+  "authorization_receipt": false,
+  "controls": [
+    {
+      "name": "guard_accepts_legitimate_omitted_size_checksum",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_accepts_explicit_null_size_checksum",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_file_id_'wrong'",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_version_id_'wrong'",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_bucket_id_'wrong'",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_status_'completed'",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_size_0",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_size_1",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_checksum_''",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_checksum_'md5:0'",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_key_'wrong'",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_self_link",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_target_content_link",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_wrong_owner_draft",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_publication_after_current",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_editable_metadata_change",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_original_pending_change",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_extra_user_file",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_missing_inherited_file",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_inherited_file_id",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_inherited_version_id",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_inherited_bucket_id",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_inherited_size",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_inherited_checksum",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_changed_initialized_target",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_reject_inherited_target_id_collision",
+      "status": "PASS"
+    },
+    {
+      "name": "guard_accepts_exact27_target_absence",
+      "status": "PASS"
+    },
+    {
+      "name": "probe_reject_status401",
+      "status": "PASS"
+    },
+    {
+      "name": "probe_reject_present200",
+      "status": "PASS"
+    },
+    {
+      "name": "probe_reject_truncated400",
+      "status": "PASS"
+    },
+    {
+      "name": "probe_reject_failed400",
+      "status": "PASS"
+    },
+    {
+      "name": "probe_reject_wrongbody400",
+      "status": "PASS"
+    },
+    {
+      "name": "probe_reject_wrong_native_version",
+      "status": "PASS"
+    },
+    {
+      "exception": "AttributeError",
+      "name": "valid_one_delete_after_both_probes_and_latch_preserves_state",
+      "reason": "'Controller' object has no attribute 'token'",
+      "status": "FAIL"
+    },
+    {
+      "exception": "AttributeError",
+      "name": "delete_blocked_by_native_probe_failure",
+      "reason": "'Controller' object has no attribute 'token'",
+      "status": "FAIL"
+    },
+    {
+      "exception": "AttributeError",
+      "name": "delete_blocked_by_final_target_change",
+      "reason": "'Controller' object has no attribute 'token'",
+      "status": "FAIL"
+    },
+    {
+      "exception": "AttributeError",
+      "name": "delete_blocked_by_original_evidence_change",
+      "reason": "'Controller' object has no attribute 'token'",
+      "status": "FAIL"
+    },
+    {
+      "exception": "AttributeError",
+      "name": "existing_file_latch_refuses_delete",
+      "reason": "'Controller' object has no attribute 'token'",
+      "status": "FAIL"
+    },
+    {
+      "exception": "AttributeError",
+      "name": "existing_directory_latch_refuses_delete",
+      "reason": "'Controller' object has no attribute 'token'",
+      "status": "FAIL"
+    },
+    {
+      "exception": "AttributeError",
+      "name": "existing_symlink_latch_refuses_delete",
+      "reason": "'Controller' object has no attribute 'token'",
+      "status": "FAIL"
+    },
+    {
+      "exception": "AttributeError",
+      "name": "delete_reject_status_401_keeps_latch",
+      "reason": "'Controller' object has no attribute 'token'",
+      "status": "FAIL"
+    },
+    {
+      "exception": "AttributeError",
+      "name": "delete_reject_status_429_keeps_latch",
+      "reason": "'Controller' object has no attribute 'token'",
+      "status": "FAIL"
+    },
+    {
+      "exception": "AttributeError",
+      "name": "delete_reject_status_500_keeps_latch",
+      "reason": "'Controller' object has no attribute 'token'",
+      "status": "FAIL"
+    },
+    {
+      "exception": "AttributeError",
+      "name": "delete_reject_status_200.0_keeps_latch",
+      "reason": "'Controller' object has no attribute 'token'",
+      "status": "FAIL"
+    },
+    {
+      "exception": "AttributeError",
+      "name": "lost_delete_response_no_repeat",
+      "reason": "'Controller' object has no attribute 'token'",
+      "status": "FAIL"
+    },
+    {
+      "exception": "AttributeError",
+      "name": "truncated_delete_success_is_unknown",
+      "reason": "'Controller' object has no attribute 'token'",
+      "status": "FAIL"
+    },
+    {
+      "name": "GET_only_reconcile_exact_absence",
+      "status": "PASS"
+    },
+    {
+      "name": "reconcile_rejects_target_still_present",
+      "status": "PASS"
+    },
+    {
+      "name": "reconcile_rejects_missing_inherited",
+      "status": "PASS"
+    },
+    {
+      "name": "reconcile_rejects_extra_user_file",
+      "status": "PASS"
+    },
+    {
+      "name": "reconcile_rejects_changed_inherited_identity",
+      "status": "PASS"
+    },
+    {
+      "name": "reconcile_rejects_changed_editable_metadata",
+      "status": "PASS"
+    }
+  ],
+  "fail": 13,
+  "live_transport_calls": 0,
+  "main_invoked": false,
+  "manufactured_only": true,
+  "optimized": false,
+  "pass": 39,
+  "primitives_sha256": "f76aeb162e6d1cad6f9d53afbf20bf68f7f4ee0f4b1504789f2880f97a4315eb",
+  "real_state_or_prior_files_read": false,
+  "source_sha256": "a4685ff65eab0dca73ecf8066a7710359979eeffea5dffcf8e2f3c4bdb2a1d60",
+  "status": "FAIL"
+}

@@ -1,0 +1,48 @@
+{
+  "blocking_findings": [],
+  "controls": {
+    "failed": 0,
+    "network_socket_functions_forbidden": true,
+    "normal_pass": 6,
+    "optimized_pass": 6,
+    "total_pass": 12
+  },
+  "fixture_initialization": "Root had already adopted. Controls copy saved NEW_STATE_BEFORE bytes and exact initial1400-byte journal prefix into temporary paths; all other pinned input bytes remain read-only.",
+  "original_evidence_sha256": {
+    "old_journal": "a413a83242ab9bfa68557b0a1f8230f3e9507f0525f48b349ae92cba1ddfb162",
+    "old_state": "9927d046277e4c808e43fff49d3c6add2495df8795cff7b166941694830132ad"
+  },
+  "pins": {
+    "publication-final/known-draft-adoption/INPUT_PINS.json": "4c3331184089e7eb4cc546cec3c5a0e61d24ac91670ab3cfe47e842ac4071b74",
+    "publication-final/known-draft-adoption/adopt_known_draft_once.py": "f3cd239eba834806961a6ed246ab183ee63c149221f1fca2a9dba7a2cb5db4da",
+    "publication-final/known-draft-adoption/live-local-adoption-001/NEW_STATE_BEFORE.json": "9942ff99779422726a333d393e98d3a82684e604df67b183928283431ce2da65",
+    "publication-final/known-draft-adoption/live-local-adoption-001/ONE_LOCAL_ADOPTION_LATCH.json": "1b6b01ab72b53a56f7e5a3140bfb5bd4f6076a2fc4bd28689c5abe4d7d4ff832",
+    "publication-final/known-draft-adoption/live-local-adoption-001/RESULT.json": "44dd8fc68ff3a82e76f17301d24e56941644d5e025f1c3230e384fd6ed51e8f3",
+    "publication-final/known-draft-adoption/source-independent-review/LOCAL_ADOPTION_NORMAL.json": "75f3cb5e8b4484792d0d1a35c715cdc1037fc50887df75c951009380e07ce5d1",
+    "publication-final/known-draft-adoption/source-independent-review/LOCAL_ADOPTION_OPTIMIZED.json": "c2399d0ed4a7b7f833bdb5271997a0df426e4d2a8729901e7a7ab8c0b777cdd3",
+    "publication-final/known-draft-adoption/source-independent-review/adopt_known_draft_once_f3cd239e_snapshot.py": "f3cd239eba834806961a6ed246ab183ee63c149221f1fca2a9dba7a2cb5db4da",
+    "publication-final/known-draft-adoption/source-independent-review/local_adoption_controls.py": "50b1362200a8aa2f1038c15f05de51e50d45abff64e3ee938253f757c412b44f"
+  },
+  "review_scope": "Local source audit and six focused fixture controls in each Python mode. No production main/adoption, network operation, or controller import by reviewer.",
+  "reviewed_utc": "2026-10-08T05:29:13.896339+00:00",
+  "root_production_local_result": {
+    "network_writes": 0,
+    "new_state_sha256": "395abb1a4bac3787a545415cfae7f05b95601b4548272bd99f525f477c7aac55",
+    "only_state_field_changed": "draft_id",
+    "original_pending_cleared": false,
+    "receipt_sha256": "44dd8fc68ff3a82e76f17301d24e56941644d5e025f1c3230e384fd6ed51e8f3",
+    "status": "PASS_LOCAL_KNOWN_DRAFT_ADOPTED_FRESH_REMOTE_GUARDS_REQUIRED"
+  },
+  "source_audit": {
+    "binding": "NEW has exact fresh six fields with null pending/draft and false published; continuation binding equals preserved old binding and exact aa7/prior/family; inventory/metadata/controller and owned unsubmitted creation response are pinned.",
+    "cleanup": "The manifest pins accepted a468 source, both reviewer receipts, all actual GET-only guard captures and the exact target-absent/inherited27-preserved result. No remote behavior is reinterpreted or invoked.",
+    "failure": "Exclusive recovery/latch prevents automatic repetition after failures before state replacement or after state/journal completion. No outcome is reported successful without final result receipt.",
+    "inputs": "Production main fixes a SHA256-pinned manifest and exact19 roles; every captured leaf is regular, ancestor symlinks and cross-role inode aliases are refused, byte count/hash and identity are checked.",
+    "journal": "Original NEW journal byte prefix preserved by append-only intent/result events; original old STATE/JOURNAL are checked byte-identical after adoption.",
+    "locks": "Both unchanged-controller CONTROLLER.lock files are held exclusively; recovery directory and O_EXCL fsynced intent are durable before local mutations; inputs are recaptured afterward.",
+    "network": "No network, subprocess, dynamic code execution, or controller import; unchanged aa7 controller must run all fresh remote guards before further publication work.",
+    "state_delta": "Deep copy of captured NEW state; only draft_id set to string23228395; temporary file fsynced, atomic os.replace, parent directory fsynced, and readback checked."
+  },
+  "source_sha256": "f3cd239eba834806961a6ed246ab183ee63c149221f1fca2a9dba7a2cb5db4da",
+  "status": "ACCEPTED_PINNED_LOCAL_KNOWN_DRAFT_ADOPTION_ONLY"
+}

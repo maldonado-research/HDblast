@@ -1,0 +1,423 @@
+# SPDX-FileCopyrightText: 2023 CERN
+# SPDX-License-Identifier: GPL-3.0-or-later
+"""Custom code config."""
+
+from invenio_administration.permissions import administration_permission
+from invenio_search.api import dsl
+
+from .params import ZenodoArgsSchema, ZenodoSearchOptions
+from .redirector import (
+    communities_detail_view_function,
+    communities_records_search,
+    communities_requests_view_function,
+    communities_settings_view_function,
+    deposit_view_function,
+    legacy_record_export_view,
+    record_export_view,
+    record_file_download_view,
+    record_view_function,
+    redirect_access_request,
+    redirect_deposit_new_view,
+    redirect_deposit_own_view,
+    redirect_formats_to_media_files_view,
+    redirect_licenses,
+    redirect_record_file_preview_view,
+    redirect_record_thumbnail_view,
+    redirect_records_search_slash,
+    search_view_function,
+)
+from .schema import ZenodoRecordSchema
+
+# I18N_TRANSLATIONS_PATHS = [os.path.abspath("./site/zenodo_rdm/translations")]
+
+# API endpoint to Zammad instance
+SUPPORT_ZAMMAD_ENDPOINT = "http://localhost:8080/api/v1"
+
+# Zammad token
+SUPPORT_ZAMMAD_HTTPTOKEN = "changeme"
+
+# Support form categories
+SUPPORT_ISSUE_CATEGORIES = [
+    {
+        "key": "record-deletion",
+        "title": "Delete a record",
+        "description": (
+            '<div class="ui warning visible message">'
+            '<div class="header">Deleting a record</div>'
+            "<ul>"
+            '<li><strong>Published within the last 30 days:</strong> Follow the <a href="https://help.zenodo.org/docs/deposit/manage-records/#delete">deletion guide</a> to delete your record.</li>'
+            '<li><strong>Published more than 30 days ago:</strong> Deletion is no longer possible. You can <a href="https://help.zenodo.org/docs/deposit/create-new-upload/#visibility">restrict public access to files</a>, <a href="https://help.zenodo.org/docs/deposit/describe-records/descriptions/">add a public note</a>, and optionally <a href="https://help.zenodo.org/docs/deposit/manage-versions/">upload a new version</a> if needed.</li>'
+            "</ul>"
+            "<p>For copyright issues, select <strong>Take-down notice</strong> from the category above. For personal data exposure, select <strong>Report personal data exposure</strong>.</p>"
+            "</div>"
+        ),
+        "form_disabled": True,
+    },
+    {
+        "key": "user-deletion",
+        "title": "Delete account",
+        "description": (
+            "Please make sure you <strong>log in before you send the request</strong>. If you have uploaded any records or created any communities, please specify to who these should be transferred."
+        ),
+    },
+    {
+        "key": "feature-request",
+        "title": "Feedback/Feature request",
+        "description": "",
+    },
+    {
+        "key": "general-inquiry",
+        "title": "General inquiry",
+        "description": "",
+    },
+    {
+        "key": "file-modification",
+        "title": "Modify files",
+        "description": (
+            '<div class="ui warning visible message">'
+            '<div class="header">Modifying record files</div>'
+            "<ul>"
+            '<li><strong>Published within the last 30 days:</strong> Follow the <a href="https://help.zenodo.org/docs/deposit/manage-files/#modify">file modification guide</a> to edit your published files.</li>'
+            '<li><strong>Published more than 30 days ago:</strong> File modification is no longer possible. You can <a href="https://help.zenodo.org/docs/deposit/create-new-upload/#visibility">restrict public access to files</a>, <a href="https://help.zenodo.org/docs/deposit/describe-records/descriptions/">add a public note</a>, and <a href="https://help.zenodo.org/docs/deposit/manage-versions/">upload a new version</a> with the corrected files.</li>'
+            "</ul>"
+            "<p>For copyright issues, select <strong>Take-down notice</strong> from the category above. For personal data exposure, select <strong>Report personal data exposure</strong>.</p>"
+            "</div>"
+        ),
+        "form_disabled": True,
+    },
+    {
+        "key": "quota-increase",
+        "title": "Storage quota increase",
+        "description": (
+            '<div class="ui warning visible message">'
+            '<div class="header">Increasing your storage quota</div>'
+            '<p>Follow the <a href="https://help.zenodo.org/docs/deposit/manage-quota/">storage quota guide</a> to manage the storage quota of your drafts.</p>'
+            "</div>"
+        ),
+        "form_disabled": True,
+    },
+    {
+        "key": "security-report",
+        "title": "Report a security issue",
+        "description": "Please provide as detailed information as possible.",
+    },
+    {
+        "key": "problem-report",
+        "title": "Report bug or problem",
+        "description": "Please provide direct links to pages and screenshots if possible. Include the <strong>error identifier</strong> if shown.",
+    },
+    {
+        "key": "personal-data-report",
+        "title": "Report personal data exposure",
+        "description": (
+            "<p>Please provide the following information:</p>"
+            "<ul>"
+            "<li><strong>Link:</strong> A direct link to the record containing personal data.</li>"
+            "<li><strong>Reason:</strong> A description of where the personal data appears.</li>"
+            "</ul>"
+        ),
+    },
+    {
+        "key": "spam-report",
+        "title": "Report spam",
+        "description": (
+            "<p>Please provide the following information:</p>"
+            "<ul>"
+            "<li><strong>Link:</strong> A direct link to the spam record/community.</li>"
+            "<li><strong>Reason:</strong> A short description of why the record is spam.</li>"
+            "</ul>"
+        ),
+    },
+    {
+        "key": "take-down",
+        "title": "Take-down notice",
+        "description": (
+            "Please provide a direct link to the record or community to request us to take down. Please specify the reason for the take-down (e.g. copyright infringement, plagiarism, fraud, or similar)."
+        ),
+    },
+    {
+        "key": "ownership-transfer",
+        "title": "Transfer ownership",
+        "description": "",
+    },
+    {
+        "key": "access-blocked-403",
+        "title": "Access blocked (403 Forbidden)",
+        "description": (
+            '<div class="ui warning visible message">'
+            '<div class="header">Access blocked due to unusual traffic</div>'
+            "If you encountered a blank page with a <strong>403</strong> error when visiting Zenodo, we recommend that you upgrade your web browser or operating system, as older or insecure versions may not be supported.</p>"
+            "<p>If the issue persists or you are unable to update your browser, kindly include the following details in your request:</p>"
+            "<ul>"
+            "<li><strong>Reference ID:</strong> The reference code shown on the error page.</li>"
+            "<li><strong>Timestamp:</strong> The timestamp displayed with the error.</li>"
+            "<li><strong>Browser and version:</strong> The browser you are using and its version.</li>"
+            "</ul>"
+            "</div>"
+        ),
+    },
+]
+
+#: Maximum size of attachment in contact form.
+SUPPORT_ATTACHMENT_MAX_SIZE = 1000 * 1000 * 10  # 10 MB
+
+#: Description maximum length.
+SUPPORT_DESCRIPTION_MAX_LENGTH = 5000
+
+#: Description minimum length.
+SUPPORT_DESCRIPTION_MIN_LENGTH = 20
+
+# Support url endpoint
+SUPPORT_ENDPOINT = "/support"
+
+# Valid referrer to access the support form.
+# Set a value (e.g. "https://help.zenodo.org/") to enable this feature.
+SUPPORT_VALID_REFERRER = None
+
+# Search query of recent uploads
+# Defaults to newest records search
+
+ZENODO_FRONTPAGE_RECENT_UPLOADS_QUERY = dsl.query.Bool(
+    must=[
+        dsl.Q(
+            "terms",
+            **{
+                "metadata.resource_type.id": [
+                    "dataset",
+                    "software",
+                    "poster",
+                    "presentation",
+                ]
+            },
+        ),
+        dsl.Q("exists", field="parent.communities"),
+        dsl.Q("term", **{"access.files": "public"}),
+    ]
+)
+
+ZENODO_FRONTPAGE_CACHE_TIMEOUT = 60 * 30
+
+
+# Citations
+# =========
+ZENODO_RECORDS_UI_CITATIONS_ENDPOINT = (
+    "https://zenodo-broker-qa.web.cern.ch/api/relationships"
+)
+
+# Redirection
+# ===========
+
+ZENODO_RECORD_EXPORTERS_LEGACY = {
+    "hx": "bibtex",
+    "dcite4": "datacite-xml",
+    "xd": "dublincore",
+    "xm": "marcxml",
+    "dcat": "DCAT-AP",
+}
+
+REDIRECTOR_RULES = {
+    "redirect_communities_about_legacy": {
+        "source": "/communities/about/<id>",
+        "rule_options": {"strict_slashes": False},
+        "target": communities_detail_view_function,
+    },
+    "redirect_communities_search_legacy": {
+        "source": "/collection/<type>",
+        "rule_options": {"strict_slashes": False},
+        "target": search_view_function,
+    },
+    "redirect_collections_about": {
+        "source": "/collection/user-<id>",
+        "rule_options": {"strict_slashes": False},
+        "target": communities_detail_view_function,
+    },
+    "redirect_communities_curate": {
+        "source": "/communities/<community_id>/curate",
+        "rule_options": {"strict_slashes": False},
+        "target": communities_requests_view_function,
+    },
+    "redirect_communities_edt": {
+        "source": "/communities/<community_id>/edit",
+        "rule_options": {"strict_slashes": False},
+        "target": communities_settings_view_function,
+    },
+    "redirect_communities_search": {
+        "source": "/communities/<community_id>/search",
+        "rule_options": {"strict_slashes": False},
+        "target": communities_records_search,
+    },
+    "redirect_dev": {
+        "source": "/dev",
+        "rule_options": {"strict_slashes": False},
+        "target": "http://developers.zenodo.org",
+    },
+    "redirect_faq": {
+        "source": "/faq",
+        "rule_options": {"strict_slashes": False},
+        "target": "http://help.zenodo.org",
+    },
+    "redirect_features": {
+        "source": "/features",
+        "rule_options": {"strict_slashes": False},
+        "target": "http://help.zenodo.org/features/",
+    },
+    "redirect_whatsnew": {
+        "source": "/whatsnew",
+        "rule_options": {"strict_slashes": False},
+        "target": "http://help.zenodo.org/whatsnew/",
+    },
+    "redirect_about": {
+        "source": "/about",
+        "rule_options": {"strict_slashes": False},
+        "target": "http://about.zenodo.org",
+    },
+    "redirect_contact": {
+        "source": "/contact",
+        "rule_options": {"strict_slashes": False},
+        "target": "http://about.zenodo.org/contact/",
+    },
+    "redirect_policies": {
+        "source": "/policies",
+        "rule_options": {"strict_slashes": False},
+        "target": "http://about.zenodo.org/policies/",
+    },
+    "redirect_privacy-policy": {
+        "source": "/privacy-policy",
+        "rule_options": {"strict_slashes": False},
+        "target": "http://about.zenodo.org/privacy-policy/",
+    },
+    "redirect_terms": {
+        "source": "/terms",
+        "rule_options": {"strict_slashes": False},
+        "target": "http://about.zenodo.org/terms/",
+    },
+    "redirect_donate": {
+        "source": "/donate",
+        "rule_options": {"strict_slashes": False},
+        "target": "https://donate.cernandsocietyfoundation.cern/zenodo/~my-donation?_cv=1",
+    },
+    "redirect_deposit_id": {
+        "source": "/deposit/<pid_value>",
+        "rule_options": {"strict_slashes": False},
+        "target": deposit_view_function,
+    },
+    "redirect_record_detail": {
+        "source": "/record/<pid_value>",
+        "rule_options": {"strict_slashes": False},
+        "target": record_view_function,
+    },
+    "redirect_record_export": {
+        "source": "/record/<pid_value>/export/<export_format>",
+        "rule_options": {"strict_slashes": False},
+        "target": record_export_view,
+    },
+    "redirect_record_file_download": {
+        "source": "/record/<pid_value>/files/<path:filename>",
+        "rule_options": {"strict_slashes": False},
+        "target": record_file_download_view,
+    },
+    "redirect_deposit_own": {
+        "source": "/deposit",
+        "rule_options": {"strict_slashes": False},
+        "target": redirect_deposit_own_view,
+    },
+    "redirect_deposit_new": {
+        "source": "/deposit/new",
+        "rule_options": {"strict_slashes": False},
+        "target": redirect_deposit_new_view,
+    },
+    "redirect_record_file_preview": {
+        "source": "/record/<pid_value>/preview/<path:filename>",
+        "rule_options": {"strict_slashes": False},
+        "target": redirect_record_file_preview_view,
+    },
+    "redirect_record_thumbnail": {
+        "source": "/record/<pid_value>/thumb<size>",
+        "rule_options": {"strict_slashes": False},
+        "target": redirect_record_thumbnail_view,
+    },
+    "redirect_formats_to_media_files": {
+        "source": "/record/<pid_value>/formats",
+        "rule_options": {"strict_slashes": False},
+        "target": redirect_formats_to_media_files_view,
+    },
+    "redirect_access_request": {
+        "source": "/account/settings/sharedlinks/accessrequest/<number>",
+        "rule_options": {"strict_slashes": False},
+        "target": redirect_access_request,
+    },
+}
+
+
+API_REDIRECTOR_RULES = {
+    "redirect_records_search_slash": {
+        "source": "/records/",
+        "target": redirect_records_search_slash,
+    },
+    "redirect_licenses": {
+        "source": "/licenses",
+        "rule_options": {"strict_slashes": False},
+        "target": redirect_licenses,
+    },
+}
+
+EXPORT_REDIRECTS = {
+    f"redirect_legacy_record_export_view_{key}": {
+        "source": f"/records/<pid_value>/export/{key}",
+        "rule_options": {"strict_slashes": False},
+        "target": legacy_record_export_view,
+    }
+    for key in ZENODO_RECORD_EXPORTERS_LEGACY
+}
+
+REDIRECTOR_RULES.update(EXPORT_REDIRECTS)
+
+
+def lock_edit_record_published_files(service, identity, record=None, draft=None):
+    """Custom conditions for file bucket lock."""
+    can_modify = service.check_permission(
+        identity, "modify_locked_files", record=record
+    )
+
+    # Admins SHOULD NOT be allowed to automatically unlock files on edit, but instead
+    # go through an explicit file modification process that is logged and tracked.
+    # NOTE: We have to be explicit here, since admins usually have "superuser-access"
+    # permissions, which bypass the above check.
+    if administration_permission.allows(identity):
+        return True
+
+    if can_modify:
+        return False
+
+    return True
+
+
+RDM_LOCK_EDIT_PUBLISHED_FILES = lock_edit_record_published_files
+"""Lock editing already published files (enforce record versioning)."""
+
+APP_RDM_RECORD_THUMBNAIL_SIZES = [
+    10,
+    50,
+    100,
+    250,
+    750,
+    1200,
+]
+"""Thumbnail sizes."""
+
+
+RDM_SEARCH_OPTIONS_CLS = ZenodoSearchOptions
+"""Zenodo search options class to support legacy search parameters."""
+
+
+RDM_SEARCH_ARGS_SCHEMA = ZenodoArgsSchema
+"""Zenodo search args schema to support legacy search parameters."""
+
+THEME_MATHJAX_CDN = (
+    "//cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"
+    "?config=TeX-AMS-MML_HTMLorMML"
+)
+
+
+RDM_RECORD_SCHEMA = ZenodoRecordSchema
+"""Base record schema."""
