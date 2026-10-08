@@ -1,0 +1,174 @@
+{
+  "cases": [
+    {
+      "adversary": "package",
+      "child_log_sha256": "e35962b7a0e04e56c0c89ead286579cf17811ad0be2ff96b1180c47040ef01bc",
+      "entry": "run_endpoint.py",
+      "entry_sha256": "a58ed1ea9c4fe9f689de8dc6f346f48b8071d7b4aaf1976efae89a7312c6accc",
+      "exit_code": 0,
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "module": "registration_guard",
+      "passed": true,
+      "unregistered_marker_executed": false
+    },
+    {
+      "adversary": "package",
+      "child_log_sha256": "f63888736c6c18f31a1a7baa2d313f7fcef9aacebe9147b8285d628190e81584",
+      "entry": "bounded_launcher.py",
+      "entry_sha256": "978aff1264dd6aa499fadc12461abbb66cadd51d8c166a6954f406b21908c490",
+      "exit_code": 1,
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "module": "kernel_guard",
+      "passed": true,
+      "unregistered_marker_executed": false
+    },
+    {
+      "adversary": "stdlib",
+      "child_log_sha256": "e35962b7a0e04e56c0c89ead286579cf17811ad0be2ff96b1180c47040ef01bc",
+      "entry": "run_endpoint.py",
+      "entry_sha256": "a58ed1ea9c4fe9f689de8dc6f346f48b8071d7b4aaf1976efae89a7312c6accc",
+      "exit_code": 0,
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "module": "hashlib",
+      "passed": true,
+      "unregistered_marker_executed": false
+    },
+    {
+      "adversary": "stdlib",
+      "child_log_sha256": "e5b649e764b4b13be4316a88ab78ca096b8d86bfee62f637460f41c8867aa28b",
+      "entry": "bounded_launcher.py",
+      "entry_sha256": "978aff1264dd6aa499fadc12461abbb66cadd51d8c166a6954f406b21908c490",
+      "exit_code": 1,
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "module": "ctypes",
+      "passed": true,
+      "unregistered_marker_executed": false
+    },
+    {
+      "adversary": "package_symlink",
+      "child_log_sha256": "e35962b7a0e04e56c0c89ead286579cf17811ad0be2ff96b1180c47040ef01bc",
+      "entry": "run_endpoint.py",
+      "entry_sha256": "a58ed1ea9c4fe9f689de8dc6f346f48b8071d7b4aaf1976efae89a7312c6accc",
+      "exit_code": 0,
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "module": "registration_guard",
+      "passed": true,
+      "unregistered_marker_executed": false
+    },
+    {
+      "adversary": "package_symlink",
+      "child_log_sha256": "9339b6ebe6057930f6651f288031b162b7f3e4bb14018753d9c85642ee1ff4ef",
+      "entry": "bounded_launcher.py",
+      "entry_sha256": "978aff1264dd6aa499fadc12461abbb66cadd51d8c166a6954f406b21908c490",
+      "exit_code": 0,
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "module": "kernel_guard",
+      "passed": true,
+      "unregistered_marker_executed": false
+    },
+    {
+      "adversary": "bytecode",
+      "child_log_sha256": "e35962b7a0e04e56c0c89ead286579cf17811ad0be2ff96b1180c47040ef01bc",
+      "entry": "run_endpoint.py",
+      "entry_sha256": "a58ed1ea9c4fe9f689de8dc6f346f48b8071d7b4aaf1976efae89a7312c6accc",
+      "exit_code": 0,
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "module": "registration_guard",
+      "passed": true,
+      "unregistered_marker_executed": false
+    },
+    {
+      "adversary": "bytecode",
+      "child_log_sha256": "45f7f18ac7390023a5bd5f46403c94b9eba86c23a688205c415eae2d9e7f1de1",
+      "entry": "bounded_launcher.py",
+      "entry_sha256": "978aff1264dd6aa499fadc12461abbb66cadd51d8c166a6954f406b21908c490",
+      "exit_code": 1,
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "module": "kernel_guard",
+      "passed": true,
+      "unregistered_marker_executed": false
+    },
+    {
+      "adversary": "native",
+      "child_log_sha256": "e35962b7a0e04e56c0c89ead286579cf17811ad0be2ff96b1180c47040ef01bc",
+      "entry": "run_endpoint.py",
+      "entry_sha256": "a58ed1ea9c4fe9f689de8dc6f346f48b8071d7b4aaf1976efae89a7312c6accc",
+      "exit_code": 0,
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "module": "registration_guard",
+      "passed": true,
+      "unregistered_marker_executed": false
+    },
+    {
+      "adversary": "native",
+      "child_log_sha256": "37f80df76ec439ebbe79b217748efae6f35aa6e36ec1d7b2a91679f261827e2a",
+      "entry": "bounded_launcher.py",
+      "entry_sha256": "978aff1264dd6aa499fadc12461abbb66cadd51d8c166a6954f406b21908c490",
+      "exit_code": 1,
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "module": "kernel_guard",
+      "passed": true,
+      "unregistered_marker_executed": false
+    },
+    {
+      "adversary": "nonisolated_initial_stdlib",
+      "child_log_sha256": "2359a3097f268502de749b66c747d68f3d52219e9020114ec515a531ddab4bfc",
+      "entry": "run_endpoint.py",
+      "entry_sha256": "a58ed1ea9c4fe9f689de8dc6f346f48b8071d7b4aaf1976efae89a7312c6accc",
+      "exit_code": 1,
+      "flags": [
+        "-B"
+      ],
+      "module": "pathlib",
+      "passed": true,
+      "unregistered_marker_executed": false
+    },
+    {
+      "adversary": "nonisolated_initial_stdlib",
+      "child_log_sha256": "d3a4ace5752cfb17d213053ad7d7f1e7d5e42fa7657a4d1d9b1863b3af2aad29",
+      "entry": "bounded_launcher.py",
+      "entry_sha256": "978aff1264dd6aa499fadc12461abbb66cadd51d8c166a6954f406b21908c490",
+      "exit_code": 1,
+      "flags": [
+        "-B"
+      ],
+      "module": "pathlib",
+      "passed": true,
+      "unregistered_marker_executed": false
+    }
+  ],
+  "checks": 12,
+  "physical_source_calls": 0,
+  "retained_decodes": 0,
+  "status": "PASS_INDEPENDENT_FINAL_BOOTSTRAP_CONTROLS"
+}

@@ -1,0 +1,117 @@
+{
+  "files": {
+    "INPUT_SPEC.json": {
+      "bytes": 112193,
+      "sha256": "364e7e5d77dbe4b18a462a58333eeec1823e5bf02ed1cd88e9c14a06b7ffde12"
+    },
+    "STATIC_PROVENANCE.json": {
+      "bytes": 14600,
+      "sha256": "44aabb4f870e5b5ad45abb6dc9ebd4fe6a8f659d8b92eae937a9086e80598b98"
+    },
+    "STATIC_PROVENANCE_SUMMARY.md": {
+      "bytes": 7484,
+      "sha256": "2369c3f672fc946da9956c8ebe86a6cc8f6a18a06a9ad7f4cdd9e197301b1bd8"
+    },
+    "UPSTREAM_HASH_RECEIPT.json": {
+      "bytes": 1748,
+      "sha256": "d35ecedb99b6e64f72bf8f89532f5b6ac426a6da1fb050fe439c7971f3b59fb6"
+    },
+    "exact_binary80.py": {
+      "bytes": 24501,
+      "sha256": "6556d52228ce3aa2f8604d29e3dcc9d3a81ad947dc4f126300128162ce15bd87"
+    },
+    "fabricated_fixtures.py": {
+      "bytes": 2668,
+      "sha256": "82ded2a154601d9c8363850ebae9e9bec5f3e6fd6a6b663ad81d02e0e1655d0d"
+    },
+    "input_spec_adapter.py": {
+      "bytes": 4140,
+      "sha256": "535983ca6a7047df997f41d807a4d0a4f95e72a4e0ffee395586e4d075b9fe61"
+    },
+    "review_codec_independent.py": {
+      "bytes": 16835,
+      "sha256": "18dd8725ea8b4101b15ddb8f4e40dac0b82343696c99a35ecc00f4ad8edb87b6"
+    },
+    "test_continuation_selection.py": {
+      "bytes": 4291,
+      "sha256": "5e6f5508528e9c488f1f9a43920ecc6c237ad7107ecbba43cd8b08054306112e"
+    },
+    "test_exact_binary80.py": {
+      "bytes": 10812,
+      "sha256": "625b5e1dfaee5c873605ba7428f80ac16fb55d5358784de0fc3e80e20fd71b07"
+    }
+  },
+  "fixture_scope": "All binary NPY/NPZ fixture bytes newly manufactured from explicit integer significands/exponents by stdlib fixture code; local INPUT_SPEC.json read solely as text metadata. No retained array content opened during these test runs.",
+  "intentional_warning": "Duplicate ZIP filename in malformed-fixture rejection control.",
+  "metadata_hydration": {
+    "capsules": [
+      {
+        "canonical_reader_inputspec_sha256": "a791e90930ebce38e991177de18fbece226a4e209c06b462d918560bd62e19e0",
+        "complete_members": 19,
+        "grid": "coarse",
+        "selected_decode_members": 9,
+        "source": "positive_B"
+      },
+      {
+        "canonical_reader_inputspec_sha256": "db3f35e6db25bd171a220d676331cdd11d82373e234aa553c83b13c0bac51c67",
+        "complete_members": 19,
+        "grid": "fine",
+        "selected_decode_members": 9,
+        "source": "positive_B"
+      },
+      {
+        "canonical_reader_inputspec_sha256": "d83c032198774718b0974f3b956f38c2cd4ca32b89781c01596db382dcd3da95",
+        "complete_members": 19,
+        "grid": "coarse",
+        "selected_decode_members": 9,
+        "source": "signed_uB"
+      },
+      {
+        "canonical_reader_inputspec_sha256": "9932739d26dc1bb7723cdb9a76684fc190ab375107cd065f56425882275b73ee",
+        "complete_members": 19,
+        "grid": "fine",
+        "selected_decode_members": 9,
+        "source": "signed_uB"
+      }
+    ],
+    "physical_source_callbacks": 0,
+    "retained_array_paths_opened": 0,
+    "retained_values_decoded": 0,
+    "status": "PASS_ALL_FOUR_CONTINUATION_METADATA_HYDRATIONS"
+  },
+  "physical_source_callbacks": 0,
+  "retained_member_streams_opened": 0,
+  "retained_values_decoded": 0,
+  "runs": [
+    {
+      "command": "python -B -m unittest -v test_exact_binary80.py review_codec_independent.py test_continuation_selection.py",
+      "exit_code": 0,
+      "failed": 0,
+      "observed_unittest_seconds": "0.065",
+      "passed": 36,
+      "skipped": 0,
+      "test_methods": 36
+    },
+    {
+      "command": "python -B -O -m unittest -v test_exact_binary80.py review_codec_independent.py test_continuation_selection.py",
+      "exit_code": 0,
+      "failed": 0,
+      "observed_unittest_seconds": "0.043",
+      "passed": 36,
+      "skipped": 0,
+      "test_methods": 36
+    }
+  ],
+  "runtime": {
+    "implementation": "CPython",
+    "python": "3.12.14"
+  },
+  "schema_version": 1,
+  "status": "PASS_MANUFACTURED_NORMAL_AND_OPTIMIZED",
+  "test_methods_by_suite": {
+    "continuation_selection": 2,
+    "upstream_author": 15,
+    "upstream_independent": 19
+  },
+  "working_directory": "/workspace/hdblast-research-work/continuation-trajectory-20261008/implementation/provenance_decoder"
+}

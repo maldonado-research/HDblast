@@ -1,0 +1,87 @@
+{
+  "cases": [
+    {
+      "accepted": true,
+      "case": "clean",
+      "error": null,
+      "fault_injected": false,
+      "passed": true
+    },
+    {
+      "accepted": false,
+      "case": "unknown_empty_directory",
+      "error": "ValueError: unregistered source directory: unknown",
+      "fault_injected": false,
+      "passed": true
+    },
+    {
+      "accepted": false,
+      "case": "hidden_execute_only_package",
+      "error": "ValueError: unregistered source directory: source/foo",
+      "fault_injected": false,
+      "passed": true
+    },
+    {
+      "accepted": false,
+      "case": "unreadable_registered_directory",
+      "error": "ValueError: source directory inspection failed: [Errno 13] Permission denied: 'source'",
+      "fault_injected": false,
+      "passed": true
+    },
+    {
+      "accepted": false,
+      "case": "directory_symlink",
+      "error": "ValueError: symlink in candidate source tree",
+      "fault_injected": false,
+      "passed": true
+    },
+    {
+      "accepted": false,
+      "case": "file_symlink",
+      "error": "ValueError: symlink in candidate source tree",
+      "fault_injected": false,
+      "passed": true
+    },
+    {
+      "accepted": false,
+      "case": "hardlink",
+      "error": "ValueError: source hardlink aliases forbidden",
+      "fault_injected": false,
+      "passed": true
+    },
+    {
+      "accepted": false,
+      "case": "injected_scandir_error",
+      "error": "ValueError: source directory inspection failed: FABRICATED_SCANDIR_ERROR",
+      "fault_injected": true,
+      "passed": true
+    },
+    {
+      "accepted": false,
+      "case": "replace_directory_before_open",
+      "error": "ValueError: source directory changed before scan",
+      "fault_injected": true,
+      "passed": true
+    },
+    {
+      "accepted": false,
+      "case": "replace_directory_before_scandir",
+      "error": "ValueError: source directory changed during scan",
+      "fault_injected": true,
+      "passed": true
+    },
+    {
+      "accepted": false,
+      "case": "replace_directory_with_symlink_before_open",
+      "error": "ValueError: source directory inspection failed: [Errno 20] Not a directory: 'source'",
+      "fault_injected": true,
+      "passed": true
+    }
+  ],
+  "checks": 11,
+  "guard_sha256": "f4b49e4347c98e3229cc8c829bd0ebe7bdd4e361601f14573c143ba24097c2c0",
+  "physical_source_calls": 0,
+  "production_numeric_modules_imported": 0,
+  "retained_decodes": 0,
+  "status": "PASS_INDEPENDENT_DIRECTORY_SCANNER_CONTROLS"
+}

@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/workspace/hdblast-research-work/continuation-trajectory-20261008/endpoint-independent-review/authenticated-bootstrap-frozen-004/5/execution/bounded_launcher.py", line 635, in <module>
+    main()
+  File "/workspace/hdblast-research-work/continuation-trajectory-20261008/endpoint-independent-review/authenticated-bootstrap-frozen-004/5/execution/bounded_launcher.py", line 628, in main
+    receipt = launch(args.candidate, args.output, arguments[1:],
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hdblast-research-work/continuation-trajectory-20261008/endpoint-independent-review/authenticated-bootstrap-frozen-004/5/execution/bounded_launcher.py", line 332, in launch
+    return _launch(candidate, output, worker_args, optimized, manufactured,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hdblast-research-work/continuation-trajectory-20261008/endpoint-independent-review/authenticated-bootstrap-frozen-004/5/execution/bounded_launcher.py", line 360, in _launch
+    _authenticate_candidate(candidate, arguments, manufactured)
+  File "/workspace/hdblast-research-work/continuation-trajectory-20261008/endpoint-independent-review/authenticated-bootstrap-frozen-004/5/execution/bounded_launcher.py", line 173, in _authenticate_candidate
+    return guard.authenticate(candidate, registration_path, registration_sha, manufactured,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hdblast-research-work/continuation-trajectory-20261008/endpoint-independent-review/authenticated-bootstrap-frozen-004/5/execution/registration_guard.py", line 80, in authenticate
+    require(source_tree(root)==set(files),'unregistered or omitted noncache source artifact')
+            ^^^^^^^^^^^^^^^^^
+  File "/workspace/hdblast-research-work/continuation-trajectory-20261008/endpoint-independent-review/authenticated-bootstrap-frozen-004/5/execution/registration_guard.py", line 36, in source_tree
+    require(not p.is_symlink(),'symlink in candidate source tree')
+  File "/workspace/hdblast-research-work/continuation-trajectory-20261008/endpoint-independent-review/authenticated-bootstrap-frozen-004/5/execution/registration_guard.py", line 42, in require
+    if not ok:raise ValueError(text)
+              ^^^^^^^^^^^^^^^^^^^^^^
+ValueError: symlink in candidate source tree
