@@ -23,3 +23,14 @@ This receipt establishes local reproduction, not a remote CI, website deployment
 or Zenodo publication outcome. Those outcomes require their own dated readback.
 The prior author-approved APS files were preserved; this checkpoint makes no
 journal submission or claim of editorial eligibility.
+
+The [independent integration review](PUBLIC_CAPSULE_REVIEW.md) authenticates the
+complete capsule, exact figure coordinates and documentation. A second actual
+[replay from the extracted release ZIP](ZIP_EXTRACTION_REPLAY.json) also passes
+all mathematical checks in both modes; optional figure regeneration was already
+verified in the first replay and is not repeated in this packaging check.
+
+[GitHub release readback](SCIENTIFIC_GITHUB_RELEASE.json) records the merged
+scientific source and its three successful pull-request checks. The separately
+[verified Zenodo publication](../../publication/2026.10.11-scalar-response-monotonicity/)
+records the final public metadata and complete anonymous file readback.
