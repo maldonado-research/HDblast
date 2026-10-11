@@ -5,7 +5,7 @@
 <meta name="google-site-verification" content="Z1uuOtt-ur1MSHkjSs7VcJRRJ4k_HXkCF1YiS1si_M4" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HDBLAST — Ricardo Maldonado (español)</title>
-<meta name="description" content="HDBLAST: una hipótesis de investigación especulativa y comprobable que pregunta si un evento gravitacional en una dimensión superior pudo haber encendido el Big Bang caliente. Ecuaciones, código, resultados, resultados negativos y correcciones.">
+<meta name="description" content="HDBLAST: cotas matemáticas de la rama escalar local hasta delta = 0,002, con cálculos reproducibles. La hipótesis de un origen del Big Bang en dimensiones superiores sigue sin establecerse.">
 <link rel="canonical" href="https://maldonado-research.github.io/HDblast/es/">
 <link rel="alternate" hreflang="en" href="https://maldonado-research.github.io/HDblast/">
 <link rel="alternate" hreflang="es" href="https://maldonado-research.github.io/HDblast/es/">
@@ -24,8 +24,7 @@
 <meta name="twitter:title" content="¿Pudo una “explosión” en una dimensión superior encender nuestro Big Bang?">
 <meta name="twitter:description" content="Un modelo en cinco dimensiones, simulaciones, resultados negativos y correcciones — todo público y reproducible.">
 <meta name="twitter:image" content="https://maldonado-research.github.io/HDblast/figures/share-card.png">
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -33,8 +32,13 @@
       "@id": "https://maldonado-research.github.io/HDblast/#website",
       "name": "HDBLAST",
       "url": "https://maldonado-research.github.io/HDblast/",
-      "inLanguage": ["en", "es"],
-      "author": {"@id": "https://maldonado-research.github.io/HDblast/#author"}
+      "inLanguage": [
+        "en",
+        "es"
+      ],
+      "author": {
+        "@id": "https://maldonado-research.github.io/HDblast/#author"
+      }
     },
     {
       "@type": "Person",
@@ -42,27 +46,53 @@
       "name": "Ricardo Maldonado",
       "jobTitle": "Independent researcher",
       "url": "https://maldonado-research.github.io/HDblast/",
-      "sameAs": ["https://github.com/maldonado-research"]
+      "sameAs": [
+        "https://github.com/maldonado-research"
+      ]
     },
     {
       "@type": "Dataset",
       "name": "HDBLAST: could a higher-dimensional blast have sparked the hot Big Bang? (research program, code and data)",
-      "description": "A speculative, testable research hypothesis asking whether a gravitational event in a fifth dimension could have transferred energy into our four-dimensional universe and started the hot Big Bang. Registered five-dimensional Einstein–scalar brane model with certified, exact and numerical results, negative results and published corrections. Not peer reviewed.",
+      "description": "HDBLAST: cotas matemáticas de la rama escalar local hasta delta = 0,002, con cálculos reproducibles. La hipótesis de un origen del Big Bang en dimensiones superiores sigue sin establecerse.",
       "url": "https://maldonado-research.github.io/HDblast/",
-      "sameAs": ["https://github.com/maldonado-research/HDblast", "https://doi.org/10.5281/zenodo.17088132"],
+      "sameAs": [
+        "https://github.com/maldonado-research/HDblast",
+        "https://doi.org/10.5281/zenodo.17088132"
+      ],
       "identifier": "https://doi.org/10.5281/zenodo.17088132",
-      "creator": {"@id": "https://maldonado-research.github.io/HDblast/#author"},
+      "creator": {
+        "@id": "https://maldonado-research.github.io/HDblast/#author"
+      },
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "isAccessibleForFree": true,
-      "keywords": ["brane-world cosmology", "extra dimensions", "Big Bang", "five-dimensional gravity", "numerical relativity", "de Sitter brane", "Randall–Sundrum", "cosmology"],
-      "inLanguage": "en",
-      "version": "2026.10.07-stored-state-comparison",
-      "dateModified": "2026-10-07",
-      "subjectOf": [{"@type": "CreativeWork", "url": "https://zenodo.org/records/23228395"}]
+      "keywords": [
+        "brane-world cosmology",
+        "extra dimensions",
+        "Big Bang",
+        "five-dimensional gravity",
+        "numerical relativity",
+        "de Sitter brane",
+        "Randall–Sundrum",
+        "cosmology"
+      ],
+      "inLanguage": "es",
+      "version": "2026.10.11-scalar-response-monotonicity",
+      "dateModified": "2026-10-11",
+      "subjectOf": [
+        {
+          "@type": "CreativeWork",
+          "url": "https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011",
+          "name": "Local scalar-response monotonicity and certified bounds through delta = 0.002"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://zenodo.org/records/23228395"
+        }
+      ],
+      "isBasedOn": "https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011"
     }
   ]
-}
-</script>
+}</script>
 <style>
 :root{
   --bg:#fbfaf7; --surface:#ffffff; --ink:#1c1d21; --muted:#5b5f6a; --line:#e3e1dc;
@@ -158,7 +188,7 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:14px;border-top:1px soli
   </section>
 
   <section id="results">
-<p data-hdb-scalar-branch="research-draft"><strong>Borrador sobre la condición escalar de frontera (8 de octubre de 2026):</strong> una demostración constructiva establece una rama regular local y cotas explícitas del error de curvatura en un modelo de Einstein y un campo escalar. Las desigualdades racionales exactas garantizan el intervalo conservador 0 &lt; delta &le; 1,09155 × 10<sup>−7</sup> para el modelo registrado; el barrido numérico anterior empieza en 0,0005 y queda fuera de esa garantía. Otro teorema obtiene una respuesta cuadrática negativa de la curvatura al acoplamiento escalar débil para cada desajuste positivo fijo. Son resultados matemáticos con revisión interna; la novedad externa, la estabilidad dinámica y un origen del Big Bang en dimensiones superiores siguen sin establecerse. <a href="https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SCALAR_BOUNDARY_CURVATURE_20261008">Demostraciones, manuscrito, comparación bibliográfica y cálculos reproducibles</a>. Este borrador no forma parte de la edición de Zenodo 23244754, que permanece sin cambios.</p>
+<p data-hdb-scalar-branch="monotonicity-20261011"><strong>Resultado sobre la condición escalar de frontera (11 de octubre de 2026):</strong> una identidad exacta de respuesta y cotas de error más precisas certifican la rama regular local del modelo registrado para <strong>todo 0 &lt; delta &le; 0,002</strong>, ampliando la garantía anterior de 1,09155 × 10<sup>−7</sup>. La demostración obtiene monotonía estricta del residuo de empalme, R<sub>T</sub> &le; −H² &lt; 0, bajo sus hipótesis declaradas. Las constantes uniformes del resto escalar y del resto de curvatura satisfacen K<sub>eta</sub> &lt; 3,196 y K<sub>H</sub> &lt; 0,254. La curvatura es menor que en la teoría de frontera completa separada con desajuste independiente del campo escalar: H² − H<sub>constante</sub>² &lt; −0,000423 delta² en todo ese intervalo. Son resultados matemáticos condicionales sobre la rama local especificada; la estabilidad dinámica y un origen del Big Bang en dimensiones superiores siguen sin establecerse. <a href="https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011">Demostración, certificados exactos y cálculos reproducibles</a> · <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/literature/LITERATURE_UPDATE_20261011.md">Revisión bibliográfica acotada de fuentes primarias</a> · <a data-hdb-monotonicity-zenodo="concept" href="https://doi.org/10.5281/zenodo.17088132">Familia DOI de Zenodo</a>. Se conserva el <a href="https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SCALAR_BOUNDARY_CURVATURE_20261008">resultado del 8 de octubre</a>.</p>
     <p data-hdb-endpoint-result="complete"><strong>Investigación completada (8 de octubre de 2026 UTC): 98.304 comparaciones de estados finales guardados.</strong> Las ejecuciones normal y optimizada comparan cada nodo retenido en eta = -4 y -3,5 con el flujo prescrito exacto desde su estado inicial guardado exacto en eta = -4,5. Los nueve archivos científicos coinciden byte por byte, con comprobación independiente. Las cotas máximas de discrepancia L1 cartesiana son <strong>U &lt; 2,520 × 10<sup>−16</sup></strong> y <strong>W &lt; 3,158 × 10<sup>−15</sup></strong>. El umbral 1e-18 limita los radios de las envolventes del objetivo, no el error del estado guardado. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261008_RETAINED_ENDPOINT_FLOW/RESULTS.md">Resultados exactos y cotas de sumas finitas</a>.</p>
 <p data-hdb-bulk-result="conditional"><strong>Modelos analíticos condicionales separados:</strong> el modelo estable de respuesta y ruido en un semiespacio plano de cinco dimensiones y su extensión de paquetes incidentes superaron la revisión analítica independiente. Una réplica exacta con un continuo en cuatro dimensiones impide identificar la dimensión a partir de estos observables. En el modelo estático lineal, los paquetes suaves de continuo con soporte compacto alejado del umbral y proyecciones nulas de posición y velocidad sobre modos ligados producen almacenamiento transitorio en la brana y reflexión final, sin captura permanente ni termalización. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261008_CAUSAL_BULK_RESPONSE/README.md">Supuestos y revisiones</a>.</p>
 <p data-hdb-endpoint-limits="current">Los extremos guardados no recuperan la trayectoria densa no guardada. El certificado continuo completo de presión, contactos, tiempo, momento y ultravioleta sigue <strong>UNRESOLVED</strong>, la calibración métrica <strong>FAIL</strong>, la causa del Big Bang en dimensiones superiores <strong>NOT_ESTABLISHED</strong> y la novedad externa <strong>NOT_ASSESSED</strong>. La reproducción independiente normal y optimizada y los controles de CI numéricos y del modelo pasaron. La CI de los documentos finales y el despliegue del sitio se documentan por separado en el registro final de entrega. La última edición verificada es <strong><a href="https://doi.org/10.5281/zenodo.23244754">23244754</a> (31 archivos / 453.646.943 bytes)</strong>. <a href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/continuation/2026.10.08-retained-endpoint-flow/README.md">Evidencia de reproducción y CI</a>. <a href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/CURRENT_STATUS.md">Estado actual de investigación y publicación</a>.</p>

@@ -1,10 +1,35 @@
 # HDBLAST: current research and publication status
 
-**New mathematical research draft — 8 October 2026:** a constructive regular-branch theorem and explicit uniform curvature-error bounds now replace the earlier branch assumption within stated small-detuning domains. Exact rational checks guarantee the registered exact-decimal model only through delta = 1.09155 × 10⁻⁷; the earlier numerical sweep starts at 0.0005 and remains outside that guarantee. A separate fixed-detuning theorem proves negative quadratic response to weak scalar coupling. [Draft, proofs, independent internal reviews and reproducible code](https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SCALAR_BOUNDARY_CURVATURE_20261008). Seven primary papers are compared directly. External novelty, APS suitability, stability and a higher-dimensional Big Bang origin remain unestablished. Zenodo 23244754 is unchanged; this draft is a later GitHub checkpoint.
+**New mathematical result — 11 October 2026:** an exact regular-center response identity proves strict shell-matching monotonicity, R_T ≤ −H² < 0, along the local scalar-junction branch under the stated hypotheses. Sharper error bounds extend the registered exact-decimal model's certified interval to **every 0 < delta ≤ 0.002**, from the earlier 1.09155 × 10⁻⁷ guarantee. The interval now includes all three detunings used in the earlier numerical sweep. The scalar remainder constant is **K_eta < 3.196** and the curvature remainder constant is **K_H < 0.254**. Curvature is strictly below that of the separate complete boundary theory with scalar-independent detuning, with **H² − H_constant² < −0.000423 delta²**. These are conditional mathematical results for the specified local branch, not a dynamical-stability or cosmological-origin result. [Proof, exact certificates and reproducible calculations](https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011) · [Bounded primary-literature update](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/literature/LITERATURE_UPDATE_20261011.md) · [Zenodo DOI family](https://doi.org/10.5281/zenodo.17088132). The [8 October checkpoint](https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SCALAR_BOUNDARY_CURVATURE_20261008) remains preserved.
 
-Updated **8 October 2026 UTC**. Frozen archive names and registrations retain their original dates and timezones, including 3 and 5 October UTC. This page distinguishes the latest completed research on GitHub from the versions actually published on Zenodo.
+Updated **11 October 2026**. Frozen archive names and registrations retain their original dates and timezones, including 3 and 5 October UTC. This page distinguishes the latest completed research on GitHub from the versions actually published on Zenodo.
 
 HDBLAST asks whether an event in a higher-dimensional space could have supplied the hot initial state of our universe. That cause remains **unestablished**. The work has no external peer review or observational confirmation. Internal independent implementations and AI-assisted reviews are documented computational checks.
+
+## Completed on 11 October 2026: the local scalar branch is certified through delta = 0.002
+
+The [new response checkpoint](../research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/) improves the sufficient estimates of the preserved [8 October theorem](../research/HDBLAST_SCALAR_BOUNDARY_CURVATURE_20261008/). It uses an exact regular-center Jacobi identity and the scalar-junction response denominator to prove **R_T ≤ −H² < 0** along the constructed local branch. This controls the shell-matching residual as the endpoint moves; uniqueness is within the stated small-field neighborhood, not among all possible bulk solutions.
+
+For the registered exact-decimal model, the result holds on the entire interval **0 < delta ≤ 0.002**, including delta = 0.0005, 0.001 and 0.002 from the earlier numerical sweep. With beta the scalar value at the shell, alpha its first-order coefficient, and a1/a2 the displayed curvature coefficients, the uniform error statements are
+
+\[
+|\beta-\alpha\delta|\leq K_\eta\delta^2,\qquad K_\eta<3.196,
+\]
+\[
+|H^2-a_1\delta-a_2\delta^2|\leq K_H\delta^3,\qquad K_H<0.254.
+\]
+
+In the model's dimensionless conventions, the comparison also guarantees
+
+\[
+H^2-H_{\rm constant}^2<-0.000423\,\delta^2<0.
+\]
+
+The comparator is a **separate complete boundary theory** obtained by replacing the scalar-dependent detuning by its constant value f0. It is not an invalid constant-scalar solution of the original scalar-dependent theory. Exact rational inequalities support the stated certificate; successful floating-point trajectories are a separate check and do not become validated ODE error enclosures.
+
+The [literature update](../research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/literature/LITERATURE_UPDATE_20261011.md) records six bounded searches, 82 returned metadata entries before deduplication, and selected sections read from six primary papers. It relates the identity to established curved-wall Hamilton–Jacobi methods and identifies recent tensor-spectrum, correlator and inverse-boundary calculations as possible follow-ups. This is neither an exhaustive priority search nor evidence for the Big Bang hypothesis. Internal AI-assisted reviews are not external peer review.
+
+The older theorem and numerical runs remain separate dated records. The new checkpoint establishes no full dynamical stability, global uniqueness, blast preparation, reheating or observational fit. The continuous pressure/contact/time/momentum/UV certificate remains **UNRESOLVED**, prior metric calibration **FAIL**, and a higher-dimensional Big Bang origin **NOT_ESTABLISHED**. The [main Zenodo DOI family](https://doi.org/10.5281/zenodo.17088132) is preserved; publication state and file verification belong to the separately dated publication receipt.
 
 ## Completed on 8 October 2026 UTC: retained endpoints and conditional bulk models
 

@@ -1,0 +1,43 @@
+name: Scalar response monotonicity exact checks
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/**'
+      - '.github/workflows/hdblast_scalar_response_monotonicity.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/**'
+      - '.github/workflows/hdblast_scalar_response_monotonicity.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  exact-reproduction:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - name: Install exact-check dependencies
+        run: |
+          python -I -B -m pip install --only-binary=:all: -r research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/requirements.txt
+      - name: Reproduce the certificate and independent checks
+        run: python -I -B research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/reproduce.py --output "$RUNNER_TEMP/scalar-response-replay"
+      - name: Retain exact-check receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scalar-response-replay-${{ github.sha }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/scalar-response-replay
+          if-no-files-found: warn
+          retention-days: 14
