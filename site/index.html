@@ -5,7 +5,7 @@
 <meta name="google-site-verification" content="Z1uuOtt-ur1MSHkjSs7VcJRRJ4k_HXkCF1YiS1si_M4" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HDBLAST — Ricardo Maldonado</title>
-<meta name="description" content="HDBLAST: a speculative, testable research hypothesis asking whether a higher-dimensional gravitational event sparked the hot Big Bang. Equations, code, results, negative results and corrections.">
+<meta name="description" content="HDBLAST: mathematical bounds for the local scalar-boundary branch through delta = 0.002, with reproducible calculations. A higher-dimensional Big Bang origin remains unestablished.">
 <link rel="canonical" href="https://maldonado-research.github.io/HDblast/">
 <link rel="alternate" hreflang="en" href="https://maldonado-research.github.io/HDblast/">
 <link rel="alternate" hreflang="es" href="https://maldonado-research.github.io/HDblast/es/">
@@ -23,8 +23,7 @@
 <meta name="twitter:title" content="Could a higher-dimensional “blast” have sparked our Big Bang?">
 <meta name="twitter:description" content="A five-dimensional model, simulations, negative results and corrections — all public and reproducible.">
 <meta name="twitter:image" content="https://maldonado-research.github.io/HDblast/figures/share-card.png">
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -32,8 +31,13 @@
       "@id": "https://maldonado-research.github.io/HDblast/#website",
       "name": "HDBLAST",
       "url": "https://maldonado-research.github.io/HDblast/",
-      "inLanguage": ["en", "es"],
-      "author": {"@id": "https://maldonado-research.github.io/HDblast/#author"}
+      "inLanguage": [
+        "en",
+        "es"
+      ],
+      "author": {
+        "@id": "https://maldonado-research.github.io/HDblast/#author"
+      }
     },
     {
       "@type": "Person",
@@ -41,27 +45,53 @@
       "name": "Ricardo Maldonado",
       "jobTitle": "Independent researcher",
       "url": "https://maldonado-research.github.io/HDblast/",
-      "sameAs": ["https://github.com/maldonado-research"]
+      "sameAs": [
+        "https://github.com/maldonado-research"
+      ]
     },
     {
       "@type": "Dataset",
       "name": "HDBLAST: could a higher-dimensional blast have sparked the hot Big Bang? (research program, code and data)",
-      "description": "A speculative, testable research hypothesis asking whether a gravitational event in a fifth dimension could have transferred energy into our four-dimensional universe and started the hot Big Bang. Registered five-dimensional Einstein–scalar brane model with certified, exact and numerical results, negative results and published corrections. Not peer reviewed.",
+      "description": "HDBLAST: mathematical bounds for the local scalar-boundary branch through delta = 0.002, with reproducible calculations. A higher-dimensional Big Bang origin remains unestablished.",
       "url": "https://maldonado-research.github.io/HDblast/",
-      "sameAs": ["https://github.com/maldonado-research/HDblast", "https://doi.org/10.5281/zenodo.17088132"],
+      "sameAs": [
+        "https://github.com/maldonado-research/HDblast",
+        "https://doi.org/10.5281/zenodo.17088132"
+      ],
       "identifier": "https://doi.org/10.5281/zenodo.17088132",
-      "creator": {"@id": "https://maldonado-research.github.io/HDblast/#author"},
+      "creator": {
+        "@id": "https://maldonado-research.github.io/HDblast/#author"
+      },
       "license": "https://creativecommons.org/licenses/by/4.0/",
       "isAccessibleForFree": true,
-      "keywords": ["brane-world cosmology", "extra dimensions", "Big Bang", "five-dimensional gravity", "numerical relativity", "de Sitter brane", "Randall–Sundrum", "cosmology"],
+      "keywords": [
+        "brane-world cosmology",
+        "extra dimensions",
+        "Big Bang",
+        "five-dimensional gravity",
+        "numerical relativity",
+        "de Sitter brane",
+        "Randall–Sundrum",
+        "cosmology"
+      ],
       "inLanguage": "en",
-      "version": "2026.10.07-stored-state-comparison",
-      "dateModified": "2026-10-07",
-      "subjectOf": [{"@type": "CreativeWork", "url": "https://zenodo.org/records/23228395"}]
+      "version": "2026.10.11-scalar-response-monotonicity",
+      "dateModified": "2026-10-11",
+      "subjectOf": [
+        {
+          "@type": "CreativeWork",
+          "url": "https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011",
+          "name": "Local scalar-response monotonicity and certified bounds through delta = 0.002"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://zenodo.org/records/23228395"
+        }
+      ],
+      "isBasedOn": "https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011"
     }
   ]
-}
-</script>
+}</script>
 <style>
 :root{
   --bg:#fbfaf7; --surface:#ffffff; --ink:#1c1d21; --muted:#5b5f6a; --line:#e3e1dc;
@@ -157,7 +187,7 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:14px;border-top:1px soli
   </section>
 
   <section id="results">
-<p data-hdb-scalar-branch="research-draft"><strong>Scalar-boundary research draft (8 October 2026):</strong> a constructive proof establishes a regular local branch and explicit curvature-error bounds in a specified Einstein–scalar model. Exact rational inequalities give a conservative registered-model interval of 0 &lt; delta &le; 1.09155 × 10<sup>−7</sup>; the earlier numerical sweep starts at 0.0005 and is outside that guarantee. A separate theorem gives negative quadratic curvature response to weak scalar coupling at every fixed positive detuning. These are internally reviewed mathematical results; external novelty, dynamical stability and a higher-dimensional Big Bang origin remain unestablished. <a href="https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SCALAR_BOUNDARY_CURVATURE_20261008">Proofs, draft manuscript, prior-art comparison and reproducible calculations</a>. This draft is not part of the unchanged Zenodo edition 23244754.</p>
+<p data-hdb-scalar-branch="monotonicity-20261011"><strong>Scalar-boundary result (11 October 2026):</strong> an exact response identity and sharper error bounds certify the registered model's regular local branch for <strong>every 0 &lt; delta &le; 0.002</strong>, extending the earlier 1.09155 × 10<sup>−7</sup> guarantee. The proof gives strict shell-matching monotonicity, R<sub>T</sub> &le; −H² &lt; 0, under its stated hypotheses. The uniform scalar and curvature remainder constants satisfy K<sub>eta</sub> &lt; 3.196 and K<sub>H</sub> &lt; 0.254. Curvature is below that of the separate complete boundary theory with scalar-independent detuning: H² − H<sub>constant</sub>² &lt; −0.000423 delta² throughout that interval. These conditional mathematical results concern the specified local branch; dynamical stability and a higher-dimensional Big Bang origin remain unestablished. <a href="https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011">Proof, exact certificates and reproducible calculations</a> · <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/literature/LITERATURE_UPDATE_20261011.md">Bounded primary-literature update</a> · <a data-hdb-monotonicity-zenodo="concept" href="https://doi.org/10.5281/zenodo.17088132">Zenodo DOI family</a>. The <a href="https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SCALAR_BOUNDARY_CURVATURE_20261008">8 October checkpoint</a> remains preserved.</p>
     <p data-hdb-endpoint-result="complete"><strong>Completed research (8 October 2026 UTC): 98,304 saved-endpoint comparisons.</strong> Normal and optimized runs compare every retained node at eta = -4 and -3.5 with exact prescribed flow from its exact saved incoming state at eta = -4.5. Nine scientific files agree byte for byte, independently checked. Maximum Cartesian L1 discrepancy bounds are <strong>U &lt; 2.520 × 10<sup>−16</sup></strong> and <strong>W &lt; 3.158 × 10<sup>−15</sup></strong>. The 1e-18 gate concerns target-enclosure radii, not saved-state errors. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261008_RETAINED_ENDPOINT_FLOW/RESULTS.md">Exact endpoint results and finite-weight bounds</a>.</p>
 <p data-hdb-bulk-result="conditional"><strong>Separate conditional analytic models:</strong> the stable flat five-dimensional half-space response/noise model and its incident-packet extension passed independent analytic review. An exact four-dimensional continuum replica prevents dimensional identification from these observables. In the static linear incident model, smooth compact continuum packets away from threshold with zero bound-mode position and velocity projections produce transient brane storage and eventual reflection, without permanent capture or thermalization. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261008_CAUSAL_BULK_RESPONSE/README.md">Model assumptions and reviews</a>.</p>
 <p data-hdb-endpoint-limits="current">Retained endpoints do not recover the unsaved dense path. Full continuous pressure/contact/time/momentum/UV certification remains <strong>UNRESOLVED</strong>, metric calibration <strong>FAIL</strong>, higher-dimensional Big Bang cause <strong>NOT_ESTABLISHED</strong> and external novelty <strong>NOT_ASSESSED</strong>. Fresh normal/optimized portable replay and numerical/bulk-model CI passed. Final-document-head CI and live site deployment are recorded separately in the final delivery receipt. The latest verified Zenodo edition is <strong><a href="https://doi.org/10.5281/zenodo.23244754">23244754</a> (31 files / 453,646,943 bytes)</strong>. <a href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/continuation/2026.10.08-retained-endpoint-flow/README.md">Replay and CI evidence</a>. <a href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/CURRENT_STATUS.md">Current research and publication status</a>.</p>
