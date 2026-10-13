@@ -1,0 +1,163 @@
+name: Offline regular-shell 35-file publication witnesses
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'hdblast/publication/2026.10.13-regular-shell-spectra/**'
+      - '.github/workflows/hdblast_regular_shell_publication.yml'
+  pull_request:
+    paths:
+      - 'hdblast/publication/2026.10.13-regular-shell-spectra/**'
+      - '.github/workflows/hdblast_regular_shell_publication.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  offline-publication-witnesses:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    env:
+      PROOF_DIRECTORY: 'hdblast/publication/2026.10.13-regular-shell-spectra'
+      VERIFIER_SHA256: 'ae29d4311b4cf4ea7bfb9dab3ba42bd176d3b573feeb8d225e4eea55710b952a'
+      CONTROLS_SHA256: '84c20853a65d403aa5967b3f7e49aae29b854bdfda6b0a0655b2ced841c540b5'
+      # Replace only after the genuine postpublication packet passes review.
+      WITNESS_MANIFEST_SHA256: '7dd1c1b28420274a3de66a9fbd9ce240a1b01d35b8a29d132f4541243041d5dc'
+      EXPECTED_NEGATIVE_CONTROLS: '8'
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: ${{ env.PROOF_DIRECTORY }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - name: Authenticate verifier, controls and complete witness bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/regular-shell-publication"
+          python -I -S -B - <<'PY' > "$RUNNER_TEMP/regular-shell-publication/authentication.log" 2>&1
+          import hashlib, json, os, pathlib, re
+          def require(condition, reason):
+              if not condition:
+                  raise ValueError(reason)
+          def sha256(raw):
+              return hashlib.sha256(raw).hexdigest()
+          def pin(value):
+              require(type(value) is str and re.fullmatch('[0-9a-f]{64}', value), 'Filled external SHA256 required')
+              return value
+          def relative(name):
+              require(type(name) is str and name and '\\' not in name and '\0' not in name, 'Safe relative path required')
+              value = pathlib.PurePosixPath(name)
+              require(not value.is_absolute() and value.as_posix() == name and
+                      all(part not in ('', '.', '..') for part in name.split('/')), 'Unsafe witness path')
+              return value
+          def unique(pairs):
+              value = {}
+              for key, item in pairs:
+                  require(key not in value, 'Duplicate manifest key')
+                  value[key] = item
+              return value
+          def read(root, name, expected_sha, expected_bytes=None):
+              path = root / relative(name)
+              require(path.is_file() and not path.is_symlink() and path.resolve().is_relative_to(root.resolve())
+                      and all(not parent.is_symlink() for parent in path.parents), 'Real pinned input required')
+              raw = path.read_bytes()
+              require(sha256(raw) == pin(expected_sha), 'Input SHA256 differs: ' + name)
+              if expected_bytes is not None:
+                  require(type(expected_bytes) is int and len(raw) == expected_bytes, 'Input byte count differs: ' + name)
+              return raw
+          root = pathlib.Path.cwd() / relative(os.environ['PROOF_DIRECTORY'])
+          # -B prevents cache writes, while source loaders may still read caches.
+          # Require the reviewed project source to be the only executable input.
+          require(not any(path.name == '__pycache__' or path.suffix in ('.pyc', '.pyo')
+                          for path in root.rglob('*')), 'Project bytecode cache forbidden')
+          source_pins = {'verify_publication.py': os.environ['VERIFIER_SHA256'],
+                         'check_publication_controls.py': os.environ['CONTROLS_SHA256']}
+          for name, expected in source_pins.items():
+              read(root, name, expected)
+          proof = root / 'proof'
+          manifest_pin = pin(os.environ['WITNESS_MANIFEST_SHA256'])
+          raw = read(proof, 'WITNESS_MANIFEST.json', manifest_pin)
+          manifest = json.loads(raw, object_pairs_hook=unique)
+          require(manifest['schema_version'] == 1 and type(manifest['files']) is dict, 'Witness manifest schema differs')
+          present = {path.relative_to(proof).as_posix() for path in proof.rglob('*') if path.is_file() or path.is_symlink()}
+          require(present == set(manifest['files']) | {'WITNESS_MANIFEST.json'}, 'Complete witness membership differs')
+          for name, expected in manifest['files'].items():
+              require(type(expected) is dict and set(expected) == {'bytes', 'sha256'}, 'Witness pin schema differs')
+              read(proof, name, expected['sha256'], expected['bytes'])
+          for name, expected in source_pins.items():
+              read(root, name, expected)
+          receipt = {'status': 'PASS_PUBLICATION_CI_INPUT_AUTHENTICATION', 'source_sha256': source_pins,
+                     'manifest_sha256': manifest_pin, 'witness_files': len(manifest['files']),
+                     'network_calls': 0, 'unreviewed_source_executed': False,
+                     'project_bytecode_cache_absent': True}
+          target = pathlib.Path(os.environ['RUNNER_TEMP']) / 'regular-shell-publication' / 'AUTHENTICATION.json'
+          target.write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+          print(receipt['status'])
+          PY
+      - name: Verify actual saved witnesses and focused semantic controls
+        shell: bash
+        run: |
+          set -euo pipefail
+          publication="$GITHUB_WORKSPACE/$PROOF_DIRECTORY"
+          witness="$publication/proof"
+          receipts="$RUNNER_TEMP/regular-shell-publication"
+          for mode in normal optimized; do
+            flags=(-I -S -B)
+            if [[ "$mode" == optimized ]]; then flags+=(-O); fi
+            python "${flags[@]}" "$publication/verify_publication.py" \
+              --root "$witness" --manifest-sha256 "$WITNESS_MANIFEST_SHA256" \
+              --output "$receipts/PUBLICATION_$mode.json" > "$receipts/verification_$mode.log" 2>&1
+            python "${flags[@]}" "$publication/check_publication_controls.py" \
+              --root "$witness" --manifest-sha256 "$WITNESS_MANIFEST_SHA256" \
+              --output "$receipts/CONTROLS_$mode.json" > "$receipts/controls_$mode.log" 2>&1
+          done
+      - name: Require matching receipts and the focused control contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          receipts="$RUNNER_TEMP/regular-shell-publication"
+          cmp "$receipts/PUBLICATION_normal.json" "$receipts/PUBLICATION_optimized.json"
+          cmp "$receipts/CONTROLS_normal.json" "$receipts/CONTROLS_optimized.json"
+          for mode in normal optimized; do
+            cmp "$receipts/verification_$mode.log" "$receipts/PUBLICATION_$mode.json"
+            cmp "$receipts/controls_$mode.log" "$receipts/CONTROLS_$mode.json"
+          done
+          python -I -S -B - <<'PY' > "$RUNNER_TEMP/regular-shell-publication/comparison.log" 2>&1
+          import json, os, pathlib
+          root = pathlib.Path(os.environ['RUNNER_TEMP']) / 'regular-shell-publication'
+          for mode in ('normal', 'optimized'):
+              publication = json.loads((root / ('PUBLICATION_' + mode + '.json')).read_bytes())
+              controls = json.loads((root / ('CONTROLS_' + mode + '.json')).read_bytes())
+              if publication['status'] != 'PASS_OFFLINE_SAVED_35_FILE_PUBLICATION_WITNESSES' or \
+                      publication['file_count'] != 35 or publication['total_bytes'] != 454964066 or \
+                      publication['preserved_records'] != 7 or publication['immutable_source_files'] != 130:
+                  raise ValueError('Publication witness contract differs')
+              if controls['status'] != 'PASS_PUBLICATION_WITNESS_CONTROLS' or \
+                      controls['negative_controls'] != int(os.environ['EXPECTED_NEGATIVE_CONTROLS']) or \
+                      controls['allowed_decoration_controls'] != 1 or controls['valid_packet_checks'] != 1:
+                  raise ValueError('Semantic control contract differs')
+              if publication['network_calls'] != 0 or controls['network_calls'] != 0:
+                  raise ValueError('Checker scope differs')
+          (root / 'COMPARISON.json').write_text(json.dumps({
+              'status': 'PASS_NORMAL_OPTIMIZED_PUBLICATION_WITNESS_IDENTITY',
+              'publication_receipts_byte_identical': True, 'control_receipts_byte_identical': True,
+              'negative_controls_each': int(os.environ['EXPECTED_NEGATIVE_CONTROLS']),
+              'scope': 'Saved publication observations, not fresh remote readback or a science rerun.'
+          }, indent=2, sort_keys=True) + '\n')
+          PY
+      - name: Retain authentication, publication and control receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: regular-shell-publication-${{ github.sha }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/regular-shell-publication/
+          if-no-files-found: warn
+          retention-days: 14

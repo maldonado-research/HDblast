@@ -1,0 +1,55 @@
+{
+  "allowed_decoration_controls": 1,
+  "checks": [
+    {
+      "name": "recognized_display_decoration_allowed",
+      "outcome": "PASS"
+    },
+    {
+      "guard": "FILE_COUNT_OR_DUPLICATE_DIFFERS",
+      "name": "old_33_file_count_rejected",
+      "outcome": "EXPECTED_REJECTION"
+    },
+    {
+      "guard": "COMPLETE_METADATA_DIFFERS",
+      "name": "scientific_text_change_rejected",
+      "outcome": "EXPECTED_REJECTION"
+    },
+    {
+      "guard": "PUBLIC_STREAM_ROUND_SCOPE_DIFFERS",
+      "name": "authenticated_stream_round_rejected",
+      "outcome": "EXPECTED_REJECTION"
+    },
+    {
+      "guard": "PUBLIC_STREAM_ROUND_PRECEDES_PUBLISH_INTENT",
+      "name": "public_round_before_publish_rejected",
+      "outcome": "EXPECTED_REJECTION"
+    },
+    {
+      "guard": "WRITE_AND_PUBLIC_READBACK_EVENT_INDEX_COLLISION",
+      "name": "write_readback_index_collision_rejected",
+      "outcome": "EXPECTED_REJECTION"
+    },
+    {
+      "guard": "COMPLETE_STREAM_OBSERVATION_DIFFERS_",
+      "name": "complete_stream_sha256_change_rejected",
+      "outcome": "EXPECTED_REJECTION"
+    },
+    {
+      "guard": "SOURCE_FILE_LIST_COUNT_DIFFERS",
+      "name": "source_leaf_omission_rejected",
+      "outcome": "EXPECTED_REJECTION"
+    },
+    {
+      "guard": "PRESERVED_RECORD_CHANGED_23294979",
+      "name": "prior_record_change_rejected",
+      "outcome": "EXPECTED_REJECTION"
+    }
+  ],
+  "manifest_sha256": "7dd1c1b28420274a3de66a9fbd9ce240a1b01d35b8a29d132f4541243041d5dc",
+  "negative_controls": 8,
+  "network_calls": 0,
+  "scope": "Actual saved packet passes first; each mutated packet is re-manifested to exercise content guards beyond outer hashes.",
+  "status": "PASS_PUBLICATION_WITNESS_CONTROLS",
+  "valid_packet_checks": 1
+}

@@ -5,7 +5,7 @@
 <meta name="google-site-verification" content="Z1uuOtt-ur1MSHkjSs7VcJRRJ4k_HXkCF1YiS1si_M4" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HDBLAST — Ricardo Maldonado</title>
-<meta name="description" content="HDBLAST: mathematical bounds for the local scalar-boundary branch through delta = 0.002, with reproducible calculations. A higher-dimensional Big Bang origin remains unestablished.">
+<meta name="description" content="HDBLAST: conditional scalar spectral positivity and tensor mass thresholds on the regular de Sitter branch, 0 &lt; delta ≤ 0.002. A Big Bang origin remains unestablished.">
 <link rel="canonical" href="https://maldonado-research.github.io/HDblast/">
 <link rel="alternate" hreflang="en" href="https://maldonado-research.github.io/HDblast/">
 <link rel="alternate" hreflang="es" href="https://maldonado-research.github.io/HDblast/es/">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HDBLAST">
 <meta property="og:title" content="Could a higher-dimensional “blast” have sparked our Big Bang?">
-<meta property="og:description" content="HDBLAST: mathematical bounds for the local scalar-boundary branch through delta = 0.002, with reproducible calculations. A higher-dimensional Big Bang origin remains unestablished.">
+<meta property="og:description" content="HDBLAST: conditional scalar spectral positivity and tensor mass thresholds on the regular de Sitter branch, 0 &lt; delta ≤ 0.002. A Big Bang origin remains unestablished.">
 <meta property="og:url" content="https://maldonado-research.github.io/HDblast/">
 <meta property="og:image" content="https://maldonado-research.github.io/HDblast/figures/share-card.png">
 <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
 <meta property="og:image:alt" content="HDBLAST: Could a higher-dimensional blast have sparked our Big Bang? Speculative, testable hypothesis by Ricardo Maldonado.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Could a higher-dimensional “blast” have sparked our Big Bang?">
-<meta name="twitter:description" content="HDBLAST: mathematical bounds for the local scalar-boundary branch through delta = 0.002, with reproducible calculations. A higher-dimensional Big Bang origin remains unestablished.">
+<meta name="twitter:description" content="HDBLAST: conditional scalar spectral positivity and tensor mass thresholds on the regular de Sitter branch, 0 &lt; delta ≤ 0.002. A Big Bang origin remains unestablished.">
 <meta name="twitter:image" content="https://maldonado-research.github.io/HDblast/figures/share-card.png">
 <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -52,7 +52,7 @@
     {
       "@type": "Dataset",
       "name": "HDBLAST: could a higher-dimensional blast have sparked the hot Big Bang? (research program, code and data)",
-      "description": "HDBLAST: mathematical bounds for the local scalar-boundary branch through delta = 0.002, with reproducible calculations. A higher-dimensional Big Bang origin remains unestablished.",
+      "description": "HDBLAST: conditional scalar spectral positivity and tensor mass thresholds on the regular de Sitter branch, 0 < delta ≤ 0.002. A Big Bang origin remains unestablished.",
       "url": "https://maldonado-research.github.io/HDblast/",
       "sameAs": [
         "https://github.com/maldonado-research/HDblast",
@@ -75,9 +75,29 @@
         "cosmology"
       ],
       "inLanguage": "en",
-      "version": "2026.10.11-scalar-response-monotonicity",
-      "dateModified": "2026-10-11",
+      "version": "2026.10.13-regular-shell-spectra",
+      "dateModified": "2026-10-13",
       "subjectOf": [
+        {
+          "@type": "CreativeWork",
+          "url": "https://doi.org/10.5281/zenodo.23335485",
+          "name": "Verified regular-shell spectral edition 2026.10.13-regular-shell-spectra"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://github.com/maldonado-research/HDblast/blob/main/hdblast/publication/2026.10.13-regular-shell-spectra/README.md",
+          "name": "Complete publication inventory and public readback"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://github.com/maldonado-research/HDblast/tree/401efdfaaef657bcbdaec588b21b82789daddd0e/research/HDBLAST_REGULAR_SHELL_SPECTRA_20261013",
+          "name": "HDBLAST: Conditional Scalar Spectral Positivity and Tensor Mass Thresholds on Regular de Sitter Shells"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://github.com/maldonado-research/HDblast/blob/401efdfaaef657bcbdaec588b21b82789daddd0e/research/HDBLAST_REGULAR_SHELL_SPECTRA_20261013/RESULTS.md",
+          "name": "Claim ledger, fixed-background scalar gap and scope"
+        },
         {
           "@type": "CreativeWork",
           "url": "https://doi.org/10.5281/zenodo.23294979",
@@ -98,7 +118,7 @@
           "url": "https://zenodo.org/records/23228395"
         }
       ],
-      "isBasedOn": "https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011"
+      "isBasedOn": "https://github.com/maldonado-research/HDblast/tree/401efdfaaef657bcbdaec588b21b82789daddd0e/research/HDBLAST_REGULAR_SHELL_SPECTRA_20261013"
     }
   ]
 }</script>
@@ -197,6 +217,12 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:14px;border-top:1px soli
   </section>
 
   <section id="results">
+
+<div data-hdb-spectra="regular-shell-spectra-20261013">
+<p><strong>Conditional spectral result (13 October 2026):</strong> At every fixed 0 &lt; delta ≤ 0.002, the entire scalar spectrum in both reflection parities is separated strictly from zero in the specified self-adjoint, finite-energy regular-cone realization. The proof gives a positive bound as a function of the background; it does not assign a numerical value or a uniform bound as delta approaches zero. An action calculation, including the moving-shell boundary terms, verifies the local kinetic coefficients of generic even and odd scalar modes. Exceptional harmonics are treated separately. The tensor sector has one even massless radial profile, and every nonzero tensor mass obeys m_T ≥ 3H_b/2.</p>
+<p>This concerns the regular branch near phi = +1 of the same fixed action. The original hilltop shell remains a distinct unstable solution; no evolution connecting the two is proved. Global physical-state coverage, admissible diffeomorphisms and cone symplectic flux retain the declared assumptions. No nonlinear stability, reheating mechanism or higher-dimensional Big Bang origin is established. Normal and optimized portable Python replay each pass 103 exact checks and 30 wrong-formula controls, counted separately. <a href="https://github.com/maldonado-research/HDblast/tree/401efdfaaef657bcbdaec588b21b82789daddd0e/research/HDBLAST_REGULAR_SHELL_SPECTRA_20261013">Proof, assumptions and portable replay</a> · <a href="https://github.com/maldonado-research/HDblast/blob/401efdfaaef657bcbdaec588b21b82789daddd0e/research/HDBLAST_REGULAR_SHELL_SPECTRA_20261013/RESULTS.md">Claim ledger and gap functional</a>.</p>
+<p data-hdb-spectra-publication="verified-23335485"><strong>Verified publication (13 October 2026):</strong> <a href="https://doi.org/10.5281/zenodo.23335485">Zenodo 23335485</a>, version <strong>2026.10.13-regular-shell-spectra</strong>, contains <strong>35 files / 454,964,066 bytes</strong>. It preserves all 33 files from 23294979 and adds the new scientific capsule and overview. Complete public readback verified every filename, size and MD5/SHA256 checksum. <a href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/publication/2026.10.13-regular-shell-spectra/README.md">Publication proof and complete inventory</a>.</p>
+</div>
 <p data-hdb-scalar-branch="monotonicity-20261011"><strong>Scalar-boundary result (11 October 2026):</strong> an exact response identity and sharper error bounds certify the registered model's regular local branch for <strong>every 0 &lt; delta &le; 0.002</strong>, extending the earlier 1.09155 × 10<sup>−7</sup> guarantee. The proof gives strict shell-matching monotonicity, R<sub>T</sub> &le; −H² &lt; 0, under its stated hypotheses. The uniform scalar and curvature remainder constants satisfy K<sub>eta</sub> &lt; 3.196 and K<sub>H</sub> &lt; 0.254. Curvature is below that of the separate complete boundary theory with scalar-independent detuning: H² − H<sub>constant</sub>² &lt; −0.000423 delta² throughout that interval. These conditional mathematical results concern the specified local branch; dynamical stability and a higher-dimensional Big Bang origin remain unestablished. <a href="https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011">Proof, exact certificates and reproducible calculations</a> · <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/literature/LITERATURE_UPDATE_20261011.md">Bounded primary-literature update</a> · <a data-hdb-monotonicity-zenodo="verified-23294979" href="https://doi.org/10.5281/zenodo.23294979">Verified Zenodo edition 23294979</a>. The <a href="https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SCALAR_BOUNDARY_CURVATURE_20261008">8 October checkpoint</a> remains preserved.</p>
 <p data-hdb-monotonicity-publication="verified-23294979"><strong>Verified publication (11 October 2026):</strong> <a href="https://doi.org/10.5281/zenodo.23294979">Zenodo 23294979</a>, version <strong>2026.10.11-scalar-response-monotonicity</strong>, contains <strong>33 files / 454,129,865 bytes</strong> in the preserved <a href="https://doi.org/10.5281/zenodo.17088132">concept DOI family 17088132</a>. It retains all 31 files from edition 23244754 and adds the scalar-response scientific capsule and overview. Saved metadata and every file's name, size, MD5 and SHA256 were checked before publication and by complete anonymous public readback afterward. <a href="https://github.com/maldonado-research/HDblast/blob/main/hdblast/publication/2026.10.11-scalar-response-monotonicity/README.md">Publication proof and complete inventory</a>.</p>
     <p data-hdb-endpoint-result="complete"><strong>Completed research (8 October 2026 UTC): 98,304 saved-endpoint comparisons.</strong> Normal and optimized runs compare every retained node at eta = -4 and -3.5 with exact prescribed flow from its exact saved incoming state at eta = -4.5. Nine scientific files agree byte for byte, independently checked. Maximum Cartesian L1 discrepancy bounds are <strong>U &lt; 2.520 × 10<sup>−16</sup></strong> and <strong>W &lt; 3.158 × 10<sup>−15</sup></strong>. The 1e-18 gate concerns target-enclosure radii, not saved-state errors. <a href="https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CHECKPOINT_20261008_RETAINED_ENDPOINT_FLOW/RESULTS.md">Exact endpoint results and finite-weight bounds</a>.</p>
