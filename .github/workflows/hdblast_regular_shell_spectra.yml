@@ -29,9 +29,11 @@ jobs:
         with:
           python-version: '3.12.14'
       - name: Install pinned exact-check dependencies
-        run: python -I -B -m pip install --only-binary=:all: -r research/HDBLAST_REGULAR_SHELL_SPECTRA_20261013/requirements.txt
+        run: |
+          python -I -B -m pip install --only-binary=:all: -r research/HDBLAST_REGULAR_SHELL_SPECTRA_20261013/requirements.txt
       - name: Replay new spectral algebra and unchanged static proof arithmetic
-        run: python -I -B research/HDBLAST_REGULAR_SHELL_SPECTRA_20261013/reproduce.py --output "$RUNNER_TEMP/regular-shell-spectra"
+        run: |
+          python -I -B research/HDBLAST_REGULAR_SHELL_SPECTRA_20261013/reproduce.py --output "$RUNNER_TEMP/regular-shell-spectra"
       - name: Retain proof-check receipts
         if: always()
         uses: actions/upload-artifact@v4
