@@ -1,0 +1,35 @@
+{
+  "checks": [
+    {
+      "expected_receipt": "results/covariant.json",
+      "name": "covariant",
+      "positive_checks": 20,
+      "script": "covariant/check_covariant_current.py",
+      "wrong_formula_controls": 4
+    },
+    {
+      "expected_receipt": "results/domain.json",
+      "name": "domain",
+      "positive_checks": 24,
+      "script": "domain/check_domain_flux.py",
+      "wrong_formula_controls": 7
+    },
+    {
+      "expected_receipt": "results/tensor.json",
+      "name": "tensor",
+      "positive_checks": 23,
+      "script": "tensor/verify_tensor_cone_domain.py",
+      "wrong_formula_controls": 6
+    },
+    {
+      "expected_receipt": "results/independent.json",
+      "name": "independent",
+      "positive_checks": 12,
+      "script": "independent/check_current_independently.py",
+      "wrong_formula_controls": 6
+    }
+  ],
+  "positive_checks_per_mode": 79,
+  "scope": "Exact algebra and prototype scaling; not independent theorem counts or global existence proofs.",
+  "wrong_formula_controls_per_mode": 23
+}

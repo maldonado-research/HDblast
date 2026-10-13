@@ -1,5 +1,14 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- cone-phase-space-20261013 -->
+**Cone current and physical-domain audit — 13 October 2026:** The Einstein–scalar action now supplies an explicit symplectic current, including unequal spectral values and the doubled-shell balance. Under stated asymptotic hypotheses for actual solutions, its null-cone limit is a scalar symplectic flux. Exact flat test-field examples show that fixed-time radial closure does not imply zero characteristic flux, and that radial and inertial energy completions can differ. The physical state space of the registered gravitational model remains open.
+
+The known tensor horizon diagnostic is recovered with explicit smoothness and energy-completion qualifications; it does not remove the massless radial profile. The earlier operator positivity theorem remains intact. Global radiative-solution existence, gauge coverage and finite-null charges are unresolved. A higher-dimensional Big Bang origin remains **NOT_ESTABLISHED**.
+
+[Technical note](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CONE_PHASE_SPACE_20261013/manuscript/COVARIANT_FLUX_AND_PHYSICAL_DOMAINS.pdf) · [Portable calculations](https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_CONE_PHASE_SPACE_20261013) · [Claim ledger](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_CONE_PHASE_SPACE_20261013/RESULTS.md). This is a GitHub research continuation; [Zenodo 23335485](https://doi.org/10.5281/zenodo.23335485) remains the preceding archived spectral edition. No new APS submission was made.
+
+<!-- End cone update; earlier dated checkpoints are preserved below. -->
+
 <!-- regular-shell-spectra-20261013 -->
 **New conditional spectral result — 13 October 2026:** At every fixed 0 < delta ≤ 0.002, the entire scalar spectrum in both reflection parities is separated strictly from zero in the specified self-adjoint, finite-energy regular-cone realization. The proof gives a positive bound as a function of the background; it does not assign a numerical value or a uniform bound as delta approaches zero. An action calculation, including the moving-shell boundary terms, verifies the local kinetic coefficients of generic even and odd scalar modes. Exceptional harmonics are treated separately. The tensor sector has one even massless radial profile, and every nonzero tensor mass obeys m_T ≥ 3H_b/2.
 
