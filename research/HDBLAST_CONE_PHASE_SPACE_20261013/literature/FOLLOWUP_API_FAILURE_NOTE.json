@@ -1,0 +1,21 @@
+{
+  "receipt_kind": "adapted_public_receipt",
+  "adaptation_description": "Recorded API failure types only; missing exact timestamps remain explicit and are not reconstructed.",
+  "raw_response_included": false,
+  "description": "Failure types retained from executed command outputs; exact initiation/retrieval timestamps were not written by the failed script and are not reconstructed. Direct-PDF successful receipts are separate.",
+  "url": "https://export.arxiv.org/api/query?id_list=hep-th%2F0003098%2C2608.14449&max_results=2",
+  "attempts": [
+    {
+      "order": 1,
+      "error_type": "TimeoutError",
+      "detail": "read operation timed out; urllib timeout45s"
+    },
+    {
+      "order": 2,
+      "error_type": "HTTPError",
+      "status": 429,
+      "detail": "Too Many Requests"
+    }
+  ],
+  "next_action": "No further retry of arXiv API; selected direct-PDF URLs and separate INSPIRE identity query succeeded through same managed proxy with TLS verification."
+}

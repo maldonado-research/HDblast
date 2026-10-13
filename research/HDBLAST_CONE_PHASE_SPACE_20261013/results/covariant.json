@@ -1,0 +1,136 @@
+{
+  "checks": [
+    {
+      "kind": "identity",
+      "name": "nonlinear Lee-Wald radial potential field-space curl",
+      "residual": "0"
+    },
+    {
+      "kind": "identity",
+      "name": "GHY potential cancellation",
+      "residual": "0"
+    },
+    {
+      "kind": "identity",
+      "name": "direct tangential Lee-Wald current on generic slice",
+      "residual": "0"
+    },
+    {
+      "kind": "identity",
+      "name": "gravity-scalar cross cancellation",
+      "residual": "0"
+    },
+    {
+      "kind": "wrong-formula control",
+      "name": "omitting gravitational radial current",
+      "nonzero_residual": "4*p*rho**4*(X1*psi2 - X2*psi1)"
+    },
+    {
+      "kind": "identity",
+      "name": "unequal-spectral physical radial current",
+      "residual": "0"
+    },
+    {
+      "kind": "identity",
+      "name": "common-spectral Green normalization",
+      "residual": "0"
+    },
+    {
+      "kind": "wrong-formula control",
+      "name": "common-Lambda shortcut for unequal profiles",
+      "nonzero_residual": "9*P1prime*P2*(Lambda1 - Lambda2)/(p**2*rho**2)"
+    },
+    {
+      "kind": "identity",
+      "name": "physical tangential energy polarization",
+      "residual": "0"
+    },
+    {
+      "kind": "identity",
+      "name": "unequal-spectral current conservation",
+      "residual": "0"
+    },
+    {
+      "kind": "identity",
+      "name": "even shell flux for unequal spectral values",
+      "residual": "0"
+    },
+    {
+      "kind": "identity",
+      "name": "odd bulk-shell current conservation",
+      "residual": "0"
+    },
+    {
+      "kind": "wrong-formula control",
+      "name": "missing moving-shell current",
+      "nonzero_residual": "-18*P1*P2*codd*(Lambda1 - Lambda2)"
+    },
+    {
+      "kind": "identity",
+      "name": "doubled moving-domain GHY and single-shell kinetic accounting",
+      "residual": "0"
+    },
+    {
+      "kind": "identity",
+      "name": "Liouville Green current orientation",
+      "residual": "0"
+    },
+    {
+      "kind": "identity",
+      "name": "general packet Liouville current",
+      "residual": "0"
+    },
+    {
+      "kind": "identity",
+      "name": "null coordinate density Jacobian",
+      "residual": "0"
+    },
+    {
+      "kind": "identity",
+      "name": "true null current density",
+      "residual": "0"
+    },
+    {
+      "kind": "identity",
+      "name": "fixed-radius pullback equals true cone pullback",
+      "residual": "0"
+    },
+    {
+      "kind": "wrong-formula control",
+      "name": "omitting density transformation Jacobian",
+      "nonzero_residual": "-scalar_null_Wronskian*(-2*sqrt(u)*v**(7/2) + v**3)/8"
+    },
+    {
+      "kind": "identity",
+      "name": "characteristic reconstruction constraint",
+      "residual": "0"
+    },
+    {
+      "kind": "identity",
+      "name": "smooth leading metric uu coefficient",
+      "residual": "0"
+    },
+    {
+      "kind": "identity",
+      "name": "characteristic mixed-spectral operator cancellation",
+      "residual": "0"
+    },
+    {
+      "kind": "identity",
+      "name": "nonzero smooth candidate-data Wronskian",
+      "residual": "0"
+    }
+  ],
+  "frozen_source_sha256": {
+    "domain/SCALAR_SELF_ADJOINT_DOMAIN_AND_GAP.md": "ad3b23eedad94e47c97952db3b273ff8204f4e898bcb86221be64eb11ac357fd",
+    "manuscript/JACOBI_RESPONSE_TO_SPECTRAL_POSITIVITY.md": "20ae2cf09000ff4e6257f3812f27a9ee7c343e7aff2c946038026bf3417e5718",
+    "operator/ODD_KINETIC_COMPLETION_20261013.md": "f4d7962be111443019d13a1c0b471d9a7c37405d843d5aa0a7e8a1dc21be319d",
+    "operator/PHYSICAL_OPERATOR_AUDIT_20261013.md": "522493f8d2dfa91ea06d1eaa99dd55155f8aa7aa9f60ad5abbba869b6facdbe5"
+  },
+  "identities": 20,
+  "passed": 24,
+  "scope": "Exact local current identities, not a global phase-space theorem",
+  "script_sha256": "b9a0556c29b9784f6deebf78bcd593442d21464a24f32cb2c4eafee838468abd",
+  "sympy_version": "1.14.0",
+  "wrong_formula_controls": 4
+}

@@ -1,0 +1,96 @@
+{
+  "adaptations_verified": 19,
+  "all_eight_replay_receipts_equal_frozen_expected_bytes": true,
+  "blockers": [],
+  "capsule_modified_by_reviewer": false,
+  "completed_replay_receipt_inspected": "final-replay-001/REPRODUCTION_RECEIPT.json",
+  "contract_counts": [
+    {
+      "counts": [
+        20,
+        4
+      ],
+      "name": "covariant",
+      "receipt_sha256": "695b3e52f82b832b88d88847ba1e1ba08b82d975459b10b5abcc473ff3974b41"
+    },
+    {
+      "counts": [
+        24,
+        7
+      ],
+      "name": "domain",
+      "receipt_sha256": "40fcbdb58e66bf153007f71095cd6c28a5416311249a4a0a54d7cf4730ce1100"
+    },
+    {
+      "counts": [
+        23,
+        6
+      ],
+      "name": "tensor",
+      "receipt_sha256": "929ad9a43d32473295081fd5b596aa146f11aa6c976a170c54ef9b6b28b9063e"
+    },
+    {
+      "counts": [
+        12,
+        6
+      ],
+      "name": "independent",
+      "receipt_sha256": "d24cc10f3dcd4ede0d0103c0359199da9a1e4aa1346a5320b410839aecf8a675"
+    }
+  ],
+  "corrected_tensor_ell0_scope": "Inspected exact near-null divergent vector counterexample and final 23+6 checker/receipt; corrected text no longer asserts full ambient continuity.",
+  "date": "2026-10-13",
+  "files_sha256": {
+    "ci-candidate.yml": "db7db0c76a2cc7645be9cf53c5aeebdd996d67043a65d78beb8e42733c6af482",
+    "final-replay-001/REPRODUCTION_RECEIPT.json": "3a7bcd9b015cc9d9454cb139e8d336c888f8081e6c877ce8886d5a87bff50c29",
+    "portable/CHECK_CONTRACTS.json": "9ce23413e5542c3df6ad4b54c7900baab49bd837a4c6ae67e2aa9d4d7c0fbea6",
+    "portable/MANIFEST.json": "6021915456815936a80c864d5e503b05725325a2cb15cbd882051fade0890194",
+    "portable/literature/ORIGIN_AND_ADAPTATION.json": "cbf7ead56e866304a8cd46c21a65474e257ad1444b38f641c18e4ead6c6627ee",
+    "portable/manuscript/COVARIANT_FLUX_AND_PHYSICAL_DOMAINS.md": "37d01f6245e6937cc1fdff48e793654ec07ad6a1640773e98cb62cb34b8e9c8a",
+    "portable/manuscript/COVARIANT_FLUX_AND_PHYSICAL_DOMAINS.pdf": "e5e9d7ee124175b9a5bbd27a34031e73e3c0e80daedae10aa16f0b648d0130ec",
+    "portable/manuscript/COVARIANT_FLUX_AND_PHYSICAL_DOMAINS.tex": "d28d6e8b32fc505a83e0c77eef429847009b1de74e17f5aebbe87a9af14bb73c",
+    "portable/provenance/ADAPTATION.json": "55adac02876c4a442daafc30691156874322a3b40f866b477d05a15cb275f40c",
+    "portable/provenance/CHECK_ADAPTATION_REVIEW.json": "80876f6dc1891a89458b0c089117a9213ff132e896ff6d71cb4525b9fbecb613",
+    "portable/reproduce.py": "b5f80083ac29747723883af4fbd83aaacfc12dbc49f28724f5249e144881bcce",
+    "portable/results/tensor.json": "929ad9a43d32473295081fd5b596aa146f11aa6c976a170c54ef9b6b28b9063e",
+    "portable/reviews/BIBLIOGRAPHY_REVIEW.json": "30a936966da24fea15381578d130affc4515fcb04f4ae352c4ffae6398d3c4fa",
+    "portable/reviews/MATHEMATICAL_REVIEW.json": "ca5771be210aa30b58af3384be11a846df74036094e92f1d024085088b3988ac",
+    "portable/reviews/VISUAL_REVIEW_RECEIPT.json": "e03f1eeb91df95df8ef077f8a4a9d623ae1fe3856730b4bfa8d8c1dd8319039a",
+    "portable/tensor/TENSOR_SMOOTHNESS_AND_GAUGE_DOMAIN.md": "2238cac56ee72a0ac46f3e89299f782b19de29b55efee5cf3badc6369530a445",
+    "portable/tensor/verify_tensor_cone_domain.py": "dd3f375784aa67f59a670ea3127064d0198eb2e9a5da9c040d895d066f890137",
+    "replay-review/FINAL_CAPSULE_REVIEW.md": "7a5ff5bcb24ac5bb0609d80ac5ddc3087dae0b5eba976b0e56a66f68b9cee9b2",
+    "replay-review/FINAL_INTEGRITY_INSPECTION.json": "e4b02a61b2130d376d1598612f83aece4078476ca484f48f85f0f7c067e688ef",
+    "replay-review/FINAL_PROVENANCE_INSPECTION.json": "d1236d180380d85f18560759aad2f1d017440b01c3e29a02d9506a2ac161148b"
+  },
+  "final_manuscript_pins_match_math_bibliography_build_visual_reviews": true,
+  "literature_public_mappings_verified": 9,
+  "manifest_bytes_excluding_itself": 1084540,
+  "manifest_files_excluding_itself": 63,
+  "manifest_sha256": "6021915456815936a80c864d5e503b05725325a2cb15cbd882051fade0890194",
+  "negative_control_failure_causes_inspected": {
+    "altered-manifest.log": "RuntimeError: Manifest differs from external pin",
+    "corrupted-input-normal.log": "RuntimeError: Capsule file differs: basis/prior-checkpoint/RESULTS.md",
+    "corrupted-input-optimized.log": "RuntimeError: Capsule file differs: basis/prior-checkpoint/RESULTS.md",
+    "injected-failure-normal.log": "RuntimeError: injected_failure: residual 1",
+    "injected-failure-optimized.log": "RuntimeError: injected_failure: residual 1"
+  },
+  "no_injected_failure_success_receipt": true,
+  "positive_checks_per_mode": 79,
+  "prior_copies_verified": 7,
+  "relocated_capsule_equals_frozen_source": true,
+  "review_kind": "Static source inspection, independent file integrity and provenance comparisons, completed local replay evidence inspection.",
+  "reviewer": "parallel covariant-current agent",
+  "runner_sha256": "b5f80083ac29747723883af4fbd83aaacfc12dbc49f28724f5249e144881bcce",
+  "science_runner_or_checkers_rerun_by_reviewer": false,
+  "scope_limits": [
+    "Internal review, not external peer review.",
+    "No new scientific completeness, global hyperbolic existence or gauge-charge theorem.",
+    "No additional literature priority or cosmological-origin claim.",
+    "No publication, remote readback or GitHub Actions execution verified in this review."
+  ],
+  "status": "PASS_BOUNDED_FINAL_CAPSULE_REVIEW",
+  "typesetting_or_remote_ci_rerun_by_reviewer": false,
+  "workflow_final_external_pins_match": true,
+  "workflow_remote_execution_claimed": false,
+  "wrong_formula_controls_per_mode": 23
+}

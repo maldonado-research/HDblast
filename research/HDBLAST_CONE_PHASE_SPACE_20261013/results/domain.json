@@ -1,0 +1,195 @@
+{
+  "scope": "Exact local identities and noncommuting cone-limit controls; no registered hyperbolic existence/completeness theorem.",
+  "sympy_version": "1.14.0",
+  "checks": [
+    {
+      "name": "s expansion through y^2",
+      "result": "pass"
+    },
+    {
+      "name": "VL expansion through y^2",
+      "result": "pass"
+    },
+    {
+      "name": "h expansion through relative y^2",
+      "result": "pass"
+    },
+    {
+      "name": "x_y expansion",
+      "result": "pass"
+    },
+    {
+      "name": "tensor potential expansion",
+      "result": "pass"
+    },
+    {
+      "name": "wrong scalar Liouville threshold 9/4",
+      "result": "rejected as intended",
+      "residual": "4"
+    },
+    {
+      "name": "wrong first s correction",
+      "result": "rejected as intended",
+      "residual": "5*r2/2"
+    },
+    {
+      "name": "alpha/(rho*h^2)=1",
+      "result": "pass"
+    },
+    {
+      "name": "Green orientation",
+      "result": "pass"
+    },
+    {
+      "name": "wrong Green orientation",
+      "result": "rejected as intended",
+      "residual": "-2*f1*fx2 + 2*f2*fx1"
+    },
+    {
+      "name": "global dS friction removal",
+      "result": "pass"
+    },
+    {
+      "name": "wrong residual threshold cancellation",
+      "result": "rejected as intended",
+      "residual": "3/4"
+    },
+    {
+      "name": "characteristic D/L identity",
+      "result": "pass"
+    },
+    {
+      "name": "characteristic physical-current identity",
+      "result": "pass"
+    },
+    {
+      "name": "leading grav-scalar current equals scalar null current",
+      "result": "pass"
+    },
+    {
+      "name": "wrong equal-Lambda packet replacement",
+      "result": "rejected as intended",
+      "residual": "9*v**3*(v**2*Derivative(A1(v), v)*Derivative(A2(v), (v, 2)) - v**2*Derivative(A1(v), (v, 2))*Derivative(A2(v), v) + 4*v*A1(v)*Derivative(A2(v), (v, 2)) - 4*v*A2(v)*Derivative(A1(v), (v, 2)) + 19*A1(v)*Derivative(A2(v), v) - 19*A2(v)*Derivative(A1(v), v))/(8*kappa**2)"
+    },
+    {
+      "name": "leading X1 comparator",
+      "result": "pass"
+    },
+    {
+      "name": "leading X2 comparator",
+      "result": "pass"
+    },
+    {
+      "name": "leading comparator flux",
+      "result": "pass"
+    },
+    {
+      "name": "scalar indicial polynomial",
+      "result": "pass"
+    },
+    {
+      "name": "flat leading radial/tangential equation",
+      "result": "pass"
+    },
+    {
+      "name": "flat exact timelike-to-null density",
+      "result": "pass"
+    },
+    {
+      "name": "flat exact characteristic flux limit",
+      "result": "pass"
+    },
+    {
+      "name": "exact flux primitive",
+      "result": "pass"
+    },
+    {
+      "name": "fixed-time flux primitive",
+      "result": "pass"
+    },
+    {
+      "name": "null scalar flux convention",
+      "result": "pass"
+    },
+    {
+      "name": "wrong interchange of whole-time and finite-time limits",
+      "result": "rejected as intended",
+      "residual": "15/64"
+    },
+    {
+      "name": "derived radial norm exponent",
+      "result": "pass"
+    },
+    {
+      "name": "derived lapse-weighted radial gradient exponent",
+      "result": "pass"
+    },
+    {
+      "name": "derived inertial gradient exponent",
+      "result": "pass"
+    },
+    {
+      "name": "wrong identical radial and inertial energy thresholds",
+      "result": "rejected as intended",
+      "residual": "-1/2"
+    }
+  ],
+  "check_count": 31,
+  "all_passed": true,
+  "flux_controls": [
+    {
+      "epsilon": 0.5,
+      "fixed_t_0_to_1": 0.07296292109443557,
+      "moving_v_1_to_2": 0.2804603576660156,
+      "moving_limit": 0.234375
+    },
+    {
+      "epsilon": 0.25,
+      "fixed_t_0_to_1": 0.004560182568402223,
+      "moving_v_1_to_2": 0.24608208239078522,
+      "moving_limit": 0.234375
+    },
+    {
+      "epsilon": 0.1,
+      "fixed_t_0_to_1": 0.00011674067375109692,
+      "moving_v_1_to_2": 0.23624995297851561,
+      "moving_limit": 0.234375
+    },
+    {
+      "epsilon": 0.01,
+      "fixed_t_0_to_1": 1.1674067375109691e-08,
+      "moving_v_1_to_2": 0.23439374999995313,
+      "moving_limit": 0.234375
+    },
+    {
+      "epsilon": 0.001,
+      "fixed_t_0_to_1": 1.1674067375109691e-12,
+      "moving_v_1_to_2": 0.2343751875,
+      "moving_limit": 0.234375
+    }
+  ],
+  "source_pins": [
+    {
+      "path": "manuscript/JACOBI_RESPONSE_TO_SPECTRAL_POSITIVITY.md",
+      "sha256": "20ae2cf09000ff4e6257f3812f27a9ee7c343e7aff2c946038026bf3417e5718"
+    },
+    {
+      "path": "domain/SCALAR_SELF_ADJOINT_DOMAIN_AND_GAP.md",
+      "sha256": "ad3b23eedad94e47c97952db3b273ff8204f4e898bcb86221be64eb11ac357fd"
+    },
+    {
+      "path": "operator/PHYSICAL_OPERATOR_AUDIT_20261013.md",
+      "sha256": "522493f8d2dfa91ea06d1eaa99dd55155f8aa7aa9f60ad5abbba869b6facdbe5"
+    },
+    {
+      "path": "tensor/TENSOR_PARTNER_GAP.md",
+      "sha256": "efd9d9293636864b419e46f7c333149c7847ffdc14e969d75e6a3c1e87256cad"
+    },
+    {
+      "path": "NEXT_CALCULATIONS.md",
+      "sha256": "34529aed111fd0126a411fb96b2f5794920d3402a2ad08352f2974c86088aa76"
+    }
+  ],
+  "checker_sha256": "d51f554493c8d768c16f373cb5ad13d46f2d96901789fd36add647003a7e1d71",
+  "note_sha256": "55e8aa268f9331b6d90fe74c97fb00e2d8f85da17913c32c0cf0e8be96a975e1"
+}

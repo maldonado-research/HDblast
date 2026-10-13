@@ -1,0 +1,47 @@
+{
+  "positive_check_count": 12,
+  "positive_checks": [
+    "nonlinear_potential_radial_curl",
+    "nonlinear_potential_tangent_curl",
+    "radial_current_after_momentum_constraint",
+    "on_shell_radial_current_first_order",
+    "mixed_eigenvalue_bulk_conservation",
+    "mixed_eigenvalue_master_current",
+    "equal_eigenvalue_green_current",
+    "even_shell_flux_zero",
+    "odd_shell_current_balance",
+    "smooth_leading_metric_null_covectors",
+    "characteristic_density_pullback",
+    "characteristic_density_limit"
+  ],
+  "scope": "Algebra from the independently derived nonlinear-family Lee-Wald potential; conditional cone expansions; no global solution existence, gauge-charge or completeness proof.",
+  "status": "PASS_EXACT_LOCAL_CURRENT_AND_NULL_LIMIT_ALGEBRA",
+  "sympy": "1.14.0",
+  "wrong_formula_control_count": 6,
+  "wrong_formula_controls": [
+    {
+      "name": "drop_density_scalar_cross_variation",
+      "nonzero_residual": "6*p*rho**4*(Psi1*X2 - Psi2*X1)"
+    },
+    {
+      "name": "drop_nonlinear_metric_connection_variation",
+      "nonzero_residual": "-12*rho**4*(Psi1*Psi2_y - Psi1_y*Psi2)"
+    },
+    {
+      "name": "omit_constraint_cross_term",
+      "nonzero_residual": "2*p*rho**4*(Psi1*X2 - Psi2*X1)"
+    },
+    {
+      "name": "use_single_eigenvalue_for_packet",
+      "nonzero_residual": "-9*P1_y*P2*(Lambda1 - Lambda2)/(p**2*rho**2)"
+    },
+    {
+      "name": "odd_shell_balance_wrong_orientation",
+      "nonzero_residual": "-36*P1*P2*c_o*(Lambda1 - Lambda2)"
+    },
+    {
+      "name": "omit_tangential_current_in_pullback",
+      "nonzero_residual": "-F1_F2v_minus_F2_F1v*v**3/16"
+    }
+  ]
+}

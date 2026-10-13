@@ -1,0 +1,105 @@
+name: Regular cone covariant-current proof checks
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_CONE_PHASE_SPACE_20261013/**'
+      - '.github/workflows/hdblast_cone_phase_space.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_CONE_PHASE_SPACE_20261013/**'
+      - '.github/workflows/hdblast_cone_phase_space.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  exact-reproduction:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    env:
+      PROOF_DIRECTORY: 'research/HDBLAST_CONE_PHASE_SPACE_20261013'
+      # Fill only from the reviewed final frozen snapshot.
+      MANIFEST_SHA256: '6021915456815936a80c864d5e503b05725325a2cb15cbd882051fade0890194'
+      REPRODUCE_SHA256: 'b5f80083ac29747723883af4fbd83aaacfc12dbc49f28724f5249e144881bcce'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: ${{ env.PROOF_DIRECTORY }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - name: Authenticate manifest and replay source before dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/cone-phase-space-ci"
+          python -I -S -B - <<'PY' > "$RUNNER_TEMP/cone-phase-space-ci/authentication.log" 2>&1
+          import hashlib, json, os, pathlib, re
+
+          def require(condition, message):
+              if not condition:
+                  raise RuntimeError(message)
+
+          workspace = pathlib.Path(os.environ['GITHUB_WORKSPACE']).resolve()
+          root = workspace / os.environ['PROOF_DIRECTORY']
+          pins = {
+              'MANIFEST.json': os.environ['MANIFEST_SHA256'],
+              'reproduce.py': os.environ['REPRODUCE_SHA256'],
+          }
+          for name, expected in pins.items():
+              require(re.fullmatch(r'[0-9a-f]{64}', expected) is not None,
+                      'Filled external SHA256 required: ' + name)
+              path = root / name
+              require(path.is_file() and not path.is_symlink()
+                      and path.resolve().is_relative_to(workspace)
+                      and all(not parent.is_symlink() for parent in path.parents),
+                      'Real input inside checkout required: ' + name)
+              require(hashlib.sha256(path.read_bytes()).hexdigest() == expected,
+                      'External SHA256 differs: ' + name)
+          receipt = {
+              'status': 'PASS_CONE_CURRENT_CI_BOOTSTRAP_AUTHENTICATION',
+              'sha256': pins,
+              'project_source_executed_before_authentication': False,
+          }
+          output = pathlib.Path(os.environ['RUNNER_TEMP']) / 'cone-phase-space-ci' / 'AUTHENTICATION.json'
+          output.write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+          print(receipt['status'])
+          PY
+          python -I -S -B "$PROOF_DIRECTORY/reproduce.py" \
+            --verify-only --manifest-sha256 "$MANIFEST_SHA256" \
+            > "$RUNNER_TEMP/cone-phase-space-ci/full-integrity.log" 2>&1
+      - name: Install authenticated pinned symbolic dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -B -m pip install --disable-pip-version-check --only-binary=:all: \
+            -r "$PROOF_DIRECTORY/requirements.txt"
+      - name: Replay relocated normal and optimized current checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -B "$PROOF_DIRECTORY/reproduce.py" \
+            --manifest-sha256 "$MANIFEST_SHA256" \
+            --output "$RUNNER_TEMP/cone-phase-space-replay" \
+            2>&1 | tee "$RUNNER_TEMP/cone-phase-space-ci/replay.log"
+      - name: Retain current-check receipts and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cone-phase-space-${{ github.sha }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/cone-phase-space-ci/
+            ${{ runner.temp }}/cone-phase-space-replay/REPRODUCTION_RECEIPT.json
+            ${{ runner.temp }}/cone-phase-space-replay/normal/*.json
+            ${{ runner.temp }}/cone-phase-space-replay/normal/*.log
+            ${{ runner.temp }}/cone-phase-space-replay/optimized/*.json
+            ${{ runner.temp }}/cone-phase-space-replay/optimized/*.log
+            ${{ runner.temp }}/cone-phase-space-replay/*.log
+          if-no-files-found: warn
+          retention-days: 14
