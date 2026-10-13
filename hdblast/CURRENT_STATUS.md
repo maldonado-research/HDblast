@@ -1,5 +1,14 @@
 # HDBLAST: current research and publication status
 
+<!-- regular-cone-evolution-20261013 -->
+**Actual local coupled cone evolution — 13 October 2026:** A regular ambient master equation now reconstructs smooth solutions of all linearized Einstein–scalar equations across the cone. Compact initial data give two non-gauge solutions with exactly nonzero local symplectic flux. Either common reflection parity satisfies the doubled-shell junctions while the causal support remains away from the shell. The physical Cauchy symplectic form is nondegenerate on the image of smooth compact master data supported in a sufficiently small spatial ball.
+
+This closes a local existence gap in the earlier conditional flux calculation. Evolution after shell contact, the full completed physical state space, nonlinear stability and a higher-dimensional Big Bang origin remain unestablished. Symplectic flux is an antisymmetric bilinear, not a positive energy or reheating calculation. The bounded literature comparison does not establish external originality or APS readiness.
+
+[Technical note](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_REGULAR_CONE_EVOLUTION_20261013/manuscript/REGULAR_CONE_EVOLUTION.pdf) · [Proofs and reproducible code](https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_REGULAR_CONE_EVOLUTION_20261013) · [Results and limits](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_REGULAR_CONE_EVOLUTION_20261013/RESULTS.md). This is a GitHub technical continuation; [Zenodo 23335485](https://doi.org/10.5281/zenodo.23335485) remains the preceding archived spectral edition. No new APS submission was made.
+
+<!-- Earlier checkpoints remain preserved below. -->
+
 <!-- cone-phase-space-20261013 -->
 **Cone current and physical-domain audit — 13 October 2026:** The Einstein–scalar action now supplies an explicit symplectic current, including unequal spectral values and the doubled-shell balance. Under stated asymptotic hypotheses for actual solutions, its null-cone limit is a scalar symplectic flux. Exact flat test-field examples show that fixed-time radial closure does not imply zero characteristic flux, and that radial and inertial energy completions can differ. The physical state space of the registered gravitational model remains open.
 

@@ -1,0 +1,148 @@
+{
+  "check_count": 22,
+  "checks": [
+    {
+      "name": "exact radial master to regular ambient operator",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "wrong potential coefficient rejected",
+      "passed": true,
+      "residual": "-(2*Omega(r)*Derivative(V(r), r) + V(r)*Derivative(Omega(r), r))*F(r)/(8*r*Omega(r)**3*V(r)**3)"
+    },
+    {
+      "name": "wrong drift coefficient rejected",
+      "passed": true,
+      "residual": "(2*Omega(r)*Derivative(V(r), r) + V(r)*Derivative(Omega(r), r))*Derivative(F(r), r)/(8*Omega(r)**3*V(r)**3)"
+    },
+    {
+      "name": "scalar reconstruction",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "metric eta coefficient",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "metric X_A X_B coefficient",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "unreduced Hamiltonian constraint",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "unreduced momentum coefficient",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "unreduced trace-free lapse coefficient",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "full linearized scalar residual",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "wrong scalar source rejected",
+      "passed": true,
+      "residual": "-psi*U1(y)"
+    },
+    {
+      "name": "actual Cauchy-jet null Wronskian",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "nonzero Wronskian",
+      "passed": true,
+      "residual": "C**2*a0*b0*(lambda_l + 20)/2"
+    },
+    {
+      "name": "background cancellation in Wronskian",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "l=2 null Wronskian",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "gauge invariant relational scalar first jet",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "gauge invariant relational scalar second jet",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "nonzero relational scalar first jet",
+      "passed": true,
+      "residual": "4*C*a0*f0*(8*L0*t0**2 + lambda_l + 4)"
+    },
+    {
+      "name": "nonzero relational scalar second jet",
+      "passed": true,
+      "residual": "8*C*b0*f0*t0*(L0*t0**2 - 2)"
+    },
+    {
+      "name": "canonical scalar conjugation potential",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "wrong canonical scalar sign rejected",
+      "passed": true,
+      "residual": "-2*(3*L**2*s + 9*L - 6*L_s*s + 8*f**2*s)/3"
+    },
+    {
+      "name": "null scalar current density coefficient",
+      "passed": true,
+      "residual": "0"
+    }
+  ],
+  "mutation": null,
+  "passed": true,
+  "positive_checks": {
+    "actual Cauchy-jet null Wronskian": "passed",
+    "background cancellation in Wronskian": "passed",
+    "canonical scalar conjugation potential": "passed",
+    "exact radial master to regular ambient operator": "passed",
+    "full linearized scalar residual": "passed",
+    "gauge invariant relational scalar first jet": "passed",
+    "gauge invariant relational scalar second jet": "passed",
+    "l=2 null Wronskian": "passed",
+    "metric X_A X_B coefficient": "passed",
+    "metric eta coefficient": "passed",
+    "nonzero Wronskian": "passed",
+    "nonzero relational scalar first jet": "passed",
+    "nonzero relational scalar second jet": "passed",
+    "null scalar current density coefficient": "passed",
+    "scalar reconstruction": "passed",
+    "unreduced Hamiltonian constraint": "passed",
+    "unreduced momentum coefficient": "passed",
+    "unreduced trace-free lapse coefficient": "passed"
+  },
+  "positive_count": 18,
+  "schema_version": 2,
+  "scope": "Exact independent local algebra and Cauchy jets. The cited hyperbolic and analytic existence theorems are hypotheses of the notes, not machine proofs.",
+  "sympy": "1.14.0",
+  "wrong_formula_controls": {
+    "wrong canonical scalar sign rejected": "-2*(3*L**2*s + 9*L - 6*L_s*s + 8*f**2*s)/3",
+    "wrong drift coefficient rejected": "(2*Omega(r)*Derivative(V(r), r) + V(r)*Derivative(Omega(r), r))*Derivative(F(r), r)/(8*Omega(r)**3*V(r)**3)",
+    "wrong potential coefficient rejected": "-(2*Omega(r)*Derivative(V(r), r) + V(r)*Derivative(Omega(r), r))*F(r)/(8*r*Omega(r)**3*V(r)**3)",
+    "wrong scalar source rejected": "-psi*U1(y)"
+  },
+  "wrong_formula_count": 4
+}
