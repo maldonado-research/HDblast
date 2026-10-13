@@ -1,0 +1,30 @@
+{
+  "date_utc": "2026-10-13",
+  "sympy": "1.14.0",
+  "all_pass": true,
+  "n_checks": 11,
+  "n_pass": 11,
+  "checks": {
+    "GHY_graph_plus_EH_flux_one_side": true,
+    "all_lapse_and_conformal_cross_terms_cancel_in_graph_correction": true,
+    "CONTROL_omit_EH_tangential_divergence_detected": true,
+    "direct_ADM_bulk_kinetic_before_constraint": true,
+    "direct_ADM_bulk_kinetic_after_constraint": true,
+    "moving_ADM_domain_first_order_curvature_one_side": true,
+    "shell_volume_kinetic": true,
+    "full_two_side_boundary_before_odd_continuity": true,
+    "full_odd_boundary_time_kinetic_coefficient": true,
+    "full_odd_boundary_physical_K_is_18cP_squared": true,
+    "CONTROL_omit_moving_domain_detected": true
+  },
+  "expressions": {
+    "graph_correction_density_after_time_IBP": "-3*Qt**2*a*rho**2*zeta**2",
+    "graph_time_kinetic_one_copy": "-3*a*rho**2*zeta**2",
+    "moving_domain_time_kinetic_one_copy": "-3*psi*rho**2*zeta",
+    "shell_volume_time_kinetic_one_shell": "rho**2*sigma*zeta**2/2",
+    "two_side_boundary_time_kinetic_before_continuity": "-6*a*rho**2*zeta**2 - 6*psi*rho**2*zeta + rho**2*sigma*zeta**2/2",
+    "odd_boundary_K": "6*a*rho**2*zeta**2"
+  },
+  "script_sha256": "484169774e5945691422e1b34e0c87d5a63411098baf713b26fa34bbecccc46c",
+  "scope": "Second-order local kinetic action including moving-domain, EH divergence, graph GHY, and shell. Compact-support time variations avoid corner terms; global symplectic completeness is not proved."
+}

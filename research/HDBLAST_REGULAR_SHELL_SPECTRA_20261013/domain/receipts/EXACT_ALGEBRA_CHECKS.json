@@ -1,0 +1,83 @@
+{
+  "all_passed": true,
+  "checks": {
+    "background_potential_simplification": true,
+    "cone_essential_threshold": true,
+    "jacobi_normalization_cancellation": true,
+    "lambda_to_mu_squared_operator_identity": true,
+    "liouville_log_derivative": true,
+    "liouville_no_first_derivative": true,
+    "picone_boundary_mass_identity": true,
+    "picone_integrand_identity": true,
+    "picone_integrated_boundary_mass_fixture": true,
+    "power_hardy_integration_identity": true,
+    "shell_flux_sign": true,
+    "shifted_threshold": true,
+    "unitary_bulk_measure": true
+  },
+  "cone_potential_exact_model": "2*A_c**2*y**4/3 + 25/4",
+  "failed": 0,
+  "identity_residuals": {
+    "background_potential_simplification": "0",
+    "cone_essential_threshold": "0",
+    "jacobi_normalization_cancellation": "0",
+    "lambda_to_mu_squared_operator_identity": "0",
+    "liouville_log_derivative": "0",
+    "liouville_no_first_derivative": "0",
+    "picone_boundary_mass_identity": "0",
+    "picone_integrand_identity": "0",
+    "picone_integrated_boundary_mass_fixture": "0",
+    "power_hardy_integration_identity": "0",
+    "shell_flux_sign": "0",
+    "shifted_threshold": "0",
+    "unitary_bulk_measure": "0"
+  },
+  "passed": 13,
+  "picone_integrated_fixture": {
+    "data": "0<y<=1, alpha=y**-4, w=y**-6, P0=y**4, f=1+y, beta=2",
+    "endpoint_penalty": "2",
+    "energy": "61/3",
+    "lower_boundary_flux": "0",
+    "norm_squared": "91/30",
+    "q": "0",
+    "scope": "Generic Picone algebra fixture; not a physical background coefficient model.",
+    "shifted_energy": "41/5",
+    "transformed_energy": "41/5"
+  },
+  "schema_version": 1,
+  "scope": "Exact algebra and rejection of specified wrong formulas only; not formal proof verification, analytic domain verification, or validation of the full physical perturbation problem.",
+  "script_sha256": "9d7206a7c6cb3469b32f217c3d947e8aefede739bc8b4ee8b81ffb74f931cbf8",
+  "sympy_version": "1.14.0",
+  "wrong_formula_controls": {
+    "lambda_to_mu_squared_shift_sign": {
+      "rejected": true,
+      "symbolic_residual": "-8*F(x(y))",
+      "witness": "psi=1; all differential and potential terms cancel in the residual",
+      "witness_residual": "-8",
+      "wrong_formula": "Lambda = mu_squared - 4"
+    },
+    "liouville_flux_derivative_sign": {
+      "rejected": true,
+      "symbolic_residual": "-2*Derivative(F(x(y)), x(y))/(p(y)*rho(y)**(3/2))",
+      "witness": "rho=1, p=1, psi_x=1 at a regular point",
+      "witness_residual": "-2",
+      "wrong_formula": "alpha*u_y = h*(+psi_x+s*psi)"
+    },
+    "liouville_potential_derivative_sign": {
+      "rejected": true,
+      "symbolic_residual": "-(2*(rho(y)*Derivative(p(y), (y, 2)) + Derivative(p(y), y)*Derivative(rho(y), y))*p(y) + 3*p(y)**2*Derivative(rho(y), (y, 2)) - 2*rho(y)*Derivative(p(y), y)**2)*rho(y)/p(y)**2",
+      "witness": "rho(y)=y, p(y)=y*(1+y**2), y=1; s is not constant",
+      "witness_residual": "-2",
+      "wrong_formula": "V = q/w + rho*s_y + s**2 (instead of -rho*s_y)"
+    },
+    "picone_boundary_mass_sign": {
+      "rejected": true,
+      "symbolic_residual": "-8*P0_T**2*f_T**2/beta",
+      "witness": "P0_T=1, f_T=2, beta=2, as in the integrated Picone fixture",
+      "witness_residual": "-16",
+      "wrong_formula": "r0 = alpha_T*P0_prime_T/P0_T + 4/beta"
+    }
+  },
+  "wrong_formulas_not_rejected": 0,
+  "wrong_formulas_rejected": 4
+}

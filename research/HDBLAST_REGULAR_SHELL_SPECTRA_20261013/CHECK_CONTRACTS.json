@@ -1,0 +1,40 @@
+{
+  "scope": "New exact checks per execution mode; algebraic identities/sign checks and deliberate wrong-formula controls are counted separately. Static dependency checks and source integrity controls are additional and reported separately.",
+  "checks": [
+    {
+      "name": "physical_operator",
+      "script": "operator/check_operator.py",
+      "receipt": "operator/results/operator-check.json",
+      "positive_checks": 29,
+      "wrong_formula_controls": 3
+    },
+    {
+      "name": "odd_kinetic",
+      "script": "operator/check_odd_kinetic.py",
+      "receipt": "operator/results/odd-kinetic-check.json",
+      "positive_checks": 9,
+      "wrong_formula_controls": 2
+    },
+    {
+      "name": "scalar_domain",
+      "script": "domain/check_liouville_and_gap_identities.py",
+      "receipt": "domain/receipts/EXACT_ALGEBRA_CHECKS.json",
+      "positive_checks": 13,
+      "wrong_formula_controls": 4
+    },
+    {
+      "name": "independent_scalar",
+      "script": "independent/check_scalar.py",
+      "receipt": "independent/SCALAR_EXACT_CHECKS.json",
+      "positive_checks": 44,
+      "wrong_formula_controls": 17
+    },
+    {
+      "name": "tensor_partner",
+      "script": "tensor/verify_tensor_partner.py",
+      "receipt": "tensor/TENSOR_PARTNER_CHECKS.json",
+      "positive_checks": 8,
+      "wrong_formula_controls": 4
+    }
+  ]
+}
