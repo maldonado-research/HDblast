@@ -1,0 +1,67 @@
+{
+  "manuscript": {
+    "path": "authoring/manuscript-authoring/REGULAR_CONE_EVOLUTION.md",
+    "sha256": "645b5889718e63cde8688b8314e52e435c17c9b64a806370a41edc7ba13cad35",
+    "bytes": 22813,
+    "snapshot": "final_reviewed_REGULAR_CONE_EVOLUTION.md"
+  },
+  "appendix_checker": {
+    "path": "authoring/master-independent/check_final_appendix_independently.py",
+    "sha256": "57df92c0a317a7dfb96b764dfca7be45d1b9588f3996caab22215c2244cec000"
+  },
+  "case_count": 4,
+  "cases": [
+    {
+      "mode": "normal",
+      "command": [
+        "python3.12.14",
+        "authoring/master-independent/check_final_appendix_independently.py"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "verified": true,
+      "stdout_sha256": "1be64158955d07f0e1639be2ffc63654f46ad6c0b92ca81b4682c4b32a914e71"
+    },
+    {
+      "mode": "optimized",
+      "command": [
+        "python3.12.14",
+        "-O",
+        "authoring/master-independent/check_final_appendix_independently.py"
+      ],
+      "exit_code": 0,
+      "expected_failure": false,
+      "verified": true,
+      "stdout_sha256": "1be64158955d07f0e1639be2ffc63654f46ad6c0b92ca81b4682c4b32a914e71"
+    },
+    {
+      "mode": "normal_injected",
+      "command": [
+        "python3.12.14",
+        "authoring/master-independent/check_final_appendix_independently.py",
+        "--inject-failure"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "verified": true,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "mode": "optimized_injected",
+      "command": [
+        "python3.12.14",
+        "-O",
+        "authoring/master-independent/check_final_appendix_independently.py",
+        "--inject-failure"
+      ],
+      "exit_code": 1,
+      "expected_failure": true,
+      "verified": true,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "passed": true,
+  "normal_optimized_output_identical": true,
+  "positive_count": 9,
+  "wrong_formula_count": 4
+}

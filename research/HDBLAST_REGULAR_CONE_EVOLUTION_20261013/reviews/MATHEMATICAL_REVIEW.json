@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "review_type": "independent internal mathematical review",
+  "review_date": "2026-10-13",
+  "inputs": [
+    {
+      "path": "authoring/manuscript-authoring/REGULAR_CONE_EVOLUTION.md",
+      "sha256": "8b0305dffde1c29d0b9a0f8b8ce6a95d8237b2ea879ebce0f7ddaac1dfa643ff",
+      "byte_count": 20060,
+      "snapshot": "reviewed_REGULAR_CONE_EVOLUTION.md"
+    },
+    {
+      "path": "authoring/root-audit/check_canonical_jets.py",
+      "sha256": "cc277580673b1bfc5df99d6c496122711373783f01d8b3f87ea20f148a15685b",
+      "byte_count": 4702,
+      "snapshot": "reviewed_check_canonical_jets.py"
+    },
+    {
+      "path": "authoring/physical-reconstruction/check_ambient_reconstruction.py",
+      "sha256": "7ca7ff8b6af686d60ceed05a88d5bd4cd9d6d7f42147d4fa34fcc9611145779a",
+      "byte_count": 9480,
+      "snapshot": "reviewed_check_ambient_reconstruction.py"
+    }
+  ],
+  "status": "mathematically sound within stated assumptions; minor wording clarifications recommended",
+  "substantive_errors_found": [],
+  "equations_reviewed": [
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19"
+  ],
+  "local_publication_theorem_warranted": true,
+  "publication_scope": "Conditional local theorem for an actual analytic background; no claim of peer review, priority or editorial acceptance.",
+  "recommended_corrections": [
+    {
+      "id": "C1",
+      "severity": "minor wording",
+      "location": "Section 4 immediately after equation 14",
+      "correction": "Specify that two solutions have the same reflection parity when doubling flux; mixed-parity pairings cancel."
+    },
+    {
+      "id": "C2",
+      "severity": "minor wording",
+      "location": "Section 3 general usable support criterion and energy paragraph",
+      "correction": "State union of negative-s continuation with original exterior branch, or bound positive s explicitly; define energy supremum on compact causal support over slab.",
+      "mitigation": "The subsequent explicit |s|<sigma criterion is complete and correct."
+    }
+  ],
+  "independent_analytic_checks": [
+    "Residual scalar factor from off-shell first-order reconstruction defect",
+    "ADM versus trace-reversed Einstein residual signs",
+    "Radial-to-Cartesian residual factors and E+6 term",
+    "Coefficientwise analytic continuation for arbitrary smooth F",
+    "Finite propagation and vertex-inclusive shell-remote slab",
+    "Canonical potential and exact E-prime identity without V-time derivative",
+    "Angular-harmonic Wronskian, doubled density and non-gauge scalar witnesses"
+  ],
+  "canonical_checker_receipt": "INTEGRATED_REVIEW_CHECKS.json",
+  "canonical_checker_verified": true,
+  "direct_residual_checker": {
+    "normal_exit_code": 0,
+    "optimized_exit_code": 0,
+    "positive_count": 32,
+    "wrong_formula_count": 6,
+    "normal_optimized_output_identical": true,
+    "normal_sha256": "c1cde26b0618be1d9d5c7733bc23755c0bc425b009f5c59cb5ea18a9cd6acdc8",
+    "optimized_sha256": "c1cde26b0618be1d9d5c7733bc23755c0bc425b009f5c59cb5ea18a9cd6acdc8"
+  },
+  "portable_adaptation_performed": false,
+  "portable_adaptation_requirements": [
+    "Preserve original source hashes and executed receipts.",
+    "Remove runtime-mode field from deterministic mathematical JSON, retaining it in runner receipts.",
+    "Restrict changes to CLI and output plumbing unless separately reviewed.",
+    "Rerun normal and optimized modes plus all real mutations; preserve nonzero failure exits.",
+    "Describe adaptation as packaging of the same derivation, not an extra independent verification."
+  ],
+  "limitations": [
+    "No independent recertification of background branch.",
+    "No post-shell-contact evolution theorem.",
+    "No complete gauge quotient or physical norm identification.",
+    "No external human peer review or novelty certification."
+  ]
+}
