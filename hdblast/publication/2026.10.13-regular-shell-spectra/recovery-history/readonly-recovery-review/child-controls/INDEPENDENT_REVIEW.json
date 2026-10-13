@@ -1,0 +1,56 @@
+{
+  "status": "PASS_INDEPENDENT_BOUNDED_READONLY_RECOVERY_SOURCE_AND_OFFLINE_CONTROLS",
+  "utc": "2026-10-13T09:25:25.723767+00:00",
+  "runner_sha256": "55c0a5fc0c527caceb19d990f743da4f6a99a7ffe5185a35d6a0486793b2a458",
+  "base_controller_sha256": "2c53e32a24fdc922d07f711cb67b8451da0be3325f740658d91d1edc0d97ca34",
+  "blocking_issues": [],
+  "tests_per_mode": 12,
+  "python_modes": [
+    "normal",
+    "optimized"
+  ],
+  "control_receipts": [
+    {
+      "filename": "CONTROLS_normal.json",
+      "sha256": "b157658ddb0fe68eef72c36e45e34612fc46f30899cf4837ee8b318a5f8de758"
+    },
+    {
+      "filename": "CONTROLS_optimized.json",
+      "sha256": "96e2d7e0a9f60ee0802175915c27e35bbb6843b9e1c88cec09679584fb2fd398"
+    }
+  ],
+  "test_sources": [
+    {
+      "path": "recovery_controls.py",
+      "sha256": "7c30c54d96661ae2c54734caeae58f9022f851da8a440c627c480ab7273da792"
+    },
+    {
+      "path": "synthetic_http.py",
+      "sha256": "9609ed5acde1213a59771257bbc52314f64efab533ca758a9b7aaa39ed2929c1"
+    }
+  ],
+  "cases_verified": [
+    "Only CONTENT_STREAM_FAILED and CONTENT_COMPLETE_MD5_SHA256_DIFFERS retry; at most3attempts per file.",
+    "Fresh original count/MD5/SHA256 and observed digest objects per attempt; partialfailure thenHTTPerror thensuccess discards priorbody/digests.",
+    "Failed attempts persist observed counts/digests/HTTPsafeheaders but emit no original FULL_CONTENT_STREAM_VERIFIED or passed sidecar event.",
+    "Exhaustion propagates the original Stop after exactly3attempts.",
+    "Unsafe URL, partial/encoded response and over-size body are not retried.",
+    "Transport and observed opener deny nonGET, bodybytes includingemptybody, and Authorizationheaders;8mutation/draft/owner entrypoints are denied.",
+    "Existing published23335485, pendingnull, mainconcept17088132 and exactstate/controller/inventory/metadata pins are required.",
+    "Original unchanged current/verify loop passes a full35file synthetic edition through publiconly transport; metadata, identity and inventorymembership failures stop before perfile retries.",
+    "Original evidence lock excludes another owner; sidecar preserves existingbytes with appendonly writes, rejects a symlink and redacts synthetic secrets while retaining source/input/record provenance."
+  ],
+  "static_execution_path_review": [
+    "Base source is SHA256-pinned and compile/exec-loaded under a nonmain module name; no basepyc is produced by this loading mechanism.",
+    "Runner main holds the original shared EvidenceLock before state/input loading and originalverify; it never calls base main, create, prepare, publish or reconcile.",
+    "Original perfile stream request construction/headers/TLS and fullverify metadata/identity/inventory/receipt gates are preserved; observation wrapper inspects and records without changing request headers.",
+    "Sidecar uses O_APPEND|O_CREAT|O_NOFOLLOW, mode0600, flush/fsync, fixedrecord/controller/input/runner hash provenance and bounded allowed HTTPheader values."
+  ],
+  "test_limits": "Tests use manufacturedtiny HTTP bodies and private local scratch state. Runner main, live evidence and real credentials were not accessed or executed; existing base95controls and separate immutable input/state/source reviews cover constructor/frozenasset validation. No live35file outcome or originalfailurecause is claimed.",
+  "network_socket_attempts": 0,
+  "real_credential_reads": 0,
+  "network_calls": 0,
+  "remote_mutations": 0,
+  "live_publisher_or_recovery_invocations": 0,
+  "source_edits_outside_child_controls": 0
+}
