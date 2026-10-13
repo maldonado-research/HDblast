@@ -1,0 +1,167 @@
+{
+  "all_passed": true,
+  "assumptions": [
+    "Nonlinear j identity uses the linearized constraint; Wronskian identity does not.",
+    "Center checks solve and differentiate the displayed leading regular series.",
+    "Riccati checks use k>0, lambda>0, d>0, w=lambda+4k.",
+    "First-crossing barrier argument is analytic; symbolic checks verify its exact identities and strict margins.",
+    "Transfer from H0^2 to H^2 additionally uses the analytic conclusion 0<R=rho/r0<=1.",
+    "Convexity additionally uses CG*LN<=1/2, CG>=1/gap, and LN>=M3*B*b."
+  ],
+  "check_count": 36,
+  "checks": {
+    "auxiliary_constraint_identity": {
+      "passed": true,
+      "residual": "0"
+    },
+    "barrier_2_minus_C_positive": {
+      "expression": "2*k/(k + lambda)",
+      "passed": true
+    },
+    "barrier_C_positive": {
+      "expression": "2*lambda/(k + lambda)",
+      "passed": true
+    },
+    "barrier_inward_margin_positive": {
+      "expression": "2*d*lambda*(3*k + lambda)/(k + lambda)**2",
+      "passed": true
+    },
+    "barrier_vector_field": {
+      "passed": true,
+      "residual": "0"
+    },
+    "center_D_constant": {
+      "passed": true,
+      "residual": "0"
+    },
+    "center_b_linear": {
+      "passed": true,
+      "residual": "0"
+    },
+    "center_eta_quadratic": {
+      "passed": true,
+      "residual": "0"
+    },
+    "center_h_quadratic": {
+      "passed": true,
+      "residual": "0"
+    },
+    "center_j_linear": {
+      "passed": true,
+      "residual": "0"
+    },
+    "center_q_linear": {
+      "passed": true,
+      "residual": "0"
+    },
+    "center_rho4_D_boundary": {
+      "passed": true,
+      "residual": "0"
+    },
+    "center_rho4_j_boundary": {
+      "passed": true,
+      "residual": "0"
+    },
+    "center_rho_cubic": {
+      "passed": true,
+      "residual": "0"
+    },
+    "center_v_quadratic": {
+      "passed": true,
+      "residual": "0"
+    },
+    "convexity_lower_bound_identity": {
+      "passed": true,
+      "residual": "0"
+    },
+    "convexity_lower_bound_positive": {
+      "expression": "lambda*(24*k + 5*lambda)/8",
+      "passed": true
+    },
+    "endpoint_residual_identity": {
+      "passed": true,
+      "residual": "0"
+    },
+    "fixed_beta_metric_identity": {
+      "passed": true,
+      "residual": "0"
+    },
+    "fixed_beta_scalar_identity": {
+      "passed": true,
+      "residual": "0"
+    },
+    "green_gap_positive": {
+      "expression": "lambda*(8*k + 3*lambda)/4",
+      "passed": true
+    },
+    "j_identity_mod_linearized_constraint": {
+      "passed": true,
+      "residual": "0"
+    },
+    "junction_residual_decomposition": {
+      "passed": true,
+      "residual": "0"
+    },
+    "linear_E_identity": {
+      "passed": true,
+      "residual": "0"
+    },
+    "linear_H2_bound_margin": {
+      "expression": "d**2*lambda/(k*(k + lambda))",
+      "passed": true
+    },
+    "linear_center_E_linear": {
+      "passed": true,
+      "residual": "0"
+    },
+    "linear_center_E_zero": {
+      "passed": true,
+      "residual": "0"
+    },
+    "linear_center_z_linear": {
+      "passed": true,
+      "residual": "0"
+    },
+    "linear_curvature_identity": {
+      "passed": true,
+      "residual": "0"
+    },
+    "linear_e_identity": {
+      "passed": true,
+      "residual": "0"
+    },
+    "metric_damping_mod_constraint": {
+      "passed": true,
+      "residual": "0"
+    },
+    "metric_positive_system_sign_-1": {
+      "passed": true,
+      "residual": "0"
+    },
+    "metric_positive_system_sign_1": {
+      "passed": true,
+      "residual": "0"
+    },
+    "scalar_positive_system_sign_-1": {
+      "passed": true,
+      "residual": "0"
+    },
+    "scalar_positive_system_sign_1": {
+      "passed": true,
+      "residual": "0"
+    },
+    "wronskian_D_identity": {
+      "passed": true,
+      "residual": "0"
+    }
+  },
+  "derived_constants": {
+    "barrier_C": "2*lambda/(k + lambda)",
+    "barrier_vector_field": "-2*d*lambda*(3*k + lambda)/(k + lambda)**2",
+    "convexity_lower_bound": "lambda*(24*k + 5*lambda)/8",
+    "linear_curvature_constant": "lambda/(k*(k + lambda))"
+  },
+  "python_version": "3.12.14",
+  "source_sha256": "45ecc031a1263c06312ecc7b1967b2aeac52c04fc18b38d007984aa987e171a9",
+  "sympy_version": "1.14.0"
+}

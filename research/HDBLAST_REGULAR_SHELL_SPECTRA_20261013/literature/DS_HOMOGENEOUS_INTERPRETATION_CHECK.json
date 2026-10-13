@@ -1,0 +1,21 @@
+{
+  "scope": "Independent algebra checking the physical-variable interpretation of arXiv2605.18403v3 eq108; not validation or rejection of the whole paper",
+  "source_equation": "delta_phi_ddot+3H delta_phi_dot+mu_eff_squared delta_phi=0",
+  "constant_H_assumption": true,
+  "dimensionless_physical_roots": "r=-3/2\u00b1sqrt(9/4-mu_eff_squared/H_squared)",
+  "strict_physical_growing_root": "mu_eff_squared<0",
+  "exact_counterexample_to_growth_inference": {
+    "mu_eff_squared/H_squared": 2,
+    "characteristic_polynomial": "r^2+3r+2=(r+1)(r+2)",
+    "physical_roots": [
+      -1,
+      -2
+    ],
+    "rescaling": "delta_phi=a^(-3/2)u",
+    "rescaled_u_roots": [
+      0.5,
+      -0.5
+    ]
+  },
+  "interpretation": "one rescaled mode grows while both original field modes decay; a different physical observable or norm needs separate justification"
+}

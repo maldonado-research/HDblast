@@ -1,0 +1,44 @@
+name: Regular shell spectral proof checks
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_REGULAR_SHELL_SPECTRA_20261013/**'
+      - '.github/workflows/hdblast_regular_shell_spectra.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_REGULAR_SHELL_SPECTRA_20261013/**'
+      - '.github/workflows/hdblast_regular_shell_spectra.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  exact-reproduction:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: research/HDBLAST_REGULAR_SHELL_SPECTRA_20261013
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - name: Install pinned exact-check dependencies
+        run: |
+          python -I -B -m pip install --only-binary=:all: -r research/HDBLAST_REGULAR_SHELL_SPECTRA_20261013/requirements.txt
+      - name: Replay new spectral algebra and unchanged static proof arithmetic
+        run: |
+          python -I -B research/HDBLAST_REGULAR_SHELL_SPECTRA_20261013/reproduce.py --output "$RUNNER_TEMP/regular-shell-spectra"
+      - name: Retain proof-check receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: regular-shell-spectra-${{ github.sha }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/regular-shell-spectra
+          if-no-files-found: warn
+          retention-days: 14

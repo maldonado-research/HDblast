@@ -1,0 +1,195 @@
+{
+  "scope": "Six bounded keyword queries, three identifier lookups, six author PDF readbacks; not exhaustive.",
+  "utc_date": "2026-10-11",
+  "preserved_proxy_and_verified_tls": true,
+  "initial_sandbox_failed_then_approved_network_retry": true,
+  "receipts": [
+    {
+      "name": "inspire_recent",
+      "url": "https://inspirehep.net/api/literature?q=date+%3E+2023+and+%28%22de+Sitter+branes%22+or+%22curved+domain+walls%22+or+%22holographic+self-tuning%22%29&sort=mostrecent&size=25",
+      "fetched_utc": "2026-10-11T07:52:47.970266+00:00",
+      "error": "URLError: <urlopen error [Errno 1] Operation not permitted>",
+      "internal_receipt_name": "SEARCH_READBACK_INITIAL.json"
+    },
+    {
+      "name": "arxiv_recent",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22de+Sitter+branes%22+OR+all%3A%22curved+domain+walls%22+OR+all%3A%22holographic+self-tuning%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+      "fetched_utc": "2026-10-11T07:52:47.988156+00:00",
+      "error": "URLError: <urlopen error [Errno 1] Operation not permitted>",
+      "internal_receipt_name": "SEARCH_READBACK_INITIAL.json"
+    },
+    {
+      "name": "crossref_hj",
+      "url": "https://api.crossref.org/works?query.bibliographic=Einstein+scalar+curved+domain+wall+Hamilton+Jacobi+brane&rows=15",
+      "fetched_utc": "2026-10-11T07:52:47.988468+00:00",
+      "error": "URLError: <urlopen error [Errno 1] Operation not permitted>",
+      "internal_receipt_name": "SEARCH_READBACK_INITIAL.json"
+    },
+    {
+      "name": "inspire_recent",
+      "url": "https://inspirehep.net/api/literature?q=date+%3E+2023+and+%28%22de+Sitter+branes%22+or+%22curved+domain+walls%22+or+%22holographic+self-tuning%22%29&sort=mostrecent&size=25",
+      "fetched_utc": "2026-10-11T07:53:06.256096+00:00",
+      "status": 200,
+      "bytes": 384921,
+      "sha256": "91d631132848f9e7a473df25cd111b4b93b67d32fe4ede9768f9171eb054d68d",
+      "final_url": "https://inspirehep.net/api/literature?q=date+%3E+2023+and+%28%22de+Sitter+branes%22+or+%22curved+domain+walls%22+or+%22holographic+self-tuning%22%29&sort=mostrecent&size=25",
+      "internal_receipt_name": "SEARCH_READBACK_ALLOWED.json",
+      "private_response_reference": "inspire_recent.response"
+    },
+    {
+      "name": "arxiv_recent",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22de+Sitter+branes%22+OR+all%3A%22curved+domain+walls%22+OR+all%3A%22holographic+self-tuning%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+      "fetched_utc": "2026-10-11T07:53:06.256887+00:00",
+      "status": 200,
+      "bytes": 44258,
+      "sha256": "e0c8ea34d4fc87b90fe6c45d92bd8eddf5dae1999e87ce2ae25fb790548ba549",
+      "final_url": "https://export.arxiv.org/api/query?search_query=all%3A%22de+Sitter+branes%22+OR+all%3A%22curved+domain+walls%22+OR+all%3A%22holographic+self-tuning%22&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+      "internal_receipt_name": "SEARCH_READBACK_ALLOWED.json",
+      "private_response_reference": "arxiv_recent.response"
+    },
+    {
+      "name": "crossref_hj",
+      "url": "https://api.crossref.org/works?query.bibliographic=Einstein+scalar+curved+domain+wall+Hamilton+Jacobi+brane&rows=15",
+      "fetched_utc": "2026-10-11T07:53:06.257457+00:00",
+      "status": 200,
+      "bytes": 131338,
+      "sha256": "ac4ff1af64e07c54916a8150977ed5c6010f9f6bc0b676e550f5468442ee7bbc",
+      "final_url": "https://api.crossref.org/works?query.bibliographic=Einstein+scalar+curved+domain+wall+Hamilton+Jacobi+brane&rows=15",
+      "internal_receipt_name": "SEARCH_READBACK_ALLOWED.json",
+      "private_response_reference": "crossref_hj.response"
+    },
+    {
+      "name": "inspire_hj",
+      "url": "https://inspirehep.net/api/literature?q=doi%3A10.1103%2FPhysRevD.74.125008&size=1",
+      "fetched_utc": "2026-10-11T07:53:44.242404+00:00",
+      "status": 200,
+      "bytes": 11076,
+      "sha256": "8bad3d84c080b09fec2bf55a525f29f5d77c5405a1f30ffbe5e8785873fe1470",
+      "final_url": "https://inspirehep.net/api/literature?q=doi%3A10.1103%2FPhysRevD.74.125008&size=1",
+      "internal_receipt_name": "PRIMARY_FOLLOWUP_RECEIPTS.json",
+      "private_response_reference": "inspire_hj.response"
+    },
+    {
+      "name": "inspire_response",
+      "url": "https://inspirehep.net/api/literature?q=%28%22Einstein-scalar%22+and+%22Hamilton-Jacobi%22%29+or+%28%22curved%22+and+%22self-tuning%22%29&sort=mostrecent&size=20",
+      "fetched_utc": "2026-10-11T07:53:44.243261+00:00",
+      "status": 200,
+      "bytes": 1333155,
+      "sha256": "28eabfacbf7d0edef5724df57be8431c42ceb410e5c1d56ca157d315ed53c8c1",
+      "final_url": "https://inspirehep.net/api/literature?q=%28%22Einstein-scalar%22+and+%22Hamilton-Jacobi%22%29+or+%28%22curved%22+and+%22self-tuning%22%29&sort=mostrecent&size=20",
+      "internal_receipt_name": "PRIMARY_FOLLOWUP_RECEIPTS.json",
+      "private_response_reference": "inspire_response.response"
+    },
+    {
+      "name": "private-source-cache/continuum2026.pdf",
+      "url": "https://arxiv.org/pdf/2608.01762v1",
+      "fetched_utc": "2026-10-11T07:53:44.244055+00:00",
+      "status": 200,
+      "bytes": 929299,
+      "sha256": "71443794aa2661ae0990a111d5b3faf4c5198a9e9903fadf9e79d499559996c8",
+      "final_url": "https://arxiv.org/pdf/2608.01762v1",
+      "internal_receipt_name": "PRIMARY_FOLLOWUP_RECEIPTS.json",
+      "private_response_reference": "private-source-cache/continuum2026.pdf.response"
+    },
+    {
+      "name": "private-source-cache/qnm2026.pdf",
+      "url": "https://arxiv.org/pdf/2606.04424v1",
+      "fetched_utc": "2026-10-11T07:53:44.573975+00:00",
+      "status": 200,
+      "bytes": 1168685,
+      "sha256": "bdb396b06ef9f0464ef5b81a4f761a3fbaae2af1dd8e6f8afc51fbdea32e4450",
+      "final_url": "https://arxiv.org/pdf/2606.04424v1",
+      "internal_receipt_name": "PRIMARY_FOLLOWUP_RECEIPTS.json",
+      "private_response_reference": "private-source-cache/qnm2026.pdf.response"
+    },
+    {
+      "name": "private-source-cache/codimension2025.pdf",
+      "url": "https://arxiv.org/pdf/2506.19515v1",
+      "fetched_utc": "2026-10-11T07:53:44.717479+00:00",
+      "status": 200,
+      "bytes": 437058,
+      "sha256": "e935c193bbc332bff13b7b7f1af62c538a6397822c01b3654e19c05c368ac278",
+      "final_url": "https://arxiv.org/pdf/2506.19515v1",
+      "internal_receipt_name": "PRIMARY_FOLLOWUP_RECEIPTS.json",
+      "private_response_reference": "private-source-cache/codimension2025.pdf.response"
+    },
+    {
+      "name": "private-source-cache/skenderis_townsend2006.pdf",
+      "url": "https://arxiv.org/pdf/hep-th/0609056",
+      "fetched_utc": "2026-10-11T07:54:09.775643+00:00",
+      "status": 200,
+      "bytes": 176752,
+      "sha256": "d7e5167a0054f12db04c0da9ae6070beacd45083f9f21bc16e17da28b72bad22",
+      "final_url": "https://arxiv.org/pdf/hep-th/0609056",
+      "internal_receipt_name": "HJ_FETCH_RECEIPT.json",
+      "private_response_reference": "private-source-cache/skenderis_townsend2006.pdf.response"
+    },
+    {
+      "name": "arxiv_scalar_curvature",
+      "url": "https://export.arxiv.org/api/query?search_query=%28all%3A%22Einstein-scalar%22+AND+%28all%3A%22curved%22+OR+all%3A%22brane%22%29%29+AND+submittedDate%3A%5B202301010000+TO+202610112359%5D&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending",
+      "fetched_utc": "2026-10-11T07:55:31.945458+00:00",
+      "status": 200,
+      "bytes": 17520,
+      "sha256": "9c5fd0647a56b6b7f3e0e367715c9171c1ecda0eac0c9103afda4e8c4c02635d",
+      "final_url": "https://export.arxiv.org/api/query?search_query=%28all%3A%22Einstein-scalar%22+AND+%28all%3A%22curved%22+OR+all%3A%22brane%22%29%29+AND+submittedDate%3A%5B202301010000+TO+202610112359%5D&start=0&max_results=25&sortBy=submittedDate&sortOrder=descending",
+      "internal_receipt_name": "TARGETED_SEARCH_RECEIPTS.json",
+      "private_response_reference": "arxiv_scalar_curvature.response"
+    },
+    {
+      "name": "arxiv_response",
+      "url": "https://export.arxiv.org/api/query?search_query=%28all%3A%22Dirichlet-to-Neumann%22+AND+%28all%3A%22gravity%22+OR+all%3A%22Einstein%22%29%29+OR+%28all%3A%22Hamilton-Jacobi%22+AND+all%3A%22curved%22+AND+all%3A%22domain%22%29&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+      "fetched_utc": "2026-10-11T07:55:31.946331+00:00",
+      "status": 200,
+      "bytes": 43470,
+      "sha256": "d2989a7d13cdd0b060036070a803757332610dc62e4d8f67966c9f020fd6f3ba",
+      "final_url": "https://export.arxiv.org/api/query?search_query=%28all%3A%22Dirichlet-to-Neumann%22+AND+%28all%3A%22gravity%22+OR+all%3A%22Einstein%22%29%29+OR+%28all%3A%22Hamilton-Jacobi%22+AND+all%3A%22curved%22+AND+all%3A%22domain%22%29&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+      "internal_receipt_name": "TARGETED_SEARCH_RECEIPTS.json",
+      "private_response_reference": "arxiv_response.response"
+    },
+    {
+      "name": "arxiv_source_metadata",
+      "url": "https://export.arxiv.org/api/query?id_list=2608.01762%2C2606.04424%2C2506.19515%2Chep-th%2F0609056&max_results=4",
+      "fetched_utc": "2026-10-11T07:55:31.946895+00:00",
+      "status": 200,
+      "bytes": 8656,
+      "sha256": "72dfa706fa682dd761bacd7f9a52c5b7a54b08aa0db6ee672bfd217314a3b2d0",
+      "final_url": "https://export.arxiv.org/api/query?id_list=2608.01762%2C2606.04424%2C2506.19515%2Chep-th%2F0609056&max_results=4",
+      "internal_receipt_name": "TARGETED_SEARCH_RECEIPTS.json",
+      "private_response_reference": "arxiv_source_metadata.response"
+    },
+    {
+      "name": "private-source-cache/dtn_ads2025.pdf",
+      "url": "https://arxiv.org/pdf/2512.03587v2",
+      "fetched_utc": "2026-10-11T07:55:57.969643+00:00",
+      "status": 200,
+      "bytes": 624298,
+      "sha256": "d0115cb0c1ab506588f54db726dc8a0b834972f169742957a12f5c121c508f29",
+      "final_url": "https://arxiv.org/pdf/2512.03587v2",
+      "internal_receipt_name": "DTN_FETCH_RECEIPTS.json",
+      "private_response_reference": "private-source-cache/dtn_ads2025.pdf.response"
+    },
+    {
+      "name": "private-source-cache/dtn_pe2023.pdf",
+      "url": "https://arxiv.org/pdf/2307.08470v2",
+      "fetched_utc": "2026-10-11T07:55:57.970531+00:00",
+      "status": 200,
+      "bytes": 752570,
+      "sha256": "66df6ef7a925129f4c79c7f65f4e7060989b7c80b6a30793a4b199a30b6d0306",
+      "final_url": "https://arxiv.org/pdf/2307.08470v2",
+      "internal_receipt_name": "DTN_FETCH_RECEIPTS.json",
+      "private_response_reference": "private-source-cache/dtn_pe2023.pdf.response"
+    },
+    {
+      "name": "arxiv_dtn_metadata",
+      "url": "https://export.arxiv.org/api/query?id_list=2512.03587%2C2307.08470&max_results=2",
+      "fetched_utc": "2026-10-11T07:55:57.971054+00:00",
+      "status": 200,
+      "bytes": 4469,
+      "sha256": "d462b5c500caf227abed54c6fd9a3df2c2c299c1d2e68258e6e0b4d354147a32",
+      "final_url": "https://export.arxiv.org/api/query?id_list=2512.03587%2C2307.08470&max_results=2",
+      "internal_receipt_name": "DTN_FETCH_RECEIPTS.json",
+      "private_response_reference": "arxiv_dtn_metadata.response"
+    }
+  ],
+  "public_packet_scope": "URLs, HTTP outcomes, dates and hashes only. Response bodies and the original per-request receipts remain in the private research archive."
+}

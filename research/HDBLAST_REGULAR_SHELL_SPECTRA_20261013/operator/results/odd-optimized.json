@@ -1,0 +1,62 @@
+{
+  "algebra_all_pass": true,
+  "all_pass": true,
+  "checks": {
+    "CONTROL_omit_EH_tangential_divergence_detected": true,
+    "CONTROL_omit_moving_domain_detected": true,
+    "GHY_graph_plus_EH_flux_one_side": true,
+    "all_lapse_and_conformal_cross_terms_cancel_in_graph_correction": true,
+    "direct_ADM_bulk_kinetic_after_constraint": true,
+    "direct_ADM_bulk_kinetic_before_constraint": true,
+    "full_odd_boundary_physical_K_is_18cP_squared": true,
+    "full_odd_boundary_time_kinetic_coefficient": true,
+    "full_two_side_boundary_before_odd_continuity": true,
+    "moving_ADM_domain_first_order_curvature_one_side": true,
+    "shell_volume_kinetic": true
+  },
+  "date_utc": "2026-10-13",
+  "expected_checks": 11,
+  "expressions": {
+    "graph_correction_density_after_time_IBP": "-3*Qt**2*a*rho**2*zeta**2",
+    "graph_time_kinetic_one_copy": "-3*a*rho**2*zeta**2",
+    "moving_domain_time_kinetic_one_copy": "-3*psi*rho**2*zeta",
+    "odd_boundary_K": "6*a*rho**2*zeta**2",
+    "shell_volume_time_kinetic_one_shell": "rho**2*sigma*zeta**2/2",
+    "two_side_boundary_time_kinetic_before_continuity": "-6*a*rho**2*zeta**2 - 6*psi*rho**2*zeta + rho**2*sigma*zeta**2/2"
+  },
+  "n_checks": 11,
+  "n_pass": 11,
+  "scope": "Second-order local kinetic action including moving-domain, EH divergence, graph GHY, and shell. Compact-support time variations avoid corner terms; global symplectic completeness is not proved.",
+  "script_sha256": "3bf08967e8f8555c02c9c113f11a5ab8628de981a2478f4f21a7fb5cd2de2017",
+  "source_integrity": {
+    "basis/bridge/PROSPECTIVE_ZERO_MODE_STRATEGY.md": {
+      "actual_sha256": "6d816800055083af4d0637eb725d032e01e2f4e03dece2e6a76519970e7b5cef",
+      "expected_sha256": "6d816800055083af4d0637eb725d032e01e2f4e03dece2e6a76519970e7b5cef",
+      "match": true
+    },
+    "basis/historical_operator/README.md": {
+      "actual_sha256": "8093849ad109ea3ae34e777ad4eb3919fca44060c2dfc809b8785ab1428856fa",
+      "expected_sha256": "8093849ad109ea3ae34e777ad4eb3919fca44060c2dfc809b8785ab1428856fa",
+      "match": true
+    },
+    "basis/historical_operator/derive_linearized.py": {
+      "actual_sha256": "90031c543407a9d57a4c5d363741896a0691b1c99597fe43b785bdf5ddac5106",
+      "expected_sha256": "90031c543407a9d57a4c5d363741896a0691b1c99597fe43b785bdf5ddac5106",
+      "match": true
+    },
+    "basis/historical_operator/verify/indep_derivation.py": {
+      "actual_sha256": "ef8cb4985bf8d5926fa6806f29dd7ba3bf4b87121872066fbfdf74b4ad3bf0d5",
+      "expected_sha256": "ef8cb4985bf8d5926fa6806f29dd7ba3bf4b87121872066fbfdf74b4ad3bf0d5",
+      "match": true
+    },
+    "basis/static/theory/JACOBI_ENDPOINT_MONOTONICITY.md": {
+      "actual_sha256": "f1e2571a551ec122dd7755a13145bae73bd92bd7f7426bdc3002e2f52f8dbfc8",
+      "expected_sha256": "f1e2571a551ec122dd7755a13145bae73bd92bd7f7426bdc3002e2f52f8dbfc8",
+      "match": true
+    }
+  },
+  "source_integrity_all_pass": true,
+  "source_manifest_sha256": "104984393c32b7af6791801f13509c495089e940a657c77a2f353b619e82cf7f",
+  "support_sha256": "c1549eb700f222d82853a92d3494b6551e57ee2fa72811584c65f6a61e95b765",
+  "sympy": "1.14.0"
+}

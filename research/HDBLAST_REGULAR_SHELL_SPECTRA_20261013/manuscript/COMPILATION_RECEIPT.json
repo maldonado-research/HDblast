@@ -1,0 +1,64 @@
+{
+  "all_commands_exit_zero": true,
+  "commands": [
+    [
+      "pandoc",
+      "JACOBI_RESPONSE_TO_SPECTRAL_POSITIVITY.md",
+      "--from=markdown+tex_math_single_backslash",
+      "--standalone",
+      "--to=latex",
+      "--output",
+      "JACOBI_RESPONSE_TO_SPECTRAL_POSITIVITY.tex"
+    ],
+    [
+      "xelatex",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-output-directory=build",
+      "JACOBI_RESPONSE_TO_SPECTRAL_POSITIVITY.tex"
+    ],
+    [
+      "xelatex",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-output-directory=build",
+      "JACOBI_RESPONSE_TO_SPECTRAL_POSITIVITY.tex"
+    ]
+  ],
+  "compiler": "XeLaTeX",
+  "environment": {
+    "FORCE_SOURCE_DATE": "1",
+    "SOURCE_DATE_EPOCH": "1791849600",
+    "XDG_CACHE_HOME": ".cache"
+  },
+  "files": [
+    {
+      "bytes": 29310,
+      "path": "JACOBI_RESPONSE_TO_SPECTRAL_POSITIVITY.md",
+      "sha256": "20ae2cf09000ff4e6257f3812f27a9ee7c343e7aff2c946038026bf3417e5718"
+    },
+    {
+      "bytes": 32452,
+      "path": "JACOBI_RESPONSE_TO_SPECTRAL_POSITIVITY.tex",
+      "sha256": "1c6d9abc11f548743a3fc4f182ca4e38cf0199e401a3cf6b12282afe25c6ec80"
+    },
+    {
+      "bytes": 101875,
+      "path": "JACOBI_RESPONSE_TO_SPECTRAL_POSITIVITY.pdf",
+      "sha256": "9d59813d4074d377f7a02d43eefb117a2a4bd58196e465859c99c9572c0ebc91"
+    }
+  ],
+  "overfull_box_count": 0,
+  "page_count": 10,
+  "pandoc_input": "markdown+tex_math_single_backslash",
+  "pandoc_version": "pandoc 3.1.11.1",
+  "review_status": "Independent internal integration reviewer reported no blocking mathematical or claim defect after full 39-equation read. Final source hashes supplied for pinning. Root PDF visual review pending; new author approval or publication readiness is not asserted.",
+  "scope": "New standalone technical research note. Compilation evidence, not mathematical or publication certification.",
+  "source_date_epoch": "1791849600",
+  "undefined_control_sequence": false,
+  "warnings": [
+    "LaTeX Font Warning: Font shape `U/rsfs/m/n' in size <5.475> not available",
+    "LaTeX Font Warning: Size substitutions with differences"
+  ],
+  "xelatex_version": "XeTeX 3.141592653-2.6-0.999996 (TeX Live 2025/dev/Debian)"
+}

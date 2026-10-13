@@ -1,0 +1,470 @@
+{
+  "status": "PASS_EXACT_SUFFICIENT_INEQUALITIES_CONDITIONAL_ON_ANALYTIC_PROOF",
+  "source_sha256": "4ca9b1824c2c94b58ef04e56289272c3e5b51a5cd52a5a062cb8511728fac7cc",
+  "theorem_sha256": "544c6dbced51fbc68dccab3bbbe84210545849c6e7447e1b6bdae0fc98e76f51",
+  "theorem_review_status": "PENDING_INDEPENDENT_ANALYTIC_REVIEW_AT_COMPUTATION",
+  "arithmetic": "All inputs, polynomial derivative bounds, constants, inequalities and output bounds use exact fractions.Fraction. Display fields are floating-point approximations only.",
+  "transcendental_bounds": [
+    "7<exp(2)<8: its degree-4 Taylor partial sum is 7; the remaining positive series is at most (4/15)/(1-1/3)=2/5, so exp(2)<7.4<8.",
+    "coth(1)=(exp(2)+1)/(exp(2)-1)<4/3.",
+    "1/(1-exp(-2))<7/6.",
+    "C0/k=4*coth(1)+nu/k>4, and exp(4)>16, hence 1-exp(-C0/k)>15/16.",
+    "C0<=16*k/3+nu, so zeta>=mu*(15/16)/(16*k/3+nu).",
+    "sinh(1)^2=(exp(2)+exp(-2)-2)/4<7/4<2, hence H0(1/k)^2>k^2/2."
+  ],
+  "derivative_bound": "For polynomial P(x)=sum p_i*x^i on |x|<=r, sup|P|<=sum|p_i|*r^i, applied after exact polynomial differentiation.",
+  "models": [
+    {
+      "name": "registered_exact_decimal_model",
+      "parameters": {
+        "k": "1/9",
+        "w": "2/1",
+        "v": "2/1",
+        "f0": "258553580356423/161839258930731",
+        "f1": "96714321425692/161839258930731",
+        "f2": "0/1"
+      },
+      "r": "1/100",
+      "b": "1/89600",
+      "delta_star": "161839258930731/1482649651195872051200",
+      "exact_constants": {
+        "m2": "28/9",
+        "lam": "14/9",
+        "nu": "7/9",
+        "mu": "77/81",
+        "gap": "175/81",
+        "zeta_lower": "385/592",
+        "J_upper": "7226/385",
+        "C_G": "4941/100",
+        "M": "14/1",
+        "ball": "28/1",
+        "M2": "48336467/15000000",
+        "M3": "418267/37500",
+        "L1": "418267/75000",
+        "C_F": "440028203/1620000000",
+        "epsilon": "1589821897439/709632000000000000",
+        "C_N": "354176595621947/81000000000",
+        "L_N": "2891501532203/829440000000000",
+        "C_P": "8642698079754767/180000000000",
+        "C_D": "21604772332938767/900000000000",
+        "C_a": "21561381947/2812500",
+        "C_L_upper": "721/54",
+        "C_H_DN": "1442/3",
+        "W2": "101/50",
+        "W3": "2/1",
+        "F1": "96714321425692/161839258930731",
+        "F2": "0/1",
+        "F_abs": "6488018089266998/4045981473268275",
+        "W_abs": "1000301/3000000",
+        "L": "258553580356423/323678517861462",
+        "a1": "258553580356423/4369659991129737",
+        "C_K": "5026457102998054599538674541423099/39287918596872290612184291541500000",
+        "a_bar": "819201320084609/5529600000000000",
+        "C_Tp": "11248711839239101/972000000000000",
+        "C_Tbeta": "11248711839239101/972000000000000",
+        "C_slope": "20574051889484311620978890261377716906303291081193268813/286408926571198998562823485337535000000000000000000",
+        "d0": "32/9",
+        "alpha": "-72535741069269/863142714297232",
+        "K_eta": "4342654362641323024477970418987489375687897629/1005770716079930639671917863462400000000000",
+        "K_H": "735272340212405765766097595977554106860521795228852336347469/2197438029152189474810739407804482810345210694400000000000"
+      },
+      "polynomial_coefficients": {
+        "W": [
+          "1/3",
+          "0/1",
+          "1/1",
+          "1/3"
+        ],
+        "f": [
+          "258553580356423/161839258930731",
+          "96714321425692/161839258930731",
+          "0/1"
+        ],
+        "U": [
+          "-2/27",
+          "0/1",
+          "14/9",
+          "50/27",
+          "-1/6",
+          "-4/9",
+          "-2/27"
+        ],
+        "A": [
+          "258553580356423/4369659991129737",
+          "-338500124989922/4369659991129737",
+          "186017839287154/1456553330376579",
+          "548696544633499/4369659991129737",
+          "96714321425692/4369659991129737",
+          "0/1"
+        ],
+        "BB": [
+          "59834708938501235427109095781/942910046324934974692422996996",
+          "12502917038177289581434709858/235727511581233743673105749249",
+          "2338414992208016662869419716/235727511581233743673105749249",
+          "0/1",
+          "0/1"
+        ]
+      },
+      "checks": [
+        {
+          "name": "field_tube_inside_polynomial_radius",
+          "lhs": "1/3200",
+          "rhs": "1/100",
+          "strict": false,
+          "pass_check": true,
+          "exact_margin": "31/3200"
+        },
+        {
+          "name": "metric_volterra_contraction",
+          "lhs": "1589821897439/709632000000000000",
+          "rhs": "1/4",
+          "strict": false,
+          "pass_check": true,
+          "exact_margin": "177406410178102561/709632000000000000"
+        },
+        {
+          "name": "scalar_contraction",
+          "lhs": "176381593464383/1024000000000000",
+          "rhs": "1/2",
+          "strict": false,
+          "pass_check": true,
+          "exact_margin": "335618406535617/1024000000000000"
+        },
+        {
+          "name": "scalar_ball_preservation",
+          "lhs": "3086396047562681/1280000000000000",
+          "rhs": "14/1",
+          "strict": false,
+          "pass_check": true,
+          "exact_margin": "14833603952437319/1280000000000000"
+        },
+        {
+          "name": "positive_metric_derivative",
+          "lhs": "440028203/1843200000000000",
+          "rhs": "1/18",
+          "strict": false,
+          "pass_check": true,
+          "exact_margin": "102399559971797/1843200000000000"
+        },
+        {
+          "name": "scalar_junction_derivative_feasibility",
+          "lhs": "8643058079754767/16128000000000000",
+          "rhs": "1/1",
+          "strict": true,
+          "pass_check": true,
+          "exact_margin": "7484941920245233/16128000000000000"
+        },
+        {
+          "name": "scalar_root_inside_boundary_tube",
+          "lhs": "1/11468800",
+          "rhs": "1/89600",
+          "strict": false,
+          "pass_check": true,
+          "exact_margin": "127/11468800"
+        },
+        {
+          "name": "scalar_junction_derivative",
+          "lhs": "8643058079754767/16128000000000000",
+          "rhs": "1/1",
+          "strict": false,
+          "pass_check": true,
+          "exact_margin": "7484941920245233/16128000000000000"
+        },
+        {
+          "name": "positive_reduced_curvature",
+          "lhs": "5026457102998054599538674541423099/359926381205170106904496799528140800000000",
+          "rhs": "258553580356423/8739319982259474",
+          "strict": false,
+          "pass_check": true,
+          "exact_margin": "95836048694609682189481004178143527192109/3239337430846530962140471195753267200000000"
+        },
+        {
+          "name": "metric_residual_positive_at_Y",
+          "lhs": "1/103219200",
+          "rhs": "1/288",
+          "strict": true,
+          "pass_check": true,
+          "exact_margin": "358399/103219200"
+        },
+        {
+          "name": "positive_shell_tension",
+          "lhs": "18192564561563593123/622712853502266261504000000",
+          "rhs": "1/18",
+          "strict": false,
+          "pass_check": true,
+          "exact_margin": "103785421006017358893220631/1868138560506798784512000000"
+        },
+        {
+          "name": "strict_downward_shell_crossing",
+          "lhs": "79573649148940165014795733349772906793931/10148238192519417360384000000000000000000000",
+          "rhs": "258553580356423/17478639964518948",
+          "strict": false,
+          "pass_check": true,
+          "exact_margin": "70544628034641880169204266650227093206069/10148238192519417360384000000000000000000000"
+        }
+      ],
+      "K_H_polynomial_refinement": "49463380931333404566299290791681554320877311765016217041028707937960218392471151114690773550701277099481133608768914883788825739186231642941860527494674253567398885881943/147879961121372232285343272780501288456501197384673122114387814449022598055098934610116968469536677296887509811200000000000000000000000000000000000000000000000000000000",
+      "exact_bound_at_delta_star": {
+        "scalar": "64961216998816301/1262720385024000000000000000",
+        "curvature": "49463380931333404566299290791681554320877311765016217041028707937960218392471151114690773550701277099481133608768914883788825739186231642941860527494674253567398885881943/113703361334661111312224793358296188644691201018960922543355195298489148610964046988735614423507735053771995954868697054157209600000000000000000000000000000000000000000000000000000000000000"
+      },
+      "strict_curvature_suppression": {
+        "q": "584603748052004165717354929/628606697549956649794948664664",
+        "best_K_H": "49463380931333404566299290791681554320877311765016217041028707937960218392471151114690773550701277099481133608768914883788825739186231642941860527494674253567398885881943/147879961121372232285343272780501288456501197384673122114387814449022598055098934610116968469536677296887509811200000000000000000000000000000000000000000000000000000000",
+        "lower_magnitude_coefficient": "1210467085716973589257657391509808659047353348305806841882288966917464722714966004665708762574299109488062483271871085116211174260813768357058139472505325746432601114118057/1354765056538629362215189606070459419822321339653179366295822922456007368159822967747460339425143264302909421246218240000000000000000000000000000000000000000000000000000000000",
+        "upper_magnitude_coefficient": "1309393847579640398390255973093171767689107971835839275964346382793385159499908306895090309675701663687024750489408914883788825739186231642941860527494674253567398885881943/1354765056538629362215189606070459419822321339653179366295822922456007368159822967747460339425143264302909421246218240000000000000000000000000000000000000000000000000000000000",
+        "exact_positive_margin": "1210467085716973589257657391509808659047353348305806841882288966917464722714966004665708762574299109488062483271871085116211174260813768357058139472505325746432601114118057/1354765056538629362215189606070459419822321339653179366295822922456007368159822967747460339425143264302909421246218240000000000000000000000000000000000000000000000000000000000",
+        "pass_check": true,
+        "inequality": "-(q+K*delta_star)*delta^2 <= H2-H2_metric <= -(q-K*delta_star)*delta^2 < 0 for every 0<delta<=delta_star.",
+        "comparator": "H2_metric=k*f0*delta/3+f0^2*delta^2/36 is the exact constant-scalar branch of the separate constant-tension model f(eta)=f0 with the same bulk W. For f1!=0 it generally violates the scalar junction of the scalar-dependent tension model."
+      },
+      "display_only": {
+        "b": 1.1160714285714286e-05,
+        "delta_star": 1.0915542913337286e-07,
+        "K_eta": 4317.737922980255,
+        "K_H_taylor": 334.60435764647565,
+        "K_H_polynomial": 334.4833238814312,
+        "suppression_margin": 0.0008934885645852637,
+        "registered_sample_min_delta_over_delta_star": 4580.624197712319
+      },
+      "search_halvings": {
+        "first_stage": 5,
+        "second_stage": 7
+      },
+      "negative_controls": {
+        "delta_one_rejected": true,
+        "oversized_tube_rejected": true
+      },
+      "uploaded_detuning_range_covered": false
+    },
+    {
+      "name": "simple_polynomial_model",
+      "parameters": {
+        "k": "1/1",
+        "w": "5/1",
+        "v": "0/1",
+        "f0": "1/1",
+        "f1": "1/1",
+        "f2": "0/1"
+      },
+      "r": "1/100",
+      "b": "1/200",
+      "delta_star": "1/1000",
+      "exact_constants": {
+        "m2": "5/1",
+        "lam": "1/1",
+        "nu": "1/2",
+        "mu": "9/4",
+        "gap": "11/4",
+        "zeta_lower": "81/224",
+        "J_upper": "274/81",
+        "C_G": "31/44",
+        "M": "1/1",
+        "ball": "2/1",
+        "M2": "1001/200",
+        "M3": "1/1",
+        "L1": "1/2",
+        "C_F": "1601/2400",
+        "epsilon": "219337/1944000000",
+        "C_N": "31601/15000",
+        "L_N": "13601/1200000",
+        "C_P": "421631/132000",
+        "C_D": "979631/660000",
+        "C_a": "1601/150",
+        "C_L_upper": "100/9",
+        "C_H_DN": "400/81",
+        "W2": "5/1",
+        "W3": "0/1",
+        "F1": "1/1",
+        "F2": "0/1",
+        "F_abs": "101/100",
+        "W_abs": "12001/4000",
+        "L": "2/5",
+        "a1": "1/3",
+        "C_K": "5171/120000",
+        "a_bar": "32001601/24000000",
+        "C_Tp": "1168473377/66000000",
+        "C_Tbeta": "1168473377/165000000",
+        "C_slope": "5528407613779/309375000000",
+        "d0": "6/1",
+        "alpha": "-1/12",
+        "K_eta": "136450037/668250000",
+        "K_H": "683524037/8019000000"
+      },
+      "polynomial_coefficients": {
+        "W": [
+          "3/1",
+          "0/1",
+          "5/2",
+          "0/1"
+        ],
+        "f": [
+          "1/1",
+          "1/1",
+          "0/1"
+        ],
+        "U": [
+          "-6/1",
+          "0/1",
+          "5/2",
+          "0/1",
+          "-25/6",
+          "0/1",
+          "0/1"
+        ],
+        "A": [
+          "1/3",
+          "-1/12",
+          "5/18",
+          "5/18",
+          "0/1",
+          "0/1"
+        ],
+        "BB": [
+          "1/144",
+          "1/18",
+          "1/36",
+          "0/1",
+          "0/1"
+        ]
+      },
+      "checks": [
+        {
+          "name": "field_tube_inside_polynomial_radius",
+          "lhs": "1/100",
+          "rhs": "1/100",
+          "strict": false,
+          "pass_check": true,
+          "exact_margin": "0/1"
+        },
+        {
+          "name": "metric_volterra_contraction",
+          "lhs": "219337/1944000000",
+          "rhs": "1/4",
+          "strict": false,
+          "pass_check": true,
+          "exact_margin": "485780663/1944000000"
+        },
+        {
+          "name": "scalar_contraction",
+          "lhs": "421631/52800000",
+          "rhs": "1/2",
+          "strict": false,
+          "pass_check": true,
+          "exact_margin": "25978369/52800000"
+        },
+        {
+          "name": "scalar_ball_preservation",
+          "lhs": "979631/132000000",
+          "rhs": "1/1",
+          "strict": false,
+          "pass_check": true,
+          "exact_margin": "131020369/132000000"
+        },
+        {
+          "name": "positive_metric_derivative",
+          "lhs": "1601/24000000",
+          "rhs": "1/2",
+          "strict": false,
+          "pass_check": true,
+          "exact_margin": "11998399/24000000"
+        },
+        {
+          "name": "scalar_junction_derivative_feasibility",
+          "lhs": "421631/26400000",
+          "rhs": "5/2",
+          "strict": true,
+          "pass_check": true,
+          "exact_margin": "65578369/26400000"
+        },
+        {
+          "name": "scalar_root_inside_boundary_tube",
+          "lhs": "1/2500",
+          "rhs": "1/200",
+          "strict": false,
+          "pass_check": true,
+          "exact_margin": "23/5000"
+        },
+        {
+          "name": "scalar_junction_derivative",
+          "lhs": "421631/26400000",
+          "rhs": "5/2",
+          "strict": false,
+          "pass_check": true,
+          "exact_margin": "65578369/26400000"
+        },
+        {
+          "name": "positive_reduced_curvature",
+          "lhs": "5171/120000000",
+          "rhs": "1/6",
+          "strict": false,
+          "pass_check": true,
+          "exact_margin": "6664943/40000000"
+        },
+        {
+          "name": "metric_residual_positive_at_Y",
+          "lhs": "1/2000",
+          "rhs": "9/32",
+          "strict": true,
+          "pass_check": true,
+          "exact_margin": "1123/4000"
+        },
+        {
+          "name": "positive_shell_tension",
+          "lhs": "227/1200000",
+          "rhs": "1/2",
+          "strict": false,
+          "pass_check": true,
+          "exact_margin": "599773/1200000"
+        },
+        {
+          "name": "strict_downward_shell_crossing",
+          "lhs": "5528407613779/309375000000000",
+          "rhs": "1/12",
+          "strict": false,
+          "pass_check": true,
+          "exact_margin": "20252842386221/309375000000000"
+        }
+      ],
+      "K_H_polynomial_refinement": "25348444879757509524243167379887700653/1074284730956250000000000000000000000000",
+      "exact_bound_at_delta_star": {
+        "scalar": "136450037/668250000000000",
+        "curvature": "25348444879757509524243167379887700653/1074284730956250000000000000000000000000000000000"
+      },
+      "strict_curvature_suppression": {
+        "q": "1/72",
+        "best_K_H": "25348444879757509524243167379887700653/1074284730956250000000000000000000000000",
+        "lower_magnitude_coefficient": "14895272818401492490475756832620112299347/1074284730956250000000000000000000000000000",
+        "upper_magnitude_coefficient": "14945969708161007509524243167379887700653/1074284730956250000000000000000000000000000",
+        "exact_positive_margin": "14895272818401492490475756832620112299347/1074284730956250000000000000000000000000000",
+        "pass_check": true,
+        "inequality": "-(q+K*delta_star)*delta^2 <= H2-H2_metric <= -(q-K*delta_star)*delta^2 < 0 for every 0<delta<=delta_star.",
+        "comparator": "H2_metric=k*f0*delta/3+f0^2*delta^2/36 is the exact constant-scalar branch of the separate constant-tension model f(eta)=f0 with the same bulk W. For f1!=0 it generally violates the scalar junction of the scalar-dependent tension model."
+      },
+      "display_only": {
+        "b": 0.005,
+        "delta_star": 0.001,
+        "K_eta": 0.2041901040029929,
+        "K_H_taylor": 0.08523806422247163,
+        "K_H_polynomial": 0.023595648480635268,
+        "suppression_margin": 0.013865293240408253,
+        "registered_sample_min_delta_over_delta_star": null
+      },
+      "search_halvings": {
+        "first_stage": 0,
+        "second_stage": 0
+      },
+      "negative_controls": {
+        "delta_one_rejected": true,
+        "oversized_tube_rejected": true
+      },
+      "uploaded_detuning_range_covered": null
+    }
+  ],
+  "model_scope": "The registered model here interprets the declared decimal 1.0357712571566784 and k=1/9 as exact rationals. It is a specified polynomial model, not a claim that binary64 shooting has zero parameter-rounding error.",
+  "limitations": [
+    "The program checks arithmetic sufficient inequalities, not the analytic operator estimates supplying them.",
+    "The registered-model range is smaller than every uploaded detuning. The simple model was not in the uploaded sweep.",
+    "No dynamical stability, physical observation or external novelty follows."
+  ]
+}
