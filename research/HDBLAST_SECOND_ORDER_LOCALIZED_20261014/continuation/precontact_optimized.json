@@ -1,0 +1,114 @@
+{
+  "status": "PASS",
+  "scope": "Exact initial-time ADM kinetic algebra, angular tensor witness, and causal support geometry; no shell-contact evolution test",
+  "positive_checks": 18,
+  "wrong_formula_controls": 7,
+  "checks": [
+    {
+      "name": "direct_5d_ricci_kinetic_identity",
+      "passed": true
+    },
+    {
+      "name": "metric_second_variation_acceleration",
+      "passed": true
+    },
+    {
+      "name": "direct_scalar_kinetic_identity",
+      "passed": true
+    },
+    {
+      "name": "scalar_second_variation_acceleration",
+      "passed": true
+    },
+    {
+      "name": "density_to_extrinsic_curvature",
+      "passed": true
+    },
+    {
+      "name": "quadrupole_trace_K",
+      "passed": true
+    },
+    {
+      "name": "closed_quadrupole_metric_forcing",
+      "passed": true
+    },
+    {
+      "name": "closed_quadrupole_scalar_forcing",
+      "passed": true
+    },
+    {
+      "name": "weyl_tensor_tangency_and_trace",
+      "passed": true
+    },
+    {
+      "name": "weyl_tensor_sphere_divergence",
+      "passed": true
+    },
+    {
+      "name": "tensor_stress_projection_polynomial",
+      "passed": true
+    },
+    {
+      "name": "nonzero_tensor_projection_exact_sphere_moment",
+      "passed": true
+    },
+    {
+      "name": "exact_scalar_stress_tensor_decomposition",
+      "passed": true
+    },
+    {
+      "name": "tensor_witness_exact_sphere_norm",
+      "passed": true
+    },
+    {
+      "name": "scalar_quadrupole_square_decomposition",
+      "passed": true
+    },
+    {
+      "name": "outer_support_shell_gap",
+      "passed": true
+    },
+    {
+      "name": "inner_support_positive_s_gap",
+      "passed": true
+    },
+    {
+      "name": "inner_support_two_branch_global_s_bound",
+      "passed": true
+    }
+  ],
+  "controls": [
+    {
+      "name": "wrong_second_variation_factor",
+      "detected": true
+    },
+    {
+      "name": "wrong_trace_K_sign",
+      "detected": true
+    },
+    {
+      "name": "omit_scalar_Ku_term",
+      "detected": true
+    },
+    {
+      "name": "wrong_density_Omega_power",
+      "detected": true
+    },
+    {
+      "name": "discard_all_tensor_harmonics",
+      "detected": true
+    },
+    {
+      "name": "extend_linear_inner_bound_past_origin",
+      "detected": true
+    },
+    {
+      "name": "static_shell_contact_time",
+      "detected": true
+    }
+  ],
+  "tensor_projection_normalized_sphere_mean": "-1/9",
+  "tensor_witness_normalized_sphere_norm_squared": "1/12",
+  "scalar_stress_TT_projection_coefficient": "-4/3",
+  "sympy_version": "1.14.0"
+}

@@ -1,0 +1,113 @@
+name: Localized constraints and formal continuation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_SECOND_ORDER_LOCALIZED_20261014/**'
+      - '.github/workflows/hdblast_second_order_localized.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_SECOND_ORDER_LOCALIZED_20261014/**'
+      - '.github/workflows/hdblast_second_order_localized.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: localized-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  core-replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 75
+    env:
+      PROOF_DIRECTORY: research/HDBLAST_SECOND_ORDER_LOCALIZED_20261014
+      MANIFEST_SHA256: '675b0f18997cadd4ab595831d804ee97eb01bdd5cbc9fd3dc74762d26313a6d2'
+      RUNNER_SHA256: '22b84eead63cf3692ca5fc7c7fb7485a79744bc34887616e924ad7e9cf023758'
+      INTEGRITY_SHA256: 'b17bcbb8ccae2a4e756982c27239df78d628c1b9b6611f01ba992b5c975e3d69'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: ${{ env.PROOF_DIRECTORY }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - name: Authenticate and relocate frozen source before project execution
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -S -B - <<'PY'
+          import hashlib, os, pathlib, re, shutil
+          root = pathlib.Path(os.environ['GITHUB_WORKSPACE']) / os.environ['PROOF_DIRECTORY']
+          for name, variable in [('MANIFEST.json', 'MANIFEST_SHA256'),
+                                 ('reproduce.py', 'RUNNER_SHA256'),
+                                 ('verify_manifest.py', 'INTEGRITY_SHA256')]:
+              expected = os.environ[variable]
+              path = root / name
+              if not re.fullmatch(r'[0-9a-f]{64}', expected):
+                  raise RuntimeError('Complete external SHA256 required: ' + name)
+              if path.is_symlink() or any(p.is_symlink() for p in path.parents):
+                  raise RuntimeError('Real capsule input required: ' + name)
+              if hashlib.sha256(path.read_bytes()).hexdigest() != expected:
+                  raise RuntimeError('External pin mismatch: ' + name)
+          target = pathlib.Path(os.environ['RUNNER_TEMP']) / 'localized-replay'
+          shutil.copytree(root, target)
+          print('Bootstrap pins passed; source relocated')
+          PY
+          python -I -S -B "$RUNNER_TEMP/localized-replay/verify_manifest.py" \
+            --expected "$MANIFEST_SHA256"
+      - name: Install pinned dependencies
+        run: |
+          python -I -B -m pip install --only-binary=:all: -r "$RUNNER_TEMP/localized-replay/requirements.txt"
+      - name: Replay core algebra and independent point numerics
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm "$RUNNER_TEMP/localized-replay/independent/indep_l0.json"
+          python -B "$RUNNER_TEMP/localized-replay/reproduce.py" --core
+      - name: Check formal reflection and precontact algebra in both execution modes
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP/localized-replay/continuation"
+          python -B check_reflection_formal.py --output reflection_normal_ci.json
+          python -O -B check_reflection_formal.py --output reflection_optimized_ci.json
+          python -B verify_precontact_dynamics.py --output precontact_normal_ci.json
+          python -O -B verify_precontact_dynamics.py --output precontact_optimized_ci.json
+          if python -O -B check_reflection_formal.py --inject-failure > reflection_failure_ci.log 2>&1; then
+            exit 1
+          fi
+          if python -O -B verify_precontact_dynamics.py --inject-failure > precontact_failure_ci.log 2>&1; then
+            exit 1
+          fi
+          python -I -S -B - <<'PY'
+          import json, pathlib
+          for prefix in ('reflection', 'precontact'):
+              left = json.loads(pathlib.Path(prefix + '_normal_ci.json').read_text())
+              right = json.loads(pathlib.Path(prefix + '_optimized_ci.json').read_text())
+              left.pop('python_optimized', None)
+              right.pop('python_optimized', None)
+              if left != right:
+                  raise RuntimeError('Scientific mode outputs differ: ' + prefix)
+              if 'deliberate_failure' not in pathlib.Path(prefix + '_failure_ci.log').read_text():
+                  raise RuntimeError('Wrong injected-failure reason: ' + prefix)
+          PY
+      - name: Retain fresh CI outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: localized-core-${{ github.sha }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/localized-replay/REPRODUCTION_RECEIPT.json
+            ${{ runner.temp }}/localized-replay/new/*.json
+            ${{ runner.temp }}/localized-replay/independent/*.json
+            ${{ runner.temp }}/localized-replay/continuation/*_ci.json
+            ${{ runner.temp }}/localized-replay/continuation/*_ci.log
+          if-no-files-found: warn
+          retention-days: 14

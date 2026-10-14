@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "positive_checks_each_mode": 18,
+  "wrong_formula_controls_each_mode": 7,
+  "normal_optimized_scientific_results_equal": true,
+  "injected_failure_exit_codes": {
+    "normal": 1,
+    "optimized": 1
+  },
+  "injected_failure_logs": [
+    "injected-failure-normal.log",
+    "injected-failure-optimized.log"
+  ],
+  "global_inner_support_bound": "max(0,R_minus-T_star)^2-T_star^2",
+  "past_origin_control": {
+    "R_minus": 1,
+    "T_star": 2,
+    "correct_lower_bound": -4,
+    "incorrect_linear_extrapolation": -3
+  },
+  "files_sha256": {
+    "verification-optimized.json": "de7ab9b498738a877058d413f725afff1ee2e0adc97e568b71e4ca1b25c8f415",
+    "verification-normal.json": "de7ab9b498738a877058d413f725afff1ee2e0adc97e568b71e4ca1b25c8f415",
+    "verify_precontact_dynamics.py": "45c9897f5f549da1faba9f997df8e97aa4b5926b9ef71c7e027e7205fe64cacc",
+    "injected-failure-normal.log": "a2c133c11e2deb78c424f413ee19d808b761d22cbe94a4659130d305cdd87706",
+    "injected-failure-optimized.log": "a2c133c11e2deb78c424f413ee19d808b761d22cbe94a4659130d305cdd87706",
+    "PRECONTACT_SECOND_ORDER_DYNAMICS.md": "e0d175728081341b054c1f96f814322ff0917eaf2394ca2f801434f7acd29b0a"
+  }
+}
