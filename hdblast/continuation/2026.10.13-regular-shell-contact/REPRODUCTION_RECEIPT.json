@@ -1,0 +1,82 @@
+{
+  "both_fixed_prior_manifest_mutations_rejected_after_outer_reseal_both_modes": true,
+  "checker_failures_rejected_without_success_receipts_both_modes": true,
+  "checks": [
+    {
+      "mode": "normal",
+      "name": "existence",
+      "positive_checks": 21,
+      "sha256": "462180a5ae52089d8f5f8785e0dc8755bb0ffdd5549f9f2e16a49a56edeb3b29",
+      "wrong_formula_controls": 4
+    },
+    {
+      "mode": "normal",
+      "name": "junctions",
+      "positive_checks": 63,
+      "sha256": "a0f1069e437845d92e800ef329799759a889118e7c1bb746c48599db6e8bb389",
+      "wrong_formula_controls": 10
+    },
+    {
+      "mode": "optimized",
+      "name": "existence",
+      "positive_checks": 21,
+      "sha256": "462180a5ae52089d8f5f8785e0dc8755bb0ffdd5549f9f2e16a49a56edeb3b29",
+      "wrong_formula_controls": 4
+    },
+    {
+      "mode": "optimized",
+      "name": "junctions",
+      "positive_checks": 63,
+      "sha256": "a0f1069e437845d92e800ef329799759a889118e7c1bb746c48599db6e8bb389",
+      "wrong_formula_controls": 10
+    }
+  ],
+  "exact_named_inventories_verified": true,
+  "externally_pinned_manifest_corruption_rejected_both_modes": true,
+  "failure_controls": [
+    {
+      "checker": "existence",
+      "control": "wrong_bulk_curvature",
+      "exit_nonzero": true,
+      "explicit_failed_report_written": true,
+      "mode": "normal",
+      "success_receipt_written": false
+    },
+    {
+      "checker": "junctions",
+      "control": "wrong_normal_force",
+      "exit_nonzero": true,
+      "explicit_failed_report_written": false,
+      "mode": "normal",
+      "success_receipt_written": false
+    },
+    {
+      "checker": "existence",
+      "control": "wrong_bulk_curvature",
+      "exit_nonzero": true,
+      "explicit_failed_report_written": true,
+      "mode": "optimized",
+      "success_receipt_written": false
+    },
+    {
+      "checker": "junctions",
+      "control": "wrong_normal_force",
+      "exit_nonzero": true,
+      "explicit_failed_report_written": false,
+      "mode": "optimized",
+      "success_receipt_written": false
+    }
+  ],
+  "mpmath": "1.3.0",
+  "normal_and_optimized_receipts_identical": true,
+  "positive_checks_per_mode": 84,
+  "prior_science_replayed": false,
+  "proof_input_corruption_rejected_both_modes": true,
+  "python": "3.12.14",
+  "scope": "Exact local identities, explicit wrong-formula controls, and provenance/replay integrity. Analytic shell-contact PDE existence, smoothness, energy estimates, physical pairing and theorem hypotheses remain in the reviewed mathematical proof; no machine PDE certificate or full-state-space claim.",
+  "source_and_relocated_capsules_unchanged": true,
+  "source_manifest_sha256": "fadd405ece09e04740f1ee681c6086b84918b54b5e221146c17b5229c364c52e",
+  "status": "PASS_REVIEWED_REGULAR_SHELL_CONTACT_REPLAY",
+  "sympy": "1.14.0",
+  "wrong_formula_controls_per_mode": 14
+}

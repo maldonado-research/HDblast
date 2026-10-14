@@ -1,0 +1,105 @@
+name: Regular shell contact algebra and replay checks
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_REGULAR_SHELL_CONTACT_20261013/**'
+      - '.github/workflows/hdblast_regular_shell_contact.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_REGULAR_SHELL_CONTACT_20261013/**'
+      - '.github/workflows/hdblast_regular_shell_contact.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  exact-reproduction:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    env:
+      PROOF_DIRECTORY: 'research/HDBLAST_REGULAR_SHELL_CONTACT_20261013'
+      # Fill only from the reviewed final frozen snapshot.
+      MANIFEST_SHA256: 'fadd405ece09e04740f1ee681c6086b84918b54b5e221146c17b5229c364c52e'
+      REPRODUCE_SHA256: '2c77deb2fd4800bbd58165938c36018e5d5c26bef44e09a649155cd6cc7ff6d1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: ${{ env.PROOF_DIRECTORY }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - name: Authenticate manifest and replay source before dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/regular-shell-contact-ci"
+          python -I -S -B - <<'PY' > "$RUNNER_TEMP/regular-shell-contact-ci/authentication.log" 2>&1
+          import hashlib, json, os, pathlib, re
+
+          def require(condition, message):
+              if not condition:
+                  raise RuntimeError(message)
+
+          workspace = pathlib.Path(os.environ['GITHUB_WORKSPACE']).resolve()
+          root = workspace / os.environ['PROOF_DIRECTORY']
+          pins = {
+              'MANIFEST.json': os.environ['MANIFEST_SHA256'],
+              'reproduce.py': os.environ['REPRODUCE_SHA256'],
+          }
+          for name, expected in pins.items():
+              require(re.fullmatch(r'[0-9a-f]{64}', expected) is not None,
+                      'Filled external SHA256 required: ' + name)
+              path = root / name
+              require(path.is_file() and not path.is_symlink()
+                      and path.resolve().is_relative_to(workspace)
+                      and all(not parent.is_symlink() for parent in path.parents),
+                      'Real input inside checkout required: ' + name)
+              require(hashlib.sha256(path.read_bytes()).hexdigest() == expected,
+                      'External SHA256 differs: ' + name)
+          receipt = {
+              'status': 'PASS_REGULAR_SHELL_CONTACT_CI_BOOTSTRAP_AUTHENTICATION',
+              'sha256': pins,
+              'project_source_executed_before_authentication': False,
+          }
+          output = pathlib.Path(os.environ['RUNNER_TEMP']) / 'regular-shell-contact-ci' / 'AUTHENTICATION.json'
+          output.write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+          print(receipt['status'])
+          PY
+          python -I -S -B "$PROOF_DIRECTORY/reproduce.py" \
+            --verify-only --manifest-sha256 "$MANIFEST_SHA256" \
+            > "$RUNNER_TEMP/regular-shell-contact-ci/full-integrity.log" 2>&1
+      - name: Install authenticated pinned symbolic dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -B -m pip install --disable-pip-version-check --only-binary=:all: \
+            -r "$PROOF_DIRECTORY/requirements.txt"
+      - name: Replay relocated normal and optimized algebra and controls
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -B "$PROOF_DIRECTORY/reproduce.py" \
+            --manifest-sha256 "$MANIFEST_SHA256" \
+            --output "$RUNNER_TEMP/regular-shell-contact-replay" \
+            2>&1 | tee "$RUNNER_TEMP/regular-shell-contact-ci/replay.log"
+      - name: Retain replay receipts and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: regular-shell-contact-${{ github.sha }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/regular-shell-contact-ci/
+            ${{ runner.temp }}/regular-shell-contact-replay/REPRODUCTION_RECEIPT.json
+            ${{ runner.temp }}/regular-shell-contact-replay/normal/*.json
+            ${{ runner.temp }}/regular-shell-contact-replay/normal/*.log
+            ${{ runner.temp }}/regular-shell-contact-replay/optimized/*.json
+            ${{ runner.temp }}/regular-shell-contact-replay/optimized/*.log
+            ${{ runner.temp }}/regular-shell-contact-replay/*.log
+          if-no-files-found: warn
+          retention-days: 14

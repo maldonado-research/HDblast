@@ -1,0 +1,121 @@
+{
+  "status": "pass",
+  "scope": "exact local junction/current identities; no PDE theorem certification",
+  "checks": [
+    "direct graph extrinsic curvature covariant 00",
+    "direct graph extrinsic curvature mixed 00",
+    "direct graph extrinsic curvature covariant 01",
+    "direct graph extrinsic curvature mixed 01",
+    "direct graph extrinsic curvature covariant 02",
+    "direct graph extrinsic curvature mixed 02",
+    "direct graph extrinsic curvature covariant 03",
+    "direct graph extrinsic curvature mixed 03",
+    "direct graph extrinsic curvature covariant 11",
+    "direct graph extrinsic curvature mixed 11",
+    "direct graph extrinsic curvature covariant 12",
+    "direct graph extrinsic curvature mixed 12",
+    "direct graph extrinsic curvature covariant 13",
+    "direct graph extrinsic curvature mixed 13",
+    "direct graph extrinsic curvature covariant 22",
+    "direct graph extrinsic curvature mixed 22",
+    "direct graph extrinsic curvature covariant 23",
+    "direct graph extrinsic curvature mixed 23",
+    "direct graph extrinsic curvature covariant 33",
+    "direct graph extrinsic curvature mixed 33",
+    "induced metric pullback 00",
+    "induced metric pullback 01",
+    "induced metric pullback 02",
+    "induced metric pullback 03",
+    "induced metric pullback 11",
+    "induced metric pullback 12",
+    "induced metric pullback 13",
+    "induced metric pullback 22",
+    "induced metric pullback 23",
+    "induced metric pullback 33",
+    "direct scalar normal pullback",
+    "direct induced scalar",
+    "full Israel isotropic cancellation",
+    "full Israel reconstructed residual",
+    "full scalar junction residual",
+    "B definition",
+    "odd Robin induced scalar matching",
+    "odd embedding induced metric matching",
+    "unseparated scalar junction to master",
+    "even Wentzell scalar sufficiency",
+    "Hamiltonian difference / normal force",
+    "shell normal-force residual",
+    "direct field-space curl of GHY-completed potential",
+    "physical radial current pullback",
+    "exact arbitrary packet current",
+    "even packet shell flux",
+    "odd packet shell current divergence",
+    "odd zeta shell current coefficient",
+    "ambient coordinate Jacobian",
+    "moving ambient normal flux density",
+    "shell temporal vector density transformation",
+    "exact graph-GHY second variation including shift",
+    "direct graph-GHY kinetic coefficient",
+    "graph GHY plus Einstein corner",
+    "full odd moving-shell kinetic action",
+    "odd current from completed action",
+    "mixed parity moving-domain cancellation",
+    "warped mixed diffeomorphism after angular TF constraint",
+    "S3 Hessian-TF norm Bochner identity",
+    "l>=2 Hessian-TF positive factorization",
+    "actual scalar Cauchy weight",
+    "actual gravitational Cauchy weight",
+    "compact-annulus K diagonal integration identity"
+  ],
+  "check_count": 63,
+  "wrong_controls": [
+    {
+      "name": "drop varying weight from K integration",
+      "nonzero_residual": "9*L*m*q**2*s"
+    },
+    {
+      "name": "omit scalar 2pPsi term",
+      "nonzero_residual": "-4*H*Pe*p"
+    },
+    {
+      "name": "reverse odd Robin sign",
+      "nonzero_residual": "-2*H*Po*p/a"
+    },
+    {
+      "name": "omit graph evaluation shift",
+      "nonzero_residual": "2*ze*(3*H + p**2)/3"
+    },
+    {
+      "name": "omit gravitational scalar mixing",
+      "nonzero_residual": "6*H**2*(-P1*P2y + P1y*P2)"
+    },
+    {
+      "name": "equal-spectral shortcut on packets",
+      "nonzero_residual": "9*H*P1y*(DP1*P2 - DP2*P1)/(P1*p**2)"
+    },
+    {
+      "name": "omit moving integration domain",
+      "nonzero_residual": "6*a*rho_b**2*z**2"
+    },
+    {
+      "name": "omit Einstein graph corner",
+      "nonzero_residual": "-2*N*rho_b**2*z"
+    },
+    {
+      "name": "omit odd shell current",
+      "nonzero_residual": "6*H*(-BoxP1*P2 + BoxP2*P1)/a"
+    },
+    {
+      "name": "double shell tension instead of one",
+      "nonzero_residual": "-3*a*rho_b**2*z**2"
+    }
+  ],
+  "source_sha256": {
+    "basis/prior-checkpoint/reconstruction/SMOOTH_AMBIENT_RECONSTRUCTION_AND_LOCAL_FLUX.md": "1532d5d6f71b249eb160e221726eaec59a0fe0337fdbfa861260f326e6437288",
+    "basis/prior-checkpoint/boundary/BOUNDARY_LAWS_AND_LOCAL_CAUCHY_PHASE_SPACE.md": "872881b498eb5f0048286a7d9b3a2fd88fea56d6acfde1e9ec4dae03385a3e45",
+    "basis/prior-checkpoint/covariant/COVARIANT_CURRENT_AND_CONE_LIMITS.md": "a26bcaa1dac0e14b2aa080aef57b0ab4cb1d6547198c49c38bea4a70828365b9",
+    "basis/prior-checkpoint/operator/PHYSICAL_OPERATOR_AUDIT_20261013.md": "522493f8d2dfa91ea06d1eaa99dd55155f8aa7aa9f60ad5abbba869b6facdbe5",
+    "basis/prior-checkpoint/operator/ODD_KINETIC_COMPLETION_20261013.md": "f4d7962be111443019d13a1c0b471d9a7c37405d843d5aa0a7e8a1dc21be319d"
+  },
+  "code_sha256": "5a4841b0f207d55c1da8c1f652f48c2b9d5ce7fb322aa823ba1054d206c81dfc",
+  "sympy_version": "1.14.0"
+}

@@ -1,0 +1,9 @@
+{
+  "build_command": "pandoc SHELL_CONTACT.md --from markdown+tex_math_single_backslash --standalone --include-in-header preamble.tex -V geometry:margin=0.9in -V fontsize=10pt -V colorlinks=true --output SHELL_CONTACT.tex; pdflatex twice",
+  "build_location": "Use a scratch copy of the complete capsule so ../figures resolves. Do not rebuild inside the frozen original.",
+  "latex": "SHELL_CONTACT.tex",
+  "pdf": "SHELL_CONTACT.pdf",
+  "pdf_reproducibility": "PDF metadata timestamps may differ on rebuild; the reviewed PDF bytes are pinned.",
+  "scope": "Technical draft for author review, no new APS submission.",
+  "source": "SHELL_CONTACT.md"
+}

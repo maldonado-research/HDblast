@@ -1,0 +1,24 @@
+--- original/check_packet_junctions.py
++++ check_packet_junctions.py
+@@ -286,15 +286,15 @@
+     if args.inject_failure:
+         zero("injected bad normal force sign",6*ab*kappa_o+2*pb*normal_phi_o)
+     source_paths = [
+-        "/workspace/HDblast/research/HDBLAST_REGULAR_CONE_EVOLUTION_20261013/reconstruction/SMOOTH_AMBIENT_RECONSTRUCTION_AND_LOCAL_FLUX.md",
+-        "/workspace/HDblast/research/HDBLAST_REGULAR_CONE_EVOLUTION_20261013/boundary/BOUNDARY_LAWS_AND_LOCAL_CAUCHY_PHASE_SPACE.md",
+-        "/workspace/HDblast/research/HDBLAST_CONE_PHASE_SPACE_20261013/covariant/COVARIANT_CURRENT_AND_CONE_LIMITS.md",
+-        "/workspace/HDblast/research/HDBLAST_REGULAR_SHELL_SPECTRA_20261013/operator/PHYSICAL_OPERATOR_AUDIT_20261013.md",
+-        "/workspace/HDblast/research/HDBLAST_REGULAR_SHELL_SPECTRA_20261013/operator/ODD_KINETIC_COMPLETION_20261013.md",
++        "basis/prior-checkpoint/reconstruction/SMOOTH_AMBIENT_RECONSTRUCTION_AND_LOCAL_FLUX.md",
++        "basis/prior-checkpoint/boundary/BOUNDARY_LAWS_AND_LOCAL_CAUCHY_PHASE_SPACE.md",
++        "basis/prior-checkpoint/covariant/COVARIANT_CURRENT_AND_CONE_LIMITS.md",
++        "basis/prior-checkpoint/operator/PHYSICAL_OPERATOR_AUDIT_20261013.md",
++        "basis/prior-checkpoint/operator/ODD_KINETIC_COMPLETION_20261013.md",
+     ]
+     result = {"status":"pass", "scope":"exact local junction/current identities; no PDE theorem certification",
+               "checks":checks,"check_count":len(checks),"wrong_controls":controls,
+-              "source_sha256":{p:hashlib.sha256(Path(p).read_bytes()).hexdigest() for p in source_paths},
++              "source_sha256":{p:hashlib.sha256((ROOT.parent / p).read_bytes()).hexdigest() for p in source_paths},
+               "code_sha256":hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+               "sympy_version":S.__version__}
+     output = Path(args.output)
