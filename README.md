@@ -1,5 +1,12 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- full-second-order-contact-20261014 -->
+**Complete second-order coefficient through shell contact — 14 October 2026:** For the specified copy-even commuting quadrupole packet, the unchanged first-order scalar reconstruction cannot satisfy the quadratic degree-four angular equation. The continuation therefore keeps all metric and scalar fields, with their complete quadratic bulk sources and physical shell boundary conditions.
+
+Under the stated background, localization and initial-data hypotheses, a boundary-preserving relative harmonic gauge and a convergent characteristic construction give a smooth complete second Taylor coefficient through first shell contact on a controlled positive-cone collar. It includes scalar degrees zero, two and four and tensor degree two. The construction satisfies all Einstein–scalar equations, induced-field matching and Israel/scalar shell laws through second order, with propagation of the sourced constraints.
+
+[Construction, assumptions and reproducible checks](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_FULL_SECOND_ORDER_CONTACT_20261014/README.md) · [Complete coefficient proof](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_FULL_SECOND_ORDER_CONTACT_20261014/FULL_FINITE_ANGULAR_SECOND_ORDER_CONTACT.md). This is a conditional coefficient construction. An exact nonlinear family through contact, estimates uniform over all angular modes, nonlinear stability and a higher-dimensional Big Bang origin remain unestablished. Internal AI-assisted proof review is not external peer review, and external novelty is not established. This is a GitHub-only checkpoint, with no new Zenodo version or APS submission. Earlier dated entries, including earlier entries from 14 October, retain their original scope.
+
 <!-- quadratic-tensor-contact-20261014 -->
 **Quadratic tensor forcing and a tensor sector through shell contact — 14 October 2026:** For the specified quadrupole Y = n₁² − n₂² in the fixed longitudinal first-order gauge, the complete gravity-plus-scalar quadratic source has a nonzero transverse traceless angular component wherever either scalar amplitude is nonzero: its coefficient is 16u² + 8v²/3. Thus the two contributions cannot cancel there. A velocity-only packet can have zero source on its initial slice and develop it later.
 

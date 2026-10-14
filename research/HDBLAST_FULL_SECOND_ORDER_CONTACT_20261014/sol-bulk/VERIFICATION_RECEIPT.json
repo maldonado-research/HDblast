@@ -1,0 +1,62 @@
+{
+  "artifact_sha256": {
+    "ANGULAR_CONTROL_RECEIPT.json": "76a5753381ba0ec7445fd58e987ec674fd2b1e552eae7b03ecef7199495fcdaf",
+    "ANGULAR_NORMAL.json": "21b107ba06b81b295898b09de3b0312f49f25cffce0ae3c167dc0f5cc3eb897c",
+    "ANGULAR_OPTIMIZED.json": "27c28233cf466799dae150fcb7ce9ed2af2f83d3113b7da1223b6b343f766c0b",
+    "FULL_L4_SCALAR_SOURCE_AND_OPERATOR.md": "fb6181ec4f1e63a538a0a10a22cb059feedc7f34eb46cd41aaaa5e90862f31bc",
+    "README.md": "012df0791460ce60d9fe3a1147d6bbeb6bb0bcb895b23fc2635a119d746f86ec",
+    "checker/README.md": "fcf69555a1e335df54858663de9f8fed26f1ed3e567e1b7142dd95ff8426aa89",
+    "checker/direct_metric_checker.py": "ba09626fb284310c92dc3abf8db769601c0d683fd28c9e7775ba01f7218d6ec1",
+    "checker/normal.json": "bb523ab2b6622c0a949d4a41c039b2bca7f2b3cd330ba71dc5712ce68354029e",
+    "checker/normal.stdout.json": "bb523ab2b6622c0a949d4a41c039b2bca7f2b3cd330ba71dc5712ce68354029e",
+    "checker/optimized.json": "59fc6cb6d6a3fccea096b2e7fb071627a13c1e1e7b6304f620d5387dfa0f8a62",
+    "checker/optimized.stdout.json": "59fc6cb6d6a3fccea096b2e7fb071627a13c1e1e7b6304f620d5387dfa0f8a62",
+    "checker/receipt.json": "2978658933ba68b3aabe6a6fc7a7cd1247b8d934b3685e5f5931241a196d8283",
+    "checker/wrong-half-optimized.json": "36def6a3263e5c9dff0c379863ab7dec6984828d289ea00268faabf5c4acf401",
+    "checker/wrong-half-optimized.stdout.json": "36def6a3263e5c9dff0c379863ab7dec6984828d289ea00268faabf5c4acf401",
+    "checker/wrong-projection.json": "95b0e7eb419907eceac61af32f53443a5a49f5e4c508e116e708368a2b43be6b",
+    "checker/wrong-projection.stdout.json": "95b0e7eb419907eceac61af32f53443a5a49f5e4c508e116e708368a2b43be6b",
+    "verify_angular_selection.py": "ee9c8559b583c38e138e74f04e81fd988b7fe076b0b59057d5387b85cd25f0b1"
+  },
+  "commands": [
+    "python checker/direct_metric_checker.py --include-controls --output checker/normal.json",
+    "python -O checker/direct_metric_checker.py --include-controls --output checker/optimized.json",
+    "python verify_angular_selection.py --output ANGULAR_NORMAL.json",
+    "python -O verify_angular_selection.py --output ANGULAR_OPTIMIZED.json",
+    "python [-O] verify_angular_selection.py --wrong-formula {wrong-l4-coefficient,omit-tensor,wrong-vector-divergence}"
+  ],
+  "generated_at_utc": "2026-10-14T22:22:20.118565+00:00",
+  "independent_internal_comparison": "Astra scalar-bulk derivation agreed in every source and linear-operator row after both independent cores existed; this is automated internal review, not external peer review.",
+  "inherited_input_sha256": {
+    "/workspace/hdblast-research-work/contact-continuation-20261014/publish-HDblast/research/HDBLAST_MATERIAL_JUNCTIONS_20261014/MATERIAL_SECOND_ORDER_JUNCTIONS.md": "69c2af7bb7be06783f2470833f3cd10507b26ccdd9c67ebf7cf905e62f188871",
+    "/workspace/hdblast-research-work/contact-continuation-20261014/publish-HDblast/research/HDBLAST_QUADRATIC_TENSOR_CONTACT_20261014/boundary/FORCED_TENSOR_CONTACT_IBVP.md": "e9651b98a5a0b50e2607a5d83e7dfc944c5528ae6de5461d67a384708039f2c5",
+    "/workspace/hdblast-research-work/contact-continuation-20261014/publish-HDblast/research/HDBLAST_QUADRATIC_TENSOR_CONTACT_20261014/bulk/FULL_QUADRATIC_TT_BULK_SOURCE.md": "f5eb4272bac6b638c78f275814ea01e1529719153c1fc6fdd66083bc3e62b467",
+    "/workspace/hdblast-research-work/contact-continuation-20261014/publish-HDblast/research/HDBLAST_REGULAR_CONE_EVOLUTION_20261013/manuscript/REGULAR_CONE_EVOLUTION.md": "4d7ef413157fc058d20208f61fb9a462b716926159bcfff1eef0ebe36456d635"
+  },
+  "negative_controls": {
+    "angular_each_mode": 3,
+    "direct_each_mode": 9,
+    "total_rejections": 24
+  },
+  "positive_runs": {
+    "angular_global_normal": 38,
+    "angular_global_optimized": 38,
+    "direct_metric_normal": {
+      "component_and_forced_relations": 15,
+      "linear": 24,
+      "quadratic": 30
+    },
+    "direct_metric_optimized": {
+      "component_and_forced_relations": 15,
+      "linear": 24,
+      "quadratic": 30
+    }
+  },
+  "runtime": {
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "python": "3.12.14",
+    "sympy": "1.14.0"
+  },
+  "scope": "Verified scalar harmonic bulk formulas and compulsory completion; no coupled shell/contact theorem",
+  "status": "PASS"
+}

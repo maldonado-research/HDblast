@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspace/hdblast-research-work/scalar-contact-20261014/harmonic-referee/verify_harmonic_contact.py", line 267, in <module>
+    main()
+  File "/workspace/hdblast-research-work/scalar-contact-20261014/harmonic-referee/verify_harmonic_contact.py", line 251, in main
+    checks = run(args.inject_corruption)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hdblast-research-work/scalar-contact-20261014/harmonic-referee/verify_harmonic_contact.py", line 197, in run
+    equal(f"physical_initial_constraint_gauge_derivative_{i}",
+  File "/workspace/hdblast-research-work/scalar-contact-20261014/harmonic-referee/verify_harmonic_contact.py", line 27, in equal
+    raise VerificationError(f"{name}: nonzero residual {residual}")
+VerificationError: physical_initial_constraint_gauge_derivative_0: nonzero residual -Cdot0/2

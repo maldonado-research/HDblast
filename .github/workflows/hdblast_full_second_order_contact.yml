@@ -1,0 +1,88 @@
+name: Complete finite-angular second-order shell contact
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_FULL_SECOND_ORDER_CONTACT_20261014/**'
+      - 'research/HDBLAST_FULL_SECOND_ORDER_CONTACT_20261014.zip'
+      - '.github/workflows/hdblast_full_second_order_contact.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_FULL_SECOND_ORDER_CONTACT_20261014/**'
+      - 'research/HDBLAST_FULL_SECOND_ORDER_CONTACT_20261014.zip'
+      - '.github/workflows/hdblast_full_second_order_contact.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: full-contact-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  fresh-independent-replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    env:
+      PROOF_DIRECTORY: research/HDBLAST_FULL_SECOND_ORDER_CONTACT_20261014
+      MANIFEST_SHA256: '0ee47e71ac4371a0f118e2c9a6bff835181a8300e2805423a444ffe700eac843'
+      ARCHIVE_SHA256: '666d3d4ad4fc25354255547ba604508d3b10cf0e4a2861a7c8d7a1e095eb81cf'
+      RUNNER_SHA256: '3634e2f81fc9f565f7cb6df7b69f9210972b7bbdcdf0d7ac16c044cef668dcbb'
+      VERIFIER_SHA256: 'b515e62f2c8e96d9f3af1aaa252448a77456e19dd0b33fad4b29d6090d09bc2d'
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /${{ env.PROOF_DIRECTORY }}/
+            /${{ env.PROOF_DIRECTORY }}.zip
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Authenticate manifest, executable bytes and matching ZIP before imports
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -S -B - <<'PY'
+          import hashlib, os, pathlib, shutil, zipfile
+          root = pathlib.Path(os.environ['PROOF_DIRECTORY'])
+          for name, variable in [('MANIFEST.json', 'MANIFEST_SHA256'),
+                                 ('reproduce.py', 'RUNNER_SHA256'),
+                                 ('verify_manifest.py', 'VERIFIER_SHA256')]:
+              path = root / name
+              if any(p.is_symlink() for p in [path, *path.parents]):
+                  raise RuntimeError('Real source files required')
+              if hashlib.sha256(path.read_bytes()).hexdigest() != os.environ[variable]:
+                  raise RuntimeError('External pin differs: ' + name)
+          archive = root.with_suffix('.zip')
+          if archive.is_symlink() or hashlib.sha256(archive.read_bytes()).hexdigest() != os.environ['ARCHIVE_SHA256']:
+              raise RuntimeError('Archive pin differs')
+          expected = {p.relative_to(root.parent).as_posix(): p.read_bytes()
+                      for p in root.rglob('*') if p.is_file()}
+          with zipfile.ZipFile(archive) as zipped:
+              if len(zipped.namelist()) != len(expected) or set(zipped.namelist()) != set(expected):
+                  raise RuntimeError('Archive members differ')
+              if any(zipped.read(name) != raw for name, raw in expected.items()):
+                  raise RuntimeError('Archive and source differ')
+          shutil.copytree(root, pathlib.Path(os.environ['RUNNER_TEMP']) / 'full-contact-source')
+          PY
+          python -I -S -B "$RUNNER_TEMP/full-contact-source/verify_manifest.py" --expected "$MANIFEST_SHA256"
+      - name: Install pinned symbolic dependency
+        run: |
+          python -I -B -m pip install --only-binary=:all: -r "$RUNNER_TEMP/full-contact-source/requirements.txt"
+      - name: Replay six independent checkers and fourteen actual corruptions in both modes
+        run: |
+          python -I -B "$RUNNER_TEMP/full-contact-source/reproduce.py" --manifest-sha256 "$MANIFEST_SHA256" --output-dir "$RUNNER_TEMP/full-contact-fresh"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: full-second-order-contact-${{ github.sha }}
+          path: ${{ runner.temp }}/full-contact-fresh
+          retention-days: 14

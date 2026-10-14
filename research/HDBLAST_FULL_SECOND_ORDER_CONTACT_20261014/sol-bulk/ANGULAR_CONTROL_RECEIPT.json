@@ -1,0 +1,97 @@
+[
+  {
+    "mode": "optimized",
+    "wrong_formula": "none",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-O",
+      "/workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/verify_angular_selection.py",
+      "--output",
+      "/workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/ANGULAR_OPTIMIZED.json"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "status": "PASS"
+  },
+  {
+    "mode": "normal",
+    "wrong_formula": "wrong-l4-coefficient",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/verify_angular_selection.py",
+      "--wrong-formula",
+      "wrong-l4-coefficient"
+    ],
+    "exit_code": 1,
+    "stderr": "stress-SVT-decomposition[0] failed: -(96*x**2*sin(phi)**4 - 96*x**2*sin(phi)**2 + 24*x**2 - 144*x*sin(phi)**4 + 144*x*sin(phi)**2 - 30*x + 1)/(72*x*(x - 1))",
+    "status": "REJECTED"
+  },
+  {
+    "mode": "normal",
+    "wrong_formula": "omit-tensor",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/verify_angular_selection.py",
+      "--wrong-formula",
+      "omit-tensor"
+    ],
+    "exit_code": 1,
+    "stderr": "stress-SVT-decomposition[0] failed: 1/(18*x*(x - 1))",
+    "status": "REJECTED"
+  },
+  {
+    "mode": "normal",
+    "wrong_formula": "wrong-vector-divergence",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/verify_angular_selection.py",
+      "--wrong-formula",
+      "wrong-vector-divergence"
+    ],
+    "exit_code": 1,
+    "stderr": "stress-TF-gradient-divergence[0] failed: 2*(8*x*sin(phi)**4 - 8*x*sin(phi)**2 + 2*x - 1)/3",
+    "status": "REJECTED"
+  },
+  {
+    "mode": "optimized",
+    "wrong_formula": "wrong-l4-coefficient",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-O",
+      "/workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/verify_angular_selection.py",
+      "--wrong-formula",
+      "wrong-l4-coefficient"
+    ],
+    "exit_code": 1,
+    "stderr": "stress-SVT-decomposition[0] failed: -(96*x**2*sin(phi)**4 - 96*x**2*sin(phi)**2 + 24*x**2 - 144*x*sin(phi)**4 + 144*x*sin(phi)**2 - 30*x + 1)/(72*x*(x - 1))",
+    "status": "REJECTED"
+  },
+  {
+    "mode": "optimized",
+    "wrong_formula": "omit-tensor",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-O",
+      "/workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/verify_angular_selection.py",
+      "--wrong-formula",
+      "omit-tensor"
+    ],
+    "exit_code": 1,
+    "stderr": "stress-SVT-decomposition[0] failed: 1/(18*x*(x - 1))",
+    "status": "REJECTED"
+  },
+  {
+    "mode": "optimized",
+    "wrong_formula": "wrong-vector-divergence",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-O",
+      "/workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/verify_angular_selection.py",
+      "--wrong-formula",
+      "wrong-vector-divergence"
+    ],
+    "exit_code": 1,
+    "stderr": "stress-TF-gradient-divergence[0] failed: 2*(8*x*sin(phi)**4 - 8*x*sin(phi)**2 + 2*x - 1)/3",
+    "status": "REJECTED"
+  }
+]
