@@ -1,0 +1,35 @@
+{
+  "spacetime_direct_ricci_checks": [
+    "R_23",
+    "R_24",
+    "R_34",
+    "R_22-R_33",
+    "R_22-R_44",
+    "D2 R_23 linear path",
+    "D2 R_24 linear path",
+    "D2 R_34 linear path"
+  ],
+  "sphere_exact_rational_checks": [
+    "all 9 decomposition components",
+    "trace",
+    "all 3 divergences",
+    "T11(north pole)=2/3 in stereographic coordinates"
+  ],
+  "wrong_formula_controls_rejected": [
+    "omitted geometry",
+    "wrong geometric sign",
+    "missing Taylor factor two",
+    "wrong TT projection sign"
+  ],
+  "convention": "g=g0+eps*h1+eps^2*h2/2; E=Ric-dphi*dphi-(2/3)U*g",
+  "D2_E_ij_TT": "(16*u^2+(8/3)*v^2)*T_ij",
+  "second_order_forcing_ij_TT": "-(16*u^2+(8/3)*v^2)*T_ij",
+  "geometry_coefficient_in_D2_E": "16*u^2",
+  "scalar_coefficient_in_D2_E": "(8/3)*v^2",
+  "status": "pass",
+  "limits": "Local algebra and specified TT projection; not a through-contact IBVP theorem.",
+  "python_optimization_level": 1,
+  "sympy_version": "1.14.0",
+  "elapsed_seconds": 27.185,
+  "checker_sha256": "3526d3667a95071e190f90dc5f8fcfc69ecb78fe92cb49e1671052a59721c34b"
+}

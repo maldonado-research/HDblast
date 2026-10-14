@@ -1,0 +1,136 @@
+{
+  "status": "PASS",
+  "authentication": {
+    "status": "PASS",
+    "files_verified": 41,
+    "manifest_sha256": "a6816c5360480eeb18701d16002b5bab9179745d101588e6f13dd023f687b0fa"
+  },
+  "steps": [
+    {
+      "mode": "normal",
+      "script": "bulk/verify_quadratic_tt.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 15.052,
+      "sha256": "133655e3fa434b9c04414b826bd3ec7ac666f607efb6c50fe8a07a33974a1ef7"
+    },
+    {
+      "mode": "normal",
+      "script": "bulk/verify_tensor_operator.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 114.258,
+      "sha256": "5122b5b487c7dc5d3b644dea49a200118bd3c778ecf469ff437f339659c6b2c2"
+    },
+    {
+      "mode": "normal",
+      "script": "bulk/verify_sphere_projection.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 4.787,
+      "sha256": "d183052450bece858b09e429e98bd1f6119127459762dc40ca96242ce4693ee7"
+    },
+    {
+      "mode": "normal",
+      "script": "bulk/verify_regular_amplitude.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 1.167,
+      "sha256": "39ba73bb8ab1f44cdd10cdf8dc504cd7c96826d012ca5973a65a835fe0355ca6"
+    },
+    {
+      "mode": "normal",
+      "script": "independent/check_full_quadratic_tt.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 24.078,
+      "sha256": "6aeb3fcb7ee7229e3e76bb63df8001d85c92b92fc558b3fbd0ed907b6c2ad3ee"
+    },
+    {
+      "mode": "normal",
+      "script": "boundary/verify_tensor_contact.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 2.51,
+      "sha256": "9e6b5f819253de43289435b12c6026cfb2dd117730399b7986674a1b221bafa6"
+    },
+    {
+      "mode": "normal",
+      "script": "bulk/verify_quadratic_tt.py",
+      "control": "--inject-failure",
+      "expected_failure_exit_code": 1,
+      "expected_reason_detected": true
+    },
+    {
+      "mode": "normal",
+      "script": "boundary/verify_tensor_contact.py",
+      "control": "--inject-error",
+      "expected_failure_exit_code": 1,
+      "expected_reason_detected": true
+    },
+    {
+      "mode": "optimized",
+      "script": "bulk/verify_quadratic_tt.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 23.747,
+      "sha256": "133655e3fa434b9c04414b826bd3ec7ac666f607efb6c50fe8a07a33974a1ef7"
+    },
+    {
+      "mode": "optimized",
+      "script": "bulk/verify_tensor_operator.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 170.316,
+      "sha256": "5122b5b487c7dc5d3b644dea49a200118bd3c778ecf469ff437f339659c6b2c2"
+    },
+    {
+      "mode": "optimized",
+      "script": "bulk/verify_sphere_projection.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 6.523,
+      "sha256": "d183052450bece858b09e429e98bd1f6119127459762dc40ca96242ce4693ee7"
+    },
+    {
+      "mode": "optimized",
+      "script": "bulk/verify_regular_amplitude.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 4.371,
+      "sha256": "39ba73bb8ab1f44cdd10cdf8dc504cd7c96826d012ca5973a65a835fe0355ca6"
+    },
+    {
+      "mode": "optimized",
+      "script": "independent/check_full_quadratic_tt.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 31.705,
+      "sha256": "f5e4c5f533060d9b8cbfe282c9114f6de620dae147d2576ecc6caf18d2a59d94"
+    },
+    {
+      "mode": "optimized",
+      "script": "boundary/verify_tensor_contact.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 6.73,
+      "sha256": "9e6b5f819253de43289435b12c6026cfb2dd117730399b7986674a1b221bafa6"
+    },
+    {
+      "mode": "optimized",
+      "script": "bulk/verify_quadratic_tt.py",
+      "control": "--inject-failure",
+      "expected_failure_exit_code": 1,
+      "expected_reason_detected": true
+    },
+    {
+      "mode": "optimized",
+      "script": "boundary/verify_tensor_contact.py",
+      "control": "--inject-error",
+      "expected_failure_exit_code": 1,
+      "expected_reason_detected": true
+    }
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "scope": "Fresh exact algebra and operator replay; no numerical spacetime or full coupled contact proof."
+}
