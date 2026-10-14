@@ -1,0 +1,242 @@
+{
+  "status": "PASS",
+  "authentication": {
+    "status": "PASS",
+    "files_verified": 80,
+    "manifest_sha256": "0ee47e71ac4371a0f118e2c9a6bff835181a8300e2805423a444ffe700eac843"
+  },
+  "steps": [
+    {
+      "mode": "normal",
+      "script": "astra-bulk/verify_scalar_bulk.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 23.862,
+      "output_sha256": "89f9aeb30ad3865fa4f69c6e1ac28ee0e9d780c1ad8e0689828ed7730f50ace9"
+    },
+    {
+      "mode": "normal",
+      "script": "sol-bulk/checker/direct_metric_checker.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 20.044,
+      "output_sha256": "bb523ab2b6622c0a949d4a41c039b2bca7f2b3cd330ba71dc5712ce68354029e"
+    },
+    {
+      "mode": "normal",
+      "script": "sol-bulk/verify_angular_selection.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 12.589,
+      "output_sha256": "21b107ba06b81b295898b09de3b0312f49f25cffce0ae3c167dc0f5cc3eb897c"
+    },
+    {
+      "mode": "normal",
+      "script": "boundary/verify_scalar_boundary.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 1.723,
+      "output_sha256": "fc748e9f43c67c7abcd28b81e40bf902a693ee2b2e2b0ae719d4f1a89c48a030"
+    },
+    {
+      "mode": "normal",
+      "script": "boundary/principal/verify_principal_symbol.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 1.78,
+      "output_sha256": "a9ecbe0f2f4dc5e25a97734b28c2339ead89c5ab46db84d25a18ce955f558399"
+    },
+    {
+      "mode": "normal",
+      "script": "harmonic-referee/verify_harmonic_contact.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 5.335,
+      "output_sha256": "d0b70db8023db9fdd4426353c5e136c0110278e65e4ae13acbd23e214dfb0c4f"
+    },
+    {
+      "mode": "normal",
+      "script": "astra-bulk/verify_scalar_bulk.py",
+      "flags": [
+        "--inject-corruption"
+      ],
+      "expected_failure_exit_code": 1,
+      "expected_reason_detected": true
+    },
+    {
+      "mode": "normal",
+      "script": "sol-bulk/checker/direct_metric_checker.py",
+      "flags": [
+        "--control",
+        "omit-d2-factor"
+      ],
+      "expected_failure_exit_code": 1,
+      "expected_reason_detected": true
+    },
+    {
+      "mode": "normal",
+      "script": "sol-bulk/verify_angular_selection.py",
+      "flags": [
+        "--wrong-formula",
+        "wrong-l4-coefficient"
+      ],
+      "expected_failure_exit_code": 1,
+      "expected_reason_detected": true
+    },
+    {
+      "mode": "normal",
+      "script": "boundary/verify_scalar_boundary.py",
+      "flags": [
+        "--inject-error"
+      ],
+      "expected_failure_exit_code": 1,
+      "expected_reason_detected": true
+    },
+    {
+      "mode": "normal",
+      "script": "boundary/principal/verify_principal_symbol.py",
+      "flags": [
+        "--inject-error"
+      ],
+      "expected_failure_exit_code": 1,
+      "expected_reason_detected": true
+    },
+    {
+      "mode": "normal",
+      "script": "harmonic-referee/verify_harmonic_contact.py",
+      "flags": [
+        "--inject-corruption",
+        "subsidiary"
+      ],
+      "expected_failure_exit_code": 1,
+      "expected_reason_detected": true
+    },
+    {
+      "mode": "normal",
+      "script": "harmonic-referee/verify_harmonic_contact.py",
+      "flags": [
+        "--inject-corruption",
+        "second-source"
+      ],
+      "expected_failure_exit_code": 1,
+      "expected_reason_detected": true
+    },
+    {
+      "mode": "optimized",
+      "script": "astra-bulk/verify_scalar_bulk.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 43.637,
+      "output_sha256": "597deb80d57abb3ffcb3c06db3f5a47df93d7b94fcd3ce4eb4214c070d9644e9"
+    },
+    {
+      "mode": "optimized",
+      "script": "sol-bulk/checker/direct_metric_checker.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 28.243,
+      "output_sha256": "59fc6cb6d6a3fccea096b2e7fb071627a13c1e1e7b6304f620d5387dfa0f8a62"
+    },
+    {
+      "mode": "optimized",
+      "script": "sol-bulk/verify_angular_selection.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 16.303,
+      "output_sha256": "27c28233cf466799dae150fcb7ce9ed2af2f83d3113b7da1223b6b343f766c0b"
+    },
+    {
+      "mode": "optimized",
+      "script": "boundary/verify_scalar_boundary.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 9.167,
+      "output_sha256": "fc748e9f43c67c7abcd28b81e40bf902a693ee2b2e2b0ae719d4f1a89c48a030"
+    },
+    {
+      "mode": "optimized",
+      "script": "boundary/principal/verify_principal_symbol.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 8.055,
+      "output_sha256": "a9ecbe0f2f4dc5e25a97734b28c2339ead89c5ab46db84d25a18ce955f558399"
+    },
+    {
+      "mode": "optimized",
+      "script": "harmonic-referee/verify_harmonic_contact.py",
+      "exit_code": 0,
+      "scientific_output_matches": true,
+      "wall_seconds": 11.06,
+      "output_sha256": "47d1ab040b164e5fda5c178099634743464e1b76f4befa473c1a7ec4c80ea6f1"
+    },
+    {
+      "mode": "optimized",
+      "script": "astra-bulk/verify_scalar_bulk.py",
+      "flags": [
+        "--inject-corruption"
+      ],
+      "expected_failure_exit_code": 1,
+      "expected_reason_detected": true
+    },
+    {
+      "mode": "optimized",
+      "script": "sol-bulk/checker/direct_metric_checker.py",
+      "flags": [
+        "--control",
+        "omit-d2-factor"
+      ],
+      "expected_failure_exit_code": 1,
+      "expected_reason_detected": true
+    },
+    {
+      "mode": "optimized",
+      "script": "sol-bulk/verify_angular_selection.py",
+      "flags": [
+        "--wrong-formula",
+        "wrong-l4-coefficient"
+      ],
+      "expected_failure_exit_code": 1,
+      "expected_reason_detected": true
+    },
+    {
+      "mode": "optimized",
+      "script": "boundary/verify_scalar_boundary.py",
+      "flags": [
+        "--inject-error"
+      ],
+      "expected_failure_exit_code": 1,
+      "expected_reason_detected": true
+    },
+    {
+      "mode": "optimized",
+      "script": "boundary/principal/verify_principal_symbol.py",
+      "flags": [
+        "--inject-error"
+      ],
+      "expected_failure_exit_code": 1,
+      "expected_reason_detected": true
+    },
+    {
+      "mode": "optimized",
+      "script": "harmonic-referee/verify_harmonic_contact.py",
+      "flags": [
+        "--inject-corruption",
+        "subsidiary"
+      ],
+      "expected_failure_exit_code": 1,
+      "expected_reason_detected": true
+    },
+    {
+      "mode": "optimized",
+      "script": "harmonic-referee/verify_harmonic_contact.py",
+      "flags": [
+        "--inject-corruption",
+        "second-source"
+      ],
+      "expected_failure_exit_code": 1,
+      "expected_reason_detected": true
+    }
+  ],
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "scope": "Fresh exact identity and formula replay; no numerical spacetime or computer-certified analytic existence proof."
+}
