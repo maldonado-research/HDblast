@@ -1,0 +1,136 @@
+{
+  "kind": "exact_symbolic_identity_checks_not_PDE_certificate",
+  "sympy_version": "1.14.0",
+  "passed": true,
+  "checks": [
+    {
+      "name": "metric_tau_tau",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "metric_chi_chi",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "metric_cross",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "angular_metric",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "actual_s",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "s_at_center",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "s_at_shell",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "bulk_conformal_potential_9_over_4",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "bulk_time_first_derivative_cancels",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "bulk_radial_first_derivative_cancels",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "negative_control_bulk_curvature_2",
+      "passed": true,
+      "wrong_residual": "(sin(chi)**2 + sin(tau)**2 - 2*cos(chi)*cos(tau) - 2)/(4*(cos(chi) + cos(tau))**2)",
+      "nonzero_witness": "-1/4"
+    },
+    {
+      "name": "normal_log_weight",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "boundary_mass_derivative",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "boundary_wave_conjugation",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "boundary_beta_conversion",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "negative_control_omit_boundary_friction",
+      "passed": true,
+      "wrong_residual": "tan(tau)*Derivative(z(tau), tau)",
+      "nonzero_witness": "sqrt(3)/3"
+    },
+    {
+      "name": "negative_control_flip_boundary_mass",
+      "passed": true,
+      "wrong_residual": "2*c*cos(tau)/b",
+      "nonzero_witness": "sqrt(3)"
+    },
+    {
+      "name": "radial_mode_conjugation",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "negative_control_omit_radial_three_quarters",
+      "passed": true,
+      "wrong_residual": "3*v(x)/(4*cos(x)**2)",
+      "nonzero_witness": "1"
+    },
+    {
+      "name": "even_boundary_ode",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "odd_boundary_ode",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "ambient_contact_time",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "outgoing_null_contact",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "fixed_ball_normal",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "fixed_ball_radial_coercivity",
+      "passed": true,
+      "residual": "0"
+    }
+  ]
+}

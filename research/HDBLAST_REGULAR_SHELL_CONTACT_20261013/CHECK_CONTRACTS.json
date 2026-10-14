@@ -1,0 +1,152 @@
+{
+  "checks": [
+    {
+      "control_names": [
+        "negative_control_bulk_curvature_2",
+        "negative_control_flip_boundary_mass",
+        "negative_control_omit_boundary_friction",
+        "negative_control_omit_radial_three_quarters"
+      ],
+      "expected_receipt": "results/existence.json",
+      "failure_controls": [
+        {
+          "arguments": [
+            "--inject-failure"
+          ],
+          "diagnostic": "injected_wrong_bulk_curvature",
+          "failed_check": "injected_wrong_bulk_curvature",
+          "name": "wrong_bulk_curvature"
+        }
+      ],
+      "inventory_schema": "detailed",
+      "name": "existence",
+      "positive_checks": 21,
+      "positive_names": [
+        "actual_s",
+        "ambient_contact_time",
+        "angular_metric",
+        "boundary_beta_conversion",
+        "boundary_mass_derivative",
+        "boundary_wave_conjugation",
+        "bulk_conformal_potential_9_over_4",
+        "bulk_radial_first_derivative_cancels",
+        "bulk_time_first_derivative_cancels",
+        "even_boundary_ode",
+        "fixed_ball_normal",
+        "fixed_ball_radial_coercivity",
+        "metric_chi_chi",
+        "metric_cross",
+        "metric_tau_tau",
+        "normal_log_weight",
+        "odd_boundary_ode",
+        "outgoing_null_contact",
+        "radial_mode_conjugation",
+        "s_at_center",
+        "s_at_shell"
+      ],
+      "script": "existence/check_shell_contact_coordinates.py",
+      "script_sha256": "47db9559ecf1609058796ba783ec44e4c6f81db7b9dff6e83bd08aa320d9c871",
+      "wrong_formula_controls": 4
+    },
+    {
+      "control_names": [
+        "double shell tension instead of one",
+        "drop varying weight from K integration",
+        "equal-spectral shortcut on packets",
+        "omit Einstein graph corner",
+        "omit graph evaluation shift",
+        "omit gravitational scalar mixing",
+        "omit moving integration domain",
+        "omit odd shell current",
+        "omit scalar 2pPsi term",
+        "reverse odd Robin sign"
+      ],
+      "expected_receipt": "results/junctions.json",
+      "failure_controls": [
+        {
+          "arguments": [
+            "--inject-failure"
+          ],
+          "diagnostic": "injected bad normal force sign",
+          "failed_check": "injected bad normal force sign",
+          "name": "wrong_normal_force"
+        }
+      ],
+      "inventory_schema": "split_list",
+      "name": "junctions",
+      "positive_checks": 63,
+      "positive_names": [
+        "B definition",
+        "Hamiltonian difference / normal force",
+        "S3 Hessian-TF norm Bochner identity",
+        "actual gravitational Cauchy weight",
+        "actual scalar Cauchy weight",
+        "ambient coordinate Jacobian",
+        "compact-annulus K diagonal integration identity",
+        "direct field-space curl of GHY-completed potential",
+        "direct graph extrinsic curvature covariant 00",
+        "direct graph extrinsic curvature covariant 01",
+        "direct graph extrinsic curvature covariant 02",
+        "direct graph extrinsic curvature covariant 03",
+        "direct graph extrinsic curvature covariant 11",
+        "direct graph extrinsic curvature covariant 12",
+        "direct graph extrinsic curvature covariant 13",
+        "direct graph extrinsic curvature covariant 22",
+        "direct graph extrinsic curvature covariant 23",
+        "direct graph extrinsic curvature covariant 33",
+        "direct graph extrinsic curvature mixed 00",
+        "direct graph extrinsic curvature mixed 01",
+        "direct graph extrinsic curvature mixed 02",
+        "direct graph extrinsic curvature mixed 03",
+        "direct graph extrinsic curvature mixed 11",
+        "direct graph extrinsic curvature mixed 12",
+        "direct graph extrinsic curvature mixed 13",
+        "direct graph extrinsic curvature mixed 22",
+        "direct graph extrinsic curvature mixed 23",
+        "direct graph extrinsic curvature mixed 33",
+        "direct graph-GHY kinetic coefficient",
+        "direct induced scalar",
+        "direct scalar normal pullback",
+        "even Wentzell scalar sufficiency",
+        "even packet shell flux",
+        "exact arbitrary packet current",
+        "exact graph-GHY second variation including shift",
+        "full Israel isotropic cancellation",
+        "full Israel reconstructed residual",
+        "full odd moving-shell kinetic action",
+        "full scalar junction residual",
+        "graph GHY plus Einstein corner",
+        "induced metric pullback 00",
+        "induced metric pullback 01",
+        "induced metric pullback 02",
+        "induced metric pullback 03",
+        "induced metric pullback 11",
+        "induced metric pullback 12",
+        "induced metric pullback 13",
+        "induced metric pullback 22",
+        "induced metric pullback 23",
+        "induced metric pullback 33",
+        "l>=2 Hessian-TF positive factorization",
+        "mixed parity moving-domain cancellation",
+        "moving ambient normal flux density",
+        "odd Robin induced scalar matching",
+        "odd current from completed action",
+        "odd embedding induced metric matching",
+        "odd packet shell current divergence",
+        "odd zeta shell current coefficient",
+        "physical radial current pullback",
+        "shell normal-force residual",
+        "shell temporal vector density transformation",
+        "unseparated scalar junction to master",
+        "warped mixed diffeomorphism after angular TF constraint"
+      ],
+      "script": "junctions/check_packet_junctions.py",
+      "script_sha256": "5a4841b0f207d55c1da8c1f652f48c2b9d5ce7fb322aa823ba1054d206c81dfc",
+      "wrong_formula_controls": 10
+    }
+  ],
+  "positive_checks_per_mode": 84,
+  "schema_version": 1,
+  "scope": "Explicit reviewed exact-identity/control roster, not machine proof of analytic PDE existence.",
+  "wrong_formula_controls_per_mode": 14
+}
