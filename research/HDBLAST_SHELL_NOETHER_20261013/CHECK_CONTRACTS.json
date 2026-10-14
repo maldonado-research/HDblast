@@ -1,0 +1,185 @@
+{
+  "checks": [
+    {
+      "control_names": [
+        "omit_nonlinear_israel_force_product",
+        "omit_one_outward_gravitational_copy",
+        "omit_scalar_force_in_tangential_identity",
+        "omit_unit_normal_variation",
+        "reverse_ghy_corner_sign_in_charge",
+        "two_tensions_instead_of_one",
+        "wrong_scalar_junction_sign_in_force",
+        "wrong_sign_ghy_corner"
+      ],
+      "expected_receipt": "results/noether.json",
+      "failure_controls": [
+        {
+          "arguments": [
+            "--inject-wrong-corner-sign"
+          ],
+          "diagnostic": "unrestricted_ghy_from_connection_and_normal_variations: exact identity failed",
+          "failed_report_status": null,
+          "kind": "scientific_identity_mutation",
+          "name": "wrong_ghy_corner_sign"
+        }
+      ],
+      "inventory_schema": "noether_dict",
+      "name": "noether",
+      "positive_checks": 6,
+      "positive_names": [
+        "codazzi_full_tangential_residual",
+        "four_dimensional_israel_trace",
+        "four_dimensional_israel_trace_reversal",
+        "full_nonlinear_normal_force_factorization",
+        "komar_ghy_single_tension_completed_charge",
+        "unrestricted_ghy_from_connection_and_normal_variations"
+      ],
+      "script": "derivation/check_nonlinear_shell_noether.py",
+      "script_sha256": "71df3f89c818e96a631870ff7556070a68cfead99911e157fa3540979c04732b",
+      "wrong_formula_controls": 8
+    },
+    {
+      "control_names": [
+        "double_counted_shell_tension",
+        "lost_Hessian_factor_two",
+        "missing_D_plus_5",
+        "missing_commutator_unit",
+        "missing_scalar_force_residual",
+        "omitted_tilted_cut_angular_term",
+        "radial_missing_velocity_unit",
+        "wrong_boost_angle_sign",
+        "wrong_gravity_symplectic_sign"
+      ],
+      "expected_receipt": "results/rotational.json",
+      "failure_controls": [
+        {
+          "arguments": [
+            "--inject-failure"
+          ],
+          "diagnostic": "explicit_injected_failure",
+          "failed_report_status": {
+            "key": "scientific_status",
+            "value": "failed"
+          },
+          "kind": "explicit_nonzero_guard",
+          "name": "explicit_guard_failure"
+        }
+      ],
+      "inventory_schema": "rotational_lists",
+      "name": "rotational",
+      "positive_checks": 46,
+      "positive_names": [
+        "ADM_extrinsic_trace",
+        "ADM_gravity_pairing",
+        "ADM_gravity_physical_orientation",
+        "ADM_momentum_00",
+        "ADM_momentum_01",
+        "ADM_momentum_02",
+        "ADM_momentum_03",
+        "ADM_momentum_10",
+        "ADM_momentum_11",
+        "ADM_momentum_12",
+        "ADM_momentum_13",
+        "ADM_momentum_20",
+        "ADM_momentum_21",
+        "ADM_momentum_22",
+        "ADM_momentum_23",
+        "ADM_momentum_30",
+        "ADM_momentum_31",
+        "ADM_momentum_32",
+        "ADM_momentum_33",
+        "ADM_scalar_physical_orientation",
+        "Israel_mixed_projection",
+        "ambient_E_commutator",
+        "arbitrary_second_order_cut_angle",
+        "compact_first_order_corner_Hessian",
+        "corner_Hessian_with_second_order_correction",
+        "corner_background_first_derivative",
+        "degree_two_J2H",
+        "degree_two_JH",
+        "degree_two_ambient_harmonic",
+        "explicit_l2_Hessian",
+        "moment_map_Hessian_factor",
+        "nonlinear_force_full_Gauss_identity",
+        "one_interior_rotational_candidate",
+        "radial_diagonal_coefficient",
+        "rotational_second_order_obstruction",
+        "single_tension_mixed_projection",
+        "sphere_HH",
+        "sphere_HJH",
+        "sphere_JHJH",
+        "sphere_angular_integration_by_parts",
+        "sphere_volume",
+        "tilt_s_unit",
+        "tilt_u_s_orthogonal",
+        "tilt_u_unit",
+        "tilted_cut_curvature",
+        "two_interior_constraint_orientation"
+      ],
+      "script": "independent/check_rotational_constraints.py",
+      "script_sha256": "6fb2ab0a0bd816485f89ba3db41b43407d00e91ec643c879c24ccbac9ad25055",
+      "wrong_formula_controls": 9
+    },
+    {
+      "control_names": [
+        "one_interior_used_as_doubled_Hessian",
+        "reversed_rotation_commutator_sign",
+        "unrestricted_quadrupole_zero_claim",
+        "wrong_sphere_trace_normalization"
+      ],
+      "expected_receipt": "results/quadrupole.json",
+      "failure_controls": [
+        {
+          "arguments": [
+            "--inject-failure"
+          ],
+          "diagnostic": "Exact identity failed: rotation_12_polynomial_covariance",
+          "failed_report_status": null,
+          "kind": "scientific_identity_mutation",
+          "name": "reversed_rotation_identity"
+        }
+      ],
+      "inventory_schema": "quadrupole_lists",
+      "name": "quadrupole",
+      "positive_checks": 29,
+      "positive_names": [
+        "arbitrary_quadrupole_bilinear_sphere_integral",
+        "boost_1_all_radial_coefficients_integrate_to_zero",
+        "boost_2_all_radial_coefficients_integrate_to_zero",
+        "boost_3_all_radial_coefficients_integrate_to_zero",
+        "boost_4_all_radial_coefficients_integrate_to_zero",
+        "common_harmonic_matrices_commute",
+        "explicit_doubled_Hessian_coefficient",
+        "explicit_orthogonal_displacement_velocity_harmonics",
+        "explicit_quadrupole_generator",
+        "explicit_quadrupole_norm",
+        "explicit_quadrupole_second_generator",
+        "explicit_rotated_quadrupole_norm",
+        "harmonic_A_trace_free",
+        "harmonic_A_zero_mean",
+        "harmonic_B_trace_free",
+        "harmonic_B_zero_mean",
+        "rotation_12_integral_is_commutator_component",
+        "rotation_12_polynomial_covariance",
+        "rotation_13_integral_is_commutator_component",
+        "rotation_13_polynomial_covariance",
+        "rotation_14_integral_is_commutator_component",
+        "rotation_14_polynomial_covariance",
+        "rotation_23_integral_is_commutator_component",
+        "rotation_23_polynomial_covariance",
+        "rotation_24_integral_is_commutator_component",
+        "rotation_24_polynomial_covariance",
+        "rotation_34_integral_is_commutator_component",
+        "rotation_34_polynomial_covariance",
+        "sphere_fourth_moments_normalize_radius_four"
+      ],
+      "script": "root-audit/check_quadrupole_admissibility.py",
+      "script_sha256": "29efa69d9ff8aafab74dc229846e0c9d82a81a7a54dd9b96c5b98ab9d035f551",
+      "wrong_formula_controls": 4
+    }
+  ],
+  "positive_checks_per_mode": 81,
+  "schema_version": 1,
+  "scope": "Exact named algebra/control inventory; matrix identities are not multiplied by component counts, and nonlinear existence or full differential-form proof is not mechanically certified.",
+  "wrong_formula_controls_per_mode": 21
+}

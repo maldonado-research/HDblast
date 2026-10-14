@@ -1,0 +1,19 @@
+--- original/check_rotational_constraints.py
++++ check_rotational_constraints.py
+@@ -239,7 +239,6 @@
+         "schema": "independent-rotational-shell-constraints-v1",
+         "scientific_status": "exact_algebra_controls_passed",
+         "scope": "spatial constraint Hessian; PDE and differentiability assumptions remain analytic",
+-        "python_optimization": sys.flags.optimize,
+         "sympy_version": sp.__version__,
+         "checks": checks,
+         "wrong_controls": controls,
+@@ -270,7 +269,7 @@
+     except Exception as error:
+         failure = {"schema": "independent-rotational-shell-constraints-v1",
+                    "scientific_status": "failed", "error": str(error),
+-                   "python_optimization": sys.flags.optimize}
++                   }
+         rendered = json.dumps(failure, indent=2, sort_keys=True) + "\n"
+         if args.output:
+             args.output.write_text(rendered)
