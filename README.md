@@ -1,5 +1,12 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- quadratic-tensor-contact-20261014 -->
+**Quadratic tensor forcing and a tensor sector through shell contact — 14 October 2026:** For the specified quadrupole Y = n₁² − n₂² in the fixed longitudinal first-order gauge, the complete gravity-plus-scalar quadratic source has a nonzero transverse traceless angular component wherever either scalar amplitude is nonzero: its coefficient is 16u² + 8v²/3. Thus the two contributions cannot cancel there. A velocity-only packet can have zero source on its initial slice and develop it later.
+
+For even first-order master data, the corresponding forced second-order tensor sector has homogeneous Neumann shell data and a conditional evolution through first contact on a controlled collar. The full coupled scalar and tensor second-order boundary problem and a nonlinear solution through contact remain open.
+
+[Derivation, assumptions and reproducible checks](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_QUADRATIC_TENSOR_CONTACT_20261014/README.md). These statements use the specified background, first-order gauge and parity. They establish no Big Bang origin or external novelty; internal proof review is not external peer review. This is a GitHub-only checkpoint, with no new Zenodo version or APS submission. Earlier dated entries retain their original scope.
+
 <!-- exact-localized-precontact-20261014 -->
 **Exact localized initial data and short precontact evolution — 14 October 2026:** Under the stated background assumptions and weighted nonlinear estimates, the reflection-invariant quadrupole sector admits a family of exact nonlinear initial data at a chosen high finite Sobolev regularity. A sufficiently short precontact Cauchy evolution preserves a collar of background fields next to the shell, where its junction conditions remain unchanged. The nonlinear boundary problem through shell contact remains open.
 

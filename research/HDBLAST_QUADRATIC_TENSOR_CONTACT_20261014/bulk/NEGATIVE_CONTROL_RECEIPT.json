@@ -1,0 +1,7 @@
+{
+  "commands": ["python verify_quadratic_tt.py --inject-failure", "python -O verify_quadratic_tt.py --inject-failure"],
+  "exit_code": 1,
+  "expected_failure": true,
+  "exception": "RuntimeError: injected_matter_only_claim: 8*u**2",
+  "interpretation": "Deleting the geometric TT contribution is detected with exit code 1 in both normal and optimized Python modes. The unmutated script passed in both modes."
+}

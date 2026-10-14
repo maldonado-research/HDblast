@@ -1,0 +1,75 @@
+name: Quadratic tensor source and shell-contact sector
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_QUADRATIC_TENSOR_CONTACT_20261014/**'
+      - 'research/HDBLAST_QUADRATIC_TENSOR_CONTACT_20261014.zip'
+      - '.github/workflows/hdblast_quadratic_tensor_contact.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_QUADRATIC_TENSOR_CONTACT_20261014/**'
+      - 'research/HDBLAST_QUADRATIC_TENSOR_CONTACT_20261014.zip'
+      - '.github/workflows/hdblast_quadratic_tensor_contact.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quadratic-tensor-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  fresh-independent-replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    env:
+      PROOF_DIRECTORY: research/HDBLAST_QUADRATIC_TENSOR_CONTACT_20261014
+      MANIFEST_SHA256: 'a6816c5360480eeb18701d16002b5bab9179745d101588e6f13dd023f687b0fa'
+      RUNNER_SHA256: '69219404e937f7704e1cc37e43f1aade41c3519aa7cad2e841677efd736efdee'
+      VERIFIER_SHA256: 'cc1036b9429e8aff56e5e1d20636f2b6c99a7821c896a71d1020bb780e8da5b0'
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: ${{ env.PROOF_DIRECTORY }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Authenticate frozen executable and manifest bytes before imports
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -S -B - <<'PY'
+          import hashlib, os, pathlib, shutil
+          root = pathlib.Path(os.environ['PROOF_DIRECTORY'])
+          for name, variable in [('MANIFEST.json', 'MANIFEST_SHA256'),
+                                 ('reproduce.py', 'RUNNER_SHA256'),
+                                 ('verify_manifest.py', 'VERIFIER_SHA256')]:
+              path = root / name
+              if any(p.is_symlink() for p in [path, *path.parents]):
+                  raise RuntimeError('Real source files required')
+              if hashlib.sha256(path.read_bytes()).hexdigest() != os.environ[variable]:
+                  raise RuntimeError('External authentication pin differs: ' + name)
+          relocated = pathlib.Path(os.environ['RUNNER_TEMP']) / 'tensor-source'
+          shutil.copytree(root, relocated)
+          PY
+          python -B "$RUNNER_TEMP/tensor-source/verify_manifest.py" --expected "$MANIFEST_SHA256"
+      - name: Install pinned symbolic dependency
+        run: |
+          python -I -B -m pip install --only-binary=:all: -r "$RUNNER_TEMP/tensor-source/requirements.txt"
+      - name: Replay six independent checkers and actual corruption controls in both modes
+        run: |
+          python -B "$RUNNER_TEMP/tensor-source/reproduce.py" --manifest-sha256 "$MANIFEST_SHA256" --output-dir "$RUNNER_TEMP/tensor-fresh-replay"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: quadratic-tensor-contact-${{ github.sha }}
+          path: ${{ runner.temp }}/tensor-fresh-replay
+          retention-days: 14
