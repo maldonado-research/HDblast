@@ -1,0 +1,508 @@
+{
+  "started_utc": "2026-10-14T17:41:46.318056+00:00",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+  "uploaded_pickle_policy": "Deleted every uploaded pickle from copy; regenerated sources_cc.pkl from reviewed source code.",
+  "steps": [
+    {
+      "name": "regenerate_sources",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "second_order_sources.py",
+        "cc"
+      ],
+      "cwd": "/workspace/hdblast-research-work/audit-replay-20261014/basis/code",
+      "exit_code": 0,
+      "wall_seconds": 212.557,
+      "log": "/workspace/hdblast-research-work/audit-replay-20261014/audit_logs/regenerate_sources.log",
+      "outputs": [
+        {
+          "path": "basis/results/sources_cc.pkl",
+          "exists": true,
+          "sha256": "91f9f861d5b6115c32bf957c453903881a88d6e86bc04487f7938d743e78bf5d"
+        }
+      ]
+    },
+    {
+      "name": "standard_fast_replay",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "reproduce.py"
+      ],
+      "cwd": "/workspace/hdblast-research-work/audit-replay-20261014",
+      "exit_code": 0,
+      "wall_seconds": 4548.737,
+      "log": "/workspace/hdblast-research-work/audit-replay-20261014/audit_logs/standard_fast_replay.log",
+      "outputs": [
+        {
+          "path": "REPRODUCTION_RECEIPT.json",
+          "exists": true,
+          "sha256": "c12c48ae8ef03314a86998d1dfc9e430c819e8066af291f100d074f70c481e11"
+        }
+      ]
+    },
+    {
+      "name": "compare_f0_resumed",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "compare_f0.py"
+      ],
+      "cwd": "/workspace/hdblast-research-work/audit-replay-20261014/independent",
+      "exit_code": 0,
+      "wall_seconds": 12.334,
+      "log": "/workspace/hdblast-research-work/audit-replay-20261014/audit_logs/compare_f0_resumed.log",
+      "output": "/workspace/hdblast-research-work/audit-replay-20261014/independent/compare_f0.json",
+      "output_sha256": "d24f838a1d244139b879a8707924f244721649b71165ccb0a82cd5c0e18dad5f"
+    }
+  ],
+  "sympy": "1.14.0",
+  "mpmath": "1.3.0",
+  "original_manifest_checks": [
+    {
+      "path": "LICENSE",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "NEXT_CALCULATIONS.md",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "README.md",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "RESULTS.md",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "make_manifest.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "reproduce.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "requirements.txt",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/README_PROVENANCE.md",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/SECOND_ORDER_LOCALIZED_CONSTRAINTS.md",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/code/analyze_l0_weight.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/code/analyze_sources.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/code/check_basics.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/code/check_kid_modes.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/code/check_kids.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/code/construct_cc.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/code/construct_cc2.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/code/construct_l0.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/code/engine.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/code/fields.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/code/linear_ops.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/code/second_order_sources.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/code/sphere.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/code/verify_cc.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/basics.json",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/basics.log",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/charges_cc.json",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/charges_nc.json",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/construct_cc.log",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/construct_cc2_H.log",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/construct_cc2_M.log",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/construct_cc_H.json",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/construct_cc_H.pkl",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/construct_cc_M.json",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/construct_cc_M.pkl",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/kid_modes.json",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/kid_modes.log",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/kids.json",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/kids.log",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/l0_sector.json",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/l0_weight.json",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/sources_cc.log",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/sources_cc.pkl",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/sources_nc.log",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/sources_nc.pkl",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "basis/results/verify_cc.log",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "independent/bg5d.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "independent/compare_f0.json",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "independent/compare_f0.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "independent/indep_check.json",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "independent/indep_check.log",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "independent/indep_check.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "independent/indep_l0.json",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "independent/indep_l0.log",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "independent/indep_l0.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "manuscript/SECOND_ORDER_LOCALIZED.md",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "new/exact_random_point.json",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "new/exact_random_point.log",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "new/exact_random_point.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "new/fast_verify.json",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "new/fast_verify.log",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "new/fast_verify.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "new/kids_symbolic_l01.json",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "new/kids_symbolic_l01.log",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "new/kids_symbolic_l01.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "new/kids_tensor_only.json",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "new/kids_tensor_only.log",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "new/kids_tensor_only.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "new/l0_full_sector.json",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "new/l0_full_sector.log",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "new/l0_full_sector.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "new/wgg_canonical.json",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "new/wgg_canonical.log",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "new/wgg_canonical.py",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "reviews/REFEREE_REPORT.md",
+      "sha256_matches": true,
+      "bytes_matches": true
+    },
+    {
+      "path": "reviews/RESPONSE_TO_REFEREE.md",
+      "sha256_matches": true,
+      "bytes_matches": true
+    }
+  ],
+  "resumed_finalization": {
+    "resumed_utc": "2026-10-14T19:06:21.538373+00:00",
+    "reason": "Original orchestration completed and recorded the eight-step replay, then stopped before compare_f0 and final timestamp. Its exact stopping cause is not established.",
+    "completed_eight_steps_rerun": false
+  },
+  "hardened_fresh_receipt_validations": [
+    {
+      "script": "new/kids_tensor_only.py",
+      "output": "new/kids_tensor_only.json",
+      "output_sha256": "5e4c55e8b4a4909541db954326e5d0d3adce2b492d6efbfd5ca15fafe6066102",
+      "predicate_passed": true
+    },
+    {
+      "script": "new/kids_symbolic_l01.py",
+      "output": "new/kids_symbolic_l01.json",
+      "output_sha256": "824d55275f2202ebe4d9329eeb697d62437a78962a2c9cc6f24f26cbb8e18ddc",
+      "predicate_passed": true
+    },
+    {
+      "script": "new/l0_full_sector.py",
+      "output": "new/l0_full_sector.json",
+      "output_sha256": "77a23792dd0a7864824131f95218b25d053abfadf23c0f25cb02e4655f5fcd44",
+      "predicate_passed": true
+    },
+    {
+      "script": "new/wgg_canonical.py",
+      "output": "new/wgg_canonical.json",
+      "output_sha256": "0103f9585b2d801e2d7905735221a5c48f75bcb639aad262e4827127d2048056",
+      "predicate_passed": true
+    },
+    {
+      "script": "new/exact_random_point.py",
+      "output": "new/exact_random_point.json",
+      "output_sha256": "d4da9ebd49b6c870ec5734d54d38dc96075ec50e163d6819d8fdccd413a4be97",
+      "predicate_passed": true
+    },
+    {
+      "script": "new/fast_verify.py",
+      "output": "new/fast_verify.json",
+      "output_sha256": "394cef39517d8668d3b4d0a5e4dbfa3fb1b1d9a4e7f92900a92aa9849525ef66",
+      "predicate_passed": true
+    },
+    {
+      "script": "new/angular_exact.py",
+      "output": "new/angular_exact.json",
+      "output_sha256": "07ff0cda6d33ecf0aab3d844ffebae445c594dd276e2a77ab110d4d443d4ceeb",
+      "predicate_passed": true
+    },
+    {
+      "script": "independent/indep_check.py",
+      "output": "independent/indep_check.json",
+      "output_sha256": "7302815694ab4ba7a46743f4fe9fbe933480bf5613d42ee7b823038231fa09ba",
+      "predicate_passed": true
+    },
+    {
+      "script": "independent/indep_l0.py",
+      "output": "independent/indep_l0.json",
+      "output_sha256": "5dbade1046f4877bc12d94b651691cf9f0dab59c83127dcde4d4f8b451de4905",
+      "predicate_passed": true
+    },
+    {
+      "script": "independent/compare_f0.py",
+      "output": "independent/compare_f0.json",
+      "output_sha256": "d24f838a1d244139b879a8707924f244721649b71165ccb0a82cd5c0e18dad5f",
+      "predicate_passed": true
+    }
+  ],
+  "all_selected_checks_passed": true,
+  "selected_check_count": 10,
+  "finished_utc": "2026-10-14T19:06:35.115410+00:00"
+}

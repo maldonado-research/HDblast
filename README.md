@@ -1,5 +1,10 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- exact-localized-precontact-20261014 -->
+**Exact localized initial data and short precontact evolution — 14 October 2026:** Under the stated background assumptions and weighted nonlinear estimates, the reflection-invariant quadrupole sector admits a family of exact nonlinear initial data at a chosen high finite Sobolev regularity. A sufficiently short precontact Cauchy evolution preserves a collar of background fields next to the shell, where its junction conditions remain unchanged. The nonlinear boundary problem through shell contact remains open.
+
+This is a conditional result at high finite regularity, with no spatial smoothness to all orders, Big Bang conclusion or external novelty established. Internal AI-assisted proof review is not external peer review. [Proof, assumptions and limits](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_EXACT_LOCALIZED_PRECONTACT_20261014/README.md). This is a GitHub-only checkpoint, with no new Zenodo version or APS submission. Earlier dated entries retain their original scope.
+
 <!-- reflection-formal-initial-data-20261014 -->
 **Formal continuation by reflection symmetry — 14 October 2026:** For the restricted commuting quadrupoles of the localized checkpoint, simultaneous diagonalization makes the first-order data invariant under coordinate reflections. The reflections force all ten local symmetry compatibility pairings to vanish at every finite constraint order. Under the stated localization hypotheses, recursive constraint solving and reflection-group averaging construct localized **formal initial data to all orders**. Convergence, an exact nonlinear solution and full evolution through shell contact are not established. [Derivation, assumptions and limits](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_SECOND_ORDER_LOCALIZED_20261014/continuation/REFLECTION_FORMAL_INITIAL_DATA.md).
 
