@@ -1,0 +1,137 @@
+{
+  "status": "PASS",
+  "positive_checks": 20,
+  "wrong_formula_controls": 11,
+  "scope": "Exact material junction algebra and Gauss/Codazzi consistency; no shell-contact PDE solve",
+  "checks": [
+    {
+      "name": "tension_second_derivative_chain_rule",
+      "passed": true
+    },
+    {
+      "name": "tension_prime_second_derivative_chain_rule",
+      "passed": true
+    },
+    {
+      "name": "full_ten_component_Lorentz_trace_reversal",
+      "passed": true
+    },
+    {
+      "name": "invertible_trace_reversal_inverse",
+      "passed": true
+    },
+    {
+      "name": "complete_second_order_ten_metric_junction_components",
+      "passed": true
+    },
+    {
+      "name": "complete_second_order_scalar_junction",
+      "passed": true
+    },
+    {
+      "name": "exact_Z2_metric_division",
+      "passed": true
+    },
+    {
+      "name": "exact_Z2_scalar_division",
+      "passed": true
+    },
+    {
+      "name": "registered_tension_second_derivative",
+      "passed": true
+    },
+    {
+      "name": "registered_tension_third_derivative",
+      "passed": true
+    },
+    {
+      "name": "registered_scalar_source_minus_four",
+      "passed": true
+    },
+    {
+      "name": "material_graph_first_scalar_derivative",
+      "passed": true
+    },
+    {
+      "name": "material_graph_second_scalar_derivative",
+      "passed": true
+    },
+    {
+      "name": "inverse_metric_through_second_order",
+      "passed": true
+    },
+    {
+      "name": "normal_force_trace_includes_all_metric_variations",
+      "passed": true
+    },
+    {
+      "name": "exact_off_shell_normal_force_identity",
+      "passed": true
+    },
+    {
+      "name": "tangential_Codazzi_tension_product_rule",
+      "passed": true
+    },
+    {
+      "name": "conformal_first_metric_source_has_zero_tracefree_part",
+      "passed": true
+    },
+    {
+      "name": "even_master_shell_metric_pullback_is_conformal",
+      "passed": true
+    },
+    {
+      "name": "tensor_Robin_flux_becomes_rescaled_Neumann",
+      "passed": true
+    }
+  ],
+  "controls": [
+    {
+      "name": "wrong_intrinsic_trace_dimension",
+      "detected": true
+    },
+    {
+      "name": "double_common_shell_tension",
+      "detected": true
+    },
+    {
+      "name": "omit_metric_product_factor_two",
+      "detected": true
+    },
+    {
+      "name": "wrong_scalar_third_derivative",
+      "detected": true
+    },
+    {
+      "name": "wrong_scalar_source_sign",
+      "detected": true
+    },
+    {
+      "name": "single_copy_uses_two_copy_tension",
+      "detected": true
+    },
+    {
+      "name": "discard_graph_bending_first_source",
+      "detected": true
+    },
+    {
+      "name": "omit_material_pullback_mixing_factor_two",
+      "detected": true
+    },
+    {
+      "name": "omit_inverse_metric_cross_term",
+      "detected": true
+    },
+    {
+      "name": "wrong_outward_normal_sum_sign",
+      "detected": true
+    },
+    {
+      "name": "bare_metric_Neumann_omits_warp_rescaling",
+      "detected": true
+    }
+  ],
+  "registered_sigma_third_derivative": 4,
+  "registered_two_copy_scalar_source": "-4 psi1^2",
+  "sympy_version": "1.14.0"
+}
