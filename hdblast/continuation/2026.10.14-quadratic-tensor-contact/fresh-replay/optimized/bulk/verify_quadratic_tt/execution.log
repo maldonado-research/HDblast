@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "convention": "g=g0+eps*h1+eps^2*k2/2",
+  "checks": {
+    "direct_Ricci2_offdiag_12": "passed",
+    "direct_Ricci2_offdiag_13": "passed",
+    "direct_Ricci2_offdiag_14": "passed",
+    "direct_Ricci2_offdiag_23": "passed",
+    "direct_Ricci2_offdiag_24": "passed",
+    "direct_Ricci2_offdiag_34": "passed",
+    "direct_Ricci2_trace_difference_1": "passed",
+    "direct_Ricci2_trace_difference_2": "passed",
+    "direct_Ricci2_trace_difference_3": "passed",
+    "general_dimension_anisotropy": "passed",
+    "dimension_four_anisotropy": "passed",
+    "full_quadratic_residual_T_coefficient": "passed",
+    "second_derivative_source_T_coefficient": "passed",
+    "ambient_warped_tensor_operator": "passed",
+    "radial_warp_factor": "passed"
+  },
+  "negative_controls": {
+    "delete_geometric_source": "8*u**2",
+    "reverse_matter_sign": "8*v**2/3",
+    "miss_second_derivative_factor": "8*u**2 + 4*v**2/3",
+    "wrong_tensor_angular_eigenvalue": "2*Z(r, tau)/(r**2*cosh(tau)**2)",
+    "wrong_conformal_drift": "3*Derivative(Omega(r), r)*Derivative(Z(r, tau), r)/Omega(r)"
+  },
+  "limits": [
+    "No shell junction condition or IBVP estimate is checked.",
+    "S3 TT decomposition is independently documented in the derivation; the coefficient is supplied to this source check.",
+    "The tensor operator is derived geometrically in the note; this script checks its coordinate conversion."
+  ]
+}
