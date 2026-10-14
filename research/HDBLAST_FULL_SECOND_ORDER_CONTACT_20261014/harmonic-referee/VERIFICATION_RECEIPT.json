@@ -1,0 +1,118 @@
+{
+  "status": "pass",
+  "reviewed_main_note_sha256": "59c58b560b257a7311d4d00a72a1d4facb95c23377b88cf0323a4d57edc81949",
+  "normal_check_count": 53,
+  "optimized_check_count": 53,
+  "actual_corruption_controls": [
+    {
+      "mode": "normal",
+      "corruption": "lapse",
+      "exit_code": 1,
+      "log": "corrupt-normal-lapse.log",
+      "rejected_by": "VerificationError: physical_rows_plus_Cy_give_lapse_Robin: nonzero residual -sigma/(6*N)"
+    },
+    {
+      "mode": "normal",
+      "corruption": "subsidiary",
+      "exit_code": 1,
+      "log": "corrupt-normal-subsidiary.log",
+      "rejected_by": "VerificationError: subsidiary_coordinate_Robin_0: nonzero residual -C0*N*sigma/6"
+    },
+    {
+      "mode": "normal",
+      "corruption": "first-gauge",
+      "exit_code": 1,
+      "log": "corrupt-normal-first-gauge.log",
+      "rejected_by": "VerificationError: longitudinal_first_normal_gauge_defect: nonzero residual -6*a*u"
+    },
+    {
+      "mode": "normal",
+      "corruption": "initial-constraint",
+      "exit_code": 1,
+      "log": "corrupt-normal-initial-constraint.log",
+      "rejected_by": "VerificationError: physical_initial_constraint_gauge_derivative_0: nonzero residual -Cdot0/2"
+    },
+    {
+      "mode": "normal",
+      "corruption": "angular",
+      "exit_code": 1,
+      "log": "corrupt-normal-angular.log",
+      "rejected_by": "VerificationError: SO4_complete_symmetric_square_character: nonzero residual 1"
+    },
+    {
+      "mode": "normal",
+      "corruption": "Robin",
+      "exit_code": 1,
+      "log": "corrupt-normal-Robin.log",
+      "rejected_by": "VerificationError: nonsymmetric_Robin_incoming_trace_0: nonzero residual -t/2"
+    },
+    {
+      "mode": "normal",
+      "corruption": "second-source",
+      "exit_code": 1,
+      "log": "corrupt-normal-second-source.log",
+      "rejected_by": "VerificationError: second_boundary_relative_lapse_source: nonzero residual -4*a*nu1**2"
+    },
+    {
+      "mode": "optimized",
+      "corruption": "lapse",
+      "exit_code": 1,
+      "log": "corrupt-optimized-lapse.log",
+      "rejected_by": "VerificationError: physical_rows_plus_Cy_give_lapse_Robin: nonzero residual -sigma/(6*N)"
+    },
+    {
+      "mode": "optimized",
+      "corruption": "subsidiary",
+      "exit_code": 1,
+      "log": "corrupt-optimized-subsidiary.log",
+      "rejected_by": "VerificationError: subsidiary_coordinate_Robin_0: nonzero residual -C0*N*sigma/6"
+    },
+    {
+      "mode": "optimized",
+      "corruption": "first-gauge",
+      "exit_code": 1,
+      "log": "corrupt-optimized-first-gauge.log",
+      "rejected_by": "VerificationError: longitudinal_first_normal_gauge_defect: nonzero residual -6*a*u"
+    },
+    {
+      "mode": "optimized",
+      "corruption": "initial-constraint",
+      "exit_code": 1,
+      "log": "corrupt-optimized-initial-constraint.log",
+      "rejected_by": "VerificationError: physical_initial_constraint_gauge_derivative_0: nonzero residual -Cdot0/2"
+    },
+    {
+      "mode": "optimized",
+      "corruption": "angular",
+      "exit_code": 1,
+      "log": "corrupt-optimized-angular.log",
+      "rejected_by": "VerificationError: SO4_complete_symmetric_square_character: nonzero residual 1"
+    },
+    {
+      "mode": "optimized",
+      "corruption": "Robin",
+      "exit_code": 1,
+      "log": "corrupt-optimized-Robin.log",
+      "rejected_by": "VerificationError: nonsymmetric_Robin_incoming_trace_0: nonzero residual -t/2"
+    },
+    {
+      "mode": "optimized",
+      "corruption": "second-source",
+      "exit_code": 1,
+      "log": "corrupt-optimized-second-source.log",
+      "rejected_by": "VerificationError: second_boundary_relative_lapse_source: nonzero residual -4*a*nu1**2"
+    }
+  ],
+  "artifact_sha256": {
+    "INDEPENDENT_CONTACT_REFEREE.md": "f4a3542d866456b26a4b4069ede15d043a979346c39d23ddcefb211fc291667a",
+    "ACTUAL_NOTE_REVIEW.md": "c1b62d8fe94faca2ea16bcdb4cf5997458e6434f10f6ce987c9e9dddc21dc2cf",
+    "verify_harmonic_contact.py": "10f6d7b7c83380efaeb6632d0f9fcab91c349771c3fd075bcb2b685f3c651a2f",
+    "normal.json": "d0b70db8023db9fdd4426353c5e136c0110278e65e4ae13acbd23e214dfb0c4f",
+    "optimized.json": "47d1ab040b164e5fda5c178099634743464e1b76f4befa473c1a7ec4c80ea6f1",
+    "FINAL_NOTE_DELTA.json": "4005f365a73187f0a32beb7aeff5fba4821642eae6da632e43260b7fe98f9ecc"
+  },
+  "scope": "Algebra verification and independent analytic referee proof; no computer existence proof, nonlinear result, or external peer review.",
+  "earlier_reviewed_main_note_sha256": "158290f79f3159581ea0473003d78de16cc4bc1741fef50965a11f3e40698189",
+  "previous_reviewed_main_note_sha256": "69833a130d3e234c3ed304e1aa04671d869e5679254df4ee4aae1b306691dd8f",
+  "final_note_delta": "FINAL_NOTE_DELTA.json"
+}

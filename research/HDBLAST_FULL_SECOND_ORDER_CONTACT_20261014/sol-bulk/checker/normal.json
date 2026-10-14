@@ -1,0 +1,173 @@
+{
+  "angular_points": 5,
+  "angular_projection": {
+    "DY_DY_TF_projection": "1/3",
+    "HessQ_TF_norm_squared_normalized_measure": "133/15",
+    "Q_norm_squared_normalized_measure": "19/720",
+    "Y_HessY_TF_projection": "1/6",
+    "gradient_square_Q_projection": "-4"
+  },
+  "cases": [
+    {
+      "case": "arbitrary_jet_1",
+      "differences": {},
+      "projected": {
+        "TF_A": "96/49",
+        "TF_B": "6544/8281",
+        "angular_TF": "14656/24843",
+        "angular_trace": "-93668925368/9038504475",
+        "scalar": "-1072418392/143468325",
+        "ta": "5128/3185",
+        "tt": "72042251264/9038504475",
+        "ya": "-256328/200655",
+        "yt": "-7472/2205",
+        "yy": "10793546/61486425"
+      }
+    },
+    {
+      "case": "arbitrary_jet_2",
+      "differences": {},
+      "projected": {
+        "TF_A": "600/121",
+        "TF_B": "18575/8712",
+        "angular_TF": "40175/26136",
+        "angular_trace": "-14302217737/119258568",
+        "scalar": "502592815/30918888",
+        "ta": "18125/3146",
+        "tt": "14912196337/119258568",
+        "ya": "749/968",
+        "yt": "23502/5005",
+        "yy": "-553622297/30115800"
+      }
+    },
+    {
+      "case": "arbitrary_jet_3",
+      "differences": {},
+      "projected": {
+        "TF_A": "392/75",
+        "TF_B": "8254/3675",
+        "angular_TF": "17858/11025",
+        "angular_trace": "-29160840561283/1009396080000",
+        "scalar": "30722322284/6834452625",
+        "ta": "-11891/2550",
+        "tt": "496586396467/20599920000",
+        "ya": "-173/3500",
+        "yt": "15826/2925",
+        "yy": "-6071257/1009800"
+      }
+    }
+  ],
+  "control": "none",
+  "epsilon_convention": "D2 residual = 2 times epsilon^2 coefficient",
+  "exact_coefficient_comparisons": {
+    "component_and_forced_relations": 15,
+    "linear": 24,
+    "quadratic": 30
+  },
+  "linear_cases": [
+    {
+      "case": "arbitrary_jet_1",
+      "component_relations": {
+        "equation_16_t": "0",
+        "equation_16_y": "0",
+        "equation_17_identity": "0",
+        "equation_18_forced_y_residual": "0",
+        "equation_18_identity": "0"
+      },
+      "differences": {},
+      "projected": {
+        "angular_TF": "2915/3128",
+        "angular_trace": "-8579870535295/869526770112",
+        "scalar": "-29087501711087/18565206660000",
+        "ta": "6078743/4883760",
+        "tt": "19970580123803/5434542313200",
+        "ya": "-784838583/375054680",
+        "yt": "-12963256289/44812567800",
+        "yy": "-74265354133/52005189600"
+      }
+    },
+    {
+      "case": "arbitrary_jet_2",
+      "component_relations": {
+        "equation_16_t": "0",
+        "equation_16_y": "0",
+        "equation_17_identity": "0",
+        "equation_18_forced_y_residual": "0",
+        "equation_18_identity": "0"
+      },
+      "differences": {},
+      "projected": {
+        "angular_TF": "-1031/3300",
+        "angular_trace": "-17246912358520961/18166898589840000",
+        "scalar": "2944228470539/411044419500",
+        "ta": "-6207457/2402400",
+        "tt": "2682532403909063/363337971796800",
+        "ya": "144360517/140998000",
+        "yt": "-645951231667/214263878400",
+        "yy": "-150168064560989/79679379780000"
+      }
+    },
+    {
+      "case": "arbitrary_jet_3",
+      "component_relations": {
+        "equation_16_t": "0",
+        "equation_16_y": "0",
+        "equation_17_identity": "0",
+        "equation_18_forced_y_residual": "0",
+        "equation_18_identity": "0"
+      },
+      "differences": {},
+      "projected": {
+        "angular_TF": "316571/1070650",
+        "angular_trace": "-250624437222276763/21220189438573125",
+        "scalar": "-2067832408100/440939001321",
+        "ta": "16820260231/6469693230",
+        "tt": "45765317029/5327368200",
+        "ya": "-2683694/963585",
+        "yt": "-604661965349/376870941300",
+        "yy": "15304979437789/8573813914575"
+      }
+    }
+  ],
+  "method": "exact Fraction epsilon and coordinate two-jets; direct Christoffels and Ricci",
+  "negative_controls": {
+    "drop-gradient-square": {
+      "reason": "{\"case\": \"arbitrary_jet_1\", \"differences\": {\"TF_B\": \"32/169\", \"angular_TF\": \"32/507\", \"angular_trace\": \"-2048/12675\", \"ta\": \"8/91\", \"tt\": \"8/49\", \"ya\": \"-20/117\", \"yt\": \"-20/63\", \"yy\": \"50/81\"}}",
+      "status": "REJECTED"
+    },
+    "drop-ricci-products": {
+      "reason": "Direct angular samples do not lie in the specified harmonic span",
+      "status": "REJECTED"
+    },
+    "flip-ricci-sign": {
+      "reason": "{\"case\": \"arbitrary_jet_1\", \"differences\": {\"TF_A\": \"-192/49\", \"TF_B\": \"-96/49\", \"angular_TF\": \"-64/49\", \"angular_trace\": \"1182694192/53482275\", \"ta\": \"-832/245\", \"tt\": \"-926937712/53482275\", \"ya\": \"4968/1715\", \"yt\": \"1816/245\", \"yy\": \"-2016104/1091475\"}}",
+      "status": "REJECTED"
+    },
+    "linear-omit-angular-potential": {
+      "reason": "{\"case\": \"arbitrary_jet_1\", \"differences\": {\"angular_trace\": \"-3/25\"}}",
+      "status": "REJECTED"
+    },
+    "linear-omit-base-warp": {
+      "reason": "{\"case\": \"arbitrary_jet_1\", \"differences\": {\"tt\": \"-577505961/477342320\", \"yt\": \"904103/1452360\", \"yy\": \"-2213/5280\"}}",
+      "status": "REJECTED"
+    },
+    "linear-omit-mixed-warp": {
+      "reason": "{\"case\": \"arbitrary_jet_1\", \"differences\": {\"ta\": \"-417/9044\", \"ya\": \"31659/180880\"}}",
+      "status": "REJECTED"
+    },
+    "omit-d2-factor": {
+      "reason": "{\"case\": \"arbitrary_jet_1\", \"differences\": {\"TF_A\": \"-48/49\", \"TF_B\": \"-3272/8281\", \"angular_TF\": \"-7328/24843\", \"angular_trace\": \"46834462684/9038504475\", \"scalar\": \"536209196/143468325\", \"ta\": \"-2564/3185\", \"tt\": \"-36021125632/9038504475\", \"ya\": \"128164/200655\", \"yt\": \"3736/2205\", \"yy\": \"-5396773/61486425\"}}",
+      "status": "REJECTED"
+    },
+    "wrong-angular-projection": {
+      "reason": "{\"case\": \"arbitrary_jet_1\", \"differences\": {\"angular_TF\": \"16/49\"}}",
+      "status": "REJECTED"
+    },
+    "wrong-potential-normalization": {
+      "reason": "{\"case\": \"arbitrary_jet_1\", \"differences\": {\"angular_trace\": \"-944/3549\", \"tt\": \"944/3549\", \"yy\": \"232/3549\"}}",
+      "status": "REJECTED"
+    }
+  },
+  "python_optimized": false,
+  "status": "PASS"
+}

@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "created_utc": "2026-10-14T22:20:37.193068+00:00",
+  "scope": "Independent exact bulk identities only; no shell evolution or nonlinear existence theorem.",
+  "normal_check_count": 52,
+  "optimized_check_count": 52,
+  "python": "3.12.14",
+  "sympy": "1.14.0",
+  "commands": [
+    "python verify_scalar_bulk.py --output normal.json --model-root RESEARCH_ROOT",
+    "python -O verify_scalar_bulk.py --output optimized.json --model-root RESEARCH_ROOT",
+    "python verify_scalar_bulk.py --inject-corruption",
+    "python -O verify_scalar_bulk.py --inject-corruption"
+  ],
+  "corruption_controls": {
+    "normal": {
+      "observed_exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "corrupt-normal.log",
+      "diagnostic": "VERIFICATION FAILED: direct quadratic Ricci 01: nonzero residual -202500000000*u*u_yt/3512479453921",
+      "modified_formula": "candidate [epsilon\u00b2]Ric_yt += u*u_yt*Y\u00b2"
+    },
+    "optimized": {
+      "observed_exit_code": 1,
+      "expected_exit_code": 1,
+      "log": "corrupt-optimized.log",
+      "diagnostic": "VERIFICATION FAILED: direct quadratic Ricci 01: nonzero residual -202500000000*u*u_yt/3512479453921",
+      "modified_formula": "candidate [epsilon\u00b2]Ric_yt += u*u_yt*Y\u00b2"
+    }
+  },
+  "model_source_sha256": {
+    "HDBLAST_REGULAR_CONE_EVOLUTION_20261013/manuscript/REGULAR_CONE_EVOLUTION.md": "4d7ef413157fc058d20208f61fb9a462b716926159bcfff1eef0ebe36456d635",
+    "HDBLAST_MATERIAL_JUNCTIONS_20261014/MATERIAL_SECOND_ORDER_JUNCTIONS.md": "69c2af7bb7be06783f2470833f3cd10507b26ccdd9c67ebf7cf905e62f188871",
+    "HDBLAST_QUADRATIC_TENSOR_CONTACT_20261014/bulk/FULL_QUADRATIC_TT_BULK_SOURCE.md": "f5eb4272bac6b638c78f275814ea01e1529719153c1fc6fdd66083bc3e62b467",
+    "HDBLAST_QUADRATIC_TENSOR_CONTACT_20261014/boundary/FORCED_TENSOR_CONTACT_IBVP.md": "e9651b98a5a0b50e2607a5d83e7dfc944c5528ae6de5461d67a384708039f2c5"
+  },
+  "artifact_sha256": {
+    "COMPLETE_L4_SCALAR_BULK.md": "e7e23e4576fe89ba072241b981a250ec781f90c0b315a2616ce420f80c589e36",
+    "verify_scalar_bulk.py": "4c2f2caed9ef367c07a94f65d39fd1048cd66ae276c6e6d09fb7606e251f4e87",
+    "normal.json": "89f9aeb30ad3865fa4f69c6e1ac28ee0e9d780c1ad8e0689828ed7730f50ace9",
+    "optimized.json": "597deb80d57abb3ffcb3c06db3f5a47df93d7b94fcd3ce4eb4214c070d9644e9",
+    "corrupt-normal.log": "2be82499d33ee084408d79faee041b4a030f28fafd5a654c61306ce9575fd98a",
+    "corrupt-optimized.log": "2be82499d33ee084408d79faee041b4a030f28fafd5a654c61306ce9575fd98a"
+  },
+  "independent_crosscheck": {
+    "compared_note": "../sol-bulk/FULL_L4_SCALAR_SOURCE_AND_OPERATOR.md",
+    "result": "All eight scalar source rows, generic scalar operator, mixed rows and Bianchi identities agree.",
+    "convention_conversion": [
+      "K_astra = 2 H_sol",
+      "A_sol = 2 L_astra",
+      "s_L_astra = cosh(t)^2 j_Omega_sol"
+    ],
+    "no_scientific_code_imported": true
+  }
+}

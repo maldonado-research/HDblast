@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/workspace/hdblast-research-work/scalar-contact-20261014/harmonic-referee/verify_harmonic_contact.py", line 267, in <module>
+    main()
+  File "/workspace/hdblast-research-work/scalar-contact-20261014/harmonic-referee/verify_harmonic_contact.py", line 251, in main
+    checks = run(args.inject_corruption)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/hdblast-research-work/scalar-contact-20261014/harmonic-referee/verify_harmonic_contact.py", line 232, in run
+    equal(f"nonsymmetric_Robin_incoming_trace_{i}",
+  File "/workspace/hdblast-research-work/scalar-contact-20261014/harmonic-referee/verify_harmonic_contact.py", line 27, in equal
+    raise VerificationError(f"{name}: nonzero residual {residual}")
+VerificationError: nonsymmetric_Robin_incoming_trace_0: nonzero residual -t/2

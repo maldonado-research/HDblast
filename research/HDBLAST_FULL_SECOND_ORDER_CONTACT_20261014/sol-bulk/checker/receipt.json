@@ -1,0 +1,49 @@
+{
+  "background_equations_imposed": false,
+  "commands": [
+    {
+      "command": "python /workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/checker/direct_metric_checker.py --include-controls --output /workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/checker/normal.json > /workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/checker/normal.stdout.json",
+      "expected_exit_code": 0,
+      "observed_exit_code": 0,
+      "report": "/workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/checker/normal.json",
+      "report_sha256": "bb523ab2b6622c0a949d4a41c039b2bca7f2b3cd330ba71dc5712ce68354029e",
+      "report_status": "PASS"
+    },
+    {
+      "command": "python -O /workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/checker/direct_metric_checker.py --include-controls --output /workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/checker/optimized.json > /workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/checker/optimized.stdout.json",
+      "expected_exit_code": 0,
+      "observed_exit_code": 0,
+      "report": "/workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/checker/optimized.json",
+      "report_sha256": "59fc6cb6d6a3fccea096b2e7fb071627a13c1e1e7b6304f620d5387dfa0f8a62",
+      "report_status": "PASS"
+    },
+    {
+      "command": "python -O /workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/checker/direct_metric_checker.py --control omit-d2-factor --output /workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/checker/wrong-half-optimized.json > /workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/checker/wrong-half-optimized.stdout.json",
+      "expected_exit_code": 1,
+      "observed_exit_code": 1,
+      "report": "/workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/checker/wrong-half-optimized.json",
+      "report_sha256": "36def6a3263e5c9dff0c379863ab7dec6984828d289ea00268faabf5c4acf401",
+      "report_status": "FAIL"
+    },
+    {
+      "command": "python /workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/checker/direct_metric_checker.py --control wrong-angular-projection --output /workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/checker/wrong-projection.json > /workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/checker/wrong-projection.stdout.json",
+      "expected_exit_code": 1,
+      "observed_exit_code": 1,
+      "report": "/workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/checker/wrong-projection.json",
+      "report_sha256": "95b0e7eb419907eceac61af32f53443a5a49f5e4c508e116e708368a2b43be6b",
+      "report_status": "FAIL"
+    }
+  ],
+  "exact_coefficient_comparisons_per_positive_run": {
+    "component_and_forced_relations": 15,
+    "linear": 24,
+    "quadratic": 30
+  },
+  "frozen_at_utc": "2026-10-14T22:21:50.710572+00:00",
+  "imports": "Python standard library only; no inherited science imports",
+  "negative_controls_rejected_per_positive_run": 9,
+  "normal_and_optimized_reports_match_except_mode": true,
+  "scope": "Exact finite local-jet validation of quadratic source, general linear operator, component rows (16), and forced identities (17)/(18); no full two-master or contact theorem.",
+  "script": "/workspace/hdblast-research-work/scalar-contact-20261014/sol-bulk/checker/direct_metric_checker.py",
+  "script_sha256": "ba09626fb284310c92dc3abf8db769601c0d683fd28c9e7775ba01f7218d6ec1"
+}
