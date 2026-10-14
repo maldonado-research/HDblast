@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "inventory_date_utc": "2026-10-14",
+  "scope": "Eight selected archived tensor, shell and Green-function method sources; read-only source inspection",
+  "archive_root": "/workspace/HDblast-archive/new-files/D-Blast 3",
+  "archive_scripts_executed": false,
+  "network_used": false,
+  "publication_changed": false,
+  "source_modifications": false,
+  "hash_algorithm": "SHA-256",
+  "files": [
+    {
+      "id": "rs2_workplan_jan20",
+      "path": "/workspace/HDblast-archive/new-files/D-Blast 3/files/January-1-20 files/HDBLAST_RS2_BulkToBrane_GreenFunction_Workplan_v1_20260120.md",
+      "sha256": "ac963a29fb92d5f7e4cdc65e10a8a319daaed5810c80a0df35acd65e7e0a4124",
+      "locator": "lines 29-44, 80-87, 106-112",
+      "method": "SL conjugation; Neumann-to-mixed BC; discrete-plus-continuum representation",
+      "caution": "Flat RS2; canonical-to-physical kernel and source weights unspecified; no imported parameters"
+    },
+    {
+      "id": "rs2_closedform_jan21",
+      "path": "/workspace/HDblast-archive/new-files/D-Blast 3/files/January-1-20 files/HDBLAST_RS2_GreenFunction_ClosedForm_K2Filter_Note_v1_20260121.pdf",
+      "sha256": "e6f2d1987f2906baf34f84b0091238ae28373d6841f8ae339af983f01128d0ef",
+      "locator": "PDF page 1: Tensor TT perturbations, Closed-form half-line Green's function, Universal knee variable; page 2: amplitude paragraph",
+      "method": "Endpoint-adapted homogeneous pair; BC mixing coefficient; Wronskian Green kernel",
+      "caution": "I2/K2 require minus Euclidean p^2; W(v,u)=v*u'-v'*u is -z^3; fix sign from source jump"
+    },
+    {
+      "id": "rs2_k2_script_jan21",
+      "path": "/workspace/HDblast-archive/new-files/D-Blast 3/files/January-1-20 files/rs2_k2_filter.py",
+      "sha256": "7e88761230272d807b1f02b48117372f3a9082ba9cae11f452666a9371c1eb03",
+      "locator": "lines 5-16, 36-60, 62-75",
+      "method": "Dimensionless response normalization; bracketed inversion; logarithmic widths",
+      "caution": "Inspected only; positive-real Euclidean filter, not current retarded shell transfer"
+    },
+    {
+      "id": "rs2_lowenergy_jan21",
+      "path": "/workspace/HDblast-archive/new-files/D-Blast 3/files/January-1-20 files/HDBLAST_RS2_GreenFunction_LowEnergyLock_Note_v1_20260121.pdf",
+      "sha256": "ddd284c7e90aa116cfd01167f1fdd52d292d676b2ce85f9740ef1bba88d38ed3",
+      "locator": "PDF page 1: sections 2-5; page 2: section 8",
+      "method": "Zero-mode dominance tested through a fractional KK correction",
+      "caution": "Undo-rescaling statement inconsistent: canonical z^-3/2 maps to constant physical h; no amplitude exponent import"
+    },
+    {
+      "id": "ds_shell_tensor_note_sep16",
+      "path": "/workspace/HDblast-archive/new-files/D-Blast 3/untitled folder 146/HDBLAST_CHAT9_SHELL_DYNAMICS_20260916/tensor_and_calibration/TENSOR_SECTOR_AND_CALIBRATION.md",
+      "sha256": "7daf1ddecc04f1c2a1a0844205d7e3d3b6e77a4a2b790ab6ed100c5730f5c6a1",
+      "locator": "lines 8-20, 23-28, 33-35, 87-90",
+      "method": "dS4 tensor equation; SUSY factorization; cone branch; two-copy M4 normalization",
+      "caution": "Registered background-specific numbers excluded; Neumann applies to reflection-even isotropic-tension TT channel"
+    },
+    {
+      "id": "ds_shell_tensor_shoot_sep16",
+      "path": "/workspace/HDblast-archive/new-files/D-Blast 3/untitled folder 146/HDBLAST_CHAT9_SHELL_DYNAMICS_20260916/tensor_and_calibration/tensor_spectrum.py",
+      "sha256": "c753f37674aaa6d77638e16b87ba1162ca316ace18ae4f8c29b1a341d0daa4e7",
+      "locator": "lines 4-8, 37-56, 58-75, 82-86, 103-110",
+      "method": "Frobenius initialization; node counts; solution rescaling; junction residuals; spectral derivative check",
+      "caution": "Not executed; archived JSON and potential must be replaced; shooting quotient has poles"
+    },
+    {
+      "id": "ds_shell_tensor_continuum_sep16",
+      "path": "/workspace/HDblast-archive/new-files/D-Blast 3/untitled folder 146/HDBLAST_CHAT9_SHELL_DYNAMICS_20260916/tensor_and_calibration/tensor_continuum.py",
+      "sha256": "f1c63eff8a797c583ac9b2b392d2424067980009cfc7fee5114841d4c7b162ac",
+      "locator": "lines 2-5, 13-36, 39-50",
+      "method": "Logarithmic endpoint integration; Hermite interpolation; continuum amplitude and step-halving",
+      "caution": "Not executed; spectral density is per dk; k=0 needs a limit; background-specific numerical conclusions excluded"
+    },
+    {
+      "id": "ds_shell_tensor_verifier_sep19",
+      "path": "/workspace/HDblast-archive/new-files/D-Blast 3/untitled folder 149/HDBLAST_CHAT12_ALL_SECTORS_20260919/verify_tensor_sector.py",
+      "sha256": "0285b22b0bd17535beec652f8228acaddccac4900d545d10194461adaa640830",
+      "locator": "lines 3-14, 32-49",
+      "method": "Exact conjugation and factorization identities; partner-potential positivity and polynomial root count",
+      "caution": "Not executed; fixed W polynomial positivity is not generic; cone operator-domain proof delegated to a separate source"
+    }
+  ]
+}
