@@ -23,7 +23,7 @@ Hans Ringström, **“Future stability of the Einstein-non-linear scalar field s
 - §1.3, equations **(12)–(13)**:
   `Ric(g)=dφ⊗dφ+[2/(n−1)]V(φ)g` and `□_gφ−V′(φ)=0`. The discussion explicitly allows `n≥3`; the five-dimensional model has `n=4`.
 - §3.1 states a general smooth quasilinear wave Cauchy setup in arbitrary spatial dimension; **Theorem 5** supplies the smooth-data version.
-- §§3.2–3.3 treat causality and energy uniqueness on domains of dependence; **Theorem 6** is a linear-wave existence/uniqueness statement on globally hyperbolic backgrounds.
+- §§3.2–3.3 treat causality and energy uniqueness on domains of dependence; **Theorem 6** is the zero-Cauchy-data uniqueness statement on the domain of dependence. The construction uses this result for causal uniqueness, with local existence supplied separately by the Cauchy theorem.
 - §4, equations **(55)–(57)**: contracted Bianchi plus the scalar equation give a homogeneous wave equation for the gauge deviation.
 - §4.1 constructs harmonic-compatible initial gauge data. It expressly permits the Einstein constraints to hold only on a chosen initial subset; propagation is then restricted to its domain of dependence.
 - §3.4, **Theorem 7**, supplies Cauchy-stability context for Einstein–scalar solutions, with smooth data and convergence in the indicated high norms.
