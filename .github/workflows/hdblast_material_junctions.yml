@@ -1,0 +1,93 @@
+name: Material second-order junction sources
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_MATERIAL_JUNCTIONS_20261014/**'
+      - '.github/workflows/hdblast_material_junctions.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_MATERIAL_JUNCTIONS_20261014/**'
+      - '.github/workflows/hdblast_material_junctions.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  exact-junctions:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    env:
+      PROOF_DIRECTORY: research/HDBLAST_MATERIAL_JUNCTIONS_20261014
+      MANIFEST_SHA256: '5f6c63a876b3ee1ab4f7d7b47540633ca1c2983463f5caa4be01503be15f8a77'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: ${{ env.PROOF_DIRECTORY }}
+          filter: blob:none
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - name: Verify frozen manifest before scientific code or dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -S -B - <<'PY'
+          import hashlib, json, os, pathlib
+          root = pathlib.Path(os.environ['PROOF_DIRECTORY'])
+          manifest = root / 'MANIFEST.json'
+          if hashlib.sha256(manifest.read_bytes()).hexdigest() != os.environ['MANIFEST_SHA256']:
+              raise RuntimeError('Manifest pin differs')
+          seen = set()
+          for entry in json.loads(manifest.read_text())['files']:
+              name = entry['path']
+              if pathlib.PurePosixPath(name).name != name or name in seen:
+                  raise RuntimeError('Invalid manifest path')
+              seen.add(name)
+              p = root / name
+              if p.is_symlink() or any(parent.is_symlink() for parent in p.parents):
+                  raise RuntimeError('Real capsule input required')
+              data = p.read_bytes()
+              if len(data) != entry['bytes'] or hashlib.sha256(data).hexdigest() != entry['sha256']:
+                  raise RuntimeError('Frozen bytes differ: ' + name)
+          print('Authenticated', len(seen), 'files')
+          PY
+      - name: Install pinned symbolic dependency
+        run: |
+          python -I -B -m pip install --only-binary=:all: -r "$PROOF_DIRECTORY/requirements.txt"
+      - name: Replay both modes and optimized explicit failure guard
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$PROOF_DIRECTORY"
+          python -B check_material_junctions.py --output "$RUNNER_TEMP/junction-normal.json"
+          python -O -B check_material_junctions.py --output "$RUNNER_TEMP/junction-optimized.json"
+          if python -O -B check_material_junctions.py --inject-failure > "$RUNNER_TEMP/junction-failure.log" 2>&1; then
+            exit 1
+          fi
+          python -I -S -B - <<'PY'
+          import json, os, pathlib
+          tmp = pathlib.Path(os.environ['RUNNER_TEMP'])
+          left = json.loads((tmp / 'junction-normal.json').read_text())
+          right = json.loads((tmp / 'junction-optimized.json').read_text())
+          if left != right or left['status'] != 'PASS':
+              raise RuntimeError('Scientific mode receipts differ')
+          if left['positive_checks'] != 20 or left['wrong_formula_controls'] != 11:
+              raise RuntimeError('Scientific check count differs')
+          if not all(item['passed'] for item in left['checks']) or not all(item['detected'] for item in left['controls']):
+              raise RuntimeError('Scientific check failed')
+          if 'deliberate_failure' not in (tmp / 'junction-failure.log').read_text():
+              raise RuntimeError('Unexpected failure-guard reason')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: material-junctions-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/junction-*.json
+            ${{ runner.temp }}/junction-failure.log
+          retention-days: 14
