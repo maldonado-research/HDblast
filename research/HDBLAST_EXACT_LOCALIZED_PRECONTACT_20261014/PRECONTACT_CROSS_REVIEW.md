@@ -44,4 +44,3 @@ The corollary explicitly assumes the actual background is smooth on the needed i
 This proves a genuine short precontact continuation in the stated finite regularity class, conditional on the initial theorem and the regular-background neighborhood assumption. It gives no through-contact evolution theorem, no long contact-time bound computed solely from background cones, no spatial C-infinity family, and no external novelty conclusion.
 
 Primary-source locations supporting the Cauchy and gauge machinery are recorded in `CAUCHY_SOURCE_LEDGER.md`.
-

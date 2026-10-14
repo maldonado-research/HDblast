@@ -173,4 +173,3 @@ For two copies one can use identical families or the parameter-reversed family `
 - Any claim of global nonlinear spacetime integrability, stability, cosmological origin, external novelty or readiness for submission remains unsupported by this initial-data result.
 
 No new numerical or symbolic tests were run for this assessment. It is a functional-analytic proof check and source audit, not an empirical PDE solution.
-

@@ -39,4 +39,3 @@ Complete arbitrary reduced Cauchy extensions on a compact auxiliary `T^4` are al
 Choose a **uniform bound on actual perturbed causal speeds**, together with strict distance margins between the entire correction annulus, the inner protected region and the shell. A background-null-cone contact bound alone is insufficient.
 
 No retrieved source is represented as a material thin-shell evolution theorem, or as establishing this model's evolution through contact.
-
