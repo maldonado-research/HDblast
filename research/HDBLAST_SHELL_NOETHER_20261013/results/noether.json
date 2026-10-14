@@ -1,0 +1,82 @@
+{
+  "arithmetic": "exact symbolic rational polynomial arithmetic",
+  "dimension": {
+    "bulk": 5,
+    "closed_cut": 3,
+    "shell": 4
+  },
+  "identities": {
+    "codazzi_full_tangential_residual": {
+      "components": 4,
+      "exact_residual": "0",
+      "status": "pass"
+    },
+    "four_dimensional_israel_trace": {
+      "components": 1,
+      "exact_residual": "0",
+      "status": "pass"
+    },
+    "four_dimensional_israel_trace_reversal": {
+      "components": 16,
+      "exact_residual": "0",
+      "status": "pass"
+    },
+    "full_nonlinear_normal_force_factorization": {
+      "components": 1,
+      "exact_residual": "0",
+      "status": "pass"
+    },
+    "komar_ghy_single_tension_completed_charge": {
+      "components": 4,
+      "exact_residual": "0",
+      "status": "pass"
+    },
+    "unrestricted_ghy_from_connection_and_normal_variations": {
+      "components": 1,
+      "exact_residual": "0",
+      "status": "pass"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Finite algebra checks only; no PDE existence or full symbolic verification of the differential-form proof.",
+  "summary": {
+    "all_identities_zero": true,
+    "all_wrong_controls_detected": true,
+    "identity_count": 6,
+    "wrong_control_count": 8
+  },
+  "wrong_controls": {
+    "omit_nonlinear_israel_force_product": {
+      "one_nonzero_exact_residual": "-2*km00*km11 - 2*km00*km22 - 2*km00*km33 + km00*sigma + 2*km01**2 + 2*km02**2 + 2*km03**2 + 2*km11*km22 + 2*km11*km33 - km11*sigma - 2*km12**2 - 2*km13**2 + 2*km22*km33 - km22*sigma - 2*km23**2 - km33*sigma + 2*kp00*kp11 + 2*kp00*kp22 + 2*kp00*kp33 - kp00*sigma - 2*kp01**2 - 2*kp02**2 - 2*kp03**2 - 2*kp11*kp22 - 2*kp11*kp33 + kp11*sigma + 2*kp12**2 + 2*kp13**2 - 2*kp22*kp33 + kp22*sigma + 2*kp23**2 + kp33*sigma",
+      "status": "detected"
+    },
+    "omit_one_outward_gravitational_copy": {
+      "one_nonzero_exact_residual": "-km01*xi1 - km02*xi2 - km03*xi3 - km11*xi0 - km22*xi0 - km33*xi0",
+      "status": "detected"
+    },
+    "omit_scalar_force_in_tangential_identity": {
+      "one_nonzero_exact_residual": "-dphi0*pm - dphi0*pp - dphi0*sigma_prime",
+      "status": "detected"
+    },
+    "omit_unit_normal_variation": {
+      "one_nonzero_exact_residual": "k00*q00/2 - k11*q00/2 - k22*q00/2 - k33*q00/2",
+      "status": "detected"
+    },
+    "reverse_ghy_corner_sign_in_charge": {
+      "one_nonzero_exact_residual": "-am0 - ap0 - km00*xi0 - km01*xi1 - km02*xi2 - km03*xi3 - kp00*xi0 - kp01*xi1 - kp02*xi2 - kp03*xi3",
+      "status": "detected"
+    },
+    "two_tensions_instead_of_one": {
+      "one_nonzero_exact_residual": "-sigma*xi0",
+      "status": "detected"
+    },
+    "wrong_scalar_junction_sign_in_force": {
+      "one_nonzero_exact_residual": "-2*pm*sigma_prime + 2*pp*sigma_prime",
+      "status": "detected"
+    },
+    "wrong_sign_ghy_corner": {
+      "one_nonzero_exact_residual": "d1q01 - d2q02 - d3q03 - d4q04",
+      "status": "detected"
+    }
+  }
+}

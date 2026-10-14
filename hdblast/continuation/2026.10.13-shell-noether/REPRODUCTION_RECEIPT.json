@@ -1,0 +1,118 @@
+{
+  "both_fixed_prior_manifest_mutations_rejected_after_outer_reseal_both_modes": true,
+  "checker_failures_rejected_without_success_receipts_both_modes": true,
+  "checks": [
+    {
+      "mode": "normal",
+      "name": "noether",
+      "positive_checks": 6,
+      "sha256": "44db9a403ead31d0064fa133a24a46fc2ef1a9950df580d769bfb24d716cfd33",
+      "wrong_formula_controls": 8
+    },
+    {
+      "mode": "normal",
+      "name": "rotational",
+      "positive_checks": 46,
+      "sha256": "6a5e73e8ec34352677ba8f7d8ee4de3339a75cab912c5d1919b758b24fa5c0c8",
+      "wrong_formula_controls": 9
+    },
+    {
+      "mode": "normal",
+      "name": "quadrupole",
+      "positive_checks": 29,
+      "sha256": "44aba751cd67b1b3d1dca631b47d653a74b5d8be402213f874b54d13610fb7e1",
+      "wrong_formula_controls": 4
+    },
+    {
+      "mode": "optimized",
+      "name": "noether",
+      "positive_checks": 6,
+      "sha256": "44db9a403ead31d0064fa133a24a46fc2ef1a9950df580d769bfb24d716cfd33",
+      "wrong_formula_controls": 8
+    },
+    {
+      "mode": "optimized",
+      "name": "rotational",
+      "positive_checks": 46,
+      "sha256": "6a5e73e8ec34352677ba8f7d8ee4de3339a75cab912c5d1919b758b24fa5c0c8",
+      "wrong_formula_controls": 9
+    },
+    {
+      "mode": "optimized",
+      "name": "quadrupole",
+      "positive_checks": 29,
+      "sha256": "44aba751cd67b1b3d1dca631b47d653a74b5d8be402213f874b54d13610fb7e1",
+      "wrong_formula_controls": 4
+    }
+  ],
+  "exact_named_inventories_verified": true,
+  "externally_pinned_manifest_corruption_rejected_both_modes": true,
+  "failure_controls": [
+    {
+      "checker": "noether",
+      "control": "wrong_ghy_corner_sign",
+      "exit_nonzero": true,
+      "explicit_failed_report_written": false,
+      "kind": "scientific_identity_mutation",
+      "mode": "normal",
+      "success_receipt_written": false
+    },
+    {
+      "checker": "rotational",
+      "control": "explicit_guard_failure",
+      "exit_nonzero": true,
+      "explicit_failed_report_written": true,
+      "kind": "explicit_nonzero_guard",
+      "mode": "normal",
+      "success_receipt_written": false
+    },
+    {
+      "checker": "quadrupole",
+      "control": "reversed_rotation_identity",
+      "exit_nonzero": true,
+      "explicit_failed_report_written": false,
+      "kind": "scientific_identity_mutation",
+      "mode": "normal",
+      "success_receipt_written": false
+    },
+    {
+      "checker": "noether",
+      "control": "wrong_ghy_corner_sign",
+      "exit_nonzero": true,
+      "explicit_failed_report_written": false,
+      "kind": "scientific_identity_mutation",
+      "mode": "optimized",
+      "success_receipt_written": false
+    },
+    {
+      "checker": "rotational",
+      "control": "explicit_guard_failure",
+      "exit_nonzero": true,
+      "explicit_failed_report_written": true,
+      "kind": "explicit_nonzero_guard",
+      "mode": "optimized",
+      "success_receipt_written": false
+    },
+    {
+      "checker": "quadrupole",
+      "control": "reversed_rotation_identity",
+      "exit_nonzero": true,
+      "explicit_failed_report_written": false,
+      "kind": "scientific_identity_mutation",
+      "mode": "optimized",
+      "success_receipt_written": false
+    }
+  ],
+  "mpmath": "1.3.0",
+  "normal_and_optimized_receipts_identical": true,
+  "positive_checks_per_mode": 81,
+  "prior_science_replayed": false,
+  "proof_input_corruption_rejected_both_modes": true,
+  "python": "3.12.14",
+  "scope": "Exact local Noether, constraint and harmonic identities, explicit wrong-formula controls, and provenance/replay integrity. The reviewed classical-family assumptions and second-order restriction argument are analytic; these checks do not establish nonlinear existence, unrestricted integrability, physical energy or cosmological evidence.",
+  "source_and_relocated_capsules_unchanged": true,
+  "source_manifest_sha256": "22cdb4ec6f19e2d07f3c439e05fa3c6ec716785b77dcd56f5c822ab4d52f5d9a",
+  "status": "PASS_REVIEWED_SHELL_NOETHER_REPLAY",
+  "sympy": "1.14.0",
+  "wrong_formula_controls_per_mode": 21
+}
