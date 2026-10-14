@@ -2,6 +2,15 @@
 
 14 October 2026 · GitHub research continuation · conditional analytic result
 
+The background is the checkpoint's Lorentz-invariant Einstein–scalar
+solution `g₀ = Ω(s)²η`, `φ₀ = Φ(s)`, `s = R²−T²`, on its stated
+regular branch. The annular solver requires the verified classifications
+`ker P_g* = span{Ωxₐ : a=1,…,4}` and `ker P_m* = rotations`,
+together with the corrected operator-specific estimates. These are
+explicit inputs; radiality and `Φ′ ≠ 0` alone do not supply them.
+The evolution corollary additionally requires the stated regular background
+spacetime neighbourhood.
+
 For the reflection-invariant quadrupole sector, the corrected annular
 constraint solver and explicit weighted nonlinear estimates give a family
 of **exact nonlinear initial data** tangent to the chosen linear datum,
@@ -26,6 +35,7 @@ metrics. It does not rely on convergence of the earlier formal series.
 - [Separate material second-order shell sources](../HDBLAST_MATERIAL_JUNCTIONS_20261014/MATERIAL_SECOND_ORDER_JUNCTIONS.md)
 - [Next scientific target](NEXT_SCIENTIFIC_TARGET.md)
 - [Portable proof packet](../HDBLAST_EXACT_LOCALIZED_PRECONTACT_20261014.zip)
+- [Two additional fresh referee audits](../../hdblast/continuation/2026.10.14-exact-localized-precontact/publication/FRESH_REFEREE_REVIEWS.md)
 
 This is an existence construction in a specified finite regularity class,
 with an operator formula for its second initial derivative. It is not a
