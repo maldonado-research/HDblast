@@ -13,3 +13,5 @@ The supplied ZIP's 75 manifest entries matched their uploaded bytes. The named g
 The companion `basis/` text and JSON files preserve their uploaded bytes. The new public manifest authenticates the reviewed source edition. The original uploaded manifest is saved separately as `UPLOADED_MANIFEST.json` and is not the current integrity manifest. All substantial work was AI assisted: Anthropic Claude for the supplied baseline, OpenAI Codex and collaborating agents for this review and continuation. Internal agent review is not external peer review.
 
 This is a GitHub-only checkpoint. No new Zenodo version or APS submission was created.
+
+Final publication review caught and corrected the general pre-contact lower support bound when a causal front passes the origin: use `max(0,R_-−T_*)²−T_*²`. The positive-s branch remains unchanged. A new exact branch check and a wrong-bound control pass in both modes; the corrected interval has independent analytic acceptance.

@@ -15,13 +15,17 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: localized-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   core-replay:
     runs-on: ubuntu-22.04
     timeout-minutes: 75
     env:
       PROOF_DIRECTORY: research/HDBLAST_SECOND_ORDER_LOCALIZED_20261014
-      MANIFEST_SHA256: '97a5b5496d599703dbeadddbe33ccfcbd6a62cee37d2e2668267f335e6d6fcfb'
+      MANIFEST_SHA256: '675b0f18997cadd4ab595831d804ee97eb01bdd5cbc9fd3dc74762d26313a6d2'
       RUNNER_SHA256: '22b84eead63cf3692ca5fc7c7fb7485a79744bc34887616e924ad7e9cf023758'
       INTEGRITY_SHA256: 'b17bcbb8ccae2a4e756982c27239df78d628c1b9b6611f01ba992b5c975e3d69'
       PYTHONDONTWRITEBYTECODE: '1'

@@ -9,10 +9,10 @@ Unfinished or failed runs are listed separately at the end.
 |---|---|
 | Formal initial-data corrections through every finite order for reflection-invariant commuting quadrupoles | [Reflection theorem](continuation/REFLECTION_FORMAL_INITIAL_DATA.md); local KID characters, covariance and Taylor factors pass 266 exact checks and 4 wrong-claim controls in each normal/optimized mode. The PDE induction is an analytic proof, not a numerical solve. |
 | Finite-slab second-order spacetime coefficients before shell contact; arbitrary finite orders in the reflection sector | [Pre-contact proof](continuation/PRECONTACT_SECOND_ORDER_DYNAMICS.md), normally hyperbolic Cauchy theory and gauge/constraint propagation. Uses the union of all correction supports and the actual controlled background interval. No through-contact solution. |
-| Exact Gaussian-time initial accelerations and matter-only TT projection `−4𝒯/3` | Independent direct Ricci, ADM conversion, sphere decomposition and causal algebra: 17 checks and 6 wrong-formula controls in each normal/optimized mode. Full quadratic geometric source not evaluated; no claim that the total TT force is nonzero. |
+| Exact Gaussian-time initial accelerations and matter-only TT projection `−4𝒯/3` | Independent direct Ricci, ADM conversion, sphere decomposition and causal algebra: 18 checks and 7 wrong-formula controls in each normal/optimized mode. Full quadratic geometric source not evaluated; no claim that the total TT force is nonzero. |
 | Validation remains active under Python optimization | Deliberate failures exit nonzero in both modes, with scientific normal/optimized receipts equal after removing the mode marker. See `reviews/reflection_runner_controls.json`, `reviews/PRECONTACT_VERIFICATION_RECEIPT.json` and `reviews/ANGULAR_INJECTED_FAILURE_RECEIPT.json`. |
 
-The two new algebra suites total **283 positive checks and 10 wrong-formula/claim controls per mode**. These counts are separate from the inherited second-order capsule's scripts and do not measure the strength of a PDE existence proof. No convergence or exact nonlinear family follows.
+The two new algebra suites total **284 positive checks and 11 wrong-formula/claim controls per mode**. These counts are separate from the inherited second-order capsule's scripts and do not measure the strength of a PDE existence proof. No convergence or exact nonlinear family follows.
 
 ## Claims and their evidence
 

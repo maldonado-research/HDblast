@@ -68,8 +68,10 @@ second-order shell embeddings. Choose the initial lapse, shift, and their
 parameter and time jets to agree with the background outside the containing
 annulus. If the available background control is restricted to \(s>0\),
 take also \(T_*<R_-/2\). More generally the whole possible support interval
-\([R_-^2-2R_-T_*,R_+^2+2R_+T_*]\) must lie in the inherited controlled
+\([\max(0,R_--T_*)^2-T_*^2,R_+^2+2R_+T_*]\) must lie in the inherited controlled
 background interval. Positivity of its lower endpoint alone is insufficient.
+The lower endpoint is \(R_-^2-2R_-T_*\) while \(T_*\le R_-\), and
+\(-T_*^2\) after the support cone can reach the spatial origin.
 
 *Proof.* Use a background-adapted generalized harmonic (wave-map) reduction.
 Its gauge vector is

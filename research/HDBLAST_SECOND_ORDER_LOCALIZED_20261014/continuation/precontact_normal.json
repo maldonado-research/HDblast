@@ -1,8 +1,8 @@
 {
   "status": "PASS",
   "scope": "Exact initial-time ADM kinetic algebra, angular tensor witness, and causal support geometry; no shell-contact evolution test",
-  "positive_checks": 17,
-  "wrong_formula_controls": 6,
+  "positive_checks": 18,
+  "wrong_formula_controls": 7,
   "checks": [
     {
       "name": "direct_5d_ricci_kinetic_identity",
@@ -71,6 +71,10 @@
     {
       "name": "inner_support_positive_s_gap",
       "passed": true
+    },
+    {
+      "name": "inner_support_two_branch_global_s_bound",
+      "passed": true
     }
   ],
   "controls": [
@@ -92,6 +96,10 @@
     },
     {
       "name": "discard_all_tensor_harmonics",
+      "detected": true
+    },
+    {
+      "name": "extend_linear_inner_bound_past_origin",
       "detected": true
     },
     {

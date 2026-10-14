@@ -25,10 +25,13 @@ def main():
 
     def zero(z):
         if isinstance(z, s.MatrixBase):
-            return all(s.simplify(v) == 0 for v in z)
+            return all(zero(v) for v in z)
         if isinstance(z, (list, tuple)):
             return all(zero(v) for v in z)
-        return s.simplify(z) == 0
+        z = s.sympify(z)
+        if z.has(s.Piecewise):
+            return s.simplify(z) == 0
+        return s.cancel(z) == 0
 
     def check(name, residual):
         ok = zero(residual)
@@ -165,6 +168,13 @@ def main():
     Tc = (b**2 - upper**2) / (2 * upper)
     check("outer_support_shell_gap", b**2 + T**2 - (upper + T)**2 - 2 * upper * (Tc - T))
     check("inner_support_positive_s_gap", (lower - T)**2 - T**2 - lower * (lower - 2 * T))
+    inner_radius = s.Piecewise((lower - T, T <= lower), (0, True))
+    minimum_s = inner_radius**2 - T**2
+    expected_minimum_s = s.Piecewise((lower**2 - 2 * lower * T, T <= lower), (-T**2, True))
+    check("inner_support_two_branch_global_s_bound",
+          s.piecewise_fold(minimum_s - expected_minimum_s))
+    control("extend_linear_inner_bound_past_origin",
+            minimum_s.subs({lower: 1, T: 2}) - (lower**2 - 2 * lower * T).subs({lower: 1, T: 2}))
     control("static_shell_contact_time", (b**2 + T**2 - (upper + T)**2).subs(T, b - upper))
 
     if args.inject_failure:
