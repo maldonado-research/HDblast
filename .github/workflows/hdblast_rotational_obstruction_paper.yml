@@ -1,0 +1,96 @@
+name: Rotational obstruction paper replay
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_ROTATIONAL_OBSTRUCTION_PAPER_20261015/**'
+      - 'research/HDBLAST_ROTATIONAL_OBSTRUCTION_PAPER_20261015.zip'
+      - 'research/HDBLAST_ROTATIONAL_OBSTRUCTION_PAPER_20261015_EVIDENCE/**'
+      - '.github/workflows/hdblast_rotational_obstruction_paper.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_ROTATIONAL_OBSTRUCTION_PAPER_20261015/**'
+      - 'research/HDBLAST_ROTATIONAL_OBSTRUCTION_PAPER_20261015.zip'
+      - 'research/HDBLAST_ROTATIONAL_OBSTRUCTION_PAPER_20261015_EVIDENCE/**'
+      - '.github/workflows/hdblast_rotational_obstruction_paper.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rotational-obstruction-paper-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  fresh-independent-replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    env:
+      PROOF_DIRECTORY: research/HDBLAST_ROTATIONAL_OBSTRUCTION_PAPER_20261015
+      MANIFEST_SHA256: 'ddeb571087dee575761a110fbbf4f4245eb32c63d85bc5f15ace5340e67b2d80'
+      ARCHIVE_SHA256: '6430134b5eea4da09b8aa5651e6bf31023473c3ba530b60f9443806a25f1b990'
+      RUNNER_SHA256: '7b617ff6cef79355ff119cb7970cc20d2c595b7003464cae0e885b3308ff22fa'
+      VERIFIER_SHA256: '969b78bbb00bb7902b1c48eb6fd38305dbb6a28edcca9eb3ae8a8ee9e8cc46b6'
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /${{ env.PROOF_DIRECTORY }}/
+            /${{ env.PROOF_DIRECTORY }}.zip
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Authenticate complete source and matching ZIP before imports
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -S -B - <<'PY'
+          import hashlib, os, pathlib, shutil, zipfile
+          root = pathlib.Path(os.environ['PROOF_DIRECTORY'])
+          for name, variable in [('MANIFEST.json', 'MANIFEST_SHA256'),
+                                 ('supplement/reproduce.py', 'RUNNER_SHA256'),
+                                 ('verify_manifest.py', 'VERIFIER_SHA256')]:
+              path = root / name
+              if any(p.is_symlink() for p in [path, *path.parents]):
+                  raise RuntimeError('Real source files required')
+              if hashlib.sha256(path.read_bytes()).hexdigest() != os.environ[variable]:
+                  raise RuntimeError('External pin differs: ' + name)
+          archive = root.with_suffix('.zip')
+          if archive.is_symlink() or hashlib.sha256(archive.read_bytes()).hexdigest() != os.environ['ARCHIVE_SHA256']:
+              raise RuntimeError('Archive pin differs')
+          for path in root.rglob('*'):
+              if path.is_symlink() or not (path.is_file() or path.is_dir()):
+                  raise RuntimeError('Symlink or special file in original source tree')
+          expected = {p.relative_to(root.parent).as_posix(): p.read_bytes()
+                      for p in root.rglob('*') if p.is_file()}
+          with zipfile.ZipFile(archive) as zipped:
+              if len(zipped.namelist()) != len(expected) or set(zipped.namelist()) != set(expected):
+                  raise RuntimeError('Archive members differ')
+              if any(zipped.read(name) != raw for name, raw in expected.items()):
+                  raise RuntimeError('Archive and source differ')
+          shutil.copytree(root, pathlib.Path(os.environ['RUNNER_TEMP']) / root.name)
+          PY
+          python -I -S -B "$RUNNER_TEMP/HDBLAST_ROTATIONAL_OBSTRUCTION_PAPER_20261015/verify_manifest.py" --expected "$MANIFEST_SHA256"
+      - name: Install pinned symbolic dependencies
+        run: |
+          python -I -B -m pip install --only-binary=:all: -r "$RUNNER_TEMP/HDBLAST_ROTATIONAL_OBSTRUCTION_PAPER_20261015/supplement/requirements.txt"
+      # These finite checks do not certify the analytic proof, novelty or significance.
+      - name: Replay four exact checkers and deliberate failures in both modes
+        run: |
+          python -I -B "$RUNNER_TEMP/HDBLAST_ROTATIONAL_OBSTRUCTION_PAPER_20261015/supplement/reproduce.py" --output-dir "$RUNNER_TEMP/rotational-obstruction-paper-fresh"
+          python -I -S -B "$RUNNER_TEMP/HDBLAST_ROTATIONAL_OBSTRUCTION_PAPER_20261015/verify_manifest.py" --expected "$MANIFEST_SHA256"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rotational-obstruction-paper-${{ github.sha }}
+          path: ${{ runner.temp }}/rotational-obstruction-paper-fresh
+          if-no-files-found: warn
+          retention-days: 14
