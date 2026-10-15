@@ -1,0 +1,141 @@
+{
+  "schema": "hdblast-independent-quadratic-material-source-review-v1",
+  "status": "ACCEPT_EXPLICIT_QUADRATIC_MATERIAL_TENSION_CONTRIBUTION",
+  "substantive_blockers": [],
+  "pins": {
+    "QUADRATIC_MATERIAL_TENSION_FORCING.md": {
+      "bytes": 12172,
+      "sha256": "d00f6afe7301abdd8bb37c40d9bb289e850f3e9357ed085822a3cec800726567"
+    },
+    "compute_quadratic_forcing.py": {
+      "bytes": 9840,
+      "sha256": "195bcd4ec6d5d4ff10e5e845347aada300af0caafd88f4a5400f907f4b53da3d"
+    },
+    "check_quadratic_forcing.py": {
+      "bytes": 9620,
+      "sha256": "6a33cd077f6ec9da7f5ad314a200e0f3c7ff8999382005eafd2add8c78a5a8fb"
+    },
+    "computed/QUADRATIC_FORCING_ENCLOSURE.json": {
+      "bytes": 8193,
+      "sha256": "091e28806cccd0dd92addc47145ec49db4de226612396d81485b3629dc5a88a3"
+    },
+    "computed/QUADRATIC_FORCING_CELLS.csv": {
+      "bytes": 1580224,
+      "sha256": "d7c9f670f3f3e95b271f1d8572e946ae121f707093eb0e987c00b7a70d3c6fd6"
+    },
+    "computed/QUADRATIC_MATERIAL_FORCING.png": {
+      "bytes": 134315,
+      "sha256": "4c9ce1b69122f371e112f5aa77dab4e193f2795cda949af9deb37339c25bc5ac"
+    },
+    "referee/MATERIAL_SCALAR_SOURCE_REVIEW.md": {
+      "bytes": 8923,
+      "sha256": "da32321d144fd5001b30913024c9e7fa50c901ac69ec51f27ae19d3ab6b293d7"
+    },
+    "referee/check_material_source.py": {
+      "bytes": 11669,
+      "sha256": "f76bb4025af878a601655a761ee171c2c3f332ea9025c495b0103c842e255f74"
+    },
+    "referee/MATERIAL_SOURCE_AUDIT_NORMAL.json": {
+      "bytes": 3083,
+      "sha256": "92abfbcce839dfd9038859a804306dfa5b09bb36ce90c197361244aa72f9feb7"
+    },
+    "referee/MATERIAL_SOURCE_AUDIT_OPTIMIZED.json": {
+      "bytes": 3083,
+      "sha256": "b95c2eecdd5d6b2545b3862ad280408fd07545a7ea8f1bfebc57e73818564eef"
+    },
+    "referee/ROOT_CHECK_NORMAL.json": {
+      "bytes": 1713,
+      "sha256": "30d0c03e377fb634cfb4c25ceb800620ec5654f5d4a767b193b4514d3bb0a81b"
+    },
+    "referee/ROOT_CHECK_OPTIMIZED.json": {
+      "bytes": 1713,
+      "sha256": "30d0c03e377fb634cfb4c25ceb800620ec5654f5d4a767b193b4514d3bb0a81b"
+    },
+    "referee/FINAL_QUADRATIC_SOURCE_REVIEW.md": {
+      "bytes": 3513,
+      "sha256": "24be7e3a2c625d6b4f23c31996d8eb86bb871d4ed951fd7787f54da66edff9f6"
+    }
+  },
+  "accepted_scope": {
+    "physical_material_SUM_scalar_source": "Qphi=-4 psi1^2",
+    "identical_copy_source": "-2 psi1^2",
+    "actual_tension_hessian": "4 phi_b",
+    "explicit_constitutive_term": "Tquad=sigma_second_b psi1^2=-phi_b Qphi",
+    "complete_harmonic_coordinate_source_computed": false,
+    "full_U2_response_computed": false,
+    "total_second_stress_determined": false
+  },
+  "physical_review": [
+    "First physical scalar trace is valid in the material junction because the intrinsic background trace is constant",
+    "Second clock and label jets transform covariantly with the first junction row; ambient embedding and normal terms remain necessary",
+    "Original coordinate sources S_p and S_K retain the metric and normal-normalization terms",
+    "Force sign fixes no full second response or total stress",
+    "Background observation measure is distinguished from a full varied-measure second observable"
+  ],
+  "angular_review": {
+    "mean_Y2": "1/6",
+    "mean_Y4": "3/40",
+    "mean_Z2_squared": "1/12",
+    "mean_H4_squared": "19/720",
+    "source_power_shares": [
+      "10/27",
+      "5/18",
+      "19/54"
+    ],
+    "mean_Qphi": "-2 S^2/3",
+    "unit_S3_Qphi_squared_integral": "(12 pi^2/5) S^4"
+  },
+  "proper_norm_review": {
+    "signed_integral": "-4 C",
+    "L1_norm": "4 C",
+    "scalar_L2_squared": "(36/5) K G^2 ell^-3 integral cosh^-3(ell x) H^4 dx",
+    "explicit_tension_L2_squared": "(sigma_second_b^2/16) times scalar_L2_squared",
+    "strict_rounded_intervals": {
+      "cosh_minus3_H_fourth_integral_interval": [
+        "86.46",
+        "87.43"
+      ],
+      "scalar_signed_integral_interval": [
+        "-2.972e12",
+        "-2.427e12"
+      ],
+      "scalar_L1_interval": [
+        "2.427e12",
+        "2.972e12"
+      ],
+      "scalar_L2_squared_interval": [
+        "5.778e21",
+        "8.644e21"
+      ],
+      "constitutive_tension_integral_interval": [
+        "2.427e12",
+        "2.971e12"
+      ],
+      "constitutive_tension_L2_squared_interval": [
+        "5.777e21",
+        "8.642e21"
+      ]
+    },
+    "tail_ell2_monopole_strict": [
+      "-2.3e-19",
+      "-6.7e-20"
+    ],
+    "tail_domain_x": [
+      2,
+      3
+    ],
+    "tail_proper_time_argument": "tau=rho_b ell x"
+  },
+  "independently_executed_each_mode": {
+    "exact_polynomial_moments_and_full_cell_audit_groups": 31,
+    "root_checker_groups": 23,
+    "continuous_cells_reconstructed": 4353
+  },
+  "figure_visually_inspected": true,
+  "retained_results": "The prior conditional complete second Taylor coefficient construction is preserved. This checkpoint computes explicit source contributions, not the full quantitative second response.",
+  "limits": [
+    "All observations are local scientific source/data review; no remote publication or CI completion is certified by this receipt.",
+    "Finite arithmetic supplements analytic identities and conditional background/first-variation premises; it is not formal verification of the complete PDE theorem or external peer review.",
+    "No new effective nonlinear remainder, finite-amplitude spacetime, observed scale, cosmological evidence or novelty is established."
+  ]
+}

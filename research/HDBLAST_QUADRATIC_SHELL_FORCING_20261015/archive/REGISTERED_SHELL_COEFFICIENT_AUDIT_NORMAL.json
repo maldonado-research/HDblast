@@ -1,0 +1,99 @@
+{
+  "schema": "hdblast-registered-shell-coefficient-audit-v1",
+  "status": "PASS",
+  "scope": "Independent exact rational and symbolic coefficient checks on authenticated public inputs. Retains conditional actual background theorem; no second-order evolution, nonlinear remainder, physical calibration or external peer review is established.",
+  "input_pins_sha256": "cc5eeae2d9f536c4b6357d624d563b8949c6e1848556558ac752689cd21b757e",
+  "parameters_exact": {
+    "delta": "1/1000",
+    "c": "96714321425692/161839258930731"
+  },
+  "tension_in_eta": "2/3 + 2 eta^2 + 2 eta^3/3 + delta (1+c+c eta)",
+  "sigma_prime": "4 eta + 2 eta^2 + delta c",
+  "sigma_second": "4+4 eta",
+  "sigma_third": "4",
+  "eta_b": {
+    "exact": [
+      "-294118535875636537/3371651227723562500000",
+      "-545133882456055051/6743302455447125000000"
+    ],
+    "display_only": [
+      -8.723278773831436e-05,
+      -8.084078773831436e-05
+    ]
+  },
+  "sigma_prime_b_correlated_monotone": {
+    "exact": [
+      "4240486299569659745581117350173913057107/17052048002114709467093876537109375000000000",
+      "18705745695842571847917743537200377837803/68208192008458837868375506148437500000000000"
+    ],
+    "display_only": [
+      0.00024867900319326897,
+      0.00027424485454068006
+    ]
+  },
+  "sigma_prime_b_retained": {
+    "exact": [
+      "16961798642570296281299118595997127837803/68208192008458837868375506148437500000000000",
+      "4676473062887728637235773585474725557107/17052048002114709467093876537109375000000000"
+    ],
+    "display_only": [
+      0.0002486768545406801,
+      0.000274247003193269
+    ]
+  },
+  "sigma_second_b": {
+    "exact": [
+      "3371357109187686863463/842912806930890625000",
+      "6742757321564668944949/1685825613861781250000"
+    ],
+    "display_only": [
+      3.9996510688490465,
+      3.999676636849047
+    ]
+  },
+  "p_b_correlated_monotone": {
+    "exact": [
+      "-18705745695842571847917743537200377837803/136416384016917675736751012296875000000000000",
+      "-4240486299569659745581117350173913057107/34104096004229418934187753074218750000000000"
+    ],
+    "display_only": [
+      -0.00013712242727034003,
+      -0.00012433950159663448
+    ]
+  },
+  "material_single_copy_source": "-2 psi_1^2",
+  "material_two_copy_source": "-4 psi_1^2",
+  "Eulerian_metric_source": "sigma_second v^2/6 - 12 a u^2",
+  "Eulerian_scalar_source": "-4 p u^2 + 2 sigma_second u v - 2 v^2",
+  "gauge_scope": "The physical material first trace is psi_1=S(t)Y in the retained straight-shell observable construction. It must not be identified silently with a wave-gauge coordinate scalar trace. The -2 psi_1^2 term is the material tension contribution, not the complete coordinate scalar source or a solved second-order response.",
+  "positive_check_groups": 15,
+  "groups": [
+    "all_nine_selected_public_inputs_match_pins",
+    "same_registered_exact_delta_and_model_c",
+    "actual_registered_cubic_tension_and_one_copy_convention_retained",
+    "registered_polynomial_three_derivatives",
+    "same_near_positive_phi_branch_and_strict_sigma_prime_monotonicity",
+    "correlated_monotone_sigma_prime_enclosure_refines_retained_box",
+    "sigma_second_exact_affine_enclosure_matches_retained_box",
+    "retained_shell_identity_sigma_prime_equals_minus_two_p",
+    "unit_normal_second_metric_derivative",
+    "unit_normal_second_scalar_derivative",
+    "complete_Eulerian_metric_source_after_first_shell_rows",
+    "complete_Eulerian_scalar_source_after_first_shell_rows",
+    "factorial_second_scalar_tension_chain_rule",
+    "one_copy_material_scalar_source_has_correct_factor_and_sign",
+    "eight_embedded_factor_sign_and_wrong_model_controls_rejected"
+  ],
+  "embedded_wrong_formula_controls_rejected": 8,
+  "embedded_control_names": [
+    "quadratic_tension_wrong_third_derivative",
+    "wrong_sign_third_derivative",
+    "doubled_third_derivative",
+    "wrong_material_scalar_sign",
+    "lost_Taylor_factor_in_material_source",
+    "scalar_source_omits_normal_terms",
+    "wrong_Eulerian_metric_v_squared_factor",
+    "wrong_Eulerian_scalar_u_squared_sign"
+  ],
+  "python_optimized": false
+}
