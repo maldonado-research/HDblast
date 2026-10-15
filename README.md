@@ -1,5 +1,10 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- second-initial-norms-gauge-20261015 -->
+**15 October 2026: second initial norms and initial harmonic gauge:** Exact rational calculations give coarse certified upper bounds for all four physical second initial fields and their first spatial covariant derivatives. The initial constraint-source cancellations remain exact. Explicit local initial relative-harmonic lapse and shift velocities retain the quadratic terms. These conditional bounds do not demonstrate a response, establish a physical force, solve the full second-order evolution or construct an exact finite-amplitude family. Common boundary/gauge completion and validated coupled evolution remain open; earlier frozen checkpoints are preserved.
+
+[Research source and exact reports](https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SECOND_INITIAL_NORMS_GAUGE_20261015) · [Second initial norms](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_SECOND_INITIAL_NORMS_GAUGE_20261015/producer/QUANTITATIVE_SECOND_INITIAL_JET.md) · [Initial harmonic completion](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_SECOND_INITIAL_NORMS_GAUGE_20261015/gauge/EXPLICIT_INITIAL_HARMONIC_COMPLETION.md) · [Spacetime initial one-jet](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_SECOND_INITIAL_NORMS_GAUGE_20261015/frame/INITIAL_SPACETIME_ONE_JET.md).
+
 <!-- explicit-second-initial-jet-20261015 -->
 **15 October 2026: explicit compact second initial constraint jet:** Local formulas now cancel all five second differentiated initial constraints for the registered aligned packet, using nonzero second scalar and normal scalar-velocity data. The correction stays in the original packet annulus. A certified Hamiltonian source below -1e19 at the packet maximum excludes zero second initial data. The physical-Cauchy/spacetime lapse conversion is explicit.
 

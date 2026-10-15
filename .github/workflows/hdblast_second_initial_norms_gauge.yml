@@ -1,0 +1,67 @@
+name: Second initial norms and local harmonic gauge replay
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_SECOND_INITIAL_NORMS_GAUGE_20261015/**'
+      - 'research/HDBLAST_SECOND_INITIAL_NORMS_GAUGE_20261015.zip'
+      - '.github/workflows/hdblast_second_initial_norms_gauge.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_SECOND_INITIAL_NORMS_GAUGE_20261015/**'
+      - 'research/HDBLAST_SECOND_INITIAL_NORMS_GAUGE_20261015.zip'
+      - '.github/workflows/hdblast_second_initial_norms_gauge.yml'
+permissions:
+  contents: read
+jobs:
+  exact-fresh-archive-replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    env:
+      CAPSULE: HDBLAST_SECOND_INITIAL_NORMS_GAUGE_20261015
+      MANIFEST_SHA256: '4c0dae7de0b63acca15e5204681a859f49e5b5028340457dea5c29246bf0626c'
+      ARCHIVE_SHA256: 'd5cde2f6340e4379afced4464e0061e229a887bd4774adc903487456a3445efb'
+      RUNNER_SHA256: 'd1827d61adf34075073964681e81881be83060660885121a975134be879e5002'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: |
+            research/HDBLAST_SECOND_INITIAL_NORMS_GAUGE_20261015
+            research/HDBLAST_SECOND_INITIAL_NORMS_GAUGE_20261015.zip
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - name: Authenticate frozen bytes and extract the matching archive
+        run: |
+          python -I -S -B - <<'PYCODE'
+          import hashlib, os, pathlib, zipfile
+          name = os.environ['CAPSULE']
+          root = pathlib.Path('research') / name
+          digest = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+          for leaf, variable in [('MANIFEST.json','MANIFEST_SHA256'),('reproduce.py','RUNNER_SHA256')]:
+              if digest(root/leaf) != os.environ[variable]: raise RuntimeError('External source pin differs')
+          archive = root.with_suffix('.zip')
+          if digest(archive) != os.environ['ARCHIVE_SHA256']: raise RuntimeError('Archive pin differs')
+          expected = {}
+          for p in root.rglob('*'):
+              if p.is_symlink(): raise RuntimeError('Symlink source')
+              if p.is_file(): expected[name+'/'+p.relative_to(root).as_posix()] = p.read_bytes()
+          with zipfile.ZipFile(archive) as z:
+              if len(z.namelist()) != len(expected) or set(z.namelist()) != set(expected): raise RuntimeError('Archive inventory differs')
+              if any(z.read(n) != raw for n,raw in expected.items()): raise RuntimeError('Archive/source bytes differ')
+              z.extractall(pathlib.Path(os.environ['RUNNER_TEMP'])/'source')
+          PYCODE
+      - name: Replay exact checks, independent reconstructions and deliberate errors
+        run: |
+          python -I -S -B "$RUNNER_TEMP/source/$CAPSULE/reproduce.py" --manifest-sha256 "$MANIFEST_SHA256" --output-dir "$RUNNER_TEMP/second-initial-norms-replay"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: second-initial-norms-gauge-${{ github.sha }}
+          path: ${{ runner.temp }}/second-initial-norms-replay
+          retention-days: 14

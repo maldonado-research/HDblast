@@ -1,0 +1,53 @@
+{
+  "scope": "Initial relative-harmonic completion only; physical jets retained; no gauge wave or boundary evolution solved",
+  "files": {
+    "EXPLICIT_INITIAL_HARMONIC_COMPLETION.md": "bc3ae85c3166575ed15b017468a3e9668615e15dfaca34bb2a13afe27ea28f92",
+    "check_initial_harmonic_completion.py": "fad7c3bbfec2c86a70eac6b0d6cfdf2fdfa8cc1e81a9349406c3f9408ab92220",
+    "INITIAL_HARMONIC_COMPLETION.json": "2a51cc50cebfca8a806b9a3de22865f4a29d8194d8641f483485b24f25e5d419",
+    "INITIAL_HARMONIC_COMPLETION_OPTIMIZED.json": "2a51cc50cebfca8a806b9a3de22865f4a29d8194d8641f483485b24f25e5d419"
+  },
+  "peer_read_root_checks": {
+    "review/check_gauge_adm_identities.py": "af2f953d073beb7feb7057ebcd95d87e87821de0d9f8eac2379d40a1b5df1744",
+    "review/check_reduced_sources.py": "99bb73a0c6a4051e9850ca08607b4092ccf81b7a5cc5477f2e5358467e443685"
+  },
+  "peer_review_judgment": "No mathematical or scope error found in the inspected root formal ADM identities and Laurent engine.",
+  "normal_optimized_identical": true,
+  "cli_negative_controls": [
+    {
+      "mutation": "omit_lapse_quadratic",
+      "nonzero_exit": true,
+      "mutation_specific_reason": true,
+      "no_output": true
+    },
+    {
+      "mutation": "halve_radial_U_Uy",
+      "nonzero_exit": true,
+      "mutation_specific_reason": true,
+      "no_output": true
+    },
+    {
+      "mutation": "omit_radial_fy",
+      "nonzero_exit": true,
+      "mutation_specific_reason": true,
+      "no_output": true
+    },
+    {
+      "mutation": "halve_angular_quadratic",
+      "nonzero_exit": true,
+      "mutation_specific_reason": true,
+      "no_output": true
+    },
+    {
+      "mutation": "omit_mixed_metric_cross",
+      "nonzero_exit": true,
+      "mutation_specific_reason": true,
+      "no_output": true
+    },
+    {
+      "mutation": "omit_second_metric_lapse_value",
+      "nonzero_exit": true,
+      "mutation_specific_reason": true,
+      "no_output": true
+    }
+  ]
+}

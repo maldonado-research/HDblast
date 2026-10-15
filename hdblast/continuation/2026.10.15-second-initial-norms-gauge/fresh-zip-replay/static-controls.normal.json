@@ -1,0 +1,74 @@
+{
+  "status": "PASS_STATIC_JET_NORMAL_OPTIMIZED_AND_TEN_NEGATIVE_CONTROLS",
+  "normal_optimized_byte_identity": true,
+  "cases": {
+    "normal": {
+      "status": "PASS",
+      "sha256": "3aa2c8d2e9ad652b72a34b4d8a6e6a6f14f72c32b8dcd1fbdc67556093265c22"
+    },
+    "normal_input_tamper": {
+      "status": "REJECTED_AS_REQUIRED",
+      "exception": "actual retained input pin mismatch",
+      "exit_code": 1,
+      "no_output_report": true
+    },
+    "normal_wrong_jet_normalization": {
+      "status": "REJECTED_AS_REQUIRED",
+      "exception": "formal jet identity failed: rho order 2",
+      "exit_code": 1,
+      "no_output_report": true
+    },
+    "normal_flip_rho_ODE": {
+      "status": "REJECTED_AS_REQUIRED",
+      "exception": "formal jet identity failed: rho order 1",
+      "exit_code": 1,
+      "no_output_report": true
+    },
+    "normal_halve_B_log_derivative": {
+      "status": "REJECTED_AS_REQUIRED",
+      "exception": "formal jet identity failed: B order 1",
+      "exit_code": 1,
+      "no_output_report": true
+    },
+    "normal_unsafe_p_denominator": {
+      "status": "REJECTED_AS_REQUIRED",
+      "exception": "actual annulus denominator signs failed",
+      "exit_code": 1,
+      "no_output_report": true
+    },
+    "optimized": {
+      "status": "PASS",
+      "sha256": "3aa2c8d2e9ad652b72a34b4d8a6e6a6f14f72c32b8dcd1fbdc67556093265c22"
+    },
+    "optimized_input_tamper": {
+      "status": "REJECTED_AS_REQUIRED",
+      "exception": "actual retained input pin mismatch",
+      "exit_code": 1,
+      "no_output_report": true
+    },
+    "optimized_wrong_jet_normalization": {
+      "status": "REJECTED_AS_REQUIRED",
+      "exception": "formal jet identity failed: rho order 2",
+      "exit_code": 1,
+      "no_output_report": true
+    },
+    "optimized_flip_rho_ODE": {
+      "status": "REJECTED_AS_REQUIRED",
+      "exception": "formal jet identity failed: rho order 1",
+      "exit_code": 1,
+      "no_output_report": true
+    },
+    "optimized_halve_B_log_derivative": {
+      "status": "REJECTED_AS_REQUIRED",
+      "exception": "formal jet identity failed: B order 1",
+      "exit_code": 1,
+      "no_output_report": true
+    },
+    "optimized_unsafe_p_denominator": {
+      "status": "REJECTED_AS_REQUIRED",
+      "exception": "actual annulus denominator signs failed",
+      "exit_code": 1,
+      "no_output_report": true
+    }
+  }
+}
