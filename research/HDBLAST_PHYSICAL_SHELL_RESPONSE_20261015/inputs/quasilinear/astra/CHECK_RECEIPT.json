@@ -1,0 +1,55 @@
+{
+  "all_expected": true,
+  "runs": [
+    {
+      "optimized": false,
+      "mutation": "none",
+      "returncode": 0,
+      "expected": 0
+    },
+    {
+      "optimized": false,
+      "mutation": "reverse_flux",
+      "returncode": 1,
+      "expected": 1
+    },
+    {
+      "optimized": false,
+      "mutation": "drop_shift",
+      "returncode": 1,
+      "expected": 1
+    },
+    {
+      "optimized": false,
+      "mutation": "mix_DN",
+      "returncode": 1,
+      "expected": 1
+    },
+    {
+      "optimized": true,
+      "mutation": "none",
+      "returncode": 0,
+      "expected": 0
+    },
+    {
+      "optimized": true,
+      "mutation": "reverse_flux",
+      "returncode": 1,
+      "expected": 1
+    },
+    {
+      "optimized": true,
+      "mutation": "drop_shift",
+      "returncode": 1,
+      "expected": 1
+    },
+    {
+      "optimized": true,
+      "mutation": "mix_DN",
+      "returncode": 1,
+      "expected": 1
+    }
+  ],
+  "checker_sha256": "d32b8f78a7b3031b8b33636ba731c9a4c8edd006e87f820894294a52cd863d7b",
+  "analytic_note_sha256": "d6f80e6158226b253c56f2f60c8d9c6cfa2ee2940e79bde42dd8fe8e48a5d6c4"
+}

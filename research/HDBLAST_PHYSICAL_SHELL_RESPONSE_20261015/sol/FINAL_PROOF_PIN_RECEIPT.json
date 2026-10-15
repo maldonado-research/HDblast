@@ -1,0 +1,50 @@
+{
+  "checker_verification": {
+    "injected_corruptions_rejected_per_mode": 3,
+    "machine_PDE_certification": false,
+    "normal_and_optimized_outputs_identical": true,
+    "positive_identities_per_mode": 17
+  },
+  "final_root_additions_reviewed": [
+    "direct positive-collar Volterra construction (11a)",
+    "strict support margin for full correction annulus",
+    "source and derivation references"
+  ],
+  "proofs": [
+    {
+      "path": "PHYSICAL_SHELL_RESPONSE.md",
+      "role": "root_physical_response",
+      "sha256": "a78f2239893fdd0e5ff653d4d5ce5cd9d3244c57c794ed2d3bb43bd4f5e1484b"
+    },
+    {
+      "path": "sol/ALIGNED_POSITIVE_VELOCITY_SHELL_RESPONSE.md",
+      "role": "sol_mixed_profile_proof",
+      "sha256": "4b7489341f57ae32ccba18edfbe7f15851acefb412104e6c45eec4adfef89f7f"
+    },
+    {
+      "path": "astra/PHYSICAL_SCALAR_ACTIVATION.md",
+      "role": "astra_pure_displacement_proof",
+      "sha256": "9ddd57201296de9e11c9f64d79f059435c68daff538551f599a858142f9090c2"
+    },
+    {
+      "path": "sol/INDEPENDENT_CROSS_REVIEW.md",
+      "role": "sol_cross_review",
+      "sha256": "1337ef8a1a49264d5973327effe5523cb2df0757e15d3c871cbfcdd24fea5a53"
+    },
+    {
+      "path": "sol/check_response_algebra.py",
+      "role": "sol_checker",
+      "sha256": "10e753142c07878ccd252cf40f6f7ac1aef0069a34b05a3ea3fc8e0082315b03"
+    },
+    {
+      "path": "sol/CHECK_RECEIPT.json",
+      "role": "sol_executed_check_receipt",
+      "sha256": "27ebfdfc5d7bcb433600c4ecaeb20984d6fcfbdbec3931a42d7bd09ac8406ee9"
+    }
+  ],
+  "review_date_utc": "2026-10-15",
+  "reviewer": "independent Sol agent",
+  "schema_version": 1,
+  "scope": "Qualitative physical-shell scalar activation and exact nonlinear squared-response diagnostic for specified both-active aligned profile. No numerical trace, effective amplitude bound, finite-amplitude arrival, global stability, external peer review, or novelty certificate.",
+  "status": "accepted_under_retained_conditional_hypotheses"
+}
