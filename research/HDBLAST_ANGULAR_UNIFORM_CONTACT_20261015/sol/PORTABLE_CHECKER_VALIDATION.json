@@ -1,0 +1,23 @@
+{
+  "checker": "verify_uniform_robin.py",
+  "dependency": "sympy only",
+  "normal": {"exit_code": 0, "status": "PASS"},
+  "optimized": {"exit_code": 0, "status": "PASS"},
+  "corruption_controls": [
+    {"mode": "boundary-sign", "normal_exit": 1, "optimized_exit": 1,
+     "diagnostic": "FAIL: B is minus Jacobian of the exact boundary RHS"},
+    {"mode": "conjugation-sign", "normal_exit": 1, "optimized_exit": 1,
+     "diagnostic": "FAIL: correct conjugation sign"},
+    {"mode": "omitted-quadratic-derivative", "normal_exit": 1, "optimized_exit": 1,
+     "diagnostic": "FAIL: all equation (5) metric-wave sources"},
+    {"mode": "noncommuting-time", "normal_exit": 1, "optimized_exit": 1,
+     "diagnostic": "FAIL: noncommuting Duhamel derivative"}
+  ],
+  "exact_noncommuting_residual": "chi^2 E13 / 2",
+  "exact_glancing_limits": {
+    "eta_times_normalized_neumann_symbol_squared": "1",
+    "integrated_phase_energy_squared_over_sqrt_eta": "1/2"
+  },
+  "original_history": "verify_uniform_robin_original.py",
+  "note": "No Python assert statements are used; failures use explicit SystemExit. This receipt records observed executions, not proof of the PDE estimate."
+}
