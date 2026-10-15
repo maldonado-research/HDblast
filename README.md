@@ -1,5 +1,12 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- quasilinear-shell-evolution-20261015 -->
+**Exact nonlinear shell evolution at fixed finite regularity:** Under the stated background, support and exact-data hypotheses, the selected aligned quadrupole has a small exact Einstein–scalar family on both copies of the controlled positive-cone region for a prescribed finite shell-interaction interval. The construction satisfies the physical shell laws and constraints, with H^14/H^13 evolution and C² parameter dependence in a lower norm.
+
+This is internally reviewed conditional mathematics. The actual first-arrival time and a nonzero gauge-invariant shell response remain to be calculated. No global stability, observational agreement or higher-dimensional origin of the Big Bang is established. The analytic proofs and finite algebra checks are documented separately; no new Zenodo version or APS submission accompanies this checkpoint. Earlier dated entries retain their original scope.
+
+[Theorem, proof and assumptions](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015/EXACT_FINITE_REGULARITY_SHELL_EVOLUTION.md) · [Reproducible checks and scope](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015/README.md).
+
 <!-- angular-uniform-contact-20261015 -->
 **All-angular linear shell-contact estimate — 14 October 2026 (Pacific):** On the registered Einstein–scalar background and a fixed controlled positive-cone collar, the full sixteen-field linear system now has a positive auxiliary Sobolev control estimate independent of angular frequency and of the full tensorial SO(4) cutoff. A bounded change of field variables removes the complete nonsymmetric twelve-row Robin matrix without changing the common wave principal part. Smooth compatible data and forcing give a unique smooth linear solution; the same method controls subsidiary constraint propagation.
 
