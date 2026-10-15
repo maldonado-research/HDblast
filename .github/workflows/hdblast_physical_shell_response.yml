@@ -1,0 +1,90 @@
+name: Physical shell-response identity replay
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_PHYSICAL_SHELL_RESPONSE_20261015/**'
+      - 'research/HDBLAST_PHYSICAL_SHELL_RESPONSE_20261015.zip'
+      - '.github/workflows/hdblast_physical_shell_response.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_PHYSICAL_SHELL_RESPONSE_20261015/**'
+      - 'research/HDBLAST_PHYSICAL_SHELL_RESPONSE_20261015.zip'
+      - '.github/workflows/hdblast_physical_shell_response.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: physical-shell-response-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  fresh-independent-replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    env:
+      PROOF_DIRECTORY: research/HDBLAST_PHYSICAL_SHELL_RESPONSE_20261015
+      MANIFEST_SHA256: 'fd06ac6eee239834f052c5bbcf7e29531cc127d1fa6621b3069ab4dcf1a77831'
+      ARCHIVE_SHA256: 'b89d648ea33d7e256229e1ae50fcaa56e90199d00753ed85960c983c865c9c2d'
+      RUNNER_SHA256: 'ee5381553a09b1c1723496ca64db98a3215c9959909c23a9baca2f93c7663ec0'
+      VERIFIER_SHA256: 'c9235712e9a028b8966c59001cd4f05d1056a096a13bcda09ff39f47d394cff7'
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /${{ env.PROOF_DIRECTORY }}/
+            /${{ env.PROOF_DIRECTORY }}.zip
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Authenticate manifest, executable bytes and matching ZIP before imports
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -S -B - <<'PY'
+          import hashlib, os, pathlib, shutil, zipfile
+          root = pathlib.Path(os.environ['PROOF_DIRECTORY'])
+          for name, variable in [('MANIFEST.json', 'MANIFEST_SHA256'),
+                                 ('reproduce.py', 'RUNNER_SHA256'),
+                                 ('verify_manifest.py', 'VERIFIER_SHA256')]:
+              path = root / name
+              if any(p.is_symlink() for p in [path, *path.parents]):
+                  raise RuntimeError('Real source files required')
+              if hashlib.sha256(path.read_bytes()).hexdigest() != os.environ[variable]:
+                  raise RuntimeError('External pin differs: ' + name)
+          archive = root.with_suffix('.zip')
+          if archive.is_symlink() or hashlib.sha256(archive.read_bytes()).hexdigest() != os.environ['ARCHIVE_SHA256']:
+              raise RuntimeError('Archive pin differs')
+          expected = {p.relative_to(root.parent).as_posix(): p.read_bytes()
+                      for p in root.rglob('*') if p.is_file()}
+          with zipfile.ZipFile(archive) as zipped:
+              if len(zipped.namelist()) != len(expected) or set(zipped.namelist()) != set(expected):
+                  raise RuntimeError('Archive members differ')
+              if any(zipped.read(name) != raw for name, raw in expected.items()):
+                  raise RuntimeError('Archive and source differ')
+          shutil.copytree(root, pathlib.Path(os.environ['RUNNER_TEMP']) / 'physical-shell-response-source')
+          PY
+          python -I -S -B "$RUNNER_TEMP/physical-shell-response-source/verify_manifest.py" --expected "$MANIFEST_SHA256"
+      - name: Install pinned symbolic dependency
+        run: |
+          python -I -B -m pip install --only-binary=:all: -r "$RUNNER_TEMP/physical-shell-response-source/requirements.txt"
+      # The frozen runner records its actual checker/control inventory.
+      # Finite identity checks do not certify an analytic response theorem.
+      - name: Replay exact checks and required controls in both Python modes
+        run: |
+          python -I -B "$RUNNER_TEMP/physical-shell-response-source/reproduce.py" --manifest-sha256 "$MANIFEST_SHA256" --output-dir "$RUNNER_TEMP/physical-shell-response-fresh"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: physical-shell-response-contact-${{ github.sha }}
+          path: ${{ runner.temp }}/physical-shell-response-fresh
+          retention-days: 14

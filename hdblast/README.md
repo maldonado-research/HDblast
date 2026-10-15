@@ -1,5 +1,12 @@
 # HDBLAST — start here
 
+<!-- physical-shell-response-20261015 -->
+**Conditional nonzero physical shell response:** For one explicitly specified aligned quadrupole with nonzero displacement and velocity, the full coupled Einstein–scalar shell equations now imply a nonzero physical first scalar response. In the retained conditional exact nonlinear family, a squared scalar-response measure over a finite intrinsic proper-time window has a strictly positive leading quadratic coefficient.
+
+The result retains the stated background, exact-data, support, regularity and finite-region hypotheses. It is qualitative: no numerical waveform, response magnitude, effective amplitude threshold or exact nonlinear first-arrival time is supplied. Internal AI-assisted review and finite reproducible checks are distinct; external peer review, global stability and a higher-dimensional origin of the Big Bang are not established. Earlier dated entries retain their original scope. No new Zenodo version or APS submission was made.
+
+[Physical response theorem and assumptions](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_PHYSICAL_SHELL_RESPONSE_20261015/PHYSICAL_SHELL_RESPONSE.md) · [Derivations and reproducible checks](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_PHYSICAL_SHELL_RESPONSE_20261015/README.md).
+
 <!-- quasilinear-shell-evolution-20261015 -->
 **Exact nonlinear shell evolution at fixed finite regularity:** Under the stated background, support and exact-data hypotheses, the selected aligned quadrupole has a small exact Einstein–scalar family on both copies of the controlled positive-cone region for a prescribed finite shell-interaction interval. The construction satisfies the physical shell laws and constraints, with H^14/H^13 evolution and C² parameter dependence in a lower norm.
 

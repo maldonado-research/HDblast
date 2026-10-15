@@ -1,0 +1,156 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "optimized": false,
+      "corruption": "none",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "artifact": "CHECK_NORMAL.json",
+      "failed_checks": []
+    },
+    {
+      "optimized": false,
+      "corruption": "reverse_spatial_drift",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "artifact": "CHECK_NORMAL_reverse_spatial_drift.json",
+      "failed_checks": [
+        "registered_master_in_inward_depth"
+      ]
+    },
+    {
+      "optimized": false,
+      "corruption": "reverse_observation",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "artifact": "CHECK_NORMAL_reverse_observation.json",
+      "failed_checks": [
+        "physical_scalar_observation"
+      ]
+    },
+    {
+      "optimized": false,
+      "corruption": "drop_normal_lapse",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "artifact": "CHECK_NORMAL_drop_normal_lapse.json",
+      "failed_checks": [
+        "complete_scalar_junction_including_normal_variation"
+      ]
+    },
+    {
+      "optimized": false,
+      "corruption": "drop_embedding_shift",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "artifact": "CHECK_NORMAL_drop_embedding_shift.json",
+      "failed_checks": [
+        "physical_pullback_gauge_cancellation"
+      ]
+    },
+    {
+      "optimized": false,
+      "corruption": "insert_measure_variation",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "artifact": "CHECK_NORMAL_insert_measure_variation.json",
+      "failed_checks": [
+        "exact_observable_second_variation"
+      ]
+    },
+    {
+      "optimized": false,
+      "corruption": "double_count_common_shell",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "artifact": "CHECK_NORMAL_double_count_common_shell.json",
+      "failed_checks": [
+        "one_common_shell_observable_normalization"
+      ]
+    },
+    {
+      "optimized": true,
+      "corruption": "none",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "artifact": "CHECK_OPTIMIZED.json",
+      "failed_checks": []
+    },
+    {
+      "optimized": true,
+      "corruption": "reverse_spatial_drift",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "artifact": "CHECK_OPTIMIZED_reverse_spatial_drift.json",
+      "failed_checks": [
+        "registered_master_in_inward_depth"
+      ]
+    },
+    {
+      "optimized": true,
+      "corruption": "reverse_observation",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "artifact": "CHECK_OPTIMIZED_reverse_observation.json",
+      "failed_checks": [
+        "physical_scalar_observation"
+      ]
+    },
+    {
+      "optimized": true,
+      "corruption": "drop_normal_lapse",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "artifact": "CHECK_OPTIMIZED_drop_normal_lapse.json",
+      "failed_checks": [
+        "complete_scalar_junction_including_normal_variation"
+      ]
+    },
+    {
+      "optimized": true,
+      "corruption": "drop_embedding_shift",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "artifact": "CHECK_OPTIMIZED_drop_embedding_shift.json",
+      "failed_checks": [
+        "physical_pullback_gauge_cancellation"
+      ]
+    },
+    {
+      "optimized": true,
+      "corruption": "insert_measure_variation",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "artifact": "CHECK_OPTIMIZED_insert_measure_variation.json",
+      "failed_checks": [
+        "exact_observable_second_variation"
+      ]
+    },
+    {
+      "optimized": true,
+      "corruption": "double_count_common_shell",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "artifact": "CHECK_OPTIMIZED_double_count_common_shell.json",
+      "failed_checks": [
+        "one_common_shell_observable_normalization"
+      ]
+    }
+  ],
+  "scope": "17 exact algebra identities in normal and optimized Python; six wrong-formula controls in each mode. No PDE or numerical-response certification."
+}
