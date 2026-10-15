@@ -1,0 +1,704 @@
+{
+  "schema": "hdblast-build-time-replay-config-v1",
+  "status": "APPROVED_FOR_FROZEN_REPLAY",
+  "capsule": "HDBLAST_COORDINATE_SHELL_SOURCES_20261015",
+  "python_version": "3.12.14",
+  "dependency_versions": {},
+  "checkers": [
+    {
+      "name": "generator",
+      "script": "compute_coordinate_sources.py",
+      "dependencies": [
+        "inputs/INPUT_PINS.json",
+        "inputs/prior/INERTIAL_WAVEFORM_CELLS.csv",
+        "inputs/prior/INERTIAL_WAVEFORM_ENCLOSURE.json",
+        "inputs/prior/INERTIAL_SHELL_WAVEFORM.md",
+        "inputs/prior/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+        "inputs/prior/PRIOR_PHYSICAL_GAIN_ENCLOSURE.json",
+        "inputs/prior/FINAL_INERTIAL_WAVEFORM_REVIEW.json",
+        "inputs/prior/FINAL_INERTIAL_WAVEFORM_REVIEW.md",
+        "inputs/reference/SCALAR_SHELL_BOUNDARY_SYSTEM.md",
+        "inputs/reference/MATERIAL_SECOND_ORDER_JUNCTIONS.md",
+        "inputs/reference/BACKGROUND_DERIVATIVE_BOUNDS.json",
+        "inputs/reference/INERTIAL_WAVEFORM_MANIFEST.json",
+        "inputs/reference/PHYSICAL_SHELL_RESPONSE.md",
+        "inputs/reference/PHYSICAL_SHELL_RESPONSE_MANIFEST.json",
+        "inputs/reference/FULL_CONTACT_MANIFEST.json",
+        "inputs/reference/GH_BOUNDARY_SOURCE_AND_CONSTRAINT_COMPLETION.md",
+        "inputs/reference/FULL_FINITE_ANGULAR_SECOND_ORDER_CONTACT.md",
+        "inputs/reference/COMPLETE_L4_SCALAR_BULK.md",
+        "inputs/reference/FULL_L4_SCALAR_SOURCE_AND_OPERATOR.md"
+      ],
+      "arguments": [
+        "--output-dir",
+        "generated"
+      ],
+      "output": "generated/COORDINATE_SHELL_SOURCE_ENCLOSURE.json",
+      "golden": "computed/COORDINATE_SHELL_SOURCE_ENCLOSURE.json",
+      "optimized_golden": "computed/COORDINATE_SHELL_SOURCE_ENCLOSURE_OPTIMIZED.json",
+      "status": "PASS",
+      "byte_equal": true,
+      "additional_outputs": [
+        [
+          "generated/COORDINATE_SHELL_SOURCE_CELLS.csv",
+          "computed/COORDINATE_SHELL_SOURCE_CELLS.csv"
+        ]
+      ],
+      "mode_fields": [
+        {
+          "path": [
+            "runtime",
+            "optimization"
+          ],
+          "normal": 0,
+          "optimized": 1
+        }
+      ],
+      "required_fields": [
+        {
+          "path": [
+            "cell_data",
+            "rows"
+          ],
+          "equals": 4353
+        },
+        {
+          "path": [
+            "scope",
+            "full_U2_evaluated"
+          ],
+          "equals": false
+        },
+        {
+          "path": [
+            "scope",
+            "EN_scope"
+          ],
+          "equals": "Retained degree-four reduced Robin forcing only."
+        }
+      ]
+    },
+    {
+      "name": "astra",
+      "script": "astra/check_coordinate_sources.py",
+      "dependencies": [
+        "inputs/INPUT_PINS.json",
+        "inputs/prior/INERTIAL_WAVEFORM_CELLS.csv",
+        "inputs/prior/INERTIAL_WAVEFORM_ENCLOSURE.json",
+        "inputs/prior/INERTIAL_SHELL_WAVEFORM.md",
+        "inputs/prior/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+        "inputs/reference/PHYSICAL_SHELL_RESPONSE.md",
+        "inputs/reference/SCALAR_SHELL_BOUNDARY_SYSTEM.md",
+        "inputs/reference/PHYSICAL_SHELL_RESPONSE_MANIFEST.json",
+        "inputs/reference/FULL_CONTACT_MANIFEST.json",
+        "inputs/reference/INERTIAL_WAVEFORM_MANIFEST.json",
+        "inputs/reference/COMPLETE_L4_SCALAR_BULK.md",
+        "computed/COORDINATE_SHELL_SOURCE_ENCLOSURE.json",
+        "computed/COORDINATE_SHELL_SOURCE_CELLS.csv"
+      ],
+      "arguments": [
+        "--output",
+        "checked.json"
+      ],
+      "output": "checked.json",
+      "golden": "astra/ASTRA_COORDINATE_NORMAL.json",
+      "optimized_golden": "astra/ASTRA_COORDINATE_OPTIMIZED.json",
+      "status": "PASS",
+      "byte_equal": true,
+      "checks": {
+        "path": [
+          "positive_groups"
+        ],
+        "kind": "names"
+      },
+      "check_count_path": [
+        "positive_group_count"
+      ]
+    },
+    {
+      "name": "sol",
+      "script": "sol/check_coordinate_shell_sources.py",
+      "dependencies": [
+        "compute_coordinate_sources.py",
+        "inputs/INPUT_PINS.json",
+        "inputs/prior/INERTIAL_WAVEFORM_CELLS.csv",
+        "inputs/prior/INERTIAL_WAVEFORM_ENCLOSURE.json",
+        "inputs/prior/INERTIAL_SHELL_WAVEFORM.md",
+        "inputs/prior/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+        "inputs/prior/PRIOR_PHYSICAL_GAIN_ENCLOSURE.json",
+        "inputs/prior/FINAL_INERTIAL_WAVEFORM_REVIEW.json",
+        "inputs/prior/FINAL_INERTIAL_WAVEFORM_REVIEW.md",
+        "inputs/reference/SCALAR_SHELL_BOUNDARY_SYSTEM.md",
+        "inputs/reference/MATERIAL_SECOND_ORDER_JUNCTIONS.md",
+        "inputs/reference/BACKGROUND_DERIVATIVE_BOUNDS.json",
+        "inputs/reference/INERTIAL_WAVEFORM_MANIFEST.json",
+        "inputs/reference/PHYSICAL_SHELL_RESPONSE.md",
+        "inputs/reference/PHYSICAL_SHELL_RESPONSE_MANIFEST.json",
+        "inputs/reference/FULL_CONTACT_MANIFEST.json",
+        "inputs/reference/GH_BOUNDARY_SOURCE_AND_CONSTRAINT_COMPLETION.md",
+        "inputs/reference/FULL_FINITE_ANGULAR_SECOND_ORDER_CONTACT.md",
+        "inputs/reference/COMPLETE_L4_SCALAR_BULK.md",
+        "inputs/reference/FULL_L4_SCALAR_SOURCE_AND_OPERATOR.md",
+        "computed/COORDINATE_SHELL_SOURCE_ENCLOSURE.json",
+        "computed/COORDINATE_SHELL_SOURCE_CELLS.csv"
+      ],
+      "arguments": [
+        "--output",
+        "checked.json"
+      ],
+      "output": "checked.json",
+      "golden": "sol/SOL_NORMAL.json",
+      "optimized_golden": "sol/SOL_OPTIMIZED.json",
+      "status": "PASS",
+      "byte_equal": true,
+      "checks": {
+        "path": [
+          "finite_groups"
+        ],
+        "kind": "names"
+      },
+      "mode_fields": [
+        {
+          "path": [
+            "optimized"
+          ],
+          "normal": false,
+          "optimized": true
+        }
+      ],
+      "required_fields": [
+        {
+          "path": [
+            "cell_count"
+          ],
+          "equals": 4353
+        },
+        {
+          "path": [
+            "primary_authentication",
+            "status"
+          ],
+          "equals": "PASS"
+        },
+        {
+          "path": [
+            "primary_authentication",
+            "scientific_endpoints_authenticated"
+          ],
+          "equals": 113178
+        }
+      ]
+    },
+    {
+      "name": "referee",
+      "script": "referee/check_full_source_formulation.py",
+      "dependencies": [
+        "inputs/INPUT_PINS.json",
+        "inputs/prior/INERTIAL_WAVEFORM_CELLS.csv",
+        "inputs/prior/INERTIAL_WAVEFORM_ENCLOSURE.json",
+        "inputs/prior/INERTIAL_SHELL_WAVEFORM.md",
+        "inputs/prior/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+        "inputs/prior/PRIOR_PHYSICAL_GAIN_ENCLOSURE.json",
+        "inputs/prior/FINAL_INERTIAL_WAVEFORM_REVIEW.json",
+        "inputs/prior/FINAL_INERTIAL_WAVEFORM_REVIEW.md",
+        "inputs/reference/SCALAR_SHELL_BOUNDARY_SYSTEM.md",
+        "inputs/reference/MATERIAL_SECOND_ORDER_JUNCTIONS.md",
+        "inputs/reference/BACKGROUND_DERIVATIVE_BOUNDS.json",
+        "inputs/reference/INERTIAL_WAVEFORM_MANIFEST.json",
+        "inputs/reference/PHYSICAL_SHELL_RESPONSE.md",
+        "inputs/reference/PHYSICAL_SHELL_RESPONSE_MANIFEST.json",
+        "inputs/reference/FULL_CONTACT_MANIFEST.json",
+        "inputs/reference/GH_BOUNDARY_SOURCE_AND_CONSTRAINT_COMPLETION.md",
+        "inputs/reference/FULL_FINITE_ANGULAR_SECOND_ORDER_CONTACT.md",
+        "inputs/reference/COMPLETE_L4_SCALAR_BULK.md",
+        "inputs/reference/FULL_L4_SCALAR_SOURCE_AND_OPERATOR.md",
+        "computed/COORDINATE_SHELL_SOURCE_ENCLOSURE.json"
+      ],
+      "arguments": [
+        "--output",
+        "checked.json"
+      ],
+      "output": "checked.json",
+      "golden": "referee/FULL_SOURCE_NORMAL.json",
+      "optimized_golden": "referee/FULL_SOURCE_OPTIMIZED.json",
+      "status": "PASS",
+      "byte_equal": true,
+      "checks": {
+        "path": [
+          "check_names"
+        ],
+        "kind": "names"
+      },
+      "check_count_path": [
+        "check_count"
+      ],
+      "required_fields": [
+        {
+          "path": [
+            "primitive_check_count"
+          ],
+          "equals": 557
+        }
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "checker": "astra",
+      "name": "normal_quadratic",
+      "reason": "unit_normal_series",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject-error",
+        "normal_quadratic"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failed_gate"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "one_copy_doubled",
+      "reason": "one_copy_scalar_source",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject-error",
+        "one_copy_doubled"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failed_gate"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "taylor_half",
+      "reason": "derivative_taylor_coefficient",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject-error",
+        "taylor_half"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failed_gate"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "sk_metric_sign",
+      "reason": "metric_coordinate_source",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject-error",
+        "sk_metric_sign"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failed_gate"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "angular_norm",
+      "reason": "angular_total_norm",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject-error",
+        "angular_norm"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failed_gate"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "volume_power",
+      "reason": "proper_volume_power",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject-error",
+        "volume_power"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failed_gate"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "scaled_force",
+      "reason": "scaled_boundary_force",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject-error",
+        "scaled_force"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failed_gate"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "drop_resolvent",
+      "reason": "volterra_resolvent",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject-error",
+        "drop_resolvent"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failed_gate"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "central_mu",
+      "reason": "positive_central_inverse_mu",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject-error",
+        "central_mu"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failed_gate"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "tail_drop_square",
+      "reason": "strict_tail_scalar_sign",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject-error",
+        "tail_drop_square"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failed_gate"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "proper_derivative",
+      "reason": "proper_clock_chain_rule",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject-error",
+        "proper_derivative"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failed_gate"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "use_comparator",
+      "reason": "actual_trace_envelope",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject-error",
+        "use_comparator"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failed_gate"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "uncancelled_gamma",
+      "reason": "dynamic_boundary_gamma_cancellation",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject-error",
+        "uncancelled_gamma"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failed_gate"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "metric_radius",
+      "reason": "metric_reconstruction_radius",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject-error",
+        "metric_radius"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failed_gate"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "endpoint_drop_square",
+      "reason": "central_endpoint_source_signs:central_left",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject-error",
+        "endpoint_drop_square"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failed_gate"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "erase_central_metric",
+      "reason": "both_central_source_signs",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject-error",
+        "erase_central_metric"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failed_gate"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "ratio_denominator",
+      "reason": "norm_ratio_interval_upper",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject-error",
+        "ratio_denominator"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failed_gate"
+      ]
+    },
+    {
+      "checker": "sol",
+      "name": "wrong_scaled_force",
+      "reason": "wrong_scaled_force: ell/mu factor missing",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject",
+        "wrong_scaled_force"
+      ],
+      "failure_format": "fail_line"
+    },
+    {
+      "checker": "sol",
+      "name": "omit_triangular_half",
+      "reason": "omit_triangular_half: integral of 2*(x-s) is x^2",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject",
+        "omit_triangular_half"
+      ],
+      "failure_format": "fail_line"
+    },
+    {
+      "checker": "sol",
+      "name": "wrong_negative_mu",
+      "reason": "wrong_negative_mu: signed endpoint witness excluded",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject",
+        "wrong_negative_mu"
+      ],
+      "failure_format": "fail_line"
+    },
+    {
+      "checker": "sol",
+      "name": "omit_resolvent",
+      "reason": "omit_resolvent: contraction residual not closed",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject",
+        "omit_resolvent"
+      ],
+      "failure_format": "fail_line"
+    },
+    {
+      "checker": "sol",
+      "name": "wrong_metric_radius",
+      "reason": "wrong_metric_radius: u=rho^-2*C*y",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject",
+        "wrong_metric_radius"
+      ],
+      "failure_format": "fail_line"
+    },
+    {
+      "checker": "sol",
+      "name": "wrong_angular_normalization",
+      "reason": "wrong_angular_normalization: sphere Y^4 mean is 3/40",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject",
+        "wrong_angular_normalization"
+      ],
+      "failure_format": "fail_line"
+    },
+    {
+      "checker": "sol",
+      "name": "omit_measure_clock",
+      "reason": "omit_measure_clock: positive Taylor term of cosh^3 excluded",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject",
+        "omit_measure_clock"
+      ],
+      "failure_format": "fail_line"
+    },
+    {
+      "checker": "sol",
+      "name": "last_cell_upper_endpoint",
+      "reason": "primary all-cell endpoint mismatch: row 4352 Sp_hi",
+      "mechanism": "copied full-cell CSV endpoint corruption",
+      "failure_format": "fail_line",
+      "target": "computed/COORDINATE_SHELL_SOURCE_CELLS.csv",
+      "before": "12272,12288,3711244296534467708204190678860515061206,4212260265796515538231137610302858946969,-41664289715150165891938049036107609301,37827112094574399906771060098370538863,219853727149239712188758681431306228,249536001027035446766653683513546380,-18997261592405819043187990258542619120,17247660966548305037541048742329820263,-648408065873721032668802644424987825,-345797802844931071768657089463851287,-12969827882902510795117372876259328000000,-7161688047994915977414340390158336000000,14322126682635687754542175021014718277844,25937558852033753674781559029761800824960,-15087332600219872476156434706120130073,-4600390954289341794090099922998804761,1533141634663730324794926399645294988,5028317363946325972328184239593708086,6132566442471534565036661008116932100,20113269416689971510920402698861120901,-1160921687886823311059421525915170,-564783442578431166661232332372934,-3731859256503434691647755971,-2896853253988405958901839396,-111110823760156783357055271736,-50682745394345958095121069024\n",
+      "after": "12272,12288,3711244296534467708204190678860515061206,4212260265796515538231137610302858946969,-41664289715150165891938049036107609301,37827112094574399906771060098370538863,219853727149239712188758681431306228,249536001027035446766653683513546380,-18997261592405819043187990258542619120,17247660966548305037541048742329820263,-648408065873721032668802644424987825,-345797802844931071768657089463851287,-12969827882902510795117372876259328000000,-7161688047994915977414340390158336000000,14322126682635687754542175021014718277844,25937558852033753674781559029761800824960,-15087332600219872476156434706120130073,-4600390954289341794090099922998804760,1533141634663730324794926399645294988,5028317363946325972328184239593708086,6132566442471534565036661008116932100,20113269416689971510920402698861120901,-1160921687886823311059421525915170,-564783442578431166661232332372934,-3731859256503434691647755971,-2896853253988405958901839396,-111110823760156783357055271736,-50682745394345958095121069024\n"
+    },
+    {
+      "checker": "sol",
+      "name": "last_norm_upper_endpoint",
+      "reason": "JSON mathematical value mismatch: /exact/norms/EN_material/squared_L2/1",
+      "mechanism": "copied full-report norm endpoint corruption",
+      "failure_format": "fail_line",
+      "target": "computed/COORDINATE_SHELL_SOURCE_ENCLOSURE.json",
+      "json_path": [
+        "exact",
+        "norms",
+        "EN_material",
+        "squared_L2",
+        1
+      ],
+      "value": "431207408323303005560211703625189650878930376603830807573270036146804993403053830906606988109521193352361914856419554991361392235066030155659763122351666228385085187753424921374908812427939799668753728162389495275520974768610910837019866355261134268551837861995169771665502825395308987054032434324001921240056117469751/319079212577344121102871000369765878705533547757495644843624752374731681691256507918990011941561869509415352680962962089874536209342578682187020188091315069962662161923101874959091608250348082347682780314473222133031123599097750682673785459116409367253980778433973675141665652736000000000000000000"
+    },
+    {
+      "checker": "referee",
+      "name": "half_ricci",
+      "reason": "Einstein Hessian (0, 0): nonzero rational residual -8683970233/311040000",
+      "failure_format": "json",
+      "failure_path": [
+        "reason"
+      ],
+      "arguments": [
+        "--output",
+        "rejected.json",
+        "--inject-error",
+        "half_ricci"
+      ],
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "referee",
+      "name": "drop_potential_cross",
+      "reason": "Einstein Hessian (0, 2): nonzero rational residual -16/3",
+      "failure_format": "json",
+      "failure_path": [
+        "reason"
+      ],
+      "arguments": [
+        "--output",
+        "rejected.json",
+        "--inject-error",
+        "drop_potential_cross"
+      ],
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "referee",
+      "name": "drop_lower_gauge_cross",
+      "reason": "lower wave-map Hessian: nonzero rational residual -767167/86400",
+      "failure_format": "json",
+      "failure_path": [
+        "reason"
+      ],
+      "arguments": [
+        "--output",
+        "rejected.json",
+        "--inject-error",
+        "drop_lower_gauge_cross"
+      ],
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "referee",
+      "name": "wrong_robin_sign",
+      "reason": "actual symmetrized Robin matrix positivity failed",
+      "failure_format": "json",
+      "failure_path": [
+        "reason"
+      ],
+      "arguments": [
+        "--output",
+        "rejected.json",
+        "--inject-error",
+        "wrong_robin_sign"
+      ],
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "referee",
+      "name": "wrong_metric_clock",
+      "reason": "background proper-time metric derivative: nonzero rational residual -39312004752/1716715",
+      "failure_format": "json",
+      "failure_path": [
+        "reason"
+      ],
+      "arguments": [
+        "--output",
+        "rejected.json",
+        "--inject-error",
+        "wrong_metric_clock"
+      ],
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "referee",
+      "name": "drop_bulk_half_factor",
+      "reason": "interior Volterra contraction: nonzero rational residual 459/1000000000",
+      "failure_format": "json",
+      "failure_path": [
+        "reason"
+      ],
+      "arguments": [
+        "--output",
+        "rejected.json",
+        "--inject-error",
+        "drop_bulk_half_factor"
+      ],
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "referee",
+      "name": "wrong_EN_scope_input",
+      "reason": "coordinate report scientific scope failed",
+      "failure_format": "json",
+      "failure_path": [
+        "reason"
+      ],
+      "arguments": [
+        "--output",
+        "rejected.json"
+      ],
+      "mechanism": "copied coordinate-report scope corruption",
+      "target": "computed/COORDINATE_SHELL_SOURCE_ENCLOSURE.json",
+      "json_path": [
+        "scope",
+        "EN_scope"
+      ],
+      "value": "All scalar degrees including monopole."
+    }
+  ]
+}

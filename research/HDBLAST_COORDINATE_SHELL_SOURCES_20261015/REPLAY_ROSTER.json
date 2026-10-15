@@ -1,0 +1,357 @@
+{
+  "schema": "hdblast-replay-roster-v1",
+  "status": "APPROVED_FOR_FROZEN_REPLAY",
+  "capsule": "HDBLAST_COORDINATE_SHELL_SOURCES_20261015",
+  "modes": [
+    "normal",
+    "optimized"
+  ],
+  "counts": {
+    "successful_checker_runs": 8,
+    "external_corruption_processes_rejected": 66,
+    "embedded_wrong_formula_controls_rejected": 0,
+    "finite_positive_check_groups_each_mode": 105
+  },
+  "positive_processes": [
+    {
+      "name": "generator",
+      "script": "compute_coordinate_sources.py",
+      "finite_positive_groups_each_mode": 0,
+      "embedded_controls_each_mode": 0,
+      "finite_positive_check_names": [],
+      "embedded_control_names": []
+    },
+    {
+      "name": "astra",
+      "script": "astra/check_coordinate_sources.py",
+      "finite_positive_groups_each_mode": 83,
+      "embedded_controls_each_mode": 0,
+      "finite_positive_check_names": [
+        "pin:inputs/prior/INERTIAL_WAVEFORM_CELLS.csv",
+        "registry:inputs/prior/INERTIAL_WAVEFORM_CELLS.csv",
+        "pin:inputs/prior/INERTIAL_WAVEFORM_ENCLOSURE.json",
+        "registry:inputs/prior/INERTIAL_WAVEFORM_ENCLOSURE.json",
+        "pin:inputs/prior/INERTIAL_SHELL_WAVEFORM.md",
+        "registry:inputs/prior/INERTIAL_SHELL_WAVEFORM.md",
+        "pin:inputs/prior/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+        "registry:inputs/prior/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+        "pin:inputs/reference/PHYSICAL_SHELL_RESPONSE.md",
+        "registry:inputs/reference/PHYSICAL_SHELL_RESPONSE.md",
+        "pin:inputs/reference/SCALAR_SHELL_BOUNDARY_SYSTEM.md",
+        "registry:inputs/reference/SCALAR_SHELL_BOUNDARY_SYSTEM.md",
+        "pin:inputs/reference/PHYSICAL_SHELL_RESPONSE_MANIFEST.json",
+        "registry:inputs/reference/PHYSICAL_SHELL_RESPONSE_MANIFEST.json",
+        "pin:inputs/reference/FULL_CONTACT_MANIFEST.json",
+        "registry:inputs/reference/FULL_CONTACT_MANIFEST.json",
+        "pin:inputs/reference/INERTIAL_WAVEFORM_MANIFEST.json",
+        "registry:inputs/reference/INERTIAL_WAVEFORM_MANIFEST.json",
+        "pin:inputs/reference/COMPLETE_L4_SCALAR_BULK.md",
+        "registry:inputs/reference/COMPLETE_L4_SCALAR_BULK.md",
+        "manifest_membership:PHYSICAL_SHELL_RESPONSE.md",
+        "manifest_membership:boundary/SCALAR_SHELL_BOUNDARY_SYSTEM.md",
+        "manifest_membership:astra-bulk/COMPLETE_L4_SCALAR_BULK.md",
+        "manifest_membership:INERTIAL_SHELL_WAVEFORM.md",
+        "manifest_membership:computed/INERTIAL_WAVEFORM_CELLS.csv",
+        "manifest_membership:computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+        "manifest_membership:archive/inputs/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+        "unit_normal_series",
+        "derivative_taylor_coefficient",
+        "extrinsic_derivative_coefficient",
+        "one_copy_scalar_source",
+        "metric_coordinate_source",
+        "robin_join",
+        "degree_two_algebraic_row",
+        "degree_two_robin_join",
+        "harmonic_decomposition",
+        "harmonic_extensions",
+        "harmonic_orthogonality",
+        "harmonic_piece_norms",
+        "angular_total_norm",
+        "proper_volume_power",
+        "dynamic_boundary_gamma_cancellation",
+        "registered_state",
+        "shell_signs",
+        "rounded_mu_encloses_exact_box",
+        "whole_cell_partition",
+        "zero_prefront",
+        "actual_trace_envelope",
+        "scaled_boundary_force",
+        "window_operator_bound",
+        "volterra_resolvent",
+        "metric_reconstruction_radius",
+        "proper_clock_chain_rule",
+        "central_positive_convolution",
+        "positive_central_inverse_mu",
+        "central_metric_positive",
+        "central_actual_scalar_zero",
+        "both_central_source_signs",
+        "central_endpoint_nonzero:central_left",
+        "central_endpoint_source_signs:central_left",
+        "central_endpoint_nonzero:central_right",
+        "central_endpoint_source_signs:central_right",
+        "tail_cells_in_retained_theorem",
+        "strict_tail_scalar_sign",
+        "strict_tail_metric_sign",
+        "registered_robin_symmetrizer_positive",
+        "new_source_table_identity",
+        "norm_pi_interval",
+        "norm_background_identity",
+        "norm_full_Y_squared_prefactor",
+        "norm_EN_degree_four_prefactor",
+        "norm_factor_join:Sp",
+        "norm_factor_join:SK",
+        "norm_factor_join:EN",
+        "norm_factor_join:dSp",
+        "norm_factor_join:dSK",
+        "norm_factor_join:dEN",
+        "norm_factor_join:Sp_material",
+        "norm_factor_join:SK_material",
+        "norm_factor_join:EN_material",
+        "norm_ratio_interval_upper",
+        "norm_ratio_report_identity",
+        "norm_ratio_strict_nine_e_minus_thirteen"
+      ],
+      "embedded_control_names": []
+    },
+    {
+      "name": "sol",
+      "script": "sol/check_coordinate_shell_sources.py",
+      "finite_positive_groups_each_mode": 5,
+      "embedded_controls_each_mode": 0,
+      "finite_positive_check_names": [
+        "input identity and coverage",
+        "signed Volterra primitive and resolvent",
+        "clock/radius derivative reconstruction",
+        "complete coefficient and harmonic rows",
+        "whole-cell source norms"
+      ],
+      "embedded_control_names": []
+    },
+    {
+      "name": "referee",
+      "script": "referee/check_full_source_formulation.py",
+      "finite_positive_groups_each_mode": 17,
+      "embedded_controls_each_mode": 0,
+      "finite_positive_check_names": [
+        "authenticate_portable_input_inventory",
+        "coordinate_source_scope_and_degree_four_only_Robin_norms",
+        "actual_shell_Robin_symmetrizer_positive_definite",
+        "generic_5D_first_connection",
+        "generic_5D_second_connection_factorial",
+        "all_fifteen_Einstein_Hessian_components",
+        "scalar_Hessian_all_terms",
+        "lower_wave_map_Hessian_cross_term",
+        "coordinate_scalar_and_Israel_normalization",
+        "degree_four_Robin_join",
+        "distinct_degree_two_Robin_join",
+        "ambient_clock_proportional_initial_profile",
+        "background_proper_time_metric_derivative_chain_rule",
+        "actual_wider_collar_first_exit_and_potential_bound",
+        "interior_Dirichlet_Volterra_operator_bound",
+        "independent_actual_H_boundary_sup_and_interior_value_error",
+        "backward_closed_causal_domain_contains_complete_first_support"
+      ],
+      "embedded_control_names": []
+    }
+  ],
+  "external_controls": [
+    {
+      "checker": "astra",
+      "name": "normal_quadratic",
+      "expected_reason": "unit_normal_series",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "astra",
+      "name": "one_copy_doubled",
+      "expected_reason": "one_copy_scalar_source",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "astra",
+      "name": "taylor_half",
+      "expected_reason": "derivative_taylor_coefficient",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "astra",
+      "name": "sk_metric_sign",
+      "expected_reason": "metric_coordinate_source",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "astra",
+      "name": "angular_norm",
+      "expected_reason": "angular_total_norm",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "astra",
+      "name": "volume_power",
+      "expected_reason": "proper_volume_power",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "astra",
+      "name": "scaled_force",
+      "expected_reason": "scaled_boundary_force",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "astra",
+      "name": "drop_resolvent",
+      "expected_reason": "volterra_resolvent",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "astra",
+      "name": "central_mu",
+      "expected_reason": "positive_central_inverse_mu",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "astra",
+      "name": "tail_drop_square",
+      "expected_reason": "strict_tail_scalar_sign",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "astra",
+      "name": "proper_derivative",
+      "expected_reason": "proper_clock_chain_rule",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "astra",
+      "name": "use_comparator",
+      "expected_reason": "actual_trace_envelope",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "astra",
+      "name": "uncancelled_gamma",
+      "expected_reason": "dynamic_boundary_gamma_cancellation",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "astra",
+      "name": "metric_radius",
+      "expected_reason": "metric_reconstruction_radius",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "astra",
+      "name": "endpoint_drop_square",
+      "expected_reason": "central_endpoint_source_signs:central_left",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "astra",
+      "name": "erase_central_metric",
+      "expected_reason": "both_central_source_signs",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "astra",
+      "name": "ratio_denominator",
+      "expected_reason": "norm_ratio_interval_upper",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "sol",
+      "name": "wrong_scaled_force",
+      "expected_reason": "wrong_scaled_force: ell/mu factor missing",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "sol",
+      "name": "omit_triangular_half",
+      "expected_reason": "omit_triangular_half: integral of 2*(x-s) is x^2",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "sol",
+      "name": "wrong_negative_mu",
+      "expected_reason": "wrong_negative_mu: signed endpoint witness excluded",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "sol",
+      "name": "omit_resolvent",
+      "expected_reason": "omit_resolvent: contraction residual not closed",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "sol",
+      "name": "wrong_metric_radius",
+      "expected_reason": "wrong_metric_radius: u=rho^-2*C*y",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "sol",
+      "name": "wrong_angular_normalization",
+      "expected_reason": "wrong_angular_normalization: sphere Y^4 mean is 3/40",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "sol",
+      "name": "omit_measure_clock",
+      "expected_reason": "omit_measure_clock: positive Taylor term of cosh^3 excluded",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "sol",
+      "name": "last_cell_upper_endpoint",
+      "expected_reason": "primary all-cell endpoint mismatch: row 4352 Sp_hi",
+      "mechanism": "copied full-cell CSV endpoint corruption"
+    },
+    {
+      "checker": "sol",
+      "name": "last_norm_upper_endpoint",
+      "expected_reason": "JSON mathematical value mismatch: /exact/norms/EN_material/squared_L2/1",
+      "mechanism": "copied full-report norm endpoint corruption"
+    },
+    {
+      "checker": "referee",
+      "name": "half_ricci",
+      "expected_reason": "Einstein Hessian (0, 0): nonzero rational residual -8683970233/311040000",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "referee",
+      "name": "drop_potential_cross",
+      "expected_reason": "Einstein Hessian (0, 2): nonzero rational residual -16/3",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "referee",
+      "name": "drop_lower_gauge_cross",
+      "expected_reason": "lower wave-map Hessian: nonzero rational residual -767167/86400",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "referee",
+      "name": "wrong_robin_sign",
+      "expected_reason": "actual symmetrized Robin matrix positivity failed",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "referee",
+      "name": "wrong_metric_clock",
+      "expected_reason": "background proper-time metric derivative: nonzero rational residual -39312004752/1716715",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "referee",
+      "name": "drop_bulk_half_factor",
+      "expected_reason": "interior Volterra contraction: nonzero rational residual 459/1000000000",
+      "mechanism": "formula comparison CLI injection"
+    },
+    {
+      "checker": "referee",
+      "name": "wrong_EN_scope_input",
+      "expected_reason": "coordinate report scientific scope failed",
+      "mechanism": "copied coordinate-report scope corruption"
+    }
+  ]
+}

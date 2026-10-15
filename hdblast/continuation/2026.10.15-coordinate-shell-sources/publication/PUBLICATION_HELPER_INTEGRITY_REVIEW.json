@@ -1,0 +1,32 @@
+{
+  "status": "PASS_SYNTHETIC_REVIEW_FIXES",
+  "reviewer": "/root/coordinate_publication/coordinate_sites_helpers",
+  "fixed_issues": [
+    "Receipt paths cannot overwrite approved source, frozen source or public workflows after verification.",
+    "Initial evidence binds complete replay bytes and runner/verifier/manifest to the actual current freeze and tool-validation receipt.",
+    "Every declared additional output must appear and match its exact configured golden bytes."
+  ],
+  "fixture": "/tmp/coordinate-helper-integrity-ltoeci2i",
+  "rejected_cases": {
+    "omitted_additional_csv": true,
+    "wrong_result_identity": true,
+    "different_freeze_before_evidence_write": true,
+    "existing_initial_delivery": true,
+    "existing_source_as_receipt": true,
+    "unrelated_control_log": true,
+    "existing_workflow_as_receipt": true
+  },
+  "normal_recorded_replay_and_initial_evidence_passed": true,
+  "initial_evidence_members": 46,
+  "helper_sha256": {
+    "assemble_source.py": "0c4c847c83805e852e77dc10d54bab1ea10b68c562a0fe4a41144042e736fc28",
+    "install_checkpoint.py": "3808ad92d519fc465404b4916ac69e0b758483b1b694cd984ac4f937bb57c30f",
+    "install_initial_evidence.py": "b8414a501c4648b466bee5ab41efd8c55f220850c316f307fd2d4dabb1b7b649",
+    "record_replay_tool_validation.py": "954afb3716ac327378530b47f480de1e27c21df6d4ee68baa49d2ba642bad2d6"
+  },
+  "http_requests": 0,
+  "scientific_HDBLAST_processes_executed": 0,
+  "scope": "Independent static review and synthetic regression fixtures only. No scientific source, real source freeze, public worktree or publication action was changed.",
+  "latest_helpers_retested": true,
+  "latest_positive_assembly_and_44_workflow_install_passed": true
+}

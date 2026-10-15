@@ -1,0 +1,177 @@
+{
+  "schema": "hdblast-sol-coordinate-controls-v1",
+  "status": "PASS",
+  "modes": [
+    0,
+    1
+  ],
+  "mathematical_controls": 7,
+  "complete_data_controls": 2,
+  "runs": 18,
+  "checker_sha256": "9ce62eacc68693d633e307df2cb0b4bc150519aee8b4e3369e30fc4125612551",
+  "runner_sha256": "a00a451a3584335461d7efdd70839edac7fa5cc58ef0eba06ea24d97d0109d61",
+  "results": [
+    {
+      "control": "wrong_scaled_force",
+      "optimization": 0,
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stderr": "FAIL: wrong_scaled_force: ell/mu factor missing\n",
+      "expected_reason": "wrong_scaled_force: ell/mu factor missing",
+      "status": "PASS_EXPECTED_FAILURE"
+    },
+    {
+      "control": "wrong_scaled_force",
+      "optimization": 1,
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stderr": "FAIL: wrong_scaled_force: ell/mu factor missing\n",
+      "expected_reason": "wrong_scaled_force: ell/mu factor missing",
+      "status": "PASS_EXPECTED_FAILURE"
+    },
+    {
+      "control": "omit_triangular_half",
+      "optimization": 0,
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stderr": "FAIL: omit_triangular_half: integral of 2*(x-s) is x^2\n",
+      "expected_reason": "omit_triangular_half: integral of 2*(x-s) is x^2",
+      "status": "PASS_EXPECTED_FAILURE"
+    },
+    {
+      "control": "omit_triangular_half",
+      "optimization": 1,
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stderr": "FAIL: omit_triangular_half: integral of 2*(x-s) is x^2\n",
+      "expected_reason": "omit_triangular_half: integral of 2*(x-s) is x^2",
+      "status": "PASS_EXPECTED_FAILURE"
+    },
+    {
+      "control": "wrong_negative_mu",
+      "optimization": 0,
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stderr": "FAIL: wrong_negative_mu: signed endpoint witness excluded\n",
+      "expected_reason": "wrong_negative_mu: signed endpoint witness excluded",
+      "status": "PASS_EXPECTED_FAILURE"
+    },
+    {
+      "control": "wrong_negative_mu",
+      "optimization": 1,
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stderr": "FAIL: wrong_negative_mu: signed endpoint witness excluded\n",
+      "expected_reason": "wrong_negative_mu: signed endpoint witness excluded",
+      "status": "PASS_EXPECTED_FAILURE"
+    },
+    {
+      "control": "omit_resolvent",
+      "optimization": 0,
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stderr": "FAIL: omit_resolvent: contraction residual not closed\n",
+      "expected_reason": "omit_resolvent: contraction residual not closed",
+      "status": "PASS_EXPECTED_FAILURE"
+    },
+    {
+      "control": "omit_resolvent",
+      "optimization": 1,
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stderr": "FAIL: omit_resolvent: contraction residual not closed\n",
+      "expected_reason": "omit_resolvent: contraction residual not closed",
+      "status": "PASS_EXPECTED_FAILURE"
+    },
+    {
+      "control": "wrong_metric_radius",
+      "optimization": 0,
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stderr": "FAIL: wrong_metric_radius: u=rho^-2*C*y\n",
+      "expected_reason": "wrong_metric_radius: u=rho^-2*C*y",
+      "status": "PASS_EXPECTED_FAILURE"
+    },
+    {
+      "control": "wrong_metric_radius",
+      "optimization": 1,
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stderr": "FAIL: wrong_metric_radius: u=rho^-2*C*y\n",
+      "expected_reason": "wrong_metric_radius: u=rho^-2*C*y",
+      "status": "PASS_EXPECTED_FAILURE"
+    },
+    {
+      "control": "wrong_angular_normalization",
+      "optimization": 0,
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stderr": "FAIL: wrong_angular_normalization: sphere Y^4 mean is 3/40\n",
+      "expected_reason": "wrong_angular_normalization: sphere Y^4 mean is 3/40",
+      "status": "PASS_EXPECTED_FAILURE"
+    },
+    {
+      "control": "wrong_angular_normalization",
+      "optimization": 1,
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stderr": "FAIL: wrong_angular_normalization: sphere Y^4 mean is 3/40\n",
+      "expected_reason": "wrong_angular_normalization: sphere Y^4 mean is 3/40",
+      "status": "PASS_EXPECTED_FAILURE"
+    },
+    {
+      "control": "omit_measure_clock",
+      "optimization": 0,
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stderr": "FAIL: omit_measure_clock: positive Taylor term of cosh^3 excluded\n",
+      "expected_reason": "omit_measure_clock: positive Taylor term of cosh^3 excluded",
+      "status": "PASS_EXPECTED_FAILURE"
+    },
+    {
+      "control": "omit_measure_clock",
+      "optimization": 1,
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stderr": "FAIL: omit_measure_clock: positive Taylor term of cosh^3 excluded\n",
+      "expected_reason": "omit_measure_clock: positive Taylor term of cosh^3 excluded",
+      "status": "PASS_EXPECTED_FAILURE"
+    },
+    {
+      "control": "last_cell_upper_endpoint",
+      "optimization": 0,
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stderr": "FAIL: primary all-cell endpoint mismatch: row 4352 Sp_hi\n",
+      "expected_reason": "primary all-cell endpoint mismatch: row 4352 Sp_hi",
+      "status": "PASS_EXPECTED_FAILURE"
+    },
+    {
+      "control": "last_cell_upper_endpoint",
+      "optimization": 1,
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stderr": "FAIL: primary all-cell endpoint mismatch: row 4352 Sp_hi\n",
+      "expected_reason": "primary all-cell endpoint mismatch: row 4352 Sp_hi",
+      "status": "PASS_EXPECTED_FAILURE"
+    },
+    {
+      "control": "last_norm_upper_endpoint",
+      "optimization": 0,
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stderr": "FAIL: JSON mathematical value mismatch: /exact/norms/EN_material/squared_L2/1\n",
+      "expected_reason": "JSON mathematical value mismatch: /exact/norms/EN_material/squared_L2/1",
+      "status": "PASS_EXPECTED_FAILURE"
+    },
+    {
+      "control": "last_norm_upper_endpoint",
+      "optimization": 1,
+      "returncode": 1,
+      "stdout_bytes": 0,
+      "stderr": "FAIL: JSON mathematical value mismatch: /exact/norms/EN_material/squared_L2/1\n",
+      "expected_reason": "JSON mathematical value mismatch: /exact/norms/EN_material/squared_L2/1",
+      "status": "PASS_EXPECTED_FAILURE"
+    }
+  ]
+}

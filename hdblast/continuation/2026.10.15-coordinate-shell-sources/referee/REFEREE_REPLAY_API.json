@@ -1,0 +1,153 @@
+{
+  "status": "PASS",
+  "program": "referee/check_full_source_formulation.py",
+  "dependencies": "Python standard library only",
+  "argv_template": [
+    "python",
+    "-I",
+    "[-O]",
+    "-B",
+    "referee/check_full_source_formulation.py",
+    "--output",
+    "OUTPUT.json"
+  ],
+  "optional_arguments": {
+    "--root": "capsule root; defaults to parent of referee",
+    "--report": "producer JSON; defaults to computed/COORDINATE_SHELL_SOURCE_ENCLOSURE.json"
+  },
+  "goldens": {
+    "normal": "referee/FULL_SOURCE_NORMAL.json",
+    "optimized": "referee/FULL_SOURCE_OPTIMIZED.json"
+  },
+  "expected_status": "PASS",
+  "named_check_list_field": "check_names",
+  "named_check_count_field": "check_count",
+  "named_check_count": 17,
+  "primitive_check_count": 557,
+  "metadata_normalization": [],
+  "positive_goldens_identical": true,
+  "controls": [
+    {
+      "name": "half_ricci",
+      "expected_exit": 1,
+      "expected_status": "FAIL",
+      "reason_contains": "Einstein Hessian (0, 0)",
+      "failure_json_keys": [
+        "status",
+        "injection",
+        "error_type",
+        "reason"
+      ],
+      "cli_args": [
+        "--inject-error",
+        "half_ricci"
+      ]
+    },
+    {
+      "name": "drop_potential_cross",
+      "expected_exit": 1,
+      "expected_status": "FAIL",
+      "reason_contains": "Einstein Hessian (0, 2)",
+      "failure_json_keys": [
+        "status",
+        "injection",
+        "error_type",
+        "reason"
+      ],
+      "cli_args": [
+        "--inject-error",
+        "drop_potential_cross"
+      ]
+    },
+    {
+      "name": "drop_lower_gauge_cross",
+      "expected_exit": 1,
+      "expected_status": "FAIL",
+      "reason_contains": "lower wave-map Hessian",
+      "failure_json_keys": [
+        "status",
+        "injection",
+        "error_type",
+        "reason"
+      ],
+      "cli_args": [
+        "--inject-error",
+        "drop_lower_gauge_cross"
+      ]
+    },
+    {
+      "name": "wrong_robin_sign",
+      "expected_exit": 1,
+      "expected_status": "FAIL",
+      "reason_contains": "actual symmetrized Robin matrix positivity failed",
+      "failure_json_keys": [
+        "status",
+        "injection",
+        "error_type",
+        "reason"
+      ],
+      "cli_args": [
+        "--inject-error",
+        "wrong_robin_sign"
+      ]
+    },
+    {
+      "name": "wrong_metric_clock",
+      "expected_exit": 1,
+      "expected_status": "FAIL",
+      "reason_contains": "background proper-time metric derivative",
+      "failure_json_keys": [
+        "status",
+        "injection",
+        "error_type",
+        "reason"
+      ],
+      "cli_args": [
+        "--inject-error",
+        "wrong_metric_clock"
+      ]
+    },
+    {
+      "name": "drop_bulk_half_factor",
+      "expected_exit": 1,
+      "expected_status": "FAIL",
+      "reason_contains": "interior Volterra contraction",
+      "failure_json_keys": [
+        "status",
+        "injection",
+        "error_type",
+        "reason"
+      ],
+      "cli_args": [
+        "--inject-error",
+        "drop_bulk_half_factor"
+      ]
+    },
+    {
+      "name": "wrong_EN_scope_input",
+      "expected_exit": 1,
+      "expected_status": "FAIL",
+      "reason_contains": "coordinate report scientific scope failed",
+      "failure_json_keys": [
+        "status",
+        "injection",
+        "error_type",
+        "reason"
+      ],
+      "input_json_mutation": {
+        "path": "computed/COORDINATE_SHELL_SOURCE_ENCLOSURE.json",
+        "field_path": [
+          "scope",
+          "EN_scope"
+        ],
+        "new_value": "All scalar degrees including monopole."
+      }
+    }
+  ],
+  "normal_and_optimized_verified_rejections": 14,
+  "source_sha256": "31af8f45e68b1c4099581e3d04fb928c1e0a37ab90de5ee1775533ee2fdf0627",
+  "scientific_documents": [
+    "referee/SCIENTIFIC_SCOPE_AND_ASSUMPTION_AUDIT.md",
+    "referee/FULL_BULK_SOURCE_AND_INTERIOR_NEXT_STEP.md"
+  ]
+}

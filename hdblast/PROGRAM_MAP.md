@@ -1,5 +1,12 @@
 # HDBLAST program map
 
+<!-- coordinate-shell-sources-20261015 -->
+**15 October 2026: continuous coordinate shell sources:** The certified quadrupole now gives enclosures over 4353 continuous time cells for the actual metric trace at the shell, its proper-time derivative, and the complete one-copy coordinate scalar and isotropic Israel coefficients Sp and SK, with scalar degrees 0, 2 and 4. The metric correction has L2 norm less than 9e-13 of the one-copy material scalar source, yet changes the coordinate source signs at a scalar zero. Each of Sp and SK consequently has at least two distinct zeros inside the certified central bracket.
+
+These results are conditional on the retained analytic inputs and the stated first longitudinal representative and derivative Taylor convention. The reduced Robin forcing norm is evaluated only for degree 4; the degree-2 Robin row is algebraic only. The norms use the background proper shell measure, and coefficient signs depend on the representative. The earlier conditional construction of the complete second coefficient retains its stated scope. No effective nonlinear amplitude or remainder, observational scale or cosmological origin is established. Independent internal checks do not replace external peer review. Full U2 remains quantitatively unresolved.
+
+[Derivation and bounds](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_COORDINATE_SHELL_SOURCES_20261015/COORDINATE_SHELL_SOURCES.md) · [Source and replay guide](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_COORDINATE_SHELL_SOURCES_20261015/README.md). See the separate publication evidence for replay, CI and live-readback status. [Publication evidence](https://github.com/maldonado-research/HDblast/blob/main/hdblast/continuation/2026.10.15-coordinate-shell-sources/PUBLICATION_RECEIPT.json).
+
 <!-- quadratic-shell-forcing-20261015 -->
 **15 October 2026: quadratic material tension forcing:** For the previously certified wider quadrupole (delta = 1/1000, ell = 10^-6 in model coordinates), the explicit material scalar-junction tension contribution is Q_phi = -4 psi_1^2 in the outward-normal SUM convention. It has scalar degrees 0, 2 and 4. Exact continuous enclosures give -2.3 × 10^-19 < ell^2 mean(Q_phi) < -6.7 × 10^-20 throughout 2 ≤ x ≤ 3 and 5.778 × 10^21 < ||Q_phi||_L2(dmu_0)^2 < 8.644 × 10^21 over 0 ≤ x ≤ 3, using the background proper-time measure and model units. The angular mean stays negative throughout the tail; the field vanishes on Y = 0.
 

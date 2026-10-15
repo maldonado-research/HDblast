@@ -1,0 +1,128 @@
+{
+  "status": "PASS",
+  "source_sha256": "31af8f45e68b1c4099581e3d04fb928c1e0a37ab90de5ee1775533ee2fdf0627",
+  "named_controls_per_mode": [
+    "half_ricci",
+    "drop_potential_cross",
+    "drop_lower_gauge_cross",
+    "wrong_robin_sign",
+    "wrong_metric_clock",
+    "drop_bulk_half_factor",
+    "wrong_EN_scope_input"
+  ],
+  "normal_and_optimized_rejections": 14,
+  "rejections": [
+    {
+      "mode": "normal",
+      "control": "half_ricci",
+      "exit_code": 1,
+      "status": "FAIL",
+      "reason": "Einstein Hessian (0, 0): nonzero rational residual -8683970233/311040000",
+      "output": "referee/controls/normal-half_ricci.json"
+    },
+    {
+      "mode": "normal",
+      "control": "drop_potential_cross",
+      "exit_code": 1,
+      "status": "FAIL",
+      "reason": "Einstein Hessian (0, 2): nonzero rational residual -16/3",
+      "output": "referee/controls/normal-drop_potential_cross.json"
+    },
+    {
+      "mode": "normal",
+      "control": "drop_lower_gauge_cross",
+      "exit_code": 1,
+      "status": "FAIL",
+      "reason": "lower wave-map Hessian: nonzero rational residual -767167/86400",
+      "output": "referee/controls/normal-drop_lower_gauge_cross.json"
+    },
+    {
+      "mode": "normal",
+      "control": "wrong_robin_sign",
+      "exit_code": 1,
+      "status": "FAIL",
+      "reason": "actual symmetrized Robin matrix positivity failed",
+      "output": "referee/controls/normal-wrong_robin_sign.json"
+    },
+    {
+      "mode": "normal",
+      "control": "wrong_metric_clock",
+      "exit_code": 1,
+      "status": "FAIL",
+      "reason": "background proper-time metric derivative: nonzero rational residual -39312004752/1716715",
+      "output": "referee/controls/normal-wrong_metric_clock.json"
+    },
+    {
+      "mode": "normal",
+      "control": "drop_bulk_half_factor",
+      "exit_code": 1,
+      "status": "FAIL",
+      "reason": "interior Volterra contraction: nonzero rational residual 459/1000000000",
+      "output": "referee/controls/normal-drop_bulk_half_factor.json"
+    },
+    {
+      "mode": "normal",
+      "control": "wrong_EN_scope_input",
+      "exit_code": 1,
+      "status": "FAIL",
+      "reason": "coordinate report scientific scope failed",
+      "output": "referee/controls/normal-wrong-EN-scope.json"
+    },
+    {
+      "mode": "optimized",
+      "control": "half_ricci",
+      "exit_code": 1,
+      "status": "FAIL",
+      "reason": "Einstein Hessian (0, 0): nonzero rational residual -8683970233/311040000",
+      "output": "referee/controls/optimized-half_ricci.json"
+    },
+    {
+      "mode": "optimized",
+      "control": "drop_potential_cross",
+      "exit_code": 1,
+      "status": "FAIL",
+      "reason": "Einstein Hessian (0, 2): nonzero rational residual -16/3",
+      "output": "referee/controls/optimized-drop_potential_cross.json"
+    },
+    {
+      "mode": "optimized",
+      "control": "drop_lower_gauge_cross",
+      "exit_code": 1,
+      "status": "FAIL",
+      "reason": "lower wave-map Hessian: nonzero rational residual -767167/86400",
+      "output": "referee/controls/optimized-drop_lower_gauge_cross.json"
+    },
+    {
+      "mode": "optimized",
+      "control": "wrong_robin_sign",
+      "exit_code": 1,
+      "status": "FAIL",
+      "reason": "actual symmetrized Robin matrix positivity failed",
+      "output": "referee/controls/optimized-wrong_robin_sign.json"
+    },
+    {
+      "mode": "optimized",
+      "control": "wrong_metric_clock",
+      "exit_code": 1,
+      "status": "FAIL",
+      "reason": "background proper-time metric derivative: nonzero rational residual -39312004752/1716715",
+      "output": "referee/controls/optimized-wrong_metric_clock.json"
+    },
+    {
+      "mode": "optimized",
+      "control": "drop_bulk_half_factor",
+      "exit_code": 1,
+      "status": "FAIL",
+      "reason": "interior Volterra contraction: nonzero rational residual 459/1000000000",
+      "output": "referee/controls/optimized-drop_bulk_half_factor.json"
+    },
+    {
+      "mode": "optimized",
+      "control": "wrong_EN_scope_input",
+      "exit_code": 1,
+      "status": "FAIL",
+      "reason": "coordinate report scientific scope failed",
+      "output": "referee/controls/optimized-wrong-EN-scope.json"
+    }
+  ]
+}
