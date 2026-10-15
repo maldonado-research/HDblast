@@ -1,0 +1,105 @@
+{
+  "check_count": 34,
+  "checks": [
+    "pinned source SHELL_RESPONSE_ERROR_CERTIFICATE.md",
+    "pinned source sol/RESIDUAL_TO_PHYSICAL_RESPONSE.md",
+    "pinned source archive/ACTUAL_BACKGROUND_AND_RIGOROUS_COLLAR_BOUNDS.md",
+    "pinned source archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+    "positive inertia lower bound",
+    "causal initial line margin",
+    "initial support has positive inner margin",
+    "initial support has positive outer margin",
+    "strict evolution margin",
+    "strict nonlinear correction margin",
+    "r equals displayed exact value",
+    "s equals displayed exact value",
+    "positive matrix diagonal",
+    "positive coupled determinant",
+    "first majorant equation",
+    "second majorant equation",
+    "positive inverse entries",
+    "displayed A upper bound",
+    "displayed V upper bound",
+    "strict global uniform output bound",
+    "strict tail uniform output bound",
+    "tail bound tighter than global bound",
+    "support-aware observation norm bound",
+    "boundary jet correct sign identity",
+    "wrong damping sign rejected",
+    "wrong beta sign rejected",
+    "wrong incoming reflection rejected",
+    "wrong observation gamma sign rejected",
+    "wrong gamma equals full C rejected",
+    "uncoupled determinant fails first supersolution",
+    "uncoupled determinant fails second supersolution",
+    "dropped velocity input rejected at peak",
+    "rigorous exponential diagnostic",
+    "deleted boundary memory rejected"
+  ],
+  "decision_arithmetic": "fractions.Fraction; no floating-point inputs or calculations",
+  "exact": {
+    "A_upper": "40000012011998203599999460000/39999999999996399999460000081",
+    "V_tail_upper": "20020018000000903599325540040419/199999999999981999997300000405000000",
+    "V_upper": "40000000012000000000000000000000/39999999999996399999460000081",
+    "a": "10000000003/10000000000",
+    "determinant": "39999999999996399999460000081/40000000000000000000000000000",
+    "diagnostic_exp2_upper": "53470751137/7236479250",
+    "diagnostic_memory_magnitude_lower": "1206079875/53470751137",
+    "eta": "20000007506001802249730539999919/199999999999981999997300000405000000000",
+    "eta_display_upper": "2500001/25000000000000",
+    "eta_tail": "95020036022498208999324730040419/1999999999999819999973000004050000000000000000",
+    "eta_tail_display_upper": "297/6250000000000000",
+    "r": "9/200000000000000",
+    "s": "9/200000000000000",
+    "support_aware_L2_error_upper": "2000001/20000000000000",
+    "velocity_input_lower_at_peak": "19999999997/200000000000000000000"
+  },
+  "owned_inputs": {
+    "UNIFORM_WAVEFORM_CERTIFICATE.md": {
+      "bytes": 13268,
+      "sha256": "a9b0354c2ecb8a68d04e9441259de7873c3c93fb7cb4369257478b31bfffcd56"
+    },
+    "check_uniform_waveform.py": {
+      "bytes": 8401,
+      "sha256": "4e43fbc87fc68d8a95b8b24f3d0e23b0e1c90619bb623011fdb9d6281c797d03"
+    }
+  },
+  "parameters": {
+    "B": "1000/1",
+    "Gamma": "250/1",
+    "L": "1/1250000000",
+    "M": "1000000/1",
+    "T": "3/10000000000",
+    "ell": "1/10000000000",
+    "m": "1/1000"
+  },
+  "python_optimization": 0,
+  "schema": "hdblast-sol-uniform-waveform-v1",
+  "scope": "Exact-rational arithmetic conditional on the written characteristic/kernel proof and retained analytic hypotheses; no formal PDE verification.",
+  "sources": {
+    "SHELL_RESPONSE_ERROR_CERTIFICATE.md": {
+      "bytes": 11344,
+      "sha256": "5f01be536c77123e9f667f4cd5514b52067641b2b389ba4e6eb655cb24654022"
+    },
+    "archive/ACTUAL_BACKGROUND_AND_RIGOROUS_COLLAR_BOUNDS.md": {
+      "bytes": 9297,
+      "sha256": "0832a16c4bdf18cc188861a2c2860e7e6ff736dec39426d6ca7c589dc0434d5c"
+    },
+    "archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json": {
+      "bytes": 19535,
+      "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+    },
+    "sol/RESIDUAL_TO_PHYSICAL_RESPONSE.md": {
+      "bytes": 15688,
+      "sha256": "b8c77c810c70aa286227c5dabe010a53942af84067eb03961f0186419a5ea96a"
+    }
+  },
+  "status": "PASS",
+  "unproved_by_program": [
+    "retained actual-background theorem",
+    "coupled reconstruction and physical gauge bridge",
+    "nonlinear exact-data/evolution hypotheses",
+    "analytic characteristic and positive-kernel estimates",
+    "physical observational scale or effective nonlinear epsilon"
+  ]
+}

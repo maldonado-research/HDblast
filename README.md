@@ -1,5 +1,12 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- uniform-first-variation-waveform-20261015 -->
+**Conditional first-variation shell waveform:** For the same specified narrow aligned quadrupole (delta = 1/1000, ell = 10^-10 in model coordinates), a continuous 4098-cell enclosure resolves the physical scalar’s linear first variation. The normalized trace H differs from its explicit comparator by less than 1.0000004 × 10^-7 on 0 ≤ x ≤ 3; the negative physical gain reverses its sign. The leading proper-time response coefficient now satisfies 6.06 × 10^15 < C < 7.44 × 10^15 in R_epsilon = epsilon^2 C + o(epsilon^2).
+
+The retained background, exact-data, gauge, regularity and nonlinear support hypotheses remain explicit. The post-pulse estimate |H| < 4.752 × 10^-14 on 2 ≤ x ≤ 3 is a small-tail bound. No finite-amplitude nonlinear waveform, observed time scale or higher-dimensional Big Bang origin is established. Next: a wider state with a validated background and an effective nonlinear remainder estimate. Internal AI-assisted review and finite checks are distinct from external peer review. Earlier entries retain their original scope. No new Zenodo version or APS submission was made.
+
+[Waveform theorem, normalization and assumptions](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/UNIFORM_FIRST_VARIATION_WAVEFORM.md) · [Reproducible calculations and independent reviews](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/README.md) · [Continuous-cell enclosure data](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/computed/WAVEFORM_ENCLOSURE.json).
+
 <!-- shell-response-error-certificate-20261015 -->
 **Conditional quantitative shell-response bound:** For the retained regular branch at delta = 1/1000 and one newly specified narrow aligned quadrupole (ell = 10^-10 in model coordinates), a free-wave comparison and exact-rational bounds give 10^15 < C < 4 × 10^17 for the leading proper-time response coefficient in R_epsilon = epsilon^2 C + o(epsilon^2). The estimate controls the physical derivative at the shell, with its positive boundary inertia.
 

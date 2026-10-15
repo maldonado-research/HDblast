@@ -1,0 +1,93 @@
+{
+  "schema": "hdblast.validated-waveform.primary-source-ledger.v1",
+  "date_utc": "2026-10-15",
+  "sources": [
+    {
+      "id": "L1",
+      "paper_id": "arxiv:2512.19167",
+      "title": "Optimal stabilization rate for the wave equation with hyperbolic boundary condition",
+      "authors": [
+        "Hugo Parada",
+        "Nicolas Vanspranghe"
+      ],
+      "date_evidence": "The retrieved title/front-matter passage identifies arXiv v1, 22 December 2025.",
+      "url": "https://arxiv.org/abs/2512.19167",
+      "evidence_level": "TARGETED_PRIMARY_PASSAGES_AND_INDEX_ABSTRACT",
+      "operations": [
+        "S1",
+        "R1"
+      ],
+      "locators": [
+        "Section 1.1, equation (1.1a)–(1.1d)",
+        "Section 1.2, background and literature review",
+        "Introduction discussion pointing to Section 3.2.2 trace estimates and Section 3.3 focusing modes"
+      ],
+      "supported_claim": "The paper studies the wave equation on a smooth bounded domain of dimension at least two, with a damped hyperbolic boundary equation including a boundary Laplace–Beltrami term and optional disjoint static boundary component. Its reported 1/t stabilization result uses the geometric control condition and high-frequency resolvent/quasimode analysis. Retrieved passages emphasize separate normal/tangential trace estimates.",
+      "relevance": "Supports treating boundary inertia and derivative traces explicitly instead of inferring them from a bulk norm.",
+      "transfer_limit": "Long-time damped stabilization with surface propagation and geometric hypotheses does not supply the present finite-time, one-dimensional, time-dependent-potential, pointwise pulse certificate. No decay constant or trace theorem is imported."
+    },
+    {
+      "id": "L2",
+      "paper_id": "arxiv:2503.22439",
+      "title": "One dimensional wave equation with in-domain localized damping and Wentzell boundary conditions",
+      "authors": null,
+      "author_evidence": "Full authorship was not present in the retained primary passages or search metadata used here.",
+      "year_from_arxiv_identifier": 2025,
+      "url": "https://arxiv.org/abs/2503.22439",
+      "evidence_level": "TARGETED_PRIMARY_PASSAGES_AND_INDEX_ABSTRACT",
+      "operations": [
+        "S1",
+        "R2"
+      ],
+      "locators": [
+        "Introduction, equation (1.1a)–(1.1h), assumptions (A1)–(A3)",
+        "Section 5, equations (5.28)–(5.30)"
+      ],
+      "supported_claim": "The displayed model has a positive Lipschitz spatial coefficient, nonnegative interior damping positive on a nonempty subinterval, and dynamic endpoint variables with positive constant coefficients. The abstract reports L2 and Lp stabilization/input-to-state methods. Retrieved Section 5 estimates control an integrated Lp bulk velocity/spatial-derivative quantity plus endpoint state variables.",
+      "relevance": "A one-dimensional structural neighbor for boundary oscillator variables and estimates driven by input terms.",
+      "transfer_limit": "Its localized damping and constant endpoint coefficients differ from the present HDB problem. The passages do not establish a uniform-in-time pointwise normal derivative error bound for a wave with our W(t,z), beta(t). The specific input-to-state theorem body was not among the returned passages, so no constants or exact theorem statement are inferred."
+    },
+    {
+      "id": "L3",
+      "paper_id": "arxiv:1802.07942",
+      "title": "Numerical integration in arbitrary-precision ball arithmetic",
+      "authors": [
+        "Fredrik Johansson"
+      ],
+      "date_evidence": "The retrieved front matter identifies arXiv v1, 22 February 2018.",
+      "url": "https://arxiv.org/abs/1802.07942",
+      "evidence_level": "TARGETED_PRIMARY_PASSAGES_AND_INDEX_ABSTRACT",
+      "operations": [
+        "S2",
+        "R3"
+      ],
+      "locators": [
+        "Section 2, algorithm and implementation, direct-box step 2 and analytic-ellipse step 3",
+        "Section 3.2, endpoint singularities and infinite intervals"
+      ],
+      "supported_claim": "The implementation combines rigorous direct interval-box enclosures and, where complex analyticity and an ellipse bound are verified, adaptive Gaussian quadrature. Endpoint/improper contributions require separate valid bounds when truncation is used.",
+      "relevance": "Supports explicit endpoint treatment and continuous-domain bounds rather than heuristic quadrature error estimates.",
+      "transfer_limit": "A smooth flat bump is not analytic across its support endpoints. The paper does not license an analytic Gaussian remainder across those endpoints. The current HDB implementation uses its own integer-dyadic outward arithmetic, exponential Taylor enclosure and real-cell range bounds; it is not an Arb run or a theorem imported from Arb."
+    },
+    {
+      "id": "L4",
+      "paper_id": "arxiv:2603.06431",
+      "title": "Certified and accurate computation of function space norms of deep neural networks",
+      "authors": null,
+      "year_from_arxiv_identifier": 2026,
+      "url": "https://arxiv.org/abs/2603.06431",
+      "evidence_level": "INDEX_METADATA_AND_ABSTRACT_ONLY",
+      "operations": [
+        "S2"
+      ],
+      "locators": [
+        "Returned paper-index metadata and abstract only"
+      ],
+      "supported_claim": "The returned abstract describes certified local interval boxes and adaptive aggregation for neural-network values/derivatives and norms, and cautions that finite point probes alone do not give guaranteed norm bounds without structure.",
+      "relevance": "A recent methodological comparison for continuous-cell certificates versus sample values.",
+      "transfer_limit": "The body and canonical authorship were not inspected. It concerns neural-network norms; our explicit bump calculation uses no neural network, and no result from this paper is used in the certificate."
+    }
+  ],
+  "scientific_scope": "Literature comparison only. The HDB characteristic proof and integer/interval implementation require their own derivation, review and replay. This file proves neither their correctness nor scientific novelty.",
+  "public_files_exclude_raw_bodies": true
+}

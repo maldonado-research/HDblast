@@ -1,0 +1,88 @@
+{
+  "status": "PASS_SOL_PORTABILITY_AND_FAILURE_INJECTION_REVIEW",
+  "science_constants_unchanged": true,
+  "mode_data_identical_except_optimization_marker": true,
+  "runs": [
+    {
+      "optimized": false,
+      "status": "PASS",
+      "check_count": 34,
+      "capsule_relative_inputs_authenticated": true,
+      "controls": [
+        {
+          "injection": "drop-determinant-coupling",
+          "exit_code": 1,
+          "named_failure": "first majorant equation",
+          "no_passing_output": true
+        },
+        {
+          "injection": "flip-boundary-damping",
+          "exit_code": 1,
+          "named_failure": "boundary jet correct sign identity",
+          "no_passing_output": true
+        },
+        {
+          "injection": "use-full-C",
+          "exit_code": 1,
+          "named_failure": "wrong gamma equals full C rejected",
+          "no_passing_output": true
+        },
+        {
+          "injection": "omit-velocity-input",
+          "exit_code": 1,
+          "named_failure": "dropped velocity input rejected at peak",
+          "no_passing_output": true
+        },
+        {
+          "injection": "delete-boundary-memory",
+          "exit_code": 1,
+          "named_failure": "deleted boundary memory rejected",
+          "no_passing_output": true
+        }
+      ]
+    },
+    {
+      "optimized": true,
+      "status": "PASS",
+      "check_count": 34,
+      "capsule_relative_inputs_authenticated": true,
+      "controls": [
+        {
+          "injection": "drop-determinant-coupling",
+          "exit_code": 1,
+          "named_failure": "first majorant equation",
+          "no_passing_output": true
+        },
+        {
+          "injection": "flip-boundary-damping",
+          "exit_code": 1,
+          "named_failure": "boundary jet correct sign identity",
+          "no_passing_output": true
+        },
+        {
+          "injection": "use-full-C",
+          "exit_code": 1,
+          "named_failure": "wrong gamma equals full C rejected",
+          "no_passing_output": true
+        },
+        {
+          "injection": "omit-velocity-input",
+          "exit_code": 1,
+          "named_failure": "dropped velocity input rejected at peak",
+          "no_passing_output": true
+        },
+        {
+          "injection": "delete-boundary-memory",
+          "exit_code": 1,
+          "named_failure": "deleted boundary memory rejected",
+          "no_passing_output": true
+        }
+      ]
+    }
+  ],
+  "source_pins": {
+    "sol/UNIFORM_WAVEFORM_CERTIFICATE.md": "a9b0354c2ecb8a68d04e9441259de7873c3c93fb7cb4369257478b31bfffcd56",
+    "sol/check_uniform_waveform.py": "4e43fbc87fc68d8a95b8b24f3d0e23b0e1c90619bb623011fdb9d6281c797d03",
+    "sol/FINAL_WAVEFORM_REVIEW.json": "ad191bf313ff642fb3275eb32bb68b179a0003f1e28928ce2ace45e3a9313250"
+  }
+}

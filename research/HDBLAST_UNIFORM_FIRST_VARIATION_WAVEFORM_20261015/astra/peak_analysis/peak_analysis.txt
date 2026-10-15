@@ -1,0 +1,227 @@
+Normalized bump waveform: exact peak geometry and rational certificates
+=====================================================================
+
+Let ell = 1/10^10, let
+
+  Q(x) = exp(4 - 1/((x-1)(2-x)))       for 1 < x < 2,
+  Q(x) = 0                            otherwise,
+  Hhat(x) = Q'(x) + ell exp(-ell x) Q(x).
+
+The extension of Q is smooth and flat at both endpoints.  All references to
+critical points and zero counts below concern the open support (1,2).
+
+1. Closed-form geometry of Q'
+
+Put z = 2x-3, r = z^2, d = 1-z^2.  Then
+
+  Q   = exp(-4 z^2/d),
+  Q'  = -16 z Q/d^2,
+  Q'' = -32 Q (1 - 6z^2 - 3z^4)/d^4.
+
+Let
+
+  s = sqrt(3),
+  r_* = 2/s - 1,
+  a = sqrt(r_*),
+  x_L = (3-a)/2,
+  x_R = (3+a)/2.
+
+The only roots of Q'' in (1,2) are x_L and x_R.  Q' increases from
+0 to its positive maximum at x_L, decreases through zero at 3/2 to
+its negative minimum at x_R, and increases back to 0.  In particular,
+
+  Q'(x_L) = M,                 Q'(x_R) = -M,
+  Q(x_L) = Q(x_R) = exp(1-s),
+  M = 16 a exp(1-s)/(1-r_*)^2
+    = 6(2+s) a exp(1-s).
+
+The identities used here are
+
+  4r_* /(1-r_*) = s-1,
+  16/(1-r_*)^2 = 6(2+s).
+
+Exact rational enclosures (every displayed decimal endpoint is rational):
+
+  1.303340053404835680417725165684 < x_L
+                                    < 1.303340053404835680417725165685,
+  1.696659946595164319582274834315 < x_R
+                                    < 1.696659946595164319582274834316,
+  4.235640422134888218565987509535 < M
+                                    < 4.235640422134888218565987509536.
+
+For useful local perturbation information, differentiating Q'' at a root gives
+
+  Q''' = 768 z(1+z^2)Q/(1-z^2)^4,
+  |Q'''(x_L)|/M = |Q'''(x_R)|/M = 36+24sqrt(3).
+
+Consequently, as ell -> 0+, both Hhat critical points move right with
+first derivative
+
+  dx_peak/dell |_(ell=0) = 1/(36+24sqrt(3))
+    = 0.0128917115316042940848581300836595... .
+
+The first-order displacement at ell=10^-10 is 1.2891711531604294... x 10^-12.
+The two peak heights have derivatives exp(1-sqrt(3)) at ell=0.  These
+asymptotic statements are explanatory; the bounds below do not rely on
+uncontrolled remainder terms.
+
+2. Exactly one interior zero of Hhat
+
+Since Q>0 in the support, Hhat has the sign of
+
+  B(x) + A(x),
+  B(x) = -16z/(1-z^2)^2,
+  A(x) = ell exp(-ell x).
+
+Their derivatives satisfy
+
+  B'(x) = -32(1+3z^2)/(1-z^2)^3 < 0,
+  A'(x) = -ell A(x) < 0.
+
+The sum decreases strictly from +infinity to -infinity, so it has precisely
+one zero.  At x=3/2 it is positive.  At x=3/2+ell/32, z=ell/16, hence
+B(x) = -ell/(1-ell^2/256)^2 < -ell while A(x)<ell.  Therefore
+
+  3/2 < x_zero < 3/2+ell/32 = 1.500000000003125.
+
+Hhat is positive before this zero and negative after it, within (1,2).
+At the simple rational sample points,
+
+  Hhat(5/4) = [128/9 + ell exp(-5ell/4)] exp(-4/3),
+  Hhat(7/4) = [-128/9 + ell exp(-7ell/4)] exp(-4/3),
+
+and the exact arithmetic verifier proves
+
+  3.748937075450029332710093 < Hhat(5/4)
+                              < 3.748937075450029332710095,
+ -3.748937075397309905094858 < Hhat(7/4)
+                              < -3.748937075397309905094855.
+
+3. Exactly two interior critical points of Hhat
+
+Set A(z) = ell exp(-ell(z+3)/2) and
+
+  N(z) = 1-6z^2-3z^4,
+  E(z) = (A(z)/2) z(1-z^2)^2
+         + (A(z)ell/32)(1-z^2)^4,
+  P(z) = N(z)+E(z).
+
+Direct differentiation gives the exact equivalence
+
+  Hhat'(x)/Q(x) = -32 P(z)/(1-z^2)^4.
+
+On -1<z<1, 0<A(z)<ell, so
+
+  |E(z)| < ell/2+ell^2/32 < ell.
+
+For |z|<=3/10, N(z)>=4357/10000.  For |z|>=1/2,
+N(z)<=-11/16.  Thus P is positive throughout the central region and
+negative throughout the two outer regions.
+
+For the intervening bands, N_z = -12z(1+z^2).  Its magnitude is >18/5,
+positive on (-1/2,-3/10), negative on (3/10,1/2).  The correction obeys
+
+  |E_z| <= (ell/2)(1+ell/2) + (ell^2/32)(8+ell/2) < ell.
+
+For this bound use A_z=-(ell/2)A, |z(1-z^2)^2|<=1,
+|d/dz[z(1-z^2)^2]|=|(1-z^2)(1-5z^2)|<=1, and
+|d/dz[(1-z^2)^4]|<=8.
+
+It follows that P has exactly one root in each band, is strictly increasing
+in the left band, and strictly decreasing in the right band.  Hhat therefore
+has one strict positive maximum and one strict negative minimum.  The
+following root boxes are certified by opposite rational-interval signs of P
+at their endpoints:
+
+  1.303340053406124851570706028048 < x_Hmax
+                                    < 1.303340053406124851570706028049,
+  1.696659946596453490735228079422 < x_Hmin
+                                    < 1.696659946596453490735228079423.
+
+Evaluating Hhat by interval arithmetic on these root boxes proves
+
+  4.235640422182980388580255 < max Hhat
+                              < 4.235640422182980388580257,
+ -4.235640422086796048554158 < min Hhat
+                              < -4.235640422086796048554156.
+
+Independently, 0 <= Hhat-Q' <= ell everywhere gives the convenient bounds
+
+  M < max Hhat < M+ell,
+  M-ell < -min Hhat < M,
+  ||Hhat||_infinity = max Hhat.
+
+Strictness follows by evaluating at the Q' peaks and using positivity of
+the correction in the support.  The positive peak is the absolute maximum.
+
+4. Conditional actual-waveform peak exclusion
+
+Suppose the actual continuous scaled waveform H obeys the global bound
+
+  |H-Hhat| <= epsilon_*,
+  epsilon_* = 8000003000800720779892143999973 /
+              79999999999992799998920000162000000000
+            < epsilon = 1000001/10^13.
+
+This error bound is an assumption imported from the parent calculation;
+the present certificate checks the rounding but does not rederive it.
+
+Exact rational evaluation gives
+
+  0.000000263559678293613961962519 < M-Q'(1.3033)
+                                    < 0.000000263559678293613961962520,
+  0.000000590303334992119176697884 < M-Q'(1.3034)
+                                    < 0.000000590303334992119176697885.
+
+Both gaps exceed 2epsilon+ell = 0.0000002000003.  By the monotonicity
+of Q', outside I_L=(1.3033,1.3034),
+
+  Q'(x) <= max(Q'(1.3033),Q'(1.3034)) = M-gap,
+  H(x) <= M-gap+ell+epsilon < M-epsilon <= H(x_L).
+
+Therefore every global positive maximizer of H lies in I_L.  Continuity
+on its compact closure and this strict exterior exclusion also ensure
+existence of a global positive maximizer.  Reflection symmetry of Q'
+gives the corresponding statement that every global negative minimizer
+lies in I_R=(1.6966,1.6967).  The same bound gives the certified height
+enclosures
+
+  4.235640322182880388580255 < max H
+                              < 4.235640522183080388580257,
+ -4.235640522086896048554158 < min H
+                              < -4.235640322086696048554156.
+
+The absolute maximum is attained somewhere in I_L union I_R.  The uniform
+error is much larger than the difference between Hhat's two absolute peak
+heights, so this error estimate does not identify which lobe contains the
+absolute maximum of H.  Nor does a uniform C^0 error bound establish
+uniqueness of the actual maxima, minima, or zero.  It does certify H(5/4)>0
+and H(7/4)<0, hence at least one zero between these points.
+
+5. Reproducible certificate
+
+Run:
+
+  python /workspace/hdblast-research-work/validated-waveform-20261015/astra/peak_analysis/verify_peaks.py
+
+This uses only Python's standard library.  All arithmetic affecting any
+verification gate is exact Fraction arithmetic.  Square roots are enclosed using
+integer square roots and exact comparison.  For 0<=u<=2, exp(-u) is enclosed
+by the alternating Taylor polynomials S_81(u) <= exp(-u) <= S_80(u).
+The omitted alternating terms decrease monotonically from these truncation
+indices; monotonicity of exp(-u) then extends the enclosure to interval u.
+Every exponential argument used by the certificate lies in [0,2].
+
+The script checks all numerical intervals above, both critical-point sign
+changes, both signed sample values, the interior zero bracket, and the actual
+waveform exclusion inequality.  Every verification gate uses an explicit
+exception and remains active under python -O.  Four built-in negative
+controls reject a missing derivative factor 16, a reversed derivative sign,
+a reversed waveform correction sign, and an inflated actual waveform error.
+It does
+not substitute a numerical search for the analytic uniqueness proof in
+Sections 2 and 3.
+
+The normal and python -O runs produced byte-identical JSON, saved respectively
+as certificate.json and certificate_optimized.json in this directory.
+Their SHA256 is 775a469d8fac49810199b01530f64de9aa29ad989749d9f6ab6e2cd1260d1e0f.
