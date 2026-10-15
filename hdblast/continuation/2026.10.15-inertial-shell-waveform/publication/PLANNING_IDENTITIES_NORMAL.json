@@ -1,0 +1,122 @@
+{
+  "arithmetic": "exact symbolic rational polynomial arithmetic; no floating-point decisions",
+  "check_group_count": 6,
+  "check_groups": [
+    {
+      "exact_residuals": {
+        "Delta B": "0",
+        "Delta H4": "0",
+        "Delta Z2": "0",
+        "Euler B minus 2 B": "0",
+        "Euler H4 minus 4 H4": "0",
+        "Euler Z2 minus 2 Z2": "0"
+      },
+      "name": "ambient harmonicity and homogeneity",
+      "passed": true
+    },
+    {
+      "exact_residuals": {
+        "Delta P4 minus 8 A": "0",
+        "Delta sA minus 16 A minus 4 s": "0",
+        "Delta s^2 minus 24 s": "0",
+        "P4 minus H4 minus s Z2/2 minus s^2/6": "0"
+      },
+      "name": "ambient Fischer decomposition",
+      "passed": true
+    },
+    {
+      "exact_residuals": {
+        "DeltaS3 B plus 8 B": "0",
+        "DeltaS3 H4 plus 24 H4": "0",
+        "DeltaS3 Z2 plus 8 Z2": "0"
+      },
+      "name": "unit S3 Laplace eigenvalues",
+      "passed": true
+    },
+    {
+      "exact_residuals": {
+        "projected norm minus 4 s A plus 4 P4": "0",
+        "projected norm minus harmonic decomposition": "0"
+      },
+      "name": "direct tangential-gradient projection",
+      "passed": true
+    },
+    {
+      "exact_residuals": {
+        "DeltaS3 P4 plus 16 P4 minus 2 gradient": "0",
+        "product-rule gradient minus direct projection": "0",
+        "product-rule gradient minus harmonic decomposition": "0"
+      },
+      "name": "independent Laplace product rule",
+      "passed": true
+    },
+    {
+      "exact_residuals": {
+        "mean H4": "0",
+        "mean Y^2 minus 1/6": "0",
+        "mean Z2": "0",
+        "mean gradient norm minus 4/3": "0",
+        "mean gradient norm minus 8 mean Y^2": "0"
+      },
+      "name": "normalized S3 moments and Dirichlet identity",
+      "passed": true
+    }
+  ],
+  "checker_sha256": "c4204aa096bdf7920c78f5bf3e7fcbc676e5c752dd18c050f5905036af12157b",
+  "classification": "public planning identities only",
+  "counted_in_frozen_replay_roster": false,
+  "frozen_waveform_replay_modified": false,
+  "nonlinear_existence_or_remainder_established": false,
+  "normalization": {
+    "mean_Y_squared": "1/6",
+    "mean_gradient_squared": "4/3",
+    "sphere_volume": "2*pi^2"
+  },
+  "novelty_claimed": false,
+  "planning_note_sha256": "3ebf12d82f9c712788e4cc14b5a884cb8303059e875257543009c178c15f15b1",
+  "prior_conditional_complete_coefficient_construction_retained": true,
+  "prior_conditional_exact_family_hypotheses_retained": true,
+  "quadratic_bulk_or_junction_sources_verified": false,
+  "runtime": {
+    "optimization": 0,
+    "python": "3.12.14",
+    "sympy": "1.14.0"
+  },
+  "schema": "hdblast-second-order-harmonic-planning-v1",
+  "scope": "selected unnormalized Y=n1^2-n2^2 on unit S3; exact angular algebra and derivative-convention controls",
+  "second_order_equations_solved_by_this_check": false,
+  "uses_assert_for_scientific_checks": false,
+  "wrong_formula_control_count": 6,
+  "wrong_formula_controls": [
+    {
+      "exact_nonzero_residual": "-x1**2 - x2**2 - x3**2 - x4**2",
+      "name": "H4 with r^4/24 instead of r^4/12",
+      "wrong_formula_rejected": true
+    },
+    {
+      "exact_nonzero_residual": "(x1**2 + x2**2 - x3**2 - x4**2)*(x1**2 + x2**2 + x3**2 + x4**2)/4",
+      "name": "omit degree-two term in Y^2 decomposition",
+      "wrong_formula_rejected": true
+    },
+    {
+      "exact_nonzero_residual": "-2*(x1 - x2)*(x1 + x2)",
+      "name": "use S2 eigenvalue -6 for Y on S3",
+      "wrong_formula_rejected": true
+    },
+    {
+      "exact_nonzero_residual": "-(7*x1**4 - 34*x1**2*x2**2 - 4*x1**2*x3**2 - 4*x1**2*x4**2 + 7*x2**4 - 4*x2**2*x3**2 - 4*x2**2*x4**2 + x3**4 + 2*x3**2*x4**2 + x4**4)/3",
+      "name": "use S2 eigenvalue -20 for H4 on S3",
+      "wrong_formula_rejected": true
+    },
+    {
+      "exact_nonzero_residual": "-2*(7*x1**4 - 34*x1**2*x2**2 - 4*x1**2*x3**2 - 4*x1**2*x4**2 + 7*x2**4 - 4*x2**2*x3**2 - 4*x2**2*x4**2 + x3**4 + 2*x3**2*x4**2 + x4**4)/3",
+      "name": "use plus 4 H4 in gradient identity",
+      "wrong_formula_rejected": true
+    },
+    {
+      "exact_nonzero_residual": "epsilon**2/2",
+      "name": "extra factor one-half in second-order forcing",
+      "wrong_formula_rejected": true
+    }
+  ]
+}
