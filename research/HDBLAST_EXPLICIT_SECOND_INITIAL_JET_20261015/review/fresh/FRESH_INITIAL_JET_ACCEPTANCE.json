@@ -1,0 +1,75 @@
+{
+  "status": "PASS_FRESH_INDEPENDENT_INITIAL_JET_ACCEPTANCE",
+  "source_sha256": {
+    "check_initial_constraint_completion.py": "954eeb402c3f06c72951bdfb6051d3f9e346b43ae2487324d67370021262425e",
+    "EXPLICIT_COMPACT_SECOND_INITIAL_JET.md": "2cca9c9b87dfa5c2c21712ae81ea0c91d01b939b902e82d54dd62a6eae6bf0ed",
+    "inputs/ACTUAL_POTENTIAL_JET_BOUNDS.json": "fd93a0de3d321ff5182115138eed2725f3c327083cf5148e3efc1aca3659d5c0",
+    "INITIAL_CONSTRAINT_COMPLETION.json": "6dcb9afb3aab2b23246912159bfdd30a5fdca01bd43b1da6eef89cb881fcbb00",
+    "INITIAL_CONSTRAINT_COMPLETION_OPTIMIZED.json": "e3c12fb9dd6cf3d2ee20d7f7524ef9f1955b9870ef53523b9b0f6e0f2b7cdd2e"
+  },
+  "reviewed_capsule_README_sha256": "c61051888de1b73f9958802f4ec41575347ebadec42cf5062e1961b2b739a06f",
+  "all_point_laurent_proof_checks": {
+    "curvature_Hessian_all_radial_angular_terms": "PASS_ZERO_LAURENT_POLYNOMIAL",
+    "Hamiltonian_all_source_terms": "PASS_ZERO_LAURENT_POLYNOMIAL",
+    "momentum_radial_complete_Hessian": "PASS_ZERO_LAURENT_POLYNOMIAL",
+    "momentum_angular_complete_Hessian": "PASS_ZERO_LAURENT_POLYNOMIAL",
+    "degree_024_decomposition": "PASS_ZERO_LAURENT_POLYNOMIAL",
+    "degree_2_eigenvalue": "PASS_ZERO_LAURENT_POLYNOMIAL",
+    "degree_4_eigenvalue": "PASS_ZERO_LAURENT_POLYNOMIAL",
+    "Hamiltonian_degree_024_projection": "PASS_ZERO_LAURENT_POLYNOMIAL",
+    "Hamiltonian_inverse_lambda_0": "PASS_ZERO_LAURENT_POLYNOMIAL",
+    "Hamiltonian_source_sign_lambda_0": "PASS_ZERO_LAURENT_POLYNOMIAL",
+    "Hamiltonian_inverse_lambda_8": "PASS_ZERO_LAURENT_POLYNOMIAL",
+    "Hamiltonian_source_sign_lambda_8": "PASS_ZERO_LAURENT_POLYNOMIAL",
+    "Hamiltonian_inverse_lambda_24": "PASS_ZERO_LAURENT_POLYNOMIAL",
+    "Hamiltonian_source_sign_lambda_24": "PASS_ZERO_LAURENT_POLYNOMIAL",
+    "momentum_pure_trace_radial_inverse": "PASS_ZERO_LAURENT_POLYNOMIAL",
+    "momentum_pure_trace_angular_inverse": "PASS_ZERO_LAURENT_POLYNOMIAL",
+    "spacetime_vs_Cauchy_affine_radial_shift": "PASS_ZERO_LAURENT_POLYNOMIAL",
+    "first_H_constraint_background_reduction": "PASS_ZERO_LAURENT_POLYNOMIAL"
+  },
+  "actual_packet_witness": {
+    "p_nonzero": "-7/50000 <= p <= -3/25000 < 0",
+    "derived_abs_v_y_lower": "18175633447895202537783423108107268477657026390061603068521/7822905643554562056125379050249560176178687500000",
+    "derived_abs_v_y_upper": "76904296946248803077030210371089741017081692605287/26563353962850679529130940073323687500000",
+    "derived_abs_u_y_upper": "1954659013516648421125000/17432166990919604301140028759",
+    "derived_abs_u_yy_upper": "666667970453763708122047482895235985570209601219604537/5756810070828999267553257332690709555000000000000",
+    "derived_abs_v_upper": "54783223384791210528125000000/17432166990919604301140028759",
+    "derived_abs_v_t_upper": "164960021716873631584375000000/52296500972758812903420086277",
+    "other_terms_coarse_upper": "499495427221012379/104006250000",
+    "Hamiltonian_Hessian_strict_upper": "-10579999999995000000"
+  },
+  "fresh_replay": {
+    "normal": {
+      "status": "PASS_FRESH_BYTE_IDENTICAL_TO_RETAINED",
+      "sha256": "6dcb9afb3aab2b23246912159bfdd30a5fdca01bd43b1da6eef89cb881fcbb00",
+      "finite_exact_checks": 48,
+      "negative_controls_rejected": 7
+    },
+    "optimized": {
+      "status": "PASS_FRESH_BYTE_IDENTICAL_TO_RETAINED",
+      "sha256": "e3c12fb9dd6cf3d2ee20d7f7524ef9f1955b9870ef53523b9b0f6e0f2b7cdd2e",
+      "finite_exact_checks": 48,
+      "negative_controls_rejected": 7
+    }
+  },
+  "normal_optimized_mathematical_identity": true,
+  "support_review": "Finite derivatives and smooth multipliers, p bounded away from zero on collar; flat packet endpoints permit smooth extension by zero in the same [ell,2ell] annulus and vanish on open shell/vertex collars.",
+  "convention_review": "Physical Cauchy affine gamma,K,phi,Pi; K=+Lie_n gamma/2 and Pi=n phi. Spacetime affine lapse induces second K,Pi and shifts radial momentum source by +6u_yu_t/rho. Coordinate conversion factors verified analytically.",
+  "accepted_scope": {
+    "separate_follow_on": true,
+    "frozen_capsule_modified": false,
+    "zero_second_initial_data_compatible": false,
+    "explicit_second_constraint_jet": true,
+    "chosen_scalar_second_data_zero": false,
+    "chosen_scalar_velocity_second_data_zero": false,
+    "second_initial_norms_numerically_enclosed": false,
+    "gauge_completion_computed": false,
+    "U2_evolution_computed": false
+  },
+  "limits": [
+    "Conditional on the authenticated retained regular background and first reconstruction.",
+    "Explicit second differentiated initial constraints only; no exact nonlinear initial family.",
+    "No completed gauge, coupled second evolution, U2 amplitude or remainder estimate."
+  ]
+}

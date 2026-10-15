@@ -1,0 +1,108 @@
+{
+  "status": "PASS_SEPARATE_EXPLICIT_INITIAL_CONSTRAINT_COMPLETION",
+  "finite_exact_checks": 48,
+  "background_sha256": "fd93a0de3d321ff5182115138eed2725f3c327083cf5148e3efc1aca3659d5c0",
+  "physical_Cauchy_affine_variables": [
+    "spatial_metric gamma",
+    "covariant K=+Lie_n(gamma)/2",
+    "scalar phi",
+    "unit-normal scalar velocity Pi"
+  ],
+  "angular_sectors": {
+    "degrees": [
+      0,
+      2,
+      4
+    ],
+    "eigenvalues": [
+      0,
+      8,
+      24
+    ],
+    "Hamiltonian_inverse_denominators": [
+      -6,
+      10,
+      42
+    ]
+  },
+  "witness": {
+    "point": {
+      "t": "0",
+      "z": "3/2000000",
+      "n": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "exact_initial_master_at_point": {
+      "w": "1",
+      "w_z": "0",
+      "w_zz": "-32000000000000"
+    },
+    "actual_abs_v_y_strict_lower": "2300000000",
+    "actual_abs_v_y_strict_upper": "3000000000",
+    "other_Hessian_terms_abs_upper": "499495427221012379/104006250000",
+    "Hamiltonian_Hessian_strict_upper": "-10579999999995000000"
+  },
+  "scope": {
+    "separate_follow_on": true,
+    "frozen_capsule_modified": false,
+    "zero_second_initial_data_compatible": false,
+    "explicit_second_constraint_jet": true,
+    "chosen_scalar_second_data_zero": false,
+    "chosen_scalar_velocity_second_data_zero": false,
+    "second_initial_norms_numerically_enclosed": false,
+    "gauge_completion_computed": false,
+    "U2_evolution_computed": false
+  },
+  "controls": {
+    "status": "PASS",
+    "optimized": false,
+    "cases": [
+      {
+        "mutation": "drop_radial_momentum_cross",
+        "rejection_prefix": "actual affine-data radial momentum Hessian",
+        "returncode": 1,
+        "no_output_report": true
+      },
+      {
+        "mutation": "half_angular_momentum",
+        "rejection_prefix": "actual affine-data tangential momentum Hessian",
+        "returncode": 1,
+        "no_output_report": true
+      },
+      {
+        "mutation": "flip_scalar_compensator",
+        "rejection_prefix": "compact Hamiltonian inverse",
+        "returncode": 1,
+        "no_output_report": true
+      },
+      {
+        "mutation": "wrong_sector_denominator",
+        "rejection_prefix": "sector Hamiltonian source cancellation",
+        "returncode": 1,
+        "no_output_report": true
+      },
+      {
+        "mutation": "half_Hamiltonian_source",
+        "rejection_prefix": "full actual-state Hamiltonian source formula",
+        "returncode": 1,
+        "no_output_report": true
+      },
+      {
+        "mutation": "drop_angular_gradient_source",
+        "rejection_prefix": "full actual-state Hamiltonian source formula",
+        "returncode": 1,
+        "no_output_report": true
+      },
+      {
+        "mutation": "omit_bump_second_jet",
+        "rejection_prefix": "nonzero initial scalar-gradient witness",
+        "returncode": 1,
+        "no_output_report": true
+      }
+    ]
+  }
+}

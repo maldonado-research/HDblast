@@ -1,0 +1,30 @@
+{
+  "schema": "hdblast-second-initial-jet-replay-v1",
+  "jobs": [
+    {
+      "name": "initial-constraints-and-controls",
+      "script": "check_initial_constraint_completion.py",
+      "arguments": [
+        "--run-controls"
+      ],
+      "goldens": {
+        "normal": "INITIAL_CONSTRAINT_COMPLETION.json",
+        "optimized": "INITIAL_CONSTRAINT_COMPLETION_OPTIMIZED.json"
+      }
+    },
+    {
+      "name": "independent-initial-review",
+      "script": "review/check_initial_jet_review.py",
+      "arguments": [
+        "--background",
+        "inputs/ACTUAL_POTENTIAL_JET_BOUNDS.json"
+      ],
+      "goldens": {
+        "normal": "review/INITIAL_JET_REVIEW_NORMAL.json",
+        "optimized": "review/INITIAL_JET_REVIEW_OPTIMIZED.json"
+      }
+    }
+  ],
+  "external_negative_processes": 14,
+  "negative_case_families": 7
+}

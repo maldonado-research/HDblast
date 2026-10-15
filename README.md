@@ -1,5 +1,10 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- explicit-second-initial-jet-20261015 -->
+**15 October 2026: explicit compact second initial constraint jet:** Local formulas now cancel all five second differentiated initial constraints for the registered aligned packet, using nonzero second scalar and normal scalar-velocity data. The correction stays in the original packet annulus. A certified Hamiltonian source below -1e19 at the packet maximum excludes zero second initial data. The physical-Cauchy/spacetime lapse conversion is explicit.
+
+[Derivation and reproducible checks](https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_EXPLICIT_SECOND_INITIAL_JET_20261015). This conditional initial jet does not supply an exact finite-amplitude family or U2 evolution. Initial norm bounds, common gauge/boundary completion and validated evolution remain open; no cosmological origin is established.
+
 <!-- interior-master-jets-20261015 -->
 **15 October 2026: certified interior derivatives and bulk forcing bounds:** Every mixed first-master derivative through order three is now bounded on the registered causal triangle. The actual potential satisfies |W_zz| < 3e10. Reconstructing the first longitudinal fields gives coarse continuous bounds for all fifteen Einstein quadratic-source components and the complete scalar source. These are conditional coordinate-source envelopes in model units; quantitative U2 and the compatible common-gauge second-order solve remain unfinished.
 
