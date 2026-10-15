@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "scope": "Publication-tool validation using a 21-file scratch source subset; not the final scientific capsule or analytic proof review.",
+  "tool_pins": {
+    "freeze_source.py": "2cd924f6d9ae0e2d52593ea92b43379cb31682ed227b60218be7244e27812548",
+    "replay-tools/verify_manifest.py": "969b78bbb00bb7902b1c48eb6fd38305dbb6a28edcca9eb3ae8a8ee9e8cc46b6",
+    "replay-tools/reproduce.py": "2a9f0468f38149332b4f2fca74775b48f381ada0f56a71acb6326de04ec74a73"
+  },
+  "scratch_source_files": 21,
+  "scratch_manifest_sha256": "7f2de3e034597b1317615485b5f13c927c55dc1c90a105f42bc49f0c97defcb4",
+  "repeat_freeze_byte_identical": true,
+  "integrity_controls": [
+    {
+      "control": "wrong_manifest_pin",
+      "status": "PASS",
+      "expected_reason": "External manifest pin differs",
+      "rejected_before_output_creation": true
+    },
+    {
+      "control": "changed_source_module",
+      "status": "PASS",
+      "expected_reason": "Frozen bytes differ: certify_response.py",
+      "rejected_before_output_creation": true
+    },
+    {
+      "control": "extra_unlisted_file",
+      "status": "PASS",
+      "expected_reason": "Frozen tree contains missing or extra files",
+      "rejected_before_output_creation": true
+    }
+  ],
+  "fresh_replay_counts": {
+    "successful_checker_runs": 12,
+    "external_corruption_processes_rejected": 18,
+    "embedded_wrong_formula_controls_rejected": 18,
+    "finite_positive_check_groups_each_mode": 149
+  },
+  "distributed_fresh_artifact_count": 61,
+  "fresh_replay_receipt_sha256": "f669023c24ee65eaab3600e57f3b828ca8e81514fdf0fc61797f04235fdafe49",
+  "checks": {
+    "full_scientific_json_matches_no_ignored_fields": true,
+    "all_expected_named_external_failures_observed": true,
+    "six_checkers_each_normal_and_optimized": true
+  }
+}

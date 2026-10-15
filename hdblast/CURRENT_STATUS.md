@@ -1,5 +1,12 @@
 # HDBLAST: current research and publication status
 
+<!-- shell-response-error-certificate-20261015 -->
+**Conditional quantitative shell-response bound:** For the retained regular branch at delta = 1/1000 and one newly specified narrow aligned quadrupole (ell = 10^-10 in model coordinates), a free-wave comparison and exact-rational bounds give 10^15 < C < 4 × 10^17 for the leading proper-time response coefficient in R_epsilon = epsilon^2 C + o(epsilon^2). The estimate controls the physical derivative at the shell, with its positive boundary inertia.
+
+This is a coarse conditional analytic enclosure in the stated model normalization. It gives no numerical waveform, effective nonlinear amplitude range, observational scale or evidence for a higher-dimensional Big Bang origin. The background, exact-data, gauge, regularity and full nonlinear support hypotheses remain explicit. Internal AI-assisted reviews and finite arithmetic checks are distinct from external peer review. Earlier entries retain their checkpoint scope. No new Zenodo version or APS submission was made.
+
+[Quantitative theorem, normalization and assumptions](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_SHELL_RESPONSE_ERROR_CERTIFICATE_20261015/SHELL_RESPONSE_ERROR_CERTIFICATE.md) · [Reproducible arithmetic and independent reviews](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_SHELL_RESPONSE_ERROR_CERTIFICATE_20261015/README.md).
+
 <!-- physical-shell-response-20261015 -->
 **Conditional nonzero physical shell response:** For one explicitly specified aligned quadrupole with nonzero displacement and velocity, the full coupled Einstein–scalar shell equations now imply a nonzero physical first scalar response. In the retained conditional exact nonlinear family, a squared scalar-response measure over a finite intrinsic proper-time window has a strictly positive leading quadratic coefficient.
 

@@ -1,0 +1,145 @@
+{
+  "exact_checks": 11,
+  "wrong_controls_rejected": [
+    "omit nonzero boundary residual with zero bulk and initial residuals",
+    "omit boundary residual in forced polynomial velocity estimate",
+    "accept floating point as an exact input enclosure"
+  ],
+  "physical_waveform_supplied": false,
+  "zero_control": {
+    "kind": "conditional exact-rational characteristic majorant",
+    "physical_waveform_supplied": false,
+    "majorant_lower_is_not_actual_error_lower_bound": true,
+    "inputs": {
+      "T": "1",
+      "M": "0",
+      "B": "0",
+      "mu_lower": "1",
+      "A0": "0",
+      "b_plus": "0",
+      "b_minus": "0",
+      "V0": "0",
+      "F": "0",
+      "G": "0",
+      "gamma_abs": "0",
+      "gamma_error": "0",
+      "u_boundary_abs": "0"
+    },
+    "majorant_lower_at_T": {
+      "E": "0",
+      "I": "0",
+      "V": "0"
+    },
+    "majorant_upper_at_T": {
+      "E": "0",
+      "I": "0",
+      "V": "0"
+    },
+    "trace_error_sup_upper": "0",
+    "trace_error_L2_squared_upper": "0",
+    "taylor_order": 1,
+    "taylor_component_tail_upper": "0"
+  },
+  "boundary_control": {
+    "kind": "conditional exact-rational characteristic majorant",
+    "physical_waveform_supplied": false,
+    "majorant_lower_is_not_actual_error_lower_bound": true,
+    "inputs": {
+      "T": "1",
+      "M": "0",
+      "B": "0",
+      "mu_lower": "1",
+      "A0": "0",
+      "b_plus": "0",
+      "b_minus": "0",
+      "V0": "0",
+      "F": "0",
+      "G": "9",
+      "gamma_abs": "0",
+      "gamma_error": "0",
+      "u_boundary_abs": "0"
+    },
+    "majorant_lower_at_T": {
+      "E": "9/2",
+      "I": "0",
+      "V": "9"
+    },
+    "majorant_upper_at_T": {
+      "E": "9/2",
+      "I": "0",
+      "V": "9"
+    },
+    "trace_error_sup_upper": "9",
+    "trace_error_L2_squared_upper": "81",
+    "taylor_order": 9,
+    "taylor_component_tail_upper": "0"
+  },
+  "polynomial_control": {
+    "kind": "conditional exact-rational characteristic majorant",
+    "physical_waveform_supplied": false,
+    "majorant_lower_is_not_actual_error_lower_bound": true,
+    "inputs": {
+      "T": "1",
+      "M": "0",
+      "B": "0",
+      "mu_lower": "1",
+      "A0": "0",
+      "b_plus": "0",
+      "b_minus": "0",
+      "V0": "0",
+      "F": "2",
+      "G": "2",
+      "gamma_abs": "0",
+      "gamma_error": "0",
+      "u_boundary_abs": "0"
+    },
+    "majorant_lower_at_T": {
+      "E": "7/3",
+      "I": "2",
+      "V": "3"
+    },
+    "majorant_upper_at_T": {
+      "E": "7/3",
+      "I": "2",
+      "V": "3"
+    },
+    "trace_error_sup_upper": "5",
+    "trace_error_L2_squared_upper": "25",
+    "taylor_order": 3,
+    "taylor_component_tail_upper": "0"
+  },
+  "positive_matrix_control": {
+    "kind": "conditional exact-rational characteristic majorant",
+    "physical_waveform_supplied": false,
+    "majorant_lower_is_not_actual_error_lower_bound": true,
+    "inputs": {
+      "T": "1/2",
+      "M": "2",
+      "B": "3",
+      "mu_lower": "2/3",
+      "A0": "1/11",
+      "b_plus": "1/13",
+      "b_minus": "1/17",
+      "V0": "1/19",
+      "F": "1/7",
+      "G": "1/9",
+      "gamma_abs": "2/5",
+      "gamma_error": "1/23",
+      "u_boundary_abs": "4/3"
+    },
+    "majorant_lower_at_T": {
+      "E": "3222746716947044147660243731225241382575182437797/9681800366124406082168133602760896192446464000000",
+      "I": "1001661056491664683577018855315599379926331623649/4034083485885169200903389001150373413519360000000",
+      "V": "4101410898544101285461575922207785306354105981037/6120678392377498097922383312090221730856960000000"
+    },
+    "majorant_upper_at_T": {
+      "E": "12368756876040492821733370729494406587873261205448257151/37158314124168994945087599201384195346280868741120000000",
+      "I": "768866012013493386131567480172209185088026725027782227/3096526177014082912090633266782016278856739061760000000",
+      "V": "1659963212685574404444606530681294858644431169043446937/2477220941611266329672506613425613023085391249408000000"
+    },
+    "trace_error_sup_upper": "220428900535927667964971606176145834514923368371621968197/185791570620844974725437996006920976731404343705600000000",
+    "trace_error_L2_squared_upper": "48588900191477892945386324651654918253032640361775451996548309949478892350843251100741177707679142238612079430809/69037015427520851094294742146777804662080727864060496135227371909375992616633462645238916678942720000000000000000",
+    "taylor_order": 30,
+    "taylor_component_tail_upper": "153562007710322157137/287674301097555082877242035189707941179555840000000"
+  }
+}

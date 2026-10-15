@@ -1,0 +1,130 @@
+{
+  "schema": "hdblast.primary-source-comparison-ledger.v1",
+  "date_utc": "2026-10-15",
+  "sources": [
+    {
+      "id": "L1",
+      "paper_id": "arxiv:1901.01792",
+      "title": "Finite element error analysis of wave equations with dynamic boundary conditions: L² estimates",
+      "authors": [
+        "David Hipp",
+        "Balázs Kovács"
+      ],
+      "year": 2019,
+      "url": "https://arxiv.org/abs/1901.01792",
+      "read_status": "PRIMARY_PASSAGES_AND_CANONICAL_METADATA",
+      "operations": [
+        "S2",
+        "R1",
+        "M1"
+      ],
+      "locators": [
+        "Section 2.1, equations (1)–(3), Theorem 2.1",
+        "Section 2.2.1, equations (8)–(10)"
+      ],
+      "supported_claim": "The abstract variational wave framework includes a positive boundary-mass term and dynamic boundary equation with normal derivative forcing; the prototype assumes positive constant boundary stiffness and coercive time-independent bilinear form.",
+      "use_for_hdb": "Structural comparison for the bulk-plus-boundary mass norm and boundary force sign.",
+      "transfer_limit": "The paper's boundary-Laplacian coefficient beta is not the HDB boundary stiffness beta(t): its kappa is the analogous stiffness. HDB W(t,z) and beta(t) may be noncoercive/time dependent. No normal-derivative output certificate or floating-point interval validation is imported."
+    },
+    {
+      "id": "L2",
+      "paper_id": "arxiv:2403.12954",
+      "title": "Damped energy-norm a posteriori error estimates for fully discrete approximations of the wave equation using C2-reconstructions with the leapfrog scheme",
+      "authors": [
+        "T. Chaumont-Frelet",
+        "A. Ern"
+      ],
+      "year": 2024,
+      "url": "https://arxiv.org/abs/2403.12954",
+      "read_status": "PRIMARY_PASSAGES_AND_CANONICAL_METADATA",
+      "operations": [
+        "S1",
+        "R2",
+        "M2"
+      ],
+      "locators": [
+        "Section 2.1, equations (2.1)–(2.2)",
+        "Section 3, C2 time reconstructions",
+        "Section 4, error upper bound; equation (1.7) and Remark 4.5",
+        "Section 2.4, CFL condition"
+      ],
+      "supported_claim": "The work provides reliable reconstructed-residual upper bounds for a damped time-integrated bulk energy norm for a Dirichlet scalar wave discretized by continuous finite elements and leapfrog; the displayed asymptotic leading estimate has explicit correction/higher-order terms that cannot be discarded in certification.",
+      "use_for_hdb": "Motivates evaluating the continuous residual of a smooth reconstruction, separately from checking discrete equations or grid convergence.",
+      "transfer_limit": "Its Dirichlet, zero-initial-data/source regularity and fixed-mesh/time-step framework is not the present dynamic-boundary model. The retrieved text does not establish directed-rounding coefficient/residual enclosures or a pointwise normal-derivative trace bound."
+    },
+    {
+      "id": "L3",
+      "paper_id": "arxiv:2509.04217",
+      "title": "A posteriori error estimates and space-adaptive mesh refinements for time-dependent scattering problems",
+      "authors": [
+        "Théophile Chaumont-Frelet",
+        "Heiko Gimperlein",
+        "Ignacio Labarca-Figueroa",
+        "Jörg Nick"
+      ],
+      "year": 2025,
+      "url": "https://arxiv.org/abs/2509.04217",
+      "read_status": "PRIMARY_FULL_PAGE_AND_CANONICAL_METADATA",
+      "operations": [
+        "S4",
+        "R3",
+        "M3"
+      ],
+      "locators": [
+        "Section 1.1, equations (1)–(2)",
+        "Section 4.3, Theorem 1",
+        "Section 4.4, Theorem 2"
+      ],
+      "supported_claim": "Residual-based a posteriori bounds are derived for boundary integral/convolution-quadrature discretizations of exterior acoustic Dirichlet scattering. Theorem 1 retains a temporal error term and a constant depending on geometry, final time and data regularity.",
+      "use_for_hdb": "Illustrates the distinction between a proved reliable residual estimator and a fully explicit end-to-end numerical enclosure.",
+      "transfer_limit": "Exterior Dirichlet scattering and boundary integral density are different from a finite collar, boundary mass and shell normal derivative. Its unspecified constant C and time remainder are not numerical HDB error bars."
+    },
+    {
+      "id": "L4",
+      "paper_id": "arxiv:2603.00594",
+      "title": "An adaptive integrating factor midpoint method for second order evolution equations",
+      "authors": [
+        "Xianfa Hu",
+        "Fazhan Geng",
+        "Wansheng Wang"
+      ],
+      "year": 2026,
+      "url": "https://arxiv.org/abs/2603.00594",
+      "read_status": "ABSTRACT_AND_CANONICAL_METADATA_ONLY",
+      "operations": [
+        "S1",
+        "M4"
+      ],
+      "locators": [
+        "Canonical metadata/abstract"
+      ],
+      "supported_claim": "The abstract reports residual energy estimates and a quadratic continuous time reconstruction for integrating-factor midpoint approximations of wave-type equations.",
+      "use_for_hdb": "Recent candidate for later method selection.",
+      "transfer_limit": "The body was not read. No claim about dynamic boundary applicability, rigorous floating-point implementation or derivative observations is made."
+    },
+    {
+      "id": "L5",
+      "paper_id": "arxiv:2607.18320",
+      "title": "Finite element exponential integration for rough solutions of nonlinear wave equations. Part II: Dynamic boundary conditions on curved domains",
+      "authors": [
+        "Jiachuan Cao",
+        "Benjamin Dörich",
+        "Buyang Li"
+      ],
+      "year": 2026,
+      "url": "https://arxiv.org/abs/2607.18320",
+      "read_status": "ABSTRACT_AND_CANONICAL_METADATA_ONLY",
+      "operations": [
+        "S2",
+        "M5"
+      ],
+      "locators": [
+        "Canonical metadata/abstract"
+      ],
+      "supported_claim": "The abstract reports fully discrete low-regularity convergence in a weak displacement-velocity norm for nonlinear wave equations with dynamic boundary conditions on curved domains.",
+      "use_for_hdb": "Recent structural neighbor for bulk-surface geometry and weak norms.",
+      "transfer_limit": "Convergence in weak norms is not an a posteriori interval enclosure or a bound on the normal derivative. The body was not read."
+    }
+  ],
+  "synthesis_claim": "The bounded search found useful structural and reconstruction methods, but no directly transferable fully explicit interval certificate for the present time-dependent boundary-mass equation and normal-derivative shell output. This is not a novelty or nonexistence claim."
+}

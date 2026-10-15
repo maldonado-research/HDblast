@@ -1,0 +1,90 @@
+name: Shell-response quantitative certificate replay
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_SHELL_RESPONSE_ERROR_CERTIFICATE_20261015/**'
+      - 'research/HDBLAST_SHELL_RESPONSE_ERROR_CERTIFICATE_20261015.zip'
+      - '.github/workflows/hdblast_shell_response_certificate.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_SHELL_RESPONSE_ERROR_CERTIFICATE_20261015/**'
+      - 'research/HDBLAST_SHELL_RESPONSE_ERROR_CERTIFICATE_20261015.zip'
+      - '.github/workflows/hdblast_shell_response_certificate.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: shell-response-error-certificate-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  fresh-independent-replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    env:
+      PROOF_DIRECTORY: research/HDBLAST_SHELL_RESPONSE_ERROR_CERTIFICATE_20261015
+      MANIFEST_SHA256: '5dd67ce3e53bc0ddaaf9b6a1f3b18830b49113f2ebaca423459c93ca5a09c183'
+      ARCHIVE_SHA256: 'b47217151ab8ed6a2fe20a029d4d595e41acd2ccf42ccbf18602c2fe479c24fe'
+      RUNNER_SHA256: '2a9f0468f38149332b4f2fca74775b48f381ada0f56a71acb6326de04ec74a73'
+      VERIFIER_SHA256: '969b78bbb00bb7902b1c48eb6fd38305dbb6a28edcca9eb3ae8a8ee9e8cc46b6'
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /${{ env.PROOF_DIRECTORY }}/
+            /${{ env.PROOF_DIRECTORY }}.zip
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Authenticate manifest, executable bytes and matching ZIP before imports
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -S -B - <<'PY'
+          import hashlib, os, pathlib, shutil, zipfile
+          root = pathlib.Path(os.environ['PROOF_DIRECTORY'])
+          for name, variable in [('MANIFEST.json', 'MANIFEST_SHA256'),
+                                 ('reproduce.py', 'RUNNER_SHA256'),
+                                 ('verify_manifest.py', 'VERIFIER_SHA256')]:
+              path = root / name
+              if any(p.is_symlink() for p in [path, *path.parents]):
+                  raise RuntimeError('Real source files required')
+              if hashlib.sha256(path.read_bytes()).hexdigest() != os.environ[variable]:
+                  raise RuntimeError('External pin differs: ' + name)
+          archive = root.with_suffix('.zip')
+          if archive.is_symlink() or hashlib.sha256(archive.read_bytes()).hexdigest() != os.environ['ARCHIVE_SHA256']:
+              raise RuntimeError('Archive pin differs')
+          expected = {p.relative_to(root.parent).as_posix(): p.read_bytes()
+                      for p in root.rglob('*') if p.is_file()}
+          with zipfile.ZipFile(archive) as zipped:
+              if len(zipped.namelist()) != len(expected) or set(zipped.namelist()) != set(expected):
+                  raise RuntimeError('Archive members differ')
+              if any(zipped.read(name) != raw for name, raw in expected.items()):
+                  raise RuntimeError('Archive and source differ')
+          shutil.copytree(root, pathlib.Path(os.environ['RUNNER_TEMP']) / 'HDBLAST_SHELL_RESPONSE_ERROR_CERTIFICATE_20261015')
+          PY
+          python -I -S -B "$RUNNER_TEMP/HDBLAST_SHELL_RESPONSE_ERROR_CERTIFICATE_20261015/verify_manifest.py" --expected "$MANIFEST_SHA256"
+      - name: Install pinned symbolic dependency
+        run: |
+          python -I -B -m pip install --only-binary=:all: -r "$RUNNER_TEMP/HDBLAST_SHELL_RESPONSE_ERROR_CERTIFICATE_20261015/requirements.txt"
+      # The frozen runner records its actual checker/control inventory.
+      # Finite identity checks do not certify an analytic response theorem.
+      - name: Replay exact checks and required controls in both Python modes
+        run: |
+          python -I -B "$RUNNER_TEMP/HDBLAST_SHELL_RESPONSE_ERROR_CERTIFICATE_20261015/reproduce.py" --manifest-sha256 "$MANIFEST_SHA256" --output-dir "$RUNNER_TEMP/shell-response-error-certificate-fresh"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shell-response-error-certificate-contact-${{ github.sha }}
+          path: ${{ runner.temp }}/shell-response-error-certificate-fresh
+          retention-days: 14

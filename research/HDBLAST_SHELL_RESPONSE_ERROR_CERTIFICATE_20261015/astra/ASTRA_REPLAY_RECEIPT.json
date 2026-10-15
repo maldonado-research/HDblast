@@ -1,0 +1,109 @@
+{
+  "status": "PASS",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "sympy": "1.14.0",
+  "symbolic_identities_per_positive_run": 17,
+  "mutation_controls_per_mode": 3,
+  "runs": [
+    {
+      "optimized": false,
+      "mutation": null,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"checks\": 17,\n  \"names\": [\n    \"boundary flux and inertia cancellation\",\n    \"shrinking right boundary flux\",\n    \"incoming shell ODE sign\",\n    \"incoming characteristic derivative\",\n    \"incoming characteristic source\",\n    \"bulk energy cross normalization\",\n    \"shell energy cross normalization\",\n    \"shell observation Cauchy Schwarz remainder\",\n    \"coefficient-aware bulk error source\",\n    \"coefficient-aware boundary error source\",\n    \"physical weighted norm cancellation\",\n    \"physical coefficient normalization\",\n    \"Dirichlet comparator cross term\",\n    \"dimensionless bump derivative\",\n    \"bump derivative envelope monotonicity\",\n    \"short pulse explicit bound polynomial\",\n    \"short pulse K coefficient sum\"\n  ],\n  \"status\": \"pass\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "optimized": false,
+      "mutation": "boundary-source",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout": "",
+      "stderr": "CHECK_FAILED: boundary flux and inertia cancellation: nonzero discrepancy 2*G*v\n"
+    },
+    {
+      "optimized": false,
+      "mutation": "moving-flux",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout": "",
+      "stderr": "CHECK_FAILED: shrinking right boundary flux: nonzero discrepancy -lam*u**2 - r**2 + 2*r*v - v**2\n"
+    },
+    {
+      "optimized": false,
+      "mutation": "physical-prefactor",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout": "",
+      "stderr": "CHECK_FAILED: physical coefficient normalization: nonzero discrepancy -6*pi**2*D**2/(p**2*rho**2)\n"
+    },
+    {
+      "kind": "root_certificate",
+      "optimized": false,
+      "exit_code": 0,
+      "groups": 25,
+      "certificate_sha256": "956cd2cddd71b226173b51fdc57a9d46f61703bb0e1b58844db216388c1b469e"
+    },
+    {
+      "optimized": true,
+      "mutation": null,
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"checks\": 17,\n  \"names\": [\n    \"boundary flux and inertia cancellation\",\n    \"shrinking right boundary flux\",\n    \"incoming shell ODE sign\",\n    \"incoming characteristic derivative\",\n    \"incoming characteristic source\",\n    \"bulk energy cross normalization\",\n    \"shell energy cross normalization\",\n    \"shell observation Cauchy Schwarz remainder\",\n    \"coefficient-aware bulk error source\",\n    \"coefficient-aware boundary error source\",\n    \"physical weighted norm cancellation\",\n    \"physical coefficient normalization\",\n    \"Dirichlet comparator cross term\",\n    \"dimensionless bump derivative\",\n    \"bump derivative envelope monotonicity\",\n    \"short pulse explicit bound polynomial\",\n    \"short pulse K coefficient sum\"\n  ],\n  \"status\": \"pass\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "optimized": true,
+      "mutation": "boundary-source",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout": "",
+      "stderr": "CHECK_FAILED: boundary flux and inertia cancellation: nonzero discrepancy 2*G*v\n"
+    },
+    {
+      "optimized": true,
+      "mutation": "moving-flux",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout": "",
+      "stderr": "CHECK_FAILED: shrinking right boundary flux: nonzero discrepancy -lam*u**2 - r**2 + 2*r*v - v**2\n"
+    },
+    {
+      "optimized": true,
+      "mutation": "physical-prefactor",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout": "",
+      "stderr": "CHECK_FAILED: physical coefficient normalization: nonzero discrepancy -6*pi**2*D**2/(p**2*rho**2)\n"
+    },
+    {
+      "kind": "root_certificate",
+      "optimized": true,
+      "exit_code": 0,
+      "groups": 25,
+      "certificate_sha256": "956cd2cddd71b226173b51fdc57a9d46f61703bb0e1b58844db216388c1b469e"
+    },
+    {
+      "kind": "background_collar",
+      "optimized": false,
+      "exit_code": 0,
+      "status": "PASS_EXACT_FIRST_EXIT_TUBE_AND_COEFFICIENT_BOUNDS"
+    },
+    {
+      "kind": "background_collar",
+      "optimized": true,
+      "exit_code": 0,
+      "status": "PASS_EXACT_FIRST_EXIT_TUBE_AND_COEFFICIENT_BOUNDS"
+    }
+  ],
+  "source_hashes": {
+    "astra/RESIDUAL_TO_PHYSICAL_RESPONSE.md": "6fd15b36168287b9283a1ad292ff71f2a77a190fa11a09324fd7fe6feeb2eb7b",
+    "astra/check_residual_response.py": "d2eef3e0682a93db7676151d8f914d84b579f47c71ed26b18e8362f78c32ddf3",
+    "SHELL_RESPONSE_ERROR_CERTIFICATE.md": "5f01be536c77123e9f667f4cd5514b52067641b2b389ba4e6eb655cb24654022",
+    "certify_response.py": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386",
+    "check_response_certificate.py": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36",
+    "archive/derive_shell_box.py": "3a4d2a71847114b8dce9f910679a1f4ce14898212001b0355279ec633ebed110",
+    "archive/ACTUAL_BACKGROUND_AND_RIGOROUS_COLLAR_BOUNDS.md": "0832a16c4bdf18cc188861a2c2860e7e6ff736dec39426d6ca7c589dc0434d5c",
+    "archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+  }
+}
