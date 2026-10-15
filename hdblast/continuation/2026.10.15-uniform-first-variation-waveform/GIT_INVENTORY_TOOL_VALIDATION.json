@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "scope": "Synthetic Git inventory gate checks only; no scientific replay or publication.",
+  "helper_sha256": "38d6916eaa478575a85fd6e712a66d5691d58a624c47140d0671b70f9e9d0a44",
+  "fixture_manifest_sha256": "d6bf684b40a477516857f86c3af5e93a53032483e560bf8438a306aac223768d",
+  "checks": [
+    {
+      "control": "ignored_source_missing_from_index",
+      "status": "PASS",
+      "expected_reason": "Git/manifest inventory differs"
+    },
+    {
+      "control": "changed_staged_source",
+      "status": "PASS",
+      "expected_reason": "Frozen Git bytes differ"
+    },
+    {
+      "control": "extra_staged_source",
+      "status": "PASS",
+      "expected_reason": "Git/manifest inventory differs"
+    },
+    {
+      "control": "changed_staged_archive",
+      "status": "PASS",
+      "expected_reason": "Git archive differs from the external pin"
+    },
+    {
+      "control": "wrong_manifest_pin",
+      "status": "PASS",
+      "expected_reason": "Git manifest differs from the external pin"
+    },
+    {
+      "check": "complete_staged_index",
+      "status": "PASS",
+      "source_files": 2
+    },
+    {
+      "check": "immutable_commit",
+      "status": "PASS",
+      "commit": "7a244f1f891c54434015f509b468062e132749bf"
+    },
+    {
+      "check": "commit_uses_git_objects_not_worktree",
+      "status": "PASS"
+    }
+  ],
+  "controls_rejected": 5,
+  "positive_checks": 3
+}

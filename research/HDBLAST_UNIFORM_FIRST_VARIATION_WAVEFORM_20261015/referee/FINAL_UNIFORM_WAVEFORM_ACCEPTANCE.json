@@ -1,0 +1,164 @@
+{
+  "status": "ACCEPT_CONDITIONAL_UNIFORM_FIRST_VARIATION_WAVEFORM",
+  "date_utc": "2026-10-15",
+  "substantive_blockers": [],
+  "review_type": "Internal independent AI-assisted analytic, exact-arithmetic, complete-export and visual review; not external peer review or formal PDE certification",
+  "approved_results": {
+    "ell_exact": "1/10000000000",
+    "coordinate_time_exact": "3/10000000000",
+    "scaled_uniform_trace_error_strict_upper": "2500001/25000000000000",
+    "scaled_tail_strict_upper": "297/6250000000000000",
+    "response_coefficient_strict_interval": [
+      "6060000000000000",
+      "7440000000000000"
+    ],
+    "actual_H_global_maximizer_window": [
+      "1.3033",
+      "1.3034"
+    ],
+    "actual_H_global_minimizer_window": [
+      "1.6966",
+      "1.6967"
+    ],
+    "unique_actual_extrema_or_zeros": false,
+    "absolute_maximum_lobe_identified": false
+  },
+  "independent_checks": {
+    "primary_groups_each_mode": 44,
+    "independent_characteristic_groups_each_mode": 20,
+    "independent_csv_norm_groups_each_mode": 23,
+    "all_4098_csv_cells_reconstructed": true,
+    "peak_builtin_controls_rejected_each_mode": 4,
+    "normal_optimized_results_identical": true
+  },
+  "required_scope": [
+    "Same specified actual branch and narrow aligned state as preceding checkpoint",
+    "Retained localized inverse, gauge/reconstruction, exact-family regularity/evolution and strict full-correction causal hypotheses",
+    "Pointwise bound from characteristics and positive boundary kernel, never inferred from L2 alone",
+    "Physical gain is negative and model-coordinate time has no inferred observational calibration",
+    "No finite-epsilon nonlinear waveform or effective nonlinear Taylor remainder",
+    "Peak windows concern actual normalized H; comparator precision, uniqueness and absolute-lobe dominance do not transfer"
+  ],
+  "pinned_reviewed_files": {
+    "UNIFORM_FIRST_VARIATION_WAVEFORM.md": {
+      "bytes": 11680,
+      "sha256": "6eada42c742aec6141925c244df21dc263e3555ae2a064e1e5d3fb7dcc9a82ad"
+    },
+    "waveform_intervals.py": {
+      "bytes": 4959,
+      "sha256": "f17f3a54d7aa34a0012b52eaccefb7e1e7c319c32ef51ed1286e0c53954f5593"
+    },
+    "compute_waveform.py": {
+      "bytes": 6307,
+      "sha256": "0eaa55feaf321c6ad57ef3334c9b351a18daba25f4ec1b737d7aaa19b61fa1b4"
+    },
+    "check_waveform.py": {
+      "bytes": 5373,
+      "sha256": "78d0789a84da840d5a7352d96df5c4c6c61787eca060bd33ea707ad8b531138e"
+    },
+    "computed/WAVEFORM_ENCLOSURE.json": {
+      "bytes": 4186,
+      "sha256": "2e9273951db60f0400d00dae036074bf886dad481e9d27cf807aff47e2645163"
+    },
+    "computed/WAVEFORM_CELLS.csv": {
+      "bytes": 760179,
+      "sha256": "bb4f4d659c920afd259c0538182623d3b40aae0f93b5f36a65d5d9405ea6e987"
+    },
+    "astra/UNIFORM_POINTWISE_WAVEFORM.md": {
+      "bytes": 11767,
+      "sha256": "878a7736e85658f981a49a67ea21359196323971fda190cdbd36746b7b8dedb4"
+    },
+    "sol/UNIFORM_WAVEFORM_CERTIFICATE.md": {
+      "bytes": 13268,
+      "sha256": "a9b0354c2ecb8a68d04e9441259de7873c3c93fb7cb4369257478b31bfffcd56"
+    },
+    "astra/peak_analysis/verify_peaks.py": {
+      "bytes": 8904,
+      "sha256": "279cac366aa86156cd4f05ade33a8668458204cd082d42a7c0d0d35f70870c3a"
+    },
+    "astra/peak_analysis/peak_analysis.txt": {
+      "bytes": 8378,
+      "sha256": "ee9db06ddc2220ee6511421927943bd8a2442ddd4e94ae88820660a31cd2aa80"
+    },
+    "astra/peak_analysis/certificate.json": {
+      "bytes": 2531,
+      "sha256": "775a469d8fac49810199b01530f64de9aa29ad989749d9f6ab6e2cd1260d1e0f"
+    },
+    "archive/PHYSICAL_GAIN_ENCLOSURE.json": {
+      "bytes": 26539,
+      "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+    },
+    "archive/inputs/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json": {
+      "bytes": 19535,
+      "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+    },
+    "referee/INDEPENDENT_UNIFORM_TRACE_BOUND.md": {
+      "bytes": 7846,
+      "sha256": "afa31c71644ee75b25f2a8cecc36e61d26291fbb7680b23874e43c971c2702e6"
+    },
+    "referee/independent_uniform_trace_audit.py": {
+      "bytes": 5746,
+      "sha256": "9aea879dd087660cae4e2d47fe703f49676d05ab7452be623e1637df0d1e63f0"
+    },
+    "referee/INDEPENDENT_UNIFORM_TRACE_AUDIT_NORMAL.json": {
+      "bytes": 2834,
+      "sha256": "f711c0cf5fe45885963d2189b9820049ad8ed0aa5bb969b852c9d178d0d1cf86"
+    },
+    "referee/independent_csv_audit.py": {
+      "bytes": 6307,
+      "sha256": "91268f2a6fe3e725631739960be9e97901c5ac5cf711a80798a53396ea575cba"
+    },
+    "referee/INDEPENDENT_CSV_AND_NORM_AUDIT.json": {
+      "bytes": 1752,
+      "sha256": "d1c2d8548e284d3a638d3fb75738ba67b0f268dd0e5366101c711c9176b9db89"
+    },
+    "archive/PHYSICAL_GAIN_AUDIT.md": {
+      "bytes": 5983,
+      "sha256": "5dcc21b737986798a6038956ee3acf908037df69f2894b3e907ea7a6f3dbb2bd"
+    },
+    "archive/enclose_physical_gain.py": {
+      "bytes": 10729,
+      "sha256": "1f032e0c7c248fdd1c0bf85ba6c9f0a7a9101ed4a703a84865e199fc43ec0053"
+    },
+    "plot_waveform.py": {
+      "bytes": 3182,
+      "sha256": "391a08ffc36e8019215fa54e62a51fc8d3fecbf64e55926f1e36bae4b700685c"
+    },
+    "figures/SHELL_FIRST_VARIATION_WAVEFORM.png": {
+      "bytes": 178856,
+      "sha256": "68bf34d840fdb8c8696bc79248517f198b483ac5febb0ea9400731a41f85ea7d"
+    },
+    "referee/PRIMARY_WAVEFORM_REVIEW_REPLAY.json": {
+      "bytes": 1032,
+      "sha256": "1fb2797151b5700e859fa4f1110a51e2fca8819d5ed913e97a8c781e3ca1cc68"
+    },
+    "referee/PEAK_REVIEW_REPLAY.json": {
+      "bytes": 1537,
+      "sha256": "0cc9f1cdafb9edaaf68a0692116689ba21cb58047654a92b04c0bdc67aacb87d"
+    },
+    "referee/FINAL_UNIFORM_WAVEFORM_ACCEPTANCE.md": {
+      "bytes": 6664,
+      "sha256": "565e63bddb7574f2e069f4c43d9074cd94fb60f74f307b014dd860993f7d2084"
+    },
+    "sol/check_uniform_waveform.py": {
+      "bytes": 8401,
+      "sha256": "4e43fbc87fc68d8a95b8b24f3d0e23b0e1c90619bb623011fdb9d6281c797d03"
+    },
+    "sol/FINAL_WAVEFORM_REVIEW.json": {
+      "bytes": 11557,
+      "sha256": "ad191bf313ff642fb3275eb32bb68b179a0003f1e28928ce2ace45e3a9313250"
+    },
+    "referee/SOL_PORTABILITY_AND_INJECTION_REVIEW.json": {
+      "bytes": 2789,
+      "sha256": "65c0d70a6fc16d838248f7fffef1c1352d4e954451f350882e0ec51d01756e60"
+    }
+  },
+  "additional_portability_review": {
+    "status": "PASS",
+    "scientific_constants_changed": false,
+    "sol_positive_groups_each_mode": 34,
+    "sol_external_failure_injections_rejected_each_mode": 5,
+    "passing_outputs_absent_after_failures": true,
+    "proof_inputs_resolve_inside_independent_copied_capsule": true
+  }
+}

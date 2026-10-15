@@ -1,0 +1,299 @@
+{
+  "failure_injections": [
+    {
+      "failure_label": "first majorant equation",
+      "injection": "drop-determinant-coupling",
+      "optimized": false,
+      "status": "REJECTED"
+    },
+    {
+      "failure_label": "first majorant equation",
+      "injection": "drop-determinant-coupling",
+      "optimized": true,
+      "status": "REJECTED"
+    },
+    {
+      "failure_label": "boundary jet correct sign identity",
+      "injection": "flip-boundary-damping",
+      "optimized": false,
+      "status": "REJECTED"
+    },
+    {
+      "failure_label": "boundary jet correct sign identity",
+      "injection": "flip-boundary-damping",
+      "optimized": true,
+      "status": "REJECTED"
+    },
+    {
+      "failure_label": "wrong gamma equals full C rejected",
+      "injection": "use-full-C",
+      "optimized": false,
+      "status": "REJECTED"
+    },
+    {
+      "failure_label": "wrong gamma equals full C rejected",
+      "injection": "use-full-C",
+      "optimized": true,
+      "status": "REJECTED"
+    },
+    {
+      "failure_label": "dropped velocity input rejected at peak",
+      "injection": "omit-velocity-input",
+      "optimized": false,
+      "status": "REJECTED"
+    },
+    {
+      "failure_label": "dropped velocity input rejected at peak",
+      "injection": "omit-velocity-input",
+      "optimized": true,
+      "status": "REJECTED"
+    },
+    {
+      "failure_label": "deleted boundary memory rejected",
+      "injection": "delete-boundary-memory",
+      "optimized": false,
+      "status": "REJECTED"
+    },
+    {
+      "failure_label": "deleted boundary memory rejected",
+      "injection": "delete-boundary-memory",
+      "optimized": true,
+      "status": "REJECTED"
+    }
+  ],
+  "full_4096_cell_generations": [
+    {
+      "optimized": false,
+      "outputs": {
+        "WAVEFORM_CELLS.csv": "bb4f4d659c920afd259c0538182623d3b40aae0f93b5f36a65d5d9405ea6e987",
+        "WAVEFORM_ENCLOSURE.json": "2e9273951db60f0400d00dae036074bf886dad481e9d27cf807aff47e2645163"
+      },
+      "status": "PASS_BYTE_IDENTICAL"
+    },
+    {
+      "optimized": true,
+      "outputs": {
+        "WAVEFORM_CELLS.csv": "bb4f4d659c920afd259c0538182623d3b40aae0f93b5f36a65d5d9405ea6e987",
+        "WAVEFORM_ENCLOSURE.json": "2e9273951db60f0400d00dae036074bf886dad481e9d27cf807aff47e2645163"
+      },
+      "status": "PASS_BYTE_IDENTICAL"
+    }
+  ],
+  "peak_exclusion_rechecked_using_sol_published_error": true,
+  "pins": {
+    "UNIFORM_FIRST_VARIATION_WAVEFORM.md": "6eada42c742aec6141925c244df21dc263e3555ae2a064e1e5d3fb7dcc9a82ad",
+    "archive/PHYSICAL_GAIN_ENCLOSURE.json": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4",
+    "astra/peak_analysis/certificate.json": "775a469d8fac49810199b01530f64de9aa29ad989749d9f6ab6e2cd1260d1e0f",
+    "astra/peak_analysis/verify_peaks.py": "279cac366aa86156cd4f05ade33a8668458204cd082d42a7c0d0d35f70870c3a",
+    "check_waveform.py": "78d0789a84da840d5a7352d96df5c4c6c61787eca060bd33ea707ad8b531138e",
+    "compute_waveform.py": "0eaa55feaf321c6ad57ef3334c9b351a18daba25f4ec1b737d7aaa19b61fa1b4",
+    "computed/WAVEFORM_CELLS.csv": "bb4f4d659c920afd259c0538182623d3b40aae0f93b5f36a65d5d9405ea6e987",
+    "computed/WAVEFORM_ENCLOSURE.json": "2e9273951db60f0400d00dae036074bf886dad481e9d27cf807aff47e2645163",
+    "referee/independent_csv_audit.py": "91268f2a6fe3e725631739960be9e97901c5ac5cf711a80798a53396ea575cba",
+    "sol/UNIFORM_WAVEFORM_CERTIFICATE.md": "a9b0354c2ecb8a68d04e9441259de7873c3c93fb7cb4369257478b31bfffcd56",
+    "sol/UNIFORM_WAVEFORM_CHECKS.json": "35c842586a8cdc83d2b9c296340d2f0fe0cb8385a2d0cfa8c49a9633563ec309",
+    "sol/UNIFORM_WAVEFORM_CHECKS_OPTIMIZED.json": "014dbd8f23a8ea1eecd0fdf3981f90a0b74609274c5810e6a9a0aae81bf56213",
+    "sol/check_uniform_waveform.py": "4e43fbc87fc68d8a95b8b24f3d0e23b0e1c90619bb623011fdb9d6281c797d03",
+    "waveform_intervals.py": "f17f3a54d7aa34a0012b52eaccefb7e1e7c319c32ef51ed1286e0c53954f5593"
+  },
+  "replays": [
+    {
+      "normal_and_optimized": "PASS_IDENTICAL",
+      "result": {
+        "checks": [
+          "negative_ceiling",
+          "rational_outward_-1/3",
+          "rational_outward_0",
+          "rational_outward_1/7",
+          "rational_outward_9/5",
+          "signed_interval_product",
+          "square_through_zero",
+          "exp_bracket_0",
+          "exp_bracket_1/8",
+          "exp_bracket_1",
+          "exp_bracket_4",
+          "exp_bracket_16",
+          "exp_bracket_64",
+          "exp_bracket_128",
+          "exp_bracket_256",
+          "exp_zero_exact",
+          "exp_tail_nonzero_upper",
+          "bump_peak_value",
+          "bump_symmetry",
+          "rising_derivative_positive",
+          "falling_derivative_negative",
+          "flat_support_endpoints",
+          "nonzero_early_interior",
+          "flat_edge_envelope",
+          "continuous_cell_subpoints_0",
+          "continuous_cell_subpoints_1",
+          "continuous_cell_subpoints_2",
+          "continuous_cell_subpoints_3",
+          "continuous_cell_subpoints_4",
+          "majorant_coupled_rows",
+          "uniform_output_sources",
+          "tail_output_sources",
+          "published_global_error",
+          "published_tail_error",
+          "support_aware_norm_error",
+          "invalid_cell_(-1, 1)",
+          "invalid_cell_(1, 4)",
+          "invalid_cell_(2, 1)",
+          "small_generator_status",
+          "physical_gain_negative",
+          "coefficient_scaling",
+          "continuous_cell_count",
+          "cell_export_hash",
+          "physical_sign_witnesses"
+        ],
+        "finite_check_groups": 44,
+        "scope": "Finite interval/arithmetic and continuous-export checks; not formal proof of the retained analytic PDE or exact-family hypotheses.",
+        "status": "PASS"
+      },
+      "script": "check_waveform.py"
+    },
+    {
+      "normal_and_optimized": "PASS_IDENTICAL",
+      "result": {
+        "checks": {
+          "all_interval_orders": true,
+          "all_physical_cells_exactly_reconstructed": true,
+          "coefficient_jacobian_and_prefactor": true,
+          "csv_bytes_match_receipt": true,
+          "csv_columns": true,
+          "csv_hash_matches_receipt": true,
+          "csv_rows_match_receipt": true,
+          "declared_value_denominator": true,
+          "exact_prefront_zero": true,
+          "full_closed_domain_coverage": true,
+          "gain_input_pin": true,
+          "negative_physical_gain": true,
+          "nonempty_ordered_cells": true,
+          "one_support_cell_per_grid_step": true,
+          "planned_outward_interval": true,
+          "quadrature_reconstructed_from_all_continuous_cells": true,
+          "reported_integral_outward_vs_128bit_recheck": true,
+          "source_pin_compute_waveform.py": true,
+          "source_pin_waveform_intervals.py": true,
+          "support_aware_norm_error_gate": true,
+          "support_cells_match_grid": true,
+          "tail_is_bounded_not_discarded": true,
+          "uniform_support_envelope": true
+        },
+        "finite_check_groups": 23,
+        "input_pins": {
+          "compute_waveform.py": "0eaa55feaf321c6ad57ef3334c9b351a18daba25f4ec1b737d7aaa19b61fa1b4",
+          "computed/WAVEFORM_CELLS.csv": "bb4f4d659c920afd259c0538182623d3b40aae0f93b5f36a65d5d9405ea6e987",
+          "computed/WAVEFORM_ENCLOSURE.json": "2e9273951db60f0400d00dae036074bf886dad481e9d27cf807aff47e2645163",
+          "waveform_intervals.py": "f17f3a54d7aa34a0012b52eaccefb7e1e7c319c32ef51ed1286e0c53954f5593"
+        },
+        "scope": "Independent exact-rational reconstruction of all 4098 exported cell envelopes, physical gain multiplication and response-norm arithmetic. Continuous comparator range validity is separately assessed by source-code and analytic review; this is not formal PDE certification.",
+        "status": "PASS_INDEPENDENT_CSV_AND_NORM_AUDIT"
+      },
+      "script": "referee/independent_csv_audit.py"
+    },
+    {
+      "normal_and_optimized": "PASS_IDENTICAL",
+      "result": {
+        "actual_waveform_corollary": {
+          "absolute_maximum_lobe_identified": false,
+          "absolute_maximum_location": "union of the preceding intervals",
+          "actual_zero_uniqueness_certified": false,
+          "assumption": "continuous H with global |H-Hhat| <= ACTUAL_ERROR",
+          "critical_point_uniqueness_certified": false,
+          "negative_minimum_location": [
+            "1.6966",
+            "1.6967"
+          ],
+          "positive_maximum_location": [
+            "1.3033",
+            "1.3034"
+          ]
+        },
+        "arithmetic": "exact rational intervals",
+        "enclosures": {
+          "Actual waveform maximum height, conditional": [
+            "4.235640322182880388580255",
+            "4.235640522183080388580257"
+          ],
+          "Actual waveform minimum height, conditional": [
+            "-4.235640522086896048554158",
+            "-4.235640322086696048554156"
+          ],
+          "Hhat negative peak height": [
+            "-4.235640422086796048554158",
+            "-4.235640422086796048554156"
+          ],
+          "Hhat negative peak location": [
+            "1.696659946596453490735228079422",
+            "1.696659946596453490735228079423"
+          ],
+          "Hhat positive peak height": [
+            "4.235640422182980388580255",
+            "4.235640422182980388580257"
+          ],
+          "Hhat positive peak location": [
+            "1.303340053406124851570706028048",
+            "1.303340053406124851570706028049"
+          ],
+          "Hhat(5/4)": [
+            "3.748937075450029332710093",
+            "3.748937075450029332710095"
+          ],
+          "Hhat(7/4)": [
+            "-3.748937075397309905094858",
+            "-3.748937075397309905094855"
+          ],
+          "M = max |Qprime|": [
+            "4.235640422134888218565987509535",
+            "4.235640422134888218565987509536"
+          ],
+          "M-Qprime(1.3033)": [
+            "0.000000263559678293613961962519",
+            "0.000000263559678293613961962520"
+          ],
+          "M-Qprime(1.3034)": [
+            "0.000000590303334992119176697884",
+            "0.000000590303334992119176697885"
+          ],
+          "Qprime negative peak location": [
+            "1.696659946595164319582274834315",
+            "1.696659946595164319582274834316"
+          ],
+          "Qprime positive peak location": [
+            "1.303340053404835680417725165684",
+            "1.303340053404835680417725165685"
+          ],
+          "Unique interior zero": [
+            "1.5",
+            "1.500000000003125"
+          ]
+        },
+        "negative_controls": [
+          {
+            "name": "missing factor 16 in Qprime",
+            "rejected": true
+          },
+          {
+            "name": "reversed Qprime sign",
+            "rejected": true
+          },
+          {
+            "name": "reversed Hhat correction sign",
+            "rejected": true
+          },
+          {
+            "name": "inflated actual waveform error",
+            "rejected": true
+          }
+        ],
+        "status": "PASS"
+      },
+      "script": "astra/peak_analysis/verify_peaks.py"
+    }
+  ],
+  "review_script_sha256": "596650a7774a11cfc2c139862999f93fb4e18e28a8215fedc9a5c1a316818c8c",
+  "root_error_constants_match_independent_sol": true,
+  "scope": "Hash-specific analytic source review and exact-arithmetic replay. Conditional on retained background, reconstruction, exact-family and evolution hypotheses. Internal AI review, not external peer review or formal PDE certification.",
+  "status": "PASS_HASH_SPECIFIC_SOL_FINAL_REVIEW"
+}

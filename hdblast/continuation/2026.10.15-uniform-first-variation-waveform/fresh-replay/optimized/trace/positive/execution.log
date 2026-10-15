@@ -1,0 +1,53 @@
+{
+  "status": "PASS_INDEPENDENT_UNIFORM_CHARACTERISTIC_TRACE_BOUND",
+  "background_sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8",
+  "finite_check_groups": 20,
+  "checks": {
+    "all_retained_collar_gates": true,
+    "positive_inverse_inertia_bound": true,
+    "actual_potential_bound": true,
+    "actual_boundary_potential_bound": true,
+    "actual_physical_trace_shift": true,
+    "strict_causal_domain": true,
+    "strict_absorption_gate": true,
+    "displacement_less_than_15e_minus6": true,
+    "boundary_velocity_less_than_49000": true,
+    "incoming_characteristic_less_than_1e_minus3": true,
+    "scaled_uniform_trace_error_less_than_5e_minus6": true,
+    "positive_computed_error": true,
+    "sharp_bulk_absorption_gate": true,
+    "sharp_boundary_absorption_gate": true,
+    "sharp_positive_inverse_gate": true,
+    "sharp_master_formula_identity": true,
+    "sharp_linear_inequality_one": true,
+    "sharp_linear_inequality_two": true,
+    "sharp_scaled_error_strict_bound": true,
+    "sharp_bound_improves_generic_bound": true
+  },
+  "exact_inputs": {
+    "ell": "1/10000000000",
+    "time": "3/10000000000",
+    "initial_depth": "1/1250000000",
+    "inverse_mu_upper": "1000",
+    "potential_abs_upper": "1000000",
+    "boundary_beta_abs_upper": "1000",
+    "physical_gamma_abs_upper": "250",
+    "bulk_source_abs_upper": "10000000003/10000",
+    "boundary_source_abs_upper": "160000000001"
+  },
+  "exact_outputs": {
+    "absorption_theta": "135000027/1000000000000000000000",
+    "bulk_displacement_upper": "144000000450900270135000081/9999999999998649999730000000000",
+    "boundary_velocity_upper": "960000000005958600000270270000081/19999999999997299999460000000",
+    "incoming_characteristic_upper": "3000043200899730269999919/9999999999998649999730000000",
+    "scaled_uniform_trace_error_upper": "1920000156012090454499731754999919/399999999999945999989200000000000000000",
+    "generic_strict_uniform_error_upper": "1/200000",
+    "sharp_determinant": "39999999999996399999460000081/40000000000000000000000000000",
+    "sharp_displacement_upper": "120000018036005405399191619999757/399999999999963999994600000810000000000",
+    "sharp_boundary_velocity_upper": "40000000012000000000000000000000/39999999999996399999460000081",
+    "sharp_master_upper": "40000012011998203599999460000/39999999999996399999460000081",
+    "sharp_scaled_uniform_trace_error_upper": "20000007506001802249730539999919/199999999999981999997300000405000000000",
+    "sharp_strict_uniform_error_upper": "2500001/25000000000000"
+  },
+  "scope": "Exact-rational consequences of an independent pointwise characteristic proof and the pinned conditional actual-background enclosure. No L2-to-pointwise inference, numerical waveform solver, finite-epsilon nonlinear response bound, or formal PDE certification."
+}

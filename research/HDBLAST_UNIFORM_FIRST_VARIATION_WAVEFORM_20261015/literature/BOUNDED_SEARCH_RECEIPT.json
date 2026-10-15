@@ -1,0 +1,160 @@
+{
+  "schema": "hdblast.validated-waveform.bounded-literature-search.v1",
+  "status": "COMPLETED",
+  "date_utc": "2026-10-15",
+  "scope": "Dynamic boundary inertia and trace estimates; one-dimensional damped Wentzell input-to-state estimates; rigorous quadrature with endpoint regularity care.",
+  "scope_limits": [
+    "Two paper-index searches and three targeted primary passage reads; not a whole-web review or novelty assessment.",
+    "The 2026 neural-norm candidate is known only from returned index metadata/abstract; its body was not read.",
+    "No external paper theorem is represented as a certificate for the present HDB waveform."
+  ],
+  "counts": {
+    "paper_index_searches": 2,
+    "web_searches": 0,
+    "primary_passage_reads": 3,
+    "additional_searches_or_reads_by_this_synthesis_agent": 0,
+    "total_external_operations": 5
+  },
+  "response_file_pin": {
+    "internal_path": "internal/RETRIEVED_RESPONSES.json",
+    "bytes": 93557,
+    "sha256": "0c2f9d97bbeb5e16074030db687845e2e55acae89a1965c43ba5e7553e80f29f",
+    "distributed": false,
+    "note": "Pin authenticates the saved result-body bytes. Invocation argument provenance is separately stated for every operation."
+  },
+  "operations": [
+    {
+      "id": "S1",
+      "type": "paper_index_search",
+      "tool": "firecrawl_research_search_papers",
+      "arguments": {
+        "query": "Wave equation with boundary mass dynamic Wentzell boundary high frequency asymptotics reflection time domain boundary oscillator pointwise estimates",
+        "k": 5
+      },
+      "argument_provenance": "Exact invocation arguments supplied directly by the root agent after the result file was saved; they are not embedded in the saved result objects.",
+      "result_provenance": "Zero-based queries[0] in the SHA-256-pinned internal response file.",
+      "result_status": "fulfilled",
+      "is_error": false,
+      "result_count": 5,
+      "results": [
+        {
+          "id": "arxiv:2512.19167",
+          "title": "Optimal stabilization rate for the wave equation with hyperbolic boundary condition",
+          "url": "https://arxiv.org/abs/2512.19167"
+        },
+        {
+          "id": "web:http://arxiv.org/list/math/2024-07?skip=1145&show=2000",
+          "title": "Mathematics Jul 2024 - arXiv",
+          "url": "http://arxiv.org/list/math/2024-07?skip=1145&show=2000"
+        },
+        {
+          "id": "arxiv:2503.22439",
+          "title": "One dimensional wave equation with in-domain localized damping and Wentzell boundary conditions",
+          "url": "https://arxiv.org/abs/2503.22439"
+        },
+        {
+          "id": "arxiv:2404.05855",
+          "title": "The nonlinear wave equation with nonlinear Wentzell boundary conditions on time-dependent compact Riemannian manifolds",
+          "url": "https://arxiv.org/abs/2404.05855"
+        },
+        {
+          "id": "arxiv:1812.09781",
+          "title": "Global existence of weak solutions for strongly damped wave equations with nonlinear boundary conditions and balanced potentials",
+          "url": "https://arxiv.org/abs/1812.09781"
+        }
+      ]
+    },
+    {
+      "id": "S2",
+      "type": "paper_index_search",
+      "tool": "firecrawl_research_search_papers",
+      "arguments": {
+        "query": "Validated rigorous numerical integration smooth flat bump exp(-1/x) interval arithmetic quadrature error bounds",
+        "k": 5
+      },
+      "argument_provenance": "Exact invocation arguments supplied directly by the root agent after the result file was saved; they are not embedded in the saved result objects.",
+      "result_provenance": "Zero-based queries[1] in the SHA-256-pinned internal response file.",
+      "result_status": "fulfilled",
+      "is_error": false,
+      "result_count": 5,
+      "results": [
+        {
+          "id": "arxiv:1802.07942",
+          "title": "Numerical integration in arbitrary-precision ball arithmetic",
+          "url": "https://arxiv.org/abs/1802.07942"
+        },
+        {
+          "id": "arxiv:1802.03948",
+          "title": "Fast and rigorous arbitrary-precision computation of Gauss-Legendre quadrature nodes and weights",
+          "url": "https://arxiv.org/abs/1802.03948"
+        },
+        {
+          "id": "arxiv:2401.07196",
+          "title": "How sharp are error bounds? --lower bounds on quadrature worst-case errors for analytic functions",
+          "url": "https://arxiv.org/abs/2401.07196"
+        },
+        {
+          "id": "arxiv:2603.06431",
+          "title": "Certified and accurate computation of function space norms of deep neural networks",
+          "url": "https://arxiv.org/abs/2603.06431"
+        },
+        {
+          "id": "arxiv:2208.12377",
+          "title": "Rigorous numerical integration of algebraic functions",
+          "url": "https://arxiv.org/abs/2208.12377"
+        }
+      ]
+    },
+    {
+      "id": "R1",
+      "type": "primary_passage_read",
+      "tool": "firecrawl_research_read_paper",
+      "arguments": {
+        "paperId": "arxiv:2512.19167",
+        "question": "What precise wave equation and hyperbolic boundary condition, geometry and damping hypotheses underlie the high-frequency results? Do they give a short-time pointwise pulse response certificate?",
+        "k": 3
+      },
+      "argument_provenance": "Exact invocation arguments supplied directly by the root agent after the result file was saved; they are not embedded in the saved result objects.",
+      "result_provenance": "Zero-based reads[0] in the SHA-256-pinned internal response file.",
+      "result_status": "fulfilled",
+      "is_error": false,
+      "passage_count": 3,
+      "raw_passages_distributed": false
+    },
+    {
+      "id": "R2",
+      "type": "primary_passage_read",
+      "tool": "firecrawl_research_read_paper",
+      "arguments": {
+        "paperId": "arxiv:2503.22439",
+        "question": "State the actual one-dimensional dynamic boundary mass law and damping assumptions, and what norm is controlled by the input-to-state estimates. Is the result a pointwise transient waveform bound with time-dependent potential?",
+        "k": 3
+      },
+      "argument_provenance": "Exact invocation arguments supplied directly by the root agent after the result file was saved; they are not embedded in the saved result objects.",
+      "result_provenance": "Zero-based reads[1] in the SHA-256-pinned internal response file.",
+      "result_status": "fulfilled",
+      "is_error": false,
+      "passage_count": 3,
+      "raw_passages_distributed": false
+    },
+    {
+      "id": "R3",
+      "type": "primary_passage_read",
+      "tool": "firecrawl_research_read_paper",
+      "arguments": {
+        "paperId": "arxiv:1802.07942",
+        "question": "Explain rigorous quadrature error bounds, handling nonanalytic or singular endpoints and whether interval box enclosures can be used when a smooth flat function is not complex analytic at an endpoint.",
+        "k": 3
+      },
+      "argument_provenance": "Exact invocation arguments supplied directly by the root agent after the result file was saved; they are not embedded in the saved result objects.",
+      "result_provenance": "Zero-based reads[2] in the SHA-256-pinned internal response file.",
+      "result_status": "fulfilled",
+      "is_error": false,
+      "passage_count": 3,
+      "raw_passages_distributed": false
+    }
+  ],
+  "raw_paper_bodies_distributed": false,
+  "downloaded_code_executed": false,
+  "retrieval_errors": []
+}
