@@ -1,0 +1,54 @@
+{
+  "all_point_source_reductions": 3,
+  "angular_gradient_sup": [
+    "0",
+    "1",
+    "5/2"
+  ],
+  "angular_nonnegative_identity_certificates": 4,
+  "angular_value_sup": [
+    "1",
+    "1/2",
+    "7/12"
+  ],
+  "checker_sha256": "99bb73a0c6a4051e9850ca08607b4092ccf81b7a5cc5477f2e5358467e443685",
+  "gradient_Y_squared_sup": "2",
+  "hypotheses": [
+    "p != 0",
+    "w = 1/rho",
+    "h = U_prime/p",
+    "p_y = p(h-4a)",
+    "a_y = -w^2-p^2/3",
+    "u_y = -pv/3-2au",
+    "E_y=wE",
+    "0<=Y^2<=S^2<=S<=1 on S3"
+  ],
+  "negative_controls": [
+    {
+      "expected_reason": "MOMENTUM_REDUCTION",
+      "name": "restore_cancelled_v_vy",
+      "no_output": true,
+      "returncode": 1
+    },
+    {
+      "expected_reason": "MOMENTUM_REDUCTION",
+      "name": "omit_momentum_radius",
+      "no_output": true,
+      "returncode": 1
+    },
+    {
+      "expected_reason": "HAMILTONIAN_REDUCTION",
+      "name": "halve_scalar_gradient",
+      "no_output": true,
+      "returncode": 1
+    },
+    {
+      "expected_reason": "ANGULAR_GRADIENT_BOUND",
+      "name": "halve_angular_gradient_cap",
+      "no_output": true,
+      "returncode": 1
+    }
+  ],
+  "scope": "Formal identities and angular bounds only; no interval norm, evolution or nonlinear-family theorem",
+  "status": "PASS_ALL_POINT_REDUCTIONS_AND_ANGULAR_MAJORANTS"
+}

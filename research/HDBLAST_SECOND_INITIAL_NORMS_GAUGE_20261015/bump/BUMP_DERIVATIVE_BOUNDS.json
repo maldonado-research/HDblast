@@ -1,0 +1,117 @@
+{
+  "schema": "hdblast-bump-derivative-envelopes-v1",
+  "status": "PASS",
+  "optimized": false,
+  "ell": "1/1000000",
+  "maximum_derivative_order": 6,
+  "definition": "Q(r)=exp(4-1/((r-1)(2-r))) for 1<r<2; Q=0 elsewhere",
+  "dimensionless_Q_derivative_sup": [
+    "1",
+    "16",
+    "256",
+    "46656/7",
+    "16777216/49",
+    "10000000000/343",
+    "8916100448256/2401"
+  ],
+  "physical_q_derivative_sup": [
+    "1",
+    "16000000",
+    "256000000000000",
+    "46656000000000000000000/7",
+    "16777216000000000000000000000000/49",
+    "10000000000000000000000000000000000000000/343",
+    "8916100448256000000000000000000000000000000000000/2401"
+  ],
+  "polynomial_coefficients_ascending": [
+    [
+      "1"
+    ],
+    [
+      "0",
+      "0",
+      "1"
+    ],
+    [
+      "0",
+      "0",
+      "6",
+      "-6",
+      "1"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "-12",
+      "24",
+      "-10",
+      "1"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "-120",
+      "420",
+      "-384",
+      "136",
+      "-20",
+      "1"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "360",
+      "-1800",
+      "2340",
+      "-1200",
+      "276",
+      "-28",
+      "1"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "5040",
+      "-35280",
+      "68040",
+      "-56400",
+      "23820",
+      "-5464",
+      "678",
+      "-42",
+      "1"
+    ]
+  ],
+  "polynomial_envelope_multipliers": [
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "1",
+    "1"
+  ],
+  "formal_composition_identity_witnesses": 35,
+  "named_checks": [
+    "exact parity recurrence",
+    "independent formal composition derivative identities",
+    "all-point shifted polynomial positivity",
+    "exponential envelope maxima and exp(2)>7",
+    "named rational constants",
+    "physical ell scaling"
+  ],
+  "scope": {
+    "supremum_bounds_do_not_use_sampled_maxima": true,
+    "flat_smooth_zero_extension": true,
+    "all_orders_flatness_uses_analytic_recurrence": true,
+    "fourth_order_suffices_for_first_Cauchy_spatial_derivative": true,
+    "physical_Cauchy_norm_evaluated": false,
+    "U2_evolution_evaluated": false
+  }
+}

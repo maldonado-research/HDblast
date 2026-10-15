@@ -1,0 +1,73 @@
+{
+  "scope": "Initial gauge algebra only; no gauge wave or boundary evolution solved",
+  "factorial_convention": "series epsilon^2 coefficients equal one half second variation",
+  "independent_method": "direct five-dimensional inverse metric and Christoffel contraction",
+  "positive_checks": [
+    {
+      "point_jet": 1,
+      "C0_C1_C2_all_zero": true,
+      "longitudinal_C1_y": "-2358/1001"
+    },
+    {
+      "point_jet": 2,
+      "C0_C1_C2_all_zero": true,
+      "longitudinal_C1_y": "-4392/1001"
+    },
+    {
+      "point_jet": 3,
+      "C0_C1_C2_all_zero": true,
+      "longitudinal_C1_y": "-7050/1001"
+    }
+  ],
+  "wrong_formula_controls": [
+    {
+      "mutation": "omit_lapse_quadratic",
+      "nonzero_residual_point_jets": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "mutation": "halve_radial_U_Uy",
+      "nonzero_residual_point_jets": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "mutation": "omit_radial_fy",
+      "nonzero_residual_point_jets": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "mutation": "halve_angular_quadratic",
+      "nonzero_residual_point_jets": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "mutation": "omit_mixed_metric_cross",
+      "nonzero_residual_point_jets": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "mutation": "omit_second_metric_lapse_value",
+      "nonzero_residual_point_jets": [
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "checker_sha256": "fad7c3bbfec2c86a70eac6b0d6cfdf2fdfa8cc1e81a9349406c3f9408ab92220"
+}

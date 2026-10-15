@@ -1,0 +1,43 @@
+{
+  "all_point_series_and_frame_identities": 12,
+  "checker_sha256": "af2f953d073beb7feb7057ebcd95d87e87821de0d9f8eac2379d40a1b5df1744",
+  "engine_sha256": "99bb73a0c6a4051e9850ca08607b4092ccf81b7a5cc5477f2e5358467e443685",
+  "hypotheses": [
+    "zero initial shift at every parameter order",
+    "N=rho(1+epsilon U), N2=0",
+    "gamma_yy=1-4epsilon U",
+    "gamma_ij=(1+2epsilon U+epsilon^2 f/2) gamma0_ij",
+    "K1_yy=-2T/rho, K1_ij=T gamma0_ij/rho",
+    "K2=q gamma0",
+    "reference slice time-symmetric"
+  ],
+  "negative_controls": [
+    {
+      "expected_reason": "LAPSE_SECOND",
+      "name": "halve_lapse_cross",
+      "no_output": true,
+      "returncode": 1
+    },
+    {
+      "expected_reason": "RADIAL_SHIFT_SECOND",
+      "name": "omit_radial_metric_cross",
+      "no_output": true,
+      "returncode": 1
+    },
+    {
+      "expected_reason": "ANGULAR_SHIFT_SECOND",
+      "name": "wrong_angular_coefficient",
+      "no_output": true,
+      "returncode": 1
+    },
+    {
+      "expected_reason": "MIXED_METRIC_CONVERSION",
+      "name": "omit_mixed_metric_conversion",
+      "no_output": true,
+      "returncode": 1
+    }
+  ],
+  "scope": "Initial gauge coefficient identities only; no gauge-wave, reduced acceleration, boundary or nonlinear-family solve",
+  "second_coefficient_convention": "epsilon^2 X2/2",
+  "status": "PASS_ALL_POINT_INITIAL_ADM_GAUGE_IDENTITIES"
+}

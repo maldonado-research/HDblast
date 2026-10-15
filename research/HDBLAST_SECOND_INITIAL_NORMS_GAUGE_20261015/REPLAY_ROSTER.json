@@ -1,0 +1,183 @@
+{
+  "schema": "hdblast-registered-exact-replay-v1",
+  "scope": "Actual initial-data and gauge coefficient certificates only",
+  "jobs": [
+    {
+      "name": "static-jets",
+      "script": "background/bound_static_coefficient_jets.py",
+      "arguments": [],
+      "goldens": {
+        "normal": "background/ACTUAL_ANNULUS_STATIC_JETS.json",
+        "optimized": "background/ACTUAL_ANNULUS_STATIC_JETS.json"
+      },
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "timeout_seconds": 240
+    },
+    {
+      "name": "static-controls",
+      "script": "background/run_static_jet_controls.py",
+      "arguments": [],
+      "goldens": {
+        "normal": "background/STATIC_JET_CONTROL_RESULTS.json"
+      },
+      "modes": [
+        "normal"
+      ],
+      "timeout_seconds": 240
+    },
+    {
+      "name": "bump",
+      "script": "bump/check_bump_derivatives.py",
+      "arguments": [],
+      "goldens": {
+        "normal": "bump/BUMP_DERIVATIVE_BOUNDS.json",
+        "optimized": "bump/BUMP_DERIVATIVE_BOUNDS_OPTIMIZED.json"
+      },
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "timeout_seconds": 240
+    },
+    {
+      "name": "bump-controls",
+      "script": "bump/check_bump_derivatives.py",
+      "arguments": [
+        "--run-controls"
+      ],
+      "goldens": {
+        "normal": "bump/BUMP_DERIVATIVE_CONTROLS.json"
+      },
+      "modes": [
+        "normal"
+      ],
+      "timeout_seconds": 240
+    },
+    {
+      "name": "physical-initial",
+      "script": "producer/check_second_initial_norms.py",
+      "arguments": [
+        "--run-controls"
+      ],
+      "goldens": {
+        "normal": "producer/SECOND_INITIAL_NORMS_NORMAL.json",
+        "optimized": "producer/SECOND_INITIAL_NORMS_OPTIMIZED.json"
+      },
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "timeout_seconds": 240
+    },
+    {
+      "name": "independent-physical",
+      "script": "independent-norm-review/check_independent_initial_norms.py",
+      "arguments": [],
+      "goldens": {
+        "normal": "independent-norm-review/INDEPENDENT_INITIAL_NORMS_NORMAL.json",
+        "optimized": "independent-norm-review/INDEPENDENT_INITIAL_NORMS_OPTIMIZED.json"
+      },
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "timeout_seconds": 240
+    },
+    {
+      "name": "direct-initial-gauge",
+      "script": "gauge/check_initial_harmonic_completion.py",
+      "arguments": [
+        "--run-controls"
+      ],
+      "goldens": {
+        "normal": "gauge/INITIAL_HARMONIC_COMPLETION.json",
+        "optimized": "gauge/INITIAL_HARMONIC_COMPLETION_OPTIMIZED.json"
+      },
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "timeout_seconds": 240
+    },
+    {
+      "name": "gauge-cli-controls",
+      "script": "review/run_gauge_failure_controls.py",
+      "arguments": [],
+      "goldens": {
+        "normal": "review/GAUGE_FAILURE_CONTROLS.json"
+      },
+      "modes": [
+        "normal"
+      ],
+      "timeout_seconds": 240
+    },
+    {
+      "name": "all-point-source",
+      "script": "review/check_reduced_sources.py",
+      "arguments": [
+        "--run-controls"
+      ],
+      "goldens": {
+        "normal": "review/REDUCED_SOURCES_NORMAL.json",
+        "optimized": "review/REDUCED_SOURCES_OPTIMIZED.json"
+      },
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "timeout_seconds": 240
+    },
+    {
+      "name": "all-point-adm",
+      "script": "review/check_gauge_adm_identities.py",
+      "arguments": [
+        "--run-controls"
+      ],
+      "goldens": {
+        "normal": "review/GAUGE_ADM_NORMAL.json",
+        "optimized": "review/GAUGE_ADM_OPTIMIZED.json"
+      },
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "timeout_seconds": 240
+    },
+    {
+      "name": "spacetime-initial",
+      "script": "frame/check_initial_spacetime_frame.py",
+      "arguments": [
+        "--run-controls"
+      ],
+      "goldens": {
+        "normal": "frame/INITIAL_SPACETIME_FRAME_NORMAL.json",
+        "optimized": "frame/INITIAL_SPACETIME_FRAME_OPTIMIZED.json"
+      },
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "timeout_seconds": 240
+    },
+    {
+      "name": "fresh-referee",
+      "script": "fresh-referee/check_referee_acceptance.py",
+      "arguments": [
+        "--root",
+        "."
+      ],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "goldens": {
+        "normal": "fresh-referee/REFEREE_ACCEPTANCE_NORMAL.json",
+        "optimized": "fresh-referee/REFEREE_ACCEPTANCE_OPTIMIZED.json"
+      },
+      "timeout_seconds": 240
+    }
+  ]
+}
