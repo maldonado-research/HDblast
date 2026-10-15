@@ -1,0 +1,1540 @@
+{
+  "schema": "hdblast-physical-shell-response-fresh-replay-v1",
+  "status": "PASS",
+  "capsule": "HDBLAST_PHYSICAL_SHELL_RESPONSE_20261015",
+  "authentication": {
+    "status": "PASS",
+    "files_verified": 164,
+    "manifest_sha256": "fd06ac6eee239834f052c5bbcf7e29531cc127d1fa6621b3069ab4dcf1a77831"
+  },
+  "runner": {
+    "path": "reproduce.py",
+    "bytes": 13080,
+    "sha256": "ee5381553a09b1c1723496ca64db98a3215c9959909c23a9baca2f93c7663ec0"
+  },
+  "integrity_verifier": {
+    "path": "verify_manifest.py",
+    "bytes": 2449,
+    "sha256": "c9235712e9a028b8966c59001cd4f05d1056a096a13bcda09ff39f47d394cff7"
+  },
+  "requirements": {
+    "path": "requirements.txt",
+    "bytes": 14,
+    "sha256": "25f9f1fb1988b230147a1d3092d34e09c069eb7a6c6d6df46b3973b9f2d36efc"
+  },
+  "python": {
+    "version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python"
+  },
+  "sympy_version": "1.14.0",
+  "successful_checker_runs": 6,
+  "external_corruption_processes_rejected": 32,
+  "embedded_wrong_formula_controls_rejected": 0,
+  "finite_positive_check_groups_each_mode": 41,
+  "finite_positive_check_groups_by_mode": {
+    "normal": 41,
+    "optimized": 41
+  },
+  "scope": "Exact finite algebra, pullback and normalization checks only; not certification of analytic activation, existence or nonlinear remainder bounds. External controls are actual failing formula processes. Only observable python_optimized is ignored in scientific comparison and is independently checked against each process mode.",
+  "steps": [
+    {
+      "kind": "positive",
+      "checker": "observable",
+      "mode": "normal",
+      "script": "check_physical_observable.py",
+      "source_sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 2.853,
+      "copied_script": {
+        "path": "normal/observable/positive/check_physical_observable.py",
+        "bytes": 3990,
+        "sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5"
+      },
+      "log": {
+        "path": "normal/observable/positive/execution.log",
+        "bytes": 1175,
+        "sha256": "7db23163baf007d303714f4b6ac2362067f57807ffff111a33955a3781ddafc2"
+      },
+      "output": {
+        "path": "normal/observable/positive/fresh.json",
+        "bytes": 1393,
+        "sha256": "56ea8f2be23d32cf10d54253d4cf6a02a4c02667a5c16c5054e00d6ead4db84a"
+      },
+      "output_origin": "Checker-written JSON result",
+      "golden": {
+        "path": "OBSERVABLE_CHECKS_NORMAL.json",
+        "bytes": 1393,
+        "sha256": "56ea8f2be23d32cf10d54253d4cf6a02a4c02667a5c16c5054e00d6ead4db84a"
+      },
+      "scientific_output_matches": true,
+      "finite_positive_check_groups": 7,
+      "ignored_top_level_fields": [
+        "python_optimized"
+      ]
+    },
+    {
+      "kind": "positive",
+      "checker": "astra",
+      "mode": "normal",
+      "script": "astra/check_physical_response.py",
+      "source_sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 1.021,
+      "copied_script": {
+        "path": "normal/astra/positive/check_physical_response.py",
+        "bytes": 5690,
+        "sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42"
+      },
+      "log": {
+        "path": "normal/astra/positive/execution.log",
+        "bytes": 71,
+        "sha256": "c2b80eca0a655fd79ea70f44b174e065f74105e2150273181e94ddfcca86bbc9"
+      },
+      "output": {
+        "path": "normal/astra/positive/fresh.json",
+        "bytes": 2043,
+        "sha256": "b01a879ca3f68020bcd434f3d6ea6ab6905a20b6d04701a9e10872c23853c5db"
+      },
+      "output_origin": "Checker-written JSON result",
+      "golden": {
+        "path": "astra/CHECK_NORMAL.json",
+        "bytes": 2043,
+        "sha256": "b01a879ca3f68020bcd434f3d6ea6ab6905a20b6d04701a9e10872c23853c5db"
+      },
+      "scientific_output_matches": true,
+      "finite_positive_check_groups": 17,
+      "ignored_top_level_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "sol",
+      "mode": "normal",
+      "script": "sol/check_response_algebra.py",
+      "source_sha256": "10e753142c07878ccd252cf40f6f7ac1aef0069a34b05a3ea3fc8e0082315b03",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [],
+      "exit_code": 0,
+      "wall_seconds": 3.079,
+      "copied_script": {
+        "path": "normal/sol/positive/check_response_algebra.py",
+        "bytes": 5109,
+        "sha256": "10e753142c07878ccd252cf40f6f7ac1aef0069a34b05a3ea3fc8e0082315b03"
+      },
+      "log": {
+        "path": "normal/sol/positive/execution.log",
+        "bytes": 662,
+        "sha256": "ed44baed07c31214186dcf74916b9dce84fd11f23853d58db1830864b431667f"
+      },
+      "output": {
+        "path": "normal/sol/positive/fresh.json",
+        "bytes": 662,
+        "sha256": "ed44baed07c31214186dcf74916b9dce84fd11f23853d58db1830864b431667f"
+      },
+      "output_origin": "Complete captured checker JSON; positive stdout or failure stderr retained verbatim in execution.log",
+      "golden": {
+        "path": "sol/normal-positive.stdout.json",
+        "bytes": 662,
+        "sha256": "ed44baed07c31214186dcf74916b9dce84fd11f23853d58db1830864b431667f"
+      },
+      "scientific_output_matches": true,
+      "finite_positive_check_groups": 17,
+      "ignored_top_level_fields": []
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "observable",
+      "mode": "normal",
+      "script": "check_physical_observable.py",
+      "source_sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--fault",
+        "drop_embedding"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 2.304,
+      "copied_script": {
+        "path": "normal/observable/drop_embedding/check_physical_observable.py",
+        "bytes": 3990,
+        "sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5"
+      },
+      "log": {
+        "path": "normal/observable/drop_embedding/execution.log",
+        "bytes": 1191,
+        "sha256": "8ab27133af7f5e94b53944b6f6e1bd845d49c5da259f664a5e76314ab5424505"
+      },
+      "output": {
+        "path": "normal/observable/drop_embedding/fresh.json",
+        "bytes": 1409,
+        "sha256": "b9c0bd0f8e6bb1f10dcb9ab1e30a472574b377278ca6a5162a166582a8281f2c"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "drop_embedding",
+      "expected_reason": "physical scalar first variation from an explicit moving pullback",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "observable",
+      "mode": "normal",
+      "script": "check_physical_observable.py",
+      "source_sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--fault",
+        "wrong_gauge_sign"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 1.572,
+      "copied_script": {
+        "path": "normal/observable/wrong_gauge_sign/check_physical_observable.py",
+        "bytes": 3990,
+        "sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5"
+      },
+      "log": {
+        "path": "normal/observable/wrong_gauge_sign/execution.log",
+        "bytes": 1202,
+        "sha256": "0e3a0d301c223385806bbc78df6a9d89f46aa7eea4e056736839394b84096c74"
+      },
+      "output": {
+        "path": "normal/observable/wrong_gauge_sign/fresh.json",
+        "bytes": 1420,
+        "sha256": "155b5444ffec6030ce71623e666d918cf4d135968ce4bc162dfa0a22b1495648"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "wrong_gauge_sign",
+      "expected_reason": "bulk normal gauge shift cancels the shell embedding shift",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "observable",
+      "mode": "normal",
+      "script": "check_physical_observable.py",
+      "source_sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--fault",
+        "half_hessian"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 2.333,
+      "copied_script": {
+        "path": "normal/observable/half_hessian/check_physical_observable.py",
+        "bytes": 3990,
+        "sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5"
+      },
+      "log": {
+        "path": "normal/observable/half_hessian/execution.log",
+        "bytes": 1226,
+        "sha256": "4876dafb09592db2f676508d541a62b730ea92f30fc72d3602e53eb6af18d353"
+      },
+      "output": {
+        "path": "normal/observable/half_hessian/fresh.json",
+        "bytes": 1444,
+        "sha256": "7e4ca2fe7c594c33ad97a01cf6b8b224ed2f6c001b7421e774f59e877adb9ef4"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "half_hessian",
+      "expected_reason": "second derivative of squared physical response includes its factor two",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "observable",
+      "mode": "normal",
+      "script": "check_physical_observable.py",
+      "source_sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--fault",
+        "wrong_angular_norm"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 1.574,
+      "copied_script": {
+        "path": "normal/observable/wrong_angular_norm/check_physical_observable.py",
+        "bytes": 3990,
+        "sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5"
+      },
+      "log": {
+        "path": "normal/observable/wrong_angular_norm/execution.log",
+        "bytes": 1195,
+        "sha256": "1e194124ad907f8028df738cc6185a67606d92e287a5254218d4a61f993d7a9b"
+      },
+      "output": {
+        "path": "normal/observable/wrong_angular_norm/fresh.json",
+        "bytes": 1413,
+        "sha256": "0f43fc6d1e7c3d61d670fbbd260cf0e303fa6586b4c1740722a6f62245dfd986"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "wrong_angular_norm",
+      "expected_reason": "actual unit S3 quadrupole norm from Hopf-coordinate integration",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "observable",
+      "mode": "normal",
+      "script": "check_physical_observable.py",
+      "source_sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--fault",
+        "missing_proper_time"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 1.672,
+      "copied_script": {
+        "path": "normal/observable/missing_proper_time/check_physical_observable.py",
+        "bytes": 3990,
+        "sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5"
+      },
+      "log": {
+        "path": "normal/observable/missing_proper_time/execution.log",
+        "bytes": 1234,
+        "sha256": "9c2b258eac4db257b2983f3c2fc1dfe6c4bbcd4132873bc32faca6d3524fee53"
+      },
+      "output": {
+        "path": "normal/observable/missing_proper_time/fresh.json",
+        "bytes": 1452,
+        "sha256": "c75da62f465631df6274093ed720ca878998b9244b130bf33871a77b9707e8fe"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "missing_proper_time",
+      "expected_reason": "one physical shell and proper-time integral give the rho_b power four",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "observable",
+      "mode": "normal",
+      "script": "check_physical_observable.py",
+      "source_sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--fault",
+        "second_jet_leak"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 1.622,
+      "copied_script": {
+        "path": "normal/observable/second_jet_leak/check_physical_observable.py",
+        "bytes": 3990,
+        "sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5"
+      },
+      "log": {
+        "path": "normal/observable/second_jet_leak/execution.log",
+        "bytes": 1195,
+        "sha256": "a5408117e0d1ed67349b8791945864e56653ab5923a13f9e07c567d14e7b15da"
+      },
+      "output": {
+        "path": "normal/observable/second_jet_leak/fresh.json",
+        "bytes": 1413,
+        "sha256": "1f337f8d9dd287c0115b1e3ae9dc34a5365922c6657c0db624816da74c134f09"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "second_jet_leak",
+      "expected_reason": "second derivative of squared physical response includes its factor two",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "observable",
+      "mode": "normal",
+      "script": "check_physical_observable.py",
+      "source_sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--fault",
+        "double_shell"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 3.204,
+      "copied_script": {
+        "path": "normal/observable/double_shell/check_physical_observable.py",
+        "bytes": 3990,
+        "sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5"
+      },
+      "log": {
+        "path": "normal/observable/double_shell/execution.log",
+        "bytes": 1214,
+        "sha256": "58e343fe85188b657d1b66aa680addd2992424d65c9f362023ed808fe29c5978"
+      },
+      "output": {
+        "path": "normal/observable/double_shell/fresh.json",
+        "bytes": 1432,
+        "sha256": "49433a41341d241cfb13ef84613bb4714100d65d5b05e54fcb331a43e6e6e629"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "double_shell",
+      "expected_reason": "one physical shell and proper-time integral give the rho_b power four",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "astra",
+      "mode": "normal",
+      "script": "astra/check_physical_response.py",
+      "source_sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--corrupt",
+        "reverse_spatial_drift"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 1.129,
+      "copied_script": {
+        "path": "normal/astra/reverse_spatial_drift/check_physical_response.py",
+        "bytes": 5690,
+        "sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42"
+      },
+      "log": {
+        "path": "normal/astra/reverse_spatial_drift/execution.log",
+        "bytes": 123,
+        "sha256": "0a94ab5781554b86304f0a54af7ab64f9ef612ee7aed1de1c3613c0297f4b881"
+      },
+      "output": {
+        "path": "normal/astra/reverse_spatial_drift/fresh.json",
+        "bytes": 2086,
+        "sha256": "15d534e04337622a99464a5f72052b6714f606d95c19a614afa472799470a5ef"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "reverse_spatial_drift",
+      "expected_reason": "registered_master_in_inward_depth",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "astra",
+      "mode": "normal",
+      "script": "astra/check_physical_response.py",
+      "source_sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--corrupt",
+        "reverse_observation"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.969,
+      "copied_script": {
+        "path": "normal/astra/reverse_observation/check_physical_response.py",
+        "bytes": 5690,
+        "sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42"
+      },
+      "log": {
+        "path": "normal/astra/reverse_observation/execution.log",
+        "bytes": 115,
+        "sha256": "68b0263f8a8a8f4060dbc3f0a1ba13b8579035a67a3d7bce05a43c2e7ed09ee2"
+      },
+      "output": {
+        "path": "normal/astra/reverse_observation/fresh.json",
+        "bytes": 2073,
+        "sha256": "de435021fc6e90d564a787bb8a705a26a10ce1ff8b56ba22f3702ad650e87fdd"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "reverse_observation",
+      "expected_reason": "physical_scalar_observation",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "astra",
+      "mode": "normal",
+      "script": "astra/check_physical_response.py",
+      "source_sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--corrupt",
+        "drop_normal_lapse"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 1.123,
+      "copied_script": {
+        "path": "normal/astra/drop_normal_lapse/check_physical_response.py",
+        "bytes": 5690,
+        "sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42"
+      },
+      "log": {
+        "path": "normal/astra/drop_normal_lapse/execution.log",
+        "bytes": 137,
+        "sha256": "d10728aa392d8cb9d96dc934a69913b2e77ca43f27a64223bca9f173b4df2486"
+      },
+      "output": {
+        "path": "normal/astra/drop_normal_lapse/fresh.json",
+        "bytes": 2069,
+        "sha256": "2455848dddb592e861ca95e6181e77f51ce13d6daaec802fa8e7c5cb38e60e8b"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "drop_normal_lapse",
+      "expected_reason": "complete_scalar_junction_including_normal_variation",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "astra",
+      "mode": "normal",
+      "script": "astra/check_physical_response.py",
+      "source_sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--corrupt",
+        "drop_embedding_shift"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 1.121,
+      "copied_script": {
+        "path": "normal/astra/drop_embedding_shift/check_physical_response.py",
+        "bytes": 5690,
+        "sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42"
+      },
+      "log": {
+        "path": "normal/astra/drop_embedding_shift/execution.log",
+        "bytes": 125,
+        "sha256": "214f2c94d004d376a8823e67096af686547265393a77c07f2fb3fe3ccdcad60d"
+      },
+      "output": {
+        "path": "normal/astra/drop_embedding_shift/fresh.json",
+        "bytes": 2063,
+        "sha256": "121c17bc5c2cff6479c9dbc953ae1c71002515309346089262e05f1ed188abb1"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "drop_embedding_shift",
+      "expected_reason": "physical_pullback_gauge_cancellation",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "astra",
+      "mode": "normal",
+      "script": "astra/check_physical_response.py",
+      "source_sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--corrupt",
+        "insert_measure_variation"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 1.023,
+      "copied_script": {
+        "path": "normal/astra/insert_measure_variation/check_physical_response.py",
+        "bytes": 5690,
+        "sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42"
+      },
+      "log": {
+        "path": "normal/astra/insert_measure_variation/execution.log",
+        "bytes": 126,
+        "sha256": "b1e22f6eb19d494119592b5344934b88d245246840c8f434ad0e7891d05c58ea"
+      },
+      "output": {
+        "path": "normal/astra/insert_measure_variation/fresh.json",
+        "bytes": 2075,
+        "sha256": "7d3ac0f26d7ec477d8dc6e27710331789b341ac20dfa8f3cd4dc606a7f765ed9"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "insert_measure_variation",
+      "expected_reason": "exact_observable_second_variation",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "astra",
+      "mode": "normal",
+      "script": "astra/check_physical_response.py",
+      "source_sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--corrupt",
+        "double_count_common_shell"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 1.07,
+      "copied_script": {
+        "path": "normal/astra/double_count_common_shell/check_physical_response.py",
+        "bytes": 5690,
+        "sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42"
+      },
+      "log": {
+        "path": "normal/astra/double_count_common_shell/execution.log",
+        "bytes": 135,
+        "sha256": "ee6a5f51837a963a8d8389a9beec833d6330a315cfc1c3d28e26571b2f2af9c7"
+      },
+      "output": {
+        "path": "normal/astra/double_count_common_shell/fresh.json",
+        "bytes": 2103,
+        "sha256": "bf9fced11374263eb40d11f07055970316889a9c316916ef2fc5d163ce10fa54"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "double_count_common_shell",
+      "expected_reason": "one_common_shell_observable_normalization",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "sol",
+      "mode": "normal",
+      "script": "sol/check_response_algebra.py",
+      "source_sha256": "10e753142c07878ccd252cf40f6f7ac1aef0069a34b05a3ea3fc8e0082315b03",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "potential"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 1.777,
+      "copied_script": {
+        "path": "normal/sol/potential/check_response_algebra.py",
+        "bytes": 5109,
+        "sha256": "10e753142c07878ccd252cf40f6f7ac1aef0069a34b05a3ea3fc8e0082315b03"
+      },
+      "log": {
+        "path": "normal/sol/potential/execution.log",
+        "bytes": 95,
+        "sha256": "87587d78fb0a5db7ca750d0cd490f481c9e75bad988a8e55233ea3edf4b2188e"
+      },
+      "output": {
+        "path": "normal/sol/potential/fresh.json",
+        "bytes": 101,
+        "sha256": "d070afa5473be59183cb1b99a1e860910615579ce2027d1ae0d07dfaef42e862"
+      },
+      "output_origin": "Complete captured checker JSON; positive stdout or failure stderr retained verbatim in execution.log",
+      "control": "potential",
+      "expected_reason": "full_drift_conjugation",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "sol",
+      "mode": "normal",
+      "script": "sol/check_response_algebra.py",
+      "source_sha256": "10e753142c07878ccd252cf40f6f7ac1aef0069a34b05a3ea3fc8e0082315b03",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "shell-sign"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 3.082,
+      "copied_script": {
+        "path": "normal/sol/shell-sign/check_response_algebra.py",
+        "bytes": 5109,
+        "sha256": "10e753142c07878ccd252cf40f6f7ac1aef0069a34b05a3ea3fc8e0082315b03"
+      },
+      "log": {
+        "path": "normal/sol/shell-sign/execution.log",
+        "bytes": 96,
+        "sha256": "c320c4f3efd7d823c352fb037bdfa3e886c736af12cf3445273683bd2e1596a7"
+      },
+      "output": {
+        "path": "normal/sol/shell-sign/fresh.json",
+        "bytes": 102,
+        "sha256": "cf293cacd13175a4c54bcc82af010054adf7672335f68d9a933f0d08cc38d85f"
+      },
+      "output_origin": "Complete captured checker JSON; positive stdout or failure stderr retained verbatim in execution.log",
+      "control": "shell-sign",
+      "expected_reason": "shell_conjugation_sign_and_mass",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "sol",
+      "mode": "normal",
+      "script": "sol/check_response_algebra.py",
+      "source_sha256": "10e753142c07878ccd252cf40f6f7ac1aef0069a34b05a3ea3fc8e0082315b03",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "ambient-velocity"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 2.63,
+      "copied_script": {
+        "path": "normal/sol/ambient-velocity/check_response_algebra.py",
+        "bytes": 5109,
+        "sha256": "10e753142c07878ccd252cf40f6f7ac1aef0069a34b05a3ea3fc8e0082315b03"
+      },
+      "log": {
+        "path": "normal/sol/ambient-velocity/execution.log",
+        "bytes": 102,
+        "sha256": "57a304fd61fee1c5c796c3297ac9b591c804a2a9f69625d6a5d88fc7a6d3aebb"
+      },
+      "output": {
+        "path": "normal/sol/ambient-velocity/fresh.json",
+        "bytes": 108,
+        "sha256": "034543da89ee190a9bd7f65b57023530d1eeef064086e5e795895fb3c7986985"
+      },
+      "output_origin": "Complete captured checker JSON; positive stdout or failure stderr retained verbatim in execution.log",
+      "control": "ambient-velocity",
+      "expected_reason": "ambient_to_global_initial_velocity",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "positive",
+      "checker": "observable",
+      "mode": "optimized",
+      "script": "check_physical_observable.py",
+      "source_sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 4.605,
+      "copied_script": {
+        "path": "optimized/observable/positive/check_physical_observable.py",
+        "bytes": 3990,
+        "sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5"
+      },
+      "log": {
+        "path": "optimized/observable/positive/execution.log",
+        "bytes": 1174,
+        "sha256": "ff71b033dbfb074b6edb90565c56a476343dc1b64f3619bf6ccdd9d764ae181c"
+      },
+      "output": {
+        "path": "optimized/observable/positive/fresh.json",
+        "bytes": 1392,
+        "sha256": "bbd9526c9ebad27d2d366bb35fac4e9d5d74a9a047d3538ec259ba535a68a44a"
+      },
+      "output_origin": "Checker-written JSON result",
+      "golden": {
+        "path": "OBSERVABLE_CHECKS_NORMAL.json",
+        "bytes": 1393,
+        "sha256": "56ea8f2be23d32cf10d54253d4cf6a02a4c02667a5c16c5054e00d6ead4db84a"
+      },
+      "scientific_output_matches": true,
+      "finite_positive_check_groups": 7,
+      "ignored_top_level_fields": [
+        "python_optimized"
+      ]
+    },
+    {
+      "kind": "positive",
+      "checker": "astra",
+      "mode": "optimized",
+      "script": "astra/check_physical_response.py",
+      "source_sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 4.763,
+      "copied_script": {
+        "path": "optimized/astra/positive/check_physical_response.py",
+        "bytes": 5690,
+        "sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42"
+      },
+      "log": {
+        "path": "optimized/astra/positive/execution.log",
+        "bytes": 71,
+        "sha256": "c2b80eca0a655fd79ea70f44b174e065f74105e2150273181e94ddfcca86bbc9"
+      },
+      "output": {
+        "path": "optimized/astra/positive/fresh.json",
+        "bytes": 2043,
+        "sha256": "b01a879ca3f68020bcd434f3d6ea6ab6905a20b6d04701a9e10872c23853c5db"
+      },
+      "output_origin": "Checker-written JSON result",
+      "golden": {
+        "path": "astra/CHECK_NORMAL.json",
+        "bytes": 2043,
+        "sha256": "b01a879ca3f68020bcd434f3d6ea6ab6905a20b6d04701a9e10872c23853c5db"
+      },
+      "scientific_output_matches": true,
+      "finite_positive_check_groups": 17,
+      "ignored_top_level_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "sol",
+      "mode": "optimized",
+      "script": "sol/check_response_algebra.py",
+      "source_sha256": "10e753142c07878ccd252cf40f6f7ac1aef0069a34b05a3ea3fc8e0082315b03",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [],
+      "exit_code": 0,
+      "wall_seconds": 7.635,
+      "copied_script": {
+        "path": "optimized/sol/positive/check_response_algebra.py",
+        "bytes": 5109,
+        "sha256": "10e753142c07878ccd252cf40f6f7ac1aef0069a34b05a3ea3fc8e0082315b03"
+      },
+      "log": {
+        "path": "optimized/sol/positive/execution.log",
+        "bytes": 662,
+        "sha256": "ed44baed07c31214186dcf74916b9dce84fd11f23853d58db1830864b431667f"
+      },
+      "output": {
+        "path": "optimized/sol/positive/fresh.json",
+        "bytes": 662,
+        "sha256": "ed44baed07c31214186dcf74916b9dce84fd11f23853d58db1830864b431667f"
+      },
+      "output_origin": "Complete captured checker JSON; positive stdout or failure stderr retained verbatim in execution.log",
+      "golden": {
+        "path": "sol/normal-positive.stdout.json",
+        "bytes": 662,
+        "sha256": "ed44baed07c31214186dcf74916b9dce84fd11f23853d58db1830864b431667f"
+      },
+      "scientific_output_matches": true,
+      "finite_positive_check_groups": 17,
+      "ignored_top_level_fields": []
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "observable",
+      "mode": "optimized",
+      "script": "check_physical_observable.py",
+      "source_sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--fault",
+        "drop_embedding"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 4.49,
+      "copied_script": {
+        "path": "optimized/observable/drop_embedding/check_physical_observable.py",
+        "bytes": 3990,
+        "sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5"
+      },
+      "log": {
+        "path": "optimized/observable/drop_embedding/execution.log",
+        "bytes": 1190,
+        "sha256": "7fe8c7b29fbdb05e5e0c99c791c57cc52895fc0607d79b59f94c7f51a5b950d8"
+      },
+      "output": {
+        "path": "optimized/observable/drop_embedding/fresh.json",
+        "bytes": 1408,
+        "sha256": "146668954863d9d4e460e8e5cb2e29f2f75b6633341bf544cd7a84de933723d7"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "drop_embedding",
+      "expected_reason": "physical scalar first variation from an explicit moving pullback",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "observable",
+      "mode": "optimized",
+      "script": "check_physical_observable.py",
+      "source_sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--fault",
+        "wrong_gauge_sign"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 4.694,
+      "copied_script": {
+        "path": "optimized/observable/wrong_gauge_sign/check_physical_observable.py",
+        "bytes": 3990,
+        "sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5"
+      },
+      "log": {
+        "path": "optimized/observable/wrong_gauge_sign/execution.log",
+        "bytes": 1201,
+        "sha256": "7c524b4c218df693e94f16fd8e91258a6d12e4ad0fcb2e2a6875db61be71b55f"
+      },
+      "output": {
+        "path": "optimized/observable/wrong_gauge_sign/fresh.json",
+        "bytes": 1419,
+        "sha256": "a71c785bcbbdd0d917114ebfdd4497a4c9043dbffd58775292431e12c701acef"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "wrong_gauge_sign",
+      "expected_reason": "bulk normal gauge shift cancels the shell embedding shift",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "observable",
+      "mode": "optimized",
+      "script": "check_physical_observable.py",
+      "source_sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--fault",
+        "half_hessian"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 6.189,
+      "copied_script": {
+        "path": "optimized/observable/half_hessian/check_physical_observable.py",
+        "bytes": 3990,
+        "sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5"
+      },
+      "log": {
+        "path": "optimized/observable/half_hessian/execution.log",
+        "bytes": 1225,
+        "sha256": "dab496deec1476e63c82c3c01fd8b8260b8a14f8cac3200462d97250d2de3457"
+      },
+      "output": {
+        "path": "optimized/observable/half_hessian/fresh.json",
+        "bytes": 1443,
+        "sha256": "9e0dd66f327c1b2baba9bfe367b569e6962cbe7f4673bc5b2a282d3a88c19ec0"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "half_hessian",
+      "expected_reason": "second derivative of squared physical response includes its factor two",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "observable",
+      "mode": "optimized",
+      "script": "check_physical_observable.py",
+      "source_sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--fault",
+        "wrong_angular_norm"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 4.997,
+      "copied_script": {
+        "path": "optimized/observable/wrong_angular_norm/check_physical_observable.py",
+        "bytes": 3990,
+        "sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5"
+      },
+      "log": {
+        "path": "optimized/observable/wrong_angular_norm/execution.log",
+        "bytes": 1194,
+        "sha256": "4e3192f1f653e4e183f786577221a37477acda2c984d43e3ceca26be98e9b646"
+      },
+      "output": {
+        "path": "optimized/observable/wrong_angular_norm/fresh.json",
+        "bytes": 1412,
+        "sha256": "e2c70dd953414e2c6df0dcf259f38986e1333f867b7de99d85fb754641acfe81"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "wrong_angular_norm",
+      "expected_reason": "actual unit S3 quadrupole norm from Hopf-coordinate integration",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "observable",
+      "mode": "optimized",
+      "script": "check_physical_observable.py",
+      "source_sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--fault",
+        "missing_proper_time"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 7.084,
+      "copied_script": {
+        "path": "optimized/observable/missing_proper_time/check_physical_observable.py",
+        "bytes": 3990,
+        "sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5"
+      },
+      "log": {
+        "path": "optimized/observable/missing_proper_time/execution.log",
+        "bytes": 1233,
+        "sha256": "00116d91a7e0d8a9b5aae6a1146f12aa6624db64cac84f88555b5537ea2fd9e4"
+      },
+      "output": {
+        "path": "optimized/observable/missing_proper_time/fresh.json",
+        "bytes": 1451,
+        "sha256": "e6cf502401c159b7fab330edf64d955f8170f794ddca7718f09e4cc75aead60b"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "missing_proper_time",
+      "expected_reason": "one physical shell and proper-time integral give the rho_b power four",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "observable",
+      "mode": "optimized",
+      "script": "check_physical_observable.py",
+      "source_sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--fault",
+        "second_jet_leak"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 4.308,
+      "copied_script": {
+        "path": "optimized/observable/second_jet_leak/check_physical_observable.py",
+        "bytes": 3990,
+        "sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5"
+      },
+      "log": {
+        "path": "optimized/observable/second_jet_leak/execution.log",
+        "bytes": 1194,
+        "sha256": "c2cadd2c9e31e58e72bc71c5f618be951bb2c9813d347c2c4ca36cfa09ff388b"
+      },
+      "output": {
+        "path": "optimized/observable/second_jet_leak/fresh.json",
+        "bytes": 1412,
+        "sha256": "e86d0fc808cbfb89b7117899b04f6982a8cc64cc0eb9620299c38d558716e32e"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "second_jet_leak",
+      "expected_reason": "second derivative of squared physical response includes its factor two",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "observable",
+      "mode": "optimized",
+      "script": "check_physical_observable.py",
+      "source_sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--fault",
+        "double_shell"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 5.195,
+      "copied_script": {
+        "path": "optimized/observable/double_shell/check_physical_observable.py",
+        "bytes": 3990,
+        "sha256": "4f453b02918cf3b0b2d1274be4042a9d48a4f19eb05451383496bc9c921706f5"
+      },
+      "log": {
+        "path": "optimized/observable/double_shell/execution.log",
+        "bytes": 1213,
+        "sha256": "5891ce9c8c11401ba2df4597a19474fba5c4b90d71099d109cc5eb8078b7b9a0"
+      },
+      "output": {
+        "path": "optimized/observable/double_shell/fresh.json",
+        "bytes": 1431,
+        "sha256": "5f5f682e039795bf24d4bd9d2e6d1a88074cb305b0a906edfb556046b3cc2b0b"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "double_shell",
+      "expected_reason": "one physical shell and proper-time integral give the rho_b power four",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "astra",
+      "mode": "optimized",
+      "script": "astra/check_physical_response.py",
+      "source_sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--corrupt",
+        "reverse_spatial_drift"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 4.818,
+      "copied_script": {
+        "path": "optimized/astra/reverse_spatial_drift/check_physical_response.py",
+        "bytes": 5690,
+        "sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42"
+      },
+      "log": {
+        "path": "optimized/astra/reverse_spatial_drift/execution.log",
+        "bytes": 123,
+        "sha256": "0a94ab5781554b86304f0a54af7ab64f9ef612ee7aed1de1c3613c0297f4b881"
+      },
+      "output": {
+        "path": "optimized/astra/reverse_spatial_drift/fresh.json",
+        "bytes": 2086,
+        "sha256": "15d534e04337622a99464a5f72052b6714f606d95c19a614afa472799470a5ef"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "reverse_spatial_drift",
+      "expected_reason": "registered_master_in_inward_depth",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "astra",
+      "mode": "optimized",
+      "script": "astra/check_physical_response.py",
+      "source_sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--corrupt",
+        "reverse_observation"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 11.119,
+      "copied_script": {
+        "path": "optimized/astra/reverse_observation/check_physical_response.py",
+        "bytes": 5690,
+        "sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42"
+      },
+      "log": {
+        "path": "optimized/astra/reverse_observation/execution.log",
+        "bytes": 115,
+        "sha256": "68b0263f8a8a8f4060dbc3f0a1ba13b8579035a67a3d7bce05a43c2e7ed09ee2"
+      },
+      "output": {
+        "path": "optimized/astra/reverse_observation/fresh.json",
+        "bytes": 2073,
+        "sha256": "de435021fc6e90d564a787bb8a705a26a10ce1ff8b56ba22f3702ad650e87fdd"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "reverse_observation",
+      "expected_reason": "physical_scalar_observation",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "astra",
+      "mode": "optimized",
+      "script": "astra/check_physical_response.py",
+      "source_sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--corrupt",
+        "drop_normal_lapse"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 9.175,
+      "copied_script": {
+        "path": "optimized/astra/drop_normal_lapse/check_physical_response.py",
+        "bytes": 5690,
+        "sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42"
+      },
+      "log": {
+        "path": "optimized/astra/drop_normal_lapse/execution.log",
+        "bytes": 137,
+        "sha256": "d10728aa392d8cb9d96dc934a69913b2e77ca43f27a64223bca9f173b4df2486"
+      },
+      "output": {
+        "path": "optimized/astra/drop_normal_lapse/fresh.json",
+        "bytes": 2069,
+        "sha256": "2455848dddb592e861ca95e6181e77f51ce13d6daaec802fa8e7c5cb38e60e8b"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "drop_normal_lapse",
+      "expected_reason": "complete_scalar_junction_including_normal_variation",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "astra",
+      "mode": "optimized",
+      "script": "astra/check_physical_response.py",
+      "source_sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--corrupt",
+        "drop_embedding_shift"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 7.176,
+      "copied_script": {
+        "path": "optimized/astra/drop_embedding_shift/check_physical_response.py",
+        "bytes": 5690,
+        "sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42"
+      },
+      "log": {
+        "path": "optimized/astra/drop_embedding_shift/execution.log",
+        "bytes": 125,
+        "sha256": "214f2c94d004d376a8823e67096af686547265393a77c07f2fb3fe3ccdcad60d"
+      },
+      "output": {
+        "path": "optimized/astra/drop_embedding_shift/fresh.json",
+        "bytes": 2063,
+        "sha256": "121c17bc5c2cff6479c9dbc953ae1c71002515309346089262e05f1ed188abb1"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "drop_embedding_shift",
+      "expected_reason": "physical_pullback_gauge_cancellation",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "astra",
+      "mode": "optimized",
+      "script": "astra/check_physical_response.py",
+      "source_sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--corrupt",
+        "insert_measure_variation"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 4.675,
+      "copied_script": {
+        "path": "optimized/astra/insert_measure_variation/check_physical_response.py",
+        "bytes": 5690,
+        "sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42"
+      },
+      "log": {
+        "path": "optimized/astra/insert_measure_variation/execution.log",
+        "bytes": 126,
+        "sha256": "b1e22f6eb19d494119592b5344934b88d245246840c8f434ad0e7891d05c58ea"
+      },
+      "output": {
+        "path": "optimized/astra/insert_measure_variation/fresh.json",
+        "bytes": 2075,
+        "sha256": "7d3ac0f26d7ec477d8dc6e27710331789b341ac20dfa8f3cd4dc606a7f765ed9"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "insert_measure_variation",
+      "expected_reason": "exact_observable_second_variation",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "astra",
+      "mode": "optimized",
+      "script": "astra/check_physical_response.py",
+      "source_sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--corrupt",
+        "double_count_common_shell"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 3.79,
+      "copied_script": {
+        "path": "optimized/astra/double_count_common_shell/check_physical_response.py",
+        "bytes": 5690,
+        "sha256": "44dcbea5d423524e122aa71be29a33a2b03e51aea6e84fc56d9ac13e57d3df42"
+      },
+      "log": {
+        "path": "optimized/astra/double_count_common_shell/execution.log",
+        "bytes": 135,
+        "sha256": "ee6a5f51837a963a8d8389a9beec833d6330a315cfc1c3d28e26571b2f2af9c7"
+      },
+      "output": {
+        "path": "optimized/astra/double_count_common_shell/fresh.json",
+        "bytes": 2103,
+        "sha256": "bf9fced11374263eb40d11f07055970316889a9c316916ef2fc5d163ce10fa54"
+      },
+      "output_origin": "Checker-written JSON result",
+      "control": "double_count_common_shell",
+      "expected_reason": "one_common_shell_observable_normalization",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "sol",
+      "mode": "optimized",
+      "script": "sol/check_response_algebra.py",
+      "source_sha256": "10e753142c07878ccd252cf40f6f7ac1aef0069a34b05a3ea3fc8e0082315b03",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "potential"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 6.705,
+      "copied_script": {
+        "path": "optimized/sol/potential/check_response_algebra.py",
+        "bytes": 5109,
+        "sha256": "10e753142c07878ccd252cf40f6f7ac1aef0069a34b05a3ea3fc8e0082315b03"
+      },
+      "log": {
+        "path": "optimized/sol/potential/execution.log",
+        "bytes": 95,
+        "sha256": "87587d78fb0a5db7ca750d0cd490f481c9e75bad988a8e55233ea3edf4b2188e"
+      },
+      "output": {
+        "path": "optimized/sol/potential/fresh.json",
+        "bytes": 101,
+        "sha256": "d070afa5473be59183cb1b99a1e860910615579ce2027d1ae0d07dfaef42e862"
+      },
+      "output_origin": "Complete captured checker JSON; positive stdout or failure stderr retained verbatim in execution.log",
+      "control": "potential",
+      "expected_reason": "full_drift_conjugation",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "sol",
+      "mode": "optimized",
+      "script": "sol/check_response_algebra.py",
+      "source_sha256": "10e753142c07878ccd252cf40f6f7ac1aef0069a34b05a3ea3fc8e0082315b03",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "shell-sign"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 18.195,
+      "copied_script": {
+        "path": "optimized/sol/shell-sign/check_response_algebra.py",
+        "bytes": 5109,
+        "sha256": "10e753142c07878ccd252cf40f6f7ac1aef0069a34b05a3ea3fc8e0082315b03"
+      },
+      "log": {
+        "path": "optimized/sol/shell-sign/execution.log",
+        "bytes": 96,
+        "sha256": "c320c4f3efd7d823c352fb037bdfa3e886c736af12cf3445273683bd2e1596a7"
+      },
+      "output": {
+        "path": "optimized/sol/shell-sign/fresh.json",
+        "bytes": 102,
+        "sha256": "cf293cacd13175a4c54bcc82af010054adf7672335f68d9a933f0d08cc38d85f"
+      },
+      "output_origin": "Complete captured checker JSON; positive stdout or failure stderr retained verbatim in execution.log",
+      "control": "shell-sign",
+      "expected_reason": "shell_conjugation_sign_and_mass",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "sol",
+      "mode": "optimized",
+      "script": "sol/check_response_algebra.py",
+      "source_sha256": "10e753142c07878ccd252cf40f6f7ac1aef0069a34b05a3ea3fc8e0082315b03",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "ambient-velocity"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 6.324,
+      "copied_script": {
+        "path": "optimized/sol/ambient-velocity/check_response_algebra.py",
+        "bytes": 5109,
+        "sha256": "10e753142c07878ccd252cf40f6f7ac1aef0069a34b05a3ea3fc8e0082315b03"
+      },
+      "log": {
+        "path": "optimized/sol/ambient-velocity/execution.log",
+        "bytes": 102,
+        "sha256": "57a304fd61fee1c5c796c3297ac9b591c804a2a9f69625d6a5d88fc7a6d3aebb"
+      },
+      "output": {
+        "path": "optimized/sol/ambient-velocity/fresh.json",
+        "bytes": 108,
+        "sha256": "034543da89ee190a9bd7f65b57023530d1eeef064086e5e795895fb3c7986985"
+      },
+      "output_origin": "Complete captured checker JSON; positive stdout or failure stderr retained verbatim in execution.log",
+      "control": "ambient-velocity",
+      "expected_reason": "ambient_to_global_initial_velocity",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    }
+  ]
+}
