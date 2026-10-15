@@ -1,0 +1,104 @@
+{
+  "arithmetic": "Integer and Fraction only; no floating certification and no producer import",
+  "fault_control_count": 5,
+  "fault_controls": [
+    {
+      "name": "coverage_gap",
+      "rejected_at": "contiguous positive-width CSV coverage"
+    },
+    {
+      "name": "omit_postpulse",
+      "rejected_at": "registered CSV row count"
+    },
+    {
+      "name": "alter_squared_integral",
+      "rejected_at": "actual whole-cell squared integral"
+    },
+    {
+      "name": "wrong_C_scaling",
+      "rejected_at": "response coefficient uses K integral divided by ell"
+    },
+    {
+      "name": "reverse_physical_tail_sign",
+      "rejected_at": "physical coefficient contains exact gain-clock scaling"
+    }
+  ],
+  "inputs": {
+    "csv": {
+      "bytes": 1043169,
+      "path": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+      "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+    },
+    "mathematical_input_pins": {
+      "archive/BACKGROUND_DERIVATIVE_BOUNDS.json": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c",
+      "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8",
+      "inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+    },
+    "report": {
+      "bytes": 10082,
+      "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+      "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+    },
+    "source_pins": {
+      "compute_inertial_waveform.py": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4",
+      "inertial_error_bounds.py": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4",
+      "sol/inertial_comparator.py": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+    }
+  },
+  "own_source_sha256": "1bd6c99a710e4b2b5d2196b78b78c66eb23c998fd642b596fd342eab1978ba5b",
+  "python_optimization": 1,
+  "review": {
+    "actual_C_interval": [
+      "645449276940653564640711337081839347748480945547063147/1063382396627932698323045648224275660800000",
+      "493645204313886434734123383375674812241031739593349863/664613997892457936451903530140172288000000"
+    ],
+    "coverage": {
+      "domain": [
+        0,
+        3
+      ],
+      "no_gaps_or_overlaps": true,
+      "postpulse_cells": 256,
+      "prefront_cells": 1,
+      "pulse_cells": 4096,
+      "rows": 4353
+    },
+    "physical_scaling": "Every CSV physical interval contains G*[1-(ell*right)^2,1]*H; G<0 and the clock factor is positive",
+    "postpulse_H_from_csv": [
+      "20894468224623737457859685/649037107316853453566312041152512",
+      "137247775367567138001114757/2596148429267413814265248164610048"
+    ],
+    "postpulse_ell_S_from_csv": [
+      "-1509886687028048419756509/2596148429267413814265248164610048",
+      "-416865109465720363509279/1298074214633706907132624082305024"
+    ],
+    "postpulse_squared_integral_outward": [
+      "690621654122963968169/664613997892457936451903530140172288",
+      "1854303721237980024761/664613997892457936451903530140172288"
+    ],
+    "public_strict_C_bounds": [
+      "606000000000",
+      "744000000000"
+    ],
+    "squared_integrals": {
+      "H0_outward": [
+        "69190075137633258457310910781225408907/10633823966279326983230456482242756608",
+        "69616822866671255123078421545425528329/10633823966279326983230456482242756608"
+      ],
+      "H0_raw": [
+        "718510819557843698495809238424173265318271600417963164310518822763710123/110427941548649020598956093796432407239217743554726184882600387580788736",
+        "361471210671792711174085908093906086059010637442927828501780367264305677/55213970774324510299478046898216203619608871777363092441300193790394368"
+      ],
+      "H_outward": [
+        "69190073508683306482571638888487716297/10633823966279326983230456482242756608",
+        "8702103062658856596397182601138771151/1329227995784915872903807060280344576"
+      ],
+      "H_raw": [
+        "359255401320930130899007562584701306986805090283805712241415403705003227/55213970774324510299478046898216203619608871777363092441300193790394368",
+        "90367804789779766751150941435647688647480283416831361298729757344061879/13803492693581127574869511724554050904902217944340773110325048447598592"
+      ]
+    }
+  },
+  "scope": "Independent reconstruction of continuous CSV coverage, residual inflation, physical interval containment, full-domain squared integrals and C. Analytic background, PDE, residual and nonlinear-family hypotheses are not proved by this finite audit.",
+  "status": "PASS_INDEPENDENT_CONTINUOUS_WAVEFORM_REVIEW"
+}

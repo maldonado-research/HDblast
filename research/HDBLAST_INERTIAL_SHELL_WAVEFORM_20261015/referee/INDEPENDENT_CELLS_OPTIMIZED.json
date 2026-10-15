@@ -1,0 +1,47 @@
+{
+  "status": "PASS_INDEPENDENT_CONTINUOUS_INERTIAL_CELLS_AND_NORM",
+  "python_optimization": 1,
+  "check_count": 18,
+  "checks": [
+    "authenticated:sol/inertial_comparator.py",
+    "authenticated:referee/INDEPENDENT_INERTIAL_BOUND_NORMAL.json",
+    "authenticated:inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+    "producer_provenance_matches_executed_source_pins",
+    "all_mathematical_input_provenance_pins_match_current_bytes",
+    "approved_state_and_full_grid",
+    "authenticated_complete_csv_bytes",
+    "root_error_constants_equal_independent_derivation",
+    "physical_parameter_boxes_match_authenticated_gain",
+    "grid_and_value_denominators_correct",
+    "whole_grid_exactly_contiguous_4353_cells",
+    "all_4353_comparison_error_actual_and_physical_cells_reconstructed",
+    "all_256_tail_cells_positive_H_negative_physical_coefficient",
+    "prefront_export_exactly_zero",
+    "direct_whole_cell_norm_sums_match_exact_report",
+    "independent_unrounded_rational_norm_contained",
+    "new_wider_C_recomputed_with_correct_inverse_width_jacobian",
+    "source_and_data_unchanged_throughout_audit"
+  ],
+  "rows_reconstructed": 4353,
+  "actual_integral_interval": [
+    "69190073508683306482571638888487716297/10633823966279326983230456482242756608",
+    "8702103062658856596397182601138771151/1329227995784915872903807060280344576"
+  ],
+  "C_interval": [
+    "645449276940653564640711337081839347748480945547063147/1063382396627932698323045648224275660800000",
+    "493645204313886434734123383375674812241031739593349863/664613997892457936451903530140172288000000"
+  ],
+  "display_only_C": [
+    606977583028.8547,
+    742754750696.3038
+  ],
+  "input_pins": {
+    "comparator": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4",
+    "independent_error": "460d2a09aab3f2450772787911667937684f68861a5509a4f441cfdd16a89a51",
+    "gain": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4",
+    "waveform_report": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8",
+    "waveform_csv": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+  },
+  "own_source_sha256": "c8935079cc4900682eeb1f9f449e32ef91096fb0131d91be95b07bf3068e0e35",
+  "scope": "Independent reconstruction of every exported continuous comparison/error/physical cell and the fresh wider-state norm coefficient. The separately reviewed comparator is used; parent generator and error evaluator are not imported. No nonlinear remainder or physical-unit calibration."
+}

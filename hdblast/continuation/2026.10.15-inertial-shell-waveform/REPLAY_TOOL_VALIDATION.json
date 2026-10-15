@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "scope": "Prefreeze minimal copied-fixture validation only. Final publication ZIP requires its own authenticated replay.",
+  "runner": {
+    "path": "replay-tools/reproduce.py",
+    "bytes": 24999,
+    "sha256": "6249e550647b2e29f030ebd46faafe22edede52dccab68a4af2fa0c5c76606cf"
+  },
+  "verifier": {
+    "path": "replay-tools/verify_manifest.py",
+    "bytes": 2804,
+    "sha256": "969b78bbb00bb7902b1c48eb6fd38305dbb6a28edcca9eb3ae8a8ee9e8cc46b6"
+  },
+  "roster": {
+    "path": "REPLAY_ROSTER.json",
+    "bytes": 4311,
+    "sha256": "358f7e1955ad36a703b6d7ef0646f20a8dc09af89f82ff2dfe2bff94c1c97ca5"
+  },
+  "replay_receipt": {
+    "path": "runner-tool-validation/replay-final/REPRODUCTION_RECEIPT.json",
+    "bytes": 161627,
+    "sha256": "c983a080ec4972e774ef4eb7a2c13f16ac585485bde22ac0635cd136380df9fc"
+  },
+  "fixture_manifest": {
+    "path": "runner-tool-validation/frozen-final/HDBLAST_INERTIAL_SHELL_WAVEFORM_20261015/MANIFEST.json",
+    "bytes": 5792,
+    "sha256": "6914d2ad3902c030b64b59034b85232e1a000c02e8013e2aa2effdaa61b970bb"
+  },
+  "fixture_timestamp_is_a_fixed_test_value": true,
+  "integrity_controls": {
+    "path": "runner-tool-validation/integrity-controls-final/INTEGRITY_CONTROLS.json",
+    "bytes": 4140,
+    "sha256": "609a75cc1d1aa178b7acc463668c78735b6e7b7ab7b4b924bc833e83fe22b5ec"
+  },
+  "independent_review": {
+    "path": "INDEPENDENT_REPLAY_REVIEW.json",
+    "bytes": 10009,
+    "sha256": "0e311d50b1fb31e2e7a43701104eb811e441fb1539aec6ef3a5e16f2ca01e383"
+  },
+  "minimal_fixture_source_files_current_and_equal": 32,
+  "successful_checker_runs": 16,
+  "external_corruption_processes_rejected": 22,
+  "embedded_wrong_formula_controls_rejected": 18,
+  "finite_positive_check_groups_each_mode": 112,
+  "fresh_nonexecutable_artifacts_including_receipt": 79,
+  "integrity_rejections": 18,
+  "valid_verifier_modes": 2,
+  "complete_generator_json_and_csv_reproduced_in_both_modes": true,
+  "mode_agreements": [
+    {
+      "checker": "root",
+      "scientific_json_equal": true,
+      "only_normalized_fields": []
+    },
+    {
+      "checker": "cells",
+      "scientific_json_equal": true,
+      "only_normalized_fields": [
+        "python_optimization"
+      ]
+    },
+    {
+      "checker": "generator",
+      "scientific_json_equal": true,
+      "only_normalized_fields": []
+    },
+    {
+      "checker": "sol",
+      "scientific_json_equal": true,
+      "only_normalized_fields": [
+        "python_optimization"
+      ]
+    },
+    {
+      "checker": "astra",
+      "scientific_json_equal": true,
+      "only_normalized_fields": [
+        "optimized_mode"
+      ]
+    },
+    {
+      "checker": "referee",
+      "scientific_json_equal": true,
+      "only_normalized_fields": [
+        "python_optimization"
+      ]
+    },
+    {
+      "checker": "archive",
+      "scientific_json_equal": true,
+      "only_normalized_fields": []
+    },
+    {
+      "checker": "identities",
+      "scientific_json_equal": true,
+      "only_normalized_fields": []
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "controls": [
+    {
+      "diagnostic": "FAIL: kernel derivative strictly positive on complete interval",
+      "fault": "reverse_kernel_initial",
+      "optimized": false,
+      "returncode": 1
+    },
+    {
+      "diagnostic": "FAIL: positive postpulse integrand on full continuous rectangle",
+      "fault": "reverse_kernel_sign",
+      "optimized": false,
+      "returncode": 1
+    },
+    {
+      "diagnostic": "FAIL: center retains negative local inertia correction",
+      "fault": "omit_local_inertia",
+      "optimized": false,
+      "returncode": 1
+    },
+    {
+      "diagnostic": "FAIL: positive incoming lobe",
+      "fault": "reverse_q_derivative",
+      "optimized": false,
+      "returncode": 1
+    },
+    {
+      "diagnostic": "FAIL: kernel derivative strictly positive on complete interval",
+      "fault": "reverse_kernel_initial",
+      "optimized": true,
+      "returncode": 1
+    },
+    {
+      "diagnostic": "FAIL: positive postpulse integrand on full continuous rectangle",
+      "fault": "reverse_kernel_sign",
+      "optimized": true,
+      "returncode": 1
+    },
+    {
+      "diagnostic": "FAIL: center retains negative local inertia correction",
+      "fault": "omit_local_inertia",
+      "optimized": true,
+      "returncode": 1
+    },
+    {
+      "diagnostic": "FAIL: positive incoming lobe",
+      "fault": "reverse_q_derivative",
+      "optimized": true,
+      "returncode": 1
+    },
+    {
+      "diagnostic": "FAIL: shell input authentication failed",
+      "fault": "changed_authenticated_input",
+      "optimized": false,
+      "returncode": 1
+    },
+    {
+      "diagnostic": "FAIL: shell input authentication failed",
+      "fault": "changed_authenticated_input",
+      "optimized": true,
+      "returncode": 1
+    }
+  ],
+  "minimal_input_file_count": 1,
+  "normal_optimized_control_count": 10,
+  "normal_optimized_mathematics_identical": true,
+  "producer_sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4",
+  "python_optimization": 1,
+  "scope": "Comparator-only arithmetic audit. Does not certify the analytic coupled PDE assumptions or actual-minus-comparator estimate.",
+  "signed_comparator_tail": [
+    "84004879596842586828946757/2596148429267413814265248164610048",
+    "34205192167304875250901685/649037107316853453566312041152512"
+  ],
+  "status": "PASS_INERTIAL_COMPARATOR_FRESH_REPLAY_AND_FAULTS"
+}

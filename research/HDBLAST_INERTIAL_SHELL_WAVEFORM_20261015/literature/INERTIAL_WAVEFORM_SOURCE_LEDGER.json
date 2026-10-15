@@ -1,0 +1,118 @@
+{
+  "schema": "hdblast.inertial-waveform.source-ledger.v1",
+  "date_utc": "2026-10-15",
+  "sources": [
+    {
+      "id": "L1",
+      "paper_id": "arxiv:1301.1004",
+      "title": "Green's Function For Linear Differential Operators In One Variable",
+      "url": "https://arxiv.org/abs/1301.1004",
+      "year_from_identifier": 2013,
+      "authors": null,
+      "author_evidence": "Not independently established in the returned metadata/passages used here.",
+      "operations": [
+        "S2",
+        "R2"
+      ],
+      "evidence_level": "TARGETED_PRIMARY_PASSAGES_AND_INDEX_ABSTRACT",
+      "locators": [
+        "Section 2, equation (11)",
+        "Section 2, Corollary2, equations (19)–(20)"
+      ],
+      "supported_claim": "Causal Green functions are represented by iterated integrals; constant-coefficient differential operators admit causal root/exponential convolution formulas.",
+      "use": "Context for direct integration of the positive-inertia boundary oscillator and its memory kernel.",
+      "transfer_limit": "No HDB PDE convergence, derivative-trace, arithmetic, or nonlinear error certificate is imported. The free endpoint-mass comparison identities in the synthesis are elementary HDB model calculations with W=beta=0, not claims about the physical coefficients."
+    },
+    {
+      "id": "L2",
+      "paper_id": "arxiv:1901.04158",
+      "title": "A path integral method for solution of the wave equation with continuously-varying coefficients",
+      "url": "https://arxiv.org/abs/1901.04158",
+      "year_from_identifier": 2019,
+      "authors": null,
+      "author_evidence": "Not independently established in the returned metadata/passages used here.",
+      "operations": [
+        "S2",
+        "R1"
+      ],
+      "evidence_level": "TARGETED_PRIMARY_PASSAGES_AND_INDEX_ABSTRACT",
+      "locators": [
+        "Section4.1, Lemmas3–4 and Theorem3",
+        "Theorem4, equations (47)–(48)"
+      ],
+      "supported_claim": "For its spatially varying acoustic medium, path-volume bounds give factorial series convergence and finite truncation estimates including derivative-series control. Faster alternating bounds have additional monotone-impedance/contrast/data hypotheses.",
+      "use": "Motivates estimating the actual causal integration geometry and preserving signed cancellation before taking absolute values.",
+      "transfer_limit": "A spatially varying acoustic impedance problem is not the HDB time-dependent-potential plus dynamic-boundary problem. Its factorial and alternating-tail constants require a separate operator proof before application."
+    },
+    {
+      "id": "L3",
+      "paper_id": "arxiv:0707.4188",
+      "title": "Well-posed initial-boundary value problem for the harmonic Einstein equations using energy estimates",
+      "url": "https://arxiv.org/abs/0707.4188",
+      "year_from_identifier": 2007,
+      "authors": [
+        "H.-O. Kreiss",
+        "O. Reula",
+        "O. Sarbach",
+        "J. Winicour"
+      ],
+      "author_evidence": "Returned primary title/front-matter passage.",
+      "operations": [
+        "S3",
+        "R3"
+      ],
+      "evidence_level": "TARGETED_PRIMARY_PASSAGES_AND_INDEX_ABSTRACT",
+      "locators": [
+        "Introduction, quasilinear extension description",
+        "Section2, equations (1)–(3) and integrated boundary estimate",
+        "Section3, harmonic Einstein boundary hierarchy",
+        "Appendix1 is identified in the introduction; its full text was not returned"
+      ],
+      "supported_claim": "The paper proves strong boundary/bulk energy estimates for specified wave boundary conditions and describes a local quasilinear extension to the harmonic Einstein system.",
+      "use": "Methodological evidence that the nonlinear boundary structure and a constraint-preserving hierarchy must enter a well-posedness argument.",
+      "transfer_limit": "Sommerfeld-type boundary conditions differ from an Israel shell with scalar matter. No quantitative second-parameter-derivative bound, effective epsilon radius or nonlinear remainder is supplied for HDB by the retrieved passages."
+    },
+    {
+      "id": "L4",
+      "paper_id": "arxiv:2006.01498",
+      "title": "The initial boundary value problem for the Einstein equations with totally geodesic timelike boundary",
+      "url": "https://arxiv.org/abs/2006.01498",
+      "year_from_identifier": 2020,
+      "authors": null,
+      "author_evidence": "Not independently established in the returned metadata/passages used here.",
+      "operations": [
+        "S3",
+        "R4"
+      ],
+      "evidence_level": "TARGETED_PRIMARY_PASSAGES_AND_INDEX_ABSTRACT",
+      "locators": [
+        "Proposition4.8",
+        "Constraint/curvature propagation proof, equation (4.48)",
+        "Abstract statement of anisotropic normal-derivative difficulty"
+      ],
+      "supported_claim": "The Einstein vacuum boundary problem uses a totally geodesic timelike boundary, anisotropic boundary regularity and cancellation of boundary energy fluxes in the propagation of constraints. The returned proposition uses B^s with s>=7 for its boundary argument.",
+      "use": "Shows that even an Einstein vacuum boundary proof relies on boundary-specific flux and normal-derivative structure.",
+      "transfer_limit": "The totally geodesic vacuum boundary is not an Einstein-scalar Israel shell. The B^s scale is not ordinary H^s. No HDB shell remainder or numerical parameter range follows."
+    },
+    {
+      "id": "L5",
+      "paper_id": "arxiv:2602.22068",
+      "title": "Optimal error bounds on the exponential integrator for dispersive equations with highly concentrated potential",
+      "url": "https://arxiv.org/abs/2602.22068",
+      "year_from_identifier": 2026,
+      "authors": null,
+      "operations": [
+        "S2"
+      ],
+      "evidence_level": "INDEX_METADATA_AND_ABSTRACT_ONLY",
+      "locators": [
+        "Returned index abstract only"
+      ],
+      "supported_claim": "The returned abstract describes cancellation-sensitive iterated-Duhamel analysis and an exponential integrator for a one-dimensional dispersive equation with concentrated potential.",
+      "use": "Recent methodological lead only.",
+      "transfer_limit": "Body, authors and applicability were not independently verified. The dispersive equation and integration method do not directly cover the present hyperbolic endpoint-mass problem."
+    }
+  ],
+  "claims_boundary": "Sources provide context and methods, not a complete HDB waveform/nonlinear certificate. Elementary comparison formulas and odd-reflection identities in the synthesis are explicitly separated from external source claims.",
+  "publication_excludes_raw_bodies": true
+}

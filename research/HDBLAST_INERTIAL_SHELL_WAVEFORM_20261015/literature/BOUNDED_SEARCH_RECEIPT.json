@@ -1,0 +1,191 @@
+{
+  "schema": "hdblast.inertial-waveform.bounded-literature-search.v1",
+  "date_utc": "2026-10-15",
+  "status": "COMPLETED_WITH_RECORDED_DISCOVERY_GAP",
+  "scope": "Endpoint mass/dynamic boundary memory; causal integral/path-series remainder methods; nonlinear Einstein boundary-energy estimates and the Einstein-scalar shell remainder gap.",
+  "scope_limits": [
+    "Three discovery attempts: two successful paper-index searches and one unexecuted HTTP402 web-search failure.",
+    "Four targeted primary passage reads, not full-paper exhaustive reads.",
+    "One 2026 candidate is index-abstract-only. No broad or exhaustive review, novelty claim, or theorem applicability inference.",
+    "Previously reviewed arXiv:2512.19167, arXiv:2503.22439 and arXiv:1802.07942 were not reread in this phase."
+  ],
+  "counts": {
+    "search_attempts": 3,
+    "successful_paper_index_searches": 2,
+    "failed_web_searches_not_run": 1,
+    "primary_passage_reads": 4,
+    "successful_external_operations": 6,
+    "total_tool_invocations": 7
+  },
+  "operations": [
+    {
+      "id": "S1",
+      "tool": "firecrawl_search",
+      "arguments": {
+        "query": "wave equation string endpoint mass exact reflection coefficient boundary memory kernel Laplace transform",
+        "sources": [
+          "web"
+        ],
+        "limit": 6
+      },
+      "invocation_provenance": "Arguments and returned result were saved together at invocation time by this literature agent.",
+      "status": "FAILED_BEFORE_SEARCH_RAN",
+      "result_error": "Request failed with status code 402",
+      "http_status": 402,
+      "failure_reason": "Connected Firecrawl web-search account reported out of credits; request was not run.",
+      "retried": false
+    },
+    {
+      "id": "S2",
+      "tool": "firecrawl_research_search_papers",
+      "arguments": {
+        "query": "one dimensional wave equation potential Duhamel Volterra integral Neumann Born series explicit rigorous remainder error bounds causal Green function",
+        "k": 6
+      },
+      "invocation_provenance": "Arguments and returned result were saved together at invocation time by this literature agent.",
+      "status": "SUCCESS",
+      "result_error": null,
+      "result_count": 6,
+      "returned_sources": [
+        {
+          "id": "pmid:12786516",
+          "title": "Inverse scattering theory: renormalization of the Lippmann-Schwinger equation for acoustic scattering in one dimension."
+        },
+        {
+          "id": "arxiv:1905.02408",
+          "title": "Integral representation formulae for the solution of a wave equation with time-dependent damping and mass in the scale-invariant case"
+        },
+        {
+          "id": "arxiv:1901.04158",
+          "title": "A path integral method for solution of the wave equation with continuously-varying coefficients"
+        },
+        {
+          "id": "arxiv:1301.1004",
+          "title": "Green's Function For Linear Differential Operators In One Variable"
+        },
+        {
+          "id": "arxiv:1805.06940",
+          "title": "A method for computation of scattering amplitudes and Green functions of whole axis problems"
+        },
+        {
+          "id": "arxiv:2602.22068",
+          "title": "Optimal error bounds on the exponential integrator for dispersive equations with highly concentrated potential"
+        }
+      ]
+    },
+    {
+      "id": "S3",
+      "tool": "firecrawl_research_search_papers",
+      "arguments": {
+        "query": "Einstein scalar field timelike boundary initial boundary value problem generalized harmonic nonlinear energy estimates smooth dependence",
+        "k": 6
+      },
+      "invocation_provenance": "Arguments and returned result were saved together at invocation time by this literature agent.",
+      "status": "SUCCESS",
+      "result_error": null,
+      "result_count": 6,
+      "returned_sources": [
+        {
+          "id": "arxiv:0707.2797",
+          "title": "Outer boundary conditions for Einstein's field equations in harmonic coordinates"
+        },
+        {
+          "id": "arxiv:gr-qc/0606053",
+          "title": "Stable radiation-controlling boundary conditions for the generalized harmonic Einstein equations"
+        },
+        {
+          "id": "arxiv:0707.4188",
+          "title": "Well-posed initial-boundary value problem for the harmonic Einstein equations using energy estimates"
+        },
+        {
+          "id": "arxiv:2006.01498",
+          "title": "The initial boundary value problem for the Einstein equations with totally geodesic timelike boundary"
+        },
+        {
+          "id": "arxiv:1711.00195",
+          "title": "Stability of Minkowski space and polyhomogeneity of the metric"
+        },
+        {
+          "id": "arxiv:1912.07338",
+          "title": "On the initial boundary value problem for the Einstein vacuum equations in the maximal gauge"
+        }
+      ]
+    },
+    {
+      "id": "R1",
+      "tool": "firecrawl_research_read_paper",
+      "arguments": {
+        "paperId": "arxiv:1901.04158",
+        "question": "State the actual one-dimensional wave model, the path-integral or Volterra series convergence theorem and explicit finite truncation remainder bounds. Does it cover a time-dependent potential or an endpoint-mass dynamic boundary? Which cancellations or reflected paths enter the estimates?",
+        "k": 4
+      },
+      "invocation_provenance": "Arguments and returned result were saved together at invocation time by this literature agent.",
+      "status": "SUCCESS",
+      "result_error": null,
+      "returned_passage_count": 4,
+      "raw_passages_distributed": false
+    },
+    {
+      "id": "R2",
+      "tool": "firecrawl_research_read_paper",
+      "arguments": {
+        "paperId": "arxiv:1301.1004",
+        "question": "Give the causal Green function construction for second-order variable-coefficient linear ODEs and convergent iterated-integral remainder bounds. Does it justify the explicit exponential kernel for a damped boundary oscillator with positive inertia, and which convergence assumptions are required?",
+        "k": 3
+      },
+      "invocation_provenance": "Arguments and returned result were saved together at invocation time by this literature agent.",
+      "status": "SUCCESS",
+      "result_error": null,
+      "returned_passage_count": 3,
+      "raw_passages_distributed": false
+    },
+    {
+      "id": "R3",
+      "tool": "firecrawl_research_read_paper",
+      "arguments": {
+        "paperId": "arxiv:0707.4188",
+        "question": "What precise boundary conditions, regularity and uniform-in-iterate energy estimates establish strong well posedness? Does the paper cover nonlinear variable-coefficient harmonic Einstein equations or only frozen coefficients? What estimates support differentiability or nonlinear Taylor remainder bounds, and does it treat scalar matter and an Israel shell?",
+        "k": 4
+      },
+      "invocation_provenance": "Arguments and returned result were saved together at invocation time by this literature agent.",
+      "status": "SUCCESS",
+      "result_error": null,
+      "returned_passage_count": 4,
+      "raw_passages_distributed": false
+    },
+    {
+      "id": "R4",
+      "tool": "firecrawl_research_read_paper",
+      "arguments": {
+        "paperId": "arxiv:2006.01498",
+        "question": "State the exact totally-geodesic boundary hypothesis, matter/vacuum scope and Sobolev regularity assumptions. How are normal derivatives and nonlinear boundary fluxes controlled? Does it give an explicit second-order parameter remainder for an Einstein-scalar Israel shell or require a different boundary structure?",
+        "k": 3
+      },
+      "invocation_provenance": "Arguments and returned result were saved together at invocation time by this literature agent.",
+      "status": "SUCCESS",
+      "result_error": null,
+      "returned_passage_count": 3,
+      "raw_passages_distributed": false
+    }
+  ],
+  "internal_result_files": [
+    {
+      "path": "internal/SEARCH_RESPONSES.json",
+      "bytes": 27448,
+      "sha256": "e94530b2b887866e9c40232beb84c7ae9fefdd248a06e0910e8ab112d465810c",
+      "distributed": false
+    },
+    {
+      "path": "internal/READ_RESPONSES.json",
+      "bytes": 115920,
+      "sha256": "765809472eedb29c557a657214a5bf297fec8190ad7617dad2ec675cee95275f",
+      "distributed": false
+    }
+  ],
+  "publication_excludes_internal_directory": true,
+  "raw_paper_bodies_distributed": false,
+  "downloaded_code_executed": false,
+  "external_messages_sent": false,
+  "git_writes_performed": false,
+  "failure_notice": "The endpoint-mass web search could not run because Firecrawl returned HTTP402. No retry was made. This limits endpoint-specific discovery; it does not invalidate the separate successful paper-index searches or reads."
+}
