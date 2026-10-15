@@ -1,0 +1,1181 @@
+{
+  "schema": "hdblast.live-display-review.v1",
+  "status": "PASS",
+  "date_utc": "2026-10-15T15:07:41.345600+00:00",
+  "scope": "Read-only DOM/layout audit of new waveform sections in five viewport configurations. Supplements separate raw/live byte readback.",
+  "transport": "Local Chromium rendered freshly fetched live HTTPS response bytes through Playwright request routing. Python urllib used the inherited HTTP(S) proxy and configured CA trust with TLS verification enabled. Browser routes were fulfilled only after verified-TLS same-origin GET responses were fetched.",
+  "tool_provenance": {
+    "browser": "Chromium",
+    "browser_version": "151.0.7922.173",
+    "automation": "Python Playwright async API",
+    "executable": "/usr/bin/chromium",
+    "network_client": "Python urllib.request with ssl.create_default_context",
+    "tls_verification_disabled": false,
+    "failed_firecrawl_interact_calls": [
+      {
+        "url": "https://maldonado-research.github.io/HDblast/",
+        "error": "Tool execution failed: timeout of 65000ms exceeded",
+        "session_id_returned": false
+      },
+      {
+        "url": "https://maldonado-research.github.io/projects/hdblast/",
+        "error": "Tool execution failed: timeout of 65000ms exceeded",
+        "session_id_returned": false
+      }
+    ],
+    "direct_browser_probe": {
+      "outcome": "ERR_CERT_AUTHORITY_INVALID",
+      "browser_closed": true,
+      "tls_bypass_used": false
+    },
+    "completed_local_routed_browser_sessions": 1,
+    "local_browser_sessions_including_failed_direct_probe": 2,
+    "routed_session_closed": true
+  },
+  "limitations": [
+    "Firecrawl returned no usable session IDs or DOM measurements; direct Chromium live navigation failed CA validation. This is local browser rendering of freshly fetched verified-TLS live bytes, not a successful Firecrawl or direct-browser network session.",
+    "No screenshots were taken or visually inspected in this audit. Geometry, image state, text and links were inspected through DOM measurements.",
+    "The audit covers the new waveform section at the five specified viewport configurations; page-wide legacy layout and other projects were not exhaustively reviewed.",
+    "Link targets were read from the DOM, not navigated or submitted. Independent gated readback verifies publication bytes separately.",
+    "Read-only same-origin GET routing blocked other origins and all non-GET requests; this can affect unrelated external resources, which are separately recorded.",
+    "A bounded baseline comparison subsequently confirmed identical mobile scroll widths in all three pinned pre-checkpoint HTML blobs. The observed 17px/20px page-wide overflow therefore predates the new waveform sections; it was not changed in this task."
+  ],
+  "persistent_site_writes": false,
+  "screenshots_created": false,
+  "observations": [
+    {
+      "url": "https://maldonado-research.github.io/HDblast/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "document": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440
+      },
+      "section_count": 1,
+      "section_rect": {
+        "x": 246,
+        "y": -187.28125,
+        "width": 948,
+        "height": 1165.453125,
+        "right": 1194,
+        "bottom": 978.171875
+      },
+      "section_display": "block",
+      "section_visibility": "visible",
+      "section_intersects_viewport": true,
+      "text_checks": {
+        "cells_4098": true,
+        "error_1_0000004": true,
+        "coefficient_lower_6_06": true,
+        "coefficient_upper_7_44": true,
+        "tail_4_752": true
+      },
+      "text_snippet": "Conditional first-variation shell waveform: For the same specified narrow aligned quadrupole (delta = 1/1000, ell = 10^-10 in model coordinates), a continuous 4098-cell enclosure resolves the physical scalar’s linear first variation. The normalized trace H differs from its explicit comparator by less than 1.0000004 × 10^-7 on 0 ≤ x ≤ 3; the negative physical gain reverses its sign. The leading proper-time response coefficient now satisfies 6.06 × 10^15 < C < 7.44 × 10^15 in R_epsilon = epsilon^2 C + o(epsilon^2).\n\nThe retained background, exact-data, gauge, regularity and nonlinear support hypotheses remain explicit. The post-pulse estimate |H| < 4.752 × 10^-14 on 2 ≤ x ≤ 3 is a small-tail bound. No finite-amplitude nonlinear waveform, observed time scale or higher-dimensional Big Bang origin is established. Next: a wider state with a val",
+      "image": {
+        "src": "assets/shell_first_variation_waveform_20261015.png",
+        "current_src": "https://maldonado-research.github.io/HDblast/assets/shell_first_variation_waveform_20261015.png",
+        "complete": true,
+        "natural_width": 2000,
+        "natural_height": 1480,
+        "rect": {
+          "x": 257,
+          "y": 157.78125,
+          "width": 926,
+          "height": 685.234375,
+          "right": 1183,
+          "bottom": 843.015625
+        },
+        "alt": "Conditional shell scalar first-variation envelope with opposite-signed lobes and a bounded post-pulse tail",
+        "linked_href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/UNIFORM_FIRST_VARIATION_WAVEFORM.md",
+        "intersects_viewport": true
+      },
+      "links": [
+        {
+          "label": "Conditional shell scalar first-variation envelope with opposite-signed lobes and a bounded post-pulse tail",
+          "href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/UNIFORM_FIRST_VARIATION_WAVEFORM.md"
+        },
+        {
+          "label": "Waveform theorem, normalization and assumptions",
+          "href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/UNIFORM_FIRST_VARIATION_WAVEFORM.md"
+        },
+        {
+          "label": "Reproducible calculations and independent reviews",
+          "href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/README.md"
+        },
+        {
+          "label": "Continuous-cell enclosure data",
+          "href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/computed/WAVEFORM_ENCLOSURE.json"
+        }
+      ],
+      "section_horizontal_overflow": [],
+      "configuration": "public_en_desktop",
+      "observed_at_utc": "2026-10-15T15:07:37.795323+00:00",
+      "checks": {
+        "new_section_displayed": true,
+        "new_result_text_present": true,
+        "image_loaded_with_expected_natural_dimensions": true,
+        "image_fits_viewport": true,
+        "meaningful_alt_present": true,
+        "image_links_to_new_proof": true,
+        "proof_and_data_links_present": true,
+        "no_horizontal_overflow_in_new_section": true
+      },
+      "status": "PASS"
+    },
+    {
+      "url": "https://maldonado-research.github.io/HDblast/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document": {
+        "clientWidth": 390,
+        "scrollWidth": 407
+      },
+      "section_count": 1,
+      "section_rect": {
+        "x": 16,
+        "y": -404.921875,
+        "width": 358,
+        "height": 1285.390625,
+        "right": 374,
+        "bottom": 880.46875
+      },
+      "section_display": "block",
+      "section_visibility": "visible",
+      "section_intersects_viewport": true,
+      "text_checks": {
+        "cells_4098": true,
+        "error_1_0000004": true,
+        "coefficient_lower_6_06": true,
+        "coefficient_upper_7_44": true,
+        "tail_4_752": true
+      },
+      "text_snippet": "Conditional first-variation shell waveform: For the same specified narrow aligned quadrupole (delta = 1/1000, ell = 10^-10 in model coordinates), a continuous 4098-cell enclosure resolves the physical scalar’s linear first variation. The normalized trace H differs from its explicit comparator by less than 1.0000004 × 10^-7 on 0 ≤ x ≤ 3; the negative physical gain reverses its sign. The leading proper-time response coefficient now satisfies 6.06 × 10^15 < C < 7.44 × 10^15 in R_epsilon = epsilon^2 C + o(epsilon^2).\n\nThe retained background, exact-data, gauge, regularity and nonlinear support hypotheses remain explicit. The post-pulse estimate |H| < 4.752 × 10^-14 on 2 ≤ x ≤ 3 is a small-tail bound. No finite-amplitude nonlinear waveform, observed time scale or higher-dimensional Big Bang origin is established. Next: a wider state with a val",
+      "image": {
+        "src": "assets/shell_first_variation_waveform_20261015.png",
+        "current_src": "https://maldonado-research.github.io/HDblast/assets/shell_first_variation_waveform_20261015.png",
+        "complete": true,
+        "natural_width": 2000,
+        "natural_height": 1480,
+        "rect": {
+          "x": 27,
+          "y": 375.140625,
+          "width": 336,
+          "height": 248.625,
+          "right": 363,
+          "bottom": 623.765625
+        },
+        "alt": "Conditional shell scalar first-variation envelope with opposite-signed lobes and a bounded post-pulse tail",
+        "linked_href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/UNIFORM_FIRST_VARIATION_WAVEFORM.md",
+        "intersects_viewport": true
+      },
+      "links": [
+        {
+          "label": "Conditional shell scalar first-variation envelope with opposite-signed lobes and a bounded post-pulse tail",
+          "href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/UNIFORM_FIRST_VARIATION_WAVEFORM.md"
+        },
+        {
+          "label": "Waveform theorem, normalization and assumptions",
+          "href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/UNIFORM_FIRST_VARIATION_WAVEFORM.md"
+        },
+        {
+          "label": "Reproducible calculations and independent reviews",
+          "href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/README.md"
+        },
+        {
+          "label": "Continuous-cell enclosure data",
+          "href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/computed/WAVEFORM_ENCLOSURE.json"
+        }
+      ],
+      "section_horizontal_overflow": [],
+      "configuration": "public_en_mobile",
+      "observed_at_utc": "2026-10-15T15:07:38.132193+00:00",
+      "checks": {
+        "new_section_displayed": true,
+        "new_result_text_present": true,
+        "image_loaded_with_expected_natural_dimensions": true,
+        "image_fits_viewport": true,
+        "meaningful_alt_present": true,
+        "image_links_to_new_proof": true,
+        "proof_and_data_links_present": true,
+        "no_horizontal_overflow_in_new_section": true
+      },
+      "status": "PASS"
+    },
+    {
+      "url": "https://maldonado-research.github.io/HDblast/es/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document": {
+        "clientWidth": 390,
+        "scrollWidth": 407
+      },
+      "section_count": 1,
+      "section_rect": {
+        "x": 16,
+        "y": -591.203125,
+        "width": 358,
+        "height": 1416.53125,
+        "right": 374,
+        "bottom": 825.328125
+      },
+      "section_display": "block",
+      "section_visibility": "visible",
+      "section_intersects_viewport": true,
+      "text_checks": {
+        "cells_4098": true,
+        "error_1_0000004": true,
+        "coefficient_lower_6_06": true,
+        "coefficient_upper_7_44": true,
+        "tail_4_752": true
+      },
+      "text_snippet": "Forma de onda condicional de la primera variación de la capa: Para el mismo cuadrupolo alineado estrecho especificado (delta = 1/1000, ell = 10^-10 en las coordenadas del modelo), una envolvente continua de 4098 celdas resuelve la primera variación lineal del escalar físico. La traza normalizada H difiere de su comparador explícito en menos de 1.0000004 × 10^-7 para 0 ≤ x ≤ 3; la ganancia física negativa invierte su signo. El coeficiente principal de respuesta en tiempo propio ahora satisface 6.06 × 10^15 < C < 7.44 × 10^15 en R_epsilon = epsilon^2 C + o(epsilon^2).\n\nSe conservan las hipótesis explícitas sobre el fondo, los datos exactos, el gauge, la regularidad y el soporte no lineal. La estimación posterior al pulso |H| < 4.752 × 10^-14 para 2 ≤ x ≤ 3 acota una cola pequeña. No se establece una forma de onda no lineal de amplitud finit",
+      "image": {
+        "src": "../assets/shell_first_variation_waveform_20261015.png",
+        "current_src": "https://maldonado-research.github.io/HDblast/assets/shell_first_variation_waveform_20261015.png",
+        "complete": true,
+        "natural_width": 2000,
+        "natural_height": 1480,
+        "rect": {
+          "x": 27,
+          "y": 297.609375,
+          "width": 336,
+          "height": 248.625,
+          "right": 363,
+          "bottom": 546.234375
+        },
+        "alt": "Envolvente condicional de la primera variación del escalar de la capa con lóbulos de signos opuestos y una cola posterior al pulso acotada",
+        "linked_href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/UNIFORM_FIRST_VARIATION_WAVEFORM.md",
+        "intersects_viewport": true
+      },
+      "links": [
+        {
+          "label": "Envolvente condicional de la primera variación del escalar de la capa con lóbulos de signos opuestos y una cola posterior al pulso acotada",
+          "href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/UNIFORM_FIRST_VARIATION_WAVEFORM.md"
+        },
+        {
+          "label": "Teorema de la forma de onda, normalización e hipótesis",
+          "href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/UNIFORM_FIRST_VARIATION_WAVEFORM.md"
+        },
+        {
+          "label": "Cálculos reproducibles y revisiones independientes",
+          "href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/README.md"
+        },
+        {
+          "label": "Datos de la envolvente continua por celdas",
+          "href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/computed/WAVEFORM_ENCLOSURE.json"
+        }
+      ],
+      "section_horizontal_overflow": [],
+      "configuration": "public_es_mobile",
+      "observed_at_utc": "2026-10-15T15:07:39.397638+00:00",
+      "checks": {
+        "new_section_displayed": true,
+        "new_result_text_present": true,
+        "image_loaded_with_expected_natural_dimensions": true,
+        "image_fits_viewport": true,
+        "meaningful_alt_present": true,
+        "image_links_to_new_proof": true,
+        "proof_and_data_links_present": true,
+        "no_horizontal_overflow_in_new_section": true
+      },
+      "status": "PASS"
+    },
+    {
+      "url": "https://maldonado-research.github.io/projects/hdblast/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "document": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440
+      },
+      "section_count": 1,
+      "section_rect": {
+        "x": 166,
+        "y": -78.4375,
+        "width": 731,
+        "height": 989.125,
+        "right": 897,
+        "bottom": 910.6875
+      },
+      "section_display": "block",
+      "section_visibility": "visible",
+      "section_intersects_viewport": true,
+      "text_checks": {
+        "cells_4098": true,
+        "error_1_0000004": true,
+        "coefficient_lower_6_06": true,
+        "coefficient_upper_7_44": true,
+        "tail_4_752": true
+      },
+      "text_snippet": "Conditional first-variation shell waveform: For the same specified narrow aligned quadrupole (delta = 1/1000, ell = 10^-10 in model coordinates), a continuous 4098-cell enclosure resolves the physical scalar’s linear first variation. The normalized trace H differs from its explicit comparator by less than 1.0000004 × 10^-7 on 0 ≤ x ≤ 3; the negative physical gain reverses its sign. The leading proper-time response coefficient now satisfies 6.06 × 10^15 < C < 7.44 × 10^15 in R_epsilon = epsilon^2 C + o(epsilon^2).\n\nThe retained background, exact-data, gauge, regularity and nonlinear support hypotheses remain explicit. The post-pulse estimate |H| < 4.752 × 10^-14 on 2 ≤ x ≤ 3 is a small-tail bound. No finite-amplitude nonlinear waveform, observed time scale or higher-dimensional Big Bang origin is established. Next: a wider state with a val",
+      "image": {
+        "src": "assets/shell_first_variation_waveform_20261015.png",
+        "current_src": "https://maldonado-research.github.io/projects/hdblast/assets/shell_first_variation_waveform_20261015.png",
+        "complete": true,
+        "natural_width": 2000,
+        "natural_height": 1480,
+        "rect": {
+          "x": 206,
+          "y": 275.03125,
+          "width": 651,
+          "height": 481.734375,
+          "right": 857,
+          "bottom": 756.765625
+        },
+        "alt": "Conditional shell scalar first-variation envelope with opposite-signed lobes and a bounded post-pulse tail",
+        "linked_href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/UNIFORM_FIRST_VARIATION_WAVEFORM.md",
+        "intersects_viewport": true
+      },
+      "links": [
+        {
+          "label": "Conditional shell scalar first-variation envelope with opposite-signed lobes and a bounded post-pulse tail",
+          "href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/UNIFORM_FIRST_VARIATION_WAVEFORM.md"
+        },
+        {
+          "label": "Waveform theorem, normalization and assumptions",
+          "href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/UNIFORM_FIRST_VARIATION_WAVEFORM.md"
+        },
+        {
+          "label": "Reproducible calculations and independent reviews",
+          "href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/README.md"
+        },
+        {
+          "label": "Continuous-cell enclosure data",
+          "href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/computed/WAVEFORM_ENCLOSURE.json"
+        }
+      ],
+      "section_horizontal_overflow": [],
+      "configuration": "shared_desktop",
+      "observed_at_utc": "2026-10-15T15:07:41.009113+00:00",
+      "checks": {
+        "new_section_displayed": true,
+        "new_result_text_present": true,
+        "image_loaded_with_expected_natural_dimensions": true,
+        "image_fits_viewport": true,
+        "meaningful_alt_present": true,
+        "image_links_to_new_proof": true,
+        "proof_and_data_links_present": true,
+        "no_horizontal_overflow_in_new_section": true
+      },
+      "status": "PASS"
+    },
+    {
+      "url": "https://maldonado-research.github.io/projects/hdblast/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document": {
+        "clientWidth": 390,
+        "scrollWidth": 410
+      },
+      "section_count": 1,
+      "section_rect": {
+        "x": 49,
+        "y": -379.375,
+        "width": 334.765625,
+        "height": 1217.75,
+        "right": 383.765625,
+        "bottom": 838.375
+      },
+      "section_display": "block",
+      "section_visibility": "visible",
+      "section_intersects_viewport": true,
+      "text_checks": {
+        "cells_4098": true,
+        "error_1_0000004": true,
+        "coefficient_lower_6_06": true,
+        "coefficient_upper_7_44": true,
+        "tail_4_752": true
+      },
+      "text_snippet": "Conditional first-variation shell waveform: For the same specified narrow aligned quadrupole (delta = 1/1000, ell = 10^-10 in model coordinates), a continuous 4098-cell enclosure resolves the physical scalar’s linear first variation. The normalized trace H differs from its explicit comparator by less than 1.0000004 × 10^-7 on 0 ≤ x ≤ 3; the negative physical gain reverses its sign. The leading proper-time response coefficient now satisfies 6.06 × 10^15 < C < 7.44 × 10^15 in R_epsilon = epsilon^2 C + o(epsilon^2).\n\nThe retained background, exact-data, gauge, regularity and nonlinear support hypotheses remain explicit. The post-pulse estimate |H| < 4.752 × 10^-14 on 2 ≤ x ≤ 3 is a small-tail bound. No finite-amplitude nonlinear waveform, observed time scale or higher-dimensional Big Bang origin is established. Next: a wider state with a val",
+      "image": {
+        "src": "assets/shell_first_variation_waveform_20261015.png",
+        "current_src": "https://maldonado-research.github.io/projects/hdblast/assets/shell_first_variation_waveform_20261015.png",
+        "complete": true,
+        "natural_width": 2000,
+        "natural_height": 1480,
+        "rect": {
+          "x": 89,
+          "y": 343.5625,
+          "width": 254.765625,
+          "height": 188.515625,
+          "right": 343.765625,
+          "bottom": 532.078125
+        },
+        "alt": "Conditional shell scalar first-variation envelope with opposite-signed lobes and a bounded post-pulse tail",
+        "linked_href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/UNIFORM_FIRST_VARIATION_WAVEFORM.md",
+        "intersects_viewport": true
+      },
+      "links": [
+        {
+          "label": "Conditional shell scalar first-variation envelope with opposite-signed lobes and a bounded post-pulse tail",
+          "href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/UNIFORM_FIRST_VARIATION_WAVEFORM.md"
+        },
+        {
+          "label": "Waveform theorem, normalization and assumptions",
+          "href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/UNIFORM_FIRST_VARIATION_WAVEFORM.md"
+        },
+        {
+          "label": "Reproducible calculations and independent reviews",
+          "href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/README.md"
+        },
+        {
+          "label": "Continuous-cell enclosure data",
+          "href": "https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/computed/WAVEFORM_ENCLOSURE.json"
+        }
+      ],
+      "section_horizontal_overflow": [],
+      "configuration": "shared_mobile",
+      "observed_at_utc": "2026-10-15T15:07:41.109858+00:00",
+      "checks": {
+        "new_section_displayed": true,
+        "new_result_text_present": true,
+        "image_loaded_with_expected_natural_dimensions": true,
+        "image_fits_viewport": true,
+        "meaningful_alt_present": true,
+        "image_links_to_new_proof": true,
+        "proof_and_data_links_present": true,
+        "no_horizontal_overflow_in_new_section": true
+      },
+      "status": "PASS"
+    }
+  ],
+  "verified_live_fetches": [
+    {
+      "url": "https://maldonado-research.github.io/HDblast/",
+      "final_url": "https://maldonado-research.github.io/HDblast/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 88187,
+      "sha256": "92eefc81cf7fc7d1de7110c164c1a73194741f10e66cc5652f4210ca979fbc80",
+      "retrieved_at_utc": "2026-10-15T15:07:35.295106+00:00",
+      "tls_verification": true
+    },
+    {
+      "url": "https://maldonado-research.github.io/HDblast/assets/shell_first_variation_waveform_20261015.png",
+      "final_url": "https://maldonado-research.github.io/HDblast/assets/shell_first_variation_waveform_20261015.png",
+      "status": 200,
+      "content_type": "image/png",
+      "bytes": 178856,
+      "sha256": "68bf34d840fdb8c8696bc79248517f198b483ac5febb0ea9400731a41f85ea7d",
+      "retrieved_at_utc": "2026-10-15T15:07:37.294842+00:00",
+      "tls_verification": true
+    },
+    {
+      "url": "https://maldonado-research.github.io/HDblast/figures/shell_hilltop_and_spectrum.png",
+      "final_url": "https://maldonado-research.github.io/HDblast/figures/shell_hilltop_and_spectrum.png",
+      "status": 200,
+      "content_type": "image/png",
+      "bytes": 254172,
+      "sha256": "c77aab6f7c28d855172dae74f1c63830a57b6c38895943f3349792b01dabeb5f",
+      "retrieved_at_utc": "2026-10-15T15:07:37.302846+00:00",
+      "tls_verification": true
+    },
+    {
+      "url": "https://maldonado-research.github.io/HDblast/es/",
+      "final_url": "https://maldonado-research.github.io/HDblast/es/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 97339,
+      "sha256": "950ec6139a3892f44c2a2609f1ae8d478916e467d6cb5f8f4e7e0014033fba0f",
+      "retrieved_at_utc": "2026-10-15T15:07:38.689575+00:00",
+      "tls_verification": true
+    },
+    {
+      "url": "https://maldonado-research.github.io/projects/hdblast/",
+      "final_url": "https://maldonado-research.github.io/projects/hdblast/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 76901,
+      "sha256": "72c053bdaab8af8255294ab44c6587930734ab0196722f1f77e0e7e47d943dba",
+      "retrieved_at_utc": "2026-10-15T15:07:39.899262+00:00",
+      "tls_verification": true
+    },
+    {
+      "url": "https://maldonado-research.github.io/styles.css",
+      "final_url": "https://maldonado-research.github.io/styles.css",
+      "status": 200,
+      "content_type": "text/css; charset=utf-8",
+      "bytes": 11055,
+      "sha256": "9e19eee47c13852834c09c42a7f9db42c1dbbb80e59f60126261f446b1a297d8",
+      "retrieved_at_utc": "2026-10-15T15:07:40.324761+00:00",
+      "tls_verification": true
+    },
+    {
+      "url": "https://maldonado-research.github.io/projects/hdblast/assets/shell_first_variation_waveform_20261015.png",
+      "final_url": "https://maldonado-research.github.io/projects/hdblast/assets/shell_first_variation_waveform_20261015.png",
+      "status": 200,
+      "content_type": "image/png",
+      "bytes": 178856,
+      "sha256": "68bf34d840fdb8c8696bc79248517f198b483ac5febb0ea9400731a41f85ea7d",
+      "retrieved_at_utc": "2026-10-15T15:07:40.956766+00:00",
+      "tls_verification": true
+    }
+  ],
+  "blocked_requests": [],
+  "errors": [],
+  "status_scope": "PASS applies to the specified new-section checks; page-wide mobile overflow is separately observed and is not declared passed.",
+  "page_wide_horizontal_overflow_observed": [
+    {
+      "configuration": "public_en_mobile",
+      "viewport_width": 390,
+      "document_scroll_width": 407,
+      "overflow_pixels": 17,
+      "new_section_overflow_elements": 0,
+      "cause": "Pre-existing in the pinned pre-checkpoint HTML baseline; see baseline_current_mobile_comparison for element observations."
+    },
+    {
+      "configuration": "public_es_mobile",
+      "viewport_width": 390,
+      "document_scroll_width": 407,
+      "overflow_pixels": 17,
+      "new_section_overflow_elements": 0,
+      "cause": "Pre-existing in the pinned pre-checkpoint HTML baseline; see baseline_current_mobile_comparison for element observations."
+    },
+    {
+      "configuration": "shared_mobile",
+      "viewport_width": 390,
+      "document_scroll_width": 410,
+      "overflow_pixels": 20,
+      "new_section_overflow_elements": 0,
+      "cause": "Pre-existing in the pinned pre-checkpoint HTML baseline; see baseline_current_mobile_comparison for element observations."
+    }
+  ],
+  "baseline_current_mobile_comparison": {
+    "status": "PASS_PRE_EXISTING_OVERFLOW",
+    "scope": "Only attribution of the already observed 390px mobile horizontal overflow; no new site changes or broad audit.",
+    "transport": "One additional local Chromium session. Baseline HTML came from pinned base Git blobs; current HTML and all requested assets used freshly fetched same-origin HTTPS GET responses with inherited proxy and verified CA trust. TLS verification was not disabled.",
+    "browser_version": "151.0.7922.173",
+    "session_closed": true,
+    "screenshots_created": false,
+    "site_writes": false,
+    "comparisons": [
+      {
+        "configuration": "public_en_mobile",
+        "repository": "maldonado-research/HDblast",
+        "path": "site/index.html",
+        "base_commit": "85c0a8af4a4cd1f7d6b861b6df74d57711585fd4",
+        "baseline_html_sha256": "5373729e942c3e1102743f474273db9eece89cd31699e22cedd7a63aadb30bda",
+        "baseline_provenance": "git show PREPARED_COMMITS.json row.base:path; local read-only Git blob",
+        "baseline": {
+          "url": "https://maldonado-research.github.io/HDblast/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "document": {
+            "clientWidth": 390,
+            "scrollWidth": 407
+          },
+          "new_waveform_section_count": 0,
+          "overflow_elements_total": 2,
+          "overflow_elements": [
+            {
+              "tag": "CODE",
+              "id": "",
+              "class_name": "",
+              "text": "52126b98d3e4b24680017fa2537b8449bd75d94f",
+              "rect": {
+                "x": 16,
+                "right": 402.296875,
+                "width": 386.296875
+              }
+            },
+            {
+              "tag": "CODE",
+              "id": "",
+              "class_name": "",
+              "text": "13a30ef46f5c90c1b01ae83b609db65fd0f8a709",
+              "rect": {
+                "x": 16,
+                "right": 402.296875,
+                "width": 386.296875
+              }
+            }
+          ]
+        },
+        "current": {
+          "url": "https://maldonado-research.github.io/HDblast/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "document": {
+            "clientWidth": 390,
+            "scrollWidth": 407
+          },
+          "new_waveform_section_count": 1,
+          "overflow_elements_total": 2,
+          "overflow_elements": [
+            {
+              "tag": "CODE",
+              "id": "",
+              "class_name": "",
+              "text": "52126b98d3e4b24680017fa2537b8449bd75d94f",
+              "rect": {
+                "x": 16,
+                "right": 402.296875,
+                "width": 386.296875
+              }
+            },
+            {
+              "tag": "CODE",
+              "id": "",
+              "class_name": "",
+              "text": "13a30ef46f5c90c1b01ae83b609db65fd0f8a709",
+              "rect": {
+                "x": 16,
+                "right": 402.296875,
+                "width": 386.296875
+              }
+            }
+          ]
+        },
+        "prior_live_audit_document": {
+          "clientWidth": 390,
+          "scrollWidth": 407
+        },
+        "baseline_and_current_scrollwidth_identical": true,
+        "current_matches_prior_live_audit": true,
+        "new_section_absent_from_baseline": true,
+        "new_section_present_in_current": true,
+        "baseline_and_current_overflow_elements_identical": true,
+        "observed_at_utc": "2026-10-15T15:09:52.257365+00:00",
+        "attribution": "PRE_EXISTING_IN_BASELINE"
+      },
+      {
+        "configuration": "public_es_mobile",
+        "repository": "maldonado-research/HDblast",
+        "path": "site/es/index.html",
+        "base_commit": "85c0a8af4a4cd1f7d6b861b6df74d57711585fd4",
+        "baseline_html_sha256": "e1942af4d0dbba3ec983058e613e1e92e67434e49bcfc4bd71681b0c8a531397",
+        "baseline_provenance": "git show PREPARED_COMMITS.json row.base:path; local read-only Git blob",
+        "baseline": {
+          "url": "https://maldonado-research.github.io/HDblast/es/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "document": {
+            "clientWidth": 390,
+            "scrollWidth": 407
+          },
+          "new_waveform_section_count": 0,
+          "overflow_elements_total": 2,
+          "overflow_elements": [
+            {
+              "tag": "CODE",
+              "id": "",
+              "class_name": "",
+              "text": "52126b98d3e4b24680017fa2537b8449bd75d94f",
+              "rect": {
+                "x": 16,
+                "right": 402.296875,
+                "width": 386.296875
+              }
+            },
+            {
+              "tag": "CODE",
+              "id": "",
+              "class_name": "",
+              "text": "13a30ef46f5c90c1b01ae83b609db65fd0f8a709",
+              "rect": {
+                "x": 16,
+                "right": 402.296875,
+                "width": 386.296875
+              }
+            }
+          ]
+        },
+        "current": {
+          "url": "https://maldonado-research.github.io/HDblast/es/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "document": {
+            "clientWidth": 390,
+            "scrollWidth": 407
+          },
+          "new_waveform_section_count": 1,
+          "overflow_elements_total": 2,
+          "overflow_elements": [
+            {
+              "tag": "CODE",
+              "id": "",
+              "class_name": "",
+              "text": "52126b98d3e4b24680017fa2537b8449bd75d94f",
+              "rect": {
+                "x": 16,
+                "right": 402.296875,
+                "width": 386.296875
+              }
+            },
+            {
+              "tag": "CODE",
+              "id": "",
+              "class_name": "",
+              "text": "13a30ef46f5c90c1b01ae83b609db65fd0f8a709",
+              "rect": {
+                "x": 16,
+                "right": 402.296875,
+                "width": 386.296875
+              }
+            }
+          ]
+        },
+        "prior_live_audit_document": {
+          "clientWidth": 390,
+          "scrollWidth": 407
+        },
+        "baseline_and_current_scrollwidth_identical": true,
+        "current_matches_prior_live_audit": true,
+        "new_section_absent_from_baseline": true,
+        "new_section_present_in_current": true,
+        "baseline_and_current_overflow_elements_identical": true,
+        "observed_at_utc": "2026-10-15T15:09:54.218095+00:00",
+        "attribution": "PRE_EXISTING_IN_BASELINE"
+      },
+      {
+        "configuration": "shared_mobile",
+        "repository": "maldonado-research/maldonado-research.github.io",
+        "path": "projects/hdblast/index.html",
+        "base_commit": "e1883cf52bd738a936ee57018da8b49d3c631b76",
+        "baseline_html_sha256": "c9c7691c5b3b3d1bfd2aea0d7fa7af2eb9b41e59216b9251425dc9128fbaee52",
+        "baseline_provenance": "git show PREPARED_COMMITS.json row.base:path; local read-only Git blob",
+        "baseline": {
+          "url": "https://maldonado-research.github.io/projects/hdblast/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "document": {
+            "clientWidth": 390,
+            "scrollWidth": 410
+          },
+          "new_waveform_section_count": 0,
+          "overflow_elements_total": 137,
+          "overflow_elements": [
+            {
+              "tag": "ARTICLE",
+              "id": "",
+              "class_name": "project-body",
+              "text": "READ THIS FIRST\n\nResearch status\n\nConditional quantitative shell-response bound: For the retained regular branch at delta = 1/1000 and one newly specified narrow aligned quadrupole",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "SECTION",
+              "id": "status",
+              "class_name": "status-panel",
+              "text": "READ THIS FIRST\n\nResearch status\n\nConditional quantitative shell-response bound: For the retained regular branch at delta = 1/1000 and one newly specified narrow aligned quadrupole",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "SECTION",
+              "id": "findings",
+              "class_name": "",
+              "text": "What the public work reports\n13 October: cone flux and physical domains\n\nAn action-derived current links the scalar equations to physical symplectic flux. Exact comparator examples",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "H2",
+              "id": "findings-title",
+              "class_name": "",
+              "text": "What the public work reports",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class_name": "findings-list",
+              "text": "13 October: cone flux and physical domains\n\nAn action-derived current links the scalar equations to physical symplectic flux. Exact comparator examples separate the fixed-time vert",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "SECTION",
+              "id": "",
+              "class_name": "finding",
+              "text": "13 October: cone flux and physical domains\n\nAn action-derived current links the scalar equations to physical symplectic flux. Exact comparator examples separate the fixed-time vert",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "H3",
+              "id": "",
+              "class_name": "",
+              "text": "13 October: cone flux and physical domains",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "P",
+              "id": "",
+              "class_name": "",
+              "text": "An action-derived current links the scalar equations to physical symplectic flux. Exact comparator examples separate the fixed-time vertex limit from a finite null-cone segment, an",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "SECTION",
+              "id": "",
+              "class_name": "finding",
+              "text": "13 October: a positive scalar spectrum on the regular branch\n\nThe exact static Jacobi response becomes a nodeless zero-mass reference. A closed ground-state identity and a weighted",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "H3",
+              "id": "",
+              "class_name": "",
+              "text": "13 October: a positive scalar spectrum on the regular branch",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "P",
+              "id": "",
+              "class_name": "",
+              "text": "The exact static Jacobi response becomes a nodeless zero-mass reference. A closed ground-state identity and a weighted Hardy inequality give a strictly positive scalar gap for each",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "SECTION",
+              "id": "",
+              "class_name": "finding",
+              "text": "8 October: every saved later endpoint compared\n\nAll 98,304 endpoints are enclosed relative to exact prescribed flow from the represented saved incoming state. The 24 finite-weight ",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "H3",
+              "id": "",
+              "class_name": "",
+              "text": "8 October: every saved later endpoint compared",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "P",
+              "id": "",
+              "class_name": "",
+              "text": "All 98,304 endpoints are enclosed relative to exact prescribed flow from the represented saved incoming state. The 24 finite-weight prefix/endpoint rows give triangle bounds R < 2.",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "SECTION",
+              "id": "",
+              "class_name": "finding",
+              "text": "7 October: every retained incoming-state node compared\n\nFour authenticated compact archives contain 49,152 capsule-node occurrences; all 76 members are authenticated before the 20 ",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            }
+          ]
+        },
+        "current": {
+          "url": "https://maldonado-research.github.io/projects/hdblast/",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "document": {
+            "clientWidth": 390,
+            "scrollWidth": 410
+          },
+          "new_waveform_section_count": 1,
+          "overflow_elements_total": 137,
+          "overflow_elements": [
+            {
+              "tag": "ARTICLE",
+              "id": "",
+              "class_name": "project-body",
+              "text": "READ THIS FIRST\n\nResearch status\n\nConditional first-variation shell waveform: For the same specified narrow aligned quadrupole (delta = 1/1000, ell = 10^-10 in model coordinates), ",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "SECTION",
+              "id": "status",
+              "class_name": "status-panel",
+              "text": "READ THIS FIRST\n\nResearch status\n\nConditional first-variation shell waveform: For the same specified narrow aligned quadrupole (delta = 1/1000, ell = 10^-10 in model coordinates), ",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "SECTION",
+              "id": "findings",
+              "class_name": "",
+              "text": "What the public work reports\n13 October: cone flux and physical domains\n\nAn action-derived current links the scalar equations to physical symplectic flux. Exact comparator examples",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "H2",
+              "id": "findings-title",
+              "class_name": "",
+              "text": "What the public work reports",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "DIV",
+              "id": "",
+              "class_name": "findings-list",
+              "text": "13 October: cone flux and physical domains\n\nAn action-derived current links the scalar equations to physical symplectic flux. Exact comparator examples separate the fixed-time vert",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "SECTION",
+              "id": "",
+              "class_name": "finding",
+              "text": "13 October: cone flux and physical domains\n\nAn action-derived current links the scalar equations to physical symplectic flux. Exact comparator examples separate the fixed-time vert",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "H3",
+              "id": "",
+              "class_name": "",
+              "text": "13 October: cone flux and physical domains",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "P",
+              "id": "",
+              "class_name": "",
+              "text": "An action-derived current links the scalar equations to physical symplectic flux. Exact comparator examples separate the fixed-time vertex limit from a finite null-cone segment, an",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "SECTION",
+              "id": "",
+              "class_name": "finding",
+              "text": "13 October: a positive scalar spectrum on the regular branch\n\nThe exact static Jacobi response becomes a nodeless zero-mass reference. A closed ground-state identity and a weighted",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "H3",
+              "id": "",
+              "class_name": "",
+              "text": "13 October: a positive scalar spectrum on the regular branch",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "P",
+              "id": "",
+              "class_name": "",
+              "text": "The exact static Jacobi response becomes a nodeless zero-mass reference. A closed ground-state identity and a weighted Hardy inequality give a strictly positive scalar gap for each",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "SECTION",
+              "id": "",
+              "class_name": "finding",
+              "text": "8 October: every saved later endpoint compared\n\nAll 98,304 endpoints are enclosed relative to exact prescribed flow from the represented saved incoming state. The 24 finite-weight ",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "H3",
+              "id": "",
+              "class_name": "",
+              "text": "8 October: every saved later endpoint compared",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "P",
+              "id": "",
+              "class_name": "",
+              "text": "All 98,304 endpoints are enclosed relative to exact prescribed flow from the represented saved incoming state. The 24 finite-weight prefix/endpoint rows give triangle bounds R < 2.",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            },
+            {
+              "tag": "SECTION",
+              "id": "",
+              "class_name": "finding",
+              "text": "7 October: every retained incoming-state node compared\n\nFour authenticated compact archives contain 49,152 capsule-node occurrences; all 76 members are authenticated before the 20 ",
+              "rect": {
+                "x": 20,
+                "right": 409.765625,
+                "width": 389.765625
+              }
+            }
+          ]
+        },
+        "prior_live_audit_document": {
+          "clientWidth": 390,
+          "scrollWidth": 410
+        },
+        "baseline_and_current_scrollwidth_identical": true,
+        "current_matches_prior_live_audit": true,
+        "new_section_absent_from_baseline": true,
+        "new_section_present_in_current": true,
+        "baseline_and_current_overflow_elements_identical": false,
+        "observed_at_utc": "2026-10-15T15:09:56.887350+00:00",
+        "attribution": "PRE_EXISTING_IN_BASELINE"
+      }
+    ],
+    "verified_live_fetches": [
+      {
+        "url": "https://maldonado-research.github.io/HDblast/figures/shell_hilltop_and_spectrum.png",
+        "status": 200,
+        "bytes": 254172,
+        "sha256": "c77aab6f7c28d855172dae74f1c63830a57b6c38895943f3349792b01dabeb5f",
+        "tls_verification": true,
+        "retrieved_at_utc": "2026-10-15T15:09:50.621109+00:00"
+      },
+      {
+        "url": "https://maldonado-research.github.io/HDblast/",
+        "status": 200,
+        "bytes": 88187,
+        "sha256": "92eefc81cf7fc7d1de7110c164c1a73194741f10e66cc5652f4210ca979fbc80",
+        "tls_verification": true,
+        "retrieved_at_utc": "2026-10-15T15:09:51.503936+00:00"
+      },
+      {
+        "url": "https://maldonado-research.github.io/HDblast/es/",
+        "status": 200,
+        "bytes": 97339,
+        "sha256": "950ec6139a3892f44c2a2609f1ae8d478916e467d6cb5f8f4e7e0014033fba0f",
+        "tls_verification": true,
+        "retrieved_at_utc": "2026-10-15T15:09:53.438697+00:00"
+      },
+      {
+        "url": "https://maldonado-research.github.io/styles.css",
+        "status": 200,
+        "bytes": 11055,
+        "sha256": "9e19eee47c13852834c09c42a7f9db42c1dbbb80e59f60126261f446b1a297d8",
+        "tls_verification": true,
+        "retrieved_at_utc": "2026-10-15T15:09:54.545355+00:00"
+      },
+      {
+        "url": "https://maldonado-research.github.io/projects/hdblast/",
+        "status": 200,
+        "bytes": 76901,
+        "sha256": "72c053bdaab8af8255294ab44c6587930734ab0196722f1f77e0e7e47d943dba",
+        "tls_verification": true,
+        "retrieved_at_utc": "2026-10-15T15:09:55.273364+00:00"
+      },
+      {
+        "url": "https://maldonado-research.github.io/projects/hdblast/assets/shell_first_variation_waveform_20261015.png",
+        "status": 200,
+        "bytes": 178856,
+        "sha256": "68bf34d840fdb8c8696bc79248517f198b483ac5febb0ea9400731a41f85ea7d",
+        "tls_verification": true,
+        "retrieved_at_utc": "2026-10-15T15:09:56.335325+00:00"
+      }
+    ],
+    "blocked_requests": [],
+    "errors": []
+  }
+}

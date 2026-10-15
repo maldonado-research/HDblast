@@ -1,0 +1,153 @@
+{
+  "status": "ACCEPT_CONDITIONAL_WIDER_STATE_FEASIBILITY_PLANNING_ONLY",
+  "publication_only": true,
+  "substantive_blockers": [],
+  "reviewed_results": {
+    "ell_exact": "1/1000000",
+    "collar_depth_exact": "1/125000",
+    "strict_fixed_rectangle_depth_supremum": "5669686020285051/123672167032900272500",
+    "coarse_global_error_upper": "0.00100378",
+    "coarse_tail_upper": "0.00000477",
+    "improved_bounds": {
+      "mu_lower": "1/500",
+      "potential_abs_upper": "102000",
+      "boundary_beta_abs_upper": "250",
+      "gamma_abs_upper": "250"
+    },
+    "improved_global_error_upper": "0.000500684",
+    "improved_tail_upper": "0.0000009325",
+    "improved_L2_error_upper": "0.000500685"
+  },
+  "analytic_review": [
+    "Inward ODE and smooth compact-box first-exit continuation argument verified",
+    "Potential polynomial and both interval evaluation routes checked",
+    "Eta upper face limits the strict certificate; equality is excluded; this is not actual maximum existence depth",
+    "Positive coupled determinant, exact majorant equations and global/tail/L2 tolerances checked",
+    "Wider shape gates follow from their newly evaluated gaps; narrow-state peak windows and C are not transferred",
+    "New wider tangent must still meet retained localization/support/gauge/evolution hypotheses",
+    "Planning runs separately against an unchanged source-root capsule, with all required input hashes checked"
+  ],
+  "runs": [
+    {
+      "derivation": "sol",
+      "optimized": false,
+      "passed_groups": 38,
+      "copied_checker_sha256": "f8c3936cc59c640afa3b1cee716961189a009e6d52252cfbf2b2ddb8fe20fbd1",
+      "source_root_is_unchanged_frozen_capsule": true,
+      "output_sha256": "f41e3faeba7ebc28c362fd5fa10b0196ffc916e2b2ed4f42ba79179980790fd3"
+    },
+    {
+      "derivation": "sol",
+      "optimized": true,
+      "passed_groups": 38,
+      "copied_checker_sha256": "f8c3936cc59c640afa3b1cee716961189a009e6d52252cfbf2b2ddb8fe20fbd1",
+      "source_root_is_unchanged_frozen_capsule": true,
+      "output_sha256": "17ae5c0f9c740b1d874c5b00036be916614cb48424f80c0821855ea2744762dc"
+    },
+    {
+      "derivation": "astra",
+      "optimized": false,
+      "passed_groups": 30,
+      "copied_checker_sha256": "998fed6dfdbf38ede5cea127a7f1b2c1bf8e5fa954fe3c8220a4a88c51dba4a5",
+      "source_root_is_unchanged_frozen_capsule": true,
+      "output_sha256": "dc492d04e58c6dfa9700c1facb3ca212f510ddcccee4d16cf2d88d6dd82d19a1"
+    },
+    {
+      "derivation": "astra",
+      "optimized": true,
+      "passed_groups": 30,
+      "copied_checker_sha256": "998fed6dfdbf38ede5cea127a7f1b2c1bf8e5fa954fe3c8220a4a88c51dba4a5",
+      "source_root_is_unchanged_frozen_capsule": true,
+      "output_sha256": "dc492d04e58c6dfa9700c1facb3ca212f510ddcccee4d16cf2d88d6dd82d19a1"
+    },
+    {
+      "derivation": "shape",
+      "optimized": false,
+      "negative_controls_rejected": 3,
+      "output_sha256": "1d97557d9e4e220ec7dfafab2695da0ec66407b0ca52b273a9f572d2980129d8"
+    },
+    {
+      "derivation": "shape",
+      "optimized": true,
+      "negative_controls_rejected": 3,
+      "output_sha256": "1d97557d9e4e220ec7dfafab2695da0ec66407b0ca52b273a9f572d2980129d8"
+    }
+  ],
+  "independent_sol_astra_common_threshold_and_majorants_equal": true,
+  "frozen_scientific_manifest_unchanged": true,
+  "pins": {
+    "planning/wider-state-sol/WIDER_FEASIBILITY_NORMAL.json": {
+      "bytes": 12395,
+      "sha256": "f41e3faeba7ebc28c362fd5fa10b0196ffc916e2b2ed4f42ba79179980790fd3"
+    },
+    "planning/wider-state-sol/WIDER_FEASIBILITY_OPTIMIZED.json": {
+      "bytes": 12395,
+      "sha256": "17ae5c0f9c740b1d874c5b00036be916614cb48424f80c0821855ea2744762dc"
+    },
+    "planning/wider-state-sol/WIDER_PORTABILITY_REPLAY.json": {
+      "bytes": 957,
+      "sha256": "d7bbe788c46e28d5c8ad5e9794d1c650cec5baf7381014262700f58f7f8b7608"
+    },
+    "planning/wider-state-sol/WIDER_REPLAY_MODES.json": {
+      "bytes": 861,
+      "sha256": "14715f1817663059287f1170cb203417247e49bd4f65e17fd74b16a8af6e619a"
+    },
+    "planning/wider-state-sol/WIDER_STATE_FEASIBILITY.md": {
+      "bytes": 8702,
+      "sha256": "5712dcbbd03330758653858f27211d2f9bd4d6b74f4361430a4eef50c0b9af0a"
+    },
+    "planning/wider-state-sol/check_wider_feasibility.py": {
+      "bytes": 11842,
+      "sha256": "f8c3936cc59c640afa3b1cee716961189a009e6d52252cfbf2b2ddb8fe20fbd1"
+    },
+    "planning/wider-state-astra/FEASIBILITY_FROZEN_INPUT.json": {
+      "bytes": 7932,
+      "sha256": "dc492d04e58c6dfa9700c1facb3ca212f510ddcccee4d16cf2d88d6dd82d19a1"
+    },
+    "planning/wider-state-astra/FEASIBILITY_FROZEN_INPUT_OPTIMIZED.json": {
+      "bytes": 7932,
+      "sha256": "dc492d04e58c6dfa9700c1facb3ca212f510ddcccee4d16cf2d88d6dd82d19a1"
+    },
+    "planning/wider-state-astra/FEASIBILITY_NORMAL.json": {
+      "bytes": 7932,
+      "sha256": "dc492d04e58c6dfa9700c1facb3ca212f510ddcccee4d16cf2d88d6dd82d19a1"
+    },
+    "planning/wider-state-astra/FEASIBILITY_OPTIMIZED.json": {
+      "bytes": 7932,
+      "sha256": "dc492d04e58c6dfa9700c1facb3ca212f510ddcccee4d16cf2d88d6dd82d19a1"
+    },
+    "planning/wider-state-astra/PLANNING_MANIFEST.json": {
+      "bytes": 1373,
+      "sha256": "9282124d04e7ce377f3c33b58b0a74194a184c942035392b57dc4ccd2a22f854"
+    },
+    "planning/wider-state-astra/WIDER_STATE_FEASIBILITY.md": {
+      "bytes": 7334,
+      "sha256": "e673d3c1c73408d0aabf965a5495714b828042192f2bbba727456987e0c42a0d"
+    },
+    "planning/wider-state-astra/check_feasibility.py": {
+      "bytes": 9783,
+      "sha256": "998fed6dfdbf38ede5cea127a7f1b2c1bf8e5fa954fe3c8220a4a88c51dba4a5"
+    },
+    "planning/wider-state-astra/shape/shape_gate.json": {
+      "bytes": 2250,
+      "sha256": "1d97557d9e4e220ec7dfafab2695da0ec66407b0ca52b273a9f572d2980129d8"
+    },
+    "planning/wider-state-astra/shape/shape_gate.py": {
+      "bytes": 6863,
+      "sha256": "df94a438c6a1ae41f2b2fe0c98d2a3c2ae6aaad5d6cbbbf8b5c6c81b09b52b33"
+    },
+    "planning/wider-state-astra/shape/shape_gate.txt": {
+      "bytes": 4106,
+      "sha256": "8b456afdc1781be66a525a9cfdb25f6bbae7a2defcf85207849d2fc76966d837"
+    },
+    "planning/wider-state-astra/shape/shape_gate_optimized.json": {
+      "bytes": 2250,
+      "sha256": "1d97557d9e4e220ec7dfafab2695da0ec66407b0ca52b273a9f572d2980129d8"
+    },
+    "NEXT_SCIENTIFIC_TARGET.md": {
+      "bytes": 3189,
+      "sha256": "147be51ff10525a6dea489d531560dc7fdc76b7816b675eae547829e578ffe50"
+    }
+  },
+  "scope": "Accept as separately labeled feasibility/next-step support in additive publication evidence only. No completed wider waveform export, new C interval, finite-epsilon nonlinear solution, effective remainder, observational scale or cosmological-origin claim."
+}

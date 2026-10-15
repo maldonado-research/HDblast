@@ -1,0 +1,116 @@
+Planning-only shape feasibility at ell = 10^-6
+============================================
+
+Scope: this fresh rational calculation checks consequences of a proposed
+uniform error majorant. It does not produce a new waveform, run an archived
+producer, or certify the PDE majorant. Nothing outside this planning directory
+was written or executed for this calculation.
+
+Input from parent calculation:
+
+  |H(x)-Hhat(x)| <= eta_exact globally,
+  eta_exact = 2007523995553919/1999981973040500000
+            < eta = 251/250000 = 0.001004,
+  Hhat(x) = Q'(x) + ell exp(-ell x)Q(x),
+  ell = 1/1000000,
+  Q(x) = exp(4-1/((x-1)(2-x))) on (1,2), zero elsewhere.
+
+Here H must be continuous. The exact rational rounding of eta is checked;
+the source majorant remains an assumption. The parent's separate tail bound
+is not needed for the following global-error consequences.
+
+Analytic geometry used
+----------------------
+
+For z=2x-3, d=1-z^2,
+
+  Q=exp(-4z^2/d),
+  Q'=-16z Q/d^2,
+  Q''=-32Q(1-6z^2-3z^4)/d^4.
+
+With a=sqrt(2/sqrt(3)-1), Q' has its unique positive global maximum
+at x_L=(3-a)/2 and unique negative global minimum at x_R=(3+a)/2.
+Its positive maximum and negative minimum are respectively M and -M, where
+
+  M=6(2+sqrt(3)) a exp(1-sqrt(3)),
+  4.235640422134888218 < M < 4.235640422134888219.
+
+The code certifies x_L in (1.29,1.32) and x_R in (1.68,1.71).
+The sign of Q'' proves monotonicity on either side of these peaks.
+
+Sign and amplitude gates
+------------------------
+
+Since 0<=Q<=1 and its support is positive,
+
+  Q'-eta <= H <= Q'+ell+eta.
+
+The rational sample magnitude is
+
+  Q'(5/4)=-Q'(7/4)=(128/9)exp(-4/3)>3.7.
+
+Thus eta+ell<3.7 suffices for the two opposite sample signs. With the
+specified eta, outward rational enclosures are
+
+  H(5/4) in [3.747933075423669618, 3.749942075423669619],
+  H(7/4) in [-3.749941075423669619, -3.747932075423669618].
+
+There is consequently at least one actual zero between 5/4 and 7/4.
+The global peak heights satisfy
+
+  max H in [4.234636422134888218, 4.236645422134888219],
+  min H in [-4.236644422134888219, -4.234635422134888218].
+
+The first interval also bounds ||H||_infinity. Convenient coarse gates are
+4.2346<max H<4.2367 and -4.2367<min H<-4.2346.
+
+Conservative peak-window gate
+------------------------------
+
+The exact rational endpoint expressions are
+
+  Q'(1.29) = (42000000/4239481) exp(-1764/2059),
+  Q'(1.32) = (140625/18496) exp(-81/136).
+
+Fresh rational evaluation gives
+
+  M-Q'(1.29) in [0.029681983025445975, 0.029681983025445976],
+  M-Q'(1.32) in [0.044578913596622392, 0.044578913596622393].
+
+Both exceed 1/50. Let G be the smaller endpoint gap. Outside
+I_L=(1.29,1.32), monotonicity gives Q'<=M-G, and therefore
+
+  H(outside I_L) <= M-G+ell+eta < M-eta <= H(x_L)
+
+provided G>2eta+ell. A particularly simple sufficient gate is
+
+  1/50 > 2eta+ell,
+  equivalently eta < 19999/2000000 = 0.0099995.
+
+The proposed rounded error passes because
+
+  2eta+ell = 2009/1000000 = 0.002009 < 1/50.
+
+Every global positive maximizer therefore lies in (1.29,1.32).
+By reflection symmetry of Q', every global negative minimizer lies in
+(1.68,1.71). Endpoints are excluded. Continuity and strict exclusion
+outside these compact closures also prove the global extrema exist.
+
+The absolute global maximum lies in the union of these two windows.
+A uniform C^0 error bound does not determine which lobe attains that
+absolute maximum, or establish uniqueness of actual extrema or zeros.
+No such uniqueness or lobe selection is claimed here.
+
+Reproducibility
+---------------
+
+Run shape_gate.py in this directory. It uses only standard-library exact
+Fraction arithmetic, integer square-root enclosures, and alternating Taylor
+brackets S49(t)<=exp(-t)<=S48(t) for 0<=t<=2. All checks use explicit
+exceptions, so python -O preserves them. Three negative controls reject
+a missing derivative factor 16, a reversed derivative sign, and an
+excessive error accepted for the proposed windows.
+
+Normal and python -O runs produced byte-identical JSON in shape_gate.json
+and shape_gate_optimized.json. SHA256:
+1d97557d9e4e220ec7dfafab2695da0ec66407b0ca52b273a9f572d2980129d8.
