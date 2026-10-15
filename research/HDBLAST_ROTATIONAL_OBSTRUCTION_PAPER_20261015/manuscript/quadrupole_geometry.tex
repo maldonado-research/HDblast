@@ -1,0 +1,271 @@
+For the finite quadrupole condition, consider the general map
+\[
+ V=\Sym_0(n,\mathbb R),\qquad
+ \mu:V\times V\longrightarrow\so(n),\qquad \mu(A,B)=[A,B],
+ \qquad Z=\mu^{-1}(0),\qquad n\geq2.
+\]
+The metrics are the Frobenius metric on matrices and its product metric on
+$V\times V$.  This is standard commuting symmetric-matrix geometry.  Under
+the canonical identification $T^*V\simeq V\times V$, the commutator represents
+the moment map for simultaneous orthogonal conjugation, up to the sign fixed
+by the dual-pairing convention.  The claims below do not concern the range
+of a gravitational constraint operator, interface conditions, or nonlinear
+spacetime continuation.  The momentum-map context is classical \cite{ArmsMarsdenMoncrief1981}.
+
+Fix $(A,B)\in Z$.  Simultaneous orthogonal diagonalization gives the
+\emph{maximal} joint eigenspace decomposition
+\[
+ \mathbb R^n=\bigoplus_{s=1}^r E_s,\qquad
+ A|_{E_s}=\alpha_s I,\qquad B|_{E_s}=\beta_s I,
+ \qquad (\alpha_s,\beta_s)\ne(\alpha_t,\beta_t)\quad(s\ne t).
+\]
+Write $m_s=\dim E_s$, let $P_s$ be its orthogonal projector, and put
+$a_{st}=P_s a|_{E_t}$ and $a_{\mathrm d}=\sum_sP_saP_s$, with analogous
+notation for $b$.  In a simultaneous orthonormal eigenbasis, use repeated
+lists $\alpha_i,\beta_i$ and define
+\[
+ c_{ij}=\beta_j-\beta_i,\qquad d_{ij}=\alpha_i-\alpha_j,
+ \qquad g_{ij}^2=c_{ij}^2+d_{ij}^2\quad(i<j).
+\]
+
+\begin{proposition}[Rank, optimal inverse, and regularity]\label{prop:inverse}
+The derivative $L=D\mu_{(A,B)}$ is
+\[
+ L(a,b)=[a,B]+[A,b],\qquad L(a,b)_{ij}=c_{ij}a_{ij}+d_{ij}b_{ij}.
+\]
+Its nonzero singular values are exactly the positive $g_{ij}$.  Equivalently,
+for each $s<t$ the singular value
+\[
+ \sqrt{(\alpha_s-\alpha_t)^2+(\beta_s-\beta_t)^2}
+\]
+occurs with multiplicity $m_s m_t$.  Hence, with
+$d=\dim V=n(n+1)/2-1$ and $N=\dim\so(n)=n(n-1)/2$,
+\[
+ \operatorname{rank} L=N-\sum_s\binom{m_s}{2},\qquad
+ \dim\ker L=2d-N+\sum_s\binom{m_s}{2}.
+\]
+The range comprises precisely the skew matrices $S$ with $P_sSP_s=0$ for
+all $s$.  The Moore--Penrose inverse $R=L^\dagger$ is the pair of symmetric
+zero-diagonal matrices with
+\[
+ (RS)^{(1)}_{ij}=\frac{c_{ij}S_{ij}}{g_{ij}^2},\qquad
+ (RS)^{(2)}_{ij}=\frac{d_{ij}S_{ij}}{g_{ij}^2}\qquad(g_{ij}>0),
+\]
+and both entries zero when $g_{ij}=0$.  Here the two displayed components
+are extended symmetrically.  Then $LR$ is the orthogonal range projection.
+If at least one $g_{ij}>0$,
+\[
+ \|R\|_{\so(n)\to V\times V}
+   =\frac{1}{\min_{g_{ij}>0}g_{ij}}.
+\]
+For $L=0$, $R=0$ and $\|R\|=0$.  In particular, a right inverse on all of
+$\so(n)$ exists exactly when every joint eigenvalue is simple.  In that
+case $R$ is the unique solution of minimum product norm for each target,
+and its operator norm is the smallest possible among all linear right
+inverses.
+\end{proposition}
+
+\begin{proof}
+For $i<j$, the normalized symmetric and skew matrix units are respectively
+$(E_{ij}+E_{ji})/\sqrt2$ and $(E_{ij}-E_{ji})/\sqrt2$.  On the two normalized
+input directions belonging to this edge, $L$ is the single row
+$(c_{ij},d_{ij})$.  Distinct edges are orthogonal; all diagonal input
+directions are in the kernel.  The trace restrictions affect only those
+diagonal inputs.  Thus each edge contributes one singular value $g_{ij}$
+unless it lies within a joint eigenspace.  This proves the singular-value,
+rank, and range statements.  The inverse formula is the minimum-norm
+solution of the scalar equation $c_{ij}a_{ij}+d_{ij}b_{ij}=S_{ij}$.
+Consequently,
+\[
+ \|RS\|_{V\times V}^2
+   =2\sum_{i<j:\,g_{ij}>0}\frac{S_{ij}^2}{g_{ij}^2}.
+\]
+The norm formula follows by concentrating $S$ on an edge of minimum
+positive gap.  Every solution for that target has norm at least the
+minimum-norm solution, which also proves optimality among right inverses.
+There is no extra factor $\sqrt2$ in the singular values: the input and
+output Frobenius normalizations agree.
+\end{proof}
+
+\begin{theorem}[All velocities of commuting curves]\label{thm:velocities}
+For $a,b\in V$, the following conditions are equivalent.
+\begin{enumerate}
+\item There is a $C^1$ curve $t\mapsto(A(t),B(t))\in Z$ through $(A,B)$
+with derivative $(a,b)$ at $0$.
+\item $L(a,b)=0$ and $[a_{ss},b_{ss}]=0$ on every maximal joint eigenspace
+$E_s$.
+\item $L(a,b)=0$ and there are unrestricted $c,d\in V$ satisfying the
+second-order matrix equation
+\[
+ L(c,d)=-2[a,b].
+\]
+\item There is a real-analytic such curve with derivative $(a,b)$ at $0$.
+\end{enumerate}
+For a velocity satisfying these conditions, define a skew matrix $K$ by
+$K_{ss}=0$ and, for $s\ne t$,
+\[
+ K_{st}=
+ \frac{(\alpha_t-\alpha_s)a_{st}+(\beta_t-\beta_s)b_{st}}
+ { (\alpha_t-\alpha_s)^2+(\beta_t-\beta_s)^2 }.
+\]
+One explicit realization is
+\begin{align*}
+ Q(t)&=(I+tK/2)(I-tK/2)^{-1},\\
+ A(t)&=Q(t)(A+t a_{\mathrm d})Q(t)^{\mathsf T},&
+ B(t)&=Q(t)(B+t b_{\mathrm d})Q(t)^{\mathsf T}.
+\end{align*}
+This rational curve is defined and real analytic for every real $t$.
+\end{theorem}
+
+\begin{proof}
+First, $L(a,b)=0$ is necessary by differentiation.  Between distinct joint
+blocks it reads
+\[
+ (\beta_t-\beta_s)a_{st}-(\alpha_t-\alpha_s)b_{st}=0.
+\]
+The coefficient pair is nonzero.  Therefore the displayed definition of
+$K$ gives
+\[
+ a_{st}=(\alpha_t-\alpha_s)K_{st},\qquad
+ b_{st}=(\beta_t-\beta_s)K_{st}\quad(s\ne t).
+\]
+Symmetry of $a,b$ and reversal of the gaps imply $K_{ts}=-K_{st}^{\mathsf T}$.
+In particular,
+\begin{equation}\label{eq:offblock-cancellation}
+ a_{st}b_{ts}-b_{st}a_{ts}=0\quad(s\ne t),\qquad
+ P_s[a,b]P_s=[a_{ss},b_{ss}].
+\end{equation}
+
+For necessity of the block condition, differentiability at $0$ alone is
+enough.  Put $X(t)=A(t)-A=ta+o(t)$ and $Y(t)=B(t)-B=tb+o(t)$.  Every
+commutator with $A$ or $B$ has zero diagonal joint block, so the exact
+equation $[A+X(t),B+Y(t)]=0$ gives
+\[
+ 0=P_s[X(t),Y(t)]P_s=t^2P_s[a,b]P_s+o(t^2).
+\]
+Divide by $t^2$ and use \eqref{eq:offblock-cancellation}.  This proves
+$(1)\Rightarrow(2)$ without assuming a second derivative of the curve.
+
+For sufficiency, the block condition says $[a_{\mathrm d},b_{\mathrm d}]=0$.
+Both block-diagonal matrices commute with $A$ and $B$, since the latter
+are scalar on each joint block.  Thus
+$[A+t a_{\mathrm d},B+t b_{\mathrm d}]=0$ identically.  For real $t$,
+$I-tK/2$ is invertible: if $(I-tK/2)x=0$, taking the real inner product with
+$x$ gives $\|x\|^2=0$.  The Cayley matrix $Q(t)$ is orthogonal, has
+$Q(0)=I$, and has $Q'(0)=K$.  Hence the proposed curve is symmetric,
+tracefree, real analytic, and commuting, and
+\[
+ A'(0)=a_{\mathrm d}+[K,A]=a,\qquad
+ B'(0)=b_{\mathrm d}+[K,B]=b.
+\]
+This proves $(2)\Rightarrow(4)\Rightarrow(1)$.
+
+Finally, Proposition~\ref{prop:inverse} says the second-order equation is
+solvable exactly when $P_s[a,b]P_s=0$ for all $s$.  Under $L(a,b)=0$,
+\eqref{eq:offblock-cancellation} identifies this with the block condition.
+This proves $(2)\Leftrightarrow(3)$.  Explicit accelerations of the curve are
+\[
+ c=2[K,a_{\mathrm d}]+[K,[K,A]],\qquad
+ d=2[K,b_{\mathrm d}]+[K,[K,B]],
+\]
+and $R(-2[a,b])$ is the correction of minimum product norm.
+\end{proof}
+
+\begin{remark}
+The condition is \emph{not} $[a,b]=0$ on all of $\mathbb R^n$.  Off-block
+components of this commutator can be canceled by second-order corrections.
+For example, let $A=\diag(1,-1,0,0)$, $B=0$,
+$a=E_{12}+E_{21}$, and $b=A$.  Then $L(a,b)=0$ and every diagonal joint
+block commutator is zero, although $[a,b]\ne0$.  Splitting a repeated
+maximal joint block into artificial one-dimensional blocks would instead
+discard genuine obstructions and is invalid.
+\end{remark}
+
+\begin{corollary}[Smooth points and a simple pencil]\label{cor:regular}
+The following are equivalent at a commuting pair: $L$ is surjective; all
+maximal joint eigenspaces are one dimensional; some real pencil $A+\tau B$
+has simple spectrum; and $Z$ is a $C^1$ embedded submanifold in a
+neighborhood of that pair.  Its dimension there is
+\[
+ 2\dim V-\dim\so(n)=\frac{n^2+3n-4}{2}.
+\]
+Neither $A$ nor $B$ need individually have simple spectrum.
+\end{corollary}
+
+\begin{proof}
+Surjectivity is Proposition~\ref{prop:inverse}, and the implicit-function
+theorem gives a smooth submanifold at every such point.  If $m_s\geq2$,
+choose an internal tracefree diagonal matrix $a$ with entries $1,-1$ and
+$b=E_{ij}+E_{ji}$ on those two coordinates.  The velocities $(a,0)$ and
+$(0,b)$ are realized by straight commuting curves, while their sum fails
+Theorem~\ref{thm:velocities}.  The velocity set of a $C^1$ embedded
+submanifold would be a vector space.  Thus no repeated joint block is a
+smooth point.  For distinct joint pairs, a collision
+$\alpha_i+\tau\beta_i=\alpha_j+\tau\beta_j$ excludes at most one value of
+$\tau$ per pair; if the two $\beta$ values agree, no value is excluded.
+Avoiding this finite set gives a simple pencil.  A repeated joint block
+prevents a simple pencil for every $\tau$.
+\end{proof}
+
+\noindent
+A local polynomial chart at any regular pair can therefore be based on a
+simple pencil rather than on $A$ alone.  Fix a suitable $\tau$ and set
+$C=A+\tau B$, $D=B$.  Every symmetric tracefree $D$ commuting with a
+nearby simple $C$ is uniquely
+\[
+ D=\sum_{k=1}^{n-1}c_k\left(C^k-\frac{\tr(C^k)}{n}I\right),\qquad
+ A=C-\tau D,\quad B=D.
+\]
+Interpolation on the $n$ distinct eigenvalues proves existence and
+uniqueness.  The coefficients depend smoothly on $(C,D)$, for example by
+inverting the nonsingular Frobenius Gram matrix of the displayed
+polynomial basis.  The $\dim V+n-1$ parameters agree with
+Corollary~\ref{cor:regular}.  In dimension four, an example with neither
+individual matrix simple is
+\[
+ A=\diag(-1,-1,1,1),\qquad B=\diag(-1,1,-1,1).
+\]
+All four joint pairs are distinct, and $A+2B=\diag(-3,1,-1,3)$ is simple.
+
+\paragraph{Dimension-four strata and the audited seeds.}
+For $n=4$, the complete multiplicity list gives
+\[
+\begin{array}{c|r|r}
+\text{joint multiplicities}&\operatorname{rank}L&\dim\ker L\\ \hline
+1,1,1,1&6&12\\
+2,1,1&5&13\\
+2,2&4&14\\
+3,1&3&15\\
+4&0&18
+\end{array}
+\]
+Every row other than the first has a nonlinear set of realizable velocities.
+At the norm-two seed $A=B=\diag(1,-1,0,0)$, take
+$a=\diag(0,0,1,-1)$ and $b=E_{34}+E_{43}$.  Their sum satisfies the linear
+equation but has $[a,b]_{34}=2$ in the repeated block, so no $C^1$ commuting
+curve realizes that velocity.  This proves the seed's genuine
+singularity, rather than merely a failure of the chosen equations to have
+independent derivatives.
+
+For the norm-matched replacement
+\[
+ A=B=\frac1{\sqrt{10}}\diag(3,1,-1,-3),\qquad
+ \tr(A^2)=\tr(B^2)=2,
+\]
+the minimal single-matrix spectral gap is $\gamma=2/\sqrt{10}$ and the
+minimal joint gap is $\sqrt2\gamma=2/\sqrt5$.  Thus the inverse bound is sharp:
+\[
+ \|R\|=\frac{\sqrt5}{2}.
+\]
+When $A=B$ has distinct eigenvalues $\lambda_i$, the general inverse
+reduces to $a=-C/2$, $b=C/2$, where
+$C_{ij}=S_{ij}/(\lambda_i-\lambda_j)$ and $C_{ii}=0$.
+
+\paragraph{Scope for the quadrupole application.}
+When the restricted charge equations have independently been established
+to reduce to $[A,B]=0$ with a nonzero prefactor, the preceding statements
+classify their entire finite curve-velocity obstruction and the optimal
+linear inverse.  They make no claim that charge-zero data, or finite
+second-order solvability, suffice for the Einstein--scalar bulk and shell
+equations.  The linear map $D\mu$ and its range must not be substituted for
+the full constraint/interface operator.

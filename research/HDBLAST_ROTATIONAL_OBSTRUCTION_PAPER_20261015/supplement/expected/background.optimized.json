@@ -1,0 +1,229 @@
+{
+  "status": "PASS_EXACT_BACKGROUND_CHECKS",
+  "scope": "Separate explicit five-dimensional Einstein-scalar shell model; exact local algebra and causal bounds only; no new-solution novelty or registered-branch claim",
+  "positive_checks": 39,
+  "wrong_formula_controls": 10,
+  "checks": [
+    {
+      "name": "metric inverse from matrix inversion",
+      "pass": true
+    },
+    {
+      "name": "Cartesian invariant derivative is 2 X_lower",
+      "pass": true
+    },
+    {
+      "name": "metric-compatible torsion-free Levi-Civita connection",
+      "pass": true
+    },
+    {
+      "name": "all Ricci components from the Christoffel definition",
+      "pass": true
+    },
+    {
+      "name": "Ricci symmetry from the independently calculated components",
+      "pass": true
+    },
+    {
+      "name": "Ricci scalar by metric contraction",
+      "pass": true
+    },
+    {
+      "name": "volume density from the metric determinant",
+      "pass": true
+    },
+    {
+      "name": "scalar dAlembertian from covariant Hessian",
+      "pass": true
+    },
+    {
+      "name": "independent divergence definition of scalar dAlembertian",
+      "pass": true
+    },
+    {
+      "name": "potential derivative by differentiation in phi",
+      "pass": true
+    },
+    {
+      "name": "all trace-reversed Einstein equations",
+      "pass": true
+    },
+    {
+      "name": "scalar equation with the differentiated stated potential",
+      "pass": true
+    },
+    {
+      "name": "outward hyperboloid normal has unit positive norm",
+      "pass": true
+    },
+    {
+      "name": "outward normal differentiates s positively on s>0",
+      "pass": true
+    },
+    {
+      "name": "extrinsic curvature from covariant normal derivative is umbilic",
+      "pass": true
+    },
+    {
+      "name": "normal derivative has zero normal contraction",
+      "pass": true
+    },
+    {
+      "name": "umbilicity from the tangential trace",
+      "pass": true
+    },
+    {
+      "name": "wall scalar is the restricted bulk scalar",
+      "pass": true
+    },
+    {
+      "name": "wall conformal factor and de Sitter radius",
+      "pass": true
+    },
+    {
+      "name": "wall a and p computed from geometric derivatives",
+      "pass": true
+    },
+    {
+      "name": "doubled-interior metric junction sigma equals 6a",
+      "pass": true
+    },
+    {
+      "name": "doubled-interior scalar junction sigma prime equals minus 2p",
+      "pass": true
+    },
+    {
+      "name": "master lower-order coefficient from Omega and Phi derivatives",
+      "pass": true
+    },
+    {
+      "name": "radial m from its defining expression",
+      "pass": true
+    },
+    {
+      "name": "radial n from its defining expression",
+      "pass": true
+    },
+    {
+      "name": "radial integration-by-parts logarithmic derivative",
+      "pass": true
+    },
+    {
+      "name": "radial coefficient from direct integration by parts",
+      "pass": true
+    },
+    {
+      "name": "radial coefficient exact factored expression",
+      "pass": true
+    },
+    {
+      "name": "positive radial m on r>0",
+      "pass": true
+    },
+    {
+      "name": "annulus numerator has strictly negative derivative on r>0",
+      "pass": true
+    },
+    {
+      "name": "annulus positivity endpoint and denominator certificate",
+      "pass": true
+    },
+    {
+      "name": "bump endpoints lie strictly in the positivity annulus",
+      "pass": true
+    },
+    {
+      "name": "standard flat bump is nonzero at its midpoint",
+      "pass": true
+    },
+    {
+      "name": "time satisfies both strict pre-contact conditions",
+      "pass": true
+    },
+    {
+      "name": "support remains strictly outside the null cone",
+      "pass": true
+    },
+    {
+      "name": "support remains strictly inside the shell radial lower bound",
+      "pass": true
+    },
+    {
+      "name": "entire causal support lies in a compact positive-s subdomain",
+      "pass": true
+    },
+    {
+      "name": "complete physical slab has 1+s greater than 3/4",
+      "pass": true
+    },
+    {
+      "name": "scalar radial derivative is nonzero throughout s>-1",
+      "pass": true
+    }
+  ],
+  "controls": [
+    {
+      "name": "Ricci curvature sign reversal",
+      "incorrect_formula_rejected": true
+    },
+    {
+      "name": "Ricci radial coefficient 12 instead of 24",
+      "incorrect_formula_rejected": true
+    },
+    {
+      "name": "Ricci metric coefficient with wrong sign of 24s",
+      "incorrect_formula_rejected": true
+    },
+    {
+      "name": "four-dimensional volume power in five dimensions",
+      "incorrect_formula_rejected": true
+    },
+    {
+      "name": "incorrect cubic exponential in the potential",
+      "incorrect_formula_rejected": true
+    },
+    {
+      "name": "wrong scalar junction sign plus 2p",
+      "incorrect_formula_rejected": true
+    },
+    {
+      "name": "wrong outward extrinsic-curvature sign",
+      "incorrect_formula_rejected": true
+    },
+    {
+      "name": "omitting radial n changes the coefficient",
+      "incorrect_formula_rejected": true
+    },
+    {
+      "name": "radial m with wrong conformal power",
+      "incorrect_formula_rejected": true
+    },
+    {
+      "name": "overlong time loses strict pre-cone separation",
+      "incorrect_formula_rejected": true
+    }
+  ],
+  "verified_expressions": {
+    "Omega": "(1+s)^(-2)",
+    "Phi": "sqrt(6)*log(1+s)",
+    "U": "84*exp(2*phi/sqrt(6))-36*exp(3*phi/sqrt(6))",
+    "Ricci": "(24*X_lower*X_lower^T+(32-24*s)*eta)/(1+s)^2",
+    "box_Phi": "2*sqrt(6)*(5-9*s)*(1+s)^2",
+    "b": "1/2",
+    "a_b": "5/8",
+    "p_b": "5*sqrt(6)/4",
+    "sigma_b": "15/4",
+    "sigma_prime_b": "-5*sqrt(6)/2",
+    "L": "-4/(1+s)",
+    "m": "(3/8)*r^3*(1+r^2)^4",
+    "n": "6*r^7*(1+r^2)^2",
+    "radial_coefficient_over_m": "(2-32*r^2-18*r^4)/(1+r^2)^2",
+    "annulus_ratio_lower_bound": "108/169",
+    "bump_support": "[11/100,19/100]",
+    "T_star": "1/32",
+    "causal_support_s_bounds": [
+      "209/40000",
+      "1919/40000"
+    ]
+  }
+}

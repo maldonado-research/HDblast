@@ -1,0 +1,185 @@
+{
+  "checks": [
+    {
+      "name": "sphere_fourth_moments_normalize_radius_four",
+      "residual": "0"
+    },
+    {
+      "name": "harmonic_A_trace_free",
+      "residual": "0"
+    },
+    {
+      "name": "harmonic_B_trace_free",
+      "residual": "0"
+    },
+    {
+      "name": "harmonic_A_zero_mean",
+      "residual": "0"
+    },
+    {
+      "name": "harmonic_B_zero_mean",
+      "residual": "0"
+    },
+    {
+      "name": "arbitrary_quadrupole_bilinear_sphere_integral",
+      "residual": "0"
+    },
+    {
+      "name": "rotation_12_polynomial_covariance",
+      "residual": "0"
+    },
+    {
+      "name": "rotation_12_integral_is_commutator_component",
+      "residual": "0"
+    },
+    {
+      "name": "rotation_13_polynomial_covariance",
+      "residual": "0"
+    },
+    {
+      "name": "rotation_13_integral_is_commutator_component",
+      "residual": "0"
+    },
+    {
+      "name": "rotation_14_polynomial_covariance",
+      "residual": "0"
+    },
+    {
+      "name": "rotation_14_integral_is_commutator_component",
+      "residual": "0"
+    },
+    {
+      "name": "rotation_23_polynomial_covariance",
+      "residual": "0"
+    },
+    {
+      "name": "rotation_23_integral_is_commutator_component",
+      "residual": "0"
+    },
+    {
+      "name": "rotation_24_polynomial_covariance",
+      "residual": "0"
+    },
+    {
+      "name": "rotation_24_integral_is_commutator_component",
+      "residual": "0"
+    },
+    {
+      "name": "rotation_34_polynomial_covariance",
+      "residual": "0"
+    },
+    {
+      "name": "rotation_34_integral_is_commutator_component",
+      "residual": "0"
+    },
+    {
+      "name": "boost_1_all_radial_coefficients_integrate_to_zero",
+      "residual": "0"
+    },
+    {
+      "name": "boost_2_all_radial_coefficients_integrate_to_zero",
+      "residual": "0"
+    },
+    {
+      "name": "boost_3_all_radial_coefficients_integrate_to_zero",
+      "residual": "0"
+    },
+    {
+      "name": "boost_4_all_radial_coefficients_integrate_to_zero",
+      "residual": "0"
+    },
+    {
+      "name": "common_harmonic_matrices_commute",
+      "residual": "0"
+    },
+    {
+      "name": "explicit_quadrupole_generator",
+      "residual": "0"
+    },
+    {
+      "name": "explicit_quadrupole_second_generator",
+      "residual": "0"
+    },
+    {
+      "name": "explicit_quadrupole_norm",
+      "residual": "0"
+    },
+    {
+      "name": "explicit_rotated_quadrupole_norm",
+      "residual": "0"
+    },
+    {
+      "name": "explicit_orthogonal_displacement_velocity_harmonics",
+      "residual": "0"
+    },
+    {
+      "name": "explicit_doubled_Hessian_coefficient",
+      "residual": "0"
+    }
+  ],
+  "controls": [
+    {
+      "incorrect_formula_rejected": true,
+      "name": "wrong_sphere_trace_normalization"
+    },
+    {
+      "incorrect_formula_rejected": true,
+      "name": "reversed_rotation_commutator_sign"
+    },
+    {
+      "incorrect_formula_rejected": true,
+      "name": "unrestricted_quadrupole_zero_claim"
+    },
+    {
+      "incorrect_formula_rejected": true,
+      "name": "one_interior_used_as_doubled_Hessian"
+    }
+  ],
+  "integration_convention": "Displayed exact moments are divided by Vol(S3)",
+  "positive_checks": 29,
+  "rotation_components": [
+    {
+      "commutator_component": "a0*b3 - a1*b3 - a3*b0 + a3*b1 + a4*b6 + a5*b7 - a6*b4 - a7*b5",
+      "generator": "J_12",
+      "integral_divided_by_sphere_volume": "-(a0*b3 - a1*b3 - a3*b0 + a3*b1 + a4*b6 + a5*b7 - a6*b4 - a7*b5)/6"
+    },
+    {
+      "commutator_component": "a0*b4 - a2*b4 + a3*b6 - a4*b0 + a4*b2 + a5*b8 - a6*b3 - a8*b5",
+      "generator": "J_13",
+      "integral_divided_by_sphere_volume": "-(a0*b4 - a2*b4 + a3*b6 - a4*b0 + a4*b2 + a5*b8 - a6*b3 - a8*b5)/6"
+    },
+    {
+      "commutator_component": "2*a0*b5 + a1*b5 + a2*b5 + a3*b7 + a4*b8 - 2*a5*b0 - a5*b1 - a5*b2 - a7*b3 - a8*b4",
+      "generator": "J_14",
+      "integral_divided_by_sphere_volume": "-(2*a0*b5 + a1*b5 + a2*b5 + a3*b7 + a4*b8 - 2*a5*b0 - a5*b1 - a5*b2 - a7*b3 - a8*b4)/6"
+    },
+    {
+      "commutator_component": "a1*b6 - a2*b6 + a3*b4 - a4*b3 - a6*b1 + a6*b2 + a7*b8 - a8*b7",
+      "generator": "J_23",
+      "integral_divided_by_sphere_volume": "-(a1*b6 - a2*b6 + a3*b4 - a4*b3 - a6*b1 + a6*b2 + a7*b8 - a8*b7)/6"
+    },
+    {
+      "commutator_component": "a0*b7 + 2*a1*b7 + a2*b7 + a3*b5 - a5*b3 + a6*b8 - a7*b0 - 2*a7*b1 - a7*b2 - a8*b6",
+      "generator": "J_24",
+      "integral_divided_by_sphere_volume": "-(a0*b7 + 2*a1*b7 + a2*b7 + a3*b5 - a5*b3 + a6*b8 - a7*b0 - 2*a7*b1 - a7*b2 - a8*b6)/6"
+    },
+    {
+      "commutator_component": "a0*b8 + a1*b8 + 2*a2*b8 + a4*b5 - a5*b4 + a6*b7 - a7*b6 - a8*b0 - a8*b1 - 2*a8*b2",
+      "generator": "J_34",
+      "integral_divided_by_sphere_volume": "-(a0*b8 + a1*b8 + 2*a2*b8 + a4*b5 - a5*b4 + a6*b7 - a7*b6 - a8*b0 - a8*b1 - 2*a8*b2)/6"
+    }
+  ],
+  "scope": "Exact harmonic/matrix algebra only; the nonlinear constraint identity, PDE existence and classical-family hypotheses require the accompanying proofs.",
+  "sphere_dimension": 3,
+  "sphere_volume": "2*pi**2",
+  "status": "PASS_EXACT_QUADRUPOLE_SYMMETRY_CHECKS",
+  "sympy_version": "1.14.0",
+  "witness": {
+    "H": "n1**2-n2**2",
+    "J12_H": "-4*n1*n2",
+    "doubled_Hessian_divided_by_omega_Krad_volume": "8/3",
+    "norm_H_divided_by_volume": "1/6",
+    "norm_JH_divided_by_volume": "2/3"
+  },
+  "wrong_formula_controls": 4
+}

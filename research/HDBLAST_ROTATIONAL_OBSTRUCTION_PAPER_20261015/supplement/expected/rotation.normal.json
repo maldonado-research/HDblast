@@ -1,0 +1,262 @@
+{
+  "checks": [
+    {
+      "name": "tilt_u_unit",
+      "passed": true
+    },
+    {
+      "name": "tilt_s_unit",
+      "passed": true
+    },
+    {
+      "name": "tilt_u_s_orthogonal",
+      "passed": true
+    },
+    {
+      "name": "tilted_cut_curvature",
+      "passed": true
+    },
+    {
+      "name": "ADM_extrinsic_trace",
+      "passed": true
+    },
+    {
+      "name": "ADM_momentum_00",
+      "passed": true
+    },
+    {
+      "name": "ADM_momentum_01",
+      "passed": true
+    },
+    {
+      "name": "ADM_momentum_02",
+      "passed": true
+    },
+    {
+      "name": "ADM_momentum_03",
+      "passed": true
+    },
+    {
+      "name": "ADM_momentum_10",
+      "passed": true
+    },
+    {
+      "name": "ADM_momentum_11",
+      "passed": true
+    },
+    {
+      "name": "ADM_momentum_12",
+      "passed": true
+    },
+    {
+      "name": "ADM_momentum_13",
+      "passed": true
+    },
+    {
+      "name": "ADM_momentum_20",
+      "passed": true
+    },
+    {
+      "name": "ADM_momentum_21",
+      "passed": true
+    },
+    {
+      "name": "ADM_momentum_22",
+      "passed": true
+    },
+    {
+      "name": "ADM_momentum_23",
+      "passed": true
+    },
+    {
+      "name": "ADM_momentum_30",
+      "passed": true
+    },
+    {
+      "name": "ADM_momentum_31",
+      "passed": true
+    },
+    {
+      "name": "ADM_momentum_32",
+      "passed": true
+    },
+    {
+      "name": "ADM_momentum_33",
+      "passed": true
+    },
+    {
+      "name": "ADM_gravity_pairing",
+      "passed": true
+    },
+    {
+      "name": "ADM_gravity_physical_orientation",
+      "passed": true
+    },
+    {
+      "name": "ADM_scalar_physical_orientation",
+      "passed": true
+    },
+    {
+      "name": "ambient_E_commutator",
+      "passed": true
+    },
+    {
+      "name": "moment_map_Hessian_factor",
+      "passed": true
+    },
+    {
+      "name": "degree_two_ambient_harmonic",
+      "passed": true
+    },
+    {
+      "name": "degree_two_JH",
+      "passed": true
+    },
+    {
+      "name": "degree_two_J2H",
+      "passed": true
+    },
+    {
+      "name": "sphere_volume",
+      "passed": true
+    },
+    {
+      "name": "sphere_HH",
+      "passed": true
+    },
+    {
+      "name": "sphere_JHJH",
+      "passed": true
+    },
+    {
+      "name": "sphere_HJH",
+      "passed": true
+    },
+    {
+      "name": "sphere_angular_integration_by_parts",
+      "passed": true
+    },
+    {
+      "name": "one_interior_rotational_candidate",
+      "passed": true
+    },
+    {
+      "name": "two_interior_constraint_orientation",
+      "passed": true
+    },
+    {
+      "name": "explicit_l2_Hessian",
+      "passed": true
+    },
+    {
+      "exact_nonzero_witness": "16*pi**2*K_rad*omega/3",
+      "name": "rotational_second_order_obstruction",
+      "passed": true
+    },
+    {
+      "name": "radial_diagonal_coefficient",
+      "passed": true
+    },
+    {
+      "name": "nonlinear_force_full_Gauss_identity",
+      "passed": true
+    },
+    {
+      "name": "single_tension_mixed_projection",
+      "passed": true
+    },
+    {
+      "name": "Israel_mixed_projection",
+      "passed": true
+    },
+    {
+      "name": "arbitrary_second_order_cut_angle",
+      "passed": true
+    },
+    {
+      "name": "corner_background_first_derivative",
+      "passed": true
+    },
+    {
+      "name": "corner_Hessian_with_second_order_correction",
+      "passed": true
+    },
+    {
+      "name": "compact_first_order_corner_Hessian",
+      "passed": true
+    }
+  ],
+  "counts": {
+    "checks": 46,
+    "wrong_controls": 9
+  },
+  "exact_results": {
+    "Hessian_orientation": "D2 C_J(v,v) = -Omega_phys(v,Jv) for compact initial data",
+    "cut_normal_identity": "k_i(s_i,J) = -K_i(tau,J) - J eta_i",
+    "full_spatial_constraint": "C_J = M_J + integral_S sqrt(c) J(eta_plus+eta_minus)",
+    "sphere_HH": "pi**2/3",
+    "sphere_JHJH": "4*pi**2/3",
+    "two_interior_l2_Hessian": "16*pi**2*K_rad*omega/3"
+  },
+  "files": [
+    {
+      "name": "check_rotational_constraints.py",
+      "sha256": "6fb2ab0a0bd816485f89ba3db41b43407d00e91ec643c879c24ccbac9ad25055"
+    },
+    {
+      "name": "ROTATIONAL_SECOND_ORDER_SHELL_OBSTRUCTION.md",
+      "sha256": "7c62ac15d9ee7269d5a335f5286c5401e4448b9120f228d9ed23fd754a81a7bd"
+    }
+  ],
+  "schema": "independent-rotational-shell-constraints-v1",
+  "scientific_status": "exact_algebra_controls_passed",
+  "scope": "spatial constraint Hessian; PDE and differentiability assumptions remain analytic",
+  "sympy_version": "1.14.0",
+  "wrong_controls": [
+    {
+      "detected": true,
+      "exact_residual": "-2*eta_J",
+      "name": "wrong_boost_angle_sign"
+    },
+    {
+      "detected": true,
+      "exact_residual": "12*(p*q2*x1**4 + 2*p*q2*x1**2*x2**2 + 2*p*q2*x1**2*x3**2 + 2*p*q2*x1**2*x4**2 + p*q2*x2**4 + 2*p*q2*x2**2*x3**2 + 2*p*q2*x2**2*x4**2 + p*q2*x3**4 + 2*p*q2*x3**2*x4**2 + p*q2*x4**4 - p2*q*x1**4 - 2*p2*q*x1**2*x2**2 - 2*p2*q*x1**2*x3**2 - 2*p2*q*x1**2*x4**2 - p2*q*x2**4 - 2*p2*q*x2**2*x3**2 - 2*p2*q*x2**2*x4**2 - p2*q*x3**4 - 2*p2*q*x3**2*x4**2 - p2*q*x4**4)/Omega",
+      "name": "wrong_gravity_symplectic_sign"
+    },
+    {
+      "detected": true,
+      "exact_residual": "9*p*(-Dq2 - 4*q2)/(4*Omega*f**2)",
+      "name": "missing_D_plus_5"
+    },
+    {
+      "detected": true,
+      "exact_residual": "3*T**2*x1**2 + x2",
+      "name": "missing_commutator_unit"
+    },
+    {
+      "detected": true,
+      "exact_residual": "a*pb - b*pa",
+      "name": "lost_Hessian_factor_two"
+    },
+    {
+      "detected": true,
+      "exact_residual": "-L*r**2 - 2",
+      "name": "radial_missing_velocity_unit"
+    },
+    {
+      "detected": true,
+      "exact_residual": "-p_minus**2 - p_minus*sigma_prime + p_plus**2 + p_plus*sigma_prime",
+      "name": "missing_scalar_force_residual"
+    },
+    {
+      "detected": true,
+      "exact_residual": "sigma*(km0 - km4 - km7 - km9 - kp0 + kp4 + kp7 + kp9)",
+      "name": "double_counted_shell_tension"
+    },
+    {
+      "detected": true,
+      "exact_residual": "pi",
+      "name": "omitted_tilted_cut_angular_term"
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "environment": {
+    "mpmath": "1.3.0",
+    "python": "3.12.14",
+    "sympy": "1.14.0"
+  },
+  "files": {
+    "code/ROTATIONAL_SECOND_ORDER_SHELL_OBSTRUCTION.md": {
+      "bytes": 17557,
+      "provenance": {
+        "commit": "a121e78c7eac5c6c060cabdda4e9b5a53d011ee0",
+        "kind": "git_commit",
+        "original_path": "research/HDBLAST_SHELL_NOETHER_20261013/independent/ROTATIONAL_SECOND_ORDER_SHELL_OBSTRUCTION.md"
+      },
+      "role": "source",
+      "sha256": "7c62ac15d9ee7269d5a335f5286c5401e4448b9120f228d9ed23fd754a81a7bd"
+    },
+    "code/check_explicit_background.py": {
+      "bytes": 16850,
+      "provenance": {
+        "commit": null,
+        "description": "New explicit-background checker prepared on 2026-10-15; not attributed to the earlier commit.",
+        "kind": "current_agent_draft",
+        "original_path": "math/background/check_explicit_background.py"
+      },
+      "role": "source",
+      "sha256": "a983e3cd87600188d4de5a34655020e42a909f1c47da9dcebe8bce6af9affd53"
+    },
+    "code/check_quadrupole_admissibility.py": {
+      "bytes": 5795,
+      "provenance": {
+        "commit": "a121e78c7eac5c6c060cabdda4e9b5a53d011ee0",
+        "kind": "git_commit",
+        "original_path": "research/HDBLAST_SHELL_NOETHER_20261013/root-audit/check_quadrupole_admissibility.py"
+      },
+      "role": "source",
+      "sha256": "29efa69d9ff8aafab74dc229846e0c9d82a81a7a54dd9b96c5b98ab9d035f551"
+    },
+    "code/check_rotational_constraints.py": {
+      "bytes": 12656,
+      "provenance": {
+        "commit": "a121e78c7eac5c6c060cabdda4e9b5a53d011ee0",
+        "kind": "git_commit",
+        "original_path": "research/HDBLAST_SHELL_NOETHER_20261013/independent/check_rotational_constraints.py"
+      },
+      "role": "source",
+      "sha256": "6fb2ab0a0bd816485f89ba3db41b43407d00e91ec643c879c24ccbac9ad25055"
+    },
+    "code/finite_commuting_geometry.py": {
+      "bytes": 16701,
+      "provenance": {
+        "commit": null,
+        "description": "New finite-matrix checker prepared on 2026-10-15; not attributed to the earlier commit.",
+        "kind": "current_agent_draft",
+        "original_path": "math/sol/finite_commuting_geometry.py"
+      },
+      "role": "source",
+      "sha256": "4b6cf1061d74c8345cfba2aae56f77d131802682e10b50db4ea4da6dc9834402"
+    },
+    "expected/background.normal.json": {
+      "bytes": 5951,
+      "role": "expected_report",
+      "sha256": "c27329722efdd844b8b9d4c132d67a28be30a95abc2cc720e06dd7acc4ce1d1f"
+    },
+    "expected/background.optimized.json": {
+      "bytes": 5951,
+      "role": "expected_report",
+      "sha256": "c27329722efdd844b8b9d4c132d67a28be30a95abc2cc720e06dd7acc4ce1d1f"
+    },
+    "expected/external-controls.json": {
+      "bytes": 1764,
+      "role": "expected_external_controls",
+      "sha256": "875d79735ebbc012c819110e8c7f665bc634f4cdf6070cc95ad24173d695642e"
+    },
+    "expected/matrix.normal.json": {
+      "bytes": 16422,
+      "role": "expected_report",
+      "sha256": "c45776c7b70890d5767f10cea65c30ed306b367f97effb372c5957b640b35076"
+    },
+    "expected/matrix.optimized.json": {
+      "bytes": 16422,
+      "role": "expected_report",
+      "sha256": "d858ef528cab625657cf2a611f57901220634b8e5c160e52f42035d6ac92d748"
+    },
+    "expected/quadrupole.normal.json": {
+      "bytes": 5343,
+      "role": "expected_report",
+      "sha256": "44aba751cd67b1b3d1dca631b47d653a74b5d8be402213f874b54d13610fb7e1"
+    },
+    "expected/quadrupole.optimized.json": {
+      "bytes": 5343,
+      "role": "expected_report",
+      "sha256": "44aba751cd67b1b3d1dca631b47d653a74b5d8be402213f874b54d13610fb7e1"
+    },
+    "expected/rotation.normal.json": {
+      "bytes": 5989,
+      "role": "expected_report",
+      "sha256": "6a5e73e8ec34352677ba8f7d8ee4de3339a75cab912c5d1919b758b24fa5c0c8"
+    },
+    "expected/rotation.optimized.json": {
+      "bytes": 5989,
+      "role": "expected_report",
+      "sha256": "6a5e73e8ec34352677ba8f7d8ee4de3339a75cab912c5d1919b758b24fa5c0c8"
+    }
+  },
+  "mode_comparison_ignored_fields": {
+    "background": [],
+    "matrix": [
+      "python_optimization"
+    ],
+    "quadrupole": [],
+    "rotation": []
+  },
+  "observed_counts_per_mode": {
+    "background": {
+      "embedded_wrong_formula_controls": 10,
+      "positive_checks": 39
+    },
+    "matrix": {
+      "embedded_wrong_formula_controls": 12,
+      "positive_checks": 132,
+      "total_generated_checks_including_controls": 144
+    },
+    "quadrupole": {
+      "embedded_wrong_formula_controls": 4,
+      "positive_checks": 29
+    },
+    "rotation": {
+      "embedded_wrong_formula_controls": 9,
+      "positive_checks": 46
+    },
+    "total_embedded_wrong_formula_controls": 35,
+    "total_positive_checks": 246
+  },
+  "schema": "focused-finite-algebra-input-pins-v1",
+  "scope": "Exact finite algebra and explicit-background identities; no general PDE existence or novelty assessment."
+}

@@ -1,0 +1,679 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,mathrsfs,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Rotational linearization obstructions in a doubled Einstein--scalar shell model},pdfauthor={Ricardo Maldonado},pdfsubject={Research draft for specialist review; not submitted}}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{microtype}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\so}{\mathfrak{so}}
+\newcommand{\F}{\mathrm{F}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Lie}{\mathcal L}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\R}{\mathbb R}
+\title{Rotational linearization obstructions in a doubled Einstein--scalar shell model}
+\author{Ricardo Maldonado\\\small Independent Researcher\\
+\small ORCID: \href{https://orcid.org/0009-0009-3937-6527}{0009-0009-3937-6527}}
+\date{15 October 2026\\\small Research draft for specialist review; not submitted}
+\begin{document}
+\maketitle
+\begin{abstract}
+We work out a rotational linearization obstruction for two Einstein--scalar
+regions joined across a timelike shell whose action is a scalar-dependent
+tension. The integrated momentum constraint and mixed Israel equation give
+an exact functional containing the shell's area--boost-angle term. At a
+rotation-invariant background its first variation vanishes for arbitrary
+matching variations, including variations of the shell geometry. Consequently
+a nonzero quadratic rotational functional cannot be cancelled by an
+unrestricted second-order correction. In a five-dimensional radial background,
+an explicit scalar master reconstruction and finite propagation produce
+smooth compactly supported linear solutions before shell contact. We exhibit
+an exact background with smooth interiors, including its fixed potential and shell tension,
+on which a rotating quadrupole has a strictly nonzero obstruction.
+For a fixed-profile quadrupole family, the six rotational conditions reduce
+to commutation of two trace-free symmetric matrices. We describe the regular
+and singular geometry of this finite condition, including the exact criterion
+for a linearized matrix direction to integrate to a commuting curve. The
+Noether and linearization-instability mechanisms are established; the result
+is an explicit physical-interface application with a computable witness.
+The matrix criterion is not a sufficiency theorem for nonlinear spacetimes.
+\end{abstract}
+\noindent\textbf{Keywords:} Einstein--scalar equations; timelike shells;
+linearization instability; gravitational constraints; momentum maps.
+
+\section{Question, contribution and relation to prior work}
+
+A solution of the linearized field equations need not be the first derivative
+of a family of exact solutions. At a symmetric background, the second
+derivative of the constraints can impose a quadratic condition on a linear
+solution. This is the classical linearization-stability problem
+\cite{FischerMarsden1973,Moncrief1975,ArmsMarsdenMoncrief1981}.
+For an internal timelike shell, applying this principle requires accounting
+for the cut shared by the two bulk Cauchy sections. Compact support of the
+\emph{first} variation does not remove an arbitrary \emph{second} variation
+at that cut.
+
+This paper gives a direct calculation for a pure-potential scalar shell.
+Its main steps are the exact cut identity \eqref{eq:exact-functional}, the
+vanishing of the first derivative on all matching corrections
+\eqref{eq:first-zero}, and the explicit nonzero value
+\eqref{eq:explicit-obstruction}. The witness exists on a short slab before
+contact with the shell, so the central result uses a standard hyperbolic
+Cauchy theorem rather than a shell initial-boundary existence theorem.
+The finite-dimensional calculation in Section~\ref{sec:geometry} distinguishes
+passing the rotational tests from lying in a regular part of their zero set.
+
+The general construction is not new. Iyer--Wald supplies the bulk Noether
+identity \cite{IyerWald1994}. Harlow--Wu's completed boundary Hamiltonian
+already has the combination of Noether charge, boundary Lagrangian and
+corner potential evaluated in Appendix~\ref{app:covariant}
+\cite{HarlowWu2020}. The physical-shell Hamiltonian of H\'aj\'i\v cek--Kijowski,
+with its erratum, supplies direct precedent for induced matching and the
+area--boost-angle pair \cite{HajicekKijowski1998,HajicekKijowski2000Erratum}.
+Recent general treatments explicitly relate second-order fields, boundary
+terms and quadratic symmetry constraints
+\cite{DeVuystEtAl2025,Khavkine2015}; the compact-Cauchy Taub mechanism is also
+displayed directly in \cite{AltasTekin2019}.
+Our calculation specializes these mechanisms to a two-sided scalar/tension
+interface and evaluates a smooth obstructed family. It does not provide a
+new general Noether formalism or a classification of the nonlinear constraint
+range. The accompanying \href{https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_ROTATIONAL_OBSTRUCTION_PAPER_20261015/literature/PRIMARY_COMPARISON.md}{primary-source comparison}
+records the exact passages used and the remaining historical-source access gaps.
+
+\section{Model, matching and regularity}
+\label{sec:model}
+
+The interface identity below holds in spacetime dimension $d+1$, $d\ge2$.
+Use signature $(-+\cdots+)$ and $8\pi G=1$. Two bulk regions $M_+$ and $M_-$
+meet at a common timelike shell $W$. Their outward spacelike unit normals
+are $n_i$, and
+$K_{i,ab}=h_a{}^A h_b{}^B\nabla_A n_{i,B}$.
+The action is
+\begin{equation}
+ S=\sum_{i=\pm}\int_{M_i}\epsilon_i
+ \left(\frac{R_i}{2}-\frac{(\nabla\phi_i)^2}{2}-U(\phi_i)\right)
+ +\int_W\epsilon_W\,[K_++K_--\sigma(\varphi)].
+ \label{eq:action}
+\end{equation}
+There are two outward Gibbons--Hawking--York terms and one tension term.
+The smooth functions $U$ and $\sigma$ are fixed. Exact induced matching is
+part of the configuration space:
+\begin{equation}
+ X_+^*g_+=X_-^*g_-=h,\qquad
+ X_+^*\phi_+=X_-^*\phi_-=\varphi.
+ \label{eq:matching}
+\end{equation}
+Writing $p_i=n_i\phi_i$, the metric and scalar junction residuals are
+\begin{equation}
+ I_{ab}=\sum_i(K_{i,ab}-K_i h_{ab})+\sigma h_{ab},\qquad
+ P=p_++p_-+\sigma'(\varphi).
+ \label{eq:junctions}
+\end{equation}
+The equations set both residuals to zero. In particular, scalar-dependent
+tension has no intrinsic derivative kinetic term and its stress is
+proportional to $h_{ab}$.
+
+Let each spatial section $C_i$ be compact with common closed boundary $S$,
+and assume no external spatial boundary. The induced metric $c$ on $S$ is
+the same from both sides. A common reference vector $J$ is tangent to $S$
+and is extended smoothly to each $C_i$. It is fixed when fields vary.
+For the explicit example, $C_i$ are four-balls and $J$ is a rotation.
+
+All differentiations below take place in a local chart of exactly matched
+configurations. Moving embeddings and Cauchy sections are pulled back to
+fixed reference regions by smooth collars. A hypothetical exact family is
+assumed $C^2$ in its parameter in a piecewise $C^k$ norm, $k\ge4$, on a
+compact slab, with uniformly nondegenerate metrics and spacelike sections.
+These are sufficient classical assumptions for the stated products, traces
+and differentiations. No manifold theorem for the full solution space is
+assumed. The second variation may occupy every angular, metric, scalar and
+shell sector compatible with exact matching.
+
+\section{The rotational constraint with its shell cut}
+\label{sec:constraint}
+
+Let $u_i$ be the future unit normal to $C_i$, $s_i$ its outward unit normal
+to $S$, and $\tau$ the common future normal to $S$ within $W$. Define the
+boost angles by
+\begin{equation}
+ n_i=\cosh\eta_i\,s_i+\sinh\eta_i\,u_i,
+ \qquad
+ \tau=\cosh\eta_i\,u_i+\sinh\eta_i\,s_i.
+ \label{eq:boost}
+\end{equation}
+For the spatial metric $\gamma_i$ and extrinsic curvature $k_i$, use the
+canonical densities
+\begin{equation}
+ \pi_i^{ab}=\frac{\sqrt{\gamma_i}}{2}
+ (k_i^{ab}-k_i\gamma_i^{ab}),\qquad
+ \varpi_i=\sqrt{\gamma_i}\,u_i\phi_i,
+ \qquad
+ \mathcal H_{i,a}=-2D_b\pi_i^b{}_a+\varpi_iD_a\phi_i.
+ \label{eq:canonical}
+\end{equation}
+Here $k_{ab}=\gamma_a{}^A\gamma_b{}^B\nabla_Au_B$; densities, rather than
+tensors with an additional volume element, are used in the bulk integrals.
+
+\begin{lemma}[Exact rotational cut identity]
+\label{lem:cut}
+For the matched configurations above,
+\begin{align}
+ \mathcal C_J
+ &:={\sum_i}\int_{C_i}\mathcal H_{i,a}J^a
+       -\int_S\sqrt c\,I(\tau,J)\nonumber\\
+ &=\sum_i\int_{C_i}
+       (\pi_i^{ab}\Lie_J\gamma_{i,ab}+\varpi_iJ\phi_i)
+       +\int_S\sqrt c\,J(\eta_++\eta_-).
+ \label{eq:exact-functional}
+\end{align}
+Every exact constraint-and-junction datum has $\mathcal C_J=0$.
+\end{lemma}
+\begin{proof}
+Differentiate the orthonormal frame \eqref{eq:boost} along the cut-tangent
+field $J$. Normalization and orthogonality give
+\begin{equation}
+ k_i(s_i,J)=-K_i(\tau,J)-J\eta_i.
+ \label{eq:tilt-identity}
+\end{equation}
+Integration by parts of the momentum constraint gives the bulk canonical
+term and the boundary term $-\int_S\sqrt c\,k_i(s_i,J)$. Since
+$h(\tau,J)=0$, the trace and tension terms in \eqref{eq:junctions} have
+zero mixed projection; hence $I(\tau,J)=\sum_iK_i(\tau,J)$. Substitution
+of \eqref{eq:tilt-identity} proves \eqref{eq:exact-functional}.
+\end{proof}
+
+Write $\vartheta=\eta_++\eta_-$ and $\rho_S=\sqrt c$. Suppose the background
+canonical fields and cut data are all $J$-invariant:
+\begin{equation}
+ \Lie_J\gamma_0=\Lie_J\pi_0=J\phi_0=\Lie_J\varpi_0
+ =\Lie_J\rho_{S0}=J\vartheta_0=0.
+ \label{eq:invariant-background}
+\end{equation}
+Lie derivatives of $\pi_0,\varpi_0,\rho_{S0}$ are density Lie derivatives.
+These assumptions hold for the radial time-symmetric section used below.
+
+\begin{proposition}[No linear second-order cancellation]
+\label{prop:derivatives}
+At a background satisfying \eqref{eq:invariant-background},
+\begin{equation}
+ D\mathcal C_J|_0[w]=0
+ \quad\hbox{for every matching variation }w.
+ \label{eq:first-zero}
+\end{equation}
+For a first variation $v$, the Hessian is
+\begin{align}
+ \mathcal T_J(v):=D^2\mathcal C_J|_0[v,v]
+ &=2\sum_i\int_{C_i}
+    (\delta\pi_i^{ab}\Lie_J\delta\gamma_{i,ab}
+                +\delta\varpi_iJ\delta\phi_i)\nonumber\\
+ &\quad+2\int_S\delta\rho_S\,J\delta\vartheta.
+ \label{eq:hessian}
+\end{align}
+If $v$ vanishes with the required first jets near the initial shell cut,
+the last integral is zero.
+\end{proposition}
+\begin{proof}
+Differentiate \eqref{eq:exact-functional}. Terms in which the variation
+multiplies a Lie derivative of a background field vanish by
+\eqref{eq:invariant-background}. The remaining first-order terms are
+$\int\pi_0\Lie_J\delta\gamma$,
+$\int\varpi_0J\delta\phi$ and $\int\rho_{S0}J\delta\vartheta$.
+Integrate them by parts. There is no exterior flux because $J$ is tangent
+to the bulk cuts, and $S$ is closed. Background density invariance sets
+each integral to zero. Differentiating a second time leaves exactly the
+cross terms \eqref{eq:hessian}; all terms linear in a second variation
+vanish by the same calculation. Because the first derivative is zero,
+the displayed Hessian is independent of the choice of matching chart.
+\end{proof}
+
+\begin{theorem}[Necessary rotational continuation condition]
+\label{thm:obstruction}
+Let $v$ be the derivative of a classical parameter-$C^2$ family of exact
+solutions of \eqref{eq:action}--\eqref{eq:junctions} through a background
+satisfying \eqref{eq:invariant-background}. Then $\mathcal T_J(v)=0$.
+In particular, a smooth linear solution for which this quantity is nonzero
+cannot be the first derivative of such a family, even when its second
+derivative is unrestricted in the bulk and on the shell.
+\end{theorem}
+\begin{proof}
+Write the exact family in a matching chart as
+$\Psi_\varepsilon=\Psi_0+\varepsilon v+
+\tfrac12\varepsilon^2w+o(\varepsilon^2)$.
+Since $\mathcal C_J(\Psi_\varepsilon)=0$, its second derivative is
+$D^2\mathcal C_J[v,v]+D\mathcal C_J[w]=0$.
+Proposition~\ref{prop:derivatives} removes the second term for every $w$.
+\end{proof}
+
+The support hypothesis removes a quadratic cut contribution of $v$.
+It is not the reason the arbitrary second-order shell correction drops
+out: that follows separately from \eqref{eq:first-zero}. Nor does
+$\mathcal T_J=0$ prove that a correction $w$ exists. The Hessian convention
+here is twice the quadratic Taylor coefficient.
+
+\section{An admissible five-dimensional witness before shell contact}
+\label{sec:witness}
+
+Assume an actual smooth radial background of the equations exists on the
+complete doubled slab, with
+\begin{equation}
+ g_0=\Omega(s)^2\eta,\qquad \phi_0=\Phi(s),\qquad
+ s=R^2-T^2,\qquad W:\ s=b^2.
+ \label{eq:background}
+\end{equation}
+The two copies agree, $\Omega>0$, and $f=\Phi_s\ne0$ on a neighborhood
+of the annulus used below. This is an explicit hypothesis about an actual
+background, not a claim that arbitrary functions $\Omega,\Phi$ solve the
+nonlinear equations. A completely specified example is given in
+Section~\ref{sec:explicit-background}. The registered model motivating
+this calculation is documented separately \cite{MaldonadoShell2026};
+its detuning and branch certification are not inputs here.
+
+Set $\mathcal E=X^A\partial_A$ and
+$L=\Omega_s/\Omega+2f_s/f$. In the region where $f\ne0$, define
+\begin{equation}
+ \mathscr L F=\Box_\eta F-2L\mathcal E F
+       -\left(8L+\frac83sf^2\right)F.
+ \label{eq:master}
+\end{equation}
+This is normally hyperbolic with smooth lower-order coefficients. The
+reconstruction is
+\begin{equation}
+ h_{AB}=2F(s\eta_{AB}-3X_AX_B),\qquad
+ \chi=-\frac{3(\mathcal E+4)F}{2\Omega^2f}.
+ \label{eq:reconstruction}
+\end{equation}
+
+\begin{lemma}[Short-slab admissibility]
+\label{lem:admissibility}
+Let the smooth data $q=F|_{T=0}$ and $p=F_T|_{T=0}$ have support in
+$r_1\le R\le r_2$, where $0<r_1<r_2<b$. For a sufficiently short
+two-sided time slab, \eqref{eq:master} and \eqref{eq:reconstruction}
+produce a smooth solution of the complete linearized bulk and shell
+equations. The perturbation vanishes near the shell and near the cone
+$s=0$ throughout this slab.
+\end{lemma}
+\begin{proof}
+On $s>0$, direct substitution using the background equations gives the
+operator identities
+\begin{align}
+ \delta\mathscr E_{AB}
+ &=\Omega^{-2}(3X_AX_B-s\eta_{AB})\mathscr L F,\nonumber\\
+ \delta\mathscr S
+ &=-\frac{3}{2\Omega^4f}(\mathcal E+6)\mathscr L F,
+ \label{eq:residual-factorization}
+\end{align}
+where $\mathscr E_{AB}=R_{AB}-\phi_A\phi_B-\tfrac23U g_{AB}$ and
+$\mathscr S=\Box_g\phi-U'$; Appendix~\ref{app:reconstruction} supplies
+the component calculation.
+Extend the coefficients of the auxiliary scalar equation smoothly away
+from a compact neighborhood of the intended causal support, and apply
+the smooth Cauchy theorem and finite propagation
+\cite[Theorem 3.2.11]{BarGinouxPfaffle2007}.
+The support is contained in
+$r_1-|T|\le R\le r_2+|T|$.
+Choose, in addition to the background-domain restriction,
+\begin{equation}
+ 0<T_*<\min\{r_1/2,(b-r_2)/2\}.
+ \label{eq:precontact-time}
+\end{equation}
+Then the causal support lies in $R>|T|$ and $R<b$, separated from both
+the cone and the shell $R=\sqrt{b^2+T^2}$. Shrink $T_*$ further, if needed,
+so this support remains in the neighborhood where the actual background
+coefficients are smooth and $f\ne0$. On this support the coefficients
+are those of the actual background and
+\eqref{eq:residual-factorization} applies. The reconstructed fields extend
+smoothly by zero to the remaining physical region. They vanish on an open
+shell neighborhood, so zero embedding variation satisfies every linearized
+matching and junction condition there. All initial bulk constraints follow
+from the bulk equations. The auxiliary coefficient extension has made no
+assertion about a nonlinear background outside the physical neighborhood.
+\end{proof}
+
+The first-order embedding and field jets vanish near the shell. Thus the
+pullback identifications for a candidate exact family can be chosen with
+zero first parameter jet near the entire initial Cauchy section, including
+the time jet needed for its canonical data. This preserves the explicit
+first variation below while allowing arbitrary second-order pullback terms.
+At $T=0$, write $D=r\partial_r$. Direct ADM variation gives
+\begin{equation}
+ \begin{aligned}
+ \delta\gamma_{ij}&=2q(r^2\delta_{ij}-3x_ix_j),&
+ \delta\pi^{ij}&=-\frac{3p}{2\Omega}x_ix_j,\\
+ \delta\phi&=-\frac{3(D+4)q}{2\Omega^2f},&
+ \delta\varpi&=-\frac{3\Omega(D+5)p}{2f}.
+ \end{aligned}
+ \label{eq:initial-reconstruction}
+\end{equation}
+The shift by five in the last formula follows from
+$[\partial_T,\mathcal E]=\partial_T$.
+Define
+\begin{equation}
+ \mathcal B(q,p)=\int\dd r\,\dd\Omega_3
+ \left[m_r(D+4)q(D+5)p+n_rqp\right],\quad
+ m_r=\frac{9r^3}{4\Omega f^2},\quad n_r=\frac{6r^7}{\Omega}.
+ \label{eq:bilinear}
+\end{equation}
+Use identical data on the two copies (or opposite signs on both fields
+of one copy). Substitution into \eqref{eq:hessian} yields
+\begin{equation}
+ \mathcal T_J(v)=4\mathcal B(Jq,p).
+ \label{eq:master-charge}
+\end{equation}
+
+Choose $Q\in C_c^\infty(I)$ nonzero, $I\Subset(0,b)$ in the regular
+annulus, a real harmonic $H$ with $JH\ne0$, and a nonzero real inverse-time
+constant $\omega$. Put $q=QH$, $p=\omega QJH$. Then
+\begin{equation}
+ \mathcal T_J(v)=4\omega\mathcal B_{\rm rad}(Q,Q)
+                              \int_{S^3}(JH)^2\dd\Omega_3.
+ \label{eq:charge-separation}
+\end{equation}
+No symmetry of the radial bilinear is assumed. Compact radial integration
+by parts gives
+\begin{equation}
+ \mathcal B_{\rm rad}(Q,Q)
+ =\int_I\left[m_r(DQ)^2+
+       \{m_r(2+9r^2L)+n_r\}Q^2\right]\dd r.
+ \label{eq:radial-diagonal}
+\end{equation}
+If $w_I$ is the length of $I$, let
+$m_* =\min_{\bar I}(m_rr^2)>0$ and
+$M_* =\max_{\bar I}m_r(-2-9r^2L)_+$. The one-dimensional Poincar\'e
+inequality implies
+\begin{equation}
+ \mathcal B_{\rm rad}(Q,Q)\ge
+ \left(\frac{\pi^2m_*}{w_I^2}-M_*\right)\int_IQ^2\dd r>0
+ \label{eq:radial-positive}
+\end{equation}
+on a sufficiently thin annulus. This is positivity of one diagonal radial
+form, not positivity of a gravitational energy.
+
+For $n=x/r$, take $H=n_1^2-n_2^2$ and
+$J=x_1\partial_2-x_2\partial_1$. Then
+$JH=-4n_1n_2$ and $\int_{S^3}(JH)^2=4\pi^2/3$, so
+\begin{equation}
+ \boxed{\mathcal T_J(v)=\frac{16\pi^2}{3}
+                  \omega\mathcal B_{\rm rad}(Q,Q)\ne0.}
+ \label{eq:explicit-obstruction}
+\end{equation}
+Lemma~\ref{lem:admissibility} makes this an actual smooth linear solution.
+Theorem~\ref{thm:obstruction} excludes a classical parameter-$C^2$ nonlinear
+continuation with this tangent. Here an admissible pure-gauge variation is
+the infinitesimal joint diffeomorphism action on bulk fields and shell
+embeddings, generated by a smooth vector field with a local flow near the
+compact initial section. Such a variation is tangent to an exact
+diffeomorphic family; the nonzero obstruction therefore excludes it.
+
+\subsection{A fully specified background and witness}
+\label{sec:explicit-background}
+
+In a fixed length unit, set $z=1+s$ and choose
+\begin{equation}
+ \Omega=z^{-2},\qquad \Phi=\sqrt6\log z,\qquad
+ U(\phi)=84e^{2\phi/\sqrt6}-36e^{3\phi/\sqrt6}.
+ \label{eq:explicit-background}
+\end{equation}
+These fields solve the bulk equations on $z>0$. Indeed, writing
+$u=\log\Omega$, the conformal Ricci formula gives
+\begin{align}
+ R_{AB}
+ &=12(u_s^2-u_{ss})X_AX_B
+   +(-16u_s-4su_{ss}-12su_s^2)\eta_{AB}\nonumber\\
+ &=\frac{24X_AX_B+(32-24s)\eta_{AB}}{z^2}
+  =\Phi_A\Phi_B+\frac23 U(\Phi)g_{AB},
+ \label{eq:explicit-ricci}
+\end{align}
+because $\Phi_s=\sqrt6/z$ and $U(\Phi)=(48-36s)z^2$.
+Independently,
+\begin{equation}
+ \Box_g\Phi=\Omega^{-2}(4s\Phi_{ss}+10\Phi_s+12su_s\Phi_s)
+ =\sqrt6(10-18s)z^2=U'(\Phi).
+ \label{eq:explicit-scalar}
+\end{equation}
+
+Join two identical interiors $s\le b^2$ at $b=1/2$.
+Their outward normal is $n^A=X^A/(b\Omega_b)$ and their extrinsic
+curvatures and scalar normal derivatives are
+\begin{equation}
+ K_{i,ab}=a_bh_{ab},\quad
+ a_b=\frac{(1-3b^2)(1+b^2)}{b}=\frac58,\qquad
+ p_b=2\sqrt6\,b(1+b^2)=\frac{5\sqrt6}{4}.
+\end{equation}
+With $\phi_b=\sqrt6\log(5/4)$, the fixed affine tension
+\begin{equation}
+ \sigma(\phi)=\frac{15}{4}-\frac{5\sqrt6}{2}(\phi-\phi_b)
+ \label{eq:explicit-tension}
+\end{equation}
+satisfies $\sigma(\phi_b)=6a_b$ and $\sigma'(\phi_b)=-2p_b$.
+Thus both residuals in \eqref{eq:junctions} vanish exactly. Induced
+matching is automatic. On $|T|\le1/2$, the interior has
+$-1/4\le s\le1/4$, so the Cartesian fields are smooth through the center
+and cone within each interior, with $\Omega>0$ and $f\ne0$.
+Across the material shell the metric is piecewise smooth, with the
+extrinsic-curvature jump fixed by the junction equations. The initial section is time
+symmetric and rotation invariant.
+
+For this background,
+\begin{equation}
+ L=-\frac4{1+s},\qquad m_r=\frac38r^3(1+r^2)^4,\qquad
+ n_r=6r^7(1+r^2)^2,
+\end{equation}
+and the zeroth-order radial coefficient is
+\begin{equation}
+ m_r(2+9r^2L)+n_r
+ =m_r\frac{2-32r^2-18r^4}{(1+r^2)^2}>0
+ \quad(0<r\le1/5).
+ \label{eq:explicit-positive}
+\end{equation}
+The numerator decreases on this interval and equals $432/625$ at its
+upper endpoint. Hence any nonzero $Q\in C_c^\infty((1/10,1/5))$ has
+$\mathcal B_{\rm rad}(Q,Q)>0$, without the thin-annulus estimate.
+For example, take $Q=\exp[-1/((r-11/100)(19/100-r))]$ between
+$11/100$ and $19/100$, and zero elsewhere. Take $T_*=1/32$ and
+$\omega=1$ in the fixed units. Together with the displayed $H$ and $J$,
+these choices specify a smooth linear state with
+\eqref{eq:explicit-obstruction} strictly positive on a fully specified
+exact background.
+
+This illustrative potential and tension differ from the registered
+HDBLAST model. The example establishes that the present hypotheses are
+realized; it makes no priority claim for the exact background and no
+claim about its long-time stability or cosmological interpretation.
+
+\section{Quadrupole charges and commuting matrices}
+\label{sec:quadrupoles}
+
+Keep $Q$, $\omega$ and the copy parity fixed, with
+$\mathcal B_{\rm rad}(Q,Q)>0$. Every real degree-two harmonic on $S^3$
+is $H_A(n)=n^TAn$ with $A\in V:=\Sym_0(4,\R)$. The family
+\begin{equation}
+ q=QH_A,\qquad p=\omega QH_B,\qquad (A,B)\in V\times V
+ \label{eq:quadrupole-family}
+\end{equation}
+has dimension eighteen. For $M^T=-M$ and $J_M=(Mn)\cdot\partial_n$,
+the exact sphere moments give
+\begin{equation}
+ \int_{S^3}H_AH_B=\frac{\operatorname{vol}(S^3)}{12}\tr(AB),
+ \qquad J_MH_A=H_{[A,M]}.
+ \label{eq:sphere-moments}
+\end{equation}
+Consequently
+\begin{equation}
+ \mathcal T_{J_M}(v)=
+ \frac{\operatorname{vol}(S^3)}{3}\omega
+ \mathcal B_{\rm rad}(Q,Q)\tr\bigl(B[A,M]\bigr).
+ \label{eq:matrix-charge}
+\end{equation}
+The six rotational tests therefore vanish exactly when $[A,B]=0$.
+For $J_{ij}=x_i\partial_j-x_j\partial_i$, the coefficient is
+$-(2\operatorname{vol}(S^3)/3)\omega\mathcal B_{\rm rad}(Q,Q)[A,B]_{ij}$.
+This calculation concerns the restricted family
+\eqref{eq:quadrupole-family}, not every perturbation or every adjoint
+constraint mode.
+
+\section{Regular and singular quadrupole test states}
+\label{sec:geometry}
+\input{quadrupole_geometry.tex}
+
+\section{Scope, reproducibility and next questions}
+
+The obstruction is a necessary condition for a specified classical exact
+family. It neither constructs a nonlinear family through a charge-zero
+state nor proves second-order solvability, stability or a positive physical
+energy. The matrix curve result is sufficient only for the finite equation
+$[A,B]=0$. It cannot be substituted for solving the full Einstein--scalar
+constraint and interface operator. A simple matrix spectrum removes one
+finite-dimensional degeneracy; it does not supply a PDE right inverse.
+
+The direct witness here remains away from the shell during the short slab.
+It therefore proves the obstruction without a contact theorem. The earlier
+technical checkpoint contains a separate finite-angular contact construction
+\cite{MaldonadoShell2026}; its stronger domain and compatibility hypotheses
+are not implicit in Lemma~\ref{lem:admissibility}. The present paper does not
+infer a nonzero jet at the exact causal front.
+
+A constructive nonlinear continuation would require identifying the range
+of the full linearized constraint and interface operator, the gauge and trace domains,
+and a second-order correction with all generated angular sectors. Further
+orders and estimates of the nonlinear remainder would then remain. The
+calculation makes no assertion about an observational scale or the origin
+of the Big Bang.
+
+The accompanying source package contains the derivation, explicit finite
+matrix checks, deliberately incorrect-formula controls, input identities,
+and the primary-source comparison. The checks test algebra and selected
+exact examples. They are not a computer-certified analytic PDE proof or
+external peer review. Published earlier checkpoints are preserved as
+separate records; the present manuscript is a focused review draft.
+The \href{https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_ROTATIONAL_OBSTRUCTION_PAPER_20261015}{draft and reproducible supplement}
+are available in the public research repository.
+
+\paragraph{AI assistance and author review.}
+Substantial OpenAI Codex assistance was used in derivation, programming,
+literature comparison and drafting, including internal reviews by separately
+delegated GPT-6 Astra and GPT-6.1 Sol agents. These are AI-assisted checks,
+not independent human peer review. The human author is responsible for
+checking the mathematics, sources, interpretation and final disclosure
+before any submission. Funding, conflicts, contact details and all journal
+declarations must be confirmed by the author for the submitted version.
+
+\appendix
+\section{Bulk reconstruction calculation}
+\label{app:reconstruction}
+
+On $s>0$, set $r=\sqrt s$, $\dd y=\Omega\dd r$,
+$\rho=r\Omega$, $p_b=\phi_y=2rf/\Omega$ and $a=\rho_y/\rho$.
+Here $p_b$ denotes the radial background scalar derivative, not the master
+velocity $p$ of Section~\ref{sec:witness}. The background equations are
+\begin{equation}
+ (p_b)_y=U_\phi-4ap_b,\quad
+ a_y=-\rho^{-2}-p_b^2/3,\quad
+ a^2=\rho^{-2}+p_b^2/12-U/6.
+\end{equation}
+For $P=r^4F$, define
+\begin{equation}
+ \mathcal M[P]=P_{yy}-(2a+2(p_b)_y/p_b)P_y
+  +\rho^{-2}(\Box_{\mathrm{dS}_4}+4)P-\tfrac23p_b^2P.
+\end{equation}
+The ambient wave operator is
+$\Box_\eta=\partial_r^2+4r^{-1}\partial_r+
+r^{-2}\Box_{\mathrm{dS}_4}$. Differentiation gives
+$\mathcal M[r^4F]=\Omega^{-2}r^4\mathscr L F$.
+With $\Psi=P/\rho^2$ and $\chi=-3P_y/(\rho^2p_b)$,
+the reconstructed metric is
+$h_{yy}=-4\Psi$, $h_{y\mu}=0$,
+$h_{\mu\nu}=2\rho^2\Psi\gamma_{\mu\nu}$.
+For arbitrary spacetime functions $\Psi$, its Ricci variation is
+\begin{align}
+ \delta R_{yy}&=-4\Psi_{yy}-16a\Psi_y+2\rho^{-2}\Box_\gamma\Psi,\nonumber\\
+ \delta R_{y\mu}&=-3D_\mu(\Psi_y+2a\Psi),\nonumber\\
+ \delta R_{\mu\nu}&=\gamma_{\mu\nu}
+ \left[-\Box_\gamma\Psi-\rho^2\{\Psi_{yy}+10a\Psi_y
+                      +6(a_y+4a^2)\Psi\}\right].
+\end{align}
+Put
+$C=p_b\chi_y-(p_b)_y\chi-3\rho^{-2}(\Box_\gamma+4)\Psi
++2p_b^2\Psi$.
+Substitution gives
+\begin{equation}
+ \delta\mathscr E_{y\mu}=0,\quad
+ \delta\mathscr E_{yy}=-2C/3,\quad
+ \delta\mathscr E_{\mu\nu}=\rho^2\gamma_{\mu\nu}C/3,\quad
+ C=-3\mathcal M[P]/\rho^2.
+\end{equation}
+The scalar variation satisfies
+$p_b\delta\mathscr S=(\partial_y+4a)C$, giving
+\eqref{eq:residual-factorization}. The pre-contact support stays in this
+$s>0$ patch, so no analytic continuation of an operator identity through
+$s=0$ is used in the proof.
+
+\section{Covariant consistency of the interface cancellation}
+\label{app:covariant}
+
+This appendix records the local boundary calculation behind the same
+physical interpretation; the direct rotational proof does not depend on a
+general phase-space existence theorem. Use the Einstein--scalar bulk
+potential, with $q_{AB}=\delta g_{AB}$, $q=g^{AB}q_{AB}$ and
+$q^{AB}=g^{AC}g^{BD}q_{CD}$:
+\begin{equation}
+ \theta^A=\sqrt{-g}\left[\tfrac12(\nabla_Bq^{AB}-\nabla^Aq)
+                         -\nabla^A\phi\,\delta\phi\right].
+\end{equation}
+Represent the two outward boundary forms in the same co-oriented shell
+density convention, including the Noether potentials and corners.
+For $v_i^a=h^{ab}n_i^A\delta g_{i,Ab}$, let
+$\beta_i=-\tfrac12i_{v_i}\epsilon_W$ and
+$\ell=(K_++K_--\sigma)\epsilon_W$.
+The unrestricted GHY variation gives
+\begin{equation}
+ \sum_i\theta_i|_W+\delta\ell
+ =-\epsilon_W\left(\tfrac12I^{ab}\delta h_{ab}
+                         +P\delta\varphi\right)+\dd_W\beta,
+ \qquad \beta=\beta_++\beta_-.
+ \label{eq:boundary-variation}
+\end{equation}
+Normal and mixed metric variations have been retained.
+For a fixed common shell-tangent vector $\xi$, let
+$Q_{\xi,i}=-\tfrac12*_i\dd\xi_i^\flat$. Set
+$A_i^a=h^a{}_Bn_i^A\nabla_A\xi_i^B$. Then
+\begin{equation}
+ Q_{\xi,i}|_W=-\tfrac12i_{A_i+K_i\cdot\xi}\epsilon_W,
+ \qquad
+ \beta_i(\Lie_\xi g)=-\tfrac12i_{A_i-K_i\cdot\xi}\epsilon_W.
+\end{equation}
+The arbitrary normal extension $A_i$ cancels, leaving
+\begin{equation}
+ B_\xi:=\sum_iQ_{\xi,i}|_W+i_\xi\ell-\beta(\Lie_\xi)
+       =-i_{I\cdot\xi}\epsilon_W.
+ \label{eq:boundary-charge}
+\end{equation}
+The combination on the left is the established completed boundary charge
+\cite[Eq.~(2.51)]{HarlowWu2020}; its explicit Israel-residual value is the
+interface calculation here. Its vanishing uses the physical junction
+equation, not a fixed induced metric at an external wall.
+
+For moving embeddings, exact pullback gives
+$\delta(Y^*g)=Y^*(\delta g+\Lie_\chi g)$, where
+$\chi=\delta Y\circ Y^{-1}$ \cite{Speranza2018}. Thus the second variation
+contains $\ddot g+2\Lie_\chi\dot g+\Lie_{\dot\chi}g+\Lie_\chi^2g$.
+Equation~\eqref{eq:matching} concerns the full pullback, including these
+terms. The matching chart used in Section~\ref{sec:constraint} retains them
+and the normalization of the shell normals. No vanishing of an unrestricted
+second-order graph has been assumed.
+
+\bibliographystyle{unsrtnat}
+\bibliography{REFERENCES}
+\end{document}
