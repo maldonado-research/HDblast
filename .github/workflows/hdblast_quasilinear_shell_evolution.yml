@@ -1,0 +1,91 @@
+name: Quasilinear shell-evolution identity replay
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015/**'
+      - 'research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015.zip'
+      - '.github/workflows/hdblast_quasilinear_shell_evolution.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015/**'
+      - 'research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015.zip'
+      - '.github/workflows/hdblast_quasilinear_shell_evolution.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quasilinear-shell-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  fresh-independent-replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    env:
+      PROOF_DIRECTORY: research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015
+      MANIFEST_SHA256: '1758d6479eaa4ed3637ef8d0aaf9f61fcbf3d8b0518e5f95fe5ecdd6fd8b979a'
+      ARCHIVE_SHA256: '3b043b09828bfd64b9c09391afc6c80784eecd27914be96349c7876b4d2df0fe'
+      RUNNER_SHA256: '54814f0e8b920a5d0535f273bdbff1a7fd25aabc7df01b9bdaed72cb4c1369d6'
+      VERIFIER_SHA256: '61fc71c8b5f63ca7d814aa9c481895f6344ed1a3511194de891dbfaca731186d'
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /${{ env.PROOF_DIRECTORY }}/
+            /${{ env.PROOF_DIRECTORY }}.zip
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Authenticate manifest, executable bytes and matching ZIP before imports
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -S -B - <<'PY'
+          import hashlib, os, pathlib, shutil, zipfile
+          root = pathlib.Path(os.environ['PROOF_DIRECTORY'])
+          for name, variable in [('MANIFEST.json', 'MANIFEST_SHA256'),
+                                 ('reproduce.py', 'RUNNER_SHA256'),
+                                 ('verify_manifest.py', 'VERIFIER_SHA256')]:
+              path = root / name
+              if any(p.is_symlink() for p in [path, *path.parents]):
+                  raise RuntimeError('Real source files required')
+              if hashlib.sha256(path.read_bytes()).hexdigest() != os.environ[variable]:
+                  raise RuntimeError('External pin differs: ' + name)
+          archive = root.with_suffix('.zip')
+          if archive.is_symlink() or hashlib.sha256(archive.read_bytes()).hexdigest() != os.environ['ARCHIVE_SHA256']:
+              raise RuntimeError('Archive pin differs')
+          expected = {p.relative_to(root.parent).as_posix(): p.read_bytes()
+                      for p in root.rglob('*') if p.is_file()}
+          with zipfile.ZipFile(archive) as zipped:
+              if len(zipped.namelist()) != len(expected) or set(zipped.namelist()) != set(expected):
+                  raise RuntimeError('Archive members differ')
+              if any(zipped.read(name) != raw for name, raw in expected.items()):
+                  raise RuntimeError('Archive and source differ')
+          shutil.copytree(root, pathlib.Path(os.environ['RUNNER_TEMP']) / 'quasilinear-shell-source')
+          PY
+          python -I -S -B "$RUNNER_TEMP/quasilinear-shell-source/verify_manifest.py" --expected "$MANIFEST_SHA256"
+      - name: Install pinned symbolic dependency
+        run: |
+          python -I -B -m pip install --only-binary=:all: -r "$RUNNER_TEMP/quasilinear-shell-source/requirements.txt"
+      # Three independent checkers in normal and optimized modes: 19 finite
+      # positive groups per mode, 14 external corruption processes and 12
+      # embedded gauge controls total. These do not certify the PDE proof.
+      - name: Replay six positive processes, fourteen external mutations and twelve embedded controls
+        run: |
+          python -I -B "$RUNNER_TEMP/quasilinear-shell-source/reproduce.py" --manifest-sha256 "$MANIFEST_SHA256" --output-dir "$RUNNER_TEMP/quasilinear-shell-fresh"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: quasilinear-shell-contact-${{ github.sha }}
+          path: ${{ runner.temp }}/quasilinear-shell-fresh
+          retention-days: 14
