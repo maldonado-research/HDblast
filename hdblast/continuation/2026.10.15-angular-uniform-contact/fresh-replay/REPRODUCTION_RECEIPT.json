@@ -1,0 +1,1025 @@
+{
+  "status": "PASS",
+  "capsule": "HDBLAST_ANGULAR_UNIFORM_CONTACT_20261015",
+  "authentication": {
+    "status": "PASS",
+    "files_verified": 38,
+    "manifest_sha256": "68496d0364ca07264d93f5b564a098a14bbbc7039fc791f8560b9f01160ba816"
+  },
+  "runner": {
+    "path": "reproduce.py",
+    "bytes": 8996,
+    "sha256": "f5b7b77c0fd56b5bb23bb9b97ad2b4854d93190de3217c192ce55a4798894411"
+  },
+  "integrity_verifier": {
+    "path": "verify_manifest.py",
+    "bytes": 2058,
+    "sha256": "07a989a41c81acf34692d2b8b87fd2c914dac0db0caf43900054479a4a62b80d"
+  },
+  "requirements": {
+    "path": "requirements.txt",
+    "bytes": 14,
+    "sha256": "25f9f1fb1988b230147a1d3092d34e09c069eb7a6c6d6df46b3973b9f2d36efc"
+  },
+  "python": {
+    "version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "implementation": "cpython"
+  },
+  "sympy_version": "1.14.0",
+  "successful_checker_runs": 6,
+  "actual_corruption_controls": 22,
+  "steps": [
+    {
+      "kind": "positive",
+      "mode": "normal",
+      "script": "astra/verify_uniform_boundary.py",
+      "source_sha256": "23e6b7c2325380d4f5a9676040e50341c2e69938e422188bd20704e47bfc03eb",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 2.886,
+      "copied_script": {
+        "path": "normal/astra/positive/verify_uniform_boundary.py",
+        "bytes": 4714,
+        "sha256": "23e6b7c2325380d4f5a9676040e50341c2e69938e422188bd20704e47bfc03eb"
+      },
+      "log": {
+        "path": "normal/astra/positive/execution.log",
+        "bytes": 872,
+        "sha256": "0cd0196d05a01f3d3d21312e2b30408640f0c52f7409d0a07f34a49974f9b6ec"
+      },
+      "output": {
+        "path": "normal/astra/positive/fresh.json",
+        "bytes": 872,
+        "sha256": "0cd0196d05a01f3d3d21312e2b30408640f0c52f7409d0a07f34a49974f9b6ec"
+      },
+      "golden": {
+        "path": "astra/NORMAL.json",
+        "bytes": 872,
+        "sha256": "0cd0196d05a01f3d3d21312e2b30408640f0c52f7409d0a07f34a49974f9b6ec"
+      },
+      "scientific_output_matches": true,
+      "ignored_top_level_fields": [
+        "optimized_python"
+      ]
+    },
+    {
+      "kind": "positive",
+      "mode": "normal",
+      "script": "sol/verify_uniform_robin.py",
+      "source_sha256": "0aabf11fdc9483d093ebba70e1fd55e29db358629131cad2dcbf8d9e56257099",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 5.8,
+      "copied_script": {
+        "path": "normal/sol/positive/verify_uniform_robin.py",
+        "bytes": 7103,
+        "sha256": "0aabf11fdc9483d093ebba70e1fd55e29db358629131cad2dcbf8d9e56257099"
+      },
+      "log": {
+        "path": "normal/sol/positive/execution.log",
+        "bytes": 647,
+        "sha256": "e0f57d766b3016082627e327977afb1e46b21754449875245a997943411e144a"
+      },
+      "output": {
+        "path": "normal/sol/positive/fresh.json",
+        "bytes": 647,
+        "sha256": "e0f57d766b3016082627e327977afb1e46b21754449875245a997943411e144a"
+      },
+      "golden": {
+        "path": "sol/verification_results.json",
+        "bytes": 647,
+        "sha256": "e0f57d766b3016082627e327977afb1e46b21754449875245a997943411e144a"
+      },
+      "scientific_output_matches": true,
+      "ignored_top_level_fields": []
+    },
+    {
+      "kind": "positive",
+      "mode": "normal",
+      "script": "referee/check_boundary_matrix_and_glancing.py",
+      "source_sha256": "593d6f2fa9d4a1b555652ae2d66b56cf4fbbccd67f56018dac91b2b94ad35f0b",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 1.799,
+      "copied_script": {
+        "path": "normal/referee/positive/check_boundary_matrix_and_glancing.py",
+        "bytes": 4991,
+        "sha256": "593d6f2fa9d4a1b555652ae2d66b56cf4fbbccd67f56018dac91b2b94ad35f0b"
+      },
+      "log": {
+        "path": "normal/referee/positive/execution.log",
+        "bytes": 465,
+        "sha256": "3f4b490d4da4ee5e327d4a3e3c9ee4b79adea9b5dba2ce47449828bb0b09829e"
+      },
+      "output": {
+        "path": "normal/referee/positive/fresh.json",
+        "bytes": 465,
+        "sha256": "3f4b490d4da4ee5e327d4a3e3c9ee4b79adea9b5dba2ce47449828bb0b09829e"
+      },
+      "golden": {
+        "path": "referee/BOUNDARY_CHECK_RESULTS.json",
+        "bytes": 465,
+        "sha256": "3f4b490d4da4ee5e327d4a3e3c9ee4b79adea9b5dba2ce47449828bb0b09829e"
+      },
+      "scientific_output_matches": true,
+      "ignored_top_level_fields": []
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "normal",
+      "script": "astra/verify_uniform_boundary.py",
+      "source_sha256": "23e6b7c2325380d4f5a9676040e50341c2e69938e422188bd20704e47bfc03eb",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--corrupt",
+        "robin_sign"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.974,
+      "copied_script": {
+        "path": "normal/astra/robin_sign/verify_uniform_boundary.py",
+        "bytes": 4714,
+        "sha256": "23e6b7c2325380d4f5a9676040e50341c2e69938e422188bd20704e47bfc03eb"
+      },
+      "log": {
+        "path": "normal/astra/robin_sign/execution.log",
+        "bytes": 61,
+        "sha256": "5fd92ef5f40132721d78f2a9def5f57028f62c40f448e07ff07e474510684b4e"
+      },
+      "corruption": "robin_sign",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "Robin_to_Neumann_boundary_jet",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "normal",
+      "script": "astra/verify_uniform_boundary.py",
+      "source_sha256": "23e6b7c2325380d4f5a9676040e50341c2e69938e422188bd20704e47bfc03eb",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--corrupt",
+        "lapse_factor"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 1.179,
+      "copied_script": {
+        "path": "normal/astra/lapse_factor/verify_uniform_boundary.py",
+        "bytes": 4714,
+        "sha256": "23e6b7c2325380d4f5a9676040e50341c2e69938e422188bd20704e47bfc03eb"
+      },
+      "log": {
+        "path": "normal/astra/lapse_factor/execution.log",
+        "bytes": 53,
+        "sha256": "c1e553ea550af285f1e124c466081bab36ab454e4a31f473fab55f8cad5fd62f"
+      },
+      "corruption": "lapse_factor",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "actual_tangent_row_00",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "normal",
+      "script": "astra/verify_uniform_boundary.py",
+      "source_sha256": "23e6b7c2325380d4f5a9676040e50341c2e69938e422188bd20704e47bfc03eb",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--corrupt",
+        "claimed_symmetry"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 1.232,
+      "copied_script": {
+        "path": "normal/astra/claimed_symmetry/verify_uniform_boundary.py",
+        "bytes": 4714,
+        "sha256": "23e6b7c2325380d4f5a9676040e50341c2e69938e422188bd20704e47bfc03eb"
+      },
+      "log": {
+        "path": "normal/astra/claimed_symmetry/execution.log",
+        "bytes": 63,
+        "sha256": "b27aadf1efbd4e188cca614814be1237d617ac3f536a24fe89829f96bd862560"
+      },
+      "corruption": "claimed_symmetry",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "false_full_Robin_symmetry_claim",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "normal",
+      "script": "sol/verify_uniform_robin.py",
+      "source_sha256": "0aabf11fdc9483d093ebba70e1fd55e29db358629131cad2dcbf8d9e56257099",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--inject-corruption",
+        "boundary-sign"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 1.562,
+      "copied_script": {
+        "path": "normal/sol/boundary-sign/verify_uniform_robin.py",
+        "bytes": 7103,
+        "sha256": "0aabf11fdc9483d093ebba70e1fd55e29db358629131cad2dcbf8d9e56257099"
+      },
+      "log": {
+        "path": "normal/sol/boundary-sign/execution.log",
+        "bytes": 52,
+        "sha256": "835bbf917d614ffe9af4f9a210c655a3e240ad8ef06960dd0fe2e30ee91278da"
+      },
+      "corruption": "boundary-sign",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "B is minus Jacobian of the exact boundary RHS",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "normal",
+      "script": "sol/verify_uniform_robin.py",
+      "source_sha256": "0aabf11fdc9483d093ebba70e1fd55e29db358629131cad2dcbf8d9e56257099",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--inject-corruption",
+        "conjugation-sign"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 4.371,
+      "copied_script": {
+        "path": "normal/sol/conjugation-sign/verify_uniform_robin.py",
+        "bytes": 7103,
+        "sha256": "0aabf11fdc9483d093ebba70e1fd55e29db358629131cad2dcbf8d9e56257099"
+      },
+      "log": {
+        "path": "normal/sol/conjugation-sign/execution.log",
+        "bytes": 31,
+        "sha256": "741d59cd06f150d25aaec139c3f7c7c01e1bb312d928791a704aae8961edcb16"
+      },
+      "corruption": "conjugation-sign",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "correct conjugation sign",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "normal",
+      "script": "sol/verify_uniform_robin.py",
+      "source_sha256": "0aabf11fdc9483d093ebba70e1fd55e29db358629131cad2dcbf8d9e56257099",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--inject-corruption",
+        "omitted-quadratic-derivative"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 3.321,
+      "copied_script": {
+        "path": "normal/sol/omitted-quadratic-derivative/verify_uniform_robin.py",
+        "bytes": 7103,
+        "sha256": "0aabf11fdc9483d093ebba70e1fd55e29db358629131cad2dcbf8d9e56257099"
+      },
+      "log": {
+        "path": "normal/sol/omitted-quadratic-derivative/execution.log",
+        "bytes": 43,
+        "sha256": "70573bdf4e50f43c413dc17a866e2cb8bd81b856e1009016228e19d1827c3a9b"
+      },
+      "corruption": "omitted-quadratic-derivative",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "all equation (5) metric-wave sources",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "normal",
+      "script": "sol/verify_uniform_robin.py",
+      "source_sha256": "0aabf11fdc9483d093ebba70e1fd55e29db358629131cad2dcbf8d9e56257099",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--inject-corruption",
+        "noncommuting-time"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 4.421,
+      "copied_script": {
+        "path": "normal/sol/noncommuting-time/verify_uniform_robin.py",
+        "bytes": 7103,
+        "sha256": "0aabf11fdc9483d093ebba70e1fd55e29db358629131cad2dcbf8d9e56257099"
+      },
+      "log": {
+        "path": "normal/sol/noncommuting-time/execution.log",
+        "bytes": 38,
+        "sha256": "cf26b6aac9159da4e482af7124b88a9ff66e32fcf120521ffe3ab18d838118aa"
+      },
+      "corruption": "noncommuting-time",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "noncommuting Duhamel derivative",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "normal",
+      "script": "referee/check_boundary_matrix_and_glancing.py",
+      "source_sha256": "593d6f2fa9d4a1b555652ae2d66b56cf4fbbccd67f56018dac91b2b94ad35f0b",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--inject-corruption",
+        "wrong-linear-scalar"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 1.906,
+      "copied_script": {
+        "path": "normal/referee/wrong-linear-scalar/check_boundary_matrix_and_glancing.py",
+        "bytes": 4991,
+        "sha256": "593d6f2fa9d4a1b555652ae2d66b56cf4fbbccd67f56018dac91b2b94ad35f0b"
+      },
+      "log": {
+        "path": "normal/referee/wrong-linear-scalar/execution.log",
+        "bytes": 156,
+        "sha256": "1fd340e43b63a07356b69b17dd56059beef15be8e890a78baaafbd1dad929ea5"
+      },
+      "output": {
+        "path": "normal/referee/wrong-linear-scalar/fresh.json",
+        "bytes": 156,
+        "sha256": "1fd340e43b63a07356b69b17dd56059beef15be8e890a78baaafbd1dad929ea5"
+      },
+      "corruption": "wrong-linear-scalar",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "exact direct-metric linearization disagrees with Robin matrix",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "normal",
+      "script": "referee/check_boundary_matrix_and_glancing.py",
+      "source_sha256": "593d6f2fa9d4a1b555652ae2d66b56cf4fbbccd67f56018dac91b2b94ad35f0b",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--inject-corruption",
+        "wrong-trace-factor"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 1.894,
+      "copied_script": {
+        "path": "normal/referee/wrong-trace-factor/check_boundary_matrix_and_glancing.py",
+        "bytes": 4991,
+        "sha256": "593d6f2fa9d4a1b555652ae2d66b56cf4fbbccd67f56018dac91b2b94ad35f0b"
+      },
+      "log": {
+        "path": "normal/referee/wrong-trace-factor/execution.log",
+        "bytes": 155,
+        "sha256": "4edd5ea57eefaed250915d0b7a6952742217a89808e4db82fd26242c14dff73f"
+      },
+      "output": {
+        "path": "normal/referee/wrong-trace-factor/fresh.json",
+        "bytes": 155,
+        "sha256": "4edd5ea57eefaed250915d0b7a6952742217a89808e4db82fd26242c14dff73f"
+      },
+      "corruption": "wrong-trace-factor",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "exact direct-metric linearization disagrees with Robin matrix",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "normal",
+      "script": "referee/check_boundary_matrix_and_glancing.py",
+      "source_sha256": "593d6f2fa9d4a1b555652ae2d66b56cf4fbbccd67f56018dac91b2b94ad35f0b",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--inject-corruption",
+        "wrong-glancing-rank"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 1.758,
+      "copied_script": {
+        "path": "normal/referee/wrong-glancing-rank/check_boundary_matrix_and_glancing.py",
+        "bytes": 4991,
+        "sha256": "593d6f2fa9d4a1b555652ae2d66b56cf4fbbccd67f56018dac91b2b94ad35f0b"
+      },
+      "log": {
+        "path": "normal/referee/wrong-glancing-rank/execution.log",
+        "bytes": 140,
+        "sha256": "e6709fbf57d7e0f3e511cd292134b4121b558386dafa8b408fc34633dd996427"
+      },
+      "output": {
+        "path": "normal/referee/wrong-glancing-rank/fresh.json",
+        "bytes": 140,
+        "sha256": "e6709fbf57d7e0f3e511cd292134b4121b558386dafa8b408fc34633dd996427"
+      },
+      "corruption": "wrong-glancing-rank",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "glancing harmonic constraint rank is not four",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "normal",
+      "script": "referee/check_boundary_matrix_and_glancing.py",
+      "source_sha256": "593d6f2fa9d4a1b555652ae2d66b56cf4fbbccd67f56018dac91b2b94ad35f0b",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--inject-corruption",
+        "wrong-conjugation"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 2.102,
+      "copied_script": {
+        "path": "normal/referee/wrong-conjugation/check_boundary_matrix_and_glancing.py",
+        "bytes": 4991,
+        "sha256": "593d6f2fa9d4a1b555652ae2d66b56cf4fbbccd67f56018dac91b2b94ad35f0b"
+      },
+      "log": {
+        "path": "normal/referee/wrong-conjugation/execution.log",
+        "bytes": 141,
+        "sha256": "61728f2b78c97b36cb7b28eab3533e30455cf7def061f4baa5fbb846a6284fe6"
+      },
+      "output": {
+        "path": "normal/referee/wrong-conjugation/fresh.json",
+        "bytes": 141,
+        "sha256": "61728f2b78c97b36cb7b28eab3533e30455cf7def061f4baa5fbb846a6284fe6"
+      },
+      "corruption": "wrong-conjugation",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "Robin conjugation leaves a nonzero boundary term",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "positive",
+      "mode": "optimized",
+      "script": "astra/verify_uniform_boundary.py",
+      "source_sha256": "23e6b7c2325380d4f5a9676040e50341c2e69938e422188bd20704e47bfc03eb",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 5.618,
+      "copied_script": {
+        "path": "optimized/astra/positive/verify_uniform_boundary.py",
+        "bytes": 4714,
+        "sha256": "23e6b7c2325380d4f5a9676040e50341c2e69938e422188bd20704e47bfc03eb"
+      },
+      "log": {
+        "path": "optimized/astra/positive/execution.log",
+        "bytes": 871,
+        "sha256": "c4b763957a368e4c5881d74e77bba543deeac82cf3f10243b72e79bb98e6c0e6"
+      },
+      "output": {
+        "path": "optimized/astra/positive/fresh.json",
+        "bytes": 871,
+        "sha256": "c4b763957a368e4c5881d74e77bba543deeac82cf3f10243b72e79bb98e6c0e6"
+      },
+      "golden": {
+        "path": "astra/NORMAL.json",
+        "bytes": 872,
+        "sha256": "0cd0196d05a01f3d3d21312e2b30408640f0c52f7409d0a07f34a49974f9b6ec"
+      },
+      "scientific_output_matches": true,
+      "ignored_top_level_fields": [
+        "optimized_python"
+      ]
+    },
+    {
+      "kind": "positive",
+      "mode": "optimized",
+      "script": "sol/verify_uniform_robin.py",
+      "source_sha256": "0aabf11fdc9483d093ebba70e1fd55e29db358629131cad2dcbf8d9e56257099",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 9.008,
+      "copied_script": {
+        "path": "optimized/sol/positive/verify_uniform_robin.py",
+        "bytes": 7103,
+        "sha256": "0aabf11fdc9483d093ebba70e1fd55e29db358629131cad2dcbf8d9e56257099"
+      },
+      "log": {
+        "path": "optimized/sol/positive/execution.log",
+        "bytes": 647,
+        "sha256": "e0f57d766b3016082627e327977afb1e46b21754449875245a997943411e144a"
+      },
+      "output": {
+        "path": "optimized/sol/positive/fresh.json",
+        "bytes": 647,
+        "sha256": "e0f57d766b3016082627e327977afb1e46b21754449875245a997943411e144a"
+      },
+      "golden": {
+        "path": "sol/verification_results.json",
+        "bytes": 647,
+        "sha256": "e0f57d766b3016082627e327977afb1e46b21754449875245a997943411e144a"
+      },
+      "scientific_output_matches": true,
+      "ignored_top_level_fields": []
+    },
+    {
+      "kind": "positive",
+      "mode": "optimized",
+      "script": "referee/check_boundary_matrix_and_glancing.py",
+      "source_sha256": "593d6f2fa9d4a1b555652ae2d66b56cf4fbbccd67f56018dac91b2b94ad35f0b",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 5.49,
+      "copied_script": {
+        "path": "optimized/referee/positive/check_boundary_matrix_and_glancing.py",
+        "bytes": 4991,
+        "sha256": "593d6f2fa9d4a1b555652ae2d66b56cf4fbbccd67f56018dac91b2b94ad35f0b"
+      },
+      "log": {
+        "path": "optimized/referee/positive/execution.log",
+        "bytes": 465,
+        "sha256": "3f4b490d4da4ee5e327d4a3e3c9ee4b79adea9b5dba2ce47449828bb0b09829e"
+      },
+      "output": {
+        "path": "optimized/referee/positive/fresh.json",
+        "bytes": 465,
+        "sha256": "3f4b490d4da4ee5e327d4a3e3c9ee4b79adea9b5dba2ce47449828bb0b09829e"
+      },
+      "golden": {
+        "path": "referee/BOUNDARY_CHECK_RESULTS.json",
+        "bytes": 465,
+        "sha256": "3f4b490d4da4ee5e327d4a3e3c9ee4b79adea9b5dba2ce47449828bb0b09829e"
+      },
+      "scientific_output_matches": true,
+      "ignored_top_level_fields": []
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "optimized",
+      "script": "astra/verify_uniform_boundary.py",
+      "source_sha256": "23e6b7c2325380d4f5a9676040e50341c2e69938e422188bd20704e47bfc03eb",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--corrupt",
+        "robin_sign"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 3.81,
+      "copied_script": {
+        "path": "optimized/astra/robin_sign/verify_uniform_boundary.py",
+        "bytes": 4714,
+        "sha256": "23e6b7c2325380d4f5a9676040e50341c2e69938e422188bd20704e47bfc03eb"
+      },
+      "log": {
+        "path": "optimized/astra/robin_sign/execution.log",
+        "bytes": 61,
+        "sha256": "5fd92ef5f40132721d78f2a9def5f57028f62c40f448e07ff07e474510684b4e"
+      },
+      "corruption": "robin_sign",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "Robin_to_Neumann_boundary_jet",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "optimized",
+      "script": "astra/verify_uniform_boundary.py",
+      "source_sha256": "23e6b7c2325380d4f5a9676040e50341c2e69938e422188bd20704e47bfc03eb",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--corrupt",
+        "lapse_factor"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 5.343,
+      "copied_script": {
+        "path": "optimized/astra/lapse_factor/verify_uniform_boundary.py",
+        "bytes": 4714,
+        "sha256": "23e6b7c2325380d4f5a9676040e50341c2e69938e422188bd20704e47bfc03eb"
+      },
+      "log": {
+        "path": "optimized/astra/lapse_factor/execution.log",
+        "bytes": 53,
+        "sha256": "c1e553ea550af285f1e124c466081bab36ab454e4a31f473fab55f8cad5fd62f"
+      },
+      "corruption": "lapse_factor",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "actual_tangent_row_00",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "optimized",
+      "script": "astra/verify_uniform_boundary.py",
+      "source_sha256": "23e6b7c2325380d4f5a9676040e50341c2e69938e422188bd20704e47bfc03eb",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--corrupt",
+        "claimed_symmetry"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 4.846,
+      "copied_script": {
+        "path": "optimized/astra/claimed_symmetry/verify_uniform_boundary.py",
+        "bytes": 4714,
+        "sha256": "23e6b7c2325380d4f5a9676040e50341c2e69938e422188bd20704e47bfc03eb"
+      },
+      "log": {
+        "path": "optimized/astra/claimed_symmetry/execution.log",
+        "bytes": 63,
+        "sha256": "b27aadf1efbd4e188cca614814be1237d617ac3f536a24fe89829f96bd862560"
+      },
+      "corruption": "claimed_symmetry",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "false_full_Robin_symmetry_claim",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "optimized",
+      "script": "sol/verify_uniform_robin.py",
+      "source_sha256": "0aabf11fdc9483d093ebba70e1fd55e29db358629131cad2dcbf8d9e56257099",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--inject-corruption",
+        "boundary-sign"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 5.697,
+      "copied_script": {
+        "path": "optimized/sol/boundary-sign/verify_uniform_robin.py",
+        "bytes": 7103,
+        "sha256": "0aabf11fdc9483d093ebba70e1fd55e29db358629131cad2dcbf8d9e56257099"
+      },
+      "log": {
+        "path": "optimized/sol/boundary-sign/execution.log",
+        "bytes": 52,
+        "sha256": "835bbf917d614ffe9af4f9a210c655a3e240ad8ef06960dd0fe2e30ee91278da"
+      },
+      "corruption": "boundary-sign",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "B is minus Jacobian of the exact boundary RHS",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "optimized",
+      "script": "sol/verify_uniform_robin.py",
+      "source_sha256": "0aabf11fdc9483d093ebba70e1fd55e29db358629131cad2dcbf8d9e56257099",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--inject-corruption",
+        "conjugation-sign"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 9.835,
+      "copied_script": {
+        "path": "optimized/sol/conjugation-sign/verify_uniform_robin.py",
+        "bytes": 7103,
+        "sha256": "0aabf11fdc9483d093ebba70e1fd55e29db358629131cad2dcbf8d9e56257099"
+      },
+      "log": {
+        "path": "optimized/sol/conjugation-sign/execution.log",
+        "bytes": 31,
+        "sha256": "741d59cd06f150d25aaec139c3f7c7c01e1bb312d928791a704aae8961edcb16"
+      },
+      "corruption": "conjugation-sign",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "correct conjugation sign",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "optimized",
+      "script": "sol/verify_uniform_robin.py",
+      "source_sha256": "0aabf11fdc9483d093ebba70e1fd55e29db358629131cad2dcbf8d9e56257099",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--inject-corruption",
+        "omitted-quadratic-derivative"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 7.513,
+      "copied_script": {
+        "path": "optimized/sol/omitted-quadratic-derivative/verify_uniform_robin.py",
+        "bytes": 7103,
+        "sha256": "0aabf11fdc9483d093ebba70e1fd55e29db358629131cad2dcbf8d9e56257099"
+      },
+      "log": {
+        "path": "optimized/sol/omitted-quadratic-derivative/execution.log",
+        "bytes": 43,
+        "sha256": "70573bdf4e50f43c413dc17a866e2cb8bd81b856e1009016228e19d1827c3a9b"
+      },
+      "corruption": "omitted-quadratic-derivative",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "all equation (5) metric-wave sources",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "optimized",
+      "script": "sol/verify_uniform_robin.py",
+      "source_sha256": "0aabf11fdc9483d093ebba70e1fd55e29db358629131cad2dcbf8d9e56257099",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--inject-corruption",
+        "noncommuting-time"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 7.61,
+      "copied_script": {
+        "path": "optimized/sol/noncommuting-time/verify_uniform_robin.py",
+        "bytes": 7103,
+        "sha256": "0aabf11fdc9483d093ebba70e1fd55e29db358629131cad2dcbf8d9e56257099"
+      },
+      "log": {
+        "path": "optimized/sol/noncommuting-time/execution.log",
+        "bytes": 38,
+        "sha256": "cf26b6aac9159da4e482af7124b88a9ff66e32fcf120521ffe3ab18d838118aa"
+      },
+      "corruption": "noncommuting-time",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "noncommuting Duhamel derivative",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "optimized",
+      "script": "referee/check_boundary_matrix_and_glancing.py",
+      "source_sha256": "593d6f2fa9d4a1b555652ae2d66b56cf4fbbccd67f56018dac91b2b94ad35f0b",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--inject-corruption",
+        "wrong-linear-scalar"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 8.214,
+      "copied_script": {
+        "path": "optimized/referee/wrong-linear-scalar/check_boundary_matrix_and_glancing.py",
+        "bytes": 4991,
+        "sha256": "593d6f2fa9d4a1b555652ae2d66b56cf4fbbccd67f56018dac91b2b94ad35f0b"
+      },
+      "log": {
+        "path": "optimized/referee/wrong-linear-scalar/execution.log",
+        "bytes": 156,
+        "sha256": "1fd340e43b63a07356b69b17dd56059beef15be8e890a78baaafbd1dad929ea5"
+      },
+      "output": {
+        "path": "optimized/referee/wrong-linear-scalar/fresh.json",
+        "bytes": 156,
+        "sha256": "1fd340e43b63a07356b69b17dd56059beef15be8e890a78baaafbd1dad929ea5"
+      },
+      "corruption": "wrong-linear-scalar",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "exact direct-metric linearization disagrees with Robin matrix",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "optimized",
+      "script": "referee/check_boundary_matrix_and_glancing.py",
+      "source_sha256": "593d6f2fa9d4a1b555652ae2d66b56cf4fbbccd67f56018dac91b2b94ad35f0b",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--inject-corruption",
+        "wrong-trace-factor"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 9.951,
+      "copied_script": {
+        "path": "optimized/referee/wrong-trace-factor/check_boundary_matrix_and_glancing.py",
+        "bytes": 4991,
+        "sha256": "593d6f2fa9d4a1b555652ae2d66b56cf4fbbccd67f56018dac91b2b94ad35f0b"
+      },
+      "log": {
+        "path": "optimized/referee/wrong-trace-factor/execution.log",
+        "bytes": 155,
+        "sha256": "4edd5ea57eefaed250915d0b7a6952742217a89808e4db82fd26242c14dff73f"
+      },
+      "output": {
+        "path": "optimized/referee/wrong-trace-factor/fresh.json",
+        "bytes": 155,
+        "sha256": "4edd5ea57eefaed250915d0b7a6952742217a89808e4db82fd26242c14dff73f"
+      },
+      "corruption": "wrong-trace-factor",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "exact direct-metric linearization disagrees with Robin matrix",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "optimized",
+      "script": "referee/check_boundary_matrix_and_glancing.py",
+      "source_sha256": "593d6f2fa9d4a1b555652ae2d66b56cf4fbbccd67f56018dac91b2b94ad35f0b",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--inject-corruption",
+        "wrong-glancing-rank"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 6.756,
+      "copied_script": {
+        "path": "optimized/referee/wrong-glancing-rank/check_boundary_matrix_and_glancing.py",
+        "bytes": 4991,
+        "sha256": "593d6f2fa9d4a1b555652ae2d66b56cf4fbbccd67f56018dac91b2b94ad35f0b"
+      },
+      "log": {
+        "path": "optimized/referee/wrong-glancing-rank/execution.log",
+        "bytes": 140,
+        "sha256": "e6709fbf57d7e0f3e511cd292134b4121b558386dafa8b408fc34633dd996427"
+      },
+      "output": {
+        "path": "optimized/referee/wrong-glancing-rank/fresh.json",
+        "bytes": 140,
+        "sha256": "e6709fbf57d7e0f3e511cd292134b4121b558386dafa8b408fc34633dd996427"
+      },
+      "corruption": "wrong-glancing-rank",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "glancing harmonic constraint rank is not four",
+      "expected_reason_detected": true
+    },
+    {
+      "kind": "actual_corruption",
+      "mode": "optimized",
+      "script": "referee/check_boundary_matrix_and_glancing.py",
+      "source_sha256": "593d6f2fa9d4a1b555652ae2d66b56cf4fbbccd67f56018dac91b2b94ad35f0b",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "fresh.json",
+        "--inject-corruption",
+        "wrong-conjugation"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 6.152,
+      "copied_script": {
+        "path": "optimized/referee/wrong-conjugation/check_boundary_matrix_and_glancing.py",
+        "bytes": 4991,
+        "sha256": "593d6f2fa9d4a1b555652ae2d66b56cf4fbbccd67f56018dac91b2b94ad35f0b"
+      },
+      "log": {
+        "path": "optimized/referee/wrong-conjugation/execution.log",
+        "bytes": 141,
+        "sha256": "61728f2b78c97b36cb7b28eab3533e30455cf7def061f4baa5fbb846a6284fe6"
+      },
+      "output": {
+        "path": "optimized/referee/wrong-conjugation/fresh.json",
+        "bytes": 141,
+        "sha256": "61728f2b78c97b36cb7b28eab3533e30455cf7def061f4baa5fbb846a6284fe6"
+      },
+      "corruption": "wrong-conjugation",
+      "expected_failure_exit_code": 1,
+      "expected_reason": "Robin conjugation leaves a nonzero boundary term",
+      "expected_reason_detected": true
+    }
+  ],
+  "scope": "Fresh exact boundary, conjugation, and symbol algebra replay. The written analytic estimates are separately reviewed mathematical arguments; these process results do not computer-certify them or establish an exact nonlinear spacetime."
+}
