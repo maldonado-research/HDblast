@@ -1,5 +1,10 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- interior-master-jets-20261015 -->
+**15 October 2026: certified interior derivatives and bulk forcing bounds:** Every mixed first-master derivative through order three is now bounded on the registered causal triangle. The actual potential satisfies |W_zz| < 3e10. Reconstructing the first longitudinal fields gives coarse continuous bounds for all fifteen Einstein quadratic-source components and the complete scalar source. These are conditional coordinate-source envelopes in model units; quantitative U2 and the compatible common-gauge second-order solve remain unfinished.
+
+[Derivations, exact reports and replay source](https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_INTERIOR_MASTER_JETS_20261015). Internal AI-assisted review does not establish external peer review, novelty or a cosmological origin.
+
 <!-- coordinate-shell-sources-20261015 -->
 **15 October 2026: continuous coordinate shell sources:** The certified quadrupole now gives enclosures over 4353 continuous time cells for the actual metric trace at the shell, its proper-time derivative, and the complete one-copy coordinate scalar and isotropic Israel coefficients Sp and SK, with scalar degrees 0, 2 and 4. The metric correction has L2 norm less than 9e-13 of the one-copy material scalar source, yet changes the coordinate source signs at a scalar zero. Each of Sp and SK consequently has at least two distinct zeros inside the certified central bracket.
 

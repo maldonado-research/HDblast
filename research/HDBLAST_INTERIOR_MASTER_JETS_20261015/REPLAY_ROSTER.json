@@ -1,0 +1,82 @@
+{
+  "schema": "hdblast-interior-master-jets-replay-v1",
+  "jobs": [
+    {
+      "name": "potential",
+      "script": "potential/check_actual_potential.py",
+      "arguments": [],
+      "goldens": {
+        "normal": "potential/ACTUAL_POTENTIAL_JET_BOUNDS.json",
+        "optimized": "potential/ACTUAL_POTENTIAL_JET_BOUNDS.json"
+      }
+    },
+    {
+      "name": "potential-controls",
+      "script": "potential/run_potential_controls.py",
+      "arguments": [],
+      "goldens": {
+        "normal": "potential/POTENTIAL_CONTROL_RESULTS.json",
+        "optimized": "potential/POTENTIAL_CONTROL_RESULTS.json"
+      },
+      "modes": [
+        "normal"
+      ]
+    },
+    {
+      "name": "master-jets",
+      "script": "jets/check_higher_jets.py",
+      "arguments": [
+        "--root",
+        "."
+      ],
+      "goldens": {
+        "normal": "jets/HIGHER_JETS_NORMAL.json",
+        "optimized": "jets/HIGHER_JETS_OPTIMIZED.json"
+      }
+    },
+    {
+      "name": "master-controls",
+      "script": "jets/check_higher_jets.py",
+      "arguments": [
+        "--run-controls"
+      ],
+      "goldens": {
+        "normal": "jets/HIGHER_JETS_CONTROLS.json",
+        "optimized": "jets/HIGHER_JETS_CONTROLS.json"
+      },
+      "modes": [
+        "normal"
+      ]
+    },
+    {
+      "name": "bulk-and-controls",
+      "script": "bulk/check_longitudinal_sources.py",
+      "arguments": [
+        "--run-controls"
+      ],
+      "goldens": {
+        "normal": "bulk/ACTUAL_LONGITUDINAL_BULK_SOURCE_BOUNDS.json",
+        "optimized": "bulk/ACTUAL_LONGITUDINAL_BULK_SOURCE_BOUNDS_OPTIMIZED.json"
+      }
+    },
+    {
+      "name": "independent-referee",
+      "script": "review/check_independent_algebra.py",
+      "arguments": [
+        "--root",
+        "."
+      ],
+      "goldens": {
+        "normal": "review/INDEPENDENT_NORMAL.json",
+        "optimized": "review/INDEPENDENT_OPTIMIZED.json"
+      }
+    }
+  ],
+  "external_negative_processes": 38,
+  "negative_case_families": {
+    "potential": 4,
+    "master_jets": 11,
+    "bulk": 4
+  },
+  "scope": "Control helpers for potential and master each exercise both Python modes internally; bulk helper exercises its current mode."
+}
