@@ -1,0 +1,70 @@
+{
+  "status": "ACCEPT_REPLAY_HARDENING_AND_APPROVED_CONFIGURATION",
+  "scope": "Read-only source inspection, focused independent hardening regressions, complete approved-golden inventory inspection and deterministic build reconstruction. No actual scientific subprocess or frozen-archive fresh replay was run by this review.",
+  "blockers": [],
+  "checks": [
+    "regular_fresh_generated_file_accepted",
+    "output_symlink_rejected",
+    "output_ancestor_symlink_rejected",
+    "outside_regular_file_rejected",
+    "nested_typed_required_field_accepted",
+    "nested_bool_integer_alias_rejected",
+    "nested_integer_float_alias_rejected",
+    "exact_configured_traceback_prefix_and_final_reason_accepted",
+    "unexpected_traceback_leading_bytes_rejected",
+    "missing_configured_traceback_prefix_rejected",
+    "wrong_configured_traceback_prefix_rejected",
+    "unexpected_traceback_trailing_bytes_rejected",
+    "trailing_traceback_blank_line_rejected",
+    "wrong_final_traceback_reason_rejected",
+    "missing_final_traceback_newline_rejected",
+    "actual_roster_exactly_reconstructed_from_config_and_named_goldens",
+    "actual_runner_exactly_reconstructed_from_template_and_approved_config",
+    "counts_derived_from_actual_6_checkers_35_controls_111_names_and_8_embedded_names",
+    "all_normalized_fields_are_individually_typed_execution_metadata",
+    "all_35_controls_named_and_cli_comparison_mechanisms_described_precisely",
+    "four_archive_traceback_controls_pin_exact_registered_diagnostic_prefix"
+  ],
+  "check_count": 21,
+  "actual_roster_counts": {
+    "successful_checker_runs": 12,
+    "external_corruption_processes_rejected": 70,
+    "embedded_wrong_formula_controls_rejected": 16,
+    "finite_positive_check_groups_each_mode": 111
+  },
+  "source_pins": [
+    {
+      "path": "publication/runner_template.py",
+      "bytes": 20273,
+      "sha256": "b6cd56b6b31f397bdbd53ef57201d3daae38207e7e9cad4713c8db73df6d868a"
+    },
+    {
+      "path": "publication/build_replay_runner.py",
+      "bytes": 12350,
+      "sha256": "82f37869c2edae5de5f27b2048cf3ec9227ebdd081d1bd252d3c8544630f4cef"
+    },
+    {
+      "path": "publication/RUNNER_CONFIG.json",
+      "bytes": 23410,
+      "sha256": "0ecf96a7373bfdce0b0728379951518d010ed35b75430b030164f952d7a25679"
+    },
+    {
+      "path": "publication/replay-tools/reproduce.py",
+      "bytes": 49909,
+      "sha256": "0acb62ed9035b9ca90543811de009f4d075388a37778d331bd877b9cdfad991f"
+    },
+    {
+      "path": "publication/replay-tools/REPLAY_ROSTER.json",
+      "bytes": 16173,
+      "sha256": "92b1c67f3622f0596e4e192c45751df602c69fbfd084a58f7929bb0ef4b0cb87"
+    },
+    {
+      "path": "publication/RUNNER_PLUMBING_VALIDATION.json",
+      "bytes": 1927,
+      "sha256": "976d4aa308c524aa282178af69ad63a2fd64c9aa346c586ed376d5052882865a"
+    }
+  ],
+  "scientific_processes_executed": 0,
+  "remaining_gate": "Hash-specific frozen source inventory, external manifest authentication and actual fresh replay receipt still require review after source freeze.",
+  "private_or_internal_research_added": false
+}
