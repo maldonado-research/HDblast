@@ -1,0 +1,2148 @@
+{
+  "schema": "hdblast-validated-response-fresh-replay-v1",
+  "status": "PASS",
+  "capsule": "HDBLAST_SHELL_RESPONSE_ERROR_CERTIFICATE_20261015",
+  "authentication": {
+    "status": "PASS",
+    "files_verified": 62,
+    "manifest_sha256": "5dd67ce3e53bc0ddaaf9b6a1f3b18830b49113f2ebaca423459c93ca5a09c183"
+  },
+  "runner": {
+    "path": "reproduce.py",
+    "bytes": 18362,
+    "sha256": "2a9f0468f38149332b4f2fca74775b48f381ada0f56a71acb6326de04ec74a73"
+  },
+  "integrity_verifier": {
+    "path": "verify_manifest.py",
+    "bytes": 2804,
+    "sha256": "969b78bbb00bb7902b1c48eb6fd38305dbb6a28edcca9eb3ae8a8ee9e8cc46b6"
+  },
+  "requirements": {
+    "path": "requirements.txt",
+    "bytes": 14,
+    "sha256": "25f9f1fb1988b230147a1d3092d34e09c069eb7a6c6d6df46b3973b9f2d36efc"
+  },
+  "python": {
+    "version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python"
+  },
+  "sympy_version": "1.14.0",
+  "successful_checker_runs": 12,
+  "external_corruption_processes_rejected": 18,
+  "embedded_wrong_formula_controls_rejected": 18,
+  "finite_positive_check_groups_each_mode": 149,
+  "finite_positive_check_groups_by_mode": {
+    "normal": 149,
+    "optimized": 149
+  },
+  "scope": "Fresh exact finite arithmetic/algebra checks and named wrong-formula processes only. Analytic energy/trace estimates, retained background existence and nonlinear remainder statements remain mathematical hypotheses and arguments; no waveform solution or formal proof certification. Complete scientific JSON compared with no ignored fields.",
+  "steps": [
+    {
+      "kind": "positive",
+      "checker": "certificate",
+      "mode": "normal",
+      "script": "check_response_certificate.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [],
+      "exit_code": 0,
+      "wall_seconds": 0.066,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          },
+          "copy": {
+            "path": "normal/certificate/positive/check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          }
+        },
+        {
+          "source": {
+            "path": "certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          },
+          "copy": {
+            "path": "normal/certificate/positive/certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "normal/certificate/positive/execution.log",
+        "bytes": 5230,
+        "sha256": "956cd2cddd71b226173b51fdc57a9d46f61703bb0e1b58844db216388c1b469e"
+      },
+      "output": {
+        "path": "normal/certificate/positive/fresh.json",
+        "bytes": 5230,
+        "sha256": "956cd2cddd71b226173b51fdc57a9d46f61703bb0e1b58844db216388c1b469e"
+      },
+      "output_origin": "complete stdout JSON, retained verbatim in execution.log",
+      "golden": {
+        "path": "RESPONSE_CERTIFICATE_NORMAL.json",
+        "bytes": 5230,
+        "sha256": "956cd2cddd71b226173b51fdc57a9d46f61703bb0e1b58844db216388c1b469e"
+      },
+      "scientific_output_matches": true,
+      "finite_positive_check_groups": 25,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_top_level_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "archive",
+      "mode": "normal",
+      "script": "archive/derive_shell_box.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [],
+      "exit_code": 0,
+      "wall_seconds": 0.117,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "archive/derive_shell_box.py",
+            "bytes": 10389,
+            "sha256": "3a4d2a71847114b8dce9f910679a1f4ce14898212001b0355279ec633ebed110"
+          },
+          "copy": {
+            "path": "normal/archive/positive/archive/derive_shell_box.py",
+            "bytes": 10389,
+            "sha256": "3a4d2a71847114b8dce9f910679a1f4ce14898212001b0355279ec633ebed110"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/sources/git/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/theory/JACOBI_ENDPOINT_MONOTONICITY.md",
+            "bytes": 24586,
+            "sha256": "f1e2571a551ec122dd7755a13145bae73bd92bd7f7426bdc3002e2f52f8dbfc8"
+          },
+          "copy": {
+            "path": "normal/archive/positive/archive/sources/git/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/theory/JACOBI_ENDPOINT_MONOTONICITY.md",
+            "bytes": 24586,
+            "sha256": "f1e2571a551ec122dd7755a13145bae73bd92bd7f7426bdc3002e2f52f8dbfc8"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/sources/git/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/bounds/RESCALED_BOUND_CERTIFICATE.json",
+            "bytes": 125471,
+            "sha256": "22c6cd4e505ee2c7e549420355b94a5b3c079ebb6945314f5b285c13bb67835d"
+          },
+          "copy": {
+            "path": "normal/archive/positive/archive/sources/git/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/bounds/RESCALED_BOUND_CERTIFICATE.json",
+            "bytes": 125471,
+            "sha256": "22c6cd4e505ee2c7e549420355b94a5b3c079ebb6945314f5b285c13bb67835d"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "normal/archive/positive/execution.log",
+        "bytes": 1956,
+        "sha256": "00187e74de95c2279481fd4606d2d73555c3819d2a09105b5be5715f66f106ac"
+      },
+      "output": {
+        "path": "normal/archive/positive/fresh.json",
+        "bytes": 19535,
+        "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+      },
+      "output_origin": "archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+      "golden": {
+        "path": "archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+        "bytes": 19535,
+        "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+      },
+      "scientific_output_matches": true,
+      "finite_positive_check_groups": 14,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_top_level_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "sol",
+      "mode": "normal",
+      "script": "sol/algebra/check_shell_response_algebra.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [],
+      "exit_code": 0,
+      "wall_seconds": 3.664,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "sol/algebra/check_shell_response_algebra.py",
+            "bytes": 10521,
+            "sha256": "63376b1686656e9aa1122961dd27f6076ad1ee8605b8de84c446c41e94a6de05"
+          },
+          "copy": {
+            "path": "normal/sol/positive/sol/algebra/check_shell_response_algebra.py",
+            "bytes": 10521,
+            "sha256": "63376b1686656e9aa1122961dd27f6076ad1ee8605b8de84c446c41e94a6de05"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "normal/sol/positive/execution.log",
+        "bytes": 214,
+        "sha256": "5721c297877f6a1c7a88316ed5c00ed42cad6dedf76709530de20f4e8db2cebd"
+      },
+      "output": {
+        "path": "normal/sol/positive/fresh.json",
+        "bytes": 4814,
+        "sha256": "fd3e72df9f71ac73e307464315431613860fda630e80264a65c2237508635ef8"
+      },
+      "output_origin": "sol/algebra/symbolic_check_results.json",
+      "golden": {
+        "path": "sol/algebra/symbolic_check_results.json",
+        "bytes": 4814,
+        "sha256": "fd3e72df9f71ac73e307464315431613860fda630e80264a65c2237508635ef8"
+      },
+      "scientific_output_matches": true,
+      "finite_positive_check_groups": 35,
+      "embedded_wrong_formula_controls": 9,
+      "ignored_top_level_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "astra",
+      "mode": "normal",
+      "script": "astra/check_residual_response.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [],
+      "exit_code": 0,
+      "wall_seconds": 1.596,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "astra/check_residual_response.py",
+            "bytes": 4735,
+            "sha256": "d2eef3e0682a93db7676151d8f914d84b579f47c71ed26b18e8362f78c32ddf3"
+          },
+          "copy": {
+            "path": "normal/astra/positive/astra/check_residual_response.py",
+            "bytes": 4735,
+            "sha256": "d2eef3e0682a93db7676151d8f914d84b579f47c71ed26b18e8362f78c32ddf3"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "normal/astra/positive/execution.log",
+        "bytes": 757,
+        "sha256": "bcd3bcac4167c976836b12455080d2cc441a0759fe8aad6c4a273ee975416560"
+      },
+      "output": {
+        "path": "normal/astra/positive/fresh.json",
+        "bytes": 757,
+        "sha256": "bcd3bcac4167c976836b12455080d2cc441a0759fe8aad6c4a273ee975416560"
+      },
+      "output_origin": "complete stdout JSON, retained verbatim in execution.log",
+      "golden": {
+        "path": "astra/ASTRA_REPLAY_RECEIPT.json",
+        "bytes": 5377,
+        "sha256": "c18fd43e898e67b185c78754239921d0590bdcb063d5a2a1136e911661a2aa85"
+      },
+      "scientific_output_matches": true,
+      "finite_positive_check_groups": 17,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_top_level_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "referee",
+      "mode": "normal",
+      "script": "referee/independent_coarse_response_audit.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [],
+      "exit_code": 0,
+      "wall_seconds": 0.116,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "referee/independent_coarse_response_audit.py",
+            "bytes": 5053,
+            "sha256": "37a63ffc6b710c548356c65654e4f812e90ba4c5a80847bf38e97615219ecd85"
+          },
+          "copy": {
+            "path": "normal/referee/positive/referee/independent_coarse_response_audit.py",
+            "bytes": 5053,
+            "sha256": "37a63ffc6b710c548356c65654e4f812e90ba4c5a80847bf38e97615219ecd85"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "normal/referee/positive/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "normal/referee/positive/execution.log",
+        "bytes": 145,
+        "sha256": "d21bb8b6fe12d5d4272fef5d7735a1d40a6bd5e800284f5cd96ca5ab54a108f9"
+      },
+      "output": {
+        "path": "normal/referee/positive/fresh.json",
+        "bytes": 1597,
+        "sha256": "b1b3942b56902a7364ff9be38f37a3ad89979fb99b73174bd7868ec7120a1d43"
+      },
+      "output_origin": "referee/INDEPENDENT_COARSE_RESPONSE_AUDIT.json",
+      "golden": {
+        "path": "referee/INDEPENDENT_COARSE_RESPONSE_AUDIT.json",
+        "bytes": 1597,
+        "sha256": "b1b3942b56902a7364ff9be38f37a3ad89979fb99b73174bd7868ec7120a1d43"
+      },
+      "scientific_output_matches": true,
+      "finite_positive_check_groups": 23,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_top_level_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "sol_crossreview",
+      "mode": "normal",
+      "script": "sol/crossreview/independent_quantitative_review.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [],
+      "exit_code": 0,
+      "wall_seconds": 0.067,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "sol/crossreview/independent_quantitative_review.py",
+            "bytes": 8694,
+            "sha256": "4162fc15992e6218b16eac3db7b80934bfbc219d4ab98cb1278b32a0c7600a6a"
+          },
+          "copy": {
+            "path": "normal/sol_crossreview/positive/sol/crossreview/independent_quantitative_review.py",
+            "bytes": 8694,
+            "sha256": "4162fc15992e6218b16eac3db7b80934bfbc219d4ab98cb1278b32a0c7600a6a"
+          }
+        },
+        {
+          "source": {
+            "path": "SHELL_RESPONSE_ERROR_CERTIFICATE.md",
+            "bytes": 11344,
+            "sha256": "5f01be536c77123e9f667f4cd5514b52067641b2b389ba4e6eb655cb24654022"
+          },
+          "copy": {
+            "path": "normal/sol_crossreview/positive/SHELL_RESPONSE_ERROR_CERTIFICATE.md",
+            "bytes": 11344,
+            "sha256": "5f01be536c77123e9f667f4cd5514b52067641b2b389ba4e6eb655cb24654022"
+          }
+        },
+        {
+          "source": {
+            "path": "certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          },
+          "copy": {
+            "path": "normal/sol_crossreview/positive/certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          }
+        },
+        {
+          "source": {
+            "path": "check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          },
+          "copy": {
+            "path": "normal/sol_crossreview/positive/check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/ACTUAL_BACKGROUND_AND_RIGOROUS_COLLAR_BOUNDS.md",
+            "bytes": 9297,
+            "sha256": "0832a16c4bdf18cc188861a2c2860e7e6ff736dec39426d6ca7c589dc0434d5c"
+          },
+          "copy": {
+            "path": "normal/sol_crossreview/positive/archive/ACTUAL_BACKGROUND_AND_RIGOROUS_COLLAR_BOUNDS.md",
+            "bytes": 9297,
+            "sha256": "0832a16c4bdf18cc188861a2c2860e7e6ff736dec39426d6ca7c589dc0434d5c"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "normal/sol_crossreview/positive/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/derive_shell_box.py",
+            "bytes": 10389,
+            "sha256": "3a4d2a71847114b8dce9f910679a1f4ce14898212001b0355279ec633ebed110"
+          },
+          "copy": {
+            "path": "normal/sol_crossreview/positive/archive/derive_shell_box.py",
+            "bytes": 10389,
+            "sha256": "3a4d2a71847114b8dce9f910679a1f4ce14898212001b0355279ec633ebed110"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/sources/git/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/theory/JACOBI_ENDPOINT_MONOTONICITY.md",
+            "bytes": 24586,
+            "sha256": "f1e2571a551ec122dd7755a13145bae73bd92bd7f7426bdc3002e2f52f8dbfc8"
+          },
+          "copy": {
+            "path": "normal/sol_crossreview/positive/archive/sources/git/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/theory/JACOBI_ENDPOINT_MONOTONICITY.md",
+            "bytes": 24586,
+            "sha256": "f1e2571a551ec122dd7755a13145bae73bd92bd7f7426bdc3002e2f52f8dbfc8"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/sources/git/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/bounds/RESCALED_BOUND_CERTIFICATE.json",
+            "bytes": 125471,
+            "sha256": "22c6cd4e505ee2c7e549420355b94a5b3c079ebb6945314f5b285c13bb67835d"
+          },
+          "copy": {
+            "path": "normal/sol_crossreview/positive/archive/sources/git/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/bounds/RESCALED_BOUND_CERTIFICATE.json",
+            "bytes": 125471,
+            "sha256": "22c6cd4e505ee2c7e549420355b94a5b3c079ebb6945314f5b285c13bb67835d"
+          }
+        },
+        {
+          "source": {
+            "path": "sol/RESIDUAL_TO_PHYSICAL_RESPONSE.md",
+            "bytes": 15688,
+            "sha256": "b8c77c810c70aa286227c5dabe010a53942af84067eb03961f0186419a5ea96a"
+          },
+          "copy": {
+            "path": "normal/sol_crossreview/positive/sol/RESIDUAL_TO_PHYSICAL_RESPONSE.md",
+            "bytes": 15688,
+            "sha256": "b8c77c810c70aa286227c5dabe010a53942af84067eb03961f0186419a5ea96a"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "normal/sol_crossreview/positive/execution.log",
+        "bytes": 5223,
+        "sha256": "866b88347ae018544c6f630388ef6db994ceb000ebb855544d1c62e6e144ad86"
+      },
+      "output": {
+        "path": "normal/sol_crossreview/positive/fresh.json",
+        "bytes": 5223,
+        "sha256": "866b88347ae018544c6f630388ef6db994ceb000ebb855544d1c62e6e144ad86"
+      },
+      "output_origin": "complete stdout JSON, retained verbatim in execution.log",
+      "golden": {
+        "path": "sol/crossreview/INDEPENDENT_QUANTITATIVE_REVIEW.json",
+        "bytes": 5223,
+        "sha256": "866b88347ae018544c6f630388ef6db994ceb000ebb855544d1c62e6e144ad86"
+      },
+      "scientific_output_matches": true,
+      "finite_positive_check_groups": 35,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_top_level_fields": []
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "certificate",
+      "mode": "normal",
+      "script": "check_response_certificate.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [],
+      "exit_code": 1,
+      "wall_seconds": 0.066,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          },
+          "copy": {
+            "path": "normal/certificate/sqrt_inward_upper/check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          }
+        },
+        {
+          "source": {
+            "path": "certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          },
+          "copy": {
+            "path": "normal/certificate/sqrt_inward_upper/certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "normal/certificate/sqrt_inward_upper/execution.log",
+        "bytes": 5262,
+        "sha256": "823390875557c16b9dd27f6c8c1d3929ae858e8a714767d4a5f6d5657d479041"
+      },
+      "output": {
+        "path": "normal/certificate/sqrt_inward_upper/fresh.json",
+        "bytes": 5262,
+        "sha256": "823390875557c16b9dd27f6c8c1d3929ae858e8a714767d4a5f6d5657d479041"
+      },
+      "output_origin": "complete stdout JSON, retained verbatim in execution.log",
+      "mutation": {
+        "name": "sqrt_inward_upper",
+        "reason": "sqrt_outward_2",
+        "before": "else F(integer + 1, scale)",
+        "after": "else F(integer, scale)",
+        "source_module": {
+          "path": "certify_response.py",
+          "bytes": 5594,
+          "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+        },
+        "mutated_module": {
+          "path": "normal/certificate/sqrt_inward_upper/certify_response.py",
+          "bytes": 5590,
+          "sha256": "a51803d2b26716a77ce1e8635286cbfc90a14aab08a1bdd232570b9070b74d29"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "sqrt_inward_upper",
+      "expected_reason": "sqrt_outward_2",
+      "reported_failures": [
+        "sqrt_outward_2",
+        "sqrt_outward_1/3",
+        "sqrt_outward_123456789/7654321"
+      ],
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "certificate",
+      "mode": "normal",
+      "script": "check_response_certificate.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [],
+      "exit_code": 1,
+      "wall_seconds": 0.066,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          },
+          "copy": {
+            "path": "normal/certificate/wrong_inertia_weight/check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          }
+        },
+        {
+          "source": {
+            "path": "certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          },
+          "copy": {
+            "path": "normal/certificate/wrong_inertia_weight/certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "normal/certificate/wrong_inertia_weight/execution.log",
+        "bytes": 5264,
+        "sha256": "60d3502c7ea8763843faf75bbb576bc37ff54895b799ba6207e3c70d1b4b3a73"
+      },
+      "output": {
+        "path": "normal/certificate/wrong_inertia_weight/fresh.json",
+        "bytes": 5264,
+        "sha256": "60d3502c7ea8763843faf75bbb576bc37ff54895b799ba6207e3c70d1b4b3a73"
+      },
+      "output_origin": "complete stdout JSON, retained verbatim in execution.log",
+      "mutation": {
+        "name": "wrong_inertia_weight",
+        "reason": "positive_inertia_forcing",
+        "before": "d['G_abs_sup'] ** 2 / d['mu_lower']",
+        "after": "d['G_abs_sup'] ** 2 * d['mu_lower']",
+        "source_module": {
+          "path": "certify_response.py",
+          "bytes": 5594,
+          "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+        },
+        "mutated_module": {
+          "path": "normal/certificate/wrong_inertia_weight/certify_response.py",
+          "bytes": 5594,
+          "sha256": "70b0797266c7863a92a34d0a1d34c1493eb84ae740afd54679eb69ef23a4f327"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "wrong_inertia_weight",
+      "expected_reason": "positive_inertia_forcing",
+      "reported_failures": [
+        "positive_inertia_forcing"
+      ],
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "certificate",
+      "mode": "normal",
+      "script": "check_response_certificate.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [],
+      "exit_code": 1,
+      "wall_seconds": 0.067,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          },
+          "copy": {
+            "path": "normal/certificate/omit_physical_shift/check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          }
+        },
+        {
+          "source": {
+            "path": "certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          },
+          "copy": {
+            "path": "normal/certificate/omit_physical_shift/certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "normal/certificate/omit_physical_shift/execution.log",
+        "bytes": 5268,
+        "sha256": "e70b9bc89d411ad40699e4ff9e58500fdd2da56d1eb2fc83526635c32562a97c"
+      },
+      "output": {
+        "path": "normal/certificate/omit_physical_shift/fresh.json",
+        "bytes": 5268,
+        "sha256": "e70b9bc89d411ad40699e4ff9e58500fdd2da56d1eb2fc83526635c32562a97c"
+      },
+      "output_origin": "complete stdout JSON, retained verbatim in execution.log",
+      "mutation": {
+        "name": "omit_physical_shift",
+        "reason": "physical_shift_trace",
+        "before": "1 / d['mu_lower'] + d['c_abs'] ** 2 / d['nu']",
+        "after": "1 / d['mu_lower']",
+        "source_module": {
+          "path": "certify_response.py",
+          "bytes": 5594,
+          "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+        },
+        "mutated_module": {
+          "path": "normal/certificate/omit_physical_shift/certify_response.py",
+          "bytes": 5566,
+          "sha256": "1b536493c4caa2e621fd610368092d4077cb4fb20eb3685b2c6b7633fc0dac27"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "omit_physical_shift",
+      "expected_reason": "physical_shift_trace",
+      "reported_failures": [
+        "physical_shift_trace"
+      ],
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "certificate",
+      "mode": "normal",
+      "script": "check_response_certificate.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [],
+      "exit_code": 1,
+      "wall_seconds": 0.067,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          },
+          "copy": {
+            "path": "normal/certificate/reverse_norm_triangle/check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          }
+        },
+        {
+          "source": {
+            "path": "certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          },
+          "copy": {
+            "path": "normal/certificate/reverse_norm_triangle/certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "normal/certificate/reverse_norm_triangle/execution.log",
+        "bytes": 5265,
+        "sha256": "6e399e224e09f5c7ebe133ff846a618f26f46bd1e5fedc57c1f68316f3077fc7"
+      },
+      "output": {
+        "path": "normal/certificate/reverse_norm_triangle/fresh.json",
+        "bytes": 5265,
+        "sha256": "6e399e224e09f5c7ebe133ff846a618f26f46bd1e5fedc57c1f68316f3077fc7"
+      },
+      "output_origin": "complete stdout JSON, retained verbatim in execution.log",
+      "mutation": {
+        "name": "reverse_norm_triangle",
+        "reason": "norm_triangle_lower",
+        "before": "sqrt_bounds(d['trial_D_sq_lower'])[0] - delta",
+        "after": "sqrt_bounds(d['trial_D_sq_lower'])[0] + delta",
+        "source_module": {
+          "path": "certify_response.py",
+          "bytes": 5594,
+          "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+        },
+        "mutated_module": {
+          "path": "normal/certificate/reverse_norm_triangle/certify_response.py",
+          "bytes": 5594,
+          "sha256": "f00c147c3b8c583a0cff6d1be4f1cf1cb7893175c185432e678548473787a650"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "reverse_norm_triangle",
+      "expected_reason": "norm_triangle_lower",
+      "reported_failures": [
+        "norm_triangle_lower"
+      ],
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "certificate",
+      "mode": "normal",
+      "script": "check_response_certificate.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [],
+      "exit_code": 1,
+      "wall_seconds": 0.066,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          },
+          "copy": {
+            "path": "normal/certificate/wrong_response_prefactor/check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          }
+        },
+        {
+          "source": {
+            "path": "certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          },
+          "copy": {
+            "path": "normal/certificate/wrong_response_prefactor/certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "normal/certificate/wrong_response_prefactor/execution.log",
+        "bytes": 5261,
+        "sha256": "09c301ec5b7b3899822dd1ec6b3b35b77f039a98cc601bbc70e457af68c02339"
+      },
+      "output": {
+        "path": "normal/certificate/wrong_response_prefactor/fresh.json",
+        "bytes": 5261,
+        "sha256": "09c301ec5b7b3899822dd1ec6b3b35b77f039a98cc601bbc70e457af68c02339"
+      },
+      "output_origin": "complete stdout JSON, retained verbatim in execution.log",
+      "mutation": {
+        "name": "wrong_response_prefactor",
+        "reason": "proper_time_prefactor",
+        "before": "prefactor_lower = 3 * pil ** 2",
+        "after": "prefactor_lower = 2 * pil ** 2",
+        "source_module": {
+          "path": "certify_response.py",
+          "bytes": 5594,
+          "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+        },
+        "mutated_module": {
+          "path": "normal/certificate/wrong_response_prefactor/certify_response.py",
+          "bytes": 5594,
+          "sha256": "d0a784adcaf2ee881aa539d836f9c6ef630377181a0a75ccb32de1033ebeca52"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "wrong_response_prefactor",
+      "expected_reason": "proper_time_prefactor",
+      "reported_failures": [
+        "proper_time_prefactor"
+      ],
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "certificate",
+      "mode": "normal",
+      "script": "check_response_certificate.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [],
+      "exit_code": 1,
+      "wall_seconds": 0.066,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          },
+          "copy": {
+            "path": "normal/certificate/erase_exponential_growth/check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          }
+        },
+        {
+          "source": {
+            "path": "certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          },
+          "copy": {
+            "path": "normal/certificate/erase_exponential_growth/certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "normal/certificate/erase_exponential_growth/execution.log",
+        "bytes": 5136,
+        "sha256": "ff33c8c95a7148d5ab5fe01f9245237238f9c7829f67376c5f1d4bbfeab96a41"
+      },
+      "output": {
+        "path": "normal/certificate/erase_exponential_growth/fresh.json",
+        "bytes": 5136,
+        "sha256": "ff33c8c95a7148d5ab5fe01f9245237238f9c7829f67376c5f1d4bbfeab96a41"
+      },
+      "output_origin": "complete stdout JSON, retained verbatim in execution.log",
+      "mutation": {
+        "name": "erase_exponential_growth",
+        "reason": "exp_positive_bound",
+        "before": "return (1 - value / count) ** (-count)",
+        "after": "return F(1)",
+        "source_module": {
+          "path": "certify_response.py",
+          "bytes": 5594,
+          "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+        },
+        "mutated_module": {
+          "path": "normal/certificate/erase_exponential_growth/certify_response.py",
+          "bytes": 5567,
+          "sha256": "82120d611d35fc336cf21c1da37ef302ca91aacc91033308341f94d0d2746ec2"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "erase_exponential_growth",
+      "expected_reason": "exp_positive_bound",
+      "reported_failures": [
+        "exp_positive_bound"
+      ],
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "astra",
+      "mode": "normal",
+      "script": "astra/check_residual_response.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "boundary-source"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.769,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "astra/check_residual_response.py",
+            "bytes": 4735,
+            "sha256": "d2eef3e0682a93db7676151d8f914d84b579f47c71ed26b18e8362f78c32ddf3"
+          },
+          "copy": {
+            "path": "normal/astra/boundary-source/astra/check_residual_response.py",
+            "bytes": 4735,
+            "sha256": "d2eef3e0682a93db7676151d8f914d84b579f47c71ed26b18e8362f78c32ddf3"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "normal/astra/boundary-source/execution.log",
+        "bytes": 80,
+        "sha256": "abc224d42df83312cf6377246fac92e7f265d8a5a96aac205185d58061fe1e67"
+      },
+      "output": {
+        "path": "normal/astra/boundary-source/fresh.json",
+        "bytes": 305,
+        "sha256": "288f7f3f41e14d2b5e1cf70950447c452058896a55ae44b1c028fcfe9016fc31"
+      },
+      "output_origin": "Runner-parsed complete CHECK_FAILED line",
+      "mutation": null,
+      "control": "boundary-source",
+      "expected_reason": "boundary flux and inertia cancellation",
+      "reported_failures": [
+        "boundary flux and inertia cancellation"
+      ],
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "astra",
+      "mode": "normal",
+      "script": "astra/check_residual_response.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "moving-flux"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.821,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "astra/check_residual_response.py",
+            "bytes": 4735,
+            "sha256": "d2eef3e0682a93db7676151d8f914d84b579f47c71ed26b18e8362f78c32ddf3"
+          },
+          "copy": {
+            "path": "normal/astra/moving-flux/astra/check_residual_response.py",
+            "bytes": 4735,
+            "sha256": "d2eef3e0682a93db7676151d8f914d84b579f47c71ed26b18e8362f78c32ddf3"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "normal/astra/moving-flux/execution.log",
+        "bytes": 97,
+        "sha256": "9e24209ca054a3f0f21f556b464dc3db772dccaed0e613aa85b31373b447725d"
+      },
+      "output": {
+        "path": "normal/astra/moving-flux/fresh.json",
+        "bytes": 313,
+        "sha256": "874efaee7a4760dbc8e78495489e2cae002392462021dda315d98246e1ee2e7d"
+      },
+      "output_origin": "Runner-parsed complete CHECK_FAILED line",
+      "mutation": null,
+      "control": "moving-flux",
+      "expected_reason": "shrinking right boundary flux",
+      "reported_failures": [
+        "shrinking right boundary flux"
+      ],
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "astra",
+      "mode": "normal",
+      "script": "astra/check_residual_response.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "physical-prefactor"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.926,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "astra/check_residual_response.py",
+            "bytes": 4735,
+            "sha256": "d2eef3e0682a93db7676151d8f914d84b579f47c71ed26b18e8362f78c32ddf3"
+          },
+          "copy": {
+            "path": "normal/astra/physical-prefactor/astra/check_residual_response.py",
+            "bytes": 4735,
+            "sha256": "d2eef3e0682a93db7676151d8f914d84b579f47c71ed26b18e8362f78c32ddf3"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "normal/astra/physical-prefactor/execution.log",
+        "bytes": 98,
+        "sha256": "b4a315bf4a1fc0234fd77c1b5d6f240832a9066dc0d2e9e8af341655ed6aedee"
+      },
+      "output": {
+        "path": "normal/astra/physical-prefactor/fresh.json",
+        "bytes": 319,
+        "sha256": "e5f449b23fb2f497c3fbe224b69c3759199953f44c95df6529ab21748ce768bb"
+      },
+      "output_origin": "Runner-parsed complete CHECK_FAILED line",
+      "mutation": null,
+      "control": "physical-prefactor",
+      "expected_reason": "physical coefficient normalization",
+      "reported_failures": [
+        "physical coefficient normalization"
+      ],
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "positive",
+      "checker": "certificate",
+      "mode": "optimized",
+      "script": "check_response_certificate.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [],
+      "exit_code": 0,
+      "wall_seconds": 0.22,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          },
+          "copy": {
+            "path": "optimized/certificate/positive/check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          }
+        },
+        {
+          "source": {
+            "path": "certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          },
+          "copy": {
+            "path": "optimized/certificate/positive/certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "optimized/certificate/positive/execution.log",
+        "bytes": 5230,
+        "sha256": "956cd2cddd71b226173b51fdc57a9d46f61703bb0e1b58844db216388c1b469e"
+      },
+      "output": {
+        "path": "optimized/certificate/positive/fresh.json",
+        "bytes": 5230,
+        "sha256": "956cd2cddd71b226173b51fdc57a9d46f61703bb0e1b58844db216388c1b469e"
+      },
+      "output_origin": "complete stdout JSON, retained verbatim in execution.log",
+      "golden": {
+        "path": "RESPONSE_CERTIFICATE_NORMAL.json",
+        "bytes": 5230,
+        "sha256": "956cd2cddd71b226173b51fdc57a9d46f61703bb0e1b58844db216388c1b469e"
+      },
+      "scientific_output_matches": true,
+      "finite_positive_check_groups": 25,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_top_level_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "archive",
+      "mode": "optimized",
+      "script": "archive/derive_shell_box.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [],
+      "exit_code": 0,
+      "wall_seconds": 0.218,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "archive/derive_shell_box.py",
+            "bytes": 10389,
+            "sha256": "3a4d2a71847114b8dce9f910679a1f4ce14898212001b0355279ec633ebed110"
+          },
+          "copy": {
+            "path": "optimized/archive/positive/archive/derive_shell_box.py",
+            "bytes": 10389,
+            "sha256": "3a4d2a71847114b8dce9f910679a1f4ce14898212001b0355279ec633ebed110"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/sources/git/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/theory/JACOBI_ENDPOINT_MONOTONICITY.md",
+            "bytes": 24586,
+            "sha256": "f1e2571a551ec122dd7755a13145bae73bd92bd7f7426bdc3002e2f52f8dbfc8"
+          },
+          "copy": {
+            "path": "optimized/archive/positive/archive/sources/git/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/theory/JACOBI_ENDPOINT_MONOTONICITY.md",
+            "bytes": 24586,
+            "sha256": "f1e2571a551ec122dd7755a13145bae73bd92bd7f7426bdc3002e2f52f8dbfc8"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/sources/git/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/bounds/RESCALED_BOUND_CERTIFICATE.json",
+            "bytes": 125471,
+            "sha256": "22c6cd4e505ee2c7e549420355b94a5b3c079ebb6945314f5b285c13bb67835d"
+          },
+          "copy": {
+            "path": "optimized/archive/positive/archive/sources/git/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/bounds/RESCALED_BOUND_CERTIFICATE.json",
+            "bytes": 125471,
+            "sha256": "22c6cd4e505ee2c7e549420355b94a5b3c079ebb6945314f5b285c13bb67835d"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "optimized/archive/positive/execution.log",
+        "bytes": 1956,
+        "sha256": "00187e74de95c2279481fd4606d2d73555c3819d2a09105b5be5715f66f106ac"
+      },
+      "output": {
+        "path": "optimized/archive/positive/fresh.json",
+        "bytes": 19535,
+        "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+      },
+      "output_origin": "archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+      "golden": {
+        "path": "archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+        "bytes": 19535,
+        "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+      },
+      "scientific_output_matches": true,
+      "finite_positive_check_groups": 14,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_top_level_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "sol",
+      "mode": "optimized",
+      "script": "sol/algebra/check_shell_response_algebra.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [],
+      "exit_code": 0,
+      "wall_seconds": 7.592,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "sol/algebra/check_shell_response_algebra.py",
+            "bytes": 10521,
+            "sha256": "63376b1686656e9aa1122961dd27f6076ad1ee8605b8de84c446c41e94a6de05"
+          },
+          "copy": {
+            "path": "optimized/sol/positive/sol/algebra/check_shell_response_algebra.py",
+            "bytes": 10521,
+            "sha256": "63376b1686656e9aa1122961dd27f6076ad1ee8605b8de84c446c41e94a6de05"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "optimized/sol/positive/execution.log",
+        "bytes": 217,
+        "sha256": "9be0432c7dcef540a4cad54dfb0f0cac300f3bcec3ff3bd9553a8ea2bac9f560"
+      },
+      "output": {
+        "path": "optimized/sol/positive/fresh.json",
+        "bytes": 4814,
+        "sha256": "fd3e72df9f71ac73e307464315431613860fda630e80264a65c2237508635ef8"
+      },
+      "output_origin": "sol/algebra/symbolic_check_results.json",
+      "golden": {
+        "path": "sol/algebra/symbolic_check_results.json",
+        "bytes": 4814,
+        "sha256": "fd3e72df9f71ac73e307464315431613860fda630e80264a65c2237508635ef8"
+      },
+      "scientific_output_matches": true,
+      "finite_positive_check_groups": 35,
+      "embedded_wrong_formula_controls": 9,
+      "ignored_top_level_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "astra",
+      "mode": "optimized",
+      "script": "astra/check_residual_response.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [],
+      "exit_code": 0,
+      "wall_seconds": 4.755,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "astra/check_residual_response.py",
+            "bytes": 4735,
+            "sha256": "d2eef3e0682a93db7676151d8f914d84b579f47c71ed26b18e8362f78c32ddf3"
+          },
+          "copy": {
+            "path": "optimized/astra/positive/astra/check_residual_response.py",
+            "bytes": 4735,
+            "sha256": "d2eef3e0682a93db7676151d8f914d84b579f47c71ed26b18e8362f78c32ddf3"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "optimized/astra/positive/execution.log",
+        "bytes": 757,
+        "sha256": "bcd3bcac4167c976836b12455080d2cc441a0759fe8aad6c4a273ee975416560"
+      },
+      "output": {
+        "path": "optimized/astra/positive/fresh.json",
+        "bytes": 757,
+        "sha256": "bcd3bcac4167c976836b12455080d2cc441a0759fe8aad6c4a273ee975416560"
+      },
+      "output_origin": "complete stdout JSON, retained verbatim in execution.log",
+      "golden": {
+        "path": "astra/ASTRA_REPLAY_RECEIPT.json",
+        "bytes": 5377,
+        "sha256": "c18fd43e898e67b185c78754239921d0590bdcb063d5a2a1136e911661a2aa85"
+      },
+      "scientific_output_matches": true,
+      "finite_positive_check_groups": 17,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_top_level_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "referee",
+      "mode": "optimized",
+      "script": "referee/independent_coarse_response_audit.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [],
+      "exit_code": 0,
+      "wall_seconds": 0.217,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "referee/independent_coarse_response_audit.py",
+            "bytes": 5053,
+            "sha256": "37a63ffc6b710c548356c65654e4f812e90ba4c5a80847bf38e97615219ecd85"
+          },
+          "copy": {
+            "path": "optimized/referee/positive/referee/independent_coarse_response_audit.py",
+            "bytes": 5053,
+            "sha256": "37a63ffc6b710c548356c65654e4f812e90ba4c5a80847bf38e97615219ecd85"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "optimized/referee/positive/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "optimized/referee/positive/execution.log",
+        "bytes": 145,
+        "sha256": "d21bb8b6fe12d5d4272fef5d7735a1d40a6bd5e800284f5cd96ca5ab54a108f9"
+      },
+      "output": {
+        "path": "optimized/referee/positive/fresh.json",
+        "bytes": 1597,
+        "sha256": "b1b3942b56902a7364ff9be38f37a3ad89979fb99b73174bd7868ec7120a1d43"
+      },
+      "output_origin": "referee/INDEPENDENT_COARSE_RESPONSE_AUDIT.json",
+      "golden": {
+        "path": "referee/INDEPENDENT_COARSE_RESPONSE_AUDIT.json",
+        "bytes": 1597,
+        "sha256": "b1b3942b56902a7364ff9be38f37a3ad89979fb99b73174bd7868ec7120a1d43"
+      },
+      "scientific_output_matches": true,
+      "finite_positive_check_groups": 23,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_top_level_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "sol_crossreview",
+      "mode": "optimized",
+      "script": "sol/crossreview/independent_quantitative_review.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [],
+      "exit_code": 0,
+      "wall_seconds": 0.216,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "sol/crossreview/independent_quantitative_review.py",
+            "bytes": 8694,
+            "sha256": "4162fc15992e6218b16eac3db7b80934bfbc219d4ab98cb1278b32a0c7600a6a"
+          },
+          "copy": {
+            "path": "optimized/sol_crossreview/positive/sol/crossreview/independent_quantitative_review.py",
+            "bytes": 8694,
+            "sha256": "4162fc15992e6218b16eac3db7b80934bfbc219d4ab98cb1278b32a0c7600a6a"
+          }
+        },
+        {
+          "source": {
+            "path": "SHELL_RESPONSE_ERROR_CERTIFICATE.md",
+            "bytes": 11344,
+            "sha256": "5f01be536c77123e9f667f4cd5514b52067641b2b389ba4e6eb655cb24654022"
+          },
+          "copy": {
+            "path": "optimized/sol_crossreview/positive/SHELL_RESPONSE_ERROR_CERTIFICATE.md",
+            "bytes": 11344,
+            "sha256": "5f01be536c77123e9f667f4cd5514b52067641b2b389ba4e6eb655cb24654022"
+          }
+        },
+        {
+          "source": {
+            "path": "certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          },
+          "copy": {
+            "path": "optimized/sol_crossreview/positive/certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          }
+        },
+        {
+          "source": {
+            "path": "check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          },
+          "copy": {
+            "path": "optimized/sol_crossreview/positive/check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/ACTUAL_BACKGROUND_AND_RIGOROUS_COLLAR_BOUNDS.md",
+            "bytes": 9297,
+            "sha256": "0832a16c4bdf18cc188861a2c2860e7e6ff736dec39426d6ca7c589dc0434d5c"
+          },
+          "copy": {
+            "path": "optimized/sol_crossreview/positive/archive/ACTUAL_BACKGROUND_AND_RIGOROUS_COLLAR_BOUNDS.md",
+            "bytes": 9297,
+            "sha256": "0832a16c4bdf18cc188861a2c2860e7e6ff736dec39426d6ca7c589dc0434d5c"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "optimized/sol_crossreview/positive/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/derive_shell_box.py",
+            "bytes": 10389,
+            "sha256": "3a4d2a71847114b8dce9f910679a1f4ce14898212001b0355279ec633ebed110"
+          },
+          "copy": {
+            "path": "optimized/sol_crossreview/positive/archive/derive_shell_box.py",
+            "bytes": 10389,
+            "sha256": "3a4d2a71847114b8dce9f910679a1f4ce14898212001b0355279ec633ebed110"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/sources/git/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/theory/JACOBI_ENDPOINT_MONOTONICITY.md",
+            "bytes": 24586,
+            "sha256": "f1e2571a551ec122dd7755a13145bae73bd92bd7f7426bdc3002e2f52f8dbfc8"
+          },
+          "copy": {
+            "path": "optimized/sol_crossreview/positive/archive/sources/git/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/theory/JACOBI_ENDPOINT_MONOTONICITY.md",
+            "bytes": 24586,
+            "sha256": "f1e2571a551ec122dd7755a13145bae73bd92bd7f7426bdc3002e2f52f8dbfc8"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/sources/git/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/bounds/RESCALED_BOUND_CERTIFICATE.json",
+            "bytes": 125471,
+            "sha256": "22c6cd4e505ee2c7e549420355b94a5b3c079ebb6945314f5b285c13bb67835d"
+          },
+          "copy": {
+            "path": "optimized/sol_crossreview/positive/archive/sources/git/research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011/bounds/RESCALED_BOUND_CERTIFICATE.json",
+            "bytes": 125471,
+            "sha256": "22c6cd4e505ee2c7e549420355b94a5b3c079ebb6945314f5b285c13bb67835d"
+          }
+        },
+        {
+          "source": {
+            "path": "sol/RESIDUAL_TO_PHYSICAL_RESPONSE.md",
+            "bytes": 15688,
+            "sha256": "b8c77c810c70aa286227c5dabe010a53942af84067eb03961f0186419a5ea96a"
+          },
+          "copy": {
+            "path": "optimized/sol_crossreview/positive/sol/RESIDUAL_TO_PHYSICAL_RESPONSE.md",
+            "bytes": 15688,
+            "sha256": "b8c77c810c70aa286227c5dabe010a53942af84067eb03961f0186419a5ea96a"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "optimized/sol_crossreview/positive/execution.log",
+        "bytes": 5223,
+        "sha256": "866b88347ae018544c6f630388ef6db994ceb000ebb855544d1c62e6e144ad86"
+      },
+      "output": {
+        "path": "optimized/sol_crossreview/positive/fresh.json",
+        "bytes": 5223,
+        "sha256": "866b88347ae018544c6f630388ef6db994ceb000ebb855544d1c62e6e144ad86"
+      },
+      "output_origin": "complete stdout JSON, retained verbatim in execution.log",
+      "golden": {
+        "path": "sol/crossreview/INDEPENDENT_QUANTITATIVE_REVIEW.json",
+        "bytes": 5223,
+        "sha256": "866b88347ae018544c6f630388ef6db994ceb000ebb855544d1c62e6e144ad86"
+      },
+      "scientific_output_matches": true,
+      "finite_positive_check_groups": 35,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_top_level_fields": []
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "certificate",
+      "mode": "optimized",
+      "script": "check_response_certificate.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [],
+      "exit_code": 1,
+      "wall_seconds": 0.218,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          },
+          "copy": {
+            "path": "optimized/certificate/sqrt_inward_upper/check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          }
+        },
+        {
+          "source": {
+            "path": "certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          },
+          "copy": {
+            "path": "optimized/certificate/sqrt_inward_upper/certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "optimized/certificate/sqrt_inward_upper/execution.log",
+        "bytes": 5262,
+        "sha256": "823390875557c16b9dd27f6c8c1d3929ae858e8a714767d4a5f6d5657d479041"
+      },
+      "output": {
+        "path": "optimized/certificate/sqrt_inward_upper/fresh.json",
+        "bytes": 5262,
+        "sha256": "823390875557c16b9dd27f6c8c1d3929ae858e8a714767d4a5f6d5657d479041"
+      },
+      "output_origin": "complete stdout JSON, retained verbatim in execution.log",
+      "mutation": {
+        "name": "sqrt_inward_upper",
+        "reason": "sqrt_outward_2",
+        "before": "else F(integer + 1, scale)",
+        "after": "else F(integer, scale)",
+        "source_module": {
+          "path": "certify_response.py",
+          "bytes": 5594,
+          "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+        },
+        "mutated_module": {
+          "path": "optimized/certificate/sqrt_inward_upper/certify_response.py",
+          "bytes": 5590,
+          "sha256": "a51803d2b26716a77ce1e8635286cbfc90a14aab08a1bdd232570b9070b74d29"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "sqrt_inward_upper",
+      "expected_reason": "sqrt_outward_2",
+      "reported_failures": [
+        "sqrt_outward_2",
+        "sqrt_outward_1/3",
+        "sqrt_outward_123456789/7654321"
+      ],
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "certificate",
+      "mode": "optimized",
+      "script": "check_response_certificate.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [],
+      "exit_code": 1,
+      "wall_seconds": 0.267,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          },
+          "copy": {
+            "path": "optimized/certificate/wrong_inertia_weight/check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          }
+        },
+        {
+          "source": {
+            "path": "certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          },
+          "copy": {
+            "path": "optimized/certificate/wrong_inertia_weight/certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "optimized/certificate/wrong_inertia_weight/execution.log",
+        "bytes": 5264,
+        "sha256": "60d3502c7ea8763843faf75bbb576bc37ff54895b799ba6207e3c70d1b4b3a73"
+      },
+      "output": {
+        "path": "optimized/certificate/wrong_inertia_weight/fresh.json",
+        "bytes": 5264,
+        "sha256": "60d3502c7ea8763843faf75bbb576bc37ff54895b799ba6207e3c70d1b4b3a73"
+      },
+      "output_origin": "complete stdout JSON, retained verbatim in execution.log",
+      "mutation": {
+        "name": "wrong_inertia_weight",
+        "reason": "positive_inertia_forcing",
+        "before": "d['G_abs_sup'] ** 2 / d['mu_lower']",
+        "after": "d['G_abs_sup'] ** 2 * d['mu_lower']",
+        "source_module": {
+          "path": "certify_response.py",
+          "bytes": 5594,
+          "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+        },
+        "mutated_module": {
+          "path": "optimized/certificate/wrong_inertia_weight/certify_response.py",
+          "bytes": 5594,
+          "sha256": "70b0797266c7863a92a34d0a1d34c1493eb84ae740afd54679eb69ef23a4f327"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "wrong_inertia_weight",
+      "expected_reason": "positive_inertia_forcing",
+      "reported_failures": [
+        "positive_inertia_forcing"
+      ],
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "certificate",
+      "mode": "optimized",
+      "script": "check_response_certificate.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [],
+      "exit_code": 1,
+      "wall_seconds": 0.217,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          },
+          "copy": {
+            "path": "optimized/certificate/omit_physical_shift/check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          }
+        },
+        {
+          "source": {
+            "path": "certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          },
+          "copy": {
+            "path": "optimized/certificate/omit_physical_shift/certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "optimized/certificate/omit_physical_shift/execution.log",
+        "bytes": 5268,
+        "sha256": "e70b9bc89d411ad40699e4ff9e58500fdd2da56d1eb2fc83526635c32562a97c"
+      },
+      "output": {
+        "path": "optimized/certificate/omit_physical_shift/fresh.json",
+        "bytes": 5268,
+        "sha256": "e70b9bc89d411ad40699e4ff9e58500fdd2da56d1eb2fc83526635c32562a97c"
+      },
+      "output_origin": "complete stdout JSON, retained verbatim in execution.log",
+      "mutation": {
+        "name": "omit_physical_shift",
+        "reason": "physical_shift_trace",
+        "before": "1 / d['mu_lower'] + d['c_abs'] ** 2 / d['nu']",
+        "after": "1 / d['mu_lower']",
+        "source_module": {
+          "path": "certify_response.py",
+          "bytes": 5594,
+          "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+        },
+        "mutated_module": {
+          "path": "optimized/certificate/omit_physical_shift/certify_response.py",
+          "bytes": 5566,
+          "sha256": "1b536493c4caa2e621fd610368092d4077cb4fb20eb3685b2c6b7633fc0dac27"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "omit_physical_shift",
+      "expected_reason": "physical_shift_trace",
+      "reported_failures": [
+        "physical_shift_trace"
+      ],
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "certificate",
+      "mode": "optimized",
+      "script": "check_response_certificate.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [],
+      "exit_code": 1,
+      "wall_seconds": 0.268,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          },
+          "copy": {
+            "path": "optimized/certificate/reverse_norm_triangle/check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          }
+        },
+        {
+          "source": {
+            "path": "certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          },
+          "copy": {
+            "path": "optimized/certificate/reverse_norm_triangle/certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "optimized/certificate/reverse_norm_triangle/execution.log",
+        "bytes": 5265,
+        "sha256": "6e399e224e09f5c7ebe133ff846a618f26f46bd1e5fedc57c1f68316f3077fc7"
+      },
+      "output": {
+        "path": "optimized/certificate/reverse_norm_triangle/fresh.json",
+        "bytes": 5265,
+        "sha256": "6e399e224e09f5c7ebe133ff846a618f26f46bd1e5fedc57c1f68316f3077fc7"
+      },
+      "output_origin": "complete stdout JSON, retained verbatim in execution.log",
+      "mutation": {
+        "name": "reverse_norm_triangle",
+        "reason": "norm_triangle_lower",
+        "before": "sqrt_bounds(d['trial_D_sq_lower'])[0] - delta",
+        "after": "sqrt_bounds(d['trial_D_sq_lower'])[0] + delta",
+        "source_module": {
+          "path": "certify_response.py",
+          "bytes": 5594,
+          "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+        },
+        "mutated_module": {
+          "path": "optimized/certificate/reverse_norm_triangle/certify_response.py",
+          "bytes": 5594,
+          "sha256": "f00c147c3b8c583a0cff6d1be4f1cf1cb7893175c185432e678548473787a650"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "reverse_norm_triangle",
+      "expected_reason": "norm_triangle_lower",
+      "reported_failures": [
+        "norm_triangle_lower"
+      ],
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "certificate",
+      "mode": "optimized",
+      "script": "check_response_certificate.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [],
+      "exit_code": 1,
+      "wall_seconds": 0.248,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          },
+          "copy": {
+            "path": "optimized/certificate/wrong_response_prefactor/check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          }
+        },
+        {
+          "source": {
+            "path": "certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          },
+          "copy": {
+            "path": "optimized/certificate/wrong_response_prefactor/certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "optimized/certificate/wrong_response_prefactor/execution.log",
+        "bytes": 5261,
+        "sha256": "09c301ec5b7b3899822dd1ec6b3b35b77f039a98cc601bbc70e457af68c02339"
+      },
+      "output": {
+        "path": "optimized/certificate/wrong_response_prefactor/fresh.json",
+        "bytes": 5261,
+        "sha256": "09c301ec5b7b3899822dd1ec6b3b35b77f039a98cc601bbc70e457af68c02339"
+      },
+      "output_origin": "complete stdout JSON, retained verbatim in execution.log",
+      "mutation": {
+        "name": "wrong_response_prefactor",
+        "reason": "proper_time_prefactor",
+        "before": "prefactor_lower = 3 * pil ** 2",
+        "after": "prefactor_lower = 2 * pil ** 2",
+        "source_module": {
+          "path": "certify_response.py",
+          "bytes": 5594,
+          "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+        },
+        "mutated_module": {
+          "path": "optimized/certificate/wrong_response_prefactor/certify_response.py",
+          "bytes": 5594,
+          "sha256": "d0a784adcaf2ee881aa539d836f9c6ef630377181a0a75ccb32de1033ebeca52"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "wrong_response_prefactor",
+      "expected_reason": "proper_time_prefactor",
+      "reported_failures": [
+        "proper_time_prefactor"
+      ],
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "certificate",
+      "mode": "optimized",
+      "script": "check_response_certificate.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [],
+      "exit_code": 1,
+      "wall_seconds": 0.268,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          },
+          "copy": {
+            "path": "optimized/certificate/erase_exponential_growth/check_response_certificate.py",
+            "bytes": 3559,
+            "sha256": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+          }
+        },
+        {
+          "source": {
+            "path": "certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          },
+          "copy": {
+            "path": "optimized/certificate/erase_exponential_growth/certify_response.py",
+            "bytes": 5594,
+            "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "optimized/certificate/erase_exponential_growth/execution.log",
+        "bytes": 5136,
+        "sha256": "ff33c8c95a7148d5ab5fe01f9245237238f9c7829f67376c5f1d4bbfeab96a41"
+      },
+      "output": {
+        "path": "optimized/certificate/erase_exponential_growth/fresh.json",
+        "bytes": 5136,
+        "sha256": "ff33c8c95a7148d5ab5fe01f9245237238f9c7829f67376c5f1d4bbfeab96a41"
+      },
+      "output_origin": "complete stdout JSON, retained verbatim in execution.log",
+      "mutation": {
+        "name": "erase_exponential_growth",
+        "reason": "exp_positive_bound",
+        "before": "return (1 - value / count) ** (-count)",
+        "after": "return F(1)",
+        "source_module": {
+          "path": "certify_response.py",
+          "bytes": 5594,
+          "sha256": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386"
+        },
+        "mutated_module": {
+          "path": "optimized/certificate/erase_exponential_growth/certify_response.py",
+          "bytes": 5567,
+          "sha256": "82120d611d35fc336cf21c1da37ef302ca91aacc91033308341f94d0d2746ec2"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "erase_exponential_growth",
+      "expected_reason": "exp_positive_bound",
+      "reported_failures": [
+        "exp_positive_bound"
+      ],
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "astra",
+      "mode": "optimized",
+      "script": "astra/check_residual_response.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "boundary-source"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 3.826,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "astra/check_residual_response.py",
+            "bytes": 4735,
+            "sha256": "d2eef3e0682a93db7676151d8f914d84b579f47c71ed26b18e8362f78c32ddf3"
+          },
+          "copy": {
+            "path": "optimized/astra/boundary-source/astra/check_residual_response.py",
+            "bytes": 4735,
+            "sha256": "d2eef3e0682a93db7676151d8f914d84b579f47c71ed26b18e8362f78c32ddf3"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "optimized/astra/boundary-source/execution.log",
+        "bytes": 80,
+        "sha256": "abc224d42df83312cf6377246fac92e7f265d8a5a96aac205185d58061fe1e67"
+      },
+      "output": {
+        "path": "optimized/astra/boundary-source/fresh.json",
+        "bytes": 305,
+        "sha256": "288f7f3f41e14d2b5e1cf70950447c452058896a55ae44b1c028fcfe9016fc31"
+      },
+      "output_origin": "Runner-parsed complete CHECK_FAILED line",
+      "mutation": null,
+      "control": "boundary-source",
+      "expected_reason": "boundary flux and inertia cancellation",
+      "reported_failures": [
+        "boundary flux and inertia cancellation"
+      ],
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "astra",
+      "mode": "optimized",
+      "script": "astra/check_residual_response.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "moving-flux"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 3.444,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "astra/check_residual_response.py",
+            "bytes": 4735,
+            "sha256": "d2eef3e0682a93db7676151d8f914d84b579f47c71ed26b18e8362f78c32ddf3"
+          },
+          "copy": {
+            "path": "optimized/astra/moving-flux/astra/check_residual_response.py",
+            "bytes": 4735,
+            "sha256": "d2eef3e0682a93db7676151d8f914d84b579f47c71ed26b18e8362f78c32ddf3"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "optimized/astra/moving-flux/execution.log",
+        "bytes": 97,
+        "sha256": "9e24209ca054a3f0f21f556b464dc3db772dccaed0e613aa85b31373b447725d"
+      },
+      "output": {
+        "path": "optimized/astra/moving-flux/fresh.json",
+        "bytes": 313,
+        "sha256": "874efaee7a4760dbc8e78495489e2cae002392462021dda315d98246e1ee2e7d"
+      },
+      "output_origin": "Runner-parsed complete CHECK_FAILED line",
+      "mutation": null,
+      "control": "moving-flux",
+      "expected_reason": "shrinking right boundary flux",
+      "reported_failures": [
+        "shrinking right boundary flux"
+      ],
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "astra",
+      "mode": "optimized",
+      "script": "astra/check_residual_response.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "physical-prefactor"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 4.592,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "astra/check_residual_response.py",
+            "bytes": 4735,
+            "sha256": "d2eef3e0682a93db7676151d8f914d84b579f47c71ed26b18e8362f78c32ddf3"
+          },
+          "copy": {
+            "path": "optimized/astra/physical-prefactor/astra/check_residual_response.py",
+            "bytes": 4735,
+            "sha256": "d2eef3e0682a93db7676151d8f914d84b579f47c71ed26b18e8362f78c32ddf3"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Initial byte-identical copies before any separately recorded formula mutation",
+      "log": {
+        "path": "optimized/astra/physical-prefactor/execution.log",
+        "bytes": 98,
+        "sha256": "b4a315bf4a1fc0234fd77c1b5d6f240832a9066dc0d2e9e8af341655ed6aedee"
+      },
+      "output": {
+        "path": "optimized/astra/physical-prefactor/fresh.json",
+        "bytes": 319,
+        "sha256": "e5f449b23fb2f497c3fbe224b69c3759199953f44c95df6529ab21748ce768bb"
+      },
+      "output_origin": "Runner-parsed complete CHECK_FAILED line",
+      "mutation": null,
+      "control": "physical-prefactor",
+      "expected_reason": "physical coefficient normalization",
+      "reported_failures": [
+        "physical coefficient normalization"
+      ],
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "status": "PASS_READ_ONLY_PINNED_PRIMARY_REPLAY",
+  "inputs_sha256": {
+    "SHELL_RESPONSE_ERROR_CERTIFICATE.md": "5f01be536c77123e9f667f4cd5514b52067641b2b389ba4e6eb655cb24654022",
+    "certify_response.py": "f634507663644e204d65d12c996fce2b160fee36331d066f654ed5d44f37f386",
+    "check_response_certificate.py": "953c8a51b21ed7c2cc3c51517a6df6d96ae0166c6f6a3990a6790fd68b7d3d36"
+  },
+  "observations": [
+    {
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "status": "PASS",
+      "finite_check_groups": 25,
+      "stdout_sha256": "956cd2cddd71b226173b51fdc57a9d46f61703bb0e1b58844db216388c1b469e",
+      "stderr_empty": true
+    },
+    {
+      "flags": [
+        "-I",
+        "-O",
+        "-B"
+      ],
+      "status": "PASS",
+      "finite_check_groups": 25,
+      "stdout_sha256": "956cd2cddd71b226173b51fdc57a9d46f61703bb0e1b58844db216388c1b469e",
+      "stderr_empty": true
+    }
+  ],
+  "mode_results_identical": true,
+  "scope": "Arithmetic checks only; these do not computer-certify the analytic theorem."
+}

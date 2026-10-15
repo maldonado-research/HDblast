@@ -1,0 +1,195 @@
+{
+  "scope": "Exact symbolic identities and deliberately false controls only; no numerical physical background or solution.",
+  "sympy_version": "1.14.0",
+  "positive_checks_passed": 35,
+  "negative_controls_rejected": 9,
+  "positive_checks": [
+    {
+      "name": "alpha_log_derivative",
+      "residual": "0"
+    },
+    {
+      "name": "y_to_z_master_operator",
+      "residual": "0"
+    },
+    {
+      "name": "conjugated_bulk_operator",
+      "residual": "0"
+    },
+    {
+      "name": "time_drift_removed",
+      "residual": "0"
+    },
+    {
+      "name": "space_drift_removed",
+      "residual": "0"
+    },
+    {
+      "name": "time_potential_k",
+      "residual": "0"
+    },
+    {
+      "name": "initial_displacement_factor",
+      "residual": "0"
+    },
+    {
+      "name": "initial_velocity_factor",
+      "residual": "0"
+    },
+    {
+      "name": "original_to_conjugated_boundary",
+      "residual": "0"
+    },
+    {
+      "name": "physical_boundary_identity_with_residual",
+      "residual": "0"
+    },
+    {
+      "name": "physical_boundary_identity_on_solution",
+      "residual": "0"
+    },
+    {
+      "name": "plus_characteristic_residual",
+      "residual": "0"
+    },
+    {
+      "name": "minus_characteristic_residual",
+      "residual": "0"
+    },
+    {
+      "name": "boundary_characteristic_ode_residual",
+      "residual": "0"
+    },
+    {
+      "name": "boundary_reflection_identity",
+      "residual": "0"
+    },
+    {
+      "name": "time_reconstruction",
+      "residual": "0"
+    },
+    {
+      "name": "space_reconstruction",
+      "residual": "0"
+    },
+    {
+      "name": "physical_trace_from_incoming_characteristic",
+      "residual": "0"
+    },
+    {
+      "name": "true_boundary_residual_includes_coefficients",
+      "residual": "0"
+    },
+    {
+      "name": "candidate_boundary_acceleration",
+      "residual": "0"
+    },
+    {
+      "name": "true_bulk_residual_includes_coefficients",
+      "residual": "0"
+    },
+    {
+      "name": "error_boundary_ode_sign",
+      "residual": "0"
+    },
+    {
+      "name": "error_physical_trace_residual_sign",
+      "residual": "0"
+    },
+    {
+      "name": "candidate_trace_coefficient_conversion",
+      "residual": "0"
+    },
+    {
+      "name": "normalized_boundary_residual_identity",
+      "residual": "0"
+    },
+    {
+      "name": "normalized_signed_error_forcing",
+      "residual": "0"
+    },
+    {
+      "name": "artificial_high_frequency_bulk_residual",
+      "residual": "0"
+    },
+    {
+      "name": "artificial_high_frequency_boundary_residual",
+      "residual": "0"
+    },
+    {
+      "name": "artificial_high_frequency_trace",
+      "residual": "0"
+    },
+    {
+      "name": "artificial_high_frequency_value_bound_tends_to_zero",
+      "residual": "0"
+    },
+    {
+      "name": "artificial_high_frequency_trace_at_zero",
+      "residual": "0"
+    },
+    {
+      "name": "artificial_high_frequency_trace_l2_squared",
+      "residual": "0"
+    },
+    {
+      "name": "weighted_observable_cosh_cancellation",
+      "residual": "0"
+    },
+    {
+      "name": "quadrupole_norm",
+      "residual": "0"
+    },
+    {
+      "name": "quadratic_variation_independent_of_second_completion",
+      "residual": "0"
+    }
+  ],
+  "negative_controls": [
+    {
+      "name": "wrong_positive_cosh_conjugation",
+      "defect": "6*tanh(t)",
+      "exact_witness_defect": "18/5"
+    },
+    {
+      "name": "wrong_cosh_observable_factor",
+      "defect": "3*pi**2*(C_b*q - 2*r)**2*(cosh(t) - 1)*(cosh(t) + 1)*(cosh(t)**2 - cosh(t) + 1)*(cosh(t)**2 + cosh(t) + 1)/(4*p_b**2*rho_b**2)",
+      "exact_witness_defect": "189*pi**2"
+    },
+    {
+      "name": "wrong_value_trace_w_instead_of_normal_trace",
+      "defect": "(C_b*q + 2*q - 2*r)/2",
+      "exact_witness_defect": "-1"
+    },
+    {
+      "name": "wrong_uncorrected_wz_trace",
+      "defect": "C_b*q/2",
+      "exact_witness_defect": "1"
+    },
+    {
+      "name": "wrong_missing_boundary_coefficient_residual",
+      "defect": "(2*C_b*q_hat*cosh(t)**2 + 4*acc_hat*mu*cosh(t)**2 - 4*acc_hat*mu_hat*cosh(t)**2 - 4*beta_hat*q_hat*cosh(t)**2 - 25*mu*q_hat*cosh(t)**2 + 35*mu*q_hat)/(4*cosh(t)**2)",
+      "exact_witness_defect": "5/2"
+    },
+    {
+      "name": "wrong_missing_boundary_mass_residual",
+      "defect": "acc_hat*(mu - mu_hat)",
+      "exact_witness_defect": "1"
+    },
+    {
+      "name": "wrong_acceleration_sign_in_trace",
+      "defect": "-2*acc*mu",
+      "exact_witness_defect": "-2"
+    },
+    {
+      "name": "wrong_acceleration_sign_in_boundary",
+      "defect": "-2*acc*mu",
+      "exact_witness_defect": "-2"
+    },
+    {
+      "name": "wrong_error_boundary_residual_sign",
+      "defect": "(2*C_b*q_hat + 4*acc_hat*mu - 4*acc_hat*mu_hat + 4*b_hat - 4*beta_hat*q_hat - 35*mu*q_hat*tanh(t)**2 + 10*mu*q_hat)/2",
+      "exact_witness_defect": "2"
+    }
+  ]
+}
