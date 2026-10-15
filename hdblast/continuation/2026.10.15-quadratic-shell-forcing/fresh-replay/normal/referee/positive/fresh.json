@@ -1,0 +1,65 @@
+{
+  "status": "PASS_INDEPENDENT_QUADRATIC_MATERIAL_SOURCE_AUDIT",
+  "python_optimization": 0,
+  "check_count": 31,
+  "checks": [
+    "ambient_harmonic_B_Z2_H4",
+    "exact_ambient_degree_0_2_4_decomposition",
+    "normalized_sphere_volume_convention",
+    "quadrupole_second_moment",
+    "quadrupole_fourth_moment",
+    "degree_two_norm",
+    "degree_four_norm",
+    "orthogonality_of_three_degrees",
+    "full_scalar_source_squared_angular_mean",
+    "all_three_orthogonal_squared_power_shares",
+    "actual_registered_tension_second_and_third_derivatives",
+    "second_derivative_chain_rule_without_spurious_half",
+    "sum_and_per_copy_source_factors",
+    "authenticated_prior_input:prior/INERTIAL_WAVEFORM_CELLS.csv",
+    "authenticated_prior_input:prior/INERTIAL_WAVEFORM_ENCLOSURE.json",
+    "authenticated_prior_input:prior/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+    "authenticated_prior_input:prior/PRIOR_PHYSICAL_GAIN_ENCLOSURE.json",
+    "new_report_and_complete_csv_authenticated",
+    "same_wider_state_and_derivative_normal_conventions",
+    "all_4353_source_and_target_cells_present",
+    "actual_positive_tension_hessian_interval",
+    "physical_gain_and_norm_prefactor_use_authenticated_background",
+    "all_six_harmonic_coefficient_ranges_rebuilt_at_every_cell",
+    "fourth_moment_retains_positive_cosh_minus3_weight",
+    "same_state_C_identity_not_cross_width_transfer",
+    "signed_integral_and_L1_are_exact_multiples_of_C",
+    "full_scalar_L2_squared_with_correct_clock_and_inverse_cubic_width",
+    "explicit_constitutive_term_integral_and_L2_squared",
+    "continuous_tail_monopole_negative_and_strict_bounds",
+    "no_full_second_order_or_total_stress_claim",
+    "inputs_and_outputs_unchanged_during_audit"
+  ],
+  "cells_reconstructed": 4353,
+  "angular_moments": {
+    "mean_Y2": "1/6",
+    "mean_Y4": "3/40",
+    "mean_Z2_squared": "1/12",
+    "mean_H4_squared": "19/720"
+  },
+  "input_pins": {
+    "prior/INERTIAL_WAVEFORM_CELLS.csv": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7",
+    "prior/INERTIAL_WAVEFORM_ENCLOSURE.json": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8",
+    "prior/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8",
+    "prior/PRIOR_PHYSICAL_GAIN_ENCLOSURE.json": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+  },
+  "report_sha256": "091e28806cccd0dd92addc47145ec49db4de226612396d81485b3629dc5a88a3",
+  "csv_sha256": "d7c9f670f3f3e95b271f1d8572e946ae121f707093eb0e987c00b7a70d3c6fd6",
+  "own_source_sha256": "f76bb4025af878a601655a761ee171c2c3f332ea9025c495b0103c842e255f74",
+  "display_only": {
+    "fourth_moment": [
+      86.46022616025748,
+      87.42628460797218
+    ],
+    "scalar_L2_squared": [
+      5.778773178536036e+21,
+      8.643174843464729e+21
+    ]
+  },
+  "scope": "Independent exact algebra and full-cell audit of the explicit material tension contributions. It does not give the complete harmonic-coordinate source, U2, total second stress, a nonlinear remainder or a novelty claim."
+}
