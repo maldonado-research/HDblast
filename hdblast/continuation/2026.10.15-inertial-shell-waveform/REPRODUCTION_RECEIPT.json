@@ -1,0 +1,4346 @@
+{
+  "schema": "hdblast-inertial-waveform-fresh-replay-v1",
+  "status": "PASS",
+  "capsule": "HDBLAST_INERTIAL_SHELL_WAVEFORM_20261015",
+  "authentication": {
+    "status": "PASS",
+    "files_verified": 75,
+    "manifest_sha256": "9b42295d819f0ed5caf94d0a46af38274a27fb11648dd6bff91f5d992385f140"
+  },
+  "runner": {
+    "path": "reproduce.py",
+    "bytes": 24999,
+    "sha256": "6249e550647b2e29f030ebd46faafe22edede52dccab68a4af2fa0c5c76606cf"
+  },
+  "integrity_verifier": {
+    "path": "verify_manifest.py",
+    "bytes": 2804,
+    "sha256": "969b78bbb00bb7902b1c48eb6fd38305dbb6a28edcca9eb3ae8a8ee9e8cc46b6"
+  },
+  "requirements": {
+    "path": "requirements.txt",
+    "bytes": 14,
+    "sha256": "25f9f1fb1988b230147a1d3092d34e09c069eb7a6c6d6df46b3973b9f2d36efc"
+  },
+  "roster": {
+    "path": "REPLAY_ROSTER.json",
+    "bytes": 4311,
+    "sha256": "358f7e1955ad36a703b6d7ef0646f20a8dc09af89f82ff2dfe2bff94c1c97ca5"
+  },
+  "python": {
+    "version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python"
+  },
+  "sympy_version": "1.14.0",
+  "successful_checker_runs": 16,
+  "external_corruption_processes_rejected": 22,
+  "embedded_wrong_formula_controls_rejected": 18,
+  "finite_positive_check_groups_each_mode": 112,
+  "finite_positive_check_groups_by_mode": {
+    "normal": 112,
+    "optimized": 112
+  },
+  "separate_generated_enclosures_each_mode": {
+    "continuous_csv_cells": 4353,
+    "support_cells": 4096,
+    "tail_cells": 256,
+    "archive_collar_components": 4,
+    "archive_correlated_shell_panels": 128
+  },
+  "mode_agreements": [
+    {
+      "checker": "root",
+      "scientific_json_equal": true,
+      "only_normalized_fields": []
+    },
+    {
+      "checker": "cells",
+      "scientific_json_equal": true,
+      "only_normalized_fields": [
+        "python_optimization"
+      ]
+    },
+    {
+      "checker": "generator",
+      "scientific_json_equal": true,
+      "only_normalized_fields": []
+    },
+    {
+      "checker": "sol",
+      "scientific_json_equal": true,
+      "only_normalized_fields": [
+        "python_optimization"
+      ]
+    },
+    {
+      "checker": "astra",
+      "scientific_json_equal": true,
+      "only_normalized_fields": [
+        "optimized_mode"
+      ]
+    },
+    {
+      "checker": "referee",
+      "scientific_json_equal": true,
+      "only_normalized_fields": [
+        "python_optimization"
+      ]
+    },
+    {
+      "checker": "archive",
+      "scientific_json_equal": true,
+      "only_normalized_fields": []
+    },
+    {
+      "checker": "identities",
+      "scientific_json_equal": true,
+      "only_normalized_fields": []
+    }
+  ],
+  "steps": [
+    {
+      "kind": "positive",
+      "checker": "root",
+      "mode": "normal",
+      "script": "check_inertial_waveform.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--data-dir",
+        "computed",
+        "--output",
+        "checked.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 1.571,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          },
+          "copy": {
+            "path": "normal/root/positive/check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          }
+        },
+        {
+          "source": {
+            "path": "inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          },
+          "copy": {
+            "path": "normal/root/positive/inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          }
+        },
+        {
+          "source": {
+            "path": "compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          },
+          "copy": {
+            "path": "normal/root/positive/compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          }
+        },
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "normal/root/positive/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          },
+          "copy": {
+            "path": "normal/root/positive/archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          },
+          "copy": {
+            "path": "normal/root/positive/inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "normal/root/positive/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          },
+          "copy": {
+            "path": "normal/root/positive/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          },
+          "copy": {
+            "path": "normal/root/positive/computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "normal/root/positive/execution.log",
+        "bytes": 2058,
+        "sha256": "17a33ad5bb757d9eb3893f9da153e5ff700c7e436b9b1835b63be166c320e439"
+      },
+      "output": {
+        "path": "normal/root/positive/fresh.json",
+        "bytes": 2058,
+        "sha256": "17a33ad5bb757d9eb3893f9da153e5ff700c7e436b9b1835b63be166c320e439"
+      },
+      "additional_outputs": [],
+      "output_origin": "checked.json",
+      "golden": {
+        "path": "computed/CHECK_INERTIAL_WAVEFORM.json",
+        "bytes": 2058,
+        "sha256": "17a33ad5bb757d9eb3893f9da153e5ff700c7e436b9b1835b63be166c320e439"
+      },
+      "scientific_output_matches": true,
+      "complete_generated_json_bytes_equal": false,
+      "finite_positive_check_groups": 31,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_golden_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "cells",
+      "mode": "normal",
+      "script": "referee/check_independent_cells.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--data-dir",
+        "computed",
+        "--output",
+        "checked.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 49.522,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "referee/check_independent_cells.py",
+            "bytes": 9289,
+            "sha256": "c8935079cc4900682eeb1f9f449e32ef91096fb0131d91be95b07bf3068e0e35"
+          },
+          "copy": {
+            "path": "normal/cells/positive/referee/check_independent_cells.py",
+            "bytes": 9289,
+            "sha256": "c8935079cc4900682eeb1f9f449e32ef91096fb0131d91be95b07bf3068e0e35"
+          }
+        },
+        {
+          "source": {
+            "path": "inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          },
+          "copy": {
+            "path": "normal/cells/positive/inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          }
+        },
+        {
+          "source": {
+            "path": "compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          },
+          "copy": {
+            "path": "normal/cells/positive/compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          }
+        },
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "normal/cells/positive/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          },
+          "copy": {
+            "path": "normal/cells/positive/archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          },
+          "copy": {
+            "path": "normal/cells/positive/inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "normal/cells/positive/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        },
+        {
+          "source": {
+            "path": "referee/INDEPENDENT_INERTIAL_BOUND_NORMAL.json",
+            "bytes": 3117,
+            "sha256": "460d2a09aab3f2450772787911667937684f68861a5509a4f441cfdd16a89a51"
+          },
+          "copy": {
+            "path": "normal/cells/positive/referee/INDEPENDENT_INERTIAL_BOUND_NORMAL.json",
+            "bytes": 3117,
+            "sha256": "460d2a09aab3f2450772787911667937684f68861a5509a4f441cfdd16a89a51"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          },
+          "copy": {
+            "path": "normal/cells/positive/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          },
+          "copy": {
+            "path": "normal/cells/positive/computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "normal/cells/positive/execution.log",
+        "bytes": 152,
+        "sha256": "cd42ddcb08101254aaef1e10178282265b5cb6a150d09e209d80d948b6a50a29"
+      },
+      "output": {
+        "path": "normal/cells/positive/fresh.json",
+        "bytes": 2516,
+        "sha256": "ef84e550ebb7715b3374c62a1b939c4df3bb22df99158a1c7e273fa1639fdb6c"
+      },
+      "additional_outputs": [],
+      "output_origin": "checked.json",
+      "golden": {
+        "path": "referee/INDEPENDENT_CELLS_NORMAL.json",
+        "bytes": 2516,
+        "sha256": "ef84e550ebb7715b3374c62a1b939c4df3bb22df99158a1c7e273fa1639fdb6c"
+      },
+      "scientific_output_matches": true,
+      "complete_generated_json_bytes_equal": false,
+      "finite_positive_check_groups": 18,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_golden_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "generator",
+      "mode": "normal",
+      "script": "compute_inertial_waveform.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output-dir",
+        "generated"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 23.62,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          },
+          "copy": {
+            "path": "normal/generator/positive/compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          }
+        },
+        {
+          "source": {
+            "path": "inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          },
+          "copy": {
+            "path": "normal/generator/positive/inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          }
+        },
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "normal/generator/positive/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          },
+          "copy": {
+            "path": "normal/generator/positive/archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          },
+          "copy": {
+            "path": "normal/generator/positive/inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "normal/generator/positive/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "normal/generator/positive/execution.log",
+        "bytes": 405,
+        "sha256": "657867a141cec8cbc1cb69d2934c027a03129317ee87a1dd46a78ff73a4101dd"
+      },
+      "output": {
+        "path": "normal/generator/positive/fresh.json",
+        "bytes": 10082,
+        "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+      },
+      "additional_outputs": [
+        {
+          "output": {
+            "path": "normal/generator/positive/generated/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          },
+          "golden": {
+            "path": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          },
+          "complete_bytes_equal": true
+        }
+      ],
+      "output_origin": "generated/INERTIAL_WAVEFORM_ENCLOSURE.json",
+      "golden": {
+        "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+        "bytes": 10082,
+        "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+      },
+      "scientific_output_matches": true,
+      "complete_generated_json_bytes_equal": true,
+      "finite_positive_check_groups": 0,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_golden_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "sol",
+      "mode": "normal",
+      "script": "sol/inertial_comparator.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--source-root",
+        "."
+      ],
+      "exit_code": 0,
+      "wall_seconds": 3.466,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "normal/sol/positive/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "normal/sol/positive/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "normal/sol/positive/execution.log",
+        "bytes": 3756,
+        "sha256": "f8857ef80fc4a6dcd554377b36753601c17a2201aba432628d195edb9b890e06"
+      },
+      "output": {
+        "path": "normal/sol/positive/fresh.json",
+        "bytes": 3756,
+        "sha256": "f8857ef80fc4a6dcd554377b36753601c17a2201aba432628d195edb9b890e06"
+      },
+      "additional_outputs": [],
+      "output_origin": "complete stdout JSON",
+      "golden": {
+        "path": "sol/COMPARATOR_NORMAL.json",
+        "bytes": 3756,
+        "sha256": "f8857ef80fc4a6dcd554377b36753601c17a2201aba432628d195edb9b890e06"
+      },
+      "scientific_output_matches": true,
+      "complete_generated_json_bytes_equal": false,
+      "finite_positive_check_groups": 13,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_golden_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "astra",
+      "mode": "normal",
+      "script": "astra/check_inertial_error.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--source-root",
+        "."
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.326,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "astra/check_inertial_error.py",
+            "bytes": 11391,
+            "sha256": "43d0926a027d73506bfb2914e91afb6d4233e645d56a1e480b2fafe304613ce4"
+          },
+          "copy": {
+            "path": "normal/astra/positive/astra/check_inertial_error.py",
+            "bytes": 11391,
+            "sha256": "43d0926a027d73506bfb2914e91afb6d4233e645d56a1e480b2fafe304613ce4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "normal/astra/positive/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ACTUAL_BACKGROUND_AND_RIGOROUS_COLLAR_BOUNDS.md",
+            "bytes": 9297,
+            "sha256": "0832a16c4bdf18cc188861a2c2860e7e6ff736dec39426d6ca7c589dc0434d5c"
+          },
+          "copy": {
+            "path": "normal/astra/positive/inputs/previous/archive/ACTUAL_BACKGROUND_AND_RIGOROUS_COLLAR_BOUNDS.md",
+            "bytes": 9297,
+            "sha256": "0832a16c4bdf18cc188861a2c2860e7e6ff736dec39426d6ca7c589dc0434d5c"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "normal/astra/positive/execution.log",
+        "bytes": 9366,
+        "sha256": "e7c9b6064e2378eaee0bcba49bc0f034f774049db35448e5970b798357c14460"
+      },
+      "output": {
+        "path": "normal/astra/positive/fresh.json",
+        "bytes": 9366,
+        "sha256": "e7c9b6064e2378eaee0bcba49bc0f034f774049db35448e5970b798357c14460"
+      },
+      "additional_outputs": [],
+      "output_origin": "complete stdout JSON",
+      "golden": {
+        "path": "astra/INERTIAL_ERROR_NORMAL.json",
+        "bytes": 9366,
+        "sha256": "e7c9b6064e2378eaee0bcba49bc0f034f774049db35448e5970b798357c14460"
+      },
+      "scientific_output_matches": true,
+      "complete_generated_json_bytes_equal": false,
+      "finite_positive_check_groups": 23,
+      "embedded_wrong_formula_controls": 5,
+      "ignored_golden_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "referee",
+      "mode": "normal",
+      "script": "referee/check_independent_inertial_bound.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--source-root",
+        "."
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.22,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "referee/check_independent_inertial_bound.py",
+            "bytes": 6178,
+            "sha256": "1b091a656c4f7e42911376e9853971c389dee9ae09f6330e31caf3b2d1e3c4be"
+          },
+          "copy": {
+            "path": "normal/referee/positive/referee/check_independent_inertial_bound.py",
+            "bytes": 6178,
+            "sha256": "1b091a656c4f7e42911376e9853971c389dee9ae09f6330e31caf3b2d1e3c4be"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          },
+          "copy": {
+            "path": "normal/referee/positive/archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/inputs/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "normal/referee/positive/archive/inputs/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "normal/referee/positive/execution.log",
+        "bytes": 3117,
+        "sha256": "460d2a09aab3f2450772787911667937684f68861a5509a4f441cfdd16a89a51"
+      },
+      "output": {
+        "path": "normal/referee/positive/fresh.json",
+        "bytes": 3117,
+        "sha256": "460d2a09aab3f2450772787911667937684f68861a5509a4f441cfdd16a89a51"
+      },
+      "additional_outputs": [],
+      "output_origin": "complete stdout JSON",
+      "golden": {
+        "path": "referee/INDEPENDENT_INERTIAL_BOUND_NORMAL.json",
+        "bytes": 3117,
+        "sha256": "460d2a09aab3f2450772787911667937684f68861a5509a4f441cfdd16a89a51"
+      },
+      "scientific_output_matches": true,
+      "complete_generated_json_bytes_equal": false,
+      "finite_positive_check_groups": 21,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_golden_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "archive",
+      "mode": "normal",
+      "script": "archive/bound_background_derivatives.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [],
+      "exit_code": 0,
+      "wall_seconds": 0.542,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "archive/bound_background_derivatives.py",
+            "bytes": 12002,
+            "sha256": "4e13079e7d11f92c87695841cdccef01b51d948d4476af66264c23d6fc3197d4"
+          },
+          "copy": {
+            "path": "normal/archive/positive/archive/bound_background_derivatives.py",
+            "bytes": 12002,
+            "sha256": "4e13079e7d11f92c87695841cdccef01b51d948d4476af66264c23d6fc3197d4"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/inputs/OCT11_JACOBI_ENDPOINT_MONOTONICITY.md",
+            "bytes": 24586,
+            "sha256": "f1e2571a551ec122dd7755a13145bae73bd92bd7f7426bdc3002e2f52f8dbfc8"
+          },
+          "copy": {
+            "path": "normal/archive/positive/archive/inputs/OCT11_JACOBI_ENDPOINT_MONOTONICITY.md",
+            "bytes": 24586,
+            "sha256": "f1e2571a551ec122dd7755a13145bae73bd92bd7f7426bdc3002e2f52f8dbfc8"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/inputs/OCT11_RESCALED_BOUND_CERTIFICATE.json",
+            "bytes": 125471,
+            "sha256": "22c6cd4e505ee2c7e549420355b94a5b3c079ebb6945314f5b285c13bb67835d"
+          },
+          "copy": {
+            "path": "normal/archive/positive/archive/inputs/OCT11_RESCALED_BOUND_CERTIFICATE.json",
+            "bytes": 125471,
+            "sha256": "22c6cd4e505ee2c7e549420355b94a5b3c079ebb6945314f5b285c13bb67835d"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/inputs/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "normal/archive/positive/archive/inputs/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "normal/archive/positive/execution.log",
+        "bytes": 1540,
+        "sha256": "2ab9357f0dc11105b0d6bbf442625d6a7a2b50886d39d35612b407f66bc39075"
+      },
+      "output": {
+        "path": "normal/archive/positive/fresh.json",
+        "bytes": 21897,
+        "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+      },
+      "additional_outputs": [],
+      "output_origin": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+      "golden": {
+        "path": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+        "bytes": 21897,
+        "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+      },
+      "scientific_output_matches": true,
+      "complete_generated_json_bytes_equal": true,
+      "finite_positive_check_groups": 0,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_golden_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "identities",
+      "mode": "normal",
+      "script": "archive/check_background_derivative_identities.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [],
+      "exit_code": 0,
+      "wall_seconds": 3.929,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "archive/check_background_derivative_identities.py",
+            "bytes": 2400,
+            "sha256": "3edc99344bb70c4e2dcadfb61d3906fca069761673c9ac453c3bde1387167c75"
+          },
+          "copy": {
+            "path": "normal/identities/positive/archive/check_background_derivative_identities.py",
+            "bytes": 2400,
+            "sha256": "3edc99344bb70c4e2dcadfb61d3906fca069761673c9ac453c3bde1387167c75"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "normal/identities/positive/execution.log",
+        "bytes": 692,
+        "sha256": "50c21b59d4146cf93cee2ae8ec51947a3cae5fb4763ec8c53448088f9485f61e"
+      },
+      "output": {
+        "path": "normal/identities/positive/fresh.json",
+        "bytes": 692,
+        "sha256": "50c21b59d4146cf93cee2ae8ec51947a3cae5fb4763ec8c53448088f9485f61e"
+      },
+      "additional_outputs": [],
+      "output_origin": "archive/BACKGROUND_DERIVATIVE_IDENTITY_CHECK.json",
+      "golden": {
+        "path": "archive/BACKGROUND_DERIVATIVE_IDENTITY_CHECK.json",
+        "bytes": 692,
+        "sha256": "50c21b59d4146cf93cee2ae8ec51947a3cae5fb4763ec8c53448088f9485f61e"
+      },
+      "scientific_output_matches": true,
+      "complete_generated_json_bytes_equal": true,
+      "finite_positive_check_groups": 6,
+      "embedded_wrong_formula_controls": 4,
+      "ignored_golden_fields": []
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "root",
+      "mode": "normal",
+      "script": "check_inertial_waveform.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--data-dir",
+        "computed",
+        "--output",
+        "checked.json"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.535,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          },
+          "copy": {
+            "path": "normal/root/wrong_inverse_width_coefficient/check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          }
+        },
+        {
+          "source": {
+            "path": "inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          },
+          "copy": {
+            "path": "normal/root/wrong_inverse_width_coefficient/inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          }
+        },
+        {
+          "source": {
+            "path": "compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          },
+          "copy": {
+            "path": "normal/root/wrong_inverse_width_coefficient/compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          }
+        },
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "normal/root/wrong_inverse_width_coefficient/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          },
+          "copy": {
+            "path": "normal/root/wrong_inverse_width_coefficient/archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          },
+          "copy": {
+            "path": "normal/root/wrong_inverse_width_coefficient/inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "normal/root/wrong_inverse_width_coefficient/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          },
+          "copy": {
+            "path": "normal/root/wrong_inverse_width_coefficient/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          },
+          "copy": {
+            "path": "normal/root/wrong_inverse_width_coefficient/computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "normal/root/wrong_inverse_width_coefficient/execution.log",
+        "bytes": 42,
+        "sha256": "4d94505abea067f18aa6c9078877ef6e3b32e7c381a35a91a7a5bab6214fdd0d"
+      },
+      "output": {
+        "path": "normal/root/wrong_inverse_width_coefficient/fresh.json",
+        "bytes": 301,
+        "sha256": "b61fb7eefac4d6d915655320b77df444a953def80d01099e9576670afcdd94f3"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": {
+        "source": {
+          "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "bytes": 10082,
+          "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+        },
+        "mutated": {
+          "path": "normal/root/wrong_inverse_width_coefficient/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "bytes": 10106,
+          "sha256": "056207c748dd50f6feb4daed24ae698f0ff2e9a1d08f54dab5cf1886802d847d"
+        },
+        "recipe": {
+          "checker": "root",
+          "name": "wrong_inverse_width_coefficient",
+          "reason": "correct inverse-width norm Jacobian",
+          "failure_format": "fail_line",
+          "target": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "json_path": [
+            "quadrature",
+            "C_interval"
+          ],
+          "transform": "multiply_by_ell_squared"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "wrong_inverse_width_coefficient",
+      "control_mechanism": "copied input/certificate bytes",
+      "expected_reason": "correct inverse-width norm Jacobian",
+      "reported_failure": "correct inverse-width norm Jacobian",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "root",
+      "mode": "normal",
+      "script": "check_inertial_waveform.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--data-dir",
+        "computed",
+        "--output",
+        "checked.json"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.174,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          },
+          "copy": {
+            "path": "normal/root/omit_incoming_velocity/check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          }
+        },
+        {
+          "source": {
+            "path": "inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          },
+          "copy": {
+            "path": "normal/root/omit_incoming_velocity/inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          }
+        },
+        {
+          "source": {
+            "path": "compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          },
+          "copy": {
+            "path": "normal/root/omit_incoming_velocity/compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          }
+        },
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "normal/root/omit_incoming_velocity/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          },
+          "copy": {
+            "path": "normal/root/omit_incoming_velocity/archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          },
+          "copy": {
+            "path": "normal/root/omit_incoming_velocity/inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "normal/root/omit_incoming_velocity/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          },
+          "copy": {
+            "path": "normal/root/omit_incoming_velocity/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          },
+          "copy": {
+            "path": "normal/root/omit_incoming_velocity/computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "normal/root/omit_incoming_velocity/execution.log",
+        "bytes": 51,
+        "sha256": "7b6049ebfd97672b0fe25cd0fb5ea1481f424e9a68d0cb88124061abd1e0fd6f"
+      },
+      "output": {
+        "path": "normal/root/omit_incoming_velocity/fresh.json",
+        "bytes": 319,
+        "sha256": "90fc9ac1f0146236993493930c3292c8e16d9a2cd327a3634ff56ba4fabf37f6"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": {
+        "source": {
+          "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "bytes": 10082,
+          "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+        },
+        "mutated": {
+          "path": "normal/root/omit_incoming_velocity/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "bytes": 10067,
+          "sha256": "afe484f010b47def11d95035d470fda25292784fecab249c1f074acdf696c698"
+        },
+        "recipe": {
+          "checker": "root",
+          "name": "omit_incoming_velocity",
+          "reason": "specified nonzero incoming velocity retained",
+          "failure_format": "fail_line",
+          "target": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "json_path": [
+            "state",
+            "initial_velocity"
+          ],
+          "value": "0"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "omit_incoming_velocity",
+      "control_mechanism": "copied input/certificate bytes",
+      "expected_reason": "specified nonzero incoming velocity retained",
+      "reported_failure": "specified nonzero incoming velocity retained",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "root",
+      "mode": "normal",
+      "script": "check_inertial_waveform.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--data-dir",
+        "computed",
+        "--output",
+        "checked.json"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.27,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          },
+          "copy": {
+            "path": "normal/root/claim_zero_uniqueness/check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          }
+        },
+        {
+          "source": {
+            "path": "inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          },
+          "copy": {
+            "path": "normal/root/claim_zero_uniqueness/inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          }
+        },
+        {
+          "source": {
+            "path": "compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          },
+          "copy": {
+            "path": "normal/root/claim_zero_uniqueness/compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          }
+        },
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "normal/root/claim_zero_uniqueness/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          },
+          "copy": {
+            "path": "normal/root/claim_zero_uniqueness/archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          },
+          "copy": {
+            "path": "normal/root/claim_zero_uniqueness/inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "normal/root/claim_zero_uniqueness/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          },
+          "copy": {
+            "path": "normal/root/claim_zero_uniqueness/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          },
+          "copy": {
+            "path": "normal/root/claim_zero_uniqueness/computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "normal/root/claim_zero_uniqueness/execution.log",
+        "bytes": 52,
+        "sha256": "6d40e0f07dc2dc63d7121322bf17f73619edd5bdb54cc8c5d7bd7cb6f1ba6459"
+      },
+      "output": {
+        "path": "normal/root/claim_zero_uniqueness/fresh.json",
+        "bytes": 321,
+        "sha256": "adb2d9b7b6560ebf4d5629fb11e55807f8ab5e8ad039307f49c8a66140d3e335"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": {
+        "source": {
+          "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "bytes": 10082,
+          "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+        },
+        "mutated": {
+          "path": "normal/root/claim_zero_uniqueness/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "bytes": 10081,
+          "sha256": "85a11a57520f7d7817eca2f15ba5fe0cdfec8bde799ae28fa31c6a1d815584d4"
+        },
+        "recipe": {
+          "checker": "root",
+          "name": "claim_zero_uniqueness",
+          "reason": "only existence claimed for two zero intervals",
+          "failure_format": "fail_line",
+          "target": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "json_path": [
+            "zero_uniqueness_claimed"
+          ],
+          "value": true
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "claim_zero_uniqueness",
+      "control_mechanism": "copied input/certificate bytes",
+      "expected_reason": "only existence claimed for two zero intervals",
+      "reported_failure": "only existence claimed for two zero intervals",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "root",
+      "mode": "normal",
+      "script": "check_inertial_waveform.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--data-dir",
+        "computed",
+        "--output",
+        "checked.json"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.22,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          },
+          "copy": {
+            "path": "normal/root/shorten_signed_tail_domain/check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          }
+        },
+        {
+          "source": {
+            "path": "inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          },
+          "copy": {
+            "path": "normal/root/shorten_signed_tail_domain/inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          }
+        },
+        {
+          "source": {
+            "path": "compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          },
+          "copy": {
+            "path": "normal/root/shorten_signed_tail_domain/compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          }
+        },
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "normal/root/shorten_signed_tail_domain/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          },
+          "copy": {
+            "path": "normal/root/shorten_signed_tail_domain/archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          },
+          "copy": {
+            "path": "normal/root/shorten_signed_tail_domain/inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "normal/root/shorten_signed_tail_domain/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          },
+          "copy": {
+            "path": "normal/root/shorten_signed_tail_domain/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          },
+          "copy": {
+            "path": "normal/root/shorten_signed_tail_domain/computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "normal/root/shorten_signed_tail_domain/execution.log",
+        "bytes": 41,
+        "sha256": "9c58e81ed700bf412e2ecbf21aa2818974f005e86f10d620b67bdc7572909e75"
+      },
+      "output": {
+        "path": "normal/root/shorten_signed_tail_domain/fresh.json",
+        "bytes": 299,
+        "sha256": "9489de9bb483b7e72289dc2c413429fdc850f353c48b36ff2abc67a8070dc7e6"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": {
+        "source": {
+          "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "bytes": 10082,
+          "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+        },
+        "mutated": {
+          "path": "normal/root/shorten_signed_tail_domain/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "bytes": 10084,
+          "sha256": "6fb54a5e50dc81ef367b18cdd09f2378871c9dda6954b2efea5c7bbb6c4bb836"
+        },
+        "recipe": {
+          "checker": "root",
+          "name": "shorten_signed_tail_domain",
+          "reason": "strict nonzero signed tail theorem",
+          "failure_format": "fail_line",
+          "target": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "json_path": [
+            "tail_theorem",
+            "domain"
+          ],
+          "value": [
+            2,
+            2.9
+          ]
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "shorten_signed_tail_domain",
+      "control_mechanism": "copied input/certificate bytes",
+      "expected_reason": "strict nonzero signed tail theorem",
+      "reported_failure": "strict nonzero signed tail theorem",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "root",
+      "mode": "normal",
+      "script": "check_inertial_waveform.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--data-dir",
+        "computed",
+        "--output",
+        "checked.json"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.122,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          },
+          "copy": {
+            "path": "normal/root/alter_complete_csv/check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          }
+        },
+        {
+          "source": {
+            "path": "inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          },
+          "copy": {
+            "path": "normal/root/alter_complete_csv/inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          }
+        },
+        {
+          "source": {
+            "path": "compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          },
+          "copy": {
+            "path": "normal/root/alter_complete_csv/compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          }
+        },
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "normal/root/alter_complete_csv/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          },
+          "copy": {
+            "path": "normal/root/alter_complete_csv/archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          },
+          "copy": {
+            "path": "normal/root/alter_complete_csv/inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "normal/root/alter_complete_csv/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          },
+          "copy": {
+            "path": "normal/root/alter_complete_csv/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          },
+          "copy": {
+            "path": "normal/root/alter_complete_csv/computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "normal/root/alter_complete_csv/execution.log",
+        "bytes": 33,
+        "sha256": "58e3012e8995528d99c4fe3698751b4c8a950a7e87b7bf54d7196e1e2146ee78"
+      },
+      "output": {
+        "path": "normal/root/alter_complete_csv/fresh.json",
+        "bytes": 283,
+        "sha256": "99bbc5749efaf47148316b80afced352bad4ec4bd5c68776485655be7e1d4861"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": {
+        "source": {
+          "path": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+          "bytes": 1043169,
+          "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+        },
+        "mutated": {
+          "path": "normal/root/alter_complete_csv/computed/INERTIAL_WAVEFORM_CELLS.csv",
+          "bytes": 1043170,
+          "sha256": "977de9b62a008310c7c3961f2ba982ce47b9f98183ecabcfa2a8e04bc9fd50ea"
+        },
+        "recipe": {
+          "checker": "root",
+          "name": "alter_complete_csv",
+          "reason": "complete CSV authenticated",
+          "failure_format": "fail_line",
+          "target": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+          "append": "\n"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "alter_complete_csv",
+      "control_mechanism": "copied input/certificate bytes",
+      "expected_reason": "complete CSV authenticated",
+      "reported_failure": "complete CSV authenticated",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "sol",
+      "mode": "normal",
+      "script": "sol/inertial_comparator.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--source-root",
+        ".",
+        "--mass-cells",
+        "64",
+        "--fault",
+        "reverse_kernel_initial"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.175,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "normal/sol/reverse_kernel_initial/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "normal/sol/reverse_kernel_initial/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "normal/sol/reverse_kernel_initial/execution.log",
+        "bytes": 63,
+        "sha256": "4ab2942e927d42a886f99aa21d36814e794c5bbfa6c9f214b2da667c9e6009d5"
+      },
+      "output": {
+        "path": "normal/sol/reverse_kernel_initial/fresh.json",
+        "bytes": 343,
+        "sha256": "1ed696944c9e5f0a63407ba8a03651422ead0f2d3e9210c0e031d8589357d759"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": null,
+      "control": "reverse_kernel_initial",
+      "control_mechanism": "production formula CLI injection",
+      "expected_reason": "kernel derivative strictly positive on complete interval",
+      "reported_failure": "kernel derivative strictly positive on complete interval",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "sol",
+      "mode": "normal",
+      "script": "sol/inertial_comparator.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--source-root",
+        ".",
+        "--mass-cells",
+        "64",
+        "--fault",
+        "reverse_kernel_sign"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.178,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "normal/sol/reverse_kernel_sign/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "normal/sol/reverse_kernel_sign/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "normal/sol/reverse_kernel_sign/execution.log",
+        "bytes": 64,
+        "sha256": "143039e48ccb9e8d73174a826bd442dfbc0a77c0075daada5f15390d20eb0004"
+      },
+      "output": {
+        "path": "normal/sol/reverse_kernel_sign/fresh.json",
+        "bytes": 345,
+        "sha256": "f250d4bbc6327bfd860bd3f6a6d4e08580fc99c2d9b8e417eb35180ccd85221d"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": null,
+      "control": "reverse_kernel_sign",
+      "control_mechanism": "production formula CLI injection",
+      "expected_reason": "positive postpulse integrand on full continuous rectangle",
+      "reported_failure": "positive postpulse integrand on full continuous rectangle",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "sol",
+      "mode": "normal",
+      "script": "sol/inertial_comparator.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--source-root",
+        ".",
+        "--mass-cells",
+        "64",
+        "--fault",
+        "omit_local_inertia"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.168,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "normal/sol/omit_local_inertia/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "normal/sol/omit_local_inertia/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "normal/sol/omit_local_inertia/execution.log",
+        "bytes": 55,
+        "sha256": "bcd3ca3b3b54ef224a70f1580fff21a92720a2e3beb787ef522c41d4a614b827"
+      },
+      "output": {
+        "path": "normal/sol/omit_local_inertia/fresh.json",
+        "bytes": 327,
+        "sha256": "8ea0d8f0cdc8fe9cb8fe56c9308784e25cf4355ed9016b8a97315e0e89d76a10"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": null,
+      "control": "omit_local_inertia",
+      "control_mechanism": "production formula CLI injection",
+      "expected_reason": "center retains negative local inertia correction",
+      "reported_failure": "center retains negative local inertia correction",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "sol",
+      "mode": "normal",
+      "script": "sol/inertial_comparator.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--source-root",
+        ".",
+        "--mass-cells",
+        "64",
+        "--fault",
+        "reverse_q_derivative"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.221,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "normal/sol/reverse_q_derivative/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "normal/sol/reverse_q_derivative/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "normal/sol/reverse_q_derivative/execution.log",
+        "bytes": 29,
+        "sha256": "a7163f6efd7791639cb657098df7a1ad889a71a9899ca9fdfae42b5da6f449d4"
+      },
+      "output": {
+        "path": "normal/sol/reverse_q_derivative/fresh.json",
+        "bytes": 275,
+        "sha256": "d2405b01ec71bb107df5d559adcdb06c23efb1a600dec55a53b6712cbfae08c5"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": null,
+      "control": "reverse_q_derivative",
+      "control_mechanism": "production formula CLI injection",
+      "expected_reason": "positive incoming lobe",
+      "reported_failure": "positive incoming lobe",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "sol",
+      "mode": "normal",
+      "script": "sol/inertial_comparator.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--source-root",
+        ".",
+        "--mass-cells",
+        "64"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.203,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "normal/sol/alter_authenticated_shell/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "normal/sol/alter_authenticated_shell/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "normal/sol/alter_authenticated_shell/execution.log",
+        "bytes": 40,
+        "sha256": "ef03a6936a003181f166905151a403fe748d847f26a1fb8a839cf490439e6e1b"
+      },
+      "output": {
+        "path": "normal/sol/alter_authenticated_shell/fresh.json",
+        "bytes": 297,
+        "sha256": "a03e235d2c58d883b6ec1a203d4b53446a3ee47924b73903ffb5e7e868457d16"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": {
+        "source": {
+          "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+          "bytes": 19535,
+          "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+        },
+        "mutated": {
+          "path": "normal/sol/alter_authenticated_shell/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+          "bytes": 19536,
+          "sha256": "3c6a2e95be50493fd949e1684cffdea9f9bc11f9076307bca07566316d6c52a1"
+        },
+        "recipe": {
+          "checker": "sol",
+          "name": "alter_authenticated_shell",
+          "reason": "shell input authentication failed",
+          "arguments": [
+            "--source-root",
+            ".",
+            "--mass-cells",
+            "64"
+          ],
+          "failure_format": "fail_line",
+          "target": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+          "append": "\n"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "alter_authenticated_shell",
+      "control_mechanism": "copied input/certificate bytes",
+      "expected_reason": "shell input authentication failed",
+      "reported_failure": "shell input authentication failed",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "archive",
+      "mode": "normal",
+      "script": "archive/bound_background_derivatives.py",
+      "flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [],
+      "exit_code": 1,
+      "wall_seconds": 0.123,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "archive/bound_background_derivatives.py",
+            "bytes": 12002,
+            "sha256": "4e13079e7d11f92c87695841cdccef01b51d948d4476af66264c23d6fc3197d4"
+          },
+          "copy": {
+            "path": "normal/archive/alter_retained_coefficient_certificate/archive/bound_background_derivatives.py",
+            "bytes": 12002,
+            "sha256": "4e13079e7d11f92c87695841cdccef01b51d948d4476af66264c23d6fc3197d4"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/inputs/OCT11_JACOBI_ENDPOINT_MONOTONICITY.md",
+            "bytes": 24586,
+            "sha256": "f1e2571a551ec122dd7755a13145bae73bd92bd7f7426bdc3002e2f52f8dbfc8"
+          },
+          "copy": {
+            "path": "normal/archive/alter_retained_coefficient_certificate/archive/inputs/OCT11_JACOBI_ENDPOINT_MONOTONICITY.md",
+            "bytes": 24586,
+            "sha256": "f1e2571a551ec122dd7755a13145bae73bd92bd7f7426bdc3002e2f52f8dbfc8"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/inputs/OCT11_RESCALED_BOUND_CERTIFICATE.json",
+            "bytes": 125471,
+            "sha256": "22c6cd4e505ee2c7e549420355b94a5b3c079ebb6945314f5b285c13bb67835d"
+          },
+          "copy": {
+            "path": "normal/archive/alter_retained_coefficient_certificate/archive/inputs/OCT11_RESCALED_BOUND_CERTIFICATE.json",
+            "bytes": 125471,
+            "sha256": "22c6cd4e505ee2c7e549420355b94a5b3c079ebb6945314f5b285c13bb67835d"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/inputs/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "normal/archive/alter_retained_coefficient_certificate/archive/inputs/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "normal/archive/alter_retained_coefficient_certificate/execution.log",
+        "bytes": 850,
+        "sha256": "05c01fb5df8cab6d3b432da9efcc0ea2ce5a56ca18c5884a8b9530fd3351d9e7"
+      },
+      "output": {
+        "path": "normal/archive/alter_retained_coefficient_certificate/fresh.json",
+        "bytes": 1143,
+        "sha256": "3b36a709c9c343e9714827d1341d930521fe39572ded67614b7c9962709d1c38"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": {
+        "source": {
+          "path": "archive/inputs/OCT11_RESCALED_BOUND_CERTIFICATE.json",
+          "bytes": 125471,
+          "sha256": "22c6cd4e505ee2c7e549420355b94a5b3c079ebb6945314f5b285c13bb67835d"
+        },
+        "mutated": {
+          "path": "normal/archive/alter_retained_coefficient_certificate/archive/inputs/OCT11_RESCALED_BOUND_CERTIFICATE.json",
+          "bytes": 125472,
+          "sha256": "23e993b32a1884c0fca258e04474cc2066b187fc69a9d5df2d5557385981a516"
+        },
+        "recipe": {
+          "checker": "archive",
+          "name": "alter_retained_coefficient_certificate",
+          "reason": "Input pin differs: OCT11_RESCALED_BOUND_CERTIFICATE.json",
+          "failure_format": "traceback",
+          "exception": "ValueError",
+          "target": "archive/inputs/OCT11_RESCALED_BOUND_CERTIFICATE.json",
+          "append": "\n"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "alter_retained_coefficient_certificate",
+      "control_mechanism": "copied input/certificate bytes",
+      "expected_reason": "Input pin differs: OCT11_RESCALED_BOUND_CERTIFICATE.json",
+      "reported_failure": "Input pin differs: OCT11_RESCALED_BOUND_CERTIFICATE.json",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "positive",
+      "checker": "root",
+      "mode": "optimized",
+      "script": "check_inertial_waveform.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--data-dir",
+        "computed",
+        "--output",
+        "checked.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.777,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          },
+          "copy": {
+            "path": "optimized/root/positive/check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          }
+        },
+        {
+          "source": {
+            "path": "inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          },
+          "copy": {
+            "path": "optimized/root/positive/inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          }
+        },
+        {
+          "source": {
+            "path": "compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          },
+          "copy": {
+            "path": "optimized/root/positive/compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          }
+        },
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "optimized/root/positive/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          },
+          "copy": {
+            "path": "optimized/root/positive/archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          },
+          "copy": {
+            "path": "optimized/root/positive/inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "optimized/root/positive/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          },
+          "copy": {
+            "path": "optimized/root/positive/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          },
+          "copy": {
+            "path": "optimized/root/positive/computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "optimized/root/positive/execution.log",
+        "bytes": 2058,
+        "sha256": "17a33ad5bb757d9eb3893f9da153e5ff700c7e436b9b1835b63be166c320e439"
+      },
+      "output": {
+        "path": "optimized/root/positive/fresh.json",
+        "bytes": 2058,
+        "sha256": "17a33ad5bb757d9eb3893f9da153e5ff700c7e436b9b1835b63be166c320e439"
+      },
+      "additional_outputs": [],
+      "output_origin": "checked.json",
+      "golden": {
+        "path": "computed/CHECK_INERTIAL_WAVEFORM.json",
+        "bytes": 2058,
+        "sha256": "17a33ad5bb757d9eb3893f9da153e5ff700c7e436b9b1835b63be166c320e439"
+      },
+      "scientific_output_matches": true,
+      "complete_generated_json_bytes_equal": false,
+      "finite_positive_check_groups": 31,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_golden_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "cells",
+      "mode": "optimized",
+      "script": "referee/check_independent_cells.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--data-dir",
+        "computed",
+        "--output",
+        "checked.json"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 16.956,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "referee/check_independent_cells.py",
+            "bytes": 9289,
+            "sha256": "c8935079cc4900682eeb1f9f449e32ef91096fb0131d91be95b07bf3068e0e35"
+          },
+          "copy": {
+            "path": "optimized/cells/positive/referee/check_independent_cells.py",
+            "bytes": 9289,
+            "sha256": "c8935079cc4900682eeb1f9f449e32ef91096fb0131d91be95b07bf3068e0e35"
+          }
+        },
+        {
+          "source": {
+            "path": "inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          },
+          "copy": {
+            "path": "optimized/cells/positive/inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          }
+        },
+        {
+          "source": {
+            "path": "compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          },
+          "copy": {
+            "path": "optimized/cells/positive/compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          }
+        },
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "optimized/cells/positive/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          },
+          "copy": {
+            "path": "optimized/cells/positive/archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          },
+          "copy": {
+            "path": "optimized/cells/positive/inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "optimized/cells/positive/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        },
+        {
+          "source": {
+            "path": "referee/INDEPENDENT_INERTIAL_BOUND_NORMAL.json",
+            "bytes": 3117,
+            "sha256": "460d2a09aab3f2450772787911667937684f68861a5509a4f441cfdd16a89a51"
+          },
+          "copy": {
+            "path": "optimized/cells/positive/referee/INDEPENDENT_INERTIAL_BOUND_NORMAL.json",
+            "bytes": 3117,
+            "sha256": "460d2a09aab3f2450772787911667937684f68861a5509a4f441cfdd16a89a51"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          },
+          "copy": {
+            "path": "optimized/cells/positive/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          },
+          "copy": {
+            "path": "optimized/cells/positive/computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "optimized/cells/positive/execution.log",
+        "bytes": 152,
+        "sha256": "cd42ddcb08101254aaef1e10178282265b5cb6a150d09e209d80d948b6a50a29"
+      },
+      "output": {
+        "path": "optimized/cells/positive/fresh.json",
+        "bytes": 2516,
+        "sha256": "84c36e423a2731b6737cd094de92b0f305522bc0f2b1bf0d691f5c0c39b4eb6d"
+      },
+      "additional_outputs": [],
+      "output_origin": "checked.json",
+      "golden": {
+        "path": "referee/INDEPENDENT_CELLS_OPTIMIZED.json",
+        "bytes": 2516,
+        "sha256": "84c36e423a2731b6737cd094de92b0f305522bc0f2b1bf0d691f5c0c39b4eb6d"
+      },
+      "scientific_output_matches": true,
+      "complete_generated_json_bytes_equal": false,
+      "finite_positive_check_groups": 18,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_golden_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "generator",
+      "mode": "optimized",
+      "script": "compute_inertial_waveform.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output-dir",
+        "generated"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 36.331,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          },
+          "copy": {
+            "path": "optimized/generator/positive/compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          }
+        },
+        {
+          "source": {
+            "path": "inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          },
+          "copy": {
+            "path": "optimized/generator/positive/inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          }
+        },
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "optimized/generator/positive/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          },
+          "copy": {
+            "path": "optimized/generator/positive/archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          },
+          "copy": {
+            "path": "optimized/generator/positive/inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "optimized/generator/positive/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "optimized/generator/positive/execution.log",
+        "bytes": 405,
+        "sha256": "657867a141cec8cbc1cb69d2934c027a03129317ee87a1dd46a78ff73a4101dd"
+      },
+      "output": {
+        "path": "optimized/generator/positive/fresh.json",
+        "bytes": 10082,
+        "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+      },
+      "additional_outputs": [
+        {
+          "output": {
+            "path": "optimized/generator/positive/generated/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          },
+          "golden": {
+            "path": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          },
+          "complete_bytes_equal": true
+        }
+      ],
+      "output_origin": "generated/INERTIAL_WAVEFORM_ENCLOSURE.json",
+      "golden": {
+        "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+        "bytes": 10082,
+        "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+      },
+      "scientific_output_matches": true,
+      "complete_generated_json_bytes_equal": true,
+      "finite_positive_check_groups": 0,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_golden_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "sol",
+      "mode": "optimized",
+      "script": "sol/inertial_comparator.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--source-root",
+        "."
+      ],
+      "exit_code": 0,
+      "wall_seconds": 6.454,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "optimized/sol/positive/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "optimized/sol/positive/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "optimized/sol/positive/execution.log",
+        "bytes": 3756,
+        "sha256": "31fc27fb83c06ad5b08460fb7c459a89dea41520a035d6e91487b1a697ca81a0"
+      },
+      "output": {
+        "path": "optimized/sol/positive/fresh.json",
+        "bytes": 3756,
+        "sha256": "31fc27fb83c06ad5b08460fb7c459a89dea41520a035d6e91487b1a697ca81a0"
+      },
+      "additional_outputs": [],
+      "output_origin": "complete stdout JSON",
+      "golden": {
+        "path": "sol/COMPARATOR_OPTIMIZED.json",
+        "bytes": 3756,
+        "sha256": "31fc27fb83c06ad5b08460fb7c459a89dea41520a035d6e91487b1a697ca81a0"
+      },
+      "scientific_output_matches": true,
+      "complete_generated_json_bytes_equal": false,
+      "finite_positive_check_groups": 13,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_golden_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "astra",
+      "mode": "optimized",
+      "script": "astra/check_inertial_error.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--source-root",
+        "."
+      ],
+      "exit_code": 0,
+      "wall_seconds": 1.333,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "astra/check_inertial_error.py",
+            "bytes": 11391,
+            "sha256": "43d0926a027d73506bfb2914e91afb6d4233e645d56a1e480b2fafe304613ce4"
+          },
+          "copy": {
+            "path": "optimized/astra/positive/astra/check_inertial_error.py",
+            "bytes": 11391,
+            "sha256": "43d0926a027d73506bfb2914e91afb6d4233e645d56a1e480b2fafe304613ce4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "optimized/astra/positive/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ACTUAL_BACKGROUND_AND_RIGOROUS_COLLAR_BOUNDS.md",
+            "bytes": 9297,
+            "sha256": "0832a16c4bdf18cc188861a2c2860e7e6ff736dec39426d6ca7c589dc0434d5c"
+          },
+          "copy": {
+            "path": "optimized/astra/positive/inputs/previous/archive/ACTUAL_BACKGROUND_AND_RIGOROUS_COLLAR_BOUNDS.md",
+            "bytes": 9297,
+            "sha256": "0832a16c4bdf18cc188861a2c2860e7e6ff736dec39426d6ca7c589dc0434d5c"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "optimized/astra/positive/execution.log",
+        "bytes": 9365,
+        "sha256": "182c747e00e55628aea451a3b0a8967d17af7931005bd6e505667c7721893334"
+      },
+      "output": {
+        "path": "optimized/astra/positive/fresh.json",
+        "bytes": 9365,
+        "sha256": "182c747e00e55628aea451a3b0a8967d17af7931005bd6e505667c7721893334"
+      },
+      "additional_outputs": [],
+      "output_origin": "complete stdout JSON",
+      "golden": {
+        "path": "astra/INERTIAL_ERROR_OPTIMIZED.json",
+        "bytes": 9365,
+        "sha256": "182c747e00e55628aea451a3b0a8967d17af7931005bd6e505667c7721893334"
+      },
+      "scientific_output_matches": true,
+      "complete_generated_json_bytes_equal": false,
+      "finite_positive_check_groups": 23,
+      "embedded_wrong_formula_controls": 5,
+      "ignored_golden_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "referee",
+      "mode": "optimized",
+      "script": "referee/check_independent_inertial_bound.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--source-root",
+        "."
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.927,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "referee/check_independent_inertial_bound.py",
+            "bytes": 6178,
+            "sha256": "1b091a656c4f7e42911376e9853971c389dee9ae09f6330e31caf3b2d1e3c4be"
+          },
+          "copy": {
+            "path": "optimized/referee/positive/referee/check_independent_inertial_bound.py",
+            "bytes": 6178,
+            "sha256": "1b091a656c4f7e42911376e9853971c389dee9ae09f6330e31caf3b2d1e3c4be"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          },
+          "copy": {
+            "path": "optimized/referee/positive/archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/inputs/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "optimized/referee/positive/archive/inputs/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "optimized/referee/positive/execution.log",
+        "bytes": 3117,
+        "sha256": "1e931b771972105a1b11a694a9eea2a6ba8797eafee176f8c104aff8a0b55e75"
+      },
+      "output": {
+        "path": "optimized/referee/positive/fresh.json",
+        "bytes": 3117,
+        "sha256": "1e931b771972105a1b11a694a9eea2a6ba8797eafee176f8c104aff8a0b55e75"
+      },
+      "additional_outputs": [],
+      "output_origin": "complete stdout JSON",
+      "golden": {
+        "path": "referee/INDEPENDENT_INERTIAL_BOUND_OPTIMIZED.json",
+        "bytes": 3117,
+        "sha256": "1e931b771972105a1b11a694a9eea2a6ba8797eafee176f8c104aff8a0b55e75"
+      },
+      "scientific_output_matches": true,
+      "complete_generated_json_bytes_equal": false,
+      "finite_positive_check_groups": 21,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_golden_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "archive",
+      "mode": "optimized",
+      "script": "archive/bound_background_derivatives.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [],
+      "exit_code": 0,
+      "wall_seconds": 1.298,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "archive/bound_background_derivatives.py",
+            "bytes": 12002,
+            "sha256": "4e13079e7d11f92c87695841cdccef01b51d948d4476af66264c23d6fc3197d4"
+          },
+          "copy": {
+            "path": "optimized/archive/positive/archive/bound_background_derivatives.py",
+            "bytes": 12002,
+            "sha256": "4e13079e7d11f92c87695841cdccef01b51d948d4476af66264c23d6fc3197d4"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/inputs/OCT11_JACOBI_ENDPOINT_MONOTONICITY.md",
+            "bytes": 24586,
+            "sha256": "f1e2571a551ec122dd7755a13145bae73bd92bd7f7426bdc3002e2f52f8dbfc8"
+          },
+          "copy": {
+            "path": "optimized/archive/positive/archive/inputs/OCT11_JACOBI_ENDPOINT_MONOTONICITY.md",
+            "bytes": 24586,
+            "sha256": "f1e2571a551ec122dd7755a13145bae73bd92bd7f7426bdc3002e2f52f8dbfc8"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/inputs/OCT11_RESCALED_BOUND_CERTIFICATE.json",
+            "bytes": 125471,
+            "sha256": "22c6cd4e505ee2c7e549420355b94a5b3c079ebb6945314f5b285c13bb67835d"
+          },
+          "copy": {
+            "path": "optimized/archive/positive/archive/inputs/OCT11_RESCALED_BOUND_CERTIFICATE.json",
+            "bytes": 125471,
+            "sha256": "22c6cd4e505ee2c7e549420355b94a5b3c079ebb6945314f5b285c13bb67835d"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/inputs/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "optimized/archive/positive/archive/inputs/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "optimized/archive/positive/execution.log",
+        "bytes": 1540,
+        "sha256": "2ab9357f0dc11105b0d6bbf442625d6a7a2b50886d39d35612b407f66bc39075"
+      },
+      "output": {
+        "path": "optimized/archive/positive/fresh.json",
+        "bytes": 21897,
+        "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+      },
+      "additional_outputs": [],
+      "output_origin": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+      "golden": {
+        "path": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+        "bytes": 21897,
+        "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+      },
+      "scientific_output_matches": true,
+      "complete_generated_json_bytes_equal": true,
+      "finite_positive_check_groups": 0,
+      "embedded_wrong_formula_controls": 0,
+      "ignored_golden_fields": []
+    },
+    {
+      "kind": "positive",
+      "checker": "identities",
+      "mode": "optimized",
+      "script": "archive/check_background_derivative_identities.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [],
+      "exit_code": 0,
+      "wall_seconds": 9.286,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "archive/check_background_derivative_identities.py",
+            "bytes": 2400,
+            "sha256": "3edc99344bb70c4e2dcadfb61d3906fca069761673c9ac453c3bde1387167c75"
+          },
+          "copy": {
+            "path": "optimized/identities/positive/archive/check_background_derivative_identities.py",
+            "bytes": 2400,
+            "sha256": "3edc99344bb70c4e2dcadfb61d3906fca069761673c9ac453c3bde1387167c75"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "optimized/identities/positive/execution.log",
+        "bytes": 692,
+        "sha256": "50c21b59d4146cf93cee2ae8ec51947a3cae5fb4763ec8c53448088f9485f61e"
+      },
+      "output": {
+        "path": "optimized/identities/positive/fresh.json",
+        "bytes": 692,
+        "sha256": "50c21b59d4146cf93cee2ae8ec51947a3cae5fb4763ec8c53448088f9485f61e"
+      },
+      "additional_outputs": [],
+      "output_origin": "archive/BACKGROUND_DERIVATIVE_IDENTITY_CHECK.json",
+      "golden": {
+        "path": "archive/BACKGROUND_DERIVATIVE_IDENTITY_CHECK.json",
+        "bytes": 692,
+        "sha256": "50c21b59d4146cf93cee2ae8ec51947a3cae5fb4763ec8c53448088f9485f61e"
+      },
+      "scientific_output_matches": true,
+      "complete_generated_json_bytes_equal": true,
+      "finite_positive_check_groups": 6,
+      "embedded_wrong_formula_controls": 4,
+      "ignored_golden_fields": []
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "root",
+      "mode": "optimized",
+      "script": "check_inertial_waveform.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--data-dir",
+        "computed",
+        "--output",
+        "checked.json"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.625,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          },
+          "copy": {
+            "path": "optimized/root/wrong_inverse_width_coefficient/check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          }
+        },
+        {
+          "source": {
+            "path": "inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          },
+          "copy": {
+            "path": "optimized/root/wrong_inverse_width_coefficient/inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          }
+        },
+        {
+          "source": {
+            "path": "compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          },
+          "copy": {
+            "path": "optimized/root/wrong_inverse_width_coefficient/compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          }
+        },
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "optimized/root/wrong_inverse_width_coefficient/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          },
+          "copy": {
+            "path": "optimized/root/wrong_inverse_width_coefficient/archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          },
+          "copy": {
+            "path": "optimized/root/wrong_inverse_width_coefficient/inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "optimized/root/wrong_inverse_width_coefficient/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          },
+          "copy": {
+            "path": "optimized/root/wrong_inverse_width_coefficient/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          },
+          "copy": {
+            "path": "optimized/root/wrong_inverse_width_coefficient/computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "optimized/root/wrong_inverse_width_coefficient/execution.log",
+        "bytes": 42,
+        "sha256": "4d94505abea067f18aa6c9078877ef6e3b32e7c381a35a91a7a5bab6214fdd0d"
+      },
+      "output": {
+        "path": "optimized/root/wrong_inverse_width_coefficient/fresh.json",
+        "bytes": 301,
+        "sha256": "b61fb7eefac4d6d915655320b77df444a953def80d01099e9576670afcdd94f3"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": {
+        "source": {
+          "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "bytes": 10082,
+          "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+        },
+        "mutated": {
+          "path": "optimized/root/wrong_inverse_width_coefficient/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "bytes": 10106,
+          "sha256": "056207c748dd50f6feb4daed24ae698f0ff2e9a1d08f54dab5cf1886802d847d"
+        },
+        "recipe": {
+          "checker": "root",
+          "name": "wrong_inverse_width_coefficient",
+          "reason": "correct inverse-width norm Jacobian",
+          "failure_format": "fail_line",
+          "target": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "json_path": [
+            "quadrature",
+            "C_interval"
+          ],
+          "transform": "multiply_by_ell_squared"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "wrong_inverse_width_coefficient",
+      "control_mechanism": "copied input/certificate bytes",
+      "expected_reason": "correct inverse-width norm Jacobian",
+      "reported_failure": "correct inverse-width norm Jacobian",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "root",
+      "mode": "optimized",
+      "script": "check_inertial_waveform.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--data-dir",
+        "computed",
+        "--output",
+        "checked.json"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.47,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          },
+          "copy": {
+            "path": "optimized/root/omit_incoming_velocity/check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          }
+        },
+        {
+          "source": {
+            "path": "inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          },
+          "copy": {
+            "path": "optimized/root/omit_incoming_velocity/inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          }
+        },
+        {
+          "source": {
+            "path": "compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          },
+          "copy": {
+            "path": "optimized/root/omit_incoming_velocity/compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          }
+        },
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "optimized/root/omit_incoming_velocity/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          },
+          "copy": {
+            "path": "optimized/root/omit_incoming_velocity/archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          },
+          "copy": {
+            "path": "optimized/root/omit_incoming_velocity/inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "optimized/root/omit_incoming_velocity/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          },
+          "copy": {
+            "path": "optimized/root/omit_incoming_velocity/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          },
+          "copy": {
+            "path": "optimized/root/omit_incoming_velocity/computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "optimized/root/omit_incoming_velocity/execution.log",
+        "bytes": 51,
+        "sha256": "7b6049ebfd97672b0fe25cd0fb5ea1481f424e9a68d0cb88124061abd1e0fd6f"
+      },
+      "output": {
+        "path": "optimized/root/omit_incoming_velocity/fresh.json",
+        "bytes": 319,
+        "sha256": "90fc9ac1f0146236993493930c3292c8e16d9a2cd327a3634ff56ba4fabf37f6"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": {
+        "source": {
+          "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "bytes": 10082,
+          "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+        },
+        "mutated": {
+          "path": "optimized/root/omit_incoming_velocity/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "bytes": 10067,
+          "sha256": "afe484f010b47def11d95035d470fda25292784fecab249c1f074acdf696c698"
+        },
+        "recipe": {
+          "checker": "root",
+          "name": "omit_incoming_velocity",
+          "reason": "specified nonzero incoming velocity retained",
+          "failure_format": "fail_line",
+          "target": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "json_path": [
+            "state",
+            "initial_velocity"
+          ],
+          "value": "0"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "omit_incoming_velocity",
+      "control_mechanism": "copied input/certificate bytes",
+      "expected_reason": "specified nonzero incoming velocity retained",
+      "reported_failure": "specified nonzero incoming velocity retained",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "root",
+      "mode": "optimized",
+      "script": "check_inertial_waveform.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--data-dir",
+        "computed",
+        "--output",
+        "checked.json"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.79,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          },
+          "copy": {
+            "path": "optimized/root/claim_zero_uniqueness/check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          }
+        },
+        {
+          "source": {
+            "path": "inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          },
+          "copy": {
+            "path": "optimized/root/claim_zero_uniqueness/inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          }
+        },
+        {
+          "source": {
+            "path": "compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          },
+          "copy": {
+            "path": "optimized/root/claim_zero_uniqueness/compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          }
+        },
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "optimized/root/claim_zero_uniqueness/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          },
+          "copy": {
+            "path": "optimized/root/claim_zero_uniqueness/archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          },
+          "copy": {
+            "path": "optimized/root/claim_zero_uniqueness/inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "optimized/root/claim_zero_uniqueness/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          },
+          "copy": {
+            "path": "optimized/root/claim_zero_uniqueness/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          },
+          "copy": {
+            "path": "optimized/root/claim_zero_uniqueness/computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "optimized/root/claim_zero_uniqueness/execution.log",
+        "bytes": 52,
+        "sha256": "6d40e0f07dc2dc63d7121322bf17f73619edd5bdb54cc8c5d7bd7cb6f1ba6459"
+      },
+      "output": {
+        "path": "optimized/root/claim_zero_uniqueness/fresh.json",
+        "bytes": 321,
+        "sha256": "adb2d9b7b6560ebf4d5629fb11e55807f8ab5e8ad039307f49c8a66140d3e335"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": {
+        "source": {
+          "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "bytes": 10082,
+          "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+        },
+        "mutated": {
+          "path": "optimized/root/claim_zero_uniqueness/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "bytes": 10081,
+          "sha256": "85a11a57520f7d7817eca2f15ba5fe0cdfec8bde799ae28fa31c6a1d815584d4"
+        },
+        "recipe": {
+          "checker": "root",
+          "name": "claim_zero_uniqueness",
+          "reason": "only existence claimed for two zero intervals",
+          "failure_format": "fail_line",
+          "target": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "json_path": [
+            "zero_uniqueness_claimed"
+          ],
+          "value": true
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "claim_zero_uniqueness",
+      "control_mechanism": "copied input/certificate bytes",
+      "expected_reason": "only existence claimed for two zero intervals",
+      "reported_failure": "only existence claimed for two zero intervals",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "root",
+      "mode": "optimized",
+      "script": "check_inertial_waveform.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--data-dir",
+        "computed",
+        "--output",
+        "checked.json"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.628,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          },
+          "copy": {
+            "path": "optimized/root/shorten_signed_tail_domain/check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          }
+        },
+        {
+          "source": {
+            "path": "inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          },
+          "copy": {
+            "path": "optimized/root/shorten_signed_tail_domain/inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          }
+        },
+        {
+          "source": {
+            "path": "compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          },
+          "copy": {
+            "path": "optimized/root/shorten_signed_tail_domain/compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          }
+        },
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "optimized/root/shorten_signed_tail_domain/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          },
+          "copy": {
+            "path": "optimized/root/shorten_signed_tail_domain/archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          },
+          "copy": {
+            "path": "optimized/root/shorten_signed_tail_domain/inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "optimized/root/shorten_signed_tail_domain/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          },
+          "copy": {
+            "path": "optimized/root/shorten_signed_tail_domain/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          },
+          "copy": {
+            "path": "optimized/root/shorten_signed_tail_domain/computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "optimized/root/shorten_signed_tail_domain/execution.log",
+        "bytes": 41,
+        "sha256": "9c58e81ed700bf412e2ecbf21aa2818974f005e86f10d620b67bdc7572909e75"
+      },
+      "output": {
+        "path": "optimized/root/shorten_signed_tail_domain/fresh.json",
+        "bytes": 299,
+        "sha256": "9489de9bb483b7e72289dc2c413429fdc850f353c48b36ff2abc67a8070dc7e6"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": {
+        "source": {
+          "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "bytes": 10082,
+          "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+        },
+        "mutated": {
+          "path": "optimized/root/shorten_signed_tail_domain/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "bytes": 10084,
+          "sha256": "6fb54a5e50dc81ef367b18cdd09f2378871c9dda6954b2efea5c7bbb6c4bb836"
+        },
+        "recipe": {
+          "checker": "root",
+          "name": "shorten_signed_tail_domain",
+          "reason": "strict nonzero signed tail theorem",
+          "failure_format": "fail_line",
+          "target": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+          "json_path": [
+            "tail_theorem",
+            "domain"
+          ],
+          "value": [
+            2,
+            2.9
+          ]
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "shorten_signed_tail_domain",
+      "control_mechanism": "copied input/certificate bytes",
+      "expected_reason": "strict nonzero signed tail theorem",
+      "reported_failure": "strict nonzero signed tail theorem",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "root",
+      "mode": "optimized",
+      "script": "check_inertial_waveform.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--data-dir",
+        "computed",
+        "--output",
+        "checked.json"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.522,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          },
+          "copy": {
+            "path": "optimized/root/alter_complete_csv/check_inertial_waveform.py",
+            "bytes": 7349,
+            "sha256": "74caa1124455f3feab7046a97f4de84f59ba5c6018657232e11c9850547fb4c1"
+          }
+        },
+        {
+          "source": {
+            "path": "inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          },
+          "copy": {
+            "path": "optimized/root/alter_complete_csv/inertial_error_bounds.py",
+            "bytes": 2148,
+            "sha256": "85608392e93239e292ef064e8a455205cc56a6ad63cd0aa91a09f25abc6ecde4"
+          }
+        },
+        {
+          "source": {
+            "path": "compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          },
+          "copy": {
+            "path": "optimized/root/alter_complete_csv/compute_inertial_waveform.py",
+            "bytes": 8479,
+            "sha256": "4d6ac2cd4510df46d9596d61ec4a73fbd70401f1d61556681e5fa5a4649745e4"
+          }
+        },
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "optimized/root/alter_complete_csv/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          },
+          "copy": {
+            "path": "optimized/root/alter_complete_csv/archive/BACKGROUND_DERIVATIVE_BOUNDS.json",
+            "bytes": 21897,
+            "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          },
+          "copy": {
+            "path": "optimized/root/alter_complete_csv/inputs/previous/archive/PHYSICAL_GAIN_ENCLOSURE.json",
+            "bytes": 26539,
+            "sha256": "2a2dbc398ac2799418edcddeb917f4dcecce9b9a8049ac73b54541e617b616a4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "optimized/root/alter_complete_csv/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          },
+          "copy": {
+            "path": "optimized/root/alter_complete_csv/computed/INERTIAL_WAVEFORM_ENCLOSURE.json",
+            "bytes": 10082,
+            "sha256": "d2ffbcec5413580ff5703da58b062a9b83024431748fa40726555c09c2a968d8"
+          }
+        },
+        {
+          "source": {
+            "path": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          },
+          "copy": {
+            "path": "optimized/root/alter_complete_csv/computed/INERTIAL_WAVEFORM_CELLS.csv",
+            "bytes": 1043169,
+            "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "optimized/root/alter_complete_csv/execution.log",
+        "bytes": 33,
+        "sha256": "58e3012e8995528d99c4fe3698751b4c8a950a7e87b7bf54d7196e1e2146ee78"
+      },
+      "output": {
+        "path": "optimized/root/alter_complete_csv/fresh.json",
+        "bytes": 283,
+        "sha256": "99bbc5749efaf47148316b80afced352bad4ec4bd5c68776485655be7e1d4861"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": {
+        "source": {
+          "path": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+          "bytes": 1043169,
+          "sha256": "2f76fd1ae2195b445582a29a352bd76658dea17c2233cbb9acc395b255172bf7"
+        },
+        "mutated": {
+          "path": "optimized/root/alter_complete_csv/computed/INERTIAL_WAVEFORM_CELLS.csv",
+          "bytes": 1043170,
+          "sha256": "977de9b62a008310c7c3961f2ba982ce47b9f98183ecabcfa2a8e04bc9fd50ea"
+        },
+        "recipe": {
+          "checker": "root",
+          "name": "alter_complete_csv",
+          "reason": "complete CSV authenticated",
+          "failure_format": "fail_line",
+          "target": "computed/INERTIAL_WAVEFORM_CELLS.csv",
+          "append": "\n"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "alter_complete_csv",
+      "control_mechanism": "copied input/certificate bytes",
+      "expected_reason": "complete CSV authenticated",
+      "reported_failure": "complete CSV authenticated",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "sol",
+      "mode": "optimized",
+      "script": "sol/inertial_comparator.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--source-root",
+        ".",
+        "--mass-cells",
+        "64",
+        "--fault",
+        "reverse_kernel_initial"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 1.447,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "optimized/sol/reverse_kernel_initial/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "optimized/sol/reverse_kernel_initial/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "optimized/sol/reverse_kernel_initial/execution.log",
+        "bytes": 63,
+        "sha256": "4ab2942e927d42a886f99aa21d36814e794c5bbfa6c9f214b2da667c9e6009d5"
+      },
+      "output": {
+        "path": "optimized/sol/reverse_kernel_initial/fresh.json",
+        "bytes": 343,
+        "sha256": "1ed696944c9e5f0a63407ba8a03651422ead0f2d3e9210c0e031d8589357d759"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": null,
+      "control": "reverse_kernel_initial",
+      "control_mechanism": "production formula CLI injection",
+      "expected_reason": "kernel derivative strictly positive on complete interval",
+      "reported_failure": "kernel derivative strictly positive on complete interval",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "sol",
+      "mode": "optimized",
+      "script": "sol/inertial_comparator.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--source-root",
+        ".",
+        "--mass-cells",
+        "64",
+        "--fault",
+        "reverse_kernel_sign"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 1.937,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "optimized/sol/reverse_kernel_sign/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "optimized/sol/reverse_kernel_sign/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "optimized/sol/reverse_kernel_sign/execution.log",
+        "bytes": 64,
+        "sha256": "143039e48ccb9e8d73174a826bd442dfbc0a77c0075daada5f15390d20eb0004"
+      },
+      "output": {
+        "path": "optimized/sol/reverse_kernel_sign/fresh.json",
+        "bytes": 345,
+        "sha256": "f250d4bbc6327bfd860bd3f6a6d4e08580fc99c2d9b8e417eb35180ccd85221d"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": null,
+      "control": "reverse_kernel_sign",
+      "control_mechanism": "production formula CLI injection",
+      "expected_reason": "positive postpulse integrand on full continuous rectangle",
+      "reported_failure": "positive postpulse integrand on full continuous rectangle",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "sol",
+      "mode": "optimized",
+      "script": "sol/inertial_comparator.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--source-root",
+        ".",
+        "--mass-cells",
+        "64",
+        "--fault",
+        "omit_local_inertia"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.775,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "optimized/sol/omit_local_inertia/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "optimized/sol/omit_local_inertia/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "optimized/sol/omit_local_inertia/execution.log",
+        "bytes": 55,
+        "sha256": "bcd3ca3b3b54ef224a70f1580fff21a92720a2e3beb787ef522c41d4a614b827"
+      },
+      "output": {
+        "path": "optimized/sol/omit_local_inertia/fresh.json",
+        "bytes": 327,
+        "sha256": "8ea0d8f0cdc8fe9cb8fe56c9308784e25cf4355ed9016b8a97315e0e89d76a10"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": null,
+      "control": "omit_local_inertia",
+      "control_mechanism": "production formula CLI injection",
+      "expected_reason": "center retains negative local inertia correction",
+      "reported_failure": "center retains negative local inertia correction",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "sol",
+      "mode": "optimized",
+      "script": "sol/inertial_comparator.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--source-root",
+        ".",
+        "--mass-cells",
+        "64",
+        "--fault",
+        "reverse_q_derivative"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.623,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "optimized/sol/reverse_q_derivative/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "optimized/sol/reverse_q_derivative/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "optimized/sol/reverse_q_derivative/execution.log",
+        "bytes": 29,
+        "sha256": "a7163f6efd7791639cb657098df7a1ad889a71a9899ca9fdfae42b5da6f449d4"
+      },
+      "output": {
+        "path": "optimized/sol/reverse_q_derivative/fresh.json",
+        "bytes": 275,
+        "sha256": "d2405b01ec71bb107df5d559adcdb06c23efb1a600dec55a53b6712cbfae08c5"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": null,
+      "control": "reverse_q_derivative",
+      "control_mechanism": "production formula CLI injection",
+      "expected_reason": "positive incoming lobe",
+      "reported_failure": "positive incoming lobe",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "sol",
+      "mode": "optimized",
+      "script": "sol/inertial_comparator.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--source-root",
+        ".",
+        "--mass-cells",
+        "64"
+      ],
+      "exit_code": 1,
+      "wall_seconds": 0.698,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          },
+          "copy": {
+            "path": "optimized/sol/alter_authenticated_shell/sol/inertial_comparator.py",
+            "bytes": 11735,
+            "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+          }
+        },
+        {
+          "source": {
+            "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "optimized/sol/alter_authenticated_shell/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "optimized/sol/alter_authenticated_shell/execution.log",
+        "bytes": 40,
+        "sha256": "ef03a6936a003181f166905151a403fe748d847f26a1fb8a839cf490439e6e1b"
+      },
+      "output": {
+        "path": "optimized/sol/alter_authenticated_shell/fresh.json",
+        "bytes": 297,
+        "sha256": "a03e235d2c58d883b6ec1a203d4b53446a3ee47924b73903ffb5e7e868457d16"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": {
+        "source": {
+          "path": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+          "bytes": 19535,
+          "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+        },
+        "mutated": {
+          "path": "optimized/sol/alter_authenticated_shell/inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+          "bytes": 19536,
+          "sha256": "3c6a2e95be50493fd949e1684cffdea9f9bc11f9076307bca07566316d6c52a1"
+        },
+        "recipe": {
+          "checker": "sol",
+          "name": "alter_authenticated_shell",
+          "reason": "shell input authentication failed",
+          "arguments": [
+            "--source-root",
+            ".",
+            "--mass-cells",
+            "64"
+          ],
+          "failure_format": "fail_line",
+          "target": "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+          "append": "\n"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "alter_authenticated_shell",
+      "control_mechanism": "copied input/certificate bytes",
+      "expected_reason": "shell input authentication failed",
+      "reported_failure": "shell input authentication failed",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    },
+    {
+      "kind": "external_corruption",
+      "checker": "archive",
+      "mode": "optimized",
+      "script": "archive/bound_background_derivatives.py",
+      "flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [],
+      "exit_code": 1,
+      "wall_seconds": 0.604,
+      "copied_inputs": [
+        {
+          "source": {
+            "path": "archive/bound_background_derivatives.py",
+            "bytes": 12002,
+            "sha256": "4e13079e7d11f92c87695841cdccef01b51d948d4476af66264c23d6fc3197d4"
+          },
+          "copy": {
+            "path": "optimized/archive/alter_retained_coefficient_certificate/archive/bound_background_derivatives.py",
+            "bytes": 12002,
+            "sha256": "4e13079e7d11f92c87695841cdccef01b51d948d4476af66264c23d6fc3197d4"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/inputs/OCT11_JACOBI_ENDPOINT_MONOTONICITY.md",
+            "bytes": 24586,
+            "sha256": "f1e2571a551ec122dd7755a13145bae73bd92bd7f7426bdc3002e2f52f8dbfc8"
+          },
+          "copy": {
+            "path": "optimized/archive/alter_retained_coefficient_certificate/archive/inputs/OCT11_JACOBI_ENDPOINT_MONOTONICITY.md",
+            "bytes": 24586,
+            "sha256": "f1e2571a551ec122dd7755a13145bae73bd92bd7f7426bdc3002e2f52f8dbfc8"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/inputs/OCT11_RESCALED_BOUND_CERTIFICATE.json",
+            "bytes": 125471,
+            "sha256": "22c6cd4e505ee2c7e549420355b94a5b3c079ebb6945314f5b285c13bb67835d"
+          },
+          "copy": {
+            "path": "optimized/archive/alter_retained_coefficient_certificate/archive/inputs/OCT11_RESCALED_BOUND_CERTIFICATE.json",
+            "bytes": 125471,
+            "sha256": "22c6cd4e505ee2c7e549420355b94a5b3c079ebb6945314f5b285c13bb67835d"
+          }
+        },
+        {
+          "source": {
+            "path": "archive/inputs/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          },
+          "copy": {
+            "path": "optimized/archive/alter_retained_coefficient_certificate/archive/inputs/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+            "bytes": 19535,
+            "sha256": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+          }
+        }
+      ],
+      "copied_inputs_snapshot": "Authenticated initial copies before any separately recorded corruption",
+      "log": {
+        "path": "optimized/archive/alter_retained_coefficient_certificate/execution.log",
+        "bytes": 859,
+        "sha256": "85f88e00c3393ee180dce121e608a73ab88471bfd9c2b5e895232f41fd0fc870"
+      },
+      "output": {
+        "path": "optimized/archive/alter_retained_coefficient_certificate/fresh.json",
+        "bytes": 1152,
+        "sha256": "f614eaa4c1f9d906410a87f495a35cac1aa5f19be405420df282901330428404"
+      },
+      "additional_outputs": [],
+      "output_origin": "Exact named failure diagnostic",
+      "mutation": {
+        "source": {
+          "path": "archive/inputs/OCT11_RESCALED_BOUND_CERTIFICATE.json",
+          "bytes": 125471,
+          "sha256": "22c6cd4e505ee2c7e549420355b94a5b3c079ebb6945314f5b285c13bb67835d"
+        },
+        "mutated": {
+          "path": "optimized/archive/alter_retained_coefficient_certificate/archive/inputs/OCT11_RESCALED_BOUND_CERTIFICATE.json",
+          "bytes": 125472,
+          "sha256": "23e993b32a1884c0fca258e04474cc2066b187fc69a9d5df2d5557385981a516"
+        },
+        "recipe": {
+          "checker": "archive",
+          "name": "alter_retained_coefficient_certificate",
+          "reason": "Input pin differs: OCT11_RESCALED_BOUND_CERTIFICATE.json",
+          "failure_format": "traceback",
+          "exception": "ValueError",
+          "target": "archive/inputs/OCT11_RESCALED_BOUND_CERTIFICATE.json",
+          "append": "\n"
+        },
+        "independent_checker_unchanged": true
+      },
+      "control": "alter_retained_coefficient_certificate",
+      "control_mechanism": "copied input/certificate bytes",
+      "expected_reason": "Input pin differs: OCT11_RESCALED_BOUND_CERTIFICATE.json",
+      "reported_failure": "Input pin differs: OCT11_RESCALED_BOUND_CERTIFICATE.json",
+      "expected_reason_detected": true,
+      "expected_failure_exit_code": 1
+    }
+  ],
+  "scope": "Fresh finite arithmetic and conditional inertial first-variation enclosures only. Complete generated JSON and CSV reproduce byte for byte. All golden JSON fields are compared; only individually verified execution-mode metadata is normalized across modes. Executions do not prove analytic PDE/exact-family hypotheses, compute a finite-amplitude nonlinear waveform, set an effective nonlinear amplitude or observational scale, or replace external peer review."
+}

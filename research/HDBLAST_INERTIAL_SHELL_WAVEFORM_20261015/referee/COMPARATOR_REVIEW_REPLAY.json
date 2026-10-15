@@ -1,0 +1,61 @@
+{
+  "status": "PASS_INDEPENDENT_COPIED_COMPARATOR_REPLAY",
+  "source_sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4",
+  "runs": [
+    {
+      "optimized": false,
+      "check_count": 13,
+      "stdout_sha256": "f8857ef80fc4a6dcd554377b36753601c17a2201aba432628d195edb9b890e06",
+      "faults_rejected": [
+        {
+          "fault": "reverse_kernel_initial",
+          "exit_code": 1,
+          "stderr": "FAIL: kernel derivative strictly positive on complete interval"
+        },
+        {
+          "fault": "reverse_kernel_sign",
+          "exit_code": 1,
+          "stderr": "FAIL: positive postpulse integrand on full continuous rectangle"
+        },
+        {
+          "fault": "omit_local_inertia",
+          "exit_code": 1,
+          "stderr": "FAIL: center retains negative local inertia correction"
+        },
+        {
+          "fault": "reverse_q_derivative",
+          "exit_code": 1,
+          "stderr": "FAIL: positive incoming lobe"
+        }
+      ]
+    },
+    {
+      "optimized": true,
+      "check_count": 13,
+      "stdout_sha256": "31fc27fb83c06ad5b08460fb7c459a89dea41520a035d6e91487b1a697ca81a0",
+      "faults_rejected": [
+        {
+          "fault": "reverse_kernel_initial",
+          "exit_code": 1,
+          "stderr": "FAIL: kernel derivative strictly positive on complete interval"
+        },
+        {
+          "fault": "reverse_kernel_sign",
+          "exit_code": 1,
+          "stderr": "FAIL: positive postpulse integrand on full continuous rectangle"
+        },
+        {
+          "fault": "omit_local_inertia",
+          "exit_code": 1,
+          "stderr": "FAIL: center retains negative local inertia correction"
+        },
+        {
+          "fault": "reverse_q_derivative",
+          "exit_code": 1,
+          "stderr": "FAIL: positive incoming lobe"
+        }
+      ]
+    }
+  ],
+  "scope": "Exact free comparator only; separate referee proof retains actual residual history."
+}

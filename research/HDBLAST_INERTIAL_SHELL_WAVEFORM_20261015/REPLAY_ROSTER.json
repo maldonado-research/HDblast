@@ -1,0 +1,134 @@
+{
+  "schema": "hdblast-replay-roster-v1",
+  "status": "APPROVED_FOR_FROZEN_REPLAY",
+  "capsule": "HDBLAST_INERTIAL_SHELL_WAVEFORM_20261015",
+  "modes": [
+    "normal",
+    "optimized"
+  ],
+  "counts": {
+    "successful_checker_runs": 16,
+    "external_corruption_processes_rejected": 22,
+    "embedded_wrong_formula_controls_rejected": 18,
+    "finite_positive_check_groups_each_mode": 112
+  },
+  "positive_processes": [
+    {
+      "name": "root",
+      "script": "check_inertial_waveform.py",
+      "finite_positive_groups_each_mode": 31,
+      "embedded_controls_each_mode": 0
+    },
+    {
+      "name": "cells",
+      "script": "referee/check_independent_cells.py",
+      "finite_positive_groups_each_mode": 18,
+      "embedded_controls_each_mode": 0
+    },
+    {
+      "name": "generator",
+      "script": "compute_inertial_waveform.py",
+      "finite_positive_groups_each_mode": 0,
+      "embedded_controls_each_mode": 0
+    },
+    {
+      "name": "sol",
+      "script": "sol/inertial_comparator.py",
+      "finite_positive_groups_each_mode": 13,
+      "embedded_controls_each_mode": 0
+    },
+    {
+      "name": "astra",
+      "script": "astra/check_inertial_error.py",
+      "finite_positive_groups_each_mode": 23,
+      "embedded_controls_each_mode": 5
+    },
+    {
+      "name": "referee",
+      "script": "referee/check_independent_inertial_bound.py",
+      "finite_positive_groups_each_mode": 21,
+      "embedded_controls_each_mode": 0
+    },
+    {
+      "name": "archive",
+      "script": "archive/bound_background_derivatives.py",
+      "finite_positive_groups_each_mode": 0,
+      "embedded_controls_each_mode": 0
+    },
+    {
+      "name": "identities",
+      "script": "archive/check_background_derivative_identities.py",
+      "finite_positive_groups_each_mode": 6,
+      "embedded_controls_each_mode": 4
+    }
+  ],
+  "external_controls": [
+    {
+      "checker": "root",
+      "name": "wrong_inverse_width_coefficient",
+      "expected_reason": "correct inverse-width norm Jacobian",
+      "mechanism": "copied input/certificate corruption"
+    },
+    {
+      "checker": "root",
+      "name": "omit_incoming_velocity",
+      "expected_reason": "specified nonzero incoming velocity retained",
+      "mechanism": "copied input/certificate corruption"
+    },
+    {
+      "checker": "root",
+      "name": "claim_zero_uniqueness",
+      "expected_reason": "only existence claimed for two zero intervals",
+      "mechanism": "copied input/certificate corruption"
+    },
+    {
+      "checker": "root",
+      "name": "shorten_signed_tail_domain",
+      "expected_reason": "strict nonzero signed tail theorem",
+      "mechanism": "copied input/certificate corruption"
+    },
+    {
+      "checker": "root",
+      "name": "alter_complete_csv",
+      "expected_reason": "complete CSV authenticated",
+      "mechanism": "copied input/certificate corruption"
+    },
+    {
+      "checker": "sol",
+      "name": "reverse_kernel_initial",
+      "expected_reason": "kernel derivative strictly positive on complete interval",
+      "mechanism": "production formula CLI injection"
+    },
+    {
+      "checker": "sol",
+      "name": "reverse_kernel_sign",
+      "expected_reason": "positive postpulse integrand on full continuous rectangle",
+      "mechanism": "production formula CLI injection"
+    },
+    {
+      "checker": "sol",
+      "name": "omit_local_inertia",
+      "expected_reason": "center retains negative local inertia correction",
+      "mechanism": "production formula CLI injection"
+    },
+    {
+      "checker": "sol",
+      "name": "reverse_q_derivative",
+      "expected_reason": "positive incoming lobe",
+      "mechanism": "production formula CLI injection"
+    },
+    {
+      "checker": "sol",
+      "name": "alter_authenticated_shell",
+      "expected_reason": "shell input authentication failed",
+      "mechanism": "copied input/certificate corruption"
+    },
+    {
+      "checker": "archive",
+      "name": "alter_retained_coefficient_certificate",
+      "expected_reason": "Input pin differs: OCT11_RESCALED_BOUND_CERTIFICATE.json",
+      "mechanism": "copied input/certificate corruption"
+    }
+  ],
+  "scope": "Finite fresh process inventory only. Producer cells/panels are listed separately and not counted as named check groups. No analytic PDE or nonlinear proof is certified."
+}

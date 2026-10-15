@@ -1,0 +1,84 @@
+{
+  "status": "ACCEPT_CONDITIONAL_INERTIAL_COMPARATOR_AND_RESIDUAL_PROOF",
+  "substantive_blockers": [],
+  "pins": {
+    "referee/INDEPENDENT_INERTIAL_BOUND.md": {
+      "bytes": 8142,
+      "sha256": "aa99470969bf1497f107616a37cd87088b12364942ffda328472dbf44bd13be8"
+    },
+    "referee/check_independent_inertial_bound.py": {
+      "bytes": 6178,
+      "sha256": "1b091a656c4f7e42911376e9853971c389dee9ae09f6330e31caf3b2d1e3c4be"
+    },
+    "referee/INDEPENDENT_INERTIAL_BOUND_NORMAL.json": {
+      "bytes": 3117,
+      "sha256": "460d2a09aab3f2450772787911667937684f68861a5509a4f441cfdd16a89a51"
+    },
+    "referee/INDEPENDENT_INERTIAL_BOUND_OPTIMIZED.json": {
+      "bytes": 3117,
+      "sha256": "1e931b771972105a1b11a694a9eea2a6ba8797eafee176f8c104aff8a0b55e75"
+    },
+    "referee/COMPARATOR_REVIEW_REPLAY.json": {
+      "bytes": 1954,
+      "sha256": "6997c2c134843ac053ce814b596e4c0b1e512b3b4b715d88b764a5f0c4fa2af6"
+    },
+    "referee/ASTRA_ERROR_REVIEW_REPLAY.json": {
+      "bytes": 788,
+      "sha256": "117596c743ec2e945b8e1b4dbd3aca1125919dd4f5b8d1719db3d05dfc35f5e9"
+    },
+    "sol/inertial_comparator.py": {
+      "bytes": 11735,
+      "sha256": "27f6185218bd8d2d038530c9c2aadf5a774c38ddf96aee99ffa5f9e6a8902ed4"
+    },
+    "sol/FREE_INERTIAL_COMPARATOR.md": {
+      "bytes": 4810,
+      "sha256": "d8472aeaa819a9b9e5afb8b04c6c5f9b17a6c28fa0a9a3e7b6976a68d013acba"
+    },
+    "sol/check_comparator.py": {
+      "bytes": 4657,
+      "sha256": "275547281eb347101073d21426d2742325652ba3e024d38822448b74fb50d184"
+    },
+    "astra/INERTIAL_COMPARATOR_AND_POSITIVE_TAIL.md": {
+      "bytes": 10051,
+      "sha256": "c48b51fd0a5fa5ca2b2b4597a6b7aedb2b293c1f5995ffee7f3515adb498f98e"
+    },
+    "astra/check_inertial_error.py": {
+      "bytes": 11391,
+      "sha256": "43d0926a027d73506bfb2914e91afb6d4233e645d56a1e480b2fafe304613ce4"
+    },
+    "archive/BACKGROUND_DERIVATIVE_BOUNDS.json": {
+      "bytes": 21897,
+      "sha256": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c"
+    },
+    "archive/bound_background_derivatives.py": {
+      "bytes": 12002,
+      "sha256": "4e13079e7d11f92c87695841cdccef01b51d948d4476af66264c23d6fc3197d4"
+    },
+    "archive/check_background_derivative_identities.py": {
+      "bytes": 2400,
+      "sha256": "3edc99344bb70c4e2dcadfb61d3906fca069761673c9ac453c3bde1387167c75"
+    },
+    "archive/BACKGROUND_DERIVATIVE_IDENTITY_CHECK.json": {
+      "bytes": 692,
+      "sha256": "50c21b59d4146cf93cee2ae8ec51947a3cae5fb4763ec8c53448088f9485f61e"
+    }
+  },
+  "analytic_findings": [
+    "Positive inertial boundary and all prescribed initial velocity terms retained",
+    "Exact odd displacement cancellation verified and nonzero velocity moment retained",
+    "Paired space/time coefficient variation, delayed boundary lift and bulk scattering accounted for",
+    "Actual-minus-comparator boundary error retains all preceding pulse memory",
+    "No L2-to-pointwise transfer or acceleration estimate from energy used",
+    "Taylor recurrence, weighted remainder and nonnegative-kernel primitive range reviewed",
+    "General kernel clamp now justified by global short-time derivative positivity",
+    "Independent exact rational proof gives global error<1.022e-7, tail error<1.645e-10 and H>9.64e-9 continuously on[2,3]"
+  ],
+  "replayed_counts_each_mode": {
+    "referee_positive_groups": 21,
+    "sol_comparator_positive_groups": 13,
+    "sol_external_mathematical_controls": 4,
+    "astra_positive_groups": 23,
+    "astra_embedded_controls": 5
+  },
+  "scope": "Conditional linear first variation only. This receipt reviews comparator and analytic residual estimates; parent continuous-cell production files, physical gain conversion, response coefficient and final export remain pending separate review. No finite-amplitude nonlinear claim or narrow-state result transfer."
+}
