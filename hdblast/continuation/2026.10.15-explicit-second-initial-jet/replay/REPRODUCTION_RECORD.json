@@ -1,0 +1,37 @@
+{
+  "status": "PASS_COMPLETE_REPORT_AGREEMENT",
+  "manifest_sha256": "1b27636663347db5b7dc3112d5f157f69f8d615cf2a95df2c1309a06e0bf8e86",
+  "processes": 4,
+  "records": [
+    {
+      "name": "initial-constraints-and-controls.normal",
+      "returncode": 0,
+      "report_sha256": "6dcb9afb3aab2b23246912159bfdd30a5fdca01bd43b1da6eef89cb881fcbb00",
+      "golden": "INITIAL_CONSTRAINT_COMPLETION.json",
+      "complete_report_matches": true
+    },
+    {
+      "name": "initial-constraints-and-controls.optimized",
+      "returncode": 0,
+      "report_sha256": "e3c12fb9dd6cf3d2ee20d7f7524ef9f1955b9870ef53523b9b0f6e0f2b7cdd2e",
+      "golden": "INITIAL_CONSTRAINT_COMPLETION_OPTIMIZED.json",
+      "complete_report_matches": true
+    },
+    {
+      "name": "independent-initial-review.normal",
+      "returncode": 0,
+      "report_sha256": "74ebbf11f0a396e88f9e65304347aa0f7f9eff600187944a6778905d89b9c525",
+      "golden": "review/INITIAL_JET_REVIEW_NORMAL.json",
+      "complete_report_matches": true
+    },
+    {
+      "name": "independent-initial-review.optimized",
+      "returncode": 0,
+      "report_sha256": "f41aa43639288a959cf570decb3c68e636152182625eb2fe3b8f1977f8c236a8",
+      "golden": "review/INITIAL_JET_REVIEW_OPTIMIZED.json",
+      "complete_report_matches": true
+    }
+  ],
+  "source_unchanged": true,
+  "scope": "Finite exact checks and recorded controls; conditional analytic estimates, no second-order solution or external peer review"
+}
