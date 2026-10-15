@@ -1,0 +1,90 @@
+name: Quadratic material shell forcing replay
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_QUADRATIC_SHELL_FORCING_20261015/**'
+      - 'research/HDBLAST_QUADRATIC_SHELL_FORCING_20261015.zip'
+      - '.github/workflows/hdblast_quadratic_shell_forcing.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_QUADRATIC_SHELL_FORCING_20261015/**'
+      - 'research/HDBLAST_QUADRATIC_SHELL_FORCING_20261015.zip'
+      - '.github/workflows/hdblast_quadratic_shell_forcing.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quadratic-shell-forcing-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  fresh-independent-replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    env:
+      PROOF_DIRECTORY: research/HDBLAST_QUADRATIC_SHELL_FORCING_20261015
+      MANIFEST_SHA256: '114d4698545e2f57e050b145d035af2a5b7fad73aa51791293e9666f2e02c1a6'
+      ARCHIVE_SHA256: '71b550dcdd8649c8d5bea88ebaa5d00d7d5a7ffc40cbe7f4da6765694b75d2ed'
+      RUNNER_SHA256: '0acb62ed9035b9ca90543811de009f4d075388a37778d331bd877b9cdfad991f'
+      VERIFIER_SHA256: '969b78bbb00bb7902b1c48eb6fd38305dbb6a28edcca9eb3ae8a8ee9e8cc46b6'
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /${{ env.PROOF_DIRECTORY }}/
+            /${{ env.PROOF_DIRECTORY }}.zip
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Authenticate manifest, executable bytes and matching ZIP before imports
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -S -B - <<'PY'
+          import hashlib, os, pathlib, shutil, zipfile
+          root = pathlib.Path(os.environ['PROOF_DIRECTORY'])
+          for name, variable in [('MANIFEST.json', 'MANIFEST_SHA256'),
+                                 ('reproduce.py', 'RUNNER_SHA256'),
+                                 ('verify_manifest.py', 'VERIFIER_SHA256')]:
+              path = root / name
+              if any(p.is_symlink() for p in [path, *path.parents]):
+                  raise RuntimeError('Real source files required')
+              if hashlib.sha256(path.read_bytes()).hexdigest() != os.environ[variable]:
+                  raise RuntimeError('External pin differs: ' + name)
+          archive = root.with_suffix('.zip')
+          if archive.is_symlink() or hashlib.sha256(archive.read_bytes()).hexdigest() != os.environ['ARCHIVE_SHA256']:
+              raise RuntimeError('Archive pin differs')
+          expected = {p.relative_to(root.parent).as_posix(): p.read_bytes()
+                      for p in root.rglob('*') if p.is_file()}
+          with zipfile.ZipFile(archive) as zipped:
+              if len(zipped.namelist()) != len(expected) or set(zipped.namelist()) != set(expected):
+                  raise RuntimeError('Archive members differ')
+              if any(zipped.read(name) != raw for name, raw in expected.items()):
+                  raise RuntimeError('Archive and source differ')
+          shutil.copytree(root, pathlib.Path(os.environ['RUNNER_TEMP']) / 'HDBLAST_QUADRATIC_SHELL_FORCING_20261015')
+          PY
+          python -I -S -B "$RUNNER_TEMP/HDBLAST_QUADRATIC_SHELL_FORCING_20261015/verify_manifest.py" --expected "$MANIFEST_SHA256"
+      - name: Install pinned symbolic dependency
+        run: |
+          python -I -B -m pip install --only-binary=:all: -r "$RUNNER_TEMP/HDBLAST_QUADRATIC_SHELL_FORCING_20261015/requirements.txt"
+      # The frozen runner records its actual checker/control inventory.
+      # Finite checks do not formally certify the conditional analytic PDE proof.
+      - name: Replay exact checks and required controls in both Python modes
+        run: |
+          python -I -B "$RUNNER_TEMP/HDBLAST_QUADRATIC_SHELL_FORCING_20261015/reproduce.py" --manifest-sha256 "$MANIFEST_SHA256" --output-dir "$RUNNER_TEMP/quadratic-shell-forcing-fresh"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: quadratic-shell-forcing-contact-${{ github.sha }}
+          path: ${{ runner.temp }}/quadratic-shell-forcing-fresh
+          retention-days: 14

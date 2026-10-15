@@ -1,0 +1,85 @@
+{
+  "schema": "hdblast-coordinate-shell-sources-claims-v1",
+  "scope": "Conditional registered background and actual first variation, retained longitudinal representative, one-copy coordinate physical rows, derivative Taylor coefficients.",
+  "claims": [
+    {
+      "id": "metric-trace",
+      "statement": "Whole-window ||u_b||_infinity <1.119e-8; background-proper-time derivative lies in (-8.519e-7,2.218e-4).",
+      "evidence": [
+        "computed/COORDINATE_SHELL_SOURCE_ENCLOSURE.json",
+        "computed/COORDINATE_SHELL_SOURCE_CELLS.csv",
+        "sol/COORDINATE_SOURCE_AUDIT.md"
+      ]
+    },
+    {
+      "id": "complete-coordinate-physical-sources",
+      "statement": "Sp=-4p u^2+2sigma_second uv-2v^2 and SK=sigma_second v^2/6-12a u^2 include the known normalized-normal and pullback contributions in the stated first representative.",
+      "evidence": [
+        "inputs/reference/SCALAR_SHELL_BOUNDARY_SYSTEM.md",
+        "astra/INDEPENDENT_COORDINATE_SOURCE_PROOF.md",
+        "referee/SCIENTIFIC_SCOPE_AND_ASSUMPTION_AUDIT.md"
+      ]
+    },
+    {
+      "id": "central-two-zeros",
+      "statement": "Each Sp and SK has at least two distinct coefficient zeros in (1.49998,1.49999), with opposite signs at the certified endpoints and at any interior actual scalar zero; no uniqueness or full zero count.",
+      "evidence": [
+        "astra/ASTRA_COORDINATE_NORMAL.json",
+        "astra/INDEPENDENT_COORDINATE_SOURCE_PROOF.md"
+      ]
+    },
+    {
+      "id": "small-norm-correction",
+      "statement": "||dSp Y^2||_L2 / ||(-2v^2)Y^2||_L2 <9e-13 in the registered background proper shell measure. No relative pointwise claim at v=0.",
+      "evidence": [
+        "computed/COORDINATE_SHELL_SOURCE_ENCLOSURE.json",
+        "astra/ASTRA_COORDINATE_NORMAL.json",
+        "sol/SOL_NORMAL.json"
+      ]
+    },
+    {
+      "id": "harmonic-and-robin-scope",
+      "statement": "Sp and SK project into 1,Z2,H4 with factors1/6,1/2,1. EN is only the retained degree-four Robin coefficient and uses H4 norm factor19pi^2/360; degree-two EN2 is a distinct algebraic formula; no monopole Robin reduction.",
+      "evidence": [
+        "astra/INDEPENDENT_COORDINATE_SOURCE_PROOF.md",
+        "referee/SCIENTIFIC_SCOPE_AND_ASSUMPTION_AUDIT.md"
+      ]
+    },
+    {
+      "id": "registered-robin-positive",
+      "statement": "D=diag(3,8) symmetrizes the displayed retained Robin matrix; exact registered boxes give eigenvalue lower>0.6677 and determinant>10.691. No full Einstein energy estimate follows.",
+      "evidence": [
+        "computed/COORDINATE_SHELL_SOURCE_ENCLOSURE.json",
+        "referee/FULL_SOURCE_NORMAL.json"
+      ]
+    },
+    {
+      "id": "first-interior-value-contraction",
+      "statement": "On D={0<=t<=3ell,z>=0,z+t<=8ell}, the actual-boundary Dirichlet map has contraction upper459/1e9, ||w||<1.001463 and ||w-w0||<4.597e-7 using the exact boundary lift. No differentiated interior jets certified.",
+      "evidence": [
+        "referee/FULL_BULK_SOURCE_AND_INTERIOR_NEXT_STEP.md",
+        "referee/FULL_SOURCE_NORMAL.json"
+      ]
+    },
+    {
+      "id": "complete-bulk-source-formulation",
+      "statement": "Full tensor Einstein/scalar Hessian and relative harmonic source formulas are supplied and cross-checked on two generic exact metric jet sets; no continuous numerical full bulk source is evaluated.",
+      "evidence": [
+        "referee/FULL_BULK_SOURCE_AND_INTERIOR_NEXT_STEP.md",
+        "referee/check_full_source_formulation.py",
+        "referee/FULL_SOURCE_NORMAL.json"
+      ]
+    }
+  ],
+  "not_established": [
+    "Full quantitative second-order response U2",
+    "A chosen numerical localized second initial constraint correction",
+    "Gauge-invariant source or response signs",
+    "Interior differentiated jets sufficient for all quadratic sources",
+    "Effective nonlinear epsilon/remainder or exact finite-amplitude family",
+    "Observational calibration or higher-dimensional Big Bang origin",
+    "External peer review, novelty or APS readiness"
+  ],
+  "zenodo_version_created": false,
+  "aps_submission": false
+}
