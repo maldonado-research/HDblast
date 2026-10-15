@@ -1,0 +1,142 @@
+{
+  "schema": "hdblast-quantitative-response-publication-v1",
+  "status": "RESEARCH_SITES_AND_INITIAL_REPLAY_PUBLISHED_VERIFIED",
+  "observed_utc": "2026-10-15T06:28:23.237826+00:00",
+  "research_and_site_pull_requests": [
+    {
+      "repository": "maldonado-research/HDblast",
+      "number": 62,
+      "url": "https://github.com/maldonado-research/HDblast/pull/62",
+      "merged": true,
+      "head_sha": "cf2202cf0ba5da083126df8881b933a74f679250",
+      "merge_commit_sha": "7c53db9f37d57ca3d24746f70c6afc5521fd12f8",
+      "merged_at": "2026-10-15T06:19:30Z",
+      "reviewed_tree": "eb39da27fa51019e48a9fa92ecaab9f0f62353c3",
+      "merged_tree": "eb39da27fa51019e48a9fa92ecaab9f0f62353c3",
+      "merged_tree_equals_reviewed_tree": true
+    },
+    {
+      "repository": "maldonado-research/maldonado-research.github.io",
+      "number": 52,
+      "url": "https://github.com/maldonado-research/maldonado-research.github.io/pull/52",
+      "merged": true,
+      "head_sha": "fdfa630b07af71bcc73c5fe55953fc078e446b54",
+      "merge_commit_sha": "e1883cf52bd738a936ee57018da8b49d3c631b76",
+      "merged_at": "2026-10-15T06:19:37Z",
+      "reviewed_tree": "a5f0abb32a076393bc6d4617874decd35326e039",
+      "merged_tree": "a5f0abb32a076393bc6d4617874decd35326e039",
+      "merged_tree_equals_reviewed_tree": true
+    }
+  ],
+  "source_freeze": {
+    "schema": "hdblast-source-freeze-v1",
+    "status": "PASS",
+    "created_utc": "2026-10-15T06:00:00+00:00",
+    "capsule": "HDBLAST_SHELL_RESPONSE_ERROR_CERTIFICATE_20261015",
+    "source_files": 62,
+    "archive_members": 63,
+    "manifest": {
+      "path": "HDBLAST_SHELL_RESPONSE_ERROR_CERTIFICATE_20261015/MANIFEST.json",
+      "bytes": 12056,
+      "sha256": "5dd67ce3e53bc0ddaaf9b6a1f3b18830b49113f2ebaca423459c93ca5a09c183"
+    },
+    "archive": {
+      "path": "HDBLAST_SHELL_RESPONSE_ERROR_CERTIFICATE_20261015.zip",
+      "bytes": 985834,
+      "sha256": "b47217151ab8ed6a2fe20a029d4d595e41acd2ccf42ccbf18602c2fe479c24fe"
+    },
+    "scope": "Byte-preserving source freeze and ZIP readback only; not scientific validation or publication."
+  },
+  "premerge_checks": {
+    "status": "PASS",
+    "reviewed_checks": 3
+  },
+  "postmerge_workflows": {
+    "status": "PASS",
+    "observed_utc": "2026-10-15T06:27:50.490682+00:00",
+    "runs": [
+      {
+        "id": 38691734083,
+        "name": "Deploy website",
+        "head_sha": "7c53db9f37d57ca3d24746f70c6afc5521fd12f8",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/maldonado-research/HDblast/actions/runs/38691734083",
+        "repository": "maldonado-research/HDblast"
+      },
+      {
+        "id": 38691734077,
+        "name": "Shell-response quantitative certificate replay",
+        "head_sha": "7c53db9f37d57ca3d24746f70c6afc5521fd12f8",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/maldonado-research/HDblast/actions/runs/38691734077",
+        "repository": "maldonado-research/HDblast"
+      },
+      {
+        "id": 38691733994,
+        "name": "Registered retained-endpoint source replay",
+        "head_sha": "7c53db9f37d57ca3d24746f70c6afc5521fd12f8",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/maldonado-research/HDblast/actions/runs/38691733994",
+        "repository": "maldonado-research/HDblast"
+      },
+      {
+        "id": 38691734053,
+        "name": "Registered stored-state comparison exact replay",
+        "head_sha": "7c53db9f37d57ca3d24746f70c6afc5521fd12f8",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/maldonado-research/HDblast/actions/runs/38691734053",
+        "repository": "maldonado-research/HDblast"
+      },
+      {
+        "id": 38691742545,
+        "name": "pages build and deployment",
+        "head_sha": "e1883cf52bd738a936ee57018da8b49d3c631b76",
+        "event": "dynamic",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/maldonado-research/maldonado-research.github.io/actions/runs/38691742545",
+        "repository": "maldonado-research/maldonado-research.github.io"
+      }
+    ]
+  },
+  "live_readback": {
+    "status": "PASS",
+    "target_count": 146,
+    "receipt_sha256": "daf66a32112d32da7a68741bb196111ab3d78ef49303b873b933981eadc01ca7"
+  },
+  "fresh_replay": {
+    "status": "PASS",
+    "successful_checker_runs": 12,
+    "external_corruption_processes_rejected": 18,
+    "embedded_wrong_formula_controls_rejected": 18,
+    "finite_positive_check_groups_each_mode": 149
+  },
+  "result": {
+    "delta": "1/1000",
+    "ell": "1/10000000000",
+    "leading_C_interval": [
+      "1000000000000000",
+      "400000000000000000"
+    ],
+    "trace_error_upper_less_than": "8",
+    "normalization": "Specified master data and fixed model units; no observational dimensional scale."
+  },
+  "analytic_scope": "Conditional consequences of the retained analytic background, localized inverse, gauge, full support and finite-time exact-family hypotheses. Internal AI derivations and review, not external peer review or formal PDE verification.",
+  "limitations": [
+    "No numerical waveform.",
+    "No effective nonlinear epsilon or remainder bound.",
+    "No exact nonlinear first-arrival time, observational scale or cosmological-origin inference."
+  ],
+  "packaging_repair": "The initial ignored historical NPZ reference was force-added byte-for-byte; final Git inventory, manifest and ZIP agree. Superseded failed CI is identified in PACKAGING_REPAIR.json.",
+  "zenodo_version_created": false,
+  "aps_submission": false,
+  "evidence_publication": "This receipt describes the completed research and site publication. The later evidence-only merge and its final byte readback are retained separately to avoid recursive receipts."
+}
