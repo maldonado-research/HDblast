@@ -1,0 +1,79 @@
+{
+  "status": "PASS_COMPLETE_REPORT_AGREEMENT",
+  "manifest_sha256": "b043a13a228d11296fbbde292aa15f7a024deab9ff915bdce452c52c73745bbb",
+  "processes": 10,
+  "records": [
+    {
+      "name": "potential.normal",
+      "returncode": 0,
+      "report_sha256": "fd93a0de3d321ff5182115138eed2725f3c327083cf5148e3efc1aca3659d5c0",
+      "golden": "potential/ACTUAL_POTENTIAL_JET_BOUNDS.json",
+      "complete_report_matches": true
+    },
+    {
+      "name": "potential.optimized",
+      "returncode": 0,
+      "report_sha256": "fd93a0de3d321ff5182115138eed2725f3c327083cf5148e3efc1aca3659d5c0",
+      "golden": "potential/ACTUAL_POTENTIAL_JET_BOUNDS.json",
+      "complete_report_matches": true
+    },
+    {
+      "name": "potential-controls.normal",
+      "returncode": 0,
+      "report_sha256": "3a5ed8090c62a195dd0b62aa8e57e82012b8548b3165a6a8ade18968429e1f43",
+      "golden": "potential/POTENTIAL_CONTROL_RESULTS.json",
+      "complete_report_matches": true
+    },
+    {
+      "name": "master-jets.normal",
+      "returncode": 0,
+      "report_sha256": "92b17fd71d78f83eb3f2c5ec8b9ea5f4e70365ec4d41aa4c0205551e7eaeb5df",
+      "golden": "jets/HIGHER_JETS_NORMAL.json",
+      "complete_report_matches": true
+    },
+    {
+      "name": "master-jets.optimized",
+      "returncode": 0,
+      "report_sha256": "fa2a6a4fd22764357f0139c6785df2dc3663babc7f33f50d7b407bf4b4666ab8",
+      "golden": "jets/HIGHER_JETS_OPTIMIZED.json",
+      "complete_report_matches": true
+    },
+    {
+      "name": "master-controls.normal",
+      "returncode": 0,
+      "report_sha256": "503042cad024b4b536a90e8c5a86fc88d90a58824010def47ccc12a49d972445",
+      "golden": "jets/HIGHER_JETS_CONTROLS.json",
+      "complete_report_matches": true
+    },
+    {
+      "name": "bulk-and-controls.normal",
+      "returncode": 0,
+      "report_sha256": "499e419da8e7ae78ff84fc1d11fc30f3685353744852aaca3a95bcbf35979159",
+      "golden": "bulk/ACTUAL_LONGITUDINAL_BULK_SOURCE_BOUNDS.json",
+      "complete_report_matches": true
+    },
+    {
+      "name": "bulk-and-controls.optimized",
+      "returncode": 0,
+      "report_sha256": "00a99c300348f29819c733c08bc537b866107c2bb2ceaf2226ae83cc0ee6d8c4",
+      "golden": "bulk/ACTUAL_LONGITUDINAL_BULK_SOURCE_BOUNDS_OPTIMIZED.json",
+      "complete_report_matches": true
+    },
+    {
+      "name": "independent-referee.normal",
+      "returncode": 0,
+      "report_sha256": "7ab2904733bb97441382df3136f2587d285f914c9254773e53f1c48299eb80dc",
+      "golden": "review/INDEPENDENT_NORMAL.json",
+      "complete_report_matches": true
+    },
+    {
+      "name": "independent-referee.optimized",
+      "returncode": 0,
+      "report_sha256": "c9952ac6d7eae07e24b02e8ba6fe1ca38023427c97bec4582ab69adb1c6f2a96",
+      "golden": "review/INDEPENDENT_OPTIMIZED.json",
+      "complete_report_matches": true
+    }
+  ],
+  "source_unchanged": true,
+  "scope": "Finite exact checks and recorded controls; conditional analytic estimates, no second-order solution or external peer review"
+}
