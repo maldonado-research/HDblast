@@ -1,0 +1,816 @@
+{
+  "schema": "hdblast-build-time-replay-config-v1",
+  "status": "APPROVED_FOR_FROZEN_REPLAY",
+  "capsule": "HDBLAST_QUADRATIC_SHELL_FORCING_20261015",
+  "python_version": "3.12.14",
+  "dependency_versions": {
+    "sympy": "1.14.0"
+  },
+  "checkers": [
+    {
+      "name": "generator",
+      "script": "compute_quadratic_forcing.py",
+      "dependencies": [
+        "inputs/prior/INERTIAL_WAVEFORM_CELLS.csv",
+        "inputs/prior/INERTIAL_WAVEFORM_ENCLOSURE.json",
+        "inputs/prior/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+        "inputs/prior/PRIOR_PHYSICAL_GAIN_ENCLOSURE.json"
+      ],
+      "arguments": [
+        "--output-dir",
+        "generated"
+      ],
+      "output": "generated/QUADRATIC_FORCING_ENCLOSURE.json",
+      "golden": "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+      "status": "PASS",
+      "byte_equal": true,
+      "additional_outputs": [
+        [
+          "generated/QUADRATIC_FORCING_CELLS.csv",
+          "computed/QUADRATIC_FORCING_CELLS.csv"
+        ]
+      ],
+      "required_fields": [
+        {
+          "path": [
+            "cell_data",
+            "rows"
+          ],
+          "equals": 4353
+        },
+        {
+          "path": [
+            "scope",
+            "full_U2_response_computed"
+          ],
+          "equals": false
+        }
+      ]
+    },
+    {
+      "name": "root",
+      "script": "check_quadratic_forcing.py",
+      "dependencies": [
+        "inputs/prior/INERTIAL_WAVEFORM_CELLS.csv",
+        "inputs/prior/INERTIAL_WAVEFORM_ENCLOSURE.json",
+        "inputs/prior/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+        "inputs/prior/PRIOR_PHYSICAL_GAIN_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_CELLS.csv"
+      ],
+      "arguments": [
+        "--output",
+        "checked.json"
+      ],
+      "output": "checked.json",
+      "golden": "computed/CHECK_QUADRATIC_FORCING.json",
+      "status": "PASS_QUADRATIC_MATERIAL_TENSION_ENCLOSURE",
+      "checks": {
+        "path": [
+          "checks"
+        ],
+        "kind": "names"
+      },
+      "check_count_path": [
+        "check_count"
+      ]
+    },
+    {
+      "name": "astra",
+      "script": "astra/check_astra_material_forcing.py",
+      "dependencies": [],
+      "arguments": [],
+      "output": null,
+      "golden": "astra/ASTRA_NORMAL.json",
+      "optimized_golden": "astra/ASTRA_OPTIMIZED.json",
+      "status": "PASS",
+      "checks": {
+        "path": [
+          "check_names"
+        ],
+        "kind": "names"
+      },
+      "check_count_path": [
+        "checks"
+      ],
+      "mode_fields": [
+        {
+          "path": [
+            "python_optimized"
+          ],
+          "normal": false,
+          "optimized": true
+        }
+      ]
+    },
+    {
+      "name": "archive",
+      "script": "archive/check_registered_shell_coefficients.py",
+      "dependencies": [
+        "inputs/INPUT_PINS.json",
+        "inputs/prior/INERTIAL_WAVEFORM_CELLS.csv",
+        "inputs/prior/INERTIAL_WAVEFORM_ENCLOSURE.json",
+        "inputs/prior/INERTIAL_SHELL_WAVEFORM.md",
+        "inputs/prior/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+        "inputs/prior/PRIOR_PHYSICAL_GAIN_ENCLOSURE.json",
+        "inputs/prior/FINAL_INERTIAL_WAVEFORM_REVIEW.json",
+        "inputs/prior/FINAL_INERTIAL_WAVEFORM_REVIEW.md",
+        "inputs/reference/SCALAR_SHELL_BOUNDARY_SYSTEM.md",
+        "inputs/reference/MATERIAL_SECOND_ORDER_JUNCTIONS.md"
+      ],
+      "arguments": [
+        "--output",
+        "checked.json"
+      ],
+      "output": "checked.json",
+      "golden": "archive/REGISTERED_SHELL_COEFFICIENT_AUDIT_NORMAL.json",
+      "optimized_golden": "archive/REGISTERED_SHELL_COEFFICIENT_AUDIT_OPTIMIZED.json",
+      "status": "PASS",
+      "checks": {
+        "path": [
+          "groups"
+        ],
+        "kind": "names"
+      },
+      "check_count_path": [
+        "positive_check_groups"
+      ],
+      "embedded_checks": {
+        "path": [
+          "embedded_control_names"
+        ],
+        "kind": "names"
+      },
+      "embedded_count_path": [
+        "embedded_wrong_formula_controls_rejected"
+      ],
+      "mode_fields": [
+        {
+          "path": [
+            "python_optimized"
+          ],
+          "normal": false,
+          "optimized": true
+        }
+      ]
+    },
+    {
+      "name": "sol",
+      "script": "sol/check_quadratic_material_forcing.py",
+      "dependencies": [
+        "sol/SOURCE_PINS.json",
+        "sol/QUADRATIC_MATERIAL_FORCING.md",
+        "inputs/INPUT_PINS.json",
+        "inputs/prior/INERTIAL_SHELL_WAVEFORM.md",
+        "inputs/prior/INERTIAL_WAVEFORM_ENCLOSURE.json",
+        "inputs/prior/INERTIAL_WAVEFORM_CELLS.csv",
+        "inputs/prior/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+        "inputs/reference/SCALAR_SHELL_BOUNDARY_SYSTEM.md",
+        "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_CELLS.csv"
+      ],
+      "arguments": [
+        "--check-computed",
+        "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_CELLS.csv",
+        "--output",
+        "checked.json"
+      ],
+      "output": "checked.json",
+      "golden": "sol/QUADRATIC_MATERIAL_NORMAL.json",
+      "optimized_golden": "sol/QUADRATIC_MATERIAL_OPTIMIZED.json",
+      "status": "PASS",
+      "checks": {
+        "path": [
+          "check_names"
+        ],
+        "kind": "names"
+      },
+      "check_count_path": [
+        "check_group_count"
+      ],
+      "mode_fields": [
+        {
+          "path": [
+            "runtime",
+            "optimization"
+          ],
+          "normal": 0,
+          "optimized": 1
+        }
+      ]
+    },
+    {
+      "name": "referee",
+      "script": "referee/check_material_source.py",
+      "dependencies": [
+        "inputs/prior/INERTIAL_WAVEFORM_CELLS.csv",
+        "inputs/prior/INERTIAL_WAVEFORM_ENCLOSURE.json",
+        "inputs/prior/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+        "inputs/prior/PRIOR_PHYSICAL_GAIN_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_CELLS.csv"
+      ],
+      "arguments": [
+        "--output",
+        "checked.json"
+      ],
+      "output": "checked.json",
+      "golden": "referee/MATERIAL_SOURCE_AUDIT_NORMAL.json",
+      "optimized_golden": "referee/MATERIAL_SOURCE_AUDIT_OPTIMIZED.json",
+      "status": "PASS_INDEPENDENT_QUADRATIC_MATERIAL_SOURCE_AUDIT",
+      "checks": {
+        "path": [
+          "checks"
+        ],
+        "kind": "names"
+      },
+      "check_count_path": [
+        "check_count"
+      ],
+      "mode_fields": [
+        {
+          "path": [
+            "python_optimization"
+          ],
+          "normal": 0,
+          "optimized": 1
+        }
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "checker": "root",
+      "name": "wrong_sum_source",
+      "reason": "correct scalar SUM and per-copy tension sources",
+      "mechanism": "copied input/certificate corruption",
+      "failure_format": "fail_line",
+      "target": "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+      "json_path": [
+        "definitions",
+        "scalar_material_source"
+      ],
+      "value": "Qphi=-2 psi1^2"
+    },
+    {
+      "checker": "root",
+      "name": "wrong_tension_hessian",
+      "reason": "actual registered positive tension Hessian and cubic derivative",
+      "mechanism": "copied input/certificate corruption",
+      "failure_format": "fail_line",
+      "target": "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+      "json_path": [
+        "parameters",
+        "sigma_second_interval"
+      ],
+      "value": [
+        "4",
+        "4"
+      ]
+    },
+    {
+      "checker": "root",
+      "name": "wrong_angular_power_shares",
+      "reason": "orthogonal squared angular power shares",
+      "mechanism": "copied input/certificate corruption",
+      "failure_format": "fail_line",
+      "target": "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+      "json_path": [
+        "angular",
+        "orthogonal_squared_power_shares_l0_l2_l4"
+      ],
+      "value": [
+        "1/3",
+        "1/3",
+        "1/3"
+      ]
+    },
+    {
+      "checker": "root",
+      "name": "wrong_scalar_l2_jacobian",
+      "reason": "fourth-moment proper-time L2 Jacobian and normalization",
+      "mechanism": "copied input/certificate corruption",
+      "failure_format": "fail_line",
+      "target": "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+      "json_path": [
+        "quadrature",
+        "scalar_L2_squared_interval"
+      ],
+      "factor": "1/1000000000000"
+    },
+    {
+      "checker": "root",
+      "name": "wrong_weighted_fourth_moment",
+      "reason": "entire weighted fourth moment independently reconstructed",
+      "mechanism": "copied input/certificate corruption",
+      "failure_format": "fail_line",
+      "target": "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+      "json_path": [
+        "quadrature",
+        "cosh_minus3_H_fourth_integral_interval"
+      ],
+      "factor": "2"
+    },
+    {
+      "checker": "root",
+      "name": "shortened_tail_domain",
+      "reason": "strict monopole bound on full continuous tail",
+      "mechanism": "copied input/certificate corruption",
+      "failure_format": "fail_line",
+      "target": "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+      "json_path": [
+        "tail_theorem",
+        "domain_x"
+      ],
+      "value": [
+        2,
+        2.9
+      ]
+    },
+    {
+      "checker": "root",
+      "name": "claim_full_bulk_source",
+      "reason": "explicit contribution scope and unresolved second response retained",
+      "mechanism": "copied input/certificate corruption",
+      "failure_format": "fail_line",
+      "target": "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+      "json_path": [
+        "scope",
+        "complete_bulk_coordinate_quadratic_source"
+      ],
+      "value": true
+    },
+    {
+      "checker": "root",
+      "name": "alter_complete_csv",
+      "reason": "complete quadratic CSV authenticated",
+      "mechanism": "copied input/certificate corruption",
+      "failure_format": "fail_line",
+      "target": "computed/QUADRATIC_FORCING_CELLS.csv",
+      "append": "\n"
+    },
+    {
+      "checker": "astra",
+      "name": "reverse_one_normal",
+      "reason": "second scalar sum derivative: nonzero symbolic residue 2*p_minus2",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject",
+        "reverse_one_normal"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failure"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "double_tension",
+      "reason": "second scalar sum derivative: nonzero symbolic residue -4*(eta_b*psi2 + psi1**2 + psi2)",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject",
+        "double_tension"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failure"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "half_hessian",
+      "reason": "second scalar sum derivative: nonzero symbolic residue 2*psi1**2",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject",
+        "half_hessian"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failure"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "wrong_projection",
+      "reason": "homogeneous square decomposition: nonzero symbolic residue (X1**2 + X2**2 - X3**2 - X4**2)*(X1**2 + X2**2 + X3**2 + X4**2)/12",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject",
+        "wrong_projection"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failure"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "omit_unknown_response",
+      "reason": "second scalar sum derivative: nonzero symbolic residue 4*psi2*(eta_b + 1)",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject",
+        "omit_unknown_response"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failure"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "omit_clock_transport",
+      "reason": "clock covariance using differentiated first junction: nonzero symbolic residue -8*clock_velocity*dpsi1*(eta_b + 1)",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject",
+        "omit_clock_transport"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failure"
+      ]
+    },
+    {
+      "checker": "astra",
+      "name": "drop_metric_stress",
+      "reason": "lower-index stress product: nonzero symbolic residue -2*h1*psi1*(c*delta + 2*eta_b**2 + 4*eta_b)",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--inject",
+        "drop_metric_stress"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "failure"
+      ]
+    },
+    {
+      "checker": "archive",
+      "name": "third-sign",
+      "reason": "registered_polynomial_three_derivatives",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--output",
+        "checked.json",
+        "--inject-error",
+        "third-sign"
+      ],
+      "failure_format": "traceback",
+      "exception": "RuntimeError",
+      "diagnostic_prefix": "REJECTED: registered_polynomial_three_derivatives\n"
+    },
+    {
+      "checker": "archive",
+      "name": "material-factor",
+      "reason": "one_copy_material_scalar_source_has_correct_factor_and_sign",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--output",
+        "checked.json",
+        "--inject-error",
+        "material-factor"
+      ],
+      "failure_format": "traceback",
+      "exception": "RuntimeError",
+      "diagnostic_prefix": "REJECTED: one_copy_material_scalar_source_has_correct_factor_and_sign\n"
+    },
+    {
+      "checker": "archive",
+      "name": "omit-normal",
+      "reason": "complete_Eulerian_scalar_source_after_first_shell_rows",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--output",
+        "checked.json",
+        "--inject-error",
+        "omit-normal"
+      ],
+      "failure_format": "traceback",
+      "exception": "RuntimeError",
+      "diagnostic_prefix": "REJECTED: complete_Eulerian_scalar_source_after_first_shell_rows\n"
+    },
+    {
+      "checker": "archive",
+      "name": "metric-factor",
+      "reason": "complete_Eulerian_metric_source_after_first_shell_rows",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--output",
+        "checked.json",
+        "--inject-error",
+        "metric-factor"
+      ],
+      "failure_format": "traceback",
+      "exception": "RuntimeError",
+      "diagnostic_prefix": "REJECTED: complete_Eulerian_metric_source_after_first_shell_rows\n"
+    },
+    {
+      "checker": "sol",
+      "name": "sum_vs_copy",
+      "reason": "ValueError: outward SUM source and derivative convention",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--check-computed",
+        "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_CELLS.csv",
+        "--output",
+        "checked.json",
+        "--inject-error",
+        "sum_vs_copy"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "error"
+      ]
+    },
+    {
+      "checker": "sol",
+      "name": "factorial_half",
+      "reason": "ValueError: outward SUM source and derivative convention",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--check-computed",
+        "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_CELLS.csv",
+        "--output",
+        "checked.json",
+        "--inject-error",
+        "factorial_half"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "error"
+      ]
+    },
+    {
+      "checker": "sol",
+      "name": "wrong_sign",
+      "reason": "ValueError: outward SUM source and derivative convention",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--check-computed",
+        "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_CELLS.csv",
+        "--output",
+        "checked.json",
+        "--inject-error",
+        "wrong_sign"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "error"
+      ]
+    },
+    {
+      "checker": "sol",
+      "name": "sphere_dimension",
+      "reason": "ValueError: unit-S3 eigenvalue",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--check-computed",
+        "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_CELLS.csv",
+        "--output",
+        "checked.json",
+        "--inject-error",
+        "sphere_dimension"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "error"
+      ]
+    },
+    {
+      "checker": "sol",
+      "name": "unit_norm",
+      "reason": "ValueError: Y is not unit norm",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--check-computed",
+        "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_CELLS.csv",
+        "--output",
+        "checked.json",
+        "--inject-error",
+        "unit_norm"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "error"
+      ]
+    },
+    {
+      "checker": "sol",
+      "name": "wrong_fourth_moment",
+      "reason": "ValueError: fourth moment",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--check-computed",
+        "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_CELLS.csv",
+        "--output",
+        "checked.json",
+        "--inject-error",
+        "wrong_fourth_moment"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "error"
+      ]
+    },
+    {
+      "checker": "sol",
+      "name": "omit_degree_two",
+      "reason": "ValueError: complete harmonic decomposition",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--check-computed",
+        "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_CELLS.csv",
+        "--output",
+        "checked.json",
+        "--inject-error",
+        "omit_degree_two"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "error"
+      ]
+    },
+    {
+      "checker": "sol",
+      "name": "wrong_harmonic_constant",
+      "reason": "ValueError: ambient harmonicity",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--check-computed",
+        "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_CELLS.csv",
+        "--output",
+        "checked.json",
+        "--inject-error",
+        "wrong_harmonic_constant"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "error"
+      ]
+    },
+    {
+      "checker": "sol",
+      "name": "wrong_norm_jacobian",
+      "reason": "ValueError: quadratic observable Jacobian",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--check-computed",
+        "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_CELLS.csv",
+        "--output",
+        "checked.json",
+        "--inject-error",
+        "wrong_norm_jacobian"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "error"
+      ]
+    },
+    {
+      "checker": "sol",
+      "name": "cancel_cosh_in_quartic",
+      "reason": "ValueError: quartic cosh weight survives",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--check-computed",
+        "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_CELLS.csv",
+        "--output",
+        "checked.json",
+        "--inject-error",
+        "cancel_cosh_in_quartic"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "error"
+      ]
+    },
+    {
+      "checker": "sol",
+      "name": "tension_remainder_factor",
+      "reason": "ValueError: exact constitutive cubic remainder",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--check-computed",
+        "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_CELLS.csv",
+        "--output",
+        "checked.json",
+        "--inject-error",
+        "tension_remainder_factor"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "error"
+      ]
+    },
+    {
+      "checker": "sol",
+      "name": "response_sign_from_source",
+      "reason": "ValueError: negative source need not give a negative response",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--check-computed",
+        "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_CELLS.csv",
+        "--output",
+        "checked.json",
+        "--inject-error",
+        "response_sign_from_source"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "error"
+      ]
+    },
+    {
+      "checker": "sol",
+      "name": "computed_cell",
+      "reason": "ValueError: new coefficient CSV differs from independent cell reconstruction",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--check-computed",
+        "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_CELLS.csv",
+        "--output",
+        "checked.json",
+        "--inject-error",
+        "computed_cell"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "error"
+      ]
+    },
+    {
+      "checker": "sol",
+      "name": "computed_J4",
+      "reason": "ValueError: new report numeric discrepancy: quadrature.cosh_minus3_H_fourth_integral_interval",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--check-computed",
+        "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_CELLS.csv",
+        "--output",
+        "checked.json",
+        "--inject-error",
+        "computed_J4"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "error"
+      ]
+    },
+    {
+      "checker": "sol",
+      "name": "computed_norm",
+      "reason": "ValueError: new report numeric discrepancy: quadrature.scalar_L2_squared_interval",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--check-computed",
+        "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_CELLS.csv",
+        "--output",
+        "checked.json",
+        "--inject-error",
+        "computed_norm"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "error"
+      ]
+    },
+    {
+      "checker": "sol",
+      "name": "computed_tail",
+      "reason": "ValueError: new report numeric discrepancy: tail_theorem.ell2_scalar_monopole_interval",
+      "mechanism": "formula comparison CLI injection",
+      "arguments": [
+        "--check-computed",
+        "computed/QUADRATIC_FORCING_ENCLOSURE.json",
+        "computed/QUADRATIC_FORCING_CELLS.csv",
+        "--output",
+        "checked.json",
+        "--inject-error",
+        "computed_tail"
+      ],
+      "failure_format": "json",
+      "failure_path": [
+        "error"
+      ]
+    }
+  ]
+}
