@@ -1,0 +1,30 @@
+{
+  "status": "PASS_FINAL_EVIDENCE_HELPER_SOURCE_REVIEW",
+  "publication_only": true,
+  "source_pins": {
+    "build_final_evidence.py": "001039b6194594551b7cbfc48957e9c6c6d6d985e921af957e8ec1c542b5d612",
+    "readback_evidence.py": "07b388d48023e810f40868ee496209cff23088fd43d2f977eaac69165e636f44",
+    "readback_published.py": "19bb570b94b7f8b3f4be2cf0d6ca8b4fa6640862868a7900e6eebc567116da7c",
+    "verify_git_inventory.py": "38d6916eaa478575a85fd6e712a66d5691d58a624c47140d0671b70f9e9d0a44",
+    "MONITOR_READBACK_TOOL_VALIDATION.json": "d01675de21de520ce55608d8bed44b7a8b89232af871bfbbb959e3c28e5ba64a"
+  },
+  "reviewed_builder_guards": [
+    "Completed real readback required; exact helper and input-receipt hashes must agree",
+    "Rebuild dynamic source/site/figure/initial-evidence target inventory from reviewed immutable heads",
+    "Require immutable-commit complete source/ZIP graph audit and exact reviewed tree",
+    "Read preserved initial evidence from Git at reviewed head; verify initial manifest and bytes",
+    "Existing initial paths may only be added with identical bytes; all new entries get a complete final manifest",
+    "Keep support tools, publication-completion records and optional planning explicitly separate from frozen scientific source",
+    "Later evidence PR readback stays local to avoid recursive publication receipts"
+  ],
+  "reviewed_readback_guards": [
+    "Clean evidence worktree at exact reviewed head and tree",
+    "Every base-to-head change must be an addition strictly under the dated evidence directory",
+    "Complete final manifest must match all regular Git blobs and exact dynamic file count",
+    "Merged PR head and merge tree must equal reviewed pins; merge diff must equal reviewed additive diff",
+    "Every expected evidence file fetched from raw main with cache busting and compared byte for byte",
+    "No fetch, merge, push or Git mutation performed by this readback tool"
+  ],
+  "substantive_blockers": [],
+  "scope": "Read-only source review. This receipt does not assert that final staging, the evidence-only PR or its remote byte readback has executed. Those require their own later real observations."
+}

@@ -1,0 +1,132 @@
+{
+  "status": "PASS",
+  "scope": "Prefreeze copied-fixture validation only; final published source ZIP requires its own authenticated replay.",
+  "runner": {
+    "path": "replay-tools/reproduce.py",
+    "bytes": 21159,
+    "sha256": "87af38f3505a3f0079bc296a280887a2549dd4d362cb538eaf34625422cf7031"
+  },
+  "verifier": {
+    "path": "replay-tools/verify_manifest.py",
+    "bytes": 2804,
+    "sha256": "969b78bbb00bb7902b1c48eb6fd38305dbb6a28edcca9eb3ae8a8ee9e8cc46b6"
+  },
+  "freeze_helper": {
+    "path": "freeze_source.py",
+    "bytes": 4945,
+    "sha256": "2cd924f6d9ae0e2d52593ea92b43379cb31682ed227b60218be7244e27812548"
+  },
+  "git_inventory_helper": {
+    "path": "verify_git_inventory.py",
+    "bytes": 7184,
+    "sha256": "38d6916eaa478575a85fd6e712a66d5691d58a624c47140d0671b70f9e9d0a44"
+  },
+  "fixture_manifest": {
+    "path": "runner-tool-validation/frozen-final/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015/MANIFEST.json",
+    "bytes": 6007,
+    "sha256": "4d341ea82756f7b79852dd4c620d65208137505c19c645bd3bad59995071efec"
+  },
+  "replay_receipt": {
+    "path": "runner-tool-validation/replay-final/REPRODUCTION_RECEIPT.json",
+    "bytes": 155256,
+    "sha256": "3c29704958b1da6170021ce4c63f81ad3d5a8dab04abd5ed303131fa7ba2b868"
+  },
+  "integrity_controls": {
+    "path": "runner-tool-validation/integrity-controls/INTEGRITY_CONTROLS.json",
+    "bytes": 3252,
+    "sha256": "1f76050a576af415c3beb60c1ba68e1e8c7da3d029907dd4e64c7749732c2e4d"
+  },
+  "csv_delivery_audit": {
+    "path": "CSV_DELIVERY_AUDIT.json",
+    "bytes": 1088,
+    "sha256": "91d61b97869380b7f0da265517aad4eb92945d6c1c6d4752603e0e7bb44f4796"
+  },
+  "source_files_current_and_equal": 33,
+  "minimal_fixture_source_roster": [
+    "CHECK_WAVEFORM_NORMAL.json",
+    "archive/PHYSICAL_GAIN_ENCLOSURE.json",
+    "archive/enclose_physical_gain.py",
+    "archive/inputs/OCT11_JACOBI_ENDPOINT_MONOTONICITY.md",
+    "archive/inputs/OCT11_RESCALED_BOUND_CERTIFICATE.json",
+    "archive/inputs/PRIOR_ACTUAL_BACKGROUND_AND_RIGOROUS_COLLAR_BOUNDS.md",
+    "archive/inputs/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+    "archive/inputs/PRIOR_SHELL_RESPONSE_ERROR_CERTIFICATE.md",
+    "archive/inputs/REFERENCE_ONLY_prior_derive_shell_box.py",
+    "astra/UNIFORM_POINTWISE_NORMAL.json",
+    "astra/check_uniform_pointwise.py",
+    "astra/peak_analysis/certificate.json",
+    "astra/peak_analysis/verify_peaks.py",
+    "check_waveform.py",
+    "compute_waveform.py",
+    "computed/WAVEFORM_CELLS.csv",
+    "computed/WAVEFORM_ENCLOSURE.json",
+    "inputs/previous/SHELL_RESPONSE_ERROR_CERTIFICATE.md",
+    "inputs/previous/archive/ACTUAL_BACKGROUND_AND_RIGOROUS_COLLAR_BOUNDS.md",
+    "inputs/previous/archive/ANALYTIC_SHELL_BOX_DELTA_1E3.json",
+    "inputs/previous/sol/RESIDUAL_TO_PHYSICAL_RESPONSE.md",
+    "referee/INDEPENDENT_CSV_AND_NORM_AUDIT.json",
+    "referee/INDEPENDENT_UNIFORM_TRACE_AUDIT_NORMAL.json",
+    "referee/independent_csv_audit.py",
+    "referee/independent_uniform_trace_audit.py",
+    "reproduce.py",
+    "requirements.txt",
+    "sol/UNIFORM_WAVEFORM_CERTIFICATE.md",
+    "sol/UNIFORM_WAVEFORM_CHECKS.json",
+    "sol/UNIFORM_WAVEFORM_CHECKS_OPTIMIZED.json",
+    "sol/check_uniform_waveform.py",
+    "verify_manifest.py",
+    "waveform_intervals.py"
+  ],
+  "successful_checker_runs": 16,
+  "external_corruption_processes_rejected": 26,
+  "embedded_wrong_formula_controls_rejected": 38,
+  "finite_positive_check_groups_each_mode": 135,
+  "fresh_nonexecutable_artifacts_including_receipt": 87,
+  "complete_generator_json_and_csv_bytes_reproduced_in_both_modes": true,
+  "normal_optimized_scientific_output_agreement": [
+    {
+      "checker": "root",
+      "scientific_json_equal": true,
+      "only_normalized_fields": []
+    },
+    {
+      "checker": "generator",
+      "scientific_json_equal": true,
+      "only_normalized_fields": []
+    },
+    {
+      "checker": "gain",
+      "scientific_json_equal": true,
+      "only_normalized_fields": []
+    },
+    {
+      "checker": "sol",
+      "scientific_json_equal": true,
+      "only_normalized_fields": [
+        "python_optimization"
+      ]
+    },
+    {
+      "checker": "astra",
+      "scientific_json_equal": true,
+      "only_normalized_fields": []
+    },
+    {
+      "checker": "trace",
+      "scientific_json_equal": true,
+      "only_normalized_fields": []
+    },
+    {
+      "checker": "csv",
+      "scientific_json_equal": true,
+      "only_normalized_fields": []
+    },
+    {
+      "checker": "peak",
+      "scientific_json_equal": true,
+      "only_normalized_fields": []
+    }
+  ],
+  "integrity_control_rejections": 14,
+  "valid_verifier_modes": 2
+}
