@@ -1,0 +1,37 @@
+{
+  "status": "pass",
+  "script_sha256": "23e6b7c2325380d4f5a9676040e50341c2e69938e422188bd20704e47bfc03eb",
+  "wrong_controls": [
+    {
+      "name": "CORRUPT_NORMAL_robin_sign.json",
+      "returncode": 1,
+      "failure": "{\"status\": \"fail\", \"error\": \"Robin_to_Neumann_boundary_jet\"}"
+    },
+    {
+      "name": "CORRUPT_NORMAL_lapse_factor.json",
+      "returncode": 1,
+      "failure": "{\"status\": \"fail\", \"error\": \"actual_tangent_row_00\"}"
+    },
+    {
+      "name": "CORRUPT_NORMAL_claimed_symmetry.json",
+      "returncode": 1,
+      "failure": "{\"status\": \"fail\", \"error\": \"false_full_Robin_symmetry_claim\"}"
+    },
+    {
+      "name": "CORRUPT_OPTIMIZED_robin_sign.json",
+      "returncode": 1,
+      "failure": "{\"status\": \"fail\", \"error\": \"Robin_to_Neumann_boundary_jet\"}"
+    },
+    {
+      "name": "CORRUPT_OPTIMIZED_lapse_factor.json",
+      "returncode": 1,
+      "failure": "{\"status\": \"fail\", \"error\": \"actual_tangent_row_00\"}"
+    },
+    {
+      "name": "CORRUPT_OPTIMIZED_claimed_symmetry.json",
+      "returncode": 1,
+      "failure": "{\"status\": \"fail\", \"error\": \"false_full_Robin_symmetry_claim\"}"
+    }
+  ],
+  "scope": "Each deliberately false algebraic claim must fail under ordinary and optimized Python. Does not mechanically certify the PDE proof."
+}
