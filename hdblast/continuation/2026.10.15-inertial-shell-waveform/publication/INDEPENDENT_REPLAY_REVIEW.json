@@ -1,0 +1,171 @@
+{
+  "schema": "hdblast-independent-replay-source-review-v1",
+  "status": "PASS_INDEPENDENT_SOURCE_AND_REPLAY_CONTRACT_REVIEW",
+  "reviewed_files": [
+    {
+      "path": "publication/replay-tools/reproduce.py",
+      "bytes": 24999,
+      "sha256": "6249e550647b2e29f030ebd46faafe22edede52dccab68a4af2fa0c5c76606cf"
+    },
+    {
+      "path": "publication/REPLAY_ROSTER.json",
+      "bytes": 4311,
+      "sha256": "358f7e1955ad36a703b6d7ef0646f20a8dc09af89f82ff2dfe2bff94c1c97ca5"
+    },
+    {
+      "path": "publication/replay-tools/verify_manifest.py",
+      "bytes": 2804,
+      "sha256": "969b78bbb00bb7902b1c48eb6fd38305dbb6a28edcca9eb3ae8a8ee9e8cc46b6"
+    }
+  ],
+  "resolved_findings": [
+    {
+      "issue": "Roster aggregate counts alone did not authenticate the declared checker and external-control identities.",
+      "resolution": "validate_declared_roster now compares exact ordered projections of all checker names, scripts, group/control counts and all external-control checker/name/reason/mechanism entries before any scientific execution.",
+      "previous_runner_sha256": "4647ea494ac5d44bfe8cd76e74e6d4782f303a49b363c75183d9735725bee2ad",
+      "revised_runner_sha256": "6249e550647b2e29f030ebd46faafe22edede52dccab68a4af2fa0c5c76606cf",
+      "independent_unchanged_count_negative_tests": 9
+    }
+  ],
+  "remaining_findings": [],
+  "source_review": {
+    "authentication_before_scientific_execution": "Full external manifest SHA256, complete file inventory, sizes and hashes, real contained paths, and no symlinks/special/extra/missing files are checked by stdlib bootstrap before capsule verifier or scientific subprocesses. The source is authenticated again at completion.",
+    "source_copy_isolation": "Each execution starts in a fresh work directory with a declared per-checker script/dependency set. Copied bytes are reread and compared. Both root and cell checker include producer files only where their provenance hashes are verified; independent cell arithmetic does not import producer or root error evaluator.",
+    "genuine_controls": "Five root certificate/data corruptions, four actual production-formula CLI injections, and two authenticated-input corruptions are each executed in both modes. The unmodified checker source is reauthenticated after execution. Success requires exit code one, no output certificate, and the exact declared failure diagnostic; arbitrary failure is rejected.",
+    "full_output_comparison": "Every fresh positive JSON object is compared in full to its frozen mode-specific golden; ignored_golden_fields is empty. Generator, archive and identity JSON must also match bytes. Every generated CSV byte must equal the complete frozen CSV, including all 4353 cells.",
+    "mode_comparison": "All eight normal/optimized output pairs are compared. Only optimization metadata previously validated for exact type and value is removed across modes; no scientific field is removed.",
+    "count_integrity": "Exact roster list identities and totals are checked before execution, then observed process counts and per-mode group totals are recomputed from execution rows.",
+    "minimum_copy_dependencies": "The explicit dependency sets cover the reviewed readers and imports and were sufficient in the separate previous full fixture replay. No whole source tree or hidden archived producer is copied into checker work directories.",
+    "limitations": "This reviews a finite arithmetic replay contract. It does not formally verify analytic PDE or nonlinear hypotheses, make an observational inference, or establish external peer review."
+  },
+  "independent_executed_contract_tests": {
+    "normal": {
+      "status": "PASS_INDEPENDENT_REPLAY_CONTRACT_TESTS",
+      "python_optimization": 0,
+      "runner_sha256": "6249e550647b2e29f030ebd46faafe22edede52dccab68a4af2fa0c5c76606cf",
+      "roster_sha256": "358f7e1955ad36a703b6d7ef0646f20a8dc09af89f82ff2dfe2bff94c1c97ca5",
+      "checks": [
+        "exact_current_roster_and_counts",
+        "positive_inventory_root_normal",
+        "positive_inventory_root_optimized",
+        "positive_inventory_cells_normal",
+        "positive_inventory_cells_optimized",
+        "positive_inventory_generator_normal",
+        "positive_inventory_generator_optimized",
+        "positive_inventory_sol_normal",
+        "positive_inventory_sol_optimized",
+        "positive_inventory_astra_normal",
+        "positive_inventory_astra_optimized",
+        "positive_inventory_referee_normal",
+        "positive_inventory_referee_optimized",
+        "positive_inventory_archive_normal",
+        "positive_inventory_archive_optimized",
+        "positive_inventory_identities_normal",
+        "positive_inventory_identities_optimized",
+        "tiny_complete_capsule_authenticates_without_execution",
+        "authentication_before_capsule_execution_bad_external_pin",
+        "authentication_before_capsule_execution_changed_source",
+        "runner_stable_through_review"
+      ],
+      "rejected_faults": [
+        "same_aggregate_positive_processes_name",
+        "same_aggregate_positive_processes_script",
+        "same_aggregate_positive_processes_finite_positive_groups_each_mode",
+        "same_aggregate_positive_processes_embedded_controls_each_mode",
+        "same_aggregate_external_controls_checker",
+        "same_aggregate_external_controls_name",
+        "same_aggregate_external_controls_expected_reason",
+        "same_aggregate_external_controls_mechanism",
+        "same_count_reordered_control_roster",
+        "wrong_mode_metadata_cells_normal",
+        "wrong_mode_metadata_cells_optimized",
+        "wrong_mode_metadata_sol_normal",
+        "wrong_mode_metadata_sol_optimized",
+        "wrong_mode_metadata_astra_normal",
+        "wrong_mode_metadata_astra_optimized",
+        "wrong_mode_metadata_referee_normal",
+        "wrong_mode_metadata_referee_optimized"
+      ],
+      "counts": {
+        "successful_checker_runs": 16,
+        "external_corruption_processes_rejected": 22,
+        "embedded_wrong_formula_controls_rejected": 18,
+        "finite_positive_check_groups_each_mode": 112
+      }
+    },
+    "optimized": {
+      "status": "PASS_INDEPENDENT_REPLAY_CONTRACT_TESTS",
+      "python_optimization": 1,
+      "runner_sha256": "6249e550647b2e29f030ebd46faafe22edede52dccab68a4af2fa0c5c76606cf",
+      "roster_sha256": "358f7e1955ad36a703b6d7ef0646f20a8dc09af89f82ff2dfe2bff94c1c97ca5",
+      "checks": [
+        "exact_current_roster_and_counts",
+        "positive_inventory_root_normal",
+        "positive_inventory_root_optimized",
+        "positive_inventory_cells_normal",
+        "positive_inventory_cells_optimized",
+        "positive_inventory_generator_normal",
+        "positive_inventory_generator_optimized",
+        "positive_inventory_sol_normal",
+        "positive_inventory_sol_optimized",
+        "positive_inventory_astra_normal",
+        "positive_inventory_astra_optimized",
+        "positive_inventory_referee_normal",
+        "positive_inventory_referee_optimized",
+        "positive_inventory_archive_normal",
+        "positive_inventory_archive_optimized",
+        "positive_inventory_identities_normal",
+        "positive_inventory_identities_optimized",
+        "tiny_complete_capsule_authenticates_without_execution",
+        "authentication_before_capsule_execution_bad_external_pin",
+        "authentication_before_capsule_execution_changed_source",
+        "runner_stable_through_review"
+      ],
+      "rejected_faults": [
+        "same_aggregate_positive_processes_name",
+        "same_aggregate_positive_processes_script",
+        "same_aggregate_positive_processes_finite_positive_groups_each_mode",
+        "same_aggregate_positive_processes_embedded_controls_each_mode",
+        "same_aggregate_external_controls_checker",
+        "same_aggregate_external_controls_name",
+        "same_aggregate_external_controls_expected_reason",
+        "same_aggregate_external_controls_mechanism",
+        "same_count_reordered_control_roster",
+        "wrong_mode_metadata_cells_normal",
+        "wrong_mode_metadata_cells_optimized",
+        "wrong_mode_metadata_sol_normal",
+        "wrong_mode_metadata_sol_optimized",
+        "wrong_mode_metadata_astra_normal",
+        "wrong_mode_metadata_astra_optimized",
+        "wrong_mode_metadata_referee_normal",
+        "wrong_mode_metadata_referee_optimized"
+      ],
+      "counts": {
+        "successful_checker_runs": 16,
+        "external_corruption_processes_rejected": 22,
+        "embedded_wrong_formula_controls_rejected": 18,
+        "finite_positive_check_groups_each_mode": 112
+      }
+    },
+    "identical_after_verified_mode_field": true,
+    "checks_each_mode": 21,
+    "negative_cases_each_mode": 17,
+    "authentication_sentinel_detail": "Separate subprocesses with invalid manifest pin or changed source bytes failed before a deliberately instrumented capsule verifier could create its marker, and before any requested output directory existed."
+  },
+  "separate_full_replay_evidence": {
+    "previous_runner_receipt": {
+      "path": "publication/runner-tool-validation/replay/REPRODUCTION_RECEIPT.json",
+      "bytes": 161628,
+      "sha256": "009d4560729376392bdbc0da70aa6c92e7388e6a4bc2637217234130645771bd"
+    },
+    "previous_runner_pin": "4647ea494ac5d44bfe8cd76e74e6d4782f303a49b363c75183d9735725bee2ad",
+    "counts": {
+      "successful_checker_runs": 16,
+      "external_corruption_processes_rejected": 22,
+      "embedded_wrong_formula_controls_rejected": 18,
+      "finite_positive_check_groups_each_mode": 112
+    },
+    "scope": "The full fresh replay here belongs to the previous runner hash. The only subsequent code change is the independently reviewed and fault-tested exact roster helper. A fresh full replay of the revised hash is being performed by the publication agent and must be recorded separately; this source-review PASS does not claim that run has completed."
+  },
+  "publication_status": "No Git, publication, workflow or remote state was changed by this reviewer."
+}

@@ -1,0 +1,112 @@
+{
+  "status": "PASS",
+  "schema": "hdblast-independent-fresh-zip-and-delivery-review-v1",
+  "reviewed_utc": "2026-10-15T16:17:44.454103+00:00",
+  "capsule": "HDBLAST_INERTIAL_SHELL_WAVEFORM_20261015",
+  "reviewed_commits": [
+    {
+      "repository": "maldonado-research/HDblast",
+      "head_sha": "6b1ff64b3bb43c6c921552488b7d7aa6daa9eb3d",
+      "reviewed_tree": "e62e73270591ecab517134f4399c95db1d183725",
+      "pr_number": 66
+    },
+    {
+      "repository": "maldonado-research/maldonado-research.github.io",
+      "head_sha": "cc41094d8a24421c9698fcb6ed9c61b4ec0c76c7",
+      "reviewed_tree": "e1a518c6cc309e7a9b4cf87f9f13306239747aac",
+      "pr_number": 54
+    }
+  ],
+  "external_pins": {
+    "manifest": "9b42295d819f0ed5caf94d0a46af38274a27fb11648dd6bff91f5d992385f140",
+    "archive": "b4bf1a0f70204e28ce9ffaece6a99723cf549696032a876a1eaee1eca32d6d42",
+    "runner": "6249e550647b2e29f030ebd46faafe22edede52dccab68a4af2fa0c5c76606cf",
+    "verifier": "969b78bbb00bb7902b1c48eb6fd38305dbb6a28edcca9eb3ae8a8ee9e8cc46b6",
+    "roster": "358f7e1955ad36a703b6d7ef0646f20a8dc09af89f82ff2dfe2bff94c1c97ca5",
+    "workflow": "9ca1a2b9352eef240660d666ce3967e26e1551733619d914f4514feca138015a"
+  },
+  "authoritative_replay": {
+    "path": "fresh-zip-replay/REPRODUCTION_RECEIPT.json",
+    "bytes": 161623,
+    "sha256": "97dd969a3df1ea26289381e1474adcf20f2ce82b7d3e9a41e0ae428538328bfc"
+  },
+  "initial_delivery_manifest": {
+    "path": "hdblast/continuation/2026.10.15-inertial-shell-waveform/INITIAL_REPLAY_MANIFEST.json",
+    "bytes": 17717,
+    "sha256": "128abbcea935fde322739a4bb0daf5c07e1cab3c12bff970049227a2308bdcc8"
+  },
+  "checks": [
+    {
+      "name": "Both reviewed immutable commit trees match",
+      "status": "PASS",
+      "repositories": 2
+    },
+    {
+      "name": "Complete committed, frozen, extracted and ZIP source equality",
+      "status": "PASS",
+      "source_files": 75,
+      "members_with_manifest": 76,
+      "archive_bytes": 928087
+    },
+    {
+      "name": "Freeze and pre-execution authentication receipts cross-bind exact source",
+      "status": "PASS"
+    },
+    {
+      "name": "Every saved fresh process, golden, artifact, dependency copy and corruption authenticated",
+      "status": "PASS",
+      "processes": 38,
+      "positive": 16,
+      "external_named_rejections": 22,
+      "embedded_controls": 18,
+      "finite_groups_per_mode": 112,
+      "artifacts": 78,
+      "copied_input_records": 194,
+      "actual_input_mutations": 14,
+      "generated_csv_byte_comparisons": 2,
+      "scientific_execution_reruns": 0
+    },
+    {
+      "name": "Entire initial evidence manifest and committed bytes authenticated",
+      "status": "PASS",
+      "files": 95,
+      "manifest_records": 94,
+      "fresh_artifacts": 78,
+      "manifest_sha256": "128abbcea935fde322739a4bb0daf5c07e1cab3c12bff970049227a2308bdcc8"
+    },
+    {
+      "name": "Exact committed CI bootstrap pins, tested runtime and all old workflows preserved",
+      "status": "PASS",
+      "old_workflows": 42,
+      "total_workflows": 43
+    },
+    {
+      "name": "All future readback targets equal reviewed Git bytes without HTTP",
+      "status": "PASS",
+      "targets": 190,
+      "http_requests": 0
+    },
+    {
+      "name": "Public source and delivery exclusion independently checked",
+      "status": "PASS",
+      "private_reference_files_checked": 22,
+      "exact_private_bodies": 0,
+      "forbidden_paths": 0,
+      "limitation": "Exact bytes and path checks do not detect paraphrases; the public-safe methods note was separately read for scope."
+    },
+    {
+      "name": "Published numeric summaries and scientific limitations agree with saved exact certificate",
+      "status": "PASS",
+      "continuous_cells": 4353,
+      "scope": "Conditional actual linear first variation at ell=10^-6; zero existence only; no finite-amplitude nonlinear waveform, effective epsilon, observed scale, cosmological-origin inference or external peer-review claim."
+    }
+  ],
+  "review_method": "Independent stdlib hashes, immutable Git blob reads, ZIP member reads, exact saved JSON/CSV and diagnostics comparisons. No scientific checker reruns, HTTP or Git mutations. Only this audit helper and receipt are written outside frozen source.",
+  "readiness": "Accepted as complete local replay and committed initial evidence. Remote CI, merge, deployment and live readback must pass their separate gates; this audit does not assert remote completion.",
+  "limitations": "Finite arithmetic and internal independent review do not establish the analytic PDE/exact-family premises or external peer review. Private exclusion is an exact-byte/path audit; the public-safe methods note was separately read for scope.",
+  "audit_helper": {
+    "path": "publication/audit_fresh_zip_delivery.py",
+    "bytes": 22526,
+    "sha256": "930d787ee5851194243e99064976f557de115aa9a171375b125e4711ff834f4d"
+  }
+}
