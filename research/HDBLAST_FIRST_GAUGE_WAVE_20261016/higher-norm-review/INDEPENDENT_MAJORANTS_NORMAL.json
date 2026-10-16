@@ -1,0 +1,92 @@
+{
+  "candidate_sha256": "f246bc6840ea36f123c7c53da28a9c04925954187e0f06df25add779ce083c6d",
+  "checker_sha256": "2bfa5a25d21ea5ed345c83b37fec4662875d9f756a4745ea987981ca4196427f",
+  "coefficient_sha256": "4009c46f6d63583b4d161eebbb620077467b7561a3c4b5728d5293655d340a53",
+  "method": "16 nonnegative Neumann iterates plus q^16*||rhs||infinity/(1-q) tail; no matrix inverse or producer imports",
+  "number_of_component_bounds": 30,
+  "number_of_mixed_derivative_classes": 10,
+  "q": "22822061003508720787401804232612611/2000000000000000000000000000000000000",
+  "scope": "Finite rational bound audit; the accompanying review checks the underlying C3 construction and derivative identities.",
+  "source_and_initial_checks": [
+    "A0*S0+Sx0",
+    "max(2S0/T+2H1,S0r+H1)",
+    "second commutator factor2",
+    "rr/xrr/rrr recovery",
+    "ell to negative total derivative order"
+  ],
+  "status": "PASS_INDEPENDENT_NEUMANN_C3_MAJORANT_AUDIT",
+  "strict_order_caps_verified": [
+    {
+      "channel": "f",
+      "order": 0,
+      "strict_cap": "332641/100000000000",
+      "verified": true
+    },
+    {
+      "channel": "f",
+      "order": 1,
+      "strict_cap": "221761/100000000000",
+      "verified": true
+    },
+    {
+      "channel": "f",
+      "order": 2,
+      "strict_cap": "75397/2000000000",
+      "verified": true
+    },
+    {
+      "channel": "f",
+      "order": 3,
+      "strict_cap": "959747/1000000000",
+      "verified": true
+    },
+    {
+      "channel": "b",
+      "order": 0,
+      "strict_cap": "11117/5000000000000000",
+      "verified": true
+    },
+    {
+      "channel": "b",
+      "order": 1,
+      "strict_cap": "148227/100000000000000000",
+      "verified": true
+    },
+    {
+      "channel": "b",
+      "order": 2,
+      "strict_cap": "12599/500000000000000",
+      "verified": true
+    },
+    {
+      "channel": "b",
+      "order": 3,
+      "strict_cap": "642163/1000000000000000",
+      "verified": true
+    },
+    {
+      "channel": "d",
+      "order": 0,
+      "strict_cap": "33351/10000000000000000000000",
+      "verified": true
+    },
+    {
+      "channel": "d",
+      "order": 1,
+      "strict_cap": "11117/5000000000000000000000",
+      "verified": true
+    },
+    {
+      "channel": "d",
+      "order": 2,
+      "strict_cap": "37797/1000000000000000000000",
+      "verified": true
+    },
+    {
+      "channel": "d",
+      "order": 3,
+      "strict_cap": "190179/200000000000000000000",
+      "verified": true
+    }
+  ]
+}

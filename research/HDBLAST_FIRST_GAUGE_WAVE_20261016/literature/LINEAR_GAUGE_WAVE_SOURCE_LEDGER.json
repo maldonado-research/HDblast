@@ -1,0 +1,192 @@
+{
+  "schema": "hdblast.gauge-wave.linear-primary-review.v1",
+  "prepared_date_utc": "2026-10-16",
+  "status": "COMPLETED_WITH_BOUNDED_COVERAGE_AND_ACCESS_LIMITS",
+  "scope": "Constructive first relative-harmonic coordinate gauge-vector wave and continuous residual/derivative certification; no nonlinear physical-shell theorem or full U2.",
+  "inputs": [
+    {
+      "path": "/workspace/hdblast-research-work/second-initial-norms-20261015/future_work/gauge-wave/FIRST_GAUGE_VECTOR_SYSTEM_UNPUBLISHED.md",
+      "sha256": "1fec12bc9f729ef7ca93fd4ec06fdce8fc1f61a2d295b6b04e3925ba609b479c"
+    },
+    {
+      "path": "/workspace/hdblast-research-work/interior-bulk-continuation-20261015/literature/TARGETED_PRIMARY_UPDATE.md",
+      "sha256": "0b5745e980421dae5d811b4706fd42fbc44a2bb013b0205d6cf0336f5c9a12c3"
+    }
+  ],
+  "skills": [
+    "skill://plugin_asdk_app_6a314a73f8ac819195b0d55e36b9c609/firecrawl/SKILL.md",
+    "skill://plugin_asdk_app_6a314a73f8ac819195b0d55e36b9c609/firecrawl/references/paper-research.md"
+  ],
+  "coverage": {
+    "executed_discovery_queries": 6,
+    "successful_firecrawl_paper_index_queries": 3,
+    "successful_other_web_queries": 3,
+    "firecrawl_web_queries_rejected_before_execution": 3,
+    "targeted_primary_body_reads_distinct_papers": 3,
+    "additional_closest_paper_metadata_only": 1,
+    "full_proof_audit": false,
+    "exhaustive_search": false,
+    "priority_claim": false,
+    "raw_paper_bodies_saved": false,
+    "children_spawned": 0,
+    "remote_mutations": false,
+    "frozen_edits": false
+  },
+  "queries": [
+    {
+      "id": "S1",
+      "tool": "firecrawl_research_search_papers",
+      "query": "2026 wave equation a posteriori fully computable guaranteed error bounds energy norm Dirichlet Neumann boundary continuous reconstruction",
+      "from": "2025-01-01",
+      "to": "2026-10-16",
+      "k": 5,
+      "status": "EXECUTED"
+    },
+    {
+      "id": "S2",
+      "tool": "firecrawl_research_search_papers",
+      "query": "one dimensional variable coefficient coupled linear wave system mixed Dirichlet Neumann boundary characteristic Volterra integral equations existence derivative estimates",
+      "k": 5,
+      "status": "EXECUTED"
+    },
+    {
+      "id": "S3",
+      "tool": "firecrawl_research_search_papers",
+      "query": "2026 rigorous numerics validated linear hyperbolic wave equation Volterra interval arithmetic residual derivative bounds",
+      "from": "2026-01-01",
+      "to": "2026-10-16",
+      "k": 5,
+      "status": "EXECUTED"
+    },
+    {
+      "id": "S4",
+      "query": "\"wave equation\" \"Dirichlet\" \"Neumann\" \"Volterra\" existence characteristic",
+      "first_tool": "firecrawl_search",
+      "first_status": "402_NOT_EXECUTED",
+      "fallback_tool": "search_service_web_run",
+      "fallback_status": "EXECUTED"
+    },
+    {
+      "id": "S5",
+      "query": "\"wave equation\" \"a posteriori\" \"energy norm\" \"2026\"",
+      "first_tool": "firecrawl_search",
+      "first_status": "402_NOT_EXECUTED",
+      "fallback_tool": "search_service_web_run",
+      "fallback_status": "EXECUTED"
+    },
+    {
+      "id": "S6",
+      "query": "\"wave equation\" \"continuous residual\" \"guaranteed\" \"energy\" a posteriori",
+      "first_tool": "firecrawl_search",
+      "first_status": "402_NOT_EXECUTED",
+      "fallback_tool": "search_service_web_run",
+      "fallback_status": "EXECUTED"
+    }
+  ],
+  "sources": [
+    {
+      "id": "CGMZ",
+      "authors": [
+        "Andreas Chatziafratis",
+        "Claudio Giorgi",
+        "Alain Miranville",
+        "Federico Zullo"
+      ],
+      "title": "On generalised d'Alembert-type integral representations for damped wave equations on the quarter-plane",
+      "url": "https://arxiv.org/abs/2608.06355v1",
+      "body_url": "https://arxiv.org/pdf/2608.06355",
+      "version": "v1",
+      "canonical_submission_date": "2026-08-06",
+      "date_evidence": "Canonical arXiv submission history",
+      "date_discrepancy": "PDF separately prints July 27, 2025; not treated as an arXiv revision",
+      "access": "Primary PDF problem (1.1), assumptions (1.2), Theorems 1-3, section 8 Theorem 5 and uniqueness proof passages",
+      "access_limit": "Equation extraction imperfect; no detailed oscillatory-kernel formula imported",
+      "applicability": "Scalar constant-coefficient forced Dirichlet quarter-plane prototype",
+      "obstruction": "No mixed-component Neumann/coupled variable-coefficient derivative certificate imported; analytic formula verification is not interval numerical validation."
+    },
+    {
+      "id": "DMW",
+      "authors": [
+        "Zhaonan Dong",
+        "Lorenzo Mascotto",
+        "Zuodong Wang"
+      ],
+      "title": "A priori and a posteriori error estimates of a C0-in-time method for the wave equation in second order formulation",
+      "url": "https://arxiv.org/abs/2411.03264v3",
+      "body_url": "https://arxiv.org/html/2411.03264v3",
+      "version": "v3",
+      "first_submission_date": "2024-11-05",
+      "version_date": "2026-05-03",
+      "date_evidence": "Canonical arXiv submission history",
+      "access": "Primary Theorem 2.1; model boundary statement; section 3 assumption (42), Proposition 3.1 and Proposition 3.6",
+      "applicability": "Explicit discrete energy stability and semidiscrete displacement reconstruction estimate",
+      "obstruction": "A posteriori norm remains L-infinity(time;L2(space)); homogeneous Dirichlet model and extra Laplacian regularity; not a pointwise derivative or verified-arithmetic certificate."
+    },
+    {
+      "id": "GOMEZ",
+      "authors": [
+        "Sergio Gomez"
+      ],
+      "title": "A variational approach to the analysis of the continuous space-time FEM for the wave equation",
+      "url": "https://arxiv.org/abs/2501.11494v2",
+      "body_url": "https://arxiv.org/html/2501.11494v2",
+      "version": "v2",
+      "first_submission_date": "2025-01-20",
+      "version_date": "2025-07-17",
+      "date_evidence": "Canonical arXiv submission history; no 2026 revision shown",
+      "access": "Primary Assumption 1, section 5 assumptions (5.1) and Theorem 5.1",
+      "applicability": "Postprocessed semidiscrete-in-time displacement residual estimator",
+      "obstruction": "Homogeneous Dirichlet, constant speed, elliptic H2 regularity; no gauge-system boundary derivative certificate."
+    },
+    {
+      "id": "CFE",
+      "authors": [
+        "Theophile Chaumont-Frelet",
+        "Alexandre Ern"
+      ],
+      "title": "Damped energy-norm a posteriori error estimates for fully discrete approximations of the wave equation using C2-reconstructions",
+      "url": "https://doi.org/10.1051/m2an/2025027",
+      "primary_metadata_url": "https://tchaumont.github.io/",
+      "journal_metadata": "ESAIM M2AN 59 (2025), 1937-1972",
+      "access": "Primary author publication list and DOI only",
+      "access_limit": "HAL anti-bot/inaccessible document; publisher DOI 403; alternate archive routes inaccessible",
+      "applicability": "Follow-up candidate only",
+      "obstruction": "Theorem hypotheses and norm not audited; no theorem imported or 2026 redating."
+    }
+  ],
+  "other_search_hits_not_body_read": [
+    "arxiv:2606.02051 (hyperboloidal SBP; not a finite-domain mixed gauge certificate)",
+    "arxiv:2601.05146 (previously reviewed parabolic validation; not reimported)",
+    "arxiv:2509.08537 (previously reviewed displacement estimator; not repeated)",
+    "arxiv:2609.23217 (nonlinear transmission eigenvalue ODE certificate, not a wave IBVP)"
+  ],
+  "operational_limits": [
+    "Firecrawl web requests were independent and batched before quota failures were observed; no retry after that result",
+    "Failed primary routes were recorded as access limits, not evidence for theorem claims",
+    "No account-specific billing URL or raw source content included in saved public notes"
+  ],
+  "result": "At the start of the review, no inspected external theorem certified the actual coupled linear gauge-vector system, and the direct characteristic/reflection route was proposed rather than imported. The subsequently completed local operator, regularity and solver proofs now give a direct conditional construction and continuous C1 defect bounds for that first gauge wave, with classical C3 regularity; this does not extend the external theorem claims or solve the second evolution.",
+  "written_scope": "/workspace/hdblast-research-work/gauge-wave-solution-20261016/literature",
+  "local_proof_finalization": {
+    "date_utc": "2026-10-16",
+    "new_research_queries": 0,
+    "purpose": "Distinguish the historical literature assessment from the subsequently proved local conditional construction; repair the input link and use raw amplitudes U=(f,b,d).",
+    "review_sha256": "60080009a175045e0a92480b660e731d53d7e754c237f1f42babba9108125056",
+    "local_proofs": [
+      {
+        "path": "/workspace/hdblast-research-work/gauge-wave-solution-20261016/operator/GAUGE_OPERATOR_AND_CONSTRUCTION.md",
+        "sha256": "ea27a8ccc28eef8ff65257dc803e2d827615161f5473c12d32972999bf82d246"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/gauge-wave-solution-20261016/regularity/MIXED_WAVE_REGULARITY.md",
+        "sha256": "00f654647d3cd5578e3f9afcb00dc3ec81739036f40adbe43f53e84b87506e98"
+      },
+      {
+        "path": "/workspace/hdblast-research-work/gauge-wave-solution-20261016/solver/GAUGE_WAVE_SOLUTION_AND_DEFECT.md",
+        "sha256": "416b951b6f473ed03962001383d9000728cbd0ef663e7e449c84dbf6a7828340"
+      }
+    ],
+    "preserved": "Original query counts, primary-reference claims, versions, access limits and original input provenance are unchanged.",
+    "scope_limit": "The initial three local proofs supplied the raw-amplitude and scaled-first-derivative continuous certificate with analytic C3 regularity on the audited triangle. The completed separate higher-norms/README.md certificate now evaluates every mixed raw-amplitude coordinate derivative through order three, accepted within that scope by higher-norm-review/HIGHER_NORM_REVIEW.md. These certificates do not supply a transformed metric-scalar source calculation, frame/covariant/angular norms, full U2, a nonlinear physical-shell theorem or a priority claim."
+  }
+}

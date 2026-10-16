@@ -1,0 +1,82 @@
+{
+  "checker_sha256": "163553f2bdb9469b3ae40bd8f1c9bcf01077b690abac9a2a7b2513619ac99011",
+  "conditional_background_box": {
+    "H_bound": "abs(tanh(ell*x)) <= 3ell",
+    "absolute_a_upper": "14/125",
+    "absolute_p_upper": "7/50000",
+    "ay_identity": "-rho^-2-p^2/3",
+    "required_domain": "0<=x<=3, r>=0, x+r<=8",
+    "rho": [
+      "129",
+      "131"
+    ]
+  },
+  "exact_caps": {
+    "A_row_sum": "3844064009/1000000000000",
+    "B_row_sum": "917/12500000",
+    "D_row_sum": "337883156437144543/10400625000000000000000000",
+    "absolute_ay": "2500271803/41602500000000",
+    "characteristic_contraction": "13581557244358312144543/1155625000000000000000000",
+    "sharper_characteristic_contraction": "27162776605560187144543/2311250000000000000000000"
+  },
+  "identities": [
+    "longitudinal_radial_defect",
+    "longitudinal_tangential_defect",
+    "warped_radial_component",
+    "warped_tangential_component",
+    "desitter_time_component",
+    "desitter_angular_component",
+    "desitter_scalar_gradient_time",
+    "desitter_scalar_gradient_angular",
+    "desitter_boost_time",
+    "desitter_boost_angular",
+    "inward_radial_drift",
+    "inward_tangential_drift",
+    "inward_source",
+    "matrix_amplitude_0",
+    "scaled_matrix_amplitude_0",
+    "matrix_amplitude_1",
+    "scaled_matrix_amplitude_1",
+    "matrix_amplitude_2",
+    "scaled_matrix_amplitude_2",
+    "reconstruction_source",
+    "initial_radial_acceleration",
+    "boundary_covector_row",
+    "reflection_B_parity"
+  ],
+  "identity_count": 23,
+  "mutation_witness_count": 8,
+  "mutation_witnesses": [
+    "longitudinal_radial_defect",
+    "warped_tangential_component",
+    "desitter_angular_component",
+    "inward_radial_drift",
+    "inward_tangential_drift",
+    "reconstruction_source",
+    "reflection_B_parity",
+    "contractive_cap"
+  ],
+  "parameters_exact": {
+    "T_scaled": "3",
+    "ell": "1/1000000",
+    "lambda": "8",
+    "z_collar_required": "1/125000"
+  },
+  "parity": "J=diag(-1,1,1); A(-r)=J A(r) J, B(-r)=-J B(r) J, D(-r)=J D(r) J, F(-r)=J F(r); jumps allowed",
+  "readable_strict_caps": {
+    "A": "3845/1000000",
+    "B_nonstrict": "7336/100000000",
+    "D": "33/1000000000",
+    "q": "3/250"
+  },
+  "scope": "Algebra identities and consequences of stated whole-collar box; no PDE existence or numerical trajectory is asserted by this checker.",
+  "source_convention": {
+    "R": "alpha/rho^2",
+    "R_z": "rho*(9*a/2-h)*R",
+    "h": "U_potential_prime/p",
+    "scaled_radial_source": "6*ell*rho*R*theta*w_r+6*ell^2*rho^2*R*theta*(a/2-h)*w",
+    "theta": "cosh(t)^(-3/2)",
+    "u": "R*theta*w"
+  },
+  "status": "PASS_EXACT_ALL_POINT_ALGEBRA_AND_CONDITIONAL_RATIONAL_CAPS"
+}

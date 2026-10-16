@@ -1,0 +1,179 @@
+{
+  "schema": "hdblast-first-gauge-wave-replay-v1",
+  "jobs": [
+    {
+      "name": "operator",
+      "script": "operator/check_gauge_operator.py",
+      "arguments": [],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "goldens": {
+        "normal": "operator/GAUGE_OPERATOR_NORMAL.json",
+        "optimized": "operator/GAUGE_OPERATOR_OPTIMIZED.json"
+      }
+    },
+    {
+      "name": "operator-controls",
+      "script": "operator/run_gauge_operator_controls.py",
+      "arguments": [],
+      "modes": [
+        "normal"
+      ],
+      "goldens": {
+        "normal": "operator/GAUGE_OPERATOR_CONTROLS.json",
+        "optimized": "operator/GAUGE_OPERATOR_CONTROLS.json"
+      }
+    },
+    {
+      "name": "coefficients",
+      "script": "coefficients/check_global_gauge_coefficients.py",
+      "arguments": [],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "goldens": {
+        "normal": "coefficients/GLOBAL_GAUGE_COEFFICIENTS_NORMAL.json",
+        "optimized": "coefficients/GLOBAL_GAUGE_COEFFICIENTS_OPTIMIZED.json"
+      }
+    },
+    {
+      "name": "coefficient-controls",
+      "script": "coefficients/run_coefficient_controls.py",
+      "arguments": [],
+      "modes": [
+        "normal"
+      ],
+      "goldens": {
+        "normal": "coefficients/COEFFICIENT_CONTROLS.json",
+        "optimized": "coefficients/COEFFICIENT_CONTROLS.json"
+      }
+    },
+    {
+      "name": "regularity",
+      "script": "regularity/check_mixed_wave_regularity.py",
+      "arguments": [
+        "--background",
+        "coefficients/inputs/ACTUAL_POTENTIAL_JET_BOUNDS.json",
+        "--master",
+        "coefficients/inputs/HIGHER_JETS_NORMAL.json"
+      ],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "goldens": {
+        "normal": "regularity/MIXED_WAVE_NORMAL.json",
+        "optimized": "regularity/MIXED_WAVE_OPTIMIZED.json"
+      }
+    },
+    {
+      "name": "reflection-controls",
+      "script": "regularity/check_mixed_wave_regularity.py",
+      "arguments": [
+        "--run-controls"
+      ],
+      "modes": [
+        "normal"
+      ],
+      "goldens": {
+        "normal": "regularity/MIXED_WAVE_CONTROLS.json",
+        "optimized": "regularity/MIXED_WAVE_CONTROLS.json"
+      }
+    },
+    {
+      "name": "actual-solution",
+      "script": "solver/check_actual_gauge_solution.py",
+      "arguments": [
+        "--run-controls"
+      ],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "goldens": {
+        "normal": "solver/ACTUAL_GAUGE_SOLUTION_NORMAL.json",
+        "optimized": "solver/ACTUAL_GAUGE_SOLUTION_OPTIMIZED.json"
+      }
+    },
+    {
+      "name": "higher-norms",
+      "script": "higher-norms/check_gauge_higher_norms.py",
+      "arguments": [],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "goldens": {
+        "normal": "higher-norms/HIGHER_GAUGE_NORMS_NORMAL.json",
+        "optimized": "higher-norms/HIGHER_GAUGE_NORMS_OPTIMIZED.json"
+      }
+    },
+    {
+      "name": "higher-norm-controls",
+      "script": "higher-norms/run_higher_norm_controls.py",
+      "arguments": [],
+      "modes": [
+        "normal"
+      ],
+      "goldens": {
+        "normal": "higher-norms/HIGHER_NORM_CONTROLS.json",
+        "optimized": "higher-norms/HIGHER_NORM_CONTROLS.json"
+      }
+    },
+    {
+      "name": "independent-higher-norms",
+      "script": "higher-norm-review/check_independent_higher_majorants.py",
+      "arguments": [
+        "--coefficients",
+        "coefficients/GLOBAL_GAUGE_COEFFICIENTS_NORMAL.json",
+        "--candidate",
+        "higher-norms/HIGHER_GAUGE_NORMS_NORMAL.json"
+      ],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "goldens": {
+        "normal": "higher-norm-review/INDEPENDENT_MAJORANTS_NORMAL.json",
+        "optimized": "higher-norm-review/INDEPENDENT_MAJORANTS_OPTIMIZED.json"
+      }
+    },
+    {
+      "name": "independent-higher-controls",
+      "script": "higher-norm-review/run_independent_majorant_controls.py",
+      "arguments": [
+        "--coefficients",
+        "coefficients/GLOBAL_GAUGE_COEFFICIENTS_NORMAL.json",
+        "--candidate",
+        "higher-norms/HIGHER_GAUGE_NORMS_NORMAL.json"
+      ],
+      "modes": [
+        "normal"
+      ],
+      "goldens": {
+        "normal": "higher-norm-review/INDEPENDENT_MAJORANT_CONTROLS.json",
+        "optimized": "higher-norm-review/INDEPENDENT_MAJORANT_CONTROLS.json"
+      }
+    },
+    {
+      "name": "fresh-referee",
+      "script": "fresh-review/check_fresh_referee.py",
+      "arguments": [
+        "--root",
+        "."
+      ],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "goldens": {
+        "normal": "fresh-review/FRESH_REVIEW_NORMAL.json",
+        "optimized": "fresh-review/FRESH_REVIEW_OPTIMIZED.json"
+      }
+    }
+  ],
+  "scope": "New exact certificates and explicit controls, conditional on authenticated earlier actual background/master results."
+}

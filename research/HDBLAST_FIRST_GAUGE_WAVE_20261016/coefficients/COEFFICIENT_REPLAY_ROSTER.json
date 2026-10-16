@@ -1,0 +1,211 @@
+{
+  "schema": "hdblast-gauge-coefficient-replay-v1",
+  "output_rule": "all output paths new and outside source/input tree",
+  "jobs": [
+    {
+      "id": "coefficient_normal",
+      "script": "check_global_gauge_coefficients.py",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "{output_dir}/normal.json"
+      ],
+      "expected_exit_code": 0,
+      "golden_report": "GLOBAL_GAUGE_COEFFICIENTS_NORMAL.json"
+    },
+    {
+      "id": "wrong_jet_factorial_normal",
+      "script": "check_global_gauge_coefficients.py",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "wrong_jet_factorial",
+        "--output",
+        "{output_dir}/reject_wrong_jet_factorialFalse.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "formal normalized jet identity",
+      "expected_report_absent": true
+    },
+    {
+      "id": "wrong_source_sign_normal",
+      "script": "check_global_gauge_coefficients.py",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "wrong_source_sign",
+        "--output",
+        "{output_dir}/reject_wrong_source_signFalse.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "proper-y/scaled-r source identity",
+      "expected_report_absent": true
+    },
+    {
+      "id": "annulus_alpha_reuse_normal",
+      "script": "check_global_gauge_coefficients.py",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "annulus_alpha_reuse",
+        "--output",
+        "{output_dir}/reject_annulus_alpha_reuseFalse.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "alpha integral must cover the whole collar from zero",
+      "expected_report_absent": true
+    },
+    {
+      "id": "wrong_alpha_origin_normal",
+      "script": "check_global_gauge_coefficients.py",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "wrong_alpha_origin",
+        "--output",
+        "{output_dir}/reject_wrong_alpha_originFalse.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "alpha(0)=1 lies in global enclosure",
+      "expected_report_absent": true
+    },
+    {
+      "id": "omit_ell_A_normal",
+      "script": "check_global_gauge_coefficients.py",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "omit_ell_A",
+        "--output",
+        "{output_dir}/reject_omit_ell_AFalse.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "weighted C1 Volterra matrix contraction",
+      "expected_report_absent": true
+    },
+    {
+      "id": "coefficient_optimized",
+      "script": "check_global_gauge_coefficients.py",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "{output_dir}/optimized.json"
+      ],
+      "expected_exit_code": 0,
+      "golden_report": "GLOBAL_GAUGE_COEFFICIENTS_OPTIMIZED.json"
+    },
+    {
+      "id": "wrong_jet_factorial_optimized",
+      "script": "check_global_gauge_coefficients.py",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "wrong_jet_factorial",
+        "--output",
+        "{output_dir}/reject_wrong_jet_factorialTrue.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "formal normalized jet identity",
+      "expected_report_absent": true
+    },
+    {
+      "id": "wrong_source_sign_optimized",
+      "script": "check_global_gauge_coefficients.py",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "wrong_source_sign",
+        "--output",
+        "{output_dir}/reject_wrong_source_signTrue.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "proper-y/scaled-r source identity",
+      "expected_report_absent": true
+    },
+    {
+      "id": "annulus_alpha_reuse_optimized",
+      "script": "check_global_gauge_coefficients.py",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "annulus_alpha_reuse",
+        "--output",
+        "{output_dir}/reject_annulus_alpha_reuseTrue.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "alpha integral must cover the whole collar from zero",
+      "expected_report_absent": true
+    },
+    {
+      "id": "wrong_alpha_origin_optimized",
+      "script": "check_global_gauge_coefficients.py",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "wrong_alpha_origin",
+        "--output",
+        "{output_dir}/reject_wrong_alpha_originTrue.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "alpha(0)=1 lies in global enclosure",
+      "expected_report_absent": true
+    },
+    {
+      "id": "omit_ell_A_optimized",
+      "script": "check_global_gauge_coefficients.py",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "omit_ell_A",
+        "--output",
+        "{output_dir}/reject_omit_ell_ATrue.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "weighted C1 Volterra matrix contraction",
+      "expected_report_absent": true
+    }
+  ],
+  "aggregate_control_runner": "run_coefficient_controls.py --output {output_dir}/controls.json"
+}

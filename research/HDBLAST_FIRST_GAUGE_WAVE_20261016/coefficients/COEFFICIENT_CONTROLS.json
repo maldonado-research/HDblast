@@ -1,0 +1,76 @@
+{
+  "status": "PASS_ALL_SEMANTIC_CONTROLS_REJECTED_NORMAL_AND_OPTIMIZED",
+  "runs": [
+    {
+      "control": "wrong_jet_factorial",
+      "optimized": false,
+      "exit_code": 1,
+      "expected_exception": "formal normalized jet identity",
+      "status": "REJECTED_FOR_INTENDED_REASON"
+    },
+    {
+      "control": "wrong_source_sign",
+      "optimized": false,
+      "exit_code": 1,
+      "expected_exception": "proper-y/scaled-r source identity",
+      "status": "REJECTED_FOR_INTENDED_REASON"
+    },
+    {
+      "control": "annulus_alpha_reuse",
+      "optimized": false,
+      "exit_code": 1,
+      "expected_exception": "alpha integral must cover the whole collar from zero",
+      "status": "REJECTED_FOR_INTENDED_REASON"
+    },
+    {
+      "control": "wrong_alpha_origin",
+      "optimized": false,
+      "exit_code": 1,
+      "expected_exception": "alpha(0)=1 lies in global enclosure",
+      "status": "REJECTED_FOR_INTENDED_REASON"
+    },
+    {
+      "control": "omit_ell_A",
+      "optimized": false,
+      "exit_code": 1,
+      "expected_exception": "weighted C1 Volterra matrix contraction",
+      "status": "REJECTED_FOR_INTENDED_REASON"
+    },
+    {
+      "control": "wrong_jet_factorial",
+      "optimized": true,
+      "exit_code": 1,
+      "expected_exception": "formal normalized jet identity",
+      "status": "REJECTED_FOR_INTENDED_REASON"
+    },
+    {
+      "control": "wrong_source_sign",
+      "optimized": true,
+      "exit_code": 1,
+      "expected_exception": "proper-y/scaled-r source identity",
+      "status": "REJECTED_FOR_INTENDED_REASON"
+    },
+    {
+      "control": "annulus_alpha_reuse",
+      "optimized": true,
+      "exit_code": 1,
+      "expected_exception": "alpha integral must cover the whole collar from zero",
+      "status": "REJECTED_FOR_INTENDED_REASON"
+    },
+    {
+      "control": "wrong_alpha_origin",
+      "optimized": true,
+      "exit_code": 1,
+      "expected_exception": "alpha(0)=1 lies in global enclosure",
+      "status": "REJECTED_FOR_INTENDED_REASON"
+    },
+    {
+      "control": "omit_ell_A",
+      "optimized": true,
+      "exit_code": 1,
+      "expected_exception": "weighted C1 Volterra matrix contraction",
+      "status": "REJECTED_FOR_INTENDED_REASON"
+    }
+  ],
+  "scope": "Wrong normalization, sign, domain, origin and scaling claims fail with active exception guards."
+}
