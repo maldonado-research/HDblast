@@ -1,0 +1,32 @@
+{
+  "checker_sha256": "20e2eb1c01d4396eb41c32942200909179ada85e4e9ce0170f0233ee874ed242",
+  "nested_rejection_processes": 2,
+  "nested_rejections": [
+    {
+      "isolated_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "mode": "normal",
+      "report_absent": true,
+      "returncode": 1,
+      "specific_reason": "input authentication: master"
+    },
+    {
+      "isolated_flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "mode": "optimized",
+      "report_absent": true,
+      "returncode": 1,
+      "specific_reason": "input authentication: master"
+    }
+  ],
+  "original_numeric_source_unchanged": true,
+  "scope": "One registered positive harness, two isolated changed-input rejection children. Not two extra direct roster rejections and not a new PDE proof.",
+  "status": "PASS_FRESH_ISOLATED_CHANGED_MASTER_BYTE_REJECTIONS"
+}

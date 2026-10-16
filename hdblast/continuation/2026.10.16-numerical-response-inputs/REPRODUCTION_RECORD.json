@@ -1,0 +1,966 @@
+{
+  "status": "PASS_COMPLETE_REPORT_AGREEMENT",
+  "manifest_sha256": "928f3e4e58d222a3c7e1274babf9e94930ec501b74cf6ba04209f97c6bbded44",
+  "roster_sha256": "de7be92a404243b74aa174ca579a7f4649be415ed63af64d610c6cf51fc30857",
+  "processes": 25,
+  "rejection_processes": 104,
+  "records": [
+    {
+      "name": "first_C3_errors.normal",
+      "returncode": 0,
+      "report_sha256": "508b65ffe99086326129e1a74370091f970a34f7c7fb74d79eaf1ccef3232e22",
+      "golden": "numeric/APPROXIMATION_ERRORS_NORMAL.json",
+      "golden_sha256": "508b65ffe99086326129e1a74370091f970a34f7c7fb74d79eaf1ccef3232e22",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "first_C3_errors.optimized",
+      "returncode": 0,
+      "report_sha256": "508b65ffe99086326129e1a74370091f970a34f7c7fb74d79eaf1ccef3232e22",
+      "golden": "numeric/APPROXIMATION_ERRORS_OPTIMIZED.json",
+      "golden_sha256": "508b65ffe99086326129e1a74370091f970a34f7c7fb74d79eaf1ccef3232e22",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "background_C4_errors.normal",
+      "returncode": 0,
+      "report_sha256": "668db0438c32eee9bd0455591be24ab6a0af14deb97b224b2f8b8517d539399d",
+      "golden": "numeric/BACKGROUND_APPROXIMATION_NORMAL.json",
+      "golden_sha256": "668db0438c32eee9bd0455591be24ab6a0af14deb97b224b2f8b8517d539399d",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "background_C4_errors.optimized",
+      "returncode": 0,
+      "report_sha256": "668db0438c32eee9bd0455591be24ab6a0af14deb97b224b2f8b8517d539399d",
+      "golden": "numeric/BACKGROUND_APPROXIMATION_OPTIMIZED.json",
+      "golden_sha256": "668db0438c32eee9bd0455591be24ab6a0af14deb97b224b2f8b8517d539399d",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "actual_initial_profiles.normal",
+      "returncode": 0,
+      "report_sha256": "19e6adf8330776abd905dfd7deb1291069ffa576d611324027cc0fdc79654d80",
+      "golden": "numeric/INITIAL_PROFILES_NORMAL.json",
+      "golden_sha256": "19e6adf8330776abd905dfd7deb1291069ffa576d611324027cc0fdc79654d80",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "actual_initial_profiles.optimized",
+      "returncode": 0,
+      "report_sha256": "19e6adf8330776abd905dfd7deb1291069ffa576d611324027cc0fdc79654d80",
+      "golden": "numeric/INITIAL_PROFILES_OPTIMIZED.json",
+      "golden_sha256": "19e6adf8330776abd905dfd7deb1291069ffa576d611324027cc0fdc79654d80",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "independent_C3_errors.normal",
+      "returncode": 0,
+      "report_sha256": "f92eca739645d7d808b23f47ff94e481c833387940399de1ab46dc9008bfa75d",
+      "golden": "numeric-review/C3_ERROR_FINAL_NORMAL.json",
+      "golden_sha256": "f92eca739645d7d808b23f47ff94e481c833387940399de1ab46dc9008bfa75d",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "independent_C3_errors.optimized",
+      "returncode": 0,
+      "report_sha256": "f92eca739645d7d808b23f47ff94e481c833387940399de1ab46dc9008bfa75d",
+      "golden": "numeric-review/C3_ERROR_FINAL_OPTIMIZED.json",
+      "golden_sha256": "f92eca739645d7d808b23f47ff94e481c833387940399de1ab46dc9008bfa75d",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "independent_initial_algebra.normal",
+      "returncode": 0,
+      "report_sha256": "7bc648876735ea989a93ac9815a3f4f38f8c2563df9f13bc5b2faa9b90ae2e1e",
+      "golden": "numeric-review/INITIAL_ALGEBRA_FINAL_NORMAL.json",
+      "golden_sha256": "7bc648876735ea989a93ac9815a3f4f38f8c2563df9f13bc5b2faa9b90ae2e1e",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "independent_initial_algebra.optimized",
+      "returncode": 0,
+      "report_sha256": "7bc648876735ea989a93ac9815a3f4f38f8c2563df9f13bc5b2faa9b90ae2e1e",
+      "golden": "numeric-review/INITIAL_ALGEBRA_FINAL_OPTIMIZED.json",
+      "golden_sha256": "7bc648876735ea989a93ac9815a3f4f38f8c2563df9f13bc5b2faa9b90ae2e1e",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "sharp_evaluation_bound.normal",
+      "returncode": 0,
+      "report_sha256": "baf37aba4d782cf4656ed3b8d99f8059c85af0ecdfddc6a91e66ce1726a6792c",
+      "golden": "evaluation-bound/EVALUATION_BOUND_NORMAL.json",
+      "golden_sha256": "baf37aba4d782cf4656ed3b8d99f8059c85af0ecdfddc6a91e66ce1726a6792c",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "sharp_evaluation_bound.optimized",
+      "returncode": 0,
+      "report_sha256": "baf37aba4d782cf4656ed3b8d99f8059c85af0ecdfddc6a91e66ce1726a6792c",
+      "golden": "evaluation-bound/EVALUATION_BOUND_OPTIMIZED.json",
+      "golden_sha256": "baf37aba4d782cf4656ed3b8d99f8059c85af0ecdfddc6a91e66ce1726a6792c",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "homogeneous_angular_operator.normal",
+      "returncode": 0,
+      "report_sha256": "fc21df65e8970b0cd99a8ba1e2e8a7f9d07ef6088fd8a43efefb76972b83365d",
+      "golden": "angular/ANGULAR_OPERATOR_NORMAL.json",
+      "golden_sha256": "fc21df65e8970b0cd99a8ba1e2e8a7f9d07ef6088fd8a43efefb76972b83365d",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "homogeneous_angular_operator.optimized",
+      "returncode": 0,
+      "report_sha256": "fc21df65e8970b0cd99a8ba1e2e8a7f9d07ef6088fd8a43efefb76972b83365d",
+      "golden": "angular/ANGULAR_OPERATOR_OPTIMIZED.json",
+      "golden_sha256": "fc21df65e8970b0cd99a8ba1e2e8a7f9d07ef6088fd8a43efefb76972b83365d",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "achieved_source_adapters.normal",
+      "returncode": 0,
+      "report_sha256": "118ea45d8116c8216d06b36991f980e0129b9e0551e7914ab7acfc92c2d2e0a8",
+      "golden": "angular/source-audit/SOURCE_ADAPTERS_NORMAL.json",
+      "golden_sha256": "118ea45d8116c8216d06b36991f980e0129b9e0551e7914ab7acfc92c2d2e0a8",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "achieved_source_adapters.optimized",
+      "returncode": 0,
+      "report_sha256": "118ea45d8116c8216d06b36991f980e0129b9e0551e7914ab7acfc92c2d2e0a8",
+      "golden": "angular/source-audit/SOURCE_ADAPTERS_OPTIMIZED.json",
+      "golden_sha256": "118ea45d8116c8216d06b36991f980e0129b9e0551e7914ab7acfc92c2d2e0a8",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "refined_response_majorant.normal",
+      "returncode": 0,
+      "report_sha256": "61acb6d949c56dc95d22337c2bd0081d470e2498f420b2ac4093323179555c73",
+      "golden": "response/REFINED_RESPONSE_NORMAL.json",
+      "golden_sha256": "61acb6d949c56dc95d22337c2bd0081d470e2498f420b2ac4093323179555c73",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "refined_response_majorant.optimized",
+      "returncode": 0,
+      "report_sha256": "61acb6d949c56dc95d22337c2bd0081d470e2498f420b2ac4093323179555c73",
+      "golden": "response/REFINED_RESPONSE_OPTIMIZED.json",
+      "golden_sha256": "61acb6d949c56dc95d22337c2bd0081d470e2498f420b2ac4093323179555c73",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "five_initial_zero_brackets.normal",
+      "returncode": 0,
+      "report_sha256": "ca6dd76b73a9f8229058b16ead3eb797a5fd0d8cda66b91b4cca48b30b47b4d8",
+      "golden": "response/SIGNED_WITNESSES_NORMAL.json",
+      "golden_sha256": "ca6dd76b73a9f8229058b16ead3eb797a5fd0d8cda66b91b4cca48b30b47b4d8",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "five_initial_zero_brackets.optimized",
+      "returncode": 0,
+      "report_sha256": "ca6dd76b73a9f8229058b16ead3eb797a5fd0d8cda66b91b4cca48b30b47b4d8",
+      "golden": "response/SIGNED_WITNESSES_OPTIMIZED.json",
+      "golden_sha256": "ca6dd76b73a9f8229058b16ead3eb797a5fd0d8cda66b91b4cca48b30b47b4d8",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "independent_independent_evaluation.normal",
+      "returncode": 0,
+      "report_sha256": "0090ab2fb9cf828dadaf4acc712e95410a0a263a0b24334499a9f95625278bd9",
+      "golden": "angular-review/EVALUATION_REVIEW_NORMAL.json",
+      "golden_sha256": "0090ab2fb9cf828dadaf4acc712e95410a0a263a0b24334499a9f95625278bd9",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "independent_independent_evaluation.optimized",
+      "returncode": 0,
+      "report_sha256": "0090ab2fb9cf828dadaf4acc712e95410a0a263a0b24334499a9f95625278bd9",
+      "golden": "angular-review/EVALUATION_REVIEW_OPTIMIZED.json",
+      "golden_sha256": "0090ab2fb9cf828dadaf4acc712e95410a0a263a0b24334499a9f95625278bd9",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "independent_independent_operator.normal",
+      "returncode": 0,
+      "report_sha256": "ecae4771be87a7e227b5e5d28a126beab2c5ea034d9c7e0553672bd5b2e28ca3",
+      "golden": "angular-review/OPERATOR_REVIEW_NORMAL.json",
+      "golden_sha256": "ecae4771be87a7e227b5e5d28a126beab2c5ea034d9c7e0553672bd5b2e28ca3",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "independent_independent_operator.optimized",
+      "returncode": 0,
+      "report_sha256": "ecae4771be87a7e227b5e5d28a126beab2c5ea034d9c7e0553672bd5b2e28ca3",
+      "golden": "angular-review/OPERATOR_REVIEW_OPTIMIZED.json",
+      "golden_sha256": "ecae4771be87a7e227b5e5d28a126beab2c5ea034d9c7e0553672bd5b2e28ca3",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "changed_master_byte_fixture.normal",
+      "returncode": 0,
+      "report_sha256": "5d460c2812c14962f7925e79bccfefa199e6ec4f486a13c42eeb9c933f2a37b6",
+      "golden": "assembly-checks/INPUT_CORRUPTION_CONTROL.json",
+      "golden_sha256": "5d460c2812c14962f7925e79bccfefa199e6ec4f486a13c42eeb9c933f2a37b6",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    }
+  ],
+  "rejections": [
+    {
+      "name": "numeric_drop_dynamic_lift.normal",
+      "returncode": 1,
+      "expected_reason": "dynamic boundary third-jet retained",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "numeric_drop_dynamic_lift.optimized",
+      "returncode": 1,
+      "expected_reason": "dynamic boundary third-jet retained",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "numeric_half_comparator.normal",
+      "returncode": 1,
+      "expected_reason": "explicit product-profile commutator",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "numeric_half_comparator.optimized",
+      "returncode": 1,
+      "expected_reason": "explicit product-profile commutator",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "numeric_drop_initial_offset.normal",
+      "returncode": 1,
+      "expected_reason": "stabilized third initial jet A(0) residual(0)+residual_x(0)",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "numeric_drop_initial_offset.optimized",
+      "returncode": 1,
+      "expected_reason": "stabilized third initial jet A(0) residual(0)+residual_x(0)",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "numeric_drop_radial_residual.normal",
+      "returncode": 1,
+      "expected_reason": "third radial recovery retains residual_r",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "numeric_drop_radial_residual.optimized",
+      "returncode": 1,
+      "expected_reason": "third radial recovery retains residual_r",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "numeric_empty_background.normal",
+      "returncode": 1,
+      "expected_reason": "nonempty background collar partition",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "numeric_empty_background.optimized",
+      "returncode": 1,
+      "expected_reason": "nonempty background collar partition",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "numeric_scalar_initial.normal",
+      "returncode": 1,
+      "expected_reason": "nonzero second scalar initial data retained",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "numeric_scalar_initial.optimized",
+      "returncode": 1,
+      "expected_reason": "nonzero second scalar initial data retained",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "independent_omit_time_commutator.normal",
+      "returncode": 1,
+      "expected_reason": "manufactured differentiated coefficient commutator",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "independent_omit_time_commutator.optimized",
+      "returncode": 1,
+      "expected_reason": "manufactured differentiated coefficient commutator",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "independent_omit_initial_acceleration_offset.normal",
+      "returncode": 1,
+      "expected_reason": "manufactured stabilized third initial jet",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "independent_omit_initial_acceleration_offset.optimized",
+      "returncode": 1,
+      "expected_reason": "manufactured stabilized third initial jet",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "independent_omit_radial_residual.normal",
+      "returncode": 1,
+      "expected_reason": "manufactured third radial recovery",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "independent_omit_radial_residual.optimized",
+      "returncode": 1,
+      "expected_reason": "manufactured third radial recovery",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "initial_algebra_half_lapse_quadratic.normal",
+      "returncode": 1,
+      "expected_reason": "second lapse velocity",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "initial_algebra_half_lapse_quadratic.optimized",
+      "returncode": 1,
+      "expected_reason": "second lapse velocity",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "initial_algebra_omit_radial_fy.normal",
+      "returncode": 1,
+      "expected_reason": "second radial shift velocity",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "initial_algebra_omit_radial_fy.optimized",
+      "returncode": 1,
+      "expected_reason": "second radial shift velocity",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "initial_algebra_half_angular_quadratic.normal",
+      "returncode": 1,
+      "expected_reason": "second angular shift velocity",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "initial_algebra_half_angular_quadratic.optimized",
+      "returncode": 1,
+      "expected_reason": "second angular shift velocity",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "initial_algebra_omit_mixed_metric_conversion.normal",
+      "returncode": 1,
+      "expected_reason": "mixed metric conversion",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "initial_algebra_omit_mixed_metric_conversion.optimized",
+      "returncode": 1,
+      "expected_reason": "mixed metric conversion",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "initial_algebra_omit_lapse_square.normal",
+      "returncode": 1,
+      "expected_reason": "second metric lapse square",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "initial_algebra_omit_lapse_square.optimized",
+      "returncode": 1,
+      "expected_reason": "second metric lapse square",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "initial_algebra_flip_scalar_compensator.normal",
+      "returncode": 1,
+      "expected_reason": "scalar compensator cancellation",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "initial_algebra_flip_scalar_compensator.optimized",
+      "returncode": 1,
+      "expected_reason": "scalar compensator cancellation",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "initial_algebra_omit_fourth_packet_term.normal",
+      "returncode": 1,
+      "expected_reason": "fourth packet derivative identity",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "initial_algebra_omit_fourth_packet_term.optimized",
+      "returncode": 1,
+      "expected_reason": "fourth packet derivative identity",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "initial_algebra_omit_physical_affine_term.normal",
+      "returncode": 1,
+      "expected_reason": "all-point canceled physical-affine scalar velocity",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "initial_algebra_omit_physical_affine_term.optimized",
+      "returncode": 1,
+      "expected_reason": "all-point canceled physical-affine scalar velocity",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evaluation_wrong_F_norm.normal",
+      "returncode": 1,
+      "expected_reason": "FULL_ANGULAR_GRAM",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evaluation_wrong_F_norm.optimized",
+      "returncode": 1,
+      "expected_reason": "FULL_ANGULAR_GRAM",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evaluation_omit_mixed_weight.normal",
+      "returncode": 1,
+      "expected_reason": "FROBENIUS_FIELD_WEIGHTS",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evaluation_omit_mixed_weight.optimized",
+      "returncode": 1,
+      "expected_reason": "FROBENIUS_FIELD_WEIGHTS",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evaluation_omit_trace_weight.normal",
+      "returncode": 1,
+      "expected_reason": "FROBENIUS_FIELD_WEIGHTS",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evaluation_omit_trace_weight.optimized",
+      "returncode": 1,
+      "expected_reason": "FROBENIUS_FIELD_WEIGHTS",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evaluation_ambient_hessian.normal",
+      "returncode": 1,
+      "expected_reason": "SPHERE_TANGENT_TF",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evaluation_ambient_hessian.optimized",
+      "returncode": 1,
+      "expected_reason": "SPHERE_TANGENT_TF",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evaluation_drop_TT.normal",
+      "returncode": 1,
+      "expected_reason": "FULL_ANGULAR_GRAM",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evaluation_drop_TT.optimized",
+      "returncode": 1,
+      "expected_reason": "FULL_ANGULAR_GRAM",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evaluation_wrong_moment.normal",
+      "returncode": 1,
+      "expected_reason": "FULL_ANGULAR_GRAM",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evaluation_wrong_moment.optimized",
+      "returncode": 1,
+      "expected_reason": "FULL_ANGULAR_GRAM",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evaluation_constant_kernel23.normal",
+      "returncode": 1,
+      "expected_reason": "NONCONSTANT_FULL_KERNEL",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evaluation_constant_kernel23.optimized",
+      "returncode": 1,
+      "expected_reason": "NONCONSTANT_FULL_KERNEL",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evaluation_unsafe_constant4.normal",
+      "returncode": 1,
+      "expected_reason": "SCALAR_SHARP_ENDPOINT",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evaluation_unsafe_constant4.optimized",
+      "returncode": 1,
+      "expected_reason": "SCALAR_SHARP_ENDPOINT",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evaluation_corrupt_Bernstein.normal",
+      "returncode": 1,
+      "expected_reason": "BERNSTEIN_RECONSTRUCTION",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evaluation_corrupt_Bernstein.optimized",
+      "returncode": 1,
+      "expected_reason": "BERNSTEIN_RECONSTRUCTION",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "angular_rough_tensor_shift.normal",
+      "returncode": 1,
+      "expected_reason": "PRIMITIVE_LAPLACIAN",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "angular_rough_tensor_shift.optimized",
+      "returncode": 1,
+      "expected_reason": "PRIMITIVE_LAPLACIAN",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "angular_cross_sign.normal",
+      "returncode": 1,
+      "expected_reason": "CROSS_RECONSTRUCTION",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "angular_cross_sign.optimized",
+      "returncode": 1,
+      "expected_reason": "CROSS_RECONSTRUCTION",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "angular_drop_TT.normal",
+      "returncode": 1,
+      "expected_reason": "TT_RETAINED",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "angular_drop_TT.optimized",
+      "returncode": 1,
+      "expected_reason": "TT_RETAINED",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "angular_omit_scalar_DC.normal",
+      "returncode": 1,
+      "expected_reason": "FULL_SYMBOLIC_BULK",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "angular_omit_scalar_DC.optimized",
+      "returncode": 1,
+      "expected_reason": "FULL_SYMBOLIC_BULK",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "angular_curvature_mixed.normal",
+      "returncode": 1,
+      "expected_reason": "CURVATURE",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "angular_curvature_mixed.optimized",
+      "returncode": 1,
+      "expected_reason": "CURVATURE",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "angular_boundary_frame.normal",
+      "returncode": 1,
+      "expected_reason": "FULL_SYMBOLIC_BOUNDARY",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "angular_boundary_frame.optimized",
+      "returncode": 1,
+      "expected_reason": "FULL_SYMBOLIC_BOUNDARY",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "angular_dirichlet_mixed.normal",
+      "returncode": 1,
+      "expected_reason": "BOUNDARY_SPLIT",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "angular_dirichlet_mixed.optimized",
+      "returncode": 1,
+      "expected_reason": "BOUNDARY_SPLIT",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_angular_tt_deleted.normal",
+      "returncode": 1,
+      "expected_reason": "SOURCE_Y_HESS",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_angular_tt_deleted.optimized",
+      "returncode": 1,
+      "expected_reason": "SOURCE_Y_HESS",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_qc_time_sign.normal",
+      "returncode": 1,
+      "expected_reason": "SOURCE_QP_IDENTITY",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_qc_time_sign.optimized",
+      "returncode": 1,
+      "expected_reason": "SOURCE_QP_IDENTITY",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_scalar_potential_omitted.normal",
+      "returncode": 1,
+      "expected_reason": "SOURCE_QPHI_IDENTITY",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_scalar_potential_omitted.optimized",
+      "returncode": 1,
+      "expected_reason": "SOURCE_QPHI_IDENTITY",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_shell_tt_omitted.normal",
+      "returncode": 1,
+      "expected_reason": "SOURCE_SHELL_TENSOR",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_shell_tt_omitted.optimized",
+      "returncode": 1,
+      "expected_reason": "SOURCE_SHELL_TENSOR",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_normal_gauge_sign.normal",
+      "returncode": 1,
+      "expected_reason": "SOURCE_NORMAL_GAUGE_JOIN",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_normal_gauge_sign.optimized",
+      "returncode": 1,
+      "expected_reason": "SOURCE_NORMAL_GAUGE_JOIN",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_initial_mixed_conversion_omitted.normal",
+      "returncode": 1,
+      "expected_reason": "SOURCE_INITIAL_MIXED_VELOCITY",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_initial_mixed_conversion_omitted.optimized",
+      "returncode": 1,
+      "expected_reason": "SOURCE_INITIAL_MIXED_VELOCITY",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_einstein_scalar_stress_halved.normal",
+      "returncode": 1,
+      "expected_reason": "SOURCE_MATTER_YY",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_einstein_scalar_stress_halved.optimized",
+      "returncode": 1,
+      "expected_reason": "SOURCE_MATTER_YY",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_evaluation_omit_TF_trace.normal",
+      "returncode": 1,
+      "expected_reason": "ValueError: INTRINSIC_TF_CONTRACTION",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_evaluation_omit_TF_trace.optimized",
+      "returncode": 1,
+      "expected_reason": "ValueError: INTRINSIC_TF_CONTRACTION",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_evaluation_wrong_F_Gram.normal",
+      "returncode": 1,
+      "expected_reason": "ValueError: SCALAR_GRAM_KERNEL",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_evaluation_wrong_F_Gram.optimized",
+      "returncode": 1,
+      "expected_reason": "ValueError: SCALAR_GRAM_KERNEL",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_evaluation_omit_TT_sector.normal",
+      "returncode": 1,
+      "expected_reason": "ValueError: BOTH_TT_KERNELS",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_evaluation_omit_TT_sector.optimized",
+      "returncode": 1,
+      "expected_reason": "ValueError: BOTH_TT_KERNELS",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_evaluation_unsafe_constant4.normal",
+      "returncode": 1,
+      "expected_reason": "ValueError: SHARP_SCALAR_ENDPOINT",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_evaluation_unsafe_constant4.optimized",
+      "returncode": 1,
+      "expected_reason": "ValueError: SHARP_SCALAR_ENDPOINT",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_evaluation_Bernstein_error.normal",
+      "returncode": 1,
+      "expected_reason": "ValueError: UNIVARIATE_BERNSTEIN_IDENTITY",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_evaluation_Bernstein_error.optimized",
+      "returncode": 1,
+      "expected_reason": "ValueError: UNIVARIATE_BERNSTEIN_IDENTITY",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_operator_fibre_time_sign.normal",
+      "returncode": 1,
+      "expected_reason": "ValueError: PRIMITIVE_O",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_operator_fibre_time_sign.optimized",
+      "returncode": 1,
+      "expected_reason": "ValueError: PRIMITIVE_O",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_operator_rough_tensor_shift.normal",
+      "returncode": 1,
+      "expected_reason": "ValueError: PRIMITIVE_Delta",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_operator_rough_tensor_shift.optimized",
+      "returncode": 1,
+      "expected_reason": "ValueError: PRIMITIVE_Delta",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_operator_coordinate_Robin.normal",
+      "returncode": 1,
+      "expected_reason": "ValueError: PRIMITIVE_By_a",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_operator_coordinate_Robin.optimized",
+      "returncode": 1,
+      "expected_reason": "ValueError: PRIMITIVE_By_a",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_operator_angular_connection_sign.normal",
+      "returncode": 1,
+      "expected_reason": "ValueError: PRIMITIVE_Ca",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_operator_angular_connection_sign.optimized",
+      "returncode": 1,
+      "expected_reason": "ValueError: PRIMITIVE_Ca",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_operator_mixed_weight.normal",
+      "returncode": 1,
+      "expected_reason": "ValueError: PHYSICAL_GRAM",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_operator_mixed_weight.optimized",
+      "returncode": 1,
+      "expected_reason": "ValueError: PHYSICAL_GRAM",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_operator_curvature_sign.normal",
+      "returncode": 1,
+      "expected_reason": "ValueError: FORMAL_ASSEMBLY_D",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_operator_curvature_sign.optimized",
+      "returncode": 1,
+      "expected_reason": "ValueError: FORMAL_ASSEMBLY_D",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_operator_omit_scalar_DC.normal",
+      "returncode": 1,
+      "expected_reason": "ValueError: FORMAL_ASSEMBLY_D",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "review_check_independent_operator_omit_scalar_DC.optimized",
+      "returncode": 1,
+      "expected_reason": "ValueError: FORMAL_ASSEMBLY_D",
+      "reason_matched": true,
+      "no_output": true
+    }
+  ],
+  "source_unchanged": true,
+  "scope": "Certified numerical inputs, exact selected23 angular operator/achieved source subset, sharp selected-space evaluation and refined formal-response majorant. The numerical full second waveform, geometric Ricci/reduced source adapter and continuous response residual remain unfinished. Inherited inputs are authenticated premises, not silently replayed PDE proofs."
+}
