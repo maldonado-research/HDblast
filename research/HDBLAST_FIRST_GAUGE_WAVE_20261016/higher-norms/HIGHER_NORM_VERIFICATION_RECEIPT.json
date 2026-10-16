@@ -1,0 +1,40 @@
+{
+  "status": "PASS_CONTINUOUS_C3_RAW_GAUGE_CAPS_NORMAL_OPTIMIZED_AND_CONTROLS",
+  "python": "3.12.14",
+  "dependencies": "Python standard library only",
+  "report_sha256": "f246bc6840ea36f123c7c53da28a9c04925954187e0f06df25add779ce083c6d",
+  "normal_optimized_byte_identical": true,
+  "normal_and_optimized_exit_codes": [
+    0,
+    0
+  ],
+  "semantic_controls": {
+    "normal": 5,
+    "optimized": 5,
+    "expected_exit_code": 1
+  },
+  "file_sha256": {
+    "check_gauge_higher_norms.py": "43a40af69416efdac1cf16da6dfe6d55a71008a9fe3f2dbc4a9087fd571875be",
+    "run_higher_norm_controls.py": "9228a8722f7e6ae5f56e80294c87482c2787583bc18b3143338552033d749d1e",
+    "README.md": "e2e72468a7279d967aae767b56e7a337a57dd1f5a681411381c16045787ee184",
+    "INPUT_PROVENANCE.json": "5fb00db1436c04eae763d8c9bb9b11bafa5b73e0c97f5c7d6732f819208348b4",
+    "HIGHER_NORM_REPLAY_ROSTER.json": "57d8d94eaff5eca1a0c155d374d2fd8b2e44ec1e0149d07e9351bbeba3037b86",
+    "HIGHER_GAUGE_NORMS_NORMAL.json": "f246bc6840ea36f123c7c53da28a9c04925954187e0f06df25add779ce083c6d",
+    "HIGHER_GAUGE_NORMS_OPTIMIZED.json": "f246bc6840ea36f123c7c53da28a9c04925954187e0f06df25add779ce083c6d",
+    "HIGHER_NORM_CONTROLS.json": "f16e20c673c5492573ea98582c270cb214b143f15e26cabafb23fc657a1cfcbc"
+  },
+  "input_sha256": {
+    "GLOBAL_GAUGE_COEFFICIENTS_NORMAL.json": "4009c46f6d63583b4d161eebbb620077467b7561a3c4b5728d5293655d340a53",
+    "COEFFICIENT_VERIFICATION_RECEIPT.json": "30b970991fe5e189892cbf007d9063ad78deb367f09cb8a5a4a6ce9988c55197",
+    "MIXED_WAVE_REGULARITY.md": "00f654647d3cd5578e3f9afcb00dc3ec81739036f40adbe43f53e84b87506e98"
+  },
+  "sourcePath": "higher-norms",
+  "domain": {
+    "ell": "1/1000000",
+    "scaled": "0<=x<=3, r>=0, x+r<=8",
+    "unscaled": "0<=t<=3ell, z>=0, t+z<=8ell",
+    "boundary": "physical shell r=0; one-sided classical derivatives"
+  },
+  "coefficient_directory_edited": false,
+  "scope": "Pointwise continuous raw-amplitude coordinate derivative caps through total order3, conditional on retained actual branch/master and the pinned gauge-wave construction. Not frame/covariant/angular derivative norms, energy norms, nonlinear amplitude/remainder bounds, or a full second-order contact solution."
+}

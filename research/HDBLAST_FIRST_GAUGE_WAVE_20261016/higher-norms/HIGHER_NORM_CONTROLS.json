@@ -1,0 +1,76 @@
+{
+  "status": "PASS_HIGHER_NORM_SEMANTIC_CONTROLS_NORMAL_AND_OPTIMIZED",
+  "runs": [
+    {
+      "control": "use_Ax0_initial_velocity",
+      "optimized": false,
+      "exit_code": 1,
+      "expected_exception": "second-time initial velocity uses A(0), not A_x(0)",
+      "status": "REJECTED_FOR_INTENDED_REASON"
+    },
+    {
+      "control": "drop_second_commutator_two",
+      "optimized": false,
+      "exit_code": 1,
+      "expected_exception": "second-time commutator factor two",
+      "status": "REJECTED_FOR_INTENDED_REASON"
+    },
+    {
+      "control": "drop_field_value_factor",
+      "optimized": false,
+      "exit_code": 1,
+      "expected_exception": "weighted field value factor is X/2=3/2",
+      "status": "REJECTED_FOR_INTENDED_REASON"
+    },
+    {
+      "control": "omit_source_radial_derivative",
+      "optimized": false,
+      "exit_code": 1,
+      "expected_exception": "third radial recovery retains source radial derivative",
+      "status": "REJECTED_FOR_INTENDED_REASON"
+    },
+    {
+      "control": "wrong_physical_scaling",
+      "optimized": false,
+      "exit_code": 1,
+      "expected_exception": "unscaled derivatives require ell to negative total order",
+      "status": "REJECTED_FOR_INTENDED_REASON"
+    },
+    {
+      "control": "use_Ax0_initial_velocity",
+      "optimized": true,
+      "exit_code": 1,
+      "expected_exception": "second-time initial velocity uses A(0), not A_x(0)",
+      "status": "REJECTED_FOR_INTENDED_REASON"
+    },
+    {
+      "control": "drop_second_commutator_two",
+      "optimized": true,
+      "exit_code": 1,
+      "expected_exception": "second-time commutator factor two",
+      "status": "REJECTED_FOR_INTENDED_REASON"
+    },
+    {
+      "control": "drop_field_value_factor",
+      "optimized": true,
+      "exit_code": 1,
+      "expected_exception": "weighted field value factor is X/2=3/2",
+      "status": "REJECTED_FOR_INTENDED_REASON"
+    },
+    {
+      "control": "omit_source_radial_derivative",
+      "optimized": true,
+      "exit_code": 1,
+      "expected_exception": "third radial recovery retains source radial derivative",
+      "status": "REJECTED_FOR_INTENDED_REASON"
+    },
+    {
+      "control": "wrong_physical_scaling",
+      "optimized": true,
+      "exit_code": 1,
+      "expected_exception": "unscaled derivatives require ell to negative total order",
+      "status": "REJECTED_FOR_INTENDED_REASON"
+    }
+  ],
+  "scope": "Initial A(0), commutator2, field-value3/2, radial source derivative and ell inverse powers."
+}

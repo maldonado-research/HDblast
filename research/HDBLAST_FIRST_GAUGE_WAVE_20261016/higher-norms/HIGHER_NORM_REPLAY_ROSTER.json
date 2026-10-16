@@ -1,0 +1,211 @@
+{
+  "schema": "hdblast-higher-gauge-norm-replay-v1",
+  "output_rule": "new output paths outside source/input tree",
+  "jobs": [
+    {
+      "id": "higher_norm_normal",
+      "script": "check_gauge_higher_norms.py",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "{output_dir}/normal.json"
+      ],
+      "expected_exit_code": 0,
+      "golden_report": "HIGHER_GAUGE_NORMS_NORMAL.json"
+    },
+    {
+      "id": "use_Ax0_initial_velocity_normal",
+      "script": "check_gauge_higher_norms.py",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "use_Ax0_initial_velocity",
+        "--output",
+        "{output_dir}/reject_use_Ax0_initial_velocityFalse.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "second-time initial velocity uses A(0), not A_x(0)",
+      "expected_report_absent": true
+    },
+    {
+      "id": "drop_second_commutator_two_normal",
+      "script": "check_gauge_higher_norms.py",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "drop_second_commutator_two",
+        "--output",
+        "{output_dir}/reject_drop_second_commutator_twoFalse.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "second-time commutator factor two",
+      "expected_report_absent": true
+    },
+    {
+      "id": "drop_field_value_factor_normal",
+      "script": "check_gauge_higher_norms.py",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "drop_field_value_factor",
+        "--output",
+        "{output_dir}/reject_drop_field_value_factorFalse.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "weighted field value factor is X/2=3/2",
+      "expected_report_absent": true
+    },
+    {
+      "id": "omit_source_radial_derivative_normal",
+      "script": "check_gauge_higher_norms.py",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "omit_source_radial_derivative",
+        "--output",
+        "{output_dir}/reject_omit_source_radial_derivativeFalse.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "third radial recovery retains source radial derivative",
+      "expected_report_absent": true
+    },
+    {
+      "id": "wrong_physical_scaling_normal",
+      "script": "check_gauge_higher_norms.py",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "wrong_physical_scaling",
+        "--output",
+        "{output_dir}/reject_wrong_physical_scalingFalse.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "unscaled derivatives require ell to negative total order",
+      "expected_report_absent": true
+    },
+    {
+      "id": "higher_norm_optimized",
+      "script": "check_gauge_higher_norms.py",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "{output_dir}/optimized.json"
+      ],
+      "expected_exit_code": 0,
+      "golden_report": "HIGHER_GAUGE_NORMS_OPTIMIZED.json"
+    },
+    {
+      "id": "use_Ax0_initial_velocity_optimized",
+      "script": "check_gauge_higher_norms.py",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "use_Ax0_initial_velocity",
+        "--output",
+        "{output_dir}/reject_use_Ax0_initial_velocityTrue.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "second-time initial velocity uses A(0), not A_x(0)",
+      "expected_report_absent": true
+    },
+    {
+      "id": "drop_second_commutator_two_optimized",
+      "script": "check_gauge_higher_norms.py",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "drop_second_commutator_two",
+        "--output",
+        "{output_dir}/reject_drop_second_commutator_twoTrue.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "second-time commutator factor two",
+      "expected_report_absent": true
+    },
+    {
+      "id": "drop_field_value_factor_optimized",
+      "script": "check_gauge_higher_norms.py",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "drop_field_value_factor",
+        "--output",
+        "{output_dir}/reject_drop_field_value_factorTrue.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "weighted field value factor is X/2=3/2",
+      "expected_report_absent": true
+    },
+    {
+      "id": "omit_source_radial_derivative_optimized",
+      "script": "check_gauge_higher_norms.py",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "omit_source_radial_derivative",
+        "--output",
+        "{output_dir}/reject_omit_source_radial_derivativeTrue.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "third radial recovery retains source radial derivative",
+      "expected_report_absent": true
+    },
+    {
+      "id": "wrong_physical_scaling_optimized",
+      "script": "check_gauge_higher_norms.py",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "wrong_physical_scaling",
+        "--output",
+        "{output_dir}/reject_wrong_physical_scalingTrue.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "unscaled derivatives require ell to negative total order",
+      "expected_report_absent": true
+    }
+  ],
+  "aggregate_control_runner": "run_higher_norm_controls.py --output {output_dir}/controls.json"
+}

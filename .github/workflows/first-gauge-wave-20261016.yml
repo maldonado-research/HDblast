@@ -1,0 +1,55 @@
+name: First relative-harmonic gauge wave replay
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_FIRST_GAUGE_WAVE_20261016/**'
+      - 'research/HDBLAST_FIRST_GAUGE_WAVE_20261016.zip'
+      - 'hdblast/continuation/2026.10.16-first-gauge-wave/**'
+      - '.github/workflows/first-gauge-wave-20261016.yml'
+      - 'README.md'
+      - 'site/index.html'
+      - 'site/es/index.html'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_FIRST_GAUGE_WAVE_20261016/**'
+      - 'research/HDBLAST_FIRST_GAUGE_WAVE_20261016.zip'
+      - 'hdblast/continuation/2026.10.16-first-gauge-wave/**'
+      - '.github/workflows/first-gauge-wave-20261016.yml'
+      - 'README.md'
+      - 'site/index.html'
+      - 'site/es/index.html'
+permissions:
+  contents: read
+jobs:
+  authenticated-source-and-exact-replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: |
+            research/HDBLAST_FIRST_GAUGE_WAVE_20261016
+            research/HDBLAST_FIRST_GAUGE_WAVE_20261016.zip
+            hdblast/continuation/2026.10.16-first-gauge-wave
+            README.md
+            site/index.html
+            site/es/index.html
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+      - name: Authenticate closed source, matching ZIP, and exact fresh replay
+        run: |
+          python -I -S -B hdblast/continuation/2026.10.16-first-gauge-wave/verify_and_reproduce.py --repo-root . --pins hdblast/continuation/2026.10.16-first-gauge-wave/PUBLICATION_PINS.json --output-dir "$RUNNER_TEMP/first-gauge-wave-verification"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: first-gauge-wave-${{ github.sha }}
+          path: ${{ runner.temp }}/first-gauge-wave-verification
+          retention-days: 14

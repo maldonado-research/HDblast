@@ -1,5 +1,12 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- first-gauge-wave-20261016 -->
+**16 October 2026: certified first relative-harmonic gauge wave:** A convergent construction gives the first coordinate gauge vector for the retained regular background and quadrupole, with continuous derivatives through order three. An explicit approximation has uniform radial coordinate-amplitude error below 5.47 × 10⁻⁹ on the controlled causal triangle. The shell’s normal Dirichlet and tangential Neumann conditions are retained.
+
+This conditional first-order result leaves the transformed quadratic bulk and shell sources and the second-order Einstein–scalar evolution unfinished. No invariant force or higher-dimensional Big Bang origin is established. Internal AI-assisted review does not replace external specialist review. No new Zenodo version or journal submission accompanies this checkpoint.
+
+[Research source and exact reports](https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_FIRST_GAUGE_WAVE_20261016) · [Construction and error proof](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_FIRST_GAUGE_WAVE_20261016/solver/GAUGE_WAVE_SOLUTION_AND_DEFECT.md) · [Derivative bounds](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_FIRST_GAUGE_WAVE_20261016/higher-norms/README.md) · [Source ZIP](https://github.com/maldonado-research/HDblast/raw/refs/heads/main/research/HDBLAST_FIRST_GAUGE_WAVE_20261016.zip) · [Replay and publication evidence](https://github.com/maldonado-research/HDblast/tree/main/hdblast/continuation/2026.10.16-first-gauge-wave).
+
 <!-- second-initial-norms-gauge-20261015 -->
 **15 October 2026: second initial norms and initial harmonic gauge:** Exact rational calculations give coarse certified upper bounds for all four physical second initial fields and their first spatial covariant derivatives. The initial constraint-source cancellations remain exact. Explicit local initial relative-harmonic lapse and shift velocities retain the quadratic terms. These conditional bounds do not demonstrate a response, establish a physical force, solve the full second-order evolution or construct an exact finite-amplitude family. Common boundary/gauge completion and validated coupled evolution remain open; earlier frozen checkpoints are preserved.
 
