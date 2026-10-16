@@ -1,0 +1,706 @@
+{
+  "jobs": [
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "bulk-producer/COMMON_GAUGE_BULK_NORMAL.json",
+        "optimized": "bulk-producer/COMMON_GAUGE_BULK_OPTIMIZED.json"
+      },
+      "name": "bulk_source",
+      "script": "bulk-producer/check_common_gauge_bulk.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "bulk-review/SOURCE_JETS_NORMAL.json",
+        "optimized": "bulk-review/SOURCE_JETS_OPTIMIZED.json"
+      },
+      "name": "source_hessian_jets",
+      "script": "bulk-review/check_common_gauge_sources.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "bulk-review/FRAME_JETS_NORMAL.json",
+        "optimized": "bulk-review/FRAME_JETS_OPTIMIZED.json"
+      },
+      "name": "frame_connection_jets",
+      "script": "bulk-review/check_frame_connection_jets.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inputs",
+        "bulk-producer/inputs",
+        "--candidate",
+        "bulk-producer/COMMON_GAUGE_BULK_NORMAL.json"
+      ],
+      "goldens": {
+        "normal": "bulk-review/INDEPENDENT_BOUNDS_NORMAL.json",
+        "optimized": "bulk-review/INDEPENDENT_BOUNDS_OPTIMIZED.json"
+      },
+      "name": "independent_bulk_bounds",
+      "script": "bulk-review/check_independent_bulk_bounds.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--run-controls"
+      ],
+      "goldens": {
+        "normal": "shell-producer/COMMON_HARMONIC_SHELL_NORMAL.json",
+        "optimized": "shell-producer/COMMON_HARMONIC_SHELL_OPTIMIZED.json"
+      },
+      "name": "physical_shell",
+      "script": "shell-producer/check_common_harmonic_shell.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--run-controls"
+      ],
+      "goldens": {
+        "normal": "boundary-review/BOUNDARY_COMPLETION_NORMAL.json",
+        "optimized": "boundary-review/BOUNDARY_COMPLETION_OPTIMIZED.json"
+      },
+      "name": "boundary_completion",
+      "script": "boundary-review/check_boundary_completion.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--shell-root",
+        "shell-producer"
+      ],
+      "goldens": {
+        "normal": "boundary-review/ACTUAL_SHELL_MAJORANTS_NORMAL.json",
+        "optimized": "boundary-review/ACTUAL_SHELL_MAJORANTS_OPTIMIZED.json"
+      },
+      "name": "independent_shell_gauge_caps",
+      "script": "boundary-review/check_actual_shell_caps.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--run-controls"
+      ],
+      "goldens": {
+        "normal": "first-fields/FIRST_FIELDS_DRAFT_NORMAL.json",
+        "optimized": "first-fields/FIRST_FIELDS_DRAFT_OPTIMIZED.json"
+      },
+      "name": "first_pair_recipe",
+      "script": "first-fields/check_first_harmonic_fields.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--research-root",
+        ".",
+        "--pins",
+        "evolution/PORTABLE_INPUT_PINS.json"
+      ],
+      "goldens": {
+        "normal": "evolution/SECOND_RESPONSE_FINAL_NORMAL.json",
+        "optimized": "evolution/SECOND_RESPONSE_FINAL_OPTIMIZED.json"
+      },
+      "name": "full_second_coefficient",
+      "script": "evolution/check_second_response.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "evolution-review/EVOLUTION_REVIEW_NORMAL.json",
+        "optimized": "evolution-review/EVOLUTION_REVIEW_OPTIMIZED.json"
+      },
+      "name": "independent_evolution_review",
+      "script": "evolution-review/check_evolution_review.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--root",
+        "."
+      ],
+      "goldens": {
+        "normal": "fresh-review/FRESH_REVIEW_NORMAL.json",
+        "optimized": "fresh-review/FRESH_REVIEW_OPTIMIZED.json"
+      },
+      "name": "fresh_scientific_review",
+      "script": "fresh-review/check_fresh_acceptance.py",
+      "timeout_seconds": 240
+    }
+  ],
+  "rejections": [
+    {
+      "arguments": [
+        "--inject-error",
+        "freeze_frame_scales"
+      ],
+      "expected_reason": "radial frame scale derivative retained",
+      "name": "bulk_freeze_frame_scales",
+      "script": "bulk-producer/check_common_gauge_bulk.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "drop_derivative_slot"
+      ],
+      "expected_reason": "second covariant jet includes derivative-slot connection",
+      "name": "bulk_drop_derivative_slot",
+      "script": "bulk-producer/check_common_gauge_bulk.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "omit_scalar_pullback"
+      ],
+      "expected_reason": "metric and scalar use the same pullback plus pf",
+      "name": "bulk_omit_scalar_pullback",
+      "script": "bulk-producer/check_common_gauge_bulk.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "undersize_sphere_fourth"
+      ],
+      "expected_reason": "actual quadrupole fourth sphere derivative cap",
+      "name": "bulk_undersize_sphere_fourth",
+      "script": "bulk-producer/check_common_gauge_bulk.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "drop_gauge_double_sum"
+      ],
+      "expected_reason": "quadratic gauge row retains both contracted indices",
+      "name": "bulk_drop_gauge_double_sum",
+      "script": "bulk-producer/check_common_gauge_bulk.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "drop_scalar_hessian_connection"
+      ],
+      "expected_reason": "scalar Hessian retains its frame connection",
+      "name": "bulk_drop_scalar_hessian_connection",
+      "script": "bulk-producer/check_common_gauge_bulk.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "half_scalar_stress_hessian"
+      ],
+      "expected_reason": "second parameter derivative retains scalar stress factor two",
+      "name": "bulk_half_scalar_stress_hessian",
+      "script": "bulk-producer/check_common_gauge_bulk.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "connection_factor"
+      ],
+      "expected_reason": "CONNECTION_HESSIAN",
+      "name": "source_connection_factor",
+      "script": "bulk-review/check_common_gauge_sources.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "background_connection_derivative"
+      ],
+      "expected_reason": "COVARIANT_CONNECTION_DERIVATIVE",
+      "name": "source_background_connection_derivative",
+      "script": "bulk-review/check_common_gauge_sources.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "ricci_product_factor"
+      ],
+      "expected_reason": "NATURAL_EINSTEIN_HESSIAN",
+      "name": "source_ricci_product_factor",
+      "script": "bulk-review/check_common_gauge_sources.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "stress_factor"
+      ],
+      "expected_reason": "NATURAL_EINSTEIN_HESSIAN",
+      "name": "source_stress_factor",
+      "script": "bulk-review/check_common_gauge_sources.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "potential_cross_factor"
+      ],
+      "expected_reason": "NATURAL_EINSTEIN_HESSIAN",
+      "name": "source_potential_cross_factor",
+      "script": "bulk-review/check_common_gauge_sources.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "scalar_connection"
+      ],
+      "expected_reason": "SCALAR_HESSIAN",
+      "name": "source_scalar_connection",
+      "script": "bulk-review/check_common_gauge_sources.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "harmonic_quadratic_contraction"
+      ],
+      "expected_reason": "QUADRATIC_GAUGE_VECTOR",
+      "name": "source_harmonic_quadratic_contraction",
+      "script": "bulk-review/check_common_gauge_sources.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "reduction_symmetrization"
+      ],
+      "expected_reason": "REDUCED_EINSTEIN_HESSIAN",
+      "name": "source_reduction_symmetrization",
+      "script": "bulk-review/check_common_gauge_sources.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "reduction_lowering_cross"
+      ],
+      "expected_reason": "REDUCED_EINSTEIN_HESSIAN",
+      "name": "source_reduction_lowering_cross",
+      "script": "bulk-review/check_common_gauge_sources.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "constant_normal_connection"
+      ],
+      "expected_reason": "SPHERE_CONNECTION_DERIVATIVE_REQUIRED",
+      "name": "frame_constant_normal_connection",
+      "script": "bulk-review/check_frame_connection_jets.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "missing_derivative_slot"
+      ],
+      "expected_reason": "METRIC_SECOND_JET_DERIVATIVE_SLOT_REQUIRED",
+      "name": "frame_missing_derivative_slot",
+      "script": "bulk-review/check_frame_connection_jets.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inputs",
+        "bulk-producer/inputs",
+        "--candidate",
+        "bulk-producer/COMMON_GAUGE_BULK_NORMAL.json",
+        "--inject",
+        "metric_cap"
+      ],
+      "expected_reason": "INDEPENDENT_METRIC_CAP",
+      "name": "bound_metric_cap",
+      "script": "bulk-review/check_independent_bulk_bounds.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inputs",
+        "bulk-producer/inputs",
+        "--candidate",
+        "bulk-producer/COMMON_GAUGE_BULK_NORMAL.json",
+        "--inject",
+        "scalar_cap"
+      ],
+      "expected_reason": "INDEPENDENT_SCALAR_CAP",
+      "name": "bound_scalar_cap",
+      "script": "bulk-review/check_independent_bulk_bounds.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inputs",
+        "bulk-producer/inputs",
+        "--candidate",
+        "bulk-producer/COMMON_GAUGE_BULK_NORMAL.json",
+        "--inject",
+        "source_cap"
+      ],
+      "expected_reason": "INDEPENDENT_SOURCE_CAP:QE",
+      "name": "bound_source_cap",
+      "script": "bulk-review/check_independent_bulk_bounds.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "wrong_normal_orientation"
+      ],
+      "expected_reason": "registered outward background Israel row",
+      "name": "shell_wrong_normal_orientation",
+      "script": "shell-producer/check_common_harmonic_shell.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "half_affine_hessian"
+      ],
+      "expected_reason": "full tensor affine normal Hessian",
+      "name": "shell_half_affine_hessian",
+      "script": "shell-producer/check_common_harmonic_shell.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "isotropic_tensor_only"
+      ],
+      "expected_reason": "anisotropic off-diagonal metric Hessian",
+      "name": "shell_isotropic_tensor_only",
+      "script": "shell-producer/check_common_harmonic_shell.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "wrong_sigma_third"
+      ],
+      "expected_reason": "registered scalar affine Hessian",
+      "name": "shell_wrong_sigma_third",
+      "script": "shell-producer/check_common_harmonic_shell.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "wrong_proper_normal_scale"
+      ],
+      "expected_reason": "proper inward mixed derivative witness",
+      "name": "shell_wrong_proper_normal_scale",
+      "script": "shell-producer/check_common_harmonic_shell.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "missing_two_copy_factor"
+      ],
+      "expected_reason": "one/two-copy metric residual Hessian adapter",
+      "name": "shell_missing_two_copy_factor",
+      "script": "shell-producer/check_common_harmonic_shell.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "scalar-sign"
+      ],
+      "expected_reason": "scalar convention",
+      "name": "boundary_scalar-sign",
+      "script": "boundary-review/check_boundary_completion.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "factorial"
+      ],
+      "expected_reason": "physical metric Hessian/completion",
+      "name": "boundary_factorial",
+      "script": "boundary-review/check_boundary_completion.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "isotropic-source"
+      ],
+      "expected_reason": "physical metric Hessian/completion",
+      "name": "boundary_isotropic-source",
+      "script": "boundary-review/check_boundary_completion.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "scalar-third"
+      ],
+      "expected_reason": "physical scalar Hessian/completion",
+      "name": "boundary_scalar-third",
+      "script": "boundary-review/check_boundary_completion.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "omit-matrix-square"
+      ],
+      "expected_reason": "normal gauge Hessian/completion",
+      "name": "boundary_omit-matrix-square",
+      "script": "boundary-review/check_boundary_completion.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "lapse-conversion"
+      ],
+      "expected_reason": "metric versus lapse coefficient",
+      "name": "boundary_lapse-conversion",
+      "script": "boundary-review/check_boundary_completion.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "clock_sign"
+      ],
+      "expected_reason": "metric component tt",
+      "name": "first_pair_clock_sign",
+      "script": "first-fields/check_first_harmonic_fields.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "missing_c_squared"
+      ],
+      "expected_reason": "metric component yi",
+      "name": "first_pair_missing_c_squared",
+      "script": "first-fields/check_first_harmonic_fields.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "wrong_inward_sign"
+      ],
+      "expected_reason": "physical inward mixed conversion",
+      "name": "first_pair_wrong_inward_sign",
+      "script": "first-fields/check_first_harmonic_fields.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "half_connection_hessian"
+      ],
+      "expected_reason": "connection second-parameter derivative",
+      "name": "first_pair_half_connection_hessian",
+      "script": "first-fields/check_first_harmonic_fields.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "missing_scalar_connection"
+      ],
+      "expected_reason": "full scalar affine Hessian",
+      "name": "first_pair_missing_scalar_connection",
+      "script": "first-fields/check_first_harmonic_fields.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--research-root",
+        ".",
+        "--pins",
+        "evolution/PORTABLE_INPUT_PINS.json",
+        "--inject",
+        "omit_TT"
+      ],
+      "expected_reason": "angular_TT_sectors_required",
+      "name": "evolution_omit_TT",
+      "script": "evolution/check_second_response.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--research-root",
+        ".",
+        "--pins",
+        "evolution/PORTABLE_INPUT_PINS.json",
+        "--inject",
+        "coordinate_Robin_in_frame"
+      ],
+      "expected_reason": "parallel_frame_cancels_tangent_2a",
+      "name": "evolution_coordinate_Robin_in_frame",
+      "script": "evolution/check_second_response.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--research-root",
+        ".",
+        "--pins",
+        "evolution/PORTABLE_INPUT_PINS.json",
+        "--inject",
+        "drop_scalar_DC"
+      ],
+      "expected_reason": "scalar_DC_coupling_required",
+      "name": "evolution_drop_scalar_DC",
+      "script": "evolution/check_second_response.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--research-root",
+        ".",
+        "--pins",
+        "evolution/PORTABLE_INPUT_PINS.json",
+        "--inject",
+        "wrong_metric_force_sign"
+      ],
+      "expected_reason": "unit_wave_metric_force_sign",
+      "name": "evolution_wrong_metric_force_sign",
+      "script": "evolution/check_second_response.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--research-root",
+        ".",
+        "--pins",
+        "evolution/PORTABLE_INPUT_PINS.json",
+        "--inject",
+        "wrong_lift_sign"
+      ],
+      "expected_reason": "neumann_lift_normal_derivative",
+      "name": "evolution_wrong_lift_sign",
+      "script": "evolution/check_second_response.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--research-root",
+        ".",
+        "--pins",
+        "evolution/PORTABLE_INPUT_PINS.json",
+        "--inject",
+        "omit_trace_weight"
+      ],
+      "expected_reason": "weighted_boundary_trace_factor",
+      "name": "evolution_omit_trace_weight",
+      "script": "evolution/check_second_response.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "curvature_sign"
+      ],
+      "expected_reason": "CURVED_RICCI_LINEARIZATION",
+      "name": "evolution_review_curvature_sign",
+      "script": "evolution-review/check_evolution_review.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "derivative_slot"
+      ],
+      "expected_reason": "CURVED_RICCI_LINEARIZATION",
+      "name": "evolution_review_derivative_slot",
+      "script": "evolution-review/check_evolution_review.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "symmetrization"
+      ],
+      "expected_reason": "CURVED_RICCI_LINEARIZATION",
+      "name": "evolution_review_symmetrization",
+      "script": "evolution-review/check_evolution_review.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "scalar_DC"
+      ],
+      "expected_reason": "SCALAR_LINEARIZATION",
+      "name": "evolution_review_scalar_DC",
+      "script": "evolution-review/check_evolution_review.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_TT"
+      ],
+      "expected_reason": "ANGULAR_MULTIPLICITY",
+      "name": "evolution_review_omit_TT",
+      "script": "evolution-review/check_evolution_review.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "scalar_component_cutoff"
+      ],
+      "expected_reason": "ANGULAR_MULTIPLICITY",
+      "name": "evolution_review_scalar_component_cutoff",
+      "script": "evolution-review/check_evolution_review.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "evaluation_factor"
+      ],
+      "expected_reason": "EVALUATION_TRACE",
+      "name": "evolution_review_evaluation_factor",
+      "script": "evolution-review/check_evolution_review.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "missing_boundary_weight"
+      ],
+      "expected_reason": "BOUNDARY_TRACE_WEIGHT",
+      "name": "evolution_review_missing_boundary_weight",
+      "script": "evolution-review/check_evolution_review.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "wrong_initial_frame_sign"
+      ],
+      "expected_reason": "INITIAL_FRAME_CONVERSION",
+      "name": "evolution_review_wrong_initial_frame_sign",
+      "script": "evolution-review/check_evolution_review.py",
+      "timeout_seconds": 120
+    }
+  ],
+  "schema": "hdblast-explicit-complete-json-replay-v1",
+  "scope": "Complete JSON replay of actual common-first-harmonic bulk and physical/gauge shell source certificates, independent finite algebra/majorant reviews, and the retained first-pair recipe. Inherited actual branch/master/gauge PDE certificates are authenticated inputs, not all freshly replayed. No exact finite-amplitude nonlinear family, remainder or invariant force is claimed. Includes the accepted integral-defined formal second coefficient and its explicit majorant joins."
+}

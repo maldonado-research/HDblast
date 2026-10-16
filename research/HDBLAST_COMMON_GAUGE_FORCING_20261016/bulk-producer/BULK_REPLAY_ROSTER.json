@@ -1,0 +1,281 @@
+{
+  "schema": "hdblast-common-gauge-bulk-replay-v1",
+  "output_rule": "new external output paths, no overwrites",
+  "jobs": [
+    {
+      "id": "common_gauge_bulk_normal",
+      "script": "check_common_gauge_bulk.py",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--output",
+        "{output_dir}/normal.json"
+      ],
+      "expected_exit_code": 0,
+      "golden_report": "COMMON_GAUGE_BULK_NORMAL.json"
+    },
+    {
+      "id": "freeze_frame_scales_normal",
+      "script": "check_common_gauge_bulk.py",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "freeze_frame_scales",
+        "--output",
+        "{output_dir}/reject_freeze_frame_scalesFalse.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "radial frame scale derivative retained",
+      "expected_report_absent": true
+    },
+    {
+      "id": "drop_derivative_slot_normal",
+      "script": "check_common_gauge_bulk.py",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "drop_derivative_slot",
+        "--output",
+        "{output_dir}/reject_drop_derivative_slotFalse.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "second covariant jet includes derivative-slot connection",
+      "expected_report_absent": true
+    },
+    {
+      "id": "omit_scalar_pullback_normal",
+      "script": "check_common_gauge_bulk.py",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "omit_scalar_pullback",
+        "--output",
+        "{output_dir}/reject_omit_scalar_pullbackFalse.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "metric and scalar use the same pullback plus pf",
+      "expected_report_absent": true
+    },
+    {
+      "id": "undersize_sphere_fourth_normal",
+      "script": "check_common_gauge_bulk.py",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "undersize_sphere_fourth",
+        "--output",
+        "{output_dir}/reject_undersize_sphere_fourthFalse.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "actual quadrupole fourth sphere derivative cap",
+      "expected_report_absent": true
+    },
+    {
+      "id": "drop_gauge_double_sum_normal",
+      "script": "check_common_gauge_bulk.py",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "drop_gauge_double_sum",
+        "--output",
+        "{output_dir}/reject_drop_gauge_double_sumFalse.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "quadratic gauge row retains both contracted indices",
+      "expected_report_absent": true
+    },
+    {
+      "id": "drop_scalar_hessian_connection_normal",
+      "script": "check_common_gauge_bulk.py",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "drop_scalar_hessian_connection",
+        "--output",
+        "{output_dir}/reject_drop_scalar_hessian_connectionFalse.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "scalar Hessian retains its frame connection",
+      "expected_report_absent": true
+    },
+    {
+      "id": "half_scalar_stress_hessian_normal",
+      "script": "check_common_gauge_bulk.py",
+      "python_flags": [
+        "-I",
+        "-B"
+      ],
+      "arguments": [
+        "--inject-error",
+        "half_scalar_stress_hessian",
+        "--output",
+        "{output_dir}/reject_half_scalar_stress_hessianFalse.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "second parameter derivative retains scalar stress factor two",
+      "expected_report_absent": true
+    },
+    {
+      "id": "common_gauge_bulk_optimized",
+      "script": "check_common_gauge_bulk.py",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--output",
+        "{output_dir}/optimized.json"
+      ],
+      "expected_exit_code": 0,
+      "golden_report": "COMMON_GAUGE_BULK_OPTIMIZED.json"
+    },
+    {
+      "id": "freeze_frame_scales_optimized",
+      "script": "check_common_gauge_bulk.py",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "freeze_frame_scales",
+        "--output",
+        "{output_dir}/reject_freeze_frame_scalesTrue.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "radial frame scale derivative retained",
+      "expected_report_absent": true
+    },
+    {
+      "id": "drop_derivative_slot_optimized",
+      "script": "check_common_gauge_bulk.py",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "drop_derivative_slot",
+        "--output",
+        "{output_dir}/reject_drop_derivative_slotTrue.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "second covariant jet includes derivative-slot connection",
+      "expected_report_absent": true
+    },
+    {
+      "id": "omit_scalar_pullback_optimized",
+      "script": "check_common_gauge_bulk.py",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "omit_scalar_pullback",
+        "--output",
+        "{output_dir}/reject_omit_scalar_pullbackTrue.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "metric and scalar use the same pullback plus pf",
+      "expected_report_absent": true
+    },
+    {
+      "id": "undersize_sphere_fourth_optimized",
+      "script": "check_common_gauge_bulk.py",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "undersize_sphere_fourth",
+        "--output",
+        "{output_dir}/reject_undersize_sphere_fourthTrue.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "actual quadrupole fourth sphere derivative cap",
+      "expected_report_absent": true
+    },
+    {
+      "id": "drop_gauge_double_sum_optimized",
+      "script": "check_common_gauge_bulk.py",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "drop_gauge_double_sum",
+        "--output",
+        "{output_dir}/reject_drop_gauge_double_sumTrue.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "quadratic gauge row retains both contracted indices",
+      "expected_report_absent": true
+    },
+    {
+      "id": "drop_scalar_hessian_connection_optimized",
+      "script": "check_common_gauge_bulk.py",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "drop_scalar_hessian_connection",
+        "--output",
+        "{output_dir}/reject_drop_scalar_hessian_connectionTrue.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "scalar Hessian retains its frame connection",
+      "expected_report_absent": true
+    },
+    {
+      "id": "half_scalar_stress_hessian_optimized",
+      "script": "check_common_gauge_bulk.py",
+      "python_flags": [
+        "-I",
+        "-B",
+        "-O"
+      ],
+      "arguments": [
+        "--inject-error",
+        "half_scalar_stress_hessian",
+        "--output",
+        "{output_dir}/reject_half_scalar_stress_hessianTrue.json"
+      ],
+      "expected_exit_code": 1,
+      "expected_stderr_contains": "second parameter derivative retains scalar stress factor two",
+      "expected_report_absent": true
+    }
+  ],
+  "aggregate_controls": "run_bulk_controls.py --output {output_dir}/controls.json"
+}
