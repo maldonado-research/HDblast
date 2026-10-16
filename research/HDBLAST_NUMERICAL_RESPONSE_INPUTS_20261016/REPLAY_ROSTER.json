@@ -1,0 +1,679 @@
+{
+  "jobs": [
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "numeric/APPROXIMATION_ERRORS_NORMAL.json",
+        "optimized": "numeric/APPROXIMATION_ERRORS_OPTIMIZED.json"
+      },
+      "name": "first_C3_errors",
+      "script": "numeric/check_approximation_errors.py",
+      "timeout_seconds": 600
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "numeric/BACKGROUND_APPROXIMATION_NORMAL.json",
+        "optimized": "numeric/BACKGROUND_APPROXIMATION_OPTIMIZED.json"
+      },
+      "name": "background_C4_errors",
+      "script": "numeric/evaluate_background_approximation.py",
+      "timeout_seconds": 600
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "numeric/INITIAL_PROFILES_NORMAL.json",
+        "optimized": "numeric/INITIAL_PROFILES_OPTIMIZED.json"
+      },
+      "name": "actual_initial_profiles",
+      "script": "numeric/evaluate_initial_profiles.py",
+      "timeout_seconds": 600
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "numeric-review/C3_ERROR_FINAL_NORMAL.json",
+        "optimized": "numeric-review/C3_ERROR_FINAL_OPTIMIZED.json"
+      },
+      "name": "independent_C3_errors",
+      "script": "numeric-review/check_independent_error_certificate.py",
+      "timeout_seconds": 600
+    },
+    {
+      "arguments": [
+        "--run-controls"
+      ],
+      "goldens": {
+        "normal": "numeric-review/INITIAL_ALGEBRA_FINAL_NORMAL.json",
+        "optimized": "numeric-review/INITIAL_ALGEBRA_FINAL_OPTIMIZED.json"
+      },
+      "name": "independent_initial_algebra",
+      "script": "numeric-review/check_independent_initial_algebra.py",
+      "timeout_seconds": 600
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "evaluation-bound/EVALUATION_BOUND_NORMAL.json",
+        "optimized": "evaluation-bound/EVALUATION_BOUND_OPTIMIZED.json"
+      },
+      "name": "sharp_evaluation_bound",
+      "script": "evaluation-bound/check_evaluation_bound.py",
+      "timeout_seconds": 600
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "angular/ANGULAR_OPERATOR_NORMAL.json",
+        "optimized": "angular/ANGULAR_OPERATOR_OPTIMIZED.json"
+      },
+      "name": "homogeneous_angular_operator",
+      "script": "angular/check_angular_operator.py",
+      "timeout_seconds": 600
+    },
+    {
+      "arguments": [
+        "--run-controls"
+      ],
+      "goldens": {
+        "normal": "angular/source-audit/SOURCE_ADAPTERS_NORMAL.json",
+        "optimized": "angular/source-audit/SOURCE_ADAPTERS_OPTIMIZED.json"
+      },
+      "name": "achieved_source_adapters",
+      "script": "angular/source-audit/check_source_adapters.py",
+      "timeout_seconds": 600
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "response/REFINED_RESPONSE_NORMAL.json",
+        "optimized": "response/REFINED_RESPONSE_OPTIMIZED.json"
+      },
+      "name": "refined_response_majorant",
+      "script": "response/check_refined_majorant.py",
+      "timeout_seconds": 600
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "response/SIGNED_WITNESSES_NORMAL.json",
+        "optimized": "response/SIGNED_WITNESSES_OPTIMIZED.json"
+      },
+      "name": "five_initial_zero_brackets",
+      "script": "response/check_signed_profile_witnesses.py",
+      "timeout_seconds": 600
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "angular-review/EVALUATION_REVIEW_NORMAL.json",
+        "optimized": "angular-review/EVALUATION_REVIEW_OPTIMIZED.json"
+      },
+      "name": "independent_independent_evaluation",
+      "script": "angular-review/check_independent_evaluation.py",
+      "timeout_seconds": 600
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "angular-review/OPERATOR_REVIEW_NORMAL.json",
+        "optimized": "angular-review/OPERATOR_REVIEW_OPTIMIZED.json"
+      },
+      "name": "independent_independent_operator",
+      "script": "angular-review/check_independent_operator.py",
+      "timeout_seconds": 600
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "assembly-checks/INPUT_CORRUPTION_CONTROL.json",
+        "optimized": "assembly-checks/INPUT_CORRUPTION_CONTROL.json"
+      },
+      "modes": [
+        "normal"
+      ],
+      "name": "changed_master_byte_fixture",
+      "script": "assembly-checks/check_input_corruption.py",
+      "timeout_seconds": 600
+    }
+  ],
+  "process_accounting": {
+    "counts_are_processes_not_theorems": true,
+    "direct_rejection_processes": 104,
+    "historical_NUMERIC_CONTROLS_rejections_not_newly_replayed_as_aggregate": 14,
+    "nested_details": {
+      "changed_master_byte_isolated_normal_optimized": 2,
+      "initial_algebra_normal_optimized": 16,
+      "source_adapter_normal_optimized": 14
+    },
+    "nested_rejections_inside_positive_processes": 32,
+    "top_level_positive_processes": 25
+  },
+  "rejections": [
+    {
+      "arguments": [
+        "--inject-error",
+        "drop_dynamic_lift"
+      ],
+      "expected_reason": "dynamic boundary third-jet retained",
+      "name": "numeric_drop_dynamic_lift",
+      "script": "numeric/check_approximation_errors.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "half_comparator"
+      ],
+      "expected_reason": "explicit product-profile commutator",
+      "name": "numeric_half_comparator",
+      "script": "numeric/check_approximation_errors.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "drop_initial_offset"
+      ],
+      "expected_reason": "stabilized third initial jet A(0) residual(0)+residual_x(0)",
+      "name": "numeric_drop_initial_offset",
+      "script": "numeric/check_approximation_errors.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "drop_radial_residual"
+      ],
+      "expected_reason": "third radial recovery retains residual_r",
+      "name": "numeric_drop_radial_residual",
+      "script": "numeric/check_approximation_errors.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--cells",
+        "0"
+      ],
+      "expected_reason": "nonempty background collar partition",
+      "name": "numeric_empty_background",
+      "script": "numeric/evaluate_background_approximation.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "omit_scalar_initial",
+        "--cells",
+        "64"
+      ],
+      "expected_reason": "nonzero second scalar initial data retained",
+      "name": "numeric_scalar_initial",
+      "script": "numeric/evaluate_initial_profiles.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_time_commutator"
+      ],
+      "expected_reason": "manufactured differentiated coefficient commutator",
+      "name": "independent_omit_time_commutator",
+      "script": "numeric-review/check_independent_error_certificate.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_initial_acceleration_offset"
+      ],
+      "expected_reason": "manufactured stabilized third initial jet",
+      "name": "independent_omit_initial_acceleration_offset",
+      "script": "numeric-review/check_independent_error_certificate.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_radial_residual"
+      ],
+      "expected_reason": "manufactured third radial recovery",
+      "name": "independent_omit_radial_residual",
+      "script": "numeric-review/check_independent_error_certificate.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "half_lapse_quadratic"
+      ],
+      "expected_reason": "second lapse velocity",
+      "name": "initial_algebra_half_lapse_quadratic",
+      "script": "numeric-review/check_independent_initial_algebra.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_radial_fy"
+      ],
+      "expected_reason": "second radial shift velocity",
+      "name": "initial_algebra_omit_radial_fy",
+      "script": "numeric-review/check_independent_initial_algebra.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "half_angular_quadratic"
+      ],
+      "expected_reason": "second angular shift velocity",
+      "name": "initial_algebra_half_angular_quadratic",
+      "script": "numeric-review/check_independent_initial_algebra.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_mixed_metric_conversion"
+      ],
+      "expected_reason": "mixed metric conversion",
+      "name": "initial_algebra_omit_mixed_metric_conversion",
+      "script": "numeric-review/check_independent_initial_algebra.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_lapse_square"
+      ],
+      "expected_reason": "second metric lapse square",
+      "name": "initial_algebra_omit_lapse_square",
+      "script": "numeric-review/check_independent_initial_algebra.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "flip_scalar_compensator"
+      ],
+      "expected_reason": "scalar compensator cancellation",
+      "name": "initial_algebra_flip_scalar_compensator",
+      "script": "numeric-review/check_independent_initial_algebra.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_fourth_packet_term"
+      ],
+      "expected_reason": "fourth packet derivative identity",
+      "name": "initial_algebra_omit_fourth_packet_term",
+      "script": "numeric-review/check_independent_initial_algebra.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_physical_affine_term"
+      ],
+      "expected_reason": "all-point canceled physical-affine scalar velocity",
+      "name": "initial_algebra_omit_physical_affine_term",
+      "script": "numeric-review/check_independent_initial_algebra.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "wrong_F_norm"
+      ],
+      "expected_reason": "FULL_ANGULAR_GRAM",
+      "name": "evaluation_wrong_F_norm",
+      "script": "evaluation-bound/check_evaluation_bound.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_mixed_weight"
+      ],
+      "expected_reason": "FROBENIUS_FIELD_WEIGHTS",
+      "name": "evaluation_omit_mixed_weight",
+      "script": "evaluation-bound/check_evaluation_bound.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_trace_weight"
+      ],
+      "expected_reason": "FROBENIUS_FIELD_WEIGHTS",
+      "name": "evaluation_omit_trace_weight",
+      "script": "evaluation-bound/check_evaluation_bound.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "ambient_hessian"
+      ],
+      "expected_reason": "SPHERE_TANGENT_TF",
+      "name": "evaluation_ambient_hessian",
+      "script": "evaluation-bound/check_evaluation_bound.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "drop_TT"
+      ],
+      "expected_reason": "FULL_ANGULAR_GRAM",
+      "name": "evaluation_drop_TT",
+      "script": "evaluation-bound/check_evaluation_bound.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "wrong_moment"
+      ],
+      "expected_reason": "FULL_ANGULAR_GRAM",
+      "name": "evaluation_wrong_moment",
+      "script": "evaluation-bound/check_evaluation_bound.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "constant_kernel23"
+      ],
+      "expected_reason": "NONCONSTANT_FULL_KERNEL",
+      "name": "evaluation_constant_kernel23",
+      "script": "evaluation-bound/check_evaluation_bound.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "unsafe_constant4"
+      ],
+      "expected_reason": "SCALAR_SHARP_ENDPOINT",
+      "name": "evaluation_unsafe_constant4",
+      "script": "evaluation-bound/check_evaluation_bound.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "corrupt_Bernstein"
+      ],
+      "expected_reason": "BERNSTEIN_RECONSTRUCTION",
+      "name": "evaluation_corrupt_Bernstein",
+      "script": "evaluation-bound/check_evaluation_bound.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "rough_tensor_shift"
+      ],
+      "expected_reason": "PRIMITIVE_LAPLACIAN",
+      "name": "angular_rough_tensor_shift",
+      "script": "angular/check_angular_operator.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "cross_sign"
+      ],
+      "expected_reason": "CROSS_RECONSTRUCTION",
+      "name": "angular_cross_sign",
+      "script": "angular/check_angular_operator.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "drop_TT"
+      ],
+      "expected_reason": "TT_RETAINED",
+      "name": "angular_drop_TT",
+      "script": "angular/check_angular_operator.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_scalar_DC"
+      ],
+      "expected_reason": "FULL_SYMBOLIC_BULK",
+      "name": "angular_omit_scalar_DC",
+      "script": "angular/check_angular_operator.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "curvature_mixed"
+      ],
+      "expected_reason": "CURVATURE",
+      "name": "angular_curvature_mixed",
+      "script": "angular/check_angular_operator.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "boundary_frame"
+      ],
+      "expected_reason": "FULL_SYMBOLIC_BOUNDARY",
+      "name": "angular_boundary_frame",
+      "script": "angular/check_angular_operator.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "dirichlet_mixed"
+      ],
+      "expected_reason": "BOUNDARY_SPLIT",
+      "name": "angular_dirichlet_mixed",
+      "script": "angular/check_angular_operator.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--mutation",
+        "angular_tt_deleted"
+      ],
+      "expected_reason": "SOURCE_Y_HESS",
+      "name": "source_angular_tt_deleted",
+      "script": "angular/source-audit/check_source_adapters.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--mutation",
+        "qc_time_sign"
+      ],
+      "expected_reason": "SOURCE_QP_IDENTITY",
+      "name": "source_qc_time_sign",
+      "script": "angular/source-audit/check_source_adapters.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--mutation",
+        "scalar_potential_omitted"
+      ],
+      "expected_reason": "SOURCE_QPHI_IDENTITY",
+      "name": "source_scalar_potential_omitted",
+      "script": "angular/source-audit/check_source_adapters.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--mutation",
+        "shell_tt_omitted"
+      ],
+      "expected_reason": "SOURCE_SHELL_TENSOR",
+      "name": "source_shell_tt_omitted",
+      "script": "angular/source-audit/check_source_adapters.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--mutation",
+        "normal_gauge_sign"
+      ],
+      "expected_reason": "SOURCE_NORMAL_GAUGE_JOIN",
+      "name": "source_normal_gauge_sign",
+      "script": "angular/source-audit/check_source_adapters.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--mutation",
+        "initial_mixed_conversion_omitted"
+      ],
+      "expected_reason": "SOURCE_INITIAL_MIXED_VELOCITY",
+      "name": "source_initial_mixed_conversion_omitted",
+      "script": "angular/source-audit/check_source_adapters.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--mutation",
+        "einstein_scalar_stress_halved"
+      ],
+      "expected_reason": "SOURCE_MATTER_YY",
+      "name": "source_einstein_scalar_stress_halved",
+      "script": "angular/source-audit/check_source_adapters.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_TF_trace"
+      ],
+      "expected_reason": "ValueError: INTRINSIC_TF_CONTRACTION",
+      "name": "review_check_independent_evaluation_omit_TF_trace",
+      "script": "angular-review/check_independent_evaluation.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "wrong_F_Gram"
+      ],
+      "expected_reason": "ValueError: SCALAR_GRAM_KERNEL",
+      "name": "review_check_independent_evaluation_wrong_F_Gram",
+      "script": "angular-review/check_independent_evaluation.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_TT_sector"
+      ],
+      "expected_reason": "ValueError: BOTH_TT_KERNELS",
+      "name": "review_check_independent_evaluation_omit_TT_sector",
+      "script": "angular-review/check_independent_evaluation.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "unsafe_constant4"
+      ],
+      "expected_reason": "ValueError: SHARP_SCALAR_ENDPOINT",
+      "name": "review_check_independent_evaluation_unsafe_constant4",
+      "script": "angular-review/check_independent_evaluation.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "Bernstein_error"
+      ],
+      "expected_reason": "ValueError: UNIVARIATE_BERNSTEIN_IDENTITY",
+      "name": "review_check_independent_evaluation_Bernstein_error",
+      "script": "angular-review/check_independent_evaluation.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "fibre_time_sign"
+      ],
+      "expected_reason": "ValueError: PRIMITIVE_O",
+      "name": "review_check_independent_operator_fibre_time_sign",
+      "script": "angular-review/check_independent_operator.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "rough_tensor_shift"
+      ],
+      "expected_reason": "ValueError: PRIMITIVE_Delta",
+      "name": "review_check_independent_operator_rough_tensor_shift",
+      "script": "angular-review/check_independent_operator.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "coordinate_Robin"
+      ],
+      "expected_reason": "ValueError: PRIMITIVE_By_a",
+      "name": "review_check_independent_operator_coordinate_Robin",
+      "script": "angular-review/check_independent_operator.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "angular_connection_sign"
+      ],
+      "expected_reason": "ValueError: PRIMITIVE_Ca",
+      "name": "review_check_independent_operator_angular_connection_sign",
+      "script": "angular-review/check_independent_operator.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "mixed_weight"
+      ],
+      "expected_reason": "ValueError: PHYSICAL_GRAM",
+      "name": "review_check_independent_operator_mixed_weight",
+      "script": "angular-review/check_independent_operator.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "curvature_sign"
+      ],
+      "expected_reason": "ValueError: FORMAL_ASSEMBLY_D",
+      "name": "review_check_independent_operator_curvature_sign",
+      "script": "angular-review/check_independent_operator.py",
+      "timeout_seconds": 240
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_scalar_DC"
+      ],
+      "expected_reason": "ValueError: FORMAL_ASSEMBLY_D",
+      "name": "review_check_independent_operator_omit_scalar_DC",
+      "script": "angular-review/check_independent_operator.py",
+      "timeout_seconds": 240
+    }
+  ],
+  "schema": "hdblast-explicit-complete-json-replay-v1",
+  "scope": "Certified numerical inputs, exact selected23 angular operator/achieved source subset, sharp selected-space evaluation and refined formal-response majorant. The numerical full second waveform, geometric Ricci/reduced source adapter and continuous response residual remain unfinished. Inherited inputs are authenticated premises, not silently replayed PDE proofs."
+}

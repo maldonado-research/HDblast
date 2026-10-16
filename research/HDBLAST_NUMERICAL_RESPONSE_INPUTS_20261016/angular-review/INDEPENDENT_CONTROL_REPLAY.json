@@ -1,0 +1,224 @@
+{
+  "negatives": [
+    {
+      "checker": "evaluation",
+      "exit_code": 1,
+      "mutation": "omit_TF_trace",
+      "no_output_report": true,
+      "optimized": false,
+      "reason": "INTRINSIC_TF_CONTRACTION"
+    },
+    {
+      "checker": "evaluation",
+      "exit_code": 1,
+      "mutation": "wrong_F_Gram",
+      "no_output_report": true,
+      "optimized": false,
+      "reason": "SCALAR_GRAM_KERNEL"
+    },
+    {
+      "checker": "evaluation",
+      "exit_code": 1,
+      "mutation": "omit_TT_sector",
+      "no_output_report": true,
+      "optimized": false,
+      "reason": "BOTH_TT_KERNELS"
+    },
+    {
+      "checker": "evaluation",
+      "exit_code": 1,
+      "mutation": "unsafe_constant4",
+      "no_output_report": true,
+      "optimized": false,
+      "reason": "SHARP_SCALAR_ENDPOINT"
+    },
+    {
+      "checker": "evaluation",
+      "exit_code": 1,
+      "mutation": "Bernstein_error",
+      "no_output_report": true,
+      "optimized": false,
+      "reason": "UNIVARIATE_BERNSTEIN_IDENTITY"
+    },
+    {
+      "checker": "evaluation",
+      "exit_code": 1,
+      "mutation": "omit_TF_trace",
+      "no_output_report": true,
+      "optimized": true,
+      "reason": "INTRINSIC_TF_CONTRACTION"
+    },
+    {
+      "checker": "evaluation",
+      "exit_code": 1,
+      "mutation": "wrong_F_Gram",
+      "no_output_report": true,
+      "optimized": true,
+      "reason": "SCALAR_GRAM_KERNEL"
+    },
+    {
+      "checker": "evaluation",
+      "exit_code": 1,
+      "mutation": "omit_TT_sector",
+      "no_output_report": true,
+      "optimized": true,
+      "reason": "BOTH_TT_KERNELS"
+    },
+    {
+      "checker": "evaluation",
+      "exit_code": 1,
+      "mutation": "unsafe_constant4",
+      "no_output_report": true,
+      "optimized": true,
+      "reason": "SHARP_SCALAR_ENDPOINT"
+    },
+    {
+      "checker": "evaluation",
+      "exit_code": 1,
+      "mutation": "Bernstein_error",
+      "no_output_report": true,
+      "optimized": true,
+      "reason": "UNIVARIATE_BERNSTEIN_IDENTITY"
+    },
+    {
+      "checker": "operator",
+      "exit_code": 1,
+      "mutation": "fibre_time_sign",
+      "no_output_report": true,
+      "optimized": false,
+      "reason": "PRIMITIVE_O"
+    },
+    {
+      "checker": "operator",
+      "exit_code": 1,
+      "mutation": "rough_tensor_shift",
+      "no_output_report": true,
+      "optimized": false,
+      "reason": "PRIMITIVE_Delta"
+    },
+    {
+      "checker": "operator",
+      "exit_code": 1,
+      "mutation": "coordinate_Robin",
+      "no_output_report": true,
+      "optimized": false,
+      "reason": "PRIMITIVE_By_a"
+    },
+    {
+      "checker": "operator",
+      "exit_code": 1,
+      "mutation": "angular_connection_sign",
+      "no_output_report": true,
+      "optimized": false,
+      "reason": "PRIMITIVE_Ca"
+    },
+    {
+      "checker": "operator",
+      "exit_code": 1,
+      "mutation": "mixed_weight",
+      "no_output_report": true,
+      "optimized": false,
+      "reason": "PHYSICAL_GRAM"
+    },
+    {
+      "checker": "operator",
+      "exit_code": 1,
+      "mutation": "curvature_sign",
+      "no_output_report": true,
+      "optimized": false,
+      "reason": "FORMAL_ASSEMBLY_D"
+    },
+    {
+      "checker": "operator",
+      "exit_code": 1,
+      "mutation": "omit_scalar_DC",
+      "no_output_report": true,
+      "optimized": false,
+      "reason": "FORMAL_ASSEMBLY_D"
+    },
+    {
+      "checker": "operator",
+      "exit_code": 1,
+      "mutation": "fibre_time_sign",
+      "no_output_report": true,
+      "optimized": true,
+      "reason": "PRIMITIVE_O"
+    },
+    {
+      "checker": "operator",
+      "exit_code": 1,
+      "mutation": "rough_tensor_shift",
+      "no_output_report": true,
+      "optimized": true,
+      "reason": "PRIMITIVE_Delta"
+    },
+    {
+      "checker": "operator",
+      "exit_code": 1,
+      "mutation": "coordinate_Robin",
+      "no_output_report": true,
+      "optimized": true,
+      "reason": "PRIMITIVE_By_a"
+    },
+    {
+      "checker": "operator",
+      "exit_code": 1,
+      "mutation": "angular_connection_sign",
+      "no_output_report": true,
+      "optimized": true,
+      "reason": "PRIMITIVE_Ca"
+    },
+    {
+      "checker": "operator",
+      "exit_code": 1,
+      "mutation": "mixed_weight",
+      "no_output_report": true,
+      "optimized": true,
+      "reason": "PHYSICAL_GRAM"
+    },
+    {
+      "checker": "operator",
+      "exit_code": 1,
+      "mutation": "curvature_sign",
+      "no_output_report": true,
+      "optimized": true,
+      "reason": "FORMAL_ASSEMBLY_D"
+    },
+    {
+      "checker": "operator",
+      "exit_code": 1,
+      "mutation": "omit_scalar_DC",
+      "no_output_report": true,
+      "optimized": true,
+      "reason": "FORMAL_ASSEMBLY_D"
+    }
+  ],
+  "normal_optimized_identical": true,
+  "positives": [
+    {
+      "checker": "evaluation",
+      "exit_code": 0,
+      "mode": "NORMAL",
+      "report": "EVALUATION_REVIEW_NORMAL.json"
+    },
+    {
+      "checker": "evaluation",
+      "exit_code": 0,
+      "mode": "OPTIMIZED",
+      "report": "EVALUATION_REVIEW_OPTIMIZED.json"
+    },
+    {
+      "checker": "operator",
+      "exit_code": 0,
+      "mode": "NORMAL",
+      "report": "OPERATOR_REVIEW_NORMAL.json"
+    },
+    {
+      "checker": "operator",
+      "exit_code": 0,
+      "mode": "OPTIMIZED",
+      "report": "OPERATOR_REVIEW_OPTIMIZED.json"
+    }
+  ],
+  "status": "PASS_ALL_INDEPENDENT_REPLAYS"
+}

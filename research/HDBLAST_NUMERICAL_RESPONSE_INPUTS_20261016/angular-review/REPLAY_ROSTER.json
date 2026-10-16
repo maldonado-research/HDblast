@@ -1,0 +1,360 @@
+{
+  "negative": [
+    {
+      "arguments": [
+        "--inject",
+        "omit_TF_trace",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": false,
+      "required_diagnostic": "ValueError: INTRINSIC_TF_CONTRACTION",
+      "script": "check_independent_evaluation.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "wrong_F_Gram",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": false,
+      "required_diagnostic": "ValueError: SCALAR_GRAM_KERNEL",
+      "script": "check_independent_evaluation.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_TT_sector",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": false,
+      "required_diagnostic": "ValueError: BOTH_TT_KERNELS",
+      "script": "check_independent_evaluation.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "unsafe_constant4",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": false,
+      "required_diagnostic": "ValueError: SHARP_SCALAR_ENDPOINT",
+      "script": "check_independent_evaluation.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "Bernstein_error",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": false,
+      "required_diagnostic": "ValueError: UNIVARIATE_BERNSTEIN_IDENTITY",
+      "script": "check_independent_evaluation.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_TF_trace",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": true,
+      "required_diagnostic": "ValueError: INTRINSIC_TF_CONTRACTION",
+      "script": "check_independent_evaluation.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "wrong_F_Gram",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": true,
+      "required_diagnostic": "ValueError: SCALAR_GRAM_KERNEL",
+      "script": "check_independent_evaluation.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_TT_sector",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": true,
+      "required_diagnostic": "ValueError: BOTH_TT_KERNELS",
+      "script": "check_independent_evaluation.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "unsafe_constant4",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": true,
+      "required_diagnostic": "ValueError: SHARP_SCALAR_ENDPOINT",
+      "script": "check_independent_evaluation.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "Bernstein_error",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": true,
+      "required_diagnostic": "ValueError: UNIVARIATE_BERNSTEIN_IDENTITY",
+      "script": "check_independent_evaluation.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "fibre_time_sign",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": false,
+      "required_diagnostic": "ValueError: PRIMITIVE_O",
+      "script": "check_independent_operator.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "rough_tensor_shift",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": false,
+      "required_diagnostic": "ValueError: PRIMITIVE_Delta",
+      "script": "check_independent_operator.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "coordinate_Robin",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": false,
+      "required_diagnostic": "ValueError: PRIMITIVE_By_a",
+      "script": "check_independent_operator.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "angular_connection_sign",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": false,
+      "required_diagnostic": "ValueError: PRIMITIVE_Ca",
+      "script": "check_independent_operator.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "mixed_weight",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": false,
+      "required_diagnostic": "ValueError: PHYSICAL_GRAM",
+      "script": "check_independent_operator.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "curvature_sign",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": false,
+      "required_diagnostic": "ValueError: FORMAL_ASSEMBLY_D",
+      "script": "check_independent_operator.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_scalar_DC",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": false,
+      "required_diagnostic": "ValueError: FORMAL_ASSEMBLY_D",
+      "script": "check_independent_operator.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "fibre_time_sign",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": true,
+      "required_diagnostic": "ValueError: PRIMITIVE_O",
+      "script": "check_independent_operator.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "rough_tensor_shift",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": true,
+      "required_diagnostic": "ValueError: PRIMITIVE_Delta",
+      "script": "check_independent_operator.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "coordinate_Robin",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": true,
+      "required_diagnostic": "ValueError: PRIMITIVE_By_a",
+      "script": "check_independent_operator.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "angular_connection_sign",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": true,
+      "required_diagnostic": "ValueError: PRIMITIVE_Ca",
+      "script": "check_independent_operator.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "mixed_weight",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": true,
+      "required_diagnostic": "ValueError: PHYSICAL_GRAM",
+      "script": "check_independent_operator.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "curvature_sign",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": true,
+      "required_diagnostic": "ValueError: FORMAL_ASSEMBLY_D",
+      "script": "check_independent_operator.py"
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_scalar_DC",
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "exit_code": 1,
+      "no_output_report": true,
+      "optimized": true,
+      "required_diagnostic": "ValueError: FORMAL_ASSEMBLY_D",
+      "script": "check_independent_operator.py"
+    }
+  ],
+  "positive": [
+    {
+      "arguments": [
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "golden": "EVALUATION_REVIEW_NORMAL.json",
+      "optimized": false,
+      "script": "check_independent_evaluation.py"
+    },
+    {
+      "arguments": [
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "golden": "EVALUATION_REVIEW_OPTIMIZED.json",
+      "optimized": true,
+      "script": "check_independent_evaluation.py"
+    },
+    {
+      "arguments": [
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "golden": "OPERATOR_REVIEW_NORMAL.json",
+      "optimized": false,
+      "script": "check_independent_operator.py"
+    },
+    {
+      "arguments": [
+        "--output",
+        "EXTERNAL_NEW_PATH"
+      ],
+      "golden": "OPERATOR_REVIEW_OPTIMIZED.json",
+      "optimized": true,
+      "script": "check_independent_operator.py"
+    }
+  ],
+  "python_flags": [
+    "-I",
+    "-S",
+    "-B"
+  ],
+  "source_directory_read_only": true
+}

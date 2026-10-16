@@ -1,0 +1,54 @@
+{
+  "controls": {
+    "flip_scalar_compensator": "scalar compensator cancellation",
+    "half_angular_quadratic": "second angular shift velocity",
+    "half_lapse_quadratic": "second lapse velocity",
+    "omit_fourth_packet_term": "fourth packet derivative identity",
+    "omit_lapse_square": "second metric lapse square",
+    "omit_mixed_metric_conversion": "mixed metric conversion",
+    "omit_physical_affine_term": "all-point canceled physical-affine scalar velocity",
+    "omit_radial_fy": "second radial shift velocity"
+  },
+  "fourth_packet_derivative": {
+    "domain": "all real r, including both smooth flat endpoints",
+    "polynomial_low_to_high": [
+      0,
+      0,
+      0,
+      -120,
+      420,
+      -384,
+      136,
+      -20,
+      1
+    ],
+    "shifted_nonnegative_coefficients": [
+      [
+        64000,
+        127616,
+        114720,
+        59960,
+        19420,
+        3840,
+        424,
+        20,
+        0
+      ],
+      [
+        67072,
+        134528,
+        114656,
+        54728,
+        16420,
+        3328,
+        472,
+        44,
+        2
+      ]
+    ],
+    "strict_scaled_fourth_bound": "16777216/49"
+  },
+  "independent_symbolic_identities": 18,
+  "scope": "initial formula identities and global packet derivative cap; no evolved response or source approximation error",
+  "status": "pass"
+}
