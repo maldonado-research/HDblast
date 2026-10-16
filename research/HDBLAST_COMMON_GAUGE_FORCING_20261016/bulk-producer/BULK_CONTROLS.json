@@ -1,0 +1,103 @@
+{
+  "status": "PASS_ALL_COMMON_GAUGE_SEMANTIC_CONTROLS_NORMAL_AND_OPTIMIZED",
+  "runs": [
+    {
+      "mutation": "freeze_frame_scales",
+      "optimized": false,
+      "exit_code": 1,
+      "expected_exception": "radial frame scale derivative retained",
+      "report_written": false
+    },
+    {
+      "mutation": "drop_derivative_slot",
+      "optimized": false,
+      "exit_code": 1,
+      "expected_exception": "second covariant jet includes derivative-slot connection",
+      "report_written": false
+    },
+    {
+      "mutation": "omit_scalar_pullback",
+      "optimized": false,
+      "exit_code": 1,
+      "expected_exception": "metric and scalar use the same pullback plus pf",
+      "report_written": false
+    },
+    {
+      "mutation": "undersize_sphere_fourth",
+      "optimized": false,
+      "exit_code": 1,
+      "expected_exception": "actual quadrupole fourth sphere derivative cap",
+      "report_written": false
+    },
+    {
+      "mutation": "drop_gauge_double_sum",
+      "optimized": false,
+      "exit_code": 1,
+      "expected_exception": "quadratic gauge row retains both contracted indices",
+      "report_written": false
+    },
+    {
+      "mutation": "drop_scalar_hessian_connection",
+      "optimized": false,
+      "exit_code": 1,
+      "expected_exception": "scalar Hessian retains its frame connection",
+      "report_written": false
+    },
+    {
+      "mutation": "half_scalar_stress_hessian",
+      "optimized": false,
+      "exit_code": 1,
+      "expected_exception": "second parameter derivative retains scalar stress factor two",
+      "report_written": false
+    },
+    {
+      "mutation": "freeze_frame_scales",
+      "optimized": true,
+      "exit_code": 1,
+      "expected_exception": "radial frame scale derivative retained",
+      "report_written": false
+    },
+    {
+      "mutation": "drop_derivative_slot",
+      "optimized": true,
+      "exit_code": 1,
+      "expected_exception": "second covariant jet includes derivative-slot connection",
+      "report_written": false
+    },
+    {
+      "mutation": "omit_scalar_pullback",
+      "optimized": true,
+      "exit_code": 1,
+      "expected_exception": "metric and scalar use the same pullback plus pf",
+      "report_written": false
+    },
+    {
+      "mutation": "undersize_sphere_fourth",
+      "optimized": true,
+      "exit_code": 1,
+      "expected_exception": "actual quadrupole fourth sphere derivative cap",
+      "report_written": false
+    },
+    {
+      "mutation": "drop_gauge_double_sum",
+      "optimized": true,
+      "exit_code": 1,
+      "expected_exception": "quadratic gauge row retains both contracted indices",
+      "report_written": false
+    },
+    {
+      "mutation": "drop_scalar_hessian_connection",
+      "optimized": true,
+      "exit_code": 1,
+      "expected_exception": "scalar Hessian retains its frame connection",
+      "report_written": false
+    },
+    {
+      "mutation": "half_scalar_stress_hessian",
+      "optimized": true,
+      "exit_code": 1,
+      "expected_exception": "second parameter derivative retains scalar stress factor two",
+      "report_written": false
+    }
+  ]
+}

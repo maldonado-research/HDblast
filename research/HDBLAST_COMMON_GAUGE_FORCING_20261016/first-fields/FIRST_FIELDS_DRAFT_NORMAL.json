@@ -1,0 +1,47 @@
+{
+  "checks": {
+    "component_and_frame_identities": 54,
+    "connection_scalar_and_gauge_identities": 327,
+    "physical_scaled_conversion_identities": 4
+  },
+  "controls": [
+    {
+      "expected_reason": "metric component tt",
+      "mutation": "clock_sign",
+      "rejected_without_output": true
+    },
+    {
+      "expected_reason": "metric component yi",
+      "mutation": "missing_c_squared",
+      "rejected_without_output": true
+    },
+    {
+      "expected_reason": "physical inward mixed conversion",
+      "mutation": "wrong_inward_sign",
+      "rejected_without_output": true
+    },
+    {
+      "expected_reason": "connection second-parameter derivative",
+      "mutation": "half_connection_hessian",
+      "rejected_without_output": true
+    },
+    {
+      "expected_reason": "full scalar affine Hessian",
+      "mutation": "missing_scalar_connection",
+      "rejected_without_output": true
+    }
+  ],
+  "conventions": {
+    "first_transformation": "h_prime=h+Lie_xi(g0); chi_prime=chi+Lie_xi(phi0)",
+    "quadratic": "second_parameter_derivative; epsilon_squared_coefficient_is_half",
+    "radial": "dy=-rho_dz; y_derivative=-r_derivative/(ell*rho)",
+    "raw_vector": "xi_y_contravariant=fY; xi_t_contravariant=bY; xi_angular=d_gradY"
+  },
+  "scope": {
+    "actual_registered_field_evaluated": false,
+    "actual_transformed_source_enclosed": false,
+    "finite_generic_jet_witnesses_supplement_analytic_derivation": true,
+    "second_order_evolution_solved": false
+  },
+  "status": "PASS_UNPUBLISHED_FINITE_ALGEBRA_ONLY"
+}

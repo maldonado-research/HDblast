@@ -1,0 +1,953 @@
+{
+  "status": "PASS_COMPLETE_REPORT_AGREEMENT",
+  "manifest_sha256": "8bf173293b5cecf7f78e138ac5004abd9c7b1821ef29addb7ecfbc2a6409b4f6",
+  "roster_sha256": "391b06838f1020cf174afcd5f0f617fdd1751422670f0fd33037bbb49e754bcb",
+  "processes": 22,
+  "rejection_processes": 106,
+  "records": [
+    {
+      "name": "bulk_source.normal",
+      "returncode": 0,
+      "report_sha256": "4175c04c09bccf0a9c69814a129ee0a46d1b17403986933a77251b359cfb8ae4",
+      "golden": "bulk-producer/COMMON_GAUGE_BULK_NORMAL.json",
+      "golden_sha256": "4175c04c09bccf0a9c69814a129ee0a46d1b17403986933a77251b359cfb8ae4",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "bulk_source.optimized",
+      "returncode": 0,
+      "report_sha256": "4175c04c09bccf0a9c69814a129ee0a46d1b17403986933a77251b359cfb8ae4",
+      "golden": "bulk-producer/COMMON_GAUGE_BULK_OPTIMIZED.json",
+      "golden_sha256": "4175c04c09bccf0a9c69814a129ee0a46d1b17403986933a77251b359cfb8ae4",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "source_hessian_jets.normal",
+      "returncode": 0,
+      "report_sha256": "e378764f3832c36417e48145c8f3eca53a80ae7c61f1cce1e514419e7dc404f7",
+      "golden": "bulk-review/SOURCE_JETS_NORMAL.json",
+      "golden_sha256": "e378764f3832c36417e48145c8f3eca53a80ae7c61f1cce1e514419e7dc404f7",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "source_hessian_jets.optimized",
+      "returncode": 0,
+      "report_sha256": "e378764f3832c36417e48145c8f3eca53a80ae7c61f1cce1e514419e7dc404f7",
+      "golden": "bulk-review/SOURCE_JETS_OPTIMIZED.json",
+      "golden_sha256": "e378764f3832c36417e48145c8f3eca53a80ae7c61f1cce1e514419e7dc404f7",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "frame_connection_jets.normal",
+      "returncode": 0,
+      "report_sha256": "6a5d564fd1dec96caa3075686ea38ce9a0026c2085008f7c083e80c9c972d54f",
+      "golden": "bulk-review/FRAME_JETS_NORMAL.json",
+      "golden_sha256": "6a5d564fd1dec96caa3075686ea38ce9a0026c2085008f7c083e80c9c972d54f",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "frame_connection_jets.optimized",
+      "returncode": 0,
+      "report_sha256": "6a5d564fd1dec96caa3075686ea38ce9a0026c2085008f7c083e80c9c972d54f",
+      "golden": "bulk-review/FRAME_JETS_OPTIMIZED.json",
+      "golden_sha256": "6a5d564fd1dec96caa3075686ea38ce9a0026c2085008f7c083e80c9c972d54f",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "independent_bulk_bounds.normal",
+      "returncode": 0,
+      "report_sha256": "4ba0d0d6abdb74c5be412b09b41ba268343f2cbe909feef227d9da9571a7b9b1",
+      "golden": "bulk-review/INDEPENDENT_BOUNDS_NORMAL.json",
+      "golden_sha256": "4ba0d0d6abdb74c5be412b09b41ba268343f2cbe909feef227d9da9571a7b9b1",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "independent_bulk_bounds.optimized",
+      "returncode": 0,
+      "report_sha256": "4ba0d0d6abdb74c5be412b09b41ba268343f2cbe909feef227d9da9571a7b9b1",
+      "golden": "bulk-review/INDEPENDENT_BOUNDS_OPTIMIZED.json",
+      "golden_sha256": "4ba0d0d6abdb74c5be412b09b41ba268343f2cbe909feef227d9da9571a7b9b1",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "physical_shell.normal",
+      "returncode": 0,
+      "report_sha256": "559f7587feca262cc68990f2ee79a3aeea22df6955e5aafb698f3326fdacd94a",
+      "golden": "shell-producer/COMMON_HARMONIC_SHELL_NORMAL.json",
+      "golden_sha256": "559f7587feca262cc68990f2ee79a3aeea22df6955e5aafb698f3326fdacd94a",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "physical_shell.optimized",
+      "returncode": 0,
+      "report_sha256": "559f7587feca262cc68990f2ee79a3aeea22df6955e5aafb698f3326fdacd94a",
+      "golden": "shell-producer/COMMON_HARMONIC_SHELL_OPTIMIZED.json",
+      "golden_sha256": "559f7587feca262cc68990f2ee79a3aeea22df6955e5aafb698f3326fdacd94a",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "boundary_completion.normal",
+      "returncode": 0,
+      "report_sha256": "d84c0820b792d4a3580260b37bc5785d0308e8554403157e49be6344a521c398",
+      "golden": "boundary-review/BOUNDARY_COMPLETION_NORMAL.json",
+      "golden_sha256": "d84c0820b792d4a3580260b37bc5785d0308e8554403157e49be6344a521c398",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "boundary_completion.optimized",
+      "returncode": 0,
+      "report_sha256": "d84c0820b792d4a3580260b37bc5785d0308e8554403157e49be6344a521c398",
+      "golden": "boundary-review/BOUNDARY_COMPLETION_OPTIMIZED.json",
+      "golden_sha256": "d84c0820b792d4a3580260b37bc5785d0308e8554403157e49be6344a521c398",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "independent_shell_gauge_caps.normal",
+      "returncode": 0,
+      "report_sha256": "34d120561eb469a05fa122d8904ce01b93102c03d3d219c9702dfc8ecb032ea1",
+      "golden": "boundary-review/ACTUAL_SHELL_MAJORANTS_NORMAL.json",
+      "golden_sha256": "34d120561eb469a05fa122d8904ce01b93102c03d3d219c9702dfc8ecb032ea1",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "independent_shell_gauge_caps.optimized",
+      "returncode": 0,
+      "report_sha256": "34d120561eb469a05fa122d8904ce01b93102c03d3d219c9702dfc8ecb032ea1",
+      "golden": "boundary-review/ACTUAL_SHELL_MAJORANTS_OPTIMIZED.json",
+      "golden_sha256": "34d120561eb469a05fa122d8904ce01b93102c03d3d219c9702dfc8ecb032ea1",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "first_pair_recipe.normal",
+      "returncode": 0,
+      "report_sha256": "f3fc44d7a4424d846124e3592208eaa3bf62d129b82db31023c98b902ea7a19a",
+      "golden": "first-fields/FIRST_FIELDS_DRAFT_NORMAL.json",
+      "golden_sha256": "f3fc44d7a4424d846124e3592208eaa3bf62d129b82db31023c98b902ea7a19a",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "first_pair_recipe.optimized",
+      "returncode": 0,
+      "report_sha256": "f3fc44d7a4424d846124e3592208eaa3bf62d129b82db31023c98b902ea7a19a",
+      "golden": "first-fields/FIRST_FIELDS_DRAFT_OPTIMIZED.json",
+      "golden_sha256": "f3fc44d7a4424d846124e3592208eaa3bf62d129b82db31023c98b902ea7a19a",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "full_second_coefficient.normal",
+      "returncode": 0,
+      "report_sha256": "09799d232fe315a1572e4b591c6aa73cab299ce70d259cb8b2757058d25f9b2c",
+      "golden": "evolution/SECOND_RESPONSE_FINAL_NORMAL.json",
+      "golden_sha256": "09799d232fe315a1572e4b591c6aa73cab299ce70d259cb8b2757058d25f9b2c",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "full_second_coefficient.optimized",
+      "returncode": 0,
+      "report_sha256": "09799d232fe315a1572e4b591c6aa73cab299ce70d259cb8b2757058d25f9b2c",
+      "golden": "evolution/SECOND_RESPONSE_FINAL_OPTIMIZED.json",
+      "golden_sha256": "09799d232fe315a1572e4b591c6aa73cab299ce70d259cb8b2757058d25f9b2c",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "independent_evolution_review.normal",
+      "returncode": 0,
+      "report_sha256": "c2c5f023585a78583a5bc3915cc91b240ad45e6500e54e026a880a2ec9956ba6",
+      "golden": "evolution-review/EVOLUTION_REVIEW_NORMAL.json",
+      "golden_sha256": "c2c5f023585a78583a5bc3915cc91b240ad45e6500e54e026a880a2ec9956ba6",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "independent_evolution_review.optimized",
+      "returncode": 0,
+      "report_sha256": "c2c5f023585a78583a5bc3915cc91b240ad45e6500e54e026a880a2ec9956ba6",
+      "golden": "evolution-review/EVOLUTION_REVIEW_OPTIMIZED.json",
+      "golden_sha256": "c2c5f023585a78583a5bc3915cc91b240ad45e6500e54e026a880a2ec9956ba6",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "fresh_scientific_review.normal",
+      "returncode": 0,
+      "report_sha256": "0dcf8a1bbf78477d864a423a4d4769b7f156ab681cf3e783ee557459a80f409f",
+      "golden": "fresh-review/FRESH_REVIEW_NORMAL.json",
+      "golden_sha256": "0dcf8a1bbf78477d864a423a4d4769b7f156ab681cf3e783ee557459a80f409f",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    },
+    {
+      "name": "fresh_scientific_review.optimized",
+      "returncode": 0,
+      "report_sha256": "0dcf8a1bbf78477d864a423a4d4769b7f156ab681cf3e783ee557459a80f409f",
+      "golden": "fresh-review/FRESH_REVIEW_OPTIMIZED.json",
+      "golden_sha256": "0dcf8a1bbf78477d864a423a4d4769b7f156ab681cf3e783ee557459a80f409f",
+      "complete_typed_JSON_matches": true,
+      "raw_bytes_match": true
+    }
+  ],
+  "rejections": [
+    {
+      "name": "bulk_freeze_frame_scales.normal",
+      "returncode": 1,
+      "expected_reason": "radial frame scale derivative retained",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "bulk_freeze_frame_scales.optimized",
+      "returncode": 1,
+      "expected_reason": "radial frame scale derivative retained",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "bulk_drop_derivative_slot.normal",
+      "returncode": 1,
+      "expected_reason": "second covariant jet includes derivative-slot connection",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "bulk_drop_derivative_slot.optimized",
+      "returncode": 1,
+      "expected_reason": "second covariant jet includes derivative-slot connection",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "bulk_omit_scalar_pullback.normal",
+      "returncode": 1,
+      "expected_reason": "metric and scalar use the same pullback plus pf",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "bulk_omit_scalar_pullback.optimized",
+      "returncode": 1,
+      "expected_reason": "metric and scalar use the same pullback plus pf",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "bulk_undersize_sphere_fourth.normal",
+      "returncode": 1,
+      "expected_reason": "actual quadrupole fourth sphere derivative cap",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "bulk_undersize_sphere_fourth.optimized",
+      "returncode": 1,
+      "expected_reason": "actual quadrupole fourth sphere derivative cap",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "bulk_drop_gauge_double_sum.normal",
+      "returncode": 1,
+      "expected_reason": "quadratic gauge row retains both contracted indices",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "bulk_drop_gauge_double_sum.optimized",
+      "returncode": 1,
+      "expected_reason": "quadratic gauge row retains both contracted indices",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "bulk_drop_scalar_hessian_connection.normal",
+      "returncode": 1,
+      "expected_reason": "scalar Hessian retains its frame connection",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "bulk_drop_scalar_hessian_connection.optimized",
+      "returncode": 1,
+      "expected_reason": "scalar Hessian retains its frame connection",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "bulk_half_scalar_stress_hessian.normal",
+      "returncode": 1,
+      "expected_reason": "second parameter derivative retains scalar stress factor two",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "bulk_half_scalar_stress_hessian.optimized",
+      "returncode": 1,
+      "expected_reason": "second parameter derivative retains scalar stress factor two",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_connection_factor.normal",
+      "returncode": 2,
+      "expected_reason": "CONNECTION_HESSIAN",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_connection_factor.optimized",
+      "returncode": 2,
+      "expected_reason": "CONNECTION_HESSIAN",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_background_connection_derivative.normal",
+      "returncode": 2,
+      "expected_reason": "COVARIANT_CONNECTION_DERIVATIVE",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_background_connection_derivative.optimized",
+      "returncode": 2,
+      "expected_reason": "COVARIANT_CONNECTION_DERIVATIVE",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_ricci_product_factor.normal",
+      "returncode": 2,
+      "expected_reason": "NATURAL_EINSTEIN_HESSIAN",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_ricci_product_factor.optimized",
+      "returncode": 2,
+      "expected_reason": "NATURAL_EINSTEIN_HESSIAN",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_stress_factor.normal",
+      "returncode": 2,
+      "expected_reason": "NATURAL_EINSTEIN_HESSIAN",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_stress_factor.optimized",
+      "returncode": 2,
+      "expected_reason": "NATURAL_EINSTEIN_HESSIAN",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_potential_cross_factor.normal",
+      "returncode": 2,
+      "expected_reason": "NATURAL_EINSTEIN_HESSIAN",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_potential_cross_factor.optimized",
+      "returncode": 2,
+      "expected_reason": "NATURAL_EINSTEIN_HESSIAN",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_scalar_connection.normal",
+      "returncode": 2,
+      "expected_reason": "SCALAR_HESSIAN",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_scalar_connection.optimized",
+      "returncode": 2,
+      "expected_reason": "SCALAR_HESSIAN",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_harmonic_quadratic_contraction.normal",
+      "returncode": 2,
+      "expected_reason": "QUADRATIC_GAUGE_VECTOR",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_harmonic_quadratic_contraction.optimized",
+      "returncode": 2,
+      "expected_reason": "QUADRATIC_GAUGE_VECTOR",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_reduction_symmetrization.normal",
+      "returncode": 2,
+      "expected_reason": "REDUCED_EINSTEIN_HESSIAN",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_reduction_symmetrization.optimized",
+      "returncode": 2,
+      "expected_reason": "REDUCED_EINSTEIN_HESSIAN",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_reduction_lowering_cross.normal",
+      "returncode": 2,
+      "expected_reason": "REDUCED_EINSTEIN_HESSIAN",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "source_reduction_lowering_cross.optimized",
+      "returncode": 2,
+      "expected_reason": "REDUCED_EINSTEIN_HESSIAN",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "frame_constant_normal_connection.normal",
+      "returncode": 2,
+      "expected_reason": "SPHERE_CONNECTION_DERIVATIVE_REQUIRED",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "frame_constant_normal_connection.optimized",
+      "returncode": 2,
+      "expected_reason": "SPHERE_CONNECTION_DERIVATIVE_REQUIRED",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "frame_missing_derivative_slot.normal",
+      "returncode": 2,
+      "expected_reason": "METRIC_SECOND_JET_DERIVATIVE_SLOT_REQUIRED",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "frame_missing_derivative_slot.optimized",
+      "returncode": 2,
+      "expected_reason": "METRIC_SECOND_JET_DERIVATIVE_SLOT_REQUIRED",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "bound_metric_cap.normal",
+      "returncode": 2,
+      "expected_reason": "INDEPENDENT_METRIC_CAP",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "bound_metric_cap.optimized",
+      "returncode": 2,
+      "expected_reason": "INDEPENDENT_METRIC_CAP",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "bound_scalar_cap.normal",
+      "returncode": 2,
+      "expected_reason": "INDEPENDENT_SCALAR_CAP",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "bound_scalar_cap.optimized",
+      "returncode": 2,
+      "expected_reason": "INDEPENDENT_SCALAR_CAP",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "bound_source_cap.normal",
+      "returncode": 2,
+      "expected_reason": "INDEPENDENT_SOURCE_CAP:QE",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "bound_source_cap.optimized",
+      "returncode": 2,
+      "expected_reason": "INDEPENDENT_SOURCE_CAP:QE",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "shell_wrong_normal_orientation.normal",
+      "returncode": 1,
+      "expected_reason": "registered outward background Israel row",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "shell_wrong_normal_orientation.optimized",
+      "returncode": 1,
+      "expected_reason": "registered outward background Israel row",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "shell_half_affine_hessian.normal",
+      "returncode": 1,
+      "expected_reason": "full tensor affine normal Hessian",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "shell_half_affine_hessian.optimized",
+      "returncode": 1,
+      "expected_reason": "full tensor affine normal Hessian",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "shell_isotropic_tensor_only.normal",
+      "returncode": 1,
+      "expected_reason": "anisotropic off-diagonal metric Hessian",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "shell_isotropic_tensor_only.optimized",
+      "returncode": 1,
+      "expected_reason": "anisotropic off-diagonal metric Hessian",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "shell_wrong_sigma_third.normal",
+      "returncode": 1,
+      "expected_reason": "registered scalar affine Hessian",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "shell_wrong_sigma_third.optimized",
+      "returncode": 1,
+      "expected_reason": "registered scalar affine Hessian",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "shell_wrong_proper_normal_scale.normal",
+      "returncode": 1,
+      "expected_reason": "proper inward mixed derivative witness",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "shell_wrong_proper_normal_scale.optimized",
+      "returncode": 1,
+      "expected_reason": "proper inward mixed derivative witness",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "shell_missing_two_copy_factor.normal",
+      "returncode": 1,
+      "expected_reason": "one/two-copy metric residual Hessian adapter",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "shell_missing_two_copy_factor.optimized",
+      "returncode": 1,
+      "expected_reason": "one/two-copy metric residual Hessian adapter",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "boundary_scalar-sign.normal",
+      "returncode": 1,
+      "expected_reason": "scalar convention",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "boundary_scalar-sign.optimized",
+      "returncode": 1,
+      "expected_reason": "scalar convention",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "boundary_factorial.normal",
+      "returncode": 1,
+      "expected_reason": "physical metric Hessian/completion",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "boundary_factorial.optimized",
+      "returncode": 1,
+      "expected_reason": "physical metric Hessian/completion",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "boundary_isotropic-source.normal",
+      "returncode": 1,
+      "expected_reason": "physical metric Hessian/completion",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "boundary_isotropic-source.optimized",
+      "returncode": 1,
+      "expected_reason": "physical metric Hessian/completion",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "boundary_scalar-third.normal",
+      "returncode": 1,
+      "expected_reason": "physical scalar Hessian/completion",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "boundary_scalar-third.optimized",
+      "returncode": 1,
+      "expected_reason": "physical scalar Hessian/completion",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "boundary_omit-matrix-square.normal",
+      "returncode": 1,
+      "expected_reason": "normal gauge Hessian/completion",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "boundary_omit-matrix-square.optimized",
+      "returncode": 1,
+      "expected_reason": "normal gauge Hessian/completion",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "boundary_lapse-conversion.normal",
+      "returncode": 1,
+      "expected_reason": "metric versus lapse coefficient",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "boundary_lapse-conversion.optimized",
+      "returncode": 1,
+      "expected_reason": "metric versus lapse coefficient",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "first_pair_clock_sign.normal",
+      "returncode": 1,
+      "expected_reason": "metric component tt",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "first_pair_clock_sign.optimized",
+      "returncode": 1,
+      "expected_reason": "metric component tt",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "first_pair_missing_c_squared.normal",
+      "returncode": 1,
+      "expected_reason": "metric component yi",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "first_pair_missing_c_squared.optimized",
+      "returncode": 1,
+      "expected_reason": "metric component yi",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "first_pair_wrong_inward_sign.normal",
+      "returncode": 1,
+      "expected_reason": "physical inward mixed conversion",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "first_pair_wrong_inward_sign.optimized",
+      "returncode": 1,
+      "expected_reason": "physical inward mixed conversion",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "first_pair_half_connection_hessian.normal",
+      "returncode": 1,
+      "expected_reason": "connection second-parameter derivative",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "first_pair_half_connection_hessian.optimized",
+      "returncode": 1,
+      "expected_reason": "connection second-parameter derivative",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "first_pair_missing_scalar_connection.normal",
+      "returncode": 1,
+      "expected_reason": "full scalar affine Hessian",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "first_pair_missing_scalar_connection.optimized",
+      "returncode": 1,
+      "expected_reason": "full scalar affine Hessian",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_omit_TT.normal",
+      "returncode": 1,
+      "expected_reason": "angular_TT_sectors_required",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_omit_TT.optimized",
+      "returncode": 1,
+      "expected_reason": "angular_TT_sectors_required",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_coordinate_Robin_in_frame.normal",
+      "returncode": 1,
+      "expected_reason": "parallel_frame_cancels_tangent_2a",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_coordinate_Robin_in_frame.optimized",
+      "returncode": 1,
+      "expected_reason": "parallel_frame_cancels_tangent_2a",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_drop_scalar_DC.normal",
+      "returncode": 1,
+      "expected_reason": "scalar_DC_coupling_required",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_drop_scalar_DC.optimized",
+      "returncode": 1,
+      "expected_reason": "scalar_DC_coupling_required",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_wrong_metric_force_sign.normal",
+      "returncode": 1,
+      "expected_reason": "unit_wave_metric_force_sign",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_wrong_metric_force_sign.optimized",
+      "returncode": 1,
+      "expected_reason": "unit_wave_metric_force_sign",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_wrong_lift_sign.normal",
+      "returncode": 1,
+      "expected_reason": "neumann_lift_normal_derivative",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_wrong_lift_sign.optimized",
+      "returncode": 1,
+      "expected_reason": "neumann_lift_normal_derivative",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_omit_trace_weight.normal",
+      "returncode": 1,
+      "expected_reason": "weighted_boundary_trace_factor",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_omit_trace_weight.optimized",
+      "returncode": 1,
+      "expected_reason": "weighted_boundary_trace_factor",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_review_curvature_sign.normal",
+      "returncode": 1,
+      "expected_reason": "CURVED_RICCI_LINEARIZATION",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_review_curvature_sign.optimized",
+      "returncode": 1,
+      "expected_reason": "CURVED_RICCI_LINEARIZATION",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_review_derivative_slot.normal",
+      "returncode": 1,
+      "expected_reason": "CURVED_RICCI_LINEARIZATION",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_review_derivative_slot.optimized",
+      "returncode": 1,
+      "expected_reason": "CURVED_RICCI_LINEARIZATION",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_review_symmetrization.normal",
+      "returncode": 1,
+      "expected_reason": "CURVED_RICCI_LINEARIZATION",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_review_symmetrization.optimized",
+      "returncode": 1,
+      "expected_reason": "CURVED_RICCI_LINEARIZATION",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_review_scalar_DC.normal",
+      "returncode": 1,
+      "expected_reason": "SCALAR_LINEARIZATION",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_review_scalar_DC.optimized",
+      "returncode": 1,
+      "expected_reason": "SCALAR_LINEARIZATION",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_review_omit_TT.normal",
+      "returncode": 1,
+      "expected_reason": "ANGULAR_MULTIPLICITY",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_review_omit_TT.optimized",
+      "returncode": 1,
+      "expected_reason": "ANGULAR_MULTIPLICITY",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_review_scalar_component_cutoff.normal",
+      "returncode": 1,
+      "expected_reason": "ANGULAR_MULTIPLICITY",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_review_scalar_component_cutoff.optimized",
+      "returncode": 1,
+      "expected_reason": "ANGULAR_MULTIPLICITY",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_review_evaluation_factor.normal",
+      "returncode": 1,
+      "expected_reason": "EVALUATION_TRACE",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_review_evaluation_factor.optimized",
+      "returncode": 1,
+      "expected_reason": "EVALUATION_TRACE",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_review_missing_boundary_weight.normal",
+      "returncode": 1,
+      "expected_reason": "BOUNDARY_TRACE_WEIGHT",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_review_missing_boundary_weight.optimized",
+      "returncode": 1,
+      "expected_reason": "BOUNDARY_TRACE_WEIGHT",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_review_wrong_initial_frame_sign.normal",
+      "returncode": 1,
+      "expected_reason": "INITIAL_FRAME_CONVERSION",
+      "reason_matched": true,
+      "no_output": true
+    },
+    {
+      "name": "evolution_review_wrong_initial_frame_sign.optimized",
+      "returncode": 1,
+      "expected_reason": "INITIAL_FRAME_CONVERSION",
+      "reason_matched": true,
+      "no_output": true
+    }
+  ],
+  "source_unchanged": true,
+  "scope": "Complete JSON replay of actual common-first-harmonic bulk and physical/gauge shell source certificates, independent finite algebra/majorant reviews, and the retained first-pair recipe. Inherited actual branch/master/gauge PDE certificates are authenticated inputs, not all freshly replayed. No exact finite-amplitude nonlinear family, remainder or invariant force is claimed. Includes the accepted integral-defined formal second coefficient and its explicit majorant joins."
+}
