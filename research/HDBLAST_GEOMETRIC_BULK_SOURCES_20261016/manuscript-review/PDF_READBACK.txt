@@ -1,0 +1,343 @@
+    Quadratic Einstein–scalar sources and an intrinsic material-shell
+                               diagnostic
+                                        Ricardo Maldonado
+                                      Independent Researcher
+                                  Henderson, Nevada, United States
+
+                        Reproducible working note, 16 October 2026 UTC
+
+
+                                                 Abstract
+          For a retained conditional Einstein–scalar problem with a timelike material shell, we complete
+      a component evaluator for the quadratic Ricci, natural Einstein and relative-harmonic reduced
+      sources and reconstruct their complete 23-amplitude angular projection. Exact polynomial
+      identities retain both transverse-traceless angular orientations. Authenticated differentiated
+      first-field error bounds give ordinary metric and scalar two-jet enclosures, and outward interval
+      evaluation bounds the actual quadratic forcing on the full causal collar. We also define an
+      intrinsic shell scalar whose background and first variations vanish. Its sphere-mean second
+      parameter derivative has exactly two simple zeros in each of two certified time brackets. A
+      separate quantitative consequence of the retained second-response derivative bound proves
+      persistence of two scalar-mean signs at positive times. The universal curvature and gauge formulas
+      are established results; the contribution here is their explicit model-specific evaluation and
+      reproducible certification. No complete numerical second waveform, finite-amplitude nonlinear
+      family, invariant force or cosmological-origin conclusion is established.
+
+
+1    Conditional problem and conventions
+The background and the selected first and second initial prescriptions are those of the preceding
+public computational checkpoint [1]. They remain premises here. In five spacetime dimensions write
+
+       g0 = dy 2 + ρ(y)2 [−dt2 + c(t)2 κ],       c = cosh t,   θ = tanh t,    a = ρy /ρ,    p = ϕ0,y ,     (1)
+
+where κ is the unit three-sphere metric. The potential V and scalar-dependent shell law are fixed by
+that checkpoint. The scaled collar is
+
+                             ℓ = 10−6 ,    x = t/ℓ,   r = z/ℓ,     dy = −ρ dz,
+                                                                                                           (2)
+                    Dbase = {0 ≤ x ≤ 3, r ≥ 0, x + r ≤ 8},            D = Dbase × S 3 .
+
+Every second variation denotes a second parameter derivative: gε = g0 + εq + ε2 k/2 + o(ε2 ) and
+ϕε = ϕ0 + εη + ε2 w/2 + o(ε2 ). Thus a displayed quadratic Hessian is twice the coefficient of ε2 .
+   Use the orthonormal background frame ey = ∂y , e0 = ρ−1 ∂t , ea = (ρc)−1 Ea , with e0 timelike.
+For Y = n21 − n22 the actual first harmonic representative has sectors
+
+                 qyy = AY,     qy0 = BY,     qya = CDa Y,      q00 = DY,     q0a = EDa Y,
+                                                                                                           (3)
+                                  qab = LY κab + M Da Db Y,       η = sY.
+
+
+                                                      1
+Here the letter D in q00 is an amplitude, while Da denotes the sphere derivative. In terms of the
+retained master amplitudes u, v and raw gauge amplitudes f, b, d,
+
+                    A = −4u + 2fy ,                          B = ft /ρ − ρby ,                     (4)
+                    C = f /(ρc) + ρcdy ,                     D = −2(u + af + bt ),                 (5)
+                    E = cdt − b/c,                           L = 2(u + af + θb),                   (6)
+                   M = 2d,                                    s = v + pf.                          (7)
+
+The actual first solve supplies C1 = DC[q] = 0 as a field, including its derivative consequences.
+Arbitrary manufactured jets need not obey this condition. On the material shell f = 0 and
+by = dy = 0; tangential derivatives of these identities are retained. No new shell displacement is
+prescribed.
+
+
+2     Complete geometric quadratic sources
+The natural residuals are
+
+                     EAB = RAB − ϕA ϕB − 23 V(ϕ)gAB ,         S = □g ϕ − V ′ (ϕ).                  (8)
+
+All following contractions and unmarked derivatives use g0 . Set
+
+             P A BC = 21 g0AD (∇B qCD + ∇C qBD − ∇D qBC ),        J A BC = −2q A D P D BC ,        (9)
+                         C         C          C     D       C D
+              QRic
+               AB = ∇C J AB − ∇B J AC + 2(P CD P AB − P BD P AC ),                                (10)
+                                      ′′ 2           ′
+              QE     Ric           2
+                                                          
+               AB = QAB − 2ηA ηB − 3 V η (g0 )AB + 2V ηqAB .                                      (11)
+
+These are the standard affine-path curvature variations, in parameter derivative normalization [2, 4].
+The source calculation acts on every tensor slot, including the derivative slot of ∇q. Ordinary
+derivatives of the frame amplitudes are converted before the connection is applied; they are not
+themselves covariant jets.
+
+2.1   Gauge lowering and an off-shell check
+Let C A (g) = g BC (Γ[g]−Γ[g0 ])A BC and CB (g) = gBA C A (g). Along gε = g0 +εq, the exact connection
+difference gives
+
+                                                        d2
+                 CB (gε ) = εgεCD PBCD ,     Q
+                                             b C,B :=       CB (gε ) 0 = −2q CD PBCD .            (12)
+                                                        dε2
+This identity is off shell. By contrast, the upper-vector Hessian is QA      A   D
+                                                                      C = −2q D C1 − 2q
+                                                                                        CD P A
+                                                                                               CD .
+                                    A
+The varying-lowering term 2qBA C1 cancels the first term when forming (12); background lowering
+alone does not.
+   For a reduction using ∇g(A CB) , the general affine Hessian is
+
+                            QE,red,gen
+                             AB        = QE     0 b          C
+                                          AB − ∇(A QC,B) + 2P AB (C1 )C .                         (13)
+
+Parentheses contain one half. The last term checks differentiation of the covariant derivative. For
+the registered harmonic field C1 = 0,
+
+                      QE,red E     0
+                       AB = QAB − ∇(A QC,B) ,            QC,B = −2q CD PBCD .                     (14)
+
+                                                  2
+The evaluator exposes both (13) and (14). Off-shell test jets are compared using the general formula.
+Enclosing the polynomial in (14) on a rectangular jet box remains valid for the actual harmonic
+field contained in that box; the other box points need not solve the harmonic equations.
+    The actual scalar Hessian is
+
+               Qϕ = 2q A D q DB ∇A ∇B ϕ0 − 2q AB ∇A ∇B η + 2q AB P C AB ∂C ϕ0 − V ′′′ η 2 .       (15)
+
+The general expression additionally contains 2q C D C1D ∂C ϕ0 − 2C1C ∂C η. Metric and scalar unit-
+principal scaled forcing are respectively −2ℓ2 ρ2 QE,red and +ℓ2 ρ2 Qϕ . These signs include the
+retained reduced wave operator convention.
+
+2.2   Exact angular reconstruction
+Define S = n21 + n22 , Z = S − 1/2 and F = Y 2 − S/2 + 1/12. The scalar basis is (1, Z, F ), the vector
+basis (DZ, DF ), and the angular tensor basis is
+
+                              (κ, Zκ, F κ, HessTF Z, HessTF F, T+ , T− ).                         (16)
+
+The two retained transverse-traceless orientations are independent basis features, even when their
+particular source coefficients agree. There are 3 + 3 + 2 + 3 + 2 + 7 = 20 metric amplitudes and
+three scalar amplitudes. The inherited homogeneous boundary operator retains five Dirichlet and
+eighteen Robin rows; no row is replaced by a longitudinal ansatz here.
+    The exact exporter leaves all 42 ordinary metric two-jet entries and six scalar two-jet entries
+independent. Rational rank witnesses extract coefficients, after which complete polynomial recon-
+struction modulo i n2i − 1 is mandatory. Thus finite witnesses alone are not the proof. Laurent
+                   P
+
+coefficients are compared exactly, retaining both TT sectors and the general gauge corrections.
+An ambient frame with four sphere labels and two normal/time labels is used with tangential
+projection: the physical spacetime dimension is still five. The machine-readable maps supplement
+these formulas; printing thousands of monomials is unnecessary for replay.
+
+
+3     Actual first jets and source enclosures
+The predecessor supplies actual scaled C 3 master/gauge approximation errors and background
+radial jet enclosures through order four [1]. The new oracle composes them with explicit comparison
+functions, normalized bivariate Taylor jets, frame factors and radial conversion. In particular,
+
+                  ∂t = ℓ−1 ∂x ,   ∂y = −(ℓρ)−1 ∂r ,       Fyy = (ℓρ)−2 Frr + a(ℓρ)−1 Fr .         (17)
+
+The metric two-jet requires gauge amplitudes through order three; the scalar two-jet requires the
+master through order three. These are actual derivative error certificates, not derivatives inferred
+from a value-error bound. The comparison functions are retained in shared expressions before
+interval evaluation. The actual solution is not replaced by a comparison.
+    On backward cones wholly in r ≥ x, the dynamic shell-lift term vanishes; a separately checked
+resolvent recomputation removes only that contribution from the exterior error budget. The full
+error budget is used elsewhere. At r = 0 the known physical boundary identities are imposed
+exactly.
+    All acceptance inequalities are rational with outward rounding at denominator 2112 . A source-only
+integer endpoint implementation uses the same floor/ceiling interval operations and is checked against
+the Fraction implementation. Its use changes replay cost, not the enclosures or the mathematical
+premises. No floating-point plot controls a sign decision.
+
+                                                      3
+    The domain cover consists of closed mesh boxes intersected with the triangular domain in (2).
+Evaluation on their outer rectangles only widens explicit comparison and background expressions;
+inherited actual errors are asserted only at points of the intersection. No extension of the PDE
+solution outside D is presumed. The radial and shell profiles also use complete cells. Define the full
+bulk forcing and its uniform angular bundle bound by
+
+                         F = (−2ℓ2 ρ2 QE,red , +ℓ2 ρ2 Qϕ ),        FH = sup |F|H .                     (18)
+                                                                           Dbase
+
+The enclosure table is generated and checked directly from the rational reports:
+
+                           Complete cell     Coefficient      Outward enclosure
+                           Exterior bulk     ⟨QE
+                                               yy ⟩           [−6.12, −5.03] 1017
+                           Reflected bulk    ⟨Qϕ ⟩            [−1.28, −1.03] 1011
+                           Physical shell    ⟨Qp ⟩            [4.63, 5.72] 108
+
+Here δ = 1/4096. The exterior cell is [1/4, 1/4 + δ] × [5/4, 5/4 + δ] in (x, r); the reflected cell is
+[3/2, 3/2 + δ] × [1/4, 1/4 + δ]; the shell cell is [5/4, 5/4 + δ] × {0}. These are closed-cell enclosures in
+model units.
+    The full collar is covered by 81 clipped boxes, with a further 64-cell profile on r ∈ [1, 2],
+x ∈ [1/4, 1/4 + δ], and six complete shell time cells. Every profile cell has strictly negative natural
+and reduced yy mean coefficients. The global bound is
+
+                            FH ≤ 17 387 513 156 573 < 171 610 068 644 000,
+
+where the rightmost number is the retained upper bound. Their ratio is greater than 9.8. The
+rounded response majorant 1.03 1033 and contraction 0.002109 used below are retained.
+   The table’s Qp is the one-copy outward-normal scalar junction Hessian. Its two-sided jump
+and inward scaled forcing require the separate retained copy/orientation factors; they are not the
+quantity printed in that row.
+   The source coefficients in that table are frame/basis components. Their signs alone do not
+describe a physical force. The global bulk forcing bound uses the positive metric Frobenius norm
+and probability-normalized angular L2 norm. Improving that forcing bound does not itself update
+the shell Green operator, contraction constant or a numerical response residual.
+
+
+4    An intrinsic shell scalar and certified mean zeros
+Let Xε embed the material shell, γε = Xε∗ gε and ψε = Xε∗ ϕε . Define the Lorentzian intrinsic scalar
+
+                                         Iε = γεµν (dµ ψε )(dν ψε ).                                   (19)
+
+The background pullback is constant. Therefore I0 = I0′ = 0 and
+
+                                      I0′′ = 2γ0µν (dµ ηmat )(dν ηmat ).                               (20)
+
+No first/second metric variation or second scalar variation enters this order. The field and embedding
+must be transformed jointly. In a normal displacement description ηmat = χb + pb ζ; the plus-pullback
+changes χb 7→ χb + pb f and ζ 7→ ζ − f preserve it. In the registered fixed-shell representation ζ = 0
+and f |b = 0, so ηmat = vY . An additional physical embedding perturbation would change this
+identification. The familiar second gauge transformation law has only Lie derivatives of I0 and
+
+                                                      4
+I0′ [2, 3]. Hence (20) is invariant under the joint perturbative field/embedding transformations and
+shell relabellings in these premises. The distinction between ambient and intrinsic hypersurface
+gauge follows the standard geometric framework [5].
+     Since |DY |2 = 4(S − Y 2 ), the explicit coefficient and its probability mean are
+                                                   "                             #
+                                                2            4v 2
+                                       I0′′ =    2 −vt2 Y 2 + 2 (S − Y 2 ) ,                      (21)
+                                                ρb            c
+                                                −vt2 + 8v 2 /c2
+                           M (t) := I0′′ =                      .                                 (22)
+                                                     3ρ2b
+
+The exact moments are Y 2 = 1/6 and |DY |2 = 4/3. This average uses the chosen background
+time foliation; no physical clock or observational sampling protocol is newly specified.
+
+Proposition 1 (Two simple mean zeros per certified bracket). For the registered actual first solution,
+M has exactly two simple zeros in each of the scaled-time brackets [5/4, 11/8] and [13/8, 7/4] at
+r = 0. It is positive between the two zeros and negative on the remaining portions of each bracket.
+In particular four distinct simple zeros are certified; additional zeros outside these brackets are not
+excluded.
+
+Proof. Where v ̸= 0 put H = cvt /v and N = vvtt − vt2 + θvvt . Direct differentiation gives
+
+                                       cN                   v2
+                                Ht =      ,        M=              (8 − H 2 ).                    (23)
+                                       v2                  3ρ2b c2
+
+The actual two-jet interval oracle proves v < 0 throughout the first bracket, v > 0 throughout the
+second, and N < 0 throughout
+                         √       both. On each bracket H is √therefore strictly decreasing. Its left
+endpoint is greater than 8 and its right endpoint less than − 8; these comparisons are checked by
+signed squared rational inequalities. Continuity and strict monotonicity
+                                                                       √ give exactly one crossing
+of each level. Both crossings are simple because Ht < 0 and H = ± 8 ̸= 0 there. The positive
+prefactor in the expression for M proves the stated signs.
+
+     At times with vvt ̸= 0, the pointwise √quadratic√ scalar itself has both angular signs: it is
+negative at (1, 0, 0, 0) and positive at (1/ 2, 1/ 2, 0, 0). For S > 0 its angular zeros satisfy
+Y 2 /S = 4v 2 /(c2 vt2 + 4v 2 ). A negative mean does not imply negativity at every angle. These are
+statements about a Lorentzian squared gradient at quadratic order, not attraction or repulsion. A
+finite-amplitude sign would require an actual nonlinear family and control of its remainder.
+
+
+5    A quantitative evolved second-mean consequence
+The retained conditional solution U = (k, w) ∈ C 1 (Dbase ; H) obeys
+
+                                sup |U |H
+                                                                          
+                    ∥U ∥X = max           , sup |Ux |H , sup |Ur |H            < 1.03 1033 .      (24)
+                                    3
+
+For m(x, r) = S 3 w dµ, the mean functional has norm one since µ(S 3 ) = 1 and W0 = 1. Consequently
+              R
+
+|mx | ≤ |Ux |H < 1.03 1033 ; no angular point-evaluation factor is needed and the value weight three
+does not enter this derivative bound.
+
+
+
+
+                                                       5
+Corollary 1 (Persistence on two complete rectangles). For 1/1000 ≤ x ≤ 1/200, the actual selected
+formal coefficient satisfies
+
+                   m(x, r) > 1.85 1030 ,                      73/64 ≤ r ≤ 585/512,                   (25)
+                   m(x, r) < −1.85 1030 ,                    951/512 ≤ r ≤ 119/64.                   (26)
+
+At every such time it has at least one radial mean zero in (585/512, 951/512). The physical time
+interval is 10−9 ≤ t ≤ 5 10−9 in the model’s units.
+Proof. The authenticated initial mean has strict magnitude greater than 7 1030 with the indicated
+signs over the two whole cells [1]. The fundamental theorem of calculus gives |m(x, r) − m(0, r)| <
+x 1.03 1033 ≤ 5.15 1030 . Subtracting this drift preserves the stated strict margin. Each rectangle lies
+in D. Radial continuity supplies the zero separately at every time; it does not prove uniqueness or a
+continuous zero branch.
+
+    This is a quantitative corollary of an accepted derivative bound, not an independent waveform
+calculation or a gauge-invariant observable. It retains the bulk, shell and coupling effects through
+its global premise rather than replacing the response with a local free wave.
+
+
+6    Verification and remaining work
+The capsule supplies the exact evaluator, projected coefficient maps, interval oracle, complete-
+cell certificates, proofs, normal/optimized goldens and reason-specific corrupted-formula controls.
+Independent internal checks compare complete coordinate metric-family expansions with the covariant
+frame calculation, reconstruct every angular polynomial, and independently audit interval arithmetic,
+domain coverage, angular Gram norms and the shell-zero inequalities. Complete reports are compared
+as typed JSON and as raw bytes. The archive manifest and external reproduction receipt state
+which programs are replayed and which older results remain authenticated premises. Internal
+computational review is not external specialist peer review or an assessment of originality.
+     The universal Ricci and gauge identities are already in the literature [2, 3, 4]; the vanishing-
+lower-order gauge criterion is also established. This note makes no external novelty or priority
+claim. Its concrete contribution is the completed model-specific source calculation, actual interval
+enclosures, intrinsic diagnostic and quantitative corollaries. The focused primary comparison is
+included with the source.
+     The next task is to evaluate a continuous selected-space numerical response candidate and bound
+its full causal integral-equation residual, including source/input, quadrature, reflection, initial, shell
+and reconstruction errors. For a candidate V and the retained contraction q∗ = 0.002109, a complete
+residual R = V − b − T V would give ∥U − V ∥X ≤ ∥R∥X /(1 − q∗ ). Neither a Neumann tail count nor
+a source enclosure alone certifies that residual. No first derivative of the quadratic source is asserted
+from the available first-field C 3 bounds. No exact finite-amplitude nonlinear family, observational
+fit or higher-dimensional origin of the Big Bang is established.
+
+
+References
+[1] R. Maldonado, Numerical response inputs and selected-space evaluation, reproducible conditional
+    working checkpoint (2026), public numerical-input checkpoint.
+
+[2] D. Brizuela, J. M. Martín-García and G. A. Mena Marugán, Second and higher-order perturbations
+    of a spherical spacetime, Phys. Rev. D 74, 044039 (2006), arXiv:gr-qc/0607025v1.
+
+                                                    6
+[3] D. Brizuela, J. M. Martín-García and G. A. Mena Marugán, High-order gauge-invariant pertur-
+    bations of a spherical spacetime, Phys. Rev. D 76, 024004 (2007), arXiv:gr-qc/0703069v1.
+
+[4] D. Brizuela, J. M. Martín-García and G. A. Mena Marugán, xPert: Computer algebra for metric
+    perturbation theory, Gen. Relativ. Gravit. 41, 2415–2431 (2009), arXiv:0807.0824v1.
+
+[5] M. Mars, First and Second Order Perturbations of Hypersurfaces, Class. Quantum Grav. 22,
+    3325–3348 (2005), arXiv:gr-qc/0507005v1.
+
+
+
+
+                                              7
+

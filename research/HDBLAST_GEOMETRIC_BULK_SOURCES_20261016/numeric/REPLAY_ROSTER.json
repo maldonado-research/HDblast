@@ -1,0 +1,197 @@
+{
+  "schema": "portable-relative-python-replay-v1",
+  "working_directory": "numeric",
+  "python_flags": [
+    "-I",
+    "-S",
+    "-B"
+  ],
+  "positive": [
+    {
+      "script": "actual_first_jets.py",
+      "arguments": [],
+      "golden_normal": "ACTUAL_FIRST_JETS_NORMAL.json",
+      "golden_optimized": "ACTUAL_FIRST_JETS_OPTIMIZED.json",
+      "normal_optimized_must_be_byte_identical": true,
+      "timeout_seconds": 180,
+      "nested_controls_per_mode": 0
+    },
+    {
+      "script": "check_actual_jets.py",
+      "arguments": [],
+      "golden_normal": "JET_ADAPTER_CONTROLS_NORMAL.json",
+      "golden_optimized": "JET_ADAPTER_CONTROLS_OPTIMIZED.json",
+      "normal_optimized_must_be_byte_identical": true,
+      "timeout_seconds": 180,
+      "nested_controls_per_mode": 0
+    },
+    {
+      "script": "exterior_error_caps.py",
+      "arguments": [],
+      "golden_normal": "EXTERIOR_ERRORS_NORMAL.json",
+      "golden_optimized": "EXTERIOR_ERRORS_OPTIMIZED.json",
+      "normal_optimized_must_be_byte_identical": true,
+      "timeout_seconds": 180,
+      "nested_controls_per_mode": 0
+    },
+    {
+      "script": "evaluate_actual_sources.py",
+      "arguments": [],
+      "golden_normal": "ACTUAL_SOURCES_NORMAL.json",
+      "golden_optimized": "ACTUAL_SOURCES_OPTIMIZED.json",
+      "normal_optimized_must_be_byte_identical": true,
+      "timeout_seconds": 600,
+      "nested_controls_per_mode": 0
+    },
+    {
+      "script": "run_numeric_controls.py",
+      "arguments": [],
+      "golden_normal": "NUMERIC_CONTROLS_NORMAL.json",
+      "golden_optimized": "NUMERIC_CONTROLS_OPTIMIZED.json",
+      "normal_optimized_must_be_byte_identical": true,
+      "timeout_seconds": 180,
+      "nested_controls_per_mode": 14
+    }
+  ],
+  "direct_negative": [
+    {
+      "script": "check_actual_jets.py",
+      "arguments": [
+        "--inject-error",
+        "drop_gauge_product"
+      ],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "required_stderr": "characteristic gauge product derivative",
+      "require_nonzero_exit": true,
+      "require_no_output_report": true
+    },
+    {
+      "script": "check_actual_jets.py",
+      "arguments": [
+        "--inject-error",
+        "drop_radial_conversion"
+      ],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "required_stderr": "variable-rho physical second derivative conversion",
+      "require_nonzero_exit": true,
+      "require_no_output_report": true
+    },
+    {
+      "script": "check_actual_jets.py",
+      "arguments": [
+        "--inject-error",
+        "wrong_scalar_shift"
+      ],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "required_stderr": "registered scalar pullback shift is +pf",
+      "require_nonzero_exit": true,
+      "require_no_output_report": true
+    },
+    {
+      "script": "check_actual_jets.py",
+      "arguments": [
+        "--inject-error",
+        "drop_radial_rho"
+      ],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "required_stderr": "registered raw gauge radial frame factor includes rho",
+      "require_nonzero_exit": true,
+      "require_no_output_report": true
+    },
+    {
+      "script": "evaluate_actual_sources.py",
+      "arguments": [
+        "--inject-error",
+        "comparator_only"
+      ],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "required_stderr": "actual solution derivative errors retained rather than comparator substitution",
+      "require_nonzero_exit": true,
+      "require_no_output_report": true
+    },
+    {
+      "script": "evaluate_actual_sources.py",
+      "arguments": [
+        "--inject-error",
+        "halve_hessian"
+      ],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "required_stderr": "actual full-cell Einstein Hessian negative witness and second-derivative normalization",
+      "require_nonzero_exit": true,
+      "require_no_output_report": true
+    },
+    {
+      "script": "evaluate_actual_sources.py",
+      "arguments": [
+        "--inject-error",
+        "reverse_metric_forcing"
+      ],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "required_stderr": "registered reduced metric forcing sign and scale",
+      "require_nonzero_exit": true,
+      "require_no_output_report": true
+    },
+    {
+      "script": "evaluate_actual_sources.py",
+      "arguments": [
+        "--inject-error",
+        "drop_corner_cell"
+      ],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "required_stderr": "complete clipped causal triangle box cover including diagonal cells",
+      "require_nonzero_exit": true,
+      "require_no_output_report": true
+    },
+    {
+      "script": "evaluate_actual_sources.py",
+      "arguments": [
+        "--inject-error",
+        "omit_shell_normalization"
+      ],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "required_stderr": "physical shell unit-normal affine Hessian and first-row elimination",
+      "require_nonzero_exit": true,
+      "require_no_output_report": true
+    }
+  ],
+  "nested_controls": {
+    "runner": "run_numeric_controls.py",
+    "direct_checkpoint_formula_processes": 9,
+    "copied_input_corruption_processes": 1,
+    "separately_identified_inherited_processes": 4,
+    "note": "The direct-negative rows expose executable formula cases separately. The runner additionally performs copied input byte corruption and the inherited nested controls, requiring the specific reason and no output."
+  },
+  "external_sibling_input": {
+    "path": "../projection/GEOMETRIC_COEFFICIENT_MAPS.json",
+    "bytes": 2364965,
+    "sha256": "34b10b62d0b36a4506a35407a591a9fdff319971994f25e0b5f031f48eb4f615"
+  },
+  "overwrite_policy": "Every --output must be absent. Use fresh output paths; retained goldens must not be removed or overwritten."
+}

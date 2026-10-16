@@ -1,0 +1,27 @@
+{
+  "status": "PASS_PRODUCER_CORE_INDEPENDENT_COORDINATE_REVIEW",
+  "input_sha256": {
+    "review/check_producer_against_coordinate.py": "8d779eb3857322b3e04e5ca5c7a98def0ae8aeacfcfbb0b27243aad45b32f7f0",
+    "review/independent_coordinate_oracle.py": "ef9409a270381b1e18b0530489dfd5abee2d7ae106ef5ffc53bbdc2aa1e6f1c2",
+    "geometry/indexed_geometry.py": "7fff2472bacba8b1a79e8b6f9bf29ef46d58a06d987439e51394584980135bd4"
+  },
+  "cases": [
+    {
+      "case": 0,
+      "status": "PASS_PRODUCER_CORE_VS_INDEPENDENT_COORDINATE_FAMILY",
+      "controls": [
+        "ricci_square_half",
+        "matter_half"
+      ]
+    },
+    {
+      "case": 1,
+      "status": "PASS_PRODUCER_CORE_VS_INDEPENDENT_COORDINATE_FAMILY",
+      "controls": [
+        "ricci_square_half",
+        "matter_half"
+      ]
+    }
+  ],
+  "scope": "Finite exact coordinate families verify implementation; universal identities are independently derived in INDEPENDENT_DERIVATION.md."
+}

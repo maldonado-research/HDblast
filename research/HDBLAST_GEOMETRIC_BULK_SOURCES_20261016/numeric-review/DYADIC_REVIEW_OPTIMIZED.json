@@ -1,0 +1,11 @@
+{
+  "all_point_proof": "Intervals have endpoints l/G,h/G. Addition and negation are exact. Product enclosure is floor(min four products/G),ceil(max four products/G) in ticks. For either same-sign denominator, reciprocal endpoints are floor(G^2/h),ceil(G^2/l). Signed floor division and ceil(n/d)=-floor(-n/d) are exact for positive or negative d. Integer-power recursion has precisely the Fraction reference rounding order. Arbitrary-size integers avoid overflow.",
+  "coercion_scope": "D imports an interval object through exact lo/hi Fraction endpoints; D arithmetic accepts integer/Fraction scalars on either side and imported interval objects on its right. The source cell adapter explicitly converts every metric/scalar/background interval to D before evaluation, so no reference-I-left/D-right arithmetic is required.",
+  "exact_endpoint_differential_checks": 20859,
+  "input_sha256": {
+    "numeric-review/check_independent_dyadic.py": "090258da7f511a61bb9f894bf4db204a67c632165475f426212d7d49eaa884ac",
+    "numeric/fast_dyadic.py": "79a68d0b27615e02a1c88c9c194dc04d3d2eea014dfa6b2d91ceb41584441654",
+    "numeric/interval_core.py": "d9cb8529e47b9590ec8dc94f2f4484b06dbeb0ddee6c16015feccde3e4440240"
+  },
+  "status": "PASS_INDEPENDENT_INTEGER_DYADIC_REVIEW"
+}

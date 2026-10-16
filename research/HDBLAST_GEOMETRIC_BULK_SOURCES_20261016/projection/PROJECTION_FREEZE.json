@@ -1,0 +1,276 @@
+{
+  "basis_ranks": {
+    "scalar": 3,
+    "tensor": 7,
+    "vector": 2
+  },
+  "control_counts": {
+    "core_nested_per_mode": 5,
+    "definitions": 9,
+    "executed_normal_and_optimized_total": 18,
+    "map_nested_per_mode": 4,
+    "nested_total_per_mode": 9
+  },
+  "engine_dependencies": {
+    "geometric_sources.py": {
+      "bytes": 9591,
+      "sha256": "ab6b4492b17b5e43762f3bf9141cc64e1d09f432cf296e76ca1dfdbab140a284"
+    },
+    "indexed_geometry.py": {
+      "bytes": 4520,
+      "sha256": "7fff2472bacba8b1a79e8b6f9bf29ef46d58a06d987439e51394584980135bd4"
+    }
+  },
+  "exact_laurent_terms": 13126,
+  "final_maps_sha256": "34b10b62d0b36a4506a35407a591a9fdff319971994f25e0b5f031f48eb4f615",
+  "formal_input_counts": {
+    "background_entries": 11,
+    "metric_ordinary_two_jet_entries": 42,
+    "scalar_ordinary_two_jet_entries": 6
+  },
+  "input_pins": "PARENT_INPUT_PINS.json",
+  "integer_api": {
+    "formal_laurent_negative_power_integer_exact": true,
+    "public_map_integer_fraction_equal": true
+  },
+  "map_sectors": 14,
+  "negative_replays": [
+    {
+      "arguments": [
+        "--output",
+        "{new_external_output}",
+        "--mutation",
+        "tt_deleted"
+      ],
+      "output_must_be_absent": true,
+      "required_stderr": "BASIS_tensor_ALL_POINT_RECONSTRUCTION_tensor",
+      "script": "check_projection.py"
+    },
+    {
+      "arguments": [
+        "--output",
+        "{new_external_output}",
+        "--mutation",
+        "one_tt_orientation_deleted"
+      ],
+      "output_must_be_absent": true,
+      "required_stderr": "BASIS_tensor_ALL_POINT_RECONSTRUCTION_tensor",
+      "script": "check_projection.py"
+    },
+    {
+      "arguments": [
+        "--output",
+        "{new_external_output}",
+        "--mutation",
+        "tensor_factor_two"
+      ],
+      "output_must_be_absent": true,
+      "required_stderr": "BASIS_tensor_ALL_POINT_RECONSTRUCTION_tensor",
+      "script": "check_projection.py"
+    },
+    {
+      "arguments": [
+        "--output",
+        "{new_external_output}",
+        "--mutation",
+        "witness_only_acceptance"
+      ],
+      "output_must_be_absent": true,
+      "required_stderr": "OFFSPAN_REJECTION_REQUIRED",
+      "script": "check_projection.py"
+    },
+    {
+      "arguments": [
+        "--output",
+        "{new_external_output}",
+        "--mutation",
+        "tt_packing_swapped"
+      ],
+      "output_must_be_absent": true,
+      "required_stderr": "REGISTERED23_PACKING",
+      "script": "check_projection.py"
+    },
+    {
+      "arguments": [
+        "--maps",
+        "{unit}/GEOMETRIC_COEFFICIENT_MAPS.json",
+        "--output",
+        "{new_external_output}",
+        "--mutation",
+        "gauge_gradient_sign"
+      ],
+      "output_must_be_absent": true,
+      "required_stderr": "MAP_REDUCED_GAUGE_SIGN",
+      "script": "check_source_maps.py"
+    },
+    {
+      "arguments": [
+        "--maps",
+        "{unit}/GEOMETRIC_COEFFICIENT_MAPS.json",
+        "--output",
+        "{new_external_output}",
+        "--mutation",
+        "metric_forcing_factor_one"
+      ],
+      "output_must_be_absent": true,
+      "required_stderr": "MAP_METRIC_FORCING_FACTOR",
+      "script": "check_source_maps.py"
+    },
+    {
+      "arguments": [
+        "--maps",
+        "{unit}/GEOMETRIC_COEFFICIENT_MAPS.json",
+        "--output",
+        "{new_external_output}",
+        "--mutation",
+        "tt_coefficients_deleted"
+      ],
+      "output_must_be_absent": true,
+      "required_stderr": "MAP_TT_COMPLETE_JOIN",
+      "script": "check_source_maps.py"
+    },
+    {
+      "arguments": [
+        "--maps",
+        "{unit}/GEOMETRIC_COEFFICIENT_MAPS.json",
+        "--output",
+        "{new_external_output}",
+        "--mutation",
+        "qc_time_index_sign"
+      ],
+      "output_must_be_absent": true,
+      "required_stderr": "MAP_QC_PARENT_ADAPTER",
+      "script": "check_source_maps.py"
+    }
+  ],
+  "normal_optimized_raw_equal": [
+    "projection_core",
+    "complete_formal_sources",
+    "map_evaluator"
+  ],
+  "pins": {
+    "EXACT_GEOMETRIC_PROJECTION.md": {
+      "bytes": 5137,
+      "sha256": "e14a06e85b156f2b866a2c2b0243858d7f425ff021ef2cacc38917ad48161b28"
+    },
+    "GEOMETRIC_COEFFICIENT_MAPS.json": {
+      "bytes": 2364965,
+      "sha256": "34b10b62d0b36a4506a35407a591a9fdff319971994f25e0b5f031f48eb4f615"
+    },
+    "GEOMETRIC_COEFFICIENT_MAPS_OPTIMIZED.json": {
+      "bytes": 2364965,
+      "sha256": "34b10b62d0b36a4506a35407a591a9fdff319971994f25e0b5f031f48eb4f615"
+    },
+    "PARENT_INPUT_PINS.json": {
+      "bytes": 912,
+      "sha256": "1aab3e208e429ebfa681779be0082073ee52b622022599a290ea782d98c4e2b2"
+    },
+    "PROJECTION_NORMAL.json": {
+      "bytes": 8078,
+      "sha256": "23683e1a7713d8e09275ab7e4cb2173241d046be97d7f4f8200f79e7ad389276"
+    },
+    "PROJECTION_OPTIMIZED.json": {
+      "bytes": 8078,
+      "sha256": "23683e1a7713d8e09275ab7e4cb2173241d046be97d7f4f8200f79e7ad389276"
+    },
+    "SOURCE_MAPS_NORMAL.json": {
+      "bytes": 1261,
+      "sha256": "e28bd8176ef8ac3597f990b66726ccc7a3618495be8edded6fdd15ff4dd58b5b"
+    },
+    "SOURCE_MAPS_OPTIMIZED.json": {
+      "bytes": 1261,
+      "sha256": "e28bd8176ef8ac3597f990b66726ccc7a3618495be8edded6fdd15ff4dd58b5b"
+    },
+    "angular_generic.py": {
+      "bytes": 5581,
+      "sha256": "fd14d8cc3ac6f58c206b784c5c57d15430f63f38ca091ac03c7769f9bfc89df9"
+    },
+    "angular_project.py": {
+      "bytes": 7805,
+      "sha256": "8d82b4e49734b374815cb13671cab2dd90c4b0f149df66a25f15e4cb9a70c83c"
+    },
+    "check_complete_source_projection.py": {
+      "bytes": 6168,
+      "sha256": "40ddc41c11a866440af8b2677474b79215fc246baa5c2d2b183575223312302f"
+    },
+    "check_projection.py": {
+      "bytes": 6867,
+      "sha256": "195899b73ad75cb308a19b6448f3b8cd3089e1c3ad70cb6ba53600d8a7b3864c"
+    },
+    "check_source_maps.py": {
+      "bytes": 8156,
+      "sha256": "d6a8311b453b22bef8a975e15612a0584a001907302b7382e86c59506e45234e"
+    },
+    "formal_coefficients.py": {
+      "bytes": 4502,
+      "sha256": "eacc57a5ebf8e2202693d7add84c1332b0b89b85f736b0ed782ee98cb469a4d8"
+    },
+    "inputs/SELECTED_SPACE_CLOSURE.md": {
+      "bytes": 4183,
+      "sha256": "120df4265154cdeefe9f6084e7223b0f66bf49d1b57b0c38922f29b4531efadc"
+    },
+    "inputs/angular_exact.py": {
+      "bytes": 5401,
+      "sha256": "2c0bafec777581c79c3fd6bd9879d0d3cb8114bb899722bd33882086751ded60"
+    },
+    "inputs/linear_operator.py": {
+      "bytes": 9764,
+      "sha256": "a008be0d89e2ac44940c273cfd2cbc5ba0d09de8fc172d5d81ef29121ab60189"
+    },
+    "inputs/source_adapters.py": {
+      "bytes": 6147,
+      "sha256": "0233ff25b9873dfc4060ba0d4963f50d0b198dbe71368625017840d225b19f8a"
+    },
+    "source_coefficients.py": {
+      "bytes": 2817,
+      "sha256": "bcdfb1de30355699241fd68b0499831d9a805a2405148d1b13a572ef6a6ecf3d"
+    }
+  },
+  "positive_replays": [
+    {
+      "arguments": [
+        "--output",
+        "{new_external_output}",
+        "--run-controls"
+      ],
+      "id": "projection_core",
+      "normal_golden": "PROJECTION_NORMAL.json",
+      "optimized_golden": "PROJECTION_OPTIMIZED.json",
+      "script": "check_projection.py",
+      "timeout_seconds": 300
+    },
+    {
+      "arguments": [
+        "--output",
+        "{new_external_output}"
+      ],
+      "id": "complete_formal_sources",
+      "normal_golden": "GEOMETRIC_COEFFICIENT_MAPS.json",
+      "optimized_golden": "GEOMETRIC_COEFFICIENT_MAPS_OPTIMIZED.json",
+      "script": "check_complete_source_projection.py",
+      "timeout_seconds": 900
+    },
+    {
+      "arguments": [
+        "--maps",
+        "{unit}/GEOMETRIC_COEFFICIENT_MAPS.json",
+        "--output",
+        "{new_external_output}",
+        "--run-controls"
+      ],
+      "id": "map_evaluator",
+      "normal_golden": "SOURCE_MAPS_NORMAL.json",
+      "optimized_golden": "SOURCE_MAPS_OPTIMIZED.json",
+      "script": "check_source_maps.py",
+      "timeout_seconds": 300
+    }
+  ],
+  "proof": "independent formal jet generators; coefficient witness rank; all-component all-point polynomial remainder zero",
+  "scope_limits": [
+    "actual harmonic QEred/Qphi require C1=0 and derivative identity on a neighbourhood",
+    "actual jet enclosures and source numerical enclosures are separate units"
+  ],
+  "standard_library_only": true,
+  "status": "PASS_FINAL_EXACT_GEOMETRIC_PROJECTION_FREEZE",
+  "unit": "projection"
+}

@@ -1,0 +1,40 @@
+{
+  "status": "PASS_INDEPENDENT_COORDINATE_AFFINE_HESSIANS",
+  "checker_sha256": "ef9409a270381b1e18b0530489dfd5abee2d7ae106ef5ffc53bbdc2aa1e6f1c2",
+  "cases": [
+    {
+      "case": 0,
+      "stereographic_point": [
+        "1/2",
+        "1/3",
+        "1/4"
+      ],
+      "exact_coordinate_comparison": "PASS",
+      "negative_controls": [
+        "derivative_slot",
+        "time_raise",
+        "drop_general_2PC1_reduction_term",
+        "confuse_upper_QC_with_actual_lowered_Hessian"
+      ],
+      "scope": "Genuine curved nonnormal metric/scalar family with all seven frame amplitudes and all ordinary y,t two-jets populated; finite witness only."
+    },
+    {
+      "case": 1,
+      "stereographic_point": [
+        "1/3",
+        "-1/2",
+        "1/5"
+      ],
+      "exact_coordinate_comparison": "PASS",
+      "negative_controls": [
+        "derivative_slot",
+        "time_raise",
+        "drop_general_2PC1_reduction_term",
+        "confuse_upper_QC_with_actual_lowered_Hessian"
+      ],
+      "scope": "Genuine curved nonnormal metric/scalar family with all seven frame amplitudes and all ordinary y,t two-jets populated; finite witness only."
+    }
+  ],
+  "convention": "Second epsilon derivatives; fixed reference connection; E=Ric-dphi*dphi-(2/3)Vg; Ered=E-nabla^g_(a C_b).",
+  "not_a_universal_proof": "The companion derivation proves the universal identities; exact finite jets test implementation and conventions."
+}

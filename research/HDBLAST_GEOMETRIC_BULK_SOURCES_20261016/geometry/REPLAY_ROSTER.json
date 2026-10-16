@@ -1,0 +1,94 @@
+{
+  "direct_negative": [
+    {
+      "arguments": [
+        "--mutation",
+        "omit_derivative_slot"
+      ],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "require_nonzero_exit": true,
+      "required_stderr": "COVARIANT_DERIVATIVE_SLOT",
+      "script": "check_geometric_sources.py"
+    },
+    {
+      "arguments": [
+        "--mutation",
+        "ricci_square_half"
+      ],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "require_nonzero_exit": true,
+      "required_stderr": "CONFORMAL_RICCI_HESSIAN",
+      "script": "check_geometric_sources.py"
+    },
+    {
+      "arguments": [
+        "--mutation",
+        "matter_half"
+      ],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "require_nonzero_exit": true,
+      "required_stderr": "PARENT_MATTER_HESSIAN",
+      "script": "check_geometric_sources.py"
+    },
+    {
+      "arguments": [
+        "--mutation",
+        "lower_time_sign"
+      ],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "require_nonzero_exit": true,
+      "required_stderr": "LOWER_TIME_GAUGE_SIGN",
+      "script": "check_geometric_sources.py"
+    },
+    {
+      "arguments": [
+        "--mutation",
+        "reduction_half"
+      ],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "require_nonzero_exit": true,
+      "required_stderr": "REDUCTION_SYMMETRIZATION",
+      "script": "check_geometric_sources.py"
+    },
+    {
+      "arguments": [
+        "--mutation",
+        "forcing_sign"
+      ],
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "require_nonzero_exit": true,
+      "required_stderr": "UNIT_PRINCIPAL_METRIC_SIGN",
+      "script": "check_geometric_sources.py"
+    }
+  ],
+  "positive": [
+    {
+      "arguments": [
+        "--run-controls"
+      ],
+      "golden_normal": "GEOMETRY_NORMAL.json",
+      "golden_optimized": "GEOMETRY_OPTIMIZED.json",
+      "nested_controls_per_mode": 6,
+      "normal_optimized_must_be_byte_identical": true,
+      "script": "check_geometric_sources.py"
+    }
+  ]
+}
