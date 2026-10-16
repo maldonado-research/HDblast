@@ -1,0 +1,125 @@
+{
+  "status": "PASS_ACTUAL_SOURCE_NUMERIC_CONTROLS",
+  "complete_normal_optimized_identity": [
+    {
+      "report": "ACTUAL_FIRST_JETS",
+      "bytes": 41030,
+      "sha256": "0aaa7b2fe30f546db92ef8b26a7224ffa7f6812d3780c331661395aa1991d3b8"
+    },
+    {
+      "report": "JET_ADAPTER_CONTROLS",
+      "bytes": 2707,
+      "sha256": "8e98b9b452eee9d17bfd591259168fe02ccd2c33074418dcf017b09d4b625b65"
+    },
+    {
+      "report": "EXTERIOR_ERRORS",
+      "bytes": 24056,
+      "sha256": "563239ba62f25a843f0884e3dac8e4e8a1cb38e7c25578e2545d32a2da6e9887"
+    },
+    {
+      "report": "ACTUAL_SOURCES",
+      "bytes": 2652777,
+      "sha256": "45a5550d2e4647bdfb84f9c4a36bf9861ef500a1de89a76f978c5afe9c51a60f"
+    }
+  ],
+  "direct_checkpoint_controls": [
+    {
+      "script": "check_actual_jets.py",
+      "mutation": "drop_gauge_product",
+      "required_stderr": "characteristic gauge product derivative",
+      "exit_nonzero": true,
+      "no_report_written": true
+    },
+    {
+      "script": "check_actual_jets.py",
+      "mutation": "drop_radial_conversion",
+      "required_stderr": "variable-rho physical second derivative conversion",
+      "exit_nonzero": true,
+      "no_report_written": true
+    },
+    {
+      "script": "check_actual_jets.py",
+      "mutation": "wrong_scalar_shift",
+      "required_stderr": "registered scalar pullback shift is +pf",
+      "exit_nonzero": true,
+      "no_report_written": true
+    },
+    {
+      "script": "check_actual_jets.py",
+      "mutation": "drop_radial_rho",
+      "required_stderr": "registered raw gauge radial frame factor includes rho",
+      "exit_nonzero": true,
+      "no_report_written": true
+    },
+    {
+      "script": "evaluate_actual_sources.py",
+      "mutation": "comparator_only",
+      "required_stderr": "actual solution derivative errors retained rather than comparator substitution",
+      "exit_nonzero": true,
+      "no_report_written": true
+    },
+    {
+      "script": "evaluate_actual_sources.py",
+      "mutation": "halve_hessian",
+      "required_stderr": "actual full-cell Einstein Hessian negative witness and second-derivative normalization",
+      "exit_nonzero": true,
+      "no_report_written": true
+    },
+    {
+      "script": "evaluate_actual_sources.py",
+      "mutation": "reverse_metric_forcing",
+      "required_stderr": "registered reduced metric forcing sign and scale",
+      "exit_nonzero": true,
+      "no_report_written": true
+    },
+    {
+      "script": "evaluate_actual_sources.py",
+      "mutation": "drop_corner_cell",
+      "required_stderr": "complete clipped causal triangle box cover including diagonal cells",
+      "exit_nonzero": true,
+      "no_report_written": true
+    },
+    {
+      "script": "evaluate_actual_sources.py",
+      "mutation": "omit_shell_normalization",
+      "required_stderr": "physical shell unit-normal affine Hessian and first-row elimination",
+      "exit_nonzero": true,
+      "no_report_written": true
+    },
+    {
+      "script": "check_actual_jets.py",
+      "mutation": "copied bump input byte corruption",
+      "required_stderr": "predecessor authentication: inputs/BUMP_DERIVATIVE_BOUNDS.json",
+      "exit_nonzero": true,
+      "no_report_written": true
+    }
+  ],
+  "separate_nested_inherited_controls": [
+    {
+      "mutation": "drop_dynamic_lift",
+      "required_stderr": "dynamic boundary third-jet retained",
+      "exit_nonzero": true,
+      "no_report_written": true
+    },
+    {
+      "mutation": "half_comparator",
+      "required_stderr": "explicit product-profile commutator",
+      "exit_nonzero": true,
+      "no_report_written": true
+    },
+    {
+      "mutation": "drop_initial_offset",
+      "required_stderr": "stabilized third initial jet",
+      "exit_nonzero": true,
+      "no_report_written": true
+    },
+    {
+      "mutation": "drop_radial_residual",
+      "required_stderr": "third radial recovery retains residual_r",
+      "exit_nonzero": true,
+      "no_report_written": true
+    }
+  ],
+  "total_rejection_processes": 14,
+  "only_standard_library": true
+}

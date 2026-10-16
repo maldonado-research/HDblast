@@ -1,0 +1,101 @@
+{
+  "schema": "portable-relative-python-replay-v1",
+  "working_directory": "numeric-review",
+  "python_flags": [
+    "-I",
+    "-S",
+    "-B"
+  ],
+  "positive": [
+    {
+      "script": "check_independent_actual_jets.py",
+      "arguments": [],
+      "golden_normal": "ACTUAL_JETS_REVIEW_NORMAL.json",
+      "golden_optimized": "ACTUAL_JETS_REVIEW_OPTIMIZED.json",
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "normal_optimized_must_be_byte_identical": true,
+      "timeout_seconds": 120,
+      "nested_controls_per_mode": 0
+    },
+    {
+      "script": "check_independent_exterior_errors.py",
+      "arguments": [],
+      "golden_normal": "EXTERIOR_REVIEW_NORMAL.json",
+      "golden_optimized": "EXTERIOR_REVIEW_OPTIMIZED.json",
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "normal_optimized_must_be_byte_identical": true,
+      "timeout_seconds": 60,
+      "nested_controls_per_mode": 0
+    },
+    {
+      "script": "check_independent_dyadic.py",
+      "arguments": [],
+      "golden_normal": "DYADIC_REVIEW_NORMAL.json",
+      "golden_optimized": "DYADIC_REVIEW_OPTIMIZED.json",
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "normal_optimized_must_be_byte_identical": true,
+      "timeout_seconds": 120,
+      "nested_controls_per_mode": 0
+    },
+    {
+      "script": "check_independent_source_report.py",
+      "arguments": [
+        "--report",
+        "../numeric/ACTUAL_SOURCES_NORMAL.json",
+        "--optimized",
+        "../numeric/ACTUAL_SOURCES_OPTIMIZED.json",
+        "--maps",
+        "../projection/GEOMETRIC_COEFFICIENT_MAPS.json",
+        "--replay-selected"
+      ],
+      "golden_normal": "SOURCE_REPORT_REVIEW_NORMAL.json",
+      "golden_optimized": "SOURCE_REPORT_REVIEW_OPTIMIZED.json",
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "normal_optimized_must_be_byte_identical": true,
+      "timeout_seconds": 180,
+      "nested_controls_per_mode": 0
+    },
+    {
+      "script": "check_numeric_negative_controls.py",
+      "arguments": [],
+      "golden_normal": "REVIEW_CONTROLS.json",
+      "modes": [
+        "normal"
+      ],
+      "timeout_seconds": 120,
+      "nested_controls_per_mode": 12,
+      "nested_controls_run_both_child_modes": true,
+      "nested_report_count_pointer": "/direct_child_processes"
+    }
+  ],
+  "direct_negative": [],
+  "nested_controls": {
+    "runner": "check_numeric_negative_controls.py",
+    "top_level_modes": [
+      "normal"
+    ],
+    "per_top_level_process": 12,
+    "child_modes": [
+      "normal",
+      "optimized"
+    ],
+    "cases_per_child_mode": 6,
+    "note": "The one normal top-level harness explicitly runs all six children under both modes. Do not duplicate it under optimized orchestration. Optional --include-source duplicates ten producer source-semantic control processes; it is excluded from this public roster."
+  },
+  "total_top_level_positive_processes": 9,
+  "total_top_level_direct_rejection_processes": 0,
+  "total_nested_rejection_processes": 12,
+  "overwrite_policy": "Use absent --output paths outside the retained goldens."
+}

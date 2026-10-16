@@ -1,0 +1,30 @@
+{
+  "compare": "entire output bytes",
+  "direct_negative": [],
+  "negative_control_note": "No direct or nested controls in this arithmetic-only manuscript checker; existing geometric and numeric controls have separate rosters.",
+  "optimized_additional_flag": "-O",
+  "output_must_be_new": true,
+  "path_base": "capsule_root",
+  "positive": [
+    {
+      "arguments": [],
+      "golden_normal": "manuscript-review/MANUSCRIPT_ARITHMETIC_NORMAL.json",
+      "golden_optimized": "manuscript-review/MANUSCRIPT_ARITHMETIC_OPTIMIZED.json",
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "nested_control_array_paths": [],
+      "nested_controls_per_mode": 0,
+      "normal_optimized_must_be_byte_identical": true,
+      "output_option": "--output",
+      "script": "manuscript-review/check_manuscript_arithmetic.py"
+    }
+  ],
+  "python_flags": [
+    "-I",
+    "-S",
+    "-B"
+  ],
+  "working_directory": "capsule_root"
+}

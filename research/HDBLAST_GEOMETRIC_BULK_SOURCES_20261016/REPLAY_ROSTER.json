@@ -1,0 +1,478 @@
+{
+  "historical_executable_not_in_roster": [
+    "response-signs/run_sign_controls.py",
+    "review/seal_review.py"
+  ],
+  "historical_reports_not_replayed_or_added_to_counts": [
+    "response-signs/EVOLVED_SIGN_CONTROLS.json",
+    "review/ALL_POINT_PROJECTION_REPLAY.json",
+    "review/FRAME_COORDINATE_FINAL_NORMAL.json",
+    "review/FRAME_COORDINATE_FINAL_OPTIMIZED.json",
+    "review/PRODUCER_CORE_NORMAL.json",
+    "numeric/NUMERIC_CONTROLS.json"
+  ],
+  "input_policy": "Retained prior PDE/existence and error certificates are local authenticated premises. No former full scientific roster is silently replayed.",
+  "jobs": [
+    {
+      "arguments": [
+        "--run-controls"
+      ],
+      "goldens": {
+        "normal": "shell-invariant/SHELL_INTRINSIC_NORMAL.json",
+        "optimized": "shell-invariant/SHELL_INTRINSIC_OPTIMIZED.json"
+      },
+      "name": "intrinsic_shell_and_four_simple_mean_zeros",
+      "nested_rejection_count": 7,
+      "nested_report_path": [
+        "controls"
+      ],
+      "script": "shell-invariant/check_shell_invariant.py",
+      "timeout_seconds": 300
+    },
+    {
+      "arguments": [
+        "--run-controls"
+      ],
+      "goldens": {
+        "normal": "projection/PROJECTION_NORMAL.json",
+        "optimized": "projection/PROJECTION_OPTIMIZED.json"
+      },
+      "name": "projection_core",
+      "nested_rejection_count": 5,
+      "nested_report_path": [
+        "controls"
+      ],
+      "script": "projection/check_projection.py",
+      "timeout_seconds": 300
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "projection/GEOMETRIC_COEFFICIENT_MAPS.json",
+        "optimized": "projection/GEOMETRIC_COEFFICIENT_MAPS_OPTIMIZED.json"
+      },
+      "name": "complete_formal_sources",
+      "nested_rejection_count": 0,
+      "script": "projection/check_complete_source_projection.py",
+      "timeout_seconds": 900
+    },
+    {
+      "arguments": [
+        "--maps",
+        "projection/GEOMETRIC_COEFFICIENT_MAPS.json",
+        "--run-controls"
+      ],
+      "goldens": {
+        "normal": "projection/SOURCE_MAPS_NORMAL.json",
+        "optimized": "projection/SOURCE_MAPS_OPTIMIZED.json"
+      },
+      "name": "map_evaluator",
+      "nested_rejection_count": 4,
+      "nested_report_path": [
+        "controls"
+      ],
+      "script": "projection/check_source_maps.py",
+      "timeout_seconds": 300
+    },
+    {
+      "arguments": [
+        "--run-controls"
+      ],
+      "goldens": {
+        "normal": "geometry/GEOMETRY_NORMAL.json",
+        "optimized": "geometry/GEOMETRY_OPTIMIZED.json"
+      },
+      "name": "geometric_source_adapter",
+      "nested_rejection_count": 6,
+      "nested_report_path": [
+        "controls"
+      ],
+      "script": "geometry/check_geometric_sources.py",
+      "timeout_seconds": 600
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "response-signs/EVOLVED_SCALAR_SIGNS_NORMAL.json",
+        "optimized": "response-signs/EVOLVED_SCALAR_SIGNS_OPTIMIZED.json"
+      },
+      "name": "evolved_formal_scalar_mean_signs",
+      "nested_rejection_count": 0,
+      "script": "response-signs/check_evolved_scalar_signs.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "numeric/ACTUAL_FIRST_JETS_NORMAL.json",
+        "optimized": "numeric/ACTUAL_FIRST_JETS_OPTIMIZED.json"
+      },
+      "name": "numeric_actual_first_jets",
+      "nested_rejection_count": 0,
+      "script": "numeric/actual_first_jets.py",
+      "timeout_seconds": 180
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "numeric/JET_ADAPTER_CONTROLS_NORMAL.json",
+        "optimized": "numeric/JET_ADAPTER_CONTROLS_OPTIMIZED.json"
+      },
+      "name": "numeric_check_actual_jets",
+      "nested_rejection_count": 0,
+      "script": "numeric/check_actual_jets.py",
+      "timeout_seconds": 180
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "numeric/EXTERIOR_ERRORS_NORMAL.json",
+        "optimized": "numeric/EXTERIOR_ERRORS_OPTIMIZED.json"
+      },
+      "name": "numeric_exterior_error_caps",
+      "nested_rejection_count": 0,
+      "script": "numeric/exterior_error_caps.py",
+      "timeout_seconds": 180
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "numeric/ACTUAL_SOURCES_NORMAL.json",
+        "optimized": "numeric/ACTUAL_SOURCES_OPTIMIZED.json"
+      },
+      "name": "numeric_evaluate_actual_sources",
+      "nested_rejection_count": 0,
+      "script": "numeric/evaluate_actual_sources.py",
+      "timeout_seconds": 600
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "numeric/NUMERIC_CONTROLS_NORMAL.json",
+        "optimized": "numeric/NUMERIC_CONTROLS_OPTIMIZED.json"
+      },
+      "name": "numeric_run_numeric_controls",
+      "nested_rejection_count": 14,
+      "nested_rejection_groups": [
+        {
+          "expected": 10,
+          "report_path": [
+            "direct_checkpoint_controls"
+          ]
+        },
+        {
+          "expected": 4,
+          "report_path": [
+            "separate_nested_inherited_controls"
+          ]
+        }
+      ],
+      "script": "numeric/run_numeric_controls.py",
+      "timeout_seconds": 180
+    },
+    {
+      "arguments": [],
+      "embedded_control_array_paths": [
+        "cases/0/negative_controls",
+        "cases/1/negative_controls"
+      ],
+      "embedded_mutation_checks": 8,
+      "goldens": {
+        "normal": "review/COORDINATE_ORACLE_NORMAL.json",
+        "optimized": "review/COORDINATE_ORACLE_NORMAL.json"
+      },
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "name": "review_independent_coordinate_oracle",
+      "nested_rejection_count": 0,
+      "script": "review/independent_coordinate_oracle.py",
+      "timeout_seconds": 900
+    },
+    {
+      "arguments": [],
+      "embedded_control_array_paths": [
+        "cases/0/controls",
+        "cases/1/controls"
+      ],
+      "embedded_mutation_checks": 4,
+      "goldens": {
+        "normal": "review/PORTABLE_CORE_EXPECTED.json",
+        "optimized": "review/PORTABLE_CORE_EXPECTED.json"
+      },
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "name": "review_check_producer_against_coordinate",
+      "nested_rejection_count": 0,
+      "script": "review/check_producer_against_coordinate.py",
+      "timeout_seconds": 900
+    },
+    {
+      "arguments": [],
+      "embedded_control_array_paths": [],
+      "embedded_mutation_checks": 0,
+      "goldens": {
+        "normal": "review/PORTABLE_FRAME_EXPECTED.json",
+        "optimized": "review/PORTABLE_FRAME_EXPECTED.json"
+      },
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "name": "review_check_frame_against_coordinate",
+      "nested_rejection_count": 0,
+      "script": "review/check_frame_against_coordinate.py",
+      "timeout_seconds": 900
+    },
+    {
+      "arguments": [
+        "--maps",
+        "projection/GEOMETRIC_COEFFICIENT_MAPS.json"
+      ],
+      "embedded_control_array_paths": [],
+      "embedded_mutation_checks": 0,
+      "goldens": {
+        "normal": "review/SOURCE_INTERVALS_FINAL_NORMAL.json",
+        "optimized": "review/SOURCE_INTERVALS_FINAL_NORMAL.json"
+      },
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "name": "review_check_independent_source_intervals",
+      "nested_rejection_count": 0,
+      "script": "review/check_independent_source_intervals.py",
+      "timeout_seconds": 900
+    },
+    {
+      "arguments": [],
+      "embedded_control_array_paths": [],
+      "embedded_mutation_checks": 0,
+      "goldens": {
+        "normal": "review/SHELL_ZEROS_INDEPENDENT_NORMAL.json",
+        "optimized": "review/SHELL_ZEROS_INDEPENDENT_NORMAL.json"
+      },
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "name": "review_check_independent_shell_zeros",
+      "nested_rejection_count": 0,
+      "script": "review/check_independent_shell_zeros.py",
+      "timeout_seconds": 900
+    },
+    {
+      "arguments": [],
+      "embedded_control_array_paths": [],
+      "embedded_mutation_checks": 0,
+      "goldens": {
+        "normal": "review/FINAL_REVIEW_RECEIPT.json",
+        "optimized": "review/FINAL_REVIEW_RECEIPT.json"
+      },
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "name": "review_check_portable_review",
+      "nested_rejection_count": 0,
+      "script": "review/check_portable_review.py",
+      "timeout_seconds": 900
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "numeric-review/ACTUAL_JETS_REVIEW_NORMAL.json",
+        "optimized": "numeric-review/ACTUAL_JETS_REVIEW_OPTIMIZED.json"
+      },
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "name": "numeric_review_check_independent_actual_jets",
+      "nested_rejection_count": 0,
+      "script": "numeric-review/check_independent_actual_jets.py",
+      "timeout_seconds": 300
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "numeric-review/EXTERIOR_REVIEW_NORMAL.json",
+        "optimized": "numeric-review/EXTERIOR_REVIEW_OPTIMIZED.json"
+      },
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "name": "numeric_review_check_independent_exterior_errors",
+      "nested_rejection_count": 0,
+      "script": "numeric-review/check_independent_exterior_errors.py",
+      "timeout_seconds": 300
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "numeric-review/DYADIC_REVIEW_NORMAL.json",
+        "optimized": "numeric-review/DYADIC_REVIEW_OPTIMIZED.json"
+      },
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "name": "numeric_review_check_independent_dyadic",
+      "nested_rejection_count": 0,
+      "script": "numeric-review/check_independent_dyadic.py",
+      "timeout_seconds": 300
+    },
+    {
+      "arguments": [
+        "--report",
+        "numeric/ACTUAL_SOURCES_NORMAL.json",
+        "--optimized",
+        "numeric/ACTUAL_SOURCES_OPTIMIZED.json",
+        "--maps",
+        "projection/GEOMETRIC_COEFFICIENT_MAPS.json",
+        "--replay-selected"
+      ],
+      "goldens": {
+        "normal": "numeric-review/SOURCE_REPORT_REVIEW_NORMAL.json",
+        "optimized": "numeric-review/SOURCE_REPORT_REVIEW_OPTIMIZED.json"
+      },
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "name": "numeric_review_check_independent_source_report",
+      "nested_rejection_count": 0,
+      "script": "numeric-review/check_independent_source_report.py",
+      "timeout_seconds": 300
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "numeric-review/REVIEW_CONTROLS.json"
+      },
+      "modes": [
+        "normal"
+      ],
+      "name": "numeric_review_check_numeric_negative_controls",
+      "nested_child_modes": [
+        "normal",
+        "optimized"
+      ],
+      "nested_rejection_count": 12,
+      "nested_report_path": [
+        "records"
+      ],
+      "script": "numeric-review/check_numeric_negative_controls.py",
+      "timeout_seconds": 300
+    },
+    {
+      "arguments": [],
+      "goldens": {
+        "normal": "manuscript-review/MANUSCRIPT_ARITHMETIC_NORMAL.json",
+        "optimized": "manuscript-review/MANUSCRIPT_ARITHMETIC_OPTIMIZED.json"
+      },
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "name": "manuscript_arithmetic",
+      "nested_rejection_count": 0,
+      "script": "manuscript-review/check_manuscript_arithmetic.py",
+      "timeout_seconds": 300
+    }
+  ],
+  "process_accounting": {
+    "counts_are_processes_not_theorems": true,
+    "direct_rejection_processes": 14,
+    "embedded_in_process_mutation_checks": 24,
+    "nested_import_only_processes": 12,
+    "nested_rejections_inside_positive_processes": 84,
+    "top_level_positive_processes": 45
+  },
+  "rejections": [
+    {
+      "arguments": [
+        "--inject",
+        "wrong_mean_norm"
+      ],
+      "expected_reason": "mean_projection_Cauchy_Schwarz",
+      "name": "evolved_sign_wrong_mean_norm",
+      "script": "response-signs/check_evolved_scalar_signs.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "wrong_derivative_weight"
+      ],
+      "expected_reason": "unit_derivative_weight_in_X",
+      "name": "evolved_sign_wrong_derivative_weight",
+      "script": "response-signs/check_evolved_scalar_signs.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "omit_evolution_drift"
+      ],
+      "expected_reason": "continuous_time_integral_enclosure",
+      "name": "evolved_sign_omit_evolution_drift",
+      "script": "response-signs/check_evolved_scalar_signs.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "wrong_time_scale"
+      ],
+      "expected_reason": "physical_time_equals_ell_times_x",
+      "name": "evolved_sign_wrong_time_scale",
+      "script": "response-signs/check_evolved_scalar_signs.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "invent_initial_margin"
+      ],
+      "expected_reason": "initial_mean_interval_authenticated",
+      "name": "evolved_sign_invent_initial_margin",
+      "script": "response-signs/check_evolved_scalar_signs.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "expand_radius_cell"
+      ],
+      "expected_reason": "entire_radius_cell_in_initial_witness",
+      "name": "evolved_sign_expand_radius_cell",
+      "script": "response-signs/check_evolved_scalar_signs.py",
+      "timeout_seconds": 120
+    },
+    {
+      "arguments": [
+        "--inject",
+        "lose_sign_room"
+      ],
+      "expected_reason": "strict_evolved_sign_room",
+      "name": "evolved_sign_lose_sign_room",
+      "script": "response-signs/check_evolved_scalar_signs.py",
+      "timeout_seconds": 120
+    }
+  ],
+  "runtime_argument_adapters": [
+    {
+      "family": "numeric-review",
+      "from_cwd": "numeric-review",
+      "rule": "Normalize ../numeric and ../projection data arguments to numeric and projection; code/goldens unchanged.",
+      "to_cwd": "capsule_root"
+    }
+  ],
+  "schema": "hdblast-explicit-complete-json-replay-v1",
+  "scope": "Retained five-dimensional Einstein-scalar material shell, actual harmonic first quadrupole and fixed second initial prescription. Results: Complete quadratic Ricci, natural/reduced Einstein, scalar and gauge source maps in all23 angular amplitudes; Actual ordinary metric/scalar two-jet and bulk/shell source enclosures;81 clipped causal cells,64 radial profile cells,6 shell cells; Positive-bundle bulk forcing norm F_H<=17387513156573; previous upper bound171610068644000; Intrinsic material-shell scalar quadratic coefficient: exactly two simple mean zeros in each of[5/4,11/8] and[13/8,7/4] scaled-time brackets, four distinct zeros certified without excluding others elsewhere; Quantitative persistence of opposite second scalar-mean signs on two complete radius cells for x in[1/1000,1/200], magnitude>1.85e30, with at least one radial mean zero at every such time. Limits: First background/master/gauge and retained causal inverse existence remain authenticated conditional premises; Universal curvature and gauge formulas and vanishing-lower-order gauge criterion are established results; no external novelty or priority assessment; Full numerical second waveform and continuous response residual remain unfinished; Intrinsic coefficient sign is not a finite-amplitude sign or physical force; its mean uses a specified background time foliation; Second scalar-mean persistence remains tied to the registered gauge and initial prescription; No exact nonlinear family, finite-amplitude remainder, observational fit or cosmological-origin conclusion"
+}

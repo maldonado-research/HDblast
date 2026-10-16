@@ -1,0 +1,112 @@
+{
+  "archive_only": [
+    "review/seal_review.py"
+  ],
+  "compare": "entire output bytes",
+  "direct_negative": [],
+  "negative_control_note": "8 coordinate-oracle injected checks and 4 indexed-core injected checks per mode; four and two distinct mutation types respectively. These run inside each scientific positive invocation; no subprocess-only status is substituted. Import smokes are not counted as negative controls.",
+  "optimized_additional_flag": "-O",
+  "output_must_be_new": true,
+  "path_base": "capsule_root",
+  "positive": [
+    {
+      "arguments": [],
+      "golden_normal": "review/COORDINATE_ORACLE_NORMAL.json",
+      "golden_optimized": "review/COORDINATE_ORACLE_NORMAL.json",
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "nested_control_array_paths": [
+        "cases/0/negative_controls",
+        "cases/1/negative_controls"
+      ],
+      "nested_controls_per_mode": 8,
+      "normal_optimized_must_be_byte_identical": true,
+      "output_option": "--output",
+      "script": "review/independent_coordinate_oracle.py"
+    },
+    {
+      "arguments": [],
+      "golden_normal": "review/PORTABLE_CORE_EXPECTED.json",
+      "golden_optimized": "review/PORTABLE_CORE_EXPECTED.json",
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "nested_control_array_paths": [
+        "cases/0/controls",
+        "cases/1/controls"
+      ],
+      "nested_controls_per_mode": 4,
+      "normal_optimized_must_be_byte_identical": true,
+      "output_option": "--output",
+      "script": "review/check_producer_against_coordinate.py"
+    },
+    {
+      "arguments": [],
+      "golden_normal": "review/PORTABLE_FRAME_EXPECTED.json",
+      "golden_optimized": "review/PORTABLE_FRAME_EXPECTED.json",
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "nested_control_array_paths": [],
+      "nested_controls_per_mode": 0,
+      "normal_optimized_must_be_byte_identical": true,
+      "output_option": "--output",
+      "script": "review/check_frame_against_coordinate.py"
+    },
+    {
+      "arguments": [
+        "--maps",
+        "projection/GEOMETRIC_COEFFICIENT_MAPS.json"
+      ],
+      "golden_normal": "review/SOURCE_INTERVALS_FINAL_NORMAL.json",
+      "golden_optimized": "review/SOURCE_INTERVALS_FINAL_NORMAL.json",
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "nested_control_array_paths": [],
+      "nested_controls_per_mode": 0,
+      "normal_optimized_must_be_byte_identical": true,
+      "output_option": "--output",
+      "script": "review/check_independent_source_intervals.py"
+    },
+    {
+      "arguments": [],
+      "golden_normal": "review/SHELL_ZEROS_INDEPENDENT_NORMAL.json",
+      "golden_optimized": "review/SHELL_ZEROS_INDEPENDENT_NORMAL.json",
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "nested_control_array_paths": [],
+      "nested_controls_per_mode": 0,
+      "normal_optimized_must_be_byte_identical": true,
+      "output_option": "--output",
+      "script": "review/check_independent_shell_zeros.py"
+    },
+    {
+      "arguments": [],
+      "golden_normal": "review/FINAL_REVIEW_RECEIPT.json",
+      "golden_optimized": "review/FINAL_REVIEW_RECEIPT.json",
+      "modes": [
+        "normal",
+        "optimized"
+      ],
+      "nested_control_array_paths": [],
+      "nested_controls_per_mode": 0,
+      "normal_optimized_must_be_byte_identical": true,
+      "output_option": "--output",
+      "script": "review/check_portable_review.py"
+    }
+  ],
+  "python_flags": [
+    "-I",
+    "-S",
+    "-B"
+  ],
+  "working_directory": "capsule_root"
+}

@@ -1,0 +1,134 @@
+{
+  "all_rejections_require": "nonzero process, mutation-specific stderr, absent output file",
+  "direct_child_processes": 12,
+  "input_sha256": {
+    "numeric-review/check_independent_actual_jets.py": "80c2a56151b61f7924ac4d21c2a42630e144a8ab14a5c8fb1106f9ed541b5551",
+    "numeric/actual_first_jets.py": "a68fa8025d2170efca6c3e85d443910a796d0c30a9b7dd17ed988cd9e00bbb00",
+    "numeric/evaluate_actual_sources.py": "ec6132179dc69bde61223670dc4d2184e549288abfbf5623e272dab9e911d99f",
+    "projection/GEOMETRIC_COEFFICIENT_MAPS.json": "34b10b62d0b36a4506a35407a591a9fdff319971994f25e0b5f031f48eb4f615",
+    "projection/source_coefficients.py": "bcdfb1de30355699241fd68b0499831d9a805a2405148d1b13a572ef6a6ecf3d"
+  },
+  "records": [
+    {
+      "arguments": [
+        "--inject-error",
+        "wrong_factorial"
+      ],
+      "exit_nonzero": true,
+      "expected_stderr": "independent ordinary quotient derivative",
+      "optimized": false,
+      "output_absent": true,
+      "script": "check_independent_actual_jets.py"
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "wrong_scalar_shift"
+      ],
+      "exit_nonzero": true,
+      "expected_stderr": "independent coordinate-to-frame ordinary derivative s",
+      "optimized": false,
+      "output_absent": true,
+      "script": "check_independent_actual_jets.py"
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "drop_radial_rho"
+      ],
+      "exit_nonzero": true,
+      "expected_stderr": "independent coordinate-to-frame ordinary derivative A",
+      "optimized": false,
+      "output_absent": true,
+      "script": "check_independent_actual_jets.py"
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "drop_radial_conversion"
+      ],
+      "exit_nonzero": true,
+      "expected_stderr": "independent coordinate-to-frame ordinary derivative Ayy",
+      "optimized": false,
+      "output_absent": true,
+      "script": "check_independent_actual_jets.py"
+    },
+    {
+      "arguments": [],
+      "exit_nonzero": true,
+      "expected_stderr": "predecessor authentication: inputs/BUMP_DERIVATIVE_BOUNDS.json",
+      "optimized": false,
+      "output_absent": true,
+      "script": "actual_first_jets.py"
+    },
+    {
+      "arguments": [],
+      "exit_nonzero": true,
+      "expected_stderr": "review binds inherited error certificate",
+      "optimized": false,
+      "output_absent": true,
+      "script": "actual_first_jets.py"
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "wrong_factorial"
+      ],
+      "exit_nonzero": true,
+      "expected_stderr": "independent ordinary quotient derivative",
+      "optimized": true,
+      "output_absent": true,
+      "script": "check_independent_actual_jets.py"
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "wrong_scalar_shift"
+      ],
+      "exit_nonzero": true,
+      "expected_stderr": "independent coordinate-to-frame ordinary derivative s",
+      "optimized": true,
+      "output_absent": true,
+      "script": "check_independent_actual_jets.py"
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "drop_radial_rho"
+      ],
+      "exit_nonzero": true,
+      "expected_stderr": "independent coordinate-to-frame ordinary derivative A",
+      "optimized": true,
+      "output_absent": true,
+      "script": "check_independent_actual_jets.py"
+    },
+    {
+      "arguments": [
+        "--inject-error",
+        "drop_radial_conversion"
+      ],
+      "exit_nonzero": true,
+      "expected_stderr": "independent coordinate-to-frame ordinary derivative Ayy",
+      "optimized": true,
+      "output_absent": true,
+      "script": "check_independent_actual_jets.py"
+    },
+    {
+      "arguments": [],
+      "exit_nonzero": true,
+      "expected_stderr": "predecessor authentication: inputs/BUMP_DERIVATIVE_BOUNDS.json",
+      "optimized": true,
+      "output_absent": true,
+      "script": "actual_first_jets.py"
+    },
+    {
+      "arguments": [],
+      "exit_nonzero": true,
+      "expected_stderr": "review binds inherited error certificate",
+      "optimized": true,
+      "output_absent": true,
+      "script": "actual_first_jets.py"
+    }
+  ],
+  "status": "PASS_INDEPENDENT_NUMERIC_DIRECT_REJECTIONS"
+}

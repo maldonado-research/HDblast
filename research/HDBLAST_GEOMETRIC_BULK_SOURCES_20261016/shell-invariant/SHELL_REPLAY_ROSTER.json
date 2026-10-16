@@ -1,0 +1,23 @@
+{
+  "jobs": [
+    {
+      "name": "intrinsic_shell_and_four_simple_mean_zeros",
+      "script": "shell-invariant/check_shell_invariant.py",
+      "arguments": [
+        "--run-controls"
+      ],
+      "goldens": {
+        "normal": "shell-invariant/SHELL_INTRINSIC_NORMAL.json",
+        "optimized": "shell-invariant/SHELL_INTRINSIC_OPTIMIZED.json"
+      },
+      "timeout_seconds": 300
+    }
+  ],
+  "rejections": [],
+  "process_accounting": {
+    "top_level_positive_processes": 2,
+    "direct_rejection_processes": 0,
+    "nested_rejections_inside_positive_processes": 14,
+    "note": "Seven specific subprocess mutations in each positive execution mode. These are processes, not theorem counts."
+  }
+}

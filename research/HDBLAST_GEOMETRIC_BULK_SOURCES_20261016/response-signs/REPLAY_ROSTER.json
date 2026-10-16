@@ -1,0 +1,44 @@
+{
+  "dependencies": "Python standard library only; all premise snapshots local under inputs/; no upstream proof replay.",
+  "expected_normal_optimized_byte_equality": true,
+  "overwrite_policy": "Outputs must be absent; use a clean copy or fresh output filenames.",
+  "reason_specific_rejections": 14,
+  "runs": [
+    {
+      "command": [
+        "python",
+        "check_evolved_scalar_signs.py",
+        "--output",
+        "EVOLVED_SCALAR_SIGNS_NORMAL.json"
+      ],
+      "expected_status": "PASS_QUANTITATIVE_EVOLVED_FORMAL_SCALAR_MEAN_SIGNS",
+      "output": "EVOLVED_SCALAR_SIGNS_NORMAL.json",
+      "sha256": "b8ecacfa68ea6c79a548835788f57b7523c04bc7915c6310a58380c3e7e34329"
+    },
+    {
+      "command": [
+        "python",
+        "-O",
+        "check_evolved_scalar_signs.py",
+        "--output",
+        "EVOLVED_SCALAR_SIGNS_OPTIMIZED.json"
+      ],
+      "expected_status": "PASS_QUANTITATIVE_EVOLVED_FORMAL_SCALAR_MEAN_SIGNS",
+      "output": "EVOLVED_SCALAR_SIGNS_OPTIMIZED.json",
+      "sha256": "b8ecacfa68ea6c79a548835788f57b7523c04bc7915c6310a58380c3e7e34329"
+    },
+    {
+      "command": [
+        "python",
+        "run_sign_controls.py",
+        "--output",
+        "EVOLVED_SIGN_CONTROLS.json"
+      ],
+      "expected_status": "PASS_EVOLVED_SIGN_REASON_CONTROLS",
+      "output": "EVOLVED_SIGN_CONTROLS.json",
+      "sha256": "d08ed8435c05b3ea6bbb564d936826b9c2abf8882de83693e033f4cb69f78369"
+    }
+  ],
+  "schema": "relative-python-replay-v1",
+  "working_directory": "."
+}
