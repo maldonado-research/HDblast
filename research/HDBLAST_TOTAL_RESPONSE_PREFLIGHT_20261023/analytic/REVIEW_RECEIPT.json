@@ -1,0 +1,78 @@
+{
+  "artifacts": {
+    "EXPLICIT_PREMISES.json": {
+      "bytes": 1703,
+      "sha256": "436305e19f375ddead2958dd44ea48dd080302852ef056631efd3ae2e6b433c1"
+    },
+    "LOCAL_TOTAL_NORMAL.json": {
+      "bytes": 3560,
+      "sha256": "4e3053280ae8cea28584e2f302069b0b260896dd8356db81a81ceb4382c1d22f"
+    },
+    "LOCAL_TOTAL_OPTIMIZED.json": {
+      "bytes": 3560,
+      "sha256": "4e3053280ae8cea28584e2f302069b0b260896dd8356db81a81ceb4382c1d22f"
+    },
+    "LOCAL_TOTAL_REVIEW.md": {
+      "bytes": 12971,
+      "sha256": "69a7a4741d599aad07d952a9b48423bf9b06f18c2b2431f3de8e821134db610c"
+    },
+    "PORTABLE_LOCAL_TOTAL_NORMAL.json": {
+      "bytes": 1718,
+      "sha256": "2395abb71cec5fa9c6a571e68e7d8e875563ff0aaa05ac4da5583495af5f4138"
+    },
+    "PORTABLE_LOCAL_TOTAL_OPTIMIZED.json": {
+      "bytes": 1718,
+      "sha256": "2395abb71cec5fa9c6a571e68e7d8e875563ff0aaa05ac4da5583495af5f4138"
+    },
+    "check_local_total_review.py": {
+      "bytes": 9981,
+      "sha256": "7bbcd7b2bff72d5ba02e34e53c62c86c537a1bec6c51e80fbc56e81d2baab63a"
+    },
+    "check_portable_local_total.py": {
+      "bytes": 4782,
+      "sha256": "47757cfd2aee1bc071b3bb4e5b7336f8dbf4da79eddf5d3453a567ab9660e874"
+    }
+  },
+  "independent_text_reviews": [
+    "physical initial Hamiltonian and four momentum completion",
+    "initial harmonic velocities and mixed metric conversion",
+    "conditional full subsidiary proof and coordinate/frame Robin conversion",
+    "initial representation C4 cutoff implies U0 C1 and V0 continuous",
+    "proper-time observable eikonal, graph, determinant and quadrupole mean identities"
+  ],
+  "normal_optimized_local_bytes_identical": true,
+  "normal_optimized_portable_bytes_identical": true,
+  "portable_pin_controls": [
+    {
+      "exit_code": 1,
+      "mutated_input": "EXPLICIT_PREMISES.json",
+      "no_output_report": true,
+      "optimized": false,
+      "rejected_reason": "LOCAL_INPUT_PIN_EXPLICIT_PREMISES.json"
+    },
+    {
+      "exit_code": 1,
+      "mutated_input": "LOCAL_TOTAL_REVIEW.md",
+      "no_output_report": true,
+      "optimized": false,
+      "rejected_reason": "LOCAL_INPUT_PIN_LOCAL_TOTAL_REVIEW.md"
+    },
+    {
+      "exit_code": 1,
+      "mutated_input": "EXPLICIT_PREMISES.json",
+      "no_output_report": true,
+      "optimized": true,
+      "rejected_reason": "LOCAL_INPUT_PIN_EXPLICIT_PREMISES.json"
+    },
+    {
+      "exit_code": 1,
+      "mutated_input": "LOCAL_TOTAL_REVIEW.md",
+      "no_output_report": true,
+      "optimized": true,
+      "rejected_reason": "LOCAL_INPUT_PIN_LOCAL_TOTAL_REVIEW.md"
+    }
+  ],
+  "scope": "Independent internal review and exact rational implications; inherited PDE premises remain conditional. No total waveform accuracy claim.",
+  "status": "PASS_LOCAL_REVIEW_AND_PORTABLE_ARITHMETIC",
+  "synthetic_formula_distinctions_per_normal_run": 8
+}
