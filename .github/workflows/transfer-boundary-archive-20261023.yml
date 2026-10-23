@@ -1,0 +1,230 @@
+name: Deliver verified HDblast archive bytes
+
+on:
+  push:
+    branches: [transfer/boundary-archive-20261023]
+
+permissions:
+  contents: write
+
+jobs:
+  deliver-authenticated-blobs:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /hdblast/transfer/boundary-archive-20261023/
+      - name: Authenticate complete frozen archive and source before delivery
+        env:
+          GH_UPLOAD_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -I -S -B <<'PYTRANSFER'
+          """Deliver authenticated existing bytes as Git blobs; never write a ref or commit."""
+          import base64
+          import hashlib
+          import io
+          import json
+          import os
+          from pathlib import Path, PurePosixPath
+          import re
+          import stat
+          import urllib.error
+          import urllib.request
+          import zipfile
+          
+          REPOSITORY = 'maldonado-research/HDblast'
+          BRANCH = 'refs/heads/transfer/boundary-archive-20261023'
+          CAPSULE = 'HDBLAST_BOUNDARY_RESPONSE_20261023'
+          TRANSFER = Path('hdblast/transfer/boundary-archive-20261023')
+          METADATA_SHA256 = '900cd6d3898f1ef441e3e730f017bf1dd081c9d229560dd2005bc9bf7696250f'
+          ARCHIVE_BYTES = 4408972
+          ARCHIVE_SHA256 = 'a37fb4c8039464e683566f2cdc589dea46ef5c5855dde99717c7d73dad157150'
+          ARCHIVE_GIT_SHA = '0e892290d5f5e4fe758bc1d6867dd4f7a36eec8b'
+          MANIFEST_SHA256 = '4ff690150a1ca6aa7b07583f68951db5f919b72f3627809580a473a591697264'
+          SOURCE_BYTES = 8650122
+          SOURCE_FILES = 50
+          
+          
+          def need(ok, message):
+              if not ok:
+                  raise ValueError(message)
+          
+          
+          def sha(raw):
+              return hashlib.sha256(raw).hexdigest()
+          
+          
+          def git_sha(raw):
+              return hashlib.sha1(b'blob ' + str(len(raw)).encode() + b'\0' + raw).hexdigest()
+          
+          
+          def unique(pairs):
+              out = {}
+              for key, value in pairs:
+                  need(key not in out, 'DUPLICATE_JSON_KEY')
+                  out[key] = value
+              return out
+          
+          
+          def decode(raw):
+              return json.loads(raw, object_pairs_hook=unique)
+          
+          
+          def canonical(name):
+              need(type(name) is str, 'NONSTRING_PATH')
+              path = PurePosixPath(name)
+              need(name not in ('', '.') and path.as_posix() == name and not path.is_absolute()
+                   and '..' not in path.parts and '\\' not in name
+                   and all(ord(c) >= 32 for c in name), 'NONCANONICAL_PATH')
+              return name
+          
+          
+          def read_archive():
+              metadata_path = TRANSFER / 'parts.json'
+              need(metadata_path.is_file() and not metadata_path.is_symlink(), 'METADATA_NOT_REGULAR')
+              metadata_raw = metadata_path.read_bytes()
+              need(sha(metadata_raw) == METADATA_SHA256, 'METADATA_EXTERNAL_PIN')
+              metadata = decode(metadata_raw)
+              need(metadata['archive'] == {'name': CAPSULE + '.zip', 'bytes': ARCHIVE_BYTES,
+                                          'sha256': ARCHIVE_SHA256, 'git_blob_sha': ARCHIVE_GIT_SHA},
+                   'EXACT_ARCHIVE_IDENTITY')
+              parts = metadata['parts']
+              need(type(parts) is list and len(parts) == 3, 'EXACT_THREE_PARTS')
+              chunks = []
+              for index, row in enumerate(parts):
+                  name = canonical(row['name'])
+                  need(name == 'part-%02d.bin' % index, 'ORDERED_PART_NAME')
+                  path = TRANSFER / name
+                  need(path.is_file() and not path.is_symlink(), 'PART_NOT_REGULAR')
+                  raw = path.read_bytes()
+                  need(len(raw) == row['bytes'] and sha(raw) == row['sha256']
+                       and git_sha(raw) == row['git_blob_sha'], 'PART_BYTE_INTEGRITY')
+                  chunks.append(raw)
+              archive = b''.join(chunks)
+              need(len(archive) == ARCHIVE_BYTES and sha(archive) == ARCHIVE_SHA256
+                   and git_sha(archive) == ARCHIVE_GIT_SHA, 'COMPLETE_ARCHIVE_INTEGRITY')
+              return archive
+          
+          
+          def authenticate_source(archive):
+              payload = {}
+              with zipfile.ZipFile(io.BytesIO(archive)) as bundle:
+                  infos = bundle.infolist()
+                  need(len(infos) == SOURCE_FILES and sum(row.file_size for row in infos) == SOURCE_BYTES,
+                       'EXACT_SOURCE_COUNT_AND_SIZE')
+                  for row in infos:
+                      name = canonical(row.filename)
+                      need(name.startswith(CAPSULE + '/'), 'CAPSULE_PREFIX')
+                      relative = canonical(name[len(CAPSULE) + 1:])
+                      need(relative not in payload and not row.is_dir() and not row.flag_bits & 1
+                           and stat.S_IFMT(row.external_attr >> 16) == stat.S_IFREG,
+                           'REGULAR_UNIQUE_ZIP_MEMBER')
+                      raw = bundle.read(row)
+                      need(len(raw) == row.file_size, 'ZIP_MEMBER_SIZE')
+                      payload[relative] = raw
+              manifest_raw = payload['MANIFEST.json']
+              need(sha(manifest_raw) == MANIFEST_SHA256, 'MANIFEST_EXTERNAL_PIN')
+              manifest = decode(manifest_raw)
+              need(manifest['capsule'] == CAPSULE and type(manifest['files']) is list
+                   and len(manifest['files']) == SOURCE_FILES - 1, 'MANIFEST_IDENTITY')
+              rows = {}
+              for row in manifest['files']:
+                  name = canonical(row['path'])
+                  need(name not in rows and name != 'MANIFEST.json'
+                       and type(row['bytes']) is int and row['bytes'] >= 0
+                       and type(row['sha256']) is str and re.fullmatch('[0-9a-f]{64}', row['sha256']),
+                       'EXACT_MANIFEST_MEMBER')
+                  rows[name] = row
+              need(set(payload) == set(rows) | {'MANIFEST.json'}, 'MANIFEST_COMPLETE_CLOSURE')
+              for name, row in rows.items():
+                  raw = payload[name]
+                  need(len(raw) == row['bytes'] and sha(raw) == row['sha256'], 'MANIFEST_MEMBER_INTEGRITY')
+              return payload
+          
+          
+          def post_blob(raw):
+              expected = git_sha(raw)
+              body = json.dumps({'encoding': 'base64', 'content': base64.b64encode(raw).decode('ascii')},
+                                separators=(',', ':')).encode()
+              token = os.environ['GH_UPLOAD_TOKEN']
+              need(bool(token), 'MISSING_ACTION_TOKEN')
+              request = urllib.request.Request(
+                  'https://api.github.com/repos/' + REPOSITORY + '/git/blobs', data=body, method='POST',
+                  headers={'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github+json',
+                           'Content-Type': 'application/json', 'X-GitHub-Api-Version': '2022-11-28',
+                           'User-Agent': 'hdblast-verified-archive-byte-transfer'})
+              try:
+                  with urllib.request.urlopen(request, timeout=90) as response:
+                      need(response.status == 201, 'CREATE_BLOB_HTTP_STATUS')
+                      result_raw = response.read(100000)
+              except urllib.error.HTTPError as error:
+                  raise RuntimeError('CREATE_BLOB_HTTP_' + str(error.code)) from None
+              result = decode(result_raw)
+              need(result['sha'] == expected, 'REMOTE_GIT_BLOB_INTEGRITY')
+              return expected
+          
+          
+          def main():
+              need(os.environ.get('GITHUB_REPOSITORY') == REPOSITORY
+                   and os.environ.get('GITHUB_REF') == BRANCH
+                   and os.environ.get('GITHUB_EVENT_NAME') == 'push', 'EXACT_REPOSITORY_BRANCH_EVENT')
+              archive = read_archive()
+              payload = authenticate_source(archive)
+              # Authentication of the entire archive and all 50 source files is complete
+              # before the first API mutation. The only mutation endpoint is git/blobs.
+              files = {'research/' + CAPSULE + '.zip': archive}
+              files.update({'research/' + CAPSULE + '/' + name: raw for name, raw in payload.items()})
+              groups = {}
+              for path, raw in sorted(files.items()):
+                  expected = git_sha(raw)
+                  if expected not in groups:
+                      groups[expected] = {'raw': raw, 'paths': []}
+                  groups[expected]['paths'].append(path)
+              receipt_rows = []
+              for expected, group in groups.items():
+                  raw = group['raw']
+                  returned = post_blob(raw)
+                  record = {'paths': group['paths'], 'bytes': len(raw), 'sha256': sha(raw),
+                            'git_blob_sha': expected, 'returned_git_blob_sha': returned}
+                  receipt_rows.append(record)
+                  print(json.dumps({'delivered_git_blob_sha': returned, 'bytes': len(raw),
+                                    'paths': group['paths']}, sort_keys=True), flush=True)
+              receipt = {'status': 'PASS_EXACT_ARCHIVE_AND_COMPLETE_SOURCE_BLOB_DELIVERY',
+                         'repository': REPOSITORY, 'branch': BRANCH,
+                         'workflow_head': os.environ.get('GITHUB_SHA'),
+                         'archive_sha256': ARCHIVE_SHA256, 'archive_bytes': ARCHIVE_BYTES,
+                         'archive_git_blob_sha': ARCHIVE_GIT_SHA,
+                         'manifest_sha256': MANIFEST_SHA256, 'source_files': SOURCE_FILES,
+                         'source_bytes': SOURCE_BYTES, 'delivered_paths': len(files),
+                         'unique_blob_posts': len(receipt_rows), 'blobs': receipt_rows,
+                         'all_source_members_authenticated_before_any_POST': True,
+                         'only_mutation_endpoint': '/repos/' + REPOSITORY + '/git/blobs',
+                         'ref_commit_or_main_updates_performed': False,
+                         'scope': 'Existing verified archive/source bytes only. No scientific calculation or new result.'}
+              destination = Path(os.environ['RUNNER_TEMP']) / 'hdblast-archive-transfer'
+              destination.mkdir(exist_ok=False)
+              target = destination / 'TRANSFER_RECEIPT.json'
+              target.write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+              print(json.dumps(receipt, sort_keys=True), flush=True)
+          
+          
+          if __name__ == '__main__':
+              try:
+                  main()
+              except (ValueError, KeyError, TypeError, OSError, RuntimeError, zipfile.BadZipFile) as error:
+                  raise SystemExit('VERIFIED_BYTE_TRANSFER_FAILED:' + str(error))
+          PYTRANSFER
+      - name: Preserve byte-delivery receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: hdblast-byte-delivery-${{ github.sha }}
+          path: ${{ runner.temp }}/hdblast-archive-transfer/TRANSFER_RECEIPT.json
+          if-no-files-found: error
+          retention-days: 14
