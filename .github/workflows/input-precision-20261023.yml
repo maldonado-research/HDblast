@@ -1,0 +1,69 @@
+name: Regular shell and initial precision replay
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_INPUT_PRECISION_20261023/**'
+      - 'research/HDBLAST_INPUT_PRECISION_20261023.zip'
+      - 'hdblast/continuation/2026.10.23-input-precision/**'
+      - '.github/workflows/input-precision-20261023.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_INPUT_PRECISION_20261023/**'
+      - 'research/HDBLAST_INPUT_PRECISION_20261023.zip'
+      - 'hdblast/continuation/2026.10.23-input-precision/**'
+      - '.github/workflows/input-precision-20261023.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      HDB_PINS: '23406765b06f7e0e50f3baa90b89d2be59a198cbf973991cf9eedac2ed943025'
+      HDB_WRAPPER: '4cc047d793b31378c4f0c1bd84e7abe1b11897e8431395bf7e5709e66bccd9e3'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /research/HDBLAST_INPUT_PRECISION_20261023/
+            /research/HDBLAST_INPUT_PRECISION_20261023.zip
+            /hdblast/continuation/2026.10.23-input-precision/
+            /research/HDBLAST_COMMON_GAUGE_FORCING_20261016/
+            /research/HDBLAST_NUMERICAL_RESPONSE_INPUTS_20261016/
+            /research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/
+            /research/HDBLAST_FORCED_RESPONSE_BOUNDS_20261023/
+            /research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023/
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Authenticate source and archive, then replay both native modes
+        shell: bash
+        run: |
+          set -euo pipefail
+          evidence="hdblast/continuation/2026.10.23-input-precision"
+          echo "$HDB_PINS  $evidence/PUBLICATION_PINS.json" | sha256sum --check --strict
+          echo "$HDB_WRAPPER  $evidence/verify_and_reproduce.py" | sha256sum --check --strict
+          python -I -S -B - <<'PY'
+          import json,os,pathlib
+          r=pathlib.Path(os.environ['GITHUB_WORKSPACE'])
+          names={'P':'HDBLAST_COMMON_GAUGE_FORCING_20261016','N':'HDBLAST_NUMERICAL_RESPONSE_INPUTS_20261016','G':'HDBLAST_GEOMETRIC_BULK_SOURCES_20261016','C':'HDBLAST_FORCED_RESPONSE_BOUNDS_20261023','T':'HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023'}
+          data={k:str(r/'research'/v) for k,v in names.items()}
+          data['B']=str(r/'research/HDBLAST_INPUT_PRECISION_20261023/branch/BRANCH_COMPARISON_REPORT.json')
+          (pathlib.Path(os.environ['RUNNER_TEMP'])/'input-precision-dependencies.json').write_text(json.dumps(data))
+          PY
+          python -I -S -B "$evidence/verify_and_reproduce.py" --repo-root "$GITHUB_WORKSPACE" --pins "$evidence/PUBLICATION_PINS.json" --pins-sha256 "$HDB_PINS" --output-dir "$RUNNER_TEMP/input-precision" --dependency-map "$RUNNER_TEMP/input-precision-dependencies.json"
+      - uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        with:
+          name: input-precision-${{ github.sha }}
+          path: ${{ runner.temp }}/input-precision/
+          if-no-files-found: warn
+          retention-days: 14

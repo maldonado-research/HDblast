@@ -1,0 +1,65 @@
+{
+  "status": "PASS_INDEPENDENT_AUTHENTICATION_HARDENING_ADDENDUM",
+  "scientific_review_sha256": "ae76df0a0b2dd720bff1f3843591fdc324a6a61a905f2a9e3149beba9dbec8d7",
+  "prior_reviewed_producer_sha256": "cc0efbe520753809d4b11f66a9f382ecf0a1615162a16a39cadd84b7c9b2e214",
+  "final_reviewed_producer_sha256": "3f7ca8354ed04f624708713c662de0dc5847ee761c267afa0adafeafed1dca41",
+  "delta_scope": [
+    "Docstring now covers original and recentered candidates.",
+    "T strict inventory rejects every undeclared regular file including caches and every symlink path before loading its authenticated audit helper.",
+    "After complete inherited manifest/hash authentication, all P/N/G/C trees receive the same stricter cache and symlink rejection before any numerical import.",
+    "Strict complete-tree authentication repeats after evaluation.",
+    "No numerical formula, bound, candidate, grid, or gate acceptance criterion changed."
+  ],
+  "strict_controls": {
+    "receipt_sha256": "10ef425891584d66a86260bb579ada2b781eee750d8856bdbfc90b0a8d46f135",
+    "owned_copy_mutations": 6,
+    "T_rejections_before_any_module_load": true,
+    "N_rejections_before_numerical_import": true,
+    "source_trees_modified": false
+  },
+  "independent_complete_report_comparison": {
+    "pass": true,
+    "reports": [
+      {
+        "name": "RECENTERED_CANDIDATE_NORMAL.json",
+        "sha256": "82f69f4f605febb261ef3fd8d6ecb7d7c46ab1272c49ac94d7bcb45f32487f8a"
+      },
+      {
+        "name": "RECENTERED_CANDIDATE_OPTIMIZED.json",
+        "sha256": "82f69f4f605febb261ef3fd8d6ecb7d7c46ab1272c49ac94d7bcb45f32487f8a"
+      },
+      {
+        "name": "RECENTERED_CANDIDATE_PUBLIC.json",
+        "sha256": "9708cff312a08463e7ffacaa6ec5d033dce40bab70196a0cce15d0d84d05ae5b"
+      },
+      {
+        "name": "RECENTERED_CANDIDATE_FINAL_PUBLIC.json",
+        "sha256": "9708cff312a08463e7ffacaa6ec5d033dce40bab70196a0cce15d0d84d05ae5b"
+      }
+    ],
+    "excluded_only": [
+      "current_authentication.external_pin",
+      "branch_input_certificate.path"
+    ],
+    "all_other_exact_fields_equal": true
+  },
+  "execution_provenance_at_review": {
+    "prehardening_source": "cc0efbe520753809d4b11f66a9f382ecf0a1615162a16a39cadd84b7c9b2e214",
+    "prehardening_reports": [
+      "RECENTERED_CANDIDATE_NORMAL.json (normal)",
+      "RECENTERED_CANDIDATE_OPTIMIZED.json (-O)",
+      "RECENTERED_CANDIDATE_PUBLIC.json (normal)"
+    ],
+    "hardened_source": "3f7ca8354ed04f624708713c662de0dc5847ee761c267afa0adafeafed1dca41",
+    "completed_hardened_reports": [
+      "RECENTERED_CANDIDATE_FINAL_PUBLIC.json (normal)"
+    ],
+    "hardened_optimized_run_already_confirmed": false,
+    "note": "A hardened -O replay was launched separately, but this addendum does not claim its completion. Final CI must bind each actual run to the frozen source and exact argv before its result is counted."
+  },
+  "verdict": "The final hardened source is approved. The previous functional proof and independent exact ledger acceptance remain valid; actual initial/free cap is unchanged. This addendum supersedes only the producer-source binding, with execution modes stated accurately.",
+  "limits": [
+    "No B1, total response, invariant observable or physical conclusion added.",
+    "Publication/merge approval and actual CI execution are separate actions outside this mathematical review."
+  ]
+}

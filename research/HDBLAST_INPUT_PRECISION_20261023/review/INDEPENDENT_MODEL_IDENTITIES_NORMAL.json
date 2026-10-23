@@ -1,0 +1,74 @@
+{
+  "status": "PASS_INDEPENDENT_EXACT_MODEL_AND_SHELL_IDENTITIES",
+  "arithmetic": "fractions.Fraction only; no scientific module imports",
+  "checks": [
+    "exact_decimal_model_identity",
+    "actual_delta_within_proved_uniform_interval",
+    "bulk_potential_polynomial_identity",
+    "exact_correlated_shell_constraint_identity",
+    "retained_beta_box_strictly_negative",
+    "retained_absolute_beta_less_than_9e_minus_5",
+    "riccati_divided_potential_between_zero_and_four",
+    "bulk_potential_above_U0_on_comparison_domain",
+    "positive_a_lower_bound_for_all_z",
+    "actual_a_upper_bound_for_z_in_0_2",
+    "correlated_shell_curvature_inside_comparison_domain",
+    "degree_six_memory_margin_given_kappa",
+    "degree_five_residual_margin_given_kappa"
+  ],
+  "conditional_comparison_checks": "The kappa>=37/20 graph damping premise is not proved here; only its proposed margins are checked. z in [0,2] follows by regular-cone first crossing after importing retained theorem existence/sign/positive a premises.",
+  "exact_constants": {
+    "c": "96714321425692/161839258930731",
+    "delta": "1/1000",
+    "old_beta_center": "-72535741069269/863142714297232000",
+    "old_beta_radius": "799/250000000",
+    "comparison_eta_abs": "9/100000",
+    "h0": "1/100",
+    "amin": "999991/9000000",
+    "amax": "3/20",
+    "M_range": [
+      "699887498784635493439/225000000000000000000",
+      "700112501215364506561/225000000000000000000"
+    ],
+    "shell_H_range_symmetric_beta_domain": [
+      "349033900664545947866079838504734752985629014169/5893187789530843591827643731225000000000000000000000",
+      "349116030510030421790891278742527747014370985831/5893187789530843591827643731225000000000000000000000"
+    ]
+  },
+  "polynomials_ascending": {
+    "U": [
+      "-2/27",
+      "0",
+      "14/9",
+      "50/27",
+      "-1/6",
+      "-4/9",
+      "-2/27"
+    ],
+    "A": [
+      "258553580356423/4369659991129737",
+      "-338500124989922/4369659991129737",
+      "186017839287154/1456553330376579",
+      "548696544633499/4369659991129737",
+      "96714321425692/4369659991129737"
+    ],
+    "B0": [
+      "59834708938501235427109095781/942910046324934974692422996996",
+      "12502917038177289581434709858/235727511581233743673105749249",
+      "2338414992208016662869419716/235727511581233743673105749249"
+    ],
+    "shell_H": [
+      "55851994493966109572557689379781/942910046324934974692422996996000000",
+      "-3041394479178570106729266047357/39287918596872290612184291541500000",
+      "7526831918280257471491749748429/58931877895308435918276437312250000",
+      "548696544633499/4369659991129737000",
+      "24178580356423/1092414997782434250"
+    ]
+  },
+  "source_script_sha256": "9ba7cbc3c480ffdd450d1bf0bb99023f712d0b4e180bfbecb937b99ea076ab11",
+  "limitations": [
+    "No endpoint graph Z or error barrier checked yet.",
+    "No numerical branch enclosure or initial gate supplied.",
+    "No global uniqueness or physical observable claim."
+  ]
+}

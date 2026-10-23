@@ -1,0 +1,52 @@
+{
+  "status": "PASS_FINAL_HARDENED_SOURCE_NATIVE_NORMAL_OPTIMIZED_BINDING",
+  "producer_sha256": "3f7ca8354ed04f624708713c662de0dc5847ee761c267afa0adafeafed1dca41",
+  "runs": [
+    {
+      "optimized": false,
+      "source_sha256_at_execution": "3f7ca8354ed04f624708713c662de0dc5847ee761c267afa0adafeafed1dca41",
+      "argv": [
+        "python",
+        "-I",
+        "-S",
+        "-B",
+        "/tmp/hdblast-input-precision-20261023/local-differences/direct_difference_pilot.py",
+        "--case",
+        "branch",
+        "--dependency-map",
+        "/tmp/hdblast-input-precision-20261023/local-differences/DEPENDENCY_MAP.json",
+        "--recenter",
+        "--output",
+        "/tmp/hdblast-input-precision-20261023/local-differences/RECENTERED_CANDIDATE_FINAL_PUBLIC.json"
+      ],
+      "report": "/tmp/hdblast-input-precision-20261023/local-differences/RECENTERED_CANDIDATE_FINAL_PUBLIC.json",
+      "report_sha256": "9708cff312a08463e7ffacaa6ec5d033dce40bab70196a0cce15d0d84d05ae5b"
+    },
+    {
+      "optimized": true,
+      "source_sha256_at_execution": "3f7ca8354ed04f624708713c662de0dc5847ee761c267afa0adafeafed1dca41",
+      "argv": [
+        "python",
+        "-I",
+        "-S",
+        "-B",
+        "-O",
+        "/tmp/hdblast-input-precision-20261023/local-differences/direct_difference_pilot.py",
+        "--case",
+        "branch",
+        "--dependency-map",
+        "/tmp/hdblast-input-precision-20261023/local-differences/DEPENDENCY_MAP.json",
+        "--recenter",
+        "--output",
+        "/tmp/hdblast-input-precision-20261023/local-differences/RECENTERED_CANDIDATE_FINAL_PUBLIC_OPTIMIZED.json"
+      ],
+      "report": "/tmp/hdblast-input-precision-20261023/local-differences/RECENTERED_CANDIDATE_FINAL_PUBLIC_OPTIMIZED.json",
+      "report_sha256": "9708cff312a08463e7ffacaa6ec5d033dce40bab70196a0cce15d0d84d05ae5b"
+    }
+  ],
+  "normal_optimized_byte_identical": true,
+  "full96cells": true,
+  "comparison_receipt_sha256": "dac44e3948810084ca369f4698f934d967475e1d8ad8ea6fd3f48791c7de7fa0",
+  "earlier_comparison_runs": "Native normal/optimized and first public used prehardening source cc0efbe520753809d4b11f66a9f382ecf0a1615162a16a39cadd84b7c9b2e214. They are retained comparison evidence; the two explicit runs here use the final strict authenticator source.",
+  "scope": "All numerical fields and all non-location provenance match; no B1 or source campaign."
+}
