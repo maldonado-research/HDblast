@@ -1,0 +1,347 @@
+{
+  "capsule": "HDBLAST_BOUNDARY_RESPONSE_20261023",
+  "children": [
+    {
+      "artifacts": [
+        {
+          "bytes": 2458663,
+          "golden": "compute/BOUNDARY_N16_NORMAL.json",
+          "output": "actual_source_normal/report.json",
+          "raw_golden_equal": true,
+          "sha256": "6caf16c304fb6db940899d58d09b648066eb2356385189ccb79eb2b0a6879675",
+          "typed_json_golden_equal": true
+        }
+      ],
+      "exit_code": 0,
+      "optimized": false,
+      "program": "portable_actual.py",
+      "role": "actual_source"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 2458663,
+          "golden": "compute/BOUNDARY_N16_OPTIMIZED.json",
+          "output": "actual_source_optimized/report.json",
+          "raw_golden_equal": true,
+          "sha256": "6caf16c304fb6db940899d58d09b648066eb2356385189ccb79eb2b0a6879675",
+          "typed_json_golden_equal": true
+        }
+      ],
+      "exit_code": 0,
+      "optimized": true,
+      "program": "portable_actual.py",
+      "role": "actual_source"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 4080,
+          "golden": "numeric-review/REVIEW_N16_NORMAL.json",
+          "output": "numerical_review_normal/report.json",
+          "raw_golden_equal": true,
+          "sha256": "892cddadf726534c14fdabb9e878e5cd11556fa01a86d8602217047852e832f7",
+          "typed_json_golden_equal": true
+        }
+      ],
+      "exit_code": 0,
+      "optimized": false,
+      "program": "numeric-review/review_boundary_response.py",
+      "role": "numerical_review"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 4080,
+          "golden": "numeric-review/REVIEW_N16_OPTIMIZED.json",
+          "output": "numerical_review_optimized/report.json",
+          "raw_golden_equal": true,
+          "sha256": "892cddadf726534c14fdabb9e878e5cd11556fa01a86d8602217047852e832f7",
+          "typed_json_golden_equal": true
+        }
+      ],
+      "exit_code": 0,
+      "optimized": true,
+      "program": "numeric-review/review_boundary_response.py",
+      "role": "numerical_review"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 1461,
+          "golden": "numeric-review/CONTROLS_N16_NORMAL.json",
+          "output": "numeric_rejections_normal/report.json",
+          "raw_golden_equal": true,
+          "sha256": "c0f6316579d88588c489ccf839a1eeb1bb484cc9ab963b930eb52b2a0a8b068e",
+          "typed_json_golden_equal": true
+        }
+      ],
+      "exit_code": 0,
+      "optimized": false,
+      "program": "numeric-review/check_boundary_controls.py",
+      "role": "numeric_rejections"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 1461,
+          "golden": "numeric-review/CONTROLS_N16_OPTIMIZED.json",
+          "output": "numeric_rejections_optimized/report.json",
+          "raw_golden_equal": true,
+          "sha256": "c0f6316579d88588c489ccf839a1eeb1bb484cc9ab963b930eb52b2a0a8b068e",
+          "typed_json_golden_equal": true
+        }
+      ],
+      "exit_code": 0,
+      "optimized": true,
+      "program": "numeric-review/check_boundary_controls.py",
+      "role": "numeric_rejections"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 5871,
+          "golden": "analytic-review/ANALYTIC_PORTABLE_NORMAL.json",
+          "output": "coarse_analytic_normal/report.json",
+          "raw_golden_equal": true,
+          "sha256": "accc7bee9a063b622a280e0c697da22f40e1c55f746446800574e96fc8f7ea3a",
+          "typed_json_golden_equal": true
+        }
+      ],
+      "exit_code": 0,
+      "optimized": false,
+      "program": "analytic-review/check_analytic_certificate_portable.py",
+      "role": "coarse_analytic"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 5871,
+          "golden": "analytic-review/ANALYTIC_PORTABLE_OPTIMIZED.json",
+          "output": "coarse_analytic_optimized/report.json",
+          "raw_golden_equal": true,
+          "sha256": "accc7bee9a063b622a280e0c697da22f40e1c55f746446800574e96fc8f7ea3a",
+          "typed_json_golden_equal": true
+        }
+      ],
+      "exit_code": 0,
+      "optimized": true,
+      "program": "analytic-review/check_analytic_certificate_portable.py",
+      "role": "coarse_analytic"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 12919,
+          "golden": "analytic-review/MEAN_BLOCK_CERTIFICATE_NORMAL.json",
+          "output": "mean_block_normal/report.json",
+          "raw_golden_equal": true,
+          "sha256": "efb890b316af82a5d2c5235770446baf160c9c5b30b495a9c54151498a1efaf5",
+          "typed_json_golden_equal": true
+        }
+      ],
+      "exit_code": 0,
+      "optimized": false,
+      "program": "analytic-review/check_mean_block_certificate.py",
+      "role": "mean_block"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 12919,
+          "golden": "analytic-review/MEAN_BLOCK_CERTIFICATE_OPTIMIZED.json",
+          "output": "mean_block_optimized/report.json",
+          "raw_golden_equal": true,
+          "sha256": "efb890b316af82a5d2c5235770446baf160c9c5b30b495a9c54151498a1efaf5",
+          "typed_json_golden_equal": true
+        }
+      ],
+      "exit_code": 0,
+      "optimized": true,
+      "program": "analytic-review/check_mean_block_certificate.py",
+      "role": "mean_block"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 4957,
+          "golden": "numeric-review/MEAN_REVIEW_NORMAL.json",
+          "output": "mean_review_normal/report.json",
+          "raw_golden_equal": true,
+          "sha256": "33d5c07f47b46377a2410936d3194b490cf0ac70c8f7b2569c234d089e16fda1",
+          "typed_json_golden_equal": true
+        }
+      ],
+      "exit_code": 0,
+      "optimized": false,
+      "program": "numeric-review/review_mean_block.py",
+      "role": "mean_review"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 4957,
+          "golden": "numeric-review/MEAN_REVIEW_OPTIMIZED.json",
+          "output": "mean_review_optimized/report.json",
+          "raw_golden_equal": true,
+          "sha256": "33d5c07f47b46377a2410936d3194b490cf0ac70c8f7b2569c234d089e16fda1",
+          "typed_json_golden_equal": true
+        }
+      ],
+      "exit_code": 0,
+      "optimized": true,
+      "program": "numeric-review/review_mean_block.py",
+      "role": "mean_review"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 3828,
+          "golden": "manuscript/DISPLAY_NORMAL.json",
+          "output": "manuscript_display_normal/DISPLAY.json",
+          "raw_golden_equal": true,
+          "sha256": "bd32635fdb9c43a24025a456509f5784e2e927121027537bcaba2113ea8474c0",
+          "typed_json_golden_equal": true
+        },
+        {
+          "bytes": 559,
+          "golden": "manuscript/GENERATED_VALUES.tex",
+          "output": "manuscript_display_normal/GENERATED_VALUES.tex",
+          "raw_golden_equal": true,
+          "sha256": "4b5dff2237f9ffaf7e4e626e51380bfb554bb3ea5492ae851eab597a73fbe348",
+          "typed_json_golden_equal": false
+        },
+        {
+          "bytes": 622,
+          "golden": "manuscript/DISPLAY_VALUES.txt",
+          "output": "manuscript_display_normal/DISPLAY_VALUES.txt",
+          "raw_golden_equal": true,
+          "sha256": "7955b9556588aa8a866ce0b0b273af7bd0e8ac485e9e6f0d3b3711a10cb485b1",
+          "typed_json_golden_equal": false
+        }
+      ],
+      "exit_code": 0,
+      "optimized": false,
+      "program": "manuscript/generate_display.py",
+      "role": "manuscript_display"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 3828,
+          "golden": "manuscript/DISPLAY_OPTIMIZED.json",
+          "output": "manuscript_display_optimized/DISPLAY.json",
+          "raw_golden_equal": true,
+          "sha256": "bd32635fdb9c43a24025a456509f5784e2e927121027537bcaba2113ea8474c0",
+          "typed_json_golden_equal": true
+        },
+        {
+          "bytes": 559,
+          "golden": "manuscript/GENERATED_VALUES.tex",
+          "output": "manuscript_display_optimized/GENERATED_VALUES.tex",
+          "raw_golden_equal": true,
+          "sha256": "4b5dff2237f9ffaf7e4e626e51380bfb554bb3ea5492ae851eab597a73fbe348",
+          "typed_json_golden_equal": false
+        },
+        {
+          "bytes": 622,
+          "golden": "manuscript/DISPLAY_VALUES.txt",
+          "output": "manuscript_display_optimized/DISPLAY_VALUES.txt",
+          "raw_golden_equal": true,
+          "sha256": "7955b9556588aa8a866ce0b0b273af7bd0e8ac485e9e6f0d3b3711a10cb485b1",
+          "typed_json_golden_equal": false
+        }
+      ],
+      "exit_code": 0,
+      "optimized": true,
+      "program": "manuscript/generate_display.py",
+      "role": "manuscript_display"
+    }
+  ],
+  "files_including_manifest": 50,
+  "fresh_report_joins": [
+    {
+      "artifacts": [
+        {
+          "bytes": 2458663,
+          "mode": 292,
+          "output": "fresh-source-integrals/BOUNDARY_N16_NORMAL.json",
+          "sha256": "6caf16c304fb6db940899d58d09b648066eb2356385189ccb79eb2b0a6879675",
+          "source": "actual_source_normal/report.json"
+        },
+        {
+          "bytes": 2458663,
+          "mode": 292,
+          "output": "fresh-source-integrals/BOUNDARY_N16_OPTIMIZED.json",
+          "sha256": "6caf16c304fb6db940899d58d09b648066eb2356385189ccb79eb2b0a6879675",
+          "source": "actual_source_optimized/report.json"
+        }
+      ],
+      "directory": "fresh-source-integrals",
+      "directory_mode": 365,
+      "fresh_mode_pair_equal_and_read_only": true,
+      "role": "actual_source",
+      "token": "FRESH_ACTUAL_SOURCE_PAIR"
+    }
+  ],
+  "manifest_sha256": "4ff690150a1ca6aa7b07583f68951db5f919b72f3627809580a473a591697264",
+  "processes_per_role": {
+    "actual_source": 2,
+    "coarse_analytic": 2,
+    "manuscript_display": 2,
+    "mean_block": 2,
+    "mean_review": 2,
+    "numeric_rejections": 2,
+    "numerical_review": 2
+  },
+  "retained_dependencies": {
+    "both_complete_archives_authenticated_before_extraction": true,
+    "geometric": {
+      "archive_bytes": 2251635,
+      "archive_sha256": "a300d732fddc8c6e3d309a7ab955860e0835b3d3c0cafb9ca4621767fbeebe49",
+      "capsule": "HDBLAST_GEOMETRIC_BULK_SOURCES_20261016",
+      "files_including_manifest": 169,
+      "manifest_sha256": "3ff1f95c151d2da6a1ab5e9b54718c2bb325c10d9c62a7ed9f97ef2bb36f0bb2",
+      "uncompressed_bytes": 15173440
+    },
+    "previous": {
+      "archive_bytes": 3132931,
+      "archive_sha256": "f310241dd0fc7894fd737bbe4ba48e25f2efc45be64577a05433503015857f41",
+      "capsule": "HDBLAST_FORCED_RESPONSE_BOUNDS_20261023",
+      "files_including_manifest": 49,
+      "manifest_sha256": "72924328a4e79cc77f0da90999b8dd56956bfdebd5e614e15c3c0498c3a8ae76",
+      "uncompressed_bytes": 5718317
+    },
+    "upstream_scientific_producers_replayed": false
+  },
+  "retained_dependencies_read_only_and_unchanged": true,
+  "roles": [
+    "actual_source",
+    "numerical_review",
+    "numeric_rejections",
+    "coarse_analytic",
+    "mean_block",
+    "mean_review",
+    "manuscript_display"
+  ],
+  "scope": "Conditional auxiliary yy probability mean at one shell-reaching point: actual source integral, independent geometry/source joins and three oracle spots, coarse analytic audit, exact coupled five-mean-block feedback, independent tensor/Cramer review, and manuscript display arithmetic. Targeted seven false-certificate rejections, eleven synthetic controls and six formula distinctions per mode are separate in-process checks. No full waveform, physical total response, force, nonlinear integrability, cosmological-origin or novelty claim; no PDF typesetting or retained upstream scientific campaign replay.",
+  "source_read_only": true,
+  "source_unchanged": true,
+  "status": "PASS_AUTHENTICATED_BOUNDARY_RESPONSE_REPRODUCTION",
+  "targeted_in_process_controls": {
+    "coarse_analytic:synthetic_false_formula_controls": {
+      "normal": 11,
+      "optimized": 11
+    },
+    "mean_review:specific_false_formula_distinctions": {
+      "normal": 6,
+      "optimized": 6
+    },
+    "numeric_rejections:targeted_false_certificate_rejections": {
+      "normal": 7,
+      "optimized": 7
+    }
+  },
+  "top_level_children": 14,
+  "upstream_scientific_producers_replayed": false
+}

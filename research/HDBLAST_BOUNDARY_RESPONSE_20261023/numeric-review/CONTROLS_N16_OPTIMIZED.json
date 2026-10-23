@@ -1,0 +1,46 @@
+{
+  "baseline_passed": true,
+  "control_source_sha256": "dc5095c3b75f06086730b37f646cf74c22781a4f03f3c1a00548bc568ce24eb1",
+  "count": 7,
+  "producer_report_sha256": "6caf16c304fb6db940899d58d09b648066eb2356385189ccb79eb2b0a6879675",
+  "rejections": [
+    {
+      "case": "halve_reflected_overlap_weight",
+      "error": "REFLECTED_ROBIN_WEIGHT",
+      "rejected": true
+    },
+    {
+      "case": "omit_active_bulk_cell",
+      "error": "GAP_FREE_DISJOINT_TOTALS",
+      "rejected": true
+    },
+    {
+      "case": "claim_exterior_errors_on_global_bbox",
+      "error": "WHOLE_BBOX_ERROR_REGIME",
+      "rejected": true
+    },
+    {
+      "case": "reverse_retarded_boundary_lift",
+      "error": "NEGATIVE_LIFT_SIGN",
+      "rejected": true
+    },
+    {
+      "case": "omit_full_metric_lowered_QC_y",
+      "error": "FULL_VARYING_METRIC_QCY",
+      "rejected": true
+    },
+    {
+      "case": "double_one_copy_outward_shell_QK",
+      "error": "ONE_COPY_OUTWARD_QK00",
+      "rejected": true
+    },
+    {
+      "case": "omit_Robin_feedback_allowance",
+      "error": "COMPLETE_FULL_STATE_FEEDBACK_LEDGER",
+      "rejected": true
+    }
+  ],
+  "reviewer_source_sha256": "170784a98701a424669d405b94f378d616d5976b1512ab87ee8e94b13317d828",
+  "scope": "Seven targeted in-process numerical certificate corruptions per execution mode; no separate child per case and no exhaustive false-source proof.",
+  "status": "PASS_SEVEN_TARGETED_BOUNDARY_NUMERICAL_REJECTIONS"
+}
