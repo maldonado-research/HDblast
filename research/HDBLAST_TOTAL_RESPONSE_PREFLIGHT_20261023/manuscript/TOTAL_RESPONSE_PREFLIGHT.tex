@@ -1,0 +1,181 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,hyperref}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue,pdftitle={A causal response estimate and an anchored shell-volume prescription},pdfauthor={Ricardo Maldonado}}
+\title{A causal response estimate and an anchored shell-volume prescription}
+\author{Ricardo Maldonado\\Independent Researcher\\Henderson, Nevada, United States}
+\date{23 October 2026\\Conditional mathematical working note}
+\begin{document}
+\maketitle
+\begin{abstract}
+We refine a conditional local contraction estimate for the registered second-order Einstein--scalar response with a timelike shell. The exact zero region preceding a compact initial packet gives a contraction factor $3409/8000000$ on a specified backward causal cone. A bounded initial-data pilot constructs one differentiable rational candidate but its certified error bound fails the proposed accuracy gate; no evaluated total response is claimed. Separately we derive the shell's spatial volume at anchored intrinsic proper time through second parameter order, including metric, embedding and clock terms. This is an unevaluated jet functional. It supplies neither a nonlinear solution family nor evidence for a cosmological origin mechanism.
+\end{abstract}
+
+\section*{Retained problem and scope}
+The previously registered conditional construction has the form
+\[
+ U=b+TU,\quad b=U_{\rm free}+KF+LG,\qquad
+ TV=K(AV_x+BV_r+D_0V)+L(MP_NV|_{r=0}).
+\]
+Here $U$ is the total second parameter derivative, in the convention
+$g_\epsilon=g_0+\epsilon q+\epsilon^2 k/2+\cdots$.
+$W=(I-T)^{-1}(KF+LG)$ is an auxiliary zero-initial-data increment;
+$U=(I-T)^{-1}U_{\rm free}+W$. The physical constraints belong to the
+completed exact total construction. Its five rotational means close as
+$(K_0,L_0,N_0,J_0,w_0)$, with Gram matrix $\operatorname{diag}(1,2,1,3,1)$.
+Only $L_0$ has the Dirichlet row. All coupled mean rows remain required.
+The earlier positive auxiliary $W_{yy}$ mean is unchanged and cannot be
+substituted for the total shell histories used below.
+
+\section*{A zero-region contraction estimate}
+On the backward-closed cone
+\[
+ D=\{0\le x\le3/2,\ \max(0,x-5/4)\le r\le7/4-x\},
+\]
+\[
+ \|V\|_X=\max(\sup_D|V|_H/3,\sup_D|V_x|_H,\sup_D|V_r|_H),
+\]
+assume $V\in C^1(D;H)$ vanishes where $x+r<1$. Then
+\[
+ |V(x,r)|_H\le(x+r-1)_+\|V\|_X\le\tfrac34\|V\|_X,
+ \qquad |V(x,0)|_H\le(x-1)_+\|V\|_X\le\tfrac14\|V\|_X.
+\]
+For $x\le1$ integrate radially from $(x,1-x)$ when outside the zero
+region. For $x>1$ integrate along $(1,0)\to(1,r)\to(x,r)$.
+Every segment lies in $D$ and has total length $x+r-1$.
+The fundamental theorem of calculus gives the bounds, also for compatible
+error functions. Nonzero initial data on $1<r\le7/4$ are allowed.
+
+Use the retained operator premises
+$\|A\|,\|B\|\le10^{-4}$, $\|D_0\|\le10^{-6}$,
+$\|M\|\le1/2000$ and reflected-kernel estimates
+$\|Kf\|_X\le(3/2)\sup|f|_H$, $\|Lg\|_X\le\sup|g|_H$.
+The invariant compatible subspace therefore has
+\[
+ q_w=\tfrac32(2\cdot10^{-4}+\tfrac34\cdot10^{-6})
+       +\tfrac14\tfrac1{2000}=\frac{3409}{8000000}=0.000426125<1.
+\]
+This sharpens a valid earlier local bound $3609/2000000$; it does not
+change the equation or assert an optimal constant. For compatible $V$,
+\[
+ \|U-V\|_X\le\frac{\|V-b-TV\|_X}{1-q_w}.
+\]
+At $(3/2,1/4)$ the corresponding mean-component value error is at most
+$3\|U-V\|_X/4$. Under the retained $\|U\|_X<1.03\cdot10^{33}$,
+the two-exact-term tail is $\|T^2U\|_X<1.870300\cdot10^{26}$.
+This tail excludes numerical and representation errors. For approximants
+$B_0,B_1$ with defects $e_0\ge\|B_0-b\|_X$ and
+$e_1\ge\|B_1-TB_0\|_X$ the complete bound is
+$q_w^2(1.03\cdot10^{33})+(1+q_w)e_0+e_1$.
+A full residual already accounts for omitted iterations.
+
+\section*{The initial-data accuracy gate}
+The pilot retains the physical Hamiltonian/momentum prescription and
+harmonic completion, including lapse, mixed velocity and scalar initial
+terms. It defines a single piecewise rational initial function from shared
+background polynomials, a rational packet and a $C^4$ cutoff, rather than
+selecting independent interval midpoints. The reflected free wave is a
+$C^1$ candidate on $D$. On 96 complete cells covering $[1,7/4]$, with an
+exact zero region $[0,1]$, outward interval arithmetic gives the safe caps
+\[
+ \delta_0<5.482\cdot10^{31},\quad
+ \delta_r<4.561\cdot10^{33},\quad
+ \delta_v<1.313\cdot10^{24}.
+\]
+The error of the free wave is at most
+\[
+ e_{\rm free}=\max\{(\delta_0+(3/2)\delta_v)/3,\delta_r+\delta_v\}
+ <4.561\cdot10^{33}.
+\]
+This certified upper bound exceeds the provisional $10^{28}$ gate.
+Even at a fixed point $r=5/4$, the retained scalar-value enclosure has
+width about $1.953\cdot10^{30}$. Decreasing cell width cannot remove
+that fixed part of this particular oracle's enclosure. Better background
+and input bounds or a different representation may help; these upper
+bounds prove no lower bound on the actual approximation error and no
+impossibility theorem. The pilot stops before a coupled bulk iteration.
+There is no new evaluated total solution or Einstein residual certificate.
+The interval ledger and exact rational coefficients are in the supplement.
+
+\section*{An intrinsic shell-volume prescription}
+Specify the physical timelike shell, a compact initial spacelike $S^3$
+section and its future normal. Intrinsic normal geodesics define
+proper-time sections locally. Smooth nondegenerate metrics and an embedded
+compact initial section give a uniform short normal neighborhood by ODE
+existence, the inverse function theorem and compactness. No numerical
+caustic-free time or finite-parameter range is evaluated here.
+
+For the complete embedding $\Psi_\epsilon$ of a proper-time section,
+choose pullback generators by
+$D_\epsilon^*=I+\epsilon\mathcal L_{Z_1}
++\epsilon^2(\mathcal L_{Z_2}+\mathcal L_{Z_1}^2)/2+\cdots$.
+Its induced spatial variations are
+\begin{align*}
+ h_1&=\Psi_0^*(q+\mathcal L_{Z_1}g_0),\\
+ h_2&=\Psi_0^*(k+2\mathcal L_{Z_1}q+
+             (\mathcal L_{Z_2}+\mathcal L_{Z_1}^2)g_0).
+\end{align*}
+With $B=h_0^{-1}h_1$, $C=h_0^{-1}h_2$ and normalized background
+spatial average, the volume variations obey
+\[
+ v_1=\frac{V_1}{V_0}=\left\langle\tfrac12\operatorname{tr}B\right\rangle,
+ \quad v_2=\frac{V_2}{V_0}=
+ \left\langle\tfrac12\operatorname{tr}C+
+ \tfrac14(\operatorname{tr}B)^2-\tfrac12\operatorname{tr}(B^2)\right\rangle.
+\]
+The volume radius $R=(V/(2\pi^2))^{1/3}$ and averaged expansion
+$\Theta=\partial_\tau\log V$ have
+$R_2/R_0=v_2/3-2v_1^2/9$ and
+$\Theta_2=\partial_\tau(v_2-v_1^2)$.
+Ambient gauge changes cancel when the shell and initial section transform
+with the inverse map. The initial anchor and observer convention are
+physical inputs to the definition.
+
+In a fixed-shell chart with background
+$\gamma_0=-ds^2+A(s)^2\kappa$ and
+$\gamma_\epsilon=\gamma_0+\epsilon m+\epsilon^2n/2+\cdots$,
+the eikonal clock $T=s+\epsilon\alpha+\epsilon^2\beta/2+\cdots$ satisfies
+\[
+ \alpha_s=-m_{ss}/2,\quad
+ \beta_s=-n_{ss}/2-m_{ss}^2/4+|m_{s\cdot}+D\alpha|_{h_0}^2,
+ \quad\alpha(0)=\beta(0)=0.
+\]
+Writing its level set as $s=\tau+\epsilon a+\epsilon^2b/2$ gives
+$a=-\alpha$, $b=-\beta+2\alpha\alpha_s$. Its spatial second variation is
+\[
+ (h_2)_{ij}=n_{ij}+2a\partial_sm_{ij}+b\partial_sh_{0ij}
+ +a^2\partial_s^2h_{0ij}
+ +2(m_{si}D_ja+m_{sj}D_ia)-2D_iaD_ja.
+\]
+Thus the bare second spatial metric trace is insufficient. The complete
+quadrupole mean contraction is derived in the accompanying observable
+note. It needs total $N_0,J_0$ shell histories and first-order traces,
+including their clock integrals and proper-time derivatives; $W_{yy}$
+cannot supply these. The functional is defined for smooth kinematical
+jets without asserting a nonlinear Einstein--scalar family realizes them.
+
+\section*{Verification, literature and remaining work}
+The local numerical pilot authenticates all four selected source closures
+before importing their numerical modules and after evaluation. Normal and
+optimized executions are compared. Portable checks replay exact rational
+implications, determinant/clock/gauge identities and the retained error
+ledger; they do not reprove the inherited PDE premises. Independent
+internal AI-assisted review is distinct from external peer review.
+
+The pullback and gauge machinery is established: Bruni et al., CQG 14
+(1997), \href{https://arxiv.org/abs/gr-qc/9609040}{gr-qc/9609040};
+Mars, CQG 22 (2005), \href{https://arxiv.org/abs/gr-qc/0507005}{gr-qc/0507005}.
+Mukohyama's junction analysis,
+\href{https://arxiv.org/abs/hep-th/0006146}{hep-th/0006146}, is linear;
+Mars's Darmois matching theorem does not replace the nonzero physical
+shell law. Further bounded primary-source comparisons are in the supplement.
+No general novelty claim follows from that literature search.
+
+The next computational task is to tighten the validated regular-branch
+background/input enclosures and the correlated initial derivative bounds,
+then repeat the initial gate. Only after it passes should a complete coupled
+mean reconstruction and observable error propagation proceed. The present
+checkpoint neither evaluates an invariant sign nor supplies a nonlinear
+remainder, an observed signature or evidence of a higher-dimensional Big Bang.
+No journal submission or new Zenodo version accompanies it.
+\end{document}

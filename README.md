@@ -1,5 +1,10 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-total-preflight="total-response-preflight-20261023" -->
+**23 October 2026: tighter response bounds and an intrinsic shell-volume prescription.** A zero-region estimate tightens the conditional local response contraction bound to q = 0.000426125. A complete initial-data pilot defines one differentiable rational candidate but its certified error bound fails the chosen accuracy gate. This identifies the next precision task; it proves no impossibility. A separate derivation defines intrinsic shell volume at anchored proper time, including clock, slicing and quadratic metric terms. Its value remains unevaluated.
+
+The numerical total response and invariant observable sign remain unevaluated. These conditional results establish no nonlinear physical family or higher-dimensional Big Bang origin. Earlier checkpoints are preserved; no new Zenodo version or journal submission accompanies this update. [Working note (PDF)](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023/manuscript/TOTAL_RESPONSE_PREFLIGHT.pdf) · [Derivations, source and checks](https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023) · [Source archive (ZIP)](https://github.com/maldonado-research/HDblast/raw/refs/heads/main/research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023.zip).
+
 <!-- data-hdb-boundary-response="boundary-response-20261023" -->
 **October 2026: a positive auxiliary mean after causal contact with the shell.** At scaled (x,r) = (3/2,1/4), after the past causal cone reaches the timelike shell, interval integration of the actual quadratic source and an exact closed system of five rotational means prove that the probability-normalized S³ mean of the auxiliary covariant yy response is positive. The bounds include all feedback in that mean system, including the Robin shell condition. All quadratic mean contributions of the first-order harmonics are retained before exact projection.
 

@@ -1,0 +1,56 @@
+name: Total response preflight and observable algebra
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023/**'
+      - 'research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023.zip'
+      - 'hdblast/continuation/2026.10.23-total-response-preflight/**'
+      - '.github/workflows/total-response-preflight-20261023.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023/**'
+      - 'research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023.zip'
+      - 'hdblast/continuation/2026.10.23-total-response-preflight/**'
+      - '.github/workflows/total-response-preflight-20261023.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      HDB_PINS: 'ecf4235816f69ad7da3c92069b6fd14f2347c3715365f64592cba7b29b78d8e2'
+      HDB_WRAPPER: '92dffc6bb93b14b2ced892d3c5dcb82e457bc9ba265e8b0b1ab588c2327ada5f'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023/
+            /research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023.zip
+            /hdblast/continuation/2026.10.23-total-response-preflight/
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Authenticate complete source and ZIP, then replay portable checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          evidence="hdblast/continuation/2026.10.23-total-response-preflight"
+          echo "$HDB_PINS  $evidence/PUBLICATION_PINS.json" | sha256sum --check --strict
+          echo "$HDB_WRAPPER  $evidence/verify_and_reproduce.py" | sha256sum --check --strict
+          python -I -S -B "$evidence/verify_and_reproduce.py" --repo-root "$GITHUB_WORKSPACE" --pins "$evidence/PUBLICATION_PINS.json" --pins-sha256 "$HDB_PINS" --output-dir "$RUNNER_TEMP/total-response-preflight"
+      - uses: actions/upload-artifact@v4
+        if: ${{ always() }}
+        with:
+          name: total-response-preflight-${{ github.sha }}
+          path: ${{ runner.temp }}/total-response-preflight/
+          if-no-files-found: warn
+          retention-days: 14
