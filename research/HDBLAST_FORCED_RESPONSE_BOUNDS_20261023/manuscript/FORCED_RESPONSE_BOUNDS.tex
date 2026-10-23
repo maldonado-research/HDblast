@@ -1,0 +1,204 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,booktabs,geometry,hyperref}
+\geometry{margin=1in}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue,
+  pdftitle={Certified causal bounds for an auxiliary Einstein-scalar response},
+  pdfauthor={Ricardo Maldonado},
+  pdfsubject={Conditional source and auxiliary-response certificate},
+  pdfkeywords={Einstein-scalar, material shell, interval enclosures}}
+\newcommand{\HH}{\mathcal H}
+\newcommand{\KK}{\mathcal K}
+\newcommand{\LL}{\mathcal L}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\title{Certified causal bounds for an auxiliary\\Einstein--scalar response}
+\author{Ricardo Maldonado\\Independent Researcher\\Henderson, Nevada, United States}
+\date{October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For one previously registered quadrupole in a conditional five-dimensional
+Einstein--scalar material-shell model, we enclose an evaluated component of the
+auxiliary quadratic forced response. Twenty exact-area source cells and a
+bound for every retained feedback iteration imply
+$1.7\times10^7<\langle W_{yy}\rangle<6.5\times10^{10}$ throughout
+$|x-1/4|,|r-5/4|\le10^{-6}$. All 23 bulk amplitudes are retained. The domain
+of dependence stays away from the shell; its contributions vanish by causality.
+The evaluated point also gives $\|W\|_X>8.8\times10^6$, below the retained
+upper bound $5.228\times10^{13}$. A four-term true-operator Neumann expression
+has truncation tail below $1035$, but remains unevaluated. The methods are
+standard interval-integral and norm estimates applied to the retained
+model-specific certificates. The result is an auxiliary, frame/gauge-dependent
+response enclosure, not a global waveform, standalone physical constraint
+solution, nonlinear spacetime, or physical-force or cosmological-origin claim.
+\end{abstract}
+
+\section{Retained conditional problem}
+The inputs are the published geometric-source construction and its separate
+response-attribution calculation~\cite{sources,attribution}, pinned to the
+repository commit recorded in the accompanying reproducibility manifest.
+We retain their background, first solution, gauge, angular conventions,
+regularity assumptions, and inverse estimates. This note does not reprove those
+upstream assumptions or replace the actual first solution by its comparison.
+The fixed quadrupole is $Y=n_0^2-n_1^2$ on the unit $S^3$, with the retained
+actual master and shell-preserving relative-harmonic gauge field. The scaled
+coordinates are $x=t/\ell$, $r=z/\ell$, with $\ell=10^{-6}$ and
+$dy=-\rho\,dz$. Tensor entries use the retained radially parallel background
+frame, whose normal vector is $e_y=\partial_y$.
+
+The fixed finite angular state has 23 amplitudes, retaining all metric blocks,
+the scalar, and both transverse-traceless orientations. Its squared norm
+$|\cdot|_{\HH}^2$ is the probability-normalized $S^3$ integral of the metric
+Frobenius square plus the scalar square. On
+\[
+ D=\{(x,r):0\le x\le3,\ r\ge0,\ x+r\le8\},
+ \qquad
+ \norm{V}_X=\max\left\{\sup_D|V|_{\HH}/3,
+                         \sup_D|V_x|_{\HH},\sup_D|V_r|_{\HH}\right\},
+\]
+the accepted reduced equation and complete linear operator are
+\begin{align}
+ U&=U_{\rm free}+\KK F+\LL G+TU,\\
+ TV&=\KK(AV_x+BV_r+D_0V)+\LL(MP_NV|_{r=0}),
+ \qquad \norm{T}_{X\to X}\le q=\frac{2109}{10^6}<1.
+\end{align}
+The source normalization is $F_{\rm metric}=-2\ell^2\rho^2Q_{\rm red}$ and
+$F_{\rm scalar}=\ell^2\rho^2Q_\phi$, for second parameter derivatives.
+The boundary vector $G$ includes the physical shell rows and normal harmonic
+source; $T$ includes the complete coupled Robin matrix. In particular,
+\[
+ \KK f(x,r)=\frac12\int_0^x\int_{r-x+s}^{r+x-s}
+                    f_{\rm ext}(s,v)\,dv\,ds,
+ \qquad
+ \LL g(x,r)=-\int_0^{\max(x-r,0)}g(s)\,ds,
+\]
+where the extension is the registered odd/even reflection $P_N-P_D$.
+The accepted flat initial wedge and corner compatibility give $G(0)=0$
+and the required $C^1$ integral fields with zero Cauchy data.
+
+Set
+\[
+ S=\KK F+\LL G,\qquad W=(I-T)^{-1}S,
+ \qquad U_{\rm hom}=(I-T)^{-1}U_{\rm free}.
+\]
+Thus $U=U_{\rm hom}+W$. This is an auxiliary decomposition of the reduced
+operator problem. The prescribed second initial data may themselves encode
+quadratic constraints. Neither summand is asserted separately to satisfy the
+complete physical constraint and gauge system.
+Throughout, $\lambda(V)=\langle V_{yy}\rangle_{S^3}$ denotes the
+probability-sphere mean of the covariant normal-frame component. Its dual
+$\HH$ norm is one, attained by the retained constant pure $yy$ tensor.
+It commutes with $x,r$ derivatives, and the exact angular projection identifies
+$\lambda(F)$ with the constant $yy$ forcing coefficient.
+
+\section{Causal-cone value calculation}
+\input{CAUSAL_RESULT.tex}
+
+\section{Global norm consequences and an accuracy target}
+The sphere mean obeys $|\lambda(W)(x,r)|\le3\norm{W}_X$, because the
+value term of the registered norm has weight three. The exact evaluated apex
+lower endpoint $L$ therefore yields
+\[
+ \norm{W}_X\ge L/3>8.8\times10^6.
+\]
+This is a stronger global norm lower bound than the independent weak-source
+witness in Appendix~\ref{app:weak}. It does not evaluate a global coefficient
+field or identify a physical energy.
+The retained actual source bounds and Green-map estimates give
+\[
+ F_{\HH}\le17387513156573,\quad G_{\HH}\le3851400,
+ \quad\norm{S}_X\le3F_{\HH}+G_{\HH}=52162543321119=:s_*.
+\]
+Therefore $\norm{W}_X\le s_* /(1-q)<5.228\times10^{13}$.
+For $V_N=\sum_{j=0}^{N-1}T^jS$,
+\[
+ (I-T)V_N-S=-T^NS,\qquad
+ \norm{W-V_N}_X\le\frac{q^Ns_*}{1-q}.
+\]
+For $N=4$ this last bound is strictly below $1035$. It excludes numerical
+input, integration, and reconstruction errors. $V_4$ here is a true-operator
+expression, not a computed coefficient field or numerical residual certificate.
+Its Robin defect is $-MP_N(T^3S)|_{r=0}$, so finite partial sums need not
+satisfy the exact coupled boundary law. A numerical candidate must account for
+the complete integral residual against the true retained inputs.
+
+\section{Reproducibility and limits}
+The accompanying package records immutable upstream hashes, exact rational
+arithmetic, independent internal mathematical review, and isolated execution
+results. It distinguishes its own checks from the accepted upstream source
+certification. The weak cutoff and contraction arguments are standard; their
+application supplies a quantitative conditional bound for this registered
+state and norm. Internal AI-assisted review does not establish external peer
+review or originality.
+
+These bounds do not establish a full-domain evaluated second response, a
+finite-amplitude nonlinear family, a physical force, or a distinctive
+cosmological prediction. In particular, the norm lower bound includes
+derivatives and is not a value-only amplitude bound. Any separately certified
+coordinate component retains its gauge and initial-prescription dependence.
+No conclusion about a higher-dimensional origin of the observed Big Bang
+follows from this calculation.
+
+\appendix
+\section{Independent weak-source lower bound}\label{app:weak}
+Write $P=\partial_x^2-\partial_r^2$. The normalized retarded fundamental
+solution $\tfrac12\mathbf1_{x\ge|r|}$ gives $P\KK F=F$ in the physical
+interior, distributionally. Since $\LL G$ depends on $x-r$ alone,
+$P\LL G=0$, also distributionally. These identities require no derivative
+estimate for the continuous quadratic source.
+
+Let $\lambda$ be the sphere mean of the covariant $yy$ metric component.
+Its dual $\HH$ norm is one: its Riesz vector is the retained constant pure
+$yy$ tensor of value one. Consequently
+\[
+ |\lambda(V_x)|,\ |\lambda(V_r)|\le\norm{V}_X.
+\]
+The value weight three in $X$ does not enter this derivative estimate.
+The exact angular projection identifies the constant $yy$ source coefficient
+with $f_0=\lambda(F)$; the other scalar harmonics have zero sphere mean.
+
+The published actual-source report encloses $f_0\ge c_->16\times10^9$
+continuously on the square
+\[
+ R=[1/4,1025/4096]\times[5/4,5121/4096],\qquad h=1/4096.
+\]
+The exact rational $c_-$ is read from the hash-authenticated report by the
+reproducer. The square lies strictly inside $D$ and has $r-x>0$. In fact its
+boundary lift vanishes and its backward cones remain at positive depth;
+ordinary unreflected integration suffices for the local weak identity.
+
+For any nonnegative $\chi\in C_c^\infty(R^\circ)$, one weak integration
+by parts gives
+\[
+ c_-\int\chi\le\int f_0\chi
+ =-\int\lambda(S_x)\chi_x+\int\lambda(S_r)\chi_r
+ \le\norm{S}_X\bigl(\norm{\chi_x}_{L^1}+\norm{\chi_r}_{L^1}\bigr).
+\]
+Take products of smooth one-dimensional plateau cutoffs with compact support
+inside the two coordinate intervals. Each has total variation two and mass
+$m_\varepsilon\to h$. The product has mass $m_\varepsilon^2$ and summed
+first variation $4m_\varepsilon$. Passing to the limit yields
+\[
+ \norm{S}_X\ge\frac{c_-h}{4}>
+ \frac{(16\times10^9)h}{4}=\frac{1953125}{2}.
+\]
+The limit gives a nonstrict inequality. Strictness of the rounded bound
+comes afterwards from the separately verified slack $c_->16\times10^9$.
+Since $S=(I-T)W$, the complete operator bound gives
+\begin{equation}
+ \boxed{\quad\norm{W}_X\ge\frac{c_-h}{4(1+q)}
+       >\frac{976562500000}{1002109}>974000.\quad}       \label{eq:lower}
+\end{equation}
+The transfer factor is $1+q$, not the upper-resolvent factor $1-q$.
+Equation~\eqref{eq:lower} proves full-state nonvanishing. Coupling prevents
+inferring a specified response component from this argument alone.
+
+\begin{thebibliography}{9}
+\bibitem{sources} R. Maldonado, \emph{Complete geometric quadratic sources and
+intrinsic shell diagnostics}, research checkpoint and source certificates,
+\url{https://github.com/maldonado-research/HDblast/tree/d110d99f054ad297fdcc0a7cec07499341bae4b8/research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016}.
+\bibitem{attribution} R. Maldonado, \emph{Separating the forced increment in the
+retained formal second response}, auxiliary operator estimate and method note,
+\url{https://github.com/maldonado-research/HDblast/tree/d110d99f054ad297fdcc0a7cec07499341bae4b8/research/HDBLAST_RESPONSE_ATTRIBUTION_20261016}.
+\end{thebibliography}
+\end{document}

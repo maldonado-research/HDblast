@@ -1,0 +1,88 @@
+name: Forced-response bounds and causal value replay
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_FORCED_RESPONSE_BOUNDS_20261023/**'
+      - 'research/HDBLAST_FORCED_RESPONSE_BOUNDS_20261023.zip'
+      - 'hdblast/continuation/2026.10.23-forced-response-bounds/**'
+      - '.github/workflows/forced-response-bounds-20261023.yml'
+      - 'README.md'
+      - 'site/index.html'
+      - 'site/es/index.html'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_FORCED_RESPONSE_BOUNDS_20261023/**'
+      - 'research/HDBLAST_FORCED_RESPONSE_BOUNDS_20261023.zip'
+      - 'hdblast/continuation/2026.10.23-forced-response-bounds/**'
+      - '.github/workflows/forced-response-bounds-20261023.yml'
+      - 'README.md'
+      - 'site/index.html'
+      - 'site/es/index.html'
+
+permissions:
+  contents: read
+
+jobs:
+  authenticated-forced-response-replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+      HDB_FINAL_PAYLOAD_PINS: 'd1c7275446539c347297728055a151261f20dfc0de1b494bbde2cc77194ff1c4'
+      HDB_VERIFIER_SHA256: 'b34652ae17dc5224841520010525ee742f4365d8664ed7b9cb5e1621dcd3d89f'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /research/HDBLAST_FORCED_RESPONSE_BOUNDS_20261023/
+            /research/HDBLAST_FORCED_RESPONSE_BOUNDS_20261023.zip
+            /hdblast/continuation/2026.10.23-forced-response-bounds/
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+          architecture: 'x64'
+          check-latest: false
+      - name: Authenticate complete frozen payload before scientific execution
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/forced-response-ci"
+          evidence="hdblast/continuation/2026.10.23-forced-response-bounds"
+          echo "$HDB_FINAL_PAYLOAD_PINS  $evidence/PUBLICATION_PINS.json" | sha256sum --check --strict
+          echo "$HDB_VERIFIER_SHA256  $evidence/verify_and_reproduce.py" | sha256sum --check --strict
+          python -I -S -B "$GITHUB_WORKSPACE/$evidence/verify_and_reproduce.py" \
+            --repo-root "$GITHUB_WORKSPACE" \
+            --pins "$GITHUB_WORKSPACE/$evidence/PUBLICATION_PINS.json" \
+            --pins-sha256 "$HDB_FINAL_PAYLOAD_PINS" \
+            --output-dir "$RUNNER_TEMP/forced-response-ci/authentication" --verify-only
+      - name: Replay the final approved numerical and independent checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          evidence="hdblast/continuation/2026.10.23-forced-response-bounds"
+          echo "$HDB_FINAL_PAYLOAD_PINS  $evidence/PUBLICATION_PINS.json" | sha256sum --check --strict
+          echo "$HDB_VERIFIER_SHA256  $evidence/verify_and_reproduce.py" | sha256sum --check --strict
+          python -I -S -B "$GITHUB_WORKSPACE/$evidence/verify_and_reproduce.py" \
+            --repo-root "$GITHUB_WORKSPACE" \
+            --pins "$GITHUB_WORKSPACE/$evidence/PUBLICATION_PINS.json" \
+            --pins-sha256 "$HDB_FINAL_PAYLOAD_PINS" \
+            --output-dir "$RUNNER_TEMP/forced-response-ci/replay"
+      - name: Retain authentication and fresh replay evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: forced-response-${{ github.sha }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/forced-response-ci/
+          if-no-files-found: warn
+          retention-days: 14

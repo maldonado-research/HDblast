@@ -1,0 +1,56 @@
+{
+  "status": "PASS_TARGETED_FALSE_CERTIFICATE_REJECTIONS",
+  "baseline_passed": true,
+  "baseline_report_sha256": "beff99f6d7c2792cdcfc1540c8949036ca454ae36418e5ea5a80f51ec453b969",
+  "reviewer_source_sha256": "a757de604ed3450a8d2c4fbc6384408286895ad7f34c9b8a7037ef39cae1409c",
+  "control_source_sha256": "2bf3cc572adacd5f37db2cf69463173384038e1880337bb48cf3348a58430d08",
+  "rejections": [
+    {
+      "case": "double_K_normalization",
+      "rejected": true,
+      "error": "NORMALIZED_DUHAMEL_INTERVAL"
+    },
+    {
+      "case": "omit_full_feedback_error",
+      "rejected": true,
+      "error": "FULL_RESPONSE_INTERVAL"
+    },
+    {
+      "case": "wrong_coupled_coefficient_sum",
+      "rejected": true,
+      "error": "COUPLING_CONSTANT_sigma_upper"
+    },
+    {
+      "case": "omit_positive_area_cell",
+      "rejected": true,
+      "error": "GAP_FREE_CONE_PARTITION"
+    },
+    {
+      "case": "omit_scalar_coupled_sector",
+      "rejected": true,
+      "error": "COMPLETE_23_SOURCE_BLOCKS"
+    },
+    {
+      "case": "wrong_clipped_triangle_area",
+      "rejected": true,
+      "error": "INDEPENDENT_CLIPPED_AREA"
+    },
+    {
+      "case": "wrong_rectangle_derivative_weight",
+      "rejected": true,
+      "error": "RECTANGLE_MEAN_VARIATION"
+    },
+    {
+      "case": "wrong_inherited_source_authentication",
+      "rejected": true,
+      "error": "REPORT_SOURCE_AUTHENTICATION"
+    },
+    {
+      "case": "wrong_evaluator_pin",
+      "rejected": true,
+      "error": "PRODUCER_CODE_PIN"
+    }
+  ],
+  "count": 9,
+  "scope": "Nine targeted metadata, geometry, source-sector, normalization and error-ledger corruptions; no claim that arbitrary fabricated source rows are independently disproved by this arithmetic audit."
+}

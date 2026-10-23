@@ -1,0 +1,178 @@
+{
+  "actual_source_integration_processes": 2,
+  "bound_control_processes": 2,
+  "children": [
+    {
+      "additional_raw_outputs": [],
+      "bytes": 113984,
+      "exit_code": 0,
+      "optimized": false,
+      "output": "actual_cone_normal.json",
+      "program": "compute/certify_exterior_response.py",
+      "role": "actual_cone",
+      "sha256": "beff99f6d7c2792cdcfc1540c8949036ca454ae36418e5ea5a80f51ec453b969",
+      "typed_and_raw_golden_equal": true
+    },
+    {
+      "additional_raw_outputs": [],
+      "bytes": 113984,
+      "exit_code": 0,
+      "optimized": true,
+      "output": "actual_cone_optimized.json",
+      "program": "compute/certify_exterior_response.py",
+      "role": "actual_cone",
+      "sha256": "beff99f6d7c2792cdcfc1540c8949036ca454ae36418e5ea5a80f51ec453b969",
+      "typed_and_raw_golden_equal": true
+    },
+    {
+      "additional_raw_outputs": [],
+      "bytes": 2436,
+      "exit_code": 0,
+      "optimized": false,
+      "output": "independent_numeric_review_normal.json",
+      "program": "numeric-review/check_cone_response.py",
+      "role": "independent_numeric_review",
+      "sha256": "5580697d64428c1dc8c911a671cb09e799da23dd0f2eeda0f55e834ffd5b572e",
+      "typed_and_raw_golden_equal": true
+    },
+    {
+      "additional_raw_outputs": [],
+      "bytes": 2436,
+      "exit_code": 0,
+      "optimized": true,
+      "output": "independent_numeric_review_optimized.json",
+      "program": "numeric-review/check_cone_response.py",
+      "role": "independent_numeric_review",
+      "sha256": "5580697d64428c1dc8c911a671cb09e799da23dd0f2eeda0f55e834ffd5b572e",
+      "typed_and_raw_golden_equal": true
+    },
+    {
+      "additional_raw_outputs": [],
+      "bytes": 1735,
+      "exit_code": 0,
+      "optimized": false,
+      "output": "numeric_rejections_normal.json",
+      "program": "numeric-review/check_rejection_controls.py",
+      "role": "numeric_rejections",
+      "sha256": "aa0a33c41eac983c6c8284748210bb52b0449d45346f9712d57188026d645118",
+      "typed_and_raw_golden_equal": true
+    },
+    {
+      "additional_raw_outputs": [],
+      "bytes": 1735,
+      "exit_code": 0,
+      "optimized": true,
+      "output": "numeric_rejections_optimized.json",
+      "program": "numeric-review/check_rejection_controls.py",
+      "role": "numeric_rejections",
+      "sha256": "aa0a33c41eac983c6c8284748210bb52b0449d45346f9712d57188026d645118",
+      "typed_and_raw_golden_equal": true
+    },
+    {
+      "additional_raw_outputs": [
+        {
+          "bytes": 3953,
+          "output": "manuscript_display_normal/CAUSAL_RESULT.tex",
+          "raw_golden_equal": true,
+          "sha256": "d6149f0bcc7e29cc4d8aedf7f32e8fe50c3cc798446a962a8a4f6e198e4e4782"
+        }
+      ],
+      "bytes": 1016,
+      "exit_code": 0,
+      "optimized": false,
+      "output": "manuscript_display_normal/MANUSCRIPT_ARITHMETIC.json",
+      "program": "manuscript/build_causal_section.py",
+      "role": "manuscript_display",
+      "sha256": "2ee897d3f4192ac4682baa3215b54a3e7ba9c5628bd27c3cd5ce2ef804e4eba6",
+      "typed_and_raw_golden_equal": true
+    },
+    {
+      "additional_raw_outputs": [
+        {
+          "bytes": 3953,
+          "output": "manuscript_display_optimized/CAUSAL_RESULT.tex",
+          "raw_golden_equal": true,
+          "sha256": "d6149f0bcc7e29cc4d8aedf7f32e8fe50c3cc798446a962a8a4f6e198e4e4782"
+        }
+      ],
+      "bytes": 1016,
+      "exit_code": 0,
+      "optimized": true,
+      "output": "manuscript_display_optimized/MANUSCRIPT_ARITHMETIC.json",
+      "program": "manuscript/build_causal_section.py",
+      "role": "manuscript_display",
+      "sha256": "2ee897d3f4192ac4682baa3215b54a3e7ba9c5628bd27c3cd5ce2ef804e4eba6",
+      "typed_and_raw_golden_equal": true
+    },
+    {
+      "additional_raw_outputs": [],
+      "bytes": 3679,
+      "exit_code": 0,
+      "optimized": false,
+      "output": "exact_bounds_normal.json",
+      "program": "check_bounds.py",
+      "role": "exact_bounds",
+      "sha256": "05762b86f78f9f20000dcb3b158785e90f58320a9f4a1ef53226b0eb4ba43fcd",
+      "typed_and_raw_golden_equal": true
+    },
+    {
+      "additional_raw_outputs": [],
+      "bytes": 3679,
+      "exit_code": 0,
+      "optimized": true,
+      "output": "exact_bounds_optimized.json",
+      "program": "check_bounds.py",
+      "role": "exact_bounds",
+      "sha256": "05762b86f78f9f20000dcb3b158785e90f58320a9f4a1ef53226b0eb4ba43fcd",
+      "typed_and_raw_golden_equal": true
+    },
+    {
+      "additional_raw_outputs": [],
+      "bytes": 1005,
+      "exit_code": 0,
+      "optimized": false,
+      "output": "bounds_rejections_normal.json",
+      "program": "check_controls.py",
+      "role": "bounds_rejections",
+      "sha256": "8a3c8575e7561ced66b55ad1467d332ca46f002df95e5e0016f5caeb8363ccc5",
+      "typed_and_raw_golden_equal": true
+    },
+    {
+      "additional_raw_outputs": [],
+      "bytes": 1005,
+      "exit_code": 0,
+      "optimized": true,
+      "output": "bounds_rejections_optimized.json",
+      "program": "check_controls.py",
+      "role": "bounds_rejections",
+      "sha256": "8a3c8575e7561ced66b55ad1467d332ca46f002df95e5e0016f5caeb8363ccc5",
+      "typed_and_raw_golden_equal": true
+    }
+  ],
+  "exact_bound_arithmetic_processes": 2,
+  "files_including_manifest": 49,
+  "independent_numerical_review_processes": 2,
+  "manifest_sha256": "72924328a4e79cc77f0da90999b8dd56956bfdebd5e614e15c3c0498c3a8ae76",
+  "manuscript_display_arithmetic_processes": 2,
+  "numerical_control_processes": 2,
+  "retained_dependency": {
+    "archive_bytes": 2251635,
+    "archive_sha256": "a300d732fddc8c6e3d309a7ab955860e0835b3d3c0cafb9ca4621767fbeebe49",
+    "capsule": "HDBLAST_GEOMETRIC_BULK_SOURCES_20261016",
+    "complete_archive_and_manifest_authenticated": true,
+    "files_including_manifest": 169,
+    "manifest_sha256": "3ff1f95c151d2da6a1ab5e9b54718c2bb325c10d9c62a7ed9f97ef2bb36f0bb2",
+    "uncompressed_bytes": 15173440
+  },
+  "retained_dependency_unchanged": true,
+  "scope": "Actual causal-cone integration, independent joins/oracle spots, exact global bounds, displayed manuscript arithmetic and targeted controls. No PDF typesetting, full-domain waveform, full-domain continuous response residual or upstream full scientific replay.",
+  "source_unchanged": true,
+  "status": "PASS_AUTHENTICATED_FORCED_RESPONSE_REPRODUCTION",
+  "targeted_in_process_controls_per_mode": {
+    "bounds": 5,
+    "numeric": 9,
+    "total": 14
+  },
+  "top_level_children": 12,
+  "upstream_scientific_producers_replayed": false
+}
