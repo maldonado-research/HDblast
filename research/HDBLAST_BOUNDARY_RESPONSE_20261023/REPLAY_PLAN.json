@@ -1,0 +1,216 @@
+{
+  "capsule": "HDBLAST_BOUNDARY_RESPONSE_20261023",
+  "jobs": [
+    {
+      "args": [
+        "--manifest-sha256",
+        "{MANIFEST}",
+        "--source-root",
+        "{OLD}",
+        "--previous-source-root",
+        "{PREVIOUS}",
+        "--output",
+        "{JOB}/report.json"
+      ],
+      "join_pair": {
+        "directory": "fresh-source-integrals",
+        "normal": "BOUNDARY_N16_NORMAL.json",
+        "optimized": "BOUNDARY_N16_OPTIMIZED.json",
+        "token": "FRESH_ACTUAL_SOURCE_PAIR"
+      },
+      "outputs": [
+        {
+          "fresh": "report.json",
+          "normal_golden": "compute/BOUNDARY_N16_NORMAL.json",
+          "optimized_golden": "compute/BOUNDARY_N16_OPTIMIZED.json",
+          "typed_json": true
+        }
+      ],
+      "primary_output": "report.json",
+      "program": "portable_actual.py",
+      "role": "actual_source"
+    },
+    {
+      "args": [
+        "--source-root",
+        "{OLD}",
+        "--previous-source-root",
+        "{PREVIOUS}",
+        "--producer-script",
+        "{SOURCE}/compute/certify_boundary_response_v2.py",
+        "--report",
+        "{FRESH_ACTUAL_SOURCE}",
+        "--oracle-spots",
+        "--output",
+        "{JOB}/report.json"
+      ],
+      "outputs": [
+        {
+          "fresh": "report.json",
+          "normal_golden": "numeric-review/REVIEW_N16_NORMAL.json",
+          "optimized_golden": "numeric-review/REVIEW_N16_OPTIMIZED.json",
+          "typed_json": true
+        }
+      ],
+      "primary_output": "report.json",
+      "program": "numeric-review/review_boundary_response.py",
+      "role": "numerical_review"
+    },
+    {
+      "args": [
+        "--source-root",
+        "{OLD}",
+        "--previous-source-root",
+        "{PREVIOUS}",
+        "--producer-script",
+        "{SOURCE}/compute/certify_boundary_response_v2.py",
+        "--report",
+        "{FRESH_ACTUAL_SOURCE}",
+        "--output",
+        "{JOB}/report.json"
+      ],
+      "control_groups": [
+        {
+          "field": [
+            "rejections"
+          ],
+          "name": "targeted_false_certificate_rejections"
+        }
+      ],
+      "outputs": [
+        {
+          "fresh": "report.json",
+          "normal_golden": "numeric-review/CONTROLS_N16_NORMAL.json",
+          "optimized_golden": "numeric-review/CONTROLS_N16_OPTIMIZED.json",
+          "typed_json": true
+        }
+      ],
+      "primary_output": "report.json",
+      "program": "numeric-review/check_boundary_controls.py",
+      "role": "numeric_rejections"
+    },
+    {
+      "args": [
+        "--old-root",
+        "{OLD}",
+        "--frozen-root",
+        "{PREVIOUS}",
+        "--follow-root",
+        "{FOLLOWON}/followon-boundary-formulation",
+        "--output",
+        "{JOB}/report.json"
+      ],
+      "control_groups": [
+        {
+          "field": [
+            "synthetic_false_formula_controls"
+          ],
+          "name": "synthetic_false_formula_controls"
+        }
+      ],
+      "outputs": [
+        {
+          "fresh": "report.json",
+          "normal_golden": "analytic-review/ANALYTIC_PORTABLE_NORMAL.json",
+          "optimized_golden": "analytic-review/ANALYTIC_PORTABLE_OPTIMIZED.json",
+          "typed_json": true
+        }
+      ],
+      "primary_output": "report.json",
+      "program": "analytic-review/check_analytic_certificate_portable.py",
+      "role": "coarse_analytic"
+    },
+    {
+      "args": [
+        "--source-root",
+        "{OLD}",
+        "--compute-root",
+        "{FRESH_ACTUAL_SOURCE_PAIR}",
+        "--output",
+        "{JOB}/report.json"
+      ],
+      "outputs": [
+        {
+          "fresh": "report.json",
+          "normal_golden": "analytic-review/MEAN_BLOCK_CERTIFICATE_NORMAL.json",
+          "optimized_golden": "analytic-review/MEAN_BLOCK_CERTIFICATE_OPTIMIZED.json",
+          "typed_json": true
+        }
+      ],
+      "primary_output": "report.json",
+      "program": "analytic-review/check_mean_block_certificate.py",
+      "role": "mean_block"
+    },
+    {
+      "args": [
+        "--source-root",
+        "{OLD}",
+        "--previous-source-root",
+        "{PREVIOUS}",
+        "--candidate-report",
+        "{FRESH_MEAN_BLOCK}",
+        "--source-report",
+        "{FRESH_ACTUAL_SOURCE}",
+        "--output",
+        "{JOB}/report.json"
+      ],
+      "control_groups": [
+        {
+          "field": [
+            "specific_false_formula_distinctions"
+          ],
+          "name": "specific_false_formula_distinctions"
+        }
+      ],
+      "outputs": [
+        {
+          "fresh": "report.json",
+          "normal_golden": "numeric-review/MEAN_REVIEW_NORMAL.json",
+          "optimized_golden": "numeric-review/MEAN_REVIEW_OPTIMIZED.json",
+          "typed_json": true
+        }
+      ],
+      "primary_output": "report.json",
+      "program": "numeric-review/review_mean_block.py",
+      "role": "mean_review"
+    },
+    {
+      "args": [
+        "--mean-report",
+        "{FRESH_MEAN_BLOCK}",
+        "--source-report",
+        "{FRESH_ACTUAL_SOURCE}",
+        "--json-output",
+        "{JOB}/DISPLAY.json",
+        "--tex-output",
+        "{JOB}/GENERATED_VALUES.tex",
+        "--text-output",
+        "{JOB}/DISPLAY_VALUES.txt"
+      ],
+      "outputs": [
+        {
+          "fresh": "DISPLAY.json",
+          "normal_golden": "manuscript/DISPLAY_NORMAL.json",
+          "optimized_golden": "manuscript/DISPLAY_OPTIMIZED.json",
+          "typed_json": true
+        },
+        {
+          "fresh": "GENERATED_VALUES.tex",
+          "normal_golden": "manuscript/GENERATED_VALUES.tex",
+          "optimized_golden": "manuscript/GENERATED_VALUES.tex",
+          "typed_json": false
+        },
+        {
+          "fresh": "DISPLAY_VALUES.txt",
+          "normal_golden": "manuscript/DISPLAY_VALUES.txt",
+          "optimized_golden": "manuscript/DISPLAY_VALUES.txt",
+          "typed_json": false
+        }
+      ],
+      "primary_output": "DISPLAY.json",
+      "program": "manuscript/generate_display.py",
+      "role": "manuscript_display"
+    }
+  ],
+  "scope": "Conditional auxiliary yy probability mean at one shell-reaching point: actual source integral, independent geometry/source joins and three oracle spots, coarse analytic audit, exact coupled five-mean-block feedback, independent tensor/Cramer review, and manuscript display arithmetic. Targeted seven false-certificate rejections, eleven synthetic controls and six formula distinctions per mode are separate in-process checks. No full waveform, physical total response, force, nonlinear integrability, cosmological-origin or novelty claim; no PDF typesetting or retained upstream scientific campaign replay."
+}

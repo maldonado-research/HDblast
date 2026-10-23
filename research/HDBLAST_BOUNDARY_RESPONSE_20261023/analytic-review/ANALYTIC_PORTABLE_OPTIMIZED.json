@@ -1,0 +1,200 @@
+{
+  "status": "PASS_INDEPENDENT_CONDITIONAL_ONE_POINT_ANALYTIC_AUDIT",
+  "scope": "Exact geometry, rational constants and synthetic convention witnesses; no actual source integral evaluated; accepted smooth first/second construction remains a premise.",
+  "input_pins": [
+    {
+      "path": "follow/NEXT_BOUNDARY_CALCULATION.md",
+      "bytes": 14602,
+      "sha256": "903699df349ed1299252aa68ddec8b4e38f81730ae6418a0550da85222c8b5e2"
+    },
+    {
+      "path": "follow/ONE_POINT_FEEDBACK_ENCLOSURE_DRAFT.md",
+      "bytes": 2809,
+      "sha256": "86caf742fc1c8b766f5c3b14ad63e146c22b09d6600a0c7d65dfb9f73be9f96e"
+    },
+    {
+      "path": "follow/ONE_POINT_FEEDBACK_AUDIT.md",
+      "bytes": 5606,
+      "sha256": "4a58981b9cd8ca0add3548a3fd01185a76cb791e06b0ccc1f17fece1bef3885e"
+    },
+    {
+      "path": "frozen/inputs/FULL_SECOND_RESPONSE_CONSTRUCTION.md",
+      "bytes": 23693,
+      "sha256": "5de45b21236cfe8c6d99fb403bacc4624069c8d96d6cf0ad2ec89b8e2d3617e1"
+    },
+    {
+      "path": "frozen/inputs/FORCED_INCREMENT_BOUND.md",
+      "bytes": 4748,
+      "sha256": "317262b4581037f00e6f65cba6771ed49a0bc8c89bf5d6b5bf7759b758eb6d7f"
+    },
+    {
+      "path": "frozen/inputs/ACTUAL_SOURCES_NORMAL.json",
+      "bytes": 2652777,
+      "sha256": "45a5550d2e4647bdfb84f9c4a36bf9861ef500a1de89a76f978c5afe9c51a60f"
+    },
+    {
+      "path": "frozen/inputs/REFINED_RESPONSE_NORMAL.json",
+      "bytes": 13581,
+      "sha256": "61acb6d949c56dc95d22337c2bd0081d470e2498f420b2ac4093323179555c73"
+    },
+    {
+      "path": "old/projection/inputs/linear_operator.py",
+      "bytes": 9764,
+      "sha256": "a008be0d89e2ac44940c273cfd2cbc5ba0d09de8fc172d5d81ef29121ab60189"
+    },
+    {
+      "path": "old/projection/angular_generic.py",
+      "bytes": 5581,
+      "sha256": "fd14d8cc3ac6f58c206b784c5c57d15430f63f38ca091ac03c7769f9bfc89df9"
+    },
+    {
+      "path": "old/projection/source_coefficients.py",
+      "bytes": 2817,
+      "sha256": "bcdfb1de30355699241fd68b0499831d9a805a2405148d1b13a572ef6a6ecf3d"
+    },
+    {
+      "path": "old/projection/GEOMETRIC_COEFFICIENT_MAPS.json",
+      "bytes": 2364965,
+      "sha256": "34b10b62d0b36a4506a35407a591a9fdff319971994f25e0b5f031f48eb4f615"
+    },
+    {
+      "path": "old/numeric/actual_first_jets.py",
+      "bytes": 12636,
+      "sha256": "a68fa8025d2170efca6c3e85d443910a796d0c30a9b7dd17ed988cd9e00bbb00"
+    },
+    {
+      "path": "old/numeric/shell_source_values.py",
+      "bytes": 2953,
+      "sha256": "ed9c6e084eae776509481fee4f490cea349eb5c1665139e286bd0a58be483d7f"
+    },
+    {
+      "path": "old/numeric/fast_dyadic.py",
+      "bytes": 2979,
+      "sha256": "79a68d0b27615e02a1c88c9c194dc04d3d2eea014dfa6b2d91ceb41584441654"
+    },
+    {
+      "path": "old/numeric/interval_core.py",
+      "bytes": 10901,
+      "sha256": "d9cb8529e47b9590ec8dc94f2f4484b06dbeb0ddee6c16015feccde3e4440240"
+    },
+    {
+      "path": "old/GAUGE_COVECTOR_BOOKKEEPING.md",
+      "bytes": 3292,
+      "sha256": "bc563ac6fbae1f14b133b9d8ccf5c61d57de2128090dfa8af0e7e19465d8a526"
+    }
+  ],
+  "geometry": {
+    "a": "3/2",
+    "b": "1/4",
+    "d": "5/4",
+    "direct_area": "47/32",
+    "reflected_area": "25/32",
+    "exclusive_area": "11/16",
+    "zero_triangle_area_each": "1/2",
+    "active_direct_area": "31/32",
+    "active_reflected_area": "9/32",
+    "active_Robin_kernel_weight": "5/8"
+  },
+  "full_state": {
+    "selected_Dirichlet_amplitudes": [
+      "L:0",
+      "L:2",
+      "L:4",
+      "v:2",
+      "v:4"
+    ],
+    "selected_Robin_count": 18,
+    "all_bulk_and_Robin_couplings_enclosed": true,
+    "mean_H_dual_norm": "1"
+  },
+  "bounds": {
+    "FH": "17387513156573",
+    "GH": "3851400",
+    "sigma": "203/1000000",
+    "m": "1/2000",
+    "K_X": "3/2",
+    "L_X": "1",
+    "q_D": "3609/2000000",
+    "S_D_cap": "52162547172519/2",
+    "B_D": "52162547172519000000/1996391",
+    "E_coarse": "877739181271977213/15971128",
+    "E_zero": "209432626897663785/15971128",
+    "E_trace": "14866325944167915/3992782"
+  },
+  "synthetic_false_formula_controls": [
+    {
+      "name": "omit_reflected_Robin_cone",
+      "expected": "9/8",
+      "false_formula": "47/64",
+      "rejected": true
+    },
+    {
+      "name": "extend_Dirichlet_components_evenly",
+      "expected": "11/32",
+      "false_formula": "9/8",
+      "rejected": true
+    },
+    {
+      "name": "drop_wave_kernel_half",
+      "expected": "9/8",
+      "false_formula": "9/4",
+      "rejected": true
+    },
+    {
+      "name": "remove_zero_wedge_from_only_one_cone",
+      "expected": "5/8",
+      "false_formula": "7/8",
+      "rejected": true
+    },
+    {
+      "name": "wrong_boundary_lift_sign",
+      "expected": "-25/32",
+      "false_formula": "25/32",
+      "rejected": true
+    },
+    {
+      "name": "wrong_boundary_radial_derivative_sign",
+      "expected": "5/4",
+      "false_formula": "-5/4",
+      "rejected": true
+    },
+    {
+      "name": "Euclidean_time_trace",
+      "expected": "12",
+      "false_formula": "16",
+      "rejected": true
+    },
+    {
+      "name": "four_sphere_dimensions",
+      "expected": "12",
+      "false_formula": "15",
+      "rejected": true
+    },
+    {
+      "name": "omit_QCy",
+      "expected": "12",
+      "false_formula": "7",
+      "rejected": true
+    },
+    {
+      "name": "two_copy_QK_reused_as_one_copy",
+      "expected": "12",
+      "false_formula": "19",
+      "rejected": true
+    },
+    {
+      "name": "multiply_value_allowance_by_three",
+      "expected": "14866325944167915/3992782",
+      "false_formula": "44598977832503745/3992782",
+      "rejected": true
+    }
+  ],
+  "not_claimed": [
+    "new source evaluation",
+    "sign separation",
+    "standalone physical constraint solution for W",
+    "full numerical waveform",
+    "independent replay of inherited PDE/source certificates"
+  ],
+  "checker_sha256": "e3d5a8b6957be8cd122219021a62ce15a1e863e6c290a4b209516c9409c690c9"
+}

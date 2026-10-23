@@ -1,0 +1,88 @@
+name: Boundary response certificate replay
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_BOUNDARY_RESPONSE_20261023/**'
+      - 'research/HDBLAST_BOUNDARY_RESPONSE_20261023.zip'
+      - 'hdblast/continuation/2026.10.23-boundary-response/**'
+      - '.github/workflows/boundary-response-20261023.yml'
+      - 'README.md'
+      - 'site/index.html'
+      - 'site/es/index.html'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_BOUNDARY_RESPONSE_20261023/**'
+      - 'research/HDBLAST_BOUNDARY_RESPONSE_20261023.zip'
+      - 'hdblast/continuation/2026.10.23-boundary-response/**'
+      - '.github/workflows/boundary-response-20261023.yml'
+      - 'README.md'
+      - 'site/index.html'
+      - 'site/es/index.html'
+
+permissions:
+  contents: read
+
+jobs:
+  authenticated-boundary-response-replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 35
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+      HDB_FINAL_PAYLOAD_PINS: '23e8bb0d4bdbbc688d338e9a801fdc70e63e29525e159e7fff4edd273c38a2db'
+      HDB_VERIFIER_SHA256: 'cdd2bac14b7b1146d7e6a24be4ea4c405da47b9cc24e6a2c0e92d0b59357f3a8'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /research/HDBLAST_BOUNDARY_RESPONSE_20261023/
+            /research/HDBLAST_BOUNDARY_RESPONSE_20261023.zip
+            /hdblast/continuation/2026.10.23-boundary-response/
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+          architecture: 'x64'
+          check-latest: false
+      - name: Authenticate complete frozen payload before scientific execution
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/boundary-response-ci"
+          evidence="hdblast/continuation/2026.10.23-boundary-response"
+          echo "$HDB_FINAL_PAYLOAD_PINS  $evidence/PUBLICATION_PINS.json" | sha256sum --check --strict
+          echo "$HDB_VERIFIER_SHA256  $evidence/verify_and_reproduce.py" | sha256sum --check --strict
+          python -I -S -B "$GITHUB_WORKSPACE/$evidence/verify_and_reproduce.py" \
+            --repo-root "$GITHUB_WORKSPACE" \
+            --pins "$GITHUB_WORKSPACE/$evidence/PUBLICATION_PINS.json" \
+            --pins-sha256 "$HDB_FINAL_PAYLOAD_PINS" \
+            --output-dir "$RUNNER_TEMP/boundary-response-ci/authentication" --verify-only
+      - name: Replay the final approved numerical and independent checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          evidence="hdblast/continuation/2026.10.23-boundary-response"
+          echo "$HDB_FINAL_PAYLOAD_PINS  $evidence/PUBLICATION_PINS.json" | sha256sum --check --strict
+          echo "$HDB_VERIFIER_SHA256  $evidence/verify_and_reproduce.py" | sha256sum --check --strict
+          python -I -S -B "$GITHUB_WORKSPACE/$evidence/verify_and_reproduce.py" \
+            --repo-root "$GITHUB_WORKSPACE" \
+            --pins "$GITHUB_WORKSPACE/$evidence/PUBLICATION_PINS.json" \
+            --pins-sha256 "$HDB_FINAL_PAYLOAD_PINS" \
+            --output-dir "$RUNNER_TEMP/boundary-response-ci/replay"
+      - name: Retain authentication and fresh replay evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: boundary-response-${{ github.sha }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/boundary-response-ci/
+          if-no-files-found: warn
+          retention-days: 14
