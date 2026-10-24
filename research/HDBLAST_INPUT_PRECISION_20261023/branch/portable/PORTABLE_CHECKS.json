@@ -1,0 +1,77 @@
+{
+  "status": "PASS_PORTABLE_RELOCATION_AND_NEGATIVE_CONTROLS",
+  "stdlib_only": true,
+  "runtime_inputs": [
+    "replay_branch.py",
+    "NUMERICAL_REFERENCE.json"
+  ],
+  "relocated_execution": true,
+  "arbitrary_working_directory": true,
+  "child_python_flags": [
+    "-I",
+    "-S",
+    "-B"
+  ],
+  "normal_optimized_byte_identical": true,
+  "positive_report_sha256": "e16cc160aadd2f64f682848d5d222089ce8ea46a3fff81367883629dc0c1d798",
+  "cases": [
+    {
+      "mode": "normal",
+      "exit": 0,
+      "status": "PASS_CONDITIONAL_RETAINED_BRANCH_RATIONAL_REPLAY"
+    },
+    {
+      "mode": "optimized",
+      "exit": 0,
+      "status": "PASS_CONDITIONAL_RETAINED_BRANCH_RATIONAL_REPLAY"
+    },
+    {
+      "mode": "normal",
+      "negative_control": "coefficient",
+      "exit": 1,
+      "failure_reason": "degree4 residual cancellation"
+    },
+    {
+      "mode": "normal",
+      "negative_control": "damping",
+      "exit": 1,
+      "failure_reason": "secant damping bound"
+    },
+    {
+      "mode": "normal",
+      "negative_control": "rounding",
+      "exit": 1,
+      "failure_reason": "outward beta rounding"
+    },
+    {
+      "mode": "optimized",
+      "negative_control": "coefficient",
+      "exit": 1,
+      "failure_reason": "degree4 residual cancellation"
+    },
+    {
+      "mode": "optimized",
+      "negative_control": "damping",
+      "exit": 1,
+      "failure_reason": "secant damping bound"
+    },
+    {
+      "mode": "optimized",
+      "negative_control": "rounding",
+      "exit": 1,
+      "failure_reason": "outward beta rounding"
+    },
+    {
+      "mode": "normal",
+      "negative_control": "corrupted_reference",
+      "exit": 1,
+      "failure_reason": "exact portable numerical reference comparison"
+    },
+    {
+      "mode": "optimized",
+      "negative_control": "corrupted_reference",
+      "exit": 1,
+      "failure_reason": "exact portable numerical reference comparison"
+    }
+  ]
+}

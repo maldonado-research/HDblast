@@ -1,0 +1,53 @@
+{
+  "status": "PASS_REJECT_UNHASHED_CACHES_AND_SYMLINK_PATHS_BEFORE_NUMERICAL_IMPORT",
+  "producer_sha256": "3f7ca8354ed04f624708713c662de0dc5847ee761c267afa0adafeafed1dca41",
+  "controls": [
+    {
+      "label": "T",
+      "mutation": "cache",
+      "rejected": true,
+      "error": "undeclared regular file <owned-control-copy>/T/__pycache__/unhashed.cpython-312.pyc",
+      "modules_loaded_before_rejection": []
+    },
+    {
+      "label": "T",
+      "mutation": "extra",
+      "rejected": true,
+      "error": "undeclared regular file <owned-control-copy>/T/UNDECLARED.txt",
+      "modules_loaded_before_rejection": []
+    },
+    {
+      "label": "T",
+      "mutation": "file_symlink",
+      "rejected": true,
+      "error": "unexpected symbolic path <owned-control-copy>/T/linked.py",
+      "modules_loaded_before_rejection": []
+    },
+    {
+      "label": "T",
+      "mutation": "directory_symlink",
+      "rejected": true,
+      "error": "unexpected symbolic path <owned-control-copy>/T/linked-directory",
+      "modules_loaded_before_rejection": []
+    },
+    {
+      "label": "N",
+      "mutation": "cache",
+      "rejected": true,
+      "error": "undeclared regular file <owned-control-copy>/N/__pycache__/unhashed.cpython-312.pyc",
+      "modules_loaded_before_rejection": [
+        "audit"
+      ]
+    },
+    {
+      "label": "N",
+      "mutation": "directory_symlink",
+      "rejected": true,
+      "error": "unexpected symbolic path <owned-control-copy>/N/linked-directory",
+      "modules_loaded_before_rejection": [
+        "audit"
+      ]
+    }
+  ],
+  "original_input_trees_modified": false
+}

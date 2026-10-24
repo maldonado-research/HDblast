@@ -1,0 +1,212 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue,
+ pdftitle={A sharper regular-shell enclosure and correlated initial-data errors},
+ pdfauthor={Ricardo Maldonado}}
+\setlength{\parskip}{3pt}
+\title{A sharper regular-shell enclosure\\and correlated initial-data errors}
+\author{Ricardo Maldonado\\Independent Researcher\\Henderson, Nevada, United States}
+\date{23 October 2026\\Conditional mathematical working note}
+\begin{document}
+\maketitle
+\begin{abstract}
+For one fixed Einstein--scalar model at detuning $\delta=10^{-3}$, an exact
+rational residual comparison sharpens the retained regular branch's shell
+scalar enclosure to radius $9.505\times10^{-18}$. A polynomial graph and an
+explicit damping barrier retain the regular-cone uncertainty without numerical
+shooting. The same shell parameter supplies a separate initial-data calculation
+using paired Taylor jets and exact difference identities. This finite checkpoint
+inherits its branch and field-equation premises; it evaluates neither the full
+second-order response nor an invariant observable.
+\end{abstract}
+
+\section{The retained model and branch}
+Set
+\begin{gather}
+ W(\eta)=\frac13+\eta^2+\frac{\eta^3}{3},\quad
+ f(\eta)=1+c+c\eta,\quad
+ c=\frac{96714321425692}{161839258930731},\quad\delta=\frac1{1000},\label{eq:model}\\
+ U(\eta)=\frac{(W')^2}{2}-\frac{2W^2}{3},\qquad \sigma=2W+\delta f.
+\end{gather}
+The regular interior has $\rho(0)=0$, $\rho_y(0)=1$, $p(0)=0$,
+with $p=\eta_y$, $a=\rho_y/\rho$ and shell scalar $\beta=\eta(T)$.
+The retained theorem gives existence and uniqueness in its specified small
+Dirichlet tube~\cite{branch}, and
+$|\beta+(9c/64)\delta|\leq3.196\delta^2$. The new necessary enclosure of
+that same existing branch is
+\begin{equation}
+ \boxed{-0.00008405268308665527\leq\beta\leq
+              -0.00008405268308663626},\quad
+ \operatorname{rad}(\beta)=9.505\times10^{-18}.\label{eq:beta}
+\end{equation}
+The endpoints are exact rationals. The old radius is $3.196\times10^{-6}$.
+Neither enclosure denotes measured physical precision. This calculation does
+not independently construct an endpoint solution or enlarge the old hypotheses.
+
+Write $h=\rho^{-2}$, the quantity also denoted $H^2$, and $z=p/\eta$.
+Along this negative scalar branch,
+\begin{equation}
+ \eta_y=\eta z,\quad h_y=-2ah,\quad z_y=M(\eta)-4az-z^2,\quad
+ a^2=h+\frac{\eta^2z^2}{12}-\frac{U(\eta)}6,\label{eq:flow}
+\end{equation}
+where $M=U'/\eta$ extends polynomially to zero. Convexity and the scalar
+divergence equation give $\eta,p<0$ and
+$|\eta(y)|\leq|\beta|<\epsilon:=9\times10^{-5}$.
+The cone expansion gives $z\to0$. Exact polynomial bounds give $0<M<4$
+and $U(0)\leq U<0$. The constraint preserves the positive branch of $a$;
+a first-crossing test then gives $0\leq z\leq2$. The decreasing $h$ crosses
+$h_0=10^{-2}$ before the shell. On the remaining segment the constraint gives
+\begin{equation}
+ a_-:=\frac19-10^{-6}\leq a\leq a_+:=\frac3{20}.\label{eq:abox}
+\end{equation}
+No tiny center amplitude or numerical cone-start data need be resolved.
+
+\section{A polynomial defect and its damping barrier}
+The supplement lists exact rational degree-four polynomials $Z(\eta,h)$ and
+$A(\eta,h)$, beginning with $Z=14/9-(42/5)h+(25/23)\eta+\cdots$ and
+$A=1/9+(9/2)h-(7/27)\eta^2+\cdots$. Define
+\begin{align}
+ B&=2hZ_h-4Z,\qquad R=M-Z^2-\eta Z_\eta Z+AB,\nonumber\\
+ D&=h+\eta^2Z^2/12-U/6-A^2.\label{eq:defects}
+\end{align}
+All coefficients of $R,D$ through total degree four vanish exactly. The
+remaining coefficients are bounded, not discarded. On
+$|\eta|\leq\epsilon$, $0\leq h\leq h_0$, coefficientwise rational estimates
+prove $0<Z<2$, $A>0$, $B<0$, and
+\begin{equation}
+ 4a_-+\inf Z-\sup|\eta Z_\eta|>1.88625\geq\kappa:=37/20.
+ \label{eq:damping}
+\end{equation}
+No invariant manifold or convergence of a formal series is assumed.
+For $e=z-Z(\eta,h)$ along the actual trajectory, the exact identities are
+\begin{align}
+ a-A&=\frac{D+\eta^2(z+Z)e/12}{a+A},\nonumber\\
+ e_y&=R+\frac{BD}{a+A}-\mathcal K e,\qquad
+ \mathcal K=4a+z+Z+\eta Z_\eta
+       -\frac{B\eta^2(z+Z)}{12(a+A)}\geq\kappa.\label{eq:error}
+\end{align}
+The square-root defect is charged. The final term in $\mathcal K$ is
+nonnegative because $B<0$ and $z+Z>0$.
+
+Let $Q=\sup|B|/(a_-+\inf A)$. Absolute coefficients in $R$ and $QD$, with
+$|\eta|^i\leq\epsilon^i$ and $h^j\leq h_0^{j-5}h^5$ for $j>5$, give
+nonnegative rational $C_j$ satisfying
+$|R+BD/(a+A)|\leq\sum_{j=0}^5 C_jh^j$. Use
+\begin{equation}
+ E(h)=2(h/h_0)^6+\sum_{j=0}^5\frac{C_jh^j}{\kappa-2ja_+}.\label{eq:barrier}
+\end{equation}
+The denominators have minimum $\kappa-10a_+=7/20$; the memory term has
+margin $\kappa-12a_+=1/20$. Since
+$(h^j)_y+\kappa h^j=(\kappa-2ja)h^j$, we have
+$E_y+\kappa E\geq\sum C_jh^j$. At entry $h=h_0$,
+$|z-Z|\leq2\leq E(h_0)$. Scalar comparison yields $|e|\leq E(h)$.
+The first term retains all cone histories allowed by the entry interval.
+At the shell, the verified bound is $E(h)<3.752255\times10^{-13}$.
+
+The shell laws retain one common parameter:
+\begin{align}
+ h_s(\beta)&=\delta\left(\frac{Wf}{9}-\frac{W'c}{12}\right)
+              +\delta^2\left(\frac{f^2}{36}-\frac{c^2}{48}\right),\label{eq:shell}\\
+ p_s&=-W'(\beta)-\delta c/2,\quad
+ a_s=W(\beta)/3+\delta f(\beta)/6,\quad \rho_s=h_s^{-1/2}.\nonumber
+\end{align}
+For $G(\beta)=\beta Z(\beta,h_s(\beta))+W'(\beta)+\delta c/2$,
+the shell obeys $|G(\beta)|\leq\epsilon E(h_{\rm upper})$.
+The full chain derivative $G'=Z+\beta(Z_\eta+Z_hh_s')+W''$ is greater
+than $3.55469$ on the entire old enclosure. Four exact rational Newton
+proposals select a seed $b$, supplying no existence assertion. The bound
+\[
+ |\beta-b|\leq\frac{|G(b)|+\epsilon E(h_{\rm upper})}{\inf G'}
+\]
+and one outward rational contraction give~\eqref{eq:beta}. This is a necessary
+enclosure using inherited existence, not an independent finite-Dirichlet solve.
+
+\section{Paired initial-data differences}
+The physical initial prescription retains the five means
+$(K_0,L_0,N_0,J_0,w_0)$ and the lapse, mixed and scalar
+terms~\cite{initial}. Their Gram matrix is $\operatorname{diag}(1,2,1,3,1)$. Put $\ell=10^{-6}$. Let $\delta_0,\delta_r,\delta_v$
+bound errors in the displacement, scaled radial derivative, and $\ell$ times
+the ordinary physical-time velocity. Reflected free-wave estimates give
+\begin{equation}
+ e_{\rm free}=\max\left\{
+       \frac{\delta_0+(3/2)\delta_v}{3},\ \delta_r+\delta_v\right\}
+ \label{eq:free}
+\end{equation}
+in the norm
+$\|V\|_X=\max(\sup|V|_H/3,\sup|V_x|_H,\sup|V_r|_H)$ on
+$D=\{0\leq x\leq3/2,\ \max(0,x-5/4)\leq r\leq7/4-x\}$.
+Only $L_0$ has the Dirichlet row; the other rows use the registered
+reflection. Compatibility is retained by the exact zero neighborhood of the
+shell in the initial data.
+The earlier candidate's certified cap, below $4.561\times10^{33}$, failed
+the provisional $10^{28}$ gate. This was not an actual-error lower bound.
+
+The new evaluator carries actual and nominal jets together with their
+small differences. For example,
+\[
+ AB-\widehat A\widehat B=(A-\widehat A)\widehat B+A(B-\widehat B),\qquad
+ A^{-1}-\widehat A^{-1}=-\frac{A-\widehat A}{A\widehat A}.
+\]
+This avoids charging the full independent variation of both profiles over
+each cell. All shell inputs derive from the shared $\beta$ in~\eqref{eq:shell}.
+Their interval projections then feed the jet recurrence; this valid enclosure
+can lose parameter correlation and is not a full parameter Taylor model.
+
+Degree-four local background polynomials supply jets through the required
+order. The exact ODE recurrence and a retained whole-footprint enclosure
+bound normalized fifth derivatives for differentiated Taylor remainders.
+The registered rational packet, cutoff and exponential approximation have
+separate direct difference bounds. Paired identities propagate three error
+channels: shell Taylor-coefficient differences; packet and representation
+differences; and validated ODE Taylor remainder. Outward arithmetic is included
+in these channels, with every physical derivative scaling factor retained.
+Ninety-six closed cells cover $1\leq r\leq7/4$; the extension on
+$0\leq r\leq1$ is exactly zero.
+
+\input{INITIAL_RESULT.tex}
+
+\section{Verification and limits}
+The branch authenticates 43 retained payloads plus their manifest against
+independent external pins and all 44 exact public archive members. The initial
+calculation separately joins its complete upstream closures and the branch
+certificate. Normal and optimized Python replays and independent exact checks
+are recorded in the supplement. Branch arithmetic is rational, with integer
+square-root bounds. Its finite scope was degree four, one comparison domain,
+four rational seed steps and one validated contraction. The initial scope
+permits one registered recentering and the same 96 cells.
+
+Residual validation and polynomial representations are established techniques.
+Recent examples discuss invariance residuals~\cite{henot} and polynomial
+dependence with rigorous remainders~\cite{tera}; the latter cites high-order
+Taylor-model integration~\cite{berz}. These references import no theorem about
+this shell model. The bounded screening supports no exhaustive coverage or
+priority claim. Reviews are internal AI-assisted checks, not external peer
+review or proof-assistant formalization.
+
+Initial precision alone supplies no bulk iteration, evaluated total response,
+invariant volume sign, nonlinear spacetime family, or evidence for a
+higher-dimensional origin of the Big Bang. The older source, gauge and
+manuscript artifacts remain frozen. This working note entails no journal
+submission.
+
+\begin{thebibliography}{9}\small
+\bibitem{branch} R.~Maldonado, \emph{Regular-cone Jacobi identities and a stronger
+uniform branch estimate}, retained checkpoint (11 October 2026),
+\href{https://doi.org/10.5281/zenodo.23294979}{doi:10.5281/zenodo.23294979}.
+\bibitem{initial} R.~Maldonado, \emph{A causal response estimate and an anchored
+shell-volume prescription}, retained note (23 October 2026),
+\href{https://github.com/maldonado-research/HDblast/tree/87b5c6edb0e5eb4033be6eb24bd631467c576ad5/research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023}{HDBLAST\_TOTAL\_RESPONSE\_PREFLIGHT\_20261023}.
+\bibitem{henot} O.~H\'enot and A.~Takayasu, \emph{Computer-Assisted Proofs in
+Dynamical Systems: A Case Study of a Heteroclinic Orbit in the
+Shimizu--Morioka System} (2026),
+\href{https://arxiv.org/abs/2605.07500v1}{arXiv:2605.07500v1}.
+\bibitem{tera} S.~Iraky and A.~Sogokon, \emph{TERA: A Unified Taylor Model Enabled
+Reachability Analysis Framework} (2026),
+\href{https://arxiv.org/abs/2607.01189v1}{arXiv:2607.01189v1}.
+\bibitem{berz} M.~Berz and K.~Makino, Verified Integration of ODEs and Flows
+Using Differential Algebraic Methods on High-Order Taylor Models,
+\emph{Reliable Computing} \textbf{4}, 361--369 (1998),
+\href{https://doi.org/10.1023/A:1024467732637}{doi:10.1023/A:1024467732637}.
+\end{thebibliography}
+\end{document}

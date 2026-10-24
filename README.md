@@ -1,5 +1,10 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-input-precision="input-precision-20261023" -->
+**23 October 2026: the initial-data precision gate passes.** An exact residual comparison sharpens the same retained regular-shell branch to a beta interval of radius 9.505e-18. A separately registered recentered rational approximation has a certified initial/free-wave error below 8.519e27, meeting the 1e28 target across all 96 cells. The old candidate and its failed bound are preserved. Some illustrative component allocations are exceeded; the exact combined inequality passes.
+
+This clears an input-accuracy bottleneck under the stated model and theorem assumptions. The evolved numerical total response and intrinsic observable sign remain unevaluated. It establishes no nonlinear physical family or higher-dimensional Big Bang origin. No new Zenodo version or journal submission accompanies this update. [Working note (PDF)](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_INPUT_PRECISION_20261023/manuscript/INPUT_PRECISION.pdf) · [Derivations, source and checks](https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_INPUT_PRECISION_20261023) · [Source archive (ZIP)](https://github.com/maldonado-research/HDblast/raw/refs/heads/main/research/HDBLAST_INPUT_PRECISION_20261023.zip).
+
 <!-- data-hdb-total-preflight="total-response-preflight-20261023" -->
 **23 October 2026: tighter response bounds and an intrinsic shell-volume prescription.** A zero-region estimate tightens the conditional local response contraction bound to q = 0.000426125. A complete initial-data pilot defines one differentiable rational candidate but its certified error bound fails the chosen accuracy gate. This identifies the next precision task; it proves no impossibility. A separate derivation defines intrinsic shell volume at anchored proper time, including clock, slicing and quadratic metric terms. Its value remains unevaluated.
 

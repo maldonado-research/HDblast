@@ -1,0 +1,324 @@
+{
+  "checked_date_utc": "2026-10-23",
+  "purpose": "Bounded HDBLAST input-precision methods audit, not exhaustive discovery or novelty assessment",
+  "framing_count": 3,
+  "retained_primary_records": 4,
+  "date_window": "2025-01-01 through 2026-10-23 for recent queries",
+  "network": {
+    "policy_state": "enforced",
+    "observations_current": true,
+    "vpn_configured": false,
+    "used_hosts": [
+      "export.arxiv.org",
+      "arxiv.org",
+      "api.crossref.org"
+    ],
+    "initial_default_sandbox_calls": "Operation not permitted; succeeded after network-enabled permission while preserving configured proxy"
+  },
+  "connector_attempts": [
+    {
+      "provider": "Firecrawl",
+      "framing": "invariant_residual",
+      "query": "(\"parameterization method\" OR \"invariant manifold\") (\"computer assisted\" OR \"a posteriori\") residual 2025 2026",
+      "status": "not_run",
+      "error": "Insufficient credits",
+      "retry": false
+    },
+    {
+      "provider": "Firecrawl",
+      "framing": "correlated_ivp",
+      "query": "\"validated\" \"initial value\" (\"Taylor models\" OR \"Lohner\" OR \"correlation\") 2025 2026",
+      "status": "not_run",
+      "error": "Insufficient credits",
+      "retry": false
+    },
+    {
+      "provider": "Firecrawl",
+      "framing": "einstein_scalar_shell",
+      "query": "\"Einstein scalar\" (\"shell\" OR \"linearization\") 2025 2026",
+      "status": "not_run",
+      "error": "Insufficient credits",
+      "retry": false
+    }
+  ],
+  "queries": [
+    {
+      "framing": "invariant_residual",
+      "source": "arXiv API",
+      "query": "(all:\"parameterization method\" OR all:\"invariant manifold\") AND (all:\"computer assisted\" OR all:\"a posteriori\") AND submittedDate:[202501010000 TO 202610232359]",
+      "url": "https://export.arxiv.org/api/query?search_query=%28all%3A%22parameterization+method%22+OR+all%3A%22invariant+manifold%22%29+AND+%28all%3A%22computer+assisted%22+OR+all%3A%22a+posteriori%22%29+AND+submittedDate%3A%5B202501010000+TO+202610232359%5D&start=0&max_results=5&sortBy=submittedDate&sortOrder=descending",
+      "max_results": 5,
+      "totalResults": "5",
+      "raw_response_file": "invariant_residual.xml",
+      "hits": [
+        {
+          "id": "http://arxiv.org/abs/2605.07500v1",
+          "title": "Computer-Assisted Proofs in Dynamical Systems: A Case Study of a Heteroclinic Orbit in the Shimizu--Morioka System",
+          "published": "2026-05-08T09:37:23Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2603.21603v3",
+          "title": "An algorithm to detect and rigorously verify blenders",
+          "published": "2026-03-23T05:55:40Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2603.15073v1",
+          "title": "The Evolution of Computer-Assisted Proof In Analysis",
+          "published": "2026-03-16T10:26:56Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2505.22903v2",
+          "title": "Non-uniqueness of stationary measures for stochastic systems with almost surely invariant manifolds",
+          "published": "2025-05-28T22:09:54Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2503.09740v1",
+          "title": "Constructive Approaches to QP-Time-Dependent KAM Theory for Lagrangian Tori in Hamiltonian Systems",
+          "published": "2025-03-12T18:39:20Z"
+        }
+      ]
+    },
+    {
+      "framing": "correlated_ivp",
+      "source": "arXiv API",
+      "query": "(all:\"validated\" OR all:\"rigorous\") AND (all:\"Taylor models\" OR all:\"Lohner\" OR all:\"initial value\") AND submittedDate:[202501010000 TO 202610232359]",
+      "url": "https://export.arxiv.org/api/query?search_query=%28all%3A%22validated%22+OR+all%3A%22rigorous%22%29+AND+%28all%3A%22Taylor+models%22+OR+all%3A%22Lohner%22+OR+all%3A%22initial+value%22%29+AND+submittedDate%3A%5B202501010000+TO+202610232359%5D&start=0&max_results=5&sortBy=submittedDate&sortOrder=descending",
+      "max_results": 5,
+      "totalResults": "81",
+      "raw_response_file": "correlated_ivp.xml",
+      "hits": [
+        {
+          "id": "http://arxiv.org/abs/2610.29938v1",
+          "title": "A PDE-theory-guided neural operator and the long-time relaxation of the two-dimensional anisotropic Boussinesq system",
+          "published": "2026-10-21T16:08:51Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2610.29871v1",
+          "title": "Rigorous integration of semilinear parabolic PDEs: forward evolution bounds and projected boundary value problems",
+          "published": "2026-10-21T15:25:03Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2610.24202v1",
+          "title": "Certified neural approximations for parabolic obstacle problems",
+          "published": "2026-10-16T20:23:13Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2610.22446v1",
+          "title": "Learnable Splines for Unstructured Neural Operators",
+          "published": "2026-10-15T15:15:31Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2610.03883v1",
+          "title": "On Information Propagation in Krylov Subspaces",
+          "published": "2026-10-02T18:03:54Z"
+        }
+      ]
+    },
+    {
+      "framing": "einstein_scalar_shell",
+      "source": "arXiv API",
+      "query": "(all:\"Einstein scalar\" OR all:\"Einstein-scalar\") AND (all:\"shell\" OR all:\"linearization\") AND submittedDate:[202501010000 TO 202610232359]",
+      "url": "https://export.arxiv.org/api/query?search_query=%28all%3A%22Einstein+scalar%22+OR+all%3A%22Einstein-scalar%22%29+AND+%28all%3A%22shell%22+OR+all%3A%22linearization%22%29+AND+submittedDate%3A%5B202501010000+TO+202610232359%5D&start=0&max_results=5&sortBy=submittedDate&sortOrder=descending",
+      "max_results": 5,
+      "totalResults": "24",
+      "raw_response_file": "einstein_scalar_shell.xml",
+      "hits": [
+        {
+          "id": "http://arxiv.org/abs/2610.08545v1",
+          "title": "Glueball gravitational form factors in dynamical holography",
+          "published": "2026-10-06T15:33:32Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2609.18475v1",
+          "title": "Second-order slow rotation of wormholes in Einstein-scalar-Gauss-Bonnet gravity",
+          "published": "2026-09-16T11:09:38Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2609.08421v1",
+          "title": "Picard Iteration for the Characteristic Initial Value Problem in Einstein Equations",
+          "published": "2026-09-08T08:29:57Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2609.01332v3",
+          "title": "Perturbative Double-Scalar Hair on Planar Black Holes in AdS$_{4}$-Einstein-Scalar Gravity",
+          "published": "2026-09-01T14:45:58Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2608.21865v1",
+          "title": "Characteristic-cone running from on-shell residues: Identifiability on the physical EFT quotient",
+          "published": "2026-08-22T09:20:30Z"
+        }
+      ]
+    },
+    {
+      "framing": "correlated_ivp",
+      "source": "arXiv API",
+      "url": "https://export.arxiv.org/api/query?search_query=%28all%3A%22validated+integration%22+OR+all%3A%22validated+numerical+integration%22+OR+all%3A%22Taylor+models%22+OR+all%3A%22Lohner%22%29+AND+%28cat%3Amath.NA+OR+cat%3Amath.DS%29+AND+submittedDate%3A%5B202501010000+TO+202610232359%5D&start=0&max_results=5&sortBy=relevance&sortOrder=descending",
+      "max_results": 5,
+      "sortBy": "relevance",
+      "totalResults": "8",
+      "raw_response_file": "correlated_ivp_recent_refined.xml",
+      "hits": [
+        {
+          "id": "http://arxiv.org/abs/2605.24151v1",
+          "title": "Polarization-Induced Beam Bending: Mathematical Model, Discretization, and Algorithm",
+          "published": "2026-05-22T19:17:35Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2602.02981v1",
+          "title": "Fisher-Information-Based Sensor Placement for Structural Digital Twins: Analytic Results and Benchmarks",
+          "published": "2026-02-03T01:41:39Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2604.09498v2",
+          "title": "New Scheme Adaption Strategy for Hyperbolic Conservation Laws",
+          "published": "2026-04-10T17:08:44Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2604.14400v1",
+          "title": "Bivariate range functions with superior convergence order",
+          "published": "2026-04-15T20:29:27Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2504.20259v2",
+          "title": "Global Optimality Characterizations and Algorithms for Minimizing Quartically-Regularized Third-Order Taylor Polynomials",
+          "published": "2025-04-28T21:03:29Z"
+        }
+      ]
+    },
+    {
+      "framing": "correlated_ivp",
+      "source": "arXiv API",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22Taylor+models%22+AND+%28all%3A%22initial+value%22+OR+all%3A%22ODE%22+OR+all%3A%22integration%22%29&start=0&max_results=5&sortBy=relevance&sortOrder=descending",
+      "max_results": 5,
+      "sortBy": "relevance",
+      "totalResults": "11",
+      "raw_response_file": "correlated_ivp_established.xml",
+      "hits": [
+        {
+          "id": "http://arxiv.org/abs/1802.00767v3",
+          "title": "On optimal decay estimates for ODEs and PDEs with modal decomposition",
+          "published": "2018-02-02T16:53:21Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2112.09197v2",
+          "title": "Verification of Neural-Network Control Systems by Integrating Taylor Models and Zonotopes",
+          "published": "2021-12-16T20:46:39Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/1307.8303v2",
+          "title": "Asymptotic Preserving time-discretization of optimal control problems for the Goldstein-Taylor model",
+          "published": "2013-07-31T12:32:08Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2607.01189v1",
+          "title": "TERA: A Unified Taylor Model Enabled Reachability Analysis Framework",
+          "published": "2026-07-01T17:20:49Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2411.13448v1",
+          "title": "Taylor Modeling and Comparative Research Containing Aspect-Ratio Dependent Optimization of Three-Dimensional Hk Superjunction MOSFETs",
+          "published": "2024-11-20T16:42:21Z"
+        }
+      ]
+    },
+    {
+      "framing": "einstein_scalar_shell",
+      "source": "arXiv API",
+      "url": "https://export.arxiv.org/api/query?search_query=%28all%3A%22Einstein+scalar%22+OR+all%3A%22Einstein-scalar%22%29+AND+all%3A%22shell%22+AND+submittedDate%3A%5B202501010000+TO+202610232359%5D&start=0&max_results=5&sortBy=relevance&sortOrder=descending",
+      "max_results": 5,
+      "sortBy": "relevance",
+      "totalResults": "4",
+      "raw_response_file": "einstein_scalar_shell_refined.xml",
+      "hits": [
+        {
+          "id": "http://arxiv.org/abs/2602.23657v2",
+          "title": "Light rings, gravitational lensing, and ISCOs of exotic compact objects in Einstein-scalar-Maxwell theories",
+          "published": "2026-02-27T03:47:35Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2608.21865v1",
+          "title": "Characteristic-cone running from on-shell residues: Identifiability on the physical EFT quotient",
+          "published": "2026-08-22T09:20:30Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2606.08889v2",
+          "title": "Exact Four-Parameter Rotating NS--NS Vacuum in Double Field Theory",
+          "published": "2026-06-08T00:26:20Z"
+        },
+        {
+          "id": "http://arxiv.org/abs/2605.16459v4",
+          "title": "Covariant Holographic Entanglement Entropy Inversion to Reconstruct Bulk Geometry",
+          "published": "2026-05-15T06:51:55Z"
+        }
+      ]
+    },
+    {
+      "framing": "correlated_ivp",
+      "source": "Crossref exact-title bibliographic lookup",
+      "url": "https://api.crossref.org/works?query.bibliographic=Verified+integration+of+ODEs+and+flows+using+differential+algebraic+methods+on+high-order+Taylor+models&rows=2",
+      "retained_hit": {
+        "DOI": "10.1023/a:1024467732637",
+        "title": [
+          "Verified Integration of ODEs and Flows Using Differential Algebraic Methods on High-Order Taylor Models"
+        ],
+        "author": [
+          {
+            "given": "Martin",
+            "family": "Berz"
+          },
+          {
+            "given": "Kyoko",
+            "family": "Makino"
+          }
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1998,
+              11
+            ]
+          ]
+        }
+      },
+      "raw_response_file": "berz_makino_crossref.json",
+      "extent": "metadata only; abstract absent; publisher fulltext not requested because host outside configured allowlist"
+    }
+  ],
+  "selected_fetches": [
+    {
+      "key": "henot_2605_07500",
+      "url": "https://arxiv.org/html/2605.07500v1",
+      "length": 642664
+    },
+    {
+      "key": "tera_2607_01189",
+      "url": "https://arxiv.org/html/2607.01189v1",
+      "length": 70600
+    },
+    {
+      "key": "mars_0507005",
+      "url": "https://export.arxiv.org/api/query?id_list=gr-qc/0507005",
+      "length": 2185
+    },
+    {
+      "key": "berz_makino_crossref",
+      "url": "https://api.crossref.org/works?query.bibliographic=Verified+integration+of+ODEs+and+flows+using+differential+algebraic+methods+on+high-order+Taylor+models&rows=2",
+      "length": 11797
+    }
+  ],
+  "reading_extents": {
+    "2605.07500v1": "abstract, full-text 1.1 and theorem 1.1, section 3 equation14 and18 and35, proposition3.3 and equation39; remaining text searched for context",
+    "2607.01189v1": "complete short HTML text; no implementation audit",
+    "Berz_Makino_1998": "Crossref metadata only; no abstract; no fulltext",
+    "gr-qc/0507005v1": "complete arXiv abstract and metadata only"
+  },
+  "not_claimed": [
+    "exhaustive coverage",
+    "absence of other 2025-2026 related work",
+    "novelty",
+    "empirical support for HDBLAST",
+    "validation of source implementations",
+    "source theorem applies automatically to retained root"
+  ]
+}
