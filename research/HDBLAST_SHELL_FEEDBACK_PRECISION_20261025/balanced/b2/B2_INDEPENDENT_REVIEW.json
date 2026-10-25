@@ -1,0 +1,40 @@
+{
+  "checker_sha256": "e53ecb692ad507eb6d9dec34f5c0cf37848641b029beb375aa2abd9dbdfb808c",
+  "checks": [
+    "Every panel midpoint, coverage, target assignment and Simpson remainder formula.",
+    "All twelve moment integrals per target: outward sums, remainder sums and scalar endpoint assembly.",
+    "Independent local-binomial P1 integration verifies velocity moments through order five.",
+    "Unrounded rational interval replay verifies B0, B1, B2, two-term and three-term assembly and all histories.",
+    "Separate replay verifies every propagated pure-quadrature component cap."
+  ],
+  "complete_closures_authenticated_before_and_after": true,
+  "limits": [
+    "Candidate arithmetic and source review only; no actual-response or observable sign claim.",
+    "Stored derivative enclosures are replayed algebraically; profile jets and quadrature are not recomputed."
+  ],
+  "normal_report_sha256": "3db587c30dca20f01e4964ac87f8f5ba457d55d15f7720d09eb840ed3e0e4935",
+  "polynomial_controls_sha256": "88496dd5ff2bc093d6fc12a608ef00cd1509305744b19e2062dbac4b650130ef",
+  "producer_source_sha256": "e4ea015d0526fc81a2c862cb048ecc3e5f4473bf2e0d71b55eec719e48ee2065",
+  "samples": [
+    {
+      "J_candidate_strictly_negative": true,
+      "J_three_term_candidate_interval": [
+        "-13928326180798793933885249621892619427482641716901/1298074214633706907132624082305024",
+        "-55713223692205705700993880307401283984158243185541/5192296858534827628530496329220096"
+      ],
+      "all_stored_remainders_sums_moments_and_assemblies_passed": true,
+      "x": "9/8"
+    },
+    {
+      "J_candidate_strictly_negative": true,
+      "J_three_term_candidate_interval": [
+        "-178522068518054411939713789766606058978799828060219/649037107316853453566312041152512",
+        "-1428176291287177989040511488037977166986332634743123/5192296858534827628530496329220096"
+      ],
+      "all_stored_remainders_sums_moments_and_assemblies_passed": true,
+      "x": "5/4"
+    }
+  ],
+  "schema": "HDBLAST_B2_INDEPENDENT_REPORT_REPLAY_V1",
+  "status": "PASS_INDEPENDENT_B2_REPORT_ARITHMETIC_AND_SOURCE_REVIEW"
+}

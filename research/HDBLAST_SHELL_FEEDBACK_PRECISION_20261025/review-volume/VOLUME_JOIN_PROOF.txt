@@ -1,0 +1,173 @@
+Independent anchored-volume join review, 25 October 2026
+
+Verdict: PASS, conditional on the previously reviewed pinned response inputs.
+No blocker, missing factor, sign reversal, or repeated quadrature charge was
+found. Nothing in the frozen repository or numerical capsules was edited.
+
+Scope and identities
+
+The complete frozen derivation read was
+repo/research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023/observable/
+SHELL_PROPER_TIME_OBSERVABLE.md (SHA-256
+2ea8e1e95489943536b54e7205e8ea7e26ea198197fd2c89a0c028eb8e2c7929).
+Its parameter convention is gamma_e=gamma_0+e*m+e^2*n/2; all reported
+second coefficients are second parameter derivatives.
+
+Frozen lines 268--271 define mean(n_ss)=N0 and
+mean(tr_(h0)n_ij)=3 J0. Frozen (6), lines 277--279, gives
+
+  Bclock = (1/2) integral_0^s N0 da
+           +(1/6) integral_0^s X^2 da
+           -(4/3) integral_0^s (V+Cclock/A)^2 da
+           + Cclock*X/3.
+
+Substitution into the FULL frozen equation (8), lines 296--300, gives
+
+  v2=(3/2)J0+(3/2)H integral_0^s N0 da+Q_first.
+
+Thus the lapse-history contribution has a positive sign. The direct J
+factor is 3/2, not 1/2, because its spatial mean trace is 3 J0. There is no
+additional factorial in this derivative convention. Since v1=0, the
+radius identity is R2/R0=v2/3, consistently with frozen (9).
+
+Set t=s/rho_b=ell*x. Then
+
+  H integral_0^s N0 da
+     =ell*tanh(ell*x) integral_0^x N0 da.
+
+The rho_b factors cancel. The pinned component ledger's direct N value
+cap is the index-2 value entry of the declared ten-state value-then-
+derivative order, on the entire shell-history causal triangle at 9/8.
+It is not a derivative cap. The exact zero wedge x<=1 makes the active
+history length delta=1/8. Using tanh(ell*x)<=ell*x gives the FULL clock
+contribution bound, already including 3/2,
+
+  nclock=(3/2)ell^2*x*delta*Ncap
+        =340099945131860012756346493053764895660373319782407716661
+         /132922799578491587290380706028034457600000000000
+        =2.558627610991817...e9 < 2.56e9.
+
+Independent Q_first bound
+
+The checker does not import join_results.py or a numerical producer. To
+avoid reproducing its x expressions, it works directly in ordinary
+dimensionless time t. With rho_b set to one after the cancellation, put
+
+  T=ell*x, D=ell*delta, Cbar=D*Xcap,
+  Ebar=Zcap+T*Cbar, Wbar=Vcap+Cbar.
+
+The ordinary-time derivative caps from the first report are Z_t and d_t.
+The first-order fields vanish on the initial inactive history. The six
+nonnegative bounds derived directly from frozen (6),(8) are
+
+  clock:       T*(D*Xcap^2/2+4*D*Wbar^2+Cbar*Xcap),
+  evaluation:  Cbar*(3*Z_t+6*T*Zcap+8*d_t+16*T*dcap)/3,
+  background:  Cbar^2*(1+T^2)/2,
+  shift:       8*Cbar*Vcap/3,
+  gradient:    4*Cbar^2/3,
+  determinant: Ebar^2/2+(8/3)*Ebar*dcap+(16/3)*dcap^2.
+
+Here |H*rho_b|<=T, rho_b/A<=1, and
+rho_b^2*(H'+2H^2)=1+tanh(t)^2<=1+T^2.
+These bounds retain every frozen (8) group after separating the N history.
+The evaluation bound in x therefore includes partial_x=ell*partial_t.
+All six exact results equal the stored join groups. Their exact sum is
+
+  Qbound=6686222274308036835249874398211279
+         /1228800000000000000000000000000000000000000000000
+        =5.441261616461618...e-15 < 5.5e-15.
+
+Response and quadrature join
+
+The pinned B2 producer builds every moment as center plus the Simpson
+remainder interval before applying shell_algebra and storing evaluation
+(exact_b2.py lines 231--256). The evaluation_omitting_quadrature_remainders
+and quadrature_error_component_uppers members are diagnostics of separate
+computations. Their separately rounded endpoints need not obey the
+identity full_interval=rounded_central_interval +/- rounded_error_cap.
+The independent B2 checker already replays the full moment assembly and
+its quadrature propagation (check_b2.py lines 405--428).
+
+The pinned second-feedback report separately bounds actual-response
+defects and the third-feedback tail and explicitly excludes candidate
+evaluation quadrature. The correct join is therefore precisely
+
+  [candidate_lo-response_error, candidate_hi+response_error],
+
+where candidate is evaluation.three_term. The join does this once.
+The independent review reconstructed every mean interval at both times,
+both N intersections with the older valid enclosure, the two J signs,
+all six first-order groups, the full clock cap, v2 and R2/R0 exactly.
+
+At x=9/8, integer outward enclosures are
+
+  J0 in [-11456254991148748, -10003713776284829],
+  v2 in [-17184385045350733, -15005568105799633],
+  R2/R0 in [-5728128348450245, -5001856035266544].
+
+The exact v2 endpoints in the review JSON equal the stored join endpoints.
+The upper endpoint is strictly negative, with margin exceeding 1.50e16.
+At x=5/4, the independently joined J0 interval is
+[-281184635336453946, -268928911183231073].
+
+The final additive generic ten-state cross-check was independently
+replayed as well. Its coarser J intervals are negative at both samples.
+Using the coarser J interval in the same volume bound at 9/8 also stays
+strictly negative, so the volume sign does not require the sharper
+integrated third-tail interval. Complete exact coarser intervals are in
+the JSON. This cross-check is an additional valid enclosure, not another
+radius to add to the sharp interval.
+
+Wrong-formula controls
+
+The review JSON also supplies exact controls. Repeating the J quadrature
+charge spuriously widens the v2 interval by about 1.17e10 on either side.
+Dropping the trace factor three produces a different interval even though
+the sign remains negative; the sign alone is not a normalization check.
+Treating the ordinary-t derivative cap as an x cap changes the Q bound
+by approximately a factor one million in its dominant derivative term.
+Dropping both clock ell factors yields an interval crossing zero of size
+about 2.56e21. The controls show why checking the exact normalization and
+interval equality is necessary in addition to checking the final sign.
+
+Finite tube and completion
+
+FINITE_TUBE_OBSERVABLE.md was independently reviewed against the full
+frozen specification, also by a separate geometry reviewer. Its compact
+normal-map stability argument is valid: a common open buffer and smooth
+ODE dependence give C1 convergence on a finite compact tube. If distinct
+domain pairs collided for parameters tending to zero, compactness and
+background injectivity would force a common limiting point. The inverse
+function theorem for (e,tau,z)->(e,F_e(tau,z)) excludes that collision.
+The open buffer handles the endpoints. Gauss' lemma and positivity of the
+spatial metric give the proper-time foliation. The permitted epsilon
+interval can depend on the chosen finite T and is not quantified here.
+
+For smooth exact mean histories, n=N0 ds^2+J0 A^2 kappa supplies the
+required second-order means. The frozen graph pullback and determinant
+show linear dependence on n only through mean(n_ss) and its spatial
+trace; second-order shift and nonmean angular tensors do not alter this
+volume jet. Keeping the known full smooth m gives a kinematic metric
+family for sufficiently small unspecified epsilon by compact openness.
+This construction is not an angular Einstein solution or a physical
+nonlinear family. Identifying the means with physical response remains
+conditional on the inherited projection and subsidiary assumptions.
+
+Artifacts and reproducibility
+
+Run: python review-volume/check_volume_join.py
+Output: review-volume/VOLUME_JOIN_REVIEW.json
+All decisions are exact Fraction decisions; floats appear only in display
+fields. The JSON records the input pins, all consumed source SHA-256
+values, complete exact interval reconstructions and wrong-formula controls.
+Only review-volume files were created by this review.
+
+The final source/report pins checked are
+  analysis/join_results.py:
+  589ee7a7efab0acb33030562c554f315f7217a580d53a899932ea182cc3fc2ef
+  /tmp/hdblast-joined-final-normal-20261025.json:
+  f37b2ce9ebb45ae96e86ed715180f752266b2013b42d59a37265c71196ecf77f
+
+The conclusion is a negative anchored proper-time kinematical parameter
+second derivative. It gives no finite-amplitude range, physical force,
+expansion-rate sign, nonlinear existence theorem or cosmological result.

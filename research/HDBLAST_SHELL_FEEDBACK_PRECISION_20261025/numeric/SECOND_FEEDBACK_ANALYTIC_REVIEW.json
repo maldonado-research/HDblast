@@ -1,0 +1,40 @@
+{
+  "approved_formulas": {
+    "Lambda_O": "[a D_O+M_O, a C_O]",
+    "W_OI": "a[D_O,C_O]H_I+(x-a)M_O Lambda_I",
+    "coefficient_route_A": "integral (Lambda_Delta+W_Delta,T+W_S,Delta) beta",
+    "coefficient_route_B": "integral (Lambda_Delta+W_T,Delta+W_Delta,S) beta",
+    "input_route_A": "direct_deltaB+integral Lambda_T R e0",
+    "input_route_B": "direct_deltaB+sharp_T_deltaB+integral W_TT R e0",
+    "third_tail": "integral W_TT H_T R beta"
+  },
+  "controls_count": 34,
+  "independent_review": {
+    "premises_checked": [
+      "Retained shell M and nominal Mstar are time-independent.",
+      "Full interior L0 couplings remain in all matrix products.",
+      "All local envelopes are frozen at the cell right endpoint.",
+      "Integration begins at actual zero-wedge boundary a=1."
+    ],
+    "reviewer": "/root/coupled_response_astra",
+    "scope": "Complete noncommutative B2 identity; Lambda/W third tail; both coefficient and input routes.",
+    "software_controls_are_separate_from_analytic_review": true,
+    "status": "APPROVED"
+  },
+  "normal_optimized_bytes_identical": true,
+  "reviewer": "/root/coupled_response_astra",
+  "schema": "HDBLAST_SECOND_FEEDBACK_ANALYTIC_PROOF_REVIEW_V1",
+  "scope": "Conditional retained five-mean shell J0 values at9/8 and5/4 only; no intrinsic observable or whole-history sign claim.",
+  "software_review_report_sha256": "450c0f6e56690180e646f55377f14c1d1fdf78ff191f97a596fd61b1c0aba31f",
+  "source_and_report_sha256": {
+    "SECOND_FEEDBACK_FINAL_REVIEW_NORMAL.json": "450c0f6e56690180e646f55377f14c1d1fdf78ff191f97a596fd61b1c0aba31f",
+    "SECOND_FEEDBACK_FINAL_REVIEW_OPTIMIZED.json": "450c0f6e56690180e646f55377f14c1d1fdf78ff191f97a596fd61b1c0aba31f",
+    "SECOND_FEEDBACK_NORMAL.json": "23883937b7e5a55f1155e8b5c795644253ed5cf0abd51e0c40a09ece50220974",
+    "SECOND_FEEDBACK_OPTIMIZED.json": "23883937b7e5a55f1155e8b5c795644253ed5cf0abd51e0c40a09ece50220974",
+    "check_second_feedback.py": "48b702800a4e673ceaf8a21013592330f28695c884408996ff6c3353279d9b3d",
+    "component_ledger.py": "8a9633409544cc52dc4436ebe322126003a2f205a79f48928afad5d572aaf460",
+    "finiteproof.md": "f9c928337022068016a4820add98ea3b2541d7021b1b755eb2968099749b2110",
+    "second_feedback_ledger.py": "49723306309358e49355812e9760d3d34cc974584d47984b22eabef4113e89cc"
+  },
+  "status": "APPROVED_CONDITIONAL_TWO_SAMPLE_COMPONENT_CERTIFICATE"
+}
