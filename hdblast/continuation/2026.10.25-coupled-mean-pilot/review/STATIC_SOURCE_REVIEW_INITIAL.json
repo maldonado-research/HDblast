@@ -1,0 +1,172 @@
+{
+  "schema": "HDBLAST_COUPLED_MEAN_INDEPENDENT_STATIC_REVIEW_V1",
+  "date_utc": "2026-10-25",
+  "status": "PASS_STATIC_REVIEW_NO_BLOCKER_IDENTIFIED_NATIVE_EXECUTION_PENDING",
+  "reviewer_scope": "Independent internal AI-assisted mathematical and static source review; no native Python or Node execution performed by this reviewer.",
+  "repository": "maldonado-research/HDblast",
+  "retained_input_commit": "2fb40bdc5a1785ef6a55bc50e6c9d81a3e3e9978",
+  "reviewed_sources": [
+    {
+      "role": "native_pilot.py",
+      "git_blob_sha": "05972529dd55f0165a0c47a32d1c735c304fef84",
+      "sha256": "b527497dafd2fa4c849de370fa2c60f866314b3dae3c5a7bae7b6d6f5bcb17de"
+    },
+    {
+      "role": "reflected_ridge.py",
+      "git_blob_sha": "212e9db209a1268bb9a1f030b2e9bdd55ce4a197",
+      "sha256": "cc38b9a0aef96d8cbc8279070f3cb537fa614d6d8eac923f76fa1d552771b495"
+    },
+    {
+      "role": "reproduce.py",
+      "git_blob_sha": "d106d72df394a8957e906d332b932afe33473e06",
+      "sha256": "59abe1b6d1a91fe0bcd3961e81c0614999946815e97c45a11337a38dcb951555"
+    },
+    {
+      "role": "check_kernel.py",
+      "git_blob_sha": "89bdbbd3aafcc0a95b59298088d9e9c168b18b6b",
+      "sha256": "a11d202c70605a4f721c4f41b2b71717f6598edc7c1ebfc05fd4bbceda209921"
+    },
+    {
+      "role": "evaluate_candidate.py",
+      "git_blob_sha": "bb78fe6b3581fb74c1b67feecafaa4c565e1ee2e",
+      "sha256": "cd76f4c5a14c6f463803a53c5d24c4f9045097d7feedd2333d5495a0309539c4"
+    }
+  ],
+  "upstream_bytes_independently_read_and_sha256_checked": [
+    {
+      "role": "precision_manifest",
+      "path": "research/HDBLAST_INPUT_PRECISION_20261023/MANIFEST.json",
+      "sha256": "c2e7bd40e94422c5fd98820941231c0da63a8392b14a5a14c4340eabdde37f61"
+    },
+    {
+      "role": "precision_branch_report",
+      "path": "research/HDBLAST_INPUT_PRECISION_20261023/branch/BRANCH_COMPARISON_REPORT.json",
+      "sha256": "024acc3720696322e9fa2f864de4c75b17c88d81ec1a6b80c020e928cefd9cd0"
+    },
+    {
+      "role": "precision_recentered_candidate_report",
+      "path": "research/HDBLAST_INPUT_PRECISION_20261023/initial/RECENTERED_CANDIDATE_NORMAL.json",
+      "sha256": "82f69f4f605febb261ef3fd8d6ecb7d7c46ab1272c49ac94d7bcb45f32487f8a"
+    },
+    {
+      "role": "precision_direct_difference_producer",
+      "path": "research/HDBLAST_INPUT_PRECISION_20261023/initial/direct_difference_pilot.py",
+      "sha256": "3f7ca8354ed04f624708713c662de0dc5847ee761c267afa0adafeafed1dca41"
+    },
+    {
+      "role": "retained_linear_operator",
+      "path": "research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/projection/inputs/linear_operator.py",
+      "sha256": "a008be0d89e2ac44940c273cfd2cbc5ba0d09de8fc172d5d81ef29121ab60189"
+    },
+    {
+      "role": "retained_initial_profile_evaluator",
+      "path": "research/HDBLAST_NUMERICAL_RESPONSE_INPUTS_20261016/numeric/evaluate_initial_profiles.py",
+      "sha256": "d9cb8529e47b9590ec8dc94f2f4484b06dbeb0ddee6c16015feccde3e4440240"
+    },
+    {
+      "role": "retained_shell_source_wrapper",
+      "path": "research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/numeric/shell_source_values.py",
+      "sha256": "ed9c6e084eae776509481fee4f490cea349eb5c1665139e286bd0a58be483d7f"
+    }
+  ],
+  "upstream_pin_checks": {
+    "precision_manifest_matches_native_embedded_pin": true,
+    "branch_report_matches_retained_direct_difference_pin": true,
+    "branch_report_status": "PASS_RETAINED_BRANCH_ANALYTIC_COMPARISON_ENCLOSURE",
+    "recentered_report_and_direct_difference_producer_match_precision_manifest": true,
+    "candidate_coefficients_canonical_sha256": "739240283c2bee53afa559c4ce71c1e3356cf2d0ad4e4b0f18b9621c077e20d3",
+    "candidate_coefficients_canonical_hash_matches_retained_and_native_pins": true,
+    "native_and_kernel_sha256_match_review_request": true,
+    "complete_legacy_closures_reauthenticated_by_this_static_review": false,
+    "native_producer_authentication_path_reviewed": "Precision complete manifest precedes direct producer import; retained direct.authenticate validates P/N/G/C/T before numerical imports; precision and legacy checks repeat after evaluation."
+  },
+  "normalization_checks": {
+    "mean_order": [
+      "K0",
+      "L0",
+      "N0",
+      "J0",
+      "w0"
+    ],
+    "mean_indices": [
+      0,
+      3,
+      6,
+      9,
+      12
+    ],
+    "gram": [
+      1,
+      2,
+      1,
+      3,
+      1
+    ],
+    "reflection_J": [
+      1,
+      -1,
+      1,
+      1,
+      1
+    ],
+    "potential": "assemble V,V1,V2 = retained initial evaluator UP[0],UP[1],UP[2] at eta; no factor one half.",
+    "shifted_scalar_coordinate_resolution": "The numerical eta variable is phi0-1. The physical shell formula sigma''=4phi0 is therefore sigma2=4*(1+eta), not 4*eta. The retained numerical shell_source_values.py wrapper explicitly uses 4*(1+eta0).",
+    "shell_sigma1": "-2*p at r=0",
+    "background": "z=ell*r; py=UP[1](eta)-4*a*p; ay=-rho^-2-p^2/3; b=-(ay+a^2)=d+p^2/3; d=rho^-2-a^2.",
+    "temporal_connection": "assemble h=tanh(ell*x)/rho. This differs from the initial/master evaluator's h=UP[1](eta)/p.",
+    "time_scale": "ell=1/1000000; ordinary partial_t velocity = partial_x/ell.",
+    "full_mean_couplings_retained": true
+  },
+  "representation_and_interpolation_checks": {
+    "B0": "Exact registered rational displacement remains in B0; one continuous rational P1 velocity replaces its registered rational velocity.",
+    "forcing_profiles": "Independent continuous P1 approximations to initial displacement and its radial derivative occur only inside forcing. They are not asserted to form a differentiable jet.",
+    "packet_jet_order": 6,
+    "derivative_curvature": "For du interpolation, whole-cell second derivative of u0_r is u0_rrr = 6*ell^3*u.c[3]. Order-six packet input propagates through v J5, vy J4, f J4, fy J3.",
+    "cell_bound": "Component interpolation error <= max(endpoint quantization errors)+(right-left)^2*sup(abs(profile_second_derivative))/8.",
+    "cutoff_segmentation": "65/64 and 66/64 are explicit nodes at each fixed level64,128,256. Apply derivative bounds on separate smooth cutoff branches, with one-sided endpoint derivatives.",
+    "weighted_norm": "Gram-weighted Frobenius bounds are valid upper bounds for all constant and coefficient-error operator norms.",
+    "native_loop": "Finite mesh cap64,128,256; a failed measured accuracy upper bound is recorded as a finite scientific outcome."
+  },
+  "kernel_checks": {
+    "ridge_decomposition": "F and G reproduce all A,B,D couplings to independent u,du and common v profiles, including primitive(v).",
+    "reflection": "The complete physical source is reflected with J; coefficient matrices are not blindly extended across the shell.",
+    "derivative_endpoint_factors": "The q>=0 and q<0 incoming/outgoing characteristic formulas and factor one half were checked algebraically.",
+    "shell_lift": "-M*PN*(primitive(u)+second_primitive(v)); dx=-M*PN*(u+primitive(v)), dr=+M*PN*(u+primitive(v)).",
+    "candidate_regular_class": "B0 is C1; continuous forcing profiles and corner-flat boundary trace generate a C1 feedback under the retained reflected K and L construction."
+  },
+  "error_identity_checks": {
+    "domain": "0<=x<=3/2, max(0,x-5/4)<=r<=7/4-x",
+    "norm": "X=max(sup|U|H/3,sup|Ux|H,sup|Ur|H)",
+    "zero_wedge": "x+r<1",
+    "q": "3409/8000000",
+    "Ucap": "1030000000000000000000000000000000",
+    "Ucap_scope": "Retained bound on the full exact fixed-point response U, not only the free wave.",
+    "source_cap": "52162547172519/2",
+    "e0": "e_free_retained+epsilon_v+source_cap",
+    "X0": "(1+q)*Ucap+e0",
+    "delta_f": "(epsA+epsB+(3/4)*epsD)*X0+(normAstar+normBstar)*epsilon_du+normDstar*epsilon_u",
+    "delta_g": "(1/4)*epsM*X0+normMstar*epsilon_u",
+    "identity": "U-(B0+B1)=T^2 U+(I+T)(b-B0)+(T B0-B1)",
+    "E": "q^2*Ucap+(1+q)*e0+(3/2)*delta_f+delta_g",
+    "counting": "epsilon_v and omitted source norm occur once in e0; subsequent multiplication by1+q propagates the same free error through feedback.",
+    "premise_join": "The retained zero-wedge lemma gives bulk value <=(3/4)*X0 and shell value <=(1/4)*X0; kernel bounds are ||Kf||X <=(3/2)sup|f|H and ||Lg||X <=sup|g|H."
+  },
+  "replay_and_evaluation_static_checks": {
+    "reproduce": "Manifest authentication before/after; exact portable golden comparisons; normal/-O native REPORT,PROFILES,EVALUATED equality; measured accuracy recorded separately.",
+    "candidate_samples": "Candidate interval values plus generic3E for values and E for derivatives safely enclose every component because all Gram weights are >=1.",
+    "ordinary_t_conversion": "Both candidate and exact-response enclosure divide dx intervals by positive ell.",
+    "obvious_static_blocker_identified": false
+  },
+  "execution_status": {
+    "native_execution_by_reviewer": false,
+    "portable_execution_by_reviewer": false,
+    "native_execution": "Pending GitHub Actions verification at time of this static receipt.",
+    "accuracy_target_outcome": "Not determined by this static review."
+  },
+  "limits": [
+    "Static byte, normalization, mathematical and source review does not reprove retained branch/PDE/source assumptions.",
+    "No native execution, timing, resource use or numerical accuracy-pass claim is certified by this receipt.",
+    "Five means only; no full angular waveform, pointwise second-derivative Einstein residual, invariant observable value/sign, nonlinear family, finite-amplitude remainder or physical-origin conclusion.",
+    "Internal review is not external specialist peer review or proof-assistant formalization."
+  ]
+}

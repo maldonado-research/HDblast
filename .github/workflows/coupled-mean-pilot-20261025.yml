@@ -1,0 +1,73 @@
+name: Bounded coupled mean and reflected kernel replay
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_COUPLED_MEAN_PILOT_20261025/**'
+      - 'hdblast/continuation/2026.10.25-coupled-mean-pilot/**'
+      - '.github/workflows/coupled-mean-pilot-20261025.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_COUPLED_MEAN_PILOT_20261025/**'
+      - 'hdblast/continuation/2026.10.25-coupled-mean-pilot/**'
+      - '.github/workflows/coupled-mean-pilot-20261025.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      HDB_PINS: '0f28efff7c7efe187268eda5e59c8ef60cc793e956bbb12a94e1f926fc1e7945'
+      HDB_WRAPPER: 'bc668f423e1f8cf531da3d3c587273ddd5d4b41f95c475c93f75cb6c2960fb21'
+      HDB_LIVE_READER: '898dde6fdbed1dfcc9b33d93ed9b293f5282f7ab4226a713f54a229399368c34'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /research/HDBLAST_COUPLED_MEAN_PILOT_20261025/
+            /research/HDBLAST_COUPLED_MEAN_PILOT_20261025.zip
+            /hdblast/continuation/2026.10.25-coupled-mean-pilot/
+            /research/HDBLAST_INPUT_PRECISION_20261023/
+            /research/HDBLAST_COMMON_GAUGE_FORCING_20261016/
+            /research/HDBLAST_NUMERICAL_RESPONSE_INPUTS_20261016/
+            /research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/
+            /research/HDBLAST_FORCED_RESPONSE_BOUNDS_20261023/
+            /research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023/
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.20.0'
+          check-latest: false
+      - name: Verify source and run both bounded native modes
+        shell: bash
+        run: |
+          set -euo pipefail
+          evidence="hdblast/continuation/2026.10.25-coupled-mean-pilot"
+          printf '%s  %s\n' "$HDB_PINS" "$evidence/PUBLICATION_PINS.json" | sha256sum --check --strict
+          printf '%s  %s\n' "$HDB_WRAPPER" "$evidence/verify_publication.py" | sha256sum --check --strict
+          python -I -S -B "$evidence/verify_publication.py" --repo-root "$GITHUB_WORKSPACE" --pins "$evidence/PUBLICATION_PINS.json" --pins-sha256 "$HDB_PINS" --output-dir "$RUNNER_TEMP/coupled-mean-pilot"
+      - name: Read back the published source and live pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        shell: bash
+        run: |
+          set -euo pipefail
+          evidence="hdblast/continuation/2026.10.25-coupled-mean-pilot"
+          printf '%s  %s\n' "$HDB_LIVE_READER" "$evidence/verify_live.py" | sha256sum --check --strict
+          python -I -S -B "$evidence/verify_live.py" --repo-root "$GITHUB_WORKSPACE" --pins "$evidence/PUBLICATION_PINS.json" --pins-sha256 "$HDB_PINS" --research-sha "$GITHUB_SHA" --output "$RUNNER_TEMP/coupled-mean-pilot/PUBLICATION_LIVE_READBACK.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coupled-mean-pilot-${{ github.sha }}
+          path: ${{ runner.temp }}/coupled-mean-pilot/
+          if-no-files-found: warn
+          retention-days: 30

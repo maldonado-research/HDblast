@@ -1,0 +1,64 @@
+{
+  "limits": [
+    "Portable controls verify the exact kernel, not the retained field.",
+    "Native accuracy outcome is reported separately from software replay.",
+    "No pointwise Einstein residual, full angular solution, invariant sign, nonlinear family or physical-origin inference."
+  ],
+  "native": {
+    "accuracy_target_passed": true,
+    "input_hashes": {
+      "C_manifest": "72924328a4e79cc77f0da90999b8dd56956bfdebd5e614e15c3c0498c3a8ae76",
+      "G_manifest": "3ff1f95c151d2da6a1ab5e9b54718c2bb325c10d9c62a7ed9f97ef2bb36f0bb2",
+      "N_manifest": "928f3e4e58d222a3c7e1274babf9e94930ec501b74cf6ba04209f97c6bbded44",
+      "P_manifest": "8bf173293b5cecf7f78e138ac5004abd9c7b1821ef29addb7ecfbc2a6409b4f6",
+      "branch_report": "024acc3720696322e9fa2f864de4c75b17c88d81ec1a6b80c020e928cefd9cd0",
+      "candidate_coefficients": "739240283c2bee53afa559c4ce71c1e3356cf2d0ad4e4b0f18b9621c077e20d3",
+      "frozen_initial_report": "82f69f4f605febb261ef3fd8d6ecb7d7c46ab1272c49ac94d7bcb45f32487f8a",
+      "precision_manifest": "c2e7bd40e94422c5fd98820941231c0da63a8392b14a5a14c4340eabdde37f61"
+    },
+    "selected_mesh_denominator": 256,
+    "status": "PASS_BOUNDED_COUPLED_MEAN_X_ERROR",
+    "total_X_error_upper": "6778035140203231934969719851173838984314006937829157239306168172841286243894337576815070746443634661/421249166674228746791672110734681729275580381602196445017243910144000000"
+  },
+  "node": "v22.20.0",
+  "python": "3.12.14",
+  "roles": [
+    {
+      "role": "independent_polygon_kernel_controls",
+      "sha256": "901d9fc86bfe4f34bbccc2c8783bf674ad0051cf70f2ecfd0da7df681af9bc6b"
+    },
+    {
+      "role": "independent_exact_fixture_regeneration",
+      "sha256": "b470999777625e402f56a8197a6e850fece9ead7d03ba843c5d3802e8b6066cc"
+    },
+    {
+      "role": "python_kernel_normal",
+      "sha256": "2f5514a9d000bec6b168b353f14fd929df3767036dfd73490cf6a6b0ebed8d00"
+    },
+    {
+      "role": "python_kernel_optimized",
+      "sha256": "2f5514a9d000bec6b168b353f14fd929df3767036dfd73490cf6a6b0ebed8d00"
+    },
+    {
+      "files": {
+        "EVALUATED_CANDIDATE.json": "1c0d6f62f3858b595335be8a6cd71966a76ce15fa2b921e36f951d1452d54cb6",
+        "PROFILES.json": "6d6f1c8b6fc11589255aa7031bc90b2612fbc022ab42046ea1114ee44ccda0e2",
+        "REPORT.json": "6a7ee36f95d2227405dd301ff5dba5e52ebf1b45b7944fd864310e04fa4749be"
+      },
+      "role": "bounded_native_normal"
+    },
+    {
+      "files": {
+        "EVALUATED_CANDIDATE.json": "1c0d6f62f3858b595335be8a6cd71966a76ce15fa2b921e36f951d1452d54cb6",
+        "PROFILES.json": "6d6f1c8b6fc11589255aa7031bc90b2612fbc022ab42046ea1114ee44ccda0e2",
+        "REPORT.json": "6a7ee36f95d2227405dd301ff5dba5e52ebf1b45b7944fd864310e04fa4749be"
+      },
+      "role": "bounded_native_optimized"
+    }
+  ],
+  "source": {
+    "files_including_manifest": 14,
+    "manifest_sha256": "043a1fb9dff8422844f8629bbbd0065393b93927b9c421bf283fe3b22d55082d"
+  },
+  "status": "PASS_REPLAY_WITH_RECORDED_SCIENTIFIC_OUTCOME"
+}

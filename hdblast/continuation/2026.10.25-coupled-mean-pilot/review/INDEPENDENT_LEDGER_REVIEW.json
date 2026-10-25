@@ -1,0 +1,308 @@
+{
+  "schema": "HDBLAST_INDEPENDENT_FROZEN_LEDGER_AUDIT_V1",
+  "status": "PASS",
+  "repository": "maldonado-research/HDblast",
+  "input_commit_reference": "2fb40bdc5a1785ef6a55bc50e6c9d81a3e3e9978",
+  "audit_method": "Independent pure JavaScript BigInt rational arithmetic over raw GitHub blob contents. No project kernel, helper integration formulas, shell commands, workflow calls, or ref updates were used.",
+  "inputs": {
+    "native_report": {
+      "github_blob_sha": "640b94e1268f950b82c0dd756c2d127ad9b6c275",
+      "bytes": 617920,
+      "sha256": "6a7ee36f95d2227405dd301ff5dba5e52ebf1b45b7944fd864310e04fa4749be"
+    },
+    "profiles": {
+      "github_blob_sha": "3385248f618b0c01b58d1e3a62466a6ad140b5d9",
+      "bytes": 235322,
+      "sha256": "6d6f1c8b6fc11589255aa7031bc90b2612fbc022ab42046ea1114ee44ccda0e2"
+    },
+    "evaluated": {
+      "github_blob_sha": "140397d77d5f8271d40f165a03db502225a4d248",
+      "bytes": 107905,
+      "sha256": "1c0d6f62f3858b595335be8a6cd71966a76ce15fa2b921e36f951d1452d54cb6"
+    }
+  },
+  "hash_validation": {
+    "raw_text_is_ASCII": true,
+    "pure_JavaScript_sha256_known_vectors_passed": [
+      "empty string",
+      "abc"
+    ],
+    "native_hash_matches_declared": true,
+    "profiles_hash_matches_declared": true,
+    "evaluated_embedded_native_hash_matches": true,
+    "evaluated_embedded_profiles_hash_matches": true
+  },
+  "primary_exact_checks": {
+    "checks": 2383,
+    "failures": 0,
+    "includes": [
+      "Mesh counts and contiguous ordered cell coverage",
+      "Nonnegative component and H error caps",
+      "996 Gram-weighted cell norm-cap inequalities",
+      "Exact maxima joining cell H caps to epsilon_u, epsilon_du and epsilon_v",
+      "All free, source, coefficient, profile, first-feedback and total error ledger identities",
+      "All four constant-matrix weighted Frobenius norm upper bounds",
+      "Stored profile node and dimension joins",
+      "Evaluated sample count and total-error join"
+    ]
+  },
+  "gram": {
+    "diagonal": [
+      1,
+      2,
+      1,
+      3,
+      1
+    ],
+    "mean_order": [
+      "K0",
+      "L0",
+      "N0",
+      "J0",
+      "w0"
+    ],
+    "vector_norm_squared": "sum_i H_i x_i^2",
+    "matrix_Frobenius_upper_squared": "sum_i,j (H_i/H_j) M_i,j^2"
+  },
+  "rounding": {
+    "quantum": "1/5192296858534827628530496329220096",
+    "quantum_description": "2^-112",
+    "cell_Hcaps_checked": 996,
+    "nonzero_cell_Hcaps_minimal_outward_sqrt": 987,
+    "zero_cell_Hcaps_with_exact_zero_weighted_square": 9,
+    "nonminimal_cell_Hcaps": 0,
+    "constant_matrix_caps_minimal_outward_sqrt": 4,
+    "method": "For each nonzero cap c and exact weighted square s, verified c^2 >= s and (c-2^-112)^2 < s."
+  },
+  "constant_matrix_H_operator_upper": {
+    "A": "212516904868653896536160450521/2596148429267413814265248164610048",
+    "B": "252014068177449425271604706795/2596148429267413814265248164610048",
+    "D": "272932442046097122400758327/5192296858534827628530496329220096",
+    "M": "1422432047649869648116952699037/5192296858534827628530496329220096"
+  },
+  "coefficient_error_H_operator_upper": {
+    "A": "5381994372931202952013103/2596148429267413814265248164610048",
+    "B": "12764601587853248879713467/5192296858534827628530496329220096",
+    "D": "6911677206600794849379/2596148429267413814265248164610048",
+    "M": "46897886466467/5192296858534827628530496329220096"
+  },
+  "additional_cap_combination": {
+    "formula": "(3/2)*[(normA+epsA)+(normB+epsB)+(3/4)*(normD+epsD)]+(1/4)*(normM+epsM)",
+    "exact": "13996346307878828294189361096433/41538374868278621028243970633760768",
+    "display_only": 0.00033694978082946957,
+    "below_retained_q": true,
+    "note": "An arithmetic check of the stored norm caps using retained forcing and trace constants; not an independent regeneration of the operator theorem."
+  },
+  "ledger_parameters": {
+    "q": "3409/8000000",
+    "Ucap": "1030000000000000000000000000000000",
+    "Ucap_required_meaning": "Upper bound for the full fixed-point response U=w+B U in the same X norm, not merely the free response w.",
+    "omitted_forcing": "52162547172519/2",
+    "target_X_error": "100000000000000000000000000000"
+  },
+  "ledger_identities": [
+    "e0 = e_free_retained + epsilon_v + omitted_forcing",
+    "B0_X_upper = (1+q)*Ucap + e0",
+    "delta_f_coefficient = (epsA+epsB+(3/4)*epsD)*B0_X_upper",
+    "delta_f_profile = (normA+normB)*epsilon_du + normD*epsilon_u",
+    "delta_g_coefficient = (1/4)*epsM*B0_X_upper",
+    "delta_g_profile = normM*epsilon_u",
+    "delta_f = delta_f_coefficient + delta_f_profile",
+    "delta_g = delta_g_coefficient + delta_g_profile",
+    "two_term_tail = q^2*Ucap",
+    "e1 = (3/2)*delta_f + delta_g",
+    "total_X_error_upper = q^2*Ucap + (1+q)*e0 + e1"
+  ],
+  "epsilon_v_counting": "epsilon_v appears once in e0; the factor (1+q) then correctly propagates that free error through identity plus first feedback.",
+  "levels": [
+    {
+      "mesh_denominator": 64,
+      "cells": 48,
+      "nodes": 49,
+      "coverage": [
+        "0",
+        "7/4"
+      ],
+      "contiguous_ordered_cover": true,
+      "first_cell": [
+        "0",
+        "65/64"
+      ],
+      "first_cell_all_caps_zero": true,
+      "all_remaining_cell_widths_at_most": "1/64",
+      "epsilon_maximizers": {
+        "epsilon_u": {
+          "exact": "35268444863764549083536915903114056510217275959368002223210374657/649037107316853453566312041152512",
+          "zero_based_cell_indices": [
+            6
+          ],
+          "cells": [
+            [
+              "35/32",
+              "71/64"
+            ]
+          ]
+        },
+        "epsilon_du": {
+          "exact": "33337544511888750583281466014904862635054845017503931324513792742611/2596148429267413814265248164610048",
+          "zero_based_cell_indices": [
+            5
+          ],
+          "cells": [
+            [
+              "69/64",
+              "35/32"
+            ]
+          ]
+        },
+        "epsilon_v": {
+          "exact": "6774091080719078527782573658772218697392509273286541050029/5192296858534827628530496329220096",
+          "zero_based_cell_indices": [
+            6
+          ],
+          "cells": [
+            [
+              "35/32",
+              "71/64"
+            ]
+          ]
+        }
+      },
+      "total_X_error_upper": "1461787418507889800554831666027582257673750882340676317392804671728602782308589050814035169201637697293/421249166674228746791672110734681729275580381602196445017243910144000000",
+      "passes_target": false
+    },
+    {
+      "mesh_denominator": 128,
+      "cells": 95,
+      "nodes": 96,
+      "coverage": [
+        "0",
+        "7/4"
+      ],
+      "contiguous_ordered_cover": true,
+      "first_cell": [
+        "0",
+        "65/64"
+      ],
+      "first_cell_all_caps_zero": true,
+      "all_remaining_cell_widths_at_most": "1/128",
+      "epsilon_maximizers": {
+        "epsilon_u": {
+          "exact": "13200723319632192731051292213885581748318418617625050742547039295/5192296858534827628530496329220096",
+          "zero_based_cell_indices": [
+            15
+          ],
+          "cells": [
+            [
+              "9/8",
+              "145/128"
+            ]
+          ]
+        },
+        "epsilon_du": {
+          "exact": "2117546303491015792513648087334057036785535801520069918874438961247/5192296858534827628530496329220096",
+          "zero_based_cell_indices": [
+            12
+          ],
+          "cells": [
+            [
+              "141/128",
+              "71/64"
+            ]
+          ]
+        },
+        "epsilon_v": {
+          "exact": "1238027639027656478690429287061069091022428192161600491/20282409603651670423947251286016",
+          "zero_based_cell_indices": [
+            15
+          ],
+          "cells": [
+            [
+              "9/8",
+              "145/128"
+            ]
+          ]
+        }
+      },
+      "total_X_error_upper": "100148691445435542649433904904045541167665248010089622889447665523306226149388831756950836875529367809/842498333348457493583344221469363458551160763204392890034487820288000000",
+      "passes_target": false
+    },
+    {
+      "mesh_denominator": 256,
+      "cells": 189,
+      "nodes": 190,
+      "coverage": [
+        "0",
+        "7/4"
+      ],
+      "contiguous_ordered_cover": true,
+      "first_cell": [
+        "0",
+        "65/64"
+      ],
+      "first_cell_all_caps_zero": true,
+      "all_remaining_cell_widths_at_most": "1/256",
+      "epsilon_maximizers": {
+        "epsilon_u": {
+          "exact": "286253067290126330871389854587862837397552543106074007629543895/1298074214633706907132624082305024",
+          "zero_based_cell_indices": [
+            30
+          ],
+          "cells": [
+            [
+              "289/256",
+              "145/128"
+            ]
+          ]
+        },
+        "epsilon_du": {
+          "exact": "8843531501093906452701397292721506591163351598070678499526369615/324518553658426726783156020576256",
+          "zero_based_cell_indices": [
+            25
+          ],
+          "cells": [
+            [
+              "71/64",
+              "285/256"
+            ]
+          ]
+        },
+        "epsilon_v": {
+          "exact": "27490501032409232046713742013262261983105894468575909023/5192296858534827628530496329220096",
+          "zero_based_cell_indices": [
+            30
+          ],
+          "cells": [
+            [
+              "289/256",
+              "145/128"
+            ]
+          ]
+        }
+      },
+      "total_X_error_upper": "6778035140203231934969719851173838984314006937829157239306168172841286243894337576815070746443634661/421249166674228746791672110734681729275580381602196445017243910144000000",
+      "passes_target": true
+    }
+  ],
+  "selected_profile_join": {
+    "mesh_denominator": 256,
+    "nodes": 190,
+    "cells": 189,
+    "all_stored_nodes_equal_cell_endpoints": true,
+    "all_three_profiles_have_190_five_component_rows": true
+  },
+  "selected_error_comparison": {
+    "exact_E_less_than": "16090323000000000000000000000",
+    "bound_verified": true,
+    "target": "100000000000000000000000000000",
+    "target_verified": true
+  },
+  "scope_limits": [
+    "Does not independently regenerate analytic endpoint or whole-cell curvature bounds underlying component_error_caps.",
+    "Does not independently regenerate coefficient_error_H_operator_upper from background Taylor intervals.",
+    "Does not authenticate retained source closures or manifest contents beyond the listed frozen-output and embedded hash joins.",
+    "Does not verify reported CI execution, normal versus optimized Python equivalence, or workflow assertions.",
+    "Does not independently evaluate B1, exact reflected integrations, shell lifts, or candidate samples; those require a separate integration audit.",
+    "Does not upgrade conditional five-mean C1 approximation claims to a full angular solution, pointwise Einstein residual, invariant observable, nonlinear family, finite-amplitude remainder, or physical-origin inference."
+  ]
+}
