@@ -1,0 +1,1420 @@
+{
+  "schema": "HDBLAST_COUPLED_MEAN_PILOT_STATIC_PUBLICATION_REVIEW_V1",
+  "status": "APPROVED_STATIC_PUBLICATION_PENDING_EXACT_HEAD_CI",
+  "reviewer": "Independent internal AI-assisted publication and preservation review agent",
+  "review_scope": "Static workflow, authentication, artifact closure, publication claims, initial-run traceability and preservation. Mathematical review is separate. Final-head CI and post-merge live readback are separate gates.",
+  "authorization": "User-authorized GitHub publication and CI/merge; this review performed only GitHub GETs before writing this unreferenced review blob. No refs, branches, pull requests or external publications were mutated by this reviewer.",
+  "reviewed_heads": {
+    "research": {
+      "repository": "maldonado-research/HDblast",
+      "base": "2fb40bdc5a1785ef6a55bc50e6c9d81a3e3e9978",
+      "head": "42e1a5bebd94003c63adcad8e72a15614196c4aa",
+      "tree": "4a7caf625adcbc8025d51f2902a0d51b4e333f5d",
+      "direct_parent": "cbb8e9f5a898faa85e6f135a14c3c4caab8aa551"
+    },
+    "shared_site": {
+      "repository": "maldonado-research/maldonado-research.github.io",
+      "base": "de41839498e54544403dfc6ade9cb68da44342fd",
+      "head": "e6afbba65161c7dcd9be1799c995c8f1338b28af",
+      "tree": "dd748a19ee88d51ecbaecc471503a5f2fa4b129a"
+    }
+  },
+  "blockers": [],
+  "approval": "No static publication or preservation blocker. These exact heads are approved for merging once the root verifies successful required CI for the exact reviewed heads and confirms fresh bases remain compatible. No approval is asserted here for an unreviewed changed head.",
+  "workflow": {
+    "contents_permission": "read",
+    "persist_credentials": false,
+    "repository_writes": false,
+    "secrets_references": false,
+    "triggers": [
+      "workflow_dispatch",
+      "path-scoped pull_request",
+      "path-scoped push to main"
+    ],
+    "job_timeout_minutes": 35,
+    "checkout": "Blob-filtered sparse checkout of the new capsule, archive, evidence directory and six retained upstream capsules.",
+    "runtimes": {
+      "python": "3.12.14",
+      "node": "22.20.0",
+      "runner": "ubuntu-24.04"
+    },
+    "execution_isolation": "Python -I -S -B; explicit source authentication precedes numerical imports. Node checkers use built-in modules and read files/write stdout only.",
+    "hardcap": "Native LEVELS=(64,128,256), unchanged from initial source. No mesh escalation or unbounded retry.",
+    "outputs": "Fresh runner temporary directory; upload-artifact retains intended receipts/results for 30 days. No git push, deploy, package install or token-bearing custom command.",
+    "live_readback": "On main push only: public unauthenticated GETs to two owned GitHub repositories and three owned GitHub Pages URLs; checks 22 capsule/archive files, 4 edited source files, and 3 full live HTML documents including all retained markers. Three-page retry loop has six attempts and 10-second spacing; HTTP timeout is 20 seconds.",
+    "bootstrap_sha256": {
+      "PUBLICATION_PINS": "0f28efff7c7efe187268eda5e59c8ef60cc793e956bbb12a94e1f926fc1e7945",
+      "verify_publication": "bc668f423e1f8cf531da3d3c587273ddd5d4b41f95c475c93f75cb6c2960fb21",
+      "verify_live": "898dde6fdbed1dfcc9b33d93ed9b293f5282f7ab4226a713f54a229399368c34",
+      "SITE_ADDITIONS": "216ff00833a4bd5f3ec5493f12461b7edb94cebad2e79489141e75b6c6a9b1b6"
+    }
+  },
+  "source_authentication": {
+    "manifest_sha256": "b932157f308c9912fa83ee06990f1132a4e75a498aafd66eb99dabcc30b256de",
+    "closure": {
+      "exact_manifest_closure": true,
+      "regular_modes": true,
+      "files": 21,
+      "truncated": false,
+      "evidence_files": 14
+    },
+    "member_hashes_independently_recomputed": true,
+    "hash_control": "Pure JavaScript SHA256 implementation checked against standard empty-string and abc vectors.",
+    "member_checks": [
+      {
+        "path": "audit_native_ledger.js",
+        "bytes": 5088,
+        "sha256": "da36e46a2609acb44006df5a3c57e2cc9774d762ce29161c06229cd0729cbbcc",
+        "matches": true
+      },
+      {
+        "path": "check_kernel.py",
+        "bytes": 6896,
+        "sha256": "a11d202c70605a4f721c4f41b2b71717f6598edc7c1ebfc05fd4bbceda209921",
+        "matches": true
+      },
+      {
+        "path": "DERIVATION.md",
+        "bytes": 8873,
+        "sha256": "5e275c1ccbc0b952dc34c707202fa9cb56ebd256236d394cc6d8fcd8f6c8e521",
+        "matches": true
+      },
+      {
+        "path": "evaluate_candidate.py",
+        "bytes": 4273,
+        "sha256": "cd76f4c5a14c6f463803a53c5d24c4f9045097d7feedd2333d5495a0309539c4",
+        "matches": true
+      },
+      {
+        "path": "EXACT_FIXTURES.json",
+        "bytes": 36297,
+        "sha256": "b470999777625e402f56a8197a6e850fece9ead7d03ba843c5d3802e8b6066cc",
+        "matches": true
+      },
+      {
+        "path": "generate_fixtures.js",
+        "bytes": 1482,
+        "sha256": "bc1a5c97de934c1b2e6dce887fe512f54c55b51dc5ef25cfb83a0f79449df522",
+        "matches": true
+      },
+      {
+        "path": "independent_actual_b1.js",
+        "bytes": 13520,
+        "sha256": "a6ca44e2d1b2e20aea91bfc817a41a0f45c8fa10286f1723d21088a2f91c9318",
+        "matches": true
+      },
+      {
+        "path": "INDEPENDENT_EXACT_REPORT.json",
+        "bytes": 978,
+        "sha256": "901d9fc86bfe4f34bbccc2c8783bf674ad0051cf70f2ecfd0da7df681af9bc6b",
+        "matches": true
+      },
+      {
+        "path": "independent_kernel_checks.js",
+        "bytes": 8009,
+        "sha256": "571bbe441ff7a4f0c65917d110c5e9c7d4a1555afc6d80db8fec8281c281a288",
+        "matches": true
+      },
+      {
+        "path": "LICENSE",
+        "bytes": 2055,
+        "sha256": "2636dc3177764535426778070d0204497352492b53d135ca0458278af298baf2",
+        "matches": true
+      },
+      {
+        "path": "native_pilot.py",
+        "bytes": 20888,
+        "sha256": "b527497dafd2fa4c849de370fa2c60f866314b3dae3c5a7bae7b6d6f5bcb17de",
+        "matches": true
+      },
+      {
+        "path": "README.md",
+        "bytes": 5339,
+        "sha256": "b98cb7d1f141661ff3f7e3b8d2170b8feb4fba9bf75677031c5051e340154e06",
+        "matches": true
+      },
+      {
+        "path": "reflected_ridge.py",
+        "bytes": 7887,
+        "sha256": "cc38b9a0aef96d8cbc8279070f3cb537fa614d6d8eac923f76fa1d552771b495",
+        "matches": true
+      },
+      {
+        "path": "reproduce.py",
+        "bytes": 8100,
+        "sha256": "593458273054a23ebc7ad0516fb2af0ed704ce4ce897349653d2bdfe0a72d717",
+        "matches": true
+      },
+      {
+        "path": "results/EVALUATED_CANDIDATE.json",
+        "bytes": 107905,
+        "sha256": "1c0d6f62f3858b595335be8a6cd71966a76ce15fa2b921e36f951d1452d54cb6",
+        "matches": true
+      },
+      {
+        "path": "results/INDEPENDENT_FEEDBACK_AUDIT.json",
+        "bytes": 2821,
+        "sha256": "c337013f467503fec7b26513104873d3ffc63e19c9e696053c6fee3e9bc7380f",
+        "matches": true
+      },
+      {
+        "path": "results/NATIVE_LEDGER_AUDIT.json",
+        "bytes": 814,
+        "sha256": "e106c4062172663173f38978ed9173bb00ec4dade39e789c28bd03848ec8131c",
+        "matches": true
+      },
+      {
+        "path": "results/PROFILES.json",
+        "bytes": 235322,
+        "sha256": "6d6f1c8b6fc11589255aa7031bc90b2612fbc022ab42046ea1114ee44ccda0e2",
+        "matches": true
+      },
+      {
+        "path": "results/REPORT.json",
+        "bytes": 617920,
+        "sha256": "6a7ee36f95d2227405dd301ff5dba5e52ebf1b45b7944fd864310e04fa4749be",
+        "matches": true
+      },
+      {
+        "path": "SOURCE_PROVENANCE.json",
+        "bytes": 3218,
+        "sha256": "64410d107691f6eb2d61ec1a27b7a2e60a8dc2d88c17887bcfb48bcf1d552941",
+        "matches": true
+      }
+    ],
+    "original_native_producer_unchanged": true,
+    "runner": "Both normal and optimized modes regenerate all five result files; every byte is compared across modes and against the authenticated frozen references; required accuracy pass is explicit in wrapper.",
+    "archive": {
+      "git_blob": "4e2853f63789346b3819b2c95c1dd16ff159b385",
+      "git_tree_size": 1104873,
+      "expected_sha256": "0c8c6060eb885ea5361f6746f342ed11b706bbb40d0ce90a240af22c8536dc5d",
+      "static_validator_review": "Pins byte length and SHA256; unique exact 21-member closure; CRC; unencrypted non-symlink files; every member size/hash and byte equality with source; archive and external pins rechecked after replay.",
+      "reviewer_limitation": "GitHub connector binary fetch is unavailable: blob fetch rejects UTF-8 decoding and contents/base64 returned empty content for this >1MB file. This reviewer independently verified the Git object and size, source hashes, and validator code; final CI must establish archive bytes/CRC execution."
+    }
+  },
+  "initial_evidence": {
+    "source_commit_preserved_as_direct_parent": true,
+    "source_head": "cbb8e9f5a898faa85e6f135a14c3c4caab8aa551",
+    "initial_manifest_sha256": "043a1fb9dff8422844f8629bbbd0065393b93927b9c421bf283fe3b22d55082d",
+    "run_id": 40219872622,
+    "job_id": 121248915049,
+    "run_url": "https://github.com/maldonado-research/HDblast/actions/runs/40219872622",
+    "job_url": "https://github.com/maldonado-research/HDblast/actions/runs/40219872622/job/121248915049",
+    "initial_stored_run_check_and_run_collection_metadata_hashes_match": true,
+    "stored_metadata_status": "Completed success; one workflow run and one check, both at initial source head.",
+    "original_output_hashes_match_frozen_manifest": true,
+    "native_initial_receipt": "Normal/optimized REPORT, PROFILES and EVALUATED_CANDIDATE hashes identical."
+  },
+  "preservation": {
+    "research_compare": {
+      "files": 40,
+      "added": 37,
+      "modified": 3,
+      "removed": 0
+    },
+    "research_git_tree_proof": {
+      "preserved": [
+        {
+          "path": ".gitignore",
+          "type": "blob",
+          "sha": "e75078ced10fd1a8ae5c3e4dc0926e68742c5515"
+        },
+        {
+          "path": "CITATION.cff",
+          "type": "blob",
+          "sha": "a71ac4a500dd2c04c7339cab48ec95c9801a55b6"
+        },
+        {
+          "path": "LICENSE",
+          "type": "blob",
+          "sha": "a99551fe1d129a3c0e41e8e6c269343106e8e91a"
+        },
+        {
+          "path": "handoff",
+          "type": "tree",
+          "sha": "433ce0435911b21ef244538d886ddc3bb624b3ce"
+        },
+        {
+          "path": "hdblast/CURRENT_STATUS.md",
+          "type": "blob",
+          "sha": "16eb913ae34d74a2e3f5893ba44674b2559cb3c0"
+        },
+        {
+          "path": "hdblast/HDBLAST_IN_PLAIN_LANGUAGE.md",
+          "type": "blob",
+          "sha": "0929308463bfa0d8073f74b3a49f0d60a70bd437"
+        },
+        {
+          "path": "hdblast/PROGRAM_MAP.md",
+          "type": "blob",
+          "sha": "5c95e3e45e54cfcf0ca3b6a69aaa03ecdafb7ebd"
+        },
+        {
+          "path": "hdblast/README.md",
+          "type": "blob",
+          "sha": "6d6145bc4cb3ccbbe8eb594dc07d0139f6306581"
+        },
+        {
+          "path": "hdblast/ZENODO_RECORDS.md",
+          "type": "blob",
+          "sha": "39e562508776524ae79a18366bf94ad984041ac3"
+        },
+        {
+          "path": "hdblast/checkpoints",
+          "type": "tree",
+          "sha": "06483b8ab2aab3569ff68b1324a44ea75984cf92"
+        },
+        {
+          "path": "hdblast/figures",
+          "type": "tree",
+          "sha": "cf5981f128c8c100d20269fb0c6767a9177501e7"
+        },
+        {
+          "path": "hdblast/guides",
+          "type": "tree",
+          "sha": "88fa354ed3471cd2b7890181d8a9f0b85ce921ac"
+        },
+        {
+          "path": "hdblast/publication",
+          "type": "tree",
+          "sha": "cd9bfc658a8d45ed371b9c0f2dd2e7e61ce913f3"
+        },
+        {
+          "path": "hdblast/verification",
+          "type": "tree",
+          "sha": "96eab6f5c7014871704e6c3ee3c912cffcb7664b"
+        },
+        {
+          "path": "research/FTL_EINSTEIN_AUDIT_20260930",
+          "type": "tree",
+          "sha": "f1c66df7d8b3f9ce6fecb4fc0ade78bc8e1035b6"
+        },
+        {
+          "path": "research/HDBLAST_ACTIVE_SOURCE_LEDGER_EXECUTION_REPAIR_20261003",
+          "type": "tree",
+          "sha": "da3f23cf3e07a30a13f855c8bf6dd956c8d4c07e"
+        },
+        {
+          "path": "research/HDBLAST_ACTIVE_SOURCE_LEDGER_PACKAGE_20261002",
+          "type": "tree",
+          "sha": "92b5ca12f4c1b5ef6ce5611713cd83ecc8a2d919"
+        },
+        {
+          "path": "research/HDBLAST_ANGULAR_UNIFORM_CONTACT_20261015.zip",
+          "type": "blob",
+          "sha": "8475a5c6c3121d2fefb89c7991ebea6880983fdb"
+        },
+        {
+          "path": "research/HDBLAST_ANGULAR_UNIFORM_CONTACT_20261015",
+          "type": "tree",
+          "sha": "f69fb72461f1ab656adeb8a3d809670c0ca9ab93"
+        },
+        {
+          "path": "research/HDBLAST_BD_PREHISTORY_PACKAGE_20261007",
+          "type": "tree",
+          "sha": "04ef3d11fff86287b52490b14ec3dfd68e5213de"
+        },
+        {
+          "path": "research/HDBLAST_BOUNDARY_RESPONSE_20261023.zip",
+          "type": "blob",
+          "sha": "0e892290d5f5e4fe758bc1d6867dd4f7a36eec8b"
+        },
+        {
+          "path": "research/HDBLAST_BOUNDARY_RESPONSE_20261023",
+          "type": "tree",
+          "sha": "b93a5bac2a68cfaafcfc8f21f05343628ed02df9"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20260927",
+          "type": "tree",
+          "sha": "02740da4de1cc213d3cf1cd0e9e451a90434d7de"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20260928",
+          "type": "tree",
+          "sha": "93777dfa4aad009847ff41294d692fb7ca41939c"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20260930",
+          "type": "tree",
+          "sha": "52f9aadfd2cc9df364581e5cd0eba6eafffb758a"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261001",
+          "type": "tree",
+          "sha": "c58cebf9e715f1c1785ed6aa46658044766e280e"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261001_QFT",
+          "type": "tree",
+          "sha": "a8de5c87dafe45ac6b869fb63dcff6a4693b01f4"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261002_ACTIVE_SOURCE_LEDGER",
+          "type": "tree",
+          "sha": "45c74e3f6645afdcbde2ea824b641f6d91f76c48"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261002_CAUSAL_RESPONSE",
+          "type": "tree",
+          "sha": "0e60696fdce0c6c2ccab060883c7a1910d13bc72"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261002_DESITTER",
+          "type": "tree",
+          "sha": "2b232c374619b476ff667ac7c1613552ccdca7bb"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261002_FRW",
+          "type": "tree",
+          "sha": "926aa6d2404bb568d71fa57e78e1e23cfa668ae1"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261002_JUNCTIONS",
+          "type": "tree",
+          "sha": "105c034aefe3dbba95fc4704fa9008456323669b"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261002_MATCHED_STRESS",
+          "type": "tree",
+          "sha": "afdc7799a337710851f3afb66a6671c299ba4f6a"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE",
+          "type": "tree",
+          "sha": "34c1edf20fd9e81ce99f9f4c567b0d1a11f9fbe3"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_FOLLOWUP",
+          "type": "tree",
+          "sha": "34437c54e5c46269fa3e80660f5050aff4575026"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261002_METRIC_RESPONSE_MEMORY_FOLLOWUP",
+          "type": "tree",
+          "sha": "58a952fb61bf84a2a84bffc9377c1cde9b016022"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261002_PV",
+          "type": "tree",
+          "sha": "e94fe10d38b20959b215e8a38accdf11addf48ca"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW",
+          "type": "tree",
+          "sha": "dd7e949a107225c03490eb0b2db0ca5e013fc7bd"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261002_SOURCE_FREE_LEDGER",
+          "type": "tree",
+          "sha": "3cbe5c44cb833d2c1c44aa438c1b580e1ee7a902"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261002_STATIONARY_QUANTUM",
+          "type": "tree",
+          "sha": "711704620357a32ff444ef0666508dd6c7277bc0"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261003_VERIFIED_SOURCE_OPERATOR",
+          "type": "tree",
+          "sha": "95d94398945e332609aeb8be64082ffa39471d37"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261005_FINITE_BAND_WARD",
+          "type": "tree",
+          "sha": "4286c289c8635ac3085a33e4fe0fb1d997ba9dba"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261007_BD_PREHISTORY",
+          "type": "tree",
+          "sha": "c1c1249d8f32536edb3dd5d6ab548a99ef1ab246"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261007_INCOMING_STATE",
+          "type": "tree",
+          "sha": "687468d5c7d1591df8a4d7a3a251eb3df2016460"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261007_STORED_STATE_COMPARISON",
+          "type": "tree",
+          "sha": "9fbd4851ea7747e54a0a0b06eebc0c4c68c5763c"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261008_CAUSAL_BULK_RESPONSE",
+          "type": "tree",
+          "sha": "720b7215539033ba6336d3482523e55231833493"
+        },
+        {
+          "path": "research/HDBLAST_CHECKPOINT_20261008_RETAINED_ENDPOINT_FLOW",
+          "type": "tree",
+          "sha": "ed78d52d9a4d23771e554380b401e24a8ea2c2de"
+        },
+        {
+          "path": "research/HDBLAST_COMMON_GAUGE_FORCING_20261016.zip",
+          "type": "blob",
+          "sha": "958487f09a185d7de4ec33281c55ca1d23fb19a4"
+        },
+        {
+          "path": "research/HDBLAST_COMMON_GAUGE_FORCING_20261016",
+          "type": "tree",
+          "sha": "d7e48c4ceb6b3f58b2a96a4c7601c7bc7804328f"
+        },
+        {
+          "path": "research/HDBLAST_CONE_PHASE_SPACE_20261013",
+          "type": "tree",
+          "sha": "dededb8f52389df7e236e64a7d49a19933d97591"
+        },
+        {
+          "path": "research/HDBLAST_COORDINATE_SHELL_SOURCES_20261015.zip",
+          "type": "blob",
+          "sha": "437eed9f83a61d112f408a17450df533ed0ce85a"
+        },
+        {
+          "path": "research/HDBLAST_COORDINATE_SHELL_SOURCES_20261015",
+          "type": "tree",
+          "sha": "0944ad62d3396b19188713c77376f052724402a2"
+        },
+        {
+          "path": "research/HDBLAST_EXACT_LOCALIZED_PRECONTACT_20261014.zip",
+          "type": "blob",
+          "sha": "bf07b83fef0e442102ad5db2cc9b3952cff99638"
+        },
+        {
+          "path": "research/HDBLAST_EXACT_LOCALIZED_PRECONTACT_20261014",
+          "type": "tree",
+          "sha": "78b576bd66000f9ad74d7f2755f03e4ae1468c98"
+        },
+        {
+          "path": "research/HDBLAST_EXPLICIT_SECOND_INITIAL_JET_20261015.zip",
+          "type": "blob",
+          "sha": "b13f96d3d3b77deec3bb78b7773ff00908139a52"
+        },
+        {
+          "path": "research/HDBLAST_EXPLICIT_SECOND_INITIAL_JET_20261015",
+          "type": "tree",
+          "sha": "22cc1b67f46b9b756d942e3467628a9fe64ca3de"
+        },
+        {
+          "path": "research/HDBLAST_FINITE_BAND_WARD_PACKAGE_20261005",
+          "type": "tree",
+          "sha": "292d957db1a1e0b66743e9cabb0096a2a95dd5ca"
+        },
+        {
+          "path": "research/HDBLAST_FIRST_GAUGE_WAVE_20261016.zip",
+          "type": "blob",
+          "sha": "1d3742997831e168e3521e91c8832f23a90c7344"
+        },
+        {
+          "path": "research/HDBLAST_FIRST_GAUGE_WAVE_20261016",
+          "type": "tree",
+          "sha": "135501b611a0e440ebd55c61f353898bcea55a43"
+        },
+        {
+          "path": "research/HDBLAST_FORCED_RESPONSE_BOUNDS_20261023.zip",
+          "type": "blob",
+          "sha": "d4d29fe26658a44551441d9b23cd98652ec01dc2"
+        },
+        {
+          "path": "research/HDBLAST_FORCED_RESPONSE_BOUNDS_20261023",
+          "type": "tree",
+          "sha": "ecee01c622c84bd79be51668b82e1239eaa0ec3c"
+        },
+        {
+          "path": "research/HDBLAST_FULL_SECOND_ORDER_CONTACT_20261014.zip",
+          "type": "blob",
+          "sha": "4aae7a368131fc488b2b2a029766e43a870e33ed"
+        },
+        {
+          "path": "research/HDBLAST_FULL_SECOND_ORDER_CONTACT_20261014",
+          "type": "tree",
+          "sha": "fe93f5f2154f74765ad282e65287dfb10a72ce04"
+        },
+        {
+          "path": "research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016.zip",
+          "type": "blob",
+          "sha": "d7744322351a51b3ad070646adfe277d7b7436d6"
+        },
+        {
+          "path": "research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016",
+          "type": "tree",
+          "sha": "6af4d09639d89fe430930f3634f652832235c043"
+        },
+        {
+          "path": "research/HDBLAST_INERTIAL_SHELL_WAVEFORM_20261015.zip",
+          "type": "blob",
+          "sha": "b27c59d78a4350c96e2afb4448bd57cb2877bbad"
+        },
+        {
+          "path": "research/HDBLAST_INERTIAL_SHELL_WAVEFORM_20261015",
+          "type": "tree",
+          "sha": "3681f25f351bdcf8ac1d9d74bea83236f43d6ca4"
+        },
+        {
+          "path": "research/HDBLAST_INPUT_PRECISION_20261023.zip",
+          "type": "blob",
+          "sha": "cdd713e7c16d8aa400cbe74a06c77f7fdb21148e"
+        },
+        {
+          "path": "research/HDBLAST_INPUT_PRECISION_20261023",
+          "type": "tree",
+          "sha": "1e1aa0953edd3b10efa0cbf7cbe09abb43c867e1"
+        },
+        {
+          "path": "research/HDBLAST_INTERIOR_MASTER_JETS_20261015.zip",
+          "type": "blob",
+          "sha": "6f3c8c2dd9b6476c657c888bb8607a2b39b7565b"
+        },
+        {
+          "path": "research/HDBLAST_INTERIOR_MASTER_JETS_20261015",
+          "type": "tree",
+          "sha": "b6141c571bf96febdaae63f402db76d22c748e6a"
+        },
+        {
+          "path": "research/HDBLAST_MATCHED_STRESS_FINAL_ZIP_REPLAY_20261002.json",
+          "type": "blob",
+          "sha": "1bc428b9c4a7c9efa7270862b9b516c1fa9b1649"
+        },
+        {
+          "path": "research/HDBLAST_MATCHED_STRESS_PUBLICATION_REPAIR_20261002.json",
+          "type": "blob",
+          "sha": "df92ba86c8778a18588209749d36d7674c0ea9cd"
+        },
+        {
+          "path": "research/HDBLAST_MATERIAL_JUNCTIONS_20261014",
+          "type": "tree",
+          "sha": "3e3b9f78788781b81dae5bec45182f6be666174e"
+        },
+        {
+          "path": "research/HDBLAST_METRIC_RESPONSE_FINAL_ZIP_REPLAY_20261002.json",
+          "type": "blob",
+          "sha": "73f1ad0337715a208863c420d98a9ded7107c7bb"
+        },
+        {
+          "path": "research/HDBLAST_METRIC_RESPONSE_HIGH_PRECISION_FAILURE_REPLAY_20261002.json",
+          "type": "blob",
+          "sha": "7ec7c668aeb484d605a28a9118930ca76516c6b7"
+        },
+        {
+          "path": "research/HDBLAST_METRIC_RESPONSE_ORIGINAL_FAILURE_REPLAY_20261002.json",
+          "type": "blob",
+          "sha": "0ecdd8d906c7924a42296eb4cdd4a57aac4ffe6f"
+        },
+        {
+          "path": "research/HDBLAST_NUMERICAL_RESPONSE_INPUTS_20261016.zip",
+          "type": "blob",
+          "sha": "00c812ae3cb21da67a119cdebfc86bd2e290b771"
+        },
+        {
+          "path": "research/HDBLAST_NUMERICAL_RESPONSE_INPUTS_20261016",
+          "type": "tree",
+          "sha": "7c3dc6168d92585bb056ba3a8f18ae81aaa6b42d"
+        },
+        {
+          "path": "research/HDBLAST_PHYSICAL_SHELL_RESPONSE_20261015.zip",
+          "type": "blob",
+          "sha": "dfda04ebb3163324d01297fe192d8226f4d3a561"
+        },
+        {
+          "path": "research/HDBLAST_PHYSICAL_SHELL_RESPONSE_20261015",
+          "type": "tree",
+          "sha": "b23ffc3df45c1b0c9798401b3445c93308baedb2"
+        },
+        {
+          "path": "research/HDBLAST_QUADRATIC_SHELL_FORCING_20261015.zip",
+          "type": "blob",
+          "sha": "f2d399fe78a94aa9043a02209465d935f9b9d301"
+        },
+        {
+          "path": "research/HDBLAST_QUADRATIC_SHELL_FORCING_20261015",
+          "type": "tree",
+          "sha": "c26d8449f25abbe2b8072c9f4efa1e006f5415ce"
+        },
+        {
+          "path": "research/HDBLAST_QUADRATIC_TENSOR_CONTACT_20261014.zip",
+          "type": "blob",
+          "sha": "7286e602f0971d0b983f8d13b378cb931dfb05ef"
+        },
+        {
+          "path": "research/HDBLAST_QUADRATIC_TENSOR_CONTACT_20261014",
+          "type": "tree",
+          "sha": "ea733fd711a5ae9ea7877bc89fa5d74732344616"
+        },
+        {
+          "path": "research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015.zip",
+          "type": "blob",
+          "sha": "261b28b4f18e63e1a494e8966b23093b2c521055"
+        },
+        {
+          "path": "research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015",
+          "type": "tree",
+          "sha": "609f828f999b5f2bcea812f34505f893b7f01736"
+        },
+        {
+          "path": "research/HDBLAST_REGULAR_CONE_EVOLUTION_20261013",
+          "type": "tree",
+          "sha": "38f554d9b130098d81b6abfae8380a44c3cdbe65"
+        },
+        {
+          "path": "research/HDBLAST_REGULAR_SHELL_CONTACT_20261013",
+          "type": "tree",
+          "sha": "3c1042e890fe474ef2c2e2fb0d20b321303daedd"
+        },
+        {
+          "path": "research/HDBLAST_REGULAR_SHELL_SPECTRA_20261013",
+          "type": "tree",
+          "sha": "62c232212e4cb6681c241930efa494da2b2d6f8f"
+        },
+        {
+          "path": "research/HDBLAST_RESPONSE_ATTRIBUTION_20261016",
+          "type": "tree",
+          "sha": "bb50f81fcb3be826c9503ab57289e3735b5186af"
+        },
+        {
+          "path": "research/HDBLAST_RETAINED_ENDPOINT_FLOW_PACKAGE_20261008",
+          "type": "tree",
+          "sha": "ca0f8fcfd69b160b8c021a4e5691a8090de27f97"
+        },
+        {
+          "path": "research/HDBLAST_ROTATIONAL_OBSTRUCTION_PAPER_20261015.zip",
+          "type": "blob",
+          "sha": "a79bdbd5cba1b5047d56775d73ea28628b6e1ffd"
+        },
+        {
+          "path": "research/HDBLAST_ROTATIONAL_OBSTRUCTION_PAPER_20261015",
+          "type": "tree",
+          "sha": "145a307c9b5ef58a310933ce6e3b53fe9c0819b3"
+        },
+        {
+          "path": "research/HDBLAST_ROTATIONAL_OBSTRUCTION_PAPER_20261015_EVIDENCE",
+          "type": "tree",
+          "sha": "882893b1b97fec5062f715d941f562edefe63544"
+        },
+        {
+          "path": "research/HDBLAST_SCALAR_BOUNDARY_CURVATURE_20261008",
+          "type": "tree",
+          "sha": "e6816d127732770b75fd7ae6b6016834a4bf155e"
+        },
+        {
+          "path": "research/HDBLAST_SCALAR_RESPONSE_MONOTONICITY_20261011",
+          "type": "tree",
+          "sha": "32f77dd3b245f0992d1e5bddf64606d5becec40d"
+        },
+        {
+          "path": "research/HDBLAST_SECOND_INITIAL_NORMS_GAUGE_20261015.zip",
+          "type": "blob",
+          "sha": "ad7bb45c4937d62453dd23335f506c01852fa75f"
+        },
+        {
+          "path": "research/HDBLAST_SECOND_INITIAL_NORMS_GAUGE_20261015",
+          "type": "tree",
+          "sha": "7b5493e7027ccfb65533e99405fe58155e0bd289"
+        },
+        {
+          "path": "research/HDBLAST_SECOND_ORDER_LOCALIZED_20261014.zip",
+          "type": "blob",
+          "sha": "50bbd5e273fb5321c881f80460dd3e90b998bc1c"
+        },
+        {
+          "path": "research/HDBLAST_SECOND_ORDER_LOCALIZED_20261014",
+          "type": "tree",
+          "sha": "486ed6d081a572056bc90f0bf6b964ccebe8a6ed"
+        },
+        {
+          "path": "research/HDBLAST_SHELL_NOETHER_20261013",
+          "type": "tree",
+          "sha": "0b986edf562ae2bafdaa3f8a4300ba132fb1faf5"
+        },
+        {
+          "path": "research/HDBLAST_SHELL_RESPONSE_ERROR_CERTIFICATE_20261015.zip",
+          "type": "blob",
+          "sha": "5245d0f7908efe1cec5efd96ea8cdbf860f8b786"
+        },
+        {
+          "path": "research/HDBLAST_SHELL_RESPONSE_ERROR_CERTIFICATE_20261015",
+          "type": "tree",
+          "sha": "21c4b3c44eb563680431889385326289a3b93a6b"
+        },
+        {
+          "path": "research/HDBLAST_SOURCE_FREE_LEDGER_PACKAGE_20261002",
+          "type": "tree",
+          "sha": "b9ace9fb2f94b810a3274f7e8bc27d8ff1928afc"
+        },
+        {
+          "path": "research/HDBLAST_STORED_STATE_COMPARISON_PACKAGE_20261007",
+          "type": "tree",
+          "sha": "d9c89a1e41ff9bb1ec6ab2205648d369d1efbecd"
+        },
+        {
+          "path": "research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023.zip",
+          "type": "blob",
+          "sha": "c65289e6ef88630071fda8e8f43ca3035e1bf290"
+        },
+        {
+          "path": "research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023",
+          "type": "tree",
+          "sha": "119d7f9f81d7c696fb5d7b90c04735d0ac672730"
+        },
+        {
+          "path": "research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015.zip",
+          "type": "blob",
+          "sha": "e33d34a9e1157113b3381a41b8c746fd9f5eae71"
+        },
+        {
+          "path": "research/HDBLAST_UNIFORM_FIRST_VARIATION_WAVEFORM_20261015",
+          "type": "tree",
+          "sha": "1fa03d25d4d5bd8e46087cb2e383b8ddee834e9c"
+        },
+        {
+          "path": "research/HDBLAST_VERIFIED_SOURCE_OPERATOR_PACKAGE_20261003",
+          "type": "tree",
+          "sha": "a9df504223cd19ba67933a1b30e9a7a5598943d6"
+        },
+        {
+          "path": "research/HDBLAST_ZENODO_V25_CANDIDATE_20261002",
+          "type": "tree",
+          "sha": "2e94dd2c4c2d5eb11340057b638152a0c2dc4b8b"
+        },
+        {
+          "path": "site/assets",
+          "type": "tree",
+          "sha": "f56fcb45b834485c3e679f82eac1e4a972ec88f2"
+        },
+        {
+          "path": "site/figures",
+          "type": "tree",
+          "sha": "cb88e290c47c27b352772dbcd64e6d4873e0e928"
+        },
+        {
+          "path": "site/sitemap.xml",
+          "type": "blob",
+          "sha": "bd18986dedac6e959bc19ff5fa437b207746a39e"
+        },
+        {
+          "path": "site/zenodo-files",
+          "type": "tree",
+          "sha": "501e2932099ff88012a6b035fb07089d91d6205d"
+        },
+        {
+          "path": ".github/workflows/boundary-response-20261023.yml",
+          "type": "blob",
+          "sha": "7164f992492aa1216904486f183774eba6c55dd6"
+        },
+        {
+          "path": ".github/workflows/common-gauge-forcing-20261016.yml",
+          "type": "blob",
+          "sha": "6825d45e89db2e569686e1100d5075e55aeed584"
+        },
+        {
+          "path": ".github/workflows/first-gauge-wave-20261016.yml",
+          "type": "blob",
+          "sha": "52727f6272b69045810d9976860cdbaceaa3ee6b"
+        },
+        {
+          "path": ".github/workflows/forced-response-bounds-20261023.yml",
+          "type": "blob",
+          "sha": "e09fc4c07ea1e656457be7a47e35a0cd18286b5f"
+        },
+        {
+          "path": ".github/workflows/geometric-bulk-sources-20261016.yml",
+          "type": "blob",
+          "sha": "1b16403617296965b4a55653472848f0c838a563"
+        },
+        {
+          "path": ".github/workflows/hdblast_angular_uniform_contact.yml",
+          "type": "blob",
+          "sha": "115881bd9dbe3a020ed32b8b8992b8b6a7ea9284"
+        },
+        {
+          "path": ".github/workflows/hdblast_bd_prehistory.yml",
+          "type": "blob",
+          "sha": "ecbf2c2ea6d831ed0f567bd8d372fbc199ae10f2"
+        },
+        {
+          "path": ".github/workflows/hdblast_browser_recovery.yml",
+          "type": "blob",
+          "sha": "e85901dae7ec3db94dac457c9593f82e2e9e5038"
+        },
+        {
+          "path": ".github/workflows/hdblast_bulk_scalar_controls.yml",
+          "type": "blob",
+          "sha": "92a9c574fc5ec3bfc96fb0bb5188a30c97b9aa11"
+        },
+        {
+          "path": ".github/workflows/hdblast_causal_response.yml",
+          "type": "blob",
+          "sha": "497c828011a6423d1d9fe15e6210a7ab6d01ff15"
+        },
+        {
+          "path": ".github/workflows/hdblast_cone_phase_space.yml",
+          "type": "blob",
+          "sha": "768b7e74a5a3e5a7795f7996a5c0cc4f8d237140"
+        },
+        {
+          "path": ".github/workflows/hdblast_coordinate_shell_sources.yml",
+          "type": "blob",
+          "sha": "1dac85e5fe79d54bd438bd84a761e07b54c29429"
+        },
+        {
+          "path": ".github/workflows/hdblast_desitter.yml",
+          "type": "blob",
+          "sha": "1e7c3f1c76f2701a277d0efc9d5248548d812b46"
+        },
+        {
+          "path": ".github/workflows/hdblast_explicit_second_initial_jet.yml",
+          "type": "blob",
+          "sha": "282171ac72435d83a4511d82f0365cbf899231e1"
+        },
+        {
+          "path": ".github/workflows/hdblast_finite_band_ward.yml",
+          "type": "blob",
+          "sha": "51413e4240ca4e4e987f2561025f24514171c08d"
+        },
+        {
+          "path": ".github/workflows/hdblast_frw_readiness.yml",
+          "type": "blob",
+          "sha": "e1ae0aadb3a414da4e5e537da79803d3f78a9e57"
+        },
+        {
+          "path": ".github/workflows/hdblast_full_second_order_contact.yml",
+          "type": "blob",
+          "sha": "d348ce54678cd548358ecebb1a871c41c4c7f3a4"
+        },
+        {
+          "path": ".github/workflows/hdblast_incoming_state.yml",
+          "type": "blob",
+          "sha": "6f98a7acc6f135c49a1a3a4a2a210aba3824d6bb"
+        },
+        {
+          "path": ".github/workflows/hdblast_inertial_shell_waveform.yml",
+          "type": "blob",
+          "sha": "e0461d93b451d7160da679bc29331ee92093751f"
+        },
+        {
+          "path": ".github/workflows/hdblast_interior_master_jets.yml",
+          "type": "blob",
+          "sha": "6711beba431fe28e51f407b34b0175d4d5935a1c"
+        },
+        {
+          "path": ".github/workflows/hdblast_junctions.yml",
+          "type": "blob",
+          "sha": "8cb1d0768014f9c1514db84ca48597f6f015dc67"
+        },
+        {
+          "path": ".github/workflows/hdblast_matched_stress.yml",
+          "type": "blob",
+          "sha": "ae08ac9b89c442fc4458cb764c32c2a4420f03ab"
+        },
+        {
+          "path": ".github/workflows/hdblast_material_junctions.yml",
+          "type": "blob",
+          "sha": "0dda0f7a14c09c7533745d76cba69de06ee4c4f5"
+        },
+        {
+          "path": ".github/workflows/hdblast_metric_response_memory_followup.yml",
+          "type": "blob",
+          "sha": "566f4b7cb8bfed0fd52f9ebb6475f399a4b30a5c"
+        },
+        {
+          "path": ".github/workflows/hdblast_oct1.yml",
+          "type": "blob",
+          "sha": "1f27364049db313343256f029192890d5b1dab45"
+        },
+        {
+          "path": ".github/workflows/hdblast_physical_shell_response.yml",
+          "type": "blob",
+          "sha": "4168975719ab1f680bbc1fbde1243dcbd7d927f0"
+        },
+        {
+          "path": ".github/workflows/hdblast_publication_offline.yml",
+          "type": "blob",
+          "sha": "e63992aa422b2deeadd3160552ae41ac66b8c150"
+        },
+        {
+          "path": ".github/workflows/hdblast_publication_receipt_guard.yml",
+          "type": "blob",
+          "sha": "79be87911aed948cc84082e68d40834e5b55ff5d"
+        },
+        {
+          "path": ".github/workflows/hdblast_pv_oct2.yml",
+          "type": "blob",
+          "sha": "e9d9e24470a833244f9f82322bda3389ba029bdc"
+        },
+        {
+          "path": ".github/workflows/hdblast_quadratic_shell_forcing.yml",
+          "type": "blob",
+          "sha": "ee38e5d8f0a0e33912b26bb80204a85992f41691"
+        },
+        {
+          "path": ".github/workflows/hdblast_quadratic_tensor_contact.yml",
+          "type": "blob",
+          "sha": "2ab525768a1e42e72e820fb2326768d1aea7ca6b"
+        },
+        {
+          "path": ".github/workflows/hdblast_quantum_oct1.yml",
+          "type": "blob",
+          "sha": "c63bc19348bde3cc28304aa1dec3152af6c3163c"
+        },
+        {
+          "path": ".github/workflows/hdblast_quasilinear_shell_evolution.yml",
+          "type": "blob",
+          "sha": "fb71f12809d88cb2f6db5e32e5689cbd62293dda"
+        },
+        {
+          "path": ".github/workflows/hdblast_regular_cone_evolution.yml",
+          "type": "blob",
+          "sha": "7402a29d6e6bbd9f68703e1f0a9b7b58d73a6d59"
+        },
+        {
+          "path": ".github/workflows/hdblast_regular_shell_contact.yml",
+          "type": "blob",
+          "sha": "a9c15ffbf51cbb26c08a4e57ead372b8fa2fe72c"
+        },
+        {
+          "path": ".github/workflows/hdblast_regular_shell_publication.yml",
+          "type": "blob",
+          "sha": "f8afb64ede5cdbefaa361bd5c28d8f5eee29e826"
+        },
+        {
+          "path": ".github/workflows/hdblast_regular_shell_spectra.yml",
+          "type": "blob",
+          "sha": "5652b5a88e2a01c0aedd049678d39c9b71a82c48"
+        },
+        {
+          "path": ".github/workflows/hdblast_retained_endpoint_flow.yml",
+          "type": "blob",
+          "sha": "46464874175867c761697d722fa21c06fb3c65b0"
+        },
+        {
+          "path": ".github/workflows/hdblast_retained_endpoint_publication.yml",
+          "type": "blob",
+          "sha": "7e0f390b5061f90e0b9e131f040e7768c8fc3217"
+        },
+        {
+          "path": ".github/workflows/hdblast_rotational_obstruction_paper.yml",
+          "type": "blob",
+          "sha": "b3784e356e8778a3fe4b4a85b626792ae214489e"
+        },
+        {
+          "path": ".github/workflows/hdblast_scalar_boundary_curvature.yml",
+          "type": "blob",
+          "sha": "11243c05510c95742e00e1b983284f1b2838fd58"
+        },
+        {
+          "path": ".github/workflows/hdblast_scalar_response_monotonicity.yml",
+          "type": "blob",
+          "sha": "eca0dc47a2bac19abb65b75ab1d879c8bb269d6a"
+        },
+        {
+          "path": ".github/workflows/hdblast_second_initial_norms_gauge.yml",
+          "type": "blob",
+          "sha": "3976dd529268812bc0f0e06ee51900ac334edc63"
+        },
+        {
+          "path": ".github/workflows/hdblast_second_order_localized.yml",
+          "type": "blob",
+          "sha": "53680cf6e265a4c0c63fef1682d81c8cf66d3253"
+        },
+        {
+          "path": ".github/workflows/hdblast_shell_noether.yml",
+          "type": "blob",
+          "sha": "5e0805984be3013b8a967e6e0856d9ff7e7390d2"
+        },
+        {
+          "path": ".github/workflows/hdblast_shell_response_certificate.yml",
+          "type": "blob",
+          "sha": "915d1295482e4f7e5f6f38fe08c9a89317daf5b6"
+        },
+        {
+          "path": ".github/workflows/hdblast_smooth_frw.yml",
+          "type": "blob",
+          "sha": "e18a6115c009917e6f17a530660646c9b9f88739"
+        },
+        {
+          "path": ".github/workflows/hdblast_source_free_ledger.yml",
+          "type": "blob",
+          "sha": "98df4edd4e92014b4a8a050730243cdad20fdad7"
+        },
+        {
+          "path": ".github/workflows/hdblast_stationary_quantum.yml",
+          "type": "blob",
+          "sha": "e62385c710149ec1a1eb235b4ed5c36fa68926d4"
+        },
+        {
+          "path": ".github/workflows/hdblast_stored_state_comparison.yml",
+          "type": "blob",
+          "sha": "d963976d957a609678d85bbd5fbb14d5a62324ec"
+        },
+        {
+          "path": ".github/workflows/hdblast_stored_state_publication.yml",
+          "type": "blob",
+          "sha": "4d7d2a43ef956e36f071ced771b786473a2feb4a"
+        },
+        {
+          "path": ".github/workflows/hdblast_uniform_first_variation_waveform.yml",
+          "type": "blob",
+          "sha": "3e8d8e406fad2aee9a60eda5bf0ceed00d426eb2"
+        },
+        {
+          "path": ".github/workflows/hdblast_verified_source_operator.yml",
+          "type": "blob",
+          "sha": "199a95eb8f2041dc2a5777fe81c2c17f1d7c99a5"
+        },
+        {
+          "path": ".github/workflows/input-precision-20261023.yml",
+          "type": "blob",
+          "sha": "2d6c6d6e9f01137cb11fa069b043434852d9f29d"
+        },
+        {
+          "path": ".github/workflows/numerical-response-inputs-20261016.yml",
+          "type": "blob",
+          "sha": "0e6bda70eec9f345abca4c2720b80275bd4f5ed5"
+        },
+        {
+          "path": ".github/workflows/pages.yml",
+          "type": "blob",
+          "sha": "9b8a6333be64625c88603db52ae211f4bf8e3cea"
+        },
+        {
+          "path": ".github/workflows/total-response-preflight-20261023.yml",
+          "type": "blob",
+          "sha": "bb78fda37f325c83a4f9a010bfaad8b28c486db7"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.07-stored-state-comparison",
+          "type": "tree",
+          "sha": "43dffbdfedc835e7316941517652c6f3389cd720"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.07",
+          "type": "tree",
+          "sha": "19cd1940e34a753be73a6a6f38a4dac874c110a9"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.08-retained-endpoint-flow",
+          "type": "tree",
+          "sha": "0cd3693736813305814f5f394bf3e1768ea2dd91"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.11-scalar-response-monotonicity",
+          "type": "tree",
+          "sha": "2e16977a66d5707a52e42ecf96e06a51506cc12b"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.13-regular-shell-contact",
+          "type": "tree",
+          "sha": "26d92be055e187d585cc6ba0d642f626fe5f42b2"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.13-shell-noether",
+          "type": "tree",
+          "sha": "d2ebbd2acffcdf2bf157ae4f46cb458dfcbb52be"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.14-exact-localized-precontact",
+          "type": "tree",
+          "sha": "5f50a8570de0c8d4b23d3b5c388f0f5335847507"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.14-full-second-order-contact",
+          "type": "tree",
+          "sha": "43d75c1b70b4377bfc9b940dee5c077d5ee9acbe"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.14-quadratic-tensor-contact",
+          "type": "tree",
+          "sha": "0d3ac54ab6f67d6c5c97de26d4425e7b996c2eec"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.14-second-order-formal",
+          "type": "tree",
+          "sha": "6de0592430c6d5b34d3e473eb669a3a7f88fe965"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.15-angular-uniform-contact",
+          "type": "tree",
+          "sha": "447a1a26b0947bce7b0dfd25fa2d1dfaad897c6e"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.15-coordinate-shell-sources",
+          "type": "tree",
+          "sha": "062d1c3606a75206267e65f106cc5e7e3b447c62"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.15-explicit-second-initial-jet",
+          "type": "tree",
+          "sha": "b31d80442c30a082f4d5853e73922a2591c781ad"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.15-inertial-shell-waveform",
+          "type": "tree",
+          "sha": "1a41c2153767438e4457ab582a3c4a7f13174b34"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.15-interior-master-jets",
+          "type": "tree",
+          "sha": "6fb521cbc10f1208a8424a2a5ce506fd6a538ef8"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.15-physical-shell-response",
+          "type": "tree",
+          "sha": "2aaef7835ce3d973327cf73377d2d9c46643ed9c"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.15-quadratic-shell-forcing",
+          "type": "tree",
+          "sha": "a6ffe952cd1e36fb6c34069c763411bf69a905a8"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.15-quasilinear-shell-evolution",
+          "type": "tree",
+          "sha": "7617f398122f96e587e3b90133d26b4e3a1b391b"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.15-second-initial-norms-gauge",
+          "type": "tree",
+          "sha": "53ee8f5a9cdf01b1c0e2cb313f374cc241da9aa8"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.15-shell-response-error-certificate",
+          "type": "tree",
+          "sha": "2662ad97daf483579834f1dc7c980dd22903a5fe"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.15-uniform-first-variation-waveform",
+          "type": "tree",
+          "sha": "cab2450c5d9d8b981d428de9949c731584e3b66b"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.16-common-gauge-forcing",
+          "type": "tree",
+          "sha": "9bd53465ecbf5adeab50a7cc0253623d0c198846"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.16-first-gauge-wave",
+          "type": "tree",
+          "sha": "70fd25cc91f5f8d082545524d9c1ec49fb8709f0"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.16-geometric-bulk-sources",
+          "type": "tree",
+          "sha": "063947df1b5f78957131d0b2487a086fd2d9c1dd"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.16-numerical-response-inputs",
+          "type": "tree",
+          "sha": "5940560befb3deaa94cab96c47ce2584c536195a"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.23-boundary-response",
+          "type": "tree",
+          "sha": "c7c162c4d8928de4c627dcf95b8fd59b86615e4d"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.23-forced-response-bounds",
+          "type": "tree",
+          "sha": "dd26a01ceb322fcbfb3fde9faf1e389c8efd109d"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.23-input-precision",
+          "type": "tree",
+          "sha": "a57cdb657c094ee663fc5810bcdc5858642a16fe"
+        },
+        {
+          "path": "hdblast/continuation/2026.10.23-total-response-preflight",
+          "type": "tree",
+          "sha": "b7e7f8be11b68882ba760d6934422d414bcee010"
+        }
+      ],
+      "modified": [
+        {
+          "path": "README.md",
+          "old": "a477a218f073b0bd857d82928f95dcfad53c7a4d",
+          "new": "8bc059959d3879a141e8105ca142ce54e74ee108",
+          "modeUnchanged": true
+        },
+        {
+          "path": "site/index.html",
+          "old": "d9d60ba95a84d7b6bf1d07b8165d8c85c854430b",
+          "new": "284860d221131e7d8290ed64c1f99b4c7280b589",
+          "modeUnchanged": true
+        },
+        {
+          "path": "site/es/index.html",
+          "old": "7af9f18f312d7ba91d17a237278e89d7fa87e535",
+          "new": "2e40a2f0b0cf1cb5c9c169f5e75ceb166c1b8bf3",
+          "modeUnchanged": true
+        }
+      ],
+      "added": [
+        {
+          "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025.zip",
+          "type": "blob",
+          "sha": "4e2853f63789346b3819b2c95c1dd16ff159b385",
+          "size": 1104873
+        },
+        {
+          "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025",
+          "type": "tree",
+          "sha": "cdbe63cfdef66469f8b547a2333586548beadb89"
+        },
+        {
+          "path": ".github/workflows/coupled-mean-pilot-20261025.yml",
+          "type": "blob",
+          "sha": "00481d77b8efd1b907f79b47bf653e9858606167",
+          "size": 3411
+        },
+        {
+          "path": "hdblast/continuation/2026.10.25-coupled-mean-pilot",
+          "type": "tree",
+          "sha": "446701c5b94b90afae38a59495f7982a2e805516"
+        }
+      ],
+      "removed": [],
+      "statements": [
+        {
+          "path": "",
+          "oldCount": 9,
+          "newCount": 9
+        },
+        {
+          "path": ".github/",
+          "oldCount": 1,
+          "newCount": 1
+        },
+        {
+          "path": "hdblast/",
+          "oldCount": 11,
+          "newCount": 11
+        },
+        {
+          "path": "research/",
+          "oldCount": 98,
+          "newCount": 100
+        },
+        {
+          "path": "site/",
+          "oldCount": 6,
+          "newCount": 6
+        },
+        {
+          "path": ".github/workflows/",
+          "oldCount": 57,
+          "newCount": 58
+        },
+        {
+          "path": "hdblast/continuation/",
+          "oldCount": 29,
+          "newCount": 30
+        },
+        {
+          "path": "site/es/",
+          "oldCount": 1,
+          "newCount": 1
+        }
+      ]
+    },
+    "shared_compare": {
+      "files": 1,
+      "added": 0,
+      "modified": 1,
+      "removed": 0
+    },
+    "shared_recursive_tree_entries": 29,
+    "shared_changed_blob_only": "projects/hdblast/index.html",
+    "all_other_shared_blobs_identical": true,
+    "all_prior_research_entries_unchanged": 98,
+    "all_prior_workflow_entries_unchanged": 57,
+    "all_prior_continuation_entries_unchanged": 29,
+    "four_whole_file_inverse_checks": [
+      {
+        "label": "root-readme",
+        "repository": "maldonado-research/HDblast",
+        "path": "README.md",
+        "base_sha256": "cf8231ac25adc61c1bcb6ff3428aa2406e8de280bbebea7216984c7251c83933",
+        "new_sha256": "9457a4b54f37c87610ba6b4ce389c0e7f6f09d13f25d3e9bbd86ad6355f14933",
+        "base_pin_matches": true,
+        "new_pin_matches": true,
+        "exact_addition": true,
+        "whole_base_inverse": true,
+        "unique_added_block": true,
+        "unique_new_marker": true,
+        "all_prior_markers_match": true,
+        "prior_marker_types": 5
+      },
+      {
+        "label": "site-en",
+        "repository": "maldonado-research/HDblast",
+        "path": "site/index.html",
+        "base_sha256": "4ae9b37be507cfb417d052b70e90247502fef4d57af2bcaba5f692fd43355ef8",
+        "new_sha256": "91a63496bc4b9a3890e61bce4b7c2d2c00f5d36998b317c77107b54d4963ed0e",
+        "base_pin_matches": true,
+        "new_pin_matches": true,
+        "exact_addition": true,
+        "whole_base_inverse": true,
+        "unique_added_block": true,
+        "unique_new_marker": true,
+        "all_prior_markers_match": true,
+        "prior_marker_types": 39
+      },
+      {
+        "label": "site-es",
+        "repository": "maldonado-research/HDblast",
+        "path": "site/es/index.html",
+        "base_sha256": "1e1d7871923a99580f3cced706fc65cef12047c87cfe2ef2ac2a866ee4f5f34f",
+        "new_sha256": "c0bfe9bd9d0b1fbf4b78c1b541967b7d8d24876e7ef38ce71e2eddf56b84aa53",
+        "base_pin_matches": true,
+        "new_pin_matches": true,
+        "exact_addition": true,
+        "whole_base_inverse": true,
+        "unique_added_block": true,
+        "unique_new_marker": true,
+        "all_prior_markers_match": true,
+        "prior_marker_types": 39
+      },
+      {
+        "label": "shared-site",
+        "repository": "maldonado-research/maldonado-research.github.io",
+        "path": "projects/hdblast/index.html",
+        "base_sha256": "de7bb2381a61700fd3962f0912af6c03d04d61fabe831a5ba113a30e5a401ba0",
+        "new_sha256": "bbe8ddec47236d6267bdecd29593c0398898ce17a518de4d73b87495c28e9107",
+        "base_pin_matches": true,
+        "new_pin_matches": true,
+        "exact_addition": true,
+        "whole_base_inverse": true,
+        "unique_added_block": true,
+        "unique_new_marker": true,
+        "all_prior_markers_match": true,
+        "prior_marker_types": 46
+      }
+    ]
+  },
+  "publication_claims": {
+    "observed_claim": "Conditional continuous five-mean C1 approximation with first coupled feedback and shell lift, complete scaled X bound below 1.6090323e28 and target 1e29.",
+    "failed_coarse_meshes_retained": [
+      64,
+      128
+    ],
+    "selected_mesh": 256,
+    "selected_nodes": 190,
+    "selected_cells": 189,
+    "complete_candidate_defined_on_cone_not_only_six_samples": true,
+    "retained_nonzero_robin_defect_disclosed": true,
+    "explicit_limits": [
+      "No full angular second-order spacetime",
+      "No pointwise second-derivative Einstein residual certificate",
+      "No intrinsic observable sign",
+      "No nonlinear finite-amplitude family",
+      "No physical Big Bang origin inference",
+      "No originality or priority claim",
+      "Internal AI-assisted review is not external peer review or formalization"
+    ],
+    "no_zenodo_or_journal_publication": true,
+    "english_and_spanish_additions_consistent": true
+  },
+  "remaining_runtime_gates": [
+    "Exact reviewed science/package head CI must pass CRC, archive/source equality, native golden replay in both modes and independent audits.",
+    "Required shared-site checks must pass for its exact reviewed head.",
+    "After merge, confirm canonical merge identities and successful bounded public source/archive/live-page readback; keep that evidence separate from this static approval."
+  ],
+  "remote_mutations_by_reviewer": "Only creation of this unreferenced JSON blob; no ref updates."
+}

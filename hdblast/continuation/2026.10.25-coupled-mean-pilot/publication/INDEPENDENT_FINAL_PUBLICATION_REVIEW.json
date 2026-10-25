@@ -1,0 +1,517 @@
+{
+  "schema": "HDBLAST_COUPLED_MEAN_PILOT_FINAL_PUBLICATION_REVIEW_V1",
+  "status": "PASS_COMPLETED_GITHUB_PUBLICATION_AND_PRESERVATION_REVIEW",
+  "reviewer": "Independent internal AI-assisted publication and preservation review agent",
+  "decision": "Approved completed publication claim for the bounded conditional five-mean checkpoint at the two reviewed canonical merges. All previously pending publication runtime gates are satisfied by the audited evidence. No publication blocker remains.",
+  "review_input": {
+    "git_blob": "b675be1a7866149b8a22329c7bc8cc0d79260e35",
+    "bytes": 784898,
+    "sha256": "4f015834fff18e0eda5564c3f9689521aba5f1a836332f5c8bd4ea03deab5ccc"
+  },
+  "static_review": {
+    "git_blob": "e53c349369ca4e68667a08e1f388b83d844b8790",
+    "sha256": "9679297d226f3da86e97054343d130d569d8290a53bf77c712f18ab554a8ef5c"
+  },
+  "blockers": [],
+  "canonical_merges": [
+    {
+      "repository": "maldonado-research/HDblast",
+      "merge": "a97052a03a188e63d77cbe468b50f56e7a2e411d",
+      "ordered_parents_match": true,
+      "tree_identical_to_reviewed_head": true,
+      "tree": "4a7caf625adcbc8025d51f2902a0d51b4e333f5d",
+      "main_points_to_merge": true,
+      "pr_number": 84,
+      "pr_merged": true,
+      "pr_state": "closed",
+      "pr_merge_sha_matches": true,
+      "pr_head_matches_review": true,
+      "pr_base_ref": "main",
+      "pr_url": "https://github.com/maldonado-research/HDblast/pull/84"
+    },
+    {
+      "repository": "maldonado-research/maldonado-research.github.io",
+      "merge": "da1e5312d993c72eef5fab5b4895f73531d6a73a",
+      "ordered_parents_match": true,
+      "tree_identical_to_reviewed_head": true,
+      "tree": "dd748a19ee88d51ecbaecc471503a5f2fa4b129a",
+      "main_points_to_merge": true,
+      "pr_number": 75,
+      "pr_merged": true,
+      "pr_state": "closed",
+      "pr_merge_sha_matches": true,
+      "pr_head_matches_review": true,
+      "pr_base_ref": "main",
+      "pr_url": "https://github.com/maldonado-research/maldonado-research.github.io/pull/75"
+    }
+  ],
+  "canonical_verification_method": "This reviewer independently fetched both main refs, Git merge objects, and the actual merged PRs. Each merge has exactly the ordered retained base/reviewed-head parents and exactly the reviewed Git tree. Final evidence bundle canonical identities agree. Both legacy status collections are empty at the merge SHA.",
+  "preservation": {
+    "retained_git_tree_and_whole_base_proofs_carried_forward": true,
+    "research_base": "2fb40bdc5a1785ef6a55bc50e6c9d81a3e3e9978",
+    "shared_base": "de41839498e54544403dfc6ade9cb68da44342fd",
+    "research_diff": {
+      "added": 37,
+      "modified": 3,
+      "deleted": 0
+    },
+    "shared_diff": {
+      "added": 0,
+      "modified": 1,
+      "deleted": 0
+    },
+    "research_selected_paths_exactly_match_compare": true,
+    "all_prior_research_entries_identical": 98,
+    "all_prior_workflows_identical": 57,
+    "all_prior_continuations_identical": 29,
+    "all_four_edited_files_exactly_recover_base_after_removing_one_declared_insertion": true,
+    "all_prior_marker_counts_retained": true,
+    "all_other_shared_site_blobs_identical": true,
+    "initial_source_commit_preserved": "cbb8e9f5a898faa85e6f135a14c3c4caab8aa551",
+    "individually_hashed_text_files": [
+      {
+        "path": ".github/workflows/coupled-mean-pilot-20261025.yml",
+        "bytes": 3411,
+        "sha256": "68be950a2742754b795fb6d27b7960b0fb83b85663b9ead4790e395eb6ec9f50",
+        "verified": true
+      },
+      {
+        "path": "hdblast/continuation/2026.10.25-coupled-mean-pilot/HANDOFF.md",
+        "bytes": 4246,
+        "sha256": "e27e715765173c9efb652e383d5dd08c459a9b62e861062a4a15a0b442583641",
+        "verified": true
+      },
+      {
+        "path": "hdblast/continuation/2026.10.25-coupled-mean-pilot/INITIAL_RUN_EVIDENCE.json",
+        "bytes": 1746,
+        "sha256": "2b72b58c5d66310443773d44e12ea75e11e2a4b23d1e01572acd91935a24549a",
+        "verified": true
+      },
+      {
+        "path": "hdblast/continuation/2026.10.25-coupled-mean-pilot/INITIAL_RUN_RECEIPT.json",
+        "bytes": 2979,
+        "sha256": "1f1e8c7b992bc692506e5709b5608f27108501e003884cde4f9d4c328c17e1b1",
+        "verified": true
+      },
+      {
+        "path": "hdblast/continuation/2026.10.25-coupled-mean-pilot/initial-run/CHECK_RUNS.json",
+        "bytes": 3601,
+        "sha256": "0b09b79bc9b15bd306c1895cb21befdb27be064ab30811ad0c362f852f91759c",
+        "verified": true
+      },
+      {
+        "path": "hdblast/continuation/2026.10.25-coupled-mean-pilot/initial-run/RUN.json",
+        "bytes": 14431,
+        "sha256": "186e41338321bdb3a41992da686d3ea5e16c9db959948896ac885ecfd84a31dc",
+        "verified": true
+      },
+      {
+        "path": "hdblast/continuation/2026.10.25-coupled-mean-pilot/initial-run/WORKFLOW_RUNS.json",
+        "bytes": 14467,
+        "sha256": "e94ec07dbf278cb38c00cce3e7e5537f2b9e351f669fb62b21481632f3b51a8e",
+        "verified": true
+      },
+      {
+        "path": "hdblast/continuation/2026.10.25-coupled-mean-pilot/PUBLICATION_PINS.json",
+        "bytes": 1461,
+        "sha256": "0f28efff7c7efe187268eda5e59c8ef60cc793e956bbb12a94e1f926fc1e7945",
+        "verified": true
+      },
+      {
+        "path": "hdblast/continuation/2026.10.25-coupled-mean-pilot/review/INDEPENDENT_CHECKER_ROOT_REPLAY.json",
+        "bytes": 315,
+        "sha256": "bf9e6c3fe051a59e680e1b3fd47443b0d8799aa93ab5dcf90dfce9e7219800a3",
+        "verified": true
+      },
+      {
+        "path": "hdblast/continuation/2026.10.25-coupled-mean-pilot/review/INDEPENDENT_LEDGER_REVIEW.json",
+        "bytes": 10991,
+        "sha256": "965ed448d3d5e55d7323d722b6aafee6c9b129930e971abb5bb9c5fdfce0eb01",
+        "verified": true
+      },
+      {
+        "path": "hdblast/continuation/2026.10.25-coupled-mean-pilot/review/MATHEMATICAL_RESULT_REVIEW.json",
+        "bytes": 7945,
+        "sha256": "eb314560cae3279a8f22d1f2b51eb932457407446cc79e689e7dfa6353f13bea",
+        "verified": true
+      },
+      {
+        "path": "hdblast/continuation/2026.10.25-coupled-mean-pilot/review/STATIC_SOURCE_REVIEW_INITIAL.json",
+        "bytes": 9551,
+        "sha256": "392f164863d48e74bd9fb41c24c1facbf0db52ca0829ffbe3982b5aea3339ac5",
+        "verified": true
+      },
+      {
+        "path": "hdblast/continuation/2026.10.25-coupled-mean-pilot/SITE_ADDITIONS.json",
+        "bytes": 16669,
+        "sha256": "216ff00833a4bd5f3ec5493f12461b7edb94cebad2e79489141e75b6c6a9b1b6",
+        "verified": true
+      },
+      {
+        "path": "hdblast/continuation/2026.10.25-coupled-mean-pilot/verify_live.py",
+        "bytes": 5696,
+        "sha256": "898dde6fdbed1dfcc9b33d93ed9b293f5282f7ab4226a713f54a229399368c34",
+        "verified": true
+      },
+      {
+        "path": "hdblast/continuation/2026.10.25-coupled-mean-pilot/verify_publication.py",
+        "bytes": 3329,
+        "sha256": "bc668f423e1f8cf531da3d3c587273ddd5d4b41f95c475c93f75cb6c2960fb21",
+        "verified": true
+      },
+      {
+        "path": "README.md",
+        "bytes": 93409,
+        "sha256": "9457a4b54f37c87610ba6b4ce389c0e7f6f09d13f25d3e9bbd86ad6355f14933",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/audit_native_ledger.js",
+        "bytes": 5088,
+        "sha256": "da36e46a2609acb44006df5a3c57e2cc9774d762ce29161c06229cd0729cbbcc",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/check_kernel.py",
+        "bytes": 6896,
+        "sha256": "a11d202c70605a4f721c4f41b2b71717f6598edc7c1ebfc05fd4bbceda209921",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/DERIVATION.md",
+        "bytes": 8873,
+        "sha256": "5e275c1ccbc0b952dc34c707202fa9cb56ebd256236d394cc6d8fcd8f6c8e521",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/evaluate_candidate.py",
+        "bytes": 4273,
+        "sha256": "cd76f4c5a14c6f463803a53c5d24c4f9045097d7feedd2333d5495a0309539c4",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/EXACT_FIXTURES.json",
+        "bytes": 36297,
+        "sha256": "b470999777625e402f56a8197a6e850fece9ead7d03ba843c5d3802e8b6066cc",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/generate_fixtures.js",
+        "bytes": 1482,
+        "sha256": "bc1a5c97de934c1b2e6dce887fe512f54c55b51dc5ef25cfb83a0f79449df522",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/independent_actual_b1.js",
+        "bytes": 13520,
+        "sha256": "a6ca44e2d1b2e20aea91bfc817a41a0f45c8fa10286f1723d21088a2f91c9318",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/INDEPENDENT_EXACT_REPORT.json",
+        "bytes": 978,
+        "sha256": "901d9fc86bfe4f34bbccc2c8783bf674ad0051cf70f2ecfd0da7df681af9bc6b",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/independent_kernel_checks.js",
+        "bytes": 8009,
+        "sha256": "571bbe441ff7a4f0c65917d110c5e9c7d4a1555afc6d80db8fec8281c281a288",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/LICENSE",
+        "bytes": 2055,
+        "sha256": "2636dc3177764535426778070d0204497352492b53d135ca0458278af298baf2",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/MANIFEST.json",
+        "bytes": 3198,
+        "sha256": "b932157f308c9912fa83ee06990f1132a4e75a498aafd66eb99dabcc30b256de",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/native_pilot.py",
+        "bytes": 20888,
+        "sha256": "b527497dafd2fa4c849de370fa2c60f866314b3dae3c5a7bae7b6d6f5bcb17de",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/README.md",
+        "bytes": 5339,
+        "sha256": "b98cb7d1f141661ff3f7e3b8d2170b8feb4fba9bf75677031c5051e340154e06",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/reflected_ridge.py",
+        "bytes": 7887,
+        "sha256": "cc38b9a0aef96d8cbc8279070f3cb537fa614d6d8eac923f76fa1d552771b495",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/reproduce.py",
+        "bytes": 8100,
+        "sha256": "593458273054a23ebc7ad0516fb2af0ed704ce4ce897349653d2bdfe0a72d717",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/results/EVALUATED_CANDIDATE.json",
+        "bytes": 107905,
+        "sha256": "1c0d6f62f3858b595335be8a6cd71966a76ce15fa2b921e36f951d1452d54cb6",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/results/INDEPENDENT_FEEDBACK_AUDIT.json",
+        "bytes": 2821,
+        "sha256": "c337013f467503fec7b26513104873d3ffc63e19c9e696053c6fee3e9bc7380f",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/results/NATIVE_LEDGER_AUDIT.json",
+        "bytes": 814,
+        "sha256": "e106c4062172663173f38978ed9173bb00ec4dade39e789c28bd03848ec8131c",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/results/PROFILES.json",
+        "bytes": 235322,
+        "sha256": "6d6f1c8b6fc11589255aa7031bc90b2612fbc022ab42046ea1114ee44ccda0e2",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/results/REPORT.json",
+        "bytes": 617920,
+        "sha256": "6a7ee36f95d2227405dd301ff5dba5e52ebf1b45b7944fd864310e04fa4749be",
+        "verified": true
+      },
+      {
+        "path": "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/SOURCE_PROVENANCE.json",
+        "bytes": 3218,
+        "sha256": "64410d107691f6eb2d61ec1a27b7a2e60a8dc2d88c17887bcfb48bcf1d552941",
+        "verified": true
+      },
+      {
+        "path": "site/es/index.html",
+        "bytes": 129158,
+        "sha256": "c0bfe9bd9d0b1fbf4b78c1b541967b7d8d24876e7ef38ce71e2eddf56b84aa53",
+        "verified": true
+      },
+      {
+        "path": "site/index.html",
+        "bytes": 116565,
+        "sha256": "91a63496bc4b9a3890e61bce4b7c2d2c00f5d36998b317c77107b54d4963ed0e",
+        "verified": true
+      },
+      {
+        "path": "projects/hdblast/index.html",
+        "bytes": 105337,
+        "sha256": "bbe8ddec47236d6267bdecd29593c0398898ce17a518de4d73b87495c28e9107",
+        "verified": true
+      }
+    ]
+  },
+  "ci": {
+    "audit_source": "Complete raw GitHub API JSON response strings in the SHA256-verified input bundle; this reviewer did not poll CI.",
+    "raw_response_and_pr_wrapper_sha256_checks": 20,
+    "complete_pagination": "Each raw workflow/check collection total_count equals the returned item count and is below per_page=100.",
+    "raw_vs_normalized_summaries_identical": true,
+    "every_raw_run_and_check_exact_head_completed_success": true,
+    "every_workflow_has_matching_check_suite": true,
+    "every_check_suite_belongs_to_an_actual_run": true,
+    "exact_owned_API_and_run_URLs_checked": true,
+    "required_paths_equal_actual_workflow_sets": true,
+    "premerge_totals": {
+      "workflow_runs": 9,
+      "check_runs": 9
+    },
+    "postmerge_totals": {
+      "workflow_runs": 11,
+      "check_runs": 13
+    },
+    "shared_premerge": "No workflows/checks ran or were required; zero was explicitly permitted, not represented as executed CI.",
+    "observations": {
+      "premerge": "2026-10-25T18:51:52.125Z",
+      "postmerge": "2026-10-25T19:01:48.323Z"
+    },
+    "details": [
+      {
+        "phase": "premerge",
+        "repository": "maldonado-research/HDblast",
+        "head": "42e1a5bebd94003c63adcad8e72a15614196c4aa",
+        "workflow_runs": 9,
+        "check_runs": 9,
+        "required_paths": [
+          ".github/workflows/boundary-response-20261023.yml",
+          ".github/workflows/common-gauge-forcing-20261016.yml",
+          ".github/workflows/first-gauge-wave-20261016.yml",
+          ".github/workflows/forced-response-bounds-20261023.yml",
+          ".github/workflows/geometric-bulk-sources-20261016.yml",
+          ".github/workflows/hdblast_retained_endpoint_flow.yml",
+          ".github/workflows/hdblast_stored_state_comparison.yml",
+          ".github/workflows/numerical-response-inputs-20261016.yml",
+          ".github/workflows/coupled-mean-pilot-20261025.yml"
+        ],
+        "run_ids": [
+          40222210262,
+          40222210197,
+          40222210248,
+          40222210273,
+          40222210396,
+          40222210282,
+          40222210219,
+          40222210193,
+          40222210210
+        ],
+        "all_success": true,
+        "raw_pages_complete": true
+      },
+      {
+        "phase": "premerge",
+        "repository": "maldonado-research/maldonado-research.github.io",
+        "head": "e6afbba65161c7dcd9be1799c995c8f1338b28af",
+        "workflow_runs": 0,
+        "check_runs": 0,
+        "required_paths": [],
+        "run_ids": [],
+        "all_success": true,
+        "raw_pages_complete": true
+      },
+      {
+        "phase": "postmerge",
+        "repository": "maldonado-research/HDblast",
+        "head": "a97052a03a188e63d77cbe468b50f56e7a2e411d",
+        "workflow_runs": 10,
+        "check_runs": 10,
+        "required_paths": [
+          ".github/workflows/boundary-response-20261023.yml",
+          ".github/workflows/common-gauge-forcing-20261016.yml",
+          ".github/workflows/first-gauge-wave-20261016.yml",
+          ".github/workflows/forced-response-bounds-20261023.yml",
+          ".github/workflows/geometric-bulk-sources-20261016.yml",
+          ".github/workflows/hdblast_retained_endpoint_flow.yml",
+          ".github/workflows/hdblast_stored_state_comparison.yml",
+          ".github/workflows/numerical-response-inputs-20261016.yml",
+          ".github/workflows/coupled-mean-pilot-20261025.yml",
+          ".github/workflows/pages.yml"
+        ],
+        "run_ids": [
+          40223308526,
+          40223308430,
+          40223308562,
+          40223308475,
+          40223308636,
+          40223308462,
+          40223308689,
+          40223308426,
+          40223308638,
+          40223308569
+        ],
+        "all_success": true,
+        "raw_pages_complete": true
+      },
+      {
+        "phase": "postmerge",
+        "repository": "maldonado-research/maldonado-research.github.io",
+        "head": "da1e5312d993c72eef5fab5b4895f73531d6a73a",
+        "workflow_runs": 1,
+        "check_runs": 3,
+        "required_paths": [
+          "dynamic/pages/pages-build-deployment"
+        ],
+        "run_ids": [
+          40223316168
+        ],
+        "all_success": true,
+        "raw_pages_complete": true
+      }
+    ],
+    "frozen_source_replay_run": "https://github.com/maldonado-research/HDblast/actions/runs/40222210282",
+    "merged_source_replay_and_live_readback_run": "https://github.com/maldonado-research/HDblast/actions/runs/40223308689",
+    "research_pages_run": "https://github.com/maldonado-research/HDblast/actions/runs/40223308526",
+    "shared_pages_run": "https://github.com/maldonado-research/maldonado-research.github.io/actions/runs/40223316168"
+  },
+  "runtime_package_and_replay": {
+    "source_manifest_sha256": "b932157f308c9912fa83ee06990f1132a4e75a498aafd66eb99dabcc30b256de",
+    "source_files_including_manifest": 21,
+    "archive": {
+      "git_blob": "4e2853f63789346b3819b2c95c1dd16ff159b385",
+      "bytes": 1104873,
+      "sha256": "0c8c6060eb885ea5361f6746f342ed11b706bbb40d0ce90a240af22c8536dc5d"
+    },
+    "pre_and_post_package_receipts_match": true,
+    "archive_runtime_checks": "Complete unique ZIP closure, CRC, every member hash, every member byte-equal to authenticated source, final archive pin unchanged.",
+    "normal_and_optimized_five_file_hashes_match_frozen_source": true,
+    "pre_and_post_native_receipts_identical": true,
+    "result_files": [
+      "REPORT.json",
+      "PROFILES.json",
+      "EVALUATED_CANDIDATE.json",
+      "NATIVE_LEDGER_AUDIT.json",
+      "INDEPENDENT_FEEDBACK_AUDIT.json"
+    ],
+    "exact_error_matches_source_and_receipts": true,
+    "exact_error_strictly_below_1_6090323e28": true,
+    "published_outward_bound_strictly_below_1e29": true,
+    "scientific_accuracy_passed": true,
+    "selected_mesh": 256,
+    "retained_coarse_failures": [
+      64,
+      128
+    ],
+    "binary_review_limitation_resolved_by_runtime_evidence": "This reviewer could not download binary ZIP bytes using text-only connector routes. The previously reviewed exact ZIP validator ran successfully before and after merge, and public readback independently reported the same complete archive size/SHA256. No local ZIP execution claim is made."
+  },
+  "public_readback": {
+    "status": "PASS_PUBLISHED_SOURCE_ARCHIVE_AND_LIVE_PAGES",
+    "research_source_commit": "a97052a03a188e63d77cbe468b50f56e7a2e411d",
+    "exact_raw_files": 26,
+    "composition": "21 authenticated capsule files including manifest, one exact ZIP, and four edited publication source files.",
+    "all_paths_sizes_sha256_and_owned_URLs_match_independently_reviewed_source": true,
+    "source_research_URLs_pinned_to_canonical_merge": true,
+    "shared_source_read_via_main_with_exact_reviewed_file_hash": true,
+    "whole_live_HTML_documents": 3,
+    "live_pages": [
+      {
+        "bytes": 116565,
+        "prior_marker_types": 39,
+        "sha256": "91a63496bc4b9a3890e61bce4b7c2d2c00f5d36998b317c77107b54d4963ed0e",
+        "url": "https://maldonado-research.github.io/HDblast/",
+        "whole_html_equals_reviewed_source": true
+      },
+      {
+        "bytes": 129158,
+        "prior_marker_types": 39,
+        "sha256": "c0bfe9bd9d0b1fbf4b78c1b541967b7d8d24876e7ef38ce71e2eddf56b84aa53",
+        "url": "https://maldonado-research.github.io/HDblast/es/",
+        "whole_html_equals_reviewed_source": true
+      },
+      {
+        "bytes": 105337,
+        "prior_marker_types": 46,
+        "sha256": "bbe8ddec47236d6267bdecd29593c0398898ce17a518de4d73b87495c28e9107",
+        "url": "https://maldonado-research.github.io/projects/hdblast/",
+        "whole_html_equals_reviewed_source": true
+      }
+    ],
+    "first_attempt_passed": true,
+    "complete_live_insertion_and_retained_marker_checks": true,
+    "verification_method": "Audited the successful authenticated readback receipt against this reviewer's independently computed whole-file hashes and source sizes and previously reviewed readback code. The live verifier was executed by the repository Actions runner; no independent local browser/runtime claim is made."
+  },
+  "final_claim_boundaries": {
+    "allowed": "The bounded continuous coupled five-mean C1 approximation met its declared conditional scaled X-error target and was merged, replayed and published with source, frozen results and verified live pages.",
+    "unchanged_limits": [
+      "Conditional on retained model/operator/source assumptions",
+      "No full angular second-order spacetime",
+      "No pointwise second-derivative Einstein residual certificate",
+      "No intrinsic observable sign",
+      "No nonlinear finite-amplitude family",
+      "No physical Big Bang-origin confirmation",
+      "No novelty or priority conclusion",
+      "Internal AI-assisted review, not external peer review or proof-assistant formalization"
+    ],
+    "no_new_zenodo_or_journal_submission": true,
+    "managed_cloud_unavailable_disclosed": true
+  },
+  "durable_evidence_handoff": "Root will place this unreferenced review blob and the complete audited input bundle on verification/coupled-mean-pilot-20261025. This review does not claim that future branch write has already occurred; it needs no additional main-source mutation.",
+  "reviewer_actions": "Read-only GitHub/API inspection and pure JavaScript evidence checks, plus authorized unreferenced review-blob creation. No CI polling, ref mutation, merge or external submission by this reviewer."
+}
