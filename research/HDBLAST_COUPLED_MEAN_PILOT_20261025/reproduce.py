@@ -106,8 +106,18 @@ def main():
             eval_command = [sys.executable,"-I","-S","-B",*flags,str(HERE/"evaluate_candidate.py"),
                             "--native-output",str(destination),"--output",str(evaluated)]
             eval_raw, eval_stderr = child(eval_command)
+            audit_raw, audit_stderr = child([node,str(HERE/"audit_native_ledger.js"),str(destination)])
+            need(json.loads(audit_raw)["status"] == "PASS_INDEPENDENT_BIGINT_NATIVE_LEDGER_AUDIT",
+                 "independent native ledger audit")
+            (destination/"NATIVE_LEDGER_AUDIT.json").write_bytes(audit_raw)
+            independent_raw, independent_stderr = child(
+                [node,str(HERE/"independent_actual_b1.js"),str(destination)])
+            need(json.loads(independent_raw)["status"] == "PASS_INDEPENDENT_EXACT_POLYGON_CANDIDATE_AUDIT",
+                 "independent actual feedback polygon audit")
+            (destination/"INDEPENDENT_FEEDBACK_AUDIT.json").write_bytes(independent_raw)
             payload = {name:(destination/name).read_bytes()
-                       for name in ("REPORT.json","PROFILES.json","EVALUATED_CANDIDATE.json")}
+                       for name in ("REPORT.json","PROFILES.json","EVALUATED_CANDIDATE.json",
+                                    "NATIVE_LEDGER_AUDIT.json","INDEPENDENT_FEEDBACK_AUDIT.json")}
             mode_payloads.append(payload)
             roles.append({"role":"bounded_native_"+mode,
                           "files":{name:digest(value) for name,value in payload.items()}})

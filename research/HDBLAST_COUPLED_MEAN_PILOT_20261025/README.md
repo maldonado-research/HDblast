@@ -4,8 +4,20 @@
 
 This capsule supplies an exact finite evaluator for the first reflected
 five-mean feedback, together with a bounded numerical accuracy pilot.
-The numerical outcome is pending the first recorded runner execution.
-No accuracy pass is asserted by this draft.
+The bounded pilot passes: the complete conditional X error is below
+**1.6090323e28**, meeting the **1e29** target. The selected mesh has 189 active
+and zero-collar cells with 190 shared nodes (denominator 256).
+The coarser denominator-64 and denominator-128 upper bounds fail and remain
+recorded in [results/REPORT.json](results/REPORT.json).
+
+One continuous approximation now includes the registered rational free
+displacement, its explicitly reconstructed velocity, the complete first
+coupled feedback and shell lift. All six sample evaluations of that
+representation are retained in [results/EVALUATED_CANDIDATE.json](results/EVALUATED_CANDIDATE.json).
+Normal and optimized Python produced identical report, profile and evaluated
+candidate bytes in the initial recorded run. A separate exact polygon/line
+integrator recomputes all six stored feedback samples without importing the
+project kernel. Its complete five-component values and first derivatives match.
 
 The kernel reduces the half-line retarded wave integral for
 f(s,r)=F(r+s)+G(r-s) to normalized one-dimensional primitives. Reflection is
@@ -48,7 +60,9 @@ python -I -S -B reproduce.py --manifest-sha256 EXTERNAL_PIN \
 Normal and optimized numerical runs must produce identical REPORT.json,
 PROFILES.json and EVALUATED_CANDIDATE.json. When frozen results are present,
 every byte is also compared with those references. The native accuracy flag
-is separate from software replay success. The GitHub workflow records both.
+is separate from software replay success. The GitHub workflow requires the
+accuracy pass and records both. The independent BigInt ledger audit recomputes
+all norms, maxima, budget joins and knot coverage from the frozen certificate.
 
 ## Scientific scope
 
@@ -73,3 +87,17 @@ were executed in V8; Python and native execution use this repository's
 GitHub Actions runner. Exact sources and outcomes are retained.
 Earlier capsules, frozen papers and other projects are preserved.
 No new Zenodo version or journal submission accompanies this checkpoint.
+
+## Current research status
+
+| Task | Status at this checkpoint |
+| --- | --- |
+| Retained regular-branch and initial-data precision | Passed in the frozen parent |
+| Continuous coupled five-mean C1 approximation at the declared1e29 target | Passed here |
+| Remaining angular sectors and full second-order matching | Open |
+| Numerical intrinsic observable and its sign | Open |
+| Exact nonlinear finite-amplitude family | Open |
+| Observational support for the proposed Big Bang origin | Not established |
+
+The numerical gate is a model-specific accuracy target. Passing it is not
+journal acceptance, proof of originality, or a physical measurement.

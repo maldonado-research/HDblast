@@ -1,0 +1,156 @@
+{
+  "schema": "HDBLAST_COUPLED_MEAN_INDEPENDENT_FINAL_REVIEW_V1",
+  "date_utc": "2026-10-25",
+  "status": "PASS_INDEPENDENT_STATIC_AND_FROZEN_OUTPUT_MATHEMATICAL_REVIEW",
+  "repository": "maldonado-research/HDblast",
+  "retained_input_commit": "2fb40bdc5a1785ef6a55bc50e6c9d81a3e3e9978",
+  "static_review": {
+    "git_blob_sha": "c781088439c01e687b9a12b51ca5a3933783e74b",
+    "bytes": 9551,
+    "sha256": "392f164863d48e74bd9fb41c24c1facbf0db52ca0829ffbe3982b5aea3339ac5",
+    "scope": "Native producer, reflected kernel, reproduction wrapper, kernel controls and candidate evaluator; source normalization, interpolation, reflection, authentication and error identity."
+  },
+  "reviewed_native_producer": {
+    "git_blob_sha": "05972529dd55f0165a0c47a32d1c735c304fef84",
+    "sha256": "b527497dafd2fa4c849de370fa2c60f866314b3dae3c5a7bae7b6d6f5bcb17de"
+  },
+  "reviewed_reflected_kernel": {
+    "git_blob_sha": "212e9db209a1268bb9a1f030b2e9bdd55ce4a197",
+    "sha256": "cc38b9a0aef96d8cbc8279070f3cb537fa614d6d8eac923f76fa1d552771b495"
+  },
+  "frozen_outputs": [
+    {
+      "role": "REPORT.json",
+      "git_blob_sha": "640b94e1268f950b82c0dd756c2d127ad9b6c275",
+      "sha256": "6a7ee36f95d2227405dd301ff5dba5e52ebf1b45b7944fd864310e04fa4749be"
+    },
+    {
+      "role": "PROFILES.json",
+      "git_blob_sha": "3385248f618b0c01b58d1e3a62466a6ad140b5d9",
+      "sha256": "6d6f1c8b6fc11589255aa7031bc90b2612fbc022ab42046ea1114ee44ccda0e2"
+    },
+    {
+      "role": "EVALUATED_CANDIDATE.json",
+      "git_blob_sha": "140397d77d5f8271d40f165a03db502225a4d248",
+      "sha256": "1c0d6f62f3858b595335be8a6cd71966a76ce15fa2b921e36f951d1452d54cb6"
+    }
+  ],
+  "independent_artifacts": {
+    "actual_B1_checker": {
+      "role": "independent_actual_b1.js",
+      "git_blob_sha": "9005d09367d2ddb9bfb0044480a87de83c784e9d",
+      "bytes": 13520,
+      "sha256": "a6ca44e2d1b2e20aea91bfc817a41a0f45c8fa10286f1723d21088a2f91c9318",
+      "exact_readback": true
+    },
+    "actual_B1_report": {
+      "role": "INDEPENDENT_ACTUAL_B1_AUDIT.json",
+      "git_blob_sha": "6db716163501eae9790275f2d1cc03f46ccdbb1f",
+      "bytes": 2821,
+      "sha256": "c337013f467503fec7b26513104873d3ffc63e19c9e696053c6fee3e9bc7380f",
+      "exact_readback": true
+    },
+    "ledger_report": {
+      "role": "INDEPENDENT_FROZEN_LEDGER_AUDIT.json",
+      "git_blob_sha": "967f08a195b332a0a2871a1f592f28df7ff43b16",
+      "bytes": 10991,
+      "sha256": "965ed448d3d5e55d7323d722b6aafee6c9b129930e971abb5bb9c5fdfce0eb01",
+      "exact_readback": true
+    }
+  },
+  "normalization_resolution": {
+    "potential": "V,V1,V2=UP[0],UP[1],UP[2](eta), without a factor one half.",
+    "scalar_shift": "The numerical coordinate eta=phi0-1. Consequently sigma2=4phi0=4*(1+eta), while sigma1=-2p.",
+    "mean_order": [
+      "K0",
+      "L0",
+      "N0",
+      "J0",
+      "w0"
+    ],
+    "indices": [
+      0,
+      3,
+      6,
+      9,
+      12
+    ],
+    "gram": [
+      1,
+      2,
+      1,
+      3,
+      1
+    ],
+    "reflection_J": [
+      1,
+      -1,
+      1,
+      1,
+      1
+    ],
+    "background": "py=UP1-4ap, ay=-rho^-2-p^2/3, b=d+p^2/3, d=rho^-2-a^2, assemble h=tanh(ell*x)/rho.",
+    "time": "ordinary partial_t=partial_x/ell, ell=1/1000000."
+  },
+  "representation_review": {
+    "B0": "The registered rational displacement is retained; a single continuous rational P1 velocity defines the new free wave.",
+    "B1": "Full constant-matrix coupled reflected bulk feedback from independent P1 u/du forcing profiles plus the coupled Robin lift.",
+    "regularity": "B0 and B1 define a compatible C1 candidate on the whole retained cone. Independent P1 u and du are forcing approximations, not a claimed differentiable jet.",
+    "interpolation": "Whole-cell h^2/8 second-derivative bound plus endpoint quantization, with explicit cutoff joins65/64 and66/64. Packet order6 provides the u0''' bound required to interpolate du.",
+    "dirichlet": "Exact candidate parity supplies the homogeneous Dirichlet row. Four sample interval boxes retain conservative same-expression cancellation width but all contain zero."
+  },
+  "actual_output_audit": {
+    "independent_ledger_checks": 2383,
+    "independent_cell_norm_inequalities": 996,
+    "nonzero_minimal_outward_grid_norm_checks": 987,
+    "zero_norm_checks": 9,
+    "constant_matrix_norm_rounding_checks": 4,
+    "profile_nodes": 190,
+    "selected_cells": 189,
+    "whole_cell_cover_and_epsilon_maxima_checked": true,
+    "independent_exact_B1_component_equalities": 90,
+    "candidate_enclosure_and_time_joins": 532,
+    "additional_representation_and_target_checks": 5,
+    "polygon_pieces": 1768,
+    "endpoint_line_pieces": 1505,
+    "independent_B1_method": "Reconstructed signed characteristic piecewise polynomial sources directly from frozen P1 tables and all five-by-five matrices. Integrated cone polygons using exact clipping and signed triangle moments; computed dx/dr by exact characteristic endpoint line integrals and shell lifts by direct P1 segment moments. No project reflected-kernel import or reflected-kernel formula reuse.",
+    "failures": 0
+  },
+  "error_ledger": {
+    "q": "3409/8000000",
+    "Ucap_scope": "Retained upper bound on the full exact total response U.",
+    "Ucap": "1030000000000000000000000000000000",
+    "source_cap": "52162547172519/2",
+    "identity": "U-(B0+B1)=T^2 U+(I+T)(b-B0)+(T B0-B1)",
+    "e0": "e_free_retained+epsilon_v+source_cap",
+    "e1": "(3/2)*delta_f+delta_g",
+    "E": "q^2*Ucap+(1+q)*e0+e1",
+    "counting": "Velocity interpolation and omitted source norm are charged once in e0; u and du interpolation errors occur only in feedback.",
+    "mesh64_passes": false,
+    "mesh128_passes": false,
+    "mesh256_passes": true,
+    "selected_mesh_denominator": 256,
+    "selected_exact_E": "6778035140203231934969719851173838984314006937829157239306168172841286243894337576815070746443634661/421249166674228746791672110734681729275580381602196445017243910144000000",
+    "strict_display_upper": "16090323000000000000000000000",
+    "target": "100000000000000000000000000000",
+    "exact_below_display_and_target": true
+  },
+  "execution_provenance": {
+    "ci_run_reference": "40219872622",
+    "ci_status_provided_with_frozen_outputs": "SUCCESS; normal and optimized complete native files byte-identical",
+    "ci_status_independently_queried_by_this_review": false,
+    "native_python_producer_executed_by_this_review": false,
+    "independent_exact_JavaScript_arithmetic_executed": true,
+    "standalone_checker_common_audit_function_executed": true,
+    "standalone_Node_wrapper_execution_by_this_review": false,
+    "note": "Frozen output bytes and exact arithmetic were independently checked. The CI run status is supplied execution provenance, not an independently queried CI claim."
+  },
+  "conclusion": "No hidden ledger or representation blocker was identified. The frozen result supports an evaluated conditional five-mean C1 approximation with exact whole-cone X error upper bound below1.6090323e28 and below the1e29 target, subject to the retained and explicitly reviewed premises.",
+  "limits": [
+    "Static review plus frozen-output arithmetic does not independently regenerate the rational initial-profile curvature/quantization intervals or reprove retained branch/PDE/source premises.",
+    "The independent actual-B1 checker verifies the six frozen samples; the whole-cone approximation theorem depends on the static representation and complete native error ledger.",
+    "The result evaluates total five means. It neither resolves the much smaller auxiliary forced increment nor supplies a full angular second-response waveform.",
+    "No pointwise second-derivative Einstein residual, invariant observable value/sign, nonlinear family, finite-amplitude remainder, physical force or cosmological-origin conclusion.",
+    "Internal independent AI-assisted review is not external specialist peer review or proof-assistant formalization."
+  ]
+}

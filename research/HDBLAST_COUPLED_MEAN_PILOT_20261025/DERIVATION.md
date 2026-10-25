@@ -193,3 +193,31 @@ an invariant shell-volume value or sign, a nonlinear finite-amplitude family,
 or physical confirmation. This standard kernel identity establishes no
 originality or priority claim, and internal AI-assisted review is not external
 specialist peer review.
+
+## Measured bounded outcome
+
+The first actual runner execution used the declared meshes64,128,256.
+The total upper caps were approximately3.470126e30,1.188711e29,
+and1.609032296423508e28 respectively. Only the last meets1e29.
+All displayed scientific upper bounds use outward rounding; the exact fraction
+and all per-cell quantities are in results/REPORT.json.
+
+At the accepted level the main ledger is:
+
+| Contribution | Safe outward upper cap |
+| --- | ---: |
+| Retained initial error plus new velocity reconstruction and omitted forcing, e0 | 8.518098e27 |
+| Complete first-feedback approximation error, e1 | 7.381566e27 |
+| Omitted two-term tail q^2 U_cap | 1.870300e26 |
+| Total, including (1+q)e0 | 1.6090323e28 |
+
+These are X-norm bounds in the retained scaled coordinates, not physical
+measurements. The source contributions and initial uncertainty are included
+once. Sample intervals enclose arithmetic evaluation of the specified
+candidate; the separate global X bound encloses its difference from the
+conditional exact response.
+
+The kernel, full profile coefficients and exact matrix coefficients define
+the approximation continuously over D+. Six stored evaluations are examples,
+not the definition or the extent of the certificate. The full angular
+second-order spacetime and intrinsic-observable sign remain unevaluated.

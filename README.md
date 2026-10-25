@@ -1,5 +1,10 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-coupled-mean-pilot="coupled-mean-pilot-20261025" -->
+**25 October 2026: a coupled five-mean response approximation passes its accuracy target.** One continuous C1 approximation now includes the first coupled bulk feedback and shell boundary lift, with a complete conditional X-error bound below **1.6090323e28**, meeting the **1e29** target. The bounded 64 and 128 meshes failed; the declared 256 limit passed. Both execution modes agree, and independent exact integration reproduces the stored feedback samples.
+
+This is progress toward a numerical second-order construction under the retained model assumptions. The full angular spacetime, intrinsic observable sign, nonlinear family and physical Big Bang origin remain unestablished. No new Zenodo version or journal submission was made. [Derivation and scope](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_COUPLED_MEAN_PILOT_20261025/DERIVATION.md) · [Frozen data, source and replay](https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_COUPLED_MEAN_PILOT_20261025) · [Source archive (ZIP)](https://github.com/maldonado-research/HDblast/raw/refs/heads/main/research/HDBLAST_COUPLED_MEAN_PILOT_20261025.zip).
+
 <!-- data-hdb-input-precision="input-precision-20261023" -->
 **23 October 2026: the initial-data precision gate passes.** An exact residual comparison sharpens the same retained regular-shell branch to a beta interval of radius 9.505e-18. A separately registered recentered rational approximation has a certified initial/free-wave error below 8.519e27, meeting the 1e28 target across all 96 cells. The old candidate and its failed bound are preserved. Some illustrative component allocations are exceeded; the exact combined inequality passes.
 

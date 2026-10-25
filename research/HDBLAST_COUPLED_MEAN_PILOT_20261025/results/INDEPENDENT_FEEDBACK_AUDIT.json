@@ -1,0 +1,62 @@
+{
+  "schema": "HDBLAST_INDEPENDENT_ACTUAL_B1_POLYGON_AUDIT_V1",
+  "status": "PASS_INDEPENDENT_EXACT_POLYGON_CANDIDATE_AUDIT",
+  "checker_sha256": "a6ca44e2d1b2e20aea91bfc817a41a0f45c8fa10286f1723d21088a2f91c9318",
+  "input_sha256": {
+    "REPORT.json": "6a7ee36f95d2227405dd301ff5dba5e52ebf1b45b7944fd864310e04fa4749be",
+    "PROFILES.json": "6d6f1c8b6fc11589255aa7031bc90b2612fbc022ab42046ea1114ee44ccda0e2",
+    "EVALUATED_CANDIDATE.json": "1c0d6f62f3858b595335be8a6cd71966a76ce15fa2b921e36f951d1452d54cb6"
+  },
+  "method": "Independent exact polygon clipping and signed triangle moments for the complete physical ridge source, full J reflection on negative-r source, exact characteristic endpoint line integrals for dx/dr, and direct P1 segment-moment shell lifts.",
+  "imports_project_kernel": false,
+  "profile_nodes": 190,
+  "polygon_pieces": 1768,
+  "endpoint_line_pieces": 1505,
+  "exact_feedback_component_equalities": 90,
+  "candidate_enclosure_and_time_joins": 532,
+  "representation_and_target_checks": 5,
+  "dirichlet_interval_boxes_noncollapsed": 4,
+  "dirichlet_interval_note": "The defined candidate satisfies exact Dirichlet parity. Some reported interval boxes retain conservative same-expression cancellation width; every boundary L0 value/dx box contains zero.",
+  "total_X_error_upper": "6778035140203231934969719851173838984314006937829157239306168172841286243894337576815070746443634661/421249166674228746791672110734681729275580381602196445017243910144000000",
+  "strict_upper_display": "16090323000000000000000000000",
+  "target_X_error": "100000000000000000000000000000",
+  "exact_error_below_display_and_target": true,
+  "samples": [
+    {
+      "x": "1",
+      "r": "0",
+      "exact_feedback_match": true
+    },
+    {
+      "x": "9/8",
+      "r": "0",
+      "exact_feedback_match": true
+    },
+    {
+      "x": "5/4",
+      "r": "0",
+      "exact_feedback_match": true
+    },
+    {
+      "x": "3/2",
+      "r": "1/4",
+      "exact_feedback_match": true
+    },
+    {
+      "x": "3/4",
+      "r": "3/4",
+      "exact_feedback_match": true
+    },
+    {
+      "x": "1/2",
+      "r": "5/4",
+      "exact_feedback_match": true
+    }
+  ],
+  "scope": [
+    "Recomputes all six frozen B1 samples and associated interval, whole-cone-error and ordinary-t arithmetic joins from the stored profile/matrix data.",
+    "Does not independently regenerate the initial rational profile curvature/quantization bounds or reauthenticate the retained PDE/source closures.",
+    "This checker uses JavaScript BigInt exact arithmetic. It does not run the native Python producer or verify GitHub Actions status.",
+    "Five conditional C1 means only; no full angular waveform, pointwise Einstein residual, invariant observable value/sign, nonlinear family, finite-amplitude remainder or physical-origin claim."
+  ]
+}
