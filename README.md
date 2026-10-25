@@ -1,5 +1,8 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-shell-precision="shell-precision-20261025" -->
+**Conditional shell and anchored-volume sign bounds — 25 October 2026.** Conditional bounds place N0(x,0) and J0(x,0) below zero at the retained scaled times x=9/8 and x=5/4. Under the retained parent projection assumptions and a smooth kinematical completion, the anchored proper-time volume second parameter derivative is also negative at x=9/8. Finite-amplitude volume change, a full angular Einstein solution and cosmological conclusions remain unestablished. No new Zenodo version or journal submission accompanies this checkpoint. [Source capsule](https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SHELL_FEEDBACK_PRECISION_20261025) · [Observable bound and assumptions](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_SHELL_FEEDBACK_PRECISION_20261025/analysis/OBSERVABLE_BOUND.md).
+
 <!-- data-hdb-coupled-mean-pilot="coupled-mean-pilot-20261025" -->
 **25 October 2026: a coupled five-mean response approximation passes its accuracy target.** One continuous C1 approximation now includes the first coupled bulk feedback and shell boundary lift, with a complete conditional X-error bound below **1.6090323e28**, meeting the **1e29** target. The bounded 64 and 128 meshes failed; the declared 256 limit passed. Both execution modes agree, and independent exact integration reproduces the stored feedback samples.
 

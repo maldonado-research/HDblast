@@ -1,0 +1,56 @@
+{
+  "arithmetic": "Python Fraction; no floating-point decisions",
+  "checker_sha256": "1fe913b259418e08dd10d660ace2d797b4c6f63fe126c117087092e8d0303ca1",
+  "checks": [
+    "Fixed 256 subintervals / 128 Simpson panels and full ordered coverage.",
+    "Each stored remainder equals width^5 times the stored fourth-derivative magnitude divided by 2880.",
+    "Outward panel sums, cumulative remainder, integral enclosure and final candidate assembly.",
+    "Independent direct P1 segment integration reconstructs frozen velocity primitives and boundary velocity.",
+    "Frozen bulk reconstructed from old feedback plus old boundary primitive.",
+    "Old candidate and candidate-change intervals enclosed."
+  ],
+  "frozen_evaluated_candidate_sha256": "1c0d6f62f3858b595335be8a6cd71966a76ce15fa2b921e36f951d1452d54cb6",
+  "frozen_profiles_sha256": "6d6f1c8b6fc11589255aa7031bc90b2612fbc022ab42046ea1114ee44ccda0e2",
+  "limits": [
+    "Candidate evaluation review only; no actual-response or intrinsic-observable sign is certified.",
+    "This replay checks stored derivative bounds algebraically; it does not recompute profile jets or quadrature.",
+    "No frozen producer or old numerical stage was executed."
+  ],
+  "manual_source_review": [
+    "AST extraction preserves the nominal f expressions and zero collar.",
+    "Point jet order 2 leaves f order 0; panel jet order 6 leaves f order 4.",
+    "The factor 4! ell^4 converts the fourth z jet coefficient to the fourth r derivative.",
+    "The balanced identity has the correct sign; nominal u_K is identically zero.",
+    "Splitting at the cutoff permits separate one-sided fourth-derivative bounds."
+  ],
+  "report_sha256": "36cdd588603c2c15226a6793430d8ed3ff3f2101e94afca1f8744a73fce9e276",
+  "samples": [
+    {
+      "all_exact_arithmetic_checks_passed": true,
+      "candidate_interval_strictly_negative": true,
+      "new_candidate_interval": [
+        "-3982449322111156631158183383180024729773081462483/81129638414606681695789005144064",
+        "-15929796481104631789637169454653144178937429721385/324518553658426726783156020576256"
+      ],
+      "panels": 64,
+      "quadrature_remainder_upper": "10999652044218378080892382657792180435392260808126606733313632543/8842844886703374724649759154046524736088612969927147520",
+      "r": "0",
+      "x": "9/8"
+    },
+    {
+      "all_exact_arithmetic_checks_passed": true,
+      "candidate_interval_strictly_negative": true,
+      "new_candidate_interval": [
+        "-1026735682234427841597281316565811949147991613899143/5192296858534827628530496329220096",
+        "-513367820644295291127660294095197063504139017229835/2596148429267413814265248164610048"
+      ],
+      "panels": 128,
+      "quadrature_remainder_upper": "34866813041052335129931551277707741218134682969488852326211220523/8842844886703374724649759154046524736088612969927147520",
+      "r": "0",
+      "x": "5/4"
+    }
+  ],
+  "schema": "HDBLAST_INDEPENDENT_EXACT_BOUNDARY_REVIEW_V1",
+  "source_sha256": "c01a8f5f95737dcacebdc26379ae0ee5863af9c1977890b3901ad6113103e619",
+  "status": "PASS_INDEPENDENT_BOUNDARY_CERTIFICATE_REPLAY"
+}

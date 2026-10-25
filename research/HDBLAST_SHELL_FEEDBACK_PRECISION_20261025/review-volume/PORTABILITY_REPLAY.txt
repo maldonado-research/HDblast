@@ -1,0 +1,38 @@
+Portable volume-review replay, 25 October 2026
+
+Only checker input/output handling changed. VOLUME_JOIN_REVIEW.json and
+VOLUME_JOIN_PROOF.txt retain the preceding review as a reference. The
+independent formulas, interval decisions, input/report/source pins,
+generic cross-check and wrong-formula controls are unchanged.
+
+Required arguments:
+  --repo-root PATH
+  --output FRESH_EXTERNAL_PATH
+
+Optional arguments:
+  --capsule-root PATH (default: checker's parent directory's parent)
+  --report PATH (default: capsule-root/results/JOINED_NORMAL.json)
+
+The logical prefix repo/research/ resolves through the supplied repo root.
+All recorded hash keys are portable logical names. The report is recorded
+as results/JOINED_NORMAL.json regardless of the supplied physical path.
+The checker requires its output outside both capsule root and repo root,
+and opens it exclusively to preserve existing files.
+
+Verified commands used the current workspace capsule, its explicit repo
+root, --report /tmp/hdblast-joined-final-normal-20261025.json, and distinct
+fresh output files outside the capsule. The normal and python -O outputs
+were then copied unchanged to FINAL_VOLUME_JOIN_REVIEW_NORMAL.json and
+FINAL_VOLUME_JOIN_REVIEW_OPTIMIZED.json. These files are byte-identical.
+
+Additional I/O checks passed:
+  * All hash keys are logical paths, with no absolute path keys.
+  * The result excluding the hash map equals the previous review exactly.
+  * A relocated capsule with results/JOINED_NORMAL.json and an explicit
+    repo root produces identical output with no --report override.
+  * Reusing an output path fails with FRESH_OUTPUT_REQUIRED.
+  * A fresh path inside the capsule fails with OUTPUT_INSIDE_CAPSULE.
+
+The current workspace has no default results/JOINED_NORMAL.json; packaging
+must supply the final pinned report there, as planned. This is an input
+placement requirement, not a mathematical or checker blocker.
