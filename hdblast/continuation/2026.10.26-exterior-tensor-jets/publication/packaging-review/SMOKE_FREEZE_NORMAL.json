@@ -1,0 +1,123 @@
+{
+  "all_nine_upstream_closures_authenticated_before_and_after": true,
+  "optional_archive_crc_exact_member_and_bytes_pass": true,
+  "project_CLIs_executed": false,
+  "reason_specific_guard_cases": [
+    {
+      "case": "wrong_archive_pin",
+      "reason": "ARCHIVE_PIN"
+    },
+    {
+      "case": "invalid_member_'../escape'",
+      "reason": "MANIFEST_MEMBER_PATH"
+    },
+    {
+      "case": "invalid_member_'/absolute'",
+      "reason": "MANIFEST_MEMBER_PATH"
+    },
+    {
+      "case": "invalid_member_'a//b'",
+      "reason": "MANIFEST_MEMBER_PATH"
+    },
+    {
+      "case": "invalid_member_'a/./b'",
+      "reason": "MANIFEST_MEMBER_PATH"
+    },
+    {
+      "case": "invalid_member_'a\\\\b'",
+      "reason": "MANIFEST_MEMBER_PATH"
+    },
+    {
+      "case": "invalid_member_''",
+      "reason": "MANIFEST_MEMBER_PATH"
+    },
+    {
+      "case": "own_capsule_output",
+      "reason": "OUTPUT_INSIDE_PROTECTED_CAPSULE"
+    },
+    {
+      "case": "old_capsule_output_HDBLAST_COUPLED_MEAN_PILOT_20261025",
+      "reason": "OUTPUT_INSIDE_PROTECTED_CAPSULE"
+    },
+    {
+      "case": "old_capsule_output_HDBLAST_INPUT_PRECISION_20261023",
+      "reason": "OUTPUT_INSIDE_PROTECTED_CAPSULE"
+    },
+    {
+      "case": "old_capsule_output_HDBLAST_COMMON_GAUGE_FORCING_20261016",
+      "reason": "OUTPUT_INSIDE_PROTECTED_CAPSULE"
+    },
+    {
+      "case": "old_capsule_output_HDBLAST_NUMERICAL_RESPONSE_INPUTS_20261016",
+      "reason": "OUTPUT_INSIDE_PROTECTED_CAPSULE"
+    },
+    {
+      "case": "old_capsule_output_HDBLAST_GEOMETRIC_BULK_SOURCES_20261016",
+      "reason": "OUTPUT_INSIDE_PROTECTED_CAPSULE"
+    },
+    {
+      "case": "old_capsule_output_HDBLAST_FORCED_RESPONSE_BOUNDS_20261023",
+      "reason": "OUTPUT_INSIDE_PROTECTED_CAPSULE"
+    },
+    {
+      "case": "old_capsule_output_HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023",
+      "reason": "OUTPUT_INSIDE_PROTECTED_CAPSULE"
+    },
+    {
+      "case": "old_capsule_output_HDBLAST_FULL_ANGULAR_RESPONSE_20261026",
+      "reason": "OUTPUT_INSIDE_PROTECTED_CAPSULE"
+    },
+    {
+      "case": "old_capsule_output_HDBLAST_SHELL_FEEDBACK_PRECISION_20261025",
+      "reason": "OUTPUT_INSIDE_PROTECTED_CAPSULE"
+    },
+    {
+      "case": "existing_output_dir",
+      "reason": "FRESH_EXTERNAL_OUTPUT_DIRECTORY"
+    },
+    {
+      "case": "symlink_output_dir",
+      "reason": "OUTPUT_DIRECTORY_SYMLINK"
+    }
+  ],
+  "reproducer_sha256": "0f883aa17fae778dccea34f3c448f458028425ce8c30f9085bd31269dfd1eefe",
+  "scientific_campaigns_executed": false,
+  "source_corruption_controls": [
+    {
+      "control": "wrong_external_manifest_pin",
+      "reason": "MANIFEST_PIN",
+      "rejected": true
+    },
+    {
+      "control": "changed_member_bytes",
+      "reason": "MANIFEST_MEMBER_BYTES",
+      "rejected": true
+    },
+    {
+      "control": "undeclared_member",
+      "reason": "MANIFEST_COMPLETE_CLOSURE",
+      "rejected": true
+    },
+    {
+      "control": "member_symlink",
+      "reason": "MANIFEST_MEMBER_TYPE",
+      "rejected": true
+    },
+    {
+      "control": "duplicate_manifest_member",
+      "reason": "MANIFEST_MEMBER_PATH",
+      "rejected": true
+    },
+    {
+      "control": "parent_traversal",
+      "reason": "MANIFEST_MEMBER_PATH",
+      "rejected": true
+    },
+    {
+      "control": "absolute_member_path",
+      "reason": "MANIFEST_MEMBER_PATH",
+      "rejected": true
+    }
+  ],
+  "status": "PASS_CHEAP_REPRODUCER_SMOKE"
+}

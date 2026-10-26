@@ -1,0 +1,235 @@
+{
+  "all_17_golden_hashes_match_immutable_remote_source": true,
+  "all_20_pass_ids_and_4_expected_reasons_match": true,
+  "completion": {
+    "complete_upstream_closures": 9,
+    "direct_runs": 20,
+    "expected_nonzero_direct_runs": 4,
+    "final_pins": {
+      "capsule_manifest_sha256": "0bc16f65598ae4977a7b8ab70a66c13ec85d844c871d6fee7739c4ec472d1c70",
+      "evaluator_sha256": "c8db4e274405a5c74026aead295e42092abcf14fa30e634b4e7f7232aba48d88",
+      "final_numeric_report_sha256": "f44d6e4286e5b65ce60c37dbda95b64c82b7614568184a05e593e3b930ff096f",
+      "independent_numeric_reviewer_sha256": "236a0e126e8224ef50637ea7942d541ca2049bb4497dc2dde02f5e769715a838",
+      "input_module_sha256": "d36f8aca0b257ed8bc9de6b2cbacbdcde24ebf3b447823e54d8af006638e08cb"
+    },
+    "independent_math_negative_controls": 4,
+    "indexed_programs": 11,
+    "positive_direct_runs": 16,
+    "scientific_golden_matches": 17,
+    "source_corruption_controls": 7,
+    "status": "PASS"
+  },
+  "decoded_log_sha256": "35314988c987f9a075d0b7802afc6ca4ffb8c024bdaafa5be1893ec2ea735cb1",
+  "goldens": [
+    {
+      "actor": "actual-twojet-normal",
+      "byte_identical": true,
+      "golden": "compute/TT_TWOJET_NORMAL.json",
+      "sha256": "f44d6e4286e5b65ce60c37dbda95b64c82b7614568184a05e593e3b930ff096f"
+    },
+    {
+      "actor": "actual-twojet-optimized",
+      "byte_identical": true,
+      "golden": "compute/TT_TWOJET_OPTIMIZED.json",
+      "sha256": "f44d6e4286e5b65ce60c37dbda95b64c82b7614568184a05e593e3b930ff096f"
+    },
+    {
+      "actor": "independent-source-normal",
+      "byte_identical": true,
+      "golden": "review-inputs/ORACLE_FINAL_NORMAL.json",
+      "sha256": "1f9c196e0b9c5e7922fbc752b509aaf50eba717b11e9eaa6fef5c5d6d012e9fa"
+    },
+    {
+      "actor": "independent-source-optimized",
+      "byte_identical": true,
+      "golden": "review-inputs/ORACLE_FINAL_OPTIMIZED.json",
+      "sha256": "1f9c196e0b9c5e7922fbc752b509aaf50eba717b11e9eaa6fef5c5d6d012e9fa"
+    },
+    {
+      "actor": "independent-twojet-normal",
+      "byte_identical": true,
+      "golden": "review-numeric/REVIEW_NORMAL.json",
+      "sha256": "999f8ad59af9dfc0c16f0a27545b7d1cab6221990a821cd53b307eef2051cc33"
+    },
+    {
+      "actor": "independent-twojet-optimized",
+      "byte_identical": true,
+      "golden": "review-numeric/REVIEW_OPTIMIZED.json",
+      "sha256": "999f8ad59af9dfc0c16f0a27545b7d1cab6221990a821cd53b307eef2051cc33"
+    },
+    {
+      "actor": "polynomial-controls-normal",
+      "byte_identical": true,
+      "golden": "compute/POLYNOMIAL_CONTROLS.json",
+      "sha256": "c8d9bb066136a5e83d6c7e5ce86771ea7122e397f2037c6ab9d5e3906ac4cac7"
+    },
+    {
+      "actor": "polynomial-controls-optimized",
+      "byte_identical": true,
+      "golden": "compute/POLYNOMIAL_CONTROLS_OPTIMIZED.json",
+      "sha256": "c8d9bb066136a5e83d6c7e5ce86771ea7122e397f2037c6ab9d5e3906ac4cac7"
+    },
+    {
+      "actor": "source-Fr-normal",
+      "byte_identical": true,
+      "golden": "inputs/actual_source_radial_final_normal.json",
+      "sha256": "079f8a186783245e7e3a26b77b85ddc1234062afbe5e22d68bc1f412dc6cbbca"
+    },
+    {
+      "actor": "source-Fr-optimized",
+      "byte_identical": true,
+      "golden": "inputs/actual_source_radial_final_optimized.json",
+      "sha256": "079f8a186783245e7e3a26b77b85ddc1234062afbe5e22d68bc1f412dc6cbbca"
+    },
+    {
+      "actor": "source-dependency-normal",
+      "byte_identical": true,
+      "golden": "inputs/c4_need_audit_normal.json",
+      "sha256": "36797fb28eb03ab17be678fcd3ce88498bd700881e088fc08270efb4cf081e62"
+    },
+    {
+      "actor": "source-dependency-optimized",
+      "byte_identical": true,
+      "golden": "inputs/c4_need_audit_optimized.json",
+      "sha256": "36797fb28eb03ab17be678fcd3ce88498bd700881e088fc08270efb4cf081e62"
+    },
+    {
+      "actor": "source-math-control-ledger",
+      "byte_identical": true,
+      "golden": "review-inputs/CONTROL_LEDGER.json",
+      "sha256": "4bc096a11a82f354e3a95026d117f814bed6d64dc0937aae8f742c80be1275c9"
+    },
+    {
+      "actor": "source-output-guards-normal",
+      "byte_identical": true,
+      "golden": "inputs/output_guards_normal.json",
+      "sha256": "8a56f154d422649ba6b7cd13f5ad215904ef583bb0ccda26ed5ba22406f71379"
+    },
+    {
+      "actor": "source-output-guards-optimized",
+      "byte_identical": true,
+      "golden": "inputs/output_guards_optimized.json",
+      "sha256": "8a56f154d422649ba6b7cd13f5ad215904ef583bb0ccda26ed5ba22406f71379"
+    },
+    {
+      "actor": "theory-controls-normal",
+      "byte_identical": true,
+      "golden": "theory/THEORY_CONTROLS_NORMAL.json",
+      "sha256": "cb7b34781cb9bd87244b557c95de5cbb201893ecd02925e8626bd259927d3d5a"
+    },
+    {
+      "actor": "theory-controls-optimized",
+      "byte_identical": true,
+      "golden": "theory/THEORY_CONTROLS_OPTIMIZED.json",
+      "sha256": "cb7b34781cb9bd87244b557c95de5cbb201893ecd02925e8626bd259927d3d5a"
+    }
+  ],
+  "head_sha": "055dc5c689b2069681b14d18a1c7e6a896778a29",
+  "independent_fetch_and_root_scientific_evidence_match": true,
+  "job_id": 121745057334,
+  "passes": [
+    {
+      "expected_rejection": null,
+      "id": "source-Fr-optimized"
+    },
+    {
+      "expected_rejection": null,
+      "id": "source-Fr-normal"
+    },
+    {
+      "expected_rejection": null,
+      "id": "source-dependency-optimized"
+    },
+    {
+      "expected_rejection": null,
+      "id": "source-dependency-normal"
+    },
+    {
+      "expected_rejection": null,
+      "id": "source-output-guards-optimized"
+    },
+    {
+      "expected_rejection": null,
+      "id": "source-output-guards-normal"
+    },
+    {
+      "expected_rejection": null,
+      "id": "actual-twojet-normal"
+    },
+    {
+      "expected_rejection": null,
+      "id": "actual-twojet-optimized"
+    },
+    {
+      "expected_rejection": null,
+      "id": "polynomial-controls-normal"
+    },
+    {
+      "expected_rejection": null,
+      "id": "polynomial-controls-optimized"
+    },
+    {
+      "expected_rejection": null,
+      "id": "theory-controls-normal"
+    },
+    {
+      "expected_rejection": null,
+      "id": "theory-controls-optimized"
+    },
+    {
+      "expected_rejection": null,
+      "id": "independent-source-optimized"
+    },
+    {
+      "expected_rejection": null,
+      "id": "independent-source-normal"
+    },
+    {
+      "expected_rejection": null,
+      "id": "independent-twojet-normal"
+    },
+    {
+      "expected_rejection": null,
+      "id": "independent-twojet-optimized"
+    },
+    {
+      "expected_rejection": "INDEPENDENT_PHYSICAL_CHAIN:yy:0",
+      "id": "source-mutant-omit_yy_conversion-normal"
+    },
+    {
+      "expected_rejection": "INDEPENDENT_FULL_SOURCE_LEIBNIZ:0",
+      "id": "source-mutant-wrong_negative_power_derivative-normal"
+    },
+    {
+      "expected_rejection": "INDEPENDENT_PHYSICAL_CHAIN:yy:0",
+      "id": "source-mutant-omit_yy_conversion-optimized"
+    },
+    {
+      "expected_rejection": "INDEPENDENT_FULL_SOURCE_LEIBNIZ:0",
+      "id": "source-mutant-wrong_negative_power_derivative-optimized"
+    }
+  ],
+  "repository": "maldonado-research/HDblast",
+  "root_native_proof_sha256": "d27894ae2a1d4c5fb54e32f60e4032ce486b20a2ac2b078f9ff96a2fcce4af68",
+  "run_id": 40372051401,
+  "scope": "Decoded native job log, not a downloaded full artifact. CI receipt metadata hash is host-specific and is not required to equal the local receipt hash.",
+  "source": "independently refetched GitHub connector decoded completed job log",
+  "status": "PASS",
+  "summary": {
+    "archive_sha256": "e96e42544d78bfe89ef0cd47414e97cefd8618048c446c8ecfe9a16480c4cad0",
+    "capsule_source_files": 46,
+    "direct_runs": 20,
+    "expected_nonzero_direct_runs": 4,
+    "independent_math_negative_controls": 4,
+    "indexed_programs": 11,
+    "manifest_sha256": "0bc16f65598ae4977a7b8ab70a66c13ec85d844c871d6fee7739c4ec472d1c70",
+    "phase": "ci-receipt",
+    "positive_direct_runs": 16,
+    "receipt_sha256": "4d37d8a93341e0f6e926bba5d6033c2d1251031be8d74e6dce4a6781da2eae84",
+    "reproduce_sha256": "0f883aa17fae778dccea34f3c448f458028425ce8c30f9085bd31269dfd1eefe",
+    "scientific_golden_matches": 17,
+    "source_corruption_controls": 7,
+    "status": "PASS",
+    "upstream_closures": 9
+  }
+}

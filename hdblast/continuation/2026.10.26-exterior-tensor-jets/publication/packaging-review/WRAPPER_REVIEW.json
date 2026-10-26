@@ -1,0 +1,88 @@
+{
+  "complete_curated_python_inventory": 11,
+  "complete_upstream_closures_before_and_after": 9,
+  "expected_nonzero_mathematical_controls": 4,
+  "expected_positive_direct_runs": 16,
+  "external_output_protected_upstream_roots": [
+    "HDBLAST_COUPLED_MEAN_PILOT_20261025",
+    "HDBLAST_INPUT_PRECISION_20261023",
+    "HDBLAST_COMMON_GAUGE_FORCING_20261016",
+    "HDBLAST_NUMERICAL_RESPONSE_INPUTS_20261016",
+    "HDBLAST_GEOMETRIC_BULK_SOURCES_20261016",
+    "HDBLAST_FORCED_RESPONSE_BOUNDS_20261023",
+    "HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023",
+    "HDBLAST_FULL_ANGULAR_RESPONSE_20261026",
+    "HDBLAST_SHELL_FEEDBACK_PRECISION_20261025"
+  ],
+  "findings": [],
+  "full_campaign_executed_during_review": false,
+  "limitations": [
+    "Full packaged replay remains to be run by the parent; this review used static inspection and cheap isolated synthetic checks only."
+  ],
+  "mocked_fresh_wrong_formula_ledger_matches_canonical_bytes": true,
+  "new_and_upstream_authentication_before_project_execution_by_control_flow": true,
+  "new_manifest_schema_exact": "HDBLAST_EXTERIOR_TENSOR_JETS_MANIFEST_V1",
+  "optional_archive_crc_exact_members_and_bytes_checked": true,
+  "packaged_capsule_output_protected": true,
+  "provenance_only_programs": [
+    "review-inputs/dependency_review.py",
+    "review-inputs/generate_exact_fixture.py"
+  ],
+  "provenance_programs_executed": false,
+  "reproducer_sha256": "0f883aa17fae778dccea34f3c448f458028425ce8c30f9085bd31269dfd1eefe",
+  "runtime_programs_in_both_isolated_modes": 8,
+  "schema": "HDBLAST_EXTERIOR_TENSOR_JETS_REPRODUCER_REVIEW_V1",
+  "scientific_and_control_goldens": 17,
+  "source_corruption_controls": [
+    {
+      "control": "wrong_external_manifest_pin",
+      "reason": "MANIFEST_PIN",
+      "rejected": true
+    },
+    {
+      "control": "changed_member_bytes",
+      "reason": "MANIFEST_MEMBER_BYTES",
+      "rejected": true
+    },
+    {
+      "control": "undeclared_member",
+      "reason": "MANIFEST_COMPLETE_CLOSURE",
+      "rejected": true
+    },
+    {
+      "control": "member_symlink",
+      "reason": "MANIFEST_MEMBER_TYPE",
+      "rejected": true
+    },
+    {
+      "control": "duplicate_manifest_member",
+      "reason": "MANIFEST_MEMBER_PATH",
+      "rejected": true
+    },
+    {
+      "control": "parent_traversal",
+      "reason": "MANIFEST_MEMBER_PATH",
+      "rejected": true
+    },
+    {
+      "control": "absolute_member_path",
+      "reason": "MANIFEST_MEMBER_PATH",
+      "rejected": true
+    }
+  ],
+  "standard_library_only_imports": [
+    "argparse",
+    "concurrent",
+    "hashlib",
+    "json",
+    "pathlib",
+    "shutil",
+    "stat",
+    "subprocess",
+    "sys",
+    "tempfile",
+    "threading",
+    "zipfile"
+  ],
+  "status": "PASS_INDEPENDENT_CHEAP_REPRODUCER_REVIEW"
+}
