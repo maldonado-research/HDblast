@@ -1,0 +1,730 @@
+{
+  "repository": "maldonado-research/HDblast",
+  "head": "bbd0a239361ec9f83db9c946d47e881ec5804c18",
+  "workflow_run_id": 40383570148,
+  "job_id": 121785860713,
+  "source": "GitHub native workflow job logs through read-only connector",
+  "raw_logs_retained": false,
+  "records": [
+    {
+      "pass": true,
+      "phase": "integrity-control",
+      "reason": "MANIFEST_PIN",
+      "run": "wrong-manifest-pin-normal"
+    },
+    {
+      "pass": true,
+      "phase": "integrity-control",
+      "reason": "MANIFEST_MEMBER_BYTES",
+      "run": "changed-primary-source-normal"
+    },
+    {
+      "pass": true,
+      "phase": "integrity-control",
+      "reason": "MANIFEST_MEMBER_BYTES",
+      "run": "changed-dependency-source-normal"
+    },
+    {
+      "pass": true,
+      "phase": "integrity-control",
+      "reason": "MANIFEST_COMPLETE_CLOSURE",
+      "run": "undeclared-member-normal"
+    },
+    {
+      "pass": true,
+      "phase": "integrity-control",
+      "reason": "MANIFEST_MEMBER_TYPE",
+      "run": "source-symlink-normal"
+    },
+    {
+      "pass": true,
+      "phase": "integrity-control",
+      "reason": "MANIFEST_MEMBER_PATH",
+      "run": "duplicate-member-normal"
+    },
+    {
+      "pass": true,
+      "phase": "integrity-control",
+      "reason": "MANIFEST_MEMBER_PATH",
+      "run": "parent-traversal-normal"
+    },
+    {
+      "pass": true,
+      "phase": "integrity-control",
+      "reason": "MANIFEST_MEMBER_PATH",
+      "run": "absolute-member-normal"
+    },
+    {
+      "pass": true,
+      "phase": "integrity-control",
+      "reason": "MANIFEST_PIN",
+      "run": "wrong-manifest-pin-optimized"
+    },
+    {
+      "pass": true,
+      "phase": "integrity-control",
+      "reason": "MANIFEST_MEMBER_BYTES",
+      "run": "changed-primary-source-optimized"
+    },
+    {
+      "pass": true,
+      "phase": "integrity-control",
+      "reason": "MANIFEST_MEMBER_BYTES",
+      "run": "changed-dependency-source-optimized"
+    },
+    {
+      "pass": true,
+      "phase": "integrity-control",
+      "reason": "MANIFEST_COMPLETE_CLOSURE",
+      "run": "undeclared-member-optimized"
+    },
+    {
+      "pass": true,
+      "phase": "integrity-control",
+      "reason": "MANIFEST_MEMBER_TYPE",
+      "run": "source-symlink-optimized"
+    },
+    {
+      "pass": true,
+      "phase": "integrity-control",
+      "reason": "MANIFEST_MEMBER_PATH",
+      "run": "duplicate-member-optimized"
+    },
+    {
+      "pass": true,
+      "phase": "integrity-control",
+      "reason": "MANIFEST_MEMBER_PATH",
+      "run": "parent-traversal-optimized"
+    },
+    {
+      "pass": true,
+      "phase": "integrity-control",
+      "reason": "MANIFEST_MEMBER_PATH",
+      "run": "absolute-member-optimized"
+    },
+    {
+      "expected_rejection": "ARCHIVE_PIN",
+      "id": "wrong-archive-pin",
+      "pass": true,
+      "phase": "integrity-control",
+      "reason_verified": true
+    },
+    {
+      "expected_rejection": "ARCHIVE_MEMBER_BYTES",
+      "id": "changed-archive-member",
+      "pass": true,
+      "phase": "integrity-control",
+      "reason_verified": true
+    },
+    {
+      "expected_rejection": "ARCHIVE_EXACT_MEMBERS",
+      "id": "missing-archive-members",
+      "pass": true,
+      "phase": "integrity-control",
+      "reason_verified": true
+    },
+    {
+      "mode": "normal",
+      "phase": "start",
+      "run": "curl-normal"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 3163,
+      "output": "curl-normal.json",
+      "phase": "golden",
+      "reference": "review/angular/CURL_NORMAL.json",
+      "run": "curl-normal",
+      "sha256": "f23bbab41771ff29a9cbf74225db93023f6ab92f361deb7f7df674f2a14af0ba"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "curl-normal"
+    },
+    {
+      "mode": "optimized",
+      "phase": "start",
+      "run": "curl-optimized"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 3163,
+      "output": "curl-optimized.json",
+      "phase": "golden",
+      "reference": "review/angular/CURL_OPTIMIZED.json",
+      "run": "curl-optimized",
+      "sha256": "f23bbab41771ff29a9cbf74225db93023f6ab92f361deb7f7df674f2a14af0ba"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "curl-optimized"
+    },
+    {
+      "mode": "normal",
+      "phase": "start",
+      "run": "curl-controls"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 2993,
+      "output": "curl-controls.json",
+      "phase": "golden",
+      "reference": "review/angular/CURL_CONTROLS.json",
+      "run": "curl-controls",
+      "sha256": "1a883688ca0c02f9ea77469b25a5b1accdf14d703b316db048ac3c99a6115564"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "curl-controls"
+    },
+    {
+      "mode": "normal",
+      "phase": "start",
+      "run": "angular-reduction-normal"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 995,
+      "output": "angular-reduction-normal.json",
+      "phase": "golden",
+      "reference": "theory/ANGULAR_REDUCTION_NORMAL.json",
+      "run": "angular-reduction-normal",
+      "sha256": "7ce74952241cee0aad92e54c6b3e24ef66888a16acb643c90fd522746fdbe37e"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "angular-reduction-normal"
+    },
+    {
+      "mode": "optimized",
+      "phase": "start",
+      "run": "angular-reduction-optimized"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 995,
+      "output": "angular-reduction-optimized.json",
+      "phase": "golden",
+      "reference": "theory/ANGULAR_REDUCTION_OPTIMIZED.json",
+      "run": "angular-reduction-optimized",
+      "sha256": "7ce74952241cee0aad92e54c6b3e24ef66888a16acb643c90fd522746fdbe37e"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "angular-reduction-optimized"
+    },
+    {
+      "mode": "normal",
+      "phase": "start",
+      "run": "theory-guards-normal"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 592,
+      "output": "theory-guards-normal.json",
+      "phase": "golden",
+      "reference": "theory/GUARDS_NORMAL.json",
+      "run": "theory-guards-normal",
+      "sha256": "0dfd3a9f326e121dec4bdfaecc97a3f9fe4f71264258310dbf0c49ce30d915e3"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "theory-guards-normal"
+    },
+    {
+      "mode": "optimized",
+      "phase": "start",
+      "run": "theory-guards-optimized"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 592,
+      "output": "theory-guards-optimized.json",
+      "phase": "golden",
+      "reference": "theory/GUARDS_OPTIMIZED.json",
+      "run": "theory-guards-optimized",
+      "sha256": "0dfd3a9f326e121dec4bdfaecc97a3f9fe4f71264258310dbf0c49ce30d915e3"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "theory-guards-optimized"
+    },
+    {
+      "mode": "normal",
+      "phase": "start",
+      "run": "direct-q-normal"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1151,
+      "output": "direct-q-normal.json",
+      "phase": "golden",
+      "reference": "review/DIRECT_NORMAL.json",
+      "run": "direct-q-normal",
+      "sha256": "6a48d6ba5a19a138ec9f8f2f9337e1b0c229d47b8a8941d55078c8add8e1281f"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "direct-q-normal"
+    },
+    {
+      "mode": "optimized",
+      "phase": "start",
+      "run": "direct-q-optimized"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1151,
+      "output": "direct-q-optimized.json",
+      "phase": "golden",
+      "reference": "review/DIRECT_OPTIMIZED.json",
+      "run": "direct-q-optimized",
+      "sha256": "6a48d6ba5a19a138ec9f8f2f9337e1b0c229d47b8a8941d55078c8add8e1281f"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "direct-q-optimized"
+    },
+    {
+      "mode": "normal",
+      "phase": "start",
+      "run": "direct-combined-normal"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1370,
+      "output": "direct-combined-normal.json",
+      "phase": "golden",
+      "reference": "review/DIRECT_COMBINED_NORMAL.json",
+      "run": "direct-combined-normal",
+      "sha256": "3be62c9e20b926d87ee2217ee2164953c0d018b785a1e2c6f9f3d618894af143"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "direct-combined-normal"
+    },
+    {
+      "mode": "optimized",
+      "phase": "start",
+      "run": "direct-combined-optimized"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1370,
+      "output": "direct-combined-optimized.json",
+      "phase": "golden",
+      "reference": "review/DIRECT_COMBINED_OPTIMIZED.json",
+      "run": "direct-combined-optimized",
+      "sha256": "3be62c9e20b926d87ee2217ee2164953c0d018b785a1e2c6f9f3d618894af143"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "direct-combined-optimized"
+    },
+    {
+      "mode": "normal",
+      "phase": "start",
+      "run": "scalar-symmetry-normal"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1263,
+      "output": "scalar-symmetry-normal.json",
+      "phase": "golden",
+      "reference": "review/symmetry/SYMMETRY_NORMAL.json",
+      "run": "scalar-symmetry-normal",
+      "sha256": "51807aa6fd5da47b00caf88a7a653add7264ca1954d8875a246fba67ea26f928"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "scalar-symmetry-normal"
+    },
+    {
+      "mode": "optimized",
+      "phase": "start",
+      "run": "scalar-symmetry-optimized"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1263,
+      "output": "scalar-symmetry-optimized.json",
+      "phase": "golden",
+      "reference": "review/symmetry/SYMMETRY_OPTIMIZED.json",
+      "run": "scalar-symmetry-optimized",
+      "sha256": "51807aa6fd5da47b00caf88a7a653add7264ca1954d8875a246fba67ea26f928"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "scalar-symmetry-optimized"
+    },
+    {
+      "mode": "normal",
+      "phase": "start",
+      "run": "symmetry-controls"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1263,
+      "output": "symmetry-controls/SYMMETRY_NORMAL.json",
+      "phase": "golden",
+      "reference": "review/symmetry/SYMMETRY_NORMAL.json",
+      "run": "symmetry-controls",
+      "sha256": "51807aa6fd5da47b00caf88a7a653add7264ca1954d8875a246fba67ea26f928"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1263,
+      "output": "symmetry-controls/SYMMETRY_OPTIMIZED.json",
+      "phase": "golden",
+      "reference": "review/symmetry/SYMMETRY_OPTIMIZED.json",
+      "run": "symmetry-controls",
+      "sha256": "51807aa6fd5da47b00caf88a7a653add7264ca1954d8875a246fba67ea26f928"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 3573,
+      "output": "symmetry-controls/SYMMETRY_CONTROLS.json",
+      "phase": "golden",
+      "reference": "review/symmetry/SYMMETRY_CONTROLS.json",
+      "run": "symmetry-controls",
+      "sha256": "c5fe232fb396f971a3d89734cf1403aa2fe72adb583582aa213df60608b2e9ed"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "symmetry-controls"
+    },
+    {
+      "mode": "normal",
+      "phase": "start",
+      "run": "wrong-magnetic_sign-normal"
+    },
+    {
+      "expected_rejection": "COMPLETE_MAGNETIC_TT_IDENTITY",
+      "phase": "pass",
+      "run": "wrong-magnetic_sign-normal"
+    },
+    {
+      "mode": "normal",
+      "phase": "start",
+      "run": "wrong-electric_half-normal"
+    },
+    {
+      "expected_rejection": "ELECTRIC_TT_PROJECTION",
+      "phase": "pass",
+      "run": "wrong-electric_half-normal"
+    },
+    {
+      "mode": "normal",
+      "phase": "start",
+      "run": "wrong-reflection_slots-normal"
+    },
+    {
+      "expected_rejection": "REFLECTION_EXCHANGE_INCLUDING_SLOTS",
+      "phase": "pass",
+      "run": "wrong-reflection_slots-normal"
+    },
+    {
+      "mode": "optimized",
+      "phase": "start",
+      "run": "wrong-magnetic_sign-optimized"
+    },
+    {
+      "expected_rejection": "COMPLETE_MAGNETIC_TT_IDENTITY",
+      "phase": "pass",
+      "run": "wrong-magnetic_sign-optimized"
+    },
+    {
+      "mode": "optimized",
+      "phase": "start",
+      "run": "wrong-electric_half-optimized"
+    },
+    {
+      "expected_rejection": "ELECTRIC_TT_PROJECTION",
+      "phase": "pass",
+      "run": "wrong-electric_half-optimized"
+    },
+    {
+      "mode": "optimized",
+      "phase": "start",
+      "run": "wrong-reflection_slots-optimized"
+    },
+    {
+      "expected_rejection": "REFLECTION_EXCHANGE_INCLUDING_SLOTS",
+      "phase": "pass",
+      "run": "wrong-reflection_slots-optimized"
+    },
+    {
+      "mode": "normal",
+      "phase": "start",
+      "run": "actual-inputs-normal"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 61741,
+      "output": "actual-inputs-normal.json",
+      "phase": "golden",
+      "reference": "numeric/ACTUAL_APEX_INPUTS_NORMAL.json",
+      "run": "actual-inputs-normal",
+      "sha256": "90bc1fdf0fb66b2dae0e1fa24f792260d0a7fa32e98b0cd34cd831ef1d325783"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "actual-inputs-normal"
+    },
+    {
+      "mode": "optimized",
+      "phase": "start",
+      "run": "actual-inputs-optimized"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 61741,
+      "output": "actual-inputs-optimized.json",
+      "phase": "golden",
+      "reference": "numeric/ACTUAL_APEX_INPUTS_OPTIMIZED.json",
+      "run": "actual-inputs-optimized",
+      "sha256": "90bc1fdf0fb66b2dae0e1fa24f792260d0a7fa32e98b0cd34cd831ef1d325783"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "actual-inputs-optimized"
+    },
+    {
+      "mode": "normal",
+      "phase": "start",
+      "run": "arithmetic-normal"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1427,
+      "output": "arithmetic-normal.json",
+      "phase": "golden",
+      "reference": "numeric/ENCODED_MAP_ARITHMETIC_CONTROLS_NORMAL.json",
+      "run": "arithmetic-normal",
+      "sha256": "002926c785d4ab01f8b9730e2d0dca7a5bc3653055c2f323a3a7f08ee77d1fdb"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "arithmetic-normal"
+    },
+    {
+      "mode": "optimized",
+      "phase": "start",
+      "run": "arithmetic-optimized"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1427,
+      "output": "arithmetic-optimized.json",
+      "phase": "golden",
+      "reference": "numeric/ENCODED_MAP_ARITHMETIC_CONTROLS_OPTIMIZED.json",
+      "run": "arithmetic-optimized",
+      "sha256": "002926c785d4ab01f8b9730e2d0dca7a5bc3653055c2f323a3a7f08ee77d1fdb"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "arithmetic-optimized"
+    },
+    {
+      "mode": "normal",
+      "phase": "start",
+      "run": "numeric-guards-normal"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 4623,
+      "output": "numeric-guards-normal.json",
+      "phase": "golden",
+      "reference": "numeric/GUARD_CONTROLS_NORMAL.json",
+      "run": "numeric-guards-normal",
+      "sha256": "6294748bd61b160b74f661f51cc8625bae3abe2c28ebb28283de17ed73441acd"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "numeric-guards-normal"
+    },
+    {
+      "mode": "optimized",
+      "phase": "start",
+      "run": "numeric-guards-optimized"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 4623,
+      "output": "numeric-guards-optimized.json",
+      "phase": "golden",
+      "reference": "numeric/GUARD_CONTROLS_OPTIMIZED.json",
+      "run": "numeric-guards-optimized",
+      "sha256": "6294748bd61b160b74f661f51cc8625bae3abe2c28ebb28283de17ed73441acd"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "numeric-guards-optimized"
+    },
+    {
+      "mode": "normal",
+      "phase": "start",
+      "run": "expanded-normal"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 6164,
+      "output": "expanded-normal.json",
+      "phase": "golden",
+      "reference": "numeric/SELECTED_MAGNETIC_EXPANDED_NORMAL.json",
+      "run": "expanded-normal",
+      "sha256": "ced4936308bbadff31e73a6684d169540a11a9423e93202c75d864d9bfe38c45"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "expanded-normal"
+    },
+    {
+      "mode": "optimized",
+      "phase": "start",
+      "run": "expanded-optimized"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 6164,
+      "output": "expanded-optimized.json",
+      "phase": "golden",
+      "reference": "numeric/SELECTED_MAGNETIC_EXPANDED_OPTIMIZED.json",
+      "run": "expanded-optimized",
+      "sha256": "ced4936308bbadff31e73a6684d169540a11a9423e93202c75d864d9bfe38c45"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "expanded-optimized"
+    },
+    {
+      "mode": "normal",
+      "phase": "start",
+      "run": "complete-normal"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 19313,
+      "output": "complete-normal.json",
+      "phase": "golden",
+      "reference": "numeric/SELECTED_MAGNETIC_COMPLETE_NORMAL.json",
+      "run": "complete-normal",
+      "sha256": "5c526136dc0e93730ddebb49cfecbc8a20344f4f06301480625828d64f83909f"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "complete-normal"
+    },
+    {
+      "mode": "optimized",
+      "phase": "start",
+      "run": "complete-optimized"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 19313,
+      "output": "complete-optimized.json",
+      "phase": "golden",
+      "reference": "numeric/SELECTED_MAGNETIC_COMPLETE_OPTIMIZED.json",
+      "run": "complete-optimized",
+      "sha256": "5c526136dc0e93730ddebb49cfecbc8a20344f4f06301480625828d64f83909f"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "complete-optimized"
+    },
+    {
+      "mode": "normal",
+      "phase": "start",
+      "run": "binding-normal"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 10328,
+      "output": "binding-normal.json",
+      "phase": "golden",
+      "reference": "FINAL_BINDING_NORMAL.json",
+      "run": "binding-normal",
+      "sha256": "73e1f9bc4e191f4bc0ee180df67c15477b5b0467053f4bb7953f94539b514aaa"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "binding-normal"
+    },
+    {
+      "mode": "optimized",
+      "phase": "start",
+      "run": "binding-optimized"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 10328,
+      "output": "binding-optimized.json",
+      "phase": "golden",
+      "reference": "FINAL_BINDING_OPTIMIZED.json",
+      "run": "binding-optimized",
+      "sha256": "73e1f9bc4e191f4bc0ee180df67c15477b5b0467053f4bb7953f94539b514aaa"
+    },
+    {
+      "expected_rejection": null,
+      "phase": "pass",
+      "run": "binding-optimized"
+    },
+    {
+      "archive_integrity_controls": 3,
+      "archive_sha256": "b4320d08fa043f2252b4554a7d368ffd5e7a251efb54a72af7c8df0c77c1d1e0",
+      "golden_matches": 28,
+      "manifest_sha256": "204e647b9f68f2af169b052deabee7c5d7f4bd71195fae31cefbfc2d10265777",
+      "negative_runs": 6,
+      "positive_runs": 26,
+      "receipt_sha256": "2432680fff3e9ab0d9f20626d60a0fc2c8d86bee39f46b6802c1492259e24cb3",
+      "source_integrity_controls": 16,
+      "status": "PASS",
+      "upstream_capsules": 10
+    },
+    {
+      "phase": "ci-receipt",
+      "status": "PASS",
+      "direct_runs": 32,
+      "positive_direct_runs": 26,
+      "expected_nonzero_direct_runs": 6,
+      "scientific_golden_matches": 28,
+      "source_integrity_controls": 16,
+      "archive_integrity_controls": 3,
+      "upstream_closures": 10,
+      "capsule_source_files": 60,
+      "indexed_programs": 18,
+      "output_files": 88,
+      "manifest_sha256": "204e647b9f68f2af169b052deabee7c5d7f4bd71195fae31cefbfc2d10265777",
+      "archive_sha256": "b4320d08fa043f2252b4554a7d368ffd5e7a251efb54a72af7c8df0c77c1d1e0",
+      "reproduce_sha256": "483772e64a9427a14a796382dad3c37198ba175a7d81f7be13b1d52b91043ccc",
+      "replay_plan_sha256": "a4937b91184c9608f1576e25dd256e93cdfd02e13155c529ea201207d8592615",
+      "receipt_sha256": "2432680fff3e9ab0d9f20626d60a0fc2c8d86bee39f46b6802c1492259e24cb3"
+    }
+  ]
+}

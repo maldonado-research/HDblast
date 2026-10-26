@@ -1,0 +1,323 @@
+{
+  "audited_root_receipts_sha256": {
+    "FINAL_LIVE_READBACK.json": "c331ec0926e4a490e1c7a0899b8dff51525338273940176a4a0e68b14d39bd81",
+    "FINAL_SOURCE_READBACK.json": "f94e1ad222bbdc856997f7987cebe5c6519833657cdb7b73f7b8320c3242b62c",
+    "POSTMERGE_NATIVE_LOG_REPLAY.json": "15dd08bcc2996a7048e055ed151f4481ef9a6cdb974a63c81297e92861a7b862",
+    "POSTMERGE_SCIENCE_JOB.json": "3b5623c5c9ebb00d14e7207cf524b5a67250fc0f434fc9a2c2a768471efaa5cb"
+  },
+  "canonical_merge_identities": "PASS exact current mains, merged PR heads, trees and ordered [original base, approved head] parents",
+  "evidence": [
+    "POSTMERGE_SOURCE_READBACK_REVIEW.json",
+    "POSTMERGE_LIVE_HTML_REVIEW.json",
+    "POSTMERGE_NATIVE_SCIENCE_REVIEW.json",
+    "postmerge-trigger-preservation/POSTMERGE_TRIGGER_PRESERVATION_REVIEW.json",
+    "POSTMERGE_REMOTE_FINAL_SNAPSHOT.json",
+    "FROZEN_CAPSULE_POSTMERGE_RECHECK.json"
+  ],
+  "evidence_sha256": {
+    "FROZEN_CAPSULE_POSTMERGE_RECHECK.json": "e32c9afa80153400687c59e263b1b539182fcd6bce6d5ff6b5e94a0c340c117f",
+    "POSTMERGE_LIVE_HTML_REVIEW.json": "7e5d54526a73a3071511146a7ab32d63e1080843e6f41b4468e0c9917f0a4935",
+    "POSTMERGE_NATIVE_SCIENCE_REVIEW.json": "8fca35db97985ae5675c7947bc9b5070861f5ce08204ab31e162e28dab11577c",
+    "POSTMERGE_REMOTE_FINAL_SNAPSHOT.json": "950c657613fc3a3e9d5f1e97e415d207f9cd0db33d2c774a100f99549e7db203",
+    "POSTMERGE_SOURCE_READBACK_REVIEW.json": "f76d1a07348be3ed6cddee1899d042c1c61803083c331ab2ead0ba29615a9401",
+    "postmerge-trigger-preservation/POSTMERGE_TRIGGER_PRESERVATION_REVIEW.json": "24f4f32ebf984a7a4f519493e2979cd71b8c8393552568007acade8bc3444c13"
+  },
+  "expected_ci_coverage": "PASS all 10 HDblast main-push workflow runs and 10 checks; one shared dynamic Pages run and all three checks",
+  "live_three_complete_html_readback": "PASS three separately fetched complete HTML bodies, 369578 bytes, byte-identical to approved source and root live receipt",
+  "no_remote_mutations": true,
+  "observed_UTC": "2026-10-26 19:32:56 UTC",
+  "post_native_scientific_replay": "PASS separately fetched native job logs: 28 frozen goldens, 32 ordered IDs, six rejection reasons, 19 integrity controls, 12 mode-pair parity groups, three external pins, exact plan and matching engine/validator completion",
+  "preservation_reused_via_identical_approved_trees": true,
+  "raw_connector_payloads_excluded": true,
+  "remaining_gates": [],
+  "repositories": [
+    {
+      "check_runs": [
+        {
+          "conclusion": "success",
+          "details_url": "https://github.com/maldonado-research/HDblast/actions/runs/40386191148/job/121794972400",
+          "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+          "id": 121794972400,
+          "name": "authenticated-forced-response-replay",
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "details_url": "https://github.com/maldonado-research/HDblast/actions/runs/40386191095/job/121794971818",
+          "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+          "id": 121794971818,
+          "name": "replay",
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "details_url": "https://github.com/maldonado-research/HDblast/actions/runs/40386191054/job/121794971687",
+          "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+          "id": 121794971687,
+          "name": "fresh-exact-replay",
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "details_url": "https://github.com/maldonado-research/HDblast/actions/runs/40386191190/job/121794971622",
+          "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+          "id": 121794971622,
+          "name": "authenticated-boundary-response-replay",
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "details_url": "https://github.com/maldonado-research/HDblast/actions/runs/40386191169/job/121794971620",
+          "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+          "id": 121794971620,
+          "name": "authenticated-source-and-exact-replay",
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "details_url": "https://github.com/maldonado-research/HDblast/actions/runs/40386191044/job/121794971352",
+          "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+          "id": 121794971352,
+          "name": "fresh-exact-replay",
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "details_url": "https://github.com/maldonado-research/HDblast/actions/runs/40386191173/job/121794971184",
+          "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+          "id": 121794971184,
+          "name": "authenticated-scientific-input-replay",
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "details_url": "https://github.com/maldonado-research/HDblast/actions/runs/40386191029/job/121794969950",
+          "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+          "id": 121794969950,
+          "name": "authenticated-source-and-exact-replay",
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "details_url": "https://github.com/maldonado-research/HDblast/actions/runs/40386190984/job/121794969917",
+          "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+          "id": 121794969917,
+          "name": "deploy",
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "details_url": "https://github.com/maldonado-research/HDblast/actions/runs/40386191050/job/121794969344",
+          "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+          "id": 121794969344,
+          "name": "authenticated-scientific-input-replay",
+          "status": "completed"
+        }
+      ],
+      "expected_check_runs": 10,
+      "expected_workflow_runs": 10,
+      "legacy_combined_state": "pending",
+      "legacy_status_contexts": [],
+      "main": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+      "merge": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+      "ordered_parents": [
+        "f7265bbf495ee0be9852ff5174e117c59d8b418a",
+        "bbd0a239361ec9f83db9c946d47e881ec5804c18"
+      ],
+      "original_base": "f7265bbf495ee0be9852ff5174e117c59d8b418a",
+      "pr": {
+        "base": "f7265bbf495ee0be9852ff5174e117c59d8b418a",
+        "head": "bbd0a239361ec9f83db9c946d47e881ec5804c18",
+        "merge_commit_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+        "merged": true,
+        "merged_at": "2026-10-26T19:22:38Z",
+        "number": 88,
+        "state": "closed"
+      },
+      "repository": "maldonado-research/HDblast",
+      "reviewed_head": "bbd0a239361ec9f83db9c946d47e881ec5804c18",
+      "tree": "ef89b93806a82b54783c0085dd5925f05b12f9a8",
+      "workflow_runs": [
+        {
+          "conclusion": "success",
+          "event": "push",
+          "head_branch": "main",
+          "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+          "id": 40386191095,
+          "path": ".github/workflows/screen-magnetic-curvature-20261026.yml",
+          "run_attempt": 1,
+          "status": "completed",
+          "url": "https://github.com/maldonado-research/HDblast/actions/runs/40386191095"
+        },
+        {
+          "conclusion": "success",
+          "event": "push",
+          "head_branch": "main",
+          "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+          "id": 40386191029,
+          "path": ".github/workflows/common-gauge-forcing-20261016.yml",
+          "run_attempt": 1,
+          "status": "completed",
+          "url": "https://github.com/maldonado-research/HDblast/actions/runs/40386191029"
+        },
+        {
+          "conclusion": "success",
+          "event": "push",
+          "head_branch": "main",
+          "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+          "id": 40386191190,
+          "path": ".github/workflows/boundary-response-20261023.yml",
+          "run_attempt": 1,
+          "status": "completed",
+          "url": "https://github.com/maldonado-research/HDblast/actions/runs/40386191190"
+        },
+        {
+          "conclusion": "success",
+          "event": "push",
+          "head_branch": "main",
+          "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+          "id": 40386190984,
+          "path": ".github/workflows/pages.yml",
+          "run_attempt": 1,
+          "status": "completed",
+          "url": "https://github.com/maldonado-research/HDblast/actions/runs/40386190984"
+        },
+        {
+          "conclusion": "success",
+          "event": "push",
+          "head_branch": "main",
+          "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+          "id": 40386191148,
+          "path": ".github/workflows/forced-response-bounds-20261023.yml",
+          "run_attempt": 1,
+          "status": "completed",
+          "url": "https://github.com/maldonado-research/HDblast/actions/runs/40386191148"
+        },
+        {
+          "conclusion": "success",
+          "event": "push",
+          "head_branch": "main",
+          "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+          "id": 40386191169,
+          "path": ".github/workflows/first-gauge-wave-20261016.yml",
+          "run_attempt": 1,
+          "status": "completed",
+          "url": "https://github.com/maldonado-research/HDblast/actions/runs/40386191169"
+        },
+        {
+          "conclusion": "success",
+          "event": "push",
+          "head_branch": "main",
+          "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+          "id": 40386191173,
+          "path": ".github/workflows/numerical-response-inputs-20261016.yml",
+          "run_attempt": 1,
+          "status": "completed",
+          "url": "https://github.com/maldonado-research/HDblast/actions/runs/40386191173"
+        },
+        {
+          "conclusion": "success",
+          "event": "push",
+          "head_branch": "main",
+          "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+          "id": 40386191050,
+          "path": ".github/workflows/geometric-bulk-sources-20261016.yml",
+          "run_attempt": 1,
+          "status": "completed",
+          "url": "https://github.com/maldonado-research/HDblast/actions/runs/40386191050"
+        },
+        {
+          "conclusion": "success",
+          "event": "push",
+          "head_branch": "main",
+          "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+          "id": 40386191054,
+          "path": ".github/workflows/hdblast_stored_state_comparison.yml",
+          "run_attempt": 1,
+          "status": "completed",
+          "url": "https://github.com/maldonado-research/HDblast/actions/runs/40386191054"
+        },
+        {
+          "conclusion": "success",
+          "event": "push",
+          "head_branch": "main",
+          "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+          "id": 40386191044,
+          "path": ".github/workflows/hdblast_retained_endpoint_flow.yml",
+          "run_attempt": 1,
+          "status": "completed",
+          "url": "https://github.com/maldonado-research/HDblast/actions/runs/40386191044"
+        }
+      ]
+    },
+    {
+      "check_runs": [
+        {
+          "conclusion": "success",
+          "details_url": "https://github.com/maldonado-research/maldonado-research.github.io/actions/runs/40386207102/job/121795127194",
+          "head_sha": "762ae703fa46ed7bcfaf5598591450476caa62dd",
+          "id": 121795127194,
+          "name": "deploy",
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "details_url": "https://github.com/maldonado-research/maldonado-research.github.io/actions/runs/40386207102/job/121795126966",
+          "head_sha": "762ae703fa46ed7bcfaf5598591450476caa62dd",
+          "id": 121795126966,
+          "name": "report-build-status",
+          "status": "completed"
+        },
+        {
+          "conclusion": "success",
+          "details_url": "https://github.com/maldonado-research/maldonado-research.github.io/actions/runs/40386207102/job/121795038018",
+          "head_sha": "762ae703fa46ed7bcfaf5598591450476caa62dd",
+          "id": 121795038018,
+          "name": "build",
+          "status": "completed"
+        }
+      ],
+      "expected_check_runs": 3,
+      "expected_workflow_runs": 1,
+      "legacy_combined_state": "pending",
+      "legacy_status_contexts": [],
+      "main": "762ae703fa46ed7bcfaf5598591450476caa62dd",
+      "merge": "762ae703fa46ed7bcfaf5598591450476caa62dd",
+      "ordered_parents": [
+        "7f34e75c6b2779bd7622a48932346e8c8c9e71b9",
+        "c589098c2c653d3fb16f62b68e28ad682008496b"
+      ],
+      "original_base": "7f34e75c6b2779bd7622a48932346e8c8c9e71b9",
+      "pr": {
+        "base": "7f34e75c6b2779bd7622a48932346e8c8c9e71b9",
+        "head": "c589098c2c653d3fb16f62b68e28ad682008496b",
+        "merge_commit_sha": "762ae703fa46ed7bcfaf5598591450476caa62dd",
+        "merged": true,
+        "merged_at": "2026-10-26T19:22:45Z",
+        "number": 79,
+        "state": "closed"
+      },
+      "repository": "maldonado-research/maldonado-research.github.io",
+      "reviewed_head": "c589098c2c653d3fb16f62b68e28ad682008496b",
+      "tree": "fa973b16027105f2b7917bf62f3826c8cbbcc6cb",
+      "workflow_runs": [
+        {
+          "conclusion": "success",
+          "event": "dynamic",
+          "head_branch": "main",
+          "head_sha": "762ae703fa46ed7bcfaf5598591450476caa62dd",
+          "id": 40386207102,
+          "path": "dynamic/pages/pages-build-deployment",
+          "run_attempt": 1,
+          "status": "completed",
+          "url": "https://github.com/maldonado-research/maldonado-research.github.io/actions/runs/40386207102"
+        }
+      ]
+    }
+  ],
+  "review_limit": "Internal AI-assisted scientific/code/publication evidence review; no external specialist review, novelty determination or journal assessment claimed.",
+  "schema": "HDBLAST_INDEPENDENT_POSTMERGE_REVIEW_V1",
+  "scope": "Independent read-only publication review of HDblast merge 3c49f3377f2e1f471012f905668ca4e7a96fee56 and shared-site merge 762ae703fa46ed7bcfaf5598591450476caa62dd at the recorded time. Optional later research supplements and later commits are outside this review.",
+  "source_readback_receipt_audit": "PASS all 69 immutable merged-source rows against exact expected metadata, independently fetched premerge bytes/blobs and identical canonical trees",
+  "status": "PASS"
+}

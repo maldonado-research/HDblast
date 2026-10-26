@@ -1,0 +1,34 @@
+{
+  "evidence": {
+    "complete_authentication_before_scientific_execution": "reproduce.py:543-546 checks own capsule, all ten whole upstream capsules and all exact archive members; 566-569 repeats checks immediately before 570-571 scientific loop.",
+    "direct_roster": {
+      "golden_outputs": 28,
+      "negative_reason_specific": 6,
+      "positive": 26,
+      "runs": 32
+    },
+    "fresh_data_chain": "Actual exports run twice from pinned upstream data; expanded/complete/binding receive fresh output paths. Complete and binding require pins from authenticated frozen reference. Each declared parity pair has byte equality checks in addition to golden byte matches.",
+    "isolated_flags": "reproduce.py:177-178 supplies -I -S -B with explicit -O for each optimized child; entry enforces flags at 524-525; packager at 128-129.",
+    "no_project_import_in_entry_or_packager": "Both helpers contain standard-library imports only. Project sources are never imported during closure/ZIP authentication or inert source-control checks.",
+    "output_safeguards": "Fresh nonsymlink external output; protected own and dependency roots; absolute nested --output and --output-dir support including equals syntax; exclusive stdout/stderr and receipt creation; no golden may collide with reserved logs/receipts. Final plan names have no collisions.",
+    "privacy": "Receipt and plan use relative inventory names and command placeholders; no checkout-specific /workspace or /home host path in helper source, plan argv, synthetic receipt or authenticated package JSON metadata. Generic /tmp examples in angular derivation are not host metadata.",
+    "python_inventory": {
+      "all_python": 18,
+      "direct_programs": 12,
+      "entry_programs": 1,
+      "explicit_role_programs": 5
+    },
+    "safe_closure_and_archive": "Member paths reject absolute paths, traversal, backslashes, colons and duplicate entries; whole-tree inventories reject undeclared files, symlinks, and special files. ZIP names equal exact authenticated closure; bytes, CRCs, regular type and external hash checked.",
+    "synthetic_replay": "INDEPENDENT_SYNTHETIC_REPLAY.json: both entry modes PASS, ten whole real dependency closures, sixteen source rejection cases and three archive rejection cases each, six exact goldens and two intended rejections each; output indexes equal across entry modes."
+  },
+  "findings": [],
+  "packager_sha256": "2de6fb40501f4e66164949541646a31731c708b1368a85822065b0f6b5e6c833",
+  "remaining_conditions": [
+    "Authenticate final external manifest and ZIP pins after freeze.",
+    "Fresh relocated real-capsule replay must pass complete before/after authentication, declared 32-run roster, all 28 golden bytes, six exact-reason negative controls, and source/ZIP controls."
+  ],
+  "replay_plan_sha256": "a4937b91184c9608f1576e25dd256e93cdfd02e13155c529ea201207d8592615",
+  "reproducer_sha256": "483772e64a9427a14a796382dad3c37198ba175a7d81f7be13b1d52b91043ccc",
+  "review_scope": "Independent code/read-only roster review and synthetic fixture replay; not an independent scientific specialist review.",
+  "status": "PASS_HELPER_AND_FINAL_PLAN_REVIEW_PENDING_FROZEN_REAL_ZIP"
+}

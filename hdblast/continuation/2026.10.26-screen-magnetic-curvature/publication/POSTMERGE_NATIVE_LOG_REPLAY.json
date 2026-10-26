@@ -1,0 +1,481 @@
+{
+  "all_19_integrity_rejections_equal_local": true,
+  "all_28_reference_hashes_equal_local": true,
+  "all_32_run_ids_and_6_expected_reasons_equal_local": true,
+  "completion": {
+    "archive_integrity_controls": 3,
+    "archive_sha256": "b4320d08fa043f2252b4554a7d368ffd5e7a251efb54a72af7c8df0c77c1d1e0",
+    "golden_matches": 28,
+    "manifest_sha256": "204e647b9f68f2af169b052deabee7c5d7f4bd71195fae31cefbfc2d10265777",
+    "negative_runs": 6,
+    "positive_runs": 26,
+    "receipt_sha256": "2319d14129cad61e72d7b3edb9e056b98abe6dc6075de377bcda89db4979f7f2",
+    "source_integrity_controls": 16,
+    "status": "PASS",
+    "upstream_capsules": 10
+  },
+  "goldens": [
+    {
+      "byte_identical": true,
+      "bytes": 3163,
+      "output": "curl-normal.json",
+      "reference": "review/angular/CURL_NORMAL.json",
+      "run": "curl-normal",
+      "sha256": "f23bbab41771ff29a9cbf74225db93023f6ab92f361deb7f7df674f2a14af0ba"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 3163,
+      "output": "curl-optimized.json",
+      "reference": "review/angular/CURL_OPTIMIZED.json",
+      "run": "curl-optimized",
+      "sha256": "f23bbab41771ff29a9cbf74225db93023f6ab92f361deb7f7df674f2a14af0ba"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 2993,
+      "output": "curl-controls.json",
+      "reference": "review/angular/CURL_CONTROLS.json",
+      "run": "curl-controls",
+      "sha256": "1a883688ca0c02f9ea77469b25a5b1accdf14d703b316db048ac3c99a6115564"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 995,
+      "output": "angular-reduction-normal.json",
+      "reference": "theory/ANGULAR_REDUCTION_NORMAL.json",
+      "run": "angular-reduction-normal",
+      "sha256": "7ce74952241cee0aad92e54c6b3e24ef66888a16acb643c90fd522746fdbe37e"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 995,
+      "output": "angular-reduction-optimized.json",
+      "reference": "theory/ANGULAR_REDUCTION_OPTIMIZED.json",
+      "run": "angular-reduction-optimized",
+      "sha256": "7ce74952241cee0aad92e54c6b3e24ef66888a16acb643c90fd522746fdbe37e"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 592,
+      "output": "theory-guards-normal.json",
+      "reference": "theory/GUARDS_NORMAL.json",
+      "run": "theory-guards-normal",
+      "sha256": "0dfd3a9f326e121dec4bdfaecc97a3f9fe4f71264258310dbf0c49ce30d915e3"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 592,
+      "output": "theory-guards-optimized.json",
+      "reference": "theory/GUARDS_OPTIMIZED.json",
+      "run": "theory-guards-optimized",
+      "sha256": "0dfd3a9f326e121dec4bdfaecc97a3f9fe4f71264258310dbf0c49ce30d915e3"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1151,
+      "output": "direct-q-normal.json",
+      "reference": "review/DIRECT_NORMAL.json",
+      "run": "direct-q-normal",
+      "sha256": "6a48d6ba5a19a138ec9f8f2f9337e1b0c229d47b8a8941d55078c8add8e1281f"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1151,
+      "output": "direct-q-optimized.json",
+      "reference": "review/DIRECT_OPTIMIZED.json",
+      "run": "direct-q-optimized",
+      "sha256": "6a48d6ba5a19a138ec9f8f2f9337e1b0c229d47b8a8941d55078c8add8e1281f"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1370,
+      "output": "direct-combined-normal.json",
+      "reference": "review/DIRECT_COMBINED_NORMAL.json",
+      "run": "direct-combined-normal",
+      "sha256": "3be62c9e20b926d87ee2217ee2164953c0d018b785a1e2c6f9f3d618894af143"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1370,
+      "output": "direct-combined-optimized.json",
+      "reference": "review/DIRECT_COMBINED_OPTIMIZED.json",
+      "run": "direct-combined-optimized",
+      "sha256": "3be62c9e20b926d87ee2217ee2164953c0d018b785a1e2c6f9f3d618894af143"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1263,
+      "output": "scalar-symmetry-normal.json",
+      "reference": "review/symmetry/SYMMETRY_NORMAL.json",
+      "run": "scalar-symmetry-normal",
+      "sha256": "51807aa6fd5da47b00caf88a7a653add7264ca1954d8875a246fba67ea26f928"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1263,
+      "output": "scalar-symmetry-optimized.json",
+      "reference": "review/symmetry/SYMMETRY_OPTIMIZED.json",
+      "run": "scalar-symmetry-optimized",
+      "sha256": "51807aa6fd5da47b00caf88a7a653add7264ca1954d8875a246fba67ea26f928"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1263,
+      "output": "symmetry-controls/SYMMETRY_NORMAL.json",
+      "reference": "review/symmetry/SYMMETRY_NORMAL.json",
+      "run": "symmetry-controls",
+      "sha256": "51807aa6fd5da47b00caf88a7a653add7264ca1954d8875a246fba67ea26f928"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1263,
+      "output": "symmetry-controls/SYMMETRY_OPTIMIZED.json",
+      "reference": "review/symmetry/SYMMETRY_OPTIMIZED.json",
+      "run": "symmetry-controls",
+      "sha256": "51807aa6fd5da47b00caf88a7a653add7264ca1954d8875a246fba67ea26f928"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 3573,
+      "output": "symmetry-controls/SYMMETRY_CONTROLS.json",
+      "reference": "review/symmetry/SYMMETRY_CONTROLS.json",
+      "run": "symmetry-controls",
+      "sha256": "c5fe232fb396f971a3d89734cf1403aa2fe72adb583582aa213df60608b2e9ed"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 61741,
+      "output": "actual-inputs-normal.json",
+      "reference": "numeric/ACTUAL_APEX_INPUTS_NORMAL.json",
+      "run": "actual-inputs-normal",
+      "sha256": "90bc1fdf0fb66b2dae0e1fa24f792260d0a7fa32e98b0cd34cd831ef1d325783"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 61741,
+      "output": "actual-inputs-optimized.json",
+      "reference": "numeric/ACTUAL_APEX_INPUTS_OPTIMIZED.json",
+      "run": "actual-inputs-optimized",
+      "sha256": "90bc1fdf0fb66b2dae0e1fa24f792260d0a7fa32e98b0cd34cd831ef1d325783"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1427,
+      "output": "arithmetic-normal.json",
+      "reference": "numeric/ENCODED_MAP_ARITHMETIC_CONTROLS_NORMAL.json",
+      "run": "arithmetic-normal",
+      "sha256": "002926c785d4ab01f8b9730e2d0dca7a5bc3653055c2f323a3a7f08ee77d1fdb"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1427,
+      "output": "arithmetic-optimized.json",
+      "reference": "numeric/ENCODED_MAP_ARITHMETIC_CONTROLS_OPTIMIZED.json",
+      "run": "arithmetic-optimized",
+      "sha256": "002926c785d4ab01f8b9730e2d0dca7a5bc3653055c2f323a3a7f08ee77d1fdb"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 4623,
+      "output": "numeric-guards-normal.json",
+      "reference": "numeric/GUARD_CONTROLS_NORMAL.json",
+      "run": "numeric-guards-normal",
+      "sha256": "6294748bd61b160b74f661f51cc8625bae3abe2c28ebb28283de17ed73441acd"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 4623,
+      "output": "numeric-guards-optimized.json",
+      "reference": "numeric/GUARD_CONTROLS_OPTIMIZED.json",
+      "run": "numeric-guards-optimized",
+      "sha256": "6294748bd61b160b74f661f51cc8625bae3abe2c28ebb28283de17ed73441acd"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 6164,
+      "output": "expanded-normal.json",
+      "reference": "numeric/SELECTED_MAGNETIC_EXPANDED_NORMAL.json",
+      "run": "expanded-normal",
+      "sha256": "ced4936308bbadff31e73a6684d169540a11a9423e93202c75d864d9bfe38c45"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 6164,
+      "output": "expanded-optimized.json",
+      "reference": "numeric/SELECTED_MAGNETIC_EXPANDED_OPTIMIZED.json",
+      "run": "expanded-optimized",
+      "sha256": "ced4936308bbadff31e73a6684d169540a11a9423e93202c75d864d9bfe38c45"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 19313,
+      "output": "complete-normal.json",
+      "reference": "numeric/SELECTED_MAGNETIC_COMPLETE_NORMAL.json",
+      "run": "complete-normal",
+      "sha256": "5c526136dc0e93730ddebb49cfecbc8a20344f4f06301480625828d64f83909f"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 19313,
+      "output": "complete-optimized.json",
+      "reference": "numeric/SELECTED_MAGNETIC_COMPLETE_OPTIMIZED.json",
+      "run": "complete-optimized",
+      "sha256": "5c526136dc0e93730ddebb49cfecbc8a20344f4f06301480625828d64f83909f"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 10328,
+      "output": "binding-normal.json",
+      "reference": "FINAL_BINDING_NORMAL.json",
+      "run": "binding-normal",
+      "sha256": "73e1f9bc4e191f4bc0ee180df67c15477b5b0467053f4bb7953f94539b514aaa"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 10328,
+      "output": "binding-optimized.json",
+      "reference": "FINAL_BINDING_OPTIMIZED.json",
+      "run": "binding-optimized",
+      "sha256": "73e1f9bc4e191f4bc0ee180df67c15477b5b0467053f4bb7953f94539b514aaa"
+    }
+  ],
+  "head_sha": "3c49f3377f2e1f471012f905668ca4e7a96fee56",
+  "integrity_controls": [
+    {
+      "id": "wrong-manifest-pin-normal",
+      "reason": "MANIFEST_PIN"
+    },
+    {
+      "id": "changed-primary-source-normal",
+      "reason": "MANIFEST_MEMBER_BYTES"
+    },
+    {
+      "id": "changed-dependency-source-normal",
+      "reason": "MANIFEST_MEMBER_BYTES"
+    },
+    {
+      "id": "undeclared-member-normal",
+      "reason": "MANIFEST_COMPLETE_CLOSURE"
+    },
+    {
+      "id": "source-symlink-normal",
+      "reason": "MANIFEST_MEMBER_TYPE"
+    },
+    {
+      "id": "duplicate-member-normal",
+      "reason": "MANIFEST_MEMBER_PATH"
+    },
+    {
+      "id": "parent-traversal-normal",
+      "reason": "MANIFEST_MEMBER_PATH"
+    },
+    {
+      "id": "absolute-member-normal",
+      "reason": "MANIFEST_MEMBER_PATH"
+    },
+    {
+      "id": "wrong-manifest-pin-optimized",
+      "reason": "MANIFEST_PIN"
+    },
+    {
+      "id": "changed-primary-source-optimized",
+      "reason": "MANIFEST_MEMBER_BYTES"
+    },
+    {
+      "id": "changed-dependency-source-optimized",
+      "reason": "MANIFEST_MEMBER_BYTES"
+    },
+    {
+      "id": "undeclared-member-optimized",
+      "reason": "MANIFEST_COMPLETE_CLOSURE"
+    },
+    {
+      "id": "source-symlink-optimized",
+      "reason": "MANIFEST_MEMBER_TYPE"
+    },
+    {
+      "id": "duplicate-member-optimized",
+      "reason": "MANIFEST_MEMBER_PATH"
+    },
+    {
+      "id": "parent-traversal-optimized",
+      "reason": "MANIFEST_MEMBER_PATH"
+    },
+    {
+      "id": "absolute-member-optimized",
+      "reason": "MANIFEST_MEMBER_PATH"
+    },
+    {
+      "id": "wrong-archive-pin",
+      "reason": "ARCHIVE_PIN"
+    },
+    {
+      "id": "changed-archive-member",
+      "reason": "ARCHIVE_MEMBER_BYTES"
+    },
+    {
+      "id": "missing-archive-members",
+      "reason": "ARCHIVE_EXACT_MEMBERS"
+    }
+  ],
+  "job_id": 121794971818,
+  "native_log_sha256": "486a3b418ea958c27cc0414f7e76d19e6a0531e3922995b371b23e47d22832ca",
+  "passes": [
+    {
+      "expected_rejection": null,
+      "id": "curl-normal"
+    },
+    {
+      "expected_rejection": null,
+      "id": "curl-optimized"
+    },
+    {
+      "expected_rejection": null,
+      "id": "curl-controls"
+    },
+    {
+      "expected_rejection": null,
+      "id": "angular-reduction-normal"
+    },
+    {
+      "expected_rejection": null,
+      "id": "angular-reduction-optimized"
+    },
+    {
+      "expected_rejection": null,
+      "id": "theory-guards-normal"
+    },
+    {
+      "expected_rejection": null,
+      "id": "theory-guards-optimized"
+    },
+    {
+      "expected_rejection": null,
+      "id": "direct-q-normal"
+    },
+    {
+      "expected_rejection": null,
+      "id": "direct-q-optimized"
+    },
+    {
+      "expected_rejection": null,
+      "id": "direct-combined-normal"
+    },
+    {
+      "expected_rejection": null,
+      "id": "direct-combined-optimized"
+    },
+    {
+      "expected_rejection": null,
+      "id": "scalar-symmetry-normal"
+    },
+    {
+      "expected_rejection": null,
+      "id": "scalar-symmetry-optimized"
+    },
+    {
+      "expected_rejection": null,
+      "id": "symmetry-controls"
+    },
+    {
+      "expected_rejection": "COMPLETE_MAGNETIC_TT_IDENTITY",
+      "id": "wrong-magnetic_sign-normal"
+    },
+    {
+      "expected_rejection": "ELECTRIC_TT_PROJECTION",
+      "id": "wrong-electric_half-normal"
+    },
+    {
+      "expected_rejection": "REFLECTION_EXCHANGE_INCLUDING_SLOTS",
+      "id": "wrong-reflection_slots-normal"
+    },
+    {
+      "expected_rejection": "COMPLETE_MAGNETIC_TT_IDENTITY",
+      "id": "wrong-magnetic_sign-optimized"
+    },
+    {
+      "expected_rejection": "ELECTRIC_TT_PROJECTION",
+      "id": "wrong-electric_half-optimized"
+    },
+    {
+      "expected_rejection": "REFLECTION_EXCHANGE_INCLUDING_SLOTS",
+      "id": "wrong-reflection_slots-optimized"
+    },
+    {
+      "expected_rejection": null,
+      "id": "actual-inputs-normal"
+    },
+    {
+      "expected_rejection": null,
+      "id": "actual-inputs-optimized"
+    },
+    {
+      "expected_rejection": null,
+      "id": "arithmetic-normal"
+    },
+    {
+      "expected_rejection": null,
+      "id": "arithmetic-optimized"
+    },
+    {
+      "expected_rejection": null,
+      "id": "numeric-guards-normal"
+    },
+    {
+      "expected_rejection": null,
+      "id": "numeric-guards-optimized"
+    },
+    {
+      "expected_rejection": null,
+      "id": "expanded-normal"
+    },
+    {
+      "expected_rejection": null,
+      "id": "expanded-optimized"
+    },
+    {
+      "expected_rejection": null,
+      "id": "complete-normal"
+    },
+    {
+      "expected_rejection": null,
+      "id": "complete-optimized"
+    },
+    {
+      "expected_rejection": null,
+      "id": "binding-normal"
+    },
+    {
+      "expected_rejection": null,
+      "id": "binding-optimized"
+    }
+  ],
+  "repository": "maldonado-research/HDblast",
+  "run_id": 40386191095,
+  "schema": "HDBLAST_SCREEN_MAGNETIC_NATIVE_LOG_PARITY_V1",
+  "scope": "Scientific byte/hash parity and independent completion summary; raw job response and logs excluded from public evidence. Full workflow artifact not downloaded.",
+  "source": "GitHub connector decoded completed job log; job/commit metadata checked separately.",
+  "status": "PASS",
+  "summaries": [
+    {
+      "archive_integrity_controls": 3,
+      "archive_sha256": "b4320d08fa043f2252b4554a7d368ffd5e7a251efb54a72af7c8df0c77c1d1e0",
+      "capsule_source_files": 60,
+      "direct_runs": 32,
+      "expected_nonzero_direct_runs": 6,
+      "indexed_programs": 18,
+      "manifest_sha256": "204e647b9f68f2af169b052deabee7c5d7f4bd71195fae31cefbfc2d10265777",
+      "output_files": 88,
+      "phase": "ci-receipt",
+      "positive_direct_runs": 26,
+      "receipt_sha256": "2319d14129cad61e72d7b3edb9e056b98abe6dc6075de377bcda89db4979f7f2",
+      "replay_plan_sha256": "a4937b91184c9608f1576e25dd256e93cdfd02e13155c529ea201207d8592615",
+      "reproduce_sha256": "483772e64a9427a14a796382dad3c37198ba175a7d81f7be13b1d52b91043ccc",
+      "scientific_golden_matches": 28,
+      "source_integrity_controls": 16,
+      "status": "PASS",
+      "upstream_closures": 10
+    }
+  ]
+}
