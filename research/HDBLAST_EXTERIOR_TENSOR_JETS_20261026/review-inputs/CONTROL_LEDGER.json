@@ -1,0 +1,57 @@
+{
+  "all_checks_active_under_optimization": true,
+  "cases": [
+    {
+      "exit_code": 1,
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "injection": "omit_yy_conversion",
+      "mode": "normal",
+      "output_created": false,
+      "reason": "ValueError: INDEPENDENT_PHYSICAL_CHAIN:yy:0"
+    },
+    {
+      "exit_code": 1,
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "injection": "wrong_negative_power_derivative",
+      "mode": "normal",
+      "output_created": false,
+      "reason": "ValueError: INDEPENDENT_FULL_SOURCE_LEIBNIZ:0"
+    },
+    {
+      "exit_code": 1,
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "injection": "omit_yy_conversion",
+      "mode": "optimized",
+      "output_created": false,
+      "reason": "ValueError: INDEPENDENT_PHYSICAL_CHAIN:yy:0"
+    },
+    {
+      "exit_code": 1,
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "injection": "wrong_negative_power_derivative",
+      "mode": "optimized",
+      "output_created": false,
+      "reason": "ValueError: INDEPENDENT_FULL_SOURCE_LEIBNIZ:0"
+    }
+  ],
+  "reviewer_source_sha256": "dca47de9d2eb0c79ed9f00e17dc7dedbf4095eb2839e078b199b660abe3626a6",
+  "status": "PASS_INDEPENDENT_TT_FR_WRONG_FORMULA_CONTROLS"
+}

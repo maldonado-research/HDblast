@@ -1,0 +1,154 @@
+Independent numerical review of the actual total TT coefficient two-jet
+
+The reviewer imports no scientific function from the two-jet producer. It
+reads the producer's rational report, authenticates all nine complete frozen
+dependency trees before importing the source oracle, and reconstructs every
+scientific report endpoint with an independently written rational interval
+ring. The producer is imported only for isolated IO/authentication controls.
+
+1. Retarded geometry and orientation
+
+Set T=1/4 and R=5/4. The closed backward cone is
+  0 <= s <= T, R-T+s <= z <= R+T-s.
+It has exact area T^2=1/16 and the zero-data wave inverse has kernel 1/2:
+  (Kf)(T,R) = (1/2) integral_0^T integral_[R-T+s,R+T-s] f(s,z) dz ds.
+Consequently the integral of the constant source 1 is T^2/2=1/32.
+
+The reviewer builds the full N by 2N bounding grid and clips every rectangle
+against the two cone half-planes. Exact rational polygon edge intersections
+and the shoelace area formula recover all 20 cells for N=4 and 72 for N=8.
+The corner cells have area h^2/2; other retained cells have area h^2. Zero-area
+intersections are discarded. The retained cells have disjoint interiors and
+their exact total area is T^2. This algorithm does not use the producer's
+retained-cell loop or its boundary-cell area rule.
+
+Write r_plus(s)=R+T-s, r_minus(s)=R-T+s. Differentiating the wave inverse
+under the integral on the retained smooth actual solution gives
+  (Kf)_x  = (1/2) integral [f(s,r_plus)+f(s,r_minus)] ds,
+  (Kf)_r  = (1/2) integral [f(s,r_plus)-f(s,r_minus)] ds.
+For v=u_r and its free source F_r the same formulas give the free u_xr
+through the sum of the F_r traces, and the free u_rr through their difference.
+Every characteristic segment is checked against these exact affine curves;
+its integration weight is its time length divided by two. The reported whole
+rectangular source enclosures bound the corresponding curve portions. No
+trapezoidal, midpoint, point-sampling or approximate area rule is used.
+
+2. Complete scalar and differentiated feedback
+
+The retained equation is
+  u_xx-u_rr = A u_x+B u_r+D u+F.
+For X(w)=max(2 sup|w|/T, sup|w_x|, sup|w_r|), the wave inverse satisfies
+  X(Kf) <= T sup|f|.
+Let sigma=cap(A)+cap(B)+(T/2)cap(D), q=T sigma. Then
+  X(u) <= T Fcap + q X(u).
+The differentiated equation, with v=u_r, is
+  v_xx-v_rr = A v_x+B v_r+D v+F_r+A_r u_x+B_r u_r+D_r u.
+Both Cauchy traces of v vanish because both retained TT Cauchy traces of u
+vanish identically as functions of r. This does not assert that u_x has zero
+initial velocity: u_xx at x=0 generally contains F(0,r).
+
+With sigma_r=cap(A_r)+cap(B_r)+(T/2)cap(D_r), q_r=T sigma_r, the simultaneous
+upper-bound system has matrix
+  [ 1-q       0   ] [ M_u ] = [ T Fcap  ]
+  [ -q_r      1-q ] [ M_v ]   [ T Frcap ].
+The reviewer solves this matrix by generic rational Gaussian elimination.
+It obtains M_u=T Fcap/(1-q), M_v=(T Frcap+q_r M_u)/(1-q).
+The norm tails, computed independently as solution minus right-hand-side,
+are E_1=M_u-T Fcap=q M_u and
+  E_2=M_v-T Frcap=q M_v+q_r M_u.
+The second q_r M_u contribution is retained separately from its propagation
+inside M_v. Equivalently E_2=q T Frcap/(1-q)+q_r T Fcap/(1-q)^2.
+The point-value tails are E_0=T E_1/2 and E_v_value=T E_2/2.
+This argument sums the complete scalar resolvent and every differentiated
+coefficient insertion. It never differentiates a C1 error enclosure.
+
+The six complete scaled apex intervals are reconstructed as follows:
+  u:     K F +/- E_0;
+  u_x:   the F trace sum +/- E_1;
+  u_r:   intersection of F trace difference +/- E_1
+         with K F_r +/- T E_2/2;
+  u_xr:  F_r trace sum +/- E_2;
+  u_rr:  F_r trace difference +/- E_2;
+  u_xx:  u_rr+A u_x+B u_r+D u+F at the apex.
+The last line is an exact PDE identity. It requires no source x derivative
+and does not claim that a residual formed from six independent intervals is
+the point interval zero or an Einstein residual bound.
+
+3. Coefficient checks and ordinary coordinate derivatives
+
+Independently from the producer's b,d,h expression, use
+  a_y=-rho^-2-p^2/3, p_y=p(h0-4a), V_eta=Vprime,
+  S=8a^2-2p^2/3+4V/3,
+  D=ell^2 [rho^2 S-8(1+c^-2)].
+This compact identity follows from b=-(a_y+a^2), d=rho^-2-a^2,
+h=H/rho and H^2=1-c^-2. On both the whole bounding box and the apex, the
+reviewer's independently computed compact D enclosure is contained in the
+producer's D enclosure. The A and B intervals agree exactly. Separately,
+  A_r=0,
+  B_r=3 ell^2 rho^2(a^2+a_y),
+  D_r=-ell^3 rho^3[2aS+16a a_y-(4/3)p p_y+(4/3)p Vprime].
+These physical ODE identity endpoints agree exactly with the report.
+An independent first-order differential ring, seeded by the authenticated
+normalized background ODE Taylor coefficients, also reproduces every reported
+analytic radial derivative endpoint. Every intersection and absolute cap is
+then checked independently; therefore using the intersection loses neither
+source uncertainty nor coefficient-derivative uncertainty.
+
+The reported ordinary t,y coefficient partial derivatives use
+  partial_t=ell^-1 partial_x, partial_y=-L partial_r,
+  L=1/(ell rho), L_r=a.
+Thus u_t=u_x/ell, u_y=-L u_r, u_tt=u_xx/ell^2,
+u_ty=-L u_xr/ell, and u_yy=L^2 u_rr+a L u_r.
+In particular the positive a L u_r term is necessary. A nonconstant L
+control detects its omission or sign reversal. These are ordinary partial
+derivatives of the registered frame coefficient, with no covariant tensor,
+curvature, detector or gauge-invariant interpretation attached.
+
+4. Domain, data, decisions and independent controls
+
+Every whole source rectangle used by both grids lies in the authenticated
+exterior domain r.lo>=x.hi, x>=0, x+r<=8. Even the full bounding rectangle
+has r-x>=3/4>0. A signal from r=0 at nonnegative time cannot enter the apex
+backward cone; the footprint on x=0 is [1,3/2]. Shell lifting and reflected
+contributions are therefore absent by finite propagation. Exact TT initial
+value and velocity, the complete TT decoupling and identical TT source rows
+remain authenticated structural scientific premises. The reviewer retains
+the actual source and its actual derivative enclosures; it does not replace
+them by a comparison source or treat them as exact values.
+
+Exactly N=4/20 cone cells and 8 line segments per characteristic are required
+first. Exactly one N=8/72 and 16-segment refinement is allowed if the first
+run has no strict second-derivative sign. The final report uses this permitted
+refinement, and all three scaled second-derivative signs remain inconclusive.
+The actual coefficient u and u_x are strictly negative. Finite enclosure is
+the primary acceptance criterion; a nonzero second derivative is diagnostic.
+All signs are recomputed from exact rational endpoints, never display floats.
+
+The final new u interval overlaps and is in fact contained in the frozen old
+total TT value interval. The reviewer checks the old report hash and exact
+endpoint inclusion without replaying its campaign.
+
+Seven exact polynomial solutions u=x^i r^j, all with zero Cauchy data, provide
+42 exact derivative checks via independent polynomial differentiation and
+closed-form integration. Additional controls reject eight distinct errors:
+missing half kernel; reversed radial characteristic orientation; sum instead
+of difference for u_rr; difference instead of sum for u_xr; omitted q_r M_u
+tail; omitted resolvent propagation of q_r; and omitted or wrong-sign aL u_r.
+
+Three actual source boxes are replayed against the authenticated oracle with
+its Fraction/dyadic/full-source audits enabled: the apex, first maximum-grid
+plus characteristic segment, and last maximum-grid minus segment. All F and
+F_r endpoints match exactly. Full independent 78-term differentiation belongs
+to the separate input review and is not duplicated by this bounded replay.
+
+Twenty-one isolated driver rejection controls cover existing or symlink
+outputs, output destinations in all nine frozen roots, packaged-self output,
+wrong complete-tree manifest pin, member corruption, root symlink, unlisted
+file, member symlink, directory symlink, wrong external oracle pin, oracle
+symlink and oracle mutation during an isolated guard-only main execution.
+All synthetic writes are contained in a temporary review directory; no
+frozen or producer file is modified. Failed attempts write no report.
+
+Both normal and optimized (-O) standalone review CLI runs pass and produce
+byte-identical JSON reports. The final receipt binds reviewer, evaluator,
+oracle, producer report and both review report bytes by SHA256.

@@ -1,0 +1,50 @@
+{
+  "actual_source_oracle_calls_per_review": 3,
+  "all_nine_frozen_complete_roots_authenticated_before_imports_and_after_review": true,
+  "evaluator_sha256": "c8db4e274405a5c74026aead295e42092abcf14fa30e634b4e7f7232aba48d88",
+  "exact_polynomial_six_jet_cases": 7,
+  "files_sha256": {
+    "DERIVATION.txt": "bf532103be9dc72b38f03aeae5f630010980c222ec949844ee75bf6327eacf97",
+    "REVIEW_NORMAL.json": "999f8ad59af9dfc0c16f0a27545b7d1cab6221990a821cd53b307eef2051cc33",
+    "REVIEW_OPTIMIZED.json": "999f8ad59af9dfc0c16f0a27545b7d1cab6221990a821cd53b307eef2051cc33",
+    "check_tt_twojet.py": "236a0e126e8224ef50637ea7942d541ca2049bb4497dc2dde02f5e769715a838"
+  },
+  "isolated_driver_rejection_controls": 21,
+  "new_value_subset_old_value": true,
+  "normal_and_optimized_review_bytes_identical": true,
+  "normal_interpreter_flags": [
+    "-I",
+    "-S",
+    "-B"
+  ],
+  "optimized_interpreter_flags": [
+    "-I",
+    "-S",
+    "-O",
+    "-B"
+  ],
+  "oracle_sha256": "d36f8aca0b257ed8bc9de6b2cbacbdcde24ebf3b447823e54d8af006638e08cb",
+  "portable_cli_arguments": [
+    "--repo-root",
+    "{repo_root}",
+    "--evaluator",
+    "{capsule_root}/compute/tt_twojet.py",
+    "--evaluator-sha256",
+    "c8db4e274405a5c74026aead295e42092abcf14fa30e634b4e7f7232aba48d88",
+    "--input-module",
+    "{capsule_root}/inputs/actual_third_jets.py",
+    "--input-module-sha256",
+    "d36f8aca0b257ed8bc9de6b2cbacbdcde24ebf3b447823e54d8af006638e08cb",
+    "--report",
+    "{capsule_root}/compute/TT_TWOJET_NORMAL.json",
+    "--report-sha256",
+    "f44d6e4286e5b65ce60c37dbda95b64c82b7614568184a05e593e3b930ff096f",
+    "--output",
+    "{fresh_output_path}"
+  ],
+  "producer_report_sha256": "f44d6e4286e5b65ce60c37dbda95b64c82b7614568184a05e593e3b930ff096f",
+  "remaining_findings": [],
+  "second_derivative_strict_sign_claim": false,
+  "status": "PASS_FINAL_INDEPENDENT_NUMERIC_REVIEW",
+  "wrong_formula_controls_rejected": 8
+}

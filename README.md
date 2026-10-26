@@ -1,5 +1,14 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-exterior-tensor-jets="exterior-tensor-jets-20261026" -->
+**26 October 2026: exterior tensor derivatives enclosed at one point.** Under the retained model assumptions, the tensor coefficient of the actual total formal response and all its first and second scaled coordinate derivatives are enclosed at (x,r)=(1/4,5/4), before shell contact. The two TT coefficients remain equal.
+
+Their common value u lies in [−0.000207982516, −0.000010433243], and its scaled time derivative u_x lies in [−0.000280539069, −0.000046459086]. Both are strictly negative. The radial first derivative and all three second-derivative intervals contain zero, so their signs remain inconclusive.
+
+This is a local result about metric coefficients in the registered gauge. It does not establish a full-domain C2 approximation, an Einstein residual bound or a physical curvature or gravitational-wave observable. Nonlinear physical realization and cosmological origin remain open. No new Zenodo version or journal submission accompanies this checkpoint.
+
+[Derivation and scope](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_EXTERIOR_TENSOR_JETS_20261026/theory/DERIVATION.md) · [Source, data and replay](https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_EXTERIOR_TENSOR_JETS_20261026).
+
 <!-- data-hdb-full-angular-response="full-angular-response-20261026" -->
 **26 October 2026: a full angular response approximation passes its accuracy target.** One continuous C1 first-feedback approximation on the retained local domain D+ keeps all 23 angular slots. Its complete conditional X-error bound for values and scaled first x/r derivatives is below 1.1787044291e28, meeting the 1e29 target in the positive angular H norm.
 

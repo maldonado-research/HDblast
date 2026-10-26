@@ -1,0 +1,41 @@
+{
+  "TemporaryDirectory_explicit_dir_argument": false,
+  "actual_source_oracle_sha256": "d36f8aca0b257ed8bc9de6b2cbacbdcde24ebf3b447823e54d8af006638e08cb",
+  "canonical_guard_report_sha256": "8a56f154d422649ba6b7cd13f5ad215904ef583bb0ccda26ed5ba22406f71379",
+  "checker_source_sha256": "982e17de9add869a76b813f6dfc6c5afebfba353c7ef160d7593a6a53acd3490",
+  "default_temp_scratch_reviewed": true,
+  "guard_cases_per_mode": 13,
+  "input_tree_file_set_and_all_file_hashes_unchanged": true,
+  "input_tree_files_checked": 13,
+  "isolated_replays": [
+    {
+      "canonical_bytes_equal": true,
+      "exit_code": 0,
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "mode": "normal",
+      "report_sha256": "8a56f154d422649ba6b7cd13f5ad215904ef583bb0ccda26ed5ba22406f71379",
+      "scratch_location": "external /tmp directory"
+    },
+    {
+      "canonical_bytes_equal": true,
+      "exit_code": 0,
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "mode": "optimized",
+      "report_sha256": "8a56f154d422649ba6b7cd13f5ad215904ef583bb0ccda26ed5ba22406f71379",
+      "scratch_location": "external /tmp directory"
+    }
+  ],
+  "previous_oracle_review_unchanged_sha256": "dca47de9d2eb0c79ed9f00e17dc7dedbf4095eb2839e078b199b660abe3626a6",
+  "scope": "Independent review of authorized scratch-location portability fix. No source-tree temporary directory is requested; both isolated modes reproduce canonical guard bytes using external scratch. Stable scientific source and independent oracle reviewer remain unchanged.",
+  "static_TemporaryDirectory_calls": 1,
+  "status": "PASS_INDEPENDENT_OUTPUT_GUARD_PORTABILITY_REVIEW"
+}

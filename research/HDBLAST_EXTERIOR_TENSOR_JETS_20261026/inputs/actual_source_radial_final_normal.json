@@ -1,0 +1,407 @@
+{
+  "C4_required": false,
+  "actual_C3_error_sha256": "508b65ffe99086326129e1a74370091f970a34f7c7fb74d79eaf1ccef3232e22",
+  "actual_C3_independent_review_sha256": "f92eca739645d7d808b23f47ff94e481c833387940399de1ab46dc9008bfa75d",
+  "all_actual_error_caps_retained": true,
+  "all_frozen_closures_reauthenticated_after_run": true,
+  "arithmetic": {
+    "exact_rational_decisions": true,
+    "outward_grid": "5192296858534827628530496329220096"
+  },
+  "budget_declaration": {
+    "acceptance": "authenticated C3 derivative errors and full 78-term algebraic AD",
+    "arithmetic": "exact rationals, outward grid 2^112",
+    "mesh_search": false,
+    "source_cell_probes": 2,
+    "source_point_probes": 3
+  },
+  "dependency_order_audit": {
+    "C4_derivative_premise_required": false,
+    "full_terms": 78,
+    "only_second_physical_derivative_symbols": [
+      "Mtt",
+      "Myt",
+      "Myy"
+    ],
+    "per_dynamic_symbol": {
+      "A": {
+        "gauge_order_after_source_r": 2,
+        "master_order_after_source_r": 1,
+        "physical_derivative_order": 0
+      },
+      "At": {
+        "gauge_order_after_source_r": 3,
+        "master_order_after_source_r": 2,
+        "physical_derivative_order": 1
+      },
+      "Ay": {
+        "gauge_order_after_source_r": 3,
+        "master_order_after_source_r": 2,
+        "physical_derivative_order": 1
+      },
+      "B": {
+        "gauge_order_after_source_r": 2,
+        "master_order_after_source_r": null,
+        "physical_derivative_order": 0
+      },
+      "Bt": {
+        "gauge_order_after_source_r": 3,
+        "master_order_after_source_r": null,
+        "physical_derivative_order": 1
+      },
+      "By": {
+        "gauge_order_after_source_r": 3,
+        "master_order_after_source_r": null,
+        "physical_derivative_order": 1
+      },
+      "C": {
+        "gauge_order_after_source_r": 2,
+        "master_order_after_source_r": null,
+        "physical_derivative_order": 0
+      },
+      "Ct": {
+        "gauge_order_after_source_r": 3,
+        "master_order_after_source_r": null,
+        "physical_derivative_order": 1
+      },
+      "Cy": {
+        "gauge_order_after_source_r": 3,
+        "master_order_after_source_r": null,
+        "physical_derivative_order": 1
+      },
+      "D": {
+        "gauge_order_after_source_r": 2,
+        "master_order_after_source_r": 1,
+        "physical_derivative_order": 0
+      },
+      "Dt": {
+        "gauge_order_after_source_r": 3,
+        "master_order_after_source_r": 2,
+        "physical_derivative_order": 1
+      },
+      "Dy": {
+        "gauge_order_after_source_r": 3,
+        "master_order_after_source_r": 2,
+        "physical_derivative_order": 1
+      },
+      "E": {
+        "gauge_order_after_source_r": 2,
+        "master_order_after_source_r": null,
+        "physical_derivative_order": 0
+      },
+      "Et": {
+        "gauge_order_after_source_r": 3,
+        "master_order_after_source_r": null,
+        "physical_derivative_order": 1
+      },
+      "Ey": {
+        "gauge_order_after_source_r": 3,
+        "master_order_after_source_r": null,
+        "physical_derivative_order": 1
+      },
+      "L": {
+        "gauge_order_after_source_r": 1,
+        "master_order_after_source_r": 1,
+        "physical_derivative_order": 0
+      },
+      "Lt": {
+        "gauge_order_after_source_r": 2,
+        "master_order_after_source_r": 2,
+        "physical_derivative_order": 1
+      },
+      "Ly": {
+        "gauge_order_after_source_r": 2,
+        "master_order_after_source_r": 2,
+        "physical_derivative_order": 1
+      },
+      "M": {
+        "gauge_order_after_source_r": 1,
+        "master_order_after_source_r": null,
+        "physical_derivative_order": 0
+      },
+      "Mt": {
+        "gauge_order_after_source_r": 2,
+        "master_order_after_source_r": null,
+        "physical_derivative_order": 1
+      },
+      "Mtt": {
+        "gauge_order_after_source_r": 3,
+        "master_order_after_source_r": null,
+        "physical_derivative_order": 2
+      },
+      "My": {
+        "gauge_order_after_source_r": 2,
+        "master_order_after_source_r": null,
+        "physical_derivative_order": 1
+      },
+      "Myt": {
+        "gauge_order_after_source_r": 3,
+        "master_order_after_source_r": null,
+        "physical_derivative_order": 2
+      },
+      "Myy": {
+        "gauge_order_after_source_r": 3,
+        "master_order_after_source_r": null,
+        "physical_derivative_order": 2
+      },
+      "s": {
+        "gauge_order_after_source_r": 1,
+        "master_order_after_source_r": 2,
+        "physical_derivative_order": 0
+      }
+    },
+    "reason": "A through E have reconstruction order at most1, L and M order0; source suffix order is at most1 except M order2; M=2d.",
+    "required_actual_gauge_total_order": 3,
+    "required_actual_master_total_order": 2,
+    "second_physical_derivative_terms": [
+      {
+        "coefficient": "-4/3",
+        "powers": {
+          "A": 1,
+          "Myy": 1,
+          "ell": 2,
+          "rho": 2
+        }
+      },
+      {
+        "coefficient": "8/3",
+        "powers": {
+          "B": 1,
+          "Myt": 1,
+          "ell": 2,
+          "rho": 1
+        }
+      },
+      {
+        "coefficient": "-4/3",
+        "powers": {
+          "D": 1,
+          "Mtt": 1,
+          "ell": 2
+        }
+      }
+    ],
+    "symbols": [
+      "A",
+      "At",
+      "Ay",
+      "B",
+      "Bt",
+      "By",
+      "C",
+      "Ct",
+      "Cy",
+      "D",
+      "Dt",
+      "Dy",
+      "E",
+      "Et",
+      "Ey",
+      "L",
+      "Lt",
+      "Ly",
+      "M",
+      "Mt",
+      "Mtt",
+      "My",
+      "Myt",
+      "Myy",
+      "Vp",
+      "a",
+      "ay",
+      "c",
+      "ell",
+      "rho",
+      "s",
+      "theta"
+    ]
+  },
+  "domain": "0<=x<=3, r>=x, x+r<=8; oracle requires whole rectangles r.lo>=x.hi",
+  "exterior_C3_algebra_sha256": "466466c745c39251294a0e9c358f42c00570e0610cff9a51e1e97a665896b472",
+  "finite_difference_used": false,
+  "frozen_TT_authentication": {
+    "files_including_manifest": 77,
+    "manifest_sha256": "a35f84119e84bf2ea8a712ded86ff79977d3ee91ac25f91ccbd202d379c859ac"
+  },
+  "oracle_calls": 5,
+  "premises": "Authenticated retained smooth actual background/master/gauge solution, differentiated integral/reflection identities, actual C3 error certificates and formal all-point source projection remain conditional scientific premises.",
+  "probes": [
+    {
+      "F": [
+        "-5889072992897760703809986287571/1298074214633706907132624082305024",
+        "-302536675574360500514233617353/81129638414606681695789005144064"
+      ],
+      "Fr": [
+        "-115163190744773108352091055521819/2596148429267413814265248164610048",
+        "-189312232692612636001164421070117/5192296858534827628530496329220096"
+      ],
+      "display_only_F": [
+        -0.004536776808681583,
+        -0.003729052433689775
+      ],
+      "display_only_Fr": [
+        -0.0443592475093075,
+        -0.03646020977815069
+      ],
+      "full_source_and_fraction_dyadic_endpoint_audits": true,
+      "label": "initial_packet_point",
+      "r": [
+        "5/4",
+        "5/4"
+      ],
+      "x": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "F": [
+        "-6217056627559031364781639269789/5192296858534827628530496329220096",
+        "-2555054752028626385693045915279/2596148429267413814265248164610048"
+      ],
+      "Fr": [
+        "1658014721612825589903027052977/1298074214633706907132624082305024",
+        "1008909768529343231742158585221/649037107316853453566312041152512"
+      ],
+      "display_only_F": [
+        -0.0011973615524967062,
+        -0.000984171291296167
+      ],
+      "display_only_Fr": [
+        0.001277288080235603,
+        0.0015544716275163657
+      ],
+      "full_source_and_fraction_dyadic_endpoint_audits": true,
+      "label": "middle_cone_point",
+      "r": [
+        "5/4",
+        "5/4"
+      ],
+      "x": [
+        "1/8",
+        "1/8"
+      ]
+    },
+    {
+      "F": [
+        "-26188845150497402574607/5192296858534827628530496329220096",
+        "-13701983953235778255607/5192296858534827628530496329220096"
+      ],
+      "Fr": [
+        "-3352200912805550615249985271/2596148429267413814265248164610048",
+        "-1099157003335827113440704153/1298074214633706907132624082305024"
+      ],
+      "display_only_F": [
+        -5.043788108426339e-12,
+        -2.638906119305018e-12
+      ],
+      "display_only_Fr": [
+        -1.291220823514887e-06,
+        -8.467597545229642e-07
+      ],
+      "full_source_and_fraction_dyadic_endpoint_audits": true,
+      "label": "apex_point",
+      "r": [
+        "5/4",
+        "5/4"
+      ],
+      "x": [
+        "1/4",
+        "1/4"
+      ]
+    },
+    {
+      "F": [
+        "-107386686517323682716915140646475/5192296858534827628530496329220096",
+        "7475650763039031/5192296858534827628530496329220096"
+      ],
+      "Fr": [
+        "-1947701009833673151544977130739083/2596148429267413814265248164610048",
+        "1878701952980389966463250244314265/2596148429267413814265248164610048"
+      ],
+      "display_only_F": [
+        -0.020681923519223874,
+        1.4397579658318158e-18
+      ],
+      "display_only_Fr": [
+        -0.7502271395103859,
+        0.7236496695647427
+      ],
+      "full_source_and_fraction_dyadic_endpoint_audits": true,
+      "label": "initial_left_N4_cell",
+      "r": [
+        "1",
+        "17/16"
+      ],
+      "x": [
+        "0",
+        "1/16"
+      ]
+    },
+    {
+      "F": [
+        "-58467605784704737195795660017707/1298074214633706907132624082305024",
+        "10161315003366471/2596148429267413814265248164610048"
+      ],
+      "Fr": [
+        "-2505063722402840337905187021520961/2596148429267413814265248164610048",
+        "2888619053516237418944588396747053/2596148429267413814265248164610048"
+      ],
+      "display_only_F": [
+        -0.04504180510295649,
+        3.913996167866955e-18
+      ],
+      "display_only_Fr": [
+        -0.9649154471147569,
+        1.1126555866188874
+      ],
+      "full_source_and_fraction_dyadic_endpoint_audits": true,
+      "label": "middle_N4_cell",
+      "r": [
+        "19/16",
+        "5/4"
+      ],
+      "x": [
+        "1/8",
+        "3/16"
+      ]
+    }
+  ],
+  "proof": "Actual normalized Taylor coefficients are comparison derivatives plus authenticated differentiated C3 actual errors. Algebraic product, inverse and chain rules propagate them. The collected full TT source uses gauge derivatives through3 and master through2 after one radial derivative. The Dual ring differentiates all 78 terms and every used background variable. No C3 interval is differentiated and no actual error is omitted.",
+  "radial_coordinate": "Fr=partial_r F at fixed scaled time x; partial_r=-ell*rho*partial_y",
+  "requested_cone": "0<=x<=1/4, 1+x<=r<=3/2-x",
+  "schema": "HDBLAST_ACTUAL_FULL_TT_SOURCE_RADIAL_DERIVATIVE_V1",
+  "seven_predecessor_authentication": {
+    "C": {
+      "files_including_manifest": 49,
+      "manifest_sha256": "72924328a4e79cc77f0da90999b8dd56956bfdebd5e614e15c3c0498c3a8ae76"
+    },
+    "G": {
+      "files_including_manifest": 169,
+      "manifest_sha256": "3ff1f95c151d2da6a1ab5e9b54718c2bb325c10d9c62a7ed9f97ef2bb36f0bb2"
+    },
+    "I": {
+      "files_including_manifest": 55,
+      "manifest_sha256": "c2e7bd40e94422c5fd98820941231c0da63a8392b14a5a14c4340eabdde37f61"
+    },
+    "N": {
+      "files_including_manifest": 112,
+      "manifest_sha256": "928f3e4e58d222a3c7e1274babf9e94930ec501b74cf6ba04209f97c6bbded44"
+    },
+    "P": {
+      "files_including_manifest": 108,
+      "manifest_sha256": "8bf173293b5cecf7f78e138ac5004abd9c7b1821ef29addb7ecfbc2a6409b4f6"
+    },
+    "T": {
+      "files_including_manifest": 49,
+      "manifest_sha256": "cffb213a69f7f9a27932e990ffdecb7569d1007e5e5baeda708d8dc39d0cce72"
+    },
+    "current": {
+      "files_including_manifest": 21,
+      "manifest_sha256": "b932157f308c9912fa83ee06990f1132a4e75a498aafd66eb99dabcc30b256de"
+    }
+  },
+  "source_map_sha256": "34b10b62d0b36a4506a35407a591a9fdff319971994f25e0b5f031f48eb4f615",
+  "source_module_sha256": "d36f8aca0b257ed8bc9de6b2cbacbdcde24ebf3b447823e54d8af006638e08cb",
+  "status": "CERTIFIED_ACTUAL_FULL_TT_SOURCE_AND_RADIAL_DERIVATIVE_ORACLE"
+}
