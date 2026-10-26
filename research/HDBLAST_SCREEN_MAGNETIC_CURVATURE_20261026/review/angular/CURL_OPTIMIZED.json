@@ -1,0 +1,157 @@
+{
+  "TT_Gram_probability_mean": [
+    [
+      "1/6",
+      "0"
+    ],
+    [
+      "0",
+      "1/6"
+    ]
+  ],
+  "TT_curl_matrix": [
+    [
+      "3",
+      "0"
+    ],
+    [
+      "0",
+      "-3"
+    ]
+  ],
+  "TT_projection_amplitudes": [
+    "6*mean(H:Tplus)",
+    "6*mean(H:Tminus)"
+  ],
+  "all_point_proofs": {
+    "angular_points_sampled": 0,
+    "independent": "raw unreduced polynomials; three-slot tangent derivative; zero homogeneous coefficients",
+    "ordinary_floating_point_decisions": 0,
+    "primary": "all 7 tensor columns; exact zero polynomials in Q[n]/(sum(n^2)-1)",
+    "raw_curl_max_degrees": [
+      0,
+      6,
+      8,
+      6,
+      8,
+      2,
+      2
+    ],
+    "symmetry_tangency_trace_divergence": true
+  },
+  "checker_sha256": "5c20715c4067b4dcb7cf06789656ed8cb5f8eea92f1835616d05410bd44e44cb",
+  "curl_matrix": [
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "3",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "-3"
+    ]
+  ],
+  "general_amplitudes": {
+    "curl": "3*A*Tplus-3*B*Tminus",
+    "curl_mean_norm_squared": "(3/2)*(A^2+B^2)",
+    "curl_pointwise_norm_squared": "(3/2)*(A-B)^2+18*A*B*S*(1-S)"
+  },
+  "input_sha256": {
+    "angular_exact.py": "2c0bafec777581c79c3fd6bd9879d0d3cb8114bb899722bd33882086751ded60"
+  },
+  "linear_screen_magnetic_TT": {
+    "amplitudes": [
+      "3*uplus_x/(2*ell*rho^2*cosh(t))",
+      "-3*uminus_x/(2*ell*rho^2*cosh(t))"
+    ],
+    "equal_amplitude_mean_norm_squared": "3*ux^2/(4*ell^2*rho^4*cosh(t)^2)",
+    "scope": "linear second-metric term only; quadratic curvature/observer terms separate"
+  },
+  "orientation": "EPS_0123=+1; epsilon_ijk=n^A EPS_Aijk; at n=e0, epsilon_123=+1",
+  "pointwise": {
+    "S": "n0^2+n1^2",
+    "Tplus_colon_Tminus": "1/6-S*(1-S)",
+    "curl_equal_combination": "3*(Tplus-Tminus)",
+    "curl_equal_norm_squared": "18*S*(1-S)",
+    "curl_equal_zero_set": "S=0 or S=1 (two coordinate great circles)",
+    "norm_Tminus_squared": "1/6",
+    "norm_Tplus_squared": "1/6"
+  },
+  "quadratic_angular_identity": {
+    "TT_pair_amplitudes": [
+      "2",
+      "-2"
+    ],
+    "Y": "n0^2-n1^2",
+    "complete_tensor": "A=2*Tplus-2*Tminus",
+    "definition": "A_ab=epsilon_(a^{cd} (D_cY) (D_b)D_dY)",
+    "mean_norm_squared": "4/3",
+    "pointwise_norm_squared": "8*S*(1-S)",
+    "proofs": "quotient zero coefficients and independent raw homogeneous zero coefficients"
+  },
+  "scope": "Exact selected seven-column curl map and selected TT pair projection, not arbitrary full TT closure or complete H2.",
+  "status": "PASS_EXACT_FROZEN_SPHERE_CURL",
+  "tensor_basis": [
+    "kappa",
+    "Zkappa",
+    "Fkappa",
+    "HZ",
+    "HF",
+    "Tplus",
+    "Tminus"
+  ]
+}

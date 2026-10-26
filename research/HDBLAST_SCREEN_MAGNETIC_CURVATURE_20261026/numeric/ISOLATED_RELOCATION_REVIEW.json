@@ -1,0 +1,202 @@
+{
+  "actual_apex_calls_this_isolated_replay": {
+    "normal": 1,
+    "optimized": 1,
+    "total": 2
+  },
+  "all_checks_passed": true,
+  "authentication": {
+    "C": {
+      "files_including_manifest": 49,
+      "label": "HDBLAST_FORCED_RESPONSE_BOUNDS_20261023",
+      "manifest_sha256": "72924328a4e79cc77f0da90999b8dd56956bfdebd5e614e15c3c0498c3a8ae76"
+    },
+    "F": {
+      "files_including_manifest": 77,
+      "label": "HDBLAST_FULL_ANGULAR_RESPONSE_20261026",
+      "manifest_sha256": "a35f84119e84bf2ea8a712ded86ff79977d3ee91ac25f91ccbd202d379c859ac"
+    },
+    "G": {
+      "files_including_manifest": 169,
+      "label": "HDBLAST_GEOMETRIC_BULK_SOURCES_20261016",
+      "manifest_sha256": "3ff1f95c151d2da6a1ab5e9b54718c2bb325c10d9c62a7ed9f97ef2bb36f0bb2"
+    },
+    "I": {
+      "files_including_manifest": 55,
+      "label": "HDBLAST_INPUT_PRECISION_20261023",
+      "manifest_sha256": "c2e7bd40e94422c5fd98820941231c0da63a8392b14a5a14c4340eabdde37f61"
+    },
+    "N": {
+      "files_including_manifest": 112,
+      "label": "HDBLAST_NUMERICAL_RESPONSE_INPUTS_20261016",
+      "manifest_sha256": "928f3e4e58d222a3c7e1274babf9e94930ec501b74cf6ba04209f97c6bbded44"
+    },
+    "P": {
+      "files_including_manifest": 108,
+      "label": "HDBLAST_COMMON_GAUGE_FORCING_20261016",
+      "manifest_sha256": "8bf173293b5cecf7f78e138ac5004abd9c7b1821ef29addb7ecfbc2a6409b4f6"
+    },
+    "T": {
+      "files_including_manifest": 49,
+      "label": "HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023",
+      "manifest_sha256": "cffb213a69f7f9a27932e990ffdecb7569d1007e5e5baeda708d8dc39d0cce72"
+    },
+    "current": {
+      "files_including_manifest": 21,
+      "label": "HDBLAST_COUPLED_MEAN_PILOT_20261025",
+      "manifest_sha256": "b932157f308c9912fa83ee06990f1132a4e75a498aafd66eb99dabcc30b256de"
+    },
+    "exterior": {
+      "files_including_manifest": 46,
+      "label": "HDBLAST_EXTERIOR_TENSOR_JETS_20261026",
+      "manifest_sha256": "0bc16f65598ae4977a7b8ab70a66c13ec85d844c871d6fee7739c4ec472d1c70"
+    },
+    "precision35": {
+      "files_including_manifest": 35,
+      "label": "HDBLAST_SHELL_FEEDBACK_PRECISION_20261025",
+      "manifest_sha256": "1a5ee8aa22953f949da000ba03da3b5a0872e4467a0fbaec9f2d3fe7fba11ec4"
+    }
+  },
+  "canonical_report_path_audit": {
+    "absolute_temporary_paths_found": false,
+    "absolute_workspace_paths_found": false,
+    "source_labels": "Stable module basenames only."
+  },
+  "certified_outward_decimal": {
+    "Tminus_total": [
+      "0.004128493946",
+      "0.024929793753"
+    ],
+    "Tplus_total": [
+      "-0.024929793753",
+      "-0.004128493946"
+    ],
+    "linear": [
+      "-0.024929793753",
+      "-0.004128493946"
+    ],
+    "quadratic": [
+      "-0.000000000000000000690462",
+      "0.000000000000000001996501"
+    ]
+  },
+  "conditional_scope": "Registered gauge, slicing observer U and spatial y normal; separate geometric/angular derivations required; no observer-invariance claim.",
+  "exact_fraction_endpoint_location": "numeric-replay-isolated/SELECTED_MAGNETIC_COMPLETE_NORMAL.json:certified_intersections",
+  "final_file_selection": {
+    "exclude_local_relocation_fixture": "numeric-replay-isolated/relocated-source/**",
+    "exclude_stale_historical": [
+      "numeric-replay/**",
+      "numeric/ACTUAL_APEX_INPUTS.json",
+      "numeric/ENCODED_MAP_ARITHMETIC_CONTROLS.json",
+      "numeric/NUMERIC_HANDOFF.json",
+      "numeric/SELECTED_MAGNETIC_COMPLETE.json",
+      "numeric/SELECTED_MAGNETIC_EXPANDED.json"
+    ],
+    "normal_goldens": [
+      "numeric-replay-isolated/ACTUAL_APEX_INPUTS_NORMAL.json",
+      "numeric-replay-isolated/SELECTED_MAGNETIC_COMPLETE_NORMAL.json",
+      "numeric-replay-isolated/SELECTED_MAGNETIC_EXPANDED_NORMAL.json",
+      "numeric-replay-isolated/ENCODED_MAP_ARITHMETIC_CONTROLS_NORMAL.json",
+      "numeric-replay-isolated/GUARD_CONTROLS_NORMAL.json"
+    ],
+    "optimized_goldens": [
+      "numeric-replay-isolated/ACTUAL_APEX_INPUTS_OPTIMIZED.json",
+      "numeric-replay-isolated/SELECTED_MAGNETIC_COMPLETE_OPTIMIZED.json",
+      "numeric-replay-isolated/SELECTED_MAGNETIC_EXPANDED_OPTIMIZED.json",
+      "numeric-replay-isolated/ENCODED_MAP_ARITHMETIC_CONTROLS_OPTIMIZED.json",
+      "numeric-replay-isolated/GUARD_CONTROLS_OPTIMIZED.json"
+    ],
+    "production_code": [
+      "numeric/check_numeric_guards.py",
+      "numeric/evaluate_encoded_map.py",
+      "numeric/evaluate_selected_magnetic.py",
+      "numeric/export_actual_inputs.py",
+      "numeric/output_safety.py"
+    ],
+    "provenance_only_optional": [
+      "numeric/build_consensus_map.py"
+    ],
+    "receipt": "numeric-replay-isolated/NUMERIC_ISOLATED_FREEZE.json",
+    "registered_map": "numeric/CONSENSUS_SELECTED_MAGNETIC_MAP.json"
+  },
+  "frozen_production_sources": {
+    "numeric/check_numeric_guards.py": {
+      "bytes": 7650,
+      "sha256": "1d330c11482677430b8b528e4fa72c4cb88f77be3f512cee20f4cf5d41705ff5"
+    },
+    "numeric/evaluate_encoded_map.py": {
+      "bytes": 8377,
+      "sha256": "5b5fdf16f24f7b902b9db6d564ffd983af9ee5ee40cf65886a35711330a7d5c3"
+    },
+    "numeric/evaluate_selected_magnetic.py": {
+      "bytes": 11926,
+      "sha256": "1ddd26a6be28304691650d18d4e652c515beae10b49a0f2b26d8cb512fedca87"
+    },
+    "numeric/export_actual_inputs.py": {
+      "bytes": 10554,
+      "sha256": "f5de031a03c71cb58062cb2c683cdf38275f6a6f6e77461c60f55a62b8611862"
+    },
+    "numeric/output_safety.py": {
+      "bytes": 1960,
+      "sha256": "85373805691bde9973bc47ce1d325fd4bb3652569d54fe71e0098032a2c8473c"
+    }
+  },
+  "generic_arithmetic_controls": 8,
+  "guard_controls": 33,
+  "normal_optimized_input_ten_capsule_authentication_before_and_after": true,
+  "normal_optimized_source_relocation_comparisons": {
+    "ACTUAL_APEX_INPUTS": {
+      "bytes": 61741,
+      "normal_optimized_byte_identical": true,
+      "production_relocated_source_byte_identical": true,
+      "sha256": "90bc1fdf0fb66b2dae0e1fa24f792260d0a7fa32e98b0cd34cd831ef1d325783"
+    },
+    "ENCODED_MAP_ARITHMETIC_CONTROLS": {
+      "bytes": 1427,
+      "normal_optimized_byte_identical": true,
+      "production_relocated_source_byte_identical": true,
+      "sha256": "002926c785d4ab01f8b9730e2d0dca7a5bc3653055c2f323a3a7f08ee77d1fdb"
+    },
+    "GUARD_CONTROLS": {
+      "bytes": 4623,
+      "normal_optimized_byte_identical": true,
+      "production_relocated_source_byte_identical": true,
+      "sha256": "6294748bd61b160b74f661f51cc8625bae3abe2c28ebb28283de17ed73441acd"
+    },
+    "SELECTED_MAGNETIC_COMPLETE": {
+      "bytes": 19313,
+      "normal_optimized_byte_identical": true,
+      "production_relocated_source_byte_identical": true,
+      "sha256": "5c526136dc0e93730ddebb49cfecbc8a20344f4f06301480625828d64f83909f"
+    },
+    "SELECTED_MAGNETIC_EXPANDED": {
+      "bytes": 6164,
+      "normal_optimized_byte_identical": true,
+      "production_relocated_source_byte_identical": true,
+      "sha256": "ced4936308bbadff31e73a6684d169540a11a9423e93202c75d864d9bfe38c45"
+    }
+  },
+  "old_campaigns_replayed": 0,
+  "registered_map": {
+    "bytes": 7575,
+    "path": "numeric/CONSENSUS_SELECTED_MAGNETIC_MAP.json",
+    "sha256": "059e491364cb4449cd55fab00771bff9312c52af20bc74ef717dd35b16a47902"
+  },
+  "relocation_proof": "Normal commands used production source; optimized commands used byte-identical relocated source copies with local path bootstrap.",
+  "required_interpreter_modes": {
+    "normal": [
+      "-I",
+      "-S",
+      "-B"
+    ],
+    "optimized": [
+      "-I",
+      "-S",
+      "-B",
+      "-O"
+    ]
+  },
+  "result": "CONDITIONAL_COMPLETE_SELECTED_MAGNETIC_COEFFICIENT_EXCLUDES_ZERO",
+  "schema": "HDBLAST_NUMERIC_ISOLATED_RELOCATION_FREEZE_V1",
+  "selected_formula_controls": 10
+}

@@ -1,0 +1,129 @@
+{
+  "exclusive_report_creation": true,
+  "normal_optimized_identical": true,
+  "output_guards": [
+    {
+      "case": "existing",
+      "expected_marker": "OUTPUT_EXISTS",
+      "optimized": false,
+      "rejected_before_calculation": true
+    },
+    {
+      "case": "leaf_symlink",
+      "expected_marker": "OUTPUT_SYMLINK",
+      "optimized": false,
+      "rejected_before_calculation": true
+    },
+    {
+      "case": "ancestor_symlink",
+      "expected_marker": "OUTPUT_ANCESTOR_SYMLINK",
+      "optimized": false,
+      "rejected_before_calculation": true
+    },
+    {
+      "case": "own_source",
+      "expected_marker": "OUTPUT_INSIDE_SOURCE_TREE",
+      "optimized": false,
+      "rejected_before_calculation": true
+    },
+    {
+      "case": "packaged_capsule",
+      "expected_marker": "OUTPUT_INSIDE_PACKAGED_CAPSULE",
+      "optimized": false,
+      "rejected_before_calculation": true
+    },
+    {
+      "case": "missing_parent",
+      "expected_marker": "OUTPUT_PARENT_MISSING",
+      "optimized": false,
+      "rejected_before_calculation": true
+    },
+    {
+      "case": "existing",
+      "expected_marker": "OUTPUT_EXISTS",
+      "optimized": true,
+      "rejected_before_calculation": true
+    },
+    {
+      "case": "leaf_symlink",
+      "expected_marker": "OUTPUT_SYMLINK",
+      "optimized": true,
+      "rejected_before_calculation": true
+    },
+    {
+      "case": "ancestor_symlink",
+      "expected_marker": "OUTPUT_ANCESTOR_SYMLINK",
+      "optimized": true,
+      "rejected_before_calculation": true
+    },
+    {
+      "case": "own_source",
+      "expected_marker": "OUTPUT_INSIDE_SOURCE_TREE",
+      "optimized": true,
+      "rejected_before_calculation": true
+    },
+    {
+      "case": "packaged_capsule",
+      "expected_marker": "OUTPUT_INSIDE_PACKAGED_CAPSULE",
+      "optimized": true,
+      "rejected_before_calculation": true
+    },
+    {
+      "case": "missing_parent",
+      "expected_marker": "OUTPUT_PARENT_MISSING",
+      "optimized": true,
+      "rejected_before_calculation": true
+    }
+  ],
+  "rejections": [
+    {
+      "expected_marker": "COMPLETE_MAGNETIC_TT_IDENTITY",
+      "mutation": "magnetic_sign",
+      "optimized": false,
+      "output_absent": true,
+      "rejected": true
+    },
+    {
+      "expected_marker": "ELECTRIC_TT_PROJECTION",
+      "mutation": "electric_half",
+      "optimized": false,
+      "output_absent": true,
+      "rejected": true
+    },
+    {
+      "expected_marker": "REFLECTION_EXCHANGE_INCLUDING_SLOTS",
+      "mutation": "reflection_slots",
+      "optimized": false,
+      "output_absent": true,
+      "rejected": true
+    },
+    {
+      "expected_marker": "COMPLETE_MAGNETIC_TT_IDENTITY",
+      "mutation": "magnetic_sign",
+      "optimized": true,
+      "output_absent": true,
+      "rejected": true
+    },
+    {
+      "expected_marker": "ELECTRIC_TT_PROJECTION",
+      "mutation": "electric_half",
+      "optimized": true,
+      "output_absent": true,
+      "rejected": true
+    },
+    {
+      "expected_marker": "REFLECTION_EXCHANGE_INCLUDING_SLOTS",
+      "mutation": "reflection_slots",
+      "optimized": true,
+      "output_absent": true,
+      "rejected": true
+    }
+  ],
+  "report_sha256": "51807aa6fd5da47b00caf88a7a653add7264ca1954d8875a246fba67ea26f928",
+  "source_sha256": {
+    "check_scalar_magnetic_symmetry.py": "bbdfdece420c51f10e893a1fc61db35c3b330c1494c434781aa18a03cac89484",
+    "run_symmetry_controls.py": "00ec9f2dd8edaef9a6a6ab1cf0feb8556812d9276a6315439fdf24d1cbfad968"
+  },
+  "source_unchanged": true,
+  "status": "PASS_SYMMETRY_SCIENTIFIC_AND_OUTPUT_CONTROLS"
+}
