@@ -1,0 +1,107 @@
+name: Full angular response and total tensor coefficient replay
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/**'
+      - 'research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026.zip'
+      - '.github/workflows/full-angular-response-20261026.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/**'
+      - 'research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026.zip'
+      - '.github/workflows/full-angular-response-20261026.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      HDB_MANIFEST: 'a35f84119e84bf2ea8a712ded86ff79977d3ee91ac25f91ccbd202d379c859ac'
+      HDB_ARCHIVE: '05a39514a6d05b4a5e2881fe5d6abb143f7b9f54c5aa723c22021db4a91fe5f2'
+      HDB_REPLAY: '96a2ed48b3cbe572d0d3c0988e0371588be8d218bdb85f59e8fb620e1a8e4c4f'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/
+            /research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026.zip
+            /research/HDBLAST_COUPLED_MEAN_PILOT_20261025/
+            /research/HDBLAST_INPUT_PRECISION_20261023/
+            /research/HDBLAST_COMMON_GAUGE_FORCING_20261016/
+            /research/HDBLAST_NUMERICAL_RESPONSE_INPUTS_20261016/
+            /research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/
+            /research/HDBLAST_FORCED_RESPONSE_BOUNDS_20261023/
+            /research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023/
+            /research/HDBLAST_SHELL_FEEDBACK_PRECISION_20261025/
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Authenticate and replay both fixed-budget modes
+        shell: bash
+        run: |
+          set -euo pipefail
+          capsule="research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026"
+          python -I -S -B - <<'PY'
+          import hashlib
+          import os
+          from pathlib import Path
+          path = Path('research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/reproduce.py')
+          if hashlib.sha256(path.read_bytes()).hexdigest() != os.environ['HDB_REPLAY']:
+              raise SystemExit('REPLAY_ENTRY_POINT_HASH_MISMATCH')
+          PY
+          python -I -S -B "$capsule/reproduce.py" \
+            --manifest-sha256 "$HDB_MANIFEST" --repo-root "$GITHUB_WORKSPACE" \
+            --archive "$capsule.zip" --archive-sha256 "$HDB_ARCHIVE" \
+            --output-dir "$RUNNER_TEMP/full-angular-response"
+      - name: Verify receipt and record individual golden hashes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -S -B - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          receipt_path = Path(os.environ['RUNNER_TEMP'])/'full-angular-response/REPRODUCTION_RECEIPT.json'
+          data = json.loads(receipt_path.read_text())
+          def require(ok, message):
+              if not ok:
+                  raise SystemExit(message)
+
+          require(data['status'] == 'PASS', 'RECEIPT_STATUS')
+          require(len(data['direct_runs']) == 24 and all(row['exit_code'] == 0 for row in data['direct_runs']), 'DIRECT_RUNS')
+          require(len(data['golden_matches']) == 35 and all(row['byte_identical'] is True for row in data['golden_matches']), 'GOLDEN_MATCHES')
+          require(len(data['source_corruption_controls']) == 7 and all(row['rejected'] is True for row in data['source_corruption_controls']), 'SOURCE_CONTROLS')
+          require(len(data['complete_eight_upstream_roots_before']) == 8, 'UPSTREAM_COUNT')
+          require(data['complete_eight_upstream_roots_before'] == data['complete_eight_upstream_roots_after'], 'UPSTREAM_UNCHANGED')
+          require(data['complete_new_capsule_before'] == data['complete_new_capsule_after'], 'CAPSULE_UNCHANGED')
+          require(data['complete_new_capsule_before']['files_including_manifest'] == 77, 'CAPSULE_SOURCE_COUNT')
+          require(data['complete_new_capsule_before']['manifest_sha256'] == os.environ['HDB_MANIFEST'], 'MANIFEST_PIN')
+          require(data['archive']['sha256'] == os.environ['HDB_ARCHIVE'] and data['archive']['members'] == 77, 'ARCHIVE_PIN_AND_COUNT')
+          require(data['archive']['crc_pass'] is True and data['archive']['all_source_bytes_equal'] is True, 'ARCHIVE_BYTES')
+          require(data['source_unchanged_after_replay'] is True, 'SOURCE_UNCHANGED')
+          for row in data['golden_matches']:
+              print(json.dumps({key: row[key] for key in ('actor', 'golden', 'sha256', 'byte_identical')}, separators=(',', ':')))
+          print(json.dumps({'status': 'PASS', 'direct_runs': 24, 'scientific_golden_matches': 35,
+                            'source_corruption_controls': 7, 'upstream_closures': 8, 'capsule_source_files': 77,
+                            'manifest_sha256': os.environ['HDB_MANIFEST'], 'archive_sha256': os.environ['HDB_ARCHIVE'],
+                            'reproduce_sha256': os.environ['HDB_REPLAY'],
+                            'receipt_sha256': hashlib.sha256(receipt_path.read_bytes()).hexdigest()}, separators=(',', ':')))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: full-angular-response-${{ github.sha }}
+          path: ${{ runner.temp }}/full-angular-response/
+          if-no-files-found: warn
+          retention-days: 30

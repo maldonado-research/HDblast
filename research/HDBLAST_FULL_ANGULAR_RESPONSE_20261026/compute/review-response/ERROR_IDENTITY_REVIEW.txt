@@ -1,0 +1,79 @@
+Independent full23 response error identity review
+
+The retained T/analytic/LOCAL_TOTAL_REVIEW.md explicitly gives the full-space
+zero-wedge contraction q=3409/8000000 on D+ and
+
+  X(V)=max(sup|V|_H/3,sup|V_x|_H,sup|V_r|_H).
+
+This norm applies to the full retained Hilbert space.  H is the exact
+probability-normalized positive fibre Gram norm in the23-amplitude basis.
+For compatible V vanishing on x+r<1, its value is at most3X(V)/4 and its
+Robin boundary trace at mostX(V)/4 on the retained causal domain.
+
+Let b be the exact free-plus-source datum, T the actual coefficient feedback,
+and U=b+TU.  Let B0 be the candidate free wave, using the expression-defined
+nominal displacement and a continuous P1 velocity, and B1 its first frozen
+coefficient feedback evaluated using independently P1-approximated nominal
+displacement and nominal radial derivative.
+
+The exact algebraic identity is
+
+  U-(B0+B1)=T^2 U+(I+T)(b-B0)+(TB0-B1).
+
+Given ||b-B0||_X<=e0 and ||U||_X<=Ucap, this yields
+
+  ||U-(B0+B1)||_X <= q^2 Ucap+(1+q)e0+e1.
+
+The actual-minus-nominal initial errors deltaU,deltaUr,deltaV yield
+
+  efree=max((deltaU+(3/2)deltaV)/3,deltaUr+deltaV).
+
+If epsV is a uniform H error for replacing nominal velocity by its P1 table,
+then ||free(nomU,nomV)-B0||_X<=epsV.  Hence the complete datum defect is
+
+  e0=efree+epsV+S,
+  S=(3/2)*17387513156573+3851400=52162547172519/2.
+
+The retained source omission S is a full-space H/X bound. It need not be
+evaluated as a waveform to charge its norm to this error ledger.
+
+If nomU,nomUr,nomV bound the three continuous nominal initial H profiles,
+
+  beta_nom=max((nomU+(3/2)nomV)/3,nomUr+nomV)
+  X0=max((nomU+(3/2)(nomV+epsV))/3,nomUr+nomV+epsV)
+
+bound the exact nominal and candidate free waves respectively.  Therefore
+
+  Ucap=(X0+e0)/(1-q)
+
+is a valid conditional full23 total-response bound, independent of the old
+five-mean cap.  It is acceptable to retain the same epsV contribution both
+inside this conservative X0 and in the datum-error e0.
+
+Let nA,nB,nD,nM be Gram operator upper bounds for the frozen candidate
+matrices, dA,dB,dD,dM for their differences from the actual matrices, and
+epsU,epsUr for the independent P1 profile errors used only in feedback.
+Then
+
+  df_coeff=(dA+dB+(3/4)dD)*X0,
+  dg_coeff=(1/4)dM*X0,
+  df_profile=(nA+nB)*epsUr+nD*epsU,
+  dg_profile=nM*epsU,
+  e1=(3/2)(df_coeff+df_profile)+dg_coeff+dg_profile.
+
+No additional profile epsV appears in df_profile: B0 itself is defined with
+that same P1 velocity, so there is no velocity replacement within B1.
+
+For matrices block diagonal in orthogonal angular sectors of sizes5,8,8,1,1,
+the operator norm is the maximum of the block operator norms.  A valid
+computable bound is the maximum Gram-weighted block Frobenius norm, each
+
+  sqrt(sum_{i,j in block}(g_i/g_j)*m_ij^2).
+
+This applies equally to nonnegative componentwise coefficient-error caps,
+provided all off-block actual/candidate entries are exactly zero. Merely
+discarding off-block entries without checking exact zero would be invalid.
+
+This note reviews the mathematical identity.  The accompanying independent
+checker must still authenticate inputs and recompute the concrete saved
+matrix bounds, sample data and arithmetic before accepting an output.

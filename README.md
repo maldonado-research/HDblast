@@ -1,5 +1,14 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-full-angular-response="full-angular-response-20261026" -->
+**26 October 2026: a full angular response approximation passes its accuracy target.** One continuous C1 first-feedback approximation on the retained local domain D+ keeps all 23 angular slots. Its complete conditional X-error bound for values and scaled first x/r derivatives is below 1.1787044291e28, meeting the 1e29 target in the positive angular H norm.
+
+At the exterior point (x,r)=(1/4,5/4), a separate targeted calculation of the actual total response encloses each of the two equal TT coefficients in [−0.001311761536, −0.000001509027]. This is a metric coefficient in the registered gauge, not an observed gravitational wave or a gauge-invariant tensor observable.
+
+These numerical approximation and integral-defect certificates retain the conditional parent coefficient-existence and subsidiary assumptions. They establish no pointwise C2 Einstein residual, nonlinear or finite-amplitude physical family, or cosmological origin. No new Zenodo version or journal submission accompanies this checkpoint.
+
+[Derivation and scope](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/DERIVATION.md) · [Source, data and replay](https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026).
+
 <!-- data-hdb-shell-precision="shell-precision-20261025" -->
 **Conditional shell and anchored-volume sign bounds — 25 October 2026.** Conditional bounds place N0(x,0) and J0(x,0) below zero at the retained scaled times x=9/8 and x=5/4. Under the retained parent projection assumptions and a smooth kinematical completion, the anchored proper-time volume second parameter derivative is also negative at x=9/8. Finite-amplitude volume change, a full angular Einstein solution and cosmological conclusions remain unestablished. No new Zenodo version or journal submission accompanies this checkpoint. [Source capsule](https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SHELL_FEEDBACK_PRECISION_20261025) · [Observable bound and assumptions](https://github.com/maldonado-research/HDblast/blob/main/research/HDBLAST_SHELL_FEEDBACK_PRECISION_20261025/analysis/OBSERVABLE_BOUND.md).
 

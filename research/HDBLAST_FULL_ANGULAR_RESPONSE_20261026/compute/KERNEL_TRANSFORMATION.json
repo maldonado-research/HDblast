@@ -1,0 +1,57 @@
+{
+  "changes": [
+    {
+      "new": "Exact first reflected feedback for the complete 23-amplitude angular space.",
+      "occurrences": 1,
+      "old": "Exact first reflected feedback for finite five-mean ridge profiles."
+    },
+    {
+      "new": "LABELS = tuple(f'{field}:{degree}' for field in ('K','L','N','J','w') for degree in (0,2,4)) + tuple(f'{field}:{degree}' for field in ('v','u') for degree in (2,4)) + ('H:2','H:4','T:+','T:-')\nDIM = len(LABELS)\nPARITY = tuple(-1 if name.startswith(('L:','v:')) else 1 for name in LABELS)\nMEANS = LABELS\n\ndef angular_gram():\n    scalar_norms = {0: Q(1), 2: Q(1,12), 4: Q(19,720)}\n    weights = []\n    for name in LABELS:\n        if name.startswith('T:'):\n            value = Q(1,6)\n        else:\n            field, degree = name.split(':')\n            degree = int(degree)\n            value = scalar_norms[degree]\n            if field == 'L': value *= 2\n            if field == 'J': value *= 3\n            if field in ('v','u'): value *= 2*degree*(degree+2)\n            if field == 'H': value *= Q(2,3)*degree*(degree+2)*(degree*(degree+2)-3)\n        weights.append(value)\n    return tuple(weights)\n\nGRAM = angular_gram()",
+      "occurrences": 1,
+      "old": "PARITY = (1, -1, 1, 1, 1)\nGRAM = (1, 2, 1, 3, 1)\nMEANS = (\"K0\", \"L0\", \"N0\", \"J0\", \"w0\")"
+    },
+    {
+      "new": "need(len(out) == DIM, \"full23 amplitudes required\")",
+      "occurrences": 1,
+      "old": "need(len(out) == 5, \"five means required\")"
+    },
+    {
+      "new": "ZERO = vector([0] * DIM)",
+      "occurrences": 1,
+      "old": "ZERO = vector([0] * 5)"
+    },
+    {
+      "new": "need(len(out) == DIM, \"full23 by23 matrix required\")",
+      "occurrences": 1,
+      "old": "need(len(out) == 5, \"full five by five matrix required\")"
+    },
+    {
+      "new": "len(self.parity) == DIM",
+      "occurrences": 1,
+      "old": "len(self.parity) == 5"
+    },
+    {
+      "new": "len(parity) == DIM",
+      "occurrences": 1,
+      "old": "len(parity) == 5"
+    },
+    {
+      "new": "0 <= order <= 5, \"primitive order 0..5\"",
+      "occurrences": 1,
+      "old": "0 <= order <= 3, \"primitive order 0..3\""
+    },
+    {
+      "new": "All 23 amplitudes, with independent forcing approximants u and du.",
+      "occurrences": 1,
+      "old": "All five couplings, with independent forcing approximants u and du."
+    },
+    {
+      "new": "need(all(M[i][j] == 0 for i, sign in enumerate(PARITY) if sign == -1 for j in range(DIM)),\n             \"shell lift has no Dirichlet forcing in any angular row\")",
+      "occurrences": 1,
+      "old": "need(all(M[1][j] == 0 for j in (0, 2, 3, 4)),\n             \"shell lift has no Dirichlet forcing\")"
+    }
+  ],
+  "new_source_sha256": "d6e935bd958512cb032e1ef3d9503d6fa159418bcf9b28051de6d2f43a43c02f",
+  "scope": "Only dimensions, labels, Gram, parity, primitive range and complete Dirichlet validation change. All retarded integral arithmetic is unchanged.",
+  "source_sha256": "cc38b9a0aef96d8cbc8279070f3cb537fa614d6d8eac923f76fa1d552771b495"
+}
