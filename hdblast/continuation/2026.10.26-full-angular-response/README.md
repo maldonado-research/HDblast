@@ -1,0 +1,9 @@
+# Full angular response checkpoint — 26 October 2026
+
+The [scientific capsule](../../../research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/) contains the derivation, fixed-budget calculations, exact rational bounds, and independent internal reviews. The source is frozen by the external pins in `PUBLICATION_PINS.json` and the dedicated GitHub workflow. Its matching ZIP contains exactly the same 77 files.
+
+A continuous approximation retains all 23 angular amplitudes on the stated causal domain. Its conditional comparison-norm error for values and scaled first time/radial derivatives is below 1.1787044291e28, meeting the declared 1e29 absolute coefficient target. A separate source-resolved calculation of the actual total response gives T+=T− in [−0.001311761536,−0.000001509027] at (x,r)=(1/4,5/4), before that point can receive a shell contribution.
+
+The global approximation has zero TT entries; its broader global bound does not resolve this small coefficient. The separate TT certificate does. All shell rows and retained parent coefficient-existence/subsidiary premises remain explicit. An integral-equation residual is bounded; a pointwise C2 Einstein residual and a finite-amplitude nonlinear realization remain open. These registered-gauge coefficients do not establish an observed gravitational wave, cosmological prediction, or higher-dimensional origin of the Big Bang.
+
+`INITIAL_PACKAGED_REPRODUCTION.json` records a fresh local replay of the frozen package. Durable publication receipts are retained on a separate verification branch after merged CI and complete source/live-page readback. No new Zenodo version or journal submission accompanies this checkpoint. Frozen manuscripts, earlier capsules and unrelated project content are preserved. Private editorial history is excluded.

@@ -1,0 +1,63 @@
+Actual total TT response on a fixed exterior cone
+
+At (x,r)=(1/4,5/4), both registered TT angular metric coefficients of the full conditional second response have the checked outward decimal enclosure
+
+  Tplus = Tminus in [-0.001311761536, -0.000001509027].
+
+The exact rational endpoints are in TT_TOTAL_RESPONSE_NORMAL.json. This is a registered-gauge metric component coefficient, conditional on the retained actual background/master/gauge existence and error premises. It is not an invariant force or a physical gravitational-wave observable.
+
+The independent structural proof supplies both TT initial displacement and partial time velocity identically zero, vanishing coupling rows and columns to all other sectors, identical scalar TT operators, and identical complete geometric TT source rows. On the backward cone 0<=x<=1/4, 1+x<=r<=3/2-x, neither physical shell forcing nor Robin reflection enters by domain of dependence. Hence the free TT term and shell lift are exactly zero, and the computed scalar response is the full total TT coefficient rather than an auxiliary mean.
+
+The authenticated actual_first_jets oracle supplies physical first-solution two-jets with all inherited actual C3 derivative error caps. Every one of the 78 terms in metric_forcing/ab/5 and the identical /6 row is retained. No comparator substitution or source derivatives are used. The fixed N=4 exact partition has 20 clipped cells with total area 1/16, two outer triangular cells in each time row, and the retarded wave factor 1/2. The resulting zero-data Duhamel interval is approximately [-0.001311733508097648,-0.000001537055254452392].
+
+Independent whole-cone scalar coefficients obey caps approximately
+  |A| <= 7.500000937501e-13,
+  |B| <= 4.341151526132e-5,
+  |D| <= 8.000300910057e-12.
+They are computed separately from the actual ODE background on the enclosing rectangle [0,1/4] x [1,3/2], including b=-(a_y+a^2), d=rho^-2-a^2, and the actual potential V. No background Hamiltonian cancellation is assumed.
+
+With T=1/4 and norm max(2 sup|u|/T,sup|u_x|,sup|u_r|), the retarded wave map has C0-to-C1 norm at most T. Thus sigma=a+b+Td/2, q=T sigma approximately 1.085287925284e-5<1, and the full scalar response norm is at most T Fmax/(1-q). The entire feedback tail at the apex is at most
+
+  E = T^2 Fmax q / (2(1-q)) approximately 2.8027827910071e-8.
+
+Adding [-E,E] to the Duhamel interval gives the stated full total response interval, strictly negative. The predeclared optional N=8 budget was not invoked because N=4 passes the complete response sign gate.
+
+All seven frozen dependency closures were authenticated byte-for-byte with strict membership checks before project imports and after each run, including checks through the latest frozen exact_boundary.py helper and its manifest pins. No frozen source tree was edited. Necessary authenticated source/error helper calls were made; no old full campaign was rerun and no GitHub mutation was performed.
+
+Canonical normal and optimized Python reports are byte-identical, including when the frozen repository is supplied from different locations. Runtime measurements are emitted only to stdout. The independent checker reconstructs A/B/D with a separate interval engine, recomputes every cell polygon area and source sum, verifies the complete resolvent arithmetic, and replays the full metric_forcing API at one point and two cells. Four controls reject a dropped cell, doubled clipped area, omitted feedback tail, and removed full-source term. Only the three stated source rows were independently replayed; primary evaluation computes all 20 cells.
+
+The authenticated point and whole-cell probes are contained in the main canonical response report.
+
+Artifacts:
+  tt_response.py
+  TT_TOTAL_RESPONSE_NORMAL.json
+  TT_TOTAL_RESPONSE_OPTIMIZED.json
+  TT_EXECUTION_RECEIPT.json
+  review/TT_SCALAR_TAIL_PROOF.md
+  review/check_tt_tail_geometry.py
+  review/TT_TAIL_GEOMETRY_REVIEW_NORMAL.json
+  review/TT_TAIL_GEOMETRY_REVIEW_OPTIMIZED.json
+  review/check_tt_total_report.py
+  review/TT_TOTAL_REVIEW_NORMAL.json
+  review/TT_TOTAL_REVIEW_OPTIMIZED.json
+
+Portability and preservation:
+  The evaluator requires --repo-root; Context takes repo_root explicitly. Report source and helper paths are logical research/... paths. Canonical reports contain no wall-time field. Fresh outputs are rejected inside all seven frozen closures and the latest helper capsule, including symlinked capsule paths.
+  The exact before/after portability proof verifies equality of every numerical report field after removing only evaluator hash, execution time, and the two path metadata values. Seven core function ASTs are identical. The exact rational total interval is unchanged. Historical executions remain unchanged outside the publication tree.
+  The independent geometry and total-report checkers also require --repo-root and fresh --output. Their normal and optimized canonical outputs are byte-identical. The evaluator I/O guard checker rejects all eight protected output locations, existing output, and symlinked helper-capsule output in both modes without source-oracle execution.
+
+Additional artifacts:
+  review/check_tt_portability.py
+  review/TT_PORTABILITY_REVIEW_NORMAL.json
+  review/TT_PORTABILITY_REVIEW_OPTIMIZED.json
+  review/check_tt_io_guards.py
+  review/TT_EVALUATOR_GUARD_REVIEW_NORMAL.json
+  review/TT_EVALUATOR_GUARD_REVIEW_OPTIMIZED.json
+
+Portable replay from the capsule directory (supply the frozen repository location and fresh output paths outside its eight capsules):
+  python -B tensor/tt_response.py --repo-root PATH_TO_REPO --output NEW_TOTAL.json
+  python -B -O tensor/tt_response.py --repo-root PATH_TO_REPO --output NEW_TOTAL_OPTIMIZED.json
+  python -B tensor/review/check_tt_total_report.py --repo-root PATH_TO_REPO --report NEW_TOTAL.json --evaluator tensor/tt_response.py --output NEW_REVIEW.json
+  python -B tensor/review/check_tt_tail_geometry.py --repo-root PATH_TO_REPO --output NEW_GEOMETRY.json
+  python -B tensor/review/check_tt_io_guards.py --repo-root PATH_TO_REPO --evaluator tensor/tt_response.py --report NEW_TOTAL.json --output NEW_GUARDS.json
+

@@ -1,0 +1,93 @@
+Full23 initial displacement and scaled velocity
+
+Scope and conventions
+
+The construction continues the retained recentered background and registered
+quadrupole first pair. It certifies only the initial footprint 0<=r<=7/4,
+x=0, over the whole sphere. Here z=ell*r, ell=10^-6, x=t/ell, and
+partial_y=-rho^-1 partial_z. Every ordinary-t velocity is multiplied by ell.
+All amplitudes are second parameter derivatives (epsilon^2/2 convention).
+
+The ambient order is the authenticated G/projection/inputs/linear_operator.py
+LABELS order, and the H norm uses that module's probability-normalized Gram.
+The same seven complete upstream roots as the latest shell component ledger
+are independently authenticated before every numerical import and again at
+the end. Frozen files are never changed.
+
+Continuous candidate
+
+The background consists of the same degree4 nominal coefficients as the
+retained RECENTERED_CANDIDATE_NORMAL.json, pinned by SHA256
+739240283c2bee53afa559c4ce71c1e3356cf2d0ad4e4b0f18b9621c077e20d3.
+Both packet and E use R(t)=(1+t/2^40)^(-2^40). The packet has t=1/[r(3-r)-2]-4
+(equivalently 1/[(r-1)(2-r)]-4), and E has t=ell*r. The equivalent centered
+denominator 1/4-(r-3/2)^2 is used for interval evaluation. The nominal packet
+is zero through65/64; on [65/64,66/64] it is multiplied by
+S(s)=126s^5-420s^6+540s^7-315s^8+70s^9, s=64r-65. It equals R thereafter
+on the retained footprint. No right cutoff or extrapolation is claimed.
+
+Let C=alpha/rho^2, B=3alpha/(rho^3 p), k=rho(5a/2-h), h=U'(eta)/p,
+u=Cq, v=B(q_z+kq), u_t=Eu, d=3/(rho p), v_t=E(v-du).
+The retained A,D,K,Pi formulas are evaluated without dropping any terms.
+The scalar source sectors are A/6+4D/3, A/2+2D, A-4D. Their f amplitudes
+are -rho^2 times those sectors divided respectively by -6,10,42.
+The scalar displacement amplitudes are -3f_y/(2p).
+
+All slots are packed through the authenticated linear_operator.pack_fields.
+The formulas agree exactly with source_adapters.initial_frame_data and
+pack_initial after setting Fmom=3K and Gmom=Fmom_y+p*Pi. The independent
+exact rational jet review compares all46 displacement/velocity slots on
+nonconstant distinct polynomial inputs and validates the time scaling.
+
+Nonzero displacement channels are N,J,w at degrees0,2,4. Nonzero velocity
+channels are K,L,N,J,w at degrees0,2,4 and u at degrees2,4. Both TT slots,
+both H slots, and v slots are exactly zero initially. Dynamics can populate
+additional channels; initial zero does not imply evolved zero.
+
+Derivative and interpolation controls
+
+The exact continuous rational displacement remains in the free wave. P1 u
+and P1 du tables approximate it only inside feedback, while P1 v defines the
+candidate's free-wave velocity. The fixed denominator is256, with both
+cutoff junctions included as nodes. The retained five mean node centers are
+reused exactly; the maximum endpoint distance from each newly evaluated
+outward interval is charged, including expression-order rounding changes.
+
+Actual-minus-nominal U, U_r, V errors need packet derivatives through4.
+For P1 u,du,v error bounds, the cellwise second derivative controls are
+U_rr, U_rrr, V_rr. Nominal normalized jets through6 suffice. Each component
+P1 error is bounded by the maximum endpoint radius plus h^2/8 times the
+closed-cell second derivative cap. Every cell remains in one analytic
+cutoff branch. S matches derivatives through4 at its endpoints. Both U and
+V are C1 across the upper cutoff, while their second derivatives can jump.
+The independent exact review contains a concrete jump witness. This does
+not invalidate the cellwise interpolation bound.
+
+Actual-minus-nominal error algebra
+
+The actual background state is enclosed by the retained shell Taylor
+coefficient intervals plus the validated fifth normalized ODE derivative
+remainder. Differentiated Taylor's theorem uses binomial(5,n) times that
+remainder times z^(5-n), n<=4. The three charged channels are the shell
+Taylor coefficient difference, rational packet/cutoff/E difference, and
+validated fifth ODE Taylor remainder including outward arithmetic.
+
+For paired primitives a,b with d_c and sum_c d_c=a-b, addition and
+differentiation are componentwise. Products use
+d_c(ab)=d_c(a)*b_nominal+a_actual*d_c(b), and reciprocals use
+d_c(1/a)=-d_c(a)/(a_actual*a_nominal). Therefore every nonlinear expression
+retains a telescoping small-difference enclosure, avoiding subtraction of
+two large independent whole-profile intervals. Six independent exact jet
+controls validate these identities. Actual packet ranges are additionally
+intersected with the independent derivative-polynomial oracle.
+
+All endpoint arithmetic is exact Fraction arithmetic followed by outward
+rounding to a2^112 grid. Rational square-root upper bounds convert component
+caps to Gram-weighted H caps. Floating displays never decide a pass.
+The two error ledgers stay separate: actual-minus-rational-candidate errors
+and P1 approximation errors. In particular the P1 velocity error must be
+included when comparing the actual free wave with the chosen candidate.
+
+This producer does not evaluate an evolved response, a pointwise Einstein
+residual, a nonlinear realization, or a physical-origin conclusion. It does
+not reduce retained branch/shell uncertainty.

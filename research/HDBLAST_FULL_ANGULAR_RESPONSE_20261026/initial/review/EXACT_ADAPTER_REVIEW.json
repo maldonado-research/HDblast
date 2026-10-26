@@ -1,0 +1,60 @@
+{
+  "status": "PASS_EXACT_RATIONAL_JET_FULL23_INITIAL_ADAPTER_REVIEW",
+  "producer_sha256": "2e0b3fe803df47060550a4be716095450e710627fd7c5258d2b4e2868f1beda1",
+  "reference": "Authenticated G/projection/inputs/source_adapters.initial_frame_data and linear_operator.pack_initial",
+  "full23_adapter_slots_checked": 46,
+  "exact_jet_coefficients_compared": 139,
+  "nonzero_displacements": [
+    "N:0",
+    "N:2",
+    "N:4",
+    "J:0",
+    "J:2",
+    "J:4",
+    "w:0",
+    "w:2",
+    "w:4"
+  ],
+  "nonzero_velocities": [
+    "K:0",
+    "K:2",
+    "K:4",
+    "L:0",
+    "L:2",
+    "L:4",
+    "N:0",
+    "N:2",
+    "N:4",
+    "J:0",
+    "J:2",
+    "J:4",
+    "w:0",
+    "w:2",
+    "w:4",
+    "u:2",
+    "u:4"
+  ],
+  "telescoping_expressions_checked": 6,
+  "time_scaling": "pack_initial multiplies every ordinary t velocity by ell; exact identity passed.",
+  "regularity_finding": "Both U and V are generally C1 at66/64. L velocity contains f_y, hence packet third derivatives. Cellwise V_rr bounds remain valid because cutoff branches align with mesh.",
+  "exact_cutoff_regularity_control": {
+    "packet": "S(1+z) on the left;1 on the right; constant rational backgrounds",
+    "scalar_displacement_left_minus_right_first_coefficients": [
+      "0",
+      "0",
+      "-140/9"
+    ],
+    "mixed_L_velocity_left_minus_right_first_coefficients": [
+      "0",
+      "0",
+      "7/75000"
+    ],
+    "conclusion": "Value and first derivative match; second derivative may jump."
+  },
+  "support": "Actual packet data vanish on [0,1], nominal data on [0,65/64]; candidate only registered through7/4.",
+  "complete_roots_authenticated_before_and_after": true,
+  "limits": [
+    "Algebraic adapter review, not a separate numerical error campaign.",
+    "Exact manufactured polynomial jets validate all slots and derivative couplings; retained physical shell input validity remains a premise."
+  ]
+}
