@@ -1,0 +1,383 @@
+{
+  "schema": "HDBLAST_SCREEN_MAGNETIC_PRIMARY_SOURCE_SCOPE_V1",
+  "checked_date_utc": "2026-10-26",
+  "bounded_search": true,
+  "not_exhaustive": true,
+  "novelty_assessment": "Not determined; no broad novelty, priority, breakthrough or origin claim.",
+  "network_method": "Read-only direct HTTPS arXiv API/PDF requests through configured proxy; no remote mutations.",
+  "public_allowlist": [
+    "LITERATURE_SCOPE.md",
+    "PRIMARY_SOURCE_METADATA.json"
+  ],
+  "publication_exclusions": [
+    "private/**",
+    "Downloaded article bodies, PDFs, extracted full text, raw API XML, full abstracts and source caches."
+  ],
+  "discovery_query_limit": {
+    "new_queries": 3,
+    "max_results_per_query": 5,
+    "submitted_date_start": "2024-01-01",
+    "submitted_date_end": "2026-10-26",
+    "sort": "submission date descending",
+    "additional_fixed_id_lookup": "1203.3563,gr-qc/9609040; metadata lookup, not discovery search"
+  },
+  "fixed_id_lookup": {
+    "raw_api_cache": "private/known-primary-metadata.xml",
+    "sha256": "d114b2a6b739522a1f9df30c43de7ebb79dea72c4c6438dfc4db4389b16d87e2"
+  },
+  "sources": [
+    {
+      "id": "https://arxiv.org/abs/1203.3563v2",
+      "title": "Minimal tensors and purely electric or magnetic spacetimes of arbitrary dimension",
+      "published": "2012-03-15T21:04:19Z",
+      "updated": "2012-12-28T21:15:34Z",
+      "authors": [
+        "Sigbjørn Hervik",
+        "Marcello Ortaggio",
+        "Lode Wylleman"
+      ],
+      "doi": "10.1088/0264-9381/30/16/165014",
+      "journal_ref": "Class. Quantum Grav. 30 (2013) 165014",
+      "pdf_sha256": "db154c6062d8071dc91a4b03987f984a95e317b421e977bc490c74a565302041",
+      "extracted_text_sha256": "f1400fc8ecb1ac9d7fb001619ecaf47b2450091fdb0867f935269e1b1fb55491",
+      "private_pdf_cache": "private/hervik-ortaggio-wylleman.pdf",
+      "read_scope": [
+        "Section 3.1, Definition 3.1, Equations (19)-(26), pp.8-9",
+        "Section 3.2, Definition 3.4, p.10",
+        "Section 3.4.2, Proposition 3.13 and selected surrounding observer/boost discussion, pp.14-15"
+      ],
+      "use": "Observer-relative magnetic decomposition; dimensional distinction between full five-dimensional magnetic sector and selected three-screen projection.",
+      "retrieval": "Fixed-ID arXiv metadata and primary PDF retrieved 2026-10-26; PDF converted with pdftotext -layout.",
+      "limits": [
+        "Selected sections only; full classification proofs not audited.",
+        "No PE/PM classification theorem or radiation theorem transferred."
+      ]
+    },
+    {
+      "id": "https://arxiv.org/abs/gr-qc/9609040v2",
+      "title": "Perturbations of spacetime: gauge transformations and gauge invariance at second order and beyond",
+      "published": "1996-09-13T17:33:46Z",
+      "updated": "1997-05-22T09:40:44Z",
+      "authors": [
+        "Marco Bruni",
+        "Sabino Matarrese",
+        "Silvia Mollerach",
+        "Sebastiano Sonego"
+      ],
+      "doi": "10.1088/0264-9381/14/9/014",
+      "journal_ref": "Class.Quant.Grav. 14 (1997) 2585-2606",
+      "pdf_sha256": "1357a5a7a185507a18c20418c424e98e5a2d2b7bacfd0c02931ecd9244550644",
+      "extracted_text_sha256": "0c298c5fc5fe83b791e311f82f14a26b922c1b5495020b829473d96e98a431e5",
+      "private_pdf_cache": "private/bruni-et-al.pdf",
+      "read_scope": [
+        "Section 3, Equations (3.2)-(3.4), pp.10-11",
+        "Section 4.1, Proposition 1, p.12",
+        "Section 4.2, Proposition 2, Equation (4.9), pp.13-14",
+        "Selected Section 6 magnetic-Weyl discussion, p.22"
+      ],
+      "use": "Primary support for second-parameter-derivative transformation law and full-lower-order-vanishing sufficient condition for a geometric tensor family.",
+      "retrieval": "Fixed-ID arXiv metadata and primary PDF retrieved 2026-10-26; PDF converted with pdftotext -layout.",
+      "limits": [
+        "General transformation theorem applies in arbitrary dimension; its scalar FLRW magnetic example is four dimensional.",
+        "Application to this registered-coordinate tensor requires an additional covariant observer, screen and anchor prescription.",
+        "Original 1974 Stewart-Walker paper not retrieved; second-order condition cited through this primary generalization."
+      ]
+    },
+    {
+      "id": "https://arxiv.org/abs/2610.26623v1",
+      "title": "Cosmological perturbations from localized sources: a gauge-invariant multipolar theory",
+      "published": "2026-10-19T15:55:41Z",
+      "updated": "2026-10-19T15:55:41Z",
+      "authors": [
+        "Geoffrey Compère",
+        "Sk Jahanur Hoque"
+      ],
+      "pdf_sha256": "cdc1414902fa21d4481007e5dbbc2bc06eeaef05894daaf4189a8df293076d31",
+      "extracted_text_sha256": "13bc08435b5632ccd527a11d8b526e5310a22a2f26c0fdda68c752227f9b9241",
+      "private_pdf_cache": "private/compere-hoque.pdf",
+      "read_scope": [
+        "Abstract and Introduction, pp.1,3-5",
+        "Section 8.2, Equations (8.14)-(8.15) and spatial-frame discussion, pp.53-55",
+        "Selected Section 10.3, Equations (10.13)-(10.17) and exterior measurement discussion, pp.68-69",
+        "Section 11, pp.69-70"
+      ],
+      "use": "Methodological comparison separating perturbative gauge, multipole spatial frame, complete local curvature and corresponding observer measurements.",
+      "retrieval": "Reused API record and primary PDF previously retrieved in tensor-jets-20261026/literature; primary passages re-read 2026-10-26.",
+      "limits": [
+        "Linearized localized-source cosmological-fluid problem in four-dimensional spatially flat FLRW; differs from present five-dimensional shell second response.",
+        "No theorem or field equation transferred; selected-section comparison, not entire-proof audit."
+      ]
+    },
+    {
+      "authors": [
+        "V. De Luca",
+        "G. Franciolini",
+        "A. Kehagias",
+        "A. Riotto"
+      ],
+      "id": "https://arxiv.org/abs/1911.09689v3",
+      "published": "2019-11-21T19:00:09Z",
+      "title": "On the Gauge Invariance of Cosmological Gravitational Waves",
+      "pdf_sha256": "9beabe1975071df7382da1eae9c30111f4a544a65ed3c4f0b788c077c8b28d2b",
+      "extracted_text_sha256": "ef6b01c767b5fbe21be2d29b8a7caa31aa6659b984a47a62d2cbb3b4b89e765b",
+      "private_pdf_cache": "private/de-luca-et-al.pdf",
+      "read_scope": [
+        "Introduction, pp.1-2",
+        "Section 2, pp.2-4; selected Section 2.1, Equations (2.5)-(2.13)"
+      ],
+      "use": "Measurement determines useful invariant variable; first-order detector discussion is not a second-order five-dimensional observable proof.",
+      "retrieval": "Reused locally cached primary body from angular-response-20261026/literature; selected passages read 2026-10-26.",
+      "limits": [
+        "Cosmological production/propagation/measurement discussion; no detector transfer to shell model."
+      ]
+    },
+    {
+      "authors": [
+        "Guillem Domènech",
+        "Misao Sasaki"
+      ],
+      "id": "https://arxiv.org/abs/2012.14016v2",
+      "published": "2020-12-27T21:29:06Z",
+      "title": "Approximate gauge independence of the induced gravitational wave spectrum",
+      "pdf_sha256": "b0124d9d6e5719f8608171c48e3b567a968e013bcfa52ebcc736979b0ab372cd",
+      "extracted_text_sha256": "dee4576c1b44abb18c23f430e9418b3f6e6692215f5bd6995017a231ff6b6a33",
+      "private_pdf_cache": "private/domenech-sasaki.pdf",
+      "read_scope": [
+        "Section II, pp.2-4, Equations (2.9)-(2.11)",
+        "Selected Section III near Equation (3.2), including suitable-gauge/subhorizon and inactive-source conditions"
+      ],
+      "use": "Distinguishes invariant tensor redefinitions from observables and conditions approximate spectral gauge comparisons.",
+      "retrieval": "Reused locally cached primary body from angular-response-20261026/literature; selected passages read 2026-10-26.",
+      "limits": [
+        "No subhorizon/inactive-source spectral result transferred to present local curvature diagnostic."
+      ]
+    }
+  ],
+  "discovery_queries": [
+    {
+      "query": "(all:\"magnetic Weyl\" OR (all:\"magnetic part\" AND all:Weyl)) AND submittedDate:[202401010000 TO 202610262359]",
+      "endpoint": "https://export.arxiv.org/api/query",
+      "max_results": 5,
+      "sortBy": "submittedDate",
+      "sortOrder": "descending",
+      "total_matches_reported": 117,
+      "returned_count": 5,
+      "records": [
+        {
+          "id": "https://arxiv.org/abs/2610.23197v2",
+          "title": "Non-Adiabatic Spin-Induced Currents in Magnetic Weyl Semimetals",
+          "published": "2026-10-16T09:33:44Z",
+          "updated": "2026-10-19T04:04:48Z",
+          "authors": [
+            "Kota Watanabe",
+            "Akihiro Ozawa",
+            "Hiroaki Ishizuka",
+            "Hiroki Isobe",
+            "Kentaro Nomura"
+          ]
+        },
+        {
+          "id": "https://arxiv.org/abs/2610.15726v1",
+          "title": "Reversible intrinsic-extrinsic crossover of the anomalous Hall effect in PrAlSi via Al/Si ratio tuning",
+          "published": "2026-10-11T16:04:50Z",
+          "updated": "2026-10-11T16:04:50Z",
+          "authors": [
+            "Huiyang Yang",
+            "Xiaohua Luo",
+            "Hongwei You",
+            "Wei Ren",
+            "Yuntao Gao",
+            "Changcai Chen",
+            "Zhishuo Zhang",
+            "Chunsheng Fang",
+            "Shengcan Ma"
+          ]
+        },
+        {
+          "id": "https://arxiv.org/abs/2610.09885v1",
+          "title": "Self-induced spin-orbit torque switching in a synthetic antiferromagnetic Co 2 MnGa /MnGa bilayer",
+          "published": "2026-10-07T11:45:24Z",
+          "updated": "2026-10-07T11:45:24Z",
+          "authors": [
+            "Rongkun Han",
+            "Haohang Cheng",
+            "Dahai Wei",
+            "Yuan Lu",
+            "Jianhua Zhao"
+          ],
+          "journal_ref": "Physical Review B, 2026, 114 (14), pp.L140401"
+        },
+        {
+          "id": "https://arxiv.org/abs/2609.18592v1",
+          "title": "Optical investigation of the electronic structure of a ferromagnetic Weyl semimetal CeAlSi",
+          "published": "2026-09-16T12:49:42Z",
+          "updated": "2026-09-16T12:49:42Z",
+          "authors": [
+            "Shin-ichi Kimura",
+            "Yue Pan",
+            "Hiroshi Watanabe",
+            "Akimitsu Kirikoshi",
+            "Junya Otsuki",
+            "Hiroshi Tanida"
+          ]
+        },
+        {
+          "id": "https://arxiv.org/abs/2609.16511v1",
+          "title": "A Gauge-Covariant Semiclassical Limit from the magnetic Hartree--Fock equation to the magnetic Vlasov--Poisson equation",
+          "published": "2026-09-15T02:03:15Z",
+          "updated": "2026-09-15T02:03:15Z",
+          "authors": [
+            "Jacky J. Chong",
+            "Zhuohui You"
+          ]
+        }
+      ],
+      "read_scope": "Returned title/metadata and API summary screening only; no returned article body inspected.",
+      "assessment": "Broad term search dominated by condensed-matter magnetic Weyl semimetals and a magnetic kinetic-theory result; no theorem imported.",
+      "raw_api_cache": "private/recent-magnetic-weyl.xml",
+      "raw_api_sha256": "d8b7ae89beea167200856f43bdbec3e4073a0c396d7753d636239a6a777cd994"
+    },
+    {
+      "query": "all:Weyl AND (all:\"second order\" OR all:\"second-order\") AND (all:\"gauge invariant\" OR all:\"gauge-invariant\") AND submittedDate:[202401010000 TO 202610262359]",
+      "endpoint": "https://export.arxiv.org/api/query",
+      "max_results": 5,
+      "sortBy": "submittedDate",
+      "sortOrder": "descending",
+      "total_matches_reported": 3,
+      "returned_count": 3,
+      "records": [
+        {
+          "id": "https://arxiv.org/abs/2610.20156v1",
+          "title": "All Quiet on the Vector Front: Scalar Growth and Perturbative Control in Horndeski--Weyl-squared Gravity",
+          "published": "2026-10-14T13:13:03Z",
+          "updated": "2026-10-14T13:13:03Z",
+          "authors": [
+            "Antonio De Felice",
+            "Guillem Domènech",
+            "Jan Tränkle"
+          ]
+        },
+        {
+          "id": "https://arxiv.org/abs/2510.25709v2",
+          "title": "Conformal gauge theory of vector-spinors and spin-3/2 particles",
+          "published": "2025-10-29T17:19:29Z",
+          "updated": "2026-04-21T15:15:39Z",
+          "authors": [
+            "Dario Sauro"
+          ],
+          "doi": "10.1103/vwhl-zhxc",
+          "journal_ref": "Phys.Rev.D 113 (2026) 8, 085015"
+        },
+        {
+          "id": "https://arxiv.org/abs/2403.20311v4",
+          "title": "Gravitational Waves on Kerr Black Holes I: Reconstruction of Linearized Metric Perturbations",
+          "published": "2024-03-29T17:32:15Z",
+          "updated": "2025-10-10T19:40:33Z",
+          "authors": [
+            "Roman Berens",
+            "Trevor Gravely",
+            "Alexandru Lupsasca"
+          ],
+          "doi": "10.1088/1361-6382/ad6c9c",
+          "journal_ref": "Class. Quantum Grav. 41, 195004 (2024)"
+        }
+      ],
+      "read_scope": "Returned title/metadata and API summary screening only; no returned article body inspected.",
+      "assessment": "Different modified-gravity, vector-spinor and Kerr reconstruction problems; no theorem imported.",
+      "raw_api_cache": "private/recent-second-order-gauge.xml",
+      "raw_api_sha256": "9ddf984c72126e8cd5969118d470c48d133a0f9da7a68e5d3085234031300296"
+    },
+    {
+      "query": "cat:gr-qc AND all:Weyl AND all:magnetic AND submittedDate:[202401010000 TO 202610262359]",
+      "endpoint": "https://export.arxiv.org/api/query",
+      "max_results": 5,
+      "sortBy": "submittedDate",
+      "sortOrder": "descending",
+      "total_matches_reported": 45,
+      "returned_count": 5,
+      "records": [
+        {
+          "id": "https://arxiv.org/abs/2610.29277v1",
+          "title": "Tomimatsu--Sato $δ=2$ Solution in Kaluza--Klein Theory",
+          "published": "2026-10-21T06:32:10Z",
+          "updated": "2026-10-21T06:32:10Z",
+          "authors": [
+            "Haryanto M. Siahaan",
+            "Masoud Ghezelbash"
+          ]
+        },
+        {
+          "id": "https://arxiv.org/abs/2609.31408v1",
+          "title": "Dilatonic Reissner--Nordström black holes in a Bertotti--Robinson magnetic background",
+          "published": "2026-09-25T15:32:51Z",
+          "updated": "2026-09-25T15:32:51Z",
+          "authors": [
+            "Kenneth Hong"
+          ]
+        },
+        {
+          "id": "https://arxiv.org/abs/2609.29922v1",
+          "title": "The Weyl double copy for relativistic Rindler fluids",
+          "published": "2026-09-24T14:55:35Z",
+          "updated": "2026-09-24T14:55:35Z",
+          "authors": [
+            "Yu-Cheng Wang",
+            "Jing-Rui Zhang",
+            "Yun-Long Zhang"
+          ]
+        },
+        {
+          "id": "https://arxiv.org/abs/2609.26391v1",
+          "title": "Potential-space geometry and scalar rigidity of the Plebański-Demiański ansatz without a cosmological constant",
+          "published": "2026-09-22T13:30:42Z",
+          "updated": "2026-09-22T13:30:42Z",
+          "authors": [
+            "Leonel Bixano",
+            "Tonatiuh Matos"
+          ]
+        },
+        {
+          "id": "https://arxiv.org/abs/2609.25209v1",
+          "title": "The Double Copy of the Black Ring",
+          "published": "2026-09-21T18:00:01Z",
+          "updated": "2026-09-21T18:00:01Z",
+          "authors": [
+            "Damien A. Easson"
+          ]
+        }
+      ],
+      "read_scope": "Returned title/metadata and API summary screening only; no returned article body inspected.",
+      "assessment": "Distinct exact-solution and double-copy problems; no result applied to the shell coefficient.",
+      "raw_api_cache": "private/recent-grqc-magnetic-weyl.xml",
+      "raw_api_sha256": "c72b82724c0a8b76e406857103b33948584971654a646dd9165faeff94b4a052"
+    }
+  ],
+  "reused_prior_search_record": {
+    "raw_api_cache": "private/prior-gauge-search.xml",
+    "sha256": "cf58dad963bcf93ae69d20d1c3b498df6afd5776821c041572f43406beff1d28",
+    "purpose": "Compere-Hoque metadata; prior search is not represented as a new exhaustive campaign."
+  },
+  "local_calculation_inputs": [
+    {
+      "path": "../theory/DERIVATION.md",
+      "sha256": "f27efc433a20689e97ea45e2c0cfd0918323318a4a1cdc4e798166de56e0172b"
+    },
+    {
+      "path": "../numeric/SELECTED_MAGNETIC_COMPLETE_NORMAL.json",
+      "sha256": "5c526136dc0e93730ddebb49cfecbc8a20344f4f06301480625828d64f83909f"
+    },
+    {
+      "sha256": "843f06e7e9cdfe6d8752e6d65d1ea97d46106c1feda0de55fcadce28c84c937d",
+      "url": "https://github.com/maldonado-research/HDblast/blob/ead1c2db7fe8ffb048386382924def76fa05de36/hdblast/continuation/2026.10.26-exterior-tensor-jets/publication/follow-on/SCREEN_MAGNETIC_FEASIBILITY.md",
+      "role": "Historical feasibility note, external to the new capsule."
+    }
+  ],
+  "supported_contribution": "Explicit registered observer/screen convention, full model-specific quadratic map, angular identities, independent controls and interval evaluation. Literature audit does not certify the geometric map or arithmetic.",
+  "unestablished_claims": [
+    "Geometrically anchored physical observer and evaluation surface",
+    "Gauge-invariance certificate",
+    "Existence or obstruction of exact nonlinear/linearization family",
+    "Radiation energy, detector response or cosmological origin",
+    "Broad novelty, priority or significance"
+  ]
+}

@@ -1,0 +1,352 @@
+name: Registered screen magnetic curvature replay
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_SCREEN_MAGNETIC_CURVATURE_20261026/**'
+      - 'research/HDBLAST_SCREEN_MAGNETIC_CURVATURE_20261026.zip'
+      - '.github/workflows/screen-magnetic-curvature-20261026.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_SCREEN_MAGNETIC_CURVATURE_20261026/**'
+      - 'research/HDBLAST_SCREEN_MAGNETIC_CURVATURE_20261026.zip'
+      - '.github/workflows/screen-magnetic-curvature-20261026.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      HDB_MANIFEST: '204e647b9f68f2af169b052deabee7c5d7f4bd71195fae31cefbfc2d10265777'
+      HDB_ARCHIVE: 'b4320d08fa043f2252b4554a7d368ffd5e7a251efb54a72af7c8df0c77c1d1e0'
+      HDB_REPLAY: '483772e64a9427a14a796382dad3c37198ba175a7d81f7be13b1d52b91043ccc'
+      HDB_OUTPUT: 'screen-magnetic-curvature-${{ github.run_id }}-${{ github.run_attempt }}'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /research/HDBLAST_SCREEN_MAGNETIC_CURVATURE_20261026/
+            /research/HDBLAST_SCREEN_MAGNETIC_CURVATURE_20261026.zip
+            /research/HDBLAST_EXTERIOR_TENSOR_JETS_20261026/
+            /research/HDBLAST_COUPLED_MEAN_PILOT_20261025/
+            /research/HDBLAST_INPUT_PRECISION_20261023/
+            /research/HDBLAST_COMMON_GAUGE_FORCING_20261016/
+            /research/HDBLAST_NUMERICAL_RESPONSE_INPUTS_20261016/
+            /research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/
+            /research/HDBLAST_FORCED_RESPONSE_BOUNDS_20261023/
+            /research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023/
+            /research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/
+            /research/HDBLAST_SHELL_FEEDBACK_PRECISION_20261025/
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Authenticate entry point and replay the frozen bounded campaign
+        shell: bash
+        run: |
+          set -euo pipefail
+          capsule="research/HDBLAST_SCREEN_MAGNETIC_CURVATURE_20261026"
+          python -I -S -B - <<'PY'
+          import hashlib
+          import os
+          from pathlib import Path
+          path = Path('research/HDBLAST_SCREEN_MAGNETIC_CURVATURE_20261026/reproduce.py')
+          if path.is_symlink() or not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != os.environ['HDB_REPLAY']:
+              raise SystemExit('REPLAY_ENTRY_POINT_HASH_MISMATCH')
+          PY
+          python -I -S -B "$capsule/reproduce.py" \
+            --manifest-sha256 "$HDB_MANIFEST" --repo-root "$GITHUB_WORKSPACE" \
+            --archive "$capsule.zip" --archive-sha256 "$HDB_ARCHIVE" \
+            --output-dir "$RUNNER_TEMP/$HDB_OUTPUT"
+      - name: Verify the receipt and record pinned native-log evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -S -B - <<'PY'
+          """Independent standard-library verification; imports no capsule Python."""
+          import hashlib
+          import json
+          import os
+          from pathlib import Path, PurePosixPath
+          import stat
+          import zipfile
+
+          CAPSULE_NAME = 'HDBLAST_SCREEN_MAGNETIC_CURVATURE_20261026'
+          PINS = {
+              'HDB_MANIFEST': '204e647b9f68f2af169b052deabee7c5d7f4bd71195fae31cefbfc2d10265777',
+              'HDB_ARCHIVE': 'b4320d08fa043f2252b4554a7d368ffd5e7a251efb54a72af7c8df0c77c1d1e0',
+              'HDB_REPLAY': '483772e64a9427a14a796382dad3c37198ba175a7d81f7be13b1d52b91043ccc',
+          }
+          PLAN_SHA = 'a4937b91184c9608f1576e25dd256e93cdfd02e13155c529ea201207d8592615'
+          UPSTREAM = {
+              'exterior': ('HDBLAST_EXTERIOR_TENSOR_JETS_20261026', '0bc16f65598ae4977a7b8ab70a66c13ec85d844c871d6fee7739c4ec472d1c70'),
+              'current': ('HDBLAST_COUPLED_MEAN_PILOT_20261025', 'b932157f308c9912fa83ee06990f1132a4e75a498aafd66eb99dabcc30b256de'),
+              'I': ('HDBLAST_INPUT_PRECISION_20261023', 'c2e7bd40e94422c5fd98820941231c0da63a8392b14a5a14c4340eabdde37f61'),
+              'P': ('HDBLAST_COMMON_GAUGE_FORCING_20261016', '8bf173293b5cecf7f78e138ac5004abd9c7b1821ef29addb7ecfbc2a6409b4f6'),
+              'N': ('HDBLAST_NUMERICAL_RESPONSE_INPUTS_20261016', '928f3e4e58d222a3c7e1274babf9e94930ec501b74cf6ba04209f97c6bbded44'),
+              'G': ('HDBLAST_GEOMETRIC_BULK_SOURCES_20261016', '3ff1f95c151d2da6a1ab5e9b54718c2bb325c10d9c62a7ed9f97ef2bb36f0bb2'),
+              'C': ('HDBLAST_FORCED_RESPONSE_BOUNDS_20261023', '72924328a4e79cc77f0da90999b8dd56956bfdebd5e614e15c3c0498c3a8ae76'),
+              'T': ('HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023', 'cffb213a69f7f9a27932e990ffdecb7569d1007e5e5baeda708d8dc39d0cce72'),
+              'F': ('HDBLAST_FULL_ANGULAR_RESPONSE_20261026', 'a35f84119e84bf2ea8a712ded86ff79977d3ee91ac25f91ccbd202d379c859ac'),
+              'precision35': ('HDBLAST_SHELL_FEEDBACK_PRECISION_20261025', '1a5ee8aa22953f949da000ba03da3b5a0872e4467a0fbaec9f2d3fe7fba11ec4'),
+          }
+          RUN_IDS = '''curl-normal curl-optimized curl-controls
+          angular-reduction-normal angular-reduction-optimized
+          theory-guards-normal theory-guards-optimized
+          direct-q-normal direct-q-optimized direct-combined-normal direct-combined-optimized
+          scalar-symmetry-normal scalar-symmetry-optimized symmetry-controls
+          wrong-magnetic_sign-normal wrong-electric_half-normal wrong-reflection_slots-normal
+          wrong-magnetic_sign-optimized wrong-electric_half-optimized wrong-reflection_slots-optimized
+          actual-inputs-normal actual-inputs-optimized arithmetic-normal arithmetic-optimized
+          numeric-guards-normal numeric-guards-optimized expanded-normal expanded-optimized
+          complete-normal complete-optimized binding-normal binding-optimized'''.split()
+          NEGATIVES = {
+              'wrong-' + mutation + '-' + mode: reason
+              for mode in ('normal', 'optimized')
+              for mutation, reason in (
+                  ('magnetic_sign', 'COMPLETE_MAGNETIC_TT_IDENTITY'),
+                  ('electric_half', 'ELECTRIC_TT_PROJECTION'),
+                  ('reflection_slots', 'REFLECTION_EXCHANGE_INCLUDING_SLOTS'))
+          }
+
+
+          def require(value, message):
+              if not value:
+                  raise SystemExit(message)
+
+
+          def sha(path):
+              return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+          def unique(pairs):
+              result = {}
+              for key, value in pairs:
+                  require(key not in result, 'JSON_DUPLICATE_KEY')
+                  result[key] = value
+              return result
+
+
+          def read(path):
+              return json.loads(path.read_text(encoding='utf-8'), object_pairs_hook=unique)
+
+
+          def safe(path):
+              path = Path(os.path.abspath(path))
+              require(all(not part.is_symlink() for part in (path,) + tuple(path.parents)), 'SYMLINK_PATH')
+              return path
+
+
+          def member(root, relative):
+              require(isinstance(relative, str) and relative and '\\' not in relative
+                      and '\x00' not in relative and ':' not in relative, 'MEMBER_PATH')
+              parts = PurePosixPath(relative)
+              require(not parts.is_absolute() and parts.as_posix() == relative
+                      and relative not in ('.', '..') and '..' not in parts.parts, 'MEMBER_PATH')
+              return safe(root / relative)
+
+
+          def authenticate(root, pin):
+              root = safe(root)
+              require(root.is_dir(), 'SOURCE_ROOT')
+              manifest_path = member(root, 'MANIFEST.json')
+              require(manifest_path.is_file() and sha(manifest_path) == pin, 'EXTERNAL_MANIFEST_PIN')
+              manifest = read(manifest_path)
+              files = {'MANIFEST.json'}
+              total = manifest_path.stat().st_size
+              require(isinstance(manifest.get('files'), list), 'MANIFEST_FILES')
+              for row in manifest['files']:
+                  path = member(root, row['path'])
+                  require(row['path'] not in files and type(row['bytes']) is int and row['bytes'] >= 0,
+                          'MANIFEST_UNIQUE_MEMBER')
+                  require(path.is_file() and path.stat().st_size == row['bytes']
+                          and sha(path) == row['sha256'], 'COMPLETE_SOURCE_BYTES:' + row['path'])
+                  files.add(row['path'])
+                  total += row['bytes']
+              actual = set()
+              for path in root.rglob('*'):
+                  require(not path.is_symlink(), 'SOURCE_TREE_SYMLINK')
+                  if path.is_file():
+                      actual.add(path.relative_to(root).as_posix())
+                  else:
+                      require(path.is_dir(), 'SOURCE_TREE_SPECIAL_MEMBER')
+              require(actual == files and sha(manifest_path) == pin, 'COMPLETE_SOURCE_FILE_CLOSURE')
+              return {'manifest_sha256': pin,
+                      'schema': manifest.get('schema', 'legacy_manifest_without_schema'),
+                      'files_including_manifest': len(files), 'bytes_including_manifest': total}, manifest, files
+
+
+          repo = safe(Path(os.environ['GITHUB_WORKSPACE']))
+          capsule = safe(Path(os.environ.get('HDB_CAPSULE', str(repo / 'research' / CAPSULE_NAME))))
+          archive = safe(Path(os.environ.get('HDB_ARCHIVE_PATH', str(capsule.with_suffix('.zip')))))
+          output = safe(Path(os.environ['RUNNER_TEMP']) / os.environ['HDB_OUTPUT'])
+          require(output.is_dir() and capsule.name == CAPSULE_NAME, 'ROOT_AND_OUTPUT')
+          require(all(os.environ.get(name) == value for name, value in PINS.items()), 'THREE_EXTERNAL_PINS')
+          receipt_path = member(output, 'REPRODUCTION_RECEIPT.json')
+          data = read(receipt_path)
+          require(data['schema'] == 'HDBLAST_SCREEN_MAGNETIC_CURVATURE_REPRODUCTION_V1'
+                  and data['status'] == 'PASS', 'RECEIPT_SCHEMA_AND_STATUS')
+          require(data['all_authentication_before_any_project_execution'] is True
+                  and data['source_unchanged_after_replay'] is True, 'AUTHENTICATION_ORDER_AND_SOURCE_UNCHANGED')
+          require(data['entry_mode'] == 'normal' and data['python_version'].startswith('3.12.14 '), 'ENTRY_PYTHON_VERSION_AND_MODE')
+
+          source, manifest, source_files = authenticate(capsule, PINS['HDB_MANIFEST'])
+          require(source == data['complete_capsule_before'] == data['complete_capsule_after']
+                  and source['files_including_manifest'] == 60
+                  and source['bytes_including_manifest'] == 520478
+                  and source['schema'] == 'HDBLAST_SCREEN_MAGNETIC_CURVATURE_MANIFEST_V1', 'SIXTY_SOURCE_FILES_BEFORE_AFTER')
+          require(sha(capsule / 'reproduce.py') == data['entry_sha256'] == PINS['HDB_REPLAY'], 'ENTRY_PIN')
+          require(sha(capsule / 'REPLAY_PLAN.json') == data['replay_plan_sha256'] == PLAN_SHA, 'EXACT_PLAN_PIN')
+          plan = read(capsule / 'REPLAY_PLAN.json')
+          require(plan['schema'] == 'HDBLAST_SCREEN_MAGNETIC_REPLAY_PLAN_V1'
+                  and [row['id'] for row in plan['runs']] == RUN_IDS
+                  and len(RUN_IDS) == len(set(RUN_IDS)) == 32, 'EXACT_32_PLAN_IDS')
+          require(data['counts'] == plan['expected_counts'] == {'positive_runs': 26, 'negative_runs': 6, 'golden_matches': 28},
+                  'EXACT_RUN_AND_GOLDEN_COUNTS')
+
+          upstream = {key: authenticate(repo / 'research' / name, pin)[0]
+                      for key, (name, pin) in UPSTREAM.items()}
+          require(len(upstream) == 10 and upstream == data['complete_ten_upstream_roots_before']
+                  == data['complete_ten_upstream_roots_after'], 'TEN_COMPLETE_UPSTREAM_CLOSURES_BEFORE_AFTER')
+
+          require(archive.is_file() and archive.stat().st_size == 534070
+                  and sha(archive) == PINS['HDB_ARCHIVE'], 'ARCHIVE_EXTERNAL_PIN_AND_SIZE')
+          expected_archive = {CAPSULE_NAME + '/' + relative: capsule / relative for relative in source_files}
+          with zipfile.ZipFile(archive) as packed:
+              names = packed.namelist()
+              require(len(names) == len(set(names)) == 60 and set(names) == set(expected_archive), 'ARCHIVE_EXACT_MEMBERS')
+              for row in packed.infolist():
+                  mode = row.external_attr >> 16
+                  require(not row.is_dir() and not stat.S_ISLNK(mode) and stat.S_IFMT(mode) in (0, stat.S_IFREG)
+                          and not row.flag_bits & 1, 'ARCHIVE_MEMBER_TYPE')
+                  payload = expected_archive[row.filename].read_bytes()
+                  require(row.file_size == len(payload) and packed.read(row) == payload, 'ARCHIVE_MEMBER_EXACT_BYTES')
+              require(packed.testzip() is None, 'ARCHIVE_CRC')
+          archive_record = {'sha256': PINS['HDB_ARCHIVE'], 'members': 60, 'crc_pass': True,
+                            'exact_member_set': True, 'all_member_bytes_equal': True}
+          require(data['archive_before'] == data['archive_after'] == archive_record, 'ARCHIVE_BEFORE_AFTER')
+
+          runs = data['direct_runs']
+          require([row['id'] for row in runs] == RUN_IDS and data['pass_ids'] == RUN_IDS, 'EXACT_ORDERED_32_RUN_IDS')
+          expected_matches = []
+          expected_output_paths = set()
+          base_keys = {'id', 'script', 'mode', 'flags', 'exit_code', 'stdout', 'stdout_sha256', 'stderr', 'stderr_sha256'}
+          for recorded, planned in zip(runs, plan['runs']):
+              identity, mode = planned['id'], planned['mode']
+              require(recorded['script'] == planned['script'] and recorded['mode'] == mode
+                      and recorded['flags'] == ['-I', '-S', '-B'] + (['-O'] if mode == 'optimized' else [])
+                      and type(recorded['exit_code']) is int, 'RUN_SCRIPT_MODE_FLAGS:' + identity)
+              require(recorded['stdout'] == planned.get('stdout', 'logs/' + identity + '.stdout.log')
+                      and recorded['stderr'] == 'logs/' + identity + '.stderr.log', 'EXACT_RUN_LOG_PATHS:' + identity)
+              for stream in ('stdout', 'stderr'):
+                  path = member(output, recorded[stream])
+                  require(path.is_file() and sha(path) == recorded[stream + '_sha256'], 'RUN_LOG_BYTES_SHA:' + identity)
+                  expected_output_paths.add(recorded[stream])
+              if identity in NEGATIVES:
+                  reason = NEGATIVES[identity]
+                  require(set(recorded) == base_keys | {'expected_rejection', 'reason_verified', 'output_absent'}
+                          and recorded['exit_code'] != 0 and recorded['expected_rejection'] == planned['reject_reason'] == reason
+                          and recorded['reason_verified'] is True and recorded['output_absent'] is True, 'REASONED_NONZERO_RUN:' + identity)
+                  terminal = member(output, recorded['stderr']).read_text().strip().splitlines()
+                  require(terminal and terminal[-1] in (reason, 'ValueError: ' + reason), 'EXACT_TERMINAL_REJECTION:' + identity)
+                  require(all(not member(output, relative).exists() for relative in planned['absent']), 'NEGATIVE_OUTPUT_ABSENT:' + identity)
+              else:
+                  require(set(recorded) == base_keys and recorded['exit_code'] == 0 and 'reject_reason' not in planned,
+                          'POSITIVE_ZERO_EXIT:' + identity)
+              for golden in planned.get('goldens', []):
+                  produced, reference = member(output, golden['output']), member(capsule, golden['reference'])
+                  require(produced.is_file() and reference.is_file() and produced.read_bytes() == reference.read_bytes(),
+                          'GOLDEN_EXACT_BYTES:' + identity)
+                  expected_matches.append({'run': identity, 'output': golden['output'], 'reference': golden['reference'],
+                                           'sha256': sha(produced), 'bytes': produced.stat().st_size, 'byte_identical': True})
+                  expected_output_paths.add(golden['output'])
+          require(len(expected_matches) == 28 and data['golden_matches'] == expected_matches, 'EXACT_28_GOLDEN_ROWS_BYTES_AND_HASHES')
+          for group in plan['parity_groups']:
+              rows = [[member(output, golden['output']) for run in plan['runs'] if run['id'] == identity
+                       for golden in run.get('goldens', [])] for identity in group]
+              require(rows[0] and all(len(row) == len(rows[0]) for row in rows)
+                      and all(left.read_bytes() == right.read_bytes() for row in rows[1:]
+                              for left, right in zip(rows[0], row)), 'EXACT_MODE_PARITY')
+
+          source_reasons = {
+              'wrong-manifest-pin': 'MANIFEST_PIN', 'changed-primary-source': 'MANIFEST_MEMBER_BYTES',
+              'changed-dependency-source': 'MANIFEST_MEMBER_BYTES', 'undeclared-member': 'MANIFEST_COMPLETE_CLOSURE',
+              'source-symlink': 'MANIFEST_MEMBER_TYPE', 'duplicate-member': 'MANIFEST_MEMBER_PATH',
+              'parent-traversal': 'MANIFEST_MEMBER_PATH', 'absolute-member': 'MANIFEST_MEMBER_PATH',
+          }
+          source_controls = data['source_integrity_controls']
+          expected_source_controls = {identity + '-' + mode: (mode, reason)
+                                      for mode in ('normal', 'optimized') for identity, reason in source_reasons.items()}
+          require(len(source_controls) == 16 and len({row['id'] for row in source_controls}) == 16
+                  and {row['id'] for row in source_controls} == set(expected_source_controls), 'EXACT_16_SOURCE_CONTROLS')
+          for row in source_controls:
+              mode, reason = expected_source_controls[row['id']]
+              require(set(row) == {'id', 'mode', 'expected_rejection', 'exit_code', 'copied_project_sources_executed', 'reason_verified'}
+                      and row['mode'] == mode and row['expected_rejection'] == reason
+                      and type(row['exit_code']) is int and row['exit_code'] != 0
+                      and row['copied_project_sources_executed'] is False and row['reason_verified'] is True,
+                      'REASON_SPECIFIC_SOURCE_CONTROL:' + row['id'])
+          zip_reasons = {'wrong-archive-pin': 'ARCHIVE_PIN', 'changed-archive-member': 'ARCHIVE_MEMBER_BYTES',
+                         'missing-archive-members': 'ARCHIVE_EXACT_MEMBERS'}
+          zip_controls = data['archive_integrity_controls']
+          require(len(zip_controls) == 3 and len({row['id'] for row in zip_controls}) == 3
+                  and {row['id']: row['expected_rejection'] for row in zip_controls} == zip_reasons
+                  and all(set(row) == {'id', 'expected_rejection', 'reason_verified'}
+                          and row['reason_verified'] is True for row in zip_controls), 'EXACT_THREE_REASONED_ZIP_CONTROLS')
+
+          programs = sorted(relative for relative in source_files if relative.endswith('.py'))
+          expected_program_rows = []
+          direct_scripts = {run['script'] for run in plan['runs']}
+          require(set(plan['program_roles']) == set(programs) - direct_scripts - {'reproduce.py'}, 'PLAN_COMPLETE_PROGRAM_ROLES')
+          for relative in programs:
+              row = {'path': relative, 'sha256': sha(member(capsule, relative))}
+              if relative == 'reproduce.py':
+                  row.update(role='entry', description='Executing standard-library authentication and replay entry point.')
+              elif relative in direct_scripts:
+                  row.update(role='direct', run_ids=[run['id'] for run in plan['runs'] if run['script'] == relative])
+              else:
+                  role = plan['program_roles'][relative]
+                  require(role['role'] in ('dependency', 'provenance'), 'PROGRAM_ROLE')
+                  if role['role'] == 'dependency':
+                      require(role['used_by'] and set(role['used_by']) <= direct_scripts, 'DEPENDENCY_USED_BY')
+                  row.update(role)
+              expected_program_rows.append(row)
+          require(len(programs) == 18 and data['program_index'] == expected_program_rows, 'EXACT_18_PROGRAM_COVERAGE_AND_HASHES')
+
+          output_rows = []
+          actual_output_paths = set()
+          for path in sorted(output.rglob('*')):
+              require(not path.is_symlink(), 'OUTPUT_TREE_SYMLINK')
+              if path.is_file() and path != receipt_path:
+                  relative = path.relative_to(output).as_posix()
+                  actual_output_paths.add(relative)
+                  output_rows.append({'path': relative, 'bytes': path.stat().st_size, 'sha256': sha(path)})
+              elif not path.is_file():
+                  require(path.is_dir(), 'OUTPUT_TREE_SPECIAL_MEMBER')
+          require(len(output_rows) == 88 and actual_output_paths == expected_output_paths
+                  and data['output_file_index'] == output_rows, 'EXACT_OUTPUT_FILE_BYTES_AND_HASH_CLOSURE')
+          require(data['runtime_dependencies'] == 'Python standard library only; no SymPy provenance generator is executed.',
+                  'STDLIB_RUNTIME_SCOPE')
+          print(json.dumps({'phase': 'ci-receipt', 'status': 'PASS', 'direct_runs': 32,
+                            'positive_direct_runs': 26, 'expected_nonzero_direct_runs': 6,
+                            'scientific_golden_matches': 28, 'source_integrity_controls': 16,
+                            'archive_integrity_controls': 3, 'upstream_closures': 10,
+                            'capsule_source_files': 60, 'indexed_programs': 18, 'output_files': 88,
+                            'manifest_sha256': PINS['HDB_MANIFEST'], 'archive_sha256': PINS['HDB_ARCHIVE'],
+                            'reproduce_sha256': PINS['HDB_REPLAY'], 'replay_plan_sha256': PLAN_SHA,
+                            'receipt_sha256': sha(receipt_path)}, separators=(',', ':')))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: screen-magnetic-curvature-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/${{ env.HDB_OUTPUT }}/REPRODUCTION_RECEIPT.json
+          if-no-files-found: warn
+          retention-days: 30

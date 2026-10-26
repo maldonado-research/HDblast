@@ -1,0 +1,63 @@
+{
+  "all_rejections_before_project_input_load": true,
+  "cases": [
+    {
+      "case": "existing",
+      "expected_gate": "OUTPUT_EXISTS",
+      "observed": "ValueError: OUTPUT_EXISTS",
+      "returncode": 1,
+      "script": "check_curl.py"
+    },
+    {
+      "case": "dangling_symlink",
+      "expected_gate": "OUTPUT_SYMLINK",
+      "observed": "ValueError: OUTPUT_SYMLINK",
+      "returncode": 1,
+      "script": "check_curl.py"
+    },
+    {
+      "case": "own_source",
+      "expected_gate": "OUTPUT_PROTECTED_SOURCE",
+      "observed": "ValueError: OUTPUT_PROTECTED_SOURCE",
+      "returncode": 1,
+      "script": "check_curl.py"
+    },
+    {
+      "case": "enclosing_package",
+      "expected_gate": "OUTPUT_PROTECTED_SOURCE",
+      "observed": "ValueError: OUTPUT_PROTECTED_SOURCE",
+      "returncode": 1,
+      "script": "check_curl.py"
+    },
+    {
+      "case": "existing",
+      "expected_gate": "OUTPUT_EXISTS",
+      "observed": "ValueError: OUTPUT_EXISTS",
+      "returncode": 1,
+      "script": "run_controls.py"
+    },
+    {
+      "case": "dangling_symlink",
+      "expected_gate": "OUTPUT_SYMLINK",
+      "observed": "ValueError: OUTPUT_SYMLINK",
+      "returncode": 1,
+      "script": "run_controls.py"
+    },
+    {
+      "case": "own_source",
+      "expected_gate": "OUTPUT_PROTECTED_SOURCE",
+      "observed": "ValueError: OUTPUT_PROTECTED_SOURCE",
+      "returncode": 1,
+      "script": "run_controls.py"
+    },
+    {
+      "case": "enclosing_package",
+      "expected_gate": "OUTPUT_PROTECTED_SOURCE",
+      "observed": "ValueError: OUTPUT_PROTECTED_SOURCE",
+      "returncode": 1,
+      "script": "run_controls.py"
+    }
+  ],
+  "exclusive_final_creation": true,
+  "status": "PASS_EARLY_FRESH_OUTPUT_GUARDS"
+}
