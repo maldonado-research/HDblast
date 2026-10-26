@@ -1,0 +1,7 @@
+One continuous approximation now retains all 23 angular amplitudes of the registered second-order Einstein–scalar shell response. Its complete conditional value/first-derivative comparison-norm error is below 1.1787044291e28, meeting the declared 1e29 coefficient target. A separate source-resolved calculation bounds both equal actual total TT coefficients in [−0.001311761536, −0.000001509027] at (x,r)=(1/4,5/4), before shell contact.
+
+The frozen 77-file capsule, matching source ZIP and pinned replay workflow retain every angular coupling and shell row. The integral residual, exact symmetry reduction, independent internal reviews and focused primary-source scope note are included. Additive English/Spanish website and README entries preserve all previous content.
+
+Validation: fresh packaged replay passed 24 direct runs and 35 canonical scientific byte comparisons, with normal/optimized Python parity, seven source-integrity corruption controls and indexed nested algebra/kernel/I/O controls. All eight frozen dependency closures authenticated before and after execution. Full old-tree preservation is reviewed separately.
+
+These are conditional formal coefficients in a registered gauge. No pointwise C2 Einstein residual, finite-amplitude nonlinear family, physical gravitational-wave observable or Big Bang-origin evidence is established. The broad global bound does not resolve the small TT coefficient; the separate targeted certificate does. No new Zenodo version or journal submission accompanies this checkpoint. Private editorial history is excluded.

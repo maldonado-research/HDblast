@@ -1,0 +1,134 @@
+{
+  "status": "CONDITIONAL_RESEARCH_PLAN_ONLY",
+  "source_commit": "218d58bb6ba3889d60bd816aecc076f35f474e0d",
+  "new_theorem": false,
+  "new_numerical_certificate": false,
+  "numerical_campaign_rerun": false,
+  "frozen_capsule_modified": false,
+  "recommended_first_target": "Certified total TT second coordinate jets at the existing exterior apex or on a specified exterior subdomain, with a differentiated evolution error ledger.",
+  "recommended_full_domain_target": "Physical-side C2 comparison to the same actual formal solution using a smoother numerical candidate and certified derivative inputs.",
+  "physical_seed_replacement_required_by_review": false,
+  "actual_data_regularity": "Qualitative smoothness retained conditionally from the primary characteristic/trace-ODE proof; no new quantitative high-jet bounds asserted.",
+  "approximation_regularities": {
+    "rational_initial_profiles": "Guaranteed C1; second derivatives can jump at upper cutoff. Exact witness concerns general polynomial inputs, not every retained slot.",
+    "free_velocity": "Continuous P1; slope jumps can propagate on knot characteristics.",
+    "existing_full_response": "C1 certificate; cannot differentiate its error bound."
+  },
+  "sources": [
+    {
+      "path": "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/initial/INITIAL_DERIVATION.txt",
+      "lines": [
+        49,
+        64
+      ],
+      "supports": "Candidate regularity and one-sided interpolation scope"
+    },
+    {
+      "path": "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/initial/review/check_exact_adapter.py",
+      "lines": [
+        150,
+        181
+      ],
+      "supports": "General exact cutoff jump witness"
+    },
+    {
+      "path": "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/initial/full23_initial.py",
+      "lines": [
+        151,
+        227
+      ],
+      "supports": "Registered formulas and candidate cutoff"
+    },
+    {
+      "path": "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/initial/full23_initial.py",
+      "lines": [
+        284,
+        347
+      ],
+      "supports": "Current order-four paired primitives and actual-versus-nominal packet distinction"
+    },
+    {
+      "path": "research/HDBLAST_FORCED_RESPONSE_BOUNDS_20261023/inputs/FULL_SECOND_RESPONSE_CONSTRUCTION.md",
+      "lines": [
+        310,
+        395
+      ],
+      "supports": "Conditional actual smoothness, trace-ODE induction, differentiated same-operator recurrence and initial offsets"
+    },
+    {
+      "path": "research/HDBLAST_NUMERICAL_RESPONSE_INPUTS_20261016/numeric/evaluate_initial_profiles.py",
+      "lines": [
+        106,
+        117
+      ],
+      "supports": "Actual exponential packet and current derivative oracle"
+    },
+    {
+      "path": "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/shell/FULL23_SHELL_AND_SUBSIDIARY.md",
+      "lines": [
+        158,
+        208
+      ],
+      "supports": "C1 versus C2 lift needs and flat actual corners"
+    },
+    {
+      "path": "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/structure/response-review/SCOPE_REVIEW.md",
+      "lines": [
+        19,
+        25
+      ],
+      "supports": "C1 candidate representation"
+    },
+    {
+      "path": "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/structure/response-review/SCOPE_REVIEW.md",
+      "lines": [
+        71,
+        83
+      ],
+      "supports": "Physical conversions and residual limitations"
+    },
+    {
+      "path": "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/DERIVATION.md",
+      "lines": [
+        152,
+        189
+      ],
+      "supports": "Exterior total TT cone and observable limitation"
+    }
+  ],
+  "quantitative_inputs_to_certify": [
+    "U0_rr and V0_r, including actual-minus-candidate errors",
+    "F(0,r), F_x and source errors",
+    "A_x, B_x, D_x with errors",
+    "G_x and derivative shell feedback for full-domain target",
+    "Second angular and mixed angular-coordinate operator/conversion bounds for physical curvature residuals"
+  ],
+  "initial_packet_derivative_budget": {
+    "U0_rr": "through order five",
+    "V0_r": "through order four",
+    "current_paired_and_actual_oracle": "through order four",
+    "higher_ODE_requirement": "Inspect existing fifth derivative enclosure; a sixth derivative is not automatically required."
+  },
+  "candidate_upgrade": {
+    "packet": "C5 joins, e.g. degree-eleven normalized integral of t^5(1-t)^5; exact identities and new error ledger required",
+    "displacement": "C2",
+    "velocity": "At least C1 with derivative error control",
+    "feedback": "Prove sufficient derivative continuity and derivative approximation errors",
+    "corners": "Preserve open zero collar or explicitly certify defects"
+  },
+  "region_limits": [
+    "All relevant spline-knot characteristics must be audited, not just cutoff characteristics.",
+    "Existing C1 error alone does not imply local C2 error.",
+    "Physical-side C2 does not mean C2 across a distributional thin shell."
+  ],
+  "acceptance_gates": [
+    "Authenticate inputs",
+    "Prove representation regularity and corner compatibility",
+    "Certify derivative-input errors",
+    "Prove differentiated response/error estimate",
+    "Convert scaled/frame/angular derivatives",
+    "Certify declared natural residual or defined observable"
+  ],
+  "plan_file": "NEXT_RESEARCH_TARGETS.md",
+  "weak_alternative": "A declared weak/interface residual requires a specified test-function norm, derivative-jump and shell terms; it is not a pointwise C2 certificate."
+}

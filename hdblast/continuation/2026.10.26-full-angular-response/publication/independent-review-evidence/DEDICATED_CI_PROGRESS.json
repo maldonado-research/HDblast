@@ -1,0 +1,66 @@
+{
+  "checked_at_utc": "2026-10-26T07:21:23.503958+00:00",
+  "run_id": 40284569389,
+  "head_sha": "8ccc766cb36624a7d34c7aa57356d7e7e5357eea",
+  "status": "in_progress",
+  "conclusion": null,
+  "jobs": [
+    {
+      "id": 121445110679,
+      "name": "replay",
+      "status": "in_progress",
+      "conclusion": null,
+      "started_at": "2026-10-26T07:14:25Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "number": 1,
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "number": 3,
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Authenticate and replay both fixed-budget modes",
+          "number": 4,
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "name": "Verify receipt and record individual golden hashes",
+          "number": 5,
+          "status": "pending",
+          "conclusion": null
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "number": 6,
+          "status": "pending",
+          "conclusion": null
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "number": 11,
+          "status": "pending",
+          "conclusion": null
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "number": 12,
+          "status": "pending",
+          "conclusion": null
+        }
+      ]
+    }
+  ]
+}
