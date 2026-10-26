@@ -1,0 +1,66 @@
+{
+  "derivation_scope": "Actual total registered-gauge TT coefficient on exterior backward cone; all inherited smooth formal-solution and authenticated actual-input premises retained.",
+  "files": {
+    "DERIVATION.md": {
+      "bytes": 14254,
+      "sha256": "5b7486e98497b54447204f8c6c5cedcd0a5d75ec743101523b26cda8adf59a8e"
+    },
+    "THEORY_CONTROLS_NORMAL.json": {
+      "bytes": 3692,
+      "sha256": "cb7b34781cb9bd87244b557c95de5cbb201893ecd02925e8626bd259927d3d5a"
+    },
+    "THEORY_CONTROLS_OPTIMIZED.json": {
+      "bytes": 3692,
+      "sha256": "cb7b34781cb9bd87244b557c95de5cbb201893ecd02925e8626bd259927d3d5a"
+    },
+    "THEORY_PORTABILITY_REVIEW.json": {
+      "bytes": 4931,
+      "sha256": "a74703bc0c456d26fcec319f5083bc1f299c94e952300ec651aef0265f5ba20e"
+    },
+    "check_theory_controls.py": {
+      "bytes": 15702,
+      "sha256": "abf38ec6f060b81021015cf428c88ce9abef73639857e15496dcd6991e39b81a"
+    }
+  },
+  "mathematical_results": [
+    "Spatial derivative v=u_r has identically zero Cauchy data.",
+    "Triangular C1 resolvent needs q<1; no q+q_r<1 assumption.",
+    "Mu=T Fcap/(1-q); Mv=(T Frcap+q_r Mu)/(1-q).",
+    "Complete common second-derivative feedback tail E2=q Mv+q_r Mu.",
+    "Boundary F/Fr quadrature gives all apex derivatives except u_xx; exact PDE gives u_xx.",
+    "Natural u_yy conversion retains a u_r/(ell rho), and mixed derivative retains orientation sign."
+  ],
+  "not_claimed": [
+    "Independent small pointwise Einstein residual.",
+    "Physical covariant metric two-jet or gauge-invariant curvature observable.",
+    "Any derivative sign before the declared numerical run.",
+    "Complete actual input certificate authentication by this theory audit."
+  ],
+  "numeric_draft_review": {
+    "path": "compute/tt_twojet.py",
+    "scope": "Read-only mathematical review through campaign_run: source quadratures, q/q_r, Mu/Mv, E0/E1/E2, area/line u_r intersection, PDE closure, natural derivative conversions. Independent numeric reviewer handles full report/geometry/API validation.",
+    "status": "FORMULAS_AGREE_WITH_DERIVATION"
+  },
+  "schema": "HDBLAST_TT_TWOJET_THEOREM_REVIEW_V1",
+  "source_dependency_result": {
+    "all_actual_TT_terms": 78,
+    "generic_C4_obstruction_not_present_in_this_row": true,
+    "maximum_scaled_master_gauge_order_required": 3,
+    "registered_M": "2*d_gauge",
+    "second_derivative_symbols": [
+      "Mtt",
+      "Myt",
+      "Myy"
+    ]
+  },
+  "status": "PASS_CONDITIONAL_ANALYTIC_TWOJET_LEDGER_AND_INDEPENDENT_CONTROLS",
+  "verification": {
+    "actual_source_numerics_replayed_by_controls": false,
+    "deliberate_mutations_rejected": 5,
+    "exact_rational_controls_passed": 22,
+    "isolated_standard_library_external_replay": true,
+    "normal_optimized_reports_byte_identical": true,
+    "output_guard_rejections_normal_and_optimized": 24,
+    "producer_imported_by_controls": false
+  }
+}

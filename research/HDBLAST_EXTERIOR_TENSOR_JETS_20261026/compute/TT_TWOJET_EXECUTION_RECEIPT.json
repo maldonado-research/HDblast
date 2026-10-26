@@ -1,0 +1,99 @@
+{
+  "all_nine_frozen_closures_authenticated_before_import_and_after_run": true,
+  "files": {
+    "POLYNOMIAL_CONTROLS.json": {
+      "bytes": 8636,
+      "sha256": "c8d9bb066136a5e83d6c7e5ce86771ea7122e397f2037c6ab9d5e3906ac4cac7"
+    },
+    "POLYNOMIAL_CONTROLS_OPTIMIZED.json": {
+      "bytes": 8636,
+      "sha256": "c8d9bb066136a5e83d6c7e5ce86771ea7122e397f2037c6ab9d5e3906ac4cac7"
+    },
+    "TT_TWOJET_NORMAL.json": {
+      "bytes": 135711,
+      "sha256": "f44d6e4286e5b65ce60c37dbda95b64c82b7614568184a05e593e3b930ff096f"
+    },
+    "TT_TWOJET_OPTIMIZED.json": {
+      "bytes": 135711,
+      "sha256": "f44d6e4286e5b65ce60c37dbda95b64c82b7614568184a05e593e3b930ff096f"
+    },
+    "check_polynomial_controls.py": {
+      "bytes": 5608,
+      "sha256": "110f7032c4e62e2b7351beda3c0514fbb688fe51667492b0d7ede2586a7c31cb"
+    },
+    "tt_twojet.py": {
+      "bytes": 21209,
+      "sha256": "c8db4e274405a5c74026aead295e42092abcf14fa30e634b4e7f7232aba48d88"
+    }
+  },
+  "input_module": {
+    "path": "inputs/actual_third_jets.py",
+    "sha256": "d36f8aca0b257ed8bc9de6b2cbacbdcde24ebf3b447823e54d8af006638e08cb"
+  },
+  "maximum_budget_reached_because": "First-run complete u_xx,u_xr,u_rr intervals each contained zero. Exactly one declared refinement was performed.",
+  "metadata_guard_update_numeric_payload_comparison": {
+    "full_scientific_payload_unchanged": true,
+    "only_ignored_top_level_metadata": [
+      "all_eight_complete_closures_authenticated_before_project_imports_and_after_run",
+      "all_nine_complete_closures_authenticated_before_project_imports_and_after_run",
+      "authentication",
+      "evaluator_sha256"
+    ],
+    "prior_metadata_report_sha256": "6efa9ed01940937cdcb4e63e2986789a00f0dc355d893adf93db9e96d94ef04e"
+  },
+  "no_frozen_capsule_edits": true,
+  "normal_optimized_polynomial_controls_byte_identical": true,
+  "normal_optimized_reports_byte_identical": true,
+  "normal_run": {
+    "code_path": "compute/tt_twojet.py",
+    "input_path": "inputs/actual_third_jets.py",
+    "python_flags": [
+      "-B"
+    ],
+    "repository_root": "separate retained angular-response checkout"
+  },
+  "optimized_run": {
+    "code_and_input_paths": "copied with identical bytes into compute/relocated-code/",
+    "python_flags": [
+      "-O",
+      "-B"
+    ],
+    "repository_root": "new independent tensor-jets checkout",
+    "working_directory_changed": true
+  },
+  "output_guards": "Fresh output required; all nine upstream capsules, output symlinks and containing capsule when packaged under research/<capsule> are protected.",
+  "package_artifact_whitelist": [
+    "tt_twojet.py",
+    "check_polynomial_controls.py",
+    "TT_TWOJET_NORMAL.json",
+    "TT_TWOJET_OPTIMIZED.json",
+    "POLYNOMIAL_CONTROLS.json",
+    "POLYNOMIAL_CONTROLS_OPTIMIZED.json",
+    "TT_TWOJET_EXECUTION_RECEIPT.json"
+  ],
+  "per_run_campaign_budgets": [
+    {
+      "cone_cells": 20,
+      "cone_n": 4,
+      "segments_per_characteristic": 8
+    },
+    {
+      "cone_cells": 72,
+      "cone_n": 8,
+      "segments_per_characteristic": 16
+    }
+  ],
+  "per_run_declared_source_call_count": 146,
+  "primary_acceptance": "CERTIFIED_FINITE_ACTUAL_TOTAL_TT_TWOJET",
+  "publication_or_GitHub_mutation": false,
+  "python_version": "3.12.14",
+  "schema": "HDBLAST_TT_TWOJET_EXECUTION_RECEIPT_V1",
+  "scratch_artifacts_excluded": [
+    "pre-freeze/",
+    "relocated-code/"
+  ],
+  "source_module_externally_pinned_before_import_and_after_run": true,
+  "status": "PASS_BOUNDED_TWOJET_AND_CANONICAL_REPLAY",
+  "strict_second_derivative_diagnostic": "inconclusive_at_declared_maximum",
+  "wall_time_recorded": false
+}

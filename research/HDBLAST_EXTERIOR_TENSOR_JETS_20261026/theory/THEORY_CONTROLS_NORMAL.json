@@ -1,0 +1,142 @@
+{
+  "actual_TT_dependency_audit": {
+    "C4_required_for_this_TT_source_derivative": false,
+    "first_jet_source": {
+      "logical_path": "research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/numeric/actual_first_jets.py",
+      "sha256": "a68fa8025d2170efca6c3e85d443910a796d0c30a9b7dd17ed988cd9e00bbb00"
+    },
+    "highest_required_scaled_actual_master_or_gauge_order": 3,
+    "registered_M": "2*d, with f,b,d=U (gauge amplitudes)",
+    "scope": "No producer import; complete frozen-tree authentication remains a separate evaluator prerequisite.",
+    "second_derivative_symbols": [
+      "Mtt",
+      "Myt",
+      "Myy"
+    ],
+    "second_derivative_term_indices_zero_based": [
+      7,
+      22,
+      50
+    ],
+    "second_derivative_terms": [
+      {
+        "coefficient": "-4/3",
+        "powers": {
+          "A": 1,
+          "Myy": 1,
+          "ell": 2,
+          "rho": 2
+        }
+      },
+      {
+        "coefficient": "8/3",
+        "powers": {
+          "B": 1,
+          "Myt": 1,
+          "ell": 2,
+          "rho": 1
+        }
+      },
+      {
+        "coefficient": "-4/3",
+        "powers": {
+          "D": 1,
+          "Mtt": 1,
+          "ell": 2
+        }
+      }
+    ],
+    "source_map": {
+      "logical_path": "research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/projection/GEOMETRIC_COEFFICIENT_MAPS.json",
+      "sha256": "34b10b62d0b36a4506a35407a591a9fdff319971994f25e0b5f031f48eb4f615"
+    },
+    "status": "PASS_READ_ONLY_STRUCTURAL_DEPENDENCY_AUDIT",
+    "symbols": [
+      "A",
+      "At",
+      "Ay",
+      "B",
+      "Bt",
+      "By",
+      "C",
+      "Ct",
+      "Cy",
+      "D",
+      "Dt",
+      "Dy",
+      "E",
+      "Et",
+      "Ey",
+      "L",
+      "Lt",
+      "Ly",
+      "M",
+      "Mt",
+      "Mtt",
+      "My",
+      "Myt",
+      "Myy",
+      "Vp",
+      "a",
+      "ay",
+      "c",
+      "ell",
+      "rho",
+      "s",
+      "theta"
+    ],
+    "total_terms": 78
+  },
+  "checker_sha256": "abf38ec6f060b81021015cf428c88ce9abef73639857e15496dcd6991e39b81a",
+  "exact_rational_theory_controls": {
+    "initial_acceleration_polynomial": [
+      {
+        "coefficient": "2",
+        "powers": [
+          0,
+          3
+        ]
+      }
+    ],
+    "mutations_rejected": {
+      "dropped_Br_ur": true,
+      "dropped_natural_yy_correction": true,
+      "omitted_retarded_half": true,
+      "omitted_second_jet_coefficient_tail": true,
+      "radial_boundary_plus_instead_of_minus": true
+    },
+    "passed_identities": [
+      "K_x_boundary_sum",
+      "K_r_boundary_difference",
+      "K_xr_boundary_Fr_sum",
+      "K_rr_boundary_Fr_difference",
+      "K_xx_endpoint_term",
+      "K_commutes_spatial_derivative",
+      "K_zero_initial_data",
+      "manufactured_u_integral_equation",
+      "manufactured_v_differentiated_integral_equation",
+      "v_zero_initial_data",
+      "nonzero_initial_acceleration",
+      "triangular_power",
+      "triangular_resolvent_with_s_above_one",
+      "complete_second_jet_tail",
+      "natural_yy_connection_correction",
+      "natural_ty_orientation_sign",
+      "M_yy_r_C3_conversion",
+      "M_yt_r_C3_conversion",
+      "M_tt_r_C3_conversion",
+      "D_r_unsimplified_equals_compact",
+      "B_r_identity",
+      "natural_coordinate_PDE_factors"
+    ],
+    "triangular_control_q": "3/17",
+    "triangular_control_s": "19/11"
+  },
+  "limits": [
+    "No actual forcing value or response computed.",
+    "Manufactured polynomial controls validate formulas, not actual input error certificates.",
+    "Ordinary registered coefficient derivatives are not gauge-invariant curvature."
+  ],
+  "schema": "HDBLAST_TT_TWOJET_INDEPENDENT_THEORY_CONTROLS_V1",
+  "status": "PASS_INDEPENDENT_TT_TWOJET_THEORY_CONTROLS"
+}

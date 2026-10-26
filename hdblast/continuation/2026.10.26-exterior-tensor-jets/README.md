@@ -1,0 +1,7 @@
+# Exterior tensor coefficient two-jet checkpoint — 26 October 2026
+
+The [scientific capsule](../../../research/HDBLAST_EXTERIOR_TENSOR_JETS_20261026/) encloses the actual total registered tensor coefficient and its six value/first/second coordinate jet entries at (x,r)=(1/4,5/4), before shell contact. The source, its radial derivative and all scalar feedback/error terms are retained. Its complete 78-term derivative needs only the previously certified C3 inputs. The value and scaled time derivative are strictly negative; all three second-derivative signs remain inconclusive. Ordinary t/y coefficient derivatives are also enclosed. No covariant curvature, full-domain C2 Einstein residual, physical signal or nonlinear finite-amplitude realization is established.
+
+The source capsule and matching ZIP are frozen by `PUBLICATION_PINS.json` and the dedicated workflow. `INITIAL_PACKAGED_REPRODUCTION.json` records the fresh replay: 16 positive runs, 4 expected wrong-formula failures, 17 exact reference comparisons, 7 source-integrity corruption controls and 9 complete dependency closures unchanged. Internal AI-assisted reviews are included; external specialist assessment remains outstanding.
+
+Final CI, merge identity, complete source/live-page readback and publication receipts are retained on a separate verification branch after publication. Frozen manuscripts, prior capsules and unrelated projects are preserved. No new Zenodo version or journal submission accompanies this checkpoint. Private editorial history is excluded.

@@ -1,0 +1,201 @@
+name: Exterior tensor coordinate two-jet replay
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_EXTERIOR_TENSOR_JETS_20261026/**'
+      - 'research/HDBLAST_EXTERIOR_TENSOR_JETS_20261026.zip'
+      - '.github/workflows/exterior-tensor-jets-20261026.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_EXTERIOR_TENSOR_JETS_20261026/**'
+      - 'research/HDBLAST_EXTERIOR_TENSOR_JETS_20261026.zip'
+      - '.github/workflows/exterior-tensor-jets-20261026.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+      HDB_MANIFEST: '0bc16f65598ae4977a7b8ab70a66c13ec85d844c871d6fee7739c4ec472d1c70'
+      HDB_ARCHIVE: 'e96e42544d78bfe89ef0cd47414e97cefd8618048c446c8ecfe9a16480c4cad0'
+      HDB_REPLAY: '0f883aa17fae778dccea34f3c448f458028425ce8c30f9085bd31269dfd1eefe'
+      HDB_OUTPUT: 'exterior-tensor-jets-${{ github.run_id }}-${{ github.run_attempt }}'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /research/HDBLAST_EXTERIOR_TENSOR_JETS_20261026/
+            /research/HDBLAST_EXTERIOR_TENSOR_JETS_20261026.zip
+            /research/HDBLAST_COUPLED_MEAN_PILOT_20261025/
+            /research/HDBLAST_INPUT_PRECISION_20261023/
+            /research/HDBLAST_COMMON_GAUGE_FORCING_20261016/
+            /research/HDBLAST_NUMERICAL_RESPONSE_INPUTS_20261016/
+            /research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/
+            /research/HDBLAST_FORCED_RESPONSE_BOUNDS_20261023/
+            /research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023/
+            /research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/
+            /research/HDBLAST_SHELL_FEEDBACK_PRECISION_20261025/
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Authenticate entry point and replay the frozen bounded campaign
+        shell: bash
+        run: |
+          set -euo pipefail
+          capsule="research/HDBLAST_EXTERIOR_TENSOR_JETS_20261026"
+          python -I -S -B - <<'PY'
+          import hashlib
+          import os
+          from pathlib import Path
+          path = Path('research/HDBLAST_EXTERIOR_TENSOR_JETS_20261026/reproduce.py')
+          if hashlib.sha256(path.read_bytes()).hexdigest() != os.environ['HDB_REPLAY']:
+              raise SystemExit('REPLAY_ENTRY_POINT_HASH_MISMATCH')
+          PY
+          python -I -S -B "$capsule/reproduce.py" \
+            --manifest-sha256 "$HDB_MANIFEST" --repo-root "$GITHUB_WORKSPACE" \
+            --archive "$capsule.zip" --archive-sha256 "$HDB_ARCHIVE" \
+            --output-dir "$RUNNER_TEMP/$HDB_OUTPUT"
+      - name: Verify the receipt and record pinned native-log evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I -S -B - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path, PurePosixPath
+
+          capsule = Path('research/HDBLAST_EXTERIOR_TENSOR_JETS_20261026')
+          output = Path(os.environ['RUNNER_TEMP']) / os.environ['HDB_OUTPUT']
+          receipt_path = output / 'REPRODUCTION_RECEIPT.json'
+          data = json.loads(receipt_path.read_text())
+
+          def require(ok, message):
+              if not ok:
+                  raise SystemExit(message)
+
+          def sha(path):
+              return hashlib.sha256(path.read_bytes()).hexdigest()
+
+          def member(root, relative):
+              path = PurePosixPath(relative)
+              require(relative == path.as_posix() and not path.is_absolute()
+                      and relative not in ('.', '..') and '..' not in path.parts
+                      and '\\' not in relative, 'RECEIPT_MEMBER_PATH')
+              return root / relative
+
+          require(data['schema'] == 'HDBLAST_EXTERIOR_TENSOR_JETS_REPRODUCTION_V1'
+                  and data['status'] == 'PASS', 'RECEIPT_SCHEMA_AND_STATUS')
+          positive_pairs = {
+              'source-Fr': ('inputs/actual_third_jets.py', 'inputs/actual_source_radial_final_{mode}.json'),
+              'source-dependency': ('inputs/c4_need_audit.py', 'inputs/c4_need_audit_{mode}.json'),
+              'source-output-guards': ('inputs/check_output_guards.py', 'inputs/output_guards_{mode}.json'),
+              'actual-twojet': ('compute/tt_twojet.py', 'compute/TT_TWOJET_{upper}.json'),
+              'polynomial-controls': ('compute/check_polynomial_controls.py', 'compute/POLYNOMIAL_CONTROLS{suffix}.json'),
+              'theory-controls': ('theory/check_theory_controls.py', 'theory/THEORY_CONTROLS_{upper}.json'),
+              'independent-source': ('review-inputs/oracle_review.py', 'review-inputs/ORACLE_FINAL_{upper}.json'),
+              'independent-twojet': ('review-numeric/check_tt_twojet.py', 'review-numeric/REVIEW_{upper}.json'),
+          }
+          positives = {name + '-' + mode: script for name, (script, _) in positive_pairs.items()
+                       for mode in ('normal', 'optimized')}
+          negatives = {
+              'source-mutant-' + mutation + '-' + mode: reason
+              for mutation, reason in (
+                  ('omit_yy_conversion', 'INDEPENDENT_PHYSICAL_CHAIN:yy:0'),
+                  ('wrong_negative_power_derivative', 'INDEPENDENT_FULL_SOURCE_LEIBNIZ:0'))
+              for mode in ('normal', 'optimized')
+          }
+          runs = data['direct_runs']
+          require(len(runs) == 20 and len({row['id'] for row in runs}) == 20
+                  and {row['id'] for row in runs} == set(positives) | set(negatives), 'EXACT_DIRECT_RUN_IDS')
+          for row in runs:
+              identity = row['id']
+              require(row['optimized'] is identity.endswith('-optimized'), 'RUN_MODE:' + identity)
+              log = member(output, row['log'])
+              require(log.is_file() and sha(log) == row['log_sha256'], 'DIRECT_LOG_HASH:' + identity)
+              if identity in positives:
+                  require(row['exit_code'] == 0 and 'expected_rejection' not in row
+                          and row['script'] == positives[identity], 'POSITIVE_RUN:' + identity)
+              else:
+                  reason = negatives[identity]
+                  require(row['exit_code'] != 0 and row['expected_rejection'] == reason
+                          and row['reason_verified'] is True and row['output_absent'] is True
+                          and reason in log.read_text(), 'EXPECTED_REASON_VERIFIED_FAILURE:' + identity)
+          require(data['positive_direct_runs'] == 16 and data['expected_nonzero_direct_runs'] == 4, 'RUN_CLASS_COUNTS')
+          require(data['independent_math_negative_controls'] == [row for row in runs if row['id'] in negatives], 'EXACT_MATH_NEGATIVE_CONTROLS')
+          expected_goldens = {
+              (name + '-' + mode, template.format(mode=mode, upper=mode.upper(),
+                                                 suffix='' if mode == 'normal' else '_OPTIMIZED'))
+              for name, (_, template) in positive_pairs.items() for mode in ('normal', 'optimized')
+          } | {('source-math-control-ledger', 'review-inputs/CONTROL_LEDGER.json')}
+          matches = data['golden_matches']
+          require(data['scientific_golden_matches_mandatory'] is True and len(matches) == 17
+                  and len({(row['actor'], row['golden']) for row in matches}) == 17
+                  and {(row['actor'], row['golden']) for row in matches} == expected_goldens, 'EXACT_GOLDEN_COMPARISONS')
+          for row in matches:
+              produced, golden = member(output, row['output']), member(capsule, row['golden'])
+              require(row['byte_identical'] is True and produced.read_bytes() == golden.read_bytes()
+                      and sha(produced) == row['sha256'] and produced.stat().st_size == row['bytes'], 'GOLDEN_BYTES:' + row['actor'])
+          expected_corruptions = {
+              'wrong_external_manifest_pin': 'MANIFEST_PIN',
+              'changed_member_bytes': 'MANIFEST_MEMBER_BYTES',
+              'undeclared_member': 'MANIFEST_COMPLETE_CLOSURE',
+              'member_symlink': 'MANIFEST_MEMBER_TYPE',
+              'duplicate_manifest_member': 'MANIFEST_MEMBER_PATH',
+              'parent_traversal': 'MANIFEST_MEMBER_PATH',
+              'absolute_member_path': 'MANIFEST_MEMBER_PATH',
+          }
+          controls = data['source_corruption_controls']
+          require(len(controls) == 7 and len({row['control'] for row in controls}) == 7
+                  and {row['control']: row['reason'] for row in controls} == expected_corruptions
+                  and all(row['rejected'] is True for row in controls), 'REASON_SPECIFIC_SOURCE_CORRUPTIONS')
+          before, after = data['complete_nine_upstream_roots_before'], data['complete_nine_upstream_roots_after']
+          require(len(before) == 9 and set(before) == {'current', 'I', 'P', 'N', 'G', 'C', 'T', 'F', 'precision35'}
+                  and before == after, 'NINE_UPSTREAM_CLOSURES_UNCHANGED')
+          require(data['all_complete_authentication_before_any_project_execution'] is True, 'AUTHENTICATION_ORDER')
+          source = data['complete_new_capsule_before']
+          require(source == data['complete_new_capsule_after'] and source['files_including_manifest'] == 46
+                  and source['manifest_sha256'] == os.environ['HDB_MANIFEST']
+                  and sha(capsule / 'MANIFEST.json') == os.environ['HDB_MANIFEST'], 'SOURCE_CLOSURE_AND_MANIFEST_PIN')
+          archive = data['archive']
+          require(archive['sha256'] == os.environ['HDB_ARCHIVE'] and archive['members'] == 46
+                  and archive['crc_pass'] is True and archive['all_source_bytes_equal'] is True
+                  and sha(capsule.with_suffix('.zip')) == os.environ['HDB_ARCHIVE'], 'ARCHIVE_PIN_COUNT_AND_EXACT_BYTES')
+          require(data['source_unchanged_after_replay'] is True
+                  and sha(capsule / 'reproduce.py') == os.environ['HDB_REPLAY'], 'SOURCE_AND_ENTRY_POINT_UNCHANGED')
+          programs = data['complete_program_index']
+          manifest = json.loads((capsule / 'MANIFEST.json').read_text())
+          expected_programs = {row['path'] for row in manifest['files'] if row['path'].endswith('.py')}
+          require(len(programs) == len(expected_programs) == 11
+                  and {row['path'] for row in programs} == expected_programs
+                  and all(sha(member(capsule, row['path'])) == row['sha256'] for row in programs), 'COMPLETE_PROGRAM_INDEX')
+          provenance = data['symbolic_provenance']
+          require(provenance['symbolic_dependency_reports_byte_identical'] is True
+                  and provenance['runtime_sympy_imported'] is False
+                  and provenance['provenance_generators_executed'] is False, 'PROVENANCE_RUNTIME_SCOPE')
+          print(json.dumps({'phase': 'ci-receipt', 'status': 'PASS', 'direct_runs': 20,
+                            'positive_direct_runs': 16, 'expected_nonzero_direct_runs': 4,
+                            'scientific_golden_matches': 17, 'source_corruption_controls': 7,
+                            'independent_math_negative_controls': 4, 'upstream_closures': 9,
+                            'capsule_source_files': 46, 'indexed_programs': 11,
+                            'manifest_sha256': os.environ['HDB_MANIFEST'],
+                            'archive_sha256': os.environ['HDB_ARCHIVE'],
+                            'reproduce_sha256': os.environ['HDB_REPLAY'],
+                            'receipt_sha256': sha(receipt_path)}, separators=(',', ':')))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: exterior-tensor-jets-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/${{ env.HDB_OUTPUT }}/
+          if-no-files-found: warn
+          retention-days: 30
