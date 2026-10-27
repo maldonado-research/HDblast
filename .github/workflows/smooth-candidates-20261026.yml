@@ -1,0 +1,42 @@
+name: Smooth full23 candidate checks
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_SMOOTH_CANDIDATES_20261026/**'
+      - '.github/workflows/smooth-candidates-20261026.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_SMOOTH_CANDIDATES_20261026/**'
+      - '.github/workflows/smooth-candidates-20261026.yml'
+permissions:
+  contents: read
+jobs:
+  exact-and-interval-checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Run arithmetic and interval checks in both modes
+        shell: bash
+        run: |
+          set -euo pipefail
+          capsule=research/HDBLAST_SMOOTH_CANDIDATES_20261026
+          for script in "$capsule/construction/smooth_candidate.py" "$capsule/checks/check_transfer.py" "$capsule/checks/check_nominal_transfer.py" "$capsule/checks/check_nominal_point.py" "$capsule/checks/check_smoothed_freewave.py" "$capsule/checks/check_potential_derivative.py"; do
+            python -I -S -B "$script" --repo-root . > "$RUNNER_TEMP/normal.json"
+            python -I -S -B -O "$script" --repo-root . > "$RUNNER_TEMP/optimized.json"
+            cmp "$RUNNER_TEMP/normal.json" "$RUNNER_TEMP/optimized.json"
+            cat "$RUNNER_TEMP/normal.json"
+          done
+          for flag in '' '-O'; do
+            python -I -S -B $flag "$capsule/checks/check_smoothed_kink.py" --candidate "$capsule/construction/smooth_candidate.py" --repo-root . > "$RUNNER_TEMP/kink${flag}.json"
+          done
+          cmp "$RUNNER_TEMP/kink.json" "$RUNNER_TEMP/kink-O.json"
+          cat "$RUNNER_TEMP/kink.json"
