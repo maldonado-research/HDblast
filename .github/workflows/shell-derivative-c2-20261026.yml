@@ -1,0 +1,41 @@
+name: Shell derivative and candidate C2 audit
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_SHELL_DERIVATIVE_C2_20261026/**'
+      - '.github/workflows/shell-derivative-c2-20261026.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_SHELL_DERIVATIVE_C2_20261026/**'
+      - '.github/workflows/shell-derivative-c2-20261026.yml'
+permissions:
+  contents: read
+jobs:
+  exact-algebra:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Check inherited inputs and exact arithmetic in both modes
+        shell: bash
+        run: |
+          set -euo pipefail
+          capsule=research/HDBLAST_SHELL_DERIVATIVE_C2_20261026/checks
+          for script in check_full23_shell_derivative.py check_tt_shell_derivative.py check_candidate_kink.py audit_b1.py; do
+            python -I -S -B "$capsule/$script" --repo-root . > "$RUNNER_TEMP/normal.json"
+            python -I -S -B -O "$capsule/$script" --repo-root . > "$RUNNER_TEMP/optimized.json"
+            cmp "$RUNNER_TEMP/normal.json" "$RUNNER_TEMP/optimized.json"
+            cat "$RUNNER_TEMP/normal.json"
+          done
+          python -I -S -B "$capsule/check_gate.py" > "$RUNNER_TEMP/normal.json"
+          python -I -S -B -O "$capsule/check_gate.py" > "$RUNNER_TEMP/optimized.json"
+          cmp "$RUNNER_TEMP/normal.json" "$RUNNER_TEMP/optimized.json"
+          cat "$RUNNER_TEMP/normal.json"
