@@ -1,0 +1,48 @@
+name: Smooth complete feedback sample
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_SMOOTH_FEEDBACK_SAMPLE_20261029/**'
+      - '.github/workflows/smooth-feedback-sample-20261029.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_SMOOTH_FEEDBACK_SAMPLE_20261029/**'
+      - '.github/workflows/smooth-feedback-sample-20261029.yml'
+permissions:
+  contents: read
+jobs:
+  exact-and-interval-checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Exact identities and interval enclosures in both modes
+        shell: bash
+        run: |
+          set -euo pipefail
+          cap=research/HDBLAST_SMOOTH_FEEDBACK_SAMPLE_20261029
+          for name in check_local_identity check_local_kernel; do
+            python -I -S -B "$cap/checks/$name.py" > "$RUNNER_TEMP/$name.normal.json"
+            python -I -S -B -O "$cap/checks/$name.py" > "$RUNNER_TEMP/$name.optimized.json"
+            cmp "$RUNNER_TEMP/$name.normal.json" "$RUNNER_TEMP/$name.optimized.json"
+            cat "$RUNNER_TEMP/$name.normal.json"
+          done
+          for name in check_complete_feedback check_coarse_feedback; do
+            python -I -S -B "$cap/checks/$name.py" --repo-root . > "$RUNNER_TEMP/$name.normal.json"
+            python -I -S -B -O "$cap/checks/$name.py" --repo-root . > "$RUNNER_TEMP/$name.optimized.json"
+            cmp "$RUNNER_TEMP/$name.normal.json" "$RUNNER_TEMP/$name.optimized.json"
+          done
+          cmp "$RUNNER_TEMP/check_complete_feedback.normal.json" "$cap/reference/COMPLETE.json"
+          cmp "$RUNNER_TEMP/check_coarse_feedback.normal.json" "$cap/reference/COARSE.json"
+          python -I -S -B "$cap/checks/compare_enclosures.py" --complete "$RUNNER_TEMP/check_complete_feedback.normal.json" --coarse "$RUNNER_TEMP/check_coarse_feedback.normal.json" > "$RUNNER_TEMP/compare.normal.json"
+          python -I -S -B -O "$cap/checks/compare_enclosures.py" --complete "$RUNNER_TEMP/check_complete_feedback.normal.json" --coarse "$RUNNER_TEMP/check_coarse_feedback.normal.json" > "$RUNNER_TEMP/compare.optimized.json"
+          cmp "$RUNNER_TEMP/compare.normal.json" "$RUNNER_TEMP/compare.optimized.json"
+          cat "$RUNNER_TEMP/compare.normal.json"
