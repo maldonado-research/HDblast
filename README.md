@@ -1,5 +1,7 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+**30 October 2026: fourth master derivatives and a bounded numerical approximation.** All five scaled fourth-order mixed derivatives of the retained actual first master are bounded by 342395.408 on the registered causal triangle. A separately defined approximation with causal source averaging has bounded second derivatives on the physical side of the shell and an explicitly charged C1 error bound. Its natural-equation residual bounds are very large and do not demonstrate physical accuracy. The complete actual bulk-source derivative, C2 target accuracy, full second-order boundary problem and nonlinear cosmological realization remain open. [Derivation, scope and reproducible checks](research/HDBLAST_CAUSAL_SOURCE_REGULARITY_20261030/).
+
 <!-- data-hdb-screen-magnetic-curvature="screen-magnetic-curvature-20261026" -->
 **26 October 2026: conditional registered screen magnetic curvature.** On the exterior angular sphere at (x,r)=(1/4,5/4), before shell contact, the projection of the second parameter derivative of the screen magnetic tensor onto the selected TT pair is Π_pair H″(0)=h(T+ − T−). The calculation combines the linear second-response TT term with the complete scalar quadratic term, retaining the observer, radial-normal, connection and epsilon corrections. The complete first variation of this screen tensor vanishes, and exact angular identities close the quadratic term on T+ − T−.
 
