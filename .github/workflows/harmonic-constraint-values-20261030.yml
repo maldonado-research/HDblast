@@ -1,0 +1,45 @@
+name: Harmonic constraint values and norm transfer
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_HARMONIC_CONSTRAINT_VALUES_20261030/**'
+      - '.github/workflows/harmonic-constraint-values-20261030.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_HARMONIC_CONSTRAINT_VALUES_20261030/**'
+      - '.github/workflows/harmonic-constraint-values-20261030.yml'
+permissions:
+  contents: read
+jobs:
+  exact-and-interval-constraints:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Reproduce formulas, direct constraints and transfer in both modes
+        shell: bash
+        run: |
+          set -euo pipefail
+          cap=research/HDBLAST_HARMONIC_CONSTRAINT_VALUES_20261030
+          for mode in normal optimized; do
+            flags=()
+            if [ "$mode" = optimized ]; then flags=(-O); fi
+            python -I -S -B "${flags[@]}" "$cap/checks/check_constraint_formulas.py" > "$RUNNER_TEMP/FORMULAS.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_direct_formula_audit.py" > "$RUNNER_TEMP/AUDIT.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_constraint_transfer.py" --repo-root . > "$RUNNER_TEMP/TRANSFER.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_direct_constraint.py" --repo-root . > "$RUNNER_TEMP/DIRECT.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_constraint_summary.py" > "$RUNNER_TEMP/SUMMARY.$mode.json"
+          done
+          for report in FORMULAS AUDIT TRANSFER DIRECT SUMMARY; do
+            cmp "$RUNNER_TEMP/$report.normal.json" "$RUNNER_TEMP/$report.optimized.json"
+            cmp "$RUNNER_TEMP/$report.normal.json" "$cap/reference/$report.json"
+          done
+          cat "$RUNNER_TEMP/SUMMARY.normal.json"
