@@ -83,10 +83,16 @@ upper-bound ledger, the initial free-wave term accounts for more than
 
 Those fractions describe the proof majorant, not a decomposition or lower
 bound of the unknown true error. They identify the initial-data estimates
-as the next useful place to improve this certificate. Two inner nominal
-second-derivative jumps and coarse interval dependencies remain. A changed
+as the next useful place to improve this certificate. Inner cutoff joins
+and coarse interval dependencies still merit attention. The existing exact
+jump table gives zero second-derivative jump in every component at `65/64`;
+a cutoff join alone is not evidence of a nonzero derivative jump. A changed
 cutoff or initial continuation would define a new candidate and would need
 its own comparison estimates.
+
+This clarifies earlier prose counting both inner joins as jumps. The
+numerical upper bounds are unchanged; the first join's jump allowance was
+already exactly zero in the calculation.
 
 ## Reproduction and scope
 

@@ -77,3 +77,13 @@ the same fresh-output runner.
 The parent reports a complete successful local replay. Actual GitHub CI,
 merge receipt and source-file readbacks must be recorded from their final
 execution evidence; this scope assessment does not infer those outcomes.
+
+## Post-draft wording clarification
+
+A subsequent read-only audit of the existing PR100 INITIAL.json distinguishes
+cutoff joins from nominal second-derivative jumps. All 23 left/right second
+derivatives and jump allowances at 65/64 are exactly zero. At 66/64 the
+signed one-sided jump intervals exclude zero for w:0,w:2,w:4. Neither fact
+is a lower bound on actual approximation error relative to the target. The
+README and error note were corrected before merging; no numerical report,
+source, candidate or upper error bound changed.

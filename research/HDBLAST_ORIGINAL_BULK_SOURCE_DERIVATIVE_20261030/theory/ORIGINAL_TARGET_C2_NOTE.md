@@ -233,8 +233,11 @@ This fraction describes the proof majorant, not a decomposition of the
 unknown true error. A zero denominator or comparison to a nonzero physical
 scale is not supplied, so no relative accuracy claim follows.
 
-The remaining two inner nominal second-derivative jumps and coarse initial
-interval dependencies therefore merit attention before more bulk iterations.
+The inner cutoff joins and coarse initial interval dependencies therefore
+merit attention before more bulk iterations. The existing exact jump table
+has zero second-derivative jump in all components at `65/64`; that join must
+not be counted as a nonzero curvature jump merely because it is a branch
+boundary.
 Reducing a majorant alone is not proof of reducing the actual error; a
 changed higher-order cutoff would define another initial candidate and
 would need all corresponding estimates re-established.
