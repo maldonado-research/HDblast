@@ -1,0 +1,49 @@
+name: Higher initial jets and matched extension
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_HIGHER_INITIAL_JETS_20261030/**'
+      - '.github/workflows/higher-initial-jets-20261030.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_HIGHER_INITIAL_JETS_20261030/**'
+      - '.github/workflows/higher-initial-jets-20261030.yml'
+permissions:
+  contents: read
+jobs:
+  exact-and-higher-jet-checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Reproduce higher jets, repair, time derivatives and source symbols
+        shell: bash
+        run: |
+          set -euo pipefail
+          cap=research/HDBLAST_HIGHER_INITIAL_JETS_20261030
+          for mode in normal optimized; do
+            flags=()
+            if [ "$mode" = optimized ]; then flags=(-O); fi
+            python -I -S -B "${flags[@]}" "$cap/checks/check_initial_second_error.py" --repo-root . > "$RUNNER_TEMP/INITIAL.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_endpoint_curvature.py" --repo-root . > "$RUNNER_TEMP/ENDPOINT.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_quadratic_extension.py" --initial-report "$RUNNER_TEMP/INITIAL.$mode.json" --endpoint-report "$RUNNER_TEMP/ENDPOINT.$mode.json" > "$RUNNER_TEMP/REPAIR.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_curvature_transfer.py" --repo-root . --initial-second-report "$RUNNER_TEMP/INITIAL.$mode.json" > "$RUNNER_TEMP/TRANSFER.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_curvature_transfer_identities.py" > "$RUNNER_TEMP/TRANSFER_IDENTITIES.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_time_coefficients.py" --repo-root . > "$RUNNER_TEMP/TIME.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_time_derivative_identity.py" --repo-root . > "$RUNNER_TEMP/TIME_IDENTITIES.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_time_report_audit.py" --repo-root . --report "$RUNNER_TEMP/TIME.$mode.json" > "$RUNNER_TEMP/TIME_AUDIT.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_bulk_derivative_symbol.py" --repo-root . > "$RUNNER_TEMP/SYMBOL.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_independent_principal_symbol.py" > "$RUNNER_TEMP/SYMBOL_AUDIT.$mode.json"
+          done
+          for report in INITIAL ENDPOINT REPAIR TRANSFER TRANSFER_IDENTITIES TIME TIME_IDENTITIES TIME_AUDIT SYMBOL SYMBOL_AUDIT; do
+            cmp "$RUNNER_TEMP/$report.normal.json" "$RUNNER_TEMP/$report.optimized.json"
+            cmp "$RUNNER_TEMP/$report.normal.json" "$cap/reference/$report.json"
+          done
