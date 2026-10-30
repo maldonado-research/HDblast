@@ -1,0 +1,49 @@
+{
+  "actual_source_report_sha256": "63ed8e3a7c0544db93de0d3bcbdba4652eb4d9a6bcd8f434327e785cd9986e60",
+  "gate_checker_sha256": "73e99c8a11532efe85cb42459881e7d4588e601d1dc56def4230b97d40d139df",
+  "rejected_run_count": 8,
+  "rejected_runs": [
+    {
+      "injection": "filtered_source_scope",
+      "mode": "normal",
+      "rejected": true
+    },
+    {
+      "injection": "filtered_source_scope",
+      "mode": "optimized",
+      "rejected": true
+    },
+    {
+      "injection": "physical_t_instead_of_scaled_x",
+      "mode": "normal",
+      "rejected": true
+    },
+    {
+      "injection": "physical_t_instead_of_scaled_x",
+      "mode": "optimized",
+      "rejected": true
+    },
+    {
+      "injection": "negative_cap",
+      "mode": "normal",
+      "rejected": true
+    },
+    {
+      "injection": "negative_cap",
+      "mode": "optimized",
+      "rejected": true
+    },
+    {
+      "injection": "nonpassing_status",
+      "mode": "normal",
+      "rejected": true
+    },
+    {
+      "injection": "nonpassing_status",
+      "mode": "optimized",
+      "rejected": true
+    }
+  ],
+  "scope": "Input-role and unit guards only; mathematical bounds require the genuine complete-source derivative proof.",
+  "status": "PASS_ORIGINAL_C2_INPUT_SCOPE_CONTROLS"
+}
