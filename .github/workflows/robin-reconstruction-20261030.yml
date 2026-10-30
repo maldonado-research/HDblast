@@ -1,0 +1,49 @@
+name: Robin reconstruction and direct error
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_ROBIN_RECONSTRUCTION_20261030/**'
+      - '.github/workflows/robin-reconstruction-20261030.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_ROBIN_RECONSTRUCTION_20261030/**'
+      - '.github/workflows/robin-reconstruction-20261030.yml'
+permissions:
+  contents: read
+jobs:
+  exact-and-interval-checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Exact identities and independent reconstructions in both modes
+        shell: bash
+        run: |
+          set -euo pipefail
+          cap=research/HDBLAST_ROBIN_RECONSTRUCTION_20261030
+          python -I -S -B "$cap/checks/check_robin_resolvent.py" > "$RUNNER_TEMP/identities.normal.json"
+          python -I -S -B -O "$cap/checks/check_robin_resolvent.py" > "$RUNNER_TEMP/identities.optimized.json"
+          cmp "$RUNNER_TEMP/identities.normal.json" "$RUNNER_TEMP/identities.optimized.json"
+          cat "$RUNNER_TEMP/identities.normal.json"
+          for mode in normal optimized; do
+            flags=()
+            if [ "$mode" = optimized ]; then flags=(-O); fi
+            python -I -S -B "${flags[@]}" "$cap/checks/check_robin_transfer.py" --repo-root . > "$RUNNER_TEMP/TRANSFER.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_robin_direct_error.py" --repo-root . --transfer-report "$RUNNER_TEMP/TRANSFER.$mode.json" > "$RUNNER_TEMP/DIRECT.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_robin_resummed.py" --repo-root . > "$RUNNER_TEMP/RESUMMED.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_robin_coarse.py" --repo-root . > "$RUNNER_TEMP/COARSE.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_posterior.py" --repo-root . --resummed "$RUNNER_TEMP/RESUMMED.$mode.json" --coarse "$RUNNER_TEMP/COARSE.$mode.json" --direct "$RUNNER_TEMP/DIRECT.$mode.json" --transfer "$RUNNER_TEMP/TRANSFER.$mode.json" > "$RUNNER_TEMP/POSTERIOR.$mode.json"
+          done
+          for report in TRANSFER DIRECT RESUMMED COARSE POSTERIOR; do
+            cmp "$RUNNER_TEMP/$report.normal.json" "$RUNNER_TEMP/$report.optimized.json"
+            cmp "$RUNNER_TEMP/$report.normal.json" "$cap/reference/$report.json"
+          done
+          python -c 'import json,sys;d=json.load(open(sys.argv[1]));print(json.dumps({k:d[k] for k in ("status","point","cross_method_interval_checks","global_C1_X_error_readable_upper")}))' "$RUNNER_TEMP/POSTERIOR.normal.json"
