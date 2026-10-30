@@ -1,0 +1,171 @@
+{
+  "arithmetic": "Exact collected rational Laurent coefficients; no floating decisions or project imports",
+  "conventions": {
+    "gauge_shell": "f=0, b_r=d_r=0 and tangential derivatives; b,d,fr remain free",
+    "inward_radial": "partial_y=-(ell*rho)^-1 partial_r",
+    "one_copy_outward": "K_out-sigma*gamma0/6 and n_out(phi)+sigma_prime/2",
+    "trace_equation": "Retained analytic law, authenticated; not a newly executed trace solver"
+  },
+  "corrupted_subprocesses": [
+    {
+      "expected_failed_identity": "longitudinal master momentum reconstruction",
+      "failure": "IDENTITY FAILED: longitudinal master momentum reconstruction; residual=[[[[\"W\", 1], [\"a\", 1], [\"alpha\", 1], [\"p\", -1], [\"rho\", -2], [\"vartheta\", 1]], \"15\"], [[[\"W\", 1], [\"alpha\", 1], [\"h\", 1], [\"p\", -1], [\"rho\", -2], [\"vartheta\", 1]], \"-6\"], [[[\"Wr\", 1], [\"alpha\", 1], [\"ell\", -1], [\"p\", -1], [\"rho\", -3], [\"vartheta\", 1]], \"6\"]]",
+      "mutation": "reverse_inward_y",
+      "output_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_failed_identity": "longitudinal master momentum reconstruction",
+      "failure": "IDENTITY FAILED: longitudinal master momentum reconstruction; residual=[[[[\"W\", 1], [\"a\", 1], [\"alpha\", 1], [\"p\", -1], [\"rho\", -2], [\"vartheta\", 1]], \"15\"], [[[\"W\", 1], [\"alpha\", 1], [\"h\", 1], [\"p\", -1], [\"rho\", -2], [\"vartheta\", 1]], \"-6\"], [[[\"Wr\", 1], [\"alpha\", 1], [\"ell\", -1], [\"p\", -1], [\"rho\", -3], [\"vartheta\", 1]], \"6\"]]",
+      "mutation": "wrong_scalar_reconstruction",
+      "output_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_failed_identity": "one-copy physical metric shell residual",
+      "failure": "IDENTITY FAILED: one-copy physical metric shell residual; residual=[[[[\"W\", 1], [\"a\", 1], [\"alpha\", 1], [\"rho\", -2], [\"vartheta\", 1]], \"5/2\"], [[[\"W\", 1], [\"alpha\", 1], [\"h\", 1], [\"rho\", -2], [\"vartheta\", 1]], \"-1\"], [[[\"Wr\", 1], [\"alpha\", 1], [\"ell\", -1], [\"rho\", -3], [\"vartheta\", 1]], \"1\"]]",
+      "mutation": "double_tension",
+      "output_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_failed_identity": "physical scalar residual = prefactor*(master residual\u2212dynamic trace residual)",
+      "failure": "IDENTITY FAILED: physical scalar residual = prefactor*(master residual\u2212dynamic trace residual); residual=[[[[\"W\", 1], [\"alpha\", 1], [\"p\", 1], [\"rho\", -2], [\"vartheta\", 1]], \"-2\"]]",
+      "mutation": "omit_unit_normal",
+      "output_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_failed_identity": "actual registered gamma definition",
+      "failure": "IDENTITY FAILED: actual registered gamma definition; residual=[[[[\"a\", 1], [\"rho\", 1]], \"5\"], [[[\"h\", 1], [\"rho\", 1]], \"-2\"]]",
+      "mutation": "wrong_gamma",
+      "output_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_failed_identity": "actual registered inverse-mu definition",
+      "failure": "IDENTITY FAILED: actual registered inverse-mu definition; residual=[[[[\"rho\", 1], [\"s\", 1]], \"-2\"]]",
+      "mutation": "wrong_mu",
+      "output_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_failed_identity": "physical scalar residual = prefactor*(master residual\u2212dynamic trace residual)",
+      "failure": "IDENTITY FAILED: physical scalar residual = prefactor*(master residual\u2212dynamic trace residual); residual=[[[[\"W\", 1], [\"a\", 1], [\"alpha\", 1], [\"h\", 1], [\"p\", -1], [\"rho\", -2], [\"vartheta\", 1]], \"39\"], [[[\"W\", 1], [\"a\", 1], [\"alpha\", 1], [\"p\", -1], [\"rho\", -2], [\"s\", 1], [\"vartheta\", 1]], \"15\"], [[[\"W\", 1], [\"a\", 2], [\"alpha\", 1], [\"p\", -1], [\"rho\", -2], [\"vartheta\", 1]], \"-60\"], [[[\"W\", 1], [\"alpha\", 1], [\"h\", 1], [\"p\", -1], [\"rho\", -2], [\"s\", 1], [\"vartheta\", 1]], \"-6\"], [[[\"W\", 1], [\"alpha\", 1], [\"h\", 2], [\"p\", -1], [\"rho\", -2], [\"vartheta\", 1]], \"-6\"]]",
+      "mutation": "wrong_H_orientation",
+      "output_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_failed_identity": "physical scalar residual = prefactor*(master residual\u2212dynamic trace residual)",
+      "failure": "IDENTITY FAILED: physical scalar residual = prefactor*(master residual\u2212dynamic trace residual); residual=[[[[\"W\", 1], [\"alpha\", 1], [\"p\", -1], [\"rho\", -4], [\"vartheta\", 1]], \"-15/2\"]]",
+      "mutation": "omit_boundary_constant",
+      "output_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_failed_identity": "physical scalar residual = prefactor*(master residual\u2212dynamic trace residual)",
+      "failure": "IDENTITY FAILED: physical scalar residual = prefactor*(master residual\u2212dynamic trace residual); residual=[[[[\"W\", 1], [\"a\", 1], [\"alpha\", 1], [\"ell\", -1], [\"h\", 1], [\"p\", -1], [\"rho\", -2], [\"vartheta\", 1]], \"-39/2\"], [[[\"W\", 1], [\"a\", 1], [\"alpha\", 1], [\"ell\", -1], [\"p\", -1], [\"rho\", -2], [\"s\", 1], [\"vartheta\", 1]], \"-15/2\"], [[[\"W\", 1], [\"a\", 1], [\"alpha\", 1], [\"h\", 1], [\"p\", -1], [\"rho\", -2], [\"vartheta\", 1]], \"39/2\"], [[[\"W\", 1], [\"a\", 1], [\"alpha\", 1], [\"p\", -1], [\"rho\", -2], [\"s\", 1], [\"vartheta\", 1]], \"15/2\"], [[[\"W\", 1], [\"a\", 2], [\"alpha\", 1], [\"ell\", -1], [\"p\", -1], [\"rho\", -2], [\"vartheta\", 1]], \"30\"], [[[\"W\", 1], [\"a\", 2], [\"alpha\", 1], [\"p\", -1], [\"rho\", -2], [\"vartheta\", 1]], \"-30\"], [[[\"W\", 1], [\"alpha\", 1], [\"ell\", -1], [\"h\", 1], [\"p\", -1], [\"rho\", -2], [\"s\", 1], [\"vartheta\", 1]], \"3\"], [[[\"W\", 1], [\"alpha\", 1], [\"ell\", -1], [\"h\", 2], [\"p\", -1], [\"rho\", -2], [\"vartheta\", 1]], \"3\"], [[[\"W\", 1], [\"alpha\", 1], [\"h\", 1], [\"p\", -1], [\"rho\", -2], [\"s\", 1], [\"vartheta\", 1]], \"-3\"], [[[\"W\", 1], [\"alpha\", 1], [\"h\", 2], [\"p\", -1], [\"rho\", -2], [\"vartheta\", 1]], \"-3\"], [[[\"Wr\", 1], [\"a\", 1], [\"alpha\", 1], [\"ell\", -2], [\"p\", -1], [\"rho\", -3], [\"vartheta\", 1]], \"12\"], [[[\"Wr\", 1], [\"a\", 1], [\"alpha\", 1], [\"ell\", -1], [\"p\", -1], [\"rho\", -3], [\"vartheta\", 1]], \"-12\"], [[[\"Wr\", 1], [\"alpha\", 1], [\"ell\", -2], [\"h\", 1], [\"p\", -1], [\"rho\", -3], [\"vartheta\", 1]], \"-3\"], [[[\"Wr\", 1], [\"alpha\", 1], [\"ell\", -2], [\"p\", -1], [\"rho\", -3], [\"s\", 1], [\"vartheta\", 1]], \"-3\"], [[[\"Wr\", 1], [\"alpha\", 1], [\"ell\", -1], [\"h\", 1], [\"p\", -1], [\"rho\", -3], [\"vartheta\", 1]], \"3\"], [[[\"Wr\", 1], [\"alpha\", 1], [\"ell\", -1], [\"p\", -1], [\"rho\", -3], [\"s\", 1], [\"vartheta\", 1]], \"3\"]]",
+      "mutation": "lose_ell",
+      "output_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_failed_identity": "physical scalar residual = prefactor*(master residual\u2212dynamic trace residual)",
+      "failure": "IDENTITY FAILED: physical scalar residual = prefactor*(master residual\u2212dynamic trace residual); residual=[[[[\"V2\", 1], [\"W\", 1], [\"alpha\", 1], [\"p\", -1], [\"rho\", -2], [\"vartheta\", 1]], \"-6\"]]",
+      "mutation": "wrong_potential",
+      "output_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_failed_identity": "physical scalar shell residual survives tangential-gauge pullback",
+      "failure": "IDENTITY FAILED: physical scalar shell residual survives tangential-gauge pullback; residual=[[[[\"ell\", -1], [\"fr\", 1], [\"p\", 1], [\"rho\", -1]], \"1\"]]",
+      "mutation": "omit_gauge_scalar_normal",
+      "output_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_failed_identity": "premature physical scalar cancellation from master alone",
+      "failure": "IDENTITY FAILED: premature physical scalar cancellation from master alone; residual=[[[[\"alpha\", 1], [\"ell\", -2], [\"p\", -1], [\"rho\", -4], [\"vartheta\", 1]], \"-3\"]]",
+      "mutation": "omit_dynamic_premise",
+      "output_absent": true,
+      "returncode": 1
+    }
+  ],
+  "factorization": {
+    "Dtrace": "W_xx-(ell/mu)*(W_r-ell*gamma*W)+ell^2*(5/2-35*Hubble^2/4)*W",
+    "Q": "2*h_ratio^2-10*a*h_ratio+35*a^2/4-V_second-p^2/6",
+    "Rmaster": "W_xx-W_rr+ell^2*(rho^2*Q-35*Hubble^2/4)*W",
+    "gamma": "rho_b*(h_ratio-5*a_b/2)",
+    "metric": "R1_ab=(u_y+2*a*u+p*chi/3)*gamma0_ab=0",
+    "mu_inverse": "rho_b*(h_ratio-4*a_b+sigma_second/2)",
+    "scalar": "P1=3*alpha*vartheta/(ell^2*rho_b^4*p_b)*(Rmaster-Dtrace)"
+  },
+  "identities": [
+    "actual R coefficient",
+    "actual scalar B coefficient",
+    "actual k coefficient",
+    "actual alpha inward derivative",
+    "longitudinal metric lapse AST",
+    "longitudinal metric time AST",
+    "longitudinal metric sphere AST",
+    "longitudinal master momentum reconstruction",
+    "one-copy physical metric shell residual",
+    "actual registered gamma definition",
+    "actual registered inverse-mu definition",
+    "actual registered master potential Q AST",
+    "physical scalar residual = prefactor*(master residual\u2212dynamic trace residual)",
+    "dynamic trace retains inertial time second derivative",
+    "dynamic/master time accelerations cancel in physical scalar normal condition",
+    "dynamic/master Hubble terms cancel in physical scalar normal condition",
+    "mu/gamma exact shell correlation",
+    "actual registered tension polynomial AST",
+    "actual affine-detuning tension sigma2",
+    "actual half sigma2",
+    "physical scalar shell residual survives tangential-gauge pullback",
+    "mixed shell metric trace B",
+    "mixed shell metric trace C",
+    "physical metric shell D survives tangential-gauge pullback",
+    "physical metric shell L survives tangential-gauge pullback",
+    "physical offdiagonal/anisotropic shell E",
+    "physical offdiagonal/anisotropic shell M",
+    "free tangential b value retained",
+    "free tangential d value retained",
+    "free radial normal gauge retained",
+    "master-only counterexample has zero master residual",
+    "master-only counterexample has nonzero dynamic trace",
+    "master-only counterexample retains physical scalar residual"
+  ],
+  "schema": "hdblast-first-shell-master-binding-v1",
+  "scope": {
+    "actual_first_AST_bound": true,
+    "cosmological_origin_established": false,
+    "existing_analytic_boundary_proof_retained": true,
+    "first_master_and_gauge_smooth_solution_existence_reproved": false,
+    "new_dynamic_trace_solution_constructed": false,
+    "second_order_solution_or_nonlinear_family_established": false,
+    "source_reconstruction_and_trace_law_coefficient_join": true
+  },
+  "selected_ast_sha256": {
+    "actual_model_tension": "4daedf1afa89b6337577ccb6df374d757bcac50709177db436497a56f18566c4",
+    "actual_potential_Q": "19742151cab40def3e948d10696aac754d385422628efa1b3a45204f43c90f85",
+    "background_alpha_z": "98f9ae89c091301c8566577b7bdd3adbd52b241f00393caacd1ca12261da6a56",
+    "background_selected_coefficients": "26366be2a24d778d2c7892472576b2f9f2809fe333155d93505a609d0ac147fa",
+    "frame_amplitudes": "b1bf7a6a5f580e3fcac937341c16bdd63b509c9589301a73970688226294c9f2"
+  },
+  "source_closures": {
+    "HDBLAST_GEOMETRIC_BULK_SOURCES_20261016": {
+      "authenticated_members": 168,
+      "manifest_sha256": "3ff1f95c151d2da6a1ab5e9b54718c2bb325c10d9c62a7ed9f97ef2bb36f0bb2"
+    },
+    "HDBLAST_INTERIOR_MASTER_JETS_20261015": {
+      "authenticated_members": 40,
+      "manifest_sha256": "b043a13a228d11296fbbde292aa15f7a024deab9ff915bdce452c52c73745bbb"
+    },
+    "HDBLAST_REGULAR_SHELL_SPECTRA_20261013": {
+      "authenticated_members": 129,
+      "manifest_sha256": "d1d47c66cef1ed79979c22ae7145dc66d35fa35be69dba900f9912ac01f31e2f"
+    }
+  },
+  "status": "PASS_FIRST_MASTER_DYNAMIC_SHELL_PHYSICAL_JUNCTION_BINDING"
+}
