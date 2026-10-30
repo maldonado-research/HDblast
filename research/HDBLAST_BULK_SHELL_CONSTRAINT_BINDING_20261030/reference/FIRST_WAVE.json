@@ -1,0 +1,214 @@
+{
+  "arithmetic": "Q Laurent polynomials, actual scaled jet derivations, cosh^(-2)=1-tanh^2 quotient; no point samples",
+  "checker_sha256": "bfddbbeec747857d10ba9e8014f5336ce24a0e84ac2246052bf0cbac8d43f73e",
+  "checks": [
+    "COORDINATE_LIE_FRAME_00",
+    "COORDINATE_LIE_FRAME_01",
+    "COORDINATE_LIE_FRAME_02",
+    "COORDINATE_LIE_FRAME_03",
+    "COORDINATE_LIE_FRAME_04",
+    "COORDINATE_LIE_FRAME_11",
+    "COORDINATE_LIE_FRAME_12",
+    "COORDINATE_LIE_FRAME_13",
+    "COORDINATE_LIE_FRAME_14",
+    "COORDINATE_LIE_FRAME_22",
+    "COORDINATE_LIE_FRAME_23",
+    "COORDINATE_LIE_FRAME_24",
+    "COORDINATE_LIE_FRAME_33",
+    "COORDINATE_LIE_FRAME_34",
+    "COORDINATE_LIE_FRAME_44",
+    "SCALAR_LIE_PULLBACK",
+    "PHYSICAL_DERIVATIVE_",
+    "PHYSICAL_DERIVATIVE_y",
+    "PHYSICAL_DERIVATIVE_t",
+    "PHYSICAL_DERIVATIVE_yy",
+    "PHYSICAL_DERIVATIVE_yt",
+    "PHYSICAL_DERIVATIVE_tt",
+    "MATRIX_A_00",
+    "MATRIX_A_01",
+    "MATRIX_A_02",
+    "MATRIX_A_10",
+    "MATRIX_A_11",
+    "MATRIX_A_12",
+    "MATRIX_A_20",
+    "MATRIX_A_21",
+    "MATRIX_A_22",
+    "MATRIX_B_00",
+    "MATRIX_B_01",
+    "MATRIX_B_02",
+    "MATRIX_B_10",
+    "MATRIX_B_11",
+    "MATRIX_B_12",
+    "MATRIX_B_20",
+    "MATRIX_B_21",
+    "MATRIX_B_22",
+    "MATRIX_D_00",
+    "MATRIX_D_01",
+    "MATRIX_D_02",
+    "MATRIX_D_10",
+    "MATRIX_D_11",
+    "MATRIX_D_12",
+    "MATRIX_D_20",
+    "MATRIX_D_21",
+    "MATRIX_D_22",
+    "SOURCE_RECONSTRUCTION_0",
+    "SOURCE_RECONSTRUCTION_1",
+    "SOURCE_RECONSTRUCTION_2",
+    "GAUGE_OPERATOR_RADIAL",
+    "GAUGE_OPERATOR_TIME",
+    "GAUGE_OPERATOR_ANGULAR_0",
+    "GAUGE_OPERATOR_ANGULAR_1",
+    "GAUGE_OPERATOR_ANGULAR_2",
+    "INITIAL_VALUE_A",
+    "INITIAL_TIME_JET_A",
+    "INITIAL_VALUE_B",
+    "INITIAL_TIME_JET_B",
+    "INITIAL_VALUE_C",
+    "INITIAL_TIME_JET_C",
+    "INITIAL_VALUE_D",
+    "INITIAL_TIME_JET_D",
+    "INITIAL_VALUE_E",
+    "INITIAL_TIME_JET_E",
+    "INITIAL_VALUE_L",
+    "INITIAL_TIME_JET_L",
+    "INITIAL_VALUE_M",
+    "INITIAL_TIME_JET_M",
+    "INITIAL_SCALAR_VALUE",
+    "INITIAL_SCALAR_TIME",
+    "INITIAL_RADIAL_ACCELERATION",
+    "SHELL_MIXED_TIME",
+    "SHELL_MIXED_ANGULAR",
+    "SHELL_SCALAR_PULLBACK"
+  ],
+  "coordinate_Lie_metric_components": 15,
+  "independent_DC_method": "full5Dparallel-frameconnectioncontraction;quadrupoleangularjetsandcovariantthirdderivative",
+  "initial_specialization": "same audited operator fixes f_tt=-6rho^2(u_y+4au) and b_tt=d_tt=0; compiled reconstruction gives corrected mixed first time jet",
+  "named_checks": 77,
+  "normalization_identities": [
+    "ell^2 rho^2 DC_y=(source_f-residual_f)Y",
+    "ell^2 rho DC_0=residual_b Y",
+    "ell^2 rho/c DC_a=-residual_d D_aY"
+  ],
+  "not_proved": [
+    "new PDE solve",
+    "global nonlinear family",
+    "small physical errors",
+    "cosmological origin",
+    "external specialist approval"
+  ],
+  "rejected_corrupted_executions": [
+    {
+      "expected_identity": "SCALAR_LIE_PULLBACK",
+      "mutation": "wrong_scalar_shift",
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "COORDINATE_LIE_FRAME_00",
+      "mutation": "drop_radial_rho",
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "COORDINATE_LIE_FRAME_00",
+      "mutation": "raw_radial_normalization",
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "COORDINATE_LIE_FRAME_22",
+      "mutation": "swap_clock_term",
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "GAUGE_OPERATOR_RADIAL",
+      "mutation": "wrong_time_contraction",
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "GAUGE_OPERATOR_ANGULAR_0",
+      "mutation": "wrong_hessian_divergence",
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "MATRIX_B_00",
+      "mutation": "wrong_radial_drift",
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "MATRIX_B_11",
+      "mutation": "wrong_tangential_drift",
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "MATRIX_A_00",
+      "mutation": "missing_ell_time_factor",
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "SOURCE_RECONSTRUCTION_0",
+      "mutation": "wrong_forcing_sign",
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "SOURCE_RECONSTRUCTION_0",
+      "mutation": "omit_source_ell_squared",
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "SOURCE_RECONSTRUCTION_0",
+      "mutation": "omit_source_rho_squared",
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "GAUGE_OPERATOR_ANGULAR_0",
+      "mutation": "wrong_angular_frame_factor",
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "PHYSICAL_DERIVATIVE_yy",
+      "mutation": "omit_variable_radial_conversion",
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "INITIAL_TIME_JET_B",
+      "mutation": "zero_initial_acceleration",
+      "report_absent": true,
+      "returncode": 1
+    }
+  ],
+  "retained_prerequisites": [
+    "actual smooth first gauge wave solves the registered PDE with zero Cauchy data",
+    "retained actual background and coupled first reconstruction",
+    "physical-half-line boundary trace regularity",
+    "existing scalar/Bianchi/Codazzi/subsidiary uniqueness chain"
+  ],
+  "source_authentication": {
+    "files": {
+      "research/HDBLAST_COMMON_GAUGE_FORCING_20261016/first-fields/FIRST_HARMONIC_FIELDS_UNPUBLISHED.md": "d15f8c65ffffd0085d195064ccea3c61bb4e719695652d0dd73472c8a06c224d",
+      "research/HDBLAST_FIRST_GAUGE_WAVE_20261016/coefficients/check_global_gauge_coefficients.py": "5c7e7f51b0257ef6d0d0ee861407f52d8b6a9a480e61367cc84dbc091aa8c42e",
+      "research/HDBLAST_FIRST_GAUGE_WAVE_20261016/operator/check_gauge_operator.py": "163553f2bdb9469b3ae40bd8f1c9bcf01077b690abac9a2a7b2513619ac99011",
+      "research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/numeric/actual_first_jets.py": "a68fa8025d2170efca6c3e85d443910a796d0c30a9b7dd17ed988cd9e00bbb00"
+    },
+    "first_wave_closed_files": 67,
+    "first_wave_manifest_sha256": "adb6e3a7e00a8e477af80a49bc6b7a0f4037fafd0dd42ab8175c8b55e3e4465c"
+  },
+  "source_registered_frame_sectors": 7,
+  "source_roles": {
+    "QC_evolving": "notcomputedhere",
+    "actual_wave_PDE": "analytic premise; this finite audit binds its operator coefficients",
+    "metric_forcing": "notusedhere"
+  },
+  "status": "PASS_EXACT_FIRST_WAVE_IMPLEMENTATION_BINDING"
+}

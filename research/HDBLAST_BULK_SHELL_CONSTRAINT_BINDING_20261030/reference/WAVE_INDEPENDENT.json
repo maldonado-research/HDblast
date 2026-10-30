@@ -1,0 +1,715 @@
+{
+  "arithmetic": "stdlib Fraction exact Laurent polynomials",
+  "checker_sha256": "e69ffa4d0ac097bb55dc4257960123db5ad83744814a7d6091a55cd298bcae02",
+  "checks": {
+    "completed_initial_QC_input_table_rows": 21,
+    "initial_DC_rows": 3,
+    "initial_value_rows": 7,
+    "initial_velocity_rows": 7,
+    "operator_normalizations": 3,
+    "ordinary_physical_derivative_rows": 6,
+    "primary_operator_rows": 3,
+    "primary_operator_source": 1,
+    "pullback_metric_rows": 7,
+    "scalar_pullback": 1,
+    "unabridged_reconstruction_rows": 8
+  },
+  "full_first_gauge_capsule_manifest_sha256": "adb6e3a7e00a8e477af80a49bc6b7a0f4037fafd0dd42ab8175c8b55e3e4465c",
+  "full_first_gauge_capsule_members_authenticated": 66,
+  "identities": [
+    "ell^2 rho^2 DC_y = s_f - Res_f",
+    "ell^2 rho DC_0 = Res_b",
+    "ell^2 rho/c DC_a = -Res_d D_aY"
+  ],
+  "limitations": [
+    "no produced result imported",
+    "no analytic PDE solve",
+    "no shell/Codazzi binding",
+    "no nonlinear or cosmological conclusion"
+  ],
+  "premises": [
+    "actual solution satisfies registered PDE as neighborhood identity",
+    "zero initial raw Cauchy data",
+    "retained analytic existence/regularity and physical domain",
+    "retained full frame DC formula and S3 identities"
+  ],
+  "rejected_corrupted_executions": [
+    {
+      "expected_identity": "scalar plus pullback",
+      "mutation": "wrong_scalar_shift",
+      "nonzero_exact_remainder": [
+        {
+          "coefficient": "-2",
+          "monomial": {
+            "f": 1,
+            "p": 1
+          }
+        }
+      ],
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "pullback A",
+      "mutation": "missing_radial_rho",
+      "nonzero_exact_remainder": [
+        {
+          "coefficient": "-2",
+          "monomial": {
+            "ell": -1,
+            "f:r": 1
+          }
+        },
+        {
+          "coefficient": "2",
+          "monomial": {
+            "ell": -1,
+            "f:r": 1,
+            "rho": -1
+          }
+        }
+      ],
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "pullback A",
+      "mutation": "raw_f_normalized",
+      "nonzero_exact_remainder": [
+        {
+          "coefficient": "2",
+          "monomial": {
+            "a": 1,
+            "f": 1,
+            "rho": 1
+          }
+        },
+        {
+          "coefficient": "-2",
+          "monomial": {
+            "ell": -1,
+            "f:r": 1
+          }
+        },
+        {
+          "coefficient": "2",
+          "monomial": {
+            "ell": -1,
+            "f:r": 1,
+            "rho": -1
+          }
+        }
+      ],
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "pullback L",
+      "mutation": "wrong_clock_term",
+      "nonzero_exact_remainder": [
+        {
+          "coefficient": "-2",
+          "monomial": {
+            "H": 1,
+            "b": 1
+          }
+        },
+        {
+          "coefficient": "2",
+          "monomial": {
+            "b:x": 1,
+            "ell": -1
+          }
+        }
+      ],
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "primary operator row f",
+      "mutation": "wrong_radial_drift",
+      "nonzero_exact_remainder": [
+        {
+          "coefficient": "1",
+          "monomial": {
+            "a": 1,
+            "ell": 1,
+            "f:r": 1,
+            "rho": 1
+          }
+        }
+      ],
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "primary operator source",
+      "mutation": "wrong_source_sign",
+      "nonzero_exact_remainder": [
+        {
+          "coefficient": "-48",
+          "monomial": {
+            "a": 1,
+            "ell": 2,
+            "rho": 2,
+            "u": 1
+          }
+        },
+        {
+          "coefficient": "12",
+          "monomial": {
+            "ell": 1,
+            "rho": 1,
+            "u:r": 1
+          }
+        }
+      ],
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "time normalization",
+      "mutation": "wrong_time_sign",
+      "nonzero_exact_remainder": [
+        {
+          "coefficient": "6",
+          "monomial": {
+            "H": 1,
+            "b:x": 1,
+            "ell": 1
+          }
+        },
+        {
+          "coefficient": "32",
+          "monomial": {
+            "H": 1,
+            "d": 1,
+            "ell": 2
+          }
+        },
+        {
+          "coefficient": "-22",
+          "monomial": {
+            "H": 2,
+            "b": 1,
+            "ell": 2
+          }
+        },
+        {
+          "coefficient": "10",
+          "monomial": {
+            "a": 1,
+            "b:r": 1,
+            "ell": 1,
+            "rho": 1
+          }
+        },
+        {
+          "coefficient": "4",
+          "monomial": {
+            "a": 1,
+            "ell": 1,
+            "f:x": 1
+          }
+        },
+        {
+          "coefficient": "10",
+          "monomial": {
+            "b": 1,
+            "ell": 2
+          }
+        },
+        {
+          "coefficient": "-2",
+          "monomial": {
+            "b:rr": 1
+          }
+        },
+        {
+          "coefficient": "2",
+          "monomial": {
+            "b:xx": 1
+          }
+        }
+      ],
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "angular normalization",
+      "mutation": "missing_angular_c",
+      "nonzero_exact_remainder": [
+        {
+          "coefficient": "2",
+          "monomial": {
+            "H": 1,
+            "b": 1,
+            "ell": 2
+          }
+        },
+        {
+          "coefficient": "-2",
+          "monomial": {
+            "H": 1,
+            "b": 1,
+            "ell": 2,
+            "q": 1
+          }
+        },
+        {
+          "coefficient": "-5",
+          "monomial": {
+            "H": 1,
+            "d:x": 1,
+            "ell": 1
+          }
+        },
+        {
+          "coefficient": "5",
+          "monomial": {
+            "H": 1,
+            "d:x": 1,
+            "ell": 1,
+            "q": 1
+          }
+        },
+        {
+          "coefficient": "-2",
+          "monomial": {
+            "H": 2,
+            "a": 1,
+            "ell": 2,
+            "f": 1
+          }
+        },
+        {
+          "coefficient": "2",
+          "monomial": {
+            "H": 2,
+            "a": 1,
+            "ell": 2,
+            "f": 1,
+            "q": 1
+          }
+        },
+        {
+          "coefficient": "4",
+          "monomial": {
+            "H": 2,
+            "d": 1,
+            "ell": 2
+          }
+        },
+        {
+          "coefficient": "-4",
+          "monomial": {
+            "H": 2,
+            "d": 1,
+            "ell": 2,
+            "q": 1
+          }
+        },
+        {
+          "coefficient": "-2",
+          "monomial": {
+            "H": 3,
+            "b": 1,
+            "ell": 2
+          }
+        },
+        {
+          "coefficient": "2",
+          "monomial": {
+            "H": 3,
+            "b": 1,
+            "ell": 2,
+            "q": 1
+          }
+        },
+        {
+          "coefficient": "5",
+          "monomial": {
+            "a": 1,
+            "d:r": 1,
+            "ell": 1,
+            "q": 1,
+            "rho": 1
+          }
+        },
+        {
+          "coefficient": "-5",
+          "monomial": {
+            "a": 1,
+            "d:r": 1,
+            "ell": 1,
+            "rho": 1
+          }
+        },
+        {
+          "coefficient": "2",
+          "monomial": {
+            "a": 1,
+            "ell": 2,
+            "f": 1
+          }
+        },
+        {
+          "coefficient": "-2",
+          "monomial": {
+            "a": 1,
+            "ell": 2,
+            "f": 1,
+            "q": 1
+          }
+        },
+        {
+          "coefficient": "-4",
+          "monomial": {
+            "d": 1,
+            "ell": 2
+          }
+        },
+        {
+          "coefficient": "4",
+          "monomial": {
+            "d": 1,
+            "ell": 2,
+            "q": 1
+          }
+        },
+        {
+          "coefficient": "1",
+          "monomial": {
+            "d:rr": 1
+          }
+        },
+        {
+          "coefficient": "-1",
+          "monomial": {
+            "d:rr": 1,
+            "q": 1
+          }
+        },
+        {
+          "coefficient": "-1",
+          "monomial": {
+            "d:xx": 1
+          }
+        },
+        {
+          "coefficient": "1",
+          "monomial": {
+            "d:xx": 1,
+            "q": 1
+          }
+        }
+      ],
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "ordinary physical derivative yy",
+      "mutation": "omit_variable_rho",
+      "nonzero_exact_remainder": [
+        {
+          "coefficient": "-1",
+          "monomial": {
+            "a": 1,
+            "ell": -1,
+            "f:r": 1,
+            "rho": -1
+          }
+        }
+      ],
+      "report_absent": true,
+      "returncode": 1
+    },
+    {
+      "expected_identity": "initial velocity B",
+      "mutation": "zero_initial_acceleration",
+      "nonzero_exact_remainder": [
+        {
+          "coefficient": "24",
+          "monomial": {
+            "a": 1,
+            "rho": 1,
+            "u": 1
+          }
+        },
+        {
+          "coefficient": "-6",
+          "monomial": {
+            "ell": -1,
+            "u:r": 1
+          }
+        }
+      ],
+      "report_absent": true,
+      "returncode": 1
+    }
+  ],
+  "rejection_remainders": {
+    "missing_angular_c": [
+      {
+        "coefficient": "2",
+        "monomial": {
+          "H": 1,
+          "b": 1,
+          "ell": 2,
+          "q": 1
+        }
+      },
+      {
+        "coefficient": "-2",
+        "monomial": {
+          "H": 1,
+          "b": 1,
+          "ell": 2,
+          "q": 2
+        }
+      },
+      {
+        "coefficient": "5",
+        "monomial": {
+          "H": 1,
+          "d:x": 1,
+          "ell": 1
+        }
+      },
+      {
+        "coefficient": "-5",
+        "monomial": {
+          "H": 1,
+          "d:x": 1,
+          "ell": 1,
+          "q": -1
+        }
+      },
+      {
+        "coefficient": "-5",
+        "monomial": {
+          "a": 1,
+          "d:r": 1,
+          "ell": 1,
+          "q": -1,
+          "rho": 1
+        }
+      },
+      {
+        "coefficient": "5",
+        "monomial": {
+          "a": 1,
+          "d:r": 1,
+          "ell": 1,
+          "rho": 1
+        }
+      },
+      {
+        "coefficient": "2",
+        "monomial": {
+          "a": 1,
+          "ell": 2,
+          "f": 1,
+          "q": 1
+        }
+      },
+      {
+        "coefficient": "-2",
+        "monomial": {
+          "a": 1,
+          "ell": 2,
+          "f": 1,
+          "q": 2
+        }
+      },
+      {
+        "coefficient": "-4",
+        "monomial": {
+          "d": 1,
+          "ell": 2,
+          "q": 1
+        }
+      },
+      {
+        "coefficient": "4",
+        "monomial": {
+          "d": 1,
+          "ell": 2,
+          "q": 2
+        }
+      },
+      {
+        "coefficient": "-1",
+        "monomial": {
+          "d:rr": 1
+        }
+      },
+      {
+        "coefficient": "1",
+        "monomial": {
+          "d:rr": 1,
+          "q": -1
+        }
+      },
+      {
+        "coefficient": "1",
+        "monomial": {
+          "d:xx": 1
+        }
+      },
+      {
+        "coefficient": "-1",
+        "monomial": {
+          "d:xx": 1,
+          "q": -1
+        }
+      }
+    ],
+    "raw_f_replaced_by_rho_f": [
+      {
+        "coefficient": "-1",
+        "monomial": {
+          "f": 1
+        }
+      },
+      {
+        "coefficient": "1",
+        "monomial": {
+          "f": 1,
+          "rho": 1
+        }
+      }
+    ],
+    "variable_rho_second_derivative_omitted": [
+      {
+        "coefficient": "1",
+        "monomial": {
+          "a": 1,
+          "ell": -1,
+          "f:r": 1,
+          "rho": -1
+        }
+      }
+    ],
+    "wrong_f_radial_drift": [
+      {
+        "coefficient": "2",
+        "monomial": {
+          "a": 1,
+          "ell": 1,
+          "f:r": 1,
+          "rho": 1
+        }
+      }
+    ],
+    "wrong_scalar_shift": [
+      {
+        "coefficient": "-2",
+        "monomial": {
+          "f": 1,
+          "p": 1
+        }
+      }
+    ],
+    "wrong_timelike_sign": [
+      {
+        "coefficient": "6",
+        "monomial": {
+          "H": 1,
+          "b:x": 1,
+          "ell": 1
+        }
+      },
+      {
+        "coefficient": "32",
+        "monomial": {
+          "H": 1,
+          "d": 1,
+          "ell": 2
+        }
+      },
+      {
+        "coefficient": "-9",
+        "monomial": {
+          "H": 2,
+          "b": 1,
+          "ell": 2
+        }
+      },
+      {
+        "coefficient": "10",
+        "monomial": {
+          "a": 1,
+          "b:r": 1,
+          "ell": 1,
+          "rho": 1
+        }
+      },
+      {
+        "coefficient": "4",
+        "monomial": {
+          "a": 1,
+          "ell": 1,
+          "f:x": 1
+        }
+      },
+      {
+        "coefficient": "-3",
+        "monomial": {
+          "b": 1,
+          "ell": 2
+        }
+      },
+      {
+        "coefficient": "13",
+        "monomial": {
+          "b": 1,
+          "ell": 2,
+          "q": 2
+        }
+      },
+      {
+        "coefficient": "-2",
+        "monomial": {
+          "b:rr": 1
+        }
+      },
+      {
+        "coefficient": "2",
+        "monomial": {
+          "b:xx": 1
+        }
+      }
+    ],
+    "zero_initial_acceleration": [
+      {
+        "coefficient": "24",
+        "monomial": {
+          "a": 1,
+          "rho": 1,
+          "u": 1
+        }
+      },
+      {
+        "coefficient": "-6",
+        "monomial": {
+          "ell": -1,
+          "u:r": 1
+        }
+      }
+    ]
+  },
+  "source_base_commit": "d98c641aabd658ff1bf456f29ae8b69886d52e54",
+  "source_readback_unchanged": true,
+  "source_runtime_requires_git": false,
+  "source_sha256": {
+    "actual": "a68fa8025d2170efca6c3e85d443910a796d0c30a9b7dd17ed988cd9e00bbb00",
+    "dc": "b53ccfd7c638c9b98df23803b50a6821ae46416adfb95f8a68a9e35b48b93f4f",
+    "initial_checker": "6b5ec8e23a6dea34273b9ddac1fdd85d3a0461ddf66bea810f3042096dd83ee5",
+    "original_operator": "163553f2bdb9469b3ae40bd8f1c9bcf01077b690abac9a2a7b2513619ac99011",
+    "pullback": "d15f8c65ffffd0085d195064ccea3c61bb4e719695652d0dd73472c8a06c224d",
+    "raw_system_note": "1fec12bc9f729ef7ca93fd4ec06fdce8fc1f61a2d295b6b04e3925ba609b479c",
+    "system": "00f654647d3cd5578e3f9afcb00dc3ec81739036f40adbe43f53e84b87506e98"
+  },
+  "status": "PASS"
+}
