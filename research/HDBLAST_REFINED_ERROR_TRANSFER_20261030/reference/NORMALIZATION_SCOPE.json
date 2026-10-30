@@ -1,0 +1,46 @@
+{
+  "input_sha256": {
+    "C2": "85bf4133d931d93401b339dc508553ae488bf91f43f75bd7e736432cc856a923",
+    "checker": "7d61979aee3566a2ca6455e28b2ea6a4af66140306d0e94ba0de0d2b86dcc233",
+    "combined": "3e4fb0174df7e88c566346a1b68aedbe4e731fbd062de11eafa28a2cae0a4989"
+  },
+  "invalid_formula_or_scope_runs_rejected": [
+    {
+      "guard": "denominator uses actual target derivative rather than affine approximation error",
+      "mode": "affine-error-denominator",
+      "rejected": true
+    },
+    {
+      "guard": "actual scalar mean has unit Gram weight",
+      "mode": "wrong-Gram",
+      "rejected": true
+    },
+    {
+      "guard": "retained classical target initial rr trace is an explicit required premise",
+      "mode": "drop-trace",
+      "rejected": true
+    },
+    {
+      "guard": "only declared global coordinate rr and max-second seminorm ratios justified",
+      "mode": "pointwise-relative",
+      "rejected": true
+    },
+    {
+      "guard": "only declared global coordinate rr and max-second seminorm ratios justified",
+      "mode": "separate-xx-denominator",
+      "rejected": true
+    },
+    {
+      "guard": "only declared global coordinate rr and max-second seminorm ratios justified",
+      "mode": "full-C2-norm",
+      "rejected": true
+    },
+    {
+      "guard": "only declared global coordinate rr and max-second seminorm ratios justified",
+      "mode": "physical-accuracy",
+      "rejected": true
+    }
+  ],
+  "scope": "Seven real invalid-formula/scope executions; no assertion of physical or pointwise relative accuracy.",
+  "status": "PASS_COORDINATE_NORMALIZATION_SCOPE_CONTROLS"
+}
