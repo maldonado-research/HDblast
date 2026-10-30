@@ -1,0 +1,48 @@
+name: Causal bulk quadrature and point transfer
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_CAUSAL_BULK_QUADRATURE_20261030/**'
+      - '.github/workflows/causal-bulk-quadrature-20261030.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_CAUSAL_BULK_QUADRATURE_20261030/**'
+      - '.github/workflows/causal-bulk-quadrature-20261030.yml'
+permissions:
+  contents: read
+jobs:
+  interval-quadrature-and-exact-controls:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Whole-panel interval quadrature and independent controls in both modes
+        shell: bash
+        run: |
+          set -euo pipefail
+          cap=research/HDBLAST_CAUSAL_BULK_QUADRATURE_20261030
+          for mode in normal optimized; do
+            flags=()
+            if [ "$mode" = optimized ]; then flags=(-O); fi
+            python -I -S -B "${flags[@]}" "$cap/checks/check_folded_geometry.py" > "$RUNNER_TEMP/GEOMETRY.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_interior_regression.py" --repo-root . --contact-capsule research/HDBLAST_SMOOTH_SHELL_CONTACT_20261030 --robin-capsule research/HDBLAST_ROBIN_RECONSTRUCTION_20261030 --bulk-capsule research/HDBLAST_ACTUAL_BULK_UPDATE_20261030 > "$RUNNER_TEMP/REGRESSION.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_bulk_quadrature.py" --repo-root . > "$RUNNER_TEMP/QUADRATURE.$mode.json"
+            cmp "$RUNNER_TEMP/QUADRATURE.$mode.json" "$cap/reference/QUADRATURE.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_bulk_quadrature.py" --repo-root . --alpha-panels 8 --theta-panels 16 --primitive-panels 16 > "$RUNNER_TEMP/COARSE.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_point_transfer.py" --repo-root . --quadrature-report "$RUNNER_TEMP/QUADRATURE.$mode.json" > "$RUNNER_TEMP/TRANSFER.$mode.json"
+            python -I -S -B "${flags[@]}" "$cap/checks/check_release_summary.py" --repo-root . > "$RUNNER_TEMP/SUMMARY.$mode.json"
+          done
+          for report in GEOMETRY REGRESSION QUADRATURE COARSE TRANSFER SUMMARY; do
+            cmp "$RUNNER_TEMP/$report.normal.json" "$RUNNER_TEMP/$report.optimized.json"
+            cmp "$RUNNER_TEMP/$report.normal.json" "$cap/reference/$report.json"
+          done
+          cat "$RUNNER_TEMP/GEOMETRY.normal.json"
+          cat "$RUNNER_TEMP/REGRESSION.normal.json"
