@@ -1,0 +1,61 @@
+{
+  "budgets": {
+    "abs_b_z": "216",
+    "b_lower": "14",
+    "b_upper": "15",
+    "coordinate_time_horizon": "1/625000",
+    "radial_clock_ceiling": "132",
+    "radial_clock_floor": "128",
+    "root_shooting_time": "1/800000"
+  },
+  "compact_gaussian_tube": {
+    "proper_tau": [
+      "0",
+      "1/5000"
+    ],
+    "scaled_initial_z": [
+      "1/16",
+      "3/16"
+    ],
+    "whole_sphere": true
+  },
+  "controls": [
+    "wrong_acceleration_sign",
+    "wrong_clock_unit",
+    "corrupt_domain_margin",
+    "source_pin_mutation_before_import"
+  ],
+  "date_utc": "2026-10-31",
+  "ell": "1/1000000",
+  "enclosing_chart_tube": {
+    "scaled_t": [
+      "0",
+      "8/5"
+    ],
+    "scaled_z": [
+      "1/32",
+      "1/4"
+    ]
+  },
+  "method": {
+    "background": "actual coherent retained branch, shell box plus authenticated first-exit vector-field image, same core.background API as actual_first_jets",
+    "clock": "tau_dagger exact integral of rho sech chi along that root",
+    "gaussian_jacobian": "j cosh chi/rho; positive radial and angular Gram; global injectivity on stated compact tube",
+    "independent_diagnostic": "optional mpmath values are never proof inputs",
+    "radial_shift": "m t\u00b2/2\u2212M\u00b3t\u2074/12 \u2264 z\u2212zi \u2264 M t\u00b2/2",
+    "root": "unique monotone shooting root; freeze exact implicit zi, not an interval endpoint or chosen float",
+    "shooting": "b_z<0, |b_z|\u2264216; j in [1\u2212216 t\u00b2,1] via strict first-exit bootstrap |j|<2",
+    "subdivision": "single whole background box; analytic integral and variational inequalities",
+    "transcendentals": "rational exponential alternating Taylor degree28 plus outward squaring; elementary tanh and sech inequalities"
+  },
+  "scope": {
+    "actual_background_conditional_on_authenticated_analytic_branch": true,
+    "effective_epsilon_radius": false,
+    "no_publication_or_git_edits": true
+  },
+  "status": "FROZEN_BEFORE_CERTIFICATE_EVALUATION",
+  "target": {
+    "t": "1/800000",
+    "z": "1/8000000"
+  }
+}

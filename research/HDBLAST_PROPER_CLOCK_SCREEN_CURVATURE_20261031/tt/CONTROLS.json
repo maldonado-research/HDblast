@@ -1,0 +1,78 @@
+{
+  "background_report_sha256": "abd05a8a93fd2f543a112c344ca7f92cf95ce6d56e379cb80ba1e7d9dfb94882",
+  "baseline_reports": {
+    "NORMAL": "4a5290e9b3907237a85cb17b72e1262561679d9acb0d5548a2832039416de486",
+    "OPTIMIZED": "4a5290e9b3907237a85cb17b72e1262561679d9acb0d5548a2832039416de486"
+  },
+  "checker_sha256": "83a8e7a132ff180c5f3c144442525f4f835fe9191297be75f34a67328b2450c6",
+  "controls": [
+    {
+      "exit_code": 1,
+      "failed_witness": "COMBINED_KERNEL_BOOST_IDENTITY",
+      "name": "wrong_Neumann_combo_sign",
+      "rejected": true,
+      "success_artifact_absent": true
+    },
+    {
+      "exit_code": 1,
+      "failed_witness": "COMBINED_KERNEL_BOOST_IDENTITY",
+      "name": "wrong_reflected_time_sign",
+      "rejected": true,
+      "success_artifact_absent": true
+    },
+    {
+      "exit_code": 1,
+      "failed_witness": "COMBINED_KERNEL_BOOST_IDENTITY",
+      "name": "wrong_positive_exp_weight",
+      "rejected": true,
+      "success_artifact_absent": true
+    },
+    {
+      "exit_code": 1,
+      "failed_witness": "RADIAL_KERNEL_ENDPOINT_SIGN",
+      "name": "wrong_radial_fold_sign",
+      "rejected": true,
+      "success_artifact_absent": true
+    },
+    {
+      "exit_code": 1,
+      "failed_witness": "COMPLETE_FEEDBACK_GAIN",
+      "name": "feedback_disabled",
+      "rejected": true,
+      "success_artifact_absent": true
+    },
+    {
+      "exit_code": 1,
+      "failed_witness": "NO_EXTRA_HALF_SECOND_DERIVATIVE",
+      "name": "extra_half_second_derivative",
+      "rejected": true,
+      "success_artifact_absent": true
+    },
+    {
+      "exit_code": 1,
+      "failed_witness": "COMPLETE_FEEDBACK_Q",
+      "name": "full_feedback_q_disabled",
+      "rejected": true,
+      "success_artifact_absent": true
+    },
+    {
+      "exit_code": 1,
+      "failed_witness": "HDBLAST_POSTCONTACT_SCREEN_CURVATURE_20261031:MEMBER_BYTES:main/POSTCONTACT_NORMAL.json",
+      "name": "authenticated_source_byte_corruption",
+      "rejected": true,
+      "success_artifact_absent": true
+    },
+    {
+      "exit_code": 1,
+      "failed_witness": "BACKGROUND_REPORT_PIN",
+      "name": "background_report_byte_corruption",
+      "rejected": true,
+      "success_artifact_absent": true
+    }
+  ],
+  "limits": "These controls verify formula wiring and authentication; they do not reprove inherited physical source boxes.",
+  "normal_optimized_canonical_equal": true,
+  "rejected_subprocess_count": 9,
+  "schema": "HDBLAST_PROPER_CLOCK_TT_SUBPROCESS_CONTROLS_V1",
+  "status": "PASS"
+}
