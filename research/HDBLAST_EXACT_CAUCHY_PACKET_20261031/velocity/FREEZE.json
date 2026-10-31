@@ -1,0 +1,95 @@
+{
+  "acceptance": "exact rational decisions; unresolved upper enclosures do not disprove true-error thresholds",
+  "adaptive_policy": "paired coefficient and ODE remainder channels each <=one half final velocity error threshold; parent component-cap intersection; no changing candidate; 128 then192 fallback; exact seed partition and budgets inherited",
+  "campaigns": [
+    {
+      "bits": 128,
+      "max_adaptive_leaves": 4096,
+      "max_dyadic_depth_relative_to_seed": 16
+    },
+    {
+      "bits": 192,
+      "max_adaptive_leaves": 4096,
+      "max_dyadic_depth_relative_to_seed": 16
+    }
+  ],
+  "candidate": "W1_exact_Cauchy_packet",
+  "domain": "D+:0<=x<=3/2,max(0,x-5/4)<=r<=7/4-x",
+  "footprint": [
+    "0",
+    "7/4"
+  ],
+  "formula": {
+    "E": "exp(-ell*r), ell=1/1000000",
+    "background": "same authenticated explicit nominal polynomial coefficients",
+    "displacement_convolution": false,
+    "outer": "f_i(R+h)=f_i(R-)+f_i,r(R-)h+f_i,rr(R-)h^2/2; R=7/4, h>=0",
+    "parity": "unchanged authenticated INITIAL_PROFILES parity",
+    "q": "exp(4-1/((r-1)*(2-r))) for 1<r<=7/4, zero for r<=1",
+    "q_E_paired_difference_channels": "exact functional identity zero; background difference channels retained",
+    "reconstruction": "full23 Context._registered including all five mean overrides, complete displacement before continuation",
+    "velocity": "complete nominal analytic all23 Context._registered(bg_nominal, exact E, exact q), including five mean overrides; no P1 interpolation or convolution",
+    "velocity_outer": "For each completed velocity component V_i, V_i(R+h)=V_i(R-)+V_i,r(R-) h for h>=0. Exact trace jets, never interval endpoints or raw-q continuation.",
+    "velocity_parity": "V_i(-r)=parity_i V_i(r), same authenticated full23 INITIAL_PROFILES velocity parity; flat zero on [0,1] and by reflection [-1,1]"
+  },
+  "frozen_before_benchmark": true,
+  "initial_gates": [
+    "new_v0<=old_C2_v0/2",
+    "new_v0_r<=old_C2_v0_r/2",
+    "all exact-packet displacement initial gates inherited unchanged"
+  ],
+  "input_sha256": {
+    "research/HDBLAST_BULK_SHELL_CONSTRAINT_BINDING_20261030/MANIFEST.json": "7eae74dedfef544199d410665deb5ebf013d4cf484745428aba37dac7ba0671e",
+    "research/HDBLAST_COMMON_GAUGE_FORCING_20261016/MANIFEST.json": "8bf173293b5cecf7f78e138ac5004abd9c7b1821ef29addb7ecfbc2a6409b4f6",
+    "research/HDBLAST_COUPLED_MEAN_PILOT_20261025/MANIFEST.json": "b932157f308c9912fa83ee06990f1132a4e75a498aafd66eb99dabcc30b256de",
+    "research/HDBLAST_EXACT_LOCALIZED_PRECONTACT_20261014/MANIFEST.json": "e0a2743b79a823cef7d54363f5b33bd030e1243e95803a300bca5be7181d0cfb",
+    "research/HDBLAST_EXACT_PACKET_INITIAL_20261031/MANIFEST.json": "8201452fa5bc745a9ccfd64f67f5f2a15c564a3364af619873825c3a7a6015aa",
+    "research/HDBLAST_EXACT_PACKET_INITIAL_20261031/checks/FREEZE.json": "aa9a7eae96aae988d3d1a25d83dcd6b436893a9464f7e3813436472a8e137ec1",
+    "research/HDBLAST_EXACT_PACKET_INITIAL_20261031/checks/producer.py": "1d7f535ecd5a380cca98408531841ab207b336fd56a249262e7671d06d591896",
+    "research/HDBLAST_EXACT_PACKET_INITIAL_20261031/reference/INITIAL.json": "692ac13f72354c526a0108ddae32800a9f22efb1a8afe4e987cbf403b5a296c3",
+    "research/HDBLAST_EXPLICIT_SECOND_INITIAL_JET_20261015/MANIFEST.json": "1b27636663347db5b7dc3112d5f157f69f8d615cf2a95df2c1309a06e0bf8e86",
+    "research/HDBLAST_FIRST_GAUGE_WAVE_20261016/MANIFEST.json": "adb6e3a7e00a8e477af80a49bc6b7a0f4037fafd0dd42ab8175c8b55e3e4465c",
+    "research/HDBLAST_FORCED_RESPONSE_BOUNDS_20261023/MANIFEST.json": "72924328a4e79cc77f0da90999b8dd56956bfdebd5e614e15c3c0498c3a8ae76",
+    "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/MANIFEST.json": "a35f84119e84bf2ea8a712ded86ff79977d3ee91ac25f91ccbd202d379c859ac",
+    "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/initial/full23_initial.py": "2e0b3fe803df47060550a4be716095450e710627fd7c5258d2b4e2868f1beda1",
+    "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/initial/results/INITIAL_PROFILES.json": "555f911f6c336862dfacb6aa56ef5179ac06701812d593b5bfbbf6ea9bd4d5d1",
+    "research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/MANIFEST.json": "3ff1f95c151d2da6a1ab5e9b54718c2bb325c10d9c62a7ed9f97ef2bb36f0bb2",
+    "research/HDBLAST_HIGHER_INITIAL_JETS_20261030/checks/initial_second_core.py": "f2d1bfef82220fc1e385a3bdb6de35487b1ef28c4caee37c8dddb6a2b68cb782",
+    "research/HDBLAST_HIGHER_INITIAL_JETS_20261030/reference/INITIAL.json": "bd8ec21a66f59736c13aaf2b5543c7724e04186a8a37e4293d8cba286ec57207",
+    "research/HDBLAST_HIGHER_INITIAL_JETS_20261030/reference/REPAIR.json": "4a6e4dcc02c8e0ece0d7452b45b4b2f1e37e8221303d20b6fbe8ec6496004002",
+    "research/HDBLAST_INITIAL_CURVATURE_REFINEMENT_20261030/MANIFEST.json": "bdaa626813194858b74a7fb155746307d701d6243eacb7cb36ac070a7978cdaa",
+    "research/HDBLAST_INITIAL_CURVATURE_REFINEMENT_20261030/reference/JOINS.json": "e1d0d6e3d8650cbf402ccb4f5a87fd20c20db651e3bd323c68f0bdea0219dd35",
+    "research/HDBLAST_INPUT_PRECISION_20261023/MANIFEST.json": "c2e7bd40e94422c5fd98820941231c0da63a8392b14a5a14c4340eabdde37f61",
+    "research/HDBLAST_INTERIOR_MASTER_JETS_20261015/MANIFEST.json": "b043a13a228d11296fbbde292aa15f7a024deab9ff915bdce452c52c73745bbb",
+    "research/HDBLAST_NATURAL_FIELD_BINDING_20261030/MANIFEST.json": "5121e4304fad7ab5856977b38c6ebd9fdc205900b543bc1c3d97384d246f378f",
+    "research/HDBLAST_NUMERICAL_RESPONSE_INPUTS_20261016/MANIFEST.json": "928f3e4e58d222a3c7e1274babf9e94930ec501b74cf6ba04209f97c6bbded44",
+    "research/HDBLAST_REDUCED_SOURCE_BINDING_20261031/MANIFEST.json": "ae4094fd0ec1f4d9a977b8036456f1b76e97d24ec2b8ed35b969d2065f0f7fa4",
+    "research/HDBLAST_REFINED_ERROR_TRANSFER_20261030/MANIFEST.json": "21a336eef2626c88cfd4d1dc3b5588583956868a123d06f1e675a7c6081650ce",
+    "research/HDBLAST_REFINED_ERROR_TRANSFER_20261030/reference/C2.json": "85bf4133d931d93401b339dc508553ae488bf91f43f75bd7e736432cc856a923",
+    "research/HDBLAST_REFINED_ERROR_TRANSFER_20261030/reference/COMBINED.json": "3e4fb0174df7e88c566346a1b68aedbe4e731fbd062de11eafa28a2cae0a4989",
+    "research/HDBLAST_REFINED_ERROR_TRANSFER_20261030/reference/NORMALIZATION.json": "e63711829cad2e3dea6ac7e133f754d0e25d04fc40c460c681c7ed1ef3a67a5a",
+    "research/HDBLAST_REGISTERED_INITIAL_CONSTRAINTS_20261030/MANIFEST.json": "ccba0e9f108f2ad4559784641c5c38140d9249e30ae56ce9c83f02b31893c56e",
+    "research/HDBLAST_REGULAR_CONE_EVOLUTION_20261013/MANIFEST.json": "a873132efe11755217ddb865fd0156041b8c1ad21ae1c45310183da4fb6140ae",
+    "research/HDBLAST_REGULAR_SHELL_SPECTRA_20261013/MANIFEST.json": "d1d47c66cef1ed79979c22ae7145dc66d35fa35be69dba900f9912ac01f31e2f",
+    "research/HDBLAST_SCREEN_MAGNETIC_CURVATURE_20261026/MANIFEST.json": "204e647b9f68f2af169b052deabee7c5d7f4bd71195fae31cefbfc2d10265777",
+    "research/HDBLAST_SECOND_INITIAL_NORMS_GAUGE_20261015/MANIFEST.json": "4c0dae7de0b63acca15e5204681a859f49e5b5028340457dea5c29246bf0626c",
+    "research/HDBLAST_SECOND_ORDER_LOCALIZED_20261014/MANIFEST.json": "675b0f18997cadd4ab595831d804ee97eb01bdd5cbc9fd3dc74762d26313a6d2",
+    "research/HDBLAST_SHELL_NOETHER_20261013/MANIFEST.json": "22cdb4ec6f19e2d07f3c439e05fa3c6ec716785b77dcd56f5c822ab4d52f5d9a",
+    "research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023/MANIFEST.json": "cffb213a69f7f9a27932e990ffdecb7569d1007e5e5baeda708d8dc39d0cce72"
+  },
+  "local_gates": [
+    "fresh actual analytic v_r full23 H denominator D>0",
+    "paired new error U<=D/10",
+    "U<fresh all23 actual-minus-old-smoothed-P1 error lower L/2"
+  ],
+  "local_old_velocity_derivative": "at r*=65/64: one half left adjacent P1 secant plus one half right adjacent P1 secant; even normalized kernel delta=1/2048 lies inside adjacent cells",
+  "local_point": [
+    "0",
+    "65/64"
+  ],
+  "near_edge": "exact q flat zero through r=1, authenticated tail derivative enclosure through5 on [1,65/64]; completed velocity needs q through3 in value and4 in radial derivative",
+  "regularity": "completed displacement globally C2; completed velocity globally C1 by affine trace matching, both flat at r=1 and at origin under parity; sufficient for C2 finite response. No C3 displacement or C2 velocity claim across R.",
+  "schema": "HDBLAST_EXACT_CAUCHY_PACKET_FREEZE_V1",
+  "scope": "Separate bounded conditional formal coefficient Cauchy-data experiment; actual U, original F/F_x/G/M, full23 H and physical-side domain fixed. No publication, nonlinear shell-contact, physical observable, or novelty claim.",
+  "seed_partition": "[0,1],[1,65/64], then consecutive [k/64,(k+1)/64] for k=65..111"
+}

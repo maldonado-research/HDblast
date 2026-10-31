@@ -1,0 +1,270 @@
+{
+  "acceptance": {
+    "desired_u_rr_factor_at_least": "2",
+    "u_no_worse": true,
+    "u_r_no_worse": true,
+    "u_rr_strict_reduction": true
+  },
+  "algorithm": "Evaluate completed registered nominal components with exact analytic q/E enclosures; retain componentwise minimum with every parent enclosure on each subset. Bisect leaves whose complete absolute rr H cap exceeds baseline/2 until all satisfy or budget exhausted. Exact zero collar and authenticated analytic tail are retained, never omitted; denominator separation checked. No error channel is changed.",
+  "budget_conservative_interpretation": "4096 leaves total including collar and tail, stricter than a per-seed cap",
+  "candidate": "W1_exact_packet",
+  "capsule_manifest_sha256": "8201452fa5bc745a9ccfd64f67f5f2a15c564a3364af619873825c3a7a6015aa",
+  "capsule_relative": "research/HDBLAST_EXACT_PACKET_INITIAL_20261031",
+  "complete_components": 23,
+  "controls": [
+    "coverage gap",
+    "coverage overlap",
+    "dropped all23 component",
+    "wrong Gram weight",
+    "understated leaf cap",
+    "understated aggregate cap",
+    "changed frozen error ledger",
+    "invalid parent inheritance",
+    "source tamper"
+  ],
+  "derivatives": [
+    "u",
+    "u_r",
+    "u_rr"
+  ],
+  "fallback_precision_bits": 192,
+  "fallback_requires_parent_agreement": true,
+  "frozen_before_new_evaluation": true,
+  "frozen_complete_initial_error_H_caps": {
+    "e0": "1986018216892193460562160369288243600755230411414576795317/85070591730234615865843651857942052864",
+    "e0_r": "237519019018901593252599226137944449296899949028931341186119/170141183460469231731687303715884105728",
+    "e0_rr": "5903466937654459236886288583881094728057363887777268356854705/42535295865117307932921825928971026432",
+    "v0": "15882826808903649619672935655557308277225354646811512445/2596148429267413814265248164610048",
+    "v0_r": "25109161119489234460668050337506949182629279140905599308589/2596148429267413814265248164610048"
+  },
+  "initial_freeze_sha256": "aa9a7eae96aae988d3d1a25d83dcd6b436893a9464f7e3813436472a8e137ec1",
+  "initial_report_sha256": "692ac13f72354c526a0108ddae32800a9f22efb1a8afe4e987cbf403b5a296c3",
+  "max_depth_relative_to_seed": 16,
+  "max_total_leaves": 4096,
+  "old_absolute_H_caps": {
+    "u": "18182717304519109077482337293093858049051773320637716714943446362088115/340282366920938463463374607431768211456",
+    "u_r": "1087334892014985406050532148310985899043226075251231725283563539459640953/340282366920938463463374607431768211456",
+    "u_rr": "108103395082677834406455469259518578023223798119883694460185744631759973923/340282366920938463463374607431768211456"
+  },
+  "precision_bits": 128,
+  "producer_sha256": "1d7f535ecd5a380cca98408531841ab207b336fd56a249262e7671d06d591896",
+  "schema": "HDBLAST_SAME_EXACT_PACKET_ABSOLUTE_REFINEMENT_FREEZE_V1",
+  "scope": "Same candidate and unknown true error unchanged; only an upper certificate may tighten. U,F,F_x,G,M,D+,H and initial velocity/error charges fixed. Existing conditional analytic theorems retained; no full nonlinear shell-contact result.",
+  "seed_partition": [
+    [
+      "0",
+      "1"
+    ],
+    [
+      "1",
+      "65/64"
+    ],
+    [
+      "65/64",
+      "33/32"
+    ],
+    [
+      "33/32",
+      "67/64"
+    ],
+    [
+      "67/64",
+      "17/16"
+    ],
+    [
+      "17/16",
+      "69/64"
+    ],
+    [
+      "69/64",
+      "35/32"
+    ],
+    [
+      "35/32",
+      "71/64"
+    ],
+    [
+      "71/64",
+      "9/8"
+    ],
+    [
+      "9/8",
+      "73/64"
+    ],
+    [
+      "73/64",
+      "37/32"
+    ],
+    [
+      "37/32",
+      "75/64"
+    ],
+    [
+      "75/64",
+      "19/16"
+    ],
+    [
+      "19/16",
+      "77/64"
+    ],
+    [
+      "77/64",
+      "39/32"
+    ],
+    [
+      "39/32",
+      "79/64"
+    ],
+    [
+      "79/64",
+      "5/4"
+    ],
+    [
+      "5/4",
+      "81/64"
+    ],
+    [
+      "81/64",
+      "41/32"
+    ],
+    [
+      "41/32",
+      "83/64"
+    ],
+    [
+      "83/64",
+      "21/16"
+    ],
+    [
+      "21/16",
+      "85/64"
+    ],
+    [
+      "85/64",
+      "43/32"
+    ],
+    [
+      "43/32",
+      "87/64"
+    ],
+    [
+      "87/64",
+      "11/8"
+    ],
+    [
+      "11/8",
+      "89/64"
+    ],
+    [
+      "89/64",
+      "45/32"
+    ],
+    [
+      "45/32",
+      "91/64"
+    ],
+    [
+      "91/64",
+      "23/16"
+    ],
+    [
+      "23/16",
+      "93/64"
+    ],
+    [
+      "93/64",
+      "47/32"
+    ],
+    [
+      "47/32",
+      "95/64"
+    ],
+    [
+      "95/64",
+      "3/2"
+    ],
+    [
+      "3/2",
+      "97/64"
+    ],
+    [
+      "97/64",
+      "49/32"
+    ],
+    [
+      "49/32",
+      "99/64"
+    ],
+    [
+      "99/64",
+      "25/16"
+    ],
+    [
+      "25/16",
+      "101/64"
+    ],
+    [
+      "101/64",
+      "51/32"
+    ],
+    [
+      "51/32",
+      "103/64"
+    ],
+    [
+      "103/64",
+      "13/8"
+    ],
+    [
+      "13/8",
+      "105/64"
+    ],
+    [
+      "105/64",
+      "53/32"
+    ],
+    [
+      "53/32",
+      "107/64"
+    ],
+    [
+      "107/64",
+      "27/16"
+    ],
+    [
+      "27/16",
+      "109/64"
+    ],
+    [
+      "109/64",
+      "55/32"
+    ],
+    [
+      "55/32",
+      "111/64"
+    ],
+    [
+      "111/64",
+      "7/4"
+    ]
+  ],
+  "unchanged_velocity": {
+    "P1_exterior": "last cell slope continued; H-isometric parity reflection",
+    "absolute_H_caps": {
+      "v": "24100248070009323874819973504355117800353338949919062967022054625627/89202980794122492566142873090593446023921664",
+      "v_r": "2946441448533453554465677352470177251555353522564221536478454121/340282366920938463463374607431768211456"
+    },
+    "delta_v": "1/2048",
+    "error_H_caps": {
+      "v0": "15882826808903649619672935655557308277225354646811512445/2596148429267413814265248164610048",
+      "v0_r": "25109161119489234460668050337506949182629279140905599308589/2596148429267413814265248164610048"
+    },
+    "error_ledger_retained_exactly": true,
+    "kernel": "35/(32*delta_v)*(1-(s/delta_v)^2)^3 on |s|<=delta_v; zero outside",
+    "kernel_absolute_first_moment_per_width": "35/128",
+    "kernel_mass": 1,
+    "profile_sha256": "555f911f6c336862dfacb6aa56ef5179ac06701812d593b5bfbbf6ea9bd4d5d1",
+    "regularity": "P1 is continuous and Lipschitz; compact C2 kernel implies smoothed velocity C2, hence required C1; differentiation uses locally integrable P1 slopes",
+    "support_zero_through": "2079/2048"
+  }
+}

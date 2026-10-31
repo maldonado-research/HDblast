@@ -1,0 +1,48 @@
+{
+  "adapter_sha256": "449d1d0293cfe2f1b8620ea8827a6ffa4343731c60c62b26f5acb94dcbf0639c",
+  "candidate": "W1_exact_Cauchy_packet",
+  "input_pins": {
+    "absolute": {
+      "FREEZE.json": "4ab1875803ba4bf3aa09881be3bd645b0355bb721fb08d6d469e75dffa7fe1d5",
+      "REFINEMENT.json": "308d787996de08e6e8d2ca31e7ff86703a2bd067e0ee308bee4e6a402cde2da0",
+      "auth.py": "7a0d13ebec87b29bde073caf1fbe678825c78d289008ffa748b30520fb15adab",
+      "check_refinement.py": "f0e1f8d859a6b6e9af3f14019606c8a40021a5da274fc457087f48241fc448f1",
+      "refine.py": "41f5f96a677266f15715962d61bfb55fe140ee43db5679b4dc916e1b0bfda805"
+    },
+    "independent_velocity": {
+      "AUDIT_PORTABLE_FINAL_NORMAL.json": "a5f1ce60f11177e893ac591b78425050d5b7c1d7b966e89e3292ae73ba84b966",
+      "INITIAL_NORMAL.json": "0afd992b335987e1a7fec01e6fcbbe5710e28d0fa0b0bb0f88d5df94b1352d2c",
+      "REGULARITY_FINAL_NORMAL.json": "f1a1d3eaa055e0a5a3c196574d51b98490a9517b78aa9fc6b987bdeff58a1306",
+      "producer-pins.json": "09bd76fd1fd98256a8ee7873605d39632e0588203f76ccb674a27ad39677067d",
+      "regularity-source-pins.json": "e4530a87ad17f90113f4d16719473da5a9e4196e0f29ac5e9ea12c3a6526764a",
+      "scripts/check_velocity_independent.py": "dca3fc5fd62c890a15d283aca7a0124db9e8c6789f47457bdd3dee2eda5beb53",
+      "scripts/check_velocity_regularity.py": "abf111499393fee277a4a4468be2e636e0d0ec49b3823c2c62e3192b557f2f57",
+      "scripts/check_velocity_reports.py": "38989b5c27b0eb7d41ad49913096d7e0846e98090fe4990b973c9783ac2c0f91",
+      "scripts/portable_velocity_audit.py": "d309d3aa2a54f00cafc1c5d653653f35f632349d9e88bfddb5bdf750be141e74",
+      "source-pins.json": "ce31d4d0a720cc0779261184494a83aa59349fa0449f8a86cc1245bda1595a4b"
+    },
+    "same_response": {
+      "checks/FREEZE.json": "f13ab951a28f5286a20a4fe8f34d1ceb4572e77482454782bd0ee3e68d4cd4f7",
+      "checks/response_adapter.py": "b4d6cd3651cf71a987bb1d32d2a746eb3bc3c64a88f245caf8d956c433e2a417",
+      "reference/RESPONSE.json": "6a0adb48d79b210a60322920e70ad6a60f2862b1ade3222c67a285419198b74e"
+    },
+    "velocity": {
+      "FREEZE.json": "14f79fefd73e9207fddddda354cdc7fb4fe67e744e16e27e2417a2edce8700fd",
+      "INITIAL_NORMAL.json": "219d9fe0aeb161a31da564014dc85d4712ecae339e46485b16242bb724219c89",
+      "REGULARITY_AND_LOCAL_PROOF.md": "a03287622fa93a337c03546a9b5ea2bc2b563c46ff4074ce91a78ed676c146d6",
+      "producer.py": "d4fc6550cbda65bd40fb37673b110f2d6793ec7b441b38948244e6273a621256"
+    }
+  },
+  "physical_scope": "Conditional formal coordinate response; C2 displacement and C1 velocity, compatible corners/source coefficients retained. No new evolved point table, natural/constraint residual, invariant observable or nonlinear claim.",
+  "required_gates": [
+    "native whole initial/local PASS",
+    "independent whole initial/local PASS",
+    "native all23 completed velocity outer affine trace equality through1",
+    "independent analytic regularity PASS",
+    "displacement errors exactly PR109",
+    "each second response upper at most PR109/2",
+    "C1 no worse than PR109"
+  ],
+  "role": "Separate new velocity candidate; same displacement and unchanged actual target/source/operators/domain/H. Old exact-packet candidate preserved. New velocity absolute/error caps must all come from fresh native analytic report.",
+  "schema": "HDBLAST_SEPARATE_EXACT_CAUCHY_RESPONSE_FREEZE_V1"
+}

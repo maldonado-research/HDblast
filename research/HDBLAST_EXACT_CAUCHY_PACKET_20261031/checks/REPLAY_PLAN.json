@@ -1,0 +1,1124 @@
+{
+  "expected_canonical_reports": 17,
+  "expected_rejected_subprocesses": 340,
+  "groups": [
+    {
+      "name": "absolute",
+      "steps": [
+        {
+          "argv": [
+            "{CAP}/absolute/refine.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--output",
+            "{OUT}/absolute/native-refinement-normal.json"
+          ],
+          "canonical_key": "native-refinement",
+          "kind": "canonical",
+          "name": "native-refinement-normal",
+          "optimized": false,
+          "output": "{OUT}/absolute/native-refinement-normal.json",
+          "reference": "absolute/REFINEMENT.json"
+        },
+        {
+          "argv": [
+            "{CAP}/absolute/refine.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--output",
+            "{OUT}/absolute/native-refinement-optimized.json"
+          ],
+          "canonical_key": "native-refinement",
+          "kind": "canonical",
+          "name": "native-refinement-optimized",
+          "optimized": true,
+          "output": "{OUT}/absolute/native-refinement-optimized.json",
+          "reference": "absolute/REFINEMENT.json"
+        },
+        {
+          "argv": [
+            "{CAP}/absolute/check_refinement.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--report",
+            "{CAP}/absolute/REFINEMENT.json",
+            "--output",
+            "{OUT}/absolute/native-replay-normal.json"
+          ],
+          "canonical_key": "native-replay",
+          "kind": "canonical",
+          "name": "native-replay-normal",
+          "optimized": false,
+          "output": "{OUT}/absolute/native-replay-normal.json",
+          "reference": "absolute/CHECK_NORMAL.json"
+        },
+        {
+          "argv": [
+            "{CAP}/absolute/check_refinement.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--report",
+            "{CAP}/absolute/REFINEMENT.json",
+            "--output",
+            "{OUT}/absolute/native-replay-optimized.json"
+          ],
+          "canonical_key": "native-replay",
+          "kind": "canonical",
+          "name": "native-replay-optimized",
+          "optimized": true,
+          "output": "{OUT}/absolute/native-replay-optimized.json",
+          "reference": "absolute/CHECK_NORMAL.json"
+        },
+        {
+          "argv": [
+            "{CAP}/absolute/run_controls.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--report",
+            "{CAP}/absolute/REFINEMENT.json",
+            "--output-dir",
+            "{OUT}/absolute/native-controls"
+          ],
+          "contract": {
+            "case_field": "case",
+            "count": 28,
+            "count_field": "execution_count",
+            "mode_field": "mode",
+            "mode_values": [
+              "normal",
+              "optimized"
+            ],
+            "nonempty": [
+              "failure",
+              "nonzero_mutation_witness"
+            ],
+            "returncode": "returncode",
+            "rows": "receipts",
+            "true": [
+              "successful_output_absent"
+            ]
+          },
+          "kind": "controls",
+          "name": "native-controls",
+          "receipt": "{OUT}/absolute/native-controls/CONTROLS.json"
+        },
+        {
+          "argv": [
+            "{CAP}/absolute-independent/scripts/refine_independent.py",
+            "--source-root",
+            "{SOURCE}",
+            "--freeze-sha256",
+            "c8c8e8d74dde1d173bdf4db1825e2b14fa423cd7adcdd8fe21e803c50c8db655",
+            "--output",
+            "{OUT}/absolute/independent-absolute-normal.json"
+          ],
+          "canonical_key": "independent-absolute",
+          "kind": "canonical",
+          "name": "independent-absolute-normal",
+          "optimized": false,
+          "output": "{OUT}/absolute/independent-absolute-normal.json",
+          "reference": "absolute-independent/reference/INDEPENDENT_ABSOLUTE.json"
+        },
+        {
+          "argv": [
+            "{CAP}/absolute-independent/scripts/refine_independent.py",
+            "--source-root",
+            "{SOURCE}",
+            "--freeze-sha256",
+            "c8c8e8d74dde1d173bdf4db1825e2b14fa423cd7adcdd8fe21e803c50c8db655",
+            "--output",
+            "{OUT}/absolute/independent-absolute-optimized.json"
+          ],
+          "canonical_key": "independent-absolute",
+          "kind": "canonical",
+          "name": "independent-absolute-optimized",
+          "optimized": true,
+          "output": "{OUT}/absolute/independent-absolute-optimized.json",
+          "reference": "absolute-independent/reference/INDEPENDENT_ABSOLUTE.json"
+        },
+        {
+          "argv": [
+            "{CAP}/absolute-independent/own_report_audit/check_report.py",
+            "--source-root",
+            "{SOURCE}",
+            "--support-root",
+            "{CAP}/absolute-independent",
+            "--report",
+            "{CAP}/absolute-independent/reference/INDEPENDENT_ABSOLUTE.json",
+            "--report-sha256",
+            "b7b0511e899b71b022d56e02dcbef0d116cf3fede9fc4e1c7bf7f73c77514275",
+            "--output",
+            "{OUT}/absolute/independent-semantics-normal.json"
+          ],
+          "canonical_key": "independent-semantics",
+          "kind": "canonical",
+          "name": "independent-semantics-normal",
+          "optimized": false,
+          "output": "{OUT}/absolute/independent-semantics-normal.json",
+          "reference": "absolute-independent/own_report_audit/executed/SEMANTICS.json"
+        },
+        {
+          "argv": [
+            "{CAP}/absolute-independent/own_report_audit/check_report.py",
+            "--source-root",
+            "{SOURCE}",
+            "--support-root",
+            "{CAP}/absolute-independent",
+            "--report",
+            "{CAP}/absolute-independent/reference/INDEPENDENT_ABSOLUTE.json",
+            "--report-sha256",
+            "b7b0511e899b71b022d56e02dcbef0d116cf3fede9fc4e1c7bf7f73c77514275",
+            "--output",
+            "{OUT}/absolute/independent-semantics-optimized.json"
+          ],
+          "canonical_key": "independent-semantics",
+          "kind": "canonical",
+          "name": "independent-semantics-optimized",
+          "optimized": true,
+          "output": "{OUT}/absolute/independent-semantics-optimized.json",
+          "reference": "absolute-independent/own_report_audit/executed/SEMANTICS.json"
+        },
+        {
+          "argv": [
+            "{STAGE_I}/own_report_audit/run_controls.py",
+            "--source-root",
+            "{SOURCE}",
+            "--support-root",
+            "{CAP}/absolute-independent",
+            "--report",
+            "{CAP}/absolute-independent/reference/INDEPENDENT_ABSOLUTE.json",
+            "--report-sha256",
+            "b7b0511e899b71b022d56e02dcbef0d116cf3fede9fc4e1c7bf7f73c77514275",
+            "--output-dir",
+            "{OUT}/absolute/semantic-controls"
+          ],
+          "contract": {
+            "case_field": "case",
+            "count": 26,
+            "count_field": null,
+            "mode_field": "optimized",
+            "mode_values": [
+              false,
+              true
+            ],
+            "nonempty": [
+              "expected_rejection"
+            ],
+            "returncode": null,
+            "rows": "controls",
+            "true": [
+              "nonzero_exit",
+              "no_success_artifact"
+            ]
+          },
+          "kind": "controls",
+          "name": "independent-semantic-controls",
+          "receipt": "{OUT}/absolute/semantic-controls/CONTROLS.json"
+        },
+        {
+          "argv": [
+            "{CAP}/absolute-independent/scripts/audit_native_structure.py",
+            "--source-root",
+            "{SOURCE}",
+            "--producer-root",
+            "{CAP}/absolute",
+            "--report",
+            "{CAP}/absolute/REFINEMENT.json",
+            "--source-pins",
+            "{CAP}/absolute-independent/source-pins.json",
+            "--source-pins-sha256",
+            "95ca851d90cf037a2bed9b98088fd912f96dcf9e5fa96736adda9f043f1d1f6e",
+            "--producer-pins",
+            "{CAP}/absolute-independent/producer-source-pins.json",
+            "--producer-pins-sha256",
+            "77de3c44ae9e1fb4579f7560198b9c977073d87cd24534ac1d77ec91f9c6d19d",
+            "--output",
+            "{OUT}/absolute/independent-native-audit-normal.json"
+          ],
+          "canonical_key": "independent-native-audit",
+          "kind": "canonical",
+          "name": "independent-native-audit-normal",
+          "optimized": false,
+          "output": "{OUT}/absolute/independent-native-audit-normal.json",
+          "reference": "absolute-independent/reference/NATIVE_AUDIT_NORMAL.json"
+        },
+        {
+          "argv": [
+            "{CAP}/absolute-independent/scripts/audit_native_structure.py",
+            "--source-root",
+            "{SOURCE}",
+            "--producer-root",
+            "{CAP}/absolute",
+            "--report",
+            "{CAP}/absolute/REFINEMENT.json",
+            "--source-pins",
+            "{CAP}/absolute-independent/source-pins.json",
+            "--source-pins-sha256",
+            "95ca851d90cf037a2bed9b98088fd912f96dcf9e5fa96736adda9f043f1d1f6e",
+            "--producer-pins",
+            "{CAP}/absolute-independent/producer-source-pins.json",
+            "--producer-pins-sha256",
+            "77de3c44ae9e1fb4579f7560198b9c977073d87cd24534ac1d77ec91f9c6d19d",
+            "--output",
+            "{OUT}/absolute/independent-native-audit-optimized.json"
+          ],
+          "canonical_key": "independent-native-audit",
+          "kind": "canonical",
+          "name": "independent-native-audit-optimized",
+          "optimized": true,
+          "output": "{OUT}/absolute/independent-native-audit-optimized.json",
+          "reference": "absolute-independent/reference/NATIVE_AUDIT_NORMAL.json"
+        },
+        {
+          "argv": [
+            "{STAGE_I}/scripts/run_native_audit_controls.py",
+            "--source-root",
+            "{SOURCE}",
+            "--producer-root",
+            "{CAP}/absolute",
+            "--output",
+            "{OUT}/absolute/native-audit-CONTROLS.json"
+          ],
+          "contract": {
+            "case_field": "control",
+            "count": 30,
+            "count_field": "actual_failing_subprocesses",
+            "mode_field": "optimized",
+            "mode_values": [
+              false,
+              true
+            ],
+            "nonempty": [
+              "expected_rejection"
+            ],
+            "returncode": "returncode",
+            "rows": "rows",
+            "true": [
+              "expected_rejection_observed",
+              "no_success_output"
+            ]
+          },
+          "kind": "controls",
+          "name": "independent-native-controls",
+          "receipt": "{OUT}/absolute/native-audit-CONTROLS.json"
+        }
+      ]
+    },
+    {
+      "name": "velocity",
+      "steps": [
+        {
+          "argv": [
+            "{CAP}/velocity/producer.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--output",
+            "{OUT}/velocity/native-initial-normal.json"
+          ],
+          "canonical_key": "native-initial",
+          "kind": "canonical",
+          "name": "native-initial-normal",
+          "optimized": false,
+          "output": "{OUT}/velocity/native-initial-normal.json",
+          "reference": "velocity/INITIAL_NORMAL.json"
+        },
+        {
+          "argv": [
+            "{CAP}/velocity/producer.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--output",
+            "{OUT}/velocity/native-initial-optimized.json"
+          ],
+          "canonical_key": "native-initial",
+          "kind": "canonical",
+          "name": "native-initial-optimized",
+          "optimized": true,
+          "output": "{OUT}/velocity/native-initial-optimized.json",
+          "reference": "velocity/INITIAL_NORMAL.json"
+        },
+        {
+          "argv": [
+            "{CAP}/velocity/producer.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--local-only",
+            "--output",
+            "{OUT}/velocity/native-local-normal.json"
+          ],
+          "canonical_key": "native-local",
+          "kind": "canonical",
+          "name": "native-local-normal",
+          "optimized": false,
+          "output": "{OUT}/velocity/native-local-normal.json",
+          "reference": "velocity/LOCAL.json"
+        },
+        {
+          "argv": [
+            "{CAP}/velocity/producer.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--local-only",
+            "--output",
+            "{OUT}/velocity/native-local-optimized.json"
+          ],
+          "canonical_key": "native-local",
+          "kind": "canonical",
+          "name": "native-local-optimized",
+          "optimized": true,
+          "output": "{OUT}/velocity/native-local-optimized.json",
+          "reference": "velocity/LOCAL.json"
+        },
+        {
+          "argv": [
+            "{CAP}/velocity/check_controls.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--output",
+            "{OUT}/velocity/native-control-identities-normal.json"
+          ],
+          "canonical_key": "native-control-identities",
+          "kind": "canonical",
+          "name": "native-control-identities-normal",
+          "optimized": false,
+          "output": "{OUT}/velocity/native-control-identities-normal.json",
+          "reference": "velocity/CONTROLS_NORMAL.json"
+        },
+        {
+          "argv": [
+            "{CAP}/velocity/check_controls.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--output",
+            "{OUT}/velocity/native-control-identities-optimized.json"
+          ],
+          "canonical_key": "native-control-identities",
+          "kind": "canonical",
+          "name": "native-control-identities-optimized",
+          "optimized": true,
+          "output": "{OUT}/velocity/native-control-identities-optimized.json",
+          "reference": "velocity/CONTROLS_NORMAL.json"
+        },
+        {
+          "argv": [
+            "{CAP}/checks/run_native_velocity_controls.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--velocity-dir",
+            "{CAP}/velocity",
+            "--output-dir",
+            "{OUT}/velocity/native-controls"
+          ],
+          "contract": {
+            "case_field": "case",
+            "count": 30,
+            "count_field": "rejected_process_count",
+            "mode_field": "mode",
+            "mode_values": [
+              "normal",
+              "optimized"
+            ],
+            "nonempty": [
+              "expected_rejection"
+            ],
+            "returncode": "returncode",
+            "rows": "receipts",
+            "true": [
+              "success_artifact_absent",
+              "expected_rejection_observed"
+            ]
+          },
+          "kind": "controls",
+          "name": "native-subprocess-controls",
+          "receipt": "{OUT}/velocity/native-controls/CONTROLS.json"
+        },
+        {
+          "argv": [
+            "{CAP}/velocity-independent/scripts/check_velocity_independent.py",
+            "--source",
+            "{SOURCE}",
+            "--coverage",
+            "--out",
+            "{OUT}/velocity/independent-initial-normal.json"
+          ],
+          "canonical_key": "independent-initial",
+          "kind": "canonical",
+          "name": "independent-initial-normal",
+          "optimized": false,
+          "output": "{OUT}/velocity/independent-initial-normal.json",
+          "reference": "velocity-independent/INITIAL_NORMAL.json"
+        },
+        {
+          "argv": [
+            "{CAP}/velocity-independent/scripts/check_velocity_independent.py",
+            "--source",
+            "{SOURCE}",
+            "--coverage",
+            "--out",
+            "{OUT}/velocity/independent-initial-optimized.json"
+          ],
+          "canonical_key": "independent-initial",
+          "kind": "canonical",
+          "name": "independent-initial-optimized",
+          "optimized": true,
+          "output": "{OUT}/velocity/independent-initial-optimized.json",
+          "reference": "velocity-independent/INITIAL_NORMAL.json"
+        },
+        {
+          "argv": [
+            "{CAP}/velocity-independent/scripts/check_velocity_regularity.py",
+            "--source-root",
+            "{SOURCE}",
+            "--producer-root",
+            "{CAP}/velocity",
+            "--pins",
+            "{CAP}/velocity-independent/regularity-source-pins.json",
+            "--output",
+            "{OUT}/velocity/independent-regularity-normal.json"
+          ],
+          "canonical_key": "independent-regularity",
+          "kind": "canonical",
+          "name": "independent-regularity-normal",
+          "optimized": false,
+          "output": "{OUT}/velocity/independent-regularity-normal.json",
+          "reference": "velocity-independent/REGULARITY_FINAL_NORMAL.json"
+        },
+        {
+          "argv": [
+            "{CAP}/velocity-independent/scripts/check_velocity_regularity.py",
+            "--source-root",
+            "{SOURCE}",
+            "--producer-root",
+            "{CAP}/velocity",
+            "--pins",
+            "{CAP}/velocity-independent/regularity-source-pins.json",
+            "--output",
+            "{OUT}/velocity/independent-regularity-optimized.json"
+          ],
+          "canonical_key": "independent-regularity",
+          "kind": "canonical",
+          "name": "independent-regularity-optimized",
+          "optimized": true,
+          "output": "{OUT}/velocity/independent-regularity-optimized.json",
+          "reference": "velocity-independent/REGULARITY_FINAL_NORMAL.json"
+        },
+        {
+          "argv": [
+            "{CAP}/velocity-independent/scripts/portable_velocity_audit.py",
+            "--source",
+            "{SOURCE}",
+            "--own",
+            "{CAP}/velocity-independent/INITIAL_NORMAL.json",
+            "--native",
+            "{CAP}/velocity/INITIAL_NORMAL.json",
+            "--producer-root",
+            "{CAP}/velocity",
+            "--output",
+            "{OUT}/velocity/independent-native-audit-normal.json"
+          ],
+          "canonical_key": "independent-native-audit",
+          "kind": "canonical",
+          "name": "independent-native-audit-normal",
+          "optimized": false,
+          "output": "{OUT}/velocity/independent-native-audit-normal.json",
+          "reference": "velocity-independent/AUDIT_PORTABLE_FINAL_NORMAL.json"
+        },
+        {
+          "argv": [
+            "{CAP}/velocity-independent/scripts/portable_velocity_audit.py",
+            "--source",
+            "{SOURCE}",
+            "--own",
+            "{CAP}/velocity-independent/INITIAL_NORMAL.json",
+            "--native",
+            "{CAP}/velocity/INITIAL_NORMAL.json",
+            "--producer-root",
+            "{CAP}/velocity",
+            "--output",
+            "{OUT}/velocity/independent-native-audit-optimized.json"
+          ],
+          "canonical_key": "independent-native-audit",
+          "kind": "canonical",
+          "name": "independent-native-audit-optimized",
+          "optimized": true,
+          "output": "{OUT}/velocity/independent-native-audit-optimized.json",
+          "reference": "velocity-independent/AUDIT_PORTABLE_FINAL_NORMAL.json"
+        },
+        {
+          "argv": [
+            "{STAGE_J}/scripts/run_velocity_controls.py",
+            "--source",
+            "{SOURCE}",
+            "--producer-root",
+            "{CAP}/velocity",
+            "--output-dir",
+            "{OUT}/velocity/independent-controls",
+            "--receipt",
+            "{OUT}/velocity/INDEPENDENT_CONTROLS.json"
+          ],
+          "contract": {
+            "case_field": "case",
+            "count": 28,
+            "count_field": "subprocess_rejections",
+            "mode_field": "optimized",
+            "mode_values": [
+              false,
+              true
+            ],
+            "nonempty": [
+              "expected_group",
+              "observed_failure"
+            ],
+            "returncode": "exit_code",
+            "rows": "receipts",
+            "true": [
+              "success_artifact_absent"
+            ]
+          },
+          "kind": "controls",
+          "name": "independent-controls",
+          "receipt": "{OUT}/velocity/INDEPENDENT_CONTROLS.json"
+        }
+      ]
+    },
+    {
+      "name": "response",
+      "steps": [
+        {
+          "argv": [
+            "{CAP}/response/checks/response_adapter.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--freeze-sha256",
+            "f13ab951a28f5286a20a4fe8f34d1ceb4572e77482454782bd0ee3e68d4cd4f7",
+            "--output",
+            "{OUT}/response/same-baseline-normal.json"
+          ],
+          "canonical_key": "same-baseline",
+          "kind": "canonical",
+          "name": "same-baseline-normal",
+          "optimized": false,
+          "output": "{OUT}/response/same-baseline-normal.json",
+          "reference": "response/reference/BASELINE.json"
+        },
+        {
+          "argv": [
+            "{CAP}/response/checks/response_adapter.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--freeze-sha256",
+            "f13ab951a28f5286a20a4fe8f34d1ceb4572e77482454782bd0ee3e68d4cd4f7",
+            "--output",
+            "{OUT}/response/same-baseline-optimized.json"
+          ],
+          "canonical_key": "same-baseline",
+          "kind": "canonical",
+          "name": "same-baseline-optimized",
+          "optimized": true,
+          "output": "{OUT}/response/same-baseline-optimized.json",
+          "reference": "response/reference/BASELINE.json"
+        },
+        {
+          "argv": [
+            "{CAP}/response/checks/response_adapter.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--freeze-sha256",
+            "f13ab951a28f5286a20a4fe8f34d1ceb4572e77482454782bd0ee3e68d4cd4f7",
+            "--caps",
+            "{CAP}/absolute/REFINEMENT.json",
+            "--caps-sha256",
+            "308d787996de08e6e8d2ca31e7ff86703a2bd067e0ee308bee4e6a402cde2da0",
+            "--proof-input",
+            "{CAP}/absolute/refine.py=41f5f96a677266f15715962d61bfb55fe140ee43db5679b4dc916e1b0bfda805",
+            "--proof-input",
+            "{CAP}/absolute/check_refinement.py=f0e1f8d859a6b6e9af3f14019606c8a40021a5da274fc457087f48241fc448f1",
+            "--proof-input",
+            "{CAP}/absolute/auth.py=7a0d13ebec87b29bde073caf1fbe678825c78d289008ffa748b30520fb15adab",
+            "--proof-input",
+            "{CAP}/absolute/FREEZE.json=4ab1875803ba4bf3aa09881be3bd645b0355bb721fb08d6d469e75dffa7fe1d5",
+            "--output",
+            "{OUT}/response/same-response-normal.json"
+          ],
+          "canonical_key": "same-response",
+          "kind": "canonical",
+          "name": "same-response-normal",
+          "optimized": false,
+          "output": "{OUT}/response/same-response-normal.json",
+          "reference": "response/reference/RESPONSE.json"
+        },
+        {
+          "argv": [
+            "{CAP}/response/checks/response_adapter.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--freeze-sha256",
+            "f13ab951a28f5286a20a4fe8f34d1ceb4572e77482454782bd0ee3e68d4cd4f7",
+            "--caps",
+            "{CAP}/absolute/REFINEMENT.json",
+            "--caps-sha256",
+            "308d787996de08e6e8d2ca31e7ff86703a2bd067e0ee308bee4e6a402cde2da0",
+            "--proof-input",
+            "{CAP}/absolute/refine.py=41f5f96a677266f15715962d61bfb55fe140ee43db5679b4dc916e1b0bfda805",
+            "--proof-input",
+            "{CAP}/absolute/check_refinement.py=f0e1f8d859a6b6e9af3f14019606c8a40021a5da274fc457087f48241fc448f1",
+            "--proof-input",
+            "{CAP}/absolute/auth.py=7a0d13ebec87b29bde073caf1fbe678825c78d289008ffa748b30520fb15adab",
+            "--proof-input",
+            "{CAP}/absolute/FREEZE.json=4ab1875803ba4bf3aa09881be3bd645b0355bb721fb08d6d469e75dffa7fe1d5",
+            "--output",
+            "{OUT}/response/same-response-optimized.json"
+          ],
+          "canonical_key": "same-response",
+          "kind": "canonical",
+          "name": "same-response-optimized",
+          "optimized": true,
+          "output": "{OUT}/response/same-response-optimized.json",
+          "reference": "response/reference/RESPONSE.json"
+        },
+        {
+          "argv": [
+            "{STAGE_R}/checks/run_controls.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--caps",
+            "{CAP}/absolute/REFINEMENT.json",
+            "--response",
+            "{CAP}/response/reference/RESPONSE.json",
+            "--output-dir",
+            "{OUT}/response/same-controls"
+          ],
+          "contract": {
+            "case_field": "control",
+            "count": 62,
+            "count_field": "count",
+            "mode_field": "mode",
+            "mode_values": [
+              "normal",
+              "optimized"
+            ],
+            "nonempty": [
+              "expected_rejection"
+            ],
+            "returncode": "returncode",
+            "rows": "records",
+            "true": [
+              "success_artifact_absent"
+            ]
+          },
+          "kind": "controls",
+          "name": "same-controls",
+          "receipt": "{OUT}/response/same-controls/CONTROLS.json"
+        },
+        {
+          "argv": [
+            "{CAP}/response/cauchy/checks/response_cauchy.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--same-response-dir",
+            "{CAP}/response",
+            "--absolute-dir",
+            "{CAP}/absolute",
+            "--velocity-dir",
+            "{CAP}/velocity",
+            "--independent-velocity-dir",
+            "{CAP}/velocity-independent",
+            "--freeze-sha256",
+            "6cb41096a36598a130dda1d19bec14c53c33ac723aec2a1e6638389d4308d751",
+            "--output",
+            "{OUT}/response/cauchy-response-normal.json"
+          ],
+          "canonical_key": "cauchy-response",
+          "kind": "canonical",
+          "name": "cauchy-response-normal",
+          "optimized": false,
+          "output": "{OUT}/response/cauchy-response-normal.json",
+          "reference": "response/cauchy/reference/RESPONSE.json"
+        },
+        {
+          "argv": [
+            "{CAP}/response/cauchy/checks/response_cauchy.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--same-response-dir",
+            "{CAP}/response",
+            "--absolute-dir",
+            "{CAP}/absolute",
+            "--velocity-dir",
+            "{CAP}/velocity",
+            "--independent-velocity-dir",
+            "{CAP}/velocity-independent",
+            "--freeze-sha256",
+            "6cb41096a36598a130dda1d19bec14c53c33ac723aec2a1e6638389d4308d751",
+            "--output",
+            "{OUT}/response/cauchy-response-optimized.json"
+          ],
+          "canonical_key": "cauchy-response",
+          "kind": "canonical",
+          "name": "cauchy-response-optimized",
+          "optimized": true,
+          "output": "{OUT}/response/cauchy-response-optimized.json",
+          "reference": "response/cauchy/reference/RESPONSE.json"
+        },
+        {
+          "argv": [
+            "{STAGE_R}/cauchy/checks/run_controls.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--same-response-dir",
+            "{CAP}/response",
+            "--absolute-dir",
+            "{CAP}/absolute",
+            "--velocity-dir",
+            "{CAP}/velocity",
+            "--independent-velocity-dir",
+            "{CAP}/velocity-independent",
+            "--response",
+            "{CAP}/response/cauchy/reference/RESPONSE.json",
+            "--output-dir",
+            "{OUT}/response/cauchy-controls"
+          ],
+          "contract": {
+            "case_field": "control",
+            "count": 60,
+            "count_field": "count",
+            "mode_field": "mode",
+            "mode_values": [
+              "normal",
+              "optimized"
+            ],
+            "nonempty": [
+              "expected_rejection"
+            ],
+            "returncode": "returncode",
+            "rows": "records",
+            "true": [
+              "success_artifact_absent"
+            ]
+          },
+          "kind": "controls",
+          "name": "cauchy-controls",
+          "receipt": "{OUT}/response/cauchy-controls/CONTROLS.json"
+        },
+        {
+          "argv": [
+            "{CAP}/absolute-independent/ledger_review/check_refined_response_independent.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--source-pins",
+            "{CAP}/absolute-independent/ledger_review/source-pins.json",
+            "--source-pins-sha256",
+            "255d3c3372d97a6a5a7ffa5663fe55363c904129adf62102d781014df4124272",
+            "--absolute",
+            "{CAP}/absolute-independent/reference/INDEPENDENT_ABSOLUTE.json",
+            "--absolute-sha256",
+            "b7b0511e899b71b022d56e02dcbef0d116cf3fede9fc4e1c7bf7f73c77514275",
+            "--absolute-support-root",
+            "{CAP}/absolute-independent",
+            "--producer-response",
+            "{CAP}/response/reference/RESPONSE.json",
+            "--producer-response-sha256",
+            "6a0adb48d79b210a60322920e70ad6a60f2862b1ade3222c67a285419198b74e",
+            "--producer-source",
+            "{CAP}/response/checks/response_adapter.py",
+            "--producer-source-sha256",
+            "b4d6cd3651cf71a987bb1d32d2a746eb3bc3c64a88f245caf8d956c433e2a417",
+            "--output",
+            "{OUT}/response/independent-same-ledger-normal.json"
+          ],
+          "canonical_key": "independent-same-ledger",
+          "kind": "canonical",
+          "name": "independent-same-ledger-normal",
+          "optimized": false,
+          "output": "{OUT}/response/independent-same-ledger-normal.json",
+          "reference": "absolute-independent/ledger_review/INDEPENDENT_RESPONSE.json"
+        },
+        {
+          "argv": [
+            "{CAP}/absolute-independent/ledger_review/check_refined_response_independent.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--source-pins",
+            "{CAP}/absolute-independent/ledger_review/source-pins.json",
+            "--source-pins-sha256",
+            "255d3c3372d97a6a5a7ffa5663fe55363c904129adf62102d781014df4124272",
+            "--absolute",
+            "{CAP}/absolute-independent/reference/INDEPENDENT_ABSOLUTE.json",
+            "--absolute-sha256",
+            "b7b0511e899b71b022d56e02dcbef0d116cf3fede9fc4e1c7bf7f73c77514275",
+            "--absolute-support-root",
+            "{CAP}/absolute-independent",
+            "--producer-response",
+            "{CAP}/response/reference/RESPONSE.json",
+            "--producer-response-sha256",
+            "6a0adb48d79b210a60322920e70ad6a60f2862b1ade3222c67a285419198b74e",
+            "--producer-source",
+            "{CAP}/response/checks/response_adapter.py",
+            "--producer-source-sha256",
+            "b4d6cd3651cf71a987bb1d32d2a746eb3bc3c64a88f245caf8d956c433e2a417",
+            "--output",
+            "{OUT}/response/independent-same-ledger-optimized.json"
+          ],
+          "canonical_key": "independent-same-ledger",
+          "kind": "canonical",
+          "name": "independent-same-ledger-optimized",
+          "optimized": true,
+          "output": "{OUT}/response/independent-same-ledger-optimized.json",
+          "reference": "absolute-independent/ledger_review/INDEPENDENT_RESPONSE.json"
+        },
+        {
+          "argv": [
+            "{STAGE_I}/ledger_review/run_controls.py",
+            "--source-root",
+            "{SOURCE}",
+            "--absolute-root",
+            "{CAP}/absolute-independent",
+            "--response-root",
+            "{CAP}/response",
+            "--output-dir",
+            "{OUT}/response/independent-same-controls"
+          ],
+          "contract": {
+            "case_field": "case",
+            "count": 22,
+            "count_field": null,
+            "mode_field": "optimized",
+            "mode_values": [
+              false,
+              true
+            ],
+            "nonempty": [
+              "expected_rejection"
+            ],
+            "returncode": null,
+            "rows": "controls",
+            "true": [
+              "nonzero_exit",
+              "no_success_artifact"
+            ]
+          },
+          "kind": "controls",
+          "name": "independent-same-controls",
+          "receipt": "{OUT}/response/independent-same-controls/CONTROLS.json"
+        },
+        {
+          "argv": [
+            "{CAP}/absolute-independent/cauchy_response_review/check_cauchy_response.py",
+            "--source-root",
+            "{SOURCE}",
+            "--same-response-root",
+            "{CAP}/response",
+            "--absolute-root",
+            "{CAP}/absolute",
+            "--velocity-root",
+            "{CAP}/velocity",
+            "--independent-velocity-root",
+            "{CAP}/velocity-independent",
+            "--producer-source",
+            "{CAP}/response/cauchy/checks/response_cauchy.py",
+            "--producer-freeze",
+            "{CAP}/response/cauchy/checks/FREEZE.json",
+            "--producer-report",
+            "{CAP}/response/cauchy/reference/RESPONSE.json",
+            "--producer-report-sha256",
+            "22554f77c72f0f489bbd1daa5c40274411d0cd71faff71fe50c38cbbd2c814c2",
+            "--output",
+            "{OUT}/response/independent-cauchy-ledger-normal.json"
+          ],
+          "canonical_key": "independent-cauchy-ledger",
+          "kind": "canonical",
+          "name": "independent-cauchy-ledger-normal",
+          "optimized": false,
+          "output": "{OUT}/response/independent-cauchy-ledger-normal.json",
+          "reference": "absolute-independent/cauchy_response_review/executed/INDEPENDENT_RESPONSE_NORMAL.json"
+        },
+        {
+          "argv": [
+            "{CAP}/absolute-independent/cauchy_response_review/check_cauchy_response.py",
+            "--source-root",
+            "{SOURCE}",
+            "--same-response-root",
+            "{CAP}/response",
+            "--absolute-root",
+            "{CAP}/absolute",
+            "--velocity-root",
+            "{CAP}/velocity",
+            "--independent-velocity-root",
+            "{CAP}/velocity-independent",
+            "--producer-source",
+            "{CAP}/response/cauchy/checks/response_cauchy.py",
+            "--producer-freeze",
+            "{CAP}/response/cauchy/checks/FREEZE.json",
+            "--producer-report",
+            "{CAP}/response/cauchy/reference/RESPONSE.json",
+            "--producer-report-sha256",
+            "22554f77c72f0f489bbd1daa5c40274411d0cd71faff71fe50c38cbbd2c814c2",
+            "--output",
+            "{OUT}/response/independent-cauchy-ledger-optimized.json"
+          ],
+          "canonical_key": "independent-cauchy-ledger",
+          "kind": "canonical",
+          "name": "independent-cauchy-ledger-optimized",
+          "optimized": true,
+          "output": "{OUT}/response/independent-cauchy-ledger-optimized.json",
+          "reference": "absolute-independent/cauchy_response_review/executed/INDEPENDENT_RESPONSE_NORMAL.json"
+        },
+        {
+          "argv": [
+            "{STAGE_I}/cauchy_response_review/run_controls.py",
+            "--source-root",
+            "{SOURCE}",
+            "--same-response-root",
+            "{CAP}/response",
+            "--absolute-root",
+            "{CAP}/absolute",
+            "--velocity-root",
+            "{CAP}/velocity",
+            "--independent-velocity-root",
+            "{CAP}/velocity-independent",
+            "--producer-source",
+            "{CAP}/response/cauchy/checks/response_cauchy.py",
+            "--producer-freeze",
+            "{CAP}/response/cauchy/checks/FREEZE.json",
+            "--producer-report",
+            "{CAP}/response/cauchy/reference/RESPONSE.json",
+            "--producer-report-sha256",
+            "22554f77c72f0f489bbd1daa5c40274411d0cd71faff71fe50c38cbbd2c814c2",
+            "--output-dir",
+            "{OUT}/response/independent-cauchy-controls"
+          ],
+          "contract": {
+            "case_field": "case",
+            "count": 34,
+            "count_field": "rejected_subprocesses",
+            "mode_field": "optimized",
+            "mode_values": [
+              false,
+              true
+            ],
+            "nonempty": [
+              "expected_rejection"
+            ],
+            "returncode": null,
+            "rows": "controls",
+            "true": [
+              "nonzero_exit",
+              "no_success_artifact"
+            ]
+          },
+          "kind": "controls",
+          "name": "independent-cauchy-controls",
+          "receipt": "{OUT}/response/independent-cauchy-controls/CONTROLS.json"
+        },
+        {
+          "argv": [
+            "{CAP}/velocity-independent/scripts/portable_conservative_response.py",
+            "--source",
+            "{SOURCE}",
+            "--absolute-dir",
+            "{CAP}/absolute",
+            "--native-response",
+            "{CAP}/response/cauchy/reference/RESPONSE.json",
+            "--output",
+            "{OUT}/response/independent-conservative-response-normal.json"
+          ],
+          "canonical_key": "independent-conservative-response",
+          "kind": "canonical",
+          "name": "independent-conservative-response-normal",
+          "optimized": false,
+          "output": "{OUT}/response/independent-conservative-response-normal.json",
+          "reference": "velocity-independent/CONSERVATIVE_RESPONSE_PORTABLE_NORMAL.json"
+        },
+        {
+          "argv": [
+            "{CAP}/velocity-independent/scripts/portable_conservative_response.py",
+            "--source",
+            "{SOURCE}",
+            "--absolute-dir",
+            "{CAP}/absolute",
+            "--native-response",
+            "{CAP}/response/cauchy/reference/RESPONSE.json",
+            "--output",
+            "{OUT}/response/independent-conservative-response-optimized.json"
+          ],
+          "canonical_key": "independent-conservative-response",
+          "kind": "canonical",
+          "name": "independent-conservative-response-optimized",
+          "optimized": true,
+          "output": "{OUT}/response/independent-conservative-response-optimized.json",
+          "reference": "velocity-independent/CONSERVATIVE_RESPONSE_PORTABLE_NORMAL.json"
+        },
+        {
+          "argv": [
+            "{STAGE_J}/scripts/run_conservative_response_controls.py",
+            "--source",
+            "{SOURCE}",
+            "--absolute-dir",
+            "{CAP}/absolute",
+            "--native-response",
+            "{CAP}/response/cauchy/reference/RESPONSE.json",
+            "--output-dir",
+            "{OUT}/response/independent-conservative-controls",
+            "--receipt",
+            "{OUT}/response/INDEPENDENT_CONSERVATIVE_CONTROLS.json"
+          ],
+          "contract": {
+            "case_field": "case",
+            "count": 20,
+            "count_field": "subprocess_rejections",
+            "mode_field": "optimized",
+            "mode_values": [
+              false,
+              true
+            ],
+            "nonempty": [
+              "expected_group",
+              "observed_failure"
+            ],
+            "returncode": "exit_code",
+            "rows": "receipts",
+            "true": [
+              "success_artifact_absent"
+            ]
+          },
+          "kind": "controls",
+          "name": "independent-conservative-controls",
+          "receipt": "{OUT}/response/INDEPENDENT_CONSERVATIVE_CONTROLS.json"
+        }
+      ]
+    }
+  ],
+  "schema": "HDBLAST_EXACT_CAUCHY_ROOT_REPLAY_PLAN_V1",
+  "scope": "Conditional coordinate upper certificates. Same-candidate bound refinement and distinct exact-Cauchy velocity improvement remain separate. No nonlinear shell-contact solution, invariant observable or cosmological claim.",
+  "stages": [
+    {
+      "component": "absolute-independent",
+      "isolate_wrappers": [
+        "scripts/run_native_audit_controls.py",
+        "own_report_audit/run_controls.py",
+        "ledger_review/run_controls.py",
+        "cauchy_response_review/run_controls.py"
+      ],
+      "name": "absolute-independent-controls",
+      "placeholder": "STAGE_I"
+    },
+    {
+      "component": "velocity-independent",
+      "isolate_wrappers": [
+        "scripts/run_velocity_controls.py",
+        "scripts/run_conservative_response_controls.py"
+      ],
+      "name": "velocity-independent-controls",
+      "placeholder": "STAGE_J"
+    },
+    {
+      "component": "response",
+      "isolate_wrappers": [
+        "checks/run_controls.py",
+        "cauchy/checks/run_controls.py"
+      ],
+      "name": "response-controls",
+      "placeholder": "STAGE_R"
+    }
+  ]
+}
