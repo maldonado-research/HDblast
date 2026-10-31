@@ -1,0 +1,103 @@
+{
+  "checker_source_sha256": "1c38f6e025e6d70fcbc1f9d2eebd8d220edf29080a9c24a694f620ea0db9e92f",
+  "controls": [
+    {
+      "checker_sha256": "97628465cbe249db10f054a59bf41120c1ae2bca9c51291578f17107fcf9172d",
+      "control": "wrong_boundary_lift_sign",
+      "exit_code": 1,
+      "failed_witness": "LIFT_SIGN_WITNESS:got=7/3;expected=-7/3",
+      "no_success_report": true,
+      "optimized": false
+    },
+    {
+      "checker_sha256": "97628465cbe249db10f054a59bf41120c1ae2bca9c51291578f17107fcf9172d",
+      "control": "wrong_boundary_lift_sign",
+      "exit_code": 1,
+      "failed_witness": "LIFT_SIGN_WITNESS:got=7/3;expected=-7/3",
+      "no_success_report": true,
+      "optimized": true
+    },
+    {
+      "checker_sha256": "0fae77821692b03d70e629c8c8d4f99c4a81f7df1e2825d949f43eddc77fc5a6",
+      "control": "wrong_reflected_endpoint_sign",
+      "exit_code": 1,
+      "failed_witness": "REFLECTED_KERNEL_WITNESS:got=0;expected=5/4",
+      "no_success_report": true,
+      "optimized": false
+    },
+    {
+      "checker_sha256": "0fae77821692b03d70e629c8c8d4f99c4a81f7df1e2825d949f43eddc77fc5a6",
+      "control": "wrong_reflected_endpoint_sign",
+      "exit_code": 1,
+      "failed_witness": "REFLECTED_KERNEL_WITNESS:got=0;expected=5/4",
+      "no_success_report": true,
+      "optimized": true
+    },
+    {
+      "checker_sha256": "1fcae4a2ec888780cfd7d1d8acfbbfa5e554e6888768e5935d2e1407f1b306d3",
+      "control": "missing_fixed_gauge_quadratic",
+      "exit_code": 1,
+      "failed_witness": "GAUGE_QUADRATIC_WITNESS:got=0;expected=-1/2",
+      "no_success_report": true,
+      "optimized": false
+    },
+    {
+      "checker_sha256": "1fcae4a2ec888780cfd7d1d8acfbbfa5e554e6888768e5935d2e1407f1b306d3",
+      "control": "missing_fixed_gauge_quadratic",
+      "exit_code": 1,
+      "failed_witness": "GAUGE_QUADRATIC_WITNESS:got=0;expected=-1/2",
+      "no_success_report": true,
+      "optimized": true
+    },
+    {
+      "checker_sha256": "b2cd78d397458425fb1746275353c76bbc7cdd444b22652dde4ce0a83e6da4ea",
+      "control": "missing_scalar_feedback_tail",
+      "exit_code": 1,
+      "failed_witness": "SCALAR_FEEDBACK_WITNESS:got=1/7;expected=2969/5544",
+      "no_success_report": true,
+      "optimized": false
+    },
+    {
+      "checker_sha256": "b2cd78d397458425fb1746275353c76bbc7cdd444b22652dde4ce0a83e6da4ea",
+      "control": "missing_scalar_feedback_tail",
+      "exit_code": 1,
+      "failed_witness": "SCALAR_FEEDBACK_WITNESS:got=1/7;expected=2969/5544",
+      "no_success_report": true,
+      "optimized": true
+    },
+    {
+      "control": "closed_source_bytes",
+      "exit_code": 1,
+      "failed_witness": "CLOSED_MEMBER:HDBLAST_EXACT_PACKET_INITIAL_20261031/README.md",
+      "mutated_member": "HDBLAST_EXACT_PACKET_INITIAL_20261031/README.md",
+      "no_success_report": true,
+      "optimized": false
+    },
+    {
+      "control": "closed_source_bytes",
+      "exit_code": 1,
+      "failed_witness": "CLOSED_MEMBER:HDBLAST_EXACT_PACKET_INITIAL_20261031/README.md",
+      "mutated_member": "HDBLAST_EXACT_PACKET_INITIAL_20261031/README.md",
+      "no_success_report": true,
+      "optimized": true
+    },
+    {
+      "control": "closed_source_symlink",
+      "exit_code": 1,
+      "failed_witness": "CLOSED_MEMBER:HDBLAST_EXACT_PACKET_INITIAL_20261031/README.md",
+      "mutated_member": "HDBLAST_EXACT_PACKET_INITIAL_20261031/README.md",
+      "no_success_report": true,
+      "optimized": false
+    },
+    {
+      "control": "closed_source_symlink",
+      "exit_code": 1,
+      "failed_witness": "CLOSED_MEMBER:HDBLAST_EXACT_PACKET_INITIAL_20261031/README.md",
+      "mutated_member": "HDBLAST_EXACT_PACKET_INITIAL_20261031/README.md",
+      "no_success_report": true,
+      "optimized": true
+    }
+  ],
+  "scope": "Four independent computational source changes and two closed-source corruptions; each rejected before a success artifact in normal and optimized modes.",
+  "status": "PASS_TWELVE_REAL_NEGATIVE_CONTROL_SUBPROCESSES"
+}
