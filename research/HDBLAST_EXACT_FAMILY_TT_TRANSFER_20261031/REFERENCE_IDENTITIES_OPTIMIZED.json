@@ -1,0 +1,139 @@
+{
+  "assert_independent": true,
+  "identities": {
+    "identity_wave_map_tension_equals_minus_C": {
+      "identity": "tau(id)=-C; C=contract_Gamma_g-contract_Gamma_g0",
+      "status": "pass"
+    },
+    "inverse_event_second_derivative": {
+      "acceleration_terms": [
+        "4",
+        "-4/3",
+        "4/9"
+      ],
+      "event_at_zero": 2,
+      "map": "Phi_e(x)=x^2/2+(1+e+e^2)*x",
+      "p_prime": "-2/3",
+      "p_second": "-28/27",
+      "scope": "explicit nonaffine one-dimensional varying map",
+      "status": "pass",
+      "target_event": 4
+    },
+    "mixed_metric_boundary_correspondence": {
+      "identities": [
+        "g*g_inverse=I",
+        "-Schur*H*g_inverse_tangent_radial=b",
+        "n(Phi^a)=0 at id iff g_Za=0",
+        "U^Z=0 when g_Za=0"
+      ],
+      "scope": "symbolic off-diagonal vector with fixed Lorentzian tangential block; nonzero Schur complement",
+      "status": "pass"
+    },
+    "normalized_screen_frame_isometry": {
+      "identity": "J^T s J=I, J=(1/R)*D*B, B=(sbar/R^2)^(-1/2)",
+      "positive_square_root_principal_minors": [
+        2,
+        3,
+        4
+      ],
+      "scope": "exact rational positive-definite fixture",
+      "status": "pass"
+    },
+    "projection_and_second_derivative_normalization": {
+      "gram_cross": "0",
+      "gram_diagonal": [
+        "1/6",
+        "1/6"
+      ],
+      "identity": "Pi H''=h(Tplus-Tminus) implies mathfrak_h''=h",
+      "scope": "normalization identity using the sourced normalized L2 Gram matrix",
+      "status": "pass"
+    },
+    "reciprocal_lapse_normal_velocity_jets": {
+      "jets": [
+        "1/rho",
+        "-U/rho",
+        "2*U**2/rho"
+      ],
+      "orders": [
+        0,
+        1,
+        2
+      ],
+      "status": "pass"
+    }
+  },
+  "mutant_controls": {
+    "extra_half_in_second_derivative_coefficient": {
+      "failed_identity": "selected_coefficient_second_derivative",
+      "status": "rejected"
+    },
+    "fixed_background_lapse_speed": {
+      "failed_identity": "reciprocal_lapse_normal_velocity_jets",
+      "status": "rejected"
+    },
+    "missing_inverse_acceleration_cross_term": {
+      "failed_identity": "inverse_event_second_derivative",
+      "status": "rejected"
+    },
+    "missing_reference_radius_frame_factor": {
+      "failed_identity": "normalized_screen_frame_isometry",
+      "status": "rejected"
+    },
+    "wrong_target_connection_sign": {
+      "failed_identity": "identity_wave_map_tension_equals_minus_C",
+      "status": "rejected"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Bounded exact identities and wrong-formula rejection only; no analytic existence or exact-family certification",
+  "source_authentication": {
+    "receipt_sha256": "1fdcb63573c29951ec66cf32a00b7cdc3972a417d1a279c5141a5a70cd902a1c",
+    "source_count": 10,
+    "sources": [
+      {
+        "path": "research/HDBLAST_COMMON_GAUGE_FORCING_20261016/inputs/EXPLICIT_INITIAL_HARMONIC_COMPLETION.md",
+        "sha256": "bc3ae85c3166575ed15b017468a3e9668615e15dfaca34bb2a13afe27ea28f92"
+      },
+      {
+        "path": "research/HDBLAST_FIRST_GAUGE_WAVE_20261016/operator/GAUGE_OPERATOR_AND_CONSTRUCTION.md",
+        "sha256": "ea27a8ccc28eef8ff65257dc803e2d827615161f5473c12d32972999bf82d246"
+      },
+      {
+        "path": "research/HDBLAST_POSTCONTACT_SCREEN_CURVATURE_20261031/DERIVATION.md",
+        "sha256": "30c1e64d5d9a592156f8f570fb034454be0300c5434226429cbc1c546cf8e801"
+      },
+      {
+        "path": "research/HDBLAST_POSTCONTACT_SCREEN_CURVATURE_20261031/NEXT_STEP.md",
+        "sha256": "bd7101be4115a549c62a693f749ad757ef3dd6a987f31c0894f71199f784b5f2"
+      },
+      {
+        "path": "research/HDBLAST_POSTCONTACT_SCREEN_CURVATURE_20261031/literature/METHODS_SCOPE.md",
+        "sha256": "4a0c0f863f0af0d198caf42782bebbb8650b76c859e4c14d3762178b4b88fa34"
+      },
+      {
+        "path": "research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015/EXACT_FINITE_REGULARITY_SHELL_EVOLUTION.md",
+        "sha256": "621c127d33cfe7d1d2134740c9f1740644a12c38145183abb9c415dc5cc9740e"
+      },
+      {
+        "path": "research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015/gauge-parameter/FINITE_REGULARITY_VARIATION_COMPLETION.md",
+        "sha256": "b965f5d698a7e2382737376ad904130f3773f5658374bfc04ded5ea44e482e32"
+      },
+      {
+        "path": "research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015/gauge-parameter/INITIAL_GAUGE_SUBSIDIARY_AND_PARAMETER.md",
+        "sha256": "74bce09080d4015b2eccf8c183b33f47b80516216a9547837e3e0e34251d7b03"
+      },
+      {
+        "path": "research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015/sol/linear_audit/LINEAR_VARIABLE_WAVE_AUDIT.md",
+        "sha256": "fcd7dc55b9459f0ebc56b1e6a77584be6a101878126efb692614378b4884af86"
+      },
+      {
+        "path": "research/HDBLAST_SCREEN_MAGNETIC_CURVATURE_20261026/theory/DERIVATION.md",
+        "sha256": "f27efc433a20689e97ea45e2c0cfd0918323318a4a1cdc4e798166de56e0172b"
+      }
+    ],
+    "status": "pass"
+  },
+  "status": "pass",
+  "sympy_version": "1.14.0"
+}
