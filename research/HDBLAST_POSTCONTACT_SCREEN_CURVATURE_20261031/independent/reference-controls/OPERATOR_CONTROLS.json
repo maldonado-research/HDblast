@@ -1,0 +1,105 @@
+{
+  "cases": [
+    {
+      "case": "source_bytes_corrupted",
+      "exit_code": 1,
+      "expected_rejection": "SOURCE_AUTHENTICATION",
+      "optimized": false,
+      "report_created": false,
+      "stderr_last_line": "ValueError: SOURCE_AUTHENTICATION:research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/projection/inputs/linear_operator.py"
+    },
+    {
+      "case": "source_bytes_corrupted",
+      "exit_code": 1,
+      "expected_rejection": "SOURCE_AUTHENTICATION",
+      "optimized": true,
+      "report_created": false,
+      "stderr_last_line": "ValueError: SOURCE_AUTHENTICATION:research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/projection/inputs/linear_operator.py"
+    },
+    {
+      "case": "lift_sign_reversed",
+      "exit_code": 1,
+      "expected_rejection": "LIFT_POSITIVE_INWARD_R_DERIVATIVE",
+      "optimized": false,
+      "report_created": false,
+      "stderr_last_line": "ValueError: LIFT_POSITIVE_INWARD_R_DERIVATIVE"
+    },
+    {
+      "case": "lift_sign_reversed",
+      "exit_code": 1,
+      "expected_rejection": "LIFT_POSITIVE_INWARD_R_DERIVATIVE",
+      "optimized": true,
+      "report_created": false,
+      "stderr_last_line": "ValueError: LIFT_POSITIVE_INWARD_R_DERIVATIVE"
+    },
+    {
+      "case": "Kx_lower_image_sign_reversed",
+      "exit_code": 1,
+      "expected_rejection": "KX_ENDPOINT",
+      "optimized": false,
+      "report_created": false,
+      "stderr_last_line": "ValueError: KX_ENDPOINT"
+    },
+    {
+      "case": "Kx_lower_image_sign_reversed",
+      "exit_code": 1,
+      "expected_rejection": "KX_ENDPOINT",
+      "optimized": true,
+      "report_created": false,
+      "stderr_last_line": "ValueError: KX_ENDPOINT"
+    },
+    {
+      "case": "Neumann_image_parity_reversed",
+      "exit_code": 1,
+      "expected_rejection": "KX_ENDPOINT",
+      "optimized": false,
+      "report_created": false,
+      "stderr_last_line": "ValueError: KX_ENDPOINT"
+    },
+    {
+      "case": "Neumann_image_parity_reversed",
+      "exit_code": 1,
+      "expected_rejection": "KX_ENDPOINT",
+      "optimized": true,
+      "report_created": false,
+      "stderr_last_line": "ValueError: KX_ENDPOINT"
+    },
+    {
+      "case": "TT_bulk_cross_coupling",
+      "exit_code": 1,
+      "expected_rejection": "PRIMITIVE_TT_CLOSURE",
+      "optimized": false,
+      "report_created": false,
+      "stderr_last_line": "ValueError: PRIMITIVE_TT_CLOSURE:Aphi"
+    },
+    {
+      "case": "TT_bulk_cross_coupling",
+      "exit_code": 1,
+      "expected_rejection": "PRIMITIVE_TT_CLOSURE",
+      "optimized": true,
+      "report_created": false,
+      "stderr_last_line": "ValueError: PRIMITIVE_TT_CLOSURE:Aphi"
+    },
+    {
+      "case": "TT_source_row_deleted",
+      "exit_code": 1,
+      "expected_rejection": "COMPLETE_78_TERM_TT_MAP",
+      "optimized": false,
+      "report_created": false,
+      "stderr_last_line": "ValueError: COMPLETE_78_TERM_TT_MAP"
+    },
+    {
+      "case": "TT_source_row_deleted",
+      "exit_code": 1,
+      "expected_rejection": "COMPLETE_78_TERM_TT_MAP",
+      "optimized": true,
+      "report_created": false,
+      "stderr_last_line": "ValueError: COMPLETE_78_TERM_TT_MAP"
+    }
+  ],
+  "positive_normal_optimized_byte_identical": true,
+  "positive_report_sha256": "7f47cf19bbbe9aa3b105b8f9af7c67ab7d1beec49e7400206ef5282bf8202fb2",
+  "scope": "Each failed subprocess wrote no report. Source-byte corruption uses original pins; semantic source mutants explicitly repin their altered fixture to reach structural guards.",
+  "status": "ALL_REAL_NEGATIVE_CONTROLS_REJECTED",
+  "subprocesses": 12
+}

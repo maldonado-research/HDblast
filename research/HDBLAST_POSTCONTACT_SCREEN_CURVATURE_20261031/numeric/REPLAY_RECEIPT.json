@@ -1,0 +1,139 @@
+{
+  "artifacts": {
+    "CONTROLS.json": "2684f420a7a6839962ea8d9c0efe830a111d9901248aebc0fa00b30a647870a2",
+    "NUMERIC_NORMAL.json": "e670411b8fcb4f8a8ec335c4759fd0694007ffb5cc3b56ab8e90f842097327b9",
+    "NUMERIC_OPTIMIZED.json": "e670411b8fcb4f8a8ec335c4759fd0694007ffb5cc3b56ab8e90f842097327b9",
+    "PUBLIC_NUMERIC_REVIEW.md": "6a1f436648586d7e45b709b6cd297dd9a7ade1ccabb8dd5dbdf655589b98b5eb",
+    "SOURCE_PINS.json": "bb3e5f2f4325c8ff1ef9be558af27a9eb0fe96e34176312694526d9acbbc4851",
+    "independent_numeric.py": "1c38f6e025e6d70fcbc1f9d2eebd8d220edf29080a9c24a694f620ea0db9e92f",
+    "report-algebra/ALGEBRA_NORMAL.json": "477ddbd19f2fe514dd12da13e992c7cfca94287aa1b6666e39b8f4b0aeecf50e",
+    "report-algebra/ALGEBRA_OPTIMIZED.json": "477ddbd19f2fe514dd12da13e992c7cfca94287aa1b6666e39b8f4b0aeecf50e",
+    "report-algebra/NUMERIC_CODE_CHECKS.json": "615058967e02375119f369876bcd2388664b087d88b482f4b9a3db9db1fbdea3",
+    "report-algebra/REPORT_ALGEBRA_REVIEW.md": "3483687773ee5a1aa6060d3d1e68716c985ee4f6b511cc8d34c9cdbd7032c50e",
+    "report-algebra/REVIEW_NUMERIC_CODE.md": "53ad7a2c95abc7c8952241a7eb9616db8799aa1949d0cc851d44ec281a488861",
+    "report-algebra/audit_report.py": "083891301ea743c1900e848ef477344ec4eb74a67ea171041a55ca9f0366e115",
+    "report-algebra/check_numeric_code.py": "12c0540b25b9feb937aba41500f714699f89a99b58392f30abf5037827434e27",
+    "run_controls.py": "c894ddd6c0720c6868f88257b1aa4981a640245dc2a4185ea68da2545d6e9b99"
+  },
+  "fixed_experiment": {
+    "adaptive_refinement": false,
+    "apex_cells": 1,
+    "clipped_cover_cells": 43,
+    "curve_segments": 33,
+    "curve_source_cells": 66,
+    "grid": [
+      8,
+      8
+    ],
+    "maximum_calls": 140,
+    "shell_endpoint_cells": 1,
+    "shell_history_cells": 8
+  },
+  "independent_code_math_review": "No blocking issue;4016exact arithmetic/cover cases incl210negative inverses; projectedcone/backwardclosure and completeC1units checked.",
+  "independent_scientific_implementation": "Integer interval operations,78term source evaluator, shell formula, cone clipping, endpoint characteristic integration, coefficient evaluation, completeC1tail, compactFquad and h aggregation.",
+  "normal_optimized_canonical_equality": true,
+  "portable_CLI": {
+    "independent_numeric.py": [
+      "--source-root",
+      "--output"
+    ],
+    "report-algebra/audit_report.py": [
+      "--producer-dir",
+      "--output"
+    ],
+    "report-algebra/check_numeric_code.py": [
+      "--output"
+    ],
+    "run_controls.py": [
+      "--source-root",
+      "--output-dir"
+    ]
+  },
+  "portable_wrapper_replay": {
+    "distinct_report_data_controls": 5,
+    "focused_code_checks": 4016,
+    "focused_code_normal_optimized_equal": true,
+    "implementation_authentication_subprocess_controls": 12,
+    "implementation_control_receipt_unchanged": true,
+    "negative_inverse_cases": 210,
+    "relocated_controls_identical": true,
+    "relocated_numeric_code_checks_identical": true,
+    "relocated_numeric_normal_identical": true,
+    "relocated_numeric_optimized_identical": true,
+    "relocated_report_algebra_identical": true,
+    "report_algebra_normal_optimized_equal": true,
+    "report_data_checks": 202,
+    "report_data_mode_evaluations": 10
+  },
+  "producer_report_data_only_comparison": {
+    "fields": {
+      "characteristic_integral": {
+        "identical": false,
+        "independent_minus_producer": [
+          "1521139279/5192296858534827628530496329220096",
+          "110714125/5192296858534827628530496329220096"
+        ]
+      },
+      "complete_feedback_tail_Ux": {
+        "identical": false,
+        "independent_minus_producer": "-691153491204224487690998930714018626763625/862671477788764907503178941411579578143117479063152967515320417779712"
+      },
+      "screen_Fquad": {
+        "identical": true,
+        "independent_minus_producer": [
+          "0",
+          "0"
+        ]
+      },
+      "screen_h": {
+        "identical": false,
+        "independent_minus_producer": [
+          "135539516151/5192296858534827628530496329220096",
+          "9468420591/5192296858534827628530496329220096"
+        ]
+      },
+      "screen_quadratic": {
+        "identical": true,
+        "independent_minus_producer": [
+          "0",
+          "0"
+        ]
+      },
+      "seed_x": {
+        "identical": false,
+        "independent_minus_producer": [
+          "1521139279/5192296858534827628530496329220096",
+          "110714125/5192296858534827628530496329220096"
+        ]
+      },
+      "shell_cap": {
+        "identical": true,
+        "independent_minus_producer": "0"
+      },
+      "source_cap": {
+        "identical": false,
+        "independent_minus_producer": "-30662233641/2596148429267413814265248164610048"
+      }
+    },
+    "sha256": "79df81942c7c1733df61b91c7dc3ce620238bafd9666f89c113c5a62a8d22a1c"
+  },
+  "public_file_list": [
+    "independent_numeric.py",
+    "SOURCE_PINS.json",
+    "NUMERIC_NORMAL.json",
+    "NUMERIC_OPTIMIZED.json",
+    "run_controls.py",
+    "CONTROLS.json",
+    "PUBLIC_NUMERIC_REVIEW.md",
+    "REPLAY_RECEIPT.json",
+    "report-algebra/audit_report.py",
+    "report-algebra/ALGEBRA_NORMAL.json",
+    "report-algebra/ALGEBRA_OPTIMIZED.json",
+    "report-algebra/check_numeric_code.py",
+    "report-algebra/NUMERIC_CODE_CHECKS.json",
+    "report-algebra/REPORT_ALGEBRA_REVIEW.md",
+    "report-algebra/REVIEW_NUMERIC_CODE.md"
+  ],
+  "shared_scientific_input": "Authenticated old actual_first_jets.py and its closed G capsule input definitions.",
+  "status": "PASS_INDEPENDENT_NUMERICAL_AND_REPORT_ALGEBRA_REPLAYS"
+}

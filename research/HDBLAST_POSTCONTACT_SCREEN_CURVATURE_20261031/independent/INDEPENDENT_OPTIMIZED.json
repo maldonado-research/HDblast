@@ -1,0 +1,59 @@
+{
+  "D_T": "-8 ell^2/cosh(t)^2 conditional on authenticated existing background field equation and Hamilton constraint",
+  "G_T": "-(8/3)ell*rho*(a*h_shell+sigma_prime*v_shell/3)*d_shell, generally nonzero",
+  "Neumann_lift": "LG=-integral_0^(x-r) G(s) ds for x>r; zero for x<r",
+  "TT_forcing_terms_per_orientation": 78,
+  "TT_indices": [
+    21,
+    22
+  ],
+  "actual_response": "U=LG+KNF+KN(A Ux+B Ur+D U); every feedback term retained",
+  "before_import_and_after_source_authentication": true,
+  "bulk_source_units": "metric_forcing_T=-2 ell^2 rho^2 QEred_T checked as exact normalized Laurent maps",
+  "complete_feedback_bound": {
+    "domain": "0<=s<=5/4, max(0,s-9/8)<=v<=11/8-s",
+    "norm": "X=max(2 sup|u|/T,sup|ux|,sup|ur|)",
+    "premises": "uniform actual F,A,B,D bounds on whole reflected backward cone, actual G on shell history; conditional C1 integral solution",
+    "q": "T*sigma<1",
+    "seed_bound": "||LG+KNF||X <= 2g+Tf",
+    "sigma": "a+b+T*d/2",
+    "tail_derivative": "|Ux-(LG+KNF)x| <= q*(2g+Tf)/(1-q)"
+  },
+  "exact_Pdagger": [
+    "5/4",
+    "1/8"
+  ],
+  "generic_TT_forcing_nonzero": true,
+  "initial_TT_value_velocity_identically_zero": true,
+  "initial_footprint": [
+    "0",
+    "11/8"
+  ],
+  "main_scientific_producer_imported": false,
+  "monomial_total_degree_max": 4,
+  "polynomial_kernel_cases": 30,
+  "primitive_matrices": 25,
+  "project_imports": [
+    "actual linear_operator.py",
+    "actual source_adapters.py"
+  ],
+  "radial_derivative": "(KNf)_r=1/2 integral_0^x [f(s,r+x-s)-f(s,abs(r-x+s))] ds",
+  "reflection": "full physical scalar composite RHS even; equivalent B odd times Ur odd",
+  "scope": "Independent exact architecture and source identity audit, no new numerical actual Ux or screen sign certificate; prior protected-point screen result already exists.",
+  "shell_history": [
+    "0",
+    "9/8"
+  ],
+  "source_pins": {
+    "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/tensor/review/TT_SCALAR_TAIL_PROOF.md": "15601792fc782f2ee10583276af11f9f2bdbbaa36996a3e20d7802b4983db52e",
+    "research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/projection/GEOMETRIC_COEFFICIENT_MAPS.json": "34b10b62d0b36a4506a35407a591a9fdff319971994f25e0b5f031f48eb4f615",
+    "research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/projection/inputs/linear_operator.py": "a008be0d89e2ac44940c273cfd2cbc5ba0d09de8fc172d5d81ef29121ab60189",
+    "research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/projection/inputs/source_adapters.py": "0233ff25b9873dfc4060ba0d4963f50d0b198dbe71368625017840d225b19f8a",
+    "research/HDBLAST_SCREEN_MAGNETIC_CURVATURE_20261026/theory/DERIVATION.md": "f27efc433a20689e97ea45e2c0cfd0918323318a4a1cdc4e798166de56e0172b",
+    "research/HDBLAST_SCREEN_MAGNETIC_CURVATURE_20261026/theory/screen_coefficient.py": "359f4771a27b490614c91a44266d156d1696abc35f72795b68564703e9fe49bd",
+    "research/HDBLAST_SECOND_INITIAL_NORMS_GAUGE_20261015/background/inputs/PRIOR_ACTUAL_BACKGROUND_AND_RIGOROUS_COLLAR_BOUNDS.md": "0832a16c4bdf18cc188861a2c2860e7e6ff736dec39426d6ca7c589dc0434d5c"
+  },
+  "source_pins_sha256": "ed1e70a05034feec47e58e75d09ffa94849b343597b21b11122d8704a5d221e4",
+  "status": "PASS_INDEPENDENT_EXACT_TT_POSTCONTACT_ARCHITECTURE",
+  "time_derivative": "(KNf)_x=1/2 integral_0^x [f(s,r+x-s)+f(s,abs(r-x+s))] ds"
+}
