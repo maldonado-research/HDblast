@@ -1,0 +1,22 @@
+# Internal static scientific scope and readability review
+
+31 October 2026. **PASS: no substantive scientific scope or readability defect found in the reviewed draft.** This is internal AI-assisted review of the supplied text and reports, not an external specialist assessment, originality determination, independent simulation, or replay of inherited analytic proofs. No existing source or publication file was edited.
+
+The README distinguishes the proved initial local true-error improvement from the comparison of global upper certificates. The new local error upper is below the retained old error lower at the same point, using a separately positive actual-target denominator. The global factor comparison is explicitly limited to upper bounds, and the large outer-endpoint normalization is expressly excluded from replacing a local denominator or yielding a physical relative error. Regionwise undefined or unresolved ratios remain qualified.
+
+All displayed scientific numerical roundings and inequality claims checked against the supplied exact ledgers pass. The actual local target norm lies between approximately 0.69427809970553896722 and 0.69427809971145721237. The retained/new certificate ratios are approximately 30.9926956139073 for rr and 31.1235723718201 for xx and xr, supporting the phrase “more than 30.” The exact initial and response ledgers use identical 23 labels, positive Gram weights, absolute candidate caps and paired initial error caps. The frozen D+ domain and original unfiltered F_x input are retained. The separate independent portable report confirms 48 active leaves plus the zero collar, contiguous coverage, and wider initial upper caps that still satisfy the exact acceptance thresholds.
+
+The candidate definition agrees with the freeze and response audit: complete the reconstructed displacement, including the five mean overrides, before applying each component's own exact quadratic exterior. The text claims C2 displacement and required velocity regularity, makes no global C3 claim, retains background and derivative-remainder channels, and explains why common q/E channels cancel by analytic identity rather than by overlapping intervals. The initial report records exact endpoint jet matching for all 23 components. The supplied response audit supports the physical-side regularity and one-sided shell interpretation under retained coefficient, source, boundary and compatibility premises; these premises are not newly proved by this review.
+
+The README preserves the same formal target U, original F and F_x, shell G/M, norm and physical-side domain. It keeps the velocity charges, Robin inverse, common-first-jet r1(0) cancellation and acceleration charges in scope. It states that fresh whole-domain bounds replace old candidate-dependent shell histories, and neither reuses old point/quadrature values as new values nor claims a new natural-equation or constraint residual. It makes no physical-force, invariant-observable, nonlinear shell-contact, cosmological-fit or Big Bang-origin conclusion. Earlier conditional exact initial-data families and protected precontact Cauchy evolution are expressly retained with their hypotheses.
+
+The literature comparison consistently describes selected passages of three sources after two focused searches. It does not present this as an exhaustive search, a novelty check, full proof audit, or a shell existence theorem imported from another wave equation. Retrieval dates are distinguished from publication dates. Bibliographic sources were assessed as represented in these supplied documents; no fresh external retrieval was performed.
+
+The exact static review ran with `python -I -S -B check_scope_numbers.py`: **45 comparisons and identities passed**. Reproduction-runner behavior, deliberate-corruption execution and later documentation additions were outside this static review. Complete reviewed-input SHA256 hashes and exact rational operands are recorded in [EXACT_CHECKS.json](EXACT_CHECKS.json).
+
+Key reviewed-input hashes:
+
+- Draft README: `6d283d280afe51ca20e9f97acf46d2c28e82e4772f71708283cdadd7f533cc05`
+- Authoritative initial report: `692ac13f72354c526a0108ddae32800a9f22efb1a8afe4e987cbf403b5a296c3`
+- Authoritative response report: `0f9471a9eeaf3ec08e41ba67aa7e2f7f7873d426f1773c527100aa4d33dd1181`
+- Frozen candidate definition: `aa9a7eae96aae988d3d1a25d83dcd6b436893a9464f7e3813436472a8e137ec1`
