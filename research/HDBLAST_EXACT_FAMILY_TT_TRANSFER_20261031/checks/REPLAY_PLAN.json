@@ -1,0 +1,655 @@
+{
+  "expected_new_canonical_reports": 4,
+  "expected_new_rejected_subprocesses": 66,
+  "groups": [
+    {
+      "name": "binding",
+      "steps": [
+        {
+          "argv": [
+            "{CAP}/binding/check_binding.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--run-controls",
+            "--output",
+            "{OUT}/exact-family-binding/normal.json"
+          ],
+          "canonical_key": "exact-family-binding",
+          "controls": {
+            "case": "mutation",
+            "category": "mathematical_formula",
+            "category_by_case": {
+              "capsule-byte-mutation": "source_authentication",
+              "source-byte-mutation": "source_authentication"
+            },
+            "count": 12,
+            "expected_returncode": 1,
+            "nonempty": [
+              "failed_witness"
+            ],
+            "returncode": "exit_code",
+            "rows": "controls",
+            "true": [
+              "success_artifact_absent"
+            ]
+          },
+          "expected_sha256": "af10db12740a98bbe37a914a9687ef45d9836bb9e4202bfdabf85edbc2a1b483",
+          "kind": "canonical",
+          "name": "exact-family-binding-normal",
+          "optimized": false,
+          "output": "{OUT}/exact-family-binding/normal.json",
+          "reference": "binding/BINDING_NORMAL.json",
+          "require_fields": {
+            "count": 40,
+            "selected_source_count": 25
+          },
+          "requires_sympy": true
+        },
+        {
+          "argv": [
+            "{CAP}/binding/check_binding.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--run-controls",
+            "--output",
+            "{OUT}/exact-family-binding/optimized.json"
+          ],
+          "canonical_key": "exact-family-binding",
+          "controls": {
+            "case": "mutation",
+            "category": "mathematical_formula",
+            "category_by_case": {
+              "capsule-byte-mutation": "source_authentication",
+              "source-byte-mutation": "source_authentication"
+            },
+            "count": 12,
+            "expected_returncode": 1,
+            "nonempty": [
+              "failed_witness"
+            ],
+            "returncode": "exit_code",
+            "rows": "controls",
+            "true": [
+              "success_artifact_absent"
+            ]
+          },
+          "expected_sha256": "af10db12740a98bbe37a914a9687ef45d9836bb9e4202bfdabf85edbc2a1b483",
+          "kind": "canonical",
+          "name": "exact-family-binding-optimized",
+          "optimized": true,
+          "output": "{OUT}/exact-family-binding/optimized.json",
+          "reference": "binding/BINDING_NORMAL.json",
+          "require_fields": {
+            "count": 40,
+            "selected_source_count": 25
+          },
+          "requires_sympy": true
+        }
+      ]
+    },
+    {
+      "name": "independent",
+      "steps": [
+        {
+          "argv": [
+            "{CAP}/independent/check_independent_transfer_algebra.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--output",
+            "{OUT}/independent-transfer/normal.json"
+          ],
+          "canonical_key": "independent-transfer",
+          "expected_sha256": "ca22b46873ee1122874583ed94164c7d2d01e6c560791d1512e3f66e7bdfa2ec",
+          "kind": "canonical",
+          "name": "independent-transfer-normal",
+          "optimized": false,
+          "output": "{OUT}/independent-transfer/normal.json",
+          "reference": "independent/REVIEW_NORMAL.json",
+          "require_fields": {
+            "direct_Ricci.five_dimensional_Ricci_variation_slots": 25,
+            "sources.recovered_capsule_members": 51,
+            "sources.selected_public_sources": 16
+          },
+          "requires_sympy": true
+        },
+        {
+          "argv": [
+            "{CAP}/independent/check_independent_transfer_algebra.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--output",
+            "{OUT}/independent-transfer/optimized.json"
+          ],
+          "canonical_key": "independent-transfer",
+          "expected_sha256": "ca22b46873ee1122874583ed94164c7d2d01e6c560791d1512e3f66e7bdfa2ec",
+          "kind": "canonical",
+          "name": "independent-transfer-optimized",
+          "optimized": true,
+          "output": "{OUT}/independent-transfer/optimized.json",
+          "reference": "independent/REVIEW_NORMAL.json",
+          "require_fields": {
+            "direct_Ricci.five_dimensional_Ricci_variation_slots": 25,
+            "sources.recovered_capsule_members": 51,
+            "sources.selected_public_sources": 16
+          },
+          "requires_sympy": true
+        },
+        {
+          "argv": [
+            "{CAP}/independent/run_controls.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--output",
+            "{OUT}/independent-controls/CONTROLS.json"
+          ],
+          "contract": {
+            "case": "name",
+            "category_field": "category",
+            "count": 18,
+            "expected_returncode": 1,
+            "fields": {
+              "all_success_artifacts_absent": true,
+              "mathematical_formula_subprocess_rejections": 14,
+              "original_selected_sources_unchanged": true,
+              "schema": "hdblast-independent-exact-TT-controls-v1",
+              "source_authentication_subprocess_rejections": 4
+            },
+            "mode": "mode",
+            "mode_values": [
+              "normal",
+              "optimized"
+            ],
+            "nonempty": [
+              "actual_stderr_witness",
+              "executed_code_sha256"
+            ],
+            "returncode": "actual_returncode",
+            "rows": "controls",
+            "true": [
+              "success_artifact_absent",
+              "returncode_nonzero"
+            ]
+          },
+          "expected_sha256": "b6a2ac3917542049d91e3c88d76fc96017c050f111de8f8e9c4e2e27a388920d",
+          "kind": "controls",
+          "name": "independent-copied-code-source-controls",
+          "receipt": "{OUT}/independent-controls/CONTROLS.json",
+          "reference": "independent/CONTROLS.json",
+          "requires_sympy": false
+        }
+      ]
+    },
+    {
+      "name": "domain",
+      "steps": [
+        {
+          "argv": [
+            "{CAP}/domain/check_domain_seed.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--pins-sha256",
+            "ce3d0ea33c758e2aafd54cdc6d8486054e198369f29e87c277a6eb60fe4c0b80"
+          ],
+          "canonical_key": "domain-and-seed",
+          "expected_sha256": "f92d9a509df5e7ac2a9030c89cb5bb65f023e4dc45606f4af0fcbd47224ae381",
+          "inprocess_formula_controls": {
+            "seed.wrong_formula_controls_rejected": 3
+          },
+          "kind": "canonical",
+          "name": "domain-and-seed-normal",
+          "optimized": false,
+          "output": "{OUT}/domain-and-seed/normal.json",
+          "reference": "domain/NORMAL.json",
+          "require_fields": {
+            "full_theorem_members_authenticated": 51,
+            "sources_authenticated": 15,
+            "status": "PASS_PINNED_DOMAIN_AND_COMMON_SEED_ALGEBRA"
+          },
+          "requires_sympy": true,
+          "stdout_is_report": true
+        },
+        {
+          "argv": [
+            "{CAP}/domain/check_domain_seed.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--pins-sha256",
+            "ce3d0ea33c758e2aafd54cdc6d8486054e198369f29e87c277a6eb60fe4c0b80"
+          ],
+          "canonical_key": "domain-and-seed",
+          "expected_sha256": "f92d9a509df5e7ac2a9030c89cb5bb65f023e4dc45606f4af0fcbd47224ae381",
+          "inprocess_formula_controls": {
+            "seed.wrong_formula_controls_rejected": 3
+          },
+          "kind": "canonical",
+          "name": "domain-and-seed-optimized",
+          "optimized": true,
+          "output": "{OUT}/domain-and-seed/optimized.json",
+          "reference": "domain/NORMAL.json",
+          "require_fields": {
+            "full_theorem_members_authenticated": 51,
+            "sources_authenticated": 15,
+            "status": "PASS_PINNED_DOMAIN_AND_COMMON_SEED_ALGEBRA"
+          },
+          "requires_sympy": true,
+          "stdout_is_report": true
+        },
+        {
+          "argv": [
+            "{CAP}/domain/run_controls.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--pins-sha256",
+            "ce3d0ea33c758e2aafd54cdc6d8486054e198369f29e87c277a6eb60fe4c0b80",
+            "--output-dir",
+            "{OUT}/domain-controls"
+          ],
+          "contract": {
+            "case": "case",
+            "category_field": "kind",
+            "count": 20,
+            "expected_returncode": 1,
+            "fields": {
+              "actual_source_mutations_rejected": 10,
+              "normal_optimized_scientific_bytes_equal": true,
+              "status": "PASS_DOMAIN_SEED_CONTROLS",
+              "strict_inequality_cases_rejected": 10,
+              "symbolic_wrong_seed_formulas_rejected": 6
+            },
+            "filter_field": "kind",
+            "filter_values": [
+              "actual_source_mutation",
+              "strict_inequality_control"
+            ],
+            "mode": "mode",
+            "mode_values": [
+              "NORMAL",
+              "OPTIMIZED"
+            ],
+            "nonempty": [
+              "reason"
+            ],
+            "returncode": "exit",
+            "rows": "runs",
+            "true": [
+              "no_success_stdout",
+              "success_artifact_absent"
+            ]
+          },
+          "expected_sha256": "0b9b4618757f71e1df44e93795e29d392918afd8ee5d0a7e76e517191ef4b2e4",
+          "kind": "controls",
+          "name": "domain-source-inequality-controls",
+          "receipt": "{OUT}/domain-controls/CONTROL_REPORT.json",
+          "reference": "domain/CONTROL_REPORT.json",
+          "requires_sympy": false
+        }
+      ]
+    },
+    {
+      "name": "reference",
+      "steps": [
+        {
+          "argv": [
+            "{CAP}/check_reference_identities.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--output",
+            "{OUT}/reference-identities/normal.json"
+          ],
+          "canonical_key": "reference-identities",
+          "expected_sha256": "5b1141f55a37f9986a8e152e0d935ede9b04d1940eca65eac88695eb61a854ce",
+          "inprocess_formula_controls": {
+            "mutant_controls": 5
+          },
+          "kind": "canonical",
+          "name": "reference-identities-normal",
+          "optimized": false,
+          "output": "{OUT}/reference-identities/normal.json",
+          "reference": "REFERENCE_IDENTITIES_NORMAL.json",
+          "require_fields": {
+            "source_authentication.source_count": 10,
+            "status": "pass",
+            "sympy_version": "1.14.0"
+          },
+          "requires_sympy": true
+        },
+        {
+          "argv": [
+            "{CAP}/check_reference_identities.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--output",
+            "{OUT}/reference-identities/optimized.json"
+          ],
+          "canonical_key": "reference-identities",
+          "expected_sha256": "5b1141f55a37f9986a8e152e0d935ede9b04d1940eca65eac88695eb61a854ce",
+          "inprocess_formula_controls": {
+            "mutant_controls": 5
+          },
+          "kind": "canonical",
+          "name": "reference-identities-optimized",
+          "optimized": true,
+          "output": "{OUT}/reference-identities/optimized.json",
+          "reference": "REFERENCE_IDENTITIES_NORMAL.json",
+          "require_fields": {
+            "source_authentication.source_count": 10,
+            "status": "pass",
+            "sympy_version": "1.14.0"
+          },
+          "requires_sympy": true
+        },
+        {
+          "argv": [
+            "{CAP}/checks/run_reference_controls.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--output",
+            "{OUT}/reference-controls/CONTROLS.json"
+          ],
+          "contract": {
+            "case": "case",
+            "category": "source_authentication",
+            "count": 4,
+            "expected_returncode": 2,
+            "false": [
+              "sympy_imported",
+              "successful_stdout_report_emitted"
+            ],
+            "fields": {
+              "original_sources_and_code_unchanged": true,
+              "source_authentication_subprocess_rejections": 4,
+              "status": "PASS_REFERENCE_SOURCE_AUTHENTICATION_CONTROLS"
+            },
+            "mode": "mode",
+            "mode_values": [
+              "normal",
+              "optimized"
+            ],
+            "nonempty": [
+              "actual_witness"
+            ],
+            "returncode": "actual_returncode",
+            "row_fields": {
+              "failure_stage": "source_authentication",
+              "failure_status": "fail"
+            },
+            "rows": "controls"
+          },
+          "expected_sha256": "5d0599a8438d894b58d1ed3c8646ef1d8ddc65563dfcf3d43fc54130255af65f",
+          "kind": "controls",
+          "name": "reference-source-controls",
+          "receipt": "{OUT}/reference-controls/CONTROLS.json",
+          "reference": "REFERENCE_CONTROLS.json",
+          "requires_sympy": false
+        }
+      ]
+    },
+    {
+      "name": "retained-postcontact",
+      "steps": [
+        {
+          "argv": [
+            "{SOURCE}/research/HDBLAST_POSTCONTACT_SCREEN_CURVATURE_20261031/checks/run_checkpoint.py",
+            "--repo-root",
+            "{SOURCE}",
+            "--output-dir",
+            "{OUT}/retained-postcontact",
+            "--jobs",
+            "3"
+          ],
+          "kind": "retained_checkpoint",
+          "manifest_sha256": "fb3046fa483cd781060e167324c8002a241898f82627172bcde8187836a3234e",
+          "name": "retained-postcontact-once",
+          "receipt": "{OUT}/retained-postcontact/VERIFICATION.json",
+          "requires_sympy": false,
+          "timeout_seconds": 600
+        }
+      ]
+    }
+  ],
+  "requirements": {
+    "mpmath": "1.3.0",
+    "sympy": "1.14.0"
+  },
+  "schema": "HDBLAST_EXACT_FAMILY_TT_ROOT_REPLAY_V1",
+  "scope": "Conditional exact-family transfer for the selected retained shell family and registered TT target, plus a reference-dependent functional on its transported diffeomorphism orbit. Finite algebra, strict domain inequalities, source authentication, and rejection controls do not reprove weighted inverse, nonlinear evolution, gauge, or parameter-regularity hypotheses. The qualitative small-amplitude sign has no effective amplitude radius.",
+  "selected_source_files": {
+    "research/HDBLAST_BULK_SHELL_CONSTRAINT_BINDING_20261030/theory/FIRST_WAVE_BINDING_NOTE.md": {
+      "bytes": 8397,
+      "sha256": "8b75fc4fa4e9f22fc95bdf5aa66a38402000929156860f7b1efd54a64c60517f"
+    },
+    "research/HDBLAST_COMMON_GAUGE_FORCING_20261016/evolution/FULL_SECOND_RESPONSE_CONSTRUCTION.md": {
+      "bytes": 23693,
+      "sha256": "5de45b21236cfe8c6d99fb403bacc4624069c8d96d6cf0ad2ec89b8e2d3617e1"
+    },
+    "research/HDBLAST_COMMON_GAUGE_FORCING_20261016/first-fields/FIRST_HARMONIC_FIELDS_UNPUBLISHED.md": {
+      "bytes": 13424,
+      "sha256": "d15f8c65ffffd0085d195064ccea3c61bb4e719695652d0dd73472c8a06c224d"
+    },
+    "research/HDBLAST_COMMON_GAUGE_FORCING_20261016/inputs/EXPLICIT_COMPACT_SECOND_INITIAL_JET.md": {
+      "bytes": 15837,
+      "sha256": "2cca9c9b87dfa5c2c21712ae81ea0c91d01b939b902e82d54dd62a6eae6bf0ed"
+    },
+    "research/HDBLAST_COMMON_GAUGE_FORCING_20261016/inputs/EXPLICIT_INITIAL_HARMONIC_COMPLETION.md": {
+      "bytes": 13214,
+      "sha256": "bc3ae85c3166575ed15b017468a3e9668615e15dfaca34bb2a13afe27ea28f92"
+    },
+    "research/HDBLAST_EXACT_CAUCHY_PACKET_20261031/velocity/FREEZE.json": {
+      "bytes": 8504,
+      "sha256": "14f79fefd73e9207fddddda354cdc7fb4fe67e744e16e27e2417a2edce8700fd"
+    },
+    "research/HDBLAST_EXACT_CAUCHY_PACKET_20261031/velocity/INITIAL_NORMAL.json": {
+      "bytes": 915497,
+      "sha256": "219d9fe0aeb161a31da564014dc85d4712ecae339e46485b16242bb724219c89"
+    },
+    "research/HDBLAST_EXACT_CAUCHY_PACKET_20261031/velocity/REGULARITY_AND_LOCAL_PROOF.md": {
+      "bytes": 5104,
+      "sha256": "a03287622fa93a337c03546a9b5ea2bc2b563c46ff4074ce91a78ed676c146d6"
+    },
+    "research/HDBLAST_EXACT_CAUCHY_PACKET_20261031/velocity/producer.py": {
+      "bytes": 11295,
+      "sha256": "d4fc6550cbda65bd40fb37673b110f2d6793ec7b441b38948244e6273a621256"
+    },
+    "research/HDBLAST_EXACT_LOCALIZED_PRECONTACT_20261014/EXACT_LOCALIZED_INITIAL_DATA_AND_PRECONTACT.md": {
+      "bytes": 23875,
+      "sha256": "95ccaa550309b72226f8d03d3a950e4e10760d0d98810f0e818d19057a8cfd0b"
+    },
+    "research/HDBLAST_EXACT_PACKET_INITIAL_20261031/checks/producer.py": {
+      "bytes": 16275,
+      "sha256": "1d7f535ecd5a380cca98408531841ab207b336fd56a249262e7671d06d591896"
+    },
+    "research/HDBLAST_EXACT_PACKET_INITIAL_20261031/reference/INITIAL.json": {
+      "bytes": 757787,
+      "sha256": "692ac13f72354c526a0108ddae32800a9f22efb1a8afe4e987cbf403b5a296c3"
+    },
+    "research/HDBLAST_EXACT_PACKET_INITIAL_20261031/theory/RESPONSE_ERROR_DERIVATION.md": {
+      "bytes": 16555,
+      "sha256": "47f5d7a195b6a23b102d8cb0ae2fbab0440e56fbee89375e71b4e03a99441eb1"
+    },
+    "research/HDBLAST_FIRST_GAUGE_WAVE_20261016/operator/GAUGE_OPERATOR_AND_CONSTRUCTION.md": {
+      "bytes": 15082,
+      "sha256": "ea27a8ccc28eef8ff65257dc803e2d827615161f5473c12d32972999bf82d246"
+    },
+    "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/compute/full23_response.py": {
+      "bytes": 21423,
+      "sha256": "efa6a6c2a9c7db596fe024246684f760b807e727fd2ddac8e8126182ba941a73"
+    },
+    "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/compute/response-normal/RESPONSE_REPORT.json": {
+      "bytes": 224999,
+      "sha256": "ce1a07ea7409253e679e84090ae9ffbcfa9a53dbfe8c620600f2b022ae3431fd"
+    },
+    "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/initial/full23_initial.py": {
+      "bytes": 25289,
+      "sha256": "2e0b3fe803df47060550a4be716095450e710627fd7c5258d2b4e2868f1beda1"
+    },
+    "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/initial/results/INITIAL_PROFILES.json": {
+      "bytes": 707732,
+      "sha256": "555f911f6c336862dfacb6aa56ef5179ac06701812d593b5bfbbf6ea9bd4d5d1"
+    },
+    "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/structure/ANGULAR_STRUCTURE_NORMAL.json": {
+      "bytes": 9148,
+      "sha256": "3a0ac02eac30388f75ddbf71fb9194bc3a888f67466479c2bc978fa558f8018c"
+    },
+    "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/structure/ANGULAR_STRUCTURE_PROOF.md": {
+      "bytes": 12193,
+      "sha256": "67222769abec72e1bb4ff09da13cb000272ee4001580fda8c90b8bc7f89b7e75"
+    },
+    "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/structure/exact_angular_structure.py": {
+      "bytes": 14474,
+      "sha256": "7c4b36532a2d4fd174028d8d8957b32d18377231ed5510b08470d3888cc26946"
+    },
+    "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/structure/subsidiary_evidence.md": {
+      "bytes": 7234,
+      "sha256": "05770f3ef284311a4ddb7b63d44b9f8bf2e10f4f948a6261bd85cb404db24098"
+    },
+    "research/HDBLAST_FULL_ANGULAR_RESPONSE_20261026/tensor/review/TT_SCALAR_TAIL_PROOF.md": {
+      "bytes": 3711,
+      "sha256": "15601792fc782f2ee10583276af11f9f2bdbbaa36996a3e20d7802b4983db52e"
+    },
+    "research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/numeric/ACTUAL_FIRST_JET_AND_SOURCE_PROOF.md": {
+      "bytes": 11541,
+      "sha256": "3957c7aec5ad78ca7bd0ac95d6010b5ad16b59f1b6a42c710131ec67c7aa462e"
+    },
+    "research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/projection/GEOMETRIC_COEFFICIENT_MAPS.json": {
+      "bytes": 2364965,
+      "sha256": "34b10b62d0b36a4506a35407a591a9fdff319971994f25e0b5f031f48eb4f615"
+    },
+    "research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/projection/inputs/linear_operator.py": {
+      "bytes": 9764,
+      "sha256": "a008be0d89e2ac44940c273cfd2cbc5ba0d09de8fc172d5d81ef29121ab60189"
+    },
+    "research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/projection/inputs/source_adapters.py": {
+      "bytes": 6147,
+      "sha256": "0233ff25b9873dfc4060ba0d4963f50d0b198dbe71368625017840d225b19f8a"
+    },
+    "research/HDBLAST_INTERIOR_MASTER_JETS_20261015/potential/inputs/BACKGROUND_DERIVATIVE_AUDIT.md": {
+      "bytes": 6973,
+      "sha256": "c85130916eb36a4a81c512cf594db8f9d4327dba926233aef126da95d45b4fff"
+    },
+    "research/HDBLAST_NATURAL_FIELD_BINDING_20261030/theory/FIRST_SHELL_MASTER_BINDING_NOTE.md": {
+      "bytes": 7374,
+      "sha256": "5dee5806bbbb93cb18cf658a4315258d9099681394d9a4ed2eb7abd8bdf1d2c2"
+    },
+    "research/HDBLAST_NATURAL_FIELD_BINDING_20261030/theory/NATURAL_FIRST_MASTER_BINDING.md": {
+      "bytes": 9370,
+      "sha256": "763ab05b7c87bc3e8698d4209cd10f2fabc3c4405daeaef389d9a0939f4aade5"
+    },
+    "research/HDBLAST_POSTCONTACT_SCREEN_CURVATURE_20261031/DERIVATION.md": {
+      "bytes": 17859,
+      "sha256": "30c1e64d5d9a592156f8f570fb034454be0300c5434226429cbc1c546cf8e801"
+    },
+    "research/HDBLAST_POSTCONTACT_SCREEN_CURVATURE_20261031/NEXT_STEP.md": {
+      "bytes": 15162,
+      "sha256": "bd7101be4115a549c62a693f749ad757ef3dd6a987f31c0894f71199f784b5f2"
+    },
+    "research/HDBLAST_POSTCONTACT_SCREEN_CURVATURE_20261031/literature/METHODS_SCOPE.md": {
+      "bytes": 6050,
+      "sha256": "4a0c0f863f0af0d198caf42782bebbb8650b76c859e4c14d3762178b4b88fa34"
+    },
+    "research/HDBLAST_POSTCONTACT_SCREEN_CURVATURE_20261031/main/POSTCONTACT_NORMAL.json": {
+      "bytes": 56353,
+      "sha256": "79df81942c7c1733df61b91c7dc3ce620238bafd9666f89c113c5a62a8d22a1c"
+    },
+    "research/HDBLAST_POSTCONTACT_SCREEN_CURVATURE_20261031/main/REFLECTED_TT_PROOF.md": {
+      "bytes": 3205,
+      "sha256": "b2c3f8266e2440ae09bdc70f4f54d2778fb1f21f947885726df5762a299e67dd"
+    },
+    "research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015/EXACT_FINITE_REGULARITY_SHELL_EVOLUTION.md": {
+      "bytes": 16551,
+      "sha256": "621c127d33cfe7d1d2134740c9f1740644a12c38145183abb9c415dc5cc9740e"
+    },
+    "research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015/MANIFEST.json": {
+      "bytes": 9081,
+      "sha256": "1758d6479eaa4ed3637ef8d0aaf9f61fcbf3d8b0518e5f95fe5ecdd6fd8b979a"
+    },
+    "research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015/astra/QUASILINEAR_VARIABLE_MIXED_EVOLUTION.md": {
+      "bytes": 24920,
+      "sha256": "d6f80e6158226b253c56f2f60c8d9c6cfa2ee2940e79bde42dd8fe8e48a5d6c4"
+    },
+    "research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015/gauge-parameter/FINITE_REGULARITY_VARIATION_COMPLETION.md": {
+      "bytes": 8465,
+      "sha256": "b965f5d698a7e2382737376ad904130f3773f5658374bfc04ded5ea44e482e32"
+    },
+    "research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015/gauge-parameter/INITIAL_GAUGE_SUBSIDIARY_AND_PARAMETER.md": {
+      "bytes": 18003,
+      "sha256": "74bce09080d4015b2eccf8c183b33f47b80516216a9547837e3e0e34251d7b03"
+    },
+    "research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015/inputs/EXACT_LOCALIZED_INITIAL_DATA_AND_PRECONTACT.md": {
+      "bytes": 23875,
+      "sha256": "95ccaa550309b72226f8d03d3a950e4e10760d0d98810f0e818d19057a8cfd0b"
+    },
+    "research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015/inputs/NONLINEAR_BOUNDARY_STRAIGHTENING.md": {
+      "bytes": 9309,
+      "sha256": "da221f388e0397e4a3b06ce40be1feff1d170311f3b7eaf79f3644b667dd6882"
+    },
+    "research/HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015/sol/linear_audit/LINEAR_VARIABLE_WAVE_AUDIT.md": {
+      "bytes": 12373,
+      "sha256": "fcd7dc55b9459f0ebc56b1e6a77584be6a101878126efb692614378b4884af86"
+    },
+    "research/HDBLAST_REDUCED_SOURCE_BINDING_20261031/theory/CONSTRAINT_PROPAGATION_CHAIN.md": {
+      "bytes": 7161,
+      "sha256": "60b934bdf5bd3063af599c43c6019f522c5288ff992be2ad8a0109d3b1cc6173"
+    },
+    "research/HDBLAST_REGISTERED_INITIAL_CONSTRAINTS_20261030/theory/PHYSICAL_INITIAL_BINDING_NOTE.md": {
+      "bytes": 7313,
+      "sha256": "919da73c88156cdd9f27c50770ca8efefb23c7c4e6799a3e2a307c0ae950c06f"
+    },
+    "research/HDBLAST_REGISTERED_INITIAL_CONSTRAINTS_20261030/theory/REGISTERED_ADM_BINDING_NOTE.md": {
+      "bytes": 9262,
+      "sha256": "b5f2bd3269440076e7ef71b007934ac0b4e6897e2f716041f87231b4e0836b97"
+    },
+    "research/HDBLAST_REGULAR_CONE_EVOLUTION_20261013/basis/prior-checkpoint/manuscript/COVARIANT_FLUX_AND_PHYSICAL_DOMAINS.md": {
+      "bytes": 33332,
+      "sha256": "37d01f6245e6937cc1fdff48e793654ec07ad6a1640773e98cb62cb34b8e9c8a"
+    },
+    "research/HDBLAST_SCREEN_MAGNETIC_CURVATURE_20261026/review/symmetry/SYMMETRY_AUDIT.md": {
+      "bytes": 5298,
+      "sha256": "c3d9f4716f781b95b69972af096f3637b6cccdca328cefd9da51d6c5a8a235a5"
+    },
+    "research/HDBLAST_SCREEN_MAGNETIC_CURVATURE_20261026/theory/DERIVATION.md": {
+      "bytes": 12378,
+      "sha256": "f27efc433a20689e97ea45e2c0cfd0918323318a4a1cdc4e798166de56e0172b"
+    },
+    "research/HDBLAST_SCREEN_MAGNETIC_CURVATURE_20261026/theory/screen_coefficient.py": {
+      "bytes": 868,
+      "sha256": "359f4771a27b490614c91a44266d156d1696abc35f72795b68564703e9fe49bd"
+    },
+    "research/HDBLAST_SECOND_INITIAL_NORMS_GAUGE_20261015/background/inputs/ACTUAL_POTENTIAL_JET_BOUNDS.json": {
+      "bytes": 12164,
+      "sha256": "fd93a0de3d321ff5182115138eed2725f3c327083cf5148e3efc1aca3659d5c0"
+    },
+    "research/HDBLAST_SECOND_INITIAL_NORMS_GAUGE_20261015/background/inputs/PRIOR_ACTUAL_BACKGROUND_AND_RIGOROUS_COLLAR_BOUNDS.md": {
+      "bytes": 9297,
+      "sha256": "0832a16c4bdf18cc188861a2c2860e7e6ff736dec39426d6ca7c589dc0434d5c"
+    },
+    "research/HDBLAST_SECOND_ORDER_LOCALIZED_20261014/continuation/PRECONTACT_SECOND_ORDER_DYNAMICS.md": {
+      "bytes": 16323,
+      "sha256": "e0d175728081341b054c1f96f814322ff0917eaf2394ca2f801434f7acd29b0a"
+    },
+    "research/HDBLAST_SECOND_ORDER_LOCALIZED_20261014/manuscript/SECOND_ORDER_LOCALIZED.md": {
+      "bytes": 21422,
+      "sha256": "4e25e993f9653b530e30e2a2d3fefcb0a006f04050534190b99a98126ba04f63"
+    }
+  },
+  "source_capsules": {
+    "HDBLAST_BULK_SHELL_CONSTRAINT_BINDING_20261030": "7eae74dedfef544199d410665deb5ebf013d4cf484745428aba37dac7ba0671e",
+    "HDBLAST_COMMON_GAUGE_FORCING_20261016": "8bf173293b5cecf7f78e138ac5004abd9c7b1821ef29addb7ecfbc2a6409b4f6",
+    "HDBLAST_EXACT_CAUCHY_PACKET_20261031": "7f841e07955f08ab0eff74c3202e2ea9b18860454e90324d0298b8f8a16ce78e",
+    "HDBLAST_EXACT_LOCALIZED_PRECONTACT_20261014": "e0a2743b79a823cef7d54363f5b33bd030e1243e95803a300bca5be7181d0cfb",
+    "HDBLAST_EXACT_PACKET_INITIAL_20261031": "8201452fa5bc745a9ccfd64f67f5f2a15c564a3364af619873825c3a7a6015aa",
+    "HDBLAST_EXTERIOR_TENSOR_JETS_20261026": "0bc16f65598ae4977a7b8ab70a66c13ec85d844c871d6fee7739c4ec472d1c70",
+    "HDBLAST_FIRST_GAUGE_WAVE_20261016": "adb6e3a7e00a8e477af80a49bc6b7a0f4037fafd0dd42ab8175c8b55e3e4465c",
+    "HDBLAST_FULL_ANGULAR_RESPONSE_20261026": "a35f84119e84bf2ea8a712ded86ff79977d3ee91ac25f91ccbd202d379c859ac",
+    "HDBLAST_GEOMETRIC_BULK_SOURCES_20261016": "3ff1f95c151d2da6a1ab5e9b54718c2bb325c10d9c62a7ed9f97ef2bb36f0bb2",
+    "HDBLAST_INTERIOR_MASTER_JETS_20261015": "b043a13a228d11296fbbde292aa15f7a024deab9ff915bdce452c52c73745bbb",
+    "HDBLAST_NATURAL_FIELD_BINDING_20261030": "5121e4304fad7ab5856977b38c6ebd9fdc205900b543bc1c3d97384d246f378f",
+    "HDBLAST_POSTCONTACT_SCREEN_CURVATURE_20261031": "fb3046fa483cd781060e167324c8002a241898f82627172bcde8187836a3234e",
+    "HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015": "1758d6479eaa4ed3637ef8d0aaf9f61fcbf3d8b0518e5f95fe5ecdd6fd8b979a",
+    "HDBLAST_REDUCED_SOURCE_BINDING_20261031": "ae4094fd0ec1f4d9a977b8036456f1b76e97d24ec2b8ed35b969d2065f0f7fa4",
+    "HDBLAST_REGISTERED_INITIAL_CONSTRAINTS_20261030": "ccba0e9f108f2ad4559784641c5c38140d9249e30ae56ce9c83f02b31893c56e",
+    "HDBLAST_REGULAR_CONE_EVOLUTION_20261013": "a873132efe11755217ddb865fd0156041b8c1ad21ae1c45310183da4fb6140ae",
+    "HDBLAST_SCREEN_MAGNETIC_CURVATURE_20261026": "204e647b9f68f2af169b052deabee7c5d7f4bd71195fae31cefbfc2d10265777",
+    "HDBLAST_SECOND_INITIAL_NORMS_GAUGE_20261015": "4c0dae7de0b63acca15e5204681a859f49e5b5028340457dea5c29246bf0626c",
+    "HDBLAST_SECOND_ORDER_LOCALIZED_20261014": "675b0f18997cadd4ab595831d804ee97eb01bdd5cbc9fd3dc74762d26313a6d2"
+  }
+}

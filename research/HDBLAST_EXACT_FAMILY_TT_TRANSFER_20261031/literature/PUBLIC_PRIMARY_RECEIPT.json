@@ -1,0 +1,149 @@
+{
+  "schema": "hdblast.primary-literature-reading-receipt.v1",
+  "prepared_date_utc": "2026-10-31",
+  "purpose": "Primary-source corroboration and normalization audit for the generic warped-product tensor operator; no novelty or exhaustive-search claim.",
+  "discovery_scope": {
+    "successful_web_searches": 2,
+    "primary_scientific_sources_used": 2,
+    "additional_scientific_sources_added_during_public_packaging": 0
+  },
+  "public_comparison": {
+    "path": "PUBLIC_GENERIC_TENSOR_COMPARISON.md",
+    "sha256": "9691f0f1cc5f2666f29490f049ba8cbaa2c36243b32f89e05f5057c6dfc78f85",
+    "bytes": 6880
+  },
+  "body_hash_policy": {
+    "sha256": null,
+    "status": "not_retained",
+    "explanation": "The earlier successful primary-body reading returned parsed Markdown. The full returned bodies were held transiently and were not retained after that session; no digest of either full primary body or its PDF bytes is asserted. Bibliographic and equation-level reading provenance is retained below."
+  },
+  "sources": [
+    {
+      "id": "KIS2000",
+      "authors": [
+        "Hideo Kodama",
+        "Akihiro Ishibashi",
+        "Osamu Seto"
+      ],
+      "title": "Brane World Cosmology — Gauge-Invariant Formalism for Perturbation",
+      "journal": "Physical Review D 62, 064022 (2000)",
+      "arxiv_id": "hep-th/0004160",
+      "primary_body_url": "https://arxiv.org/pdf/hep-th/0004160",
+      "version_observed": "v3, 7 August 2000, as observed in the returned body banner",
+      "version_in_url": false,
+      "representation_read": "Primary PDF body returned as parsed Markdown; focused inspection of the sections and equations recorded here.",
+      "read_date_utc": "2026-10-31",
+      "body_sha256": null,
+      "body_sha256_status": "Original returned body was not retained; no full-body or PDF digest asserted.",
+      "locations_read": [
+        {
+          "section": "II.A",
+          "equations": [
+            "(2)",
+            "(7)",
+            "(8)",
+            "(9)",
+            "(10)"
+          ],
+          "purpose": "Generic warped product with arbitrary m-dimensional base and radius function; isotropic angular matter; background Einstein equation."
+        },
+        {
+          "section": "II.C.1",
+          "equations": [
+            "(19)",
+            "(20)",
+            "(21)",
+            "(22)",
+            "(23)"
+          ],
+          "purpose": "TT harmonics, metric/source normalization, gauge invariance, and tensor master equation."
+        },
+        {
+          "section": "IV introduction",
+          "equations": [],
+          "purpose": "Identify vacuum as a later specialization rather than an assumption of Section II tensor equation."
+        }
+      ],
+      "exact_equations_in_normalized_notation": {
+        "(19)-(20)": "Delta_hat T_ij = -k^2 T_ij; T^i_i=0; D_hat_j T^j_i=0.",
+        "(21)": "h_ab=0; h_ai=0; h_ij=2 r^2 H_T T_ij.",
+        "(22)": "delta T^i_j=tau_T T^i_j.",
+        "(23)": "-Box_B H_T-(n/r) D r dot D H_T+(k^2+2K) H_T/r^2=kappa^2 tau_T."
+      },
+      "applicability": "Use m=2, base coordinates (y,t), g_B=dy^2-rho(y)^2 dt^2, r=rho(y) cosh(t), n=3, K=1, k^2=6, H_T=U/2; canonical radial scalar gives tau_T=0.",
+      "limits": "Equation-level corroboration of the project operator; does not by itself prove the project-specific full-mode projection, global well-posedness, or nonlinear integrability."
+    },
+    {
+      "id": "CaiCao2013",
+      "authors": [
+        "Rong-Gen Cai",
+        "Li-Ming Cao"
+      ],
+      "title": "Generalized Formalism in Gauge-Invariant Gravitational Perturbations",
+      "journal": "Physical Review D 88, 084047 (2013)",
+      "arxiv_id": "1306.4927",
+      "primary_body_url": "https://arxiv.org/pdf/1306.4927",
+      "publisher_url_discovered": "https://link.aps.org/doi/10.1103/PhysRevD.88.084047",
+      "version_observed": "Returned PDF parsing metadata identified arXiv:1306.4927v1 [gr-qc], 20 June 2013; the unversioned retrieval URL was used. No new version resolution was performed.",
+      "version_in_url": false,
+      "representation_read": "Primary PDF body returned as parsed Markdown; focused inspection of the sections and equations recorded here.",
+      "read_date_utc": "2026-10-31",
+      "body_sha256": null,
+      "body_sha256_status": "Original returned body was not retained; no full-body or PDF digest asserted.",
+      "locations_read": [
+        {
+          "section": "II.A",
+          "equations": [
+            "(2.1)",
+            "(2.2)"
+          ],
+          "purpose": "Arbitrary Lorentzian base and Einstein fiber assumptions."
+        },
+        {
+          "section": "III.B.1",
+          "equations": [
+            "(3.9)",
+            "(3.10)",
+            "(3.11)",
+            "(3.12)"
+          ],
+          "purpose": "Tensor equation before spectral expansion; covariant matter correction and Lichnerowicz operator."
+        },
+        {
+          "section": "IV.A",
+          "equations": [
+            "(4.1)",
+            "(4.2)",
+            "(4.3)"
+          ],
+          "purpose": "TT eigentensor expansion and master equation with explicitly normalized source."
+        }
+      ],
+      "exact_equations_in_normalized_notation": {
+        "(3.10)": "-Box_B(h_Tij^(2)/r^2)-n(D^a r/r)D_a(h_Tij^(2)/r^2)+r^-2[Delta_L-2(n-1)K](h_Tij^(2)/r^2)=2 kappa^2[delta T_Tij^(2)/r^2-P h_Tij^(2)/r^2].",
+        "(4.1)": "(Delta_L-lambda_L) T_ij=0, with trace and divergence zero.",
+        "(4.2)": "h_Tij^(2)/r^2=2 H_T T_ij; delta T_Tij^(2)/r^2-P h_Tij^(2)/r^2=tau_T T_ij.",
+        "(4.3)": "Box_B H_T+n(D^a r/r)D_a H_T-r^-2[lambda_L-2(n-1)K]H_T=-kappa^2 tau_T."
+      },
+      "notation_normalization": "Box_B denotes the base dAlembertian. The returned parsed equation had inconsistent superscript typography on that operator; the surrounding base-operator definition fixes its meaning. For a constant-curvature fiber on TT tensors, Delta_L=-Delta_hat+2nK, hence lambda_L-2(n-1)K=k^2+2K.",
+      "applicability": "Corroborates the same generic tensor equation before any vacuum or static-black-hole specialization and displays the isotropic-pressure subtraction explicitly.",
+      "limits": "Focused reading of recorded sections; not a line-by-line review of every part of the full paper. No new source or edition was selected during public packaging."
+    }
+  ],
+  "result": {
+    "background": "g_B=dy^2-rho(y)^2 dt^2; R=rho(y) cosh(t); a=rho_prime/rho.",
+    "bound_operator": "[U_tt-rho^2 U_yy-4 rho^2 a U_y+3 tanh(t) U_t+8 sech(t)^2 U]/(2 rho^2).",
+    "normalization": "Coefficient of the mixed angular TT residual; the covariant residual coefficient multiplying T_ij has an additional factor R^2.",
+    "scalar_matter": "The first variation of angular scalar-gradient anisotropy vanishes for a radial background scalar; the remaining mixed angular stress is pure trace, so tau_T=0."
+  },
+  "independent_verification_boundary": "The project-specific TT projection and direct Ricci calculation provide the mathematical verification. This literature receipt corroborates their operator and does not replace those arguments.",
+  "redistribution": "This receipt and comparison contain bibliographic metadata, brief equation-level material, and original synthesis. No full third-party paper body is distributed.",
+  "runtime_dependencies": [],
+  "public_path_policy": "All artifact references in this receipt are relative names. No private filesystem path, credential, authenticated retrieval token, or private raw-body dependency is included.",
+  "limits": [
+    "Smooth regular region rho>0; compact round unit S^3; Einstein equation with a minimally coupled canonical scalar.",
+    "No global boundary or initial value theorem, nonlinear completion theorem, or classification of all perturbations is asserted.",
+    "No full-body hash was retained; the comparison note itself is byte-hashed.",
+    "No novelty or exhaustive-literature claim."
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "authenticated_capsules": [
+    {
+      "manifest": "MANIFEST.json",
+      "manifest_sha256": "1758d6479eaa4ed3637ef8d0aaf9f61fcbf3d8b0518e5f95fe5ecdd6fd8b979a",
+      "member_count": 51,
+      "path": "HDBLAST_QUASILINEAR_SHELL_EVOLUTION_20261015"
+    }
+  ],
+  "checks": [
+    "model-potential",
+    "model-tension-second",
+    "model-tension-third",
+    "seed-metric-radial",
+    "seed-metric-angular",
+    "seed-momentum",
+    "seed-scalar",
+    "seed-scalar-density",
+    "seed-frozen-profile-ratio",
+    "canonical-inverse-00",
+    "canonical-inverse-01",
+    "canonical-inverse-02",
+    "canonical-inverse-03",
+    "canonical-inverse-10",
+    "canonical-inverse-11",
+    "canonical-inverse-12",
+    "canonical-inverse-13",
+    "canonical-inverse-20",
+    "canonical-inverse-21",
+    "canonical-inverse-22",
+    "canonical-inverse-23",
+    "canonical-inverse-30",
+    "canonical-inverse-31",
+    "canonical-inverse-32",
+    "canonical-inverse-33",
+    "completed-velocity-11",
+    "completed-velocity-22",
+    "completed-velocity-33",
+    "TT-background-Hamilton-reduction",
+    "universal-TT-coordinate-conversion",
+    "shell-normalization",
+    "screen-second-derivative",
+    "domain-support-union",
+    "domain-actual-speed-margin",
+    "domain-observation-margin",
+    "domain-first-field-triangle",
+    "inherited-observation-point",
+    "inherited-contraction-arithmetic",
+    "inherited-screen-endpoint-binding",
+    "inherited-screen-sign"
+  ],
+  "controls": [
+    {
+      "exit_code": 1,
+      "failed_witness": "model-potential",
+      "mutation": "potential_sign",
+      "rejected_by": "model-potential",
+      "success_artifact_absent": true
+    },
+    {
+      "exit_code": 1,
+      "failed_witness": "seed-momentum",
+      "mutation": "velocity_profile",
+      "rejected_by": "seed-momentum",
+      "success_artifact_absent": true
+    },
+    {
+      "exit_code": 1,
+      "failed_witness": "seed-scalar-density",
+      "mutation": "scalar_density",
+      "rejected_by": "seed-scalar-density",
+      "success_artifact_absent": true
+    },
+    {
+      "exit_code": 1,
+      "failed_witness": "canonical-inverse-00",
+      "mutation": "canonical_half",
+      "rejected_by": "canonical-inverse-00",
+      "success_artifact_absent": true
+    },
+    {
+      "exit_code": 1,
+      "failed_witness": "canonical-inverse-00",
+      "mutation": "omit_density_variation",
+      "rejected_by": "canonical-inverse-00",
+      "success_artifact_absent": true
+    },
+    {
+      "exit_code": 1,
+      "failed_witness": "completed-velocity-11",
+      "mutation": "omit_lapse_product",
+      "rejected_by": "completed-velocity-11",
+      "success_artifact_absent": true
+    },
+    {
+      "exit_code": 1,
+      "failed_witness": "universal-TT-coordinate-conversion",
+      "mutation": "radial_chain",
+      "rejected_by": "universal-TT-coordinate-conversion",
+      "success_artifact_absent": true
+    },
+    {
+      "exit_code": 1,
+      "failed_witness": "shell-normalization",
+      "mutation": "boundary_sign",
+      "rejected_by": "shell-normalization",
+      "success_artifact_absent": true
+    },
+    {
+      "exit_code": 1,
+      "failed_witness": "screen-second-derivative",
+      "mutation": "curvature_half",
+      "rejected_by": "screen-second-derivative",
+      "success_artifact_absent": true
+    },
+    {
+      "exit_code": 1,
+      "failed_witness": "domain-support-union",
+      "mutation": "support_undercount",
+      "rejected_by": "domain-support-union",
+      "success_artifact_absent": true
+    },
+    {
+      "exit_code": 1,
+      "failed_witness": "source-hash:HDBLAST_EXACT_LOCALIZED_PRECONTACT_20261014/EXACT_LOCALIZED_INITIAL_DATA_AND_PRECONTACT.md",
+      "mutation": "source-byte-mutation",
+      "rejected_by": "source-hash",
+      "success_artifact_absent": true
+    },
+    {
+      "exit_code": 1,
+      "failed_witness": "capsule-member-hash:README.md",
+      "mutation": "capsule-byte-mutation",
+      "rejected_by": "capsule-member-hash",
+      "success_artifact_absent": true
+    }
+  ],
+  "count": 40,
+  "inherited_contraction": "4508174448713669220135983443725/83076749736557242056487941267521536",
+  "inherited_screen_interval": [
+    "-1049651791613786574257886764672101/2596148429267413814265248164610048",
+    "-18954240643899648600527883239121/1298074214633706907132624082305024"
+  ],
+  "scope": "Finite exact algebra and domain checks only; analytic premises are not certified.",
+  "selected_source_count": 25,
+  "source_pins_sha256": "8404af36d4458f9ba0a9f04fe92b937457773d48624598617ed7813b71cc0c99",
+  "sympy": "1.14.0"
+}
