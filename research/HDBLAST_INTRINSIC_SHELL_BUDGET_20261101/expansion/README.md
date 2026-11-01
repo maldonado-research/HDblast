@@ -29,14 +29,16 @@ The essential component files are:
 - `TRACE_RECOVERY_AGGREGATION_AUDIT.md`: independent mathematical check of
   the numerical Volterra extraction, separate from the 21 identities.
 
-From this component directory, with SymPy 1.14.0 available:
+From this component directory, with SymPy 1.14.0 available, choose fresh
+output locations outside both the checkout and component:
 
 ```
-python -I -B check_shell_expansion.py --repo-root CHECKOUT --run-controls --output NORMAL.json
-python -I -B -O check_shell_expansion.py --repo-root CHECKOUT --run-controls --output-dir optimized
+python -I -B check_shell_expansion.py --repo-root CHECKOUT --run-controls --output /tmp/hdblast-shell-expansion-normal.json
+python -I -B -O check_shell_expansion.py --repo-root CHECKOUT --run-controls --output-dir /tmp/hdblast-shell-expansion-optimized
 ```
 
-The second command writes `optimized/SHELL_EXPANSION.json`. These reports
+The second command writes `/tmp/hdblast-shell-expansion-optimized/SHELL_EXPANSION.json`.
+Keep the shipped reference reports unchanged. The generated reports
 must agree byte for byte. Omitting both output options writes the same
 canonical JSON to stdout. Source authentication uses file hashes rather
 than requiring the checkout's HEAD to equal the recorded source commit;
