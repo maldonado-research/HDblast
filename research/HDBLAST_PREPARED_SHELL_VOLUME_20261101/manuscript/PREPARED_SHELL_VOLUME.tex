@@ -1,0 +1,588 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={A conditional proper-time volume response for prepared Einstein-scalar shell data},pdfauthor={Ricardo Maldonado},pdfsubject={Working manuscript for author and specialist review}}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\Lie}{\mathcal L}
+\newcommand{\av}[1]{\left\langle #1\right\rangle}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\bQ}{\mathcal Q}
+\newcommand{\vol}{\operatorname{Vol}}
+\newtheorem{proposition}{Proposition}
+\title{A conditional proper-time volume response for prepared Einstein--scalar shell data}
+\author{Ricardo Maldonado\\\small Independent Researcher}
+\date{1 November 2026}
+
+\begin{document}
+\maketitle
+\begin{center}\small Working manuscript for author and specialist review\end{center}
+\begin{abstract}
+We calculate a conditional second variation of anchored proper-time volume
+for a compactly prepared perturbation of a five-dimensional Einstein--scalar
+spacetime with a pure-tension timelike shell. An explicit compact monopole
+particular solution fixes second initial data that were not numerically
+specified by an earlier weighted-only completion. A pure second-order gauge
+transformation removes a large spatial Lie-derivative term while retaining
+its scalar contribution. The complete five-component mean system is bounded
+by a fresh causal contraction estimate. Clock and volume-measure corrections
+give the proper scalar mean, and an exact intrinsic Gauss identity with a
+positive Green kernel gives the volume and expansion response. At the fixed
+proper time $\tau_*=(5/4)\rho_b10^{-6}$, outward enclosures are
+$V_2/V_0\in[-5.4520,-2.6521]\times10^{16}$ and
+$\Theta_2\in[-9.0208,-4.4458]\times10^{21}$ in the stated model and parameter
+normalization. The conclusions assume the retained background, localized
+constraint inverse, smooth shell development, and source-identification
+results. They imply smaller volume and smaller positive expansion than the
+background for sufficiently small nonzero parameters in each fixed family;
+they give no effective parameter radius or physical radiation mechanism.
+\end{abstract}
+
+\section{Problem, model, and conditional statement}
+
+Second-order observables depend on the nonlinear completion of first-order
+Cauchy data. A fixed first packet and zero initial tensor-transverse-traceless
+data do not determine the scalar second response. In particular, a weighted
+constraint construction whose radial weights have not been instantiated
+does not identify a unique numerical mean history. We address this problem
+by prescribing a compact mean particular solution and applying the retained
+constraint construction to the remaining source. This is a new preparation,
+not a reconstruction of unspecified old weights.
+
+The bulk and one-copy outward shell equations are
+\begin{align}
+ \operatorname{Ric}_{AB}-\phi_A\phi_B-\tfrac23\mathcal V(\phi)g_{AB}&=0,
+ &\Box_g\phi-\mathcal V'(\phi)&=0, \label{eq:model}\\
+ K^{\rm out}_{ab}&=\tfrac16\sigma(\phi)\gamma_{ab},
+ &n_{\rm out}\phi&=-\tfrac12\sigma'(\phi). \label{eq:shell}
+\end{align}
+Two identical interior copies use their respective outward normals. The
+retained model is
+\begin{gather}
+ W(\phi)=1-\phi+\phi^3/3,\qquad
+ \mathcal V=\tfrac12(W')^2-\tfrac23W^2,\qquad
+ \sigma=2W+\delta(1+c_\sigma\phi), \nonumber\\
+ \delta=10^{-3},\qquad c_\sigma=96714321425692/161839258930731.
+ \label{eq:potential}
+\end{gather}
+The selected near-$\phi=1$ regular background, with its retained shell
+data, is
+\begin{equation}
+ g_0=\dd y^2+\rho(y)^2[-\dd t^2+\cosh^2t\,\kappa],\qquad
+ a=\rho_y/\rho,\quad p=\phi_{0,y}, \label{eq:background}
+\end{equation}
+where $\kappa$ is the unit round metric on $S^3$. Put
+$\ell=10^{-6}$, $x=t/\ell$, $r=z/\ell$, and $\dd y=-\rho\,\dd z$.
+Thus $\partial_r=-\ell\rho\partial_y$. The shell radius is $\rho_b$.
+The coordinate $t$ is not proper time; on the background shell
+$\tau=\rho_b t$.
+
+All subscript-$2$ quantities are second parameter derivatives:
+\begin{equation}
+ g_\eps=g_0+\eps q+\tfrac12\eps^2 k+o(\eps^2),\qquad
+ \phi_\eps=\phi_0+\eps\eta+\tfrac12\eps^2w+o(\eps^2).
+ \label{eq:factorial}
+\end{equation}
+An angular mean uses probability measure on $S^3$. The first angular
+factor is $Y=n_1^2-n_2^2$, so
+$\av{Y}=0$, $\av{Y^2}=1/6$, and $\Delta_\kappa Y=-8Y$.
+
+The following are explicit analytic premises, not theorems reproved by
+the interval calculation: the regular background and its stated collar
+bounds; the invariant dotted-space weighted constraint inverse and its
+nonlinear implicit-function construction; a common fixed-shell development
+with the retained subsidiary and boundary uniqueness statements; its $C^2$
+parameter dependence with the lower spacetime regularity needed for traces
+and observables; and identification of the actual first master and harmonic
+gauge fields with that family's first derivative. The companion technical
+records specify these premises and the fixed first seed \cite{companion}.
+The common solution slab contains the target with a strict time margin.
+For each sufficiently small fixed family, the anchored intrinsic normal
+foliation exists on the needed compact interval after qualitative parameter
+shrinkage. No numerical no-caustic or parameter-radius estimate is supplied.
+
+\begin{proposition}[Conditional response at a fixed proper clock]
+Under these premises, choose the explicit mean preparation of
+Section~\ref{sec:preparation}, keep the retained first packet, and define
+the anchored observables of Section~\ref{sec:proper}. At
+$\tau_*=(5/4)\rho_b\ell$, their second derivatives obey
+\begin{align}
+ M_2(\tau_*)&\in[1.1296,1.9779]\times10^{30},\nonumber\\
+ v_2(\tau_*):=V_2(\tau_*)/V_0(\tau_*)&\in[-5.4520,-2.6521]\times10^{16},
+ \label{eq:main}\\
+ \Theta_2(\tau_*)&\in[-9.0208,-4.4458]\times10^{21}.\nonumber
+\end{align}
+The intervals are outward decimal displays of exact rational enclosures.
+Every fixed admissible choice of the remaining radial weights has this
+same second mean response. This does not identify the full finite-parameter
+families or give a uniform admissible parameter interval over those choices.
+\end{proposition}
+
+\section{An explicit compact second mean}\label{sec:preparation}
+
+Write $\rho_0$ for the background spatial volume density, distinct from
+$\rho$. With the action normalization $R/2-|\dd\phi|^2/2-\mathcal V$,
+the initial first canonical data in a background orthonormal spatial frame
+are
+\begin{equation}
+ \gamma_1=\operatorname{diag}(-4u,2u,2u,2u)Y,\quad
+ \pi_1/\rho_0=\operatorname{diag}(-3s/2,0,0,0)Y,\quad
+ \phi_1=vY,\quad \varpi_1/\rho_0=jY, \label{eq:first}
+\end{equation}
+where $s=u_t/\rho$, $j=v_t/\rho$. The actual initial packet is
+\begin{align}
+ Q(z)&=\exp\!\left(4-\frac{\ell^2}{(z-\ell)(2\ell-z)}\right)
+ &&(\ell<z<2\ell), \label{eq:bump}\\
+ \alpha&=(\rho/\rho_b)^{3/2}p/p_b,\quad
+ \kappa_r=\alpha_z/\alpha=\rho(5a/2-\mathcal V'/p),\nonumber\\
+ u&=\alpha Q/\rho^2,\quad u_t=e^{-z}u,\quad
+ v=\frac{3\alpha(Q_z+\kappa_rQ)}{\rho^3p},\quad
+ v_t=\frac{3\alpha e^{-z}[Q_z+(\kappa_r-1)Q]}{\rho^3p}.\nonumber
+\end{align}
+Set $Q=0$ elsewhere; its endpoints are flat. In particular
+$pv=-3(u_y+2au)$ and $pj=-3(s_y+3as)$.
+
+Let $Q_H$ and $Q_M$ be the monopole Hessians of the canonical Hamiltonian
+constraint and the radial momentum constraint divided by $\rho_0$.
+Write the latter as $Q_M^{\rm mom}$. Their explicit expressions are
+\begin{align}
+ Q_H={}&-2u_y^2-24auu_y-2uu_{yy}
+ -(16a_y+32a^2+8p^2/3)u^2-4u^2/\rho^2-s^2\nonumber\\
+ &-(j^2+v_y^2+\mathcal V''v^2)/6
+ -(4/3)puv_y-(4/3)v^2/\rho^2, \label{eq:sources}\\
+ Q_M^{\rm mom}={}&-2s u_y+j(v_y+4pu)/3.\nonumber
+\end{align}
+These are Hessians, not coefficients already divided by two. If $P$ is
+the linearized constraint operator, the required second equation is
+$P x_2=-D^2\widehat{\mathcal C}[v_{\rm seed},v_{\rm seed}]$.
+
+With $y_L=y(2\ell)<y_U=y(\ell)$, define
+\begin{align}
+ I&=\int_{y_L}^{y_U}\rho^4 Q_H\,\dd y,&
+ J&=\int_{y_L}^{y_U}\rho^2 Q\,\dd y>0,& f&=\frac{2I}{9J}Q,
+ \label{eq:IJ}\\
+ C[f]&=-\tfrac32(f_{yy}+3af_y)-\mathcal V f,&
+ \xi(y)&=-\frac{\displaystyle\int_{y_L}^{y}\rho^4(Q_H+C[f])\,\dd s}
+                    {\rho^4p^2}.&&\label{eq:xi}
+\end{align}
+The mean canonical datum $B_{\rm mean}$ is
+\begin{align}
+ h&=f\gamma_0+\Lie_{\xi\partial_y}\gamma_0,\qquad
+       \phi_2=\varpi_2=0,\nonumber\\
+ \tau:=\pi_2/\rho_0&=\operatorname{diag}
+       (0,-Q_M^{\rm mom}/(6a),-Q_M^{\rm mom}/(6a),-Q_M^{\rm mom}/(6a)).
+       \label{eq:B}
+\end{align}
+The displayed metric components are $h_{yy}=f+2\xi_y$ and
+$h_{\rm angular}=f+2a\xi$.
+
+The radial identities proving the construction are
+\begin{align}
+ P_g(f\gamma_0)&=C[f],&
+ P_g(\Lie_{\xi\partial_y}\gamma_0)&=\rho^{-4}(\rho^4p^2\xi)_y,
+ \nonumber\\
+ \int\rho^4 C[f]\,\dd y&=-\tfrac92\int\rho^2f\,\dd y,&
+ P_m(C,D)&=-2[C_y+3a(C-D)]. \label{eq:rightinverse}
+\end{align}
+Thus the primitive in \eqref{eq:xi} has zero total integral and vanishes
+on both exterior sides. Flatness gives a smooth compact extension, and
+\eqref{eq:B} solves $P B_{\rm mean}=-P_0D^2\widehat{\mathcal C}[v,v]$.
+The denominator bounds $\rho\ge129$, $|p|\ge3/25000$, and
+$a\ge111/1000$ hold on the support. The sign and factor
+$-Q_M^{\rm mom}/(6a)$ are essential.
+
+For completeness, let $\mathcal A$ be the retained radial weighted
+correction map and $\omega$ its constraint weight. Apply the same local
+implicit-function theorem to
+\begin{equation}
+ x_\eps=x_0+\eps v_{\rm seed}+\tfrac12\eps^2B_{\rm mean}
+             +\mathcal A U(\eps),\qquad U(0)=U'(0)=0. \label{eq:ift}
+\end{equation}
+The derivative in $U$ is the original isomorphism
+$L=\omega^{-2}P\mathcal A$. Smooth compact polynomial trial terms only
+alter local constants. Haar averaging $P_0$ on the full tensor spaces
+commutes with the radial operators and weights, is bounded on the dotted
+closures, and maps the reflection-invariant domain into itself. Hence
+$LP_0U''(0)=0$, so injectivity gives $P_0U''(0)=0$. Individual rotations
+need not preserve that reflection-invariant domain. Consequently the exact
+curve has the prescribed second mean for every remaining admissible radial
+weight choice. Other angular second data and higher parameter derivatives
+are not thereby fixed.
+
+\section{A conditioned second harmonic jet}
+
+The canonical-to-physical map is
+\begin{equation}
+ K_{ij}=\frac{2}{\rho_\gamma}
+ \left(\gamma_{ia}\gamma_{jb}\pi^{ab}
+       -\tfrac13\gamma_{ij}\gamma_{ab}\pi^{ab}\right),\qquad
+ \Pi=\varpi/\rho_\gamma,\qquad K=\tfrac12\Lie_n\gamma.
+ \label{eq:canonical}
+\end{equation}
+At the time-symmetric background it gives
+$\av{K_{2,yy}}=Q_M^{\rm mom}/(3a)+6us$,
+$\av{K_{2,\rm angular}}=-us$, and $\av{\Pi_2}=-uj/3$.
+Choose initial lapse $N_\eps=\rho(1+\eps uY)$ and zero shift.
+For $R^A=g^{BC}\widehat\Gamma^A_{BC}$ with
+$\widehat\Gamma=\Gamma[g_0]$, the exact initial relative-harmonic
+completion is
+\begin{equation}
+ \dot N=N^2\operatorname{tr}_\gamma K-N^3R^t,\qquad
+ \dot\beta^I=N^2(\Gamma_\gamma^I-R^I)-N\gamma^{IJ}\partial_JN.
+ \label{eq:gaugeinitial}
+\end{equation}
+The perturbed inverse metric contracts the reference connection. Together
+with $\dot\gamma=2NK$ and $\dot\phi=N\Pi$, this fixes all gauge
+velocities. The physical constraints then supply the vanishing initial
+normal subsidiary derivative through the reduced equations; those
+accelerations are not extra freely chosen Cauchy data.
+
+The spatial term $2\xi_y$ can have size about $10^{39}$ in this
+preparation. Evolving the original angular trace requires cancellation
+against a large radial contribution in the shell boundary lift. We use
+a pure second generator $Z$, initially
+\begin{equation}
+ (Z^y,Z^t,Z^y_t,Z^t_t)=(-\xi,0,0,a\xi),\qquad Z^{\rm angular}=0,
+ \label{eq:Zdata}
+\end{equation}
+and solve $(\Box_0+\operatorname{Ric}_0)Z=0$, with
+$Z^y=0$ and $\partial_yZ^t=0$ at the shell. These are the monopole
+normal Dirichlet and tangential Neumann rows. They are derived directly
+for the monopole vector; an angular-gradient amplitude is absent.
+The smooth compatible two-component problem has a standard reflected
+Volterra construction. The companion check bounds its contraction
+constant on the retained triangle by $3/250$.
+
+The second transformation is
+\begin{equation}
+ \bar k=k+\Lie_Zg_0,\qquad \bar w=w+Z\phi_0. \label{eq:secondgauge}
+\end{equation}
+It removes the spatial Lie term and gives $\bar\phi_2=-p\xi$.
+It leaves second canonical momenta unchanged because their background
+values vanish; naturality of \eqref{eq:canonical} preserves the physical
+conversion. The chosen time derivative in \eqref{eq:Zdata} keeps the
+second lapse and shift values fixed. Omitting the new scalar displacement
+would change the physical data and violate the linearized constraint
+cancellation.
+
+Use the background frame $e_y=\partial_y$, $e_0=\rho^{-1}\partial_t$,
+$e_a=(\rho\cosh t)^{-1}E_a$, and mean order
+$\mathbf U=(K_0,L_0,N_0,J_0,w_0)$ for the $yy,y0,00$, angular-isotropic,
+and scalar slots. The positive angular norm has Gram matrix
+$\operatorname{diag}(1,2,1,3,1)$. In this conditioned representative,
+\begin{align}
+ \mathbf U_0&=(f,0,-u^2/3,f,-p\xi), \label{eq:U0}\\
+ \mathbf V_0:=\partial_x\mathbf U|_0
+ &=\ell\begin{pmatrix}
+ 2\rho Q_M^{\rm mom}/(3a)+32uu_t/3\\
+ \rho[-f_y+af-13uu_y/3-au^2/3]\\
+ -2\rho Q_M^{\rm mom}/(3a)+4uu_t/3\\
+ -4uu_t/3\\0
+ \end{pmatrix},\label{eq:V0}\\
+ \partial_r\mathbf U_0&=-\ell\rho(f_y,0,-2uu_y/3,f_y,-p_y\xi-p\xi_y).
+ \label{eq:U0r}
+\end{align}
+In particular $N_0$ is a covariant timelike frame component, with no
+additional sign flip. The $g_{ty}$ velocity includes
+$2(\gamma_1)_{yy}\dot\beta_1^y$; the $g_{tt}$ value includes the
+quadratic lapse square. The vanishing scalar time velocity is the exact
+cancellation $\rho\Pi_2+2N_1\Pi_1=0$.
+
+This is a change of second jet of the same prepared physical family.
+The flow of $Z$ at parameter $\eps^2/2$ preserves the shell and its
+initial anchor. It need not be a nonlinear harmonic transformation for
+finite $\eps$. Only $dC[\Lie_Zg_0]=0$ is required for the second jet.
+The first field and all its quadratic sources remain unchanged. The
+retained parameter regularity permits the needed second-jet and trace
+operations; no new lossless Sobolev composition theorem is asserted.
+
+\section{The complete five-mean estimate}
+
+Rotational equivariance of the linearized background bulk and shell
+operators makes all five invariant slots a closed system, even for second
+data with additional angular components. Projecting the exact family's
+second equations and applying the retained mixed linear uniqueness
+identifies their mean with the solution from
+\eqref{eq:U0}--\eqref{eq:U0r}. The operator, physical shell rows, and
+normal gauge row are retained together:
+\begin{equation}
+ \mathbf U_{xx}-\mathbf U_{rr}
+ =A_0\mathbf U_x+B_0\mathbf U_r+D_0\mathbf U+F_0,
+ \quad L_0|_{r=0}=0,\quad P_N\mathbf U_r=M_0P_N\mathbf U+G_0.
+ \label{eq:meanpde}
+\end{equation}
+Here $P_N$ selects the other four slots. The actual forcing includes
+the reduced Einstein/scalar Hessians and all physical and gauge shell
+sources, not a selected-sign replacement.
+
+Set $T=5/4$, $\Delta=T-1=1/4$, and
+\begin{equation}
+ D_T=\{0\le x\le T,\ 0\le r\le T-x\},\qquad
+ \norm{\mathbf U}_X=\max\left\{sup_{D_T}|\mathbf U|_H/3,
+      \sup_{D_T}|\mathbf U_x|_H,\sup_{D_T}|\mathbf U_r|_H\right\}.
+ \label{eq:norm}
+\end{equation}
+The mean initial data and first quadratic sources vanish in the flat
+wedge $x+r\le1$. Thus the linear mean response vanishes there. This
+does not impose that same wedge on every finite-parameter nonlinear field.
+For compatible differences, integration from the wedge gives
+$|\mathbf U|_H\le\Delta\norm{\mathbf U}_X$ and shell trace
+$|\mathbf U(x,0)|_H\le(x-1)_+\norm{\mathbf U}_X$.
+
+Write $\mathcal K$ for the reflected bulk Duhamel operator and
+$\mathcal L$ for the Robin lift. Their bounds are
+$\norm{\mathcal KF}_X\le T\sup|F|_H$ and
+$\norm{\mathcal LG}_X\le\sup|G|_H$.
+The retained coefficient caps
+$\norm{A_0},\norm{B_0}\le10^{-4}$,
+$\norm{D_0}\le10^{-6}$ and $\norm{M_0}\le1/2000$ yield
+\begin{equation}
+ q=T(2\cdot10^{-4}+\Delta10^{-6})+\Delta/2000
+   =\frac{1201}{3200000}=0.0003753125<1. \label{eq:q}
+\end{equation}
+If $\mathbf B$ is the reflected free wave for the \emph{new} initial
+pair, the exact total mean satisfies
+$\mathbf U=\mathbf B+\mathcal T\mathbf U+\mathbf S$.
+The entire forcing history is charged once using
+\begin{equation}
+ F_H=17387513156573,\quad G_H=3851400,\qquad
+ S_X=TF_H+G_H=\frac{86937581188465}{4}. \label{eq:sourcecap}
+\end{equation}
+For new initial norm caps $D_0^{\rm init},D_r^{\rm init},D_v^{\rm init}$,
+\begin{equation}
+ B_X\le\max\{(D_0^{\rm init}+TD_v^{\rm init})/3,
+                    D_r^{\rm init}+D_v^{\rm init}\},\qquad
+ \norm{\mathbf U-\mathbf B}_X\le E_X:=\frac{qB_X+S_X}{1-q}.
+ \label{eq:resolvent}
+\end{equation}
+This bounds all feedback iterations and all internal mean couplings.
+No old total cap, initial accuracy allocation, or truncated-iteration tail
+is substituted. Whole-cell interval evaluation with flat-tail treatment
+gives the outward displays
+\begin{center}
+\begin{tabular}{@{}lc@{}}\toprule
+Quantity & Certified upper display\\\midrule
+$D_0^{\rm init}$ & $1.9944\times10^{30}$\\
+$D_r^{\rm init}$ & $1.7478\times10^{31}$\\
+$D_v^{\rm init}$ & $2.7533\times10^{22}$\\
+$B_X$ & $1.7478\times10^{31}$\\
+$E_X$ & $6.5620\times10^{27}$\\\bottomrule
+\end{tabular}
+\end{center}
+The large coefficients reflect the chosen parameter normalization; they
+are not finite-amplitude field values. The construction bounds a
+continuous response rather than numerically time-stepping a full field.
+
+\section{Proper scalar mean and intrinsic volume}\label{sec:proper}
+
+Anchor the shell's intrinsic future normal-geodesic foliation at its
+registered initial spatial section. Let $h_\eps(\tau)$ be the induced
+spatial metric in that foliation and define
+\begin{equation}
+ V_\eps(\tau)=\int_{S^3}\dd\mu_{h_\eps},\qquad
+ \Theta_\eps=\partial_\tau\log V_\eps,\qquad
+ M_\eps=V_\eps^{-1}\int_{S^3}\phi_\eps\,\dd\mu_{h_\eps}.
+ \label{eq:observables}
+\end{equation}
+The observers are intrinsic shell geodesics, not an assumed material flow
+or ambient geodesic congruence. The background has
+$A(\tau)=\rho_b\cosh(\tau/\rho_b)$,
+$H=A_\tau/A$, and $V_0=2\pi^2A^3$.
+All first integrated coefficients vanish by the quadrupole mean.
+
+To exhibit the required first corrections, write the first shell frame
+metric as $m_{00}=-2XY$, $m_{0a}=V D_aY$, and
+$m_{ab}=2(ZY\kappa_{ab}+dD_aD_bY)$, and write the first scalar as
+$\psi Y$. Here $V$ is a first metric amplitude only in these formulas,
+not the shell volume. Set
+$C_\tau=X$, $C(0)=0$, and $E=Z-HC$.
+The normalized proper mean is
+\begin{equation}
+ M_2=w_0-C\psi_\tau/3+(E-8d/3)\psi. \label{eq:M2}
+\end{equation}
+The last term is the perturbed measure correction. The $d$ contribution
+is retained. Angular transport cancels only after scalar pullback and
+measure are combined, not by dropping both indiscriminately.
+
+Let $Q_{\rm corr}$ bound the last two terms of \eqref{eq:M2}. The actual
+first shell two-jet is enclosed on the whole interval $1\le x\le T$,
+giving $Q_{\rm corr}<3.7987$. Even reflection and zero initial scalar
+velocity give $B_w(x,0)=w_{\rm init}(x)=-p\xi|_{r=x}$. Hence
+\begin{equation}
+ |M_2(x)-w_{\rm init}(x)|\le(x-1)E_X+Q_{\rm corr}\quad(1\le x\le T).
+ \label{eq:Merror}
+\end{equation}
+Its linearly weighted and unweighted history error bounds are, respectively,
+$\Delta^3 E_X/6+\Delta^2Q_{\rm corr}/2$ and
+$\Delta^2 E_X/2+\Delta Q_{\rm corr}$. Exact positive cell weights integrate
+the continuous initial scalar boxes. No assumption of pointwise positivity
+at every arbitrarily early contact time enters these history bounds.
+
+The exact shell Gauss contraction of \eqref{eq:model}--\eqref{eq:shell}
+is
+\begin{equation}
+ R(\gamma)=(D\phi)^2+F(\phi),\qquad
+ F=2\mathcal V-\tfrac14(\sigma')^2+\tfrac13\sigma^2. \label{eq:gauss}
+\end{equation}
+This standard geometric identity removes the electric Weyl trace; it
+does not determine every induced tensor equation. Define
+$v_2=V_2/V_0$. The volume-weighted second identity in the anchored
+proper-time foliation is
+\begin{align}
+ (v_2)_{\tau\tau}+4H(v_2)_\tau-2v_2/A^2
+    &=\tfrac12F'M_2+Q_1,\qquad v_2(0)=(v_2)_\tau(0)=0,
+ \label{eq:volumeODE}\\
+ Q_1={}&F''\psi^2/12-\psi_\tau^2/6+4\psi^2/(3A^2)-5E^2/(3A^2)
+ \nonumber\\
+ &+E_\tau^2-16E_\tau D_\tau/3+8D_\tau^2/3. \label{eq:Q1}
+\end{align}
+Here $D$ is the synchronous angular Hessian coefficient, with
+$D_\tau=d_\tau-V/A-C/A^2$. Every term is retained and bounded in absolute
+value; the resulting cap is $|Q_1|<7.8317\times10^{19}$.
+In \eqref{eq:volumeODE} the scalar source is the full proper mean,
+not the coordinate coefficient $w_0$.
+
+One way to check the curvature coefficient is to vary the functional
+$\mathcal J(h)=\int R_3\dd\mu-(2/A^2)\int\dd\mu$ at the round sphere.
+It is critical. For the coordinate metric variation
+$h_1=2A^2(EY\kappa+D\operatorname{Hess}Y)$, its normalized Hessian is
+$V_0^{-1}D^2\mathcal J[h_1,h_1]=10E^2/(3A^2)$; a pure spatial
+diffeomorphism contributes zero.
+The weighted second spatial curvature is therefore
+$-4v_2/A^2+10E^2/(3A^2)$. The temporal part contributes
+$2(v_2)_{\tau\tau}+8H(v_2)_\tau
+ +2\av{\operatorname{tr}K_1^2-\theta_1^2}$, with
+\begin{equation}
+ \av{\operatorname{tr}K_1^2-\theta_1^2}
+ =-E_\tau^2+16E_\tau D_\tau/3-8D_\tau^2/3.
+\end{equation}
+Combining this with
+$\av{(D\phi)^2}_2=-\psi_\tau^2/3+8\psi^2/(3A^2)$ proves
+\eqref{eq:volumeODE}--\eqref{eq:Q1}, including the derivative convention.
+
+In scaled time the exact Green kernel is
+\begin{equation}
+ k(T,x)=\frac{\sinh(2\ell(T-x))}{2\ell}
+             \frac{\cosh^2(\ell x)}{\cosh^2(\ell T)}. \label{eq:Green}
+\end{equation}
+It follows from the homogeneous solutions
+$\tanh(\ell x)$ and $1+\tanh^2(\ell x)$. It is positive, with
+$0\le k(T,x)\le T-x$. On the interval used here,
+$|k/(T-x)-1|<10^{-11}$ and $|k_T-1|<10^{-11}$, interpreted continuously
+at the endpoint. These uniform errors are charged to the history bounds.
+Consequently
+\begin{align}
+ v_2(T)&=(\rho_b\ell)^2\int_1^T
+       k(T,x)[F'M_2(x)/2+Q_1(x)]\,\dd x, \label{eq:integralvolume}\\
+ \Theta_2(T)=(v_2)_\tau(T)&=\rho_b\ell\int_1^T
+       k_T(T,x)[F'M_2(x)/2+Q_1(x)]\,\dd x. \label{eq:integraltheta}
+\end{align}
+Here $F'$ is evaluated at the constant background shell scalar. Its
+retained interval is negative. Equations \eqref{eq:Merror} and
+\eqref{eq:integralvolume}--\eqref{eq:integraltheta}, with the full
+source budgets, give \eqref{eq:main}. In particular $\Theta_2$ is the
+first proper-time derivative of $v_2$, not an acceleration.
+
+\section{Interpretation, verification, and relation to prior work}
+
+At the chosen positive time the background expansion is
+\begin{equation}
+ \Theta_0(\tau_*)=\frac{3}{\rho_b}\tanh(\ell T)>0.
+\end{equation}
+Because the first integrated coefficients vanish, $C^2$ parameter
+dependence gives, at this same anchored proper clock,
+\begin{equation}
+ \frac{V_\eps}{V_0}=1+\tfrac12\eps^2v_2+o(\eps^2),\qquad
+ \Theta_\eps=\Theta_0+\tfrac12\eps^2\Theta_2+o(\eps^2).
+\end{equation}
+The strict signs in \eqref{eq:main} therefore imply, for each fixed
+admissible family and sufficiently small nonzero $\eps$ of either sign,
+\begin{equation}
+       0<V_\eps(\tau_*)/V_0(\tau_*)<1,\qquad
+       0<\Theta_\eps(\tau_*)<\Theta_0(\tau_*). \label{eq:qualitative}
+\end{equation}
+No particular nonzero $\eps$ is certified. The allowed interval depends
+on the family and its remainder control, and need not be uniform in the
+remaining weights. The background is still expanding in
+\eqref{eq:qualitative}; a negative second change is not total contraction.
+
+The numerical statements use whole-cell outward interval arithmetic and
+exact rational endpoints, including the packet's flat tails. The initial
+campaign uses the registered $N=1024$ base grid, with 994 recorded cells:
+992 interior cells and two grouped flat-tail regions. The conditioned adapter is
+independently checked against every supplied cell, and the complete source
+history enters once through \eqref{eq:sourcecap}. Normal and optimized
+runs agree exactly. A separate reconstruction of the response budget
+matches all three final rational intervals without importing the response
+producer. These checks authenticate and audit the stated finite
+calculation; they do not constitute proofs of the retained analytic
+existence assumptions or external peer review. The accompanying materials
+provide the proofs, arithmetic adapters, source pins, raw boxes, and
+canonical reports \cite{companion}.
+
+The calculation uses established geometric and analytic machinery.
+Bruni et al.\ \cite{Bruni} give the second-order gauge law, including
+its factorial convention and first-generator cross terms; Mars
+\cite{Mars} treats perturbations of hypersurfaces and the distinction
+between spacetime gauge and hypersurface identification. Transport of the
+shell and its anchor is necessary here. The Gauss--Codazzi projection
+used in brane geometry \cite{SMS} is standard; constant-tension or
+constant-bulk matter reductions cannot be imported unchanged into
+\eqref{eq:gauss}. Buchert's averaging identities \cite{BuchertI,BuchertII}
+establish the expansion-variance/shear combination and the averaging
+commutator. Their dust or fluid evolution assumptions are not imposed on
+our intrinsically geodesic shell observers. The reflected-kernel
+contraction and Green-function calculation are standard linear methods.
+
+The contribution is the model-specific connection between an explicit
+compact second mean, its conditioned five-field response, and these
+anchored observable enclosures. This is a focused comparison with those
+primary frameworks, not an exhaustive novelty survey or a new general
+implicit-function theorem, averaging law, or Einstein equation. The
+uncomputed higher angular sectors are not needed for this invariant
+projection, but no complete angular waveform is supplied. The large
+second coefficients have no SI calibration here. No quantitative
+finite-amplitude continuation, hot-matter or radiation history, physical
+packet-generation mechanism, or Big-Bang-origin conclusion follows.
+
+\paragraph{Acknowledgment and review status.}
+The manuscript and accompanying calculations were prepared with AI
+assistance, including internal algebraic and reproducibility review.
+This working draft is supplied for author and specialist review. Internal
+checks are not external peer review.
+
+\begin{thebibliography}{9}
+\footnotesize
+\setlength{\itemsep}{3pt}
+\bibitem{Bruni} M. Bruni, S. Matarrese, S. Mollerach, and S. Sonego,
+\emph{Perturbations of spacetime: gauge transformations and gauge invariance
+at second order and beyond}, Classical and Quantum Gravity \textbf{14}
+(1997), \href{https://arxiv.org/abs/gr-qc/9609040}{arXiv:gr-qc/9609040}.
+\bibitem{Mars} M. Mars, \emph{First and Second Order Perturbations of
+Hypersurfaces}, Classical and Quantum Gravity \textbf{22} (2005),
+\href{https://arxiv.org/abs/gr-qc/0507005}{arXiv:gr-qc/0507005}.
+\bibitem{SMS} T. Shiromizu, K. Maeda, and M. Sasaki,
+\emph{The Einstein Equations on the 3-Brane World},
+\href{https://arxiv.org/abs/gr-qc/9910076}{arXiv:gr-qc/9910076}.
+\bibitem{BuchertI} T. Buchert, \emph{On Average Properties of Inhomogeneous
+Fluids in General Relativity I: Dust Cosmologies},
+\href{https://arxiv.org/abs/gr-qc/9906015}{arXiv:gr-qc/9906015}.
+\bibitem{BuchertII} T. Buchert, \emph{On Average Properties of Inhomogeneous
+Fluids in General Relativity II: Perfect Fluid Cosmologies},
+\href{https://arxiv.org/abs/gr-qc/0102049}{arXiv:gr-qc/0102049}.
+\bibitem{companion} R. Maldonado, \emph{HDBLAST conditional technical
+records and reproducibility materials} (2026),
+\href{https://github.com/maldonado-research/HDblast}{repository}.
+Retained records: exact localized initial data (14 October), common-gauge
+response (16 October), exact-family transfer (31 October), and intrinsic
+shell budget (1 November). The associated prepared-response materials
+contain the explicit preparation, both initial-gauge adapters, and the
+exact final scalar/volume/expansion report used here.
+\end{thebibliography}
+\end{document}

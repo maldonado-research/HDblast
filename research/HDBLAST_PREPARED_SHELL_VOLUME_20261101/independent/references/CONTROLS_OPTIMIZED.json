@@ -1,0 +1,95 @@
+{
+  "controls": [
+    {
+      "case": "omit_measure",
+      "exit_code": 2,
+      "final_witness": {
+        "reason": "independent reconstructed mismatch: proper_M2_target",
+        "stage": "SCIENCE",
+        "status": "REJECT"
+      },
+      "no_output": true,
+      "reason": "independent reconstructed mismatch: proper_M2_target",
+      "stage": "SCIENCE",
+      "stderr_empty": true,
+      "stdout_one_json": true
+    },
+    {
+      "case": "halve_scalar",
+      "exit_code": 2,
+      "final_witness": {
+        "reason": "independent reconstructed mismatch: proper_M2_target",
+        "stage": "SCIENCE",
+        "status": "REJECT"
+      },
+      "no_output": true,
+      "reason": "independent reconstructed mismatch: proper_M2_target",
+      "stage": "SCIENCE",
+      "stderr_empty": true,
+      "stdout_one_json": true
+    },
+    {
+      "case": "omit_history_error",
+      "exit_code": 2,
+      "final_witness": {
+        "reason": "independent reconstructed mismatch: proper_v2",
+        "stage": "SCIENCE",
+        "status": "REJECT"
+      },
+      "no_output": true,
+      "reason": "independent reconstructed mismatch: proper_v2",
+      "stage": "SCIENCE",
+      "stderr_empty": true,
+      "stdout_one_json": true
+    },
+    {
+      "case": "wrong_moment",
+      "exit_code": 2,
+      "final_witness": {
+        "reason": "METRIC_MOMENT",
+        "stage": "SCIENCE",
+        "status": "REJECT"
+      },
+      "no_output": true,
+      "reason": "METRIC_MOMENT",
+      "stage": "SCIENCE",
+      "stderr_empty": true,
+      "stdout_one_json": true
+    },
+    {
+      "case": "wrong_primitive_sign",
+      "exit_code": 2,
+      "final_witness": {
+        "reason": "CELL_XI",
+        "stage": "SCIENCE",
+        "status": "REJECT"
+      },
+      "no_output": true,
+      "reason": "CELL_XI",
+      "stage": "SCIENCE",
+      "stderr_empty": true,
+      "stdout_one_json": true
+    },
+    {
+      "case": "report_custody",
+      "exit_code": 2,
+      "final_witness": {
+        "reason": "response_report",
+        "stage": "AUTH_REPORT",
+        "status": "REJECT"
+      },
+      "no_output": true,
+      "reason": "response_report",
+      "stage": "AUTH_REPORT",
+      "stderr_empty": true,
+      "stdout_one_json": true
+    }
+  ],
+  "counts": {
+    "no_output_rejections": 6,
+    "scientific_formula_rejections": 5,
+    "separate_report_custody_rejections": 1
+  },
+  "positive_source_authentication": "PASS",
+  "status": "PASS_INDEPENDENT_EXACT_WITNESS_CONTROLS"
+}

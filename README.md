@@ -1,5 +1,8 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+**1 November 2026: prepared proper-time shell volume.** For explicitly chosen new compact second-order mean data, conditional bounds give a positive shell volume and a positive expansion rate, both below their background values, at one registered proper time for sufficiently small nonzero parameters of either sign. This is a different nonlinear completion from the earlier weighted-only family whose mean data were not numerically specified. The usable amplitude interval remains uncomputed; the result is in model units without SI calibration and establishes no radiation production or higher-dimensional Big Bang origin. The next targets are preparation selection, a registered time history, a quantitative nonlinear remainder, and a matter model with a physical scale. [Statement, assumptions and replay](research/HDBLAST_PREPARED_SHELL_VOLUME_20261101/) · [Working paper for review](research/HDBLAST_PREPARED_SHELL_VOLUME_20261101/manuscript/PREPARED_SHELL_VOLUME.pdf).
+
+
 **1 November 2026: conditional intrinsic shell geometry and the required second mean response.** Continuous actual-field bounds give strictly positive second derivatives of the shell curvature defect `<R3>-6/Rvolume^2` and expansion-variance/shear correction on `x in [1.24,1.26]`. The scalar-gradient contribution and a fixed-gauge initial monopole moment are also bounded. These first-field pieces do not determine the full volume history: a second scalar mean and explicit initial weight choices remain. No hot-radiation history or higher-dimensional Big Bang origin is established. [Proof, assumptions and reproduction](research/HDBLAST_INTRINSIC_SHELL_BUDGET_20261101/).
 
 
