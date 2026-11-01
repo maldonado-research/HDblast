@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "control_count": 7,
+  "controls": [
+    {
+      "case": "source_tamper_before_SymPy_import",
+      "expected_final_witness": "ValueError: Changed source: research/HDBLAST_EXACT_FAMILY_TT_TRANSFER_20261031/DERIVATION.md",
+      "observed_final_witness": "ValueError: Changed source: research/HDBLAST_EXACT_FAMILY_TT_TRANSFER_20261031/DERIVATION.md",
+      "returncode": 1,
+      "stdout_empty": true,
+      "artifact": {
+        "path": "before-import.json",
+        "expected_state": "absent",
+        "observed_state": "absent"
+      }
+    },
+    {
+      "case": "existing_report_preserved",
+      "expected_final_witness": "FileExistsError: Refusing to replace existing report: <TEMP>/existing.json",
+      "observed_final_witness": "FileExistsError: Refusing to replace existing report: <TEMP>/existing.json",
+      "returncode": 1,
+      "stdout_empty": true,
+      "artifact": {
+        "path": "existing.json",
+        "expected_state": "preserved",
+        "observed_state": "preserved",
+        "expected_sha256": "7ee0e7f63b9b65e302add82986c18196ecb8da0121575e4733219572eeac2712",
+        "observed_sha256": "7ee0e7f63b9b65e302add82986c18196ecb8da0121575e4733219572eeac2712"
+      }
+    },
+    {
+      "case": "fresh_output_inside_code_root",
+      "expected_final_witness": "ValueError: --output must be outside the code and source roots",
+      "observed_final_witness": "ValueError: --output must be outside the code and source roots",
+      "returncode": 1,
+      "stdout_empty": true,
+      "artifact": {
+        "path": "package/fresh.json",
+        "expected_state": "absent",
+        "observed_state": "absent"
+      }
+    },
+    {
+      "case": "fresh_output_inside_source_root",
+      "expected_final_witness": "ValueError: --output must be outside the code and source roots",
+      "observed_final_witness": "ValueError: --output must be outside the code and source roots",
+      "returncode": 1,
+      "stdout_empty": true,
+      "artifact": {
+        "path": "repo/fresh.json",
+        "expected_state": "absent",
+        "observed_state": "absent"
+      }
+    },
+    {
+      "case": "source_tamper_after_evaluation",
+      "expected_final_witness": "ValueError: Changed source: research/HDBLAST_EXACT_FAMILY_TT_TRANSFER_20261031/DERIVATION.md",
+      "observed_final_witness": "ValueError: Changed source: research/HDBLAST_EXACT_FAMILY_TT_TRANSFER_20261031/DERIVATION.md",
+      "returncode": 1,
+      "stdout_empty": true,
+      "artifact": {
+        "path": "after-evaluation.json",
+        "expected_state": "absent",
+        "observed_state": "absent"
+      }
+    },
+    {
+      "case": "pin_file_tamper_after_evaluation",
+      "expected_final_witness": "ValueError: SOURCE_PINS.json changed during execution",
+      "observed_final_witness": "ValueError: SOURCE_PINS.json changed during execution",
+      "returncode": 1,
+      "stdout_empty": true,
+      "artifact": {
+        "path": "pin-tamper.json",
+        "expected_state": "absent",
+        "observed_state": "absent"
+      }
+    },
+    {
+      "case": "radial_metric_sign_mutation",
+      "expected_final_witness": "ValueError: radial_metric_operator: 3*a(y)*Derivative(A(y), y)",
+      "observed_final_witness": "ValueError: radial_metric_operator: 3*a(y)*Derivative(A(y), y)",
+      "returncode": 1,
+      "stdout_empty": true,
+      "artifact": {
+        "path": "radial-sign-mutation.json",
+        "expected_state": "absent",
+        "observed_state": "absent"
+      }
+    }
+  ],
+  "scope": "Packaging and fail-closed controls; separate from 34 scientific checks and 8 formula controls."
+}

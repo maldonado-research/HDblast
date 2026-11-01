@@ -1,0 +1,267 @@
+{
+  "audit_byte_identical_across_modes_and_relocation": true,
+  "audit_report_sha256": "8f605a9d5cae451ba1ec6e9e88e10a2a6c9c71e6844f9754e413a0880b483742",
+  "every_negative_checks_exact_final_object_return_code_empty_stderr_and_absent_output": true,
+  "isolation_flags": [
+    "-I",
+    "-S",
+    "-B"
+  ],
+  "negative_cases_per_mode": 9,
+  "negative_subprocesses": 18,
+  "optimization_modes": [
+    "normal",
+    "optimized"
+  ],
+  "positive_auditor_subprocesses": 4,
+  "positive_producer_subprocesses": 4,
+  "positive_relocation_separate_from_negatives": true,
+  "producer_report_sha256": "3a4597ca94e42397a35f46c92dc99a30788f0b00afae3c316c7a58c1868fc4c5",
+  "python_version": "3.12.14",
+  "records": [
+    {
+      "auditor_final_witness": {
+        "audit_sha256": "8f605a9d5cae451ba1ec6e9e88e10a2a6c9c71e6844f9754e413a0880b483742",
+        "status": "PASS",
+        "witness": "INDEPENDENT_EXACT_RATIONAL_AGGREGATION"
+      },
+      "kind": "positive_relocation_or_baseline",
+      "location": "original",
+      "mode": "normal",
+      "producer_final_witness": {
+        "report_sha256": "3a4597ca94e42397a35f46c92dc99a30788f0b00afae3c316c7a58c1868fc4c5",
+        "status": "PASS",
+        "witness": "FROZEN_NINE_CALL_CAMPAIGN"
+      }
+    },
+    {
+      "auditor_final_witness": {
+        "audit_sha256": "8f605a9d5cae451ba1ec6e9e88e10a2a6c9c71e6844f9754e413a0880b483742",
+        "status": "PASS",
+        "witness": "INDEPENDENT_EXACT_RATIONAL_AGGREGATION"
+      },
+      "kind": "positive_relocation_or_baseline",
+      "location": "original",
+      "mode": "optimized",
+      "producer_final_witness": {
+        "report_sha256": "3a4597ca94e42397a35f46c92dc99a30788f0b00afae3c316c7a58c1868fc4c5",
+        "status": "PASS",
+        "witness": "FROZEN_NINE_CALL_CAMPAIGN"
+      }
+    },
+    {
+      "auditor_final_witness": {
+        "audit_sha256": "8f605a9d5cae451ba1ec6e9e88e10a2a6c9c71e6844f9754e413a0880b483742",
+        "status": "PASS",
+        "witness": "INDEPENDENT_EXACT_RATIONAL_AGGREGATION"
+      },
+      "kind": "positive_relocation_or_baseline",
+      "location": "relocated",
+      "mode": "normal",
+      "producer_final_witness": {
+        "report_sha256": "3a4597ca94e42397a35f46c92dc99a30788f0b00afae3c316c7a58c1868fc4c5",
+        "status": "PASS",
+        "witness": "FROZEN_NINE_CALL_CAMPAIGN"
+      }
+    },
+    {
+      "auditor_final_witness": {
+        "audit_sha256": "8f605a9d5cae451ba1ec6e9e88e10a2a6c9c71e6844f9754e413a0880b483742",
+        "status": "PASS",
+        "witness": "INDEPENDENT_EXACT_RATIONAL_AGGREGATION"
+      },
+      "kind": "positive_relocation_or_baseline",
+      "location": "relocated",
+      "mode": "optimized",
+      "producer_final_witness": {
+        "report_sha256": "3a4597ca94e42397a35f46c92dc99a30788f0b00afae3c316c7a58c1868fc4c5",
+        "status": "PASS",
+        "witness": "FROZEN_NINE_CALL_CAMPAIGN"
+      }
+    },
+    {
+      "case": "wrong_second_derivative_factor",
+      "final_witness": {
+        "status": "FAIL",
+        "witness": "SECOND_DERIVATIVE_FACTOR"
+      },
+      "kind": "negative",
+      "mode": "normal",
+      "output_directory_absent": true
+    },
+    {
+      "case": "wrong_second_derivative_factor",
+      "final_witness": {
+        "status": "FAIL",
+        "witness": "SECOND_DERIVATIVE_FACTOR"
+      },
+      "kind": "negative",
+      "mode": "optimized",
+      "output_directory_absent": true
+    },
+    {
+      "case": "wrong_angular_eigenvalue",
+      "final_witness": {
+        "status": "FAIL",
+        "witness": "ANGULAR_GRADIENT_FACTOR"
+      },
+      "kind": "negative",
+      "mode": "normal",
+      "output_directory_absent": true
+    },
+    {
+      "case": "wrong_angular_eigenvalue",
+      "final_witness": {
+        "status": "FAIL",
+        "witness": "ANGULAR_GRADIENT_FACTOR"
+      },
+      "kind": "negative",
+      "mode": "optimized",
+      "output_directory_absent": true
+    },
+    {
+      "case": "bulk_radius_substitution",
+      "final_witness": {
+        "status": "FAIL",
+        "witness": "PHYSICAL_SHELL"
+      },
+      "kind": "negative",
+      "mode": "normal",
+      "output_directory_absent": true
+    },
+    {
+      "case": "bulk_radius_substitution",
+      "final_witness": {
+        "status": "FAIL",
+        "witness": "PHYSICAL_SHELL"
+      },
+      "kind": "negative",
+      "mode": "optimized",
+      "output_directory_absent": true
+    },
+    {
+      "case": "wrong_ell_scale",
+      "final_witness": {
+        "status": "FAIL",
+        "witness": "ELL_UNITS"
+      },
+      "kind": "negative",
+      "mode": "normal",
+      "output_directory_absent": true
+    },
+    {
+      "case": "wrong_ell_scale",
+      "final_witness": {
+        "status": "FAIL",
+        "witness": "ELL_UNITS"
+      },
+      "kind": "negative",
+      "mode": "optimized",
+      "output_directory_absent": true
+    },
+    {
+      "case": "wrong_background_metric",
+      "final_witness": {
+        "status": "FAIL",
+        "witness": "BACKGROUND_JET_REFERENCE"
+      },
+      "kind": "negative",
+      "mode": "normal",
+      "output_directory_absent": true
+    },
+    {
+      "case": "wrong_background_metric",
+      "final_witness": {
+        "status": "FAIL",
+        "witness": "BACKGROUND_JET_REFERENCE"
+      },
+      "kind": "negative",
+      "mode": "optimized",
+      "output_directory_absent": true
+    },
+    {
+      "case": "metric_instead_of_scalar_jet",
+      "final_witness": {
+        "status": "FAIL",
+        "witness": "SCALAR_JET_REFERENCE"
+      },
+      "kind": "negative",
+      "mode": "normal",
+      "output_directory_absent": true
+    },
+    {
+      "case": "metric_instead_of_scalar_jet",
+      "final_witness": {
+        "status": "FAIL",
+        "witness": "SCALAR_JET_REFERENCE"
+      },
+      "kind": "negative",
+      "mode": "optimized",
+      "output_directory_absent": true
+    },
+    {
+      "case": "corrupted_raw_metric_data",
+      "final_witness": {
+        "status": "FAIL",
+        "witness": "METRIC_JET_REFERENCE"
+      },
+      "kind": "negative",
+      "mode": "normal",
+      "output_directory_absent": true
+    },
+    {
+      "case": "corrupted_raw_metric_data",
+      "final_witness": {
+        "status": "FAIL",
+        "witness": "METRIC_JET_REFERENCE"
+      },
+      "kind": "negative",
+      "mode": "optimized",
+      "output_directory_absent": true
+    },
+    {
+      "case": "report_integrity_extra_field",
+      "final_witness": {
+        "status": "FAIL",
+        "witness": "REPORT_INTEGRITY"
+      },
+      "kind": "negative",
+      "mode": "normal",
+      "output_directory_absent": true
+    },
+    {
+      "case": "report_integrity_extra_field",
+      "final_witness": {
+        "status": "FAIL",
+        "witness": "REPORT_INTEGRITY"
+      },
+      "kind": "negative",
+      "mode": "optimized",
+      "output_directory_absent": true
+    },
+    {
+      "case": "source_capsule_member_corruption",
+      "final_witness": {
+        "status": "FAIL",
+        "witness": "SOURCE_MEMBER_BYTES"
+      },
+      "kind": "negative",
+      "mode": "normal",
+      "output_directory_absent": true
+    },
+    {
+      "case": "source_capsule_member_corruption",
+      "final_witness": {
+        "status": "FAIL",
+        "witness": "SOURCE_MEMBER_BYTES"
+      },
+      "kind": "negative",
+      "mode": "optimized",
+      "output_directory_absent": true
+    }
+  ],
+  "report_byte_identical_across_modes_and_relocation": true,
+  "schema": "HDBLAST_PORTABLE_SHELL_GRADIENT_STRICT_SUBPROCESS_CONTROLS_V1",
+  "status": "PASS_STRICT_SUBPROCESS_CONTROLS",
+  "test_source_sha256": "aee7e708b9ce7839fc914e729e43413cbe1e53cd5c8af9ac0f0b32ae0f3d8d14"
+}

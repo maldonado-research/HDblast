@@ -1,0 +1,60 @@
+{
+  "oracle_calls": 0,
+  "repository_relative_source_pins": {
+    "research/HDBLAST_EXACT_FAMILY_TT_TRANSFER_20261031/DERIVATION.md": "69bfe846cc4fda8ec6a981969fbdd12fff7862b5ca7cf31a19d696b0a839165a",
+    "research/HDBLAST_EXACT_FAMILY_TT_TRANSFER_20261031/independent/COMPLETION_SCOPE_COUNTEREXAMPLE.md": "033d93e468ca3c5c1c4b64e7e8a47d58e75224e96f26b22b0f9b1a094a72f128",
+    "research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/shell-invariant/SHELL_INTRINSIC_SCALAR.md": "bf122c3136f6dfa47f725e2848d861a494bc980adc5ad4ff119af63868d2ddd7",
+    "research/HDBLAST_PROPER_CLOCK_SCREEN_CURVATURE_20261031/background/FAMILY_DOMAIN_JOIN.md": "bc02ebe0ab9e8a70a9e38b682b137d2e8a0d3a53fe614f7a0569b957f66f1fe6",
+    "research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023/observable/SHELL_PROPER_TIME_OBSERVABLE.md": "2ea8e1e95489943536b54e7205e8ea7e26ea198197fd2c89a0c028eb8e2c7929"
+  },
+  "science": {
+    "angular": {
+      "checks": [
+        "PASS: Hopf metric, uniform Z law, Y and gradient identities",
+        "PASS: exact independent moments <Y\u00b2>=1/6 and <|DY|\u00b2>=4/3",
+        "PASS: angular-fraction antiderivative, endpoints, and rational tail bound",
+        "PASS: explicit mixed-sign and degenerate-case controls"
+      ],
+      "status": "PASS"
+    },
+    "curvature_buchert": {
+      "Buchert_Q2_Eprime_j": "2*Ep**2 + 32*Ep*j/3 + 16*j**2/3",
+      "Buchert_Q2_W_j": "2*W**2 + 20*W*j/3 - 10*j**2/3",
+      "Buchert_convention": "Q_B=(2/3)Var(theta)-<|shear|^2>; norm has no factor1/2",
+      "C2": "10*E**2/(3*A**2)",
+      "imports_source_or_producer": false,
+      "mean_R3_second_conformal_path": "-8*E**2/(3*A**2)",
+      "round_reference_second_conformal_path": "-6*E**2/A**2",
+      "scope": "standard integrated scalar-curvature first/second variation and averaged Gauss identity applied to retained first Gaussian shell metric; no actual u/P evaluation",
+      "status": "PASS",
+      "tracefree_Hessian_mean_norm": "40/9"
+    },
+    "generic_gradient_jet": {
+      "checks": [
+        "generic symmetric first/second metric inverse",
+        "Q0=Q1=0 and Q2=2h0_inverse(deta,deta)",
+        "K2=2(u0 eta)^2",
+        "S2=Q2+K2",
+        "event pullback invariance",
+        "normalized moving measure invariance with fixed background measure",
+        "uniform S3 moments",
+        "second-derivative normalization"
+      ],
+      "counterexamples": {
+        "different_background_measure_Y2": "29/140 versus 1/6",
+        "different_background_observer_K2": "50/9 versus 2 for deta=dt",
+        "no_uniform_finite_parameter_radius": "phi_e=e*t+e^2*c*x yields Q=-e^2+e^4*c^2, Q2=-2 for every c"
+      },
+      "moments": {
+        "DY2": "4/3",
+        "Y2": "1/6",
+        "Y4": "3/40",
+        "weighted_Y2": "29/140"
+      },
+      "scope": "independent generic exact jet algebra, angular moments and necessary-hypothesis counterexamples; no source imports or actual-jet numerical evaluation",
+      "status": "PASS"
+    }
+  },
+  "source_authentication_before_third_party_import_and_after": true,
+  "status": "PASS_PORTABLE_INDEPENDENT_SHELL_GEOMETRY"
+}
