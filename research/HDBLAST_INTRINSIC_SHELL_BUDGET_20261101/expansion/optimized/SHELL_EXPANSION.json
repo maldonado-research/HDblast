@@ -1,0 +1,101 @@
+{
+  "checks": [
+    "Gaussian Ric00 direct contraction",
+    "Gaussian scalar direct contraction",
+    "Gaussian G00 direct contraction",
+    "Averaged scalar commutator",
+    "Ambient S3 Y square",
+    "Ambient S3 gradient square",
+    "Ambient S3 Hessian square",
+    "Ambient S3 tracefree Hessian square",
+    "First-only expansion variance",
+    "First-only shear derivative",
+    "First-only Buchert Q",
+    "Round normalized curvature is critical",
+    "Curvature defect exponential second jet",
+    "Curvature defect linear second jet",
+    "Exact finite non-round curvature defect is positive",
+    "First clock cancels time gauge",
+    "Angular transport cancels spatial gauge",
+    "Current nonzero scalar mean coefficient",
+    "Actual first intrinsic trace ODE",
+    "Second averaged scalar-volume balance",
+    "Second HD derivative normalization"
+  ],
+  "exact_fixtures": {
+    "conformal_phi4_a_1_over_10": {
+      "I_over_V0_times_A2": "367/60",
+      "V_over_V0": "22962521/22400000",
+      "positive_cube_gap": "561124241/75600000",
+      "positive_factor_lower": "9/10"
+    }
+  },
+  "rejected_formula_controls": [
+    "commutator",
+    "shear",
+    "curvature",
+    "transport",
+    "monopole"
+  ],
+  "scope": "Exact geometry/clock algebra; no PDE solve or evaluated physical sign.",
+  "source_commit": "b51908d7e62e7ec80cef82438edd00923ff94723",
+  "source_pins_sha256": "0da81d7eb58b5ef408891447fbddf1843d3bf2abf9038ed2af97a5bc26c85c49",
+  "status": "FINITE_EXACT_IDENTITIES_PASS",
+  "strict_formula_control_rows": [
+    {
+      "case": "commutator",
+      "expected_final_witness": "ValueError: IDENTITY_FAILED:Averaged scalar commutator:4*variance",
+      "nonzero_exit": true,
+      "observed_final_witness": "ValueError: IDENTITY_FAILED:Averaged scalar commutator:4*variance",
+      "output_artifact_absent_after": true,
+      "output_artifact_absent_before": true,
+      "subprocess_exit_code": 1,
+      "success_json_absent": true,
+      "success_stdout_absent": true
+    },
+    {
+      "case": "shear",
+      "expected_final_witness": "ValueError: IDENTITY_FAILED:Ambient S3 tracefree Hessian square:8/9",
+      "nonzero_exit": true,
+      "observed_final_witness": "ValueError: IDENTITY_FAILED:Ambient S3 tracefree Hessian square:8/9",
+      "output_artifact_absent_after": true,
+      "output_artifact_absent_before": true,
+      "subprocess_exit_code": 1,
+      "success_json_absent": true,
+      "success_stdout_absent": true
+    },
+    {
+      "case": "curvature",
+      "expected_final_witness": "ValueError: IDENTITY_FAILED:Curvature defect exponential second jet:2*E**2/(3*A**2)",
+      "nonzero_exit": true,
+      "observed_final_witness": "ValueError: IDENTITY_FAILED:Curvature defect exponential second jet:2*E**2/(3*A**2)",
+      "output_artifact_absent_after": true,
+      "output_artifact_absent_before": true,
+      "subprocess_exit_code": 1,
+      "success_json_absent": true,
+      "success_stdout_absent": true
+    },
+    {
+      "case": "transport",
+      "expected_final_witness": "ValueError: IDENTITY_FAILED:Angular transport cancels spatial gauge:J + d",
+      "nonzero_exit": true,
+      "observed_final_witness": "ValueError: IDENTITY_FAILED:Angular transport cancels spatial gauge:J + d",
+      "output_artifact_absent_after": true,
+      "output_artifact_absent_before": true,
+      "subprocess_exit_code": 1,
+      "success_json_absent": true,
+      "success_stdout_absent": true
+    },
+    {
+      "case": "monopole",
+      "expected_final_witness": "ValueError: IDENTITY_FAILED:Current nonzero scalar mean coefficient:2*Vp - 8*a*p + p*sigma2",
+      "nonzero_exit": true,
+      "observed_final_witness": "ValueError: IDENTITY_FAILED:Current nonzero scalar mean coefficient:2*Vp - 8*a*p + p*sigma2",
+      "output_artifact_absent_after": true,
+      "output_artifact_absent_before": true,
+      "subprocess_exit_code": 1,
+      "success_json_absent": true,
+      "success_stdout_absent": true
+    }
+  ]
+}

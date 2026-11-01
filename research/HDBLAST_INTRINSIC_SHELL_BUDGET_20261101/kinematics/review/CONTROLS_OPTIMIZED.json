@@ -1,0 +1,64 @@
+{
+  "exact_kernel_fixtures": 5,
+  "expected_rejections": [
+    {
+      "name": "wrong_kernel_power",
+      "reason": "ENCLOSURE:weight8:1",
+      "status": "REJECTED"
+    },
+    {
+      "name": "point_rectangle_instead_of_integral_weight",
+      "reason": "ENCLOSURE:weight8:1",
+      "status": "REJECTED"
+    },
+    {
+      "name": "missing_half_in_double_integrated_forcing",
+      "reason": "ENCLOSURE:target8:forcing_integrated_u",
+      "status": "REJECTED"
+    },
+    {
+      "name": "missing_rho_in_proper_time_derivative",
+      "reason": "ENCLOSURE:target8:u_prime",
+      "status": "REJECTED"
+    },
+    {
+      "name": "missing_ell_in_coordinate_derivative",
+      "reason": "ENCLOSURE:target8:recovered_u_t",
+      "status": "REJECTED"
+    },
+    {
+      "name": "second_derivative_factor_two",
+      "reason": "ENCLOSURE:target8:curvature_defect_second",
+      "status": "REJECTED"
+    },
+    {
+      "name": "drop_feedback_acceleration_error",
+      "reason": "UPPER:feedback_acceleration_error_cap",
+      "status": "REJECTED"
+    },
+    {
+      "name": "history_gap",
+      "reason": "HISTORY_COVER",
+      "status": "REJECTED"
+    },
+    {
+      "name": "drop_complete_actual_error_premise",
+      "reason": "ACTUAL_SOURCE_ERROR_GUARD:actual_scalar_source_with_complete_inherited_errors",
+      "status": "REJECTED"
+    },
+    {
+      "name": "precontact_zero_shortcut",
+      "reason": "NO_PRECONTACT_ZERO_SHORTCUT",
+      "status": "REJECTED"
+    },
+    {
+      "name": "shrink_raw_source_box_to_comparison",
+      "reason": "RAW_BOX_PROJECTION_PIN",
+      "status": "REJECTED"
+    }
+  ],
+  "oracle_campaigns": 0,
+  "producer_imports": false,
+  "status": "PASS",
+  "zero_crossing_square_verified": true
+}

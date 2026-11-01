@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN_READY_FOR_PRIVATE_INTEGRATION",
+  "component_destination": "weighted-mean/review",
+  "manifest": {
+    "source_relative": "COPY_PLAN.json",
+    "destination_relative": "weighted-mean/review/COPY_PLAN.json",
+    "hash_provided_in_separate_freeze_receipt": true
+  },
+  "files": [
+    {
+      "source_relative": "README.md",
+      "destination_relative": "weighted-mean/review/README.md",
+      "sha256": "6b006a779c4655c26c689d6f6a9e3f704ca9dbefbc9be861f62e4e9a93a37ddc",
+      "bytes": 3059,
+      "essential": true
+    },
+    {
+      "source_relative": "REVIEW.md",
+      "destination_relative": "weighted-mean/review/REVIEW.md",
+      "sha256": "42aa79519b8e30f56166bf4bb362e6e2cd8e8b5b8a26dc2412ba040ef47684c5",
+      "bytes": 8854,
+      "essential": true
+    },
+    {
+      "source_relative": "REVIEW_RECEIPT.json",
+      "destination_relative": "weighted-mean/review/REVIEW_RECEIPT.json",
+      "sha256": "3182f42784a77c9862089af75817395f9aed6e8e1bf99376c3efbbcdfff2ba96",
+      "bytes": 765,
+      "essential": true
+    },
+    {
+      "source_relative": "SOURCE_PINS.json",
+      "destination_relative": "weighted-mean/review/SOURCE_PINS.json",
+      "sha256": "b062de04e071cd115132502c3671a7b022b7cda609075c74548b61e9a2c7a5f6",
+      "bytes": 1649,
+      "essential": true
+    },
+    {
+      "source_relative": "requirements.txt",
+      "destination_relative": "weighted-mean/review/requirements.txt",
+      "sha256": "25f9f1fb1988b230147a1d3092d34e09c069eb7a6c6d6df46b3973b9f2d36efc",
+      "bytes": 14,
+      "essential": true
+    },
+    {
+      "source_relative": "PACKAGING_VALIDATION.json",
+      "destination_relative": "weighted-mean/review/PACKAGING_VALIDATION.json",
+      "sha256": "d9fdade213c0cf80ecf29144562b6947ef6a62f9d1bdd87360b52c78c83cad0d",
+      "bytes": 736,
+      "essential": true
+    },
+    {
+      "source_relative": "checks/independent_review.py",
+      "destination_relative": "weighted-mean/review/checks/independent_review.py",
+      "sha256": "f82a0fb9da2aefff2495ba9074213085005bb3d4ebb2093806ead461a0d2b88a",
+      "bytes": 12591,
+      "essential": true
+    },
+    {
+      "source_relative": "results/NORMAL.json",
+      "destination_relative": "weighted-mean/review/results/NORMAL.json",
+      "sha256": "72ac6e473fd53793ca504856b739fd3344b700ea6edcf9fc05084e382aa0bebf",
+      "bytes": 3937,
+      "essential": true
+    },
+    {
+      "source_relative": "results/OPTIMIZED.json",
+      "destination_relative": "weighted-mean/review/results/OPTIMIZED.json",
+      "sha256": "72ac6e473fd53793ca504856b739fd3344b700ea6edcf9fc05084e382aa0bebf",
+      "bytes": 3937,
+      "essential": true
+    }
+  ],
+  "source_closure": [
+    {
+      "key": "S1",
+      "path": "research/HDBLAST_EXACT_FAMILY_TT_TRANSFER_20261031/DERIVATION.md",
+      "sha256": "69bfe846cc4fda8ec6a981969fbdd12fff7862b5ca7cf31a19d696b0a839165a",
+      "bytes": 35768
+    },
+    {
+      "key": "S2",
+      "path": "research/HDBLAST_EXACT_LOCALIZED_PRECONTACT_20261014/EXACT_LOCALIZED_INITIAL_DATA_AND_PRECONTACT.md",
+      "sha256": "95ccaa550309b72226f8d03d3a950e4e10760d0d98810f0e818d19057a8cfd0b",
+      "bytes": 23875
+    },
+    {
+      "key": "S3",
+      "path": "research/HDBLAST_EXPLICIT_SECOND_INITIAL_JET_20261015/EXPLICIT_COMPACT_SECOND_INITIAL_JET.md",
+      "sha256": "2cca9c9b87dfa5c2c21712ae81ea0c91d01b939b902e82d54dd62a6eae6bf0ed",
+      "bytes": 15837
+    },
+    {
+      "key": "S4",
+      "path": "research/HDBLAST_SECOND_ORDER_LOCALIZED_20261014/manuscript/SECOND_ORDER_LOCALIZED.md",
+      "sha256": "4e25e993f9653b530e30e2a2d3fefcb0a006f04050534190b99a98126ba04f63",
+      "bytes": 21422
+    },
+    {
+      "key": "S5",
+      "path": "research/HDBLAST_TOTAL_RESPONSE_PREFLIGHT_20261023/observable/SHELL_PROPER_TIME_OBSERVABLE.md",
+      "sha256": "2ea8e1e95489943536b54e7205e8ea7e26ea198197fd2c89a0c028eb8e2c7929",
+      "bytes": 16973
+    },
+    {
+      "key": "S6",
+      "path": "research/HDBLAST_EXPLICIT_SECOND_INITIAL_JET_20261015/inputs/ACTUAL_POTENTIAL_JET_BOUNDS.json",
+      "sha256": "fd93a0de3d321ff5182115138eed2725f3c327083cf5148e3efc1aca3659d5c0",
+      "bytes": 12164
+    }
+  ],
+  "requirements": {
+    "python": ">=3.9",
+    "tested_python": "3.12.14",
+    "sympy": "1.14.0",
+    "git_required": false,
+    "network_required": false
+  },
+  "replay_commands": [
+    "python -I -B weighted-mean/review/checks/independent_review.py --repo-root \"$REPO_ROOT\" --output \"$FRESH_OUTPUT_DIR/WEIGHTED_REVIEW_NORMAL.json\"",
+    "python -I -B -O weighted-mean/review/checks/independent_review.py --repo-root \"$REPO_ROOT\" --output \"$FRESH_OUTPUT_DIR/WEIGHTED_REVIEW_OPTIMIZED.json\""
+  ],
+  "expected_report_sha256": {
+    "NORMAL": "72ac6e473fd53793ca504856b739fd3344b700ea6edcf9fc05084e382aa0bebf",
+    "OPTIMIZED": "72ac6e473fd53793ca504856b739fd3344b700ea6edcf9fc05084e382aa0bebf"
+  },
+  "expected_status": "PASS_CONDITIONAL_ALGEBRA_AND_SIGN",
+  "expected_check_count": 29,
+  "report_byte_identity_scope": "Normal and optimized reports are byte-identical. Exact report hashes apply to the tested Python and SymPy versions; runtime versions are included.",
+  "portable_producer_note": {
+    "destination_relative": "weighted-mean/WEIGHTED_MEAN_INITIAL_DATA.md",
+    "sha256": "5958ad37ef2aa20a2b58e8554f85cfc946504c59d1caa27f7c58b9f814766514"
+  },
+  "scope": "Mathematical review and portable authentication. Retained analytic premises remain conditional. No old capsule, public repository, or source tree was changed."
+}
