@@ -1,0 +1,173 @@
+{
+  "status": "PASS",
+  "method": "Exact rational general five-dimensional metric inverse and Christoffel contraction",
+  "gauge_checks": [
+    {
+      "label": 1,
+      "five_C0_C1_C2_zero": true
+    },
+    {
+      "label": 3,
+      "five_C0_C1_C2_zero": true
+    },
+    {
+      "label": 7,
+      "five_C0_C1_C2_zero": true
+    }
+  ],
+  "map_checks": [
+    {
+      "label": 1,
+      "canonical_conversion": true,
+      "scalar_velocity_zero": true,
+      "five_displacement_velocity_radial_maps": true,
+      "trace_identity": true,
+      "momentum_sign_factor_and_control": true
+    },
+    {
+      "label": 3,
+      "canonical_conversion": true,
+      "scalar_velocity_zero": true,
+      "five_displacement_velocity_radial_maps": true,
+      "trace_identity": true,
+      "momentum_sign_factor_and_control": true
+    },
+    {
+      "label": 7,
+      "canonical_conversion": true,
+      "scalar_velocity_zero": true,
+      "five_displacement_velocity_radial_maps": true,
+      "trace_identity": true,
+      "momentum_sign_factor_and_control": true
+    }
+  ],
+  "in_process_controls": [
+    {
+      "mutation": "omit_radial_second_profile",
+      "detected_at_rational_jets": [
+        1,
+        3,
+        7
+      ]
+    },
+    {
+      "mutation": "omit_trace_inverse_cross",
+      "detected_at_rational_jets": [
+        1,
+        3,
+        7
+      ]
+    },
+    {
+      "mutation": "omit_metric_mixed_cross",
+      "detected_at_rational_jets": [
+        1,
+        3,
+        7
+      ]
+    },
+    {
+      "mutation": "omit_lapse_square_value",
+      "detected_at_rational_jets": [
+        1,
+        3,
+        7
+      ]
+    },
+    {
+      "mutation": "halve_second_gauge_velocity",
+      "detected_at_rational_jets": [
+        1,
+        3,
+        7
+      ]
+    }
+  ],
+  "in_process_control_count": 5,
+  "real_subprocess_control_count": 0,
+  "limits": "Finite algebra checks only; retained analytic theorems and evolution not certified.",
+  "authentication": {
+    "before": {
+      "essential_pin_sha256": "83f8e39b3c38f66d971dbfbfc879d517ca222e76538af41becd4add9dc466c63",
+      "source_pin_sha256": "191e9102f701fbac08e8cc02913bd9638c753184ceb67be6007863667bcd02eb",
+      "local_files": [
+        "gauge/CONDITIONED_GAUGE.md",
+        "gauge/MEAN_INITIAL_GAUGE.md",
+        "gauge/README.md",
+        "gauge/SOURCE_PINS.json",
+        "gauge/authenticate.py",
+        "gauge/checks/_conditioned_science.py",
+        "gauge/checks/_initial_science.py",
+        "gauge/checks/_preparation_science.py",
+        "gauge/checks/check_conditioned.py",
+        "gauge/checks/check_initial_mean.py",
+        "gauge/checks/check_preparation.py",
+        "gauge/checks/run_controls.py",
+        "gauge/conditioned_mean_initial.py",
+        "gauge/mean_initial.py",
+        "gauge/requirements.txt",
+        "gauge/run_check.py",
+        "preparation/EXPLICIT_MEAN_DESIGN.md",
+        "preparation/EXPLICIT_MEAN_REVIEW.md"
+      ],
+      "upstream_keys": [
+        "W",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "S8",
+        "S9",
+        "SB",
+        "DESIGN_S3",
+        "DESIGN_S4",
+        "DESIGN_S5"
+      ]
+    },
+    "after": {
+      "essential_pin_sha256": "83f8e39b3c38f66d971dbfbfc879d517ca222e76538af41becd4add9dc466c63",
+      "source_pin_sha256": "191e9102f701fbac08e8cc02913bd9638c753184ceb67be6007863667bcd02eb",
+      "local_files": [
+        "gauge/CONDITIONED_GAUGE.md",
+        "gauge/MEAN_INITIAL_GAUGE.md",
+        "gauge/README.md",
+        "gauge/SOURCE_PINS.json",
+        "gauge/authenticate.py",
+        "gauge/checks/_conditioned_science.py",
+        "gauge/checks/_initial_science.py",
+        "gauge/checks/_preparation_science.py",
+        "gauge/checks/check_conditioned.py",
+        "gauge/checks/check_initial_mean.py",
+        "gauge/checks/check_preparation.py",
+        "gauge/checks/run_controls.py",
+        "gauge/conditioned_mean_initial.py",
+        "gauge/mean_initial.py",
+        "gauge/requirements.txt",
+        "gauge/run_check.py",
+        "preparation/EXPLICIT_MEAN_DESIGN.md",
+        "preparation/EXPLICIT_MEAN_REVIEW.md"
+      ],
+      "upstream_keys": [
+        "W",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "S8",
+        "S9",
+        "SB",
+        "DESIGN_S3",
+        "DESIGN_S4",
+        "DESIGN_S5"
+      ]
+    },
+    "equal": true
+  },
+  "component": "prepared_shell_volume/initial"
+}

@@ -1,0 +1,272 @@
+{
+  "status": "PASS",
+  "authentication": {
+    "before": {
+      "essential_pin_sha256": "83f8e39b3c38f66d971dbfbfc879d517ca222e76538af41becd4add9dc466c63",
+      "source_pin_sha256": "191e9102f701fbac08e8cc02913bd9638c753184ceb67be6007863667bcd02eb",
+      "local_files": [
+        "gauge/CONDITIONED_GAUGE.md",
+        "gauge/MEAN_INITIAL_GAUGE.md",
+        "gauge/README.md",
+        "gauge/SOURCE_PINS.json",
+        "gauge/authenticate.py",
+        "gauge/checks/_conditioned_science.py",
+        "gauge/checks/_initial_science.py",
+        "gauge/checks/_preparation_science.py",
+        "gauge/checks/check_conditioned.py",
+        "gauge/checks/check_initial_mean.py",
+        "gauge/checks/check_preparation.py",
+        "gauge/checks/run_controls.py",
+        "gauge/conditioned_mean_initial.py",
+        "gauge/mean_initial.py",
+        "gauge/requirements.txt",
+        "gauge/run_check.py",
+        "preparation/EXPLICIT_MEAN_DESIGN.md",
+        "preparation/EXPLICIT_MEAN_REVIEW.md"
+      ],
+      "upstream_keys": [
+        "W",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "S8",
+        "S9",
+        "SB",
+        "DESIGN_S3",
+        "DESIGN_S4",
+        "DESIGN_S5"
+      ]
+    },
+    "after": {
+      "essential_pin_sha256": "83f8e39b3c38f66d971dbfbfc879d517ca222e76538af41becd4add9dc466c63",
+      "source_pin_sha256": "191e9102f701fbac08e8cc02913bd9638c753184ceb67be6007863667bcd02eb",
+      "local_files": [
+        "gauge/CONDITIONED_GAUGE.md",
+        "gauge/MEAN_INITIAL_GAUGE.md",
+        "gauge/README.md",
+        "gauge/SOURCE_PINS.json",
+        "gauge/authenticate.py",
+        "gauge/checks/_conditioned_science.py",
+        "gauge/checks/_initial_science.py",
+        "gauge/checks/_preparation_science.py",
+        "gauge/checks/check_conditioned.py",
+        "gauge/checks/check_initial_mean.py",
+        "gauge/checks/check_preparation.py",
+        "gauge/checks/run_controls.py",
+        "gauge/conditioned_mean_initial.py",
+        "gauge/mean_initial.py",
+        "gauge/requirements.txt",
+        "gauge/run_check.py",
+        "preparation/EXPLICIT_MEAN_DESIGN.md",
+        "preparation/EXPLICIT_MEAN_REVIEW.md"
+      ],
+      "upstream_keys": [
+        "W",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "S8",
+        "S9",
+        "SB",
+        "DESIGN_S3",
+        "DESIGN_S4",
+        "DESIGN_S5"
+      ]
+    },
+    "equal": true
+  },
+  "real_subprocess_count": 14,
+  "positive_subprocess_count": 3,
+  "negative_subprocess_count": 11,
+  "in_process_mutant_count": 0,
+  "exact_witness_checks": [
+    {
+      "case": "baseline_preparation",
+      "expected": "PASS",
+      "observed": "PASS"
+    },
+    {
+      "case": "baseline_initial_mean",
+      "expected": "PASS",
+      "observed": "PASS"
+    },
+    {
+      "case": "baseline_conditioned",
+      "expected": "PASS",
+      "observed": "PASS"
+    },
+    {
+      "case": "omit_radial_second_profile",
+      "expected_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"INITIAL_GAUGE_RESIDUAL_OMIT_RADIAL_SECOND_PROFILE\"}\n",
+        "stderr": "",
+        "output_exists": false
+      },
+      "observed_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"INITIAL_GAUGE_RESIDUAL_OMIT_RADIAL_SECOND_PROFILE\"}\n",
+        "stderr": "",
+        "output_exists": false
+      }
+    },
+    {
+      "case": "omit_trace_inverse_cross",
+      "expected_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"INITIAL_GAUGE_RESIDUAL_OMIT_TRACE_INVERSE_CROSS\"}\n",
+        "stderr": "",
+        "output_exists": false
+      },
+      "observed_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"INITIAL_GAUGE_RESIDUAL_OMIT_TRACE_INVERSE_CROSS\"}\n",
+        "stderr": "",
+        "output_exists": false
+      }
+    },
+    {
+      "case": "omit_metric_mixed_cross",
+      "expected_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"INITIAL_GAUGE_RESIDUAL_OMIT_METRIC_MIXED_CROSS\"}\n",
+        "stderr": "",
+        "output_exists": false
+      },
+      "observed_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"INITIAL_GAUGE_RESIDUAL_OMIT_METRIC_MIXED_CROSS\"}\n",
+        "stderr": "",
+        "output_exists": false
+      }
+    },
+    {
+      "case": "omit_lapse_square_value",
+      "expected_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"INITIAL_GAUGE_RESIDUAL_OMIT_LAPSE_SQUARE_VALUE\"}\n",
+        "stderr": "",
+        "output_exists": false
+      },
+      "observed_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"INITIAL_GAUGE_RESIDUAL_OMIT_LAPSE_SQUARE_VALUE\"}\n",
+        "stderr": "",
+        "output_exists": false
+      }
+    },
+    {
+      "case": "halve_second_gauge_velocity",
+      "expected_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"INITIAL_GAUGE_RESIDUAL_HALVE_SECOND_GAUGE_VELOCITY\"}\n",
+        "stderr": "",
+        "output_exists": false
+      },
+      "observed_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"INITIAL_GAUGE_RESIDUAL_HALVE_SECOND_GAUGE_VELOCITY\"}\n",
+        "stderr": "",
+        "output_exists": false
+      }
+    },
+    {
+      "case": "omit_time_jacobian",
+      "expected_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"CONDITIONED_LAPSE_VALUE\"}\n",
+        "stderr": "",
+        "output_exists": false
+      },
+      "observed_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"CONDITIONED_LAPSE_VALUE\"}\n",
+        "stderr": "",
+        "output_exists": false
+      }
+    },
+    {
+      "case": "omit_vector_potential",
+      "expected_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"CONDITIONED_MIXED_VELOCITY\"}\n",
+        "stderr": "",
+        "output_exists": false
+      },
+      "observed_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"CONDITIONED_MIXED_VELOCITY\"}\n",
+        "stderr": "",
+        "output_exists": false
+      }
+    },
+    {
+      "case": "omit_scalar_compensation",
+      "expected_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"CONDITIONED_PULLBACK\"}\n",
+        "stderr": "",
+        "output_exists": false
+      },
+      "observed_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"CONDITIONED_PULLBACK\"}\n",
+        "stderr": "",
+        "output_exists": false
+      }
+    },
+    {
+      "case": "wrong_momentum",
+      "expected_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"PREPARATION_MOMENTUM\"}\n",
+        "stderr": "",
+        "output_exists": false
+      },
+      "observed_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"PREPARATION_MOMENTUM\"}\n",
+        "stderr": "",
+        "output_exists": false
+      }
+    },
+    {
+      "case": "changed_upstream_proof",
+      "expected_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"SOURCE_AUTHENTICATION\"}\n",
+        "stderr": "",
+        "output_exists": false
+      },
+      "observed_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"SOURCE_AUTHENTICATION\"}\n",
+        "stderr": "",
+        "output_exists": false
+      }
+    },
+    {
+      "case": "changed_local_api",
+      "expected_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"LOCAL_AUTHENTICATION\"}\n",
+        "stderr": "",
+        "output_exists": false
+      },
+      "observed_witness": {
+        "returncode": 2,
+        "stdout": "{\"status\": \"FAIL\", \"witness\": \"LOCAL_AUTHENTICATION\"}\n",
+        "stderr": "",
+        "output_exists": false
+      }
+    }
+  ]
+}
