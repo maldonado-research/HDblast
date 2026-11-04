@@ -1,0 +1,49 @@
+{
+  "status": "FROZEN_BEFORE_NEW_RATIONAL_EVALUATION",
+  "date": "2026-11-04",
+  "scope": "Private exact-rational physical initial scalar-level-set area class bound. No new oracle, PDE solve, bump query, public edit or commit.",
+  "physical_profile": "D = relative second variation of initial scalar-level-set area between the added preparation and base; all derivatives below are dimensionless r derivatives",
+  "class": {
+    "causal_initial_segment": ["1", "5/4"],
+    "norm": "R = max(sup |D|, sup |D_r|) for the complete added preparation",
+    "radius": "2000000000000000000000000000000000",
+    "support_and_regularity": "Existing admissible smooth compact flat zero-moment homogeneous preparation directions, with the same anchored initial collar and retained analytic family premises; class constraint imposed only on the causal initial segment."
+  },
+  "constants": {
+    "ell": "1/1000000", "T": "5/4", "delta": "1/4", "q": "1201/3200000",
+    "rho": ["129", "131"], "minus_p": ["3/25000", "1/7000"],
+    "a": ["111/1000", "14/125"], "abs_p_y": "1/4000", "abs_a_y": "1/10000", "abs_Fprime": "1/1000",
+    "matrix_inf_norm_cap": "20001/20000", "matrix_exponential_cap": "4/3",
+    "exponential_taylor_degree": 6
+  },
+  "fixed_formulas": {
+    "bmax": "ell*rho_hi*a_hi", "gmax": "ell*rho_hi*p_hi^2/(3*a_lo)",
+    "Z_H_cap_per_R": "delta*(4/3)*(2/3)*gmax",
+    "h_r_cap_per_R": "3*ell^2*Z_H_cap_per_R+(bmax+gmax)*Z_H_cap_per_R+(2/3)*gmax",
+    "kmax": "p_hi/(2*a_lo)",
+    "abs_k_r_max": "ell*rho_hi*(py_hi/(2*a_lo)+p_hi*ay_hi/(2*a_lo^2))",
+    "s_cap_per_R": "kmax*(Z_H_cap_per_R+2/3)",
+    "s_r_cap_per_R": "abs_k_r_max*(Z_H_cap_per_R+2/3)+kmax*(h_r_cap_per_R+2/3)",
+    "V_L_cap_per_R": "h_r_cap_per_R+bmax*Z_H_cap_per_R",
+    "D0": "2*H+S", "Dr": "2*Hr+Sr", "Dv": "2*V_L",
+    "N_per_R": "max((D0+T*Dv)/3,Dr+Dv)",
+    "C_v": "(rho_hi*ell)^2*abs_Fprime*delta^3/(12*(1-q))",
+    "C_Theta": "rho_hi*ell*abs_Fprime*delta^2/(4*(1-q))"
+  },
+  "fixed_strict_gates": {
+    "N_per_R_upper": "1/2000",
+    "N_class_upper": "1000000000000000000000000000000",
+    "base_v2_outward": ["-5.4520e16", "-2.6521e16"],
+    "base_Theta2_outward": ["-9.0208e21", "-4.4458e21"],
+    "new_v2_outward": ["-7.6900e16", "-4.1600e15"],
+    "new_Theta2_outward": ["-1.1070e22", "-2.3980e21"],
+    "both_new_upper_bounds_strict_negative": true
+  },
+  "failure_rule": "Do not adjust the class radius, constants, norm bound or headline gates after evaluation. A failed gate produces an inconclusive report.",
+  "limits": [
+    "No physical preparation mechanism or selection rule is supplied.",
+    "The bounds are in the inherited model and coefficient units.",
+    "The class controls no higher derivatives or uniform nonlinear remainder; no common effective finite epsilon interval follows.",
+    "All analytic background, weighted IFT, exact-family regularity and coupled mean premises remain conditional."
+  ]
+}

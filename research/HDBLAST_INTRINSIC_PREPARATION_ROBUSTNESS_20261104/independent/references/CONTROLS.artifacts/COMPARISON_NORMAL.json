@@ -1,0 +1,98 @@
+{
+  "accepted_check_count": 30,
+  "accepted_checks": [
+    "Gram_norm_caps_per_R/D0",
+    "Gram_norm_caps_per_R/Dr",
+    "Gram_norm_caps_per_R/Dv",
+    "Gram_norm_caps_per_R/N",
+    "conditioned_component_caps_per_R/h",
+    "conditioned_component_caps_per_R/h_r",
+    "conditioned_component_caps_per_R/s",
+    "conditioned_component_caps_per_R/s_r",
+    "conditioned_component_caps_per_R/V_L",
+    "conditioned_component_caps_per_R/k",
+    "conditioned_component_caps_per_R/abs_k_r",
+    "ode_caps/H_per_R",
+    "ode_caps/Hr_per_R",
+    "ode_caps/Z_per_R",
+    "ode_caps/bmax",
+    "ode_caps/gmax",
+    "continuous matrix max row sums",
+    "independent positive Taylor tail reconstruction",
+    "observable_operator_caps_per_N/volume",
+    "observable_operator_caps_per_N/expansion",
+    "Gram_norm_caps_per_R/fixed_N_per_R_guard",
+    "class/radius",
+    "class_N/fixed_guard",
+    "class_N/actual_derived_cap",
+    "complete increment and causal scope",
+    "absolute_observable_difference_caps/volume",
+    "absolute_observable_difference_caps/expansion",
+    "base and whole-class exact v2",
+    "base and whole-class exact Theta2",
+    "old_exact_N_threshold/both"
+  ],
+  "actual_CLI_negative_controls": 0,
+  "candidate_logical_role": "portable bounds producer report",
+  "candidate_sha256": "16efc39b531ea3aea14aa6157f3f804df5d335a34294aa7cae7fb3fb9a6d00d5",
+  "count_scope": "Nine in-process candidate mutants in this suite; actual CLI controls have a separate validation receipt.",
+  "exact_portable_provenance_schema_checked": true,
+  "full_scientific_projection_matches_frozen_baseline": true,
+  "in_process_report_mutants": 9,
+  "method": "Independent two-source Fraction reconstruction; explicit SHA-pinned local module; no producer imports.",
+  "new_oracle_calls": 0,
+  "report_mutant_outcomes": [
+    {
+      "label": "omit_scalar_coefficient_derivative",
+      "reason": "conditioned_component_caps_per_R/abs_k_r",
+      "status": "REJECTED"
+    },
+    {
+      "label": "omit_mixed_metric_velocity",
+      "reason": "conditioned_component_caps_per_R/V_L",
+      "status": "REJECTED"
+    },
+    {
+      "label": "drop_angular_Gram_weight",
+      "reason": "Gram_norm_caps_per_R/D0",
+      "status": "REJECTED"
+    },
+    {
+      "label": "drop_radial_derivative",
+      "reason": "Gram_norm_caps_per_R/Dr",
+      "status": "REJECTED"
+    },
+    {
+      "label": "extra_half_in_volume_transfer",
+      "reason": "observable_operator_caps_per_N/volume",
+      "status": "REJECTED"
+    },
+    {
+      "label": "extra_half_in_expansion_transfer",
+      "reason": "observable_operator_caps_per_N/expansion",
+      "status": "REJECTED"
+    },
+    {
+      "label": "understate_matrix_row",
+      "reason": "matrix bound",
+      "status": "REJECTED"
+    },
+    {
+      "label": "understate_exponential_tail",
+      "reason": "Taylor first_tail_term",
+      "status": "REJECTED"
+    },
+    {
+      "label": "unscaled_direction_norm",
+      "reason": "class_N/fixed_guard",
+      "status": "REJECTED"
+    }
+  ],
+  "scientific_projection_excluded_top_level_keys": [
+    "authenticated_inputs",
+    "frozen_design",
+    "provenance",
+    "scope"
+  ],
+  "status": "PASS_INDEPENDENT_CANDIDATE_COMPARISON"
+}

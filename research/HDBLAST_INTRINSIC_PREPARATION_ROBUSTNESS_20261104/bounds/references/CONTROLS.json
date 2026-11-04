@@ -1,0 +1,226 @@
+{
+  "PDE_solves": 0,
+  "actual_negatives": [
+    {
+      "empty_stderr": true,
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "name": "existing_output_rejected",
+      "output_preserved": true,
+      "pass": true,
+      "reason": "output absent",
+      "single_JSON_stdout": true
+    },
+    {
+      "empty_stderr": true,
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "name": "relative_output_rejected",
+      "no_output_artifact": true,
+      "pass": true,
+      "reason": "absolute output path",
+      "single_JSON_stdout": true
+    },
+    {
+      "empty_stderr": true,
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "name": "parent_escape_rejected",
+      "no_output_artifact": true,
+      "pass": true,
+      "reason": "normalized output path",
+      "single_JSON_stdout": true
+    },
+    {
+      "empty_stderr": true,
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "name": "symlink_parent_rejected",
+      "no_output_artifact": true,
+      "pass": true,
+      "reason": "output path contains symlink",
+      "single_JSON_stdout": true
+    },
+    {
+      "empty_stderr": true,
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "name": "inside_component_rejected",
+      "no_output_artifact": true,
+      "pass": true,
+      "reason": "output outside code and repository",
+      "single_JSON_stdout": true
+    },
+    {
+      "empty_stderr": true,
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "name": "inside_repository_rejected",
+      "no_output_artifact": true,
+      "pass": true,
+      "reason": "output outside code and repository",
+      "single_JSON_stdout": true
+    },
+    {
+      "empty_stderr": true,
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "name": "missing_output_parent_rejected",
+      "no_output_artifact": true,
+      "pass": true,
+      "reason": "output parent exists",
+      "single_JSON_stdout": true
+    },
+    {
+      "empty_stderr": true,
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "name": "missing_source_root_rejected",
+      "no_output_artifact": true,
+      "pass": true,
+      "reason": "source unreadable: static",
+      "single_JSON_stdout": true
+    },
+    {
+      "empty_stderr": true,
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "name": "mutated_design_rejected",
+      "no_output_artifact": true,
+      "pass": true,
+      "reason": "frozen design byte pin",
+      "single_JSON_stdout": true
+    },
+    {
+      "empty_stderr": true,
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "name": "optimized_mutated_design_rejected",
+      "no_output_artifact": true,
+      "pass": true,
+      "reason": "frozen design byte pin",
+      "single_JSON_stdout": true
+    },
+    {
+      "empty_stderr": true,
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "name": "mutated_local_reference_rejected",
+      "no_output_artifact": true,
+      "pass": true,
+      "reason": "follow-on byte pin",
+      "single_JSON_stdout": true
+    },
+    {
+      "empty_stderr": true,
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "name": "mutated_static_source_rejected",
+      "no_output_artifact": true,
+      "pass": true,
+      "reason": "static byte pin",
+      "single_JSON_stdout": true
+    }
+  ],
+  "count_contract": {
+    "actual_negative_subprocesses": 12,
+    "inprocess_checks": 2,
+    "success_subprocesses": 2,
+    "total_controls": 16
+  },
+  "counts": {
+    "actual_negative_subprocesses": 12,
+    "inprocess_checks": 2,
+    "success_subprocesses": 2,
+    "total_controls": 16
+  },
+  "inprocess": [
+    {
+      "name": "stored_normal_optimized_identical",
+      "pass": true
+    },
+    {
+      "name": "frozen_scientific_check_count_38",
+      "pass": true
+    }
+  ],
+  "new_bump_queries": 0,
+  "normal_optimized_identical": true,
+  "oracle_calls": 0,
+  "report_sha256": "16efc39b531ea3aea14aa6157f3f804df5d335a34294aa7cae7fb3fb9a6d00d5",
+  "status": "PASS_PORTABLE_ISOLATED_REPLAY_AND_REJECTION_CONTROLS",
+  "successes": [
+    {
+      "exit_code": 0,
+      "finite_checks": 38,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "name": "normal_exact_replay",
+      "pass": true
+    },
+    {
+      "exit_code": 0,
+      "finite_checks": 38,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "name": "optimized_exact_replay",
+      "pass": true
+    }
+  ]
+}

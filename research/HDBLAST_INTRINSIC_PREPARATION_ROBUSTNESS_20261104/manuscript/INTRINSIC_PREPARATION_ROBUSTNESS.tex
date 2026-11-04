@@ -1,0 +1,714 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.92in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Scalar-level initial geometry and robust shell-volume perturbations},pdfauthor={Ricardo Maldonado},pdfsubject={Working manuscript for author and specialist review}}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\Lie}{\mathcal L}
+\newcommand{\av}[1]{\langle #1\rangle}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\cV}{\mathcal V}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\title{Scalar-level initial geometry and robust shell-volume perturbations}
+\author{Ricardo Maldonado\\\small Independent Researcher}
+\date{4 November 2026}
+
+\begin{document}
+\maketitle
+\begin{center}\small Working manuscript for author and specialist review\end{center}
+\begin{abstract}
+We describe a geometric, background-calibrated class of homogeneous second
+preparations in a conditional five-dimensional Einstein--scalar shell model.
+On a physically supplied initial Cauchy section, we compare the three-area
+of the continued spherical component of each scalar level with that of a
+fixed base preparation. For families with the same first tangent, the
+relative difference of second area derivatives is
+$D=3J/2-3aw/p$, including the scalar displacement of the level.
+In the retained compact metric-mean freedom, with the other canonical
+sectors fixed, the full profile determines the preparation by a two-component
+linear initial-value problem. On the target's causal initial segment,
+exact rational bounds give $N\le R_A/2000$, where $R_A$ bounds $D$ and
+its fixed background scalar-label derivative. The specified class
+$R_A\le2\times10^{33}$ therefore retains strictly negative proper-volume
+and expansion second coefficients at one fixed proper time. Each admitted
+exact family consequently has smaller positive volume and slower positive
+expansion for sufficiently small nonzero parameter of either sign.
+The result retains explicit background, constraint, development, and
+uniqueness premises. It supplies neither a physical rule choosing this
+class nor a parameter interval uniform over it. The contribution is the
+restricted geometric reconstruction and its quantitative transport to these
+two model observables, rather than a general gauge-invariance principle.
+\end{abstract}
+
+\section{Question, model, and retained premises}
+
+A fixed first perturbation does not fix homogeneous second initial data.
+In the present shell model, an admissible compact second preparation can
+reverse the signs of both proper-volume and expansion coefficients while
+preserving the first packet and the initial shell collar
+\cite{preparation,records}. This raises a narrower question: can a specified
+class of second preparations be expressed using initial geometry, and can
+one certify both signs throughout that class? We answer this conditionally
+for the retained metric-mean freedom. The initial physical section and a
+background scalar-label calibration remain part of the specification.
+
+The bulk action has normalization
+\begin{equation}
+ S_{\rm bulk}=\int\left(\tfrac12R-\tfrac12|\dd\phi|_g^2-\cV(\phi)\right)
+ \dd\mu_g.
+ \label{eq:action}
+\end{equation}
+The bulk and one-copy outward shell equations are
+\begin{align}
+ \operatorname{Ric}_{AB}-\phi_A\phi_B-\tfrac23\cV(\phi)g_{AB}&=0,
+ &\Box_g\phi-\cV'(\phi)&=0,\label{eq:bulk}\\
+ K^{\rm out}_{ab}&=\tfrac16\sigma(\phi)\gamma_{ab},
+ &n_{\rm out}\phi&=-\tfrac12\sigma'(\phi).\label{eq:shell}
+\end{align}
+There are two identical interior copies with their respective outward
+normals. Fix
+\begin{gather}
+ W(\phi)=1-\phi+\phi^3/3,\qquad
+ \cV=\tfrac12(W')^2-\tfrac23W^2,\qquad
+ \sigma=2W+\delta_\sigma(1+c_\sigma\phi),\nonumber\\
+ \delta_\sigma=10^{-3},\qquad
+ c_\sigma=96714321425692/161839258930731.
+ \label{eq:potential}
+\end{gather}
+The selected regular near-$\phi=1$ background is
+\begin{equation}
+ g_0=\dd y^2+\rho(y)^2[-\dd t^2+\cosh^2t\,\kappa],\qquad
+ a=\rho_y/\rho>0,\quad p=\phi_{0,y}\ne0,
+ \label{eq:background}
+\end{equation}
+where $\kappa$ is the unit round metric on $S^3$. Its exact selected shell
+radius is $\rho_b$. Put $\ell=10^{-6}$, $x=t/\ell$, $r=z/\ell$, and
+$\dd y=-\rho\,\dd z$. The packet is $1\le r\le2$; the target is
+\begin{equation}
+ T=5/4,\qquad \tau_*=\rho_b\ell T.
+ \label{eq:target}
+\end{equation}
+The exact $\rho_b$, rather than a rounded value from an enclosure, specifies
+this clock. All quantities use the inherited model and coefficient units.
+
+Every comparison keeps the selected background, first seed and parameter
+normalization, full quadratic constraint and evolution sources, canonical
+momentum and scalar canonical second sectors, second transverse-traceless
+initial pair, and initial shell collar fixed. In particular,
+\begin{equation}
+ x_\eps=x_0+\eps v_{\rm seed}+\tfrac12\eps^2x_2+o(\eps^2),\qquad
+ g_\eps=g_0+\eps q+\tfrac12\eps^2k+o(\eps^2).
+ \label{eq:normalization}
+\end{equation}
+The fixed first seed is a smooth flat quadrupole packet with
+$Y=n_1^2-n_2^2$, $\av Y=0$, $\av{Y^2}=1/6$, and
+$\Delta_\kappa Y=-8Y$. Its normalization and the base preparation are
+identified in Appendix~\ref{app:base}. Its full first-field solution is
+common to all families; no quadratic first-field term is discarded in an
+absolute observable.
+
+We retain the selected background and its continuous authenticated annulus
+bounds; the equivariant weighted constraint isomorphism and nonlinear
+implicit-function hypotheses; the conditional fixed-shell development,
+subsidiary and boundary uniqueness, and identification of the first
+derivative with that first-field solution. For each fixed preparation we
+assume $C^2$ dependence on $\eps$ in the retained lower $C^4$ spacetime
+topology on a common compact neighborhood, including the required traces.
+After a family-dependent shrinkage in $\eps$, an intrinsic normal tube
+reaches \eqref{eq:target}. The complete five-mean linear mixed problem
+retains its physical Robin and normal-gauge rows, uniqueness, and the
+coefficient estimate stated in Section~\ref{sec:transfer}. These are shared
+analytic premises of the retained construction \cite{records}; the finite
+rational checks below do not establish them. No effective or uniform
+nonlinear parameter radius is assumed.
+
+\section{Restricted homogeneous preparation freedom}
+
+On the physical initial section $\Sigma$, the background spatial data are
+$\gamma_0=\dd y^2+\rho^2\kappa$ and $\phi_0=\phi_0(y)$. Let $h$ be smooth,
+supported in the packet and flat at its endpoints, with
+\begin{equation}
+ \int_{y_L}^{y_U}\rho^2h\,\dd y=0,\quad
+ \chi(y)=\int_{y_L}^{y}\rho^2h\,\dd s,\quad
+ h=\rho^{-2}\chi_y,\qquad y_L=y(2),\quad y_U=y(1).
+ \label{eq:admissible}
+\end{equation}
+Thus $\chi$ is smooth, compact, and flat. The complete added second
+preparation is the metric mean
+\begin{equation}
+ \Delta\gamma_2=h\gamma_0+\Lie_{\zeta\partial_y}\gamma_0,
+ \quad\Delta\phi_2=0,\qquad
+ \zeta=\frac{3(h_y-ah)}{2p^2}+\frac{9\chi}{2\rho^4p^2};
+ \label{eq:raw}
+\end{equation}
+the canonical momentum and both scalar canonical second sectors are fixed.
+The background identity $a_y+4a^2=3/\rho^2-2\cV/3$ gives
+\begin{align}
+ C[h]&=-\tfrac32(h_{yy}+3ah_y)-\cV h,\nonumber\\
+ \rho^4C[h]&=-\tfrac32[\rho^4(h_y-ah)]_y-\tfrac92\rho^2h,
+ &P_g\Delta\gamma_2&=C[h]+\rho^{-4}(\rho^4p^2\zeta)_y=0.
+ \label{eq:constraint}
+\end{align}
+The moment and flatness conditions make this a compact homogeneous
+constraint datum. Adding it to the base preparation leaves the complete
+quadratic constraint source unchanged. The retained weighted
+implicit-function construction and equivariance give an exact completed
+family with the stated second mean for each fixed admissible $h$
+\cite{preparation}. This is an application of the premises, not a new
+existence theorem for unrestricted data.
+
+The freedom is not the pure second conditioning diffeomorphism. At the
+time-symmetric background, a normal generator changes the initial spatial
+metric and scalar by multiples of $K_0=0$ and $\Pi_0=0$. Averaging a proposed
+tangential generator leaves a radial one; its scalar variation is $pX^y$.
+Since the raw scalar difference in \eqref{eq:raw} vanishes and $p\ne0$,
+$X^y=0$. Also $\Delta\gamma_2=0$ would require
+$h+2\zeta_y=h+2a\zeta=0$, hence $\zeta_y=a\zeta$; compact support then
+gives $\zeta=h=0$. Nonzero $h$ is therefore physical in the retained
+anchored pure second gauge quotient, with the first representative fixed.
+
+\section{Scalar-level area on the supplied section}
+
+For a fixed background scalar value $\varphi=\phi_0(y)$, let
+$S_\eps(\varphi)$ be the component of $\{\phi_\eps=\varphi\}$ in the
+selected annular collar that continues the background three-sphere. Define
+\begin{equation}
+ A_\eps(\varphi)=\operatorname{Vol}_3(S_\eps(\varphi),\gamma_\eps),
+ \qquad A_0(\phi_0(y))=2\pi^2\rho(y)^3,
+ \qquad
+ D_h(y)=\frac{\partial_\eps^2 A_\eps^h(\phi_0(y))|_0
+                 -\partial_\eps^2 A_\eps^{\rm base}(\phi_0(y))|_0}
+                {A_0(\phi_0(y))}.
+ \label{eq:area}
+\end{equation}
+The scalar label is held fixed in the parameter derivatives. They are
+actual second derivatives, with no extra factor $1/2$. The component
+qualification excludes unrelated components elsewhere on $\Sigma$.
+
+\begin{lemma}[Regularity and shared-first cancellation]\label{lem:area}
+Under the retained $C^2$-into-$C^4$ hypothesis, \eqref{eq:area} exists
+and is $C^1$ in the background label. If two preparations have identical
+first metric and scalar fields, then
+\begin{equation}
+ D_h=\av{\tfrac12\operatorname{tr}_{\rho^2\kappa}
+                  (\Delta\gamma_{2,\mathrm{tan}})
+                    -3a\Delta\phi_2/p}.
+ \label{eq:difference}
+\end{equation}
+Brackets denote the normalized $\kappa$ integral.
+\end{lemma}
+
+\begin{proof}
+Work in a slightly enlarged compact collar, so endpoint labels are included.
+The uniform nonzero bound on $p$ and $C^4$ closeness give unique continued
+level graphs $F_\eps(y,\omega)=(u_\eps(y,\omega),\omega)$ satisfying
+\begin{equation}
+ \phi_\eps(u_\eps(y,\omega),\omega)=\phi_0(y),\qquad u_0=y.
+ \label{eq:graph}
+\end{equation}
+The spatial implicit equations give continuity of $u_\eps$ in $C^4$.
+At the graph, its parameter derivatives satisfy
+\begin{equation}
+ \dot u=-\dot\phi/\phi_y,\qquad
+ \ddot u=-\frac{\ddot\phi+2\dot\phi_y\dot u+\phi_{yy}\dot u^2}{\phi_y}.
+ \label{eq:graphderivatives}
+\end{equation}
+Their spatial derivatives through order two use at most four spatial
+derivatives of the input and uniformly nonzero denominators. Difference
+quotients and the mean value formula give $u_\eps$ $C^2$ into $C^2$.
+This allows two spatial orders of loss; differentiability of composition
+at unchanged $C^4$ regularity is not needed.
+
+The induced metric, with all fields evaluated at $F_\eps$, is
+\begin{equation}
+ \sigma_{\eps,AB}=\gamma_{\eps,AB}
+ +\gamma_{\eps,yA}\partial_Bu_\eps
+ +\gamma_{\eps,yB}\partial_Au_\eps
+ +\gamma_{\eps,yy}\partial_Au_\eps\partial_Bu_\eps.
+ \label{eq:induced}
+\end{equation}
+It is $C^2$ into $C^1$ and remains positive definite. Integrating
+$\sqrt{\det\sigma_\eps}$ over the compact sphere gives $A_\eps$ $C^2$
+into $C^1$. No rotational symmetry of the perturbed data is assumed.
+
+The first level displacements coincide. Subtracting
+\eqref{eq:graphderivatives} at $\eps=0$ gives
+$\Delta\ddot u=-\Delta\phi_2/p$. The background angular graph slope and
+$\gamma_{0,yA}$ vanish, so
+\begin{equation}
+ \Delta\sigma_{2,AB}=\Delta\gamma_{2,AB}
+                 -(\Delta\phi_2/p)\partial_y\gamma_{0,AB}.
+ \label{eq:sigmadifference}
+\end{equation}
+The determinant terms quadratic in the common first variation cancel
+after subtraction. Its remaining linear trace gives
+\eqref{eq:difference}. The actual nonspherical first-field quadratics
+remain in each absolute area variation.
+\end{proof}
+
+For an angular metric mean $J$ and scalar mean $w$, the formula becomes
+\begin{equation}
+ \boxed{D_h=\tfrac32J-3aw/p.}
+ \label{eq:invariant}
+\end{equation}
+In \eqref{eq:raw}, $J=h+2a\zeta$ and $w=0$. After the retained pure
+second conditioning gauge, $J=h$ and $w=-p\zeta$. Both give
+\begin{equation}
+ D_h=\tfrac32(h+2a\zeta),\qquad
+ w=\frac{p}{2a}(h-2D_h/3).
+ \label{eq:conditioning}
+\end{equation}
+The scalar pullback in the conditioned representative is essential.
+For a general pure second tangential generator $X$, the metric trace in
+\eqref{eq:difference} contributes $3aX^y+\operatorname{div}_\kappa X^{\rm tan}$
+and the scalar term contributes $-3aX^y$. The sphere integral of the
+divergence vanishes. Thus the area is invariant under section
+diffeomorphisms transporting both fields, including nonspherical ones.
+A spacetime diffeomorphism must also transport the supplied physical
+section. Replacing it by a different physical slice changes the
+observable; no invariance under that replacement is asserted.
+
+\section{Reconstruction and the geometric class}
+
+Set $Z=\chi/(\ell\rho^3)$, $b=\ell\rho a$, and
+$g=\ell\rho p^2/(3a)$. Substitution of \eqref{eq:raw} into
+\eqref{eq:conditioning} gives
+\begin{equation}
+ h_y=(a-p^2/(3a))h-3\chi/\rho^4+(p^2/(3a))(2D_h/3).
+ \label{eq:hy}
+\end{equation}
+Using $\rho_r=-\ell a\rho^2$ and $\chi_r=-\ell\rho^3h$, we obtain
+\begin{equation}
+ \boxed{\quad Z_r=3bZ-h,\qquad
+ h_r=3\ell^2Z+(-b+g)h-\tfrac23gD_h,\qquad
+ (Z,h)(1)=(0,0).\quad}
+ \label{eq:reconstruction}
+\end{equation}
+Flatness gives $h(1)=0$ and the exact zero moment gives $\chi(1)=0$.
+
+\begin{proposition}[Restricted injectivity]\label{prop:injectivity}
+Within \eqref{eq:admissible}--\eqref{eq:raw}, with the other canonical
+second sectors fixed, equal profiles on $[1,T]$ give equal $h$, $\chi$,
+and $\zeta$ on that segment. Equal full profiles on $[1,2]$ give equal
+full preparations. In particular, $D_h=0$ on the whole packet implies
+$h=0$.
+\end{proposition}
+\begin{proof}
+The continuous-coefficient linear initial-value problem
+\eqref{eq:reconstruction} has a unique solution by its fundamental matrix
+or the integral Gronwall inequality. Its difference for equal profiles
+has zero forcing and initial value. The formula for $\zeta$ then gives
+the claim.
+\end{proof}
+
+A profile zero only on $[1,T]$ need not restrict a preparation outside
+that causal segment. This is injectivity for the specified mean freedom,
+not for arbitrary Einstein--scalar Cauchy data. It is not surjectivity
+onto arbitrary $C^1$ profiles: compactness, endpoint flatness, and the
+moment condition constrain the image.
+
+The derivative used to calibrate the class is fixed by the background
+scalar label:
+\begin{equation}
+ D_{h,r}:=\phi_{0,r}\partial_\varphi D_h
+        =(-\ell\rho p)\partial_\varphi D_h,
+ \qquad \varphi=\phi_0(y(r)).
+ \label{eq:labelderivative}
+\end{equation}
+It is not a derivative in an arbitrary perturbed radial coordinate.
+The background calibration can itself be read from
+$\rho(\varphi)=(A_0(\varphi)/(2\pi^2))^{1/3}$ and the retained map
+$r\mapsto\varphi$. Define
+\begin{equation}
+ R_A(h)=\max\left\{\sup_{1\le r\le T}|D_h(r)|,
+                         \sup_{1\le r\le T}|D_{h,r}(r)|\right\},\qquad
+ \mathcal C_A=\{h\text{ satisfying \eqref{eq:admissible}}:
+                     R_A(h)\le2\times10^{33}\}.
+ \label{eq:class}
+\end{equation}
+This is a geometric, background-calibrated specification on the given
+section. Neither the restriction to these canonical sectors nor the
+chosen radius is derived from a physical preparation process. If an
+increment is written $\lambda h$, its class norm is
+$R_A(\lambda h)=|\lambda|R_A(h)$; the unscaled direction does not control
+arbitrary $\lambda$.
+
+\section{An exact rational initial-data bound}\label{sec:rational}
+
+Write $R=R_A(h)$. The retained continuous background boxes imply, everywhere
+on the causal initial segment,
+\begin{gather}
+ 129\le\rho,\rho_b\le131,\qquad
+ 3/25000\le-p\le1/7000,\qquad
+ 111/1000\le a\le14/125,\nonumber\\
+ |p_y|\le1/4000,\qquad |a_y|\le1/10000,\qquad
+ 1/1200\le-F'_b\le1/1000.
+ \label{eq:caps}
+\end{gather}
+Here $F'_b$ is the scalar-field derivative at the background shell of
+$F(\phi)=2\cV(\phi)-\sigma'(\phi)^2/4+\sigma(\phi)^2/3$, the coefficient
+in the retained proper-volume difference equation below. These are bounds on continuous
+domains, rather than point samples. Their source bytes, the class radius,
+and the numerical gates were fixed before the new rational evaluation.
+
+Let $b_+=917/62500000$ and $g_+=131/16317000000000$, obtained directly
+from \eqref{eq:caps}. The matrix of \eqref{eq:reconstruction} has
+infinity norm at most
+\begin{equation}
+ \max\{1+3b_+,3\ell^2+b_++g_+\}\le\mu:=20001/20000.
+ \label{eq:matrixbound}
+\end{equation}
+Put $\Delta=T-1=1/4$. A positive Taylor sum through degree six with a
+geometric tail gives the exact rational certificate
+\begin{equation}
+ e^{\mu\Delta}\le
+ \sum_{j=0}^6\frac{(\mu\Delta)^j}{j!}
+ +\frac{(\mu\Delta)^7/7!}{1-\mu\Delta/8}<\frac43.
+ \label{eq:exponential}
+\end{equation}
+Variation of constants therefore bounds both $|Z|$ and $|h|$ by $HR$,
+where
+\begin{equation}
+ H=\Delta\tfrac43\tfrac23g_+=\frac{131}{73426500000000},\qquad
+ H_r=3\ell^2H+(b_++g_+)H+\tfrac23g_+,
+ \quad |h_r|\le H_rR.
+ \label{eq:hbound}
+\end{equation}
+No derivative bound on the ODE matrix is required.
+
+In $(K,L,N,J,w)$ order the conditioned difference data satisfy
+\begin{equation}
+ W_0=(h,0,0,h,w),\qquad W_{0,x}=(0,V_L,0,0,0),\qquad
+ W_{0,r}=(h_r,0,0,h_r,w_r),
+ \label{eq:initialvectors}
+\end{equation}
+where, with $k=p/(2a)$,
+\begin{equation}
+ w=k(h-2D_h/3),\qquad
+ w_r=k_r(h-2D_h/3)+k(h_r-2D_{h,r}/3),\qquad
+ V_L=h_r+bh.
+ \label{eq:adapter}
+\end{equation}
+The mixed metric velocity and the derivative of $k$ are both retained.
+Bounds following from \eqref{eq:caps} are
+\begin{align}
+ k_+&=\frac{1/7000}{2(111/1000)}=\frac1{1554},\nonumber\\
+ k_{r,+}&=\ell\,131\left\{\frac{1/4000}{2(111/1000)}
+              +\frac{(1/7000)(1/10000)}{2(111/1000)^2}\right\},\nonumber\\
+ S&=k_+(H+2/3),\qquad
+ S_r=k_{r,+}(H+2/3)+k_+(H_r+2/3),\qquad
+ V=H_r+b_+H.
+ \label{eq:componentcaps}
+\end{align}
+Thus $|w|\le SR$, $|w_r|\le S_rR$, and $|V_L|\le VR$.
+For $\mathsf H=\operatorname{diag}(1,2,1,3,1)$, let
+$I_0=\sup|W_0|_{\mathsf H}$, $I_r=\sup|W_{0,r}|_{\mathsf H}$,
+$I_x=\sup|W_{0,x}|_{\mathsf H}$, with the data zero for $r\le1$.
+The triangle inequalities give
+\begin{equation}
+ I_0\le(2H+S)R,\qquad I_r\le(2H_r+S_r)R,\qquad
+ I_x\le2VR,\qquad
+ N:=\max\{(I_0+TI_x)/3,I_r+I_x\}.
+ \label{eq:N}
+\end{equation}
+All operations are rational. The resulting exact upper bound is
+\begin{equation}
+ \begin{gathered}
+ N\le c_NR\le R/2000,\\
+ c_N=
+ \frac{798916710779559466175931203077}
+      {1861847711577000000000000000000000}
+ <0.000429098849392<\frac1{2000}.
+ \end{gathered}
+ \label{eq:Nrational}
+\end{equation}
+In particular every member of \eqref{eq:class} satisfies $N\le10^{30}$.
+The certificate verifies 38 finite checks using standard-library rational
+arithmetic, with zero new background or evolved-field oracle calls, PDE
+solves, or bump queries. A separate rational implementation reconstructs
+the bound from shared retained inputs without importing the producer
+\cite{records}. These checks share the analytic and background premises.
+
+\section{Transport to proper volume and expansion}\label{sec:transfer}
+
+The shell observables use the intrinsic future normal-geodesic foliation
+anchored at the common initial section:
+\begin{equation}
+ V_\eps(\tau)=\int_{S^3}\dd\mu_{h_\eps(\tau)},\qquad
+ \Theta_\eps=\partial_\tau\log V_\eps,\qquad
+ v_2=\frac{\partial_\eps^2V_\eps|_0}{V_0},\quad
+ \Theta_2=\partial_\eps^2\Theta_\eps|_0.
+ \label{eq:observables}
+\end{equation}
+The clock and anchor are transported under gauge changes. The background
+has $A(\tau)=\rho_b\cosh(\tau/\rho_b)$, $V_0=2\pi^2A^3$, and
+$\Theta_0=3\rho_b^{-1}\tanh(\tau/\rho_b)$.
+
+The same first field means the same quadratic bulk, shell, clock, and
+measure sources. They cancel in the difference of the second responses.
+Retained linear uniqueness gives the complete homogeneous five-mean
+difference $W$, including metric--scalar coupling and Robin feedback.
+On the backward-closed cone $0\le x\le T$, $0\le r\le T-x$, the retained
+coefficient estimate has
+\begin{equation}
+ q=\frac{1201}{3200000}<1,\qquad
+ X(U)=\max\{\sup|U|_{\mathsf H}/3,
+                   \sup|U_x|_{\mathsf H},\sup|U_r|_{\mathsf H}\}.
+ \label{eq:resolvent}
+\end{equation}
+For the free reflected wave $B$ of \eqref{eq:initialvectors},
+$X(B)\le N$ and $X(W-B)\le qN/(1-q)$, hence $X(W)\le N/(1-q)$.
+The exact zero wedge $x+r\le1$ then implies, for $m(x)=W_w(x,0)$,
+\begin{equation}
+ |m(x)|\le (x-1)_+\frac{N}{1-q}.
+ \label{eq:zero-wedge}
+\end{equation}
+Only the initial segment up to $T$ enters this target estimate.
+
+Let $\nu=v_2^h-v_2^{\rm base}$ and
+$\theta=\Theta_2^h-\Theta_2^{\rm base}$. The retained proper-time
+difference equation and zero initial conditions are
+\begin{equation}
+ \nu_{\tau\tau}+4(A_\tau/A)\nu_\tau-2\nu/A^2=(F'_b/2)m,
+ \qquad \nu(0)=\nu_\tau(0)=0,\qquad \theta=\nu_\tau.
+ \label{eq:volumeode}
+\end{equation}
+There is no additional $1/2$ multiplying $\nu$ or $\theta$: the
+observable coefficients are second parameter derivatives. At the target,
+\begin{align}
+ \nu(T)&=(\rho_b\ell)^2(F'_b/2)\int_1^T k(T,x)m(x)\,\dd x,\nonumber\\
+ \theta(T)&=\rho_b\ell(F'_b/2)\int_1^T k_T(T,x)m(x)\,\dd x,\nonumber\\
+ k(T,x)&=\frac{\sinh(2\ell(T-x))}{2\ell}
+                   \frac{\cosh^2(\ell x)}{\cosh^2(\ell T)},\qquad
+ k_T=\frac{\cosh^2(\ell x)\cosh(\ell T-2\ell x)}{\cosh^3(\ell T)}.
+ \label{eq:kernels}
+\end{align}
+The exact inequalities $0\le k\le T-x$ and $0<k_T\le1$, together with
+\eqref{eq:zero-wedge}, give
+\begin{equation}
+ \begin{gathered}
+ |\nu(T)|\le C_vN,\qquad |\theta(T)|\le C_\Theta N,\\
+ C_v=\frac{(131\ell)^2(1/1000)\Delta^3}{12(1-q)}
+     =\frac{17161}{767711760000000000},\qquad
+ C_\Theta=\frac{131\ell(1/1000)\Delta^2}{4(1-q)}
+     =\frac{131}{63975980000}.
+ \end{gathered}
+ \label{eq:transport}
+\end{equation}
+This bounds the full coupled response, rather than a free-history sign.
+
+\begin{theorem}[Conditional robustness of the specified class]\label{thm:main}
+Under the retained premises, every admitted exact family with complete
+increment $h\in\mathcal C_A$ has, at \eqref{eq:target},
+\begin{equation}
+ v_2\in[-7.6900\times10^{16},-4.1600\times10^{15}],\qquad
+ \Theta_2\in[-1.1070\times10^{22},-2.3980\times10^{21}].
+ \label{eq:mainbounds}
+\end{equation}
+For each such family there exists a possibly family-dependent
+$\eps_h>0$ such that, for $0<|\eps|<\eps_h$ of either sign,
+\begin{equation}
+ 0<V_\eps(\tau_*)<V_0(\tau_*),\qquad
+ 0<\Theta_\eps(\tau_*)<\Theta_0(\tau_*).
+ \label{eq:qualitative}
+\end{equation}
+No positive parameter radius common to the whole class is asserted.
+\end{theorem}
+
+\begin{proof}
+The retained base coefficient enclosures and the absolute difference
+bounds at $N=10^{30}$ are
+\begin{center}
+\begin{tabular}{@{}lcc@{}}\toprule
+Quantity & Base outward enclosure & Absolute increment cap\\\midrule
+$v_2$ & $[-5.4520,-2.6521]\,10^{16}$ & $C_v10^{30}<2.23535\,10^{16}$\\
+$\Theta_2$ & $[-9.0208,-4.4458]\,10^{21}$ & $C_\Theta10^{30}<2.04765\,10^{21}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The exact base rational intervals plus and minus the exact caps give
+\eqref{eq:mainbounds} with outward rounding. Equivalently, $10^{30}$
+is strictly below the retained sufficient threshold
+$N_{\rm crit}>1.1864\times10^{30}$ for both coefficients to stay negative.
+The first integrated variations vanish by the common quadrupole mean.
+For each fixed admitted family, $C^2$ dependence gives
+\begin{equation}
+ V_\eps/V_0=1+\tfrac12\eps^2v_2+o(\eps^2),\qquad
+ \Theta_\eps=\Theta_0+\tfrac12\eps^2\Theta_2+o(\eps^2).
+ \label{eq:taylor}
+\end{equation}
+Since $V_0>0$ and $\Theta_0(\tau_*)>0$, strict negativity gives the
+upper inequalities and continuity gives positivity after a further
+family-dependent shrinkage. This proves \eqref{eq:qualitative}.
+\end{proof}
+
+The small-parameter conclusion is qualitative. The class bounds no higher
+norms or nonlinear remainders uniformly, so the common coefficient
+enclosures do not provide a uniform finite-$\eps$ regime. They concern
+one registered proper time, not a signed time interval, contraction, or
+the sign of volume acceleration.
+
+\section{The earlier reversal and the scope of the result}
+
+The earlier sign reversal uses the fixed admissible direction
+\begin{equation}
+ \begin{gathered}
+ Q(r)=\exp\!\left(4-\frac1{(r-1)(2-r)}\right)\ (1<r<2),
+ \qquad Q=0\text{ otherwise},\\
+ \chi=\ell\rho_b^3Q,\qquad
+ h_*=-\left(\rho_b/\rho\right)^3Q_r,
+ \end{gathered}
+ \label{eq:witness}
+\end{equation}
+scaled by the fixed finite $\lambda=-10^{21}$. Its two proper-response
+coefficients are positive in that retained construction
+\cite{preparation}. This does not contradict Theorem~\ref{thm:main}.
+Independent exact rational target bounds give
+\begin{equation}
+ D_{h_*}(T)>3.7621\times10^{12},\qquad
+ D_{h_*,r}(T)<-6.870\times10^{13}.
+ \label{eq:witnessbounds}
+\end{equation}
+Consequently
+\begin{equation}
+ R_A(-10^{21}h_*)>3.7621\times10^{33}>2\times10^{33},\qquad
+ |D_{-10^{21}h_*,r}(T)|>6.870\times10^{34}.
+ \label{eq:excluded}
+\end{equation}
+It is outside the specified class already at one endpoint. This exclusion
+uses retained target background boxes and an independent analytic Taylor
+enclosure for the old $Q(T)$ and its derivatives; it is a check of an
+existing witness, not a new direction search or oracle call.
+
+The geometric ingredients have established antecedents. General first
+and second variations of induced hypersurface geometry are treated by
+Mars \cite[Secs.~3, 6--7]{Mars}; the cancellation in
+Lemma~\ref{lem:area} is an application with a common first tangent.
+Scalar--metric invariant combinations in warped scalar backgrounds are
+standard \cite[Secs.~III--IV]{Giovannini}: with transverse conformal
+coefficient $J=2\psi$, our $D=3(\psi-aw/p)$ has the same kinematic
+cancellation. This does not identify the two dynamical problems.
+The fact that a fixed scalar-defined window can give a gauge-invariant
+averaging prescription does not select that window or a physical
+hypersurface \cite[Sec.~3, Eq.~(3.23), and Sec.~4]{Gasperini}.
+That work uses a timelike spacetime scalar gradient; here spatial scalar
+levels lie inside an already supplied Cauchy section. Accordingly, the result
+here is not a new gauge principle. It identifies the retained mean
+freedom through a particular level-area profile, proves its restricted
+reconstruction, and transports a stated profile radius to simultaneous
+coefficient bounds in this model.
+
+The supplied Cauchy section, continued level component, background label
+calibration, canonical-sector restriction, and class radius are explicit
+inputs. No physical process selecting them is given. The larger freedom
+still admits the earlier opposite-sign preparation; the class theorem
+states what follows after a further specification, not sign universality
+from the first packet alone. No SI calibration, measured amplitude,
+radiation epoch, or cosmological origin follows from these model-unit
+coefficients. This focused comparison does not establish priority or
+exhaustive literature novelty. The conditional mathematical result is
+intended for author and specialist review.
+
+\appendix
+\section{Identification of the fixed seed and base}\label{app:base}
+
+For clarity, the retained seed can be specified without choosing a
+perturbed foliation. Let $Q$ be \eqref{eq:witness}, $B(z)=Q(z/\ell)$,
+$p_b$ the background shell scalar derivative, and
+\begin{gather}
+ \alpha=(\rho/\rho_b)^{3/2}p/p_b,\qquad
+ \varkappa=\alpha_z/\alpha=\rho(5a/2-\cV'/p),\nonumber\\
+ u=\alpha B/\rho^2,\quad u_t=e^{-z}u,\quad s_1=u_t/\rho,\qquad
+ v=3\alpha(B_z+\varkappa B)/(\rho^3p),\nonumber\\
+ v_t=3\alpha e^{-z}[B_z+(\varkappa-1)B]/(\rho^3p),\qquad j=v_t/\rho.
+ \label{eq:seed}
+\end{gather}
+In a background orthonormal spatial frame, with spatial density $\rho_0$,
+the canonical first datum is
+\begin{equation}
+ \gamma_1=\operatorname{diag}(-4u,2u,2u,2u)Y,\quad
+ \pi_1/\rho_0=\operatorname{diag}(-3s_1/2,0,0,0)Y,\quad
+ \phi_1=vY,\quad\varpi_1/\rho_0=jY.
+ \label{eq:canonicalseed}
+\end{equation}
+The mean Hamiltonian and radial momentum Hessians in convention
+\eqref{eq:normalization} are
+\begin{align}
+ Q_H={}&-2u_y^2-24auu_y-2uu_{yy}
+ -(16a_y+32a^2+8p^2/3)u^2-4u^2/\rho^2-s_1^2\nonumber\\
+ &-(j^2+v_y^2+\cV''v^2)/6-(4/3)puv_y-(4/3)v^2/\rho^2,\nonumber\\
+ Q_M={}&-2s_1u_y+j(v_y+4pu)/3.
+ \label{eq:hessians}
+\end{align}
+Define $I=\int_{y_L}^{y_U}\rho^4Q_H\,\dd y$,
+$J_B=\int_{y_L}^{y_U}\rho^2B\,\dd y>0$, $f=2IB/(9J_B)$, and
+$\xi=-(\rho^4p^2)^{-1}\int_{y_L}^y\rho^4(Q_H+C[f])\,\dd s$, with
+$C$ as in \eqref{eq:constraint}. The base second mean, in
+$(\gamma,\pi,\phi,\varpi)$ order, is
+\begin{equation}
+ B_{\rm base}=\left(f\gamma_0+\Lie_{\xi\partial_y}\gamma_0,\,
+ \rho_0\operatorname{diag}(0,-Q_M/(6a),-Q_M/(6a),-Q_M/(6a)),\,0,\,0\right).
+ \label{eq:base}
+\end{equation}
+It satisfies the full mean second constraint with these Hessians.
+The retained exact completion and evolution, rather than just the
+initial Hessians, supply the base response intervals used in the theorem.
+The added datum \eqref{eq:raw} leaves all canonical entries except the
+metric mean unchanged.
+
+\section{Reproducibility and shared inputs}
+
+The accompanying capsule \cite{records} contains the geometric proof,
+frozen design, rational producer, normal and optimized reports,
+independent reconstruction, and the previous-witness exclusion check.
+The rational producer authenticates the retained static annulus jets,
+base proper response, and preparation-difference records by SHA-256
+before evaluating the fixed gates. Normal and optimized runs agree in
+their report bytes. The independent checker imports no producer.
+Its agreement checks finite arithmetic under shared background and
+analytic assumptions, not an independent observation or proof of the
+Einstein--scalar PDE.
+
+The scalar-level geometry and reconstruction require no new background
+solution, evolved-field evaluation, numerical quadrature, or bump
+evaluation. All new class bounds are rational consequences of
+\eqref{eq:caps}, \eqref{eq:reconstruction}, and the retained coupled
+estimate. The supplementary old-witness check constructs analytic target
+exponential bounds and does not query a numerical bump oracle. Source,
+displayed-bound audit, deterministic compilation record, and page-render
+review accompany this manuscript.
+
+\begin{thebibliography}{8}
+\footnotesize
+\setlength{\itemsep}{3pt}
+\bibitem{Mars} M. Mars, \emph{First and Second Order Perturbations of
+Hypersurfaces}, Class. Quantum Grav. \textbf{22} (2005) 3325--3348,
+\href{https://arxiv.org/abs/gr-qc/0507005}{arXiv:gr-qc/0507005}.
+\bibitem{Giovannini} M. Giovannini, \emph{Gauge-invariant fluctuations
+of scalar branes}, Phys. Rev. D \textbf{64}, 064023 (2001),
+\href{https://arxiv.org/abs/hep-th/0106041}{arXiv:hep-th/0106041}.
+\bibitem{Gasperini} M. Gasperini, G. Marozzi, and G. Veneziano,
+\emph{Gauge invariant averages for the cosmological backreaction},
+JCAP \textbf{03} (2009) 011,
+\href{https://arxiv.org/abs/0901.1303}{arXiv:0901.1303}.
+\bibitem{preparation} R. Maldonado, \emph{Preparation dependence of
+proper-time volume in Einstein--scalar shell perturbations}, working
+manuscript (4 November 2026),
+\href{https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SHELL_PREPARATION_DEPENDENCE_20261104}{preparation-difference capsule}.
+\bibitem{records} R. Maldonado, \emph{HDBLAST conditional technical
+records and reproducibility materials} (2026),
+\href{https://github.com/maldonado-research/HDblast}{repository}.
+The retained inputs include the localized constraint and development
+records, the 1 November prepared-shell volume capsule, and the
+4 November preparation-difference capsule. The present companion is
+\href{https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_INTRINSIC_PREPARATION_ROBUSTNESS_20261104}{the scalar-level preparation-robustness capsule}.
+\end{thebibliography}
+\end{document}
