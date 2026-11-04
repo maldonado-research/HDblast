@@ -1,0 +1,50 @@
+{
+  "activity": {
+    "new_PDE_solves": 0,
+    "new_background_or_evolved_field_queries": 0,
+    "new_bump_queries": 0
+  },
+  "limits": "Finite algebra checks shared retained equations and conditional source assertions; not a full PDE/characteristic existence theorem, past-state calculation, physical energy, state-selection law or cosmological-origin evidence.",
+  "run_controls": {
+    "actual_child_protocol": "Each case is a real isolated child, exit2, one exact status/reason JSON dictionary, empty stderr, absent new output or preexisting bytes preserved.",
+    "canonical_references": [
+      "references/NORMAL.json",
+      "references/OPTIMIZED.json"
+    ],
+    "command": "python -I -S -B run_controls.py --repo-root ABS_REPO --output ABS_FRESH_CONTROL_JSON",
+    "control_reference": "references/CONTROLS.json",
+    "negative_cases_each_both_modes": {
+      "design_bytes": "FROZEN_DESIGN_BYTES",
+      "output_exists": "FRESH_OUTPUT_FILE",
+      "output_inside_repo": "OUTPUT_OUTSIDE_CODE_AND_SOURCE",
+      "source_bytes": "AUTHENTICATED_SOURCE_BYTES"
+    },
+    "outputs": [
+      "CONTROL_BASENAME.artifacts/NORMAL.json",
+      "CONTROL_BASENAME.artifacts/OPTIMIZED.json",
+      "CONTROL_JSON"
+    ],
+    "run_once": true,
+    "success": {
+      "actual_rejected_subprocesses": 8,
+      "output_sha256": "SHA256 of written control report",
+      "positive_subprocesses": 2,
+      "status": "PASS",
+      "witness": "STRICT_INCOMING_THEORY_CONTROLS"
+    }
+  },
+  "runtime": "Python3.12.14 standard library only; all child flags -I -S -B with optional -O",
+  "schema": "HDBLAST_INCOMING_THEORY_PORTABLE_CLI_V1",
+  "verify": {
+    "command": "python -I -S -B verify.py --repo-root ABS_REPO --output ABS_FRESH_FILE",
+    "optional": "--design ABS_FILE requires byte-identical frozen design",
+    "output_rule": "Fresh file with existing parent outside resolved component and repository; symlink path components rejected; semantic path normalization allowed.",
+    "runtime_failure": "Listed post-parse failures return exit2, exactly one JSON stdout line, empty stderr, exact reason, no new output or preserved preexisting bytes. Standard argparse usage errors/--help use standard argparse output.",
+    "success": {
+      "finite_checks": 32,
+      "output_sha256": "SHA256 of written canonical report",
+      "status": "PASS",
+      "witness": "INCOMING_PREPARATION_THEORY_IDENTITIES"
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "component_destination": "research/HDBLAST_INCOMING_PREPARATION_LEDGER_20261104/sources",
+  "execution_counts": {
+    "canonical_report_pairs": 1,
+    "inprocess_mutant_evaluations": 0,
+    "negative_subprocesses": 8,
+    "positive_subprocesses": 2
+  },
+  "negative_cases_per_mode": {
+    "altered_design_scale": "DESIGN_AUTHENTICATION",
+    "occupied_output": "OUTPUT_EXISTS",
+    "relative_output": "ABSOLUTE_OUTPUT_REQUIRED",
+    "tampered_source_pin": "LOCAL_PIN_AUTHENTICATION"
+  },
+  "optimized_additional_flag": "-O",
+  "output_contract": {
+    "absolute_required": true,
+    "fresh_artifact_directory_required": true,
+    "fresh_output_required": true,
+    "outside_repository_and_component": true,
+    "retained_canonical_reports": [
+      "NORMAL.json",
+      "OPTIMIZED.json"
+    ],
+    "symlink_ancestors_rejected_before_resolution": true,
+    "wrapper_artifacts_basename": "SOURCES_CONTROLS.artifacts",
+    "wrapper_report_basename": "SOURCES_CONTROLS.json"
+  },
+  "producer": "source_budget.py",
+  "producer_arguments": [
+    "--repo-root",
+    "REPO",
+    "--output",
+    "ABS_EXTERNAL/REPORT.json"
+  ],
+  "python_flags_all_children": [
+    "-I",
+    "-S",
+    "-B"
+  ],
+  "schema": "HDBLAST_INCOMING_SOURCES_CLI_CONTRACT_V1",
+  "scientific_activity": {
+    "PDE_solves": 0,
+    "background_queries": 0,
+    "bump_queries": 0,
+    "project_imports": 0,
+    "source_oracle_calls": 0
+  },
+  "scientific_projection_excluded_top_keys": [
+    "schema",
+    "scope",
+    "public_provenance"
+  ],
+  "scientific_projection_sha256": "1d6e455ac430503bf628438d93a5ac93f1c41c2bac43175d8511ff638acefc49",
+  "strict_protocol": {
+    "occupied_output": "preserved byte-identically",
+    "rejected_new_output": "absent",
+    "rejection_exit": 2,
+    "stderr": "empty",
+    "stdout": "one complete JSON object",
+    "success_exit": 0
+  },
+  "wrapper": "checks.py",
+  "wrapper_arguments": [
+    "--repo-root",
+    "REPO",
+    "--output",
+    "ABS_EXTERNAL/SOURCES_CONTROLS.json"
+  ]
+}
