@@ -1,0 +1,56 @@
+{
+  "schema": "HDBLAST_PREPARATION_DIFFERENCE_FROZEN_EXPERIMENT_V1",
+  "registration_date": "2026-11-04",
+  "registered_before_any_new_direction_evaluation": true,
+  "campaign": "ONE_DIRECTION_P1_N1024_T5_4",
+  "direction": {
+    "P": "1",
+    "chi": "ell*rho_b^3*Q(ell*r)",
+    "h": "-(rho_b/rho)^3*d_r Q(ell*r)",
+    "zero_moment": "rho^2*h=chi_y, chi compact and flat; exact identity, no numerical cancellation",
+    "parameter": "f_lambda=f+lambda*h; lambda is fixed and finite independently of epsilon"
+  },
+  "target": "5/4",
+  "ell": "1/1000000",
+  "delta": "1/4",
+  "initial_coverage": "[0,5/4]; exact zero on [0,1], then old N1024 whole-cell partition restricted to r<=5/4",
+  "partition": {
+    "N": 1024,
+    "tail": ["1", "65/64"],
+    "interior_cells": "[k/1024,(k+1)/1024], k=1040,...,1279",
+    "cell_count": 241,
+    "target_background": "Existing authenticated exact target row r=5/4; no point query"
+  },
+  "flat_tail_method": "Authenticated s^(2k)*exp(4-s), s>=4096/63, k<=3; monotone and flat endpoint zero",
+  "new_background_or_first_field_oracle_queries": [],
+  "background_reuse": "Only rho,p,a cell/target fields from authenticated original RAW_BOXES.json, rho_b and Fprime from authenticated shell box, global p_y from ACTUAL_ANNULUS_STATIC_JETS.json; a_y=-rho^-2-p^2/3. Original f,xi and old initial/total-response norms are not bounds for this direction.",
+  "initial_vectors": {
+    "order": ["K0", "L0", "N0", "J0", "w0"],
+    "U0": ["h", "0", "0", "h", "s"],
+    "U0_r": ["h_r", "0", "0", "h_r", "s_r"],
+    "V0": ["0", "ell*rho*(-h_y+a*h)", "0", "0", "0"],
+    "Gram": [1, 2, 1, 3, 1]
+  },
+  "bounds": {
+    "norms": "Take componentwise whole-cone maxima, then upward rational Gram square roots D0,Dr,Dv",
+    "N_h": "max((D0+T*Dv)/3,Dr+Dv)",
+    "q": "1201/3200000",
+    "E_h": "q*N_h/(1-q)",
+    "boundary_error": "(x-1)_+*E_h",
+    "source_forcing_difference": "exactly zero; no FH,GH,clock,measure or Q1 charge in homogeneous difference",
+    "kernel_eta": "1/100000000000",
+    "M2": "s(T)+[-delta*E_h,delta*E_h]",
+    "volume_kernel_history": "Jv +/- (delta^3*E_h/6+eta*Av)",
+    "expansion_kernel_history": "Jtheta +/- (delta^2*E_h/2+eta*Atheta)",
+    "history_quadrature": "Exact positive cell weights times whole-cell s boxes; absolute-history weights use magnitudes",
+    "volume_slope": "(rho_b*ell)^2*Fprime*volume_kernel_history/2",
+    "expansion_slope": "rho_b*ell*Fprime*expansion_kernel_history/2"
+  },
+  "registered_tests": [
+    "M2 slope interval excludes zero",
+    "volume kernel history interval excludes zero and Fprime.hi<0",
+    "expansion kernel history interval excludes zero and Fprime.hi<0"
+  ],
+  "stopping_rule": "If any registered test fails, report that test inconclusive. Do not change direction, normalization, partition, tail method, target, or gates within this experiment. Any new experiment requires a new versioned preregistration.",
+  "scope": "Conditional on the same retained background/operator/gauge/existence premises; no new independent PDE observation. No broad replay, publication edit, commit, push, or CI."
+}

@@ -1,0 +1,159 @@
+{
+  "authentication_pins": {
+    "local_pins_sha256": "61e8651454443b9eb3d3722aa2895956eee914bd43261e2ec048024f66898483",
+    "source_pins_sha256": "9e4a5e3dd24d9e491b1d851e83c860da0c0dab9ed852dcf5f21fd9ced2205e75"
+  },
+  "case_count": 8,
+  "cases": [
+    {
+      "case": "drop_conditioned_scalar",
+      "child_required_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "execution": "Real CLI subprocess, authenticated raw reaggregation only; no new bump/background/first-field calls.",
+      "exit_code": 2,
+      "expected": {
+        "status": "REJECTED",
+        "witness": "FROZEN_SCIENCE_MISMATCH:M2_slope"
+      },
+      "no_artifact": true,
+      "optimized_mode_matches_parent": true,
+      "stderr_empty": true,
+      "stdout_single_JSON": true
+    },
+    {
+      "case": "skip_initial_norm",
+      "child_required_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "execution": "Real CLI subprocess, authenticated raw reaggregation only; no new bump/background/first-field calls.",
+      "exit_code": 2,
+      "expected": {
+        "status": "REJECTED",
+        "witness": "FROZEN_SCIENCE_MISMATCH:N_h"
+      },
+      "no_artifact": true,
+      "optimized_mode_matches_parent": true,
+      "stderr_empty": true,
+      "stdout_single_JSON": true
+    },
+    {
+      "case": "skip_resolvent_feedback",
+      "child_required_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "execution": "Real CLI subprocess, authenticated raw reaggregation only; no new bump/background/first-field calls.",
+      "exit_code": 2,
+      "expected": {
+        "status": "REJECTED",
+        "witness": "FROZEN_SCIENCE_MISMATCH:E_h"
+      },
+      "no_artifact": true,
+      "optimized_mode_matches_parent": true,
+      "stderr_empty": true,
+      "stdout_single_JSON": true
+    },
+    {
+      "case": "add_unchanged_first_forcing",
+      "child_required_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "execution": "Real CLI subprocess, authenticated raw reaggregation only; no new bump/background/first-field calls.",
+      "exit_code": 2,
+      "expected": {
+        "status": "REJECTED",
+        "witness": "FROZEN_SCIENCE_MISMATCH:E_h"
+      },
+      "no_artifact": true,
+      "optimized_mode_matches_parent": true,
+      "stderr_empty": true,
+      "stdout_single_JSON": true
+    },
+    {
+      "case": "skip_target_feedback",
+      "child_required_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "execution": "Real CLI subprocess, authenticated raw reaggregation only; no new bump/background/first-field calls.",
+      "exit_code": 2,
+      "expected": {
+        "status": "REJECTED",
+        "witness": "FROZEN_SCIENCE_MISMATCH:M2_slope"
+      },
+      "no_artifact": true,
+      "optimized_mode_matches_parent": true,
+      "stderr_empty": true,
+      "stdout_single_JSON": true
+    },
+    {
+      "case": "skip_kernel_comparison",
+      "child_required_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "execution": "Real CLI subprocess, authenticated raw reaggregation only; no new bump/background/first-field calls.",
+      "exit_code": 2,
+      "expected": {
+        "status": "REJECTED",
+        "witness": "FROZEN_SCIENCE_MISMATCH:volume_history_error"
+      },
+      "no_artifact": true,
+      "optimized_mode_matches_parent": true,
+      "stderr_empty": true,
+      "stdout_single_JSON": true
+    },
+    {
+      "case": "drop_proper_time_factors",
+      "child_required_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "execution": "Real CLI subprocess, authenticated raw reaggregation only; no new bump/background/first-field calls.",
+      "exit_code": 2,
+      "expected": {
+        "status": "REJECTED",
+        "witness": "FROZEN_SCIENCE_MISMATCH:volume_slope"
+      },
+      "no_artifact": true,
+      "optimized_mode_matches_parent": true,
+      "stderr_empty": true,
+      "stdout_single_JSON": true
+    },
+    {
+      "case": "reverse_lambda_sign",
+      "child_required_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "execution": "Real CLI subprocess, authenticated raw reaggregation only; no new bump/background/first-field calls.",
+      "exit_code": 2,
+      "expected": {
+        "status": "REJECTED",
+        "witness": "FROZEN_SCIENCE_MISMATCH:finite_lambda_witness"
+      },
+      "no_artifact": true,
+      "optimized_mode_matches_parent": true,
+      "stderr_empty": true,
+      "stdout_single_JSON": true
+    }
+  ],
+  "new_oracle_calls": {
+    "background": 0,
+    "evolved_actual_first_field": 0
+  },
+  "positive_scientific_campaign_rerun": false,
+  "status": "PASS_PORTABLE_REAL_NEGATIVE_CONTROLS"
+}

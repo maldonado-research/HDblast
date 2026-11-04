@@ -1,0 +1,36 @@
+{
+  "controls_child_process_breakdown": {
+    "normal_negative_source_tamper": 2,
+    "normal_positive": 1,
+    "optimized_negative_source_tamper": 2,
+    "optimized_positive": 1
+  },
+  "controls_child_process_count": 6,
+  "controls_cli": "python -I -S -B theory/checks/run_controls.py --repo-root REPO --output ABSOLUTE_FRESH_CONTROLS_JSON",
+  "controls_exact_stdout": "{\"status\":\"PASS_COARSE_PORTABLE_REPLAY_AND_SOURCE_CONTROLS\",\"strict_child_process_count\":6}\n",
+  "destination": "theory",
+  "files": [
+    "COMPONENT_MANIFEST.json",
+    "COPY_PLAN.json",
+    "LOCAL_PINS.json",
+    "PROOF.md",
+    "PROTOCOL.json",
+    "README.md",
+    "SOURCE_PINS.json",
+    "checks/run_controls.py",
+    "produce.py",
+    "references/CONTROLS.json",
+    "references/CONTROLS_OPTIMIZED.json",
+    "references/NORMAL.json",
+    "references/OPTIMIZED.json"
+  ],
+  "in_process_checks": "Producer: direct source authentication, broad interval inclusion/domain, exact bump polynomial identities, rational exponential bounds, q equality, strict sign gates, deterministic affine reversal. Controls runner: component local pins, byte reference equality, process result and no-output-on-rejection checks.",
+  "negative_process_contract": "flags -I -S -B (+-O); exit2; full exact single JSON stdout; empty stderr; no output artifact; exact per-case witness",
+  "new_oracle_call_count": 0,
+  "producer_child_process_count": 0,
+  "production_cli": "python -I -S -B theory/produce.py --repo-root REPO --output ABSOLUTE_FRESH_JSON",
+  "production_exact_stdout": "{\"output_sha256\":\"7a43ac153d6a6af3208657ad2b362f00c054617568844313107f491eb7eec3eb\",\"status\":\"PASS_COARSE_ANALYTIC_PREPARATION_SIGN_CERTIFICATE\"}\n",
+  "scientific_import_count": 0,
+  "scientific_reference": "references/NORMAL.json",
+  "status": "FROZEN_THEORY_COMPONENT_FOR_ROOT_INTEGRATION"
+}

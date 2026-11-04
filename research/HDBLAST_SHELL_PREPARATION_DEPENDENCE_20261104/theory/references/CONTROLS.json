@@ -1,0 +1,96 @@
+{
+  "controls": [
+    {
+      "case_id": "normal_replay",
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "output_exists": true,
+      "output_sha256": "7a43ac153d6a6af3208657ad2b362f00c054617568844313107f491eb7eec3eb",
+      "pass": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"output_sha256\":\"7a43ac153d6a6af3208657ad2b362f00c054617568844313107f491eb7eec3eb\",\"status\":\"PASS_COARSE_ANALYTIC_PREPARATION_SIGN_CERTIFICATE\"}\n"
+    },
+    {
+      "case_id": "optimized_replay",
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "output_exists": true,
+      "output_sha256": "7a43ac153d6a6af3208657ad2b362f00c054617568844313107f491eb7eec3eb",
+      "pass": true,
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "{\"output_sha256\":\"7a43ac153d6a6af3208657ad2b362f00c054617568844313107f491eb7eec3eb\",\"status\":\"PASS_COARSE_ANALYTIC_PREPARATION_SIGN_CERTIFICATE\"}\n"
+    },
+    {
+      "case_id": "source_0_normal",
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "output_exists": false,
+      "pass": true,
+      "returncode": 2,
+      "source": "research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/numeric/inputs/ACTUAL_ANNULUS_STATIC_JETS.json",
+      "stderr": "",
+      "stdout": "{\"reason\":\"source hash: research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/numeric/inputs/ACTUAL_ANNULUS_STATIC_JETS.json\",\"status\":\"REJECTED\"}\n"
+    },
+    {
+      "case_id": "source_0_optimized",
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "output_exists": false,
+      "pass": true,
+      "returncode": 2,
+      "source": "research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/numeric/inputs/ACTUAL_ANNULUS_STATIC_JETS.json",
+      "stderr": "",
+      "stdout": "{\"reason\":\"source hash: research/HDBLAST_GEOMETRIC_BULK_SOURCES_20261016/numeric/inputs/ACTUAL_ANNULUS_STATIC_JETS.json\",\"status\":\"REJECTED\"}\n"
+    },
+    {
+      "case_id": "source_1_normal",
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "output_exists": false,
+      "pass": true,
+      "returncode": 2,
+      "source": "research/HDBLAST_PREPARED_SHELL_VOLUME_20261101/response/references/FINAL_NORMAL.json",
+      "stderr": "",
+      "stdout": "{\"reason\":\"source hash: research/HDBLAST_PREPARED_SHELL_VOLUME_20261101/response/references/FINAL_NORMAL.json\",\"status\":\"REJECTED\"}\n"
+    },
+    {
+      "case_id": "source_1_optimized",
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "output_exists": false,
+      "pass": true,
+      "returncode": 2,
+      "source": "research/HDBLAST_PREPARED_SHELL_VOLUME_20261101/response/references/FINAL_NORMAL.json",
+      "stderr": "",
+      "stdout": "{\"reason\":\"source hash: research/HDBLAST_PREPARED_SHELL_VOLUME_20261101/response/references/FINAL_NORMAL.json\",\"status\":\"REJECTED\"}\n"
+    }
+  ],
+  "new_oracle_calls": 0,
+  "reference_sha256": "7a43ac153d6a6af3208657ad2b362f00c054617568844313107f491eb7eec3eb",
+  "scientific_imports": 0,
+  "status": "PASS_COARSE_PORTABLE_REPLAY_AND_SOURCE_CONTROLS",
+  "strict_child_process_count": 6
+}
