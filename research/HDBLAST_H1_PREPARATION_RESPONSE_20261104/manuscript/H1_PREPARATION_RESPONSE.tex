@@ -1,0 +1,709 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.92in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={Integrated geometric control of shell-volume response},pdfauthor={Ricardo Maldonado},pdfsubject={Working draft for author and specialist review}}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\pdfsuppressptexinfo=15
+\newcommand{\eps}{\varepsilon}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\Lie}{\mathcal L}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\HH}{\mathsf H}
+\newcommand{\ip}[2]{\langle #1,#2\rangle_{\HH}}
+\newcommand{\PN}{P_N}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\title{Integrated geometric control of shell-volume response}
+\author{Ricardo Maldonado\\\small Independent Researcher}
+\date{4 November 2026}
+
+\begin{document}
+\maketitle
+\begin{center}\small Working draft for author and specialist review\end{center}
+\begin{abstract}
+A derivative-supremum condition can exclude concentrated smooth initial
+data even when their integrated geometric size remains bounded. We derive
+a direct $H^1$-to-observable estimate for the retained five-channel
+Einstein--scalar shell mean problem. On a physically supplied initial
+Cauchy section, the profile $D$ is the relative difference of second
+scalar-level three-area variations, with fixed first perturbation and
+background scalar-label calibration. A tilted wave energy with a positive
+boundary value term controls the scalar history despite a mixed
+Dirichlet and nonselfadjoint Robin boundary block. The complete initial
+map gives $E(0)\le R^2/(5\times10^6)$, and the boundary history obeys
+$|m|\le R/300$, where $R=\norm{D}_{H^1([1,5/4])}$. The specified closed
+class $R\le2\times10^{31}$ retains strictly negative volume and expansion
+second coefficients at one proper time. An explicit sequence in the
+actual compact preparation image has bounded $H^1$ norm and unbounded
+old derivative-supremum norm, so this criterion covers data beyond that
+earlier sufficient criterion. It does not imply containment of the two
+budget balls or response instability. All coefficient, exact-family and
+linear-development premises remain explicit and conditional. The estimating
+energy is not an identified physical energy or preparation law; neither a
+physical class selection nor a uniform nonlinear parameter interval follows.
+\end{abstract}
+
+\section{Model, fixed data, and the new estimate}
+
+The sign of a second response depends on both the common quadratic first
+source and the homogeneous second preparation. The retained shell model
+admits an explicit pair with opposite volume and expansion coefficient
+signs, at the same anchored proper time, while its first packet is fixed
+\cite{preparation}. A subsequent geometric class, based on the supremum of
+an initial scalar-level area profile and its derivative, certifies negative
+signs throughout a specified budget \cite{intrinsic}. The question here is
+whether integrated control of that same profile can give a direct response
+bound, even when the earlier derivative-supremum route fails.
+
+The bulk normalization and one-copy outward shell equations are
+\begin{align}
+ S_{\rm bulk}&=\int\bigl(R_g/2-|\dd\phi|_g^2/2-\cV(\phi)\bigr)\dd\mu_g,
+ \nonumber\\
+ \operatorname{Ric}_{AB}&=\phi_A\phi_B+\tfrac23\cV g_{AB},
+ &\Box_g\phi&=\cV',\nonumber\\
+ K^{\rm out}_{ab}&=\tfrac16\sigma(\phi)\gamma_{ab},
+ &n_{\rm out}\phi&=-\tfrac12\sigma'(\phi).
+ \label{eq:model}
+\end{align}
+Two identical interior copies use their respective outward normals. Fix
+\begin{gather}
+ W=1-\phi+\phi^3/3,\qquad
+ \cV=(W')^2/2-2W^2/3,\qquad
+ \sigma=2W+10^{-3}(1+c_\sigma\phi),\nonumber\\
+ c_\sigma=96714321425692/161839258930731.
+ \label{eq:potential}
+\end{gather}
+The selected regular background and coordinates are
+\begin{equation}
+ g_0=\dd y^2+\rho(y)^2[-\dd t^2+\cosh^2t\,\kappa],\qquad
+ a=\rho_y/\rho>0,\quad p=\phi_{0,y}\ne0,\quad
+ \dd y=-\ell\rho\,\dd r,\quad x=t/\ell,
+ \label{eq:background}
+\end{equation}
+where $\kappa$ is the unit round three-sphere metric, $\ell=10^{-6}$,
+the packet is $1\le r\le2$, and the exact selected shell radius is $\rho_b$.
+The target is
+\begin{equation}
+ T=5/4,\qquad \Delta=T-1=1/4,\qquad \tau_*=\rho_b\ell T.
+ \label{eq:target}
+\end{equation}
+The exact $\rho_b$ fixes the clock; its enclosure is not a replacement
+value. All numerical quantities below are in the model's fixed parameter
+and coefficient normalization, with no SI calibration.
+
+We compare the same background, first canonical quadrupole seed, complete
+quadratic constraint and evolution sources, initial shell collar, canonical
+momentum and both scalar canonical second sectors, and second
+transverse-traceless initial pair. Parameter derivatives use
+\begin{equation}
+ x_\eps=x_0+\eps v+\tfrac12\eps^2w+o(\eps^2).
+ \label{eq:normalization}
+\end{equation}
+The common smooth flat seed has $Y=n_1^2-n_2^2$,
+$\langle Y\rangle=0$, $\langle Y^2\rangle=1/6$ and
+$\Delta_\kappa Y=-8Y$; its exact normalization and the fixed base
+preparation are those specified in \cite{preparation,intrinsic}.
+The retained base response includes the complete first-field bulk and
+shell forcing, clock corrections and measure corrections.
+
+We assume the selected smooth background and its authenticated continuous
+boxes; the equivariant weighted constraint inverse and nonlinear
+implicit-function hypotheses; the conditional exact-family fixed-shell
+development, subsidiary and boundary uniqueness; and identification of the
+common first derivative. Each fixed smooth preparation has $C^2$ parameter
+dependence in the retained lower $C^4$ topology on a compact neighborhood.
+An anchored intrinsic normal tube reaches the target after a possibly
+family-dependent shrinkage in $\eps$. The exact five-mean projection,
+homogeneous difference equation, boundary rows and continuous operator
+caps in Section~\ref{sec:energy} are retained conditional premises.
+In particular the numerical caps are declared by the earlier
+\texttt{EXPLICIT\_PREMISES.json} record \cite{records}; they are not
+reproved by the new arithmetic. The new result is an a priori estimate
+for this stipulated coupled problem, not a new nonlinear existence theorem.
+
+\section{Geometric profile and complete initial map}
+
+On the supplied physical initial section $\Sigma$, let $h$ be smooth,
+compact in the packet, flat at both endpoints, and satisfy
+\begin{equation}
+ \int_{y_L}^{y_U}\rho^2h\,\dd y=0,\qquad
+ \chi(y)=\int_{y_L}^y\rho^2h\,\dd s,\qquad
+ h=\rho^{-2}\chi_y,\quad y_L=y(2),\quad y_U=y(1).
+ \label{eq:admissible}
+\end{equation}
+The complete added raw canonical second datum is
+\begin{equation}
+ (\Delta\gamma_2,\Delta\pi_2,\Delta\phi_2,\Delta\varpi_2)
+ =\bigl(h\gamma_0+\Lie_{\zeta\partial_y}\gamma_0,0,0,0\bigr),
+ \qquad
+ \zeta=\frac{3(h_y-ah)}{2p^2}+\frac{9\chi}{2\rho^4p^2}.
+ \label{eq:raw}
+\end{equation}
+Its exact homogeneous constraint and zero-moment construction, and its
+conditional exact completion with the same full correction second
+derivative, are retained from \cite{preparation}. No quadratic source is
+changed by this addition.
+
+For $\varphi=\phi_0(y)$, use the scalar-level component in the annular
+collar that continues the background sphere. Its three-area is
+$A_\eps(\varphi)$ and $A_0(\phi_0(y))=2\pi^2\rho^3$. At fixed scalar
+label define
+\begin{equation}
+ D=\frac{\partial_\eps^2A_\eps^h|_0-
+                    \partial_\eps^2A_\eps^{\rm base}|_0}{A_0},
+ \qquad
+ D_r=(-\ell\rho p)\partial_\varphi D.
+ \label{eq:geometry}
+\end{equation}
+This derivative uses the fixed background scalar-label map, not an arbitrary
+coordinate of the perturbed metric. In a slightly enlarged collar, $p\ne0$
+gives regular continued level graphs. The retained $C^2$-into-$C^4$
+dependence gives $C^2$-into-$C^1$ area dependence after the two spatial
+orders of loss described in \cite{intrinsic}. Thus $D$ and $D_r$ exist.
+There is no assumption of exact rotational symmetry of the perturbed data.
+
+The two first level displacements agree. Their second displacement
+difference is $-\Delta\phi_2/p$, and the common first-field determinant
+quadratics cancel after subtraction. For the angular metric mean $J$ and
+scalar mean $w$ this gives
+\begin{equation}
+ D=\tfrac32J-3aw/p.
+ \label{eq:D}
+\end{equation}
+The raw representative has $J=h+2a\zeta,w=0$; after the pure second
+conditioning gauge it has $J=h,w=-p\zeta$. Both give the same $D$.
+This is the standard metric--scalar displacement cancellation on the
+given section. Simultaneous diffeomorphisms transport the section, fields
+and level component; choosing a different physical section is a different
+observable.
+
+Set $Z=\chi/(\ell\rho^3)$, $b=\ell\rho a$,
+$g=\ell\rho p^2/(3a)>0$, and $\beta=p/(2a)$. Then
+\begin{equation}
+ Z_r=3bZ-h,\qquad
+ h_r=3\ell^2Z+(-b+g)h-\tfrac23gD,\qquad (Z,h)(1)=(0,0).
+ \label{eq:reconstruct}
+\end{equation}
+This retained reconstruction determines the restricted preparation on
+$[1,T]$ from its profile there; whole-packet injectivity needs the full
+profile on $[1,2]$. It is not injectivity on unrestricted Cauchy data or
+surjectivity onto arbitrary profiles.
+
+In $(K,L,N,J,w)$ order the complete conditioned difference initial map is
+\begin{gather}
+ U_0=(h,0,0,h,w),\qquad V_0:=U_{0,x}=(0,V_L,0,0,0),\qquad
+ P_0:=U_{0,r}=(h_r,0,0,h_r,w_r),\nonumber\\
+ w=\beta(h-2D/3),\qquad
+ w_r=\beta_r(h-2D/3)+\beta(h_r-2D_r/3),\qquad V_L=h_r+bh.
+ \label{eq:initialmap}
+\end{gather}
+In particular the mixed metric velocity and derivative of the scalar
+coefficient are included. Define the integrated profile size
+\begin{equation}
+ R=\norm{D}_{H^1(I)}
+   :=\left(\int_I(D^2+D_r^2)\,\dd r\right)^{1/2},
+ \qquad I=[1,T].
+ \label{eq:R}
+\end{equation}
+It applies to the complete increment: $R(\lambda h)=|\lambda|R(h)$.
+
+\section{Tilted five-channel energy and boundary history}\label{sec:energy}
+
+Write $|U|_{\HH}^2=U^\mathsf{T}\HH U$ for
+$\HH=\operatorname{diag}(1,2,1,3,1)$. All operator norms in this section
+are the induced norms of this inner product. Retain the exact homogeneous
+equation
+\begin{equation}
+ U_{xx}-U_{rr}=\mathcal A U_x+\mathcal B U_r+\mathcal D U,\qquad
+ \norm{\mathcal A},\norm{\mathcal B}\le10^{-4},\quad
+ \norm{\mathcal D}\le10^{-6}.
+ \label{eq:PDE}
+\end{equation}
+At $r=0$, the $L$ component is Dirichlet and the four complementary
+components obey the Robin row
+\begin{equation}
+ U_L=0,\qquad \PN U_r=M\PN U,\qquad \norm{M}_{\HH}\le1/2000,
+ \label{eq:boundary}
+\end{equation}
+where $\PN$ projects off the $L$ component. The block $M$ need not be
+self-adjoint or constant. The derivative in the Robin row is the
+increasing-$r$ derivative in \eqref{eq:background}, with that sign already
+included in $M$. The retained cap domain is
+$0\le x\le3/2$, $\max(0,x-5/4)\le r\le7/4-x$.
+The cone
+$\mathcal K_T=\{0\le x\le T,\ 0\le r\le T-x\}$ lies in the retained
+coefficient domain; the solution is exactly zero for $x+r\le1$.
+
+Let $V=U_x$, $P=U_r$, $k=\alpha=1/2$, and define
+\begin{align}
+ e&=\tfrac12\bigl(|V|_{\HH}^2+|P|_{\HH}^2+
+                     2k\ip{V}{P}+|U|_{\HH}^2\bigr),\nonumber\\
+ \mathcal E(x)&=\int_0^{T-x}e\,\dd r+
+                         \tfrac{\alpha}{2}|\PN U(x,0)|_{\HH}^2.
+ \label{eq:energy}
+\end{align}
+This is a coercive estimating norm for the linear difference. It is not
+identified with a positive conserved physical energy of the full shell.
+Pointwise,
+\begin{equation}
+ e\ge\tfrac{1-k}{2}(|V|_{\HH}^2+|P|_{\HH}^2)+\tfrac12|U|_{\HH}^2.
+ \label{eq:coercive}
+\end{equation}
+
+\begin{lemma}[Continuous energy and trace bound]\label{lem:energy}
+Under \eqref{eq:PDE}--\eqref{eq:boundary}, the retained smooth solution
+satisfies
+\begin{equation}
+ \mathcal E(x)\le e^{Cx}\mathcal E(0),\qquad
+ C=201/100,\qquad e^{CT}<13.
+ \label{eq:growth}
+\end{equation}
+If $\mathcal E(0)\le R^2/(5\times10^6)$, its scalar shell history
+$m(x)=U_w(x,0)$ satisfies
+\begin{equation}
+ m(x)=0\quad(x\le1),\qquad |m(x)|\le R/300\quad(1\le x\le T).
+ \label{eq:trace}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Put $F=\mathcal A V+\mathcal B P+\mathcal D U$. Direct differentiation
+gives the local identity
+\begin{equation}
+ e_x=f_r+\ip{V+kP}{F}+\ip{U}{V},\qquad
+ f=\ip{V}{P}+\tfrac k2(|V|_{\HH}^2+|P|_{\HH}^2).
+ \label{eq:flux}
+\end{equation}
+At the shrinking upper endpoint the flux is
+\begin{equation}
+ f-e=-\tfrac{1-k}{2}|V-P|_{\HH}^2-\tfrac12|U|_{\HH}^2\le0.
+ \label{eq:upperflux}
+\end{equation}
+Thus no boundary data are introduced on that characteristic side.
+
+The Dirichlet row has $U_L=V_L=0$ at the shell and contributes
+$-k|P_L|_{\HH}^2/2\le0$. Put $u=\PN U(x,0)$ and $v=\PN V(x,0)$.
+The Robin block and the derivative of the boundary value term give
+\begin{equation}
+ -f_N+\alpha\ip{u}{v}
+ =-\tfrac k2|v|_{\HH}^2+\ip{v}{(\alpha I-M)u}
+                           -\tfrac k2|Mu|_{\HH}^2.
+ \label{eq:Robinflux}
+\end{equation}
+This identity does not exchange $M$ with its adjoint. Young's inequality
+and $\norm{M}\le1/2000$ control the mixed term using only the operator
+norm. No derivative of $M$, Robin quadratic potential, or symmetry
+assumption is required.
+More explicitly, put $s=v+Mu$ and
+$\mu_M=1/2000$, $\gamma=\alpha+(1-k)\mu_M$.
+The same shell expression becomes
+$-k|s|^2/2-(1-k)\ip{s}{Mu}+(1-k)|Mu|^2
++\alpha\ip{u}{s-Mu}$. Hence it is bounded above by
+\begin{equation}
+ -\tfrac k4|s|_{\HH}^2+
+ \left\{\frac{\gamma^2}{k}+(1-k)\mu_M^2+\alpha\mu_M\right\}|u|_{\HH}^2.
+ \label{eq:Robinabsorb}
+\end{equation}
+Relative to the boundary summand of $\mathcal E$, the resulting rate is
+$C_{\rm bdry}=2003001/1000000=2.003001<C$.
+
+For completeness, if $a_*=b_*=10^{-4}$ and $d_*=10^{-6}$, the bulk
+production is bounded by
+$c_V|V|^2+c_P|P|^2+c_U|U|^2$, where
+\begin{align}
+ c_V&=a_*+(b_*+ka_*)/2+d_*/2+1/2,\nonumber\\
+ c_P&=kb_*+(b_*+ka_*)/2+kd_*/2,\qquad
+ c_U=d_*/2+kd_*/2+1/2.
+ \label{eq:bulkconstants}
+\end{align}
+Consequently its rate relative to the bulk energy is at most
+$\max\{2c_V/(1-k),2c_P/(1-k),2c_U\}
+=1000351/500000=2.000702<C$. The shell mixed term in
+\eqref{eq:Robinflux} is also absorbed with a rate below $C$ relative to
+the positive boundary value term. Combining these estimates gives
+$\mathcal E'\le C\mathcal E$ on $0\le x<T$, hence the first inequality
+in \eqref{eq:growth}. Continuity gives the endpoint statement.
+A positive Taylor sum and geometric remainder give
+\begin{equation}
+ e^{CT}\le\sum_{j=0}^{24}\frac{(CT)^j}{j!}
+       +\frac{(CT)^{25}/25!}{1-CT/26}<13.
+ \label{eq:exp}
+\end{equation}
+Finally $|m|^2\le|\PN U|_{\HH}^2\le2\mathcal E/\alpha$ and
+\begin{equation}
+ \frac{2\cdot13}{\alpha(5\times10^6)}
+       =\frac{13}{1250000}<\frac1{300^2}.
+ \label{eq:tracesquare}
+\end{equation}
+Together with the zero wedge this proves \eqref{eq:trace}.
+\end{proof}
+
+\section{Integrated control of all initial components}\label{sec:initial}
+
+The retained continuous background boxes on $I$ give
+\begin{gather}
+129\le\rho,\rho_b\le131,\quad
+3/25000\le-p\le1/7000,\quad111/1000\le a\le14/125,\nonumber\\
+|p_y|\le1/4000,\quad|a_y|\le1/10000,\qquad
+1/1200\le-F'_b\le1/1000.
+\label{eq:caps}
+\end{gather}
+Here $F'_b$ is the scalar-field derivative at the background shell of
+$F=2\cV-\sigma'^2/4+\sigma^2/3$.
+Set
+\begin{gather}
+ b_+=\ell\,131(14/125),\quad
+ g_+=\ell\,131(1/7000)^2/[3(111/1000)],\nonumber\\
+ H=\Delta(4/3)(2/3)g_+,\qquad
+ H_r=3\ell^2H+(b_++g_+)H+(2/3)g_+,\qquad
+ V_+=H_r+b_+H.
+ \label{eq:ODEcaps}
+\end{gather}
+The reconstruction matrix has infinity norm at most $20001/20000$.
+The retained rational exponential bound on this interval is $4/3$,
+so variation of constants gives
+$\sup|h|,\sup|Z|\le H\sup|D|$ and
+$\sup|h_r|\le H_r\sup|D|$.
+
+On an interval of length $\Delta=1/4$, the elementary one-dimensional
+estimate yields
+\begin{equation}
+ \sup|D|\le2\norm D_2+\tfrac12\norm{D_r}_2
+       \le\tfrac{\sqrt{17}}2R\le\tfrac{21}{10}R.
+ \label{eq:sobolev}
+\end{equation}
+Thus define the per-$R$ $L^2$ caps
+\begin{align}
+ h_2&=(21/20)H,& h_{r,2}&=(21/20)H_r,& v_2^0&=(21/20)V_+,\nonumber\\
+ \beta_+&=1/1554,&
+ \beta_{r,+}&=\ell\,131\left\{\frac{1/4000}{2(111/1000)}
+       +\frac{(1/7000)(1/10000)}{2(111/1000)^2}\right\},\nonumber\\
+ w_2&=\beta_+(h_2+2/3),&
+ w_{r,2}&=\beta_{r,+}(h_2+2/3)+\beta_+(h_{r,2}+2/3).
+ \label{eq:L2caps}
+\end{align}
+For example $\norm h_2\le h_2R$, while both $\norm D_2$ and
+$\norm{D_r}_2$ are bounded by $R$ in the scalar formulas. Equation
+\eqref{eq:initialmap} gives
+\begin{equation}
+ \norm{U_0}_{L^2_{\HH}}\le(2h_2+w_2)R,\quad
+ \norm{P_0}_{L^2_{\HH}}\le(2h_{r,2}+w_{r,2})R,\quad
+ \norm{V_0}_{L^2_{\HH}}\le2v_2^0R.
+ \label{eq:Gramcaps}
+\end{equation}
+The initial tilt term is exactly zero: $V_0$ occupies only the $L$ slot,
+whereas $P_0$ has zero $L$ slot. The shell initial value is zero in the
+unchanged collar. Therefore
+\begin{equation}
+ \mathcal E(0)\le c_0R^2,\quad
+ c_0=\tfrac12\bigl[(2h_2+w_2)^2+(2h_{r,2}+w_{r,2})^2
+                                  +(2v_2^0)^2\bigr]
+                         <\frac1{5000000}.
+ \label{eq:E0}
+\end{equation}
+All these comparisons are rational, including the guard
+$17/4<(21/10)^2$. They control all five channels and the complete scalar
+pullback, rather than only a free scalar history.
+
+\section{The specified integrated class and the two proper responses}
+
+Use the shell's intrinsic future normal-geodesic foliation, anchored at
+the common initial section, and set
+\begin{equation}
+ V_\eps(\tau)=\int_{S^3}\dd\mu_{h_\eps(\tau)},\qquad
+ \Theta_\eps=\partial_\tau\log V_\eps,\qquad
+ v_2=\frac{\partial_\eps^2V_\eps|_0}{V_0},\quad
+ \Theta_2=\partial_\eps^2\Theta_\eps|_0.
+ \label{eq:observables}
+\end{equation}
+The clock and anchor are transported with a gauge change.
+The background has $A(\tau)=\rho_b\cosh(\tau/\rho_b)$,
+$V_0=2\pi^2A^3$, and
+$\Theta_0=3\rho_b^{-1}\tanh(\tau/\rho_b)>0$ at $\tau_*$.
+
+In the difference from the base, the common first quadratic sources,
+proper-clock and measure terms cancel. The retained full coupled
+difference gives
+\begin{align}
+ \nu(T)&:=(v_2-v_2^{\rm base})(T)
+   =(\rho_b\ell)^2(F'_b/2)\int_1^T K(T,x)m(x)\,\dd x,\nonumber\\
+ \vartheta(T)&:=(\Theta_2-\Theta_2^{\rm base})(T)
+   =\rho_b\ell(F'_b/2)\int_1^T K_T(T,x)m(x)\,\dd x,\nonumber\\
+ K(T,x)&=\frac{\sinh(2\ell(T-x))}{2\ell}
+                       \frac{\cosh^2(\ell x)}{\cosh^2(\ell T)},\qquad
+ K_T=\frac{\cosh^2(\ell x)\cosh(\ell T-2\ell x)}{\cosh^3(\ell T)}.
+ \label{eq:kernels}
+\end{align}
+The exact bounds are $0\le K\le T-x$ and $0<K_T\le1$.
+The factor $1/2$ in these kernels' source coefficient is retained; there
+is no extra factor multiplying the differences of the observable second
+derivatives.
+
+\begin{theorem}[Conditional integrated geometric control]\label{thm:main}
+Under the stated retained premises, each admitted smooth compact
+preparation satisfies
+\begin{equation}
+ |\nu(T)|\le C_vR,\qquad |\vartheta(T)|\le C_\Theta R,\qquad
+ C_v=\frac{17161}{19200000000000000000},\quad
+ C_\Theta=\frac{131}{2400000000000}.
+ \label{eq:transfer}
+\end{equation}
+For the specified closed class
+\begin{equation}
+ \mathcal C_{H^1}=\{h\text{ satisfying \eqref{eq:admissible}}:
+                         \norm D_{H^1(I)}\le2\times10^{31}\},
+ \label{eq:class}
+\end{equation}
+the coefficients at $\tau_*$ obey the outward enclosures
+\begin{equation}
+ v_2\in[-7.2400\times10^{16},-8.6400\times10^{15}],\qquad
+ \Theta_2\in[-1.0113\times10^{22},-3.3540\times10^{21}].
+ \label{eq:signs}
+\end{equation}
+For every individual admitted exact family, for sufficiently small
+nonzero $\eps$ of either sign,
+\begin{equation}
+ 0<V_\eps(\tau_*)<V_0(\tau_*),\qquad
+ 0<\Theta_\eps(\tau_*)<\Theta_0(\tau_*).
+ \label{eq:nonlinear}
+\end{equation}
+The sufficiently small interval can depend on the family.
+\end{theorem}
+
+\begin{proof}
+Equations \eqref{eq:trace} and \eqref{eq:kernels} imply
+\begin{equation}
+ C_v=\frac{(131\ell)^2(1/1000)\Delta^2}{4\cdot300},\qquad
+ C_\Theta=\frac{131\ell(1/1000)\Delta}{2\cdot300},
+ \label{eq:Cformula}
+\end{equation}
+which equal \eqref{eq:transfer}. At $R=2\times10^{31}$ the absolute
+increment caps are below $1.78761\times10^{16}$ and
+$1.09167\times10^{21}$. Adding and subtracting the exact caps from the
+retained base rational intervals, whose outward displays are
+\begin{equation}
+ v_2^{\rm base}\in[-5.4520,-2.6521]\,10^{16},\qquad
+ \Theta_2^{\rm base}\in[-9.0208,-4.4458]\,10^{21},
+ \label{eq:baseintervals}
+\end{equation}
+gives \eqref{eq:signs}. The radius and energy/trace gates were declared
+before evaluation of these final sign gates.
+
+The first integrated volume and expansion variations vanish by the shared
+quadrupole mean. For each fixed family, retained $C^2$ dependence gives
+\begin{equation}
+ V_\eps/V_0=1+\tfrac12\eps^2v_2+o(\eps^2),\qquad
+ \Theta_\eps=\Theta_0+\tfrac12\eps^2\Theta_2+o(\eps^2).
+ \label{eq:Taylor}
+\end{equation}
+Strict negativity and continuity, with $V_0,\Theta_0>0$ at the target,
+give \eqref{eq:nonlinear} after a family-dependent shrinkage.
+\end{proof}
+
+The estimating norm controls no higher derivatives or nonlinear remainders
+uniformly. The theorem therefore gives no effective or class-wide nonlinear
+parameter interval, signed time history, contracting branch, or
+volume-acceleration sign. Large second coefficients are not finite-amplitude
+field values.
+
+\section{Actual preparation data beyond the old supremum criterion}
+
+The earlier sufficient condition used
+$R_A=\max\{\sup_I|D|,\sup_I|D_r|\}\le2\times10^{33}$
+and an initial supremum quantity $N$ involving $U_{0,r}$
+\cite{intrinsic}. A direct $H^1$ criterion cannot be obtained merely by
+embedding into that condition. This failure occurs in the actual retained
+preparation image, not just among arbitrary scalar profiles.
+
+For any smooth $Z$ compactly supported inside $I$, define
+$\chi=\ell\rho^3Z$ and $h=3bZ-Z_r$. Then
+$\chi_r=-\ell\rho^3h$ and $\chi_y=\rho^2h$, so the exact moment in
+\eqref{eq:admissible} vanishes by endpoint evaluation. With
+\begin{equation}
+ \mathfrak A=\frac3{2g},\qquad c=-2b-g,\qquad
+ d=3(\ell^2-b^2+bg-b_r),
+ \label{eq:profileoperator}
+\end{equation}
+elimination of $h$ in \eqref{eq:reconstruct} gives
+\begin{equation}
+ D=\mathfrak A(Z_{rr}+cZ_r+dZ),\quad
+ D_r=\mathfrak A Z_{rrr}+(\mathfrak A_r+\mathfrak Ac)Z_{rr}
+       +(\mathfrak A_rc+\mathfrak Ac_r+\mathfrak Ad)Z_r
+       +(\mathfrak A_rd+\mathfrak Ad_r)Z.
+ \label{eq:Doperator}
+\end{equation}
+The coefficients are bounded on a compact interior interval using
+$b\in C^2$, $g\in C^1$ and $g>0$. Literal smooth admissibility uses the
+retained smooth static background, distinct from the lower $C^4$
+topology for parameter dependence.
+
+Take $r_0=9/8$, integers $m\ge4$, and
+\begin{equation}
+ \psi(u)=
+ \begin{cases}u^3\exp(1-1/(1-u^2)),&|u|<1,\\0,&|u|\ge1,\end{cases}
+ \qquad Z_m(r)=m^{-5}\psi(m^2(r-r_0)).
+ \label{eq:concentration}
+\end{equation}
+This is smooth and flat, supported inside
+$[17/16,19/16]\subset(1,T)$. The raw metric addition and conditioning
+generator are consequently compact and flat, with the other canonical
+sectors still fixed. Change of variables gives the exact scaling
+\begin{equation}
+ \norm{Z_m^{(j)}}_{L^2(I)}
+       =m^{2j-6}\norm{\psi^{(j)}}_{L^2(-1,1)},\qquad 0\le j\le3.
+ \label{eq:scaling}
+\end{equation}
+Therefore \eqref{eq:Doperator} bounds $\norm{D_m}_{H^1(I)}$ by one
+finite constant $C_*>0$ independent of $m$.
+At the center,
+$\psi(0)=\psi'(0)=\psi''(0)=0$ and $\psi'''(0)=6$, so exactly
+\begin{equation}
+ h_m(r_0)=h_{m,r}(r_0)=D_m(r_0)=0,\qquad
+ D_{m,r}(r_0)=\frac{9m}{g(r_0)},\qquad
+ w_{m,r}(r_0)=-\frac{3p(r_0)m}{a(r_0)g(r_0)}.
+ \label{eq:center}
+\end{equation}
+Thus $R_A$ and the old genuine initial derivative supremum, hence every
+sufficient old $N$ of that form, diverge. The profile amplitudes themselves
+can tend to zero; the failure concerns derivative suprema.
+
+For any prescribed positive budget $B$, multiplying every direction by
+the same $\eta=B/(2C_*)>0$ puts its $H^1$ norm below $B$ and preserves
+this divergence. With $B=2\times10^{31}$, infinitely many such data
+satisfy Theorem~\ref{thm:main} while failing the old $R_A$ cutoff.
+This proves coverage beyond the previous sufficient criterion. It does
+not state that the new budget ball contains the old one, that the actual
+responses diverge, or that sign instability has been found. Each fixed
+$m$ has only its retained family-dependent nonlinear interval.
+
+\section{Preparation selection and relation to established methods}
+
+The energy proof is a tailored application of standard multiplier methods.
+Kreiss, Reula, Sarbach and Winicour construct positive mixed-derivative
+energies, boundary dissipation and lower-order estimates in
+\cite[Sec.~2 and Apps.~1--2]{KRSW2007}. Their geometric treatment
+\cite{KRSW2009} likewise adapts the timelike multiplier to the boundary.
+Their theorems impose their own boundary conditions; the 2007 displayed
+condition has a strictly positive time-derivative coefficient.
+Neither is invoked as a theorem automatically covering the present
+mixed Dirichlet/nonselfadjoint Robin system or shrinking cone.
+Equations \eqref{eq:flux}--\eqref{eq:E0} provide that direct conditional
+estimate with the retained model-specific caps.
+
+The estimating energy also does not select the preparation budget.
+A specified first-tangent quadratic functional $Q(v)$ is common to
+every preparation here because $v$ is common. Hollands--Wald canonical
+energy explicitly has such first-tangent dependence in its stationary
+black-hole setting \cite[Sec.~2.3]{HW}; that setting and its Killing
+generator are not supplied by this shell's proper clock.
+The retained matched-shell Noether calculation supplies necessary
+quadratic tests of the form
+\begin{equation}
+ DH_K|_0=0,\qquad D^2H_K|_0[v,v]
+       =\Omega_{{\rm rel},0}(v,\mathcal K v)=0
+ \label{eq:Noether}
+\end{equation}
+under its own full-domain and compensated-symmetry premises
+\cite{Noether}. Such tests are constant on the admitted second-preparation
+fiber. They cannot alone select a finite $H^1$ radius: scaling a fixed
+nonzero interior profile by any fixed finite parameter changes its $R$
+without changing these first-tangent inputs.
+
+The limitation is specific. For an arbitrary $C^2$ nonlinear functional,
+\begin{equation}
+ (F\circ x_\eps)''|_0=DF_0[w]+D^2F_0[v,v].
+ \label{eq:functional}
+\end{equation}
+The first term can distinguish preparations. Nor is a bare Noether
+surface integral automatically a Hamiltonian: generator, boundary
+conditions, shell and corner completion, and allowed variations matter
+\cite{IW,HarlowWu}. A specified local initial-cut functional depending
+on identical finite boundary and embedding jets has equal coefficients
+through order two by the chain rule, since these compact additions
+vanish on the initial collars. This does not apply to arbitrary
+interior or future cuts, interior-dependent generators, or unspecified
+physical energies. No no-go theorem for every energy or state-based
+preparation rule is claimed.
+
+The physical initial section, continued component, scalar-label
+calibration, canonical-sector restriction and numerical radius remain
+inputs. The present result certifies what follows from one integrated
+geometric specification; it supplies no action, state or process that
+chooses it. No measured amplitude, matter/radiation energy transfer or
+higher-dimensional Big Bang origin is established. The focused primary
+comparison identifies the standard methods used here, without asserting
+exhaustive novelty or priority.
+
+\appendix
+\section{Certificates and reproducibility}
+
+The companion capsule \cite{records} contains the tilted-energy proof,
+predeclared design, selected-source SHA-256 pins, exact rational producer,
+normal and optimized reports, independent reconstruction, actual-image
+concentration proof and its algebra checker, and the limited
+preparation-selection and primary-source comparisons.
+The producer authenticates retained records before checking rational
+consequences. Authentication of a published coefficient assertion is not
+a fresh proof of that continuous assertion.
+
+The 24 finite arithmetic gates verify the positive tilt, bulk and nonsymmetric
+Robin rate guards, exponential remainder, complete initial map, boundary
+trace factor, and whole-class sign displays. The concentration checker
+verifies operator identities, center jets, support exponents and
+continuous analytic bump bounds without evaluating a numerical bump.
+No new background/evolved-field oracle, PDE solve or numerical bump query
+is used. Independent implementations share the retained analytic and
+background premises; their agreement is not an independent observation
+of the nonlinear PDE. Source, displayed-bound audit, deterministic
+compilation receipt and page-render review accompany this working draft.
+
+\begin{thebibliography}{10}
+\footnotesize
+\setlength{\itemsep}{2pt}
+\bibitem{KRSW2007} H.-O. Kreiss, O. Reula, O. Sarbach and J. Winicour,
+\emph{Well-posed initial-boundary value problem for the harmonic Einstein
+equations using energy estimates}, Class. Quantum Grav. \textbf{24}
+(2007) 5973--5984,
+\href{https://arxiv.org/abs/0707.4188}{arXiv:0707.4188}.
+\bibitem{KRSW2009} H.-O. Kreiss, O. Reula, O. Sarbach and J. Winicour,
+\emph{Boundary conditions for coupled quasilinear wave equations with
+application to isolated systems}, Commun. Math. Phys. \textbf{289}
+(2009) 1099--1129,
+\href{https://arxiv.org/abs/0807.3207}{arXiv:0807.3207}.
+\bibitem{HW} S. Hollands and R. M. Wald,
+\emph{Stability of Black Holes and Black Branes}, Commun. Math. Phys.
+\textbf{321} (2013) 629--680,
+\href{https://arxiv.org/abs/1201.0463}{arXiv:1201.0463}.
+\bibitem{IW} V. Iyer and R. M. Wald,
+\emph{Some Properties of Noether Charge and a Proposal for Dynamical Black
+Hole Entropy}, Phys. Rev. D \textbf{50} (1994) 846--864,
+\href{https://arxiv.org/abs/gr-qc/9403028}{arXiv:gr-qc/9403028}.
+\bibitem{HarlowWu} D. Harlow and J.-q. Wu,
+\emph{Covariant phase space with boundaries}, JHEP \textbf{10} (2020) 146,
+\href{https://arxiv.org/abs/1906.08616}{arXiv:1906.08616}.
+\bibitem{preparation} R. Maldonado, \emph{Preparation dependence of
+proper-time volume in Einstein--scalar shell perturbations}, working
+manuscript (4 November 2026),
+\href{https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SHELL_PREPARATION_DEPENDENCE_20261104}{preparation-difference capsule}.
+\bibitem{intrinsic} R. Maldonado, \emph{Scalar-level initial geometry and
+robust shell-volume perturbations}, working manuscript (4 November 2026),
+\href{https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_INTRINSIC_PREPARATION_ROBUSTNESS_20261104}{scalar-level preparation capsule}.
+\bibitem{Noether} R. Maldonado,
+\emph{Full nonlinear shell Noether identity and quadratic integrability
+tests}, conditional technical record (13 October 2026),
+\href{https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_SHELL_NOETHER_20261013}{shell-Noether capsule}.
+\bibitem{records} R. Maldonado, \emph{HDBLAST conditional technical
+records and reproducibility materials} (2026),
+\href{https://github.com/maldonado-research/HDblast}{repository}.
+The retained source of the operator assertions is the
+23 October total-response-preflight capsule.
+The present companion is
+\href{https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_H1_PREPARATION_RESPONSE_20261104}{the integrated geometric response capsule}.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,229 @@
+{
+  "activity": {
+    "PDE_solves": 0,
+    "analytic_target_bump_replays": 0,
+    "background_or_evolved_field_queries": 0,
+    "bump_queries": 0
+  },
+  "actual_positive_subprocesses": 2,
+  "actual_rejected_subprocesses": 10,
+  "canonical_normal_optimized_byte_identical": true,
+  "inprocess_mutant_executions": 0,
+  "negative_children": [
+    {
+      "case": "source-pin",
+      "existing_output_preserved": false,
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "mode": "NORMAL",
+      "output_absent": true,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "INPUT_PIN:premises"
+      }
+    },
+    {
+      "case": "shared-primary-radius",
+      "existing_output_preserved": false,
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "mode": "NORMAL",
+      "output_absent": true,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "PRIMARY_COMPARISON"
+      }
+    },
+    {
+      "case": "unknown-primary-field",
+      "existing_output_preserved": false,
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "mode": "NORMAL",
+      "output_absent": true,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "PRIMARY_SCHEMA"
+      }
+    },
+    {
+      "case": "invalid-primary-fraction",
+      "existing_output_preserved": false,
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "mode": "NORMAL",
+      "output_absent": true,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "INVALID_INPUT_STRUCTURE"
+      }
+    },
+    {
+      "case": "occupied-output",
+      "existing_output_preserved": true,
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "mode": "NORMAL",
+      "output_absent": false,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "OUTPUT_EXISTS"
+      }
+    },
+    {
+      "case": "source-pin",
+      "existing_output_preserved": false,
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "mode": "OPTIMIZED",
+      "output_absent": true,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "INPUT_PIN:premises"
+      }
+    },
+    {
+      "case": "shared-primary-radius",
+      "existing_output_preserved": false,
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "mode": "OPTIMIZED",
+      "output_absent": true,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "PRIMARY_COMPARISON"
+      }
+    },
+    {
+      "case": "unknown-primary-field",
+      "existing_output_preserved": false,
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "mode": "OPTIMIZED",
+      "output_absent": true,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "PRIMARY_SCHEMA"
+      }
+    },
+    {
+      "case": "invalid-primary-fraction",
+      "existing_output_preserved": false,
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "mode": "OPTIMIZED",
+      "output_absent": true,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "INVALID_INPUT_STRUCTURE"
+      }
+    },
+    {
+      "case": "occupied-output",
+      "existing_output_preserved": true,
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "mode": "OPTIMIZED",
+      "output_absent": false,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "OUTPUT_EXISTS"
+      }
+    }
+  ],
+  "positive_children": [
+    {
+      "artifact": "NORMAL.json",
+      "artifact_sha256": "73e05469dfbc4bef235d512b3e34ad69aea102f380e800905db975b9a1268029",
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "mode": "NORMAL",
+      "returncode": 0,
+      "stderr_empty": true,
+      "stdout": {
+        "report_sha256": "73e05469dfbc4bef235d512b3e34ad69aea102f380e800905db975b9a1268029",
+        "status": "PASS",
+        "witness": "INDEPENDENT_H1_RECONSTRUCTION"
+      }
+    },
+    {
+      "artifact": "OPTIMIZED.json",
+      "artifact_sha256": "73e05469dfbc4bef235d512b3e34ad69aea102f380e800905db975b9a1268029",
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "mode": "OPTIMIZED",
+      "returncode": 0,
+      "stderr_empty": true,
+      "stdout": {
+        "report_sha256": "73e05469dfbc4bef235d512b3e34ad69aea102f380e800905db975b9a1268029",
+        "status": "PASS",
+        "witness": "INDEPENDENT_H1_RECONSTRUCTION"
+      }
+    }
+  ],
+  "schema": "HDBLAST_INDEPENDENT_H1_STRICT_CONTROLS_V1",
+  "scope": "One final wrapper execution runs two canonical mathematical children and ten exact rejection children. Source authentication, not inherited PDE-proof replay.",
+  "status": "PASS_INDEPENDENT_H1_STRICT_CONTROLS"
+}

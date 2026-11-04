@@ -1,0 +1,42 @@
+{
+  "activity": {
+    "PDE_solves": 0,
+    "analytic_target_bump_replays": 0,
+    "background_or_evolved_field_queries": 0,
+    "bump_queries": 0
+  },
+  "actual_positive_subprocesses": 2,
+  "actual_rejected_subprocesses": 10,
+  "candidate_is_used": "Shared projection compared against independently reconstructed exact bounds; unknown top-level/energy keys rejected. Distinct initial majorants are compared only to the shared fixed guard.",
+  "canonical_artifacts": [
+    "CONTROLS_BASENAME.artifacts/NORMAL.json",
+    "CONTROLS_BASENAME.artifacts/OPTIMIZED.json"
+  ],
+  "canonical_references": [
+    "references/CONTROLS.artifacts/NORMAL.json",
+    "references/CONTROLS.artifacts/OPTIMIZED.json"
+  ],
+  "control_reference": "references/CONTROLS.json",
+  "inprocess_mutant_executions": 0,
+  "negative_cases_each_in_both_modes": {
+    "invalid-primary-fraction": "INVALID_INPUT_STRUCTURE",
+    "occupied-output": "OUTPUT_EXISTS",
+    "shared-primary-radius": "PRIMARY_COMPARISON",
+    "source-pin": "INPUT_PIN:premises",
+    "unknown-primary-field": "PRIMARY_SCHEMA"
+  },
+  "negative_contract": "exit2; exactly one exact status/witness JSON line; empty stderr; absent new output or preserved existing bytes",
+  "output_boundary": "Fresh absolute output, existing parent, outside repository and component; symlink path components rejected. Do not choose the references directory in the executing component.",
+  "recompute": "python -I -S -B recompute.py --repo-root ABS_REPO --candidate ABS_PRIMARY_REPORT --output ABS_FRESH_FILE",
+  "runtime": "Python3.12.14 standard library; child flags -I -S -B and optional -O",
+  "schema": "HDBLAST_INDEPENDENT_H1_PORTABLE_CLI_V1",
+  "source_assertions": "Retained continuous operator caps and inherited analytic hypotheses are conditional. Source byte authentication is not their proof.",
+  "validate": "python -I -S -B validate.py --repo-root ABS_REPO --candidate ABS_PRIMARY_REPORT --output ABS_FRESH_CONTROLS_JSON",
+  "validate_success": {
+    "positive_children": 2,
+    "rejected_children": 10,
+    "report_sha256": "actual written report SHA256",
+    "status": "PASS",
+    "witness": "INDEPENDENT_H1_STRICT_CONTROLS"
+  }
+}
