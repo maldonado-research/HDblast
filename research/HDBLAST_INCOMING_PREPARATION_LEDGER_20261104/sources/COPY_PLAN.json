@@ -1,0 +1,49 @@
+{
+  "declared_counts": {
+    "canonical_report_pairs": 1,
+    "inprocess_mutant_evaluations": 0,
+    "negative_subprocesses": 8,
+    "positive_subprocesses": 2
+  },
+  "destination_root": "research/HDBLAST_INCOMING_PREPARATION_LEDGER_20261104/sources",
+  "execution": "Invoke checks.py once with --repo-root REPO --output ABS_EXTERNAL/SOURCES_CONTROLS.json; retain the two canonical siblings from SOURCES_CONTROLS.artifacts. No duplicate positive producer calls required.",
+  "files": [
+    "CLI_CONTRACT.json",
+    "COMPONENT_MANIFEST.json",
+    "COPY_PLAN.json",
+    "FROZEN_DESIGN.json",
+    "LOCAL_PINS.json",
+    "PACKET_SOURCE_JOIN.json",
+    "PROVENANCE.json",
+    "README.md",
+    "REGISTERED_PACKET_AUDIT.md",
+    "SOURCE_CLOSED_MANIFEST.json",
+    "SOURCE_CLOSURE_INPUTS.json",
+    "SOURCE_LEDGER.md",
+    "SOURCE_PINS.json",
+    "checks.py",
+    "references/CONTROLS.json",
+    "references/NORMAL.json",
+    "references/OPTIMIZED.json",
+    "source_budget.py"
+  ],
+  "portable_protocol_revision": {
+    "canonical_reports_unchanged": true,
+    "change": "Wrapper validates exactly one stdout line before parsing the complete JSON object.",
+    "control_report_unchanged": true,
+    "new_producer_or_oracle_campaign_executed": false,
+    "producer_code_unchanged": true,
+    "superseded_component_manifest_sha256": "7796b7d8e636b1cf1b80c8103f3851a698b8175ecdce7779e33facdf56a5cb1e",
+    "verification": "Source-static protocol strengthening; all previously observed accepted child outputs already use one line. Parent owns the one complete fresh publication replay."
+  },
+  "schema": "HDBLAST_INCOMING_SOURCES_COPY_PLAN_V1",
+  "scientific_activity": {
+    "PDE_solves": 0,
+    "background_queries": 0,
+    "bump_queries": 0,
+    "project_imports": 0,
+    "source_oracle_calls": 0
+  },
+  "source_root": ".",
+  "status": "FROZEN_COPY_PLAN"
+}

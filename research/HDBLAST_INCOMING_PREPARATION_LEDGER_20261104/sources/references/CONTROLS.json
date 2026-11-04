@@ -1,0 +1,177 @@
+{
+  "actual_rejected_subprocesses": 8,
+  "artifact_directory_contract": "Sibling directory OUTPUT_STEM.artifacts",
+  "canonical_report_pairs_reproduced": 1,
+  "canonical_sha256": "29043299ad58ac8233493b5f6da7a8f88c03894d60ddfb19cc5f914e2de53e09",
+  "inprocess_mutant_evaluations": 0,
+  "positive_control_subprocesses_executed": 2,
+  "retained_canonical_artifacts": [
+    "NORMAL.json",
+    "OPTIMIZED.json"
+  ],
+  "rows": [
+    {
+      "exit_code": 0,
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "kind": "positive_subprocess",
+      "mode": "NORMAL",
+      "retained_report": "NORMAL.json",
+      "sha256": "29043299ad58ac8233493b5f6da7a8f88c03894d60ddfb19cc5f914e2de53e09",
+      "single_json_stdout": true,
+      "stderr_empty": true
+    },
+    {
+      "artifact_semantics": "no_output_artifact",
+      "case": "tampered_source_pin",
+      "exit_code": 2,
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "kind": "negative_subprocess",
+      "mode": "NORMAL",
+      "single_json_stdout": true,
+      "stderr_empty": true,
+      "witness": "LOCAL_PIN_AUTHENTICATION"
+    },
+    {
+      "artifact_semantics": "no_output_artifact",
+      "case": "altered_design_scale",
+      "exit_code": 2,
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "kind": "negative_subprocess",
+      "mode": "NORMAL",
+      "single_json_stdout": true,
+      "stderr_empty": true,
+      "witness": "DESIGN_AUTHENTICATION"
+    },
+    {
+      "artifact_semantics": "existing_output_preserved_exactly",
+      "case": "occupied_output",
+      "exit_code": 2,
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "kind": "negative_subprocess",
+      "mode": "NORMAL",
+      "single_json_stdout": true,
+      "stderr_empty": true,
+      "witness": "OUTPUT_EXISTS"
+    },
+    {
+      "artifact_semantics": "no_output_artifact",
+      "case": "relative_output",
+      "exit_code": 2,
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "kind": "negative_subprocess",
+      "mode": "NORMAL",
+      "single_json_stdout": true,
+      "stderr_empty": true,
+      "witness": "ABSOLUTE_OUTPUT_REQUIRED"
+    },
+    {
+      "exit_code": 0,
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "kind": "positive_subprocess",
+      "mode": "OPTIMIZED",
+      "retained_report": "OPTIMIZED.json",
+      "sha256": "29043299ad58ac8233493b5f6da7a8f88c03894d60ddfb19cc5f914e2de53e09",
+      "single_json_stdout": true,
+      "stderr_empty": true
+    },
+    {
+      "artifact_semantics": "no_output_artifact",
+      "case": "tampered_source_pin",
+      "exit_code": 2,
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "kind": "negative_subprocess",
+      "mode": "OPTIMIZED",
+      "single_json_stdout": true,
+      "stderr_empty": true,
+      "witness": "LOCAL_PIN_AUTHENTICATION"
+    },
+    {
+      "artifact_semantics": "no_output_artifact",
+      "case": "altered_design_scale",
+      "exit_code": 2,
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "kind": "negative_subprocess",
+      "mode": "OPTIMIZED",
+      "single_json_stdout": true,
+      "stderr_empty": true,
+      "witness": "DESIGN_AUTHENTICATION"
+    },
+    {
+      "artifact_semantics": "existing_output_preserved_exactly",
+      "case": "occupied_output",
+      "exit_code": 2,
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "kind": "negative_subprocess",
+      "mode": "OPTIMIZED",
+      "single_json_stdout": true,
+      "stderr_empty": true,
+      "witness": "OUTPUT_EXISTS"
+    },
+    {
+      "artifact_semantics": "no_output_artifact",
+      "case": "relative_output",
+      "exit_code": 2,
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "kind": "negative_subprocess",
+      "mode": "OPTIMIZED",
+      "single_json_stdout": true,
+      "stderr_empty": true,
+      "witness": "ABSOLUTE_OUTPUT_REQUIRED"
+    }
+  ],
+  "schema": "HDBLAST_INCOMING_SOURCES_STRICT_CONTROLS_V1",
+  "scientific_activity": {
+    "PDE_solves": 0,
+    "background_queries": 0,
+    "bump_queries": 0,
+    "project_imports": 0,
+    "source_oracle_calls": 0
+  },
+  "scope": "Two actual exact-postprocessor children plus eight actual protocol/input rejection children; inherited source and PDE proofs are not rerun.",
+  "status": "PASS_TWO_CANONICAL_AND_EIGHT_REJECTED_CHILDREN"
+}

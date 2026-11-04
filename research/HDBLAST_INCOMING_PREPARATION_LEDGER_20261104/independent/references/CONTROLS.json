@@ -1,0 +1,190 @@
+{
+  "actual_negative_children": 8,
+  "canonical_children": [
+    {
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "optimized": false,
+      "report_sha256": "02a22609ca2f02e2c2445ae23e6c0c6ad1f03f411f4c609dce648bca0f8ee9da",
+      "returncode": 0,
+      "stderr_empty": true,
+      "stdout": {
+        "finite_checks": 45,
+        "output_sha256": "02a22609ca2f02e2c2445ae23e6c0c6ad1f03f411f4c609dce648bca0f8ee9da",
+        "status": "PASS",
+        "witness": "INDEPENDENT_INCOMING_RECONSTRUCTION"
+      }
+    },
+    {
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "optimized": true,
+      "report_sha256": "02a22609ca2f02e2c2445ae23e6c0c6ad1f03f411f4c609dce648bca0f8ee9da",
+      "returncode": 0,
+      "stderr_empty": true,
+      "stdout": {
+        "finite_checks": 45,
+        "output_sha256": "02a22609ca2f02e2c2445ae23e6c0c6ad1f03f411f4c609dce648bca0f8ee9da",
+        "status": "PASS",
+        "witness": "INDEPENDENT_INCOMING_RECONSTRUCTION"
+      }
+    }
+  ],
+  "canonical_pair_sha256": "02a22609ca2f02e2c2445ae23e6c0c6ad1f03f411f4c609dce648bca0f8ee9da",
+  "canonical_positive_children": 2,
+  "distinct_rejection_cases": 4,
+  "negative_children": [
+    {
+      "case": "source_pin",
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "optimized": false,
+      "output_absent": true,
+      "preexisting_bytes_preserved": false,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "SOURCE_PIN_MISMATCH"
+      }
+    },
+    {
+      "case": "candidate_source_budget",
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "optimized": false,
+      "output_absent": true,
+      "preexisting_bytes_preserved": false,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "CANDIDATE_SOURCE_LEDGER_MISMATCH"
+      }
+    },
+    {
+      "case": "malformed_fraction",
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "optimized": false,
+      "output_absent": true,
+      "preexisting_bytes_preserved": false,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "NUMERIC_PARSE_ERROR"
+      }
+    },
+    {
+      "case": "occupied_output",
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "optimized": false,
+      "output_absent": false,
+      "preexisting_bytes_preserved": true,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "FRESH_OUTPUT_FILE"
+      }
+    },
+    {
+      "case": "source_pin",
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "optimized": true,
+      "output_absent": true,
+      "preexisting_bytes_preserved": false,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "SOURCE_PIN_MISMATCH"
+      }
+    },
+    {
+      "case": "candidate_source_budget",
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "optimized": true,
+      "output_absent": true,
+      "preexisting_bytes_preserved": false,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "CANDIDATE_SOURCE_LEDGER_MISMATCH"
+      }
+    },
+    {
+      "case": "malformed_fraction",
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "optimized": true,
+      "output_absent": true,
+      "preexisting_bytes_preserved": false,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "NUMERIC_PARSE_ERROR"
+      }
+    },
+    {
+      "case": "occupied_output",
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "optimized": true,
+      "output_absent": false,
+      "preexisting_bytes_preserved": true,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "FRESH_OUTPUT_FILE"
+      }
+    }
+  ],
+  "new_PDE_solves": 0,
+  "new_field_background_bump_or_source_queries": 0,
+  "schema": "HDBLAST_INCOMING_INDEPENDENT_CONTROLS_V1",
+  "scope": "One canonical pair and eight actual isolated rejection children; controls authenticate and compare finite exact reconstructions, not continuum or past-existence premises.",
+  "status": "PASS_STRICT_INDEPENDENT_INCOMING_CONTROLS"
+}

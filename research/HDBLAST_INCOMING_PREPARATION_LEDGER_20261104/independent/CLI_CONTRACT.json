@@ -1,0 +1,43 @@
+{
+  "absolute_paths_required": true,
+  "arithmetic_error_caught": true,
+  "canonical_child_flags": [
+    "-I",
+    "-S",
+    "-B"
+  ],
+  "canonical_pair_sha256": "02a22609ca2f02e2c2445ae23e6c0c6ad1f03f411f4c609dce648bca0f8ee9da",
+  "canonical_report_finite_gates": 45,
+  "fresh_output_outside_repository_and_component": true,
+  "not_claimed": "Unknown/missing CLI argument handling is not one of the four declared runtime rejection cases; analytic premises and full continuum existence are not established by protocol tests.",
+  "optimized_child_additional_flag": "-O",
+  "producer": "recompute.py",
+  "regular_input_files_no_symlinks": true,
+  "required_flags": [
+    "--repo-root",
+    "--source-candidate",
+    "--theory-candidate",
+    "--output"
+  ],
+  "runtime_failure": {
+    "exit_code": 2,
+    "fresh_output_absent": true,
+    "occupied_output_preserved_byte_for_byte": true,
+    "stderr_empty": true,
+    "stdout": "One JSON line with status FAIL and exact witness."
+  },
+  "runtime_rejection_cases": {
+    "candidate_source_budget": "CANDIDATE_SOURCE_LEDGER_MISMATCH",
+    "malformed_fraction": "NUMERIC_PARSE_ERROR",
+    "occupied_output": "FRESH_OUTPUT_FILE",
+    "source_pin": "SOURCE_PIN_MISMATCH"
+  },
+  "schema": "HDBLAST_INCOMING_INDEPENDENT_CLI_V1",
+  "stdout_success": "One JSON line; report written to fresh output.",
+  "wrapper": "run_controls.py",
+  "wrapper_children": {
+    "actual_negative": 8,
+    "canonical_positive": 2,
+    "distinct_negative_cases": 4
+  }
+}
