@@ -1,0 +1,17 @@
+{
+  "schema": "HDBLAST_PREPARATION_ALGEBRAIC_WITNESS_RULE_V1",
+  "registration_date": "2026-11-04",
+  "registered_before_any_new_direction_evaluation": true,
+  "kind": "Additive preregistered algebraic postprocessing; no change to direction, profile, partition, target, bounds or original sign gates",
+  "trigger": "Both registered physical volume and expansion slope intervals have strictly negative upper endpoints",
+  "base_input": "Authenticated response/FROZEN_SCIENTIFIC_REFERENCE.json from the original prepared-shell capsule, fields proper_v2 and proper_Theta2 exact endpoints",
+  "rule": "Let L=10^n for the smallest integer n>=0 with L>max((-base_v_lower)/(-slope_v_upper),(-base_theta_lower)/(-slope_theta_upper)); choose lambda=-L.",
+  "outputs": [
+    "Base and slope interval inputs with exact endpoints",
+    "Exact rational threshold and chosen finite rational lambda",
+    "base_v+lambda*volume_slope and base_theta+lambda*expansion_slope outward intervals",
+    "Strict positivity gates for both resulting second coefficients"
+  ],
+  "stopping_rule": "If the trigger fails, do not select this witness; report unavailable. If either resulting strict positivity gate fails, report failure without altering the rule.",
+  "scope": "Affine formal second coefficients of fixed finite preparations, conditional on retained premises. No quantitative nonlinear epsilon interval, actual contraction, matter, radiation, or cosmological claim."
+}

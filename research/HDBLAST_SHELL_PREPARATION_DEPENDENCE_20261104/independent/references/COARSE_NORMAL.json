@@ -1,0 +1,134 @@
+{
+  "coarse_report_sha256": "7a43ac153d6a6af3208657ad2b362f00c054617568844313107f491eb7eec3eb",
+  "continuous_bound_review": "Exact polynomial identities, continuous extrema, Taylor exponential enclosures, positive primitive moments, full Gram caps and coupled error checked.",
+  "matched_scientific_fields": 23,
+  "negative_controls": {
+    "extra_volume_factorial": {
+      "reason": "coarse interval disagreement: /slopes/v2",
+      "status": "REJECTED"
+    },
+    "missing_proper_clock": {
+      "reason": "coarse interval disagreement: /slopes/Theta2",
+      "status": "REJECTED"
+    },
+    "omit_coupled_error": {
+      "reason": "coarse rational disagreement: /full_resolvent_error",
+      "status": "REJECTED"
+    },
+    "omit_kernel_lower_loss": {
+      "reason": "coarse rational disagreement: /constants/eta",
+      "status": "REJECTED"
+    },
+    "omit_mixed_velocity_norm": {
+      "reason": "coarse rational disagreement: /initial_norm_caps/Dv",
+      "status": "REJECTED"
+    },
+    "omit_scalar_derivative_cap": {
+      "reason": "coarse exact disagreement: /analytic_bump_caps/Q_rrr",
+      "status": "REJECTED"
+    },
+    "wrong_Q_third_polynomial": {
+      "reason": "Q third derivative identity",
+      "status": "REJECTED"
+    },
+    "wrong_finite_lambda": {
+      "reason": "coarse exact disagreement: /deterministic_choice/lambda",
+      "status": "REJECTED"
+    }
+  },
+  "oracle_calls": 0,
+  "producer_imported": false,
+  "science": {
+    "analytic_bump_caps": {
+      "Q": "1/3",
+      "Q_r": "8",
+      "Q_rr": "216",
+      "Q_rrr": "6400"
+    },
+    "constants": {
+      "c_hi": {
+        "exact": "28101137500000000/276922881"
+      },
+      "c_lo": {
+        "exact": "22540234500000000/294499921"
+      },
+      "eta": {
+        "exact": "1/100000000000"
+      },
+      "q": {
+        "exact": "1201/3200000"
+      }
+    },
+    "deterministic_choice": {
+      "lambda": "-1000000000000000000000",
+      "n": 21,
+      "threshold": {
+        "exact": "168123640441222290305397886156800000000000000000000000000000000000/264977293562582477173628049628841785375976603"
+      }
+    },
+    "full_resolvent_error": {
+      "exact": "25919931452994033603588990257119957/106298476178390280000000000"
+    },
+    "initial_norm_caps": {
+      "D0": {
+        "exact": "485588711858923898011/22153830480"
+      },
+      "Dr": {
+        "exact": "21581957897534061588584241142117/33230745720000000000"
+      },
+      "Dv": {
+        "exact": "1896830904248894/4192751953125"
+      },
+      "N": {
+        "exact": "21581957912567888096243955251557/33230745720000000000"
+      }
+    },
+    "new_coefficients": {
+      "Theta2": {
+        "exact": [
+          "12106706640170023358528770434005223171997075375/2329666443680470278486912",
+          "60373473860303768685010197206792067859175/170077561885424448"
+        ]
+      },
+      "v2": {
+        "exact": [
+          "127860259119874331883640685778836569375976603/1733705260413373230501888000",
+          "478091185882742331787667338714484435582077/81637229705003735040000"
+        ]
+      }
+    },
+    "positive_history_lower_bounds": {
+      "Theta": {
+        "exact": "264977293562582477173628049628841785375976603/1001756570782602219749372160000000000"
+      },
+      "v": {
+        "exact": "222381869917611440410603619538836569375976603/12021078849391226636992465920000000000"
+      }
+    },
+    "slopes": {
+      "M2": {
+        "exact": [
+          "158962016936764962243787217052808402975976603/125219571347825277468671520000000000",
+          "9345724039762220481829061244257119957/425193904713561120000000000"
+        ]
+      },
+      "Theta2": {
+        "exact": [
+          "-2445184187397359547837143888271682714367/6803102475416977920000000000000000000",
+          "-264977293562582477173628049628841785375976603/18637331549443762227895296000000000000000000"
+        ]
+      },
+      "v2": {
+        "exact": [
+          "-480256286851748735844663178714484435582077/81637229705003735040000000000000000000000000",
+          "-222381869917611440410603619538836569375976603/1733705260413373230501888000000000000000000000000"
+        ]
+      }
+    }
+  },
+  "source_sha256": {
+    "base": "1a9ebffb6bee9332bc0fd0df0f5d1d9f7f2a796825c2a563e4c644974ba4d8a3",
+    "static": "3aa2c8d2e9ad652b72a34b4d8a6e6a6f14f72c32b8dcd1fbdc67556093265c22"
+  },
+  "status": "PASS_INDEPENDENT_COARSE_REVIEW"
+}
