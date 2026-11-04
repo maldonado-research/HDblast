@@ -1,0 +1,45 @@
+{
+  "H1_budget_scaling": "C=sum_j=0^2[(M_j+J_j)B_j+M_j B_(j+1)]>0; alpha=B/(2C) fits every B>0 and preserves unbounded R_A and existing initial-sup N",
+  "H2_bridge": {
+    "actual_contact_flat": "R_A <= 1/2 ||D_rr||2 <= 1/2 ||D||H2",
+    "extra_sufficient_budget_for_declared_class": "||D||H2<=4e33 implies R_A<=2e33",
+    "generic": "R_A <= sqrt(17)/2 ||D||H2",
+    "physical_energy_identification": false
+  },
+  "actual_admissible_image": true,
+  "added_canonical_sectors": "Zero added canonical momentum and zero added scalar canonical sectors",
+  "algebra_certificate_sha256": "af2e1c9e54a04e603a6b721a71c773200bbbf67f6dd0f32fedd924613672dd75",
+  "bump_rational_L2_caps": [
+    "2",
+    "22",
+    "2604",
+    "1101276"
+  ],
+  "exact_center_formulas": {
+    "D_r": "9m/g(r0)",
+    "s_r": "-3p(r0)m/[a(r0)g(r0)]"
+  },
+  "new_activity": {
+    "PDE_solves": 0,
+    "actual_background_queries": 0,
+    "numerical_bump_queries": 0,
+    "oracle_calls": 0
+  },
+  "norm_convention": "||D||H1^2=integral_1^(5/4)(D^2+D_r^2) dr",
+  "normal_optimized_certificate_bytes_identical": true,
+  "profile": "Retained physical initial scalar-level-set relative area second-variation difference D",
+  "public_edits": 0,
+  "regularity": "Coefficient estimates require b in C2 and g in C1,g>0; literal smooth admissibility uses the retained smooth selected static background, distinct from lower C4 parameter topology.",
+  "scope": {
+    "H1_bounds_existing_initial_sup_N": false,
+    "H1_implies_declared_RA_class": false,
+    "direct_H1_to_observable_bounds_ruled_out": false,
+    "new_energy_boundary_trace_estimate_proved": false,
+    "new_observable_sign_or_reversal_claim": false,
+    "physical_preparation_selection": false,
+    "uniform_nonlinear_epsilon_window": false
+  },
+  "sequence": "r0=9/8; psi(u)=u^3 exp(1-1/(1-u^2)) on |u|<1, zero otherwise; z_m=m^-5 psi(m^2(r-r0)), integer m>=4; h_m=3b z_m-z_m,r; chi_m=ell rho^3 z_m",
+  "status": "PASS_PRIVATE_ACTUAL_IMAGE_H1_OBSTRUCTION_AND_H2_BRIDGE",
+  "zero_moment": "Exact primitive endpoint identity, no quadrature"
+}

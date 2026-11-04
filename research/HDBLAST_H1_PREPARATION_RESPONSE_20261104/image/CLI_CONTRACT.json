@@ -1,0 +1,61 @@
+{
+  "controls": {
+    "actual_CLI_negative_control_count": 8,
+    "all_negative_case_modes": [
+      false,
+      true
+    ],
+    "canonical_artifact_directory": "IMAGE_CONTROLS.artifacts",
+    "canonical_artifact_names": [
+      "NORMAL.json",
+      "OPTIMIZED.json"
+    ],
+    "canonical_child_processes": 2,
+    "cases": [
+      "relative-output",
+      "existing-output",
+      "inside-component",
+      "symlink-parent"
+    ],
+    "fixed_output_basename": "IMAGE_CONTROLS.json",
+    "negative_cases": 4,
+    "reference": "references/CONTROLS.json",
+    "required_arguments": [
+      "--output"
+    ],
+    "required_negative_contract": [
+      "interpreter_flags -I -S -B plus -O in optimized mode",
+      "exact single JSON stdout",
+      "empty stderr",
+      "exit code 2",
+      "no new output artifact or preserved existing bytes"
+    ],
+    "script": "checks.py",
+    "total_child_processes": 10
+  },
+  "optimized_extra_flag": "-O",
+  "python_prefix": [
+    "python",
+    "-I",
+    "-S",
+    "-B"
+  ],
+  "schema": "HDBLAST_H1_ACTUAL_IMAGE_CLI_CONTRACT_V1",
+  "science_activity": {
+    "PDE_solves": 0,
+    "background_queries": 0,
+    "numerical_bump_queries": 0,
+    "oracle_queries": 0
+  },
+  "source_closed_manifest_role": "Historical source closure provenance only; current portable closure is COMPONENT_MANIFEST.json.",
+  "verifier": {
+    "canonical_reference_normal": "references/NORMAL.json",
+    "canonical_reference_optimized": "references/OPTIMIZED.json",
+    "canonical_sha256": "af2e1c9e54a04e603a6b721a71c773200bbbf67f6dd0f32fedd924613672dd75",
+    "output": "Fresh absolute normalized path with existing parent, outside component, no symlinks or overwrite",
+    "required_arguments": [
+      "--output"
+    ],
+    "script": "verify_algebra.py"
+  }
+}

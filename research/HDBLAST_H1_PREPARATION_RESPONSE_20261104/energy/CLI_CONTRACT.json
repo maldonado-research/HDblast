@@ -1,0 +1,55 @@
+{
+  "produce": {
+    "command": "python -I -S -B produce.py --repo-root ABS_REPO --output ABS_FRESH_FILE",
+    "failure": {
+      "output": "absent, or any preexisting file bytes remain unchanged",
+      "returncode": 2,
+      "scope": "The listed post-parse runtime/control failures; standard argparse usage errors and --help use standard argparse output.",
+      "stderr": "empty",
+      "stdout": "Exactly one JSON line with status FAIL and exact reason witness"
+    },
+    "optional": "--design ABS_FILE must have the exact frozen design bytes",
+    "output_boundary": "Fresh regular output file whose existing parent is outside both the resolved repository and this component. Reject symlink path components. Semantic path normalization is allowed.",
+    "success": {
+      "finite_checks": 24,
+      "output_sha256": "SHA256 of written canonical report",
+      "status": "PASS",
+      "witness": "EXACT_H1_ENERGY_RESPONSE_BOUNDS"
+    }
+  },
+  "run_controls": {
+    "actual_rejected_subprocesses": 12,
+    "all_new_scientific_queries_and_PDE_solves": 0,
+    "canonical_pair_outputs": [
+      "CONTROLS_BASENAME.artifacts/NORMAL.json",
+      "CONTROLS_BASENAME.artifacts/OPTIMIZED.json"
+    ],
+    "canonical_references": [
+      "references/NORMAL.json",
+      "references/OPTIMIZED.json"
+    ],
+    "command": "python -I -S -B run_controls.py --repo-root ABS_REPO --output ABS_FRESH_CONTROLS_JSON",
+    "control_reference": "references/CONTROLS.json",
+    "negative_cases_each_in_both_modes": {
+      "design_bytes": "FROZEN_DESIGN_BYTES",
+      "output_exists": "FRESH_OUTPUT_FILE",
+      "output_inside_component": "OUTPUT_OUTSIDE_CODE_AND_SOURCE",
+      "output_inside_repo": "OUTPUT_OUTSIDE_CODE_AND_SOURCE",
+      "output_parent_missing": "OUTPUT_PARENT_EXISTS",
+      "source_bytes": "AUTHENTICATED_SOURCE_BYTES"
+    },
+    "per_negative_contract": "Real isolated child, exit2, one exact JSON line, empty stderr, exact expected status/reason dictionary, no new output or preserved preexisting bytes.",
+    "positive_subprocesses": 2,
+    "runs_once": true,
+    "success": {
+      "actual_rejected_subprocesses": 12,
+      "output_sha256": "SHA256 of written control report",
+      "positive_subprocesses": 2,
+      "status": "PASS",
+      "witness": "STRICT_H1_ENERGY_CONTROLS"
+    }
+  },
+  "runtime": "Python3.12.14 standard library only; isolated children use -I -S -B and optional -O",
+  "schema": "HDBLAST_H1_ENERGY_PORTABLE_CLI_V1",
+  "source_assertion_boundary": "Published continuous same-H operator bounds remain explicit conditional assertions. Authentication and exact rational inequalities do not reprove those bounds, linear mixed existence, constraints, nonlinear development or physical preparation selection."
+}

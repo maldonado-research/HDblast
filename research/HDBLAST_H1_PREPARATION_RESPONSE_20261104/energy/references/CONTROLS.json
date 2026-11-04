@@ -1,0 +1,260 @@
+{
+  "actual_rejected_subprocesses": 12,
+  "canonical_children": [
+    {
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "optimized": false,
+      "report_sha256": "55125a31647237047eb7b1777058cd73cc301e30e423f281dbd3885ccbc3f966",
+      "returncode": 0,
+      "stderr_empty": true,
+      "stdout": {
+        "finite_checks": 24,
+        "output_sha256": "55125a31647237047eb7b1777058cd73cc301e30e423f281dbd3885ccbc3f966",
+        "status": "PASS",
+        "witness": "EXACT_H1_ENERGY_RESPONSE_BOUNDS"
+      }
+    },
+    {
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "optimized": true,
+      "report_sha256": "55125a31647237047eb7b1777058cd73cc301e30e423f281dbd3885ccbc3f966",
+      "returncode": 0,
+      "stderr_empty": true,
+      "stdout": {
+        "finite_checks": 24,
+        "output_sha256": "55125a31647237047eb7b1777058cd73cc301e30e423f281dbd3885ccbc3f966",
+        "status": "PASS",
+        "witness": "EXACT_H1_ENERGY_RESPONSE_BOUNDS"
+      }
+    }
+  ],
+  "canonical_pair_sha256": "55125a31647237047eb7b1777058cd73cc301e30e423f281dbd3885ccbc3f966",
+  "distinct_rejection_cases": 6,
+  "negative_cases": [
+    {
+      "case": "source_bytes",
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "optimized": false,
+      "output_absent": true,
+      "preexisting_bytes_preserved": false,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "AUTHENTICATED_SOURCE_BYTES"
+      }
+    },
+    {
+      "case": "output_exists",
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "optimized": false,
+      "output_absent": false,
+      "preexisting_bytes_preserved": true,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "FRESH_OUTPUT_FILE"
+      }
+    },
+    {
+      "case": "output_inside_repo",
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "optimized": false,
+      "output_absent": true,
+      "preexisting_bytes_preserved": false,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "OUTPUT_OUTSIDE_CODE_AND_SOURCE"
+      }
+    },
+    {
+      "case": "output_inside_component",
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "optimized": false,
+      "output_absent": true,
+      "preexisting_bytes_preserved": false,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "OUTPUT_OUTSIDE_CODE_AND_SOURCE"
+      }
+    },
+    {
+      "case": "design_bytes",
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "optimized": false,
+      "output_absent": true,
+      "preexisting_bytes_preserved": false,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "FROZEN_DESIGN_BYTES"
+      }
+    },
+    {
+      "case": "output_parent_missing",
+      "flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "optimized": false,
+      "output_absent": true,
+      "preexisting_bytes_preserved": false,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "OUTPUT_PARENT_EXISTS"
+      }
+    },
+    {
+      "case": "source_bytes",
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "optimized": true,
+      "output_absent": true,
+      "preexisting_bytes_preserved": false,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "AUTHENTICATED_SOURCE_BYTES"
+      }
+    },
+    {
+      "case": "output_exists",
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "optimized": true,
+      "output_absent": false,
+      "preexisting_bytes_preserved": true,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "FRESH_OUTPUT_FILE"
+      }
+    },
+    {
+      "case": "output_inside_repo",
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "optimized": true,
+      "output_absent": true,
+      "preexisting_bytes_preserved": false,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "OUTPUT_OUTSIDE_CODE_AND_SOURCE"
+      }
+    },
+    {
+      "case": "output_inside_component",
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "optimized": true,
+      "output_absent": true,
+      "preexisting_bytes_preserved": false,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "OUTPUT_OUTSIDE_CODE_AND_SOURCE"
+      }
+    },
+    {
+      "case": "design_bytes",
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "optimized": true,
+      "output_absent": true,
+      "preexisting_bytes_preserved": false,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "FROZEN_DESIGN_BYTES"
+      }
+    },
+    {
+      "case": "output_parent_missing",
+      "flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "optimized": true,
+      "output_absent": true,
+      "preexisting_bytes_preserved": false,
+      "returncode": 2,
+      "stderr_empty": true,
+      "stdout": {
+        "status": "FAIL",
+        "witness": "OUTPUT_PARENT_EXISTS"
+      }
+    }
+  ],
+  "new_PDE_solves": 0,
+  "new_background_or_evolved_field_queries": 0,
+  "new_bump_queries": 0,
+  "positive_subprocesses": 2,
+  "scope": "Each negative is a real isolated child; source authentication/path/output protocol controls do not prove analytic PDE premises.",
+  "status": "PASS_STRICT_H1_ENERGY_CONTROLS"
+}

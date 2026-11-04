@@ -1,0 +1,195 @@
+{
+  "actual_CLI_negative_control_count": 8,
+  "actual_CLI_negative_controls": [
+    {
+      "case": "relative-output",
+      "existing_bytes_preserved": false,
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "no_new_output_artifact": true,
+      "optimized": false,
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "status": "REJECTED",
+        "witness": "absolute output path"
+      }
+    },
+    {
+      "case": "existing-output",
+      "existing_bytes_preserved": true,
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "no_new_output_artifact": true,
+      "optimized": false,
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "status": "REJECTED",
+        "witness": "output absent"
+      }
+    },
+    {
+      "case": "inside-component",
+      "existing_bytes_preserved": false,
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "no_new_output_artifact": true,
+      "optimized": false,
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "status": "REJECTED",
+        "witness": "output outside component"
+      }
+    },
+    {
+      "case": "symlink-parent",
+      "existing_bytes_preserved": false,
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "no_new_output_artifact": true,
+      "optimized": false,
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "status": "REJECTED",
+        "witness": "output path contains symlink"
+      }
+    },
+    {
+      "case": "relative-output",
+      "existing_bytes_preserved": false,
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "no_new_output_artifact": true,
+      "optimized": true,
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "status": "REJECTED",
+        "witness": "absolute output path"
+      }
+    },
+    {
+      "case": "existing-output",
+      "existing_bytes_preserved": true,
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "no_new_output_artifact": true,
+      "optimized": true,
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "status": "REJECTED",
+        "witness": "output absent"
+      }
+    },
+    {
+      "case": "inside-component",
+      "existing_bytes_preserved": false,
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "no_new_output_artifact": true,
+      "optimized": true,
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "status": "REJECTED",
+        "witness": "output outside component"
+      }
+    },
+    {
+      "case": "symlink-parent",
+      "existing_bytes_preserved": false,
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "no_new_output_artifact": true,
+      "optimized": true,
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "status": "REJECTED",
+        "witness": "output path contains symlink"
+      }
+    }
+  ],
+  "canonical_artifact_directory": "IMAGE_CONTROLS.artifacts",
+  "canonical_child_processes": 2,
+  "canonical_children": [
+    {
+      "artifact": "IMAGE_CONTROLS.artifacts/NORMAL.json",
+      "case": "canonical",
+      "exit_code": 0,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "optimized": false,
+      "sha256": "af2e1c9e54a04e603a6b721a71c773200bbbf67f6dd0f32fedd924613672dd75",
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "sha256": "af2e1c9e54a04e603a6b721a71c773200bbbf67f6dd0f32fedd924613672dd75",
+        "status": "PASS_EXACT_FORMAL_ALGEBRA_AND_CONTINUOUS_BOUND_CONSTANTS"
+      }
+    },
+    {
+      "artifact": "IMAGE_CONTROLS.artifacts/OPTIMIZED.json",
+      "case": "canonical",
+      "exit_code": 0,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "optimized": true,
+      "sha256": "af2e1c9e54a04e603a6b721a71c773200bbbf67f6dd0f32fedd924613672dd75",
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "sha256": "af2e1c9e54a04e603a6b721a71c773200bbbf67f6dd0f32fedd924613672dd75",
+        "status": "PASS_EXACT_FORMAL_ALGEBRA_AND_CONTINUOUS_BOUND_CONSTANTS"
+      }
+    }
+  ],
+  "canonical_pairs_byte_identical": true,
+  "negative_cases": 4,
+  "scope": {
+    "actual_background_queries": 0,
+    "new_PDE_solves": 0,
+    "new_observable_sign_claim": false,
+    "new_oracle_queries": 0,
+    "numerical_bump_queries": 0
+  },
+  "status": "PASS_PORTABLE_ACTUAL_IMAGE_ALGEBRA_CONTROLS",
+  "total_child_processes": 10
+}
