@@ -1,0 +1,270 @@
+{
+  "actual_CLI_negative_control_count": 8,
+  "actual_CLI_negative_controls": [
+    {
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "label": "missing_required_output",
+      "no_new_output_artifact": true,
+      "script": "recompute.py",
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "reason": "invalid CLI arguments",
+        "status": "REJECTED"
+      }
+    },
+    {
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "label": "relative_output",
+      "no_new_output_artifact": true,
+      "script": "recompute.py",
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "reason": "absolute normalized non-symlink output required",
+        "status": "REJECTED"
+      }
+    },
+    {
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "label": "existing_output",
+      "no_new_output_artifact": true,
+      "script": "recompute.py",
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "reason": "output already exists",
+        "status": "REJECTED"
+      }
+    },
+    {
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "label": "tampered_static_byte_pin",
+      "no_new_output_artifact": true,
+      "script": "recompute.py",
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "reason": "source hash: static",
+        "status": "REJECTED"
+      }
+    },
+    {
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "label": "witness_symlink_output",
+      "no_new_output_artifact": true,
+      "preexisting_symlink_preserved": true,
+      "script": "witness.py",
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "reason": "output_already_exists",
+        "status": "REJECTED"
+      }
+    },
+    {
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "label": "omit_scalar_coefficient_derivative",
+      "no_new_output_artifact": true,
+      "script": "compare_candidate.py",
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "reason": "conditioned_component_caps_per_R/abs_k_r",
+        "status": "REJECTED"
+      }
+    },
+    {
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "label": "extra_half_in_proper_volume",
+      "no_new_output_artifact": true,
+      "script": "compare_candidate.py",
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "reason": "observable_operator_caps_per_N/volume",
+        "status": "REJECTED"
+      }
+    },
+    {
+      "exit_code": 2,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "label": "drop_Gram_angular_weight",
+      "no_new_output_artifact": true,
+      "script": "compare_candidate.py",
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "reason": "Gram_norm_caps_per_R/D0",
+        "status": "REJECTED"
+      }
+    }
+  ],
+  "all_eight_exact_rejection_witnesses_checked": true,
+  "candidate_report_mutant_evaluations_across_canonical_modes": 18,
+  "candidate_report_mutants_unique_cases": 9,
+  "canonical_artifact_directory": "CONTROLS.artifacts",
+  "canonical_child_processes": 6,
+  "canonical_children": [
+    {
+      "artifact": "BOUND_NORMAL.json",
+      "exit_code": 0,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "mode": "NORMAL",
+      "script": "recompute.py",
+      "sha256": "15e94c3142f57e0474ac829a6f21cd4b8090d2efba3b049c3fa9509d86d46296",
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "output_sha256": "15e94c3142f57e0474ac829a6f21cd4b8090d2efba3b049c3fa9509d86d46296",
+        "status": "PASS_INDEPENDENT_GEOMETRIC_CLASS_BOUND"
+      }
+    },
+    {
+      "artifact": "BOUND_OPTIMIZED.json",
+      "exit_code": 0,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "mode": "OPTIMIZED",
+      "script": "recompute.py",
+      "sha256": "15e94c3142f57e0474ac829a6f21cd4b8090d2efba3b049c3fa9509d86d46296",
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "output_sha256": "15e94c3142f57e0474ac829a6f21cd4b8090d2efba3b049c3fa9509d86d46296",
+        "status": "PASS_INDEPENDENT_GEOMETRIC_CLASS_BOUND"
+      }
+    },
+    {
+      "artifact": "COMPARISON_NORMAL.json",
+      "exit_code": 0,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "mode": "NORMAL",
+      "script": "compare_candidate.py",
+      "sha256": "397f7a80e91ce883c4d2735e39ee4d4d07a81f9fc4c4b2d7838d8242f87e7409",
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "accepted_check_count": 30,
+        "output_sha256": "397f7a80e91ce883c4d2735e39ee4d4d07a81f9fc4c4b2d7838d8242f87e7409",
+        "report_mutants_rejected": 9,
+        "status": "PASS_INDEPENDENT_CANDIDATE_COMPARISON"
+      }
+    },
+    {
+      "artifact": "COMPARISON_OPTIMIZED.json",
+      "exit_code": 0,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "mode": "OPTIMIZED",
+      "script": "compare_candidate.py",
+      "sha256": "397f7a80e91ce883c4d2735e39ee4d4d07a81f9fc4c4b2d7838d8242f87e7409",
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "accepted_check_count": 30,
+        "output_sha256": "397f7a80e91ce883c4d2735e39ee4d4d07a81f9fc4c4b2d7838d8242f87e7409",
+        "report_mutants_rejected": 9,
+        "status": "PASS_INDEPENDENT_CANDIDATE_COMPARISON"
+      }
+    },
+    {
+      "artifact": "WITNESS_NORMAL.json",
+      "exit_code": 0,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B"
+      ],
+      "mode": "NORMAL",
+      "script": "witness.py",
+      "sha256": "ba3973210fb364f40cafaada84d3dd04abb29b385c594d70603903817ad31e5c",
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "new_oracle_queries": 0,
+        "report_sha256": "ba3973210fb364f40cafaada84d3dd04abb29b385c594d70603903817ad31e5c",
+        "status": "PASS_INDEPENDENT_WITNESS_EXCLUSION"
+      }
+    },
+    {
+      "artifact": "WITNESS_OPTIMIZED.json",
+      "exit_code": 0,
+      "interpreter_flags": [
+        "-I",
+        "-S",
+        "-B",
+        "-O"
+      ],
+      "mode": "OPTIMIZED",
+      "script": "witness.py",
+      "sha256": "ba3973210fb364f40cafaada84d3dd04abb29b385c594d70603903817ad31e5c",
+      "stderr_empty": true,
+      "stdout_complete_JSON": {
+        "new_oracle_queries": 0,
+        "report_sha256": "ba3973210fb364f40cafaada84d3dd04abb29b385c594d70603903817ad31e5c",
+        "status": "PASS_INDEPENDENT_WITNESS_EXCLUSION"
+      }
+    }
+  ],
+  "canonical_normal_processes": 3,
+  "canonical_optimized_processes": 3,
+  "canonical_pairs_byte_identical": true,
+  "schema": "HDBLAST_INDEPENDENT_PORTABLE_VALIDATION_V1",
+  "scope": {
+    "count_note": "Unique in-process mutant cases, their evaluations, canonical child processes and actual CLI negative processes are separate counts.",
+    "fresh_analytic_target_bump_replay_executions": 2,
+    "new_PDE_solves": 0,
+    "new_bump_queries": 0,
+    "new_directions": 0,
+    "new_oracle_queries": 0,
+    "root_old_source_closure_replays": 0
+  },
+  "source_mutant_evaluations_across_canonical_modes": 12,
+  "source_mutants_unique_cases": 6,
+  "status": "PASS_INDEPENDENT_PORTABLE_VALIDATION",
+  "stdout_exactly_one_complete_JSON_line_checked": true,
+  "total_child_processes": 14
+}

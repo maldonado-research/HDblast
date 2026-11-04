@@ -1,0 +1,73 @@
+{
+  "canonical_references": {
+    "controls": "references/CONTROLS.json",
+    "normal": "references/NORMAL.json",
+    "optimized": "references/OPTIMIZED.json",
+    "source_scientific_projection": "references/FROZEN_SCIENTIFIC.json"
+  },
+  "controls": {
+    "actual_negative_subprocesses": 12,
+    "every_child_prefix": [
+      "sys.executable",
+      "-I",
+      "-S",
+      "-B"
+    ],
+    "inprocess_checks": 2,
+    "negative_requirements": [
+      "single JSON stdout",
+      "empty stderr",
+      "exit code 2",
+      "exact reason witness",
+      "no output artifact or identical preexisting bytes"
+    ],
+    "optimized_children_add": "-O",
+    "required_arguments": [
+      "--repo-root",
+      "--output"
+    ],
+    "script": "checks.py",
+    "success_subprocesses": 2,
+    "total_controls": 16
+  },
+  "interpreter_prefix": [
+    "python",
+    "-I",
+    "-S",
+    "-B"
+  ],
+  "new_oracle_PDE_bump_counts": [
+    0,
+    0,
+    0
+  ],
+  "optimized_extra_flag": "-O",
+  "producer": {
+    "extra_runtime_path_and_projection_guards_are_not_scientific_gate_counts": true,
+    "optional_local_pin_arguments": {
+      "--design": "FROZEN_DESIGN.json",
+      "--follow-on": "inputs/FOLLOW_ON_REFERENCE.json"
+    },
+    "output": "Fresh absolute normalized path, existing parent, outside component and supplied repository; no symlinks, parent escapes or overwrite.",
+    "rejection_exit_code": 2,
+    "rejection_stdout": {
+      "reason": "Exact fixed rejection witness",
+      "status": "REJECTED_INCONCLUSIVE"
+    },
+    "repo_root": "Explicit absolute repository containing the three pinned old research paths.",
+    "required_arguments": [
+      "--repo-root",
+      "--output"
+    ],
+    "scientific_finite_checks": 38,
+    "script": "produce.py",
+    "stderr": "Empty",
+    "stdout": "Exactly one JSON object line",
+    "success_stdout_keys": [
+      "finite_checks",
+      "output_sha256",
+      "status"
+    ]
+  },
+  "schema": "HDBLAST_BOUNDS_CLI_COUNT_CONTRACT_V1"
+}

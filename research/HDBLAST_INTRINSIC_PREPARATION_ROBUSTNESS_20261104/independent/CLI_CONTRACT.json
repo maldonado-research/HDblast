@@ -1,0 +1,81 @@
+{
+  "actual_CLI_controls": 8,
+  "canonical_artifact_subdirectory": "CONTROLS.artifacts",
+  "canonical_artifacts": [
+    "BOUND_NORMAL.json",
+    "BOUND_OPTIMIZED.json",
+    "COMPARISON_NORMAL.json",
+    "COMPARISON_OPTIMIZED.json",
+    "WITNESS_NORMAL.json",
+    "WITNESS_OPTIMIZED.json"
+  ],
+  "inprocess_report_unique_cases": 9,
+  "inprocess_source_unique_cases": 6,
+  "optional_optimized_flag": "-O",
+  "programs": {
+    "compare_candidate.py": {
+      "candidate": "portable bounds NORMAL.json"
+    },
+    "recompute.py": {
+      "candidate": "old prepared response FINAL_NORMAL.json",
+      "optional_arguments": [
+        "--controls"
+      ]
+    },
+    "validate.py": {
+      "candidate": "portable bounds NORMAL.json",
+      "canonical_output_basename": "CONTROLS.json",
+      "root_replay_once": true
+    },
+    "witness.py": {
+      "candidate": "old preparation RAW_WITNESS.json"
+    }
+  },
+  "rejection_witnesses": {
+    "drop_Gram_angular_weight": {
+      "reason": "Gram_norm_caps_per_R/D0",
+      "status": "REJECTED"
+    },
+    "existing_output": {
+      "reason": "output already exists",
+      "status": "REJECTED"
+    },
+    "extra_half_in_proper_volume": {
+      "reason": "observable_operator_caps_per_N/volume",
+      "status": "REJECTED"
+    },
+    "missing_required_output": {
+      "reason": "invalid CLI arguments",
+      "status": "REJECTED"
+    },
+    "omit_scalar_coefficient_derivative": {
+      "reason": "conditioned_component_caps_per_R/abs_k_r",
+      "status": "REJECTED"
+    },
+    "relative_output": {
+      "reason": "absolute normalized non-symlink output required",
+      "status": "REJECTED"
+    },
+    "tampered_static_byte_pin": {
+      "reason": "source hash: static",
+      "status": "REJECTED"
+    },
+    "witness_symlink_output": {
+      "reason": "output_already_exists",
+      "status": "REJECTED"
+    }
+  },
+  "required_arguments": [
+    "--repo-root",
+    "--candidate",
+    "--output"
+  ],
+  "required_interpreter_flags": [
+    "-I",
+    "-S",
+    "-B"
+  ],
+  "schema": "HDBLAST_INDEPENDENT_PORTABLE_CLI_CONTRACT_V1",
+  "status": "FROZEN",
+  "stdout": "Exactly one complete JSON line; empty stderr. Success exit0; rejection exit2, exact complete rejection witness for each control, no new artifact."
+}
