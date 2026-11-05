@@ -1,0 +1,66 @@
+{
+  "components": [
+    {
+      "arguments": [
+        "--output",
+        "{output}"
+      ],
+      "name": "primary",
+      "references": {
+        "NORMAL": "primary/references/NORMAL.json",
+        "OPTIMIZED": "primary/references/OPTIMIZED.json"
+      },
+      "script": "primary/verify.py"
+    },
+    {
+      "arguments": [
+        "--output",
+        "{output}"
+      ],
+      "name": "independent",
+      "references": {
+        "NORMAL": "independent/references/NORMAL.json",
+        "OPTIMIZED": "independent/references/OPTIMIZED.json"
+      },
+      "script": "independent/verify.py"
+    },
+    {
+      "arguments": [
+        "--output",
+        "{output}"
+      ],
+      "name": "refinement",
+      "references": {
+        "NORMAL": "refinement/references/NORMAL.json",
+        "OPTIMIZED": "refinement/references/OPTIMIZED.json"
+      },
+      "script": "refinement/verify.py"
+    },
+    {
+      "arguments": [
+        "--report",
+        "{capsule}/primary/references/NORMAL.json",
+        "--optimized",
+        "{capsule}/primary/references/OPTIMIZED.json",
+        "--proof",
+        "{capsule}/primary/PROOF.md",
+        "--refinement",
+        "{capsule}/refinement/references/NORMAL.json",
+        "--refinement-optimized",
+        "{capsule}/refinement/references/OPTIMIZED.json",
+        "--refinement-proof",
+        "{capsule}/refinement/PROOF.md",
+        "--output",
+        "{output}"
+      ],
+      "name": "manuscript_display",
+      "references": {
+        "NORMAL": "manuscript/DISPLAYED_BOUNDS_AUDIT.json",
+        "OPTIMIZED": "manuscript/DISPLAYED_BOUNDS_AUDIT.json"
+      },
+      "script": "manuscript/audit_displayed_bounds.py"
+    }
+  ],
+  "interpretation": "Three mathematical verifier pairs and one manuscript audit pair. Six source/CLI rejection controls run separately. Selected old theorems and continuous analytic arguments remain explicit premises.",
+  "schema": "HDBLAST_PAST_FUTURE_SCALAR_TRANSFER_REPLAY_PLAN_V1"
+}
