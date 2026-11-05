@@ -1,0 +1,9 @@
+{
+  "schema": "HDBLAST_OBSERVER_DOMAIN_REPLAY_PLAN_V1",
+  "components": [
+    {"name": "embedding", "script": "embedding/check_observer_domain.py", "arguments": ["--output", "{output}"], "references": {"NORMAL": "references/embedding_NORMAL.json", "OPTIMIZED": "references/embedding_OPTIMIZED.json"}},
+    {"name": "normal", "script": "normal/check_clock_domain.py", "arguments": ["--output", "{output}"], "references": {"NORMAL": "normal/references/NORMAL.json", "OPTIMIZED": "normal/references/OPTIMIZED.json"}},
+    {"name": "bootstrap", "script": "bootstrap/check_flow_bootstrap.py", "arguments": ["--output", "{output}"], "references": {"NORMAL": "bootstrap/references/NORMAL.json", "OPTIMIZED": "bootstrap/references/OPTIMIZED.json"}}
+  ],
+  "interpretation": "Three complementary conditional finite-domain components; one normal/optimized pair each. These do not evaluate the physical model's nonlinear amplitude or prove retained PDE premises."
+}
