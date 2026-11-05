@@ -1,0 +1,48 @@
+{
+  "components": [
+    {
+      "arguments": [
+        "--output",
+        "{output}"
+      ],
+      "name": "primary",
+      "references": {
+        "NORMAL": "primary/references/NORMAL.json",
+        "OPTIMIZED": "primary/references/OPTIMIZED.json"
+      },
+      "script": "primary/verify.py"
+    },
+    {
+      "arguments": [
+        "--output",
+        "{output}"
+      ],
+      "name": "independent",
+      "references": {
+        "NORMAL": "independent/references/NORMAL.json",
+        "OPTIMIZED": "independent/references/OPTIMIZED.json"
+      },
+      "script": "independent/verify.py"
+    },
+    {
+      "arguments": [
+        "--report",
+        "{capsule}/primary/references/NORMAL.json",
+        "--optimized",
+        "{capsule}/primary/references/OPTIMIZED.json",
+        "--proof",
+        "{capsule}/primary/PROOF.md",
+        "--output",
+        "{output}"
+      ],
+      "name": "manuscript_display",
+      "references": {
+        "NORMAL": "manuscript/DISPLAYED_BOUNDS_AUDIT.json",
+        "OPTIMIZED": "manuscript/DISPLAYED_BOUNDS_AUDIT.json"
+      },
+      "script": "manuscript/audit_displayed_bounds.py"
+    }
+  ],
+  "interpretation": "Two mathematical verifier pairs and one manuscript display audit pair. Six source/CLI rejection controls run separately. Retained analytic premises and continuous arguments are not replaced by finite arithmetic.",
+  "schema": "HDBLAST_PAST_SHELL_CONTACT_REPLAY_PLAN_V1"
+}
