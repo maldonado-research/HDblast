@@ -1,0 +1,131 @@
+{
+  "Goursat": {
+    "Volterra_norm_upper": "103/16000000000",
+    "coordinates": "a=r+x-1,b=2-r+x; a,b>=0,a+b<=1",
+    "each_face_has_an_interior_zero": true,
+    "equation": "U_ab=-(scaled_potential/4)U",
+    "face_midpoints": [
+      [
+        "-1/4",
+        "5/4"
+      ],
+      [
+        "-1/4",
+        "7/4"
+      ]
+    ],
+    "past_corner": [
+      "-1/2",
+      "3/2"
+    ],
+    "shared_corner_value_required": true,
+    "traces_are_restrictions_of_the_fixed_linear_Cauchy_solution": true
+  },
+  "L2_route": {
+    "Poincare_Q_over_Qprime": "1/2",
+    "U_norm_factor": "2000002000/1999999897",
+    "claimed_share_guard": "499999/1000000",
+    "each_principal_weight_share_lower": "15999980704004993744496872010609/31999996704009817744908872021218",
+    "relative_J_norm_error": "2206000103/3999999794000000"
+  },
+  "activity": {
+    "PDE_solves": 0,
+    "background_oracle_calls": 0,
+    "bump_queries": 0,
+    "project_imports": 0,
+    "source_oracle_calls": 0
+  },
+  "first_exit": {
+    "a": {
+      "flow_tube": [
+        "12806962742217003387570089468724692324082688831698261927584322949/114987117163062362504011418838630896587670654296875000000000000000",
+        "4405597676000344321510802164356996309032625070378817475214363733669/39555568304093452701379928080489028426158705078125000000000000000000"
+      ],
+      "lower": "43392737117081149624821977636662802851246204745136927584322949/114987117163062362504011418838630896587670654296875000000000000000",
+      "upper": "24625974058122381043749780657774874697149898371182524785636266331/39555568304093452701379928080489028426158705078125000000000000000000"
+    },
+    "eta": {
+      "flow_tube": [
+        "-294118535875636537/3371651227723562500000",
+        "-27207225255989592441/337165122772356250000000"
+      ],
+      "lower": "1166259327435511/421456403465445312500",
+      "upper": "234015434201092441/337165122772356250000000"
+    },
+    "p": {
+      "flow_tube": [
+        "-4676473062887728637235773585474725557107/34104096004229418934187753074218750000000000",
+        "-338587843879361272725619143674653461835211283459343417/2728327680338353514735020245937500000000000000000000000000"
+      ],
+      "lower": "98100377704390013550511844915899442893/34104096004229418934187753074218750000000000",
+      "upper": "11188522238758850957416714162153461835211283459343417/2728327680338353514735020245937500000000000000000000000000"
+    },
+    "rho": {
+      "flow_tube": [
+        "153369601420824941721364319446331/1180591620717411303424000000000",
+        "39267433515920476758390673/302231454903657293676544"
+      ],
+      "lower": "1073282348278883579668319446331/1180591620717411303424000000000",
+      "upper": "324887076458628713236591/302231454903657293676544"
+    }
+  },
+  "independent_coefficient_bounds": {
+    "Q_joint_lower": "17246399951/15000000000",
+    "Q_joint_upper": "38208223/7200000",
+    "U1": [
+      "-699887498785364493439/2500000000000000000000000",
+      "-56958007734395833/228881835937500000000"
+    ],
+    "U2": [
+      "139954999271291593439/45000000000000000000",
+      "34169921734424999/10986328125000000"
+    ],
+    "h": [
+      "56958007734395833/32043457031250000",
+      "699887498785364493439/300000000000000000000"
+    ],
+    "safe_Q": [
+      1,
+      "16/3"
+    ],
+    "shared_W_absolute_cap": 103000,
+    "shared_scaled_cap": "103/1000000000",
+    "strict_W": [
+      16000,
+      92000
+    ]
+  },
+  "new_physical_time_domain": [
+    "-1/1000000",
+    0
+  ],
+  "pointwise_route": {
+    "both_face_midpoint_lower": "31999983691/63999999794",
+    "central_Q_lower": "1/4",
+    "corner_guard": "-1/25000000",
+    "corner_upper": "-3175991536500103/63999999176000000000000",
+    "exponential_4_over_3_upper": "232942282459661/61402919002425",
+    "midpoint_guard": "499999/1000000"
+  },
+  "raw_shell_box_used_directly": true,
+  "schema": "HDBLAST_PAST_MASTER_INDEPENDENT_RATIONAL_AUDIT_V1",
+  "scope": [
+    "Conditional actual linear master on the positive-depth collar before shell contact, -1<x<=0.",
+    "Principal L2 weights are not physical energy/flux and are not invariant under spatial conjugation.",
+    "A positive master conjugation preserves trace signs/zeros only, not all reconstructed component signs.",
+    "No full Einstein-scalar characteristic constraints, nonlinear past preparation, source-selection law or uniform amplitude radius is proved."
+  ],
+  "source_pins": {
+    "research/HDBLAST_INCOMING_PREPARATION_LEDGER_20261104/sources/REGISTERED_PACKET_AUDIT.md": "ec3ad7ef010a381e898cf9dae7a94dee6d8bd35880c02b0a8e03387f3442f37f",
+    "research/HDBLAST_INTERIOR_MASTER_JETS_20261015/inputs/reference/PHYSICAL_SHELL_RESPONSE.md": "a78f2239893fdd0e5ff653d4d5ce5cd9d3244c57c794ed2d3bb43bd4f5e1484b",
+    "research/HDBLAST_INTERIOR_MASTER_JETS_20261015/potential/ACTUAL_POTENTIAL_WZZ_DERIVATION.md": "208dfc2107499b3c0cda6c23396173408ba27653e49e584b23e102b823d0fe0a",
+    "research/HDBLAST_INTERIOR_MASTER_JETS_20261015/potential/inputs/BACKGROUND_DERIVATIVE_BOUNDS.json": "fd6fd277176033703a4e75a2f66ab94894318aac49c83264ef979e9a27f0a02c",
+    "research/HDBLAST_INTERIOR_MASTER_JETS_20261015/potential/inputs/PRIOR_ANALYTIC_SHELL_BOX_DELTA_1E3.json": "8ccba65a1c7fd66e175703cd4dfb8e1adb029b52d455a2b9a440f346bf2e4bc8"
+  },
+  "static_radial_domain": [
+    0,
+    "1/125000"
+  ],
+  "status": "PASS_CONDITIONAL_PAST_MASTER_MARGINS",
+  "stored_wider_flow_intervals_used": false
+}
