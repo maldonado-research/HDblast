@@ -25,6 +25,6 @@ jobs:
           python-version: '3.12.14'
           check-latest: false
       - name: Reproduce two mathematical pairs and the manuscript display audit
-        run: python -I -S -B research/HDBLAST_PAST_SHELL_CONTACT_20261104/checks/run_checkpoint.py --manifest-sha256 187512f231dd8918a24bac6c3e7900207a5d93e1b466d07d0f46974a7f9fed96 --output-dir "$RUNNER_TEMP/past-shell-contact-fresh"
+        run: python -I -S -B research/HDBLAST_PAST_SHELL_CONTACT_20261104/checks/run_checkpoint.py --manifest-sha256 0f95bcb57139cdb3bfb05351efe7cefb6a03bcc712e873cdf1bfa824355ae18e --output-dir "$RUNNER_TEMP/past-shell-contact-fresh"
       - name: Verify six source or CLI rejections and two authentication controls
-        run: python -I -S -B research/HDBLAST_PAST_SHELL_CONTACT_20261104/checks/run_controls.py --manifest-sha256 187512f231dd8918a24bac6c3e7900207a5d93e1b466d07d0f46974a7f9fed96 --output-dir "$RUNNER_TEMP/past-shell-contact-controls-fresh"
+        run: python -I -S -B research/HDBLAST_PAST_SHELL_CONTACT_20261104/checks/run_controls.py --manifest-sha256 0f95bcb57139cdb3bfb05351efe7cefb6a03bcc712e873cdf1bfa824355ae18e --output-dir "$RUNNER_TEMP/past-shell-contact-controls-fresh"
