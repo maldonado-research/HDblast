@@ -1,0 +1,340 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\hypersetup{pdftitle={Characteristic bounds for the past scalar response of a timelike shell},pdfauthor={Ricardo Maldonado}}
+\title{Characteristic bounds for the past scalar response\protect\\ of a timelike shell}
+\author{Ricardo Maldonado\protect\\\small Independent Researcher\protect\\\small Henderson, Nevada, United States}
+\date{4 November 2026 (America/Los\_Angeles)}
+\begin{document}
+\maketitle
+\begin{abstract}
+For one registered packet in a conditional linear Einstein--scalar shell
+construction, the past--future difference has zero initial displacement and
+a velocity input with small integrated mass. Incoming-characteristic transport, positive
+two-variable majorants and a boundary-inertia comparator bound the actual
+physical scalar-coefficient difference by $1/40$ on $0\le t\le3\ell$, and by
+$1/40000$ on $49\ell/25\le t\le3\ell$, where $\ell=10^{-6}$.
+The full dynamic boundary law and the complete previous forcing history
+are retained. An explicit normalization join to older actual future
+enclosures transfers two disjoint fine zero brackets and a strictly negative
+post-pulse coefficient tail to the past. A separate norm/cross-term estimate
+also bounds the past first-field quadratic scalar norm. The older analytic
+and waveform-certificate premises remain explicit; their full campaigns
+are not rerun. These are first-coefficient results in model units, without
+an effective nonlinear amplitude interval or a cosmological interpretation.
+\end{abstract}
+
+\section{Registered problem and results}
+Fix $\ell=10^{-6}$ and $T=3\ell$. Set
+\[
+Q(x)=\begin{cases}
+ \exp\!\left(4-\dfrac1{(x-1)(2-x)}\right),&1<x<2,\\
+ 0,&\text{otherwise},
+\end{cases}
+\qquad q(z)=Q(z/\ell),\quad h(z)=e^{-z}q(z).
+\]
+The registered current master has data $(w,w_t)|_{t=0}=(q,h)$ and solves
+the complete reduced problem retained from the contact construction~\cite{contact}:
+\begin{align}
+ w_{tt}-w_{zz}+W(t,z)w&=0, &
+ -w_z+\mu w_{tt}+\beta(t)w&=0\quad(z=0),\label{eq:wave}\\
+ W(t,z)&=V(z)-a_0\tanh^2t, &
+ \beta(t)&=\beta_0-a_0\mu\tanh^2t,\nonumber\\
+ \beta_0&=\gamma+\tfrac52\mu, &a_0&=\tfrac{35}{4}.\nonumber
+\end{align}
+Its embedding-included first physical scalar coefficient is
+\begin{equation}
+\begin{aligned}
+ \Phi_1(\tau,\Omega)&=S(\tau/\rho_b)Y(\Omega),\qquad
+ Y=n_1^2-n_2^2,\quad \tau=\rho_bt,\\
+ S(t)&=G\cosh^{-3/2}t\,[w_z(t,0)-\gamma w(t,0)],\qquad
+ G=\frac3{\rho_b^3p_b}.
+\end{aligned}
+ \label{eq:physical}
+\end{equation}
+The background shell scalar is constant, so first clock/label pullbacks add
+no amplitude term. The angular mean of $Y$ is zero and $\sup|Y|=1$.
+The branch, reconstruction, regularity, full boundary law and smooth linear
+development/uniqueness are retained premises. The older actual future
+waveform theorem~\cite{inertial} is additionally retained when its intervals
+are used below. Exact selected-file checks do not reprove these premises.
+
+\begin{theorem}\label{thm:difference}
+Under these premises, the registered first scalar amplitude obeys
+\begin{align}
+ \sup_{0\le t\le3\ell}|S(-t)-S(t)|&<\frac1{40},\label{eq:global}\\
+ \sup_{49\ell/25\le t\le3\ell}|S(-t)-S(t)|&<\frac1{40000}.\label{eq:late}
+\end{align}
+The paired proper times are $-\rho_bt$ and $+\rho_bt$ at one anchor.
+The bounds concern absolute differences of first linear coefficients in
+model units, not either individual amplitude or a relative error.
+\end{theorem}
+
+\section{Zero displacement and complete boundary majorants}
+Let $w_+$ and $w_-$ have data $(q,+h)$ and $(q,-h)$ for the same
+problem~\eqref{eq:wave}. Evenness of both $W$ and $\beta$, followed by
+uniqueness, gives $w_{\rm current}(-t)=w_-(t)$ and
+$w_{\rm current}(t)=w_+(t)$. Thus
+\[
+\begin{aligned}
+ \psi&=\tfrac12(w_+-w_-),\qquad (\psi,\psi_t)|_0=(0,h),\\
+ S(-t)-S(t)&=-2G\cosh^{-3/2}t\,D_\psi(t),\qquad
+ D_\psi=\psi_z(t,0)-\gamma\psi(t,0).
+\end{aligned}
+\]
+The spatial normal does not reverse. The factor two is essential. This is
+an actual coupled velocity-only solution, rather than a free approximation
+or a second-order preparation difference. Its initial shell jets vanish,
+and its shell trace vanishes before $t=\ell$.
+
+The selected contact enclosures give safe bounds on the relevant causal
+triangles:
+\begin{equation}
+\begin{aligned}
+ \mu&>m=\frac1{1000},& |W|&<M=103000,\\
+ 0&<\beta_0<B=300,& |\beta|&<B,\quad |\gamma|<\Gamma=300,\\
+ |G|&\le G_*:=\frac{25000}{129^3}<\frac3{250}.&&
+\end{aligned}
+ \label{eq:constants}
+\end{equation}
+These bounds follow from the admitted shell and background data. Positive
+elapsed time is supplied by the complete even problem; the older past-only
+interval is not silently enlarged.
+
+Write $y(t)=\psi(t,0)$. The velocity is nonnegative, with
+$\int_0^\infty h\dd z\le L:=\ell$. Its free Dirichlet solution $u_D$
+has $|u_D|\le L/2\le L$. With the half-line retarded kernel $\mathcal R$,
+\begin{equation}
+ \psi(t,z)=u_D(t,z)+\mathbf1_{t\ge z}y(t-z)
+                    +\mathcal R[-W\psi](t,z).
+ \label{eq:dirichlet}
+\end{equation}
+The kernel is positive and has total mass at most $t^2/2$. On $t+z\le T$,
+put $A=\sup|\psi|$ and $V_b=\sup_{[0,T]}|y'|$. Incoming transport is exact:
+\begin{equation}
+ (\psi_t+\psi_z)(t,0)=h(t)-I(t),\qquad
+ I(t)=\int_0^tW(s,t-s)\psi(s,t-s)\dd s,\qquad
+ \mu y''+y'=h-I-\beta y.
+ \label{eq:incoming}
+\end{equation}
+Using $|I(t)|\le MtA$, $|y(t)|\le tV_b$, and the positive exponential
+kernel of the last equation yields the two inequalities
+\[
+ (1-r)A-TV_b\le L,\qquad
+ -\frac rm A+(1-s)V_b\le\frac Lm,
+ \qquad r=\frac{MT^2}{2},\quad s=\frac{BT^2}{2m}.
+\]
+Their inverse is positive because $d=(1-r)(1-s)-Tr/m>0$. Therefore
+\begin{equation}
+ A\le A_*:=\frac{L(1-s+T/m)}d,\qquad
+ V_b\le V_*:=\frac{L}{md}.
+ \label{eq:majorants}
+\end{equation}
+The triangles and their characteristic subdomains stay inside the retained
+collar. No field or coefficient oracle is sampled. The improvement comes
+from the velocity mass $L$, not from treating the original displacement
+as small.
+
+\section{An actual normal-trace estimate}
+On an incoming ray, odd extension of $h$ gives
+\[
+ u_D(s,t-s)=\tfrac12\int_{t-2s}^t h_{\rm odd}(r)\dd r\ge0,
+ \qquad
+ \int_0^tu_D(s,t-s)\dd s=\tfrac12\int_0^t r h(r)\dd r
+ \le\frac{3\ell^2}{4}.
+\]
+The boundary lift and the bulk remainder in~\eqref{eq:dirichlet} consequently
+give, on the complete interval,
+\begin{equation}
+ |I(t)|\le I_*:=\frac34M\ell^2+\frac14MV_*T^2
+                         +\frac16M^2A_*T^3.
+ \label{eq:I}
+\end{equation}
+In particular, there is no displacement contribution of order $Mtq(t)$.
+
+Let $u$ solve the free bulk equation with the same data $(0,h)$ and constant
+complete boundary coefficient $\beta_0$. Its value $b(t)=u(t,0)$ satisfies
+$\mu b''+b'+\beta_0b=h$, with zero initial data. For $q_e=y-b$ and
+$v_e=q_e'$, subtraction gives
+\[
+ \mu v_e'+v_e+\beta_0q_e=-I+a_0\mu\tanh^2t\,y.
+\]
+Keeping the whole earlier forcing history, rather than substituting a tail
+estimate into an on-pulse convolution, gives
+\begin{equation}
+ |v_e|\le E_*:=\frac{TI_*/m+a_0V_*T^4/4}{1-s},\qquad
+ |q_e|\le TE_*,\qquad
+ |D_\psi-D_u|\le R_*:=I_*+(1+\Gamma T)E_*.
+ \label{eq:error}
+\end{equation}
+Indeed $D_\psi-D_u=-I-v_e-\gamma q_e$ by incoming transport.
+This is a characteristic estimate of the actual normal trace; it is not
+an inference from an $L^2$ bulk-energy norm.
+
+For the impulse kernel $k$, with
+$\mu k''+k'+\beta_0k=0$, $k(0)=0$, $k'(0)=1/\mu$, the identity
+\[
+ [\mu(k')^2+\beta_0k^2]'=-2(k')^2
+\]
+gives $|k'|\le1/m$ and $|k(t)|\le t/m$. Thus
+\[
+ D_u=h-(k'+\gamma k)*h,\qquad
+ |(k'+\gamma k)*h|\le C_{\rm mem}:=(1+\Gamma T)\ell/m.
+\]
+Here $*$ denotes convolution in nonnegative time.
+Combining this with~\eqref{eq:error} proves the uniform estimate
+\begin{equation}
+ |S(-t)-S(t)|\le2G_*[h(t)+C_{\rm mem}+R_*].
+ \label{eq:masterbound}
+\end{equation}
+Exact rational evaluation with $h\le1$ makes the right side less than $1/40$.
+For $x\ge49/25$, the bump decreases to its flat endpoint and
+\[
+ Q(49/25)=e^{-529/24}<e^{-22}<10^{-9}.
+\]
+The last inequality follows from the positive series bound $e>8/3$ and
+the exact integer inequality $(8/3)^{22}>10^9$. Beyond $x=2$, $Q=0$.
+Replacing $h$ by $10^{-9}$ in~\eqref{eq:masterbound} makes its bound less
+than $1/40000$, proving Theorem~\ref{thm:difference}. An independent route
+estimates the incoming trace directly from a complete two-variable majorant;
+it obtains the same two safe ceilings without a comparator oracle.
+
+\section{Two past zeros, a signed tail and a quadratic norm}
+The retained wider future certificate uses this same $\ell=10^{-6}$ packet,
+full dynamic boundary law, physical normal and anchored clock. Its actual
+enclosures include the error from its free comparator. The exported
+$\mathtt{ell\_S}$ is $\ell S$, so division by $\ell$ precedes widening.
+The distinct $\ell=10^{-10}$ state or a comparator-only value cannot replace
+this actual-field input. Exact interval widening gives Table~\ref{tab:signs}.
+\begin{table}[ht]
+\centering
+\begin{tabular}{lll}
+\toprule
+Matched $x=t/\ell$ & Difference ceiling & Strict past coefficient bound\\
+\midrule
+$1.49998$ & $1/40$ & $S(-\ell x)<-3/2$\\
+$1.49999$ & $1/40$ & $S(-\ell x)>1$\\
+$1.96$ & $1/40000$ & $S(-\ell x)>1/1000$\\
+$1.97$ & $1/40000$ & $S(-\ell x)<-29/100000$\\
+\bottomrule
+\end{tabular}
+\caption{Safe rational sign margins after converting the retained actual
+future intervals to physical-$S$ model units. The terminating time decimals
+are exact rational numbers.}\label{tab:signs}
+\end{table}
+
+\begin{corollary}
+The continuous first scalar amplitude has at least one zero in each of the
+two disjoint open past-coordinate intervals
+\begin{equation}
+ (-1.49999\ell,-1.49998\ell),\qquad
+ (-1.97\ell,-1.96\ell).
+ \label{eq:zeros}
+\end{equation}
+Its post-pulse past coefficient satisfies uniformly
+\begin{equation}
+ -\frac1{1500}<S(-t)<-\frac1{4000},\qquad 2\ell\le t\le3\ell.
+ \label{eq:tail}
+\end{equation}
+\end{corollary}
+The zeros follow from the strict signs and continuity. The tail follows
+from the retained whole-interval actual future tail enclosure and the
+localized bound~\eqref{eq:late}. These are at least two distinct zeros,
+without uniqueness, a complete zero count or optimality. The central width
+is $\ell/100000$, a factor $3125/64$ narrower than the preceding past
+$\ell/2048$ bracket~\cite{pastfuture}. This transfers an older fine future
+bracket; it does not improve that future bracket. A negative $S$ is not a
+globally negative angular field because $Y$ changes sign.
+
+For completeness a separate norm estimate retains the quadratic cross term.
+Define $H_\pm(x)=\ell D_{\rm current}(\pm\ell x)$,
+$I_\pm=\int_0^3H_\pm^2\dd x$. From the characteristic bound, the prefront
+vanishing and $\Delta H=-2\ell D_\psi(\ell x)$,
+\[
+ \norm{\Delta H}_{L^2(0,3)}^2
+ \le 2[2\ell(1+C_{\rm mem}+R_*)]^2<(3\ell)^2.
+\]
+The retained actual future interval gives $I_+<9$, hence
+\begin{equation}
+ |I_--I_+|
+ \le2\norm{H_+}_2\norm{\Delta H}_2+\norm{\Delta H}_2^2
+ <18\ell+9\ell^2=\frac{18000009}{10^{12}}.
+ \label{eq:cross}
+\end{equation}
+For the first-field squared scalar norm on the past background proper-time
+window, the spatial measure is
+$\dd V_{0,\tau}=\rho_b^3\cosh^3t\dd\Omega$, $\dd\tau=\rho_b\dd t$,
+and $\int_{S^3}Y^2\dd\Omega=\pi^2/3$. The even background measure and
+conjugation cancel as in the future:
+\begin{equation}
+ \mathcal C_-=\frac{\mathcal K}{\ell}I_-,\qquad
+ \mathcal K=\frac{3\pi^2}{\rho_b^2p_b^2}>0,\qquad
+ 6.06\,10^{11}<\mathcal C_-<7.44\,10^{11}.
+ \label{eq:C}
+\end{equation}
+The time reversal changes integration limits, not the positive sign of this
+integral. The last interval follows by widening the retained actual $I_+$
+interval with~\eqref{eq:cross} and multiplying the retained positive
+$\mathcal K/\ell$ interval. This is not physical injected or Noether energy.
+
+\section*{Scope and reproducibility}
+The new calculations use selected public input copies, continuous proofs,
+independent derivations and exact normal/optimized arithmetic. No old waveform
+campaign, numerical PDE, background trajectory or field/source/bump oracle
+is rerun. Authentication and finite arithmetic do not replace the retained
+analytic and actual-waveform theorems. The source capsule includes a separate
+manuscript display audit. Internal review is distinct from external peer
+review and proof-assistant certification.
+
+Earlier project results already include conditional formal complete future
+second Taylor coefficients and conditional exact nonlinear future families,
+with qualitative small-amplitude conclusions~\cite{second,nonlinear,intrinsic}.
+Those results are preserved. Applying the appropriate hypotheses to a chosen
+past completion, quantifying its particular observable and remainder, and
+obtaining an effective parameter radius remain distinct tasks. No common
+exact past family or finite-amplitude waveform is established in this note.
+The bounds provide neither SI time calibration, a physical source mechanism,
+radiation/heating nor evidence for a higher-dimensional Big Bang.
+
+The methods have direct characteristic and positive-majorant precedents in
+the older project proof~\cite{inertial}; they are not new general principles.
+Recent timelike-Einstein boundary work distinguishes reduced existence,
+constraint propagation and geometric consistency~\cite{stevens}. Its vacuum,
+dimension and boundary hypotheses do not supply this shell problem.
+Similarly, damped Wentzell stabilization~\cite{parada} is not imported as a
+backward decay theorem. The comparison is focused, not an exhaustive
+priority review; broader novelty and significance require specialist assessment.
+
+\begin{thebibliography}{9}\small
+\bibitem{contact} R. Maldonado, \emph{A pointwise scalar-trace bound through past
+shell contact}, working paper and source capsule (4 November 2026),
+HDBLAST past-shell-contact checkpoint.
+\bibitem{inertial} R. Maldonado, \emph{A wider shell waveform with a certified
+signed inertial tail}, primary proof and actual enclosure report
+(15 October 2026), HDBLAST inertial-waveform checkpoint.
+\bibitem{pastfuture} R. Maldonado, \emph{A past--future scalar comparison for a
+timelike-shell packet}, working note and source capsule (4 November 2026),
+HDBLAST past--future scalar-transfer checkpoint.
+\bibitem{second} R. Maldonado, \emph{A complete finite-angular second-order
+coefficient through shell contact} (14 October 2026), full-contact primary proof.
+\bibitem{nonlinear} R. Maldonado, \emph{Exact finite-regularity shell evolution}
+(15 October 2026), HDBLAST quasilinear-shell-evolution primary proof.
+\bibitem{intrinsic} R. Maldonado, \emph{Intrinsic shell budget}, derivation
+(1 November 2026), sections on anchored proper-clock cuts and family-wise
+small-amplitude sign transfer.
+\bibitem{stevens} C. Stevens and J. A. Valiente Kroon,
+\emph{Wellposedness of the initial boundary value problem for the conformal
+field equations}, arXiv:2604.24931v1 (2026), sections 5.2--7.
+\bibitem{parada} H. Parada and N. Vanspranghe,
+\emph{Optimal stabilization rate for the wave equation with hyperbolic boundary
+condition}, arXiv:2512.19167v1 (2025), section 1.1.
+\end{thebibliography}
+\end{document}
