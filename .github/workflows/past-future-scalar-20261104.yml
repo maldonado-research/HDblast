@@ -25,6 +25,6 @@ jobs:
           python-version: '3.12.14'
           check-latest: false
       - name: Reproduce three mathematical pairs and the manuscript display audit
-        run: python -I -S -B research/HDBLAST_PAST_FUTURE_SCALAR_TRANSFER_20261104/checks/run_checkpoint.py --manifest-sha256 eddc50bcf50abcd6170df8d71924122ffe90a16b0b90151ae1d5a13697ec321d --output-dir "$RUNNER_TEMP/past-future-scalar-fresh"
+        run: python -I -S -B research/HDBLAST_PAST_FUTURE_SCALAR_TRANSFER_20261104/checks/run_checkpoint.py --manifest-sha256 78484ac9f286e286a6ee3554500b892a3477dda55fa0dfb1fed4ca063f05e628 --output-dir "$RUNNER_TEMP/past-future-scalar-fresh"
       - name: Verify six source or CLI rejections and two authentication controls
-        run: python -I -S -B research/HDBLAST_PAST_FUTURE_SCALAR_TRANSFER_20261104/checks/run_controls.py --manifest-sha256 eddc50bcf50abcd6170df8d71924122ffe90a16b0b90151ae1d5a13697ec321d --output-dir "$RUNNER_TEMP/past-future-scalar-controls-fresh"
+        run: python -I -S -B research/HDBLAST_PAST_FUTURE_SCALAR_TRANSFER_20261104/checks/run_controls.py --manifest-sha256 78484ac9f286e286a6ee3554500b892a3477dda55fa0dfb1fed4ca063f05e628 --output-dir "$RUNNER_TEMP/past-future-scalar-controls-fresh"

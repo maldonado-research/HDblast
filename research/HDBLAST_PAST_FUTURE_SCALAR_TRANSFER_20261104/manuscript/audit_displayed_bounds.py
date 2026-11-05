@@ -180,7 +180,7 @@ def main():
         r"\frac{33}{20000\ell}+\frac{\ell}{160}",
         r"through \(r=6\)", r"validated background collar \(r\le8\)",
         r"stay in \(r\le5\)", r"\ell S(\ell x)",
-        r"Earlier future-contact work~\cite{second} already constructs", 
+        r"Earlier future-contact work~\cite{second} already constructs",
     ]
     check(all(fragment in source for fragment in fragments),
           "key audited formulas radii and prior-result credit occur in editable source")
