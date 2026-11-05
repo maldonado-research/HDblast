@@ -1,0 +1,47 @@
+{
+  "schema": "HDBLAST_PAST_PRECURSOR_REPLAY_PLAN_V1",
+  "components": [
+    {
+      "name": "primary",
+      "script": "primary/verify.py",
+      "arguments": ["--output", "{output}"],
+      "references": {
+        "NORMAL": "primary/references/NORMAL.json",
+        "OPTIMIZED": "primary/references/OPTIMIZED.json"
+      }
+    },
+    {
+      "name": "characteristic_review",
+      "script": "characteristic_review/verify.py",
+      "arguments": ["--repo-root", "{capsule}/inputs", "--output", "{output}"],
+      "references": {
+        "NORMAL": "characteristic_review/references/NORMAL.json",
+        "OPTIMIZED": "characteristic_review/references/OPTIMIZED.json"
+      }
+    },
+    {
+      "name": "independent",
+      "script": "independent/recompute.py",
+      "arguments": ["--repo-root", "{capsule}/inputs", "--output", "{output}"],
+      "references": {
+        "NORMAL": "independent/references/NORMAL.json",
+        "OPTIMIZED": "independent/references/OPTIMIZED.json"
+      }
+    },
+    {
+      "name": "manuscript_display",
+      "script": "manuscript/audit_displayed_bounds.py",
+      "arguments": [
+        "--report", "{capsule}/primary/references/NORMAL.json",
+        "--optimized", "{capsule}/primary/references/OPTIMIZED.json",
+        "--proof", "{capsule}/primary/PROOF.md",
+        "--output", "{output}"
+      ],
+      "references": {
+        "NORMAL": "manuscript/DISPLAYED_BOUNDS_AUDIT.json",
+        "OPTIMIZED": "manuscript/DISPLAYED_BOUNDS_AUDIT.json"
+      }
+    }
+  ],
+  "interpretation": "Three mathematical verifier pairs and one manuscript display/diagram audit pair. Source/CLI controls run separately; no inherited program or full campaign is executed. Continuous proofs and retained analytic premises are separate from the finite checks."
+}
