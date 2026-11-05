@@ -1,0 +1,309 @@
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\documentclass[10pt]{article}
+\usepackage[margin=0.82in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,microtype}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={A past-future scalar comparison for a timelike-shell packet},pdfauthor={Ricardo Maldonado}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\Hh}{\mathcal H}
+\newcommand{\dd}{\Delta}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\title{A past--future scalar comparison for a timelike-shell packet}
+\author{Ricardo Maldonado\\\small Independent Researcher\\\small Henderson, Nevada, United States}
+\date{4 November 2026 (America/Los\_Angeles)}
+\begin{document}
+\maketitle
+\begin{abstract}
+For one registered quadrupole packet in a conditional linear Einstein--scalar
+shell construction, the complete dynamical boundary problem is even in time,
+although the initial velocity is nonzero. Comparing the developments with
+opposite initial velocities removes the initial displacement from a higher
+graph-energy estimate. This gives the uniform absolute bound
+\( |S(-t)-S(t)|<264000000001/13738809600<20 \) for
+\(0\le t\le3\ell\), \(\ell=10^{-6}\), where \(S\) is the first physical
+scalar amplitude on the shell in fixed model units. After an explicit
+state, clock and normalization join to retained future waveform enclosures,
+two lobe signs first give a coarse past zero. Two selected whole-cell
+enclosures then localize at least one amplitude zero to
+\((-6145\ell/4096,-6143\ell/4096)\), a gap of width \(\ell/2048\).
+The result retains the earlier branch, reconstruction,
+regularity, uniqueness and waveform-certificate premises. It supplies neither
+a nonlinear amplitude interval nor evidence for a cosmological origin.
+\end{abstract}
+
+\section{Registered problem and conditional result}
+
+Fix \(\ell=10^{-6}\), \(x=t/\ell\), \(r=z/\ell\), and the flat unit bump
+\[
+ Q(r)=\begin{cases}\exp\!\left(4-\dfrac1{(r-1)(2-r)}\right),&1<r<2,\\0,&\text{otherwise}.\end{cases}
+ \qquad g(r)=\ell e^{-\ell r}Q(r).
+\]
+The registered master data are \(U(0,r)=Q(r)\), \(U_x(0,r)=g(r)\).
+The physical first scalar coefficient, including the normal embedding in
+the retained straight-shell reconstruction, is
+\begin{equation}\label{eq:observation}
+ \Phi_1(\tau,\Omega)=S(\tau/\rho_b)Y(\Omega),\qquad
+ Y=n_1^2-n_2^2,\quad \tau=\rho_b t.
+\end{equation}
+Here \(\sup|Y|=1\) and its angular mean is zero. The background shell scalar
+is constant, so first clock/label pullbacks add no amplitude term.
+
+We retain the analytic branch, admitted shell enclosures, smooth linear
+development, full dynamical junction law and physical reconstruction of
+the past-contact construction~\cite{contact}. We also identify explicitly
+when the older actual future waveform enclosure~\cite{future} is used.
+Selected-source hashing and finite arithmetic do not reprove these premises.
+
+\begin{theorem}\label{thm:main}
+Under those retained premises, the actual registered first scalar amplitude
+satisfies
+\begin{equation}\label{eq:main}
+ \sup_{0\le t\le3\ell}|S(-t)-S(t)|<B,
+ \qquad B=\frac{264000000001}{13738809600}<20.
+\end{equation}
+The compared proper times are \(-\rho_b t\) and \(+\rho_b t\) at the same
+anchor. The bound concerns a first linear coefficient in model units.
+\end{theorem}
+
+This is an absolute difference estimate: it does not bound either individual
+amplitude by 20, prescribe a relative error at a zero, or assert equality of
+past and future profiles. The construction uses established time-reflection,
+positive-form and graph-energy ideas~\cite{zahn,marta}; its contribution is
+the explicit estimate and normalized certificate transfer for this packet.
+
+\section{A common operator and a zero-displacement difference}
+
+Use the same auxiliary static half-line realization for both developments:
+\begin{align}
+ \Hh&=L^2(0,\infty)\oplus\mathbb R,
+ &\norm{(u,q)}_{\Hh}^2&=\int_0^\infty u^2\,dr+\Lambda q^2,\label{eq:space}\\
+ A_0(u,q)&=\left(-u_{rr}+V_0u,\frac{-u_r(0)+b_0q}{\Lambda}\right),
+ &\Lambda&=\frac{\mu_b}{\ell}>1000,\label{eq:operator}\\
+ V_0&=\ell^2\rho^2Q_{\rm bg},
+ &b_0&=\ell\left(\gamma+\frac52\mu_b\right),\quad\gamma=\frac{C_b}{2}.
+ \nonumber
+\end{align}
+The form domain links \(q=u(0)\); the operator domain has no extra static
+Robin condition. Both endpoint kinetic and spring terms are retained,
+as in the standard coupled energy bookkeeping~\cite{dahmani}.
+The prior positive-form construction gives \(A_0\ge5500\ell^2 I\).
+The complete equation and dynamic boundary law take the common form
+\begin{equation}\label{eq:wave}
+ Z_{xx}+(A_0+\omega(x)I)Z=0,\qquad
+ \omega(x)=-\frac{35}{4}\ell^2\tanh^2(\ell x),\qquad
+ b(x)=b_0+\Lambda\omega(x).
+\end{equation}
+In particular, the boundary spring has the same time dependence as the bulk
+operator; omitting that endpoint term would invalidate the argument.
+
+The static extension agrees with the actual coefficients through \(r=6\),
+within the validated background collar \(r\le8\).
+The original fields have support within \([0,2+s]\), and before \(s=1\)
+within \([1-s,2+s]\), for \(s=|x|\le3\). They therefore stay in \(r\le5\),
+where the extension has no effect. Their flat initial data satisfy every
+power-domain compatibility requirement in the retained smooth construction.
+
+Let \(Z_+\) have data \((Q,+g)\) and \(Z_-\) data \((Q,-g)\), including
+the linked zero initial endpoint components. Evenness of the \emph{complete}
+equation and boundary law, followed by uniqueness, gives
+\[
+ Z_{\rm current}(s)=Z_+(s),\qquad Z_{\rm current}(-s)=Z_-(s).
+\]
+Thus \(\dd Z=Z_--Z_+\) has \(\dd Z(0)=0\),
+\(\dd Z_s(0)=(-2g,0)\). The factor two in the velocity is essential.
+For positive \(s\), \(\omega_s\le0\), so the complete estimating energy
+\begin{equation}\label{eq:energy}
+ E[X]=\frac12\left(\norm{X_s}_{\Hh}^2+
+       \norm{A_0^{1/2}X}_{\Hh}^2+\omega\norm X_{\Hh}^2\right),
+ \qquad E'[X]=\frac{\omega_s}{2}\norm X_{\Hh}^2\le0
+\end{equation}
+is nonincreasing. It is a mathematical norm estimate, with no physical
+injected-energy or Noether-energy interpretation supplied here.
+Since \(\norm Q_2\le1\),
+\(E[\dd Z](s)\le E[\dd Z](0)\le2\ell^2\).
+Its local endpoint trace \(\dd q\) vanishes before contact. From the endpoint
+mass in~\eqref{eq:energy}, \(500|\dd q_s|^2\le E[\dd Z](0)\), whence
+\begin{equation}\label{eq:qbound}
+ |\dd q(s)|^2\le\frac{(s-1)_+^2}{500}E[\dd Z](0)
+ \le\frac{2\ell^2}{125}<\ell^2,\qquad0\le s\le3.
+\end{equation}
+
+\section{Graph energy and the physical scalar bound}
+
+Apply the abstract form identity to \(A_0^{1/2}\dd Z\). This vector is
+generally nonlocal; no compact-support assertion is made for it.
+Scalar \(\omega I\) commutes with \(A_0\), and coercivity gives
+\begin{align}
+ 2E[A_0^{1/2}\dd Z](s)&\ge(1-\epsilon)\norm{A_0\dd Z(s)}_{\Hh}^2,
+ &\epsilon&=\frac{63\ell^2}{4400}<1,\label{eq:coercive}\\
+ 2E[A_0^{1/2}\dd Z](0)&=4a_0(g,g)
+ \le4\ell^2\bigl[(16+\ell)^2+103000\ell^2\bigr].\label{eq:graphinitial}
+\end{align}
+To see the constants, \(|\omega|\le(315/4)\ell^4\) for \(s\le3\),
+and \(V_0<103000\ell^2\) on the initial support. Writing
+\(y=[(r-1)(2-r)]^{-1}\ge4\) gives
+\(Q_r=(3-2r)y^2e^{4-y}\), so \(|Q_r|\le16\) analytically and
+\(\norm{g_r}_2\le\ell(16+\ell)\).
+The zero displacement removes the initial \(Q_{rr}\) contribution.
+The spectral identity in~\eqref{eq:graphinitial} includes every endpoint
+component of the half-power vector. Exact arithmetic yields
+\begin{equation}\label{eq:graphbound}
+ \norm{A_0\dd Z(s)}_{\Hh}^2
+ \le\frac{4\ell^2[(16+\ell)^2+103000\ell^2]}{1-\epsilon}
+ <(33\ell)^2.
+\end{equation}
+
+The retained physical reconstruction and boundary cancellation give
+\begin{equation}\label{eq:physical}
+ S_{\dd}(\ell s)=\frac{3\mu_b\cosh(\ell s)^{-3/2}}{\rho_b^3p_b}
+ \left[-\frac{(A_0\dd Z)_b}{\ell^2}+\frac52\dd q\right].
+\end{equation}
+Indeed \(U_r=b_0q-\Lambda(A_0Z)_b\) implies
+\(U_r/\ell-\gamma q=\mu_b[-(A_0Z)_b/\ell^2+(5/2)q]\).
+The temporal term cancels. The normal derivative is spatial and the
+conjugating \(\cosh\) factor is even, so there is no additional reflection
+minus sign: \(S_\dd(t)=S(-t)-S(t)\).
+
+The endpoint norm implies
+\(\mu_b|(A_0\dd Z)_b|\le\sqrt{\mu_b\ell}\norm{A_0\dd Z}_{\Hh}\).
+Use the admitted bounds
+\(\mu_b<1/400\), \(\sqrt{\mu_b\ell}<1/20000\),
+\(\rho_b\ge129\), \(|p_b|\ge3/25000\), together with
+\eqref{eq:qbound} and~\eqref{eq:graphbound}. Then
+\begin{equation}\label{eq:ceiling}
+ |S_\dd|<\frac{25000}{129^3}
+ \left(\frac{33}{20000\ell}+\frac{\ell}{160}\right)
+ =\frac{264000000001}{13738809600}=B<20.
+\end{equation}
+This proves Theorem~\ref{thm:main}. It also bounds the angular first-field
+difference because \(|Y|\le1\), without supplying an SI calibration.
+
+\section{A retained future certificate and a coarse past zero}
+
+The selected wider inertial waveform proof~\cite{future} uses this same
+\(\ell=10^{-6}\), branch, flat bump, nonzero velocity \(e^{-z}Q(z/\ell)\),
+quadrupole, conjugation and full dynamic shell law. Its actual enclosure
+includes the proved error from the free comparator. The report exports
+\begin{equation}\label{eq:export}
+ H(x)=\ell\,[w_z(\ell x,0)-\gamma w(\ell x,0)],\qquad
+ \ell S(\ell x)=\frac{3\cosh(\ell x)^{-3/2}}{\rho_b^3p_b}H(x).
+\end{equation}
+Thus the stored \texttt{ell\_S} interval must be divided by \(\ell\)
+\emph{before} adding the model-unit difference ceiling \(B\).
+The same reconstructed state and clock are identified by retained linear
+uniqueness; neither a comparator alone nor the separate \(\ell=10^{-10}\)
+packet supplies this join.
+
+If \([L,U]\) encloses the actual future value \(S(t)\), then
+\([L-B,U+B]\) encloses the matched past value \(S(-t)\).
+Table~\ref{tab:transfer} shows outward decimal roundings of the exact
+rational endpoints. The proof uses the rational intervals, not those
+readable decimal summaries.
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+Matched \(t>0\)&Retained future \(S(t)\)&Transported past \(S(-t)\)\\
+\midrule
+\(5\ell/4\)&\([-41241.437,-37396.209]\)&\([-41260.653,-37376.993]\)\\
+\(7\ell/4\)&\([37398.637,41244.115]\)&\([37379.422,41263.331]\)\\
+\bottomrule
+\end{tabular}
+\caption{Two actual coefficient enclosures in model units, conditional on
+the retained future enclosure theorem and Theorem~\ref{thm:main}.}
+\label{tab:transfer}
+\end{table}
+
+\begin{corollary}
+With the retained future certificate, \(S(-5\ell/4)<-37376\) and
+\(S(-7\ell/4)>37379\). The continuous amplitude therefore has at least
+one zero in \((-7\ell/4,-5\ell/4)\).
+\end{corollary}
+
+\paragraph{A selected-cell refinement.}
+The older certificate also supplies continuous enclosures on whole closed
+grid cells, rather than only sampled values. Authenticating its cell CSV
+and retaining the earlier full-cell enclosure theorem gives the two
+uniform transports
+\begin{equation}\label{eq:cells}
+ \begin{array}{c|c}
+ s\in[3071/2048,\,6143/4096]&S(-\ell s)<-53\\[2pt]
+ s\in[6145/4096,\,3073/2048]&S(-\ell s)>63.
+ \end{array}
+\end{equation}
+The CSV stores integer \texttt{ell\_S} endpoints with value denominator
+\(D_v=2^{112}\). Decode them by \(D_v\), then divide by \(\ell\) to obtain
+physical-\(S\) endpoints and widen by \(B\). No old waveform
+campaign or numerical PDE is rerun. Applying continuity to the two inner
+cell endpoints proves the sharper conditional statement
+\begin{equation}\label{eq:refinedzero}
+ \exists\,t_0\in
+ \left(-\frac{6145\ell}{4096},-\frac{6143\ell}{4096}\right):
+ \ S(t_0)=0,\qquad
+ \text{gap width}=\frac{\ell}{2048}.
+\end{equation}
+This gap is exactly 1024 times narrower than the preceding coarse past
+interval of width \(\ell/2\). This comparison concerns those two past
+intervals only; it does not compare precision with older fine future
+brackets or assert optimal localization.
+
+Neither zero conclusion gives uniqueness or a total zero count. These are
+signs of the coefficient \(S\), rather than a globally signed angular field.
+The four older narrow central/late point witnesses and negative future tail
+have margins smaller than \(B\); their widened intervals straddle zero.
+Those particular older point-witness brackets and the tail sign therefore
+do not transfer by this ceiling. The selected-cell argument establishes a
+different past interval. A quadratic response integral needs a separate norm and
+cross-term argument, rather than pointwise interval widening.
+
+\paragraph{Scope and reproducibility.}
+Selected local input copies, a continuous primary proof, an independent
+odd-part derivation, a separately checked whole-cell certificate join,
+exact normal/optimized arithmetic reports and the
+manuscript display audit accompany this note in the
+\href{https://github.com/maldonado-research/HDblast/tree/main/research/HDBLAST_PAST_FUTURE_SCALAR_TRANSFER_20261104}{research capsule}.
+The retained older waveform theorem is accepted as a conditional premise;
+its full campaign is not rerun. The new calculations use rational arithmetic
+and source checks, with no numerical PDE or field/source/bump oracle.
+Internal review is distinct from external peer review and formal
+proof-assistant certification.
+
+Earlier future-contact work~\cite{second} already constructs a conditional complete
+finite-angular second Taylor coefficient under its correction, gauge,
+corner and support hypotheses. This note concerns the first coefficient.
+Quantitative control of the chosen past second-order observable and
+particular baseline, a nonlinear defect-to-error map and effective parameter
+interval, physical incoming preparation, radiation and cosmological-origin
+evidence remain separate tasks.
+
+\begin{thebibliography}{9}\small
+\bibitem{contact} R.~Maldonado, \emph{A pointwise scalar-trace bound through
+past shell contact}, working paper and source capsule (4 November 2026),
+\href{https://github.com/maldonado-research/HDblast/tree/b2a2fce15ca1870fff3e4bc312a65480c9e839cf/research/HDBLAST_PAST_SHELL_CONTACT_20261104}{HDBLAST past-shell-contact checkpoint}.
+\bibitem{future} R.~Maldonado, \emph{Inertial shell waveform}, primary proof,
+actual enclosure report and selected source inputs (15 October 2026),
+\href{https://github.com/maldonado-research/HDblast/tree/415ab642d0a13720c03594c6968f9aede67d4c34/research/HDBLAST_INERTIAL_SHELL_WAVEFORM_20261015}{HDBLAST inertial-waveform checkpoint}.
+\bibitem{zahn} J.~Zahn, \emph{Generalized Wentzell boundary conditions and
+quantum field theory}, Annales Henri Poincar\'e \textbf{19}, 163 (2018),
+\href{https://doi.org/10.1007/s00023-017-0629-3}{doi:10.1007/s00023-017-0629-3};
+\href{https://arxiv.org/abs/1512.05512}{arXiv:1512.05512}.
+\bibitem{marta} A.~Marta, \emph{The nonlinear wave equation with nonlinear
+Wentzell boundary conditions on time-dependent compact Riemannian manifolds},
+\href{https://arxiv.org/abs/2404.05855}{arXiv:2404.05855} (2024),
+especially Remark~4.3 on reversal of time and Remarks~4.4--4.5 on the
+coupled energy and finite speed.
+\bibitem{dahmani} A.~Dahmani, Y.~Chitour, H.-M.~Nguyen and C.~Roman,
+\emph{One dimensional wave equation with in-domain localized damping and
+Wentzell boundary conditions},
+\href{https://arxiv.org/abs/2503.22439}{arXiv:2503.22439} (2025),
+Section~4, Eqs.~(4.2)--(4.3). Its damping-dependent decay estimate is not
+imported here.
+\bibitem{second} R.~Maldonado, \emph{A complete finite-angular second-order
+coefficient through shell contact} (14 October 2026),
+\href{https://github.com/maldonado-research/HDblast/blob/f4001e5d94e6388bfff4f82dee63c174f2dfd5eb/research/HDBLAST_FULL_SECOND_ORDER_CONTACT_20261014/FULL_FINITE_ANGULAR_SECOND_ORDER_CONTACT.md}{HDBLAST full-second-order-contact primary proof}, Sections~1 and~8.
+\end{thebibliography}
+\end{document}
