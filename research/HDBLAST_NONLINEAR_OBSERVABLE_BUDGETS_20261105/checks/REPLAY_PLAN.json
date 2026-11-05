@@ -1,0 +1,24 @@
+{
+  "schema": "HDBLAST_NONLINEAR_OBSERVABLE_BUDGETS_REPLAY_PLAN_V1",
+  "components": [
+    {
+      "name": "geometry",
+      "script": "geometry/check_area_density.py",
+      "arguments": ["--output", "{output}"],
+      "references": {"NORMAL": "geometry/references/NORMAL.json", "OPTIMIZED": "geometry/references/OPTIMIZED.json"}
+    },
+    {
+      "name": "odd",
+      "script": "odd/check_exact.py",
+      "arguments": ["--output", "{output}"],
+      "references": {"NORMAL": "odd/references/NORMAL.json", "OPTIMIZED": "odd/references/OPTIMIZED.json"}
+    },
+    {
+      "name": "observer",
+      "script": "observer/check_budget.py",
+      "arguments": ["--output", "{output}"],
+      "references": {"NORMAL": "observer/references/NORMAL.json", "OPTIMIZED": "observer/references/OPTIMIZED.json"}
+    }
+  ],
+  "interpretation": "Three complementary conditional algebra-budget components, each with one normal/optimized pair. These are not three independent proofs of a nonlinear PDE solution. Source/CLI transport controls run separately."
+}
