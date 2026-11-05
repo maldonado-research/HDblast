@@ -1,0 +1,30 @@
+name: Past shell contact and scalar trace replay
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_PAST_SHELL_CONTACT_20261104/**'
+      - '.github/workflows/past-shell-contact-20261104.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_PAST_SHELL_CONTACT_20261104/**'
+      - '.github/workflows/past-shell-contact-20261104.yml'
+permissions:
+  contents: read
+jobs:
+  past-shell-contact-and-scalar-trace:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Reproduce two mathematical pairs and the manuscript display audit
+        run: python -I -S -B research/HDBLAST_PAST_SHELL_CONTACT_20261104/checks/run_checkpoint.py --manifest-sha256 0f95bcb57139cdb3bfb05351efe7cefb6a03bcc712e873cdf1bfa824355ae18e --output-dir "$RUNNER_TEMP/past-shell-contact-fresh"
+      - name: Verify six source or CLI rejections and two authentication controls
+        run: python -I -S -B research/HDBLAST_PAST_SHELL_CONTACT_20261104/checks/run_controls.py --manifest-sha256 0f95bcb57139cdb3bfb05351efe7cefb6a03bcc712e873cdf1bfa824355ae18e --output-dir "$RUNNER_TEMP/past-shell-contact-controls-fresh"
