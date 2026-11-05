@@ -1,0 +1,48 @@
+{
+  "components": [
+    {
+      "arguments": [
+        "--output",
+        "{output}"
+      ],
+      "name": "primary",
+      "references": {
+        "NORMAL": "primary/references/NORMAL.json",
+        "OPTIMIZED": "primary/references/OPTIMIZED.json"
+      },
+      "script": "primary/verify.py"
+    },
+    {
+      "arguments": [
+        "--output",
+        "{output}"
+      ],
+      "name": "independent",
+      "references": {
+        "NORMAL": "independent/references/NORMAL.json",
+        "OPTIMIZED": "independent/references/OPTIMIZED.json"
+      },
+      "script": "independent/verify.py"
+    },
+    {
+      "arguments": [
+        "--report",
+        "{capsule}/primary/references/NORMAL.json",
+        "--optimized",
+        "{capsule}/primary/references/OPTIMIZED.json",
+        "--proof",
+        "{capsule}/primary/PROOF.md",
+        "--output",
+        "{output}"
+      ],
+      "name": "manuscript_display",
+      "references": {
+        "NORMAL": "manuscript/DISPLAYED_BOUNDS_AUDIT.json",
+        "OPTIMIZED": "manuscript/DISPLAYED_BOUNDS_AUDIT.json"
+      },
+      "script": "manuscript/audit_displayed_bounds.py"
+    }
+  ],
+  "interpretation": "Two actual-linear mathematical verifier pairs and one manuscript display pair. Nonlinear supplement is an independently reviewed conditional analytic note, not a runtime producer pair. Source/CLI controls run separately.",
+  "schema": "HDBLAST_CHARACTERISTIC_ODD_TRACE_REPLAY_PLAN_V1"
+}
