@@ -1,0 +1,33 @@
+name: Weighted initial output replay
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_WEIGHTED_INITIAL_OUTPUT_20261106/**'
+      - '.github/workflows/weighted-initial-output-20261106.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_WEIGHTED_INITIAL_OUTPUT_20261106/**'
+      - '.github/workflows/weighted-initial-output-20261106.yml'
+permissions:
+  contents: read
+jobs:
+  weighted-initial-output:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Evaluate initial weighted output in both Python modes
+        run: |
+          python -I -S -B research/HDBLAST_WEIGHTED_INITIAL_OUTPUT_20261106/checks/check_checkpoint.py --manifest-sha256 a9ebf6a21b3aea53c2b64c513167fdee716ecb6c46c65d32b4c79ab48e9f1b8e --output "$RUNNER_TEMP/initial-output-normal.json"
+          python -O -I -S -B research/HDBLAST_WEIGHTED_INITIAL_OUTPUT_20261106/checks/check_checkpoint.py --manifest-sha256 a9ebf6a21b3aea53c2b64c513167fdee716ecb6c46c65d32b4c79ab48e9f1b8e --output "$RUNNER_TEMP/initial-output-optimized.json"
+          cmp "$RUNNER_TEMP/initial-output-normal.json" "$RUNNER_TEMP/initial-output-optimized.json"
+      - name: Reject six source, arithmetic or path errors
+        run: python -I -S -B research/HDBLAST_WEIGHTED_INITIAL_OUTPUT_20261106/checks/run_controls.py --manifest-sha256 a9ebf6a21b3aea53c2b64c513167fdee716ecb6c46c65d32b4c79ab48e9f1b8e --output-dir "$RUNNER_TEMP/initial-output-controls-fresh"
