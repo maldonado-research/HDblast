@@ -1,0 +1,33 @@
+name: Boundary flow and metric patch replay
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_BOUNDARY_FLOW_PATCH_20261106/**'
+      - '.github/workflows/boundary-flow-patch-20261106.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_BOUNDARY_FLOW_PATCH_20261106/**'
+      - '.github/workflows/boundary-flow-patch-20261106.yml'
+permissions:
+  contents: read
+jobs:
+  boundary-flow-patch:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Replay exact chart and conditional metric margins in both modes
+        run: |
+          python -I -S -B research/HDBLAST_BOUNDARY_FLOW_PATCH_20261106/checks/check_checkpoint.py --manifest-sha256 7e31da73f52f639a29a86489c6dc29b1e6ca0ab06d26e88c91185ed733b95c95 --output "$RUNNER_TEMP/boundary-patch-normal.json"
+          python -O -I -S -B research/HDBLAST_BOUNDARY_FLOW_PATCH_20261106/checks/check_checkpoint.py --manifest-sha256 7e31da73f52f639a29a86489c6dc29b1e6ca0ab06d26e88c91185ed733b95c95 --output "$RUNNER_TEMP/boundary-patch-optimized.json"
+          cmp "$RUNNER_TEMP/boundary-patch-normal.json" "$RUNNER_TEMP/boundary-patch-optimized.json"
+      - name: Reject six source, manifest and arithmetic corruptions
+        run: python -I -S -B research/HDBLAST_BOUNDARY_FLOW_PATCH_20261106/checks/run_controls.py --manifest-sha256 7e31da73f52f639a29a86489c6dc29b1e6ca0ab06d26e88c91185ed733b95c95 --output-dir "$RUNNER_TEMP/boundary-patch-controls-fresh"
