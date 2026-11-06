@@ -1,5 +1,19 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-evolution-bounds="evolution-bounds-20261106" -->
+**6 November 2026 UTC: complete initial wave data, pointwise PDE coefficient budgets and a conditional energy propagator.** For the selected actual weighted canonical curve, the affine lapse and zero shift complete the initial physical metric/scalar relative-harmonic wave Cauchy data through the second amplitude derivative at zero. Their raw, unstraightened positive-background norm satisfies `W2<10^4000`; it combines H14 field values and H13 time velocities. This does not bound the nonlinear radial-root or inverse-flow straightened H14 data.
+
+After the literal background-subtracted boundary flow, the transformed PDE is quadratic in the first jet. On `0<=z<=6ell`, `|t|<=13ell/8`, `||V||_*<=.001`, every mixed base/state coefficient derivative through total order 16 has sum of absolute entries `<10^150000`, with `ell=10^-6`. These are pointwise coefficient derivatives, not evolved-solution derivatives; an actual solution's first-jet bound remains unevaluated.
+
+The explicit sixteen-field auxiliary energy propagator retains the moving angular frame and interior radial cross fluxes. It has the conditional majorant `K<=237+(12/5)U_t+(18/5)U_x+36000l_t+18000l_w+135l_0`, where `U_t,U_x` are actual normalized-metric first-jet budgets and `l_t,l_w,l_0` are complete transformed lower-order map budgets. The physical metric patch, exact cross traces and homogeneous four-Dirichlet/twelve-Neumann shell rows must hold for each frozen iterate; an outer wall or separately established support condition is also required. The actual evolved budgets, complete quadratic forcing and high-order closure remain open.
+
+These are very conservative analytic budgets in fixed model normalization, without SI calibration. They supply no evolved norm, nonlinear amplitude interval, proper-clock or actual-area estimate, finite nonlinear remainder or confirmation of a physical origin. This GitHub working checkpoint includes no new Zenodo edition or journal submission.
+
+[Capsule and replay guide](research/HDBLAST_EVOLUTION_BOUNDS_20261106/README.md) · [Initial gauge Cauchy completion](research/HDBLAST_EVOLUTION_BOUNDS_20261106/GAUGE_CAUCHY_COMPLETION.md) · [Transformed coefficient envelope](research/HDBLAST_EVOLUTION_BOUNDS_20261106/COEFFICIENTS.md) · [Conditional energy majorant](research/HDBLAST_EVOLUTION_BOUNDS_20261106/ENERGY_MAJORANT.md).
+
+<!-- data-hdb-evolution-bounds-priority="evolution-bounds-20261106" -->
+**Next quantitative step:** bound the initial nonlinear radial-root and inverse boundary-flow Sobolev map; then evaluate product/commutator constants, normal recovery and the complete quadratic forcing, and establish the actual family's uniform metric-patch membership. A common physical shell/observer domain, proper clock, full-family Q(a), actual area, finite nonlinear remainder and quantitative central-zero goal still require compatible control on one admitted amplitude interval.
+
 <!-- data-hdb-boundary-flow="boundary-flow-patch-20261106" -->
 **6 November 2026 UTC: quantified auxiliary boundary flow and a conditional metric-energy patch.** The literal proper-y, boundary-frozen, background-subtracted flow exists for `|z|<=8ell`, with chart and inverse Jacobian norms `<1.01`. Mixed state and normal-coordinate `z` jets through total order 18 are `<10^126` on `|z|<=6ell`, `||u||_*<=.003`. Here `ell=10^-6`; the auxiliary flow parameter is not physical time.
 
