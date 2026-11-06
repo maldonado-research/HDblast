@@ -1,0 +1,33 @@
+name: Projected curvature source replay
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_PROJECTED_CURVATURE_SOURCE_20261106/**'
+      - '.github/workflows/projected-curvature-source-20261106.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_PROJECTED_CURVATURE_SOURCE_20261106/**'
+      - '.github/workflows/projected-curvature-source-20261106.yml'
+permissions:
+  contents: read
+jobs:
+  projected-curvature-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Evaluate projected-curvature-source checks in both Python modes
+        run: |
+          python -I -S -B research/HDBLAST_PROJECTED_CURVATURE_SOURCE_20261106/checks/check_checkpoint.py --manifest-sha256 9feab28b414cde69b388137fc02c0c11e18e6d07aa2d6734b64e79d0d61ff2f9 --output "$RUNNER_TEMP/projected-curvature-normal.json"
+          python -O -I -S -B research/HDBLAST_PROJECTED_CURVATURE_SOURCE_20261106/checks/check_checkpoint.py --manifest-sha256 9feab28b414cde69b388137fc02c0c11e18e6d07aa2d6734b64e79d0d61ff2f9 --output "$RUNNER_TEMP/projected-curvature-optimized.json"
+          cmp "$RUNNER_TEMP/projected-curvature-normal.json" "$RUNNER_TEMP/projected-curvature-optimized.json"
+      - name: Reject six source, arithmetic or path errors
+        run: python -I -S -B research/HDBLAST_PROJECTED_CURVATURE_SOURCE_20261106/checks/run_controls.py --manifest-sha256 9feab28b414cde69b388137fc02c0c11e18e6d07aa2d6734b64e79d0d61ff2f9 --output-dir "$RUNNER_TEMP/projected-curvature-controls-fresh"

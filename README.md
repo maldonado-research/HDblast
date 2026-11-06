@@ -1,5 +1,18 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-curvature-source="projected-curvature-source-20261106" -->
+**5 November 2026 (Los Angeles; 6 November UTC): evaluated scalar-curvature source and a conditional compensation test.** For the fixed registered affine amplitude `e`, at `e=0` and on `0<=q<=T=25ell/16`, with proper `q=-tau/rho_b` and `ell=10^-6`, the actual first physical scalar coefficient satisfies `|S|<51500` and `|S_q|<3.107e12`. Subscript `2` denotes the second amplitude derivative, twice the `e^2` Taylor coefficient. These are model-normalized derivative coefficients, without SI calibration.
+
+At `q=T`, the known scalar-curvature source integral satisfies `I_R>1.17e9`; its zero-data particular contribution to the weighted second relative log-area derivative is `<-1.17e9`. The full normalized denominator instead obeys `D2/D0=K_D-I_R-I_Z`, where `I_Z` is the weighted Green integral of the unresolved combination `Z=rho_b^2 P'_b <psi2>_w-<electricWeyl2>_w`, with fixed weight `<f>_w=<Y^2 f>/<Y^2>`. Both second fields are complete physical pullbacks, including the moving shell, event, observer, normal and tangent.
+
+**Only if the additional sign hypothesis `D2(T)>=0` is imposed** would compensation require `Zmax=sup|Z|>1.35e21`. This is not an unconditional bound on the actual `Zmax`, nor a proof of compensation or of the sign of the total second area derivative. Positive physical area `D_e>0` does not require `D2>=0`; a negative second derivative is compatible with positive area at sufficiently small amplitude. No finite-amplitude remainder, effective amplitude radius, physical energy, force, net focusing or Big Bang origin is established.
+
+The full family and original proper Gaussian observer map are assumed to exist smoothly on one common target cylinder through `T`, retaining the physical anchor, transported labels and the field, matching, reconstruction, constraint, gauge and uniqueness premises. The binding's `3ell/2` coordinate slab alone does not establish this longer proper-time cylinder. The retained first linear proof covers `3ell`; this first-field coverage does not prove the common nonlinear cylinder. This GitHub working checkpoint includes no new Zenodo edition or journal submission.
+
+[Capsule and replay guide](research/HDBLAST_PROJECTED_CURVATURE_SOURCE_20261106/README.md) · [Curvature-source bound](research/HDBLAST_PROJECTED_CURVATURE_SOURCE_20261106/CURVATURE_SOURCE_BOUND.md) · [References](research/HDBLAST_PROJECTED_CURVATURE_SOURCE_20261106/REFERENCES.md).
+
+**Current priority:** recover and instantiate the actual weighted constraint inverse and bound the three second-scalar projections plus the two nonconstant anisotropic-Weyl stress projections. Establish the common cylinder and compatible uniform mixed metric, scalar, observer/clock, embedding, area and denominator bounds on one admitted amplitude interval. The original full-family `Q(a)`, nonlinear remainder and quantitative central-zero goal continues.
+
 <!-- data-hdb-quadratic-area="quadratic-proper-area-20261106" -->
 **5 November 2026 (Los Angeles; 6 November UTC): evaluated known quadratic proper-area sources.** For the registered affine amplitude `e`, at `e=0` and throughout `0<=q<=25ell/16`, with proper `q=-tau/rho_b` and `ell=10^-6`, this conditional calculation evaluates first-field quadratic density, expansion-square and shear-square contributions. It retains the fixed physical anchor, transported labels and the branch, smooth-development, reconstruction, gauge, uniqueness and observer-domain premises. Subscript `2` denotes the second amplitude derivative, twice the `e^2` Taylor coefficient.
 
