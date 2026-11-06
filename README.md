@@ -1,5 +1,15 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-weighted-initial="weighted-initial-output-20261106" -->
+**6 November 2026 UTC: quantified initial weighted corrections, conditional on the retained analytic premises.** For the actual scalar-harmonic degrees `0,2,4` of the quadratic constraint source, explicit compact comparison tensors and the selected correction's minimum-energy property give `N(h2)<2.5e40` and `N(tau2)<2e17` for one explicitly specified new weight member. Here `tau2=pi2/rho0`, with fixed background volume density `rho0`, and `N(T)^2=integral rho^3 |dy| <|T|^2_gamma0>_S3,prob` uses the round probability measure on the sphere.
+
+These are initial second amplitude derivatives at zero in model normalization, retaining the exact-initial-data/weighted-domain theorem and background branch as premises. The new member keeps the actual first seed and affine scalar and scalar-density prescription; it does not identify the unspecified historical weights. Quantitative `H14/H13` control, evolved second fields, a common nonlinear target cylinder and a finite-amplitude radius remain open.
+
+[Capsule and replay guide](research/HDBLAST_WEIGHTED_INITIAL_OUTPUT_20261106/README.md) · [Initial metric output bound](research/HDBLAST_WEIGHTED_INITIAL_OUTPUT_20261106/SCALAR_WEIGHTED_OUTPUT.md) · [References](research/HDBLAST_WEIGHTED_INITIAL_OUTPUT_20261106/REFERENCES.md).
+
+<!-- data-hdb-weighted-initial-priority="weighted-initial-output-20261106" -->
+**Current priority:** quantify the high-order weighted inverse and its initial output in H14 for the metric and H13 for the momentum; then bound the actual coupled second-scalar and anisotropic-Weyl histories. Establish their common nonlinear target cylinder with compatible physical shell, clock/observer, embedding, area and denominator bounds on one admitted amplitude interval. The full-family Q(a), nonlinear remainder and quantitative central-zero goal remain open.
+
 <!-- data-hdb-curvature-source="projected-curvature-source-20261106" -->
 **5 November 2026 (Los Angeles; 6 November UTC): evaluated scalar-curvature source and a conditional compensation test.** For the fixed registered affine amplitude `e`, at `e=0` and on `0<=q<=T=25ell/16`, with proper `q=-tau/rho_b` and `ell=10^-6`, the actual first physical scalar coefficient satisfies `|S|<51500` and `|S_q|<3.107e12`. Subscript `2` denotes the second amplitude derivative, twice the `e^2` Taylor coefficient. These are model-normalized derivative coefficients, without SI calibration.
 
@@ -11,7 +21,7 @@ The full family and original proper Gaussian observer map are assumed to exist s
 
 [Capsule and replay guide](research/HDBLAST_PROJECTED_CURVATURE_SOURCE_20261106/README.md) · [Curvature-source bound](research/HDBLAST_PROJECTED_CURVATURE_SOURCE_20261106/CURVATURE_SOURCE_BOUND.md) · [References](research/HDBLAST_PROJECTED_CURVATURE_SOURCE_20261106/REFERENCES.md).
 
-**Current priority:** recover and instantiate the actual weighted constraint inverse and bound the three second-scalar projections plus the two nonconstant anisotropic-Weyl stress projections. Establish the common cylinder and compatible uniform mixed metric, scalar, observer/clock, embedding, area and denominator bounds on one admitted amplitude interval. The original full-family `Q(a)`, nonlinear remainder and quantitative central-zero goal continues.
+**Earlier priority:** recover and instantiate the actual weighted constraint inverse and bound the three second-scalar projections plus the two nonconstant anisotropic-Weyl stress projections. Establish the common cylinder and compatible uniform mixed metric, scalar, observer/clock, embedding, area and denominator bounds on one admitted amplitude interval. The original full-family `Q(a)`, nonlinear remainder and quantitative central-zero goal continues.
 
 <!-- data-hdb-quadratic-area="quadratic-proper-area-20261106" -->
 **5 November 2026 (Los Angeles; 6 November UTC): evaluated known quadratic proper-area sources.** For the registered affine amplitude `e`, at `e=0` and throughout `0<=q<=25ell/16`, with proper `q=-tau/rho_b` and `ell=10^-6`, this conditional calculation evaluates first-field quadratic density, expansion-square and shear-square contributions. It retains the fixed physical anchor, transported labels and the branch, smooth-development, reconstruction, gauge, uniqueness and observer-domain premises. Subscript `2` denotes the second amplitude derivative, twice the `e^2` Taylor coefficient.
