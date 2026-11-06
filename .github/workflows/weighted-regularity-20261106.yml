@@ -1,0 +1,33 @@
+name: Weighted regularity replay
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_WEIGHTED_REGULARITY_20261106/**'
+      - '.github/workflows/weighted-regularity-20261106.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_WEIGHTED_REGULARITY_20261106/**'
+      - '.github/workflows/weighted-regularity-20261106.yml'
+permissions:
+  contents: read
+jobs:
+  weighted-regularity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Evaluate high-order initial data in both Python modes
+        run: |
+          python -I -S -B research/HDBLAST_WEIGHTED_REGULARITY_20261106/checks/check_checkpoint.py --manifest-sha256 0af5e1b49783e91d1a3cfec38d68a0bc876020a80cd5dd9ea9777286a90dd708 --output "$RUNNER_TEMP/regularity-normal.json"
+          python -O -I -S -B research/HDBLAST_WEIGHTED_REGULARITY_20261106/checks/check_checkpoint.py --manifest-sha256 0af5e1b49783e91d1a3cfec38d68a0bc876020a80cd5dd9ea9777286a90dd708 --output "$RUNNER_TEMP/regularity-optimized.json"
+          cmp "$RUNNER_TEMP/regularity-normal.json" "$RUNNER_TEMP/regularity-optimized.json"
+      - name: Reject six source, arithmetic or path errors
+        run: python -I -S -B research/HDBLAST_WEIGHTED_REGULARITY_20261106/checks/run_controls.py --manifest-sha256 0af5e1b49783e91d1a3cfec38d68a0bc876020a80cd5dd9ea9777286a90dd708 --output-dir "$RUNNER_TEMP/regularity-controls-fresh"

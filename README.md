@@ -1,5 +1,17 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-weighted-regularity="weighted-regularity-20261106" -->
+**6 November 2026 UTC: conditional full covariant second initial-jet budgets.** For the specified new weight member, the retained weighted-inverse and background premises give `||h2||_H14<10^2131` and `||tau2||_H13<10^355`, with `tau2=pi2/rho0` normalized by the fixed background volume density. These are second amplitude derivatives at zero. The full geometric Sobolev norm is `||T||_Hm^2=sum_(j=0)^m integral |nabla_gamma0^j T|_gamma0^2 dvol_gamma0`, using background covariant derivatives and the full sphere volume `2pi^2`.
+
+The canonical-to-physical conversions for `K2` and `Pi2` retain the known quadratic first-field terms. Although the canonical data have `phi2=varpi2=0`, the physical normal scalar momentum `Pi2` is nonzero. On each bulk copy the complete physical ADM initial budget satisfies `I2=||h2||_H14+||K2||_H13+||phi2||_H14+||Pi2||_H13<10^2132`.
+
+The newly specified weights retain the actual first seed and affine scalar and scalar-density prescription; the historical weights remain unrecovered. These extremely conservative upper budgets use the fixed model normalization, without SI calibration, and do not estimate a measured size. Uniform amplitude control, a common nonlinear development, evolved-field bounds and the finite-amplitude quadrupole remainder remain open.
+
+[Capsule and replay guide](research/HDBLAST_WEIGHTED_REGULARITY_20261106/README.md) · [Complete physical second Cauchy jet](research/HDBLAST_WEIGHTED_REGULARITY_20261106/PHYSICAL_CAUCHY_SECOND_JET.md) · [References](research/HDBLAST_WEIGHTED_REGULARITY_20261106/REFERENCES.md).
+
+<!-- data-hdb-weighted-regularity-priority="weighted-regularity-20261106" -->
+**Current priority:** bound the actual coupled second evolution of the scalar, metric and anisotropic Weyl fields from the complete physical initial jet. Establish a common physical target cylinder and compatible shell, clock/observer, embedding, area and denominator estimates, with uniform parameter control on one admitted amplitude interval beyond the initial derivatives at zero. The full-family Q(a), finite-amplitude quadrupole remainder and quantitative central-zero goal remain open.
+
 <!-- data-hdb-weighted-initial="weighted-initial-output-20261106" -->
 **6 November 2026 UTC: quantified initial weighted corrections, conditional on the retained analytic premises.** For the actual scalar-harmonic degrees `0,2,4` of the quadratic constraint source, explicit compact comparison tensors and the selected correction's minimum-energy property give `N(h2)<2.5e40` and `N(tau2)<2e17` for one explicitly specified new weight member. Here `tau2=pi2/rho0`, with fixed background volume density `rho0`, and `N(T)^2=integral rho^3 |dy| <|T|^2_gamma0>_S3,prob` uses the round probability measure on the sphere.
 
@@ -8,7 +20,7 @@ These are initial second amplitude derivatives at zero in model normalization, r
 [Capsule and replay guide](research/HDBLAST_WEIGHTED_INITIAL_OUTPUT_20261106/README.md) · [Initial metric output bound](research/HDBLAST_WEIGHTED_INITIAL_OUTPUT_20261106/SCALAR_WEIGHTED_OUTPUT.md) · [References](research/HDBLAST_WEIGHTED_INITIAL_OUTPUT_20261106/REFERENCES.md).
 
 <!-- data-hdb-weighted-initial-priority="weighted-initial-output-20261106" -->
-**Current priority:** quantify the high-order weighted inverse and its initial output in H14 for the metric and H13 for the momentum; then bound the actual coupled second-scalar and anisotropic-Weyl histories. Establish their common nonlinear target cylinder with compatible physical shell, clock/observer, embedding, area and denominator bounds on one admitted amplitude interval. The full-family Q(a), nonlinear remainder and quantitative central-zero goal remain open.
+**Earlier priority:** quantify the high-order weighted inverse and its initial output in H14 for the metric and H13 for the momentum; then bound the actual coupled second-scalar and anisotropic-Weyl histories. Establish their common nonlinear target cylinder with compatible physical shell, clock/observer, embedding, area and denominator bounds on one admitted amplitude interval. The full-family Q(a), nonlinear remainder and quantitative central-zero goal remain open.
 
 <!-- data-hdb-curvature-source="projected-curvature-source-20261106" -->
 **5 November 2026 (Los Angeles; 6 November UTC): evaluated scalar-curvature source and a conditional compensation test.** For the fixed registered affine amplitude `e`, at `e=0` and on `0<=q<=T=25ell/16`, with proper `q=-tau/rho_b` and `ell=10^-6`, the actual first physical scalar coefficient satisfies `|S|<51500` and `|S_q|<3.107e12`. Subscript `2` denotes the second amplitude derivative, twice the `e^2` Taylor coefficient. These are model-normalized derivative coefficients, without SI calibration.
