@@ -1,5 +1,16 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-quadratic-area="quadratic-proper-area-20261106" -->
+**5 November 2026 (Los Angeles; 6 November UTC): evaluated known quadratic proper-area sources.** For the registered affine amplitude `e`, at `e=0` and throughout `0<=q<=25ell/16`, with proper `q=-tau/rho_b` and `ell=10^-6`, this conditional calculation evaluates first-field quadratic density, expansion-square and shear-square contributions. It retains the fixed physical anchor, transported labels and the branch, smooth-development, reconstruction, gauge, uniqueness and observer-domain premises. Subscript `2` denotes the second amplitude derivative, twice the `e^2` Taylor coefficient.
+
+For the normalized denominator with fixed weight `<f>_w=<Y^2 f>/<Y^2>`, the exact decomposition is `D2/D0=K_D+<L2_R>_w`, with the known sum bounded by `-3.65e-16<K_D<5.357e-16`. The remaining transfer contains the full pulled-back intrinsic-curvature derivative `R2`, including field, embedding, clock and observer variations. If a future bound supplies `Cr>=sup_{0<=q<=25ell/16}|<R2(q)>_w|`, then `|<L2_R>_w|<=8.614e-13 Cr`. `Cr` is unevaluated; this transfer uses only the retained full nonlinear quiet interval through `ell/4`.
+
+This is no bound on the total `D2`, full nonlinear remainder or effective amplitude radius. The signs of the known terms do not establish net focusing, a physical force or a Big Bang origin. This GitHub working checkpoint includes no new Zenodo edition or journal submission.
+
+[Capsule](research/HDBLAST_QUADRATIC_PROPER_AREA_20261106/) · [Quadratic area bound](research/HDBLAST_QUADRATIC_PROPER_AREA_20261106/QUADRATIC_AREA_BOUND.md) · [References](research/HDBLAST_QUADRATIC_PROPER_AREA_20261106/REFERENCES.md).
+
+**Next priority:** bound the actual weighted curvature projection `<R2>_w` or an equivalent second-field evolution, then establish compatible uniform mixed field and observer bounds and a common domain on one admitted amplitude interval. The full-family metric bound `Q(a)`, scalar and odd-remainder budgets and quantitative central-zero guard remain part of the original priority.
+
 <!-- data-hdb-first-geometry="first-proper-geometry-20261106" -->
 **5 November 2026 (Los Angeles; 6 November UTC): evaluated first proper-cut metric and area bounds.** For the registered affine amplitude `e`, at `e=0` and throughout `0<=q<=25ell/16`, with proper `q=-tau/rho_b` and `ell=10^-6`, the normalized physical cut metric satisfies `sup||G'_0||op<2.4e-8` and the relative actual-area density satisfies `sup|j'_0|<3.5e-8` (`G_0=Id`, `j_0=1`; operator norms in background-orthonormal frames). These are evaluated first derivatives of the selected field at the expansion point, retaining the master, background, reconstruction, gauge and uniqueness premises.
 
