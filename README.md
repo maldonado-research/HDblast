@@ -1,5 +1,17 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-boundary-flow="boundary-flow-patch-20261106" -->
+**6 November 2026 UTC: quantified auxiliary boundary flow and a conditional metric-energy patch.** The literal proper-y, boundary-frozen, background-subtracted flow exists for `|z|<=8ell`, with chart and inverse Jacobian norms `<1.01`. Mixed state and normal-coordinate `z` jets through total order 18 are `<10^126` on `|z|<=6ell`, `||u||_*<=.003`. Here `ell=10^-6`; the auxiliary flow parameter is not physical time.
+
+The inner state ball `||u||_*<=.001` has flow images `<.00101`, which imply the full physical-metric patch `||Gamma-J||op<1/40`, including all four radial cross components. Conditional on this metric patch throughout the candidate coordinate slab and the exact boundary identities for every frozen iterate, the sixteen-field auxiliary principal energy obeys `1/72000<=e[V]/Q_fixed<=1/2` for nonzero `Q_fixed`. Radial coordinate causal speed is `<11/10<2`, and the homogeneous four-Dirichlet/twelve-Neumann shell flux is exactly zero.
+
+These are chart, pointwise coercivity and coordinate-speed results under the retained background premises. They supply no evolved-field bound, proper-clock construction, common physical domain, finite nonlinear remainder or physical-origin discovery; the actual nonlinear family's membership in the patch remains to be established.
+
+[Capsule and replay guide](research/HDBLAST_BOUNDARY_FLOW_PATCH_20261106/README.md) · [Literal boundary-flow proof](research/HDBLAST_BOUNDARY_FLOW_PATCH_20261106/BOUNDARY_FLOW_PROOF.md) · [Conditional metric-energy certificate](research/HDBLAST_BOUNDARY_FLOW_PATCH_20261106/METRIC_ENERGY_CERTIFICATE.md).
+
+<!-- data-hdb-boundary-flow-priority="boundary-flow-patch-20261106" -->
+**Next quantitative step:** bound coefficient derivatives, lower-order terms and the actual coupled second evolution; establish uniform patch membership and a common physical shell/observer domain on one admitted amplitude interval. The proper clock, full-family Q(a), finite nonlinear remainder and quantitative central-zero goal remain open.
+
 <!-- data-hdb-weighted-regularity="weighted-regularity-20261106" -->
 **6 November 2026 UTC: conditional full covariant second initial-jet budgets.** For the specified new weight member, the retained weighted-inverse and background premises give `||h2||_H14<10^2131` and `||tau2||_H13<10^355`, with `tau2=pi2/rho0` normalized by the fixed background volume density. These are second amplitude derivatives at zero. The full geometric Sobolev norm is `||T||_Hm^2=sum_(j=0)^m integral |nabla_gamma0^j T|_gamma0^2 dvol_gamma0`, using background covariant derivatives and the full sphere volume `2pi^2`.
 
