@@ -1,5 +1,15 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-ordered-evolution="ordered-evolution-20261106" -->
+**6 November 2026: evaluated background evolution and finite-Sobolev quadratic forcing.** The initial radial-root/inverse-flow conversion is now bounded by `T1<10^5200`, `T2<10^10000` in fixed product H14/H13 norms. The next checkpoint evaluates the complete ordered background lower maps, including the coordinate-to-bundle substitution `P=DV−Omega V`. With `C=10^150000`, their bounds are `l_t<=2C`, `l_w<=9C`, `l_0<=40C`.
+
+For the retained linear solution with homogeneous shell rows and the stated outer boundary, `G_bg(t,0)<exp(10^150000)` on `0<=t<=13/8000000`; the first wave satisfies `||V1||H1+||V1,t||L2<10^5203 exp(10^150000)`. A tensor Sobolev product estimate also gives `||F2||H12<=10^240 (10^152000)^2 N14^2`, where `N14=||V1||H14+||V1,t||H13`, and `||F2(0)||H12<10^315000`. This explicitly retains the principal-variation term and its factor two.
+
+**Current priority:** close the evolved high-order commutator/normal-recovery and time-source budgets, then the actual-family metric patch, amplitude interval and proper-time/actual-area observable remainder. The very large conditional bounds do not establish those remaining steps or a physical origin. A focused review of eight primary papers checks relevant methods and revised theorem statements; neighboring bubble/brane models keep their own assumptions.
+
+[Ordered evolution, forcing proofs and replay](research/HDBLAST_ORDERED_EVOLUTION_20261106/README.md) · [Recent primary literature and applicability](research/HDBLAST_ORDERED_EVOLUTION_20261106/LITERATURE.md) · [Initial transport proof](research/HDBLAST_INITIAL_TRANSPORT_20261106/INITIAL_TRANSPORT.md).
+
+
 <!-- data-hdb-evolution-bounds="evolution-bounds-20261106" -->
 **6 November 2026 UTC: complete initial wave data, pointwise PDE coefficient budgets and a conditional energy propagator.** For the selected actual weighted canonical curve, the affine lapse and zero shift complete the initial physical metric/scalar relative-harmonic wave Cauchy data through the second amplitude derivative at zero. Their raw, unstraightened positive-background norm satisfies `W2<10^4000`; it combines H14 field values and H13 time velocities. This does not bound the nonlinear radial-root or inverse-flow straightened H14 data.
 
