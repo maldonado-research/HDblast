@@ -1,0 +1,30 @@
+name: HDBLAST scheduler offline guards
+on:
+  push:
+    paths:
+      - '.github/hdblast/**'
+      - '.github/workflows/hdblast_research_round.yml'
+      - '.github/workflows/hdblast_research_scheduler_guards.yml'
+  pull_request:
+    paths:
+      - '.github/hdblast/**'
+      - '.github/workflows/hdblast_research_round.yml'
+      - '.github/workflows/hdblast_research_scheduler_guards.yml'
+permissions:
+  contents: read
+jobs:
+  offline-guards:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          sparse-checkout: .github/hdblast
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Run offline control-plane tests without credentials or model calls
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python -m unittest discover -s .github/hdblast -p 'test_*.py' -v
