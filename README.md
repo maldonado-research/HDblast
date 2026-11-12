@@ -1,5 +1,15 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-high-order-first-wave="high-order-first-wave-20261112" -->
+**Evaluated background first-wave H14/H13 evolution.** The high-order norm left open in the preceding checkpoint is now bounded throughout the retained background slab: `N14(t)=||V1||H14+||V1,t||H13<10^4000000 exp(10^152017)` for `0<=t<=13/8000000`. The argument evaluates the time/rotation commutators, initial temporal jets and interior radial recovery in the fixed sixteen-field product bundle, with the stated homogeneous shell and outer wall.
+
+The complete quadratic source consequently has an evaluated whole-slice bound `sup_t ||R2[V1]||H12<10^8400000 exp(10^152018)`. Exact natural SO(4) symmetry also preserves the selected first wave's Casimir-eight subspace, including its tensor slots and gauge velocity. The high-order proof itself uses all ordered rotation words and no artificial angular cutoff.
+
+**Current priority:** evaluate the mixed time-source and initial-corner hierarchy for the evolved second wave, then actual nonlinear-family patch/amplitude and proper-time/actual-area observable control. The new results are conditional background linear estimates; the finite nonlinear observable remainder and cosmological origin remain open. No new Zenodo edition accompanies this working checkpoint.
+
+[High-order proof and exact replay](research/HDBLAST_HIGH_ORDER_FIRST_WAVE_20261112/README.md) · [Natural symmetry and quadrupole preservation](research/HDBLAST_HIGH_ORDER_FIRST_WAVE_20261112/SYMMETRY.md) · [Focused primary methods update](research/HDBLAST_HIGH_ORDER_FIRST_WAVE_20261112/LITERATURE.md).
+
+
 <!-- data-hdb-ordered-evolution="ordered-evolution-20261106" -->
 **6 November 2026: evaluated background evolution and finite-Sobolev quadratic forcing.** The initial radial-root/inverse-flow conversion is now bounded by `T1<10^5200`, `T2<10^10000` in fixed product H14/H13 norms. The next checkpoint evaluates the complete ordered background lower maps, including the coordinate-to-bundle substitution `P=DV−Omega V`. With `C=10^150000`, their bounds are `l_t<=2C`, `l_w<=9C`, `l_0<=40C`.
 

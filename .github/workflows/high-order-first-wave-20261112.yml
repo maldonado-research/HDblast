@@ -1,0 +1,33 @@
+name: High-order background first wave replay
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_HIGH_ORDER_FIRST_WAVE_20261112/**'
+      - '.github/workflows/high-order-first-wave-20261112.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_HIGH_ORDER_FIRST_WAVE_20261112/**'
+      - '.github/workflows/high-order-first-wave-20261112.yml'
+permissions:
+  contents: read
+jobs:
+  high-order-first-wave:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Replay first-wave H14 evolution and natural rotations in both modes
+        run: |
+          python -I -S -B research/HDBLAST_HIGH_ORDER_FIRST_WAVE_20261112/checks/check_checkpoint.py --manifest-sha256 7482d0c82630ae04e895d3742680d1168fda8b422b4ccc06e58f47b9343851fa --output "$RUNNER_TEMP/high-order-first-wave-normal.json"
+          python -O -I -S -B research/HDBLAST_HIGH_ORDER_FIRST_WAVE_20261112/checks/check_checkpoint.py --manifest-sha256 7482d0c82630ae04e895d3742680d1168fda8b422b4ccc06e58f47b9343851fa --output "$RUNNER_TEMP/high-order-first-wave-optimized.json"
+          cmp "$RUNNER_TEMP/high-order-first-wave-normal.json" "$RUNNER_TEMP/high-order-first-wave-optimized.json"
+      - name: Reject seven source, manifest and arithmetic corruptions
+        run: python -I -S -B research/HDBLAST_HIGH_ORDER_FIRST_WAVE_20261112/checks/run_controls.py --manifest-sha256 7482d0c82630ae04e895d3742680d1168fda8b422b4ccc06e58f47b9343851fa --output-dir "$RUNNER_TEMP/high-order-first-wave-controls-fresh"
