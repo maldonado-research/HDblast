@@ -1,0 +1,33 @@
+name: Forced second-wave mixed evolution replay
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_SECOND_WAVE_EVOLUTION_20261112/**'
+      - '.github/workflows/second-wave-evolution-20261112.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_SECOND_WAVE_EVOLUTION_20261112/**'
+      - '.github/workflows/second-wave-evolution-20261112.yml'
+permissions:
+  contents: read
+jobs:
+  second-wave-evolution:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Replay forced second-wave evolution and mixed source hierarchy in both modes
+        run: |
+          python -I -S -B research/HDBLAST_SECOND_WAVE_EVOLUTION_20261112/checks/check_checkpoint.py --manifest-sha256 3f4b6a826d5e476f6951ed139a9cb608b0fe38fe7c9c02fe7247ff1c543fc5b0 --output "$RUNNER_TEMP/second-wave-evolution-normal.json"
+          python -O -I -S -B research/HDBLAST_SECOND_WAVE_EVOLUTION_20261112/checks/check_checkpoint.py --manifest-sha256 3f4b6a826d5e476f6951ed139a9cb608b0fe38fe7c9c02fe7247ff1c543fc5b0 --output "$RUNNER_TEMP/second-wave-evolution-optimized.json"
+          cmp "$RUNNER_TEMP/second-wave-evolution-normal.json" "$RUNNER_TEMP/second-wave-evolution-optimized.json"
+      - name: Reject seven source, manifest and arithmetic corruptions
+        run: python -I -S -B research/HDBLAST_SECOND_WAVE_EVOLUTION_20261112/checks/run_controls.py --manifest-sha256 3f4b6a826d5e476f6951ed139a9cb608b0fe38fe7c9c02fe7247ff1c543fc5b0 --output-dir "$RUNNER_TEMP/second-wave-evolution-controls-fresh"

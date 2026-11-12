@@ -1,5 +1,15 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-second-wave-evolution="second-wave-evolution-20261112" -->
+**Evaluated second-wave evolution in the full mixed X13 norm.** The completed first-wave estimate now supplies the entire mixed source and initial-corner hierarchy needed at second-wave order thirteen. For the actual selected second amplitude derivative at zero, `V2`, the retained background mixed-wall problem gives `sup_t sum_(j=0)^13 ||partial_t^j V2||H^(13-j)<10^10200000 exp(10^152019)` on `0<=t<=13/8000000`.
+
+The proof charges the principal variation and all factors two, inhomogeneous initial time jets, the evolving forcing integral and normalized radial source derivatives. It uses generic tensor rotation words and no inherited first-wave angular cutoff. Energy uniqueness identifies the stronger second jet with the retained C2(X10) variation; the whole nonlinear curve is not asserted C2 into X13.
+
+**Current priority:** quantify actual finite-amplitude family/metric-patch control and connect the completed jets to compatible proper-clock, embedding, cut-area, denominator and common-domain observable estimates. The finite nonlinear observable remainder and cosmological origin remain open. This working checkpoint includes no new Zenodo edition.
+
+[Second-wave proof and exact replay](research/HDBLAST_SECOND_WAVE_EVOLUTION_20261112/README.md) · [Complete mixed source hierarchy](research/HDBLAST_SECOND_WAVE_EVOLUTION_20261112/MIXED_SOURCE.md) · [Primary methods and applicability](research/HDBLAST_SECOND_WAVE_EVOLUTION_20261112/LITERATURE.md).
+
+
 <!-- data-hdb-high-order-first-wave="high-order-first-wave-20261112" -->
 **Evaluated background first-wave H14/H13 evolution.** The high-order norm left open in the preceding checkpoint is now bounded throughout the retained background slab: `N14(t)=||V1||H14+||V1,t||H13<10^4000000 exp(10^152017)` for `0<=t<=13/8000000`. The argument evaluates the time/rotation commutators, initial temporal jets and interior radial recovery in the fixed sixteen-field product bundle, with the stated homogeneous shell and outer wall.
 
