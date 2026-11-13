@@ -1,5 +1,16 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-uniform-cauchy-data="uniform-cauchy-data-20261113" -->
+**13 November 2026: uniform nonlinear completed Cauchy data.** The admitted initial family now passes through the actual canonical-to-physical, relative-harmonic and boundary-state maps on the full original interval `|epsilon|<=10^-6402`. In the fixed H14 field/H13 first-time-velocity norm, the completed data are bounded by `10^-2200`, their first parameter derivative by `10^4200`, and their second by `B_C=10^10400`, under the retained smooth-background and selected-family premises.
+
+The proof retains the original lapse, zero initial shift, fixed canonical density and complete mixed metric velocities. It includes the third state differential needed for the nonzero-state velocity Hessian. The pointwise boundary chart stays inside its proved patch; one bulk copy and the retained identical two-copy family are covered. These are conservative conditional mathematical bounds, with physical confirmation still open.
+
+**Next priority:** quantify the nonlinear initial temporal jets and a compatible X14 seed, then the variable-coefficient mixed evolution and observer tube. No prescribed-slab nonlinear evolution interval or observable remainder is assigned here. This working checkpoint creates no new Zenodo edition.
+
+[Uniform initial-map proof and exact replay](research/HDBLAST_UNIFORM_CAUCHY_DATA_20261113/README.md) · [Complete nonzero-state Cauchy bound](research/HDBLAST_UNIFORM_CAUCHY_DATA_20261113/UNIFORM_CAUCHY_DATA.md) · [Next nonlinear initialization and evolution calculation](research/HDBLAST_UNIFORM_CAUCHY_DATA_20261113/CONTINUATION.md).
+
+Older entries below retain their checkpoint-specific scope.
+
 <!-- data-hdb-nonlinear-constraint-ball="nonlinear-constraint-ball-20261113" -->
 **13 November 2026: quantified nonlinear initial-constraint family.** Under the retained smooth-background and selected weighted-inverse premises, the actual canonical constraint map now has a uniform positive-ball estimate: `||D²F||<=10^1100` and `||D²G||<=10^6100`, charged as `K=10^6400`. A contraction admits the same selected initial-data family for `|epsilon|<=10^-6402`, with correction norm `<=10^-6404`, positive metric and all symmetry-allowed angular modes.
 
