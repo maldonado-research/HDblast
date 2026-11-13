@@ -1,5 +1,15 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-all-mode-inverse="all-mode-inverse-20261113" -->
+**Evaluated initial constraint inverse across all symmetry-allowed angular modes.** The selected background weighted inverse now has complete source-to-potential bounds: scalar `dot H12(q,w)→dot H16(q,w)` with constant `10^5000`, momentum `dot H12(q,w)→dot H14(q,w)` with `10^2700`, and their Hilbert direct sum with `10^5000`. The annulus, weights, reflection-invariant spaces, fixed canonical density and selected inverse remain the same.
+
+The proof includes both degenerate ends and both coexact vector families. Unbounded angular frequencies stay in the positive principal operator; a new two-way covariant norm bridge charges every derivative slot. Sources are normalized by `w^-2`, with the raw momentum-density source first divided by fixed `rho0`. These are deliberately loose conditional analytic ceilings, without SI energy or observational calibration.
+
+**Current priority:** evaluate the uniform second derivative of the actual preconditioned nonlinear constraint map on a positive product ball, then quantify the initial-family interval and nonlinear evolution/observer tube. The background inverse bound alone assigns no nonzero amplitude or finite nonlinear remainder. Physical origin and observational confirmation remain open. No new Zenodo edition accompanies this working checkpoint.
+
+[All-mode inverse proofs and exact replay](research/HDBLAST_ALL_MODE_INVERSE_20261113/README.md) · [Covariant weighted norm bridge](research/HDBLAST_ALL_MODE_INVERSE_20261113/WEIGHTED_NORM_BRIDGE.md) · [Primary theorem and convention check](research/HDBLAST_ALL_MODE_INVERSE_20261113/LITERATURE.md).
+
+
 <!-- data-hdb-proper-second-geometry="proper-second-geometry-20261113" -->
 **Complete proper scalar, curvature and area derivatives at zero amplitude.** The first/second wave bounds now control the actual anchored proper-time scalar, full intrinsic Ricci contraction, cut-area density, weighted denominator and total-area second derivatives on `0<=q<=25ell/16`, with `q=-tau/rho_b` and `ell=10^-6`.
 
