@@ -1,5 +1,15 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-proper-second-geometry="proper-second-geometry-20261113" -->
+**Complete proper scalar, curvature and area derivatives at zero amplitude.** The first/second wave bounds now control the actual anchored proper-time scalar, full intrinsic Ricci contraction, cut-area density, weighted denominator and total-area second derivatives on `0<=q<=25ell/16`, with `q=-tau/rho_b` and `ell=10^-6`.
+
+With the retained second-field ceiling `B2=10^10200000 exp(10^152019)`, the evaluated bounds are `sup|Phi2|<10^8 B2`, `sup|R2|<4*10^25 B2`, and `sup|j2|, sup|D2/D0|, sup|A2/A0|<10^14 B2`. Background Ricci subtraction removes second observer motion; the complete first harmonic observer and quadratic connection terms remain. The same-state past join includes the full tensor reflection and nonzero initial velocity. The curvature kernel keeps the full-family quiet interval `ell/4`.
+
+**Current priority:** quantify the actual nonlinear state/parameter tube and a nonzero amplitude interval, then the uniform proper-time observable remainder. The longer past-slab family application and its analytic premises remain conditional; individual jets at zero do not establish that interval. No physical confirmation, sign of area change or SI energy calibration follows. This working checkpoint includes no new Zenodo edition.
+
+[Proper geometric proofs and exact replay](research/HDBLAST_PROPER_SECOND_GEOMETRY_20261113/README.md) · [Complete intrinsic curvature and area](research/HDBLAST_PROPER_SECOND_GEOMETRY_20261113/SECOND_CURVATURE_AREA.md) · [Primary methods and applicability](research/HDBLAST_PROPER_SECOND_GEOMETRY_20261113/LITERATURE.md).
+
+
 <!-- data-hdb-second-wave-evolution="second-wave-evolution-20261112" -->
 **Evaluated second-wave evolution in the full mixed X13 norm.** The completed first-wave estimate now supplies the entire mixed source and initial-corner hierarchy needed at second-wave order thirteen. For the actual selected second amplitude derivative at zero, `V2`, the retained background mixed-wall problem gives `sup_t sum_(j=0)^13 ||partial_t^j V2||H^(13-j)<10^10200000 exp(10^152019)` on `0<=t<=13/8000000`.
 
