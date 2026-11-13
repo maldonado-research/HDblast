@@ -1,5 +1,14 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-nonlinear-constraint-ball="nonlinear-constraint-ball-20261113" -->
+**13 November 2026: quantified nonlinear initial-constraint family.** Under the retained smooth-background and selected weighted-inverse premises, the actual canonical constraint map now has a uniform positive-ball estimate: `||D²F||<=10^1100` and `||D²G||<=10^6100`, charged as `K=10^6400`. A contraction admits the same selected initial-data family for `|epsilon|<=10^-6402`, with correction norm `<=10^-6404`, positive metric and all symmetry-allowed angular modes.
+
+This is a deliberately conservative proof threshold in the registered normalization, not a measured cosmological amplitude or evidence for a higher-dimensional event. The argument includes the full nonzero-velocity seed, all canonical matter terms, weighted correction decay, inverse/determinant compositions and source-normalization derivatives. **Next priority:** quantify the completed nonlinear Cauchy-data map, then the prescribed-slab evolution and observer tube. No nonlinear evolution interval or observable remainder is assigned here, and no new Zenodo edition is created.
+
+[Initial-family proof and exact replay](research/HDBLAST_NONLINEAR_CONSTRAINT_BALL_20261113/README.md) · [Uniform positive-ball proof](research/HDBLAST_NONLINEAR_CONSTRAINT_BALL_20261113/NONLINEAR_CONSTRAINT_BALL.md) · [Next Cauchy-map calculation](research/HDBLAST_NONLINEAR_CONSTRAINT_BALL_20261113/CONTINUATION.md).
+
+Earlier checkpoint entries below are preserved as dated research history; this entry states the current initial-family result.
+
 <!-- data-hdb-all-mode-inverse="all-mode-inverse-20261113" -->
 **Evaluated initial constraint inverse across all symmetry-allowed angular modes.** The selected background weighted inverse now has complete source-to-potential bounds: scalar `dot H12(q,w)→dot H16(q,w)` with constant `10^5000`, momentum `dot H12(q,w)→dot H14(q,w)` with `10^2700`, and their Hilbert direct sum with `10^5000`. The annulus, weights, reflection-invariant spaces, fixed canonical density and selected inverse remain the same.
 
