@@ -1,5 +1,17 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-temporal-seed="temporal-seed-20261114" -->
+**14 November 2026: nonlinear initial jets and a compatible seed.** The exact reduced PDE now determines `J0` through `J14`, with `I14<=10^6503000 d(a)`. A regularized heat lift matches all fifteen jets, respects the mixed boundary conditions and reflection symmetry, and has `sup_s X14(seed)<=10^255 I14`. The composed initial-pair-to-seed constant is `10^6503255`.
+
+On the same original parameter restricted to `|epsilon|<=10^-6507485`, the seed norm is at most `10^-30`. This smaller interval is a conservative mathematical threshold under the retained background and selected-family premises. The seed is an auxiliary starting field; it does not establish nonlinear evolution or a physical higher-dimensional event.
+
+**Next priority:** evaluate the actual variable-coefficient energy and normal-recovery constants and close the full nonlinear iteration on the prescribed past slab. The order-fifteen smoothing interface and observer tube remain open. No new Zenodo edition accompanies this working checkpoint.
+
+[Initial-jet and seed proofs with exact replay](research/HDBLAST_TEMPORAL_JETS_SEED_20261114/README.md) · [Compatible heat lift](research/HDBLAST_TEMPORAL_JETS_SEED_20261114/QUANTITATIVE_COMPATIBLE_SEED.md) · [Next evolution calculation](research/HDBLAST_TEMPORAL_JETS_SEED_20261114/CONTINUATION.md).
+
+Older entries below retain their checkpoint-specific scope.
+
+
 <!-- data-hdb-uniform-cauchy-data="uniform-cauchy-data-20261113" -->
 **13 November 2026: uniform nonlinear completed Cauchy data.** The admitted initial family now passes through the actual canonical-to-physical, relative-harmonic and boundary-state maps on the full original interval `|epsilon|<=10^-6402`. In the fixed H14 field/H13 first-time-velocity norm, the completed data are bounded by `10^-2200`, their first parameter derivative by `10^4200`, and their second by `B_C=10^10400`, under the retained smooth-background and selected-family premises.
 
