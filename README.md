@@ -1,5 +1,17 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-variable-energy="variable-energy-20261114" -->
+**14 November 2026: evaluated mixed evolution estimates and smooth iteration bounds.** The actual frozen sixteen-field equation now has explicit high-order energy and interior normal-recovery constants. Their join bounds compatible smooth Picard iterates in X14 across the prescribed past slab, under the retained background, coefficient-chart and smooth frozen-construction premises.
+
+The sufficient restriction is `abs(epsilon)<=10^(-10^500209)` in the same original parameter. This positive nested power is deliberately conservative and much smaller than the preceding seed interval; it is a mathematical proof threshold without a measured cosmological amplitude interpretation. The estimates retain all angular modes, mixed coefficients, boundary rows and tensor slots.
+
+**Next priority:** evaluate consecutive-iterate differences and prove convergence, then complete continuous X14 regularity and the separate order-fifteen smoothing interface. A nonlinear finite-Sobolev solution, evolved observer tube and physical confirmation remain open. No new Zenodo edition accompanies this working checkpoint.
+
+[Energy, normal recovery and exact replay](research/HDBLAST_VARIABLE_COEFFICIENT_ENERGY_20261114/README.md) · [Conditional smooth-iteration admission](research/HDBLAST_VARIABLE_COEFFICIENT_ENERGY_20261114/CONDITIONAL_PICARD_ADMISSION.md) · [Next difference and smoothing calculation](research/HDBLAST_VARIABLE_COEFFICIENT_ENERGY_20261114/CONTINUATION.md).
+
+Older entries below retain their checkpoint-specific scope.
+
+
 <!-- data-hdb-temporal-seed="temporal-seed-20261114" -->
 **14 November 2026: nonlinear initial jets and a compatible seed.** The exact reduced PDE now determines `J0` through `J14`, with `I14<=10^6503000 d(a)`. A regularized heat lift matches all fifteen jets, respects the mixed boundary conditions and reflection symmetry, and has `sup_s X14(seed)<=10^255 I14`. The composed initial-pair-to-seed constant is `10^6503255`.
 
