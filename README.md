@@ -1,5 +1,17 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-nonlinear-limit="nonlinear-limit-20261114" -->
+**14 November 2026: reduced nonlinear solution, full time continuity and causal support.** The controlled Picard scheme now converges to an actual unique solution of the reduced sixteen-field mixed system on the prescribed past slab. A separate weak-energy and boundary argument proves strong time continuity of all fifteen X14 jets, under the retained background, chart, initial-data and frozen-linear construction premises.
+
+The original restriction remains `abs(epsilon)<=10^(-10^500209)`, an extremely conservative mathematical threshold without measured cosmological amplitude calibration. Coordinate radial speed is bounded by `20/19`; the exact solution remains separated from the artificial outer wall. These results do not identify the reduced solution with the full unreduced Einstein–scalar/Israel system or confirm a higher-dimensional origin.
+
+**Next priority:** verify the exact subsidiary/constraint and boundary propagation, then top initial-data and evolved parameter estimates needed for observer conclusions. Strong top convergence of approximation sequences remains separate from each solution's proved time continuity. No new Zenodo edition accompanies this working checkpoint.
+
+[Proofs and exact replay](research/HDBLAST_NONLINEAR_PICARD_LIMIT_20261114/README.md) · [Integrated reduced theorem and support](research/HDBLAST_NONLINEAR_PICARD_LIMIT_20261114/REDUCED_EVOLUTION_AND_CAUSAL_SUPPORT.md) · [Support diagram](research/HDBLAST_NONLINEAR_PICARD_LIMIT_20261114/figures/causal_support.svg) · [Next calculations](research/HDBLAST_NONLINEAR_PICARD_LIMIT_20261114/CONTINUATION.md).
+
+Older entries below retain their checkpoint-specific scope.
+
+
 <!-- data-hdb-variable-energy="variable-energy-20261114" -->
 **14 November 2026: evaluated mixed evolution estimates and smooth iteration bounds.** The actual frozen sixteen-field equation now has explicit high-order energy and interior normal-recovery constants. Their join bounds compatible smooth Picard iterates in X14 across the prescribed past slab, under the retained background, coefficient-chart and smooth frozen-construction premises.
 
