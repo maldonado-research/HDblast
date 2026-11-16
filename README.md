@@ -1,5 +1,14 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-subsidiary-closure="subsidiary-closure-20261116" -->
+**16 November 2026: conditional full Einstein–scalar/Israel local solution.** Exact physical reconstruction, current canonical constraints and harmonic completion, and finite-regularity subsidiary energy now join the actual reduced solution to the retained full bulk equations and physical shell laws. Separate internal review accepted the four proofs.
+
+The original interval remains `abs(epsilon)<=10^(-10^500209)`, under the retained background, chart, selected-family and smooth-construction premises. Uniqueness is in the same relative-harmonic C X14 high-norm class with the same outer boundary data. No new physical energy calibration, cosmological origin or observed signal is established.
+
+**Next priority:** actual evolved parameter/observer estimates, a finite nonlinear response remainder, and a physically specified source/detector experiment. Strong top approximation/data continuity remains separate. This working checkpoint creates no new Zenodo spectral edition. Older entries retain their dated scope.
+
+[Proofs and exact replay](research/HDBLAST_SUBSIDIARY_CLOSURE_20261116/README.md) · [Integrated unreduced theorem](research/HDBLAST_SUBSIDIARY_CLOSURE_20261116/UNREDUCED_LOCAL_SHELL_SOLUTION.md) · [Primary literature](research/HDBLAST_SUBSIDIARY_CLOSURE_20261116/LITERATURE.md) · [Next calculations](research/HDBLAST_SUBSIDIARY_CLOSURE_20261116/CONTINUATION.md).
+
 <!-- data-hdb-nonlinear-limit="nonlinear-limit-20261114" -->
 **14 November 2026: reduced nonlinear solution, full time continuity and causal support.** The controlled Picard scheme now converges to an actual unique solution of the reduced sixteen-field mixed system on the prescribed past slab. A separate weak-energy and boundary argument proves strong time continuity of all fifteen X14 jets, under the retained background, chart, initial-data and frozen-linear construction premises.
 
