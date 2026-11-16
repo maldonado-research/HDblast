@@ -1,5 +1,14 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-parameter-dependence="parameter-dependence-20261116" -->
+**16 November 2026: actual first and second evolved parameter derivatives.** Solution difference quotients now establish C2 dependence of the actual canonical family in C X10, with a stronger normalized C X11 result, under the retained conditional local-model premises. The exact fixed-coordinate physical reconstruction is C2 as well; differentiated full bulk and junction identities retain their geometric variations.
+
+The original `abs(epsilon)<=10^(-10^500209)` interval, time slab and numerical ledger remain. The qualitative field Taylor remainder is `o(h^2)`. Physical observer/clock, source/detector/noise calibration and cosmological confirmation remain separate tasks. No new Zenodo spectral edition accompanies this working checkpoint.
+
+**Next priority:** a common observer and proper-clock domain, followed by an explicitly calibrated response experiment. Older entries retain their dated scope.
+
+[Proofs and exact replay](research/HDBLAST_EVOLVED_PARAMETER_20261116/README.md) · [Actual parameter and physical chain theorem](research/HDBLAST_EVOLVED_PARAMETER_20261116/EVOLVED_PARAMETER_AND_PHYSICAL_CHAIN.md) · [Primary methods](research/HDBLAST_EVOLVED_PARAMETER_20261116/LITERATURE.md) · [Next calculations](research/HDBLAST_EVOLVED_PARAMETER_20261116/CONTINUATION.md).
+
 <!-- data-hdb-subsidiary-closure="subsidiary-closure-20261116" -->
 **16 November 2026: conditional full Einstein–scalar/Israel local solution.** Exact physical reconstruction, current canonical constraints and harmonic completion, and finite-regularity subsidiary energy now join the actual reduced solution to the retained full bulk equations and physical shell laws. Separate internal review accepted the four proofs.
 
