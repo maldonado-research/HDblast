@@ -1,0 +1,38 @@
+name: Effective observer domain replay
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_EFFECTIVE_OBSERVER_20261116/**'
+      - '.github/workflows/effective-observer-20261116.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_EFFECTIVE_OBSERVER_20261116/**'
+      - '.github/workflows/effective-observer-20261116.yml'
+permissions:
+  contents: read
+jobs:
+  effective-observer-data:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.14'
+          check-latest: false
+      - name: Verify the recorded standard-library runtime
+        run: |
+          python -I -B -c 'import sys; sys.exit(0 if sys.version_info[:3] == (3, 12, 14) else "Python 3.12.14 required")'
+      - name: Replay authenticated sources and effective observer interfaces in both modes
+        run: |
+          python -I -B research/HDBLAST_EFFECTIVE_OBSERVER_20261116/checks/check_checkpoint.py --manifest-sha256 3b59fba4c4e93b626593132d4795339d4bfc759d9b6e7342b64100cf191b3687 --output "$RUNNER_TEMP/effective-observer-normal.json"
+          python -O -I -B research/HDBLAST_EFFECTIVE_OBSERVER_20261116/checks/check_checkpoint.py --manifest-sha256 3b59fba4c4e93b626593132d4795339d4bfc759d9b6e7342b64100cf191b3687 --output "$RUNNER_TEMP/effective-observer-optimized.json"
+          cmp "$RUNNER_TEMP/effective-observer-normal.json" "$RUNNER_TEMP/effective-observer-optimized.json"
+      - name: Reject protocol faults and freshly rehashed mathematical faults
+        run: |
+          python -I -B research/HDBLAST_EFFECTIVE_OBSERVER_20261116/checks/run_controls.py --manifest-sha256 3b59fba4c4e93b626593132d4795339d4bfc759d9b6e7342b64100cf191b3687 --output-dir "$RUNNER_TEMP/effective-observer-auth-fresh"
+          python -O -I -B research/HDBLAST_EFFECTIVE_OBSERVER_20261116/checks/run_math_controls.py --manifest-sha256 3b59fba4c4e93b626593132d4795339d4bfc759d9b6e7342b64100cf191b3687 --output-dir "$RUNNER_TEMP/effective-observer-math-fresh"

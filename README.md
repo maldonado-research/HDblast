@@ -1,5 +1,14 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-effective-observer="effective-observer-20261116" -->
+**16 November 2026 (America/Los_Angeles; 17 November UTC): an effective observer duration and causal response upper bounds.** Under the retained local-model premises, the actual intrinsic shell-normal observers now continue for every original parameter and label through `0<=q<=Q=25ell/16`, including `q_star=6145ell/4096`, with `ell=10^-6`. The physical proper duration is `r=rho_b q`. Explicit phase estimates, a positive cut gap and a global embedding establish this full domain while preserving the original field slab and parameter interval.
+
+The proof establishes an exact initial quiet interval and rigorous upper bounds for the relative cut-area error and the proper-area scalar mean's departure from its background value. With `d=(q-19ell/40)_+`, these are `2^18 delta d^2` and `(10^7 M/11!)[d+24delta d^2]^11`, respectively. Here delta is the normalized shell-metric error; `delta<10^-20` follows from the existing admitted field bound M. These upper bounds establish neither arrival of a disturbance nor a nonzero or detectable signal. No calibrated number of seconds, detector/noise model or Big Bang origin is supplied.
+
+**Next priority:** calculate whether the admitted family produces a nonzero response on this domain, and specify physical source, detector, noise and uncertainty models. This working checkpoint creates no new Zenodo spectral edition. Older entries retain their dated scope.
+
+[Proofs and exact replay](research/HDBLAST_EFFECTIVE_OBSERVER_20261116/README.md) · [Effective domain and response bounds](research/HDBLAST_EFFECTIVE_OBSERVER_20261116/EFFECTIVE_OBSERVER_DOMAIN_AND_RESPONSE_BOUNDS.md) · [Primary methods](research/HDBLAST_EFFECTIVE_OBSERVER_20261116/LITERATURE.md) · [Results and remaining gates](research/HDBLAST_EFFECTIVE_OBSERVER_20261116/RESULTS.md).
+
 <!-- data-hdb-observer-clock="observer-clock-20261116" -->
 **16 November 2026: actual common short observers and proper-clock geometry.** Under the retained local-model premises, the actual canonical family now has a common short intrinsic shell-normal observer cylinder, positive spacelike cuts and a globally embedded proper-time map. Its moving scalar, curvature, cut-volume and proper-area-mean quantities have continuous first and second parameter derivatives. The physical Israel law identifies the confined acceleration and one-sided Fermi–Walker frame.
 
