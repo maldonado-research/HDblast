@@ -1,5 +1,12 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-observer-clock="observer-clock-20261116" -->
+**16 November 2026: actual common short observers and proper-clock geometry.** Under the retained local-model premises, the actual canonical family now has a common short intrinsic shell-normal observer cylinder, positive spacelike cuts and a globally embedded proper-time map. Its moving scalar, curvature, cut-volume and proper-area-mean quantities have continuous first and second parameter derivatives. The physical Israel law identifies the confined acceleration and one-sided Fermi–Walker frame.
+
+The original parameter interval and field slab remain. The new proper duration is positive but unspecified; causal illumination and a nonzero calibrated response are not established. **Next priority:** an effective observer duration reaching the perturbation, evaluated geometric response constants, and physical source/detector/noise norms. This working checkpoint creates no new Zenodo spectral edition. Older entries retain their dated scope.
+
+[Proofs and exact replay](research/HDBLAST_OBSERVER_CLOCK_20261116/README.md) · [Actual observer and geometric theorem](research/HDBLAST_OBSERVER_CLOCK_20261116/ACTUAL_OBSERVER_AND_RELATIONAL_GEOMETRY.md) · [Primary methods](research/HDBLAST_OBSERVER_CLOCK_20261116/LITERATURE.md) · [Next calculations](research/HDBLAST_OBSERVER_CLOCK_20261116/CONTINUATION.md).
+
 <!-- data-hdb-parameter-dependence="parameter-dependence-20261116" -->
 **16 November 2026: actual first and second evolved parameter derivatives.** Solution difference quotients now establish C2 dependence of the actual canonical family in C X10, with a stronger normalized C X11 result, under the retained conditional local-model premises. The exact fixed-coordinate physical reconstruction is C2 as well; differentiated full bulk and junction identities retain their geometric variations.
 
