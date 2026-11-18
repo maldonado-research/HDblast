@@ -1,5 +1,7 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+**18 November 2026 · A nonzero quadrupole on the actual shell observer’s clock.** For the registered Einstein–scalar packet, the full-sphere scalar mean has zero first derivative. The directional response stays strictly negative in its signed quadrupole coefficient throughout `5/4 ≤ q/ell ≤ 11/8`. The coefficient of the squared amplitude in the angular variance, averaged over the entire admitted observer interval, lies between **35,373,971 and 43,294,110** in the registered model units. This conditional prediction uses the full initial metric and scalar data, the physical shell boundary laws and the actual moving area measure. The physical source, time scale and mapping to astronomical observations remain open. [Proof, figure and exact replay](research/HDBLAST_SHELL_RESPONSE_20261118/README.md) · [Zenodo edition](https://doi.org/10.5281/zenodo.24351089)
+
 <!-- data-hdb-effective-observer="effective-observer-20261116" -->
 **16 November 2026 (America/Los_Angeles; 17 November UTC): an effective observer duration and causal response upper bounds.** Under the retained local-model premises, the actual intrinsic shell-normal observers now continue for every original parameter and label through `0<=q<=Q=25ell/16`, including `q_star=6145ell/4096`, with `ell=10^-6`. The physical proper duration is `r=rho_b q`. Explicit phase estimates, a positive cut gap and a global embedding establish this full domain while preserving the original field slab and parameter interval.
 
