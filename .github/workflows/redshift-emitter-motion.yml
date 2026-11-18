@@ -1,0 +1,28 @@
+name: Fixed redshift and emitter motion
+on:
+  push:
+    paths: ['research/HDBLAST_REDSHIFT_EMITTER_MOTION_20261118/**', 'research/HDBLAST_JOINT_CURVATURE_20261118/**', '.github/workflows/redshift-emitter-motion.yml']
+  pull_request:
+    paths: ['research/HDBLAST_REDSHIFT_EMITTER_MOTION_20261118/**', 'research/HDBLAST_JOINT_CURVATURE_20261118/**', '.github/workflows/redshift-emitter-motion.yml']
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            research/HDBLAST_REDSHIFT_EMITTER_MOTION_20261118
+            research/HDBLAST_JOINT_CURVATURE_20261118
+          filter: blob:none
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Authenticate inputs and run the five redshift calculations
+        working-directory: research/HDBLAST_REDSHIFT_EMITTER_MOTION_20261118
+        run: |
+          echo '2e7bcf097fb50a76f27dd2004d36399417acdd8b46929bbd3f0cc938bed31eed  SHA256SUMS' | sha256sum -c -
+          sha256sum -c SHA256SUMS
+          python -I -B reproduce.py
+          python -I -B -O reproduce.py
