@@ -1,0 +1,40 @@
+{
+  "identities": [
+    "metric_time_row",
+    "metric_spatial_row",
+    "two_copy_scalar_boundary_variation",
+    "total_shell_flux_equals_matter_Ward",
+    "Codazzi_equals_Ward",
+    "normal_momentum_constraint_equals_Ward",
+    "particle_kinetic_energy_ledger",
+    "decay_internal_transfer_cancels",
+    "bulk_coordinate_energy_has_metric_work"
+  ],
+  "negative_controls": [
+    {
+      "name": "omit_second_interior",
+      "residual": "v*(J*kappa2 + sigma_phi)/(2*kappa2)"
+    },
+    {
+      "name": "reverse_scalar_junction_only",
+      "residual": "2*v*(J*kappa2 + sigma_phi)/kappa2"
+    },
+    {
+      "name": "omit_tension_from_total_budget",
+      "residual": "-sigma_phi*v/kappa2"
+    },
+    {
+      "name": "production_without_paid_work",
+      "residual": "number_in*sqrt(m**2 + q**2)"
+    },
+    {
+      "name": "massive_gas_as_radiation_pressure",
+      "residual": "H*m**2*n/sqrt(m**2 + q**2)"
+    },
+    {
+      "name": "drop_bulk_metric_work",
+      "residual": "(6*AT*U*exp2B - 3*AT*phT**2 + 3*AT*phZ**2 + 4*BT*U*exp2B)/2"
+    }
+  ],
+  "scope": "Finite symbolic identities only; no independent bulk flux measurement."
+}
