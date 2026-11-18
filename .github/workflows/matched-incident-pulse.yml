@@ -1,0 +1,35 @@
+name: Matched incident pulse and shell response
+on:
+  pull_request:
+    paths:
+      - 'research/HDBLAST_INCIDENT_PULSE_20261118/**'
+      - '.github/workflows/matched-incident-pulse.yml'
+  push:
+    paths:
+      - 'research/HDBLAST_INCIDENT_PULSE_20261118/**'
+      - '.github/workflows/matched-incident-pulse.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: research/HDBLAST_INCIDENT_PULSE_20261118
+          filter: blob:none
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check the pulse data and recompute the signed shell response
+        working-directory: research/HDBLAST_INCIDENT_PULSE_20261118
+        run: |
+          echo '6476ce5dd7614c4c773b2ebda26e53070b502db87676ef98088373c2dfe7462b  SHA256SUMS' | sha256sum -c -
+          sha256sum -c SHA256SUMS
+          python -I -B reproduce.py
+          python -I -B -O reproduce.py
+      - name: Verify the finite-amplitude bracket and strict concavity
+        working-directory: research/HDBLAST_INCIDENT_PULSE_20261118
+        run: |
+          c++ -std=c++17 -O2 -fno-fast-math -ffp-contract=off invariant/interval/bracket.cpp -o "$RUNNER_TEMP/hdblast-bracket"
+          "$RUNNER_TEMP/hdblast-bracket"
