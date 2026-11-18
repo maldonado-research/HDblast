@@ -133,7 +133,11 @@ def run():
         first = mass_test(rows,F(5,4),F(1,32),err)
         second = mass_test(rows,F(11,8),F(1,32),err)
         require(first[0]>second[1], 'independent constant-mass intervals overlap')
+        gap = first[0] - second[1]
+        required_gap = F(1374, 100) if err == 0 else F(1237, 100)
+        require(gap > required_gap, 'mass spread times cancellation bound')
         out[key] = {'mass_squared_intervals':[first,second],
+                    'minimum_mass_spread_times_cancellation':gap,
                     'minimum_relative_weak_residual':(first[0]-second[1])/2}
     return out
 

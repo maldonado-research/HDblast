@@ -20,7 +20,7 @@ jobs:
       - name: Verify the shape, pulse and cutoff arithmetic
         working-directory: research/HDBLAST_DIMENSIONAL_COMPARISON_20261118
         run: |
-          echo 'ed79a6e17e050e39d0ffa25ef0492afdce19009b90bdf04e3b4246c7d9a30544  SHA256SUMS' | sha256sum -c -
+          echo '6787aa457d8acf6e523e28fbbf9ae06b82ddbe568f1535af66ef4afe734a5562  SHA256SUMS' | sha256sum -c -
           sha256sum -c SHA256SUMS
           for mode in normal optimized; do
             flags=()
