@@ -1,0 +1,32 @@
+name: Matched source and detector on the shell
+on:
+  push:
+    paths: ['research/HDBLAST_RECIPROCAL_PREPARATION_20261118/**', '.github/workflows/reciprocal-preparation-20261118.yml']
+  pull_request:
+    paths: ['research/HDBLAST_RECIPROCAL_PREPARATION_20261118/**', '.github/workflows/reciprocal-preparation-20261118.yml']
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: research/HDBLAST_RECIPROCAL_PREPARATION_20261118
+          filter: blob:none
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify inputs and reproduce the exposure and bandwidth bounds
+        working-directory: research/HDBLAST_RECIPROCAL_PREPARATION_20261118
+        run: |
+          echo 'a5ccdef13a11a3eeb8539706aebaddfdc4520ea2cc92377c983c85ae7e7da59c  SHA256SUMS' | sha256sum -c -
+          sha256sum -c SHA256SUMS
+          python -I -B kick.py > "$RUNNER_TEMP/KICK.json"
+          cmp KICK.json "$RUNNER_TEMP/KICK.json"
+          python -I -B reciprocal.py > "$RUNNER_TEMP/RECIPROCAL.json"
+          cmp RECIPROCAL.json "$RUNNER_TEMP/RECIPROCAL.json"
+          python -I -B angle.py > "$RUNNER_TEMP/ANGLE.json"
+          cmp ANGLE.json "$RUNNER_TEMP/ANGLE.json"
+          python -I -B bandwidth.py > "$RUNNER_TEMP/BANDWIDTH.json"
+          cmp BANDWIDTH.json "$RUNNER_TEMP/BANDWIDTH.json"
