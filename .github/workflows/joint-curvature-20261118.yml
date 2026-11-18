@@ -1,0 +1,26 @@
+name: Joint scalar and shell curvature
+on:
+  push:
+    paths: ['research/HDBLAST_JOINT_CURVATURE_20261118/**', '.github/workflows/joint-curvature-20261118.yml']
+  pull_request:
+    paths: ['research/HDBLAST_JOINT_CURVATURE_20261118/**', '.github/workflows/joint-curvature-20261118.yml']
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: research/HDBLAST_JOINT_CURVATURE_20261118
+          filter: blob:none
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify archived proofs and inputs and replay all arithmetic
+        working-directory: research/HDBLAST_JOINT_CURVATURE_20261118
+        run: |
+          echo '31051974feab64d957ea26e9e5cda9e3772123e801f3172fcc661375bb1932ef  SHA256SUMS' | sha256sum -c -
+          sha256sum -c SHA256SUMS
+          python -I -B reproduce.py
+          python -I -B -O reproduce.py
