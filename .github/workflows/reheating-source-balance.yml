@@ -1,0 +1,30 @@
+name: Reheating source balance
+on:
+  push:
+    paths:
+      - 'research/HDBLAST_REHEATING_TRANSFER_20261118/**'
+      - '.github/workflows/reheating-source-balance.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_REHEATING_TRANSFER_20261118/**'
+      - '.github/workflows/reheating-source-balance.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: research/HDBLAST_REHEATING_TRANSFER_20261118
+          filter: blob:none
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify the archived samples and both Python calculation modes
+        working-directory: research/HDBLAST_REHEATING_TRANSFER_20261118
+        run: |
+          echo 'ab3ac2754bd127f02b27d14ca331969f3b3ce93830c381f711c16bcffbb4c5c1  SHA256SUMS' | sha256sum -c -
+          sha256sum -c SHA256SUMS
+          python -I -B thermal_balance.py | cmp - RESULTS.json
+          python -I -B -O thermal_balance.py | cmp - RESULTS.json
