@@ -1,0 +1,34 @@
+name: Four-dimensional shell comparison
+on:
+  push:
+    paths: ['research/HDBLAST_DIMENSIONAL_COMPARISON_20261118/**', '.github/workflows/dimensional-comparison-20261118.yml']
+  pull_request:
+    paths: ['research/HDBLAST_DIMENSIONAL_COMPARISON_20261118/**', '.github/workflows/dimensional-comparison-20261118.yml']
+permissions:
+  contents: read
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: research/HDBLAST_DIMENSIONAL_COMPARISON_20261118
+          filter: blob:none
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify the shape, pulse and cutoff arithmetic
+        working-directory: research/HDBLAST_DIMENSIONAL_COMPARISON_20261118
+        run: |
+          echo '6787aa457d8acf6e523e28fbbf9ae06b82ddbe568f1535af66ef4afe734a5562  SHA256SUMS' | sha256sum -c -
+          sha256sum -c SHA256SUMS
+          for mode in normal optimized; do
+            flags=()
+            if [ "$mode" = optimized ]; then flags=(-O); fi
+            python -I -B "${flags[@]}" shape.py > "$RUNNER_TEMP/shape.json"
+            python -I -B "${flags[@]}" pulse_replay.py > "$RUNNER_TEMP/pulse.json"
+            python -I -B "${flags[@]}" cutoff.py > "$RUNNER_TEMP/cutoff.json"
+            cmp SHAPE.json "$RUNNER_TEMP/shape.json"
+            cmp pulse_bounds.json "$RUNNER_TEMP/pulse.json"
+            cmp CUTOFF.json "$RUNNER_TEMP/cutoff.json"
+          done
