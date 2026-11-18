@@ -24,7 +24,7 @@ jobs:
       - name: Verify the numerical tables and replay all registered outputs
         working-directory: research/HDBLAST_SCALAR_RESERVOIR_20261118
         run: |
-          echo 'bfdfb717321e79b640f73cb1c0df30cf92d02184b14d87d5058307a672bf3fb0  SHA256SUMS' | sha256sum -c -
+          echo '723bbf44fe9bc180017411f2885c28cddf8717121f43003e7fd01b417427b8b5  SHA256SUMS' | sha256sum -c -
           sha256sum -c SHA256SUMS
           python -I -B reproduce.py
           python -I -B -O reproduce.py

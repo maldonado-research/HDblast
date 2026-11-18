@@ -51,9 +51,9 @@ The degree-four derivative results are:
 | RHS of (1) | -15.6495001865 | -15.6531765955 |
 | Endpoint minus RHS residual | +0.000889156324 | +0.000365122169 |
 | Residual / max(abs(Delta E),abs(RHS)) | 5.68169e-5 | 2.33258e-5 |
-| Residual / sum of absolute integrated terms | 7.69049e-6 | 3.15693e-6 |
+| Residual / D, defined below | 7.69049e-6 | 3.15693e-6 |
 
-The smaller last-row numbers arise from cancellation between larger terms and must not replace the preceding error scale. These finite discrepancies are not continuum error bounds. The energy becomes negative because the actual bulk potential is included; replacing it by kinetic energy alone would change the observable and invalidate (1).
+Here D=abs(Delta E_coll)+abs(I_inner)+abs(I_wall)+abs(I_work): the sum includes the endpoint energy change as well as the three integrated terms. The smaller last-row numbers arise from cancellation between larger terms and must not replace the preceding error scale. These finite discrepancies are not continuum error bounds. The energy becomes negative because the actual bulk potential is included; replacing it by kinetic energy alone would change the observable and invalidate (1).
 
 With degree-two derivatives, the residuals are -0.00301412064 and -0.00050868033, respectively 1.92614e-4 and 3.24978e-5 of the energy-change scale. Retaining every other time row changes the degree-four predicted energy change by approximately 2.35e-4 and 2.34e-4 relative, larger than the full-cadence residuals. Thus small balance residuals do not certify a converged integration error or the precision of each term.
 
@@ -73,4 +73,12 @@ The four `collar_data/*.csv` files contain only time, collar energy, the two flu
 python replay_collar.py --output COLLAR_BALANCE.json
 ```
 
-The private extractor `collar_extract.py` implements the independently specified spatial derivative stencils and records SHA256 pins for every source snapshot. It never uses a producer Neumann derivative. The extraction receipts retain provenance for the rerun arrays. The optional SymPy script `check_collar_identity.py` verifies the finite displayed identity and nonzero residuals for four incorrect formulas. None of these checks turns the numerical experiment into a theorem of global energy conservation, a positive-reservoir bound, or a successful reheating scenario.
+To extract from a saved snapshot directory, including one from a full run, use NumPy and:
+
+```sh
+python collar_extract.py --grid coarse --snapshot-dir /path/to/run/collar --output-dir /path/to/output
+```
+
+Repeat with `--grid fine` and its snapshot directory. The extractor retains its original input/output defaults when these options are omitted. It reads from the initial snapshot through the first snapshot bracketing s=4, writes CSVs under the output directory's `collar_data/`, and writes extraction receipts in that output directory.
+
+The extractor implements the independently specified spatial derivative stencils and records SHA256 pins for every snapshot it reads. It never uses a producer Neumann derivative. The extraction receipts retain provenance for the rerun arrays. The optional SymPy script `check_collar_identity.py` verifies the finite displayed identity and nonzero residuals for four incorrect formulas. None of these checks turns the numerical experiment into a theorem of global energy conservation, a positive-reservoir bound, or a successful reheating scenario.

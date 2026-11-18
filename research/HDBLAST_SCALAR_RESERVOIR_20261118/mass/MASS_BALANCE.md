@@ -25,7 +25,7 @@ $$
 D_a\mu=\frac23 R^3 (T_a{}^b-\delta_a{}^b T_c{}^c)D_bR .
 $$
 
-The trace here runs over $T,z$ only. The reported mass retains all of the model's scalar potential $U(\phi)$. As a normalization check, planar vacuum with Schwarzschild–AdS function $f(R)=R^2/\ell^2-m$ and $U=-6/\ell^2$ gives $\mu=m-R^4/\ell^2$. The right side is $-(4/\ell^2)R^3D_aR$, exactly its derivative. Using a cosmological-constant-subtracted convention would change both the mass and its balance. [Einstein-limit normalization in Maeda and Nozawa](https://arxiv.org/abs/0709.1199)
+The trace here runs over $T,z$ only. The reported mass retains all of the model's scalar potential $U(\phi)$. As a normalization check, planar vacuum with Schwarzschild–AdS function $f(R)=R^2/\ell^2-m/R^2$ and $U=-6/\ell^2$ gives $\mu=m-R^4/\ell^2$. The right side is $-(4/\ell^2)R^3D_aR$, exactly its derivative. Using a cosmological-constant-subtracted convention would change both the mass and its balance. [Einstein-limit normalization in Maeda and Nozawa](https://arxiv.org/abs/0709.1199)
 
 ## Independent metric and stress calculations
 

@@ -40,8 +40,10 @@ def trap(x,y):
     return math.fsum(float((x[i+1]-x[i])*(y[i]+y[i+1])/2) for i in range(len(x)-1))
 
 
-def extract(grid,degree):
-    paths=sorted((ROOT/f'run_{grid}'/'run/collar').glob('sample_*.npz'))
+def extract(grid,degree,snapshot_dir=None,output_dir=None):
+    snapshot_dir=ROOT/f'run_{grid}'/'run/collar' if snapshot_dir is None else snapshot_dir
+    output_dir=HERE if output_dir is None else output_dir
+    paths=sorted(snapshot_dir.glob('sample_*.npz'))
     require(paths,'no snapshots')
     records=[];pins=[];z0=None;A0=None;mat0=None;mat1=None;zz=None
     for path in paths:
@@ -74,6 +76,8 @@ def extract(grid,degree):
         work=weight*(.5*(3*at-bt)*pz**2-.5*(3*at+bt)*pt**2+(3*at+bt)*potential+bz*pt*pz)
         inferred=.5*math.exp(3*(float(d['A'][-1])-A0))*(float(d['sigma1'])+float(d['J']))*float(d['phi_T'][-1])
         records.append((float(d['T']),float(d['s']),trap(zz,energy),float(flux[0]),float(flux[-1]),trap(zz,work),inferred))
+        # Only the first bracket beyond the fixed window is needed, even for full runs.
+        if float(d['s'])>=4:break
     rows=np.asarray(records);T=rows[:,0];clock=rows[:,1]
     require(np.all(np.diff(T)>0) and np.all(np.diff(clock)>0),'invalid time grid')
     require(clock[0]<=1<4<=clock[-1],'rerun has not completed selected window')
@@ -81,24 +85,30 @@ def extract(grid,degree):
     tt=np.r_[endpoints[0],T[(T>endpoints[0])&(T<endpoints[1])],endpoints[1]]
     out=np.column_stack([np.interp(tt,T,rows[:,k]) for k in range(len(HEADER))])
     out[:,0]=tt;out[0,1]=1.;out[-1,1]=4.
-    folder=HERE/'collar_data';folder.mkdir(exist_ok=True)
+    folder=output_dir/'collar_data';folder.mkdir(parents=True,exist_ok=True)
     file=folder/f'{grid}_d{degree}.csv'
     with file.open('w',newline='') as f:
         writer=csv.writer(f,lineterminator='\n');writer.writerow(HEADER)
         writer.writerows(tuple(format(float(v),'.17g') for v in row) for row in out)
     receipt=dict(grid=grid,derivative_degree=degree,collar=[-.04,0.],collar_nodes=len(zz),
-                 source_nodes=len(z0),source_snapshots=len(paths),A0=A0,
+                 source_nodes=len(z0),source_snapshots=len(pins),A0=A0,
                  selected_T=endpoints.tolist(),selected_s=[1,4],selected_rows=len(tt),
                  public_csv=file.name,csv_sha256=hashlib.sha256(file.read_bytes()).hexdigest(),
                  wall_derivative_excludes_boundary_node=True,
                  source_pins=pins)
-    (HERE/f'COLLAR_EXTRACTION_{grid}_d{degree}.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
+    (output_dir/f'COLLAR_EXTRACTION_{grid}_d{degree}.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
     print(file,len(tt),receipt['csv_sha256'])
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--grid',choices=['coarse','fine'],required=True);a=p.parse_args()
-    for degree in (2,4):extract(a.grid,degree)
+    p=argparse.ArgumentParser()
+    p.add_argument('--grid',choices=['coarse','fine'],required=True)
+    p.add_argument('--snapshot-dir',type=Path,
+                   help='directory containing sample_*.npz (default: ../interior/run_GRID/run/collar)')
+    p.add_argument('--output-dir',type=Path,
+                   help='root for collar_data/ and extraction receipts (default: this script directory)')
+    a=p.parse_args()
+    for degree in (2,4):extract(a.grid,degree,a.snapshot_dir,a.output_dir)
 
 
 if __name__=='__main__':main()

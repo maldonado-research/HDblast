@@ -2,7 +2,7 @@
 
 18 November 2026. Numerical consequences of the archived B1 runs, with an exact algebraic conversion envelope. This concerns the earlier homogeneous, tuned `delta=0.1` B1 model; it does not import results from the later local packet model.
 
-At every retained state in the specified windows, converting **all currently present massive-particle energy** into radiation would still leave the registered radiation-dominance diagnostics far from their targets. Across all eight registered cutoff cells and both grids, the largest same-state radiation contribution to `H^2` is `0.01853141`, and the smallest Weyl/radiation ratio after this generous conversion is `56.7030`. The registered targets are `Omega_r>=0.9` and `|r|<=0.1`.
+At every retained state in the specified windows, converting **all currently present massive-particle energy** into radiation would still leave the registered radiation-dominance diagnostics far from their targets. Across all eight registered cutoff cells and both grids, the largest fraction of the recorded `H^2` attributable to radiation after conversion is `0.01853141`, and the smallest Weyl/radiation ratio after this generous conversion is `56.7030`. The registered targets are `Omega_r>=0.9` and `|r|<=0.1`.
 
 The nonlinear Friedmann formula distinguishes two deficits. The required radiative **contribution** is at least `567.03` times the available envelope; the required all-radiation **density** is at least `557.67` times the currently recorded total matter density. Merely attaining the `Omega_r>=0.9` criterion, without the Weyl-ratio criterion, requires at least `48.49` times that density. These are fixed-state numerical requirements, not predictions for a dynamically modified run.
 
