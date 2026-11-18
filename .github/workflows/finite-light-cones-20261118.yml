@@ -1,0 +1,34 @@
+name: Finite light cones at fixed affine length
+on:
+  push:
+    paths: ['research/HDBLAST_FINITE_LIGHT_CONES_20261118/**', 'research/HDBLAST_JOINT_CURVATURE_20261118/**', '.github/workflows/finite-light-cones-20261118.yml']
+  pull_request:
+    paths: ['research/HDBLAST_FINITE_LIGHT_CONES_20261118/**', 'research/HDBLAST_JOINT_CURVATURE_20261118/**', '.github/workflows/finite-light-cones-20261118.yml']
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            research/HDBLAST_FINITE_LIGHT_CONES_20261118
+            research/HDBLAST_JOINT_CURVATURE_20261118
+          filter: blob:none
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify model inputs and reproduce three optical enclosures
+        working-directory: research/HDBLAST_FINITE_LIGHT_CONES_20261118
+        run: |
+          echo '880a78bf536a666369ff69f32e0ff78acdaad75fd84a57be55bee445993239ee  SHA256SUMS' | sha256sum -c -
+          sha256sum -c SHA256SUMS
+          for optimize in "" "-O"; do
+            python -I -B $optimize optics.py > "$RUNNER_TEMP/optics.json"
+            cmp OPTICS.json "$RUNNER_TEMP/optics.json"
+            python -I -B $optimize beam_distance.py > "$RUNNER_TEMP/beam.json"
+            cmp BEAM.json "$RUNNER_TEMP/beam.json"
+            python -I -B $optimize kernel_check.py > "$RUNNER_TEMP/kernel.json"
+            cmp KERNEL.json "$RUNNER_TEMP/kernel.json"
+          done
