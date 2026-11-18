@@ -2,7 +2,7 @@
 
 A light beam on the modeled shell has two directions across its image. In the surrounding five-dimensional spacetime, a beam has a third. **Where the shell image expands at first order, a pencil of rays tilted slightly off the shell narrows in the extra direction.** The two changes cancel exactly in the full beam volume at that order. At second order the volume decreases in a calculable angular pattern. These predictions use the registered disturbance, the same receiving observer and the same fixed affine length as the earlier shell optical calculation. [Zenodo edition](https://doi.org/10.5281/zenodo.24353557) · [Previous shell measurement](../HDBLAST_FINITE_LIGHT_CONES_20261118/DERIVATION.md)
 
-A separate test uses the spatial volume of the entire shell. A closed universe with only a cosmological constant and separately conserved radiation can match the shell’s initial quiet interval only if its radiation density vanishes. [Proper-volume test and scope](ORIGIN.md)
+A separate test uses the spatial volume of the entire shell. A closed universe with only a cosmological constant and separately conserved radiation can match the shell’s initial quiet interval only if its radiation density vanishes. Adding a nonnegative pressureless parent that decays into radiation still leaves both densities zero throughout a connected regular history containing that cut, if all energy transfer stays between those two components. [Proper-volume test and scope](ORIGIN.md)
 
 ## What the shell predicts
 

@@ -31,7 +31,7 @@ jobs:
       - name: Verify capsule hashes and replay six calculations in both Python modes
         working-directory: research/HDBLAST_TRANSVERSE_OPTICS_20261118
         run: |
-          echo '28b57e46794c9c2e795da6cd853989f0ffbe17b44e353c76c12781bab321eb3d  SHA256SUMS' | sha256sum -c -
+          echo 'f817475cc6be07f26de5fe578faac191edd52e770b853711e8659e948c0243f8  SHA256SUMS' | sha256sum -c -
           sha256sum -c SHA256SUMS
           python -I -B reproduce.py
           python -I -B -O reproduce.py
