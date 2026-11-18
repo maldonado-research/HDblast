@@ -1,0 +1,37 @@
+name: Transverse bulk optical focusing
+on:
+  push:
+    paths:
+      - 'research/HDBLAST_TRANSVERSE_OPTICS_20261118/**'
+      - 'research/HDBLAST_JOINT_CURVATURE_20261118/**'
+      - 'research/HDBLAST_FINITE_LIGHT_CONES_20261118/**'
+      - '.github/workflows/transverse-optics.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_TRANSVERSE_OPTICS_20261118/**'
+      - 'research/HDBLAST_JOINT_CURVATURE_20261118/**'
+      - 'research/HDBLAST_FINITE_LIGHT_CONES_20261118/**'
+      - '.github/workflows/transverse-optics.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            research/HDBLAST_TRANSVERSE_OPTICS_20261118
+            research/HDBLAST_JOINT_CURVATURE_20261118
+            research/HDBLAST_FINITE_LIGHT_CONES_20261118
+          filter: blob:none
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify capsule hashes and replay six calculations in both Python modes
+        working-directory: research/HDBLAST_TRANSVERSE_OPTICS_20261118
+        run: |
+          echo '28b57e46794c9c2e795da6cd853989f0ffbe17b44e353c76c12781bab321eb3d  SHA256SUMS' | sha256sum -c -
+          sha256sum -c SHA256SUMS
+          python -I -B reproduce.py
+          python -I -B -O reproduce.py
