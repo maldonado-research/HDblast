@@ -13,7 +13,7 @@ The earlier study predicted how a scalar field varies across the shell after a w
 
 ![The scalar quadrupole and two directional averages of the intrinsic null Ricci curvature in the same two time windows. The curvature averages have opposite signs.](joint_signals.png)
 
-Shading marks the same clock windows in both panels. The left curve connects the centers of the scalar cell enclosures. The right curves use the first variation for two differently weighted ensembles of local null directions, in units specified by the full-sky test. The scale of a finite perturbation and a conversion to instrumental sensitivity remain unknown. [Figure code](plot_signals.py) · [Exact curvature intervals](NULL_SKY.json)
+Shading marks the same clock windows in both panels. The left curve connects the centers of the scalar cell enclosures. The right curves use the first variation for two differently weighted ensembles of local null directions, in units specified by the full-sky test. In the same physical curvature units, the plus-weighted directional mean is only about $-9.6\times10^{-16}$ of the intrinsic Ricci trace’s quadrupole mean in the first window and $+1.6\times10^{-14}$ in the second. This relative size is specific to the short registered packet. The absolute finite-amplitude signal and instrumental sensitivity remain unknown. [Figure code](plot_signals.py) · [Exact curvature intervals](NULL_SKY.json)
 
 ## What the negative sign means
 

@@ -20,7 +20,7 @@ jobs:
       - name: Verify archived proofs and inputs and replay all arithmetic
         working-directory: research/HDBLAST_JOINT_CURVATURE_20261118
         run: |
-          echo '31051974feab64d957ea26e9e5cda9e3772123e801f3172fcc661375bb1932ef  SHA256SUMS' | sha256sum -c -
+          echo 'f44f963be6065b11753e69dcb3f67d443d1213b0859db68ad9d5e72539dd10dd  SHA256SUMS' | sha256sum -c -
           sha256sum -c SHA256SUMS
           python -I -B reproduce.py
           python -I -B -O reproduce.py

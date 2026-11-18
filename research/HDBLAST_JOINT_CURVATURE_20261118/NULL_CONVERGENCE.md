@@ -24,6 +24,18 @@ Using $M=\mu\rho_b^2 U/\ell$, the normalized exposure is $\mp(16/27)M\operatorna
 
 Both exposures vanish at zero amplitude. Their clock averages have nonzero first derivatives of opposite sign. Smooth dependence of the actual induced metric, curvature and observer cut on the family parameter implies that for **every sufficiently small nonzero amplitude**, at least one of the two nonnegative-weight averages of the actual null Ricci curvature is negative. The protocol giving the negative sign swaps when the amplitude sign changes. A negative average guarantees a local negative contraction somewhere in its support. Two orthogonal spatial axes at a critical zero of $Y$ give a pointwise version. A smooth tangent vector field gives another protocol using one direction at each observer. [Two point directions](NULL_DIRECTIONS.md) · [One direction per observer](ANGULAR_EXPOSURE.md) The proofs supply no numerical amplitude radius or instrumental sensitivity. [Observer regularity, §2](https://github.com/maldonado-research/HDblast/blob/59651ab35b954ef268c81a771e9ec8064691f9ad/research/HDBLAST_EFFECTIVE_OBSERVER_20261116/EFFECTIVE_OBSERVER_DOMAIN_AND_RESPONSE_BOUNDS.md)
 
+## How large is the directional signal in the same curvature units?
+
+The first variations of both readings have units of inverse length squared. For the plus-weighted null exposure and the quadrupole coefficient of the intrinsic Ricci trace, their ratio of means over one clock window is
+$$
+\frac{\overline{N'_+}}{\overline{(\delta R)_Y}}
+=-\frac{8\ell^2}{81}\,
+\frac{\overline{M\operatorname{sech}^2 q}}{\overline A}.
+$$
+Indeed $(\delta R)_Y=2p_bB_b S=6B_b A/(\rho_b^3\ell)$, $N'_+=-16\ell M\operatorname{sech}^2q/(27\mu\rho_b^4)$, and the endpoint normalization satisfies $\mu\rho_b B_b=1$. The exact enclosures give a ratio between **−9.677 and −9.602 times $10^{-16}$** in the first window, and between **1.59167 and 1.60653 times $10^{-14}$** in the second. The minus-weighted result has the opposite sign. The small factor arises from the registered packet width $\ell=10^{-6}$. The independently normalized plot makes the shapes visible and uses different vertical scales.
+
+The reference in the denominator is the perturbation of the Ricci trace projected on $Y$, with the background removed. A common amplitude and common curvature unit cancel in this first-order comparison. The relative response of the two curvature measurements, null normalization, time windows and angular registration still require calibration. These figures neither specify actual instrumental sensitivity nor compare the signal with the entire background curvature. [Rational endpoints](NULL_SKY.json)
+
 ## What the sign excludes
 
 In four-dimensional Einstein gravity with positive coupling, $R_{kk}=\kappa_4 T_{kk}$ for true null vectors even in the presence of a cosmological constant. Matter satisfying the pointwise null energy condition gives a nonnegative value to **each** of these observations, irrespective of the initial states or number of fields. Such a model cannot match the registered intrinsic metric or both of the null-curvature exposures at the stated small amplitudes. This is a conditional exclusion for the metric to which the observers couple.

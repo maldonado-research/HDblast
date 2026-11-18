@@ -83,12 +83,23 @@ def calculate():
     inherited_means = [list(map(F, pair)) for pair in registered["metric_means"]]
     require(metric == inherited_means, "independent retarded integration")
     # Output units are mu*rho_b^4/ell times R_kk first variation.
+    shape_bytes = (ROOT / "inputs" / "SHAPE.json").read_bytes()
+    require(hashlib.sha256(shape_bytes).hexdigest() == "247d0a9cd51aada5dac103732278429981aeade6d1f6943cb3ee179d629eec1a", "trace reference")
+    scalar_means = json.loads(shape_bytes)["scaled_window_means"]
     rows = []
     for i,(lo,hi) in enumerate(metric):
         require(lo > error, "positive null response")
         negative = [-multiplier*(hi+error), -multiplier*(lo-error)]
         positive = [-negative[1], -negative[0]]
-        rows.append({"window":list(map(str,WINDOWS[i])),
+        denominators = list(map(F, scalar_means[i]))
+        require(denominators[0]*denominators[1] > 0, "trace mean cannot vanish")
+        ratios = [ELL**2*n/(6*d) for n in negative for d in denominators]
+        lo_ratio, hi_ratio = min(ratios), max(ratios)
+        rounded = [(-9677, -9602), (159167, 160653)][i]
+        require(F(rounded[0], 10**19) < lo_ratio <= hi_ratio < F(rounded[1], 10**19),
+                "physical curvature ratio")
+        rows.append({"physical_plus_to_trace_ratio":list(map(str, (lo_ratio,hi_ratio))),
+                     "window":list(map(str,WINDOWS[i])),
                      "mean_plus":list(map(str,negative)), "mean_minus":list(map(str,positive))})
     return {"csv_sha256":CSV_HASH, "angular_multiplier":str(multiplier),
             "units":"(mu*rho_b^4/ell) times the first variation of the null Ricci exposure",
