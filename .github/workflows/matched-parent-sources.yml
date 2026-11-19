@@ -1,0 +1,39 @@
+name: Initial pressure and force bounds on pair signals
+on:
+  push:
+    paths:
+      - 'research/HDBLAST_MATCHED_PARENT_SOURCES_20261119/**'
+      - '.github/workflows/matched-parent-sources.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_MATCHED_PARENT_SOURCES_20261119/**'
+      - '.github/workflows/matched-parent-sources.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            research/HDBLAST_MATCHED_PARENT_SOURCES_20261119
+            research/HDBLAST_MOVING_PARENT_20261119
+            research/HDBLAST_TAGGED_PARENT_20261119/primary
+            research/HDBLAST_SOURCE_WORK_20261118/coupled
+            research/HDBLAST_PULSE_PARTICLE_RESPONSE_20261118/classical/runs
+          filter: blob:none
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Authenticate the shell histories and recompute the constrained optima
+        working-directory: research/HDBLAST_MATCHED_PARENT_SOURCES_20261119
+        run: |
+          echo '3392281d2d6874a30a478c97db4ed872f93dd609048145b11fd7f0ffb510976e  SHA256SUMS' | sha256sum -c -
+          sha256sum --quiet -c SHA256SUMS
+          python -m pip install numpy==2.3.5 scipy==1.17.0
+          python -I -B reproduce.py
+          python -I -B -O reproduce.py --full
