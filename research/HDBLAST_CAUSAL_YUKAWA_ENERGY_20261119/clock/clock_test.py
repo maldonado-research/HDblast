@@ -140,17 +140,20 @@ def calculate(native):
     return report
 
 
-def verify(actual, expected):
+def verify(actual, expected, field=""):
     if isinstance(expected, dict):
         if actual.keys() != expected.keys():
             raise ValueError('Unexpected fields in output')
         for key in expected:
-            verify(actual[key], expected[key])
+            verify(actual[key], expected[key], key)
     elif isinstance(expected, str):
         if actual != expected:
             raise ValueError('Metadata differs')
     else:
-        np.testing.assert_allclose(actual, expected, rtol=1e-8, atol=2e-8)
+        # Subtracting two energies and converting to percent changes the
+        # absolute roundoff scale. The pulse energy is about 22 in these units.
+        absolute = 3e-6 if field.endswith(("_percent_of_quiet", "_pp")) else 2e-8
+        np.testing.assert_allclose(actual, expected, rtol=1e-8, atol=absolute)
 
 
 if __name__ == '__main__':

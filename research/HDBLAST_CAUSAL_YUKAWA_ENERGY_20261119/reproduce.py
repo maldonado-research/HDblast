@@ -58,7 +58,11 @@ def compare(actual, expected, field=""):
     elif isinstance(expected, float):
         # Finite-coupling extrapolations difference large vacuum energies. Their
         # independent convergence and symplectic tests run inside check/verify.py.
-        require(math.isclose(actual, expected, rel_tol=3e-6, abs_tol=3e-7),
+        # Clock contrasts are differences of two energies, expressed as percent
+        # of another energy of order 22.5. Their tolerance is in percentage points.
+        clock_percent = field.startswith("clock/") and field.endswith(("_percent_of_quiet", "_pp"))
+        absolute = 3e-6 if clock_percent else 3e-7
+        require(math.isclose(actual, expected, rel_tol=3e-6, abs_tol=absolute),
                 f"{field}: {actual} vs {expected}")
     else:
         require(type(actual) is type(expected) and actual == expected, field)

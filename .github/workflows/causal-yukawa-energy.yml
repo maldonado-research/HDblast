@@ -27,7 +27,7 @@ jobs:
       - name: Authenticate study and historical inputs
         working-directory: research/HDBLAST_CAUSAL_YUKAWA_ENERGY_20261119
         run: |
-          echo '00cf5322ee7e42131069fdb7adc629194835d76024e6c63c67c6e4f049d92f55  SHA256SUMS' | sha256sum -c -
+          echo 'a9115bb333ccabc80734d66f922fc7d84ce04f830ec7c5ddeaec5cd140581f2e  SHA256SUMS' | sha256sum -c -
           python -I -B -S reproduce.py
       - name: Recompute published numerical experiments
         working-directory: research/HDBLAST_CAUSAL_YUKAWA_ENERGY_20261119
