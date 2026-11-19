@@ -31,7 +31,7 @@ jobs:
       - name: Verify the capsule and inputs
         working-directory: research/HDBLAST_PULSE_PARTICLE_RESPONSE_20261118
         run: |
-          echo '260f01ea3d28cdc8ab68b236121267c3b1bd53c5fba805fbb7784c289c71c879  SHA256SUMS' | sha256sum -c -
+          echo '434f2d8522e3d7d4902359cdcf7632b874fa7f114b286465ff704ac6902edb7d  SHA256SUMS' | sha256sum -c -
           sha256sum -c SHA256SUMS
       - name: Install numerical dependencies
         run: python -m pip install numpy==2.3.5 scipy==1.17.0
