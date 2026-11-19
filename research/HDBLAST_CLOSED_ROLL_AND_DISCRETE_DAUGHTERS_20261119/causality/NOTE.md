@@ -1,0 +1,16 @@
+# Prior causal separation of the two scalar flanks
+
+This supplementary check follows four constrained positive-minimum-branch trajectories up to the upper fitted-field guard, at a canonical distance of $10^{-6}$ from the spline edge. The field at the limiting point is rolling toward larger `q`, away from the calibrated minimum. The opposite point on the hemisphere is rolling toward the minimum. Their angular separation is `π/2`.
+
+| Signed A | Guard x | Bound on total radial null reach | Lower bound on separation of initial causal footprints | Field distance to minimum at favored geodesic | Range enclosing q within 0.3 radians of favored geodesic |
+|---:|---:|---:|---:|---:|---:|
+| +0.0010 | 0.370306 | 0.36291 | 0.84499 | 0.31132 | [−0.07449, −0.05066] |
+| −0.0010 | 0.450848 | 0.43953 | 0.69174 | 0.04860 | [−0.33721, −0.31707] |
+| +0.0005 | 0.421094 | 0.40995 | 0.75090 | 0.31134 | [−0.07447, −0.05065] |
+| −0.0005 | 0.501853 | 0.48519 | 0.60042 | 0.04966 | [−0.33615, −0.31612] |
+
+The synchronous metric gives `|dχ/dx| ≤ exp[−m−sin²χ d]/a_bg` for every future-directed causal curve, with equality for radial null rays. Over each DOP853 step, the old spectral coefficients plus the sum of absolute values of the seven dense-output coefficients bound the absolute value of each instantaneous coefficient. This follows from the nested representation of the degree-seven interpolant, whose factors are either the normalized step fraction or its complement. Both have magnitude at most one. Each angular basis polynomial obeys `|U_n| ≤ n+1`. The resulting upper bound on `|m|+|d|`, combined with the smallest reference radius on that step, therefore bounds the speed on the full step and sphere. Summing the product of step durations and bounds gives the numerical null reach `C`. Each guard event depends only on a portion of the initial hypersurface within angular radius `C`. The gap between the two initial footprints is at least `π/2−2C`. The bound uses the computed polynomial metric and does not independently certify continuum PDE or floating-point errors. Checking degree 112 and maximum step 0.003 against degree 192 and step 0.0015 changes the reach bound by less than 0.00018 radians for all seeds. The initial data on the two regions are correlated through the original global constraint solution.
+
+At the stop, smooth fitted in-domain data occupy a finite neighborhood of the favored worldline, with the entire radius-0.3 neighborhood on the original side of `q_m = −0.38580518`. The field range on that slice uses a second-angular-derivative bound to account for gaps between sampled points. Local well-posedness and continuity give an open interval in which the favored geodesic still lies on that side of the minimum. The interval has no computed duration here. The numerical speed enclosure ends at the guard. Following a local patch beyond that time requires evolving the scalar and its metric on a domain of dependence where the fit remains valid. Extrapolating the final velocity or applying the previous speed enclosure after the guard would not establish when that patch crosses.
+
+Run from the study root with `OPENBLAS_NUM_THREADS=1 python causality/null_cones.py --output causality/NULL.json`.
