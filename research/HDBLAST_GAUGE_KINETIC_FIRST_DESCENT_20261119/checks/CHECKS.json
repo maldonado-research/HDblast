@@ -1,0 +1,94 @@
+{
+  "energy": "late physical excess above constant-I out vacuum times a^4",
+  "sphere": "unit radius harmonics k>=2 with 2(k^2-1) real transverse oscillators",
+  "sech": {
+    "g": 0.2,
+    "tau": 0.18,
+    "log_endpoint_ratio": 0.6283185307179586,
+    "full_sphere_a4_density": 0.5080321309819549,
+    "highest_k": 96,
+    "analytic_tail_upper": 5.656868385813184e-43,
+    "total_count_on_sphere": 2.948959164178822,
+    "squeeze_upper_per_oscillator": 0.4495487919054408,
+    "samples": [
+      {
+        "k": 2,
+        "exact": 0.1536142947629426,
+        "canonical_ode": 0.153614294762941
+      },
+      {
+        "k": 3,
+        "exact": 0.05657136168967674,
+        "canonical_ode": 0.056571361689677226
+      },
+      {
+        "k": 4,
+        "exact": 0.019088169041079784,
+        "canonical_ode": 0.01908816904107887
+      },
+      {
+        "k": 7,
+        "exact": 0.0006550761947255645,
+        "canonical_ode": 0.0006550761947254592
+      },
+      {
+        "k": 12,
+        "exact": 2.2947208896939488e-06,
+        "canonical_ode": 2.2947208896936896e-06
+      },
+      {
+        "k": 16,
+        "exact": 2.48902360934508e-08,
+        "canonical_ode": 2.4890236096019263e-08
+      }
+    ],
+    "checks": {
+      "max_absolute_occupation_error": 1.609823385706477e-15,
+      "max_relative_occupation_error": 1.0319145538062457e-10,
+      "max_reciprocal_difference": 1.2836953722228372e-15,
+      "max_work_residual": 3.7192471324942744e-15,
+      "max_wronskian_residual": 2.615685446016869e-12
+    }
+  },
+  "compact": {
+    "log_endpoint_ratio": 0.25,
+    "support_duration": 2,
+    "L1_potential_upper": 0.6193523796718269,
+    "L1_second_residual_upper": 11.492026227214893,
+    "A_rational": "2351526822405/3796751089664",
+    "B_rational": "65926009667987684320311450814059098239157097057147820723313487400390257/5736674139488536011466624159395454216144324214054332206881323645665280",
+    "partial_sums": [
+      {
+        "highest_k": 8,
+        "sum_a4_density": 0.011642549011286928,
+        "rigorous_tail_bound_rounded": 0.0018744642191702104
+      },
+      {
+        "highest_k": 16,
+        "sum_a4_density": 0.011643448838104066,
+        "rigorous_tail_bound_rounded": 0.0004392263616513593
+      },
+      {
+        "highest_k": 32,
+        "sum_a4_density": 0.011643468336417637,
+        "rigorous_tail_bound_rounded": 0.00010599501569531505
+      },
+      {
+        "highest_k": 64,
+        "sum_a4_density": 0.011643468680869708,
+        "rigorous_tail_bound_rounded": 2.601356671290147e-05
+      },
+      {
+        "highest_k": 128,
+        "sum_a4_density": 0.01164346868733596,
+        "rigorous_tail_bound_rounded": 6.442194246828354e-06
+      }
+    ],
+    "checks": {
+      "max_abs_occupation_refinement": 3.2959746043559335e-17,
+      "max_canonical_residual": 9.50350909079134e-14,
+      "max_beta_over_mode_bound": 0.5597459115590698,
+      "max_number_over_squeeze_bound": 0.2136880337915635
+    }
+  }
+}
