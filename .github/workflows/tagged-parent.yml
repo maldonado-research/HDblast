@@ -1,0 +1,36 @@
+name: Tagged scalar to Dirac pairs
+on:
+  push:
+    paths:
+      - 'research/HDBLAST_TAGGED_PARENT_20261119/**'
+      - '.github/workflows/tagged-parent.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_TAGGED_PARENT_20261119/**'
+      - '.github/workflows/tagged-parent.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            research/HDBLAST_TAGGED_PARENT_20261119
+            research/HDBLAST_SOURCE_WORK_20261118/coupled
+            research/HDBLAST_PULSE_PARTICLE_RESPONSE_20261118/classical/runs
+          filter: blob:none
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify inputs and reproduce the two-window spectrum
+        working-directory: research/HDBLAST_TAGGED_PARENT_20261119
+        run: |
+          echo 'd93ed7d8e511106657d3ad0656815d58445022cff89d8c4b912eac74440c19e9  SHA256SUMS' | sha256sum -c -
+          sha256sum --quiet -c SHA256SUMS
+          python -m pip install numpy==2.3.5 scipy==1.17.0
+          python -I -B -O reproduce.py
