@@ -21,7 +21,7 @@ def check(d):
     for grid, data in d["grids"].items():
         if (not 0 <= data["max_independent_difference_over_total"] < 2e-6 or
                 max(data["original_vacuum_to_retained_fork_relative_discrepancy"].values()) >= 1e-5 or
-                max(data["independent_contrast_error_pp"].values()) >= 2e-4 or
+                max(data["independent_contrast_error_pp"].values()) >= 1e-5 or
                 data["independent_midpoint_error_fraction"] >= 1e-7):
             raise ValueError("Independent replay")
         walls=data["walls"]
@@ -74,25 +74,72 @@ def check(d):
     return verified
 
 
-def match(a,b,path=()):
-    if isinstance(a,dict):
-        if not isinstance(b,dict) or a.keys()!=b.keys():
-            raise ValueError(("Keys",path))
-        for k,v in a.items():
-            match(v,b[k],(*path,k))
-    elif isinstance(a,list):
-        if not isinstance(b,list) or len(a)!=len(b):
-            raise ValueError(("List",path))
-        for i,v in enumerate(a):
-            match(v,b[i],(*path,str(i)))
-    elif isinstance(a,(int,float)):
-        # The released data use finite mesh histories. Replaying the native
-        # solver can move small differences of pulse counts by roundoff.
-        absolute = 4e-7 if "contrasts" in path or "independent_contrast_error_pp" in path else 5e-9
-        if not math.isclose(a,b,rel_tol=3e-6,abs_tol=absolute):
-            raise ValueError(("Number",path,a,b))
-    elif a!=b:
-        raise ValueError(("Value",path,a,b))
+DIAGNOSTICS = {
+    "max_independent_difference_over_total", "original_vacuum_to_retained_fork_relative_discrepancy",
+    "independent_contrast_error_pp", "independent_midpoint_error_fraction",
+    "max_difference_between_methods", "max_method_difference",
+}
+
+
+def tolerances(path, reference, actual):
+    # Each complete run has already passed the physical tests, including hard
+    # ceilings on the discrepancies of its two independent integration schemes.
+    # These discrepancy estimates are positive upper limits; their digits are
+    # sensitive to cancellation and are not themselves physical predictions.
+    if any(key in DIAGNOSTICS for key in path):
+        return None
+    if "contrasts" in path:
+        grid, field = path[1], path[-1]
+        bounds = [d["grids"][grid]["independent_contrast_error_pp"][field]
+                  for d in (reference, actual)]
+        # Primary values can approach the stable transfer result from either
+        # side. Allow both measured errors, in percentage points, plus a small
+        # allowance for the transfer quadrature on different platforms.
+        return 0., sum(bounds)+1e-8
+    if "midpoint_fraction" in path:
+        if path[-1]=="fixed":
+            return 0., 1e-12  # exact covariance-midpoint identity
+        grid=path[1]
+        return 0., sum(d["grids"][grid]["independent_midpoint_error_fraction"]
+                       for d in (reference,actual))+1e-10
+    if "normalized_differences" in path or "symmetric_contributions" in path:
+        # The quiet-wall supplement stores both methods' values for each
+        # component. Use its own discrepancy, even for the tiny hybrid term.
+        grid,section,*keys=path
+        direct="independent_differences" if section=="normalized_differences" else "independent_contributions"
+        errors=[]
+        for d in (reference,actual):
+            first,second=d[grid][section],d[grid][direct]
+            for key in keys:
+                first,second=first[key],second[key]
+            errors.append(abs(first-second))
+        return 0., sum(errors)+2e-11
+    if "independent_differences" in path or "independent_contributions" in path:
+        return 5e-8, 2e-11
+    return 3e-6, 5e-9  # absolute yields, densities, input moments and clocks
+
+
+def match(reference,actual):
+    def visit(a,b,path):
+        if isinstance(a,dict):
+            if not isinstance(b,dict) or a.keys()!=b.keys():
+                raise ValueError(("Keys",path))
+            for key,value in a.items():
+                visit(value,b[key],(*path,key))
+        elif isinstance(a,list):
+            if not isinstance(b,list) or len(a)!=len(b):
+                raise ValueError(("List",path))
+            for i,value in enumerate(a):
+                visit(value,b[i],(*path,str(i)))
+        elif isinstance(a,(int,float)):
+            if not isinstance(b,(int,float)) or not math.isfinite(a) or not math.isfinite(b):
+                raise ValueError(("Nonfinite number",path))
+            limits=tolerances(path,reference,actual)
+            if limits is not None and not math.isclose(a,b,rel_tol=limits[0],abs_tol=limits[1]):
+                raise ValueError(("Number",path,a,b,limits))
+        elif a!=b:
+            raise ValueError(("Value",path,a,b))
+    visit(reference,actual,())
 
 
 def check_supplement(data,split,main_data):
