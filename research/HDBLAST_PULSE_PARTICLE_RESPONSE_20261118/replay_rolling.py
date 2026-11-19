@@ -221,11 +221,24 @@ def full(work):
             require(max(map(abs, case["checks"].values())) < .002, "Independent matter budget")
             for k in ("q","s_star","D_over_q","number_factor","n_hat_at_crossing"):
                 close(case["event"][k],original[grid]["branches"][branch]["event"][k],k)
+            # Check the reconstructed densities before taking a pulse/quiet difference.
+            # The 32/48-node refinement shifts a late density by up to 3.4e-8
+            # relatively; use 1e-7 per density for cross-platform reproduction.
+            for field in ("R_with_F", "R_without_F"):
+                close(case["transport"]["cuts"]["2.15"][field],
+                      original[grid]["branches"][branch]["transport"]["cuts"]["2.15"][field],
+                      grid + "/" + branch + "/" + field, rel=1e-7)
         for branch in BRANCHES[1:]:
             for k in ("recorded_R_pct","recorded_X_pct","transport_R_pct","transport_R_no_D_pct",
                       "exact_fixed_wall_R_no_D_pct"):
+                expected = original[grid]["contrasts"][branch]["cuts"]["2.15"][k]
+                # Each transport percentage is 100 * (R_pulse/R_quiet - 1).
+                # Propagate the two density tolerances in percentage points.
+                absolute = 1e-11
+                if k in ("transport_R_pct", "transport_R_no_D_pct"):
+                    absolute = abs(100 + expected) * 2e-7 / (1 - 1e-7)
                 close(actual[grid]["contrasts"][branch]["cuts"]["2.15"][k],
-                      original[grid]["contrasts"][branch]["cuts"]["2.15"][k],k)
+                      expected, grid + "/" + branch + "/" + k, absolute=absolute)
     print("Reproduced rolling timing, leading-only coupled radiation and independent transport budget", flush=True)
 
 
