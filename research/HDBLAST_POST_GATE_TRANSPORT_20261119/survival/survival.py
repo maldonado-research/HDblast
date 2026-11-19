@@ -6,7 +6,7 @@ from pathlib import Path
 
 import numpy as np
 from scipy.optimize import brentq
-from scipy.special import gammainc
+from scipy.special import gammainc, roots_legendre
 
 ROOT = Path(__file__).resolve().parents[1]
 Y = 0.1
@@ -54,6 +54,30 @@ def sum_cells(x, factor):
     return x.reshape(-1, factor).sum(axis=1)
 
 
+def target_energy_floor(q, omega, weights, duration, energy, inverse, y, order):
+    """Necessary target column for ten percent of the original particles to collide."""
+    nodes, w = roots_legendre(order)
+    k = (omega[:, :, None] + q[:, None, None] * nodes) / 2
+    probabilities = weights[:, :, None] * w / (2 * weights.sum())
+    def fraction(column):
+        return np.sum(probabilities * (-np.expm1(-8*np.pi*column/k)))
+    column = brentq(lambda u: fraction(u)-.10, 0., 2., xtol=1.e-14)
+    jensen = -np.log1p(-.1) * weights.sum() / (8*np.pi*inverse)
+    mean_inv = column / duration
+    floor = 2*np.pi**2/SPIN * mean_inv**2
+    # At fixed inverse moment, the fully occupied ball minimizes energy.
+    radius = np.sqrt(4*np.pi**2*mean_inv / SPIN)
+    sphere_k = (nodes+1)*radius/2
+    sphere = SPIN/(2*np.pi**2)*w*radius/2*sphere_k**2
+    assert abs(np.sum(sphere/sphere_k)/mean_inv - 1.) < 2.e-12
+    assert abs(np.sum(sphere*sphere_k)/floor - 1.) < 2.e-12
+    assert 0 < jensen <= column and abs(fraction(column)-.10)<2.e-12
+    return dict(target_tag_fraction=.10, necessary_integrated_inverse_moment=column,
+                jensen_necessary_column=jensen, necessary_mean_inverse_moment=mean_inv,
+                necessary_mean_target_energy=floor, emitted_per_sign_energy=y**2*energy,
+                minimum_ratio_to_emitted_energy=floor/(y**2*energy))
+
+
 def experiment(repo):
     daughter = library("daughters", "daughters.py")
     transport = library("transport", "transport.py")
@@ -73,6 +97,12 @@ def experiment(repo):
         assert np.isclose(measure.sum(), physical_count, rtol=1.e-13)
         assert np.isclose((measure/k).sum(), max_inv, rtol=1.e-13)
         column = transport.column(repo, arm, END)
+        target_floor = target_energy_floor(q, omega, weights, column["delta_eta"], energy, inv, Y, 40)
+        check_nodes = daughter.pair_nodes(repo, arm, "full", 64, 3)
+        lower_res = target_energy_floor(*check_nodes, column["delta_eta"], energy, inv, Y, 20)
+        target_floor["relative_refinement"] = abs(target_floor["necessary_mean_target_energy"] /
+                                                 lower_res["necessary_mean_target_energy"] - 1.)
+        assert target_floor["relative_refinement"] < 3.e-6
         b = 8*np.pi*max_inv*column["delta_eta"]
         ncap = -np.expm1(-b * inv/number)
         ecap = -np.expm1(-b * number/energy)
@@ -84,6 +114,20 @@ def experiment(repo):
         clipped = abs(np.minimum(counts,0.).sum())
         assert clipped < 2.e-9 and abs(1-counts.sum())<1.e-8
         counts = np.maximum(0.,counts)
+        def histogram_column(k_edge):
+            def frac(u):
+                active = k_edge > 0.
+                hit = np.ones_like(k_edge)
+                hit[active] = -np.expm1(-8.*np.pi*u/k_edge[active])
+                return counts @ hit - .10
+            return brentq(frac,1.e-8,2.)
+        lower_col = histogram_column(fine[:-1])
+        upper_col = histogram_column(fine[1:])
+        assert lower_col <= target_floor["necessary_integrated_inverse_moment"] <= upper_col
+        target_floor["independent_column_bracket"] = [lower_col,upper_col]
+        target_floor["conservative_lower_energy_ratio"] = (
+            2*np.pi**2/SPIN * (lower_col / column["delta_eta"])**2 / (Y**2*energy)
+        )
         # Compare a separately evaluated coarse histogram; account for cumulative roundoff.
         curves2 = daughter.pair_interpolants(repo, arm, 80, 3)
         bins2 = daughter.binned(q, "full", curves2, fine[::16])[0]/number
@@ -121,7 +165,7 @@ def experiment(repo):
             fermi_ball_radius=kf,maximum_comoving_inverse_moment=max_inv,delta_eta=column["delta_eta"],
             upper_tag_exponent_numerator=b,upper_first_event_fraction_number=float(ncap),
             upper_first_event_fraction_initial_energy=float(ecap), bin_negative_roundoff=clipped,
-            independent_bin_L1_discrepancy=float(comparison),bin_widths=table)
+            independent_bin_L1_discrepancy=float(comparison),bin_widths=table, target_energy_floor=target_floor)
     return result
 
 

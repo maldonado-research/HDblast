@@ -34,3 +34,22 @@ For the fermionic equilibrium shape at the strictly conserved count and energy, 
 ## Numerical controls
 
 The reference bins have widths 1, 1/2 and 1/4 over $0\le k\le64$, with an overflow bin retaining the equilibrium tail. Source counts use a piecewise angular integral. Within every bin, subintervals of width 1/64 bracket the survival weights at both ends. A second source and time resolution checks the integrated masses. The code independently evaluates the filled-sphere moments and solves for Fermi–Dirac equilibrium using the convergent fugacity expansion. It reports both ends of the numerical bracket for the exposure threshold of each finite-bin test. All bounds concern this finite source, recorded time interval and declared transport assumptions. [Calculation](survival.py) · [All four histories](SURVIVAL.json)
+
+## How much energy would a larger target population require?
+
+We can relax the assumption that the emitted antiparticles are the only targets and ask for a **necessary energy budget** for a proposed replacement. Keep the original freely redshifting tags until their first encounter, the measured geometry, and the same one isotropic elastic channel. The total target pool has two fermionic spin states, $g=2$, and a homogeneous, isotropic one-body distribution satisfying Pauli occupation. Its number and momentum distribution may vary in time. Let $L=\int I(\eta)\,d\eta$ be its total inverse-momentum column. A tag with initial comoving momentum $k$ experiences its first collision with probability no larger than $1-\exp(-8\pi L/k)$. Thus a necessary column for ten percent to collide solves
+
+$$
+ 0.10=\int [1-e^{-8\pi L_{10}/k}]\,dP_0(k).
+$$
+
+For any target inverse moment $I$, the smallest permitted comoving energy density is $E_{\min}=2\pi^2 I^2/g$. To see this, the energy cost per unit inverse moment at momentum $k$ is $k^2$. Filling the lowest available states first minimizes the cost. A filled sphere of radius $r$ has $I=gr^2/(4\pi^2)$ and $E=gr^4/(8\pi^2)$, attaining the bound. Averaging over the conformal interval and applying the mean-square inequality gives
+
+$$
+ \overline E_{\rm target} \ge \frac{2\pi^2}{g}
+       \left(\frac{L_{10}}{\Delta\eta}\right)^2 .
+$$
+
+The quiet wall needs $L_{10}=0.0670490$ in native units. The available interval is 0.0889485. The required mean comoving energy density in opposite-sign targets is therefore at least 5.608 native units. The emitted antiparticles supply 0.13908 at $y=0.1$, giving a ratio of **40.32**. The three pulse ratios are 40.54, 39.17 and 40.24. An independent momentum histogram brackets the required column using tag survival at both edges of each cell. Its conservative endpoints still require **more than 39 times** the emitted one-sign energy on every wall.
+
+This is the total target energy averaged over the observed conformal interval. The count threshold concerns original particles with an encounter; ten percent need not suffice to make a thermal spectrum. The comparison fixes the shell motion so it can specify what a proposed source would have to supply. Introducing that much material and allowing it to gravitate would require a new shell evolution. Changing the target degeneracy, interaction channels, angular law or time interval changes the budget. [Exploratory energy-budget test](https://github.com/maldonado-research/HDblast/issues/157#issuecomment-7016666861)

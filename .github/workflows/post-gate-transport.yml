@@ -38,7 +38,7 @@ jobs:
           python-version: '3.12'
       - name: Verify study and historical inputs
         run: |
-          echo '6ef4596b7aee169c1508684663d4e4fec1f5e18afc5f3ea366073bff8b5412ce  SHA256SUMS' | sha256sum -c -
+          echo '674c613d3f308af6c9835da5d71bd47b625c8436c5ecb4a42c4a472f6c746d58  SHA256SUMS' | sha256sum -c -
           python -I -B -S reproduce.py
       - name: Replay the scientific experiments
         env:
