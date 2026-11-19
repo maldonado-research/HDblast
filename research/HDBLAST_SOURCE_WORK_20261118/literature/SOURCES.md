@@ -1,0 +1,29 @@
+# Energy transfer, quantum subtraction and the choice of a bath
+
+The preceding HDblast calculation found that a local crossing rule and freely propagated quantum modes predict different changes in an admitted momentum band. The next question concerns which source supplies the change in energy and whether it can be followed into radiation. Several existing results determine what a calculation of that transfer must keep. [Preceding study](https://doi.org/10.5281/zenodo.24355584)
+
+## Work by the changing mass
+
+Franchino-Viñas, Mantiñan and Mazzitelli treat a quantum scalar with an external squared mass proportional to $\sigma^2$. Their Eq. (21) relates the divergence of the renormalized field stress to the derivative of the external potential multiplied by the renormalized variance. Eqs. (22)–(23) show explicitly how the fourth-order stress and second-order variance subtractions preserve that relation in their model. Fulling, Settlemyre and Milton give the external-potential conservation identity in Eq. (34), with their metric signature, and exhibit the same need to choose the two finite parts consistently. Their Eq. (14) also gives an action with a quadratic coupling to a second scalar. [Franchino-Viñas et al., Sec. III A](https://arxiv.org/abs/2110.14692v1) · [Fulling et al., Sec. III D](https://doi.org/10.3390/sym10030054)
+
+For a homogeneous squared mass $X(s)$, proper time $s$, a flat Friedmann scale factor $a$ and $h=d\log a/ds$, the field’s energy density satisfies
+
+$$
+\dot\rho_\chi+3h(\rho_\chi+p_\chi)=\tfrac12\dot X\langle\chi^2\rangle.
+$$
+
+On a fixed comoving momentum interval the free mode equations imply this balance separately for that interval when all three observables use the same modes. The derivative on the right acts on the squared mass. The integrated terms $\int a^3\dot X\langle\chi^2\rangle\,ds/2$ and $-\int 3ha^3p_\chi\,ds$ add to the change of field energy in a unit comoving volume. Subtracting a reference oscillator energy also changes the force and pressure terms by its derivatives. A numerical match of this identity tests the calculation within the prescribed band. It leaves the ultraviolet modes and any independent source or bath dynamics undetermined. [External-potential derivation](https://arxiv.org/abs/1802.02883v1) · [Covariant subtractions with a scalar background](https://arxiv.org/abs/2110.14692v1)
+
+## Which differences are independent of the subtraction?
+
+For a specified Klein–Gordon operator, the local two-point function of a Hadamard state has the form $H_\ell+W$ with $W$ smooth. Subtracting two such states on the same metric with the same mass operator cancels their common local singular term when the same prescription is used. The pulse and quiet histories generally have different metrics and different mass histories. The state-difference argument cannot remove that dependence from their energy contrast. A fixed finite band and an explicitly chosen subtraction still define a reproducible effective comparison. [Juárez-Aubry et al., Eq. (5)](https://doi.org/10.1088/1475-7516/2024/10/002)
+
+Lai and Ota’s 11 November 2026 **version 2** preprint studies the one-loop gravitational-wave response of a scalar with time-dependent effective mass on an FLRW background. The response includes the explicit metric variation of the stress operator, called the contact term. With that term, the three local coefficients accessible from the homogeneous background stress agree with the corresponding coefficients from the linear response. Eqs. (5.21)–(5.22) verify cancellation in both energy density and pressure. The Weyl-squared coefficient requires the perturbed calculation. Their prepared-state example in Sec. 6 also illustrates a distinct initial-surface contribution. This result motivates checking the explicit parameter dependence of a varied observable alongside the variation of its state. Their tensor-response calculation does not provide a microscopic model of the HDblast shell. [Lai and Ota, version 2, Secs. 5–7](https://arxiv.org/pdf/2606.16296v2)
+
+## Closing a source model and introducing decay
+
+Ramsey and Hu evolved quantum fluctuations, a mean field and cosmological expansion together in a self-interacting inflaton model, using a closed-time-path effective action, a leading large-$N$ approximation and consistently renormalized equations. Their calculation illustrates the additional premises of a semiclassical model beyond propagation on a stored background. A finite band coupled reciprocally to a dynamical source can test energy exchange and change the trajectory within its specified truncation. [Ramsey and Hu, Sec. III](https://arxiv.org/abs/hep-ph/9706207v2)
+
+Dann, Levy and Kosloff demonstrate explicitly that in a driven parametric harmonic oscillator the weak-coupling Markovian jump operators and rates derived from the time-dependent propagator can differ from the instantaneous energy-basis prescription. The familiar instantaneous lowering and raising operators reappear in their adiabatic limit. This matters at a rapid mass crossing. A channel built from instantaneous lowering operators supplies a well-defined test of one decay model. Complete positivity and energy conservation within that model alone cannot establish a microscopic decay rate or thermalization of its daughters. [Dann et al., Secs. III B and IV](https://arxiv.org/abs/1805.10689)
+
+The targeted Firecrawl literature search covered external scalar potentials, Hadamard state differences, semiclassical scalar backreaction and driven-oscillator master equations. A second search restricted recent papers to 1 January 2024 through 18 November 2026. The cited identities were checked against the papers, including the explicitly versioned November 2026 PDF. These studies supply methods and consistency tests for the model. Astronomical evidence for a higher-dimensional origin would require a separate observational test.
