@@ -1,6 +1,4 @@
-# Deploys the HDBLAST website (the small site/ folder) to GitHub Pages.
-# The repository itself is several GB, so only site/ is checked out and published.
-# One-time setup: Settings -> Pages -> Build and deployment -> Source: "GitHub Actions".
+# Deploy the static site from a sparse checkout of the repository.
 name: Deploy website
 
 on:
@@ -9,29 +7,60 @@ on:
     paths: ["site/**", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-22.04
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: read
+    outputs:
+      artifact_name: ${{ steps.package.outputs.name }}
+      artifact_id: ${{ steps.upload.outputs.artifact_id }}
     steps:
       - uses: actions/checkout@v4
         with:
           sparse-checkout: site
           filter: blob:none
-      - uses: actions/configure-pages@v5
+      - name: Name this build
+        id: package
+        run: echo "name=github-pages-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-pages-artifact@v3
+        id: upload
         with:
+          name: ${{ steps.package.outputs.name }}
           path: site
-      - id: deployment
-        uses: actions/deploy-pages@v4
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-22.04
+    permissions:
+      actions: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - name: Allow time for the uploaded artifact to appear
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARTIFACT_NAME: ${{ needs.build.outputs.artifact_name }}
+          ARTIFACT_ID: ${{ needs.build.outputs.artifact_id }}
+        run: |
+          # REST visibility is advisory. The deployment action performs the final lookup.
+          endpoint="repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?name=$ARTIFACT_NAME"
+          for delay in 1 2 4 8 16; do
+            if visible_id=$(timeout 5s gh api "$endpoint" \
+                --jq '.artifacts[] | select(.expired == false) | .id') && [[ "$visible_id" == "$ARTIFACT_ID" && -n "$ARTIFACT_ID" ]]; then
+              break
+            fi
+            sleep "$delay"
+          done
+      - uses: actions/deploy-pages@v4
+        id: deployment
+        with:
+          artifact_name: ${{ needs.build.outputs.artifact_name }}
