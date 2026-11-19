@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "band": [
+    60.0,
+    120.0
+  ],
+  "variable": "x=omega^-2",
+  "measure": "dmu=(1-q^2*x)/(8*pi^2*x^2)dx = g\u00b2(domega)/omega\u00b2",
+  "reconstruction": "omega=x^-1/2,g\u00b2=mu/x",
+  "source_rule": "N1..16 x-Gauss; N32/64 independent direct frequency references",
+  "mode_count": 24,
+  "orders": {
+    "1": {
+      "min_strength": 1058397.6878520537,
+      "max_relative_static_kinetic_moment_error": 2.220446049250313e-16,
+      "max_abs_normalized_scaled_polynomial_moment_error": 1.667526408584296e-14,
+      "base512_vs1024_max_relative_response_change": 0.0
+    },
+    "2": {
+      "min_strength": 173354.66067306598,
+      "max_relative_static_kinetic_moment_error": 2.398081733190338e-14,
+      "max_abs_normalized_scaled_polynomial_moment_error": 1.7366860586426503e-14,
+      "base512_vs1024_max_relative_response_change": 1.247149030594796e-14
+    },
+    "4": {
+      "min_strength": 31899.635932414138,
+      "max_relative_static_kinetic_moment_error": 2.4424906541753444e-14,
+      "max_abs_normalized_scaled_polynomial_moment_error": 2.234268887470183e-14,
+      "base512_vs1024_max_relative_response_change": 1.331490824901508e-14
+    },
+    "8": {
+      "min_strength": 7255.272325711594,
+      "max_relative_static_kinetic_moment_error": 2.4424906541753444e-14,
+      "max_abs_normalized_scaled_polynomial_moment_error": 2.3872721863600433e-14,
+      "base512_vs1024_max_relative_response_change": 1.3459136131208126e-14
+    },
+    "16": {
+      "min_strength": 1768.447217882211,
+      "max_relative_static_kinetic_moment_error": 2.4424906541753444e-14,
+      "max_abs_normalized_scaled_polynomial_moment_error": 2.4077197756648647e-14,
+      "base512_vs1024_max_relative_response_change": 1.3745165290085925e-14
+    },
+    "32": {
+      "min_strength": 439.2071405247414,
+      "max_relative_static_kinetic_moment_error": 2.4868995751603507e-14,
+      "max_abs_normalized_scaled_polynomial_moment_error": 2.3287358871454352e-14,
+      "base512_vs1024_max_relative_response_change": 1.3841232981195933e-14
+    },
+    "64": {
+      "min_strength": 109.61328489362931,
+      "max_relative_static_kinetic_moment_error": 2.4868995751603507e-14,
+      "max_abs_normalized_scaled_polynomial_moment_error": 2.3412841028747127e-14,
+      "base512_vs1024_max_relative_response_change": 1.3697171020283352e-14
+    }
+  }
+}
