@@ -1,0 +1,253 @@
+{
+  "model": "Quiet fixed wall with 64-node frequency panels, full proper energy coefficients per y^2",
+  "frequency_panels": [
+    [
+      0,
+      60
+    ],
+    [
+      60,
+      120
+    ],
+    [
+      120,
+      240
+    ],
+    [
+      240,
+      480
+    ]
+  ],
+  "first_panel_lower_per_mode": "q",
+  "static_completion": "C=sum(g^2/omega^2) for actual included oscillators",
+  "direct_opposite_sign_maximum_normalized_residuals": {
+    "quiet_bare": {
+      "rho": 2.418306751925948e-15,
+      "p": 1.0330673017118315e-15,
+      "j": 5.320299484265867e-16,
+      "rad": 5.869715427003181e-16,
+      "drho": 3.728305774367308e-15,
+      "dp": 1.1665666709869211e-15,
+      "dj": 5.356836158138847e-16,
+      "drad": 4.3942110274553917e-16
+    },
+    "quiet_static": {
+      "rho": 1.0694970807962545e-14,
+      "p": 4.3808356983608555e-15,
+      "j": 6.964346441380528e-16,
+      "rad": 5.869715427003181e-16,
+      "drho": 7.056396270030106e-15,
+      "dp": 5.376345964782536e-15,
+      "dj": 8.136298425196592e-16,
+      "drad": 4.3942110274553917e-16
+    },
+    "minus_bare": {
+      "rho": 7.150699739055147e-15,
+      "p": 9.0843989319371e-16,
+      "j": 7.585787398767957e-16,
+      "rad": 6.959935782587684e-16,
+      "drho": 3.909453933885895e-15,
+      "dp": 1.0100619083747104e-15,
+      "dj": 7.136346029260561e-16,
+      "drad": 5.09277939498693e-16
+    },
+    "minus_static": {
+      "rho": 1.0285610889665914e-14,
+      "p": 2.959517995378437e-15,
+      "j": 6.974748313264746e-16,
+      "rad": 6.959935782587684e-16,
+      "drho": 6.525675301246057e-15,
+      "dp": 3.582644028182361e-15,
+      "dj": 9.2057200291255e-16,
+      "drad": 5.09277939498693e-16
+    }
+  },
+  "quiet_late_increments_per_cutoff": {
+    "120": {
+      "bare": {
+        "change_energy": {
+          "parent": -14.767096482830866,
+          "daughter": 13.647943532332953,
+          "interaction": 0.0,
+          "counterterm": 0.0
+        },
+        "total_proper_change": -1.119152950497913,
+        "scalar_mass_work": -0.17850127515306385,
+        "gate_interaction_work": -0.7408879263881252,
+        "gate_completion_work": 0.0,
+        "gate_work": -0.7408879263881252,
+        "gate_work_path": {
+          "gross_in": 6.377174531207614,
+          "gross_out": 7.118062293894216,
+          "maximum_cumulative": 2.272154530403469,
+          "minimum_cumulative": -4.104617701354692,
+          "pchip_net": -0.7408877626866017
+        },
+        "expansion_work": -0.1997637445177069,
+        "energy_residual": -4.4390169873231855e-09,
+        "max_pointwise_ward": 1.3926637620897964e-12,
+        "initial_pulse_proper_daughter": 22.279509604271784,
+        "both_pulses_proper_daughter": 35.92745313660474
+      },
+      "static": {
+        "change_energy": {
+          "parent": -3.9221432914783936,
+          "daughter": 13.647943532332953,
+          "interaction": 0.0,
+          "counterterm": 0.0
+        },
+        "total_proper_change": 9.725800240854559,
+        "scalar_mass_work": -0.05132591050804371,
+        "gate_interaction_work": -0.7408879263881252,
+        "gate_completion_work": 10.712095832086664,
+        "gate_work": 9.971207905698538,
+        "gate_work_path": {
+          "gross_in": 13.569877717986548,
+          "gross_out": 3.5986694882025434,
+          "maximum_cumulative": 13.551365997480794,
+          "minimum_cumulative": -1.0134576457032194e-07,
+          "pchip_net": 9.971208229784006
+        },
+        "expansion_work": -0.19408175670105723,
+        "energy_residual": 2.3651224589915643e-09,
+        "max_pointwise_ward": 1.2505552149377763e-12,
+        "initial_pulse_proper_daughter": 22.279509604271784,
+        "both_pulses_proper_daughter": 35.92745313660474
+      }
+    },
+    "240": {
+      "bare": {
+        "change_energy": {
+          "parent": -65.00716595718687,
+          "daughter": 42.8291522786569,
+          "interaction": 0.0,
+          "counterterm": 0.0
+        },
+        "total_proper_change": -22.17801367852997,
+        "scalar_mass_work": -0.8536376002532091,
+        "gate_interaction_work": -20.657958035130797,
+        "gate_completion_work": 0.0,
+        "gate_work": -20.657958035130797,
+        "gate_work_path": {
+          "gross_in": 19.83424517850534,
+          "gross_out": 40.49220360609709,
+          "maximum_cumulative": 2.955359010465724e-06,
+          "minimum_cumulative": -37.66119653584896,
+          "pchip_net": -20.65795842759176
+        },
+        "expansion_work": -0.6664180751859764,
+        "energy_residual": 3.204000942336194e-08,
+        "max_pointwise_ward": 6.59383658785373e-12,
+        "initial_pulse_proper_daughter": 22.27951495053019,
+        "both_pulses_proper_daughter": 65.1086672291871
+      },
+      "static": {
+        "change_energy": {
+          "parent": -21.11171891866385,
+          "daughter": 42.8291522786569,
+          "interaction": 0.0,
+          "counterterm": 0.0
+        },
+        "total_proper_change": 21.71743335999305,
+        "scalar_mass_work": -0.338606879802145,
+        "gate_interaction_work": -20.657958035130797,
+        "gate_completion_work": 43.35785223368159,
+        "gate_work": 22.699894198550794,
+        "gate_work_path": {
+          "gross_in": 29.352286301238703,
+          "gross_out": 6.652390953388672,
+          "maximum_cumulative": 27.5785337379873,
+          "minimum_cumulative": 0.0,
+          "pchip_net": 22.69989534785003
+        },
+        "expansion_work": -0.6438540183260519,
+        "energy_residual": 5.957045257076743e-08,
+        "max_pointwise_ward": 4.490630090003833e-12,
+        "initial_pulse_proper_daughter": 22.27951495053019,
+        "both_pulses_proper_daughter": 65.1086672291871
+      }
+    },
+    "480": {
+      "bare": {
+        "change_energy": {
+          "parent": -201.96820420511128,
+          "daughter": 44.1246884009983,
+          "interaction": 0.0,
+          "counterterm": 0.0
+        },
+        "total_proper_change": -157.84351580411297,
+        "scalar_mass_work": -2.501281522884921,
+        "gate_interaction_work": -154.48191961242875,
+        "gate_completion_work": 0.0,
+        "gate_work": -154.48191961242875,
+        "gate_work_path": {
+          "gross_in": 56.41804690144478,
+          "gross_out": 210.89997229085665,
+          "maximum_cumulative": 5.457470571368972e-07,
+          "minimum_cumulative": -210.89421549634235,
+          "pchip_net": -154.48192538941186
+        },
+        "expansion_work": -0.860314441592917,
+        "energy_residual": -2.2720638759299305e-07,
+        "max_pointwise_ward": 2.8194335754960775e-11,
+        "initial_pulse_proper_daughter": 22.279514951059376,
+        "both_pulses_proper_daughter": 66.40420335205769
+      },
+      "static": {
+        "change_energy": {
+          "parent": -25.75966603031437,
+          "daughter": 44.1246884009983,
+          "interaction": 0.0,
+          "counterterm": 0.0
+        },
+        "total_proper_change": 18.36502237068393,
+        "scalar_mass_work": -0.43345917561699604,
+        "gate_interaction_work": -154.48191961242875,
+        "gate_completion_work": 174.05067040502496,
+        "gate_work": 19.56875079259615,
+        "gate_work_path": {
+          "gross_in": 33.97715383716245,
+          "gross_out": 14.408403017197461,
+          "maximum_cumulative": 31.750846089508705,
+          "minimum_cumulative": 0.0,
+          "pchip_net": 19.568750819964983
+        },
+        "expansion_work": -0.7702691295902324,
+        "energy_residual": -1.1670498900606674e-07,
+        "max_pointwise_ward": 2.1941559680271894e-11,
+        "initial_pulse_proper_daughter": 22.279514951059376,
+        "both_pulses_proper_daughter": 66.40420335205769
+      }
+    }
+  },
+  "quiet_difference_8192_minus_4096_subdivisions": {
+    "120": {
+      "bare": {
+        "daughter_increment": -2.996399235399849e-07,
+        "parent_increment": -1.2293108042626955e-07,
+        "gate_work": -4.2420469914539183e-07,
+        "total_proper_change": -4.2257100396625447e-07
+      },
+      "static": {
+        "daughter_increment": -2.996399235399849e-07,
+        "parent_increment": -3.787171198865735e-08,
+        "gate_work": -3.3034489277383727e-07,
+        "total_proper_change": -3.3751163464046385e-07
+      }
+    },
+    "480": {
+      "bare": {
+        "daughter_increment": -3.567834170326023e-07,
+        "parent_increment": -1.3771470719348144e-06,
+        "gate_work": -2.0189322356145567e-06,
+        "total_proper_change": -1.7339305031782715e-06
+      },
+      "static": {
+        "daughter_increment": -3.567834170326023e-07,
+        "parent_increment": -9.323148475459675e-09,
+        "gate_work": -5.079293003973362e-07,
+        "total_proper_change": -3.66106565508062e-07
+      }
+    }
+  }
+}
