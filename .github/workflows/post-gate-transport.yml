@@ -1,0 +1,49 @@
+name: Particle collisions after shell emission
+on:
+  pull_request:
+    branches: [main]
+    paths: &study_paths
+      - 'research/HDBLAST_POST_GATE_TRANSPORT_20261119/**'
+      - '.github/workflows/post-gate-transport.yml'
+      - 'research/HDBLAST_COVARIANCE_FEEDBACK_20261119/native/FORK.json'
+      - 'research/HDBLAST_COVARIANCE_FEEDBACK_20261119/native/WALLS.zip'
+      - 'research/HDBLAST_QUANTUM_MEMORY_20261119/quantum/SPECTRUM.json'
+      - 'research/HDBLAST_QUANTUM_MEMORY_20261119/quantum/spectrum.py'
+  push:
+    branches: [main]
+    paths: *study_paths
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reproduce:
+    name: Reconstruct daughter spectra and verify collision bounds
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: research/HDBLAST_POST_GATE_TRANSPORT_20261119
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /research/HDBLAST_POST_GATE_TRANSPORT_20261119/
+            /research/HDBLAST_COVARIANCE_FEEDBACK_20261119/native/FORK.json
+            /research/HDBLAST_COVARIANCE_FEEDBACK_20261119/native/WALLS.zip
+            /research/HDBLAST_QUANTUM_MEMORY_20261119/quantum/SPECTRUM.json
+            /research/HDBLAST_QUANTUM_MEMORY_20261119/quantum/spectrum.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify study and historical inputs
+        run: |
+          echo '674c613d3f308af6c9835da5d71bd47b625c8436c5ecb4a42c4a472f6c746d58  SHA256SUMS' | sha256sum -c -
+          python -I -B -S reproduce.py
+      - name: Replay the scientific experiments
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+        run: |
+          python -m pip install numpy==2.3.5 scipy==1.17.0
+          python -I -B reproduce.py --verify
