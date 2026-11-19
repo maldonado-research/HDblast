@@ -1,0 +1,62 @@
+name: Scalar-clock gravity response
+on:
+  pull_request:
+    branches: [main]
+    paths: &study_paths
+      - 'research/HDBLAST_SCALAR_CLOCK_GRAVITY_20261119/**'
+      - '.github/workflows/scalar-clock-gravity.yml'
+      - 'research/HDBLAST_CAUSAL_YUKAWA_ENERGY_20261119/clock/clock_test.py'
+      - 'research/HDBLAST_CAUSAL_YUKAWA_ENERGY_20261119/solver/budget.py'
+      - 'research/HDBLAST_CHECKPOINT_20260927/mechanisms/pilot_5d/rolloff5d_v1.py'
+      - 'research/HDBLAST_CHECKPOINT_20260930/B1_derived_chi_source/evolve_b1.py'
+      - 'research/HDBLAST_CHECKPOINT_20260930/B1_derived_chi_source/shell_matter.py'
+      - 'research/HDBLAST_CHECKPOINT_20260930/B1_derived_chi_source/static_w.py'
+      - 'research/HDBLAST_COVARIANCE_FEEDBACK_20261119/native/FORK.json'
+      - 'research/HDBLAST_COVARIANCE_FEEDBACK_20261119/native/FORK_INPUTS.zip'
+      - 'research/HDBLAST_COVARIANCE_FEEDBACK_20261119/native/WALLS.zip'
+      - 'research/HDBLAST_PULSE_PARTICLE_RESPONSE_20261118/classical/rolling_data.py'
+      - 'research/HDBLAST_SOURCE_WORK_20261118/coupled/quantum_shell.py'
+  push:
+    branches: [main]
+    paths: *study_paths
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  regenerate:
+    name: Regenerate the scalar-clock sources and live shell response
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    defaults:
+      run:
+        working-directory: research/HDBLAST_SCALAR_CLOCK_GRAVITY_20261119
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /research/HDBLAST_SCALAR_CLOCK_GRAVITY_20261119/
+            /research/HDBLAST_CAUSAL_YUKAWA_ENERGY_20261119/clock/clock_test.py
+            /research/HDBLAST_CAUSAL_YUKAWA_ENERGY_20261119/solver/budget.py
+            /research/HDBLAST_CHECKPOINT_20260927/mechanisms/pilot_5d/rolloff5d_v1.py
+            /research/HDBLAST_CHECKPOINT_20260930/B1_derived_chi_source/evolve_b1.py
+            /research/HDBLAST_CHECKPOINT_20260930/B1_derived_chi_source/shell_matter.py
+            /research/HDBLAST_CHECKPOINT_20260930/B1_derived_chi_source/static_w.py
+            /research/HDBLAST_COVARIANCE_FEEDBACK_20261119/native/FORK.json
+            /research/HDBLAST_COVARIANCE_FEEDBACK_20261119/native/FORK_INPUTS.zip
+            /research/HDBLAST_COVARIANCE_FEEDBACK_20261119/native/WALLS.zip
+            /research/HDBLAST_PULSE_PARTICLE_RESPONSE_20261118/classical/rolling_data.py
+            /research/HDBLAST_SOURCE_WORK_20261118/coupled/quantum_shell.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify capsule and historical inputs
+        run: |
+          echo '1daf191483d20fb5709b315abb0d1ef6d7fc8cfe5a9c5a65238286efecd7d222  SOURCES.json' | sha256sum -c -
+          echo '2d5c818406d1c69604a0fc5a03cdd3b8147f14f64bdd49369a83f2dfc3b2929e  SHA256SUMS' | sha256sum -c -
+          sha256sum --quiet -c SHA256SUMS
+          python -I -B -S reproduce.py
+      - name: Regenerate the published experiments
+        run: |
+          python -m pip install numpy==2.3.5 scipy==1.17.0
+          python -I -B reproduce.py --regenerate --jobs 2
