@@ -1,0 +1,2549 @@
+{
+  "branch": "phi_m=-0.5",
+  "hilltop_H": 0.9999999999999999,
+  "normalization": "E and integrated work divided by V_round,0 times u_top",
+  "initial_data": "matched local daughter stress in the two matter couplings, parent U2, vanishing extrinsic curvature and parent velocity",
+  "runs": {
+    "0.001/velocity/0.01/matter": {
+      "parent_amplitude": 0.001,
+      "daughter_seed": 0.01,
+      "launch_phase": "velocity",
+      "matter_weight": true,
+      "degree": 64,
+      "angular_nodes": 192,
+      "maximum_step": 0.004,
+      "snapshots": {
+        "initial": {
+          "t": 0.0,
+          "E_parent": 0.9999860750721364,
+          "E_daughter": 1.666668513285968e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 2.2148915223611076e-06,
+          "volume": 1.0000082252714728,
+          "H_volume": 0.0,
+          "E_daughter_kinetic": 1.666668513285968e-05,
+          "E_daughter_gradient": 0.0,
+          "daughter_fraction_of_total_scalar_energy": 1.666663943697985e-05,
+          "daughter_pressure_to_energy": 1.0
+        },
+        "before": {
+          "t": 0.4833560310690923,
+          "E_parent": 1.3621003321669887,
+          "E_daughter": 1.589405798663041e-05,
+          "transfer_rate_into_daughter": 2.4918733544521817e-06,
+          "daughter_shift_charge": 2.2148915223891093e-06,
+          "volume": 1.395081816957718,
+          "H_volume": 0.4173165466563031,
+          "E_daughter_kinetic": 4.257314352289318e-07,
+          "E_daughter_gradient": 1.5468326551401478e-05,
+          "daughter_fraction_of_total_scalar_energy": 1.1668650354955284e-05,
+          "daughter_pressure_to_energy": -0.29761923727831335
+        },
+        "crossing": {
+          "t": 0.4883560310690923,
+          "E_parent": 1.3672442358759338,
+          "E_daughter": 1.5936537296037446e-05,
+          "transfer_rate_into_daughter": 2.550560317614849e-06,
+          "daughter_shift_charge": 2.2148915223910613e-06,
+          "volume": 1.4038513157461043,
+          "H_volume": 0.4181480021405786,
+          "E_daughter_kinetic": 3.6138401402832126e-07,
+          "E_daughter_gradient": 1.5575153282009128e-05,
+          "daughter_fraction_of_total_scalar_energy": 1.165581914662904e-05,
+          "daughter_pressure_to_energy": -0.30309807312046577
+        },
+        "after": {
+          "t": 0.4933560310690923,
+          "E_parent": 1.3721196984186281,
+          "E_daughter": 1.5979873480907898e-05,
+          "transfer_rate_into_daughter": 2.5965732997829706e-06,
+          "daughter_shift_charge": 2.214891522391911e-06,
+          "volume": 1.4126905180420077,
+          "H_volume": 0.4186896857079838,
+          "E_daughter_kinetic": 3.025043086957733e-07,
+          "E_daughter_gradient": 1.5677369172212124e-05,
+          "daughter_fraction_of_total_scalar_energy": 1.164598642373178e-05,
+          "daughter_pressure_to_energy": -0.308092890801487
+        },
+        "fixed": {
+          "t": 0.505,
+          "E_parent": 1.3822705700482187,
+          "E_daughter": 1.6083344802718626e-05,
+          "transfer_rate_into_daughter": 2.6448662842825113e-06,
+          "daughter_shift_charge": 2.2148915223869006e-06,
+          "volume": 1.4335122989049276,
+          "H_volume": 0.41873179683452194,
+          "E_daughter_kinetic": 1.8640249795725394e-07,
+          "E_daughter_gradient": 1.5896942304761372e-05,
+          "daughter_fraction_of_total_scalar_energy": 1.163531801688148e-05,
+          "daughter_pressure_to_energy": -0.31788028752777464
+        }
+      },
+      "balances": {
+        "to_crossing": {
+          "parent_energy_change": 0.36725816080379736,
+          "daughter_energy_change": -7.30147836822233e-07,
+          "parent_pressure_work": -0.36725830265555254,
+          "daughter_pressure_work": 8.719996825839838e-07,
+          "transfer_into_daughter": 1.4185184576167933e-07,
+          "parent_balance_residual": 9.058623098223619e-14,
+          "daughter_balance_residual": 7.146840492458159e-20,
+          "total_balance_residual": 9.060583841853659e-14
+        },
+        "through_crossing": {
+          "parent_energy_change": 0.010019366251639461,
+          "daughter_energy_change": 8.58154942774869e-08,
+          "parent_pressure_work": -0.010019391736138266,
+          "daughter_pressure_work": -6.033101286068994e-08,
+          "transfer_into_daughter": 2.548448141679843e-08,
+          "parent_balance_residual": -1.7387844222485684e-14,
+          "daughter_balance_residual": -1.465764045443965e-21,
+          "total_balance_residual": -1.7388696109328773e-14
+        },
+        "to_fixed": {
+          "parent_energy_change": 0.3822844949760823,
+          "daughter_energy_change": -5.833403301410534e-07,
+          "parent_pressure_work": -0.38228468030343893,
+          "daughter_pressure_work": 7.686677261818185e-07,
+          "transfer_into_daughter": 1.8532739604073435e-07,
+          "parent_balance_residual": 3.941304961721195e-14,
+          "daughter_balance_residual": 3.070494433796839e-20,
+          "total_balance_residual": 3.9402739743936205e-14
+        }
+      },
+      "constraints": {
+        "hamiltonian": 5.9692991290679255e-12,
+        "momentum": 8.006882108579643e-12,
+        "raychaudhuri": 1.1635128046213104e-11
+      },
+      "max_abs_shift_charge_drift": 3.0079834022894714e-17,
+      "time_quadrature_absolute_change": 7.771561172376096e-16
+    },
+    "0.001/velocity/0.01/constant": {
+      "parent_amplitude": 0.001,
+      "daughter_seed": 0.01,
+      "launch_phase": "velocity",
+      "matter_weight": false,
+      "degree": 64,
+      "angular_nodes": 192,
+      "maximum_step": 0.004,
+      "snapshots": {
+        "initial": {
+          "t": 0.0,
+          "E_parent": 0.9999860750721364,
+          "E_daughter": 1.6666685132859682e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -5.516013316818983e-08,
+          "volume": 1.0000082252714728,
+          "H_volume": 0.0,
+          "E_daughter_kinetic": 1.6666685132859682e-05,
+          "E_daughter_gradient": 0.0,
+          "daughter_fraction_of_total_scalar_energy": 1.6666639436979853e-05,
+          "daughter_pressure_to_energy": 1.0
+        },
+        "before": {
+          "t": 0.48339257041548095,
+          "E_parent": 1.362142696117734,
+          "E_daughter": 1.5750316116045297e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -5.516013316801041e-08,
+          "volume": 1.3951468803328777,
+          "H_volume": 0.4173277300363532,
+          "E_daughter_kinetic": 4.528088546728229e-07,
+          "E_daughter_gradient": 1.529750726137247e-05,
+          "daughter_fraction_of_total_scalar_energy": 1.15627636104154e-05,
+          "daughter_pressure_to_energy": -0.2950010779604578
+        },
+        "crossing": {
+          "t": 0.48839257041548095,
+          "E_parent": 1.367284671827023,
+          "E_daughter": 1.5779767473120838e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -5.516013316792663e-08,
+          "volume": 1.403917002502576,
+          "H_volume": 0.41815715038408546,
+          "E_daughter_kinetic": 3.861427708403548e-07,
+          "E_daughter_gradient": 1.5393624702280485e-05,
+          "daughter_fraction_of_total_scalar_energy": 1.1540819323740473e-05,
+          "daughter_pressure_to_energy": -0.30070566447419816
+        },
+        "after": {
+          "t": 0.49339257041548096,
+          "E_parent": 1.3721579253748681,
+          "E_daughter": 1.5809810326955717e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -5.516013316799431e-08,
+          "volume": 1.4127567890620152,
+          "H_volume": 0.4186966131478062,
+          "E_daughter_kinetic": 3.2488391941845276e-07,
+          "E_daughter_gradient": 1.5484926407537264e-05,
+          "daughter_fraction_of_total_scalar_energy": 1.1521726383155082e-05,
+          "daughter_pressure_to_energy": -0.30593398126861976
+        },
+        "fixed": {
+          "t": 0.505,
+          "E_parent": 1.3822735455559165,
+          "E_daughter": 1.5881461703687407e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -5.516013316803381e-08,
+          "volume": 1.433513947928857,
+          "H_volume": 0.41873546892135743,
+          "E_daughter_kinetic": 2.0339709693350597e-07,
+          "E_daughter_gradient": 1.56780646067539e-05,
+          "daughter_fraction_of_total_scalar_energy": 1.148924486672281e-05,
+          "daughter_pressure_to_energy": -0.31625706325790903
+        }
+      },
+      "balances": {
+        "to_crossing": {
+          "parent_energy_change": 0.36729859675488663,
+          "daughter_energy_change": -8.869176597388445e-07,
+          "parent_pressure_work": -0.36729859675480303,
+          "daughter_pressure_work": 8.869176597388225e-07,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": 8.359979375427429e-14,
+          "daughter_balance_residual": -2.202285662861181e-20,
+          "total_balance_residual": 8.357938195431135e-14
+        },
+        "through_crossing": {
+          "parent_energy_change": 0.01001522925713405,
+          "daughter_energy_change": 5.9494210910419795e-08,
+          "parent_pressure_work": -0.01001522925716381,
+          "daughter_pressure_work": -5.9494210910424295e-08,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": -2.9759181230382126e-14,
+          "daughter_balance_residual": -4.4998625322884706e-21,
+          "total_balance_residual": -2.975939240628379e-14
+        },
+        "to_fixed": {
+          "parent_energy_change": 0.3822874704837801,
+          "daughter_energy_change": -7.852234291722754e-07,
+          "parent_pressure_work": -0.3822874704837592,
+          "daughter_pressure_work": 7.852234291722584e-07,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": 2.0872192862952943e-14,
+          "daughter_balance_residual": -1.6940658945086007e-20,
+          "total_balance_residual": 2.0877247955582157e-14
+        }
+      },
+      "constraints": {
+        "hamiltonian": 6.5436545071406735e-12,
+        "momentum": 1.1447667350663768e-11,
+        "raychaudhuri": 1.242983493909833e-11
+      },
+      "max_abs_shift_charge_drift": 5.981376096595445e-19,
+      "time_quadrature_absolute_change": 8.881784197001252e-16
+    },
+    "0.001/velocity/0.005/matter": {
+      "parent_amplitude": 0.001,
+      "daughter_seed": 0.005,
+      "launch_phase": "velocity",
+      "matter_weight": true,
+      "degree": 64,
+      "angular_nodes": 192,
+      "maximum_step": 0.004,
+      "snapshots": {
+        "initial": {
+          "t": 0.0,
+          "E_parent": 1.0000048250943165,
+          "E_daughter": 4.166691374155293e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 1.0512018553841286e-06,
+          "volume": 1.0000269754007252,
+          "H_volume": 0.0,
+          "E_daughter_kinetic": 4.166691374155293e-06,
+          "E_daughter_gradient": 0.0,
+          "daughter_fraction_of_total_scalar_energy": 4.166653908496301e-06,
+          "daughter_pressure_to_energy": 1.0
+        },
+        "before": {
+          "t": 0.4833855649755678,
+          "E_parent": 1.362166882573199,
+          "E_daughter": 3.973588325182635e-06,
+          "transfer_rate_into_daughter": 6.229479638636142e-07,
+          "daughter_shift_charge": 1.0512018553952949e-06,
+          "volume": 1.3951685660343367,
+          "H_volume": 0.41733079018669544,
+          "E_daughter_kinetic": 1.063331850104207e-07,
+          "E_daughter_gradient": 3.867255140172213e-06,
+          "daughter_fraction_of_total_scalar_energy": 2.9170997949404466e-06,
+          "daughter_pressure_to_energy": -0.2976533462759478
+        },
+        "crossing": {
+          "t": 0.4883855649755678,
+          "E_parent": 1.3673093748979324,
+          "E_daughter": 3.98420987496509e-06,
+          "transfer_rate_into_daughter": 6.37602616036449e-07,
+          "daughter_shift_charge": 1.0512018553970586e-06,
+          "volume": 1.4039388929429215,
+          "H_volume": 0.4181605939694882,
+          "E_daughter_kinetic": 9.025451510403964e-08,
+          "E_daughter_gradient": 3.8939553598610495e-06,
+          "daughter_fraction_of_total_scalar_energy": 2.9138966926826836e-06,
+          "daughter_pressure_to_energy": -0.30312926345533586
+        },
+        "after": {
+          "t": 0.4933855649755678,
+          "E_parent": 1.372183189068059,
+          "E_daughter": 3.995045491601624e-06,
+          "transfer_rate_into_daughter": 6.490871597176948e-07,
+          "daughter_shift_charge": 1.0512018553973055e-06,
+          "volume": 1.412778894698355,
+          "H_volume": 0.41870047720014075,
+          "E_daughter_kinetic": 7.554273247875238e-08,
+          "E_daughter_gradient": 3.919502759122872e-06,
+          "daughter_fraction_of_total_scalar_energy": 2.9114435245089915e-06,
+          "daughter_pressure_to_energy": -0.30812119406815003
+        },
+        "fixed": {
+          "t": 0.505,
+          "E_parent": 1.3823058436555238,
+          "E_daughter": 4.020849864591955e-06,
+          "transfer_rate_into_daughter": 6.61109357770969e-07,
+          "daughter_shift_charge": 1.0512018553944898e-06,
+          "volume": 1.4335492143453032,
+          "H_volume": 0.41873994958047533,
+          "E_daughter_kinetic": 4.660039518094473e-08,
+          "E_daughter_gradient": 3.97424946941101e-06,
+          "daughter_fraction_of_total_scalar_energy": 2.9087905453316552e-06,
+          "daughter_pressure_to_energy": -0.3178804160810834
+        }
+      },
+      "balances": {
+        "to_crossing": {
+          "parent_energy_change": 0.3673045498036158,
+          "daughter_energy_change": -1.8248149919020322e-07,
+          "parent_pressure_work": -0.367304585282035,
+          "daughter_pressure_work": 2.1796000551775637e-07,
+          "transfer_into_daughter": 3.547850632753856e-08,
+          "parent_balance_residual": 8.712505482393904e-14,
+          "daughter_balance_residual": 1.4591466005435408e-20,
+          "total_balance_residual": 8.712618156966479e-14
+        },
+        "through_crossing": {
+          "parent_energy_change": 0.010016306494859961,
+          "daughter_energy_change": 2.145716641898863e-08,
+          "parent_pressure_work": -0.010016312865630006,
+          "daughter_pressure_work": -1.508642338816697e-08,
+          "transfer_into_daughter": 6.370743030820829e-09,
+          "parent_balance_residual": -2.7014365107538648e-14,
+          "daughter_balance_residual": 8.329708768408989e-22,
+          "total_balance_residual": -2.7014693770384253e-14
+        },
+        "to_fixed": {
+          "parent_energy_change": 0.38230101856120724,
+          "daughter_energy_change": -1.4584150956333796e-07,
+          "parent_pressure_work": -0.38230106488788107,
+          "daughter_pressure_work": 1.921682090911332e-07,
+          "transfer_into_daughter": 4.6326699527793775e-08,
+          "parent_balance_residual": 2.569737244746995e-14,
+          "daughter_balance_residual": 1.462455322993753e-21,
+          "total_balance_residual": 2.572504054708144e-14
+        }
+      },
+      "constraints": {
+        "hamiltonian": 6.631584170690986e-12,
+        "momentum": 1.0992961450780507e-11,
+        "raychaudhuri": 1.2649298275491107e-11
+      },
+      "max_abs_shift_charge_drift": 1.29284756321792e-17,
+      "time_quadrature_absolute_change": 9.43689570931383e-16
+    },
+    "0.001/velocity/0.005/constant": {
+      "parent_amplitude": 0.001,
+      "daughter_seed": 0.005,
+      "launch_phase": "velocity",
+      "matter_weight": false,
+      "degree": 64,
+      "angular_nodes": 192,
+      "maximum_step": 0.004,
+      "snapshots": {
+        "initial": {
+          "t": 0.0,
+          "E_parent": 1.0000048250943165,
+          "E_daughter": 4.166691374155294e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -8.382945904593379e-08,
+          "volume": 1.0000269754007252,
+          "H_volume": 0.0,
+          "E_daughter_kinetic": 4.166691374155294e-06,
+          "E_daughter_gradient": 0.0,
+          "daughter_fraction_of_total_scalar_energy": 4.1666539084963015e-06,
+          "daughter_pressure_to_energy": 1.0
+        },
+        "before": {
+          "t": 0.48339470110590504,
+          "E_parent": 1.362177473887266,
+          "E_daughter": 3.937597331644974e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -8.382945904594458e-08,
+          "volume": 1.3951848352739504,
+          "H_volume": 0.41733358470858883,
+          "E_daughter_kinetic": 1.1319176803493555e-07,
+          "E_daughter_gradient": 3.824405563610038e-06,
+          "daughter_fraction_of_total_scalar_energy": 2.890655604640437e-06,
+          "daughter_pressure_to_energy": -0.29500479319363737
+        },
+        "crossing": {
+          "t": 0.48839470110590505,
+          "E_parent": 1.3673194838829388,
+          "E_daughter": 3.9449610422236915e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -8.382945904601926e-08,
+          "volume": 1.4039553180236384,
+          "H_volume": 0.4181628794691552,
+          "E_daughter_kinetic": 9.652605848210492e-08,
+          "E_daughter_gradient": 3.848434983741587e-06,
+          "daughter_fraction_of_total_scalar_energy": 2.8851703693536527e-06,
+          "daughter_pressure_to_energy": -0.3007090792705032
+        },
+        "after": {
+          "t": 0.49339470110590505,
+          "E_parent": 1.3721927454444234,
+          "E_daughter": 3.952472637441503e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -8.382945904598883e-08,
+          "volume": 1.4127954658345852,
+          "H_volume": 0.41870220723917345,
+          "E_daughter_kinetic": 8.121215569441348e-08,
+          "E_daughter_gradient": 3.8712604817470905e-06,
+          "daughter_fraction_of_total_scalar_energy": 2.880398009586524e-06,
+          "daughter_pressure_to_energy": -0.30593709705494365
+        },
+        "fixed": {
+          "t": 0.505,
+          "E_parent": 1.3823065877751588,
+          "E_daughter": 3.970384225389367e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -8.38294590460342e-08,
+          "volume": 1.433549626566499,
+          "H_volume": 0.4187408676482442,
+          "E_daughter_kinetic": 5.0847235287729486e-08,
+          "E_daughter_gradient": 3.919536990101637e-06,
+          "daughter_fraction_of_total_scalar_energy": 2.872280908189063e-06,
+          "daughter_pressure_to_energy": -0.3162578288309136
+        }
+      },
+      "balances": {
+        "to_crossing": {
+          "parent_energy_change": 0.36731465878862224,
+          "daughter_energy_change": -2.2173033193160236e-07,
+          "parent_pressure_work": -0.3673146587885391,
+          "daughter_pressure_work": 2.2173033193160175e-07,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": 8.315570454442422e-14,
+          "daughter_balance_residual": -6.088049308390284e-22,
+          "total_balance_residual": 8.315879052367909e-14
+        },
+        "through_crossing": {
+          "parent_energy_change": 0.010015271557157313,
+          "daughter_energy_change": 1.4875305796528767e-08,
+          "parent_pressure_work": -0.010015271557187733,
+          "daughter_pressure_work": -1.487530579652997e-08,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": -3.042011087472929e-14,
+          "daughter_balance_residual": -1.2027206106521022e-21,
+          "total_balance_residual": -3.0420477148650166e-14
+        },
+        "to_fixed": {
+          "parent_energy_change": 0.38230176268084226,
+          "daughter_energy_change": -1.9630714876592723e-07,
+          "parent_pressure_work": -0.38230176268082305,
+          "daughter_pressure_work": 1.9630714876592705e-07,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": 1.9206858326015208e-14,
+          "daughter_balance_residual": -1.852884572118782e-22,
+          "total_balance_residual": 1.9214051144514834e-14
+        }
+      },
+      "constraints": {
+        "hamiltonian": 6.577109227616045e-12,
+        "momentum": 1.1594202742332873e-11,
+        "raychaudhuri": 1.249174837643826e-11
+      },
+      "max_abs_shift_charge_drift": 5.941274380498874e-19,
+      "time_quadrature_absolute_change": 9.43689570931383e-16
+    },
+    "0.001/velocity/0/matter": {
+      "parent_amplitude": 0.001,
+      "daughter_seed": 0.0,
+      "launch_phase": "velocity",
+      "matter_weight": true,
+      "degree": 64,
+      "angular_nodes": 192,
+      "maximum_step": 0.004,
+      "snapshots": {
+        "initial": {
+          "t": 0.0,
+          "E_parent": 1.000011075135195,
+          "E_daughter": 0.0,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 0.0,
+          "volume": 1.0000332254772966,
+          "H_volume": 0.0,
+          "E_daughter_kinetic": 0.0,
+          "E_daughter_gradient": 0.0,
+          "daughter_fraction_of_total_scalar_energy": 0.0,
+          "daughter_pressure_to_energy": null
+        },
+        "before": {
+          "t": 0.4833954113191816,
+          "E_parent": 1.3621890665549423,
+          "E_daughter": 0.0,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 0.0,
+          "volume": 1.3951974870251358,
+          "H_volume": 0.4173355362096129,
+          "E_daughter_kinetic": 0.0,
+          "E_daughter_gradient": 0.0,
+          "daughter_fraction_of_total_scalar_energy": 0.0,
+          "daughter_pressure_to_energy": null
+        },
+        "crossing": {
+          "t": 0.4883954113191816,
+          "E_parent": 1.3673310879777718,
+          "E_daughter": 0.0,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 0.0,
+          "volume": 1.4039680899690983,
+          "H_volume": 0.4181647891077384,
+          "E_daughter_kinetic": 0.0,
+          "E_daughter_gradient": 0.0,
+          "daughter_fraction_of_total_scalar_energy": 0.0,
+          "daughter_pressure_to_energy": null
+        },
+        "after": {
+          "t": 0.49339541131918163,
+          "E_parent": 1.372204352208653,
+          "E_daughter": 0.0,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 0.0,
+          "volume": 1.4128083581981379,
+          "H_volume": 0.41870407187979636,
+          "E_daughter_kinetic": 0.0,
+          "E_daughter_gradient": 0.0,
+          "daughter_fraction_of_total_scalar_energy": 0.0,
+          "daughter_pressure_to_energy": null
+        },
+        "fixed": {
+          "t": 0.505,
+          "E_parent": 1.3823176019299224,
+          "E_daughter": 0.0,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 0.0,
+          "volume": 1.4335615195177605,
+          "H_volume": 0.4187426671832232,
+          "E_daughter_kinetic": 0.0,
+          "E_daughter_gradient": 0.0,
+          "daughter_fraction_of_total_scalar_energy": 0.0,
+          "daughter_pressure_to_energy": null
+        }
+      },
+      "balances": {
+        "to_crossing": {
+          "parent_energy_change": 0.36732001284257687,
+          "daughter_energy_change": 0.0,
+          "parent_pressure_work": -0.3673200128425515,
+          "daughter_pressure_work": 0.0,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": 2.5368596112684827e-14,
+          "daughter_balance_residual": 0.0,
+          "total_balance_residual": 2.5368596112684827e-14
+        },
+        "through_crossing": {
+          "parent_energy_change": 0.010015285653710793,
+          "daughter_energy_change": 0.0,
+          "parent_pressure_work": -0.010015285653683441,
+          "daughter_pressure_work": 0.0,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": 2.7351385045726317e-14,
+          "daughter_balance_residual": 0.0,
+          "total_balance_residual": 2.7351385045726317e-14
+        },
+        "to_fixed": {
+          "parent_energy_change": 0.38230652679472743,
+          "daughter_energy_change": 0.0,
+          "parent_pressure_work": -0.3823065267946586,
+          "daughter_pressure_work": 0.0,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": 6.88338275267597e-14,
+          "daughter_balance_residual": 0.0,
+          "total_balance_residual": 6.88338275267597e-14
+        }
+      },
+      "constraints": {
+        "hamiltonian": 1.024010506019598e-11,
+        "momentum": 9.26489031826601e-12,
+        "raychaudhuri": 2.1354797559898962e-11
+      },
+      "max_abs_shift_charge_drift": 0.0,
+      "time_quadrature_absolute_change": 1.4432899320127035e-15
+    },
+    "0.001/displacement/0.01/matter": {
+      "parent_amplitude": 0.001,
+      "daughter_seed": 0.01,
+      "launch_phase": "displacement",
+      "matter_weight": true,
+      "degree": 64,
+      "angular_nodes": 192,
+      "maximum_step": 0.004,
+      "snapshots": {
+        "initial": {
+          "t": 0.0,
+          "E_parent": 0.9999860749980231,
+          "E_daughter": 1.66666955351007e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 0.0,
+          "volume": 1.0000082248961388,
+          "H_volume": 0.0,
+          "E_daughter_kinetic": 0.0,
+          "E_daughter_gradient": 1.66666955351007e-05,
+          "daughter_fraction_of_total_scalar_energy": 1.6666649840254198e-05,
+          "daughter_pressure_to_energy": -0.3333333333333333
+        },
+        "before": {
+          "t": 0.4833941706281682,
+          "E_parent": 1.3621548019265768,
+          "E_daughter": 1.4481545713659188e-05,
+          "transfer_rate_into_daughter": -1.78547079159579e-06,
+          "daughter_shift_charge": -2.315255722069001e-16,
+          "volume": 1.3951580844806335,
+          "H_volume": 0.4173334546653489,
+          "E_daughter_kinetic": 1.2679784623914172e-05,
+          "E_daughter_gradient": 1.801761089745016e-06,
+          "daughter_fraction_of_total_scalar_energy": 1.0631237900728787e-05,
+          "daughter_pressure_to_energy": 0.8341096891753693
+        },
+        "crossing": {
+          "t": 0.4883941706281682,
+          "E_parent": 1.3672969243344677,
+          "E_daughter": 1.4406634928814163e-05,
+          "transfer_rate_into_daughter": -1.6495197630904284e-06,
+          "daughter_shift_charge": -2.5456533970211036e-16,
+          "volume": 1.4039283975584746,
+          "H_volume": 0.4181628654777327,
+          "E_daughter_kinetic": 1.2718033201954113e-05,
+          "E_daughter_gradient": 1.688601726860049e-06,
+          "daughter_fraction_of_total_scalar_energy": 1.0536470080007416e-05,
+          "daughter_pressure_to_energy": 0.8437199956636886
+        },
+        "after": {
+          "t": 0.4933941706281682,
+          "E_parent": 1.3721702946928613,
+          "E_daughter": 1.4332643177855425e-05,
+          "transfer_rate_into_daughter": -1.4828804834601575e-06,
+          "daughter_shift_charge": -1.7673931908960922e-16,
+          "volume": 1.4127683767450812,
+          "H_volume": 0.41870230318203905,
+          "E_daughter_kinetic": 1.2753601239535365e-05,
+          "E_daughter_gradient": 1.5790419383200608e-06,
+          "daughter_fraction_of_total_scalar_energy": 1.044512734826423e-05,
+          "daughter_pressure_to_energy": 0.8531053047949778
+        },
+        "fixed": {
+          "t": 0.505,
+          "E_parent": 1.3822847647689045,
+          "E_daughter": 1.4165867558588128e-05,
+          "transfer_rate_into_daughter": -9.670795017286284e-07,
+          "daughter_shift_charge": -7.697932689663384e-17,
+          "volume": 1.433523105089975,
+          "H_volume": 0.4187411275749074,
+          "E_daughter_kinetic": 1.2827219592457234e-05,
+          "E_daughter_gradient": 1.3386479661308962e-06,
+          "daughter_fraction_of_total_scalar_energy": 1.0248049278360957e-05,
+          "daughter_pressure_to_energy": 0.8740024959672089
+        }
+      },
+      "balances": {
+        "to_crossing": {
+          "parent_energy_change": 0.36731084933644464,
+          "daughter_energy_change": -2.2600606062865388e-06,
+          "parent_pressure_work": -0.36731060074958866,
+          "daughter_pressure_work": 2.0114738286950478e-06,
+          "transfer_into_daughter": -2.4858677759257804e-07,
+          "parent_balance_residual": 7.839614139287023e-14,
+          "daughter_balance_residual": 1.0870609086824877e-18,
+          "total_balance_residual": 7.840983908029764e-14
+        },
+        "through_crossing": {
+          "parent_energy_change": 0.01001549276628455,
+          "daughter_energy_change": -1.489025358037639e-07,
+          "parent_pressure_work": -0.010015476322284804,
+          "daughter_pressure_work": 1.3245849442833786e-07,
+          "transfer_into_daughter": -1.6444041375221462e-08,
+          "parent_balance_residual": -4.1628278578781884e-14,
+          "daughter_balance_residual": -2.0458492654151523e-19,
+          "total_balance_residual": -4.1627919039765554e-14
+        },
+        "to_fixed": {
+          "parent_energy_change": 0.38229868977088144,
+          "daughter_energy_change": -2.500827976512574e-06,
+          "parent_pressure_work": -0.3822984189420617,
+          "daughter_pressure_work": 2.2299991453005527e-06,
+          "transfer_into_daughter": -2.7082883121224273e-07,
+          "parent_balance_residual": -1.1452759479000589e-14,
+          "daughter_balance_residual": 2.2139323658859275e-19,
+          "total_balance_residual": -1.1477020726071438e-14
+        }
+      },
+      "constraints": {
+        "hamiltonian": 6.999586095920072e-12,
+        "momentum": 1.2026927469989519e-11,
+        "raychaudhuri": 1.3606793720003706e-11
+      },
+      "max_abs_shift_charge_drift": 2.5460097445247976e-16,
+      "time_quadrature_absolute_change": 1.1658178203599557e-15
+    },
+    "0.001/displacement/0.01/constant": {
+      "parent_amplitude": 0.001,
+      "daughter_seed": 0.01,
+      "launch_phase": "displacement",
+      "matter_weight": false,
+      "degree": 64,
+      "angular_nodes": 192,
+      "maximum_step": 0.004,
+      "snapshots": {
+        "initial": {
+          "t": 0.0,
+          "E_parent": 0.9999860749980231,
+          "E_daughter": 1.6666695535100695e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 0.0,
+          "volume": 1.0000082248961388,
+          "H_volume": 0.0,
+          "E_daughter_kinetic": 0.0,
+          "E_daughter_gradient": 1.6666695535100695e-05,
+          "daughter_fraction_of_total_scalar_energy": 1.666664984025419e-05,
+          "daughter_pressure_to_energy": -0.33333333333333337
+        },
+        "before": {
+          "t": 0.48339478377069667,
+          "E_parent": 1.3621521620563037,
+          "E_daughter": 1.468488485274093e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -4.685857567149208e-19,
+          "volume": 1.3951584687863932,
+          "H_volume": 0.41733080522882204,
+          "E_daughter_kinetic": 1.3000227221607312e-05,
+          "E_daughter_gradient": 1.684657631133618e-06,
+          "daughter_fraction_of_total_scalar_energy": 1.0780533152540669e-05,
+          "daughter_pressure_to_energy": 0.8470393062410994
+        },
+        "crossing": {
+          "t": 0.48839478377069667,
+          "E_parent": 1.3672940755818332,
+          "E_daughter": 1.4616923317655684e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -3.920027588875813e-19,
+          "volume": 1.403928726443683,
+          "H_volume": 0.4181600229518406,
+          "E_daughter_kinetic": 1.3045779936028846e-05,
+          "E_daughter_gradient": 1.571143381626839e-06,
+          "daughter_fraction_of_total_scalar_energy": 1.0690287714674657e-05,
+          "daughter_pressure_to_energy": 0.8566827097164318
+        },
+        "after": {
+          "t": 0.4933947837706967,
+          "E_parent": 1.3721672496130637,
+          "E_daughter": 1.4549143622409547e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -7.477091356727802e-19,
+          "volume": 1.4127686454783657,
+          "H_volume": 0.418699274898554,
+          "E_daughter_kinetic": 1.30876579489489e-05,
+          "E_daughter_gradient": 1.461485673460647e-06,
+          "daughter_fraction_of_total_scalar_energy": 1.0602927130787127e-05,
+          "daughter_pressure_to_energy": 0.8660644492083532
+        },
+        "fixed": {
+          "t": 0.505,
+          "E_parent": 1.3822808622782379,
+          "E_daughter": 1.4393117309022133e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -9.94959904342762e-19,
+          "volume": 1.4335221127145146,
+          "H_volume": 0.4187377711412635,
+          "E_daughter_kinetic": 1.3171168025371541e-05,
+          "E_daughter_gradient": 1.2219492836505919e-06,
+          "daughter_fraction_of_total_scalar_energy": 1.0412476822763534e-05,
+          "daughter_pressure_to_energy": 0.8868024433794589
+        }
+      },
+      "balances": {
+        "to_crossing": {
+          "parent_energy_change": 0.3673080005838102,
+          "daughter_energy_change": -2.0497722174450114e-06,
+          "parent_pressure_work": -0.3673080005837265,
+          "daughter_pressure_work": 2.049772217445023e-06,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": 8.37108160567368e-14,
+          "daughter_balance_residual": 1.1434944787933055e-20,
+          "total_balance_residual": 8.369522853292496e-14
+        },
+        "through_crossing": {
+          "parent_energy_change": 0.01001508755675995,
+          "daughter_energy_change": -1.3574123033138225e-07,
+          "parent_pressure_work": -0.010015087556790593,
+          "daughter_pressure_work": 1.357412303313873e-07,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": -3.06438902031303e-14,
+          "daughter_balance_residual": 5.055727903924105e-21,
+          "total_balance_residual": -3.064315500500186e-14
+        },
+        "to_fixed": {
+          "parent_energy_change": 0.3822947872802148,
+          "daughter_energy_change": -2.2735782260785616e-06,
+          "parent_pressure_work": -0.3822947872801961,
+          "daughter_pressure_work": 2.273578226078575e-06,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": 1.8707257964933888e-14,
+          "daughter_balance_residual": 1.3552527156068805e-20,
+          "total_balance_residual": 1.8710620685734487e-14
+        }
+      },
+      "constraints": {
+        "hamiltonian": 6.5657109378965604e-12,
+        "momentum": 1.1607863436002225e-11,
+        "raychaudhuri": 1.2461994399378305e-11
+      },
+      "max_abs_shift_charge_drift": 9.94959904342762e-19,
+      "time_quadrature_absolute_change": 8.326748917653927e-16
+    },
+    "0.001/displacement/0.005/matter": {
+      "parent_amplitude": 0.001,
+      "daughter_seed": 0.005,
+      "launch_phase": "displacement",
+      "matter_weight": true,
+      "degree": 64,
+      "angular_nodes": 192,
+      "maximum_step": 0.004,
+      "snapshots": {
+        "initial": {
+          "t": 0.0,
+          "E_parent": 1.000004825084998,
+          "E_daughter": 4.166695089185373e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 0.0,
+          "volume": 1.0000269753161035,
+          "H_volume": 0.0,
+          "E_daughter_kinetic": 0.0,
+          "E_daughter_gradient": 4.166695089185373e-06,
+          "daughter_fraction_of_total_scalar_energy": 4.166657623516324e-06,
+          "daughter_pressure_to_energy": -0.3333333333333333
+        },
+        "before": {
+          "t": 0.48339510114987483,
+          "E_parent": 1.362180500605534,
+          "E_daughter": 3.6204235524880184e-06,
+          "transfer_rate_into_daughter": -4.4640693780038175e-07,
+          "daughter_shift_charge": -1.1362558843361842e-16,
+          "volume": 1.39518763640381,
+          "H_volume": 0.41733501601871514,
+          "E_daughter_kinetic": 3.1699604600043125e-06,
+          "E_daughter_gradient": 4.5046309248370533e-07,
+          "daughter_fraction_of_total_scalar_energy": 2.657807778402896e-06,
+          "daughter_pressure_to_energy": 0.8341029860353808
+        },
+        "crossing": {
+          "t": 0.48839510114987483,
+          "E_parent": 1.3673225472946113,
+          "E_daughter": 3.601695544329781e-06,
+          "transfer_rate_into_daughter": -4.1241771066799473e-07,
+          "daughter_shift_charge": -1.3588542344803303e-16,
+          "volume": 1.403958166885368,
+          "H_volume": 0.41816430840943225,
+          "E_daughter_kinetic": 3.179522885613163e-06,
+          "E_daughter_gradient": 4.221726587166182e-07,
+          "daughter_fraction_of_total_scalar_energy": 2.634115896188944e-06,
+          "daughter_pressure_to_energy": 0.8437133646193379
+        },
+        "after": {
+          "t": 0.49339510114987484,
+          "E_parent": 1.3721958380781625,
+          "E_daughter": 3.5831973066225786e-06,
+          "transfer_rate_into_daughter": -3.7075597170702043e-07,
+          "daughter_shift_charge": -9.975920963344428e-17,
+          "volume": 1.4127983628582985,
+          "H_volume": 0.41870362992921606,
+          "E_daughter_kinetic": 3.1884152096841958e-06,
+          "E_daughter_gradient": 3.9478209693838267e-07,
+          "daughter_fraction_of_total_scalar_energy": 2.6112802928396307e-06,
+          "daughter_pressure_to_energy": 0.8530987595133788
+        },
+        "fixed": {
+          "t": 0.505,
+          "E_parent": 1.3823093929343082,
+          "E_daughter": 3.5415060163408834e-06,
+          "transfer_rate_into_daughter": -2.418119061887847e-07,
+          "daughter_shift_charge": -6.964045417234297e-17,
+          "volume": 1.4335519159530636,
+          "H_volume": 0.41874228253796314,
+          "E_daughter_kinetic": 3.2068192978933995e-06,
+          "E_daughter_gradient": 3.3468671844748464e-07,
+          "daughter_fraction_of_total_scalar_energy": 2.562014669836523e-06,
+          "daughter_pressure_to_energy": 0.8739945786140306
+        }
+      },
+      "balances": {
+        "to_crossing": {
+          "parent_energy_change": 0.36731772220961334,
+          "daughter_energy_change": -5.649995448555919e-07,
+          "parent_pressure_work": -0.3673176600617094,
+          "daughter_pressure_work": 5.028517235756985e-07,
+          "transfer_into_daughter": -6.214782128018069e-08,
+          "parent_balance_residual": 8.265403695973046e-14,
+          "daughter_balance_residual": 2.8728975290701715e-19,
+          "total_balance_residual": 8.263792484459158e-14
+        },
+        "through_crossing": {
+          "parent_energy_change": 0.010015337472628394,
+          "daughter_energy_change": -3.722624586543988e-08,
+          "parent_pressure_work": -0.010015333361274179,
+          "daughter_pressure_work": 3.3114858571869666e-08,
+          "transfer_into_daughter": -4.111387293545874e-09,
+          "parent_balance_residual": -3.307813778247151e-14,
+          "daughter_balance_residual": -2.4340616704985392e-20,
+          "total_balance_residual": -3.307812104199027e-14
+        },
+        "to_fixed": {
+          "parent_energy_change": 0.3823045678493102,
+          "daughter_energy_change": -6.251890728444894e-07,
+          "parent_pressure_work": -0.38230450014062195,
+          "daughter_pressure_work": 5.574803960037245e-07,
+          "transfer_into_daughter": -6.770867684087447e-08,
+          "parent_balance_residual": 1.1426346185908562e-14,
+          "daughter_balance_residual": 1.0953194799182171e-19,
+          "total_balance_residual": 1.1426133421820123e-14
+        }
+      },
+      "constraints": {
+        "hamiltonian": 6.581550119714546e-12,
+        "momentum": 1.1682914483966383e-11,
+        "raychaudhuri": 1.2414264061177961e-11
+      },
+      "max_abs_shift_charge_drift": 1.3588379102068606e-16,
+      "time_quadrature_absolute_change": 7.771796356367857e-16
+    },
+    "0.001/displacement/0.005/constant": {
+      "parent_amplitude": 0.001,
+      "daughter_seed": 0.005,
+      "launch_phase": "displacement",
+      "matter_weight": false,
+      "degree": 64,
+      "angular_nodes": 192,
+      "maximum_step": 0.004,
+      "snapshots": {
+        "initial": {
+          "t": 0.0,
+          "E_parent": 1.000004825084998,
+          "E_daughter": 4.166695089185372e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 0.0,
+          "volume": 1.0000269753161035,
+          "H_volume": 0.0,
+          "E_daughter_kinetic": 0.0,
+          "E_daughter_gradient": 4.166695089185372e-06,
+          "daughter_fraction_of_total_scalar_energy": 4.166657623516323e-06,
+          "daughter_pressure_to_energy": -0.3333333333333333
+        },
+        "before": {
+          "t": 0.48339525443345205,
+          "E_parent": 1.3621798404119976,
+          "E_daughter": 3.671256452428702e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 6.478685772452027e-20,
+          "volume": 1.3951877324439241,
+          "H_volume": 0.4173343534930512,
+          "E_daughter_kinetic": 3.2500720094422334e-06,
+          "E_daughter_gradient": 4.211844429864685e-07,
+          "daughter_fraction_of_total_scalar_energy": 2.6951261859953207e-06,
+          "daughter_pressure_to_energy": 0.8470334980429435
+        },
+        "crossing": {
+          "t": 0.48839525443345205,
+          "E_parent": 1.3673218348608018,
+          "E_daughter": 3.654265587273289e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 1.0233542195116587e-19,
+          "volume": 1.4039582490661653,
+          "H_volume": 0.4181635975977813,
+          "E_daughter_kinetic": 3.261460340784114e-06,
+          "E_daughter_gradient": 3.9280524648917523e-07,
+          "daughter_fraction_of_total_scalar_energy": 2.6725645183489342e-06,
+          "daughter_pressure_to_energy": 0.8566769940104343
+        },
+        "after": {
+          "t": 0.49339525443345206,
+          "E_parent": 1.3721950765420683,
+          "E_daughter": 3.6373201636269237e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 4.2846478391825546e-20,
+          "volume": 1.4127984299965655,
+          "H_volume": 0.41870287266388206,
+          "E_daughter_kinetic": 3.271929987200463e-06,
+          "E_daughter_gradient": 3.6539017642646073e-07,
+          "daughter_fraction_of_total_scalar_energy": 2.6507240728926295e-06,
+          "daughter_pressure_to_energy": 0.8660588345304877
+        },
+        "fixed": {
+          "t": 0.505,
+          "E_parent": 1.3823084170004456,
+          "E_daughter": 3.5983139254255734e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 5.3027488933530355e-20,
+          "volume": 1.4335516678010851,
+          "H_volume": 0.4187414432040063,
+          "E_daughter_kinetic": 3.2928070485528497e-06,
+          "E_daughter_gradient": 3.0550687687272423e-07,
+          "daughter_fraction_of_total_scalar_energy": 2.6031126732319043e-06,
+          "daughter_pressure_to_energy": 0.8867962854439421
+        }
+      },
+      "balances": {
+        "to_crossing": {
+          "parent_energy_change": 0.36731700977580384,
+          "daughter_energy_change": -5.124295019120831e-07,
+          "parent_pressure_work": -0.3673170097757202,
+          "daughter_pressure_work": 5.124295019120844e-07,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": 8.365530490550555e-14,
+          "daughter_balance_residual": 1.2705494208814505e-21,
+          "total_balance_residual": 8.368082050249216e-14
+        },
+        "through_crossing": {
+          "parent_energy_change": 0.010015236130070715,
+          "daughter_energy_change": -3.393628880177823e-08,
+          "parent_pressure_work": -0.010015236130100904,
+          "daughter_pressure_work": 3.39362888017788e-08,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": -3.0189392652424374e-14,
+          "daughter_balance_residual": 5.69100261436483e-22,
+          "total_balance_residual": -3.018928916882102e-14
+        },
+        "to_fixed": {
+          "parent_energy_change": 0.3823035919154476,
+          "daughter_energy_change": -5.683811637597986e-07,
+          "parent_pressure_work": -0.3823035919154284,
+          "daughter_pressure_work": 5.683811637598003e-07,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": 1.9206858326015208e-14,
+          "daughter_balance_residual": 1.6940658945086007e-21,
+          "total_balance_residual": 1.922085723953448e-14
+        }
+      },
+      "constraints": {
+        "hamiltonian": 6.637505360155654e-12,
+        "momentum": 1.16763071478465e-11,
+        "raychaudhuri": 1.2601938011632306e-11
+      },
+      "max_abs_shift_charge_drift": 3.467624598240976e-19,
+      "time_quadrature_absolute_change": 8.881802196451381e-16
+    },
+    "-0.001/velocity/0.01/matter": {
+      "parent_amplitude": -0.001,
+      "daughter_seed": 0.01,
+      "launch_phase": "velocity",
+      "matter_weight": true,
+      "degree": 64,
+      "angular_nodes": 192,
+      "maximum_step": 0.004,
+      "snapshots": {
+        "initial": {
+          "t": 0.0,
+          "E_parent": 0.9999860855670487,
+          "E_daughter": 1.666668456317947e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -2.327963339467681e-06,
+          "volume": 1.000008256754257,
+          "H_volume": 0.0,
+          "E_daughter_kinetic": 1.666668456317947e-05,
+          "E_daughter_gradient": 0.0,
+          "daughter_fraction_of_total_scalar_energy": 1.6666638692396266e-05,
+          "daughter_pressure_to_energy": 1.0
+        },
+        "before": {
+          "t": 0.5841222212661192,
+          "E_parent": 1.4436774046990053,
+          "E_daughter": 1.514285199217455e-05,
+          "transfer_rate_into_daughter": -1.3793643971394515e-05,
+          "daughter_shift_charge": -2.3279633393922505e-06,
+          "volume": 1.5631602547837797,
+          "H_volume": 0.2988742866345582,
+          "E_daughter_kinetic": 1.1502505464379631e-07,
+          "E_daughter_gradient": 1.5027826937530754e-05,
+          "daughter_fraction_of_total_scalar_energy": 1.0488972889596245e-05,
+          "daughter_pressure_to_energy": -0.3232053376556157
+        },
+        "crossing": {
+          "t": 0.5891222212661192,
+          "E_parent": 1.4549079529651252,
+          "E_daughter": 1.5090235811186444e-05,
+          "transfer_rate_into_daughter": -1.4126654521153539e-05,
+          "daughter_shift_charge": -2.3279633394906634e-06,
+          "volume": 1.5700323988844722,
+          "H_volume": 0.28591288524211445,
+          "E_daughter_kinetic": 1.5111913510295254e-07,
+          "E_daughter_gradient": 1.4939116676083492e-05,
+          "daughter_fraction_of_total_scalar_energy": 1.0371844670208006e-05,
+          "daughter_pressure_to_energy": -0.3199808461582885
+        },
+        "after": {
+          "t": 0.5941222212661192,
+          "E_parent": 1.4682109466715008,
+          "E_daughter": 1.503451667332835e-05,
+          "transfer_rate_into_daughter": -1.4421293972923063e-05,
+          "daughter_shift_charge": -2.327963339547362e-06,
+          "volume": 1.5766210818170738,
+          "H_volume": 0.2723594533070836,
+          "E_daughter_kinetic": 1.9326174504613836e-07,
+          "E_daughter_gradient": 1.4841254928282212e-05,
+          "daughter_fraction_of_total_scalar_energy": 1.0239920057239105e-05,
+          "daughter_pressure_to_energy": -0.3161939511817727
+        },
+        "fixed": {
+          "t": 0.605,
+          "E_parent": 1.5055874194415728,
+          "E_daughter": 1.4903535418997234e-05,
+          "transfer_rate_into_daughter": -1.4909692779119467e-05,
+          "daughter_shift_charge": -2.3279633395900636e-06,
+          "volume": 1.5898956826631991,
+          "H_volume": 0.24113894665628316,
+          "E_daughter_kinetic": 3.070421928383359e-07,
+          "E_daughter_gradient": 1.4596493226158899e-05,
+          "daughter_fraction_of_total_scalar_energy": 9.898719729343156e-06,
+          "daughter_pressure_to_energy": -0.30586403970993753
+        }
+      },
+      "balances": {
+        "to_crossing": {
+          "parent_energy_change": 0.4549218673980765,
+          "daughter_energy_change": -1.5764487519930269e-06,
+          "parent_pressure_work": -0.4549206724349511,
+          "daughter_pressure_work": 3.8148677560742205e-07,
+          "transfer_into_daughter": -1.1949619763856627e-06,
+          "parent_balance_residual": 1.149009247309148e-12,
+          "daughter_balance_residual": 5.7809998650106e-20,
+          "total_balance_residual": 1.1490191815762513e-12
+        },
+        "through_crossing": {
+          "parent_energy_change": 0.024533541972495465,
+          "daughter_energy_change": -1.0833531884619935e-07,
+          "parent_pressure_work": -0.02453340077083333,
+          "daughter_pressure_work": -3.2867273263486145e-08,
+          "transfer_into_daughter": -1.4120259210971467e-07,
+          "parent_balance_residual": -9.299761647694692e-13,
+          "daughter_balance_residual": 2.916969712106997e-20,
+          "total_balance_residual": -9.299776771931187e-13
+        },
+        "to_fixed": {
+          "parent_energy_change": 0.5056013338745241,
+          "daughter_energy_change": -1.763149144182237e-06,
+          "parent_pressure_work": -0.5055999077958035,
+          "daughter_pressure_work": 3.370704995570757e-07,
+          "transfer_into_daughter": -1.4260786446252581e-06,
+          "parent_balance_residual": 7.593140902992853e-14,
+          "daughter_balance_residual": 9.677351422380381e-20,
+          "total_balance_residual": 7.598429289671564e-14
+        }
+      },
+      "constraints": {
+        "hamiltonian": 1.4155527120844153e-09,
+        "momentum": 3.2019998098440257e-09,
+        "raychaudhuri": 1.8351279014912812e-08
+      },
+      "max_abs_shift_charge_drift": 1.2238270835109033e-16,
+      "time_quadrature_absolute_change": 5.884212523699431e-15
+    },
+    "-0.001/velocity/0.01/constant": {
+      "parent_amplitude": -0.001,
+      "daughter_seed": 0.01,
+      "launch_phase": "velocity",
+      "matter_weight": false,
+      "degree": 64,
+      "angular_nodes": 192,
+      "maximum_step": 0.004,
+      "snapshots": {
+        "initial": {
+          "t": 0.0,
+          "E_parent": 0.9999860855670487,
+          "E_daughter": 1.6666684563179474e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -5.572682153680641e-08,
+          "volume": 1.000008256754257,
+          "H_volume": 0.0,
+          "E_daughter_kinetic": 1.6666684563179474e-05,
+          "E_daughter_gradient": 0.0,
+          "daughter_fraction_of_total_scalar_energy": 1.666663869239627e-05,
+          "daughter_pressure_to_energy": 1.0
+        },
+        "before": {
+          "t": 0.5841343238890324,
+          "E_parent": 1.4437730502617638,
+          "E_daughter": 1.6295120837757026e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -5.572682153694803e-08,
+          "volume": 1.5631639616901367,
+          "H_volume": 0.29880677982077414,
+          "E_daughter_kinetic": 1.2305468443533261e-07,
+          "E_daughter_gradient": 1.6172066153321692e-05,
+          "daughter_fraction_of_total_scalar_energy": 1.1286356205543855e-05,
+          "daughter_pressure_to_energy": -0.32326449651929295
+        },
+        "crossing": {
+          "t": 0.5891343238890324,
+          "E_parent": 1.4550197516336785,
+          "E_daughter": 1.6311995372514437e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -5.5726821536938234e-08,
+          "volume": 1.570034500228843,
+          "H_volume": 0.2858426865271947,
+          "E_daughter_kinetic": 1.6184241812713354e-07,
+          "E_daughter_gradient": 1.61501529543873e-05,
+          "daughter_fraction_of_total_scalar_energy": 1.1210715514384007e-05,
+          "daughter_pressure_to_energy": -0.3201044250417222
+        },
+        "after": {
+          "t": 0.5941343238890324,
+          "E_parent": 1.4683402791324642,
+          "E_daughter": 1.6327182077003155e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -5.572682153667401e-08,
+          "volume": 1.5766215017870555,
+          "H_volume": 0.27228674656356167,
+          "E_daughter_kinetic": 2.062266180387748e-07,
+          "E_daughter_gradient": 1.6120955458964383e-05,
+          "daughter_fraction_of_total_scalar_energy": 1.111935752309045e-05,
+          "daughter_pressure_to_energy": -0.31649216486011633
+        },
+        "fixed": {
+          "t": 0.605,
+          "E_parent": 1.5057106483064675,
+          "E_daughter": 1.635422748440526e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -5.572682153685298e-08,
+          "volume": 1.5898782903047357,
+          "H_volume": 0.24109737077701554,
+          "E_daughter_kinetic": 3.2276616926939904e-07,
+          "E_daughter_gradient": 1.6031461315135868e-05,
+          "daughter_fraction_of_total_scalar_energy": 1.0861349671542799e-05,
+          "daughter_pressure_to_energy": -0.30701873713674954
+        }
+      },
+      "balances": {
+        "to_crossing": {
+          "parent_energy_change": 0.45503366606662976,
+          "daughter_energy_change": -3.546891906650379e-07,
+          "parent_pressure_work": -0.4550336660657942,
+          "daughter_pressure_work": 3.546891906650324e-07,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": 8.355538483328928e-13,
+          "daughter_balance_residual": -5.505714157152952e-21,
+          "total_balance_residual": 8.355341713340116e-13
+        },
+        "through_crossing": {
+          "parent_energy_change": 0.024567228870700397,
+          "daughter_energy_change": 3.2061239246128907e-08,
+          "parent_pressure_work": -0.02456722887198067,
+          "daughter_pressure_work": -3.2061239246133764e-08,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": -1.280274497528211e-12,
+          "daughter_balance_residual": -4.8572045569113785e-21,
+          "total_balance_residual": -1.2802738145946624e-12
+        },
+        "to_fixed": {
+          "parent_energy_change": 0.5057245627394188,
+          "daughter_energy_change": -3.12457078774213e-07,
+          "parent_pressure_work": -0.5057245627386326,
+          "daughter_pressure_work": 3.124570787742112e-07,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": 7.861489237370733e-13,
+          "daughter_balance_residual": -1.7999450129153882e-21,
+          "total_balance_residual": 7.861570974991352e-13
+        }
+      },
+      "constraints": {
+        "hamiltonian": 1.3820375954765043e-09,
+        "momentum": 3.0671803998725723e-09,
+        "raychaudhuri": 1.8295009951430078e-08
+      },
+      "max_abs_shift_charge_drift": 9.554068423885478e-19,
+      "time_quadrature_absolute_change": 7.771561172376096e-16
+    },
+    "-0.001/velocity/0.005/matter": {
+      "parent_amplitude": -0.001,
+      "daughter_seed": 0.005,
+      "launch_phase": "velocity",
+      "matter_weight": true,
+      "degree": 64,
+      "angular_nodes": 192,
+      "maximum_step": 0.004,
+      "snapshots": {
+        "initial": {
+          "t": 0.0,
+          "E_parent": 1.0000048355885878,
+          "E_daughter": 4.166691231740573e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -1.220236520348553e-06,
+          "volume": 1.0000270068824415,
+          "H_volume": 0.0,
+          "E_daughter_kinetic": 4.166691231740573e-06,
+          "E_daughter_gradient": 0.0,
+          "daughter_fraction_of_total_scalar_energy": 4.166653722357853e-06,
+          "daughter_pressure_to_energy": 1.0
+        },
+        "before": {
+          "t": 0.58413123878604,
+          "E_parent": 1.4437728497869289,
+          "E_daughter": 3.7856700344229413e-06,
+          "transfer_rate_into_daughter": -3.448863256144843e-06,
+          "daughter_shift_charge": -1.2202365202998136e-06,
+          "volume": 1.5632043395285837,
+          "H_volume": 0.29883088090843024,
+          "E_daughter_kinetic": 2.8774236379243437e-08,
+          "E_daughter_gradient": 3.756895798043698e-06,
+          "daughter_fraction_of_total_scalar_energy": 2.622060740874059e-06,
+          "daughter_pressure_to_energy": -0.32319889262487206
+        },
+        "crossing": {
+          "t": 0.58913123878604,
+          "E_parent": 1.4550144486643557,
+          "E_daughter": 3.772513036628846e-06,
+          "transfer_rate_into_daughter": -3.5320802957551115e-06,
+          "daughter_shift_charge": -1.2202365203458593e-06,
+          "volume": 1.5700756320402827,
+          "H_volume": 0.2858675349707379,
+          "E_daughter_kinetic": 3.7801060880369876e-08,
+          "E_daughter_gradient": 3.7347119757484755e-06,
+          "daughter_fraction_of_total_scalar_energy": 2.5927599955251077e-06,
+          "daughter_pressure_to_energy": -0.3199731635956035
+        },
+        "after": {
+          "t": 0.59413123878604,
+          "E_parent": 1.4683294891437655,
+          "E_daughter": 3.7585804567650005e-06,
+          "transfer_rate_into_daughter": -3.6057005139899775e-06,
+          "daughter_shift_charge": -1.2202365203786755e-06,
+          "volume": 1.5766634021781982,
+          "H_volume": 0.27231229222829223,
+          "E_daughter_kinetic": 4.834023852657907e-08,
+          "E_daughter_gradient": 3.7102402182384216e-06,
+          "daughter_fraction_of_total_scalar_energy": 2.559759824679067e-06,
+          "daughter_pressure_to_energy": -0.3161849306025196
+        },
+        "fixed": {
+          "t": 0.605,
+          "E_parent": 1.5056991391717691,
+          "E_daughter": 3.725858199055894e-06,
+          "transfer_rate_into_daughter": -3.7276234120069926e-06,
+          "daughter_shift_charge": -1.220236520375901e-06,
+          "volume": 1.5899254504702482,
+          "H_volume": 0.24111509440692797,
+          "E_daughter_kinetic": 7.67670654541585e-08,
+          "E_daughter_gradient": 3.649091133601735e-06,
+          "daughter_fraction_of_total_scalar_energy": 2.4744976486325127e-06,
+          "daughter_pressure_to_energy": -0.3058615183034034
+        }
+      },
+      "balances": {
+        "to_crossing": {
+          "parent_energy_change": 0.4550096130757679,
+          "daughter_energy_change": -3.941781951117272e-07,
+          "parent_pressure_work": -0.4550093142610134,
+          "daughter_pressure_work": 9.536441784384879e-08,
+          "transfer_into_daughter": -2.9881377726789545e-07,
+          "parent_balance_residual": 9.772833954631034e-13,
+          "daughter_balance_residual": 1.7046538063492794e-20,
+          "total_balance_residual": 9.773106683225833e-13
+        },
+        "through_crossing": {
+          "parent_energy_change": 0.024556639356836607,
+          "daughter_energy_change": -2.7089577657940796e-08,
+          "parent_pressure_work": -0.02455660405335043,
+          "daughter_pressure_work": -8.215230278369371e-09,
+          "transfer_into_daughter": -3.530480793631824e-08,
+          "parent_balance_residual": -1.3217602323204312e-12,
+          "daughter_balance_residual": 8.07328277851755e-21,
+          "total_balance_residual": -1.3217597410165064e-12
+        },
+        "to_fixed": {
+          "parent_energy_change": 0.5056943035831813,
+          "daughter_energy_change": -4.4083303268467923e-07,
+          "parent_pressure_work": -0.50569394701767,
+          "daughter_pressure_work": 8.426814068360361e-08,
+          "transfer_into_daughter": -3.5656489200109693e-07,
+          "parent_balance_residual": 6.193380161428555e-13,
+          "daughter_balance_residual": 2.1281702799764296e-20,
+          "total_balance_residual": 6.193894023759825e-13
+        }
+      },
+      "constraints": {
+        "hamiltonian": 1.3939865558162032e-09,
+        "momentum": 3.1684201572925816e-09,
+        "raychaudhuri": 1.8303487910505588e-08
+      },
+      "max_abs_shift_charge_drift": 5.4853641905951676e-17,
+      "time_quadrature_absolute_change": 8.881784197001252e-16
+    },
+    "-0.001/velocity/0.005/constant": {
+      "parent_amplitude": -0.001,
+      "daughter_seed": 0.005,
+      "launch_phase": "velocity",
+      "matter_weight": false,
+      "degree": 64,
+      "angular_nodes": 192,
+      "maximum_step": 0.004,
+      "snapshots": {
+        "initial": {
+          "t": 0.0,
+          "E_parent": 1.0000048355885878,
+          "E_daughter": 4.166691231740574e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -8.411279695518947e-08,
+          "volume": 1.0000270068824415,
+          "H_volume": 0.0,
+          "E_daughter_kinetic": 4.166691231740574e-06,
+          "E_daughter_gradient": 0.0,
+          "daughter_fraction_of_total_scalar_energy": 4.1666537223578535e-06,
+          "daughter_pressure_to_energy": 1.0
+        },
+        "before": {
+          "t": 0.5841342645938774,
+          "E_parent": 1.4437967693943945,
+          "E_daughter": 4.0738153350326515e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -8.411279695572365e-08,
+          "volume": 1.5632052660907818,
+          "H_volume": 0.2988140039924621,
+          "E_daughter_kinetic": 3.076520224061356e-08,
+          "E_daughter_gradient": 4.043050132792038e-06,
+          "daughter_fraction_of_total_scalar_energy": 2.821590909987355e-06,
+          "daughter_pressure_to_energy": -0.3232640822061654
+        },
+        "crossing": {
+          "t": 0.5891342645938774,
+          "E_parent": 1.455042407063844,
+          "E_daughter": 4.078035175814539e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -8.411279695572283e-08,
+          "volume": 1.570076157196834,
+          "H_volume": 0.28584998523350996,
+          "E_daughter_kinetic": 4.04623501907107e-08,
+          "E_daughter_gradient": 4.037572825623828e-06,
+          "daughter_fraction_of_total_scalar_energy": 2.8026837751077197e-06,
+          "daughter_pressure_to_energy": -0.32010397215120345
+        },
+        "after": {
+          "t": 0.5941342645938774,
+          "E_parent": 1.4683618314528915,
+          "E_daughter": 4.0818330764636774e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -8.411279695568149e-08,
+          "volume": 1.5766635069794503,
+          "H_volume": 0.27229411564456835,
+          "E_daughter_kinetic": 5.1558610923685703e-08,
+          "E_daughter_gradient": 4.030274465539992e-06,
+          "daughter_fraction_of_total_scalar_energy": 2.7798473388211447e-06,
+          "daughter_pressure_to_energy": -0.3164916807529511
+        },
+        "fixed": {
+          "t": 0.605,
+          "E_parent": 1.5057299485815787,
+          "E_daughter": 4.08859717431563e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -8.411279695567012e-08,
+          "volume": 1.5899211024581743,
+          "H_volume": 0.24110470198478753,
+          "E_daughter_kinetic": 8.069411623500849e-08,
+          "E_daughter_gradient": 4.0079030580806215e-06,
+          "daughter_fraction_of_total_scalar_energy": 2.7153514985795945e-06,
+          "daughter_pressure_to_energy": -0.3070181571511699
+        }
+      },
+      "balances": {
+        "to_crossing": {
+          "parent_energy_change": 0.45503757147525614,
+          "daughter_energy_change": -8.86560559260349e-08,
+          "parent_pressure_work": -0.4550375714743973,
+          "daughter_pressure_work": 8.865605592603298e-08,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": 8.588685318500211e-13,
+          "daughter_balance_residual": -1.9190590211230242e-21,
+          "total_balance_residual": 8.588535704820806e-13
+        },
+        "through_crossing": {
+          "parent_energy_change": 0.024565062058496956,
+          "daughter_energy_change": 8.017741431025897e-09,
+          "parent_pressure_work": -0.02456506205979382,
+          "daughter_pressure_work": -8.017741431027369e-09,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": -1.2968653928524532e-12,
+          "daughter_balance_residual": -1.4723814903443893e-21,
+          "total_balance_residual": -1.2968638391723435e-12
+        },
+        "to_fixed": {
+          "parent_energy_change": 0.5057251129929909,
+          "daughter_energy_change": -7.809405742494381e-08,
+          "parent_pressure_work": -0.5057251129922303,
+          "daughter_pressure_work": 7.80940574249425e-08,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": 7.606137941706947e-13,
+          "daughter_balance_residual": -1.3102540902839958e-21,
+          "total_balance_residual": 7.60595768846356e-13
+        }
+      },
+      "constraints": {
+        "hamiltonian": 1.3861350585860541e-09,
+        "momentum": 3.0869479189698026e-09,
+        "raychaudhuri": 1.8289808186485366e-08
+      },
+      "max_abs_shift_charge_drift": 8.105178862937595e-19,
+      "time_quadrature_absolute_change": 7.771561172376096e-16
+    },
+    "-0.001/velocity/0/matter": {
+      "parent_amplitude": -0.001,
+      "daughter_seed": 0.0,
+      "launch_phase": "velocity",
+      "matter_weight": true,
+      "degree": 64,
+      "angular_nodes": 192,
+      "maximum_step": 0.004,
+      "snapshots": {
+        "initial": {
+          "t": 0.0,
+          "E_parent": 1.0000110856292526,
+          "E_daughter": 0.0,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 0.0,
+          "volume": 1.0000332569586567,
+          "H_volume": 0.0,
+          "E_daughter_kinetic": 0.0,
+          "E_daughter_gradient": 0.0,
+          "daughter_fraction_of_total_scalar_energy": 0.0,
+          "daughter_pressure_to_energy": null
+        },
+        "before": {
+          "t": 0.5841342448320971,
+          "E_parent": 1.4438046759876537,
+          "E_daughter": 0.0,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 0.0,
+          "volume": 1.5632190343134629,
+          "H_volume": 0.29881641198668424,
+          "E_daughter_kinetic": 0.0,
+          "E_daughter_gradient": 0.0,
+          "daughter_fraction_of_total_scalar_energy": 0.0,
+          "daughter_pressure_to_energy": null
+        },
+        "crossing": {
+          "t": 0.5891342448320971,
+          "E_parent": 1.4550499590990766,
+          "E_daughter": 0.0,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 0.0,
+          "volume": 1.5700900429428803,
+          "H_volume": 0.2858524180723293,
+          "E_daughter_kinetic": 0.0,
+          "E_daughter_gradient": 0.0,
+          "daughter_fraction_of_total_scalar_energy": 0.0,
+          "daughter_pressure_to_energy": null
+        },
+        "after": {
+          "t": 0.5941342448320971,
+          "E_parent": 1.4683690157932585,
+          "E_daughter": 0.0,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 0.0,
+          "volume": 1.5766775088012261,
+          "H_volume": 0.2722965719414299,
+          "E_daughter_kinetic": 0.0,
+          "E_daughter_gradient": 0.0,
+          "daughter_fraction_of_total_scalar_energy": 0.0,
+          "daughter_pressure_to_energy": null
+        },
+        "fixed": {
+          "t": 0.605,
+          "E_parent": 1.5057363822392176,
+          "E_daughter": 0.0,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 0.0,
+          "volume": 1.5899353732670074,
+          "H_volume": 0.2411071456671002,
+          "E_daughter_kinetic": 0.0,
+          "E_daughter_gradient": 0.0,
+          "daughter_fraction_of_total_scalar_energy": 0.0,
+          "daughter_pressure_to_energy": null
+        }
+      },
+      "balances": {
+        "to_crossing": {
+          "parent_energy_change": 0.4550388734698241,
+          "daughter_energy_change": 0.0,
+          "parent_pressure_work": -0.4550388734709637,
+          "daughter_pressure_work": 0.0,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": -1.1396439347777232e-12,
+          "daughter_balance_residual": 0.0,
+          "total_balance_residual": -1.1396439347777232e-12
+        },
+        "through_crossing": {
+          "parent_energy_change": 0.024564339805604796,
+          "daughter_energy_change": 0.0,
+          "parent_pressure_work": -0.02456433980630124,
+          "daughter_pressure_work": 0.0,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": -6.964429033473607e-13,
+          "daughter_balance_residual": 0.0,
+          "total_balance_residual": -6.964429033473607e-13
+        },
+        "to_fixed": {
+          "parent_energy_change": 0.505725296609965,
+          "daughter_energy_change": 0.0,
+          "parent_pressure_work": -0.5057252966125478,
+          "daughter_pressure_work": 0.0,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": -2.582822844487964e-12,
+          "daughter_balance_residual": 0.0,
+          "total_balance_residual": -2.582822844487964e-12
+        }
+      },
+      "constraints": {
+        "hamiltonian": 1.6673133984568269e-09,
+        "momentum": 2.909723227582225e-09,
+        "raychaudhuri": 1.775834945760835e-08
+      },
+      "max_abs_shift_charge_drift": 0.0,
+      "time_quadrature_absolute_change": 4.551914400963142e-15
+    },
+    "-0.001/displacement/0.01/matter": {
+      "parent_amplitude": -0.001,
+      "daughter_seed": 0.01,
+      "launch_phase": "displacement",
+      "matter_weight": true,
+      "degree": 64,
+      "angular_nodes": 192,
+      "maximum_step": 0.004,
+      "snapshots": {
+        "initial": {
+          "t": 0.0,
+          "E_parent": 0.999986085492017,
+          "E_daughter": 1.6666695577572584e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 0.0,
+          "volume": 1.000008256377308,
+          "H_volume": 0.0,
+          "E_daughter_kinetic": 0.0,
+          "E_daughter_gradient": 1.6666695577572584e-05,
+          "daughter_fraction_of_total_scalar_energy": 1.6666649707826014e-05,
+          "daughter_pressure_to_energy": -0.3333333333333333
+        },
+        "before": {
+          "t": 0.5841371615733039,
+          "E_parent": 1.443787627253572,
+          "E_daughter": 1.7273194282451403e-05,
+          "transfer_rate_into_daughter": 4.0848846594197645e-05,
+          "daughter_shift_charge": 7.940708946397346e-16,
+          "volume": 1.5631700124958159,
+          "H_volume": 0.2987732708918301,
+          "E_daughter_kinetic": 1.715125432442377e-05,
+          "E_daughter_gradient": 1.219399580276281e-07,
+          "daughter_fraction_of_total_scalar_energy": 1.1963662318290666e-05,
+          "daughter_pressure_to_energy": 0.9905873454530243
+        },
+        "crossing": {
+          "t": 0.5891371615733039,
+          "E_parent": 1.4550392415173545,
+          "E_daughter": 1.7564900620384168e-05,
+          "transfer_rate_into_daughter": 4.3086232834295884e-05,
+          "daughter_shift_charge": 6.7685493185388125e-16,
+          "volume": 1.5700397598356284,
+          "H_volume": 0.2858067333855971,
+          "E_daughter_kinetic": 1.7455840395796462e-05,
+          "E_daughter_gradient": 1.090602245877056e-07,
+          "daughter_fraction_of_total_scalar_energy": 1.2071625343360328e-05,
+          "daughter_pressure_to_energy": 0.9917213518068612
+        },
+        "after": {
+          "t": 0.5941371615733039,
+          "E_parent": 1.4683655181837973,
+          "E_daughter": 1.7886427511879977e-05,
+          "transfer_rate_into_daughter": 4.541004981288717e-05,
+          "daughter_shift_charge": 5.03058555180122e-16,
+          "volume": 1.5766259035784833,
+          "H_volume": 0.27224827738554114,
+          "E_daughter_kinetic": 1.7783624163163556e-05,
+          "E_daughter_gradient": 1.028033487164233e-07,
+          "daughter_fraction_of_total_scalar_energy": 1.2181033547307513e-05,
+          "daughter_pressure_to_energy": 0.9923365841764179
+        },
+        "fixed": {
+          "t": 0.605,
+          "E_parent": 1.5057400778910244,
+          "E_daughter": 1.8698688782690364e-05,
+          "transfer_rate_into_daughter": 5.078839092282355e-05,
+          "daughter_shift_charge": 6.093993669062163e-16,
+          "volume": 1.5898773262891037,
+          "H_volume": 0.24106160292273834,
+          "E_daughter_kinetic": 1.858543931855016e-05,
+          "E_daughter_gradient": 1.1324946414020629e-07,
+          "daughter_fraction_of_total_scalar_energy": 1.2418117080587582e-05,
+          "daughter_pressure_to_energy": 0.9919246056621865
+        }
+      },
+      "balances": {
+        "to_crossing": {
+          "parent_energy_change": 0.4550531560253376,
+          "daughter_energy_change": 8.982050428115842e-07,
+          "parent_pressure_work": -0.45505640065272573,
+          "daughter_pressure_work": 2.3464233822892613e-06,
+          "transfer_into_daughter": 3.2446284251035743e-06,
+          "parent_balance_residual": 1.0369487882321926e-12,
+          "daughter_balance_residual": -2.7287166395797285e-18,
+          "total_balance_residual": 1.036921956346006e-12
+        },
+        "through_crossing": {
+          "parent_energy_change": 0.024577890930225443,
+          "daughter_energy_change": 6.132332294285737e-07,
+          "parent_pressure_work": -0.02457832193731838,
+          "daughter_pressure_work": -1.8222692826675364e-07,
+          "transfer_into_daughter": 4.310063011617594e-07,
+          "parent_balance_residual": -7.917742438697576e-13,
+          "daughter_balance_residual": 6.072167440629266e-20,
+          "total_balance_residual": -7.91773929038199e-13
+        },
+        "to_fixed": {
+          "parent_energy_change": 0.5057539923990074,
+          "daughter_energy_change": 2.0319932051177808e-06,
+          "parent_pressure_work": -0.5057579802906438,
+          "daughter_pressure_work": 1.955900206400019e-06,
+          "transfer_into_daughter": 3.987893411521602e-06,
+          "parent_balance_residual": 1.7751626711753877e-12,
+          "daughter_balance_residual": -3.802330900224554e-18,
+          "total_balance_residual": 1.7751837779658838e-12
+        }
+      },
+      "constraints": {
+        "hamiltonian": 1.4678474731984656e-09,
+        "momentum": 3.1156046415441885e-09,
+        "raychaudhuri": 1.839724816932176e-08
+      },
+      "max_abs_shift_charge_drift": 7.933449476609703e-16,
+      "time_quadrature_absolute_change": 6.661338147750939e-16
+    },
+    "-0.001/displacement/0.01/constant": {
+      "parent_amplitude": -0.001,
+      "daughter_seed": 0.01,
+      "launch_phase": "displacement",
+      "matter_weight": false,
+      "degree": 64,
+      "angular_nodes": 192,
+      "maximum_step": 0.004,
+      "snapshots": {
+        "initial": {
+          "t": 0.0,
+          "E_parent": 0.999986085492017,
+          "E_daughter": 1.666669557757258e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 0.0,
+          "volume": 1.000008256377308,
+          "H_volume": 0.0,
+          "E_daughter_kinetic": 0.0,
+          "E_daughter_gradient": 1.666669557757258e-05,
+          "daughter_fraction_of_total_scalar_energy": 1.666664970782601e-05,
+          "daughter_pressure_to_energy": -0.33333333333333337
+        },
+        "before": {
+          "t": 0.5841344749061861,
+          "E_parent": 1.4437759400926318,
+          "E_daughter": 1.4199060669225056e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 3.146332466385281e-19,
+          "volume": 1.5631741613762387,
+          "H_volume": 0.2988090991246652,
+          "E_daughter_kinetic": 1.4050790274776126e-05,
+          "E_daughter_gradient": 1.4827039444893243e-07,
+          "daughter_fraction_of_total_scalar_energy": 9.834573795850954e-06,
+          "daughter_pressure_to_energy": 0.9860769762260597
+        },
+        "crossing": {
+          "t": 0.5891344749061861,
+          "E_parent": 1.4550221454576895,
+          "E_daughter": 1.4249047531328735e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 3.5758116848273378e-19,
+          "volume": 1.5700447988979458,
+          "H_volume": 0.2858449652229176,
+          "E_daughter_kinetic": 1.413325750953804e-05,
+          "E_daughter_gradient": 1.1579002179069504e-07,
+          "daughter_fraction_of_total_scalar_energy": 9.792914861194292e-06,
+          "daughter_pressure_to_energy": 0.9891651217120664
+        },
+        "after": {
+          "t": 0.5941344749061861,
+          "E_parent": 1.4683421663765834,
+          "E_daughter": 1.4311142258897095e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 4.738146555022341e-19,
+          "volume": 1.5766318970244195,
+          "H_volume": 0.27228897964799903,
+          "E_daughter_kinetic": 1.4223322931708971e-05,
+          "E_daughter_gradient": 8.781932718812477e-08,
+          "daughter_fraction_of_total_scalar_energy": 9.746367777856895e-06,
+          "daughter_pressure_to_energy": 0.9918180929144187
+        },
+        "fixed": {
+          "t": 0.605,
+          "E_parent": 1.5057108170816105,
+          "E_daughter": 1.4492077578031897e-05,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 5.186962330965729e-19,
+          "volume": 1.5898887120882255,
+          "H_volume": 0.24109993416650832,
+          "E_daughter_kinetic": 1.4449000071257185e-05,
+          "E_daughter_gradient": 4.307750677470899e-08,
+          "daughter_fraction_of_total_scalar_energy": 9.624648991338541e-06,
+          "daughter_pressure_to_energy": 0.9960366844994896
+        }
+      },
+      "balances": {
+        "to_crossing": {
+          "parent_energy_change": 0.45503605996567253,
+          "daughter_energy_change": -2.417648046243845e-06,
+          "parent_pressure_work": -0.4550360599648121,
+          "daughter_pressure_work": 2.417648046243822e-06,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": 8.604228440844963e-13,
+          "daughter_balance_residual": -2.286988957586611e-20,
+          "total_balance_residual": 8.60406564958283e-13
+        },
+        "through_crossing": {
+          "parent_energy_change": 0.024566226283951664,
+          "daughter_energy_change": 1.1208158967203867e-07,
+          "parent_pressure_work": -0.024566226285246403,
+          "daughter_pressure_work": -1.1208158967203735e-07,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": -1.2947386218709056e-12,
+          "daughter_balance_residual": 1.3234889800848443e-21,
+          "total_balance_residual": -1.2947381123276483e-12
+        },
+        "to_fixed": {
+          "parent_energy_change": 0.5057247315895935,
+          "daughter_energy_change": -2.1746179995406832e-06,
+          "parent_pressure_work": -0.5057247315888241,
+          "daughter_pressure_work": 2.174617999540658e-06,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": 7.693845560652335e-13,
+          "daughter_balance_residual": -2.541098841762901e-20,
+          "total_balance_residual": 7.693633463602342e-13
+        }
+      },
+      "constraints": {
+        "hamiltonian": 1.3865258570907222e-09,
+        "momentum": 3.0850256063361306e-09,
+        "raychaudhuri": 1.828680318283205e-08
+      },
+      "max_abs_shift_charge_drift": 9.638721841787031e-19,
+      "time_quadrature_absolute_change": 8.881784197001252e-16
+    },
+    "-0.001/displacement/0.005/matter": {
+      "parent_amplitude": -0.001,
+      "daughter_seed": 0.005,
+      "launch_phase": "displacement",
+      "matter_weight": true,
+      "degree": 64,
+      "angular_nodes": 192,
+      "maximum_step": 0.004,
+      "snapshots": {
+        "initial": {
+          "t": 0.0,
+          "E_parent": 1.0000048355790399,
+          "E_daughter": 4.1666950998019805e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 0.0,
+          "volume": 1.000027006797416,
+          "H_volume": 0.0,
+          "E_daughter_kinetic": 0.0,
+          "E_daughter_gradient": 4.1666950998019805e-06,
+          "daughter_fraction_of_total_scalar_energy": 4.1666575904081055e-06,
+          "daughter_pressure_to_energy": -0.33333333333333337
+        },
+        "before": {
+          "t": 0.584134973985976,
+          "E_parent": 1.4438004128048734,
+          "E_daughter": 4.318168560924607e-06,
+          "transfer_rate_into_daughter": 1.0210945944377276e-05,
+          "daughter_shift_charge": 4.2943172527269826e-16,
+          "volume": 1.5632067792467375,
+          "H_volume": 0.29880562831391017,
+          "E_daughter_kinetic": 4.287675590836796e-06,
+          "E_daughter_gradient": 3.0492970087811136e-08,
+          "daughter_fraction_of_total_scalar_energy": 2.9908258840606748e-06,
+          "daughter_pressure_to_energy": 0.9905845978736623
+        },
+        "crossing": {
+          "t": 0.589134973985976,
+          "E_parent": 1.4550472784463564,
+          "E_daughter": 4.391079429700312e-06,
+          "transfer_rate_into_daughter": 1.077022463930697e-05,
+          "daughter_shift_charge": 3.1702607325284104e-16,
+          "volume": 1.570077472587841,
+          "H_volume": 0.2858409985772034,
+          "E_daughter_kinetic": 4.363808597259298e-06,
+          "E_daughter_gradient": 2.7270832441013867e-08,
+          "daughter_fraction_of_total_scalar_energy": 3.017816838855903e-06,
+          "daughter_pressure_to_energy": 0.9917193231178164
+        },
+        "after": {
+          "t": 0.594134973985976,
+          "E_parent": 1.4683681398492427,
+          "E_daughter": 4.471444131667195e-06,
+          "transfer_rate_into_daughter": 1.1351106150635906e-05,
+          "daughter_shift_charge": 2.3138104286321304e-16,
+          "volume": 1.5766646079528635,
+          "H_volume": 0.2722845000526377,
+          "E_daughter_kinetic": 4.445739799373965e-06,
+          "E_daughter_gradient": 2.5704332293230683e-08,
+          "daughter_fraction_of_total_scalar_energy": 3.045169936620277e-06,
+          "daughter_pressure_to_energy": 0.9923352630495996
+        },
+        "fixed": {
+          "t": 0.605,
+          "E_parent": 1.5057373050043605,
+          "E_daughter": 4.674512428288185e-06,
+          "transfer_rate_into_daughter": 1.2695794413308124e-05,
+          "daughter_shift_charge": 2.2842853045704497e-16,
+          "volume": 1.589920861945423,
+          "H_volume": 0.24109576149614598,
+          "E_daughter_kinetic": 4.646200425768686e-06,
+          "E_daughter_gradient": 2.831200251949989e-08,
+          "daughter_fraction_of_total_scalar_energy": 3.1044577968054617e-06,
+          "daughter_pressure_to_energy": 0.9919244333453425
+        }
+      },
+      "balances": {
+        "to_crossing": {
+          "parent_energy_change": 0.45504244286731654,
+          "daughter_energy_change": 2.243843298983311e-07,
+          "parent_pressure_work": -0.4550432539243983,
+          "daughter_pressure_work": 5.866736585295148e-07,
+          "transfer_into_daughter": 8.110579884286156e-07,
+          "parent_balance_residual": 9.066554123936227e-13,
+          "daughter_balance_residual": -7.697411908173454e-19,
+          "total_balance_residual": 9.066506675268105e-13
+        },
+        "through_crossing": {
+          "parent_energy_change": 0.02456772704436938,
+          "daughter_energy_change": 1.5327557074258868e-07,
+          "parent_pressure_work": -0.024567834783847043,
+          "daughter_pressure_work": -4.5537339247634785e-08,
+          "transfer_into_daughter": 1.0773823149485199e-07,
+          "parent_balance_residual": -1.2461674699612558e-12,
+          "daughter_balance_residual": 1.0190865146653301e-19,
+          "total_balance_residual": -1.2461673841462304e-12
+        },
+        "to_fixed": {
+          "parent_energy_change": 0.5057324694253207,
+          "daughter_energy_change": 5.078173284862043e-07,
+          "parent_pressure_work": -0.5057334663032563,
+          "daughter_pressure_work": 4.890616081958235e-07,
+          "transfer_into_daughter": 9.96878936682947e-07,
+          "parent_balance_residual": 1.001038988640156e-12,
+          "daughter_balance_residual": -9.190307477709159e-19,
+          "total_balance_residual": 1.0010729858956808e-12
+        }
+      },
+      "constraints": {
+        "hamiltonian": 1.4002132786572476e-09,
+        "momentum": 3.1107696807101993e-09,
+        "raychaudhuri": 1.832900586862252e-08
+      },
+      "max_abs_shift_charge_drift": 4.2908048744289833e-16,
+      "time_quadrature_absolute_change": 8.881784197001252e-16
+    },
+    "-0.001/displacement/0.005/constant": {
+      "parent_amplitude": -0.001,
+      "daughter_seed": 0.005,
+      "launch_phase": "displacement",
+      "matter_weight": false,
+      "degree": 64,
+      "angular_nodes": 192,
+      "maximum_step": 0.004,
+      "snapshots": {
+        "initial": {
+          "t": 0.0,
+          "E_parent": 1.0000048355790399,
+          "E_daughter": 4.166695099801978e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": 0.0,
+          "volume": 1.000027006797416,
+          "H_volume": 0.0,
+          "E_daughter_kinetic": 0.0,
+          "E_daughter_gradient": 4.166695099801978e-06,
+          "daughter_fraction_of_total_scalar_energy": 4.166657590408103e-06,
+          "daughter_pressure_to_energy": -0.33333333333333337
+        },
+        "before": {
+          "t": 0.5841343023506461,
+          "E_parent": 1.443797491985922,
+          "E_daughter": 3.5497852645251585e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -1.0921416128138168e-19,
+          "volume": 1.5632078160654663,
+          "H_volume": 0.2988145838063281,
+          "E_daughter_kinetic": 3.5127109579847966e-06,
+          "E_daughter_gradient": 3.707430654036217e-08,
+          "daughter_fraction_of_total_scalar_energy": 2.4586388025946082e-06,
+          "daughter_pressure_to_energy": 0.9860745354896573
+        },
+        "crossing": {
+          "t": 0.5891343023506461,
+          "E_parent": 1.4550430056598187,
+          "E_daughter": 3.56228058293817e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -1.8730045028104262e-19,
+          "volume": 1.570078731917787,
+          "H_volume": 0.28585055489515954,
+          "E_daughter_kinetic": 3.5333273062515386e-06,
+          "E_daughter_gradient": 2.895327668663101e-08,
+          "daughter_fraction_of_total_scalar_energy": 2.4482244495999392e-06,
+          "daughter_pressure_to_energy": 0.9891630184605875
+        },
+        "after": {
+          "t": 0.5941343023506461,
+          "E_parent": 1.4683623034101938,
+          "E_daughter": 3.577802782999674e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -1.3615344848144209e-19,
+          "volume": 1.576666105842976,
+          "H_volume": 0.27229467390326856,
+          "E_daughter_kinetic": 3.5558431280020584e-06,
+          "E_daughter_gradient": 2.1959654997615846e-08,
+          "daughter_fraction_of_total_scalar_energy": 2.4365880662142254e-06,
+          "daughter_pressure_to_energy": 0.9918163348365802
+        },
+        "fixed": {
+          "t": 0.605,
+          "E_parent": 1.5057299909298796,
+          "E_daughter": 3.623033909260006e-06,
+          "transfer_rate_into_daughter": 0.0,
+          "daughter_shift_charge": -6.501564230094407e-20,
+          "volume": 1.5899237079547452,
+          "H_volume": 0.24110534282607235,
+          "E_daughter_kinetic": 3.612261946250242e-06,
+          "E_daughter_gradient": 1.0771963009764321e-08,
+          "daughter_fraction_of_total_scalar_energy": 2.406158616411904e-06,
+          "daughter_pressure_to_energy": 0.9960357485725863
+        }
+      },
+      "balances": {
+        "to_crossing": {
+          "parent_energy_change": 0.45503817008077885,
+          "daughter_energy_change": -6.044145168638078e-07,
+          "parent_pressure_work": -0.45503817007991565,
+          "daughter_pressure_work": 6.044145168638055e-07,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": 8.631984016460592e-13,
+          "daughter_balance_residual": -2.329340604949326e-21,
+          "total_balance_residual": 8.631817822243594e-13
+        },
+        "through_crossing": {
+          "parent_energy_change": 0.024564811424271804,
+          "daughter_energy_change": 2.8017518474515274e-08,
+          "parent_pressure_work": -0.024564811425573065,
+          "daughter_pressure_work": -2.8017518474514867e-08,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": -1.3012611821405784e-12,
+          "daughter_balance_residual": 4.069728613760896e-22,
+          "total_balance_residual": -1.3012603042074722e-12
+        },
+        "to_fixed": {
+          "parent_energy_change": 0.5057251553508397,
+          "daughter_energy_change": -5.436611905419719e-07,
+          "parent_pressure_work": -0.5057251553500861,
+          "daughter_pressure_work": 5.436611905419658e-07,
+          "transfer_into_daughter": 0.0,
+          "parent_balance_residual": 7.536193891155563e-13,
+          "daughter_balance_residual": -6.1409888675936775e-21,
+          "total_balance_residual": 7.53650607997135e-13
+        }
+      },
+      "constraints": {
+        "hamiltonian": 1.3873986404178142e-09,
+        "momentum": 3.0912068105386854e-09,
+        "raychaudhuri": 1.828754510787197e-08
+      },
+      "max_abs_shift_charge_drift": 3.151054124138188e-19,
+      "time_quadrature_absolute_change": 8.881784197001252e-16
+    }
+  },
+  "refinement": {
+    "0.001/velocity/0.01/matter": {
+      "space": {
+        "differences": {
+          "crossing_time_delta": -4.168887457467463e-14,
+          "fixed_H_volume_delta": 7.382983113757291e-15,
+          "fixed_volume_delta": 1.1102230246251565e-15,
+          "fixed_transfer_delta": 2.5225699960417132e-20,
+          "fixed_daughter_energy_delta": -8.131516293641283e-20
+        },
+        "constraints": {
+          "hamiltonian": 8.487136919181164e-12,
+          "momentum": 6.2003770911585296e-12,
+          "raychaudhuri": 1.671640603717606e-11
+        },
+        "max_balance": 1.1941250386232804e-13
+      },
+      "time": {
+        "differences": {
+          "crossing_time_delta": 9.381384558082573e-15,
+          "fixed_H_volume_delta": 2.1649348980190553e-15,
+          "fixed_volume_delta": 2.220446049250313e-16,
+          "fixed_transfer_delta": -8.277100081450616e-20,
+          "fixed_daughter_energy_delta": -1.1180834903756764e-19
+        },
+        "constraints": {
+          "hamiltonian": 1.605456508476285e-12,
+          "momentum": 2.642976354446244e-12,
+          "raychaudhuri": 3.135639895882984e-12
+        },
+        "max_balance": 4.707340677208856e-14
+      }
+    },
+    "0.001/velocity/0.01/constant": {
+      "space": {
+        "differences": {
+          "crossing_time_delta": -1.426636586643326e-14,
+          "fixed_H_volume_delta": 6.494804694057166e-15,
+          "fixed_volume_delta": 6.661338147750939e-16,
+          "fixed_transfer_delta": 0.0,
+          "fixed_daughter_energy_delta": -1.3552527156068805e-20
+        },
+        "constraints": {
+          "hamiltonian": 6.487107147753099e-12,
+          "momentum": 5.330825989985416e-12,
+          "raychaudhuri": 1.3295586853701026e-11
+        },
+        "max_balance": 1.0774714453987144e-13
+      },
+      "time": {
+        "differences": {
+          "crossing_time_delta": 6.328271240363392e-15,
+          "fixed_H_volume_delta": 1.887379141862766e-15,
+          "fixed_volume_delta": 2.220446049250313e-16,
+          "fixed_transfer_delta": 0.0,
+          "fixed_daughter_energy_delta": 0.0
+        },
+        "constraints": {
+          "hamiltonian": 1.5127158784859302e-12,
+          "momentum": 2.3517878339487666e-12,
+          "raychaudhuri": 2.9735473342877112e-12
+        },
+        "max_balance": 5.1514348342607263e-14
+      }
+    },
+    "0.001/displacement/0.01/matter": {
+      "space": {
+        "differences": {
+          "crossing_time_delta": -1.7208456881689926e-14,
+          "fixed_H_volume_delta": 5.551115123125783e-15,
+          "fixed_volume_delta": 4.440892098500626e-16,
+          "fixed_transfer_delta": 2.735387024039356e-19,
+          "fixed_daughter_energy_delta": -4.828087799349512e-19
+        },
+        "constraints": {
+          "hamiltonian": 6.571410082756302e-12,
+          "momentum": 5.709445168525134e-12,
+          "raychaudhuri": 1.3465969080546834e-11
+        },
+        "max_balance": 1.0634486619615934e-13
+      },
+      "time": {
+        "differences": {
+          "crossing_time_delta": 1.609823385706477e-15,
+          "fixed_H_volume_delta": 1.3322676295501878e-15,
+          "fixed_volume_delta": 0.0,
+          "fixed_transfer_delta": 1.1254950286641516e-19,
+          "fixed_daughter_energy_delta": -3.4897757426877174e-19
+        },
+        "constraints": {
+          "hamiltonian": 1.5496492977717937e-12,
+          "momentum": 2.396246430258672e-12,
+          "raychaudhuri": 3.0556298232416647e-12
+        },
+        "max_balance": 5.236436538693474e-14
+      }
+    },
+    "0.001/displacement/0.01/constant": {
+      "space": {
+        "differences": {
+          "crossing_time_delta": -1.3877787807814457e-14,
+          "fixed_H_volume_delta": 6.106226635438361e-15,
+          "fixed_volume_delta": 8.881784197001252e-16,
+          "fixed_transfer_delta": 0.0,
+          "fixed_daughter_energy_delta": -1.6940658945086007e-21
+        },
+        "constraints": {
+          "hamiltonian": 6.504278597200635e-12,
+          "momentum": 5.248886317927303e-12,
+          "raychaudhuri": 1.3328597484966549e-11
+        },
+        "max_balance": 1.071365218763276e-13
+      },
+      "time": {
+        "differences": {
+          "crossing_time_delta": 5.662137425588298e-15,
+          "fixed_H_volume_delta": 1.7208456881689926e-15,
+          "fixed_volume_delta": 0.0,
+          "fixed_transfer_delta": 0.0,
+          "fixed_daughter_energy_delta": -3.3881317890172014e-21
+        },
+        "constraints": {
+          "hamiltonian": 1.4822217527428925e-12,
+          "momentum": 2.3832679073460123e-12,
+          "raychaudhuri": 2.9064158487320437e-12
+        },
+        "max_balance": 5.1958437552457326e-14
+      }
+    },
+    "-0.001/velocity/0.01/matter": {
+      "space": {
+        "differences": {
+          "crossing_time_delta": 4.674038933671909e-14,
+          "fixed_H_volume_delta": 4.54081217071689e-14,
+          "fixed_volume_delta": 1.2212453270876722e-14,
+          "fixed_transfer_delta": -1.088437337221776e-19,
+          "fixed_daughter_energy_delta": -2.558039500707987e-19
+        },
+        "constraints": {
+          "hamiltonian": 3.5890460973557014e-10,
+          "momentum": 3.0071370395469445e-10,
+          "raychaudhuri": 7.302431252279955e-10
+        },
+        "max_balance": 1.1561876863392338e-12
+      },
+      "time": {
+        "differences": {
+          "crossing_time_delta": 6.661338147750939e-16,
+          "fixed_H_volume_delta": 2.836619827917275e-14,
+          "fixed_volume_delta": 1.9984014443252818e-15,
+          "fixed_transfer_delta": 3.559655960836197e-19,
+          "fixed_daughter_energy_delta": 3.3034284942917713e-19
+        },
+        "constraints": {
+          "hamiltonian": 1.4842183778303783e-09,
+          "momentum": 2.799808787955067e-09,
+          "raychaudhuri": 1.8229417383016276e-08
+        },
+        "max_balance": 1.6863252419919864e-12
+      }
+    },
+    "-0.001/velocity/0.01/constant": {
+      "space": {
+        "differences": {
+          "crossing_time_delta": 2.1649348980190553e-14,
+          "fixed_H_volume_delta": 3.4083846855992306e-14,
+          "fixed_volume_delta": 8.881784197001252e-15,
+          "fixed_transfer_delta": 0.0,
+          "fixed_daughter_energy_delta": 2.710505431213761e-20
+        },
+        "constraints": {
+          "hamiltonian": 4.35927442291965e-10,
+          "momentum": 4.11822640210473e-10,
+          "raychaudhuri": 8.699304980079131e-10
+        },
+        "max_balance": 1.240185037998387e-12
+      },
+      "time": {
+        "differences": {
+          "crossing_time_delta": -6.8833827526759706e-15,
+          "fixed_H_volume_delta": 2.223221606811876e-14,
+          "fixed_volume_delta": 1.5543122344752192e-15,
+          "fixed_transfer_delta": 0.0,
+          "fixed_daughter_energy_delta": 2.0328790734103208e-20
+        },
+        "constraints": {
+          "hamiltonian": 1.711798110666981e-09,
+          "momentum": 3.2748243637880596e-09,
+          "raychaudhuri": 1.7642101705443263e-08
+        },
+        "max_balance": 1.3715695246219184e-12
+      }
+    },
+    "-0.001/displacement/0.01/matter": {
+      "space": {
+        "differences": {
+          "crossing_time_delta": 1.4876988529977098e-14,
+          "fixed_H_volume_delta": 2.811639809863209e-14,
+          "fixed_volume_delta": 7.105427357601002e-15,
+          "fixed_transfer_delta": -1.3518645838178633e-18,
+          "fixed_daughter_energy_delta": -2.168404344971009e-19
+        },
+        "constraints": {
+          "hamiltonian": 4.03143000463994e-10,
+          "momentum": 4.1952550381824566e-10,
+          "raychaudhuri": 7.998869714735217e-10
+        },
+        "max_balance": 5.410755475075507e-13
+      },
+      "time": {
+        "differences": {
+          "crossing_time_delta": -1.021405182655144e-14,
+          "fixed_H_volume_delta": 9.853229343548264e-15,
+          "fixed_volume_delta": -4.440892098500626e-16,
+          "fixed_transfer_delta": -3.8285889215894375e-19,
+          "fixed_daughter_energy_delta": 3.713392440762853e-18
+        },
+        "constraints": {
+          "hamiltonian": 1.7449307184354745e-09,
+          "momentum": 3.2904335452449176e-09,
+          "raychaudhuri": 1.7847009203819656e-08
+        },
+        "max_balance": 9.923725858634002e-13
+      }
+    },
+    "-0.001/displacement/0.01/constant": {
+      "space": {
+        "differences": {
+          "crossing_time_delta": 2.1760371282653068e-14,
+          "fixed_H_volume_delta": 3.652633751016765e-14,
+          "fixed_volume_delta": 9.547918011776346e-15,
+          "fixed_transfer_delta": 0.0,
+          "fixed_daughter_energy_delta": -2.913793338554793e-19
+        },
+        "constraints": {
+          "hamiltonian": 4.3534006029707e-10,
+          "momentum": 3.8886636688655285e-10,
+          "raychaudhuri": 8.686379023477761e-10
+        },
+        "max_balance": 1.2758752387931338e-12
+      },
+      "time": {
+        "differences": {
+          "crossing_time_delta": -6.217248937900877e-15,
+          "fixed_H_volume_delta": 2.4369395390522186e-14,
+          "fixed_volume_delta": 2.220446049250313e-15,
+          "fixed_transfer_delta": 0.0,
+          "fixed_daughter_energy_delta": -5.082197683525802e-20
+        },
+        "constraints": {
+          "hamiltonian": 1.7109833549966427e-09,
+          "momentum": 3.248103185220798e-09,
+          "raychaudhuri": 1.7644414522048162e-08
+        },
+        "max_balance": 1.546540673302843e-12
+      }
+    }
+  },
+  "paired_controls": {
+    "0.001/velocity/0.01": {
+      "matter_minus_constant": {
+        "crossing_time_delta": -3.653934638864209e-05,
+        "fixed_H_volume_delta": -3.67208683549336e-06,
+        "fixed_volume_delta": -1.649023929406468e-06,
+        "fixed_transfer_delta": 1.8532739604073435e-07,
+        "fixed_daughter_energy_delta": 2.018830990312186e-07
+      },
+      "matter_minus_unseeded": {
+        "crossing_time_delta": -3.9380250089315894e-05,
+        "fixed_H_volume_delta": -1.0870348701286225e-05,
+        "fixed_volume_delta": -4.92206128328565e-05,
+        "fixed_transfer_delta": 1.8532739604073435e-07,
+        "fixed_daughter_energy_delta": 1.6083344802718626e-05
+      },
+      "initial_energy": 1.666668513285968e-05,
+      "initial_metric_mismatch": 0.0,
+      "initial_daughter_energy_mismatch": -3.3881317890172014e-21
+    },
+    "0.001/velocity/0.005": {
+      "matter_minus_constant": {
+        "crossing_time_delta": -9.136130337261683e-06,
+        "fixed_H_volume_delta": -9.180677688624961e-07,
+        "fixed_volume_delta": -4.122211958446087e-07,
+        "fixed_transfer_delta": 4.6326699527793775e-08,
+        "fixed_daughter_energy_delta": 5.046563920258843e-08
+      },
+      "matter_minus_unseeded": {
+        "crossing_time_delta": -9.846343613839625e-06,
+        "fixed_H_volume_delta": -2.717602747892567e-06,
+        "fixed_volume_delta": -1.2305172457205416e-05,
+        "fixed_transfer_delta": 4.6326699527793775e-08,
+        "fixed_daughter_energy_delta": 4.020849864591955e-06
+      },
+      "initial_energy": 4.166691374155293e-06,
+      "initial_metric_mismatch": 0.0,
+      "initial_daughter_energy_mismatch": -8.470329472543003e-22
+    },
+    "0.001/displacement/0.01": {
+      "matter_minus_constant": {
+        "crossing_time_delta": -6.131425284716663e-07,
+        "fixed_H_volume_delta": 3.356433643908474e-06,
+        "fixed_volume_delta": 9.923754604734825e-07,
+        "fixed_transfer_delta": -2.7082883121224273e-07,
+        "fixed_daughter_energy_delta": -2.2724975043400567e-07
+      },
+      "matter_minus_unseeded": {
+        "crossing_time_delta": -1.2406910134266091e-06,
+        "fixed_H_volume_delta": -1.5396083158369933e-06,
+        "fixed_volume_delta": -3.8414427785404825e-05,
+        "fixed_transfer_delta": -2.7082883121224273e-07,
+        "fixed_daughter_energy_delta": 1.4165867558588128e-05
+      },
+      "initial_energy": 1.66666955351007e-05,
+      "initial_metric_mismatch": 0.0,
+      "initial_daughter_energy_mismatch": 6.776263578034403e-21
+    },
+    "0.001/displacement/0.005": {
+      "matter_minus_constant": {
+        "crossing_time_delta": -1.5328357721999808e-07,
+        "fixed_H_volume_delta": 8.393339568368852e-07,
+        "fixed_volume_delta": 2.481519785213493e-07,
+        "fixed_transfer_delta": -6.770867684087447e-08,
+        "fixed_daughter_energy_delta": -5.680790908468998e-08
+      },
+      "matter_minus_unseeded": {
+        "crossing_time_delta": -3.1016930679417243e-07,
+        "fixed_H_volume_delta": -3.8464526008752387e-07,
+        "fixed_volume_delta": -9.603564696814004e-06,
+        "fixed_transfer_delta": -6.770867684087447e-08,
+        "fixed_daughter_energy_delta": 3.5415060163408834e-06
+      },
+      "initial_energy": 4.166695089185373e-06,
+      "initial_metric_mismatch": 0.0,
+      "initial_daughter_energy_mismatch": 8.470329472543003e-22
+    },
+    "-0.001/velocity/0.01": {
+      "matter_minus_constant": {
+        "crossing_time_delta": -1.2102622913179317e-05,
+        "fixed_H_volume_delta": 4.1575879267619076e-05,
+        "fixed_volume_delta": 1.739235846343057e-05,
+        "fixed_transfer_delta": -1.4260786446252581e-06,
+        "fixed_daughter_energy_delta": -1.4506920654080275e-06
+      },
+      "matter_minus_unseeded": {
+        "crossing_time_delta": -1.2023565977847817e-05,
+        "fixed_H_volume_delta": 3.180098918295626e-05,
+        "fixed_volume_delta": -3.969060380826228e-05,
+        "fixed_transfer_delta": -1.4260786446252581e-06,
+        "fixed_daughter_energy_delta": 1.4903535418997234e-05
+      },
+      "initial_energy": 1.666668456317947e-05,
+      "initial_metric_mismatch": 0.0,
+      "initial_daughter_energy_mismatch": -3.3881317890172014e-21
+    },
+    "-0.001/velocity/0.005": {
+      "matter_minus_constant": {
+        "crossing_time_delta": -3.0258078373979203e-06,
+        "fixed_H_volume_delta": 1.0392422140431679e-05,
+        "fixed_volume_delta": 4.3480120739403105e-06,
+        "fixed_transfer_delta": -3.5656489200109693e-07,
+        "fixed_daughter_energy_delta": -3.6273897525973627e-07
+      },
+      "matter_minus_unseeded": {
+        "crossing_time_delta": -3.0060460570746628e-06,
+        "fixed_H_volume_delta": 7.94873982776223e-06,
+        "fixed_volume_delta": -9.922796759154195e-06,
+        "fixed_transfer_delta": -3.5656489200109693e-07,
+        "fixed_daughter_energy_delta": 3.725858199055894e-06
+      },
+      "initial_energy": 4.166691231740573e-06,
+      "initial_metric_mismatch": 0.0,
+      "initial_daughter_energy_mismatch": -8.470329472543003e-22
+    },
+    "-0.001/displacement/0.01": {
+      "matter_minus_constant": {
+        "crossing_time_delta": 2.686667117779429e-06,
+        "fixed_H_volume_delta": -3.8331243769978984e-05,
+        "fixed_volume_delta": -1.1385799121743645e-05,
+        "fixed_transfer_delta": 3.987893411521602e-06,
+        "fixed_daughter_energy_delta": 4.206611204658467e-06
+      },
+      "matter_minus_unseeded": {
+        "crossing_time_delta": 2.916741206782092e-06,
+        "fixed_H_volume_delta": -4.5542744361859455e-05,
+        "fixed_volume_delta": -5.804697790368074e-05,
+        "fixed_transfer_delta": 3.987893411521602e-06,
+        "fixed_daughter_energy_delta": 1.8698688782690364e-05
+      },
+      "initial_energy": 1.6666695577572584e-05,
+      "initial_metric_mismatch": 0.0,
+      "initial_daughter_energy_mismatch": 3.3881317890172014e-21
+    },
+    "-0.001/displacement/0.005": {
+      "matter_minus_constant": {
+        "crossing_time_delta": 6.716353299074385e-07,
+        "fixed_H_volume_delta": -9.581329926372506e-06,
+        "fixed_volume_delta": -2.846009322210463e-06,
+        "fixed_transfer_delta": 9.96878936682947e-07,
+        "fixed_daughter_energy_delta": 1.0514785190281788e-06
+      },
+      "matter_minus_unseeded": {
+        "crossing_time_delta": 7.291538789422347e-07,
+        "fixed_H_volume_delta": -1.138417095422617e-05,
+        "fixed_volume_delta": -1.4511321584365078e-05,
+        "fixed_transfer_delta": 9.96878936682947e-07,
+        "fixed_daughter_energy_delta": 4.674512428288185e-06
+      },
+      "initial_energy": 4.1666950998019805e-06,
+      "initial_metric_mismatch": 0.0,
+      "initial_daughter_energy_mismatch": 2.541098841762901e-21
+    }
+  },
+  "summary": {
+    "0.001/velocity/0.01": {
+      "transfer_to_crossing_as_percent_of_daughter_seed": 0.8511101315642381,
+      "energy_change_to_crossing_as_percent_of_daughter_seed": -4.3808821670404585,
+      "transfer_through_crossing_as_percent_of_daughter_seed": 0.15290671908449133,
+      "crossing_total_daughter_share": 1.165581914662904e-05,
+      "crossing_daughter_pressure_to_energy": -0.30309807312046577
+    },
+    "0.001/velocity/0.005": {
+      "transfer_to_crossing_as_percent_of_daughter_seed": 0.8514791027624661,
+      "energy_change_to_crossing_as_percent_of_daughter_seed": -4.3795300108397734,
+      "transfer_through_crossing_as_percent_of_daughter_seed": 0.1528969260919249,
+      "crossing_total_daughter_share": 2.9138966926826836e-06,
+      "crossing_daughter_pressure_to_energy": -0.30312926345533586
+    },
+    "0.001/displacement/0.01": {
+      "transfer_to_crossing_as_percent_of_daughter_seed": -1.4915180820879863,
+      "energy_change_to_crossing_as_percent_of_daughter_seed": -13.560340149772125,
+      "transfer_through_crossing_as_percent_of_daughter_seed": -0.09866407735468424,
+      "crossing_total_daughter_share": 1.0536470080007416e-05,
+      "crossing_daughter_pressure_to_energy": 0.8437199956636886
+    },
+    "0.001/displacement/0.005": {
+      "transfer_to_crossing_as_percent_of_daughter_seed": -1.49153753634349,
+      "energy_change_to_crossing_as_percent_of_daughter_seed": -13.559896578994806,
+      "transfer_through_crossing_as_percent_of_daughter_seed": -0.09867262195923455,
+      "crossing_total_daughter_share": 2.634115896188944e-06,
+      "crossing_daughter_pressure_to_energy": 0.8437133646193379
+    },
+    "-0.001/velocity/0.01": {
+      "transfer_to_crossing_as_percent_of_daughter_seed": -7.1697641594874115,
+      "energy_change_to_crossing_as_percent_of_daughter_seed": -9.45868235531237,
+      "transfer_through_crossing_as_percent_of_daughter_seed": -0.8472146429270258,
+      "crossing_total_daughter_share": 1.0371844670208006e-05,
+      "crossing_daughter_pressure_to_energy": -0.3199808461582885
+    },
+    "-0.001/velocity/0.005": {
+      "transfer_to_crossing_as_percent_of_daughter_seed": -7.171488374075428,
+      "energy_change_to_crossing_as_percent_of_daughter_seed": -9.460220908835263,
+      "transfer_through_crossing_as_percent_of_daughter_seed": -0.8473103950534434,
+      "crossing_total_daughter_share": 2.5927599955251077e-06,
+      "crossing_daughter_pressure_to_energy": -0.3199731635956035
+    },
+    "-0.001/displacement/0.01": {
+      "transfer_to_crossing_as_percent_of_daughter_seed": 19.467736780827057,
+      "energy_change_to_crossing_as_percent_of_daughter_seed": 5.389220908433987,
+      "transfer_through_crossing_as_percent_of_daughter_seed": 2.5860333210965933,
+      "crossing_total_daughter_share": 1.2071625343360328e-05,
+      "crossing_daughter_pressure_to_energy": 0.9917213518068612
+    },
+    "-0.001/displacement/0.005": {
+      "transfer_to_crossing_as_percent_of_daughter_seed": 19.465258892285174,
+      "energy_change_to_crossing_as_percent_of_daughter_seed": 5.385187169298632,
+      "transfer_through_crossing_as_percent_of_daughter_seed": 2.5856999111831382,
+      "crossing_total_daughter_share": 3.017816838855903e-06,
+      "crossing_daughter_pressure_to_energy": 0.9917193231178164
+    }
+  },
+  "passed": true
+}
