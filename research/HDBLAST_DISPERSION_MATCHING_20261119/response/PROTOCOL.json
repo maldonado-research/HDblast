@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "declared_before_response_evaluation": true,
+  "cutoffs": [
+    60,
+    120,
+    240,
+    480
+  ],
+  "frequency_ratios_nu_over_q": [
+    0.25,
+    0.5,
+    1,
+    2
+  ],
+  "frequency_square": "z=nu^2, retarded frequency Omega=i*nu",
+  "bath_orders": [
+    64,
+    128,
+    256,
+    512,
+    1024,
+    1536,
+    2048
+  ],
+  "frozen_scale_factor": 1.0,
+  "constant_gate": 1.0,
+  "matching": {
+    "anchors": [
+      "Sigma(0)",
+      "dSigma/dz(0)"
+    ],
+    "targets": [
+      0.0,
+      0.0
+    ],
+    "formula": "R(z)=Sigma(z)-Sigma(0)-z*Sigma_prime(0)",
+    "data_used": "analytic derivatives at z=0 only, separately for each native mode and finite bath"
+  },
+  "held_out": "all strictly positive frequency probes; none used for matching",
+  "reference": "exact continuous spectral integral at finite cutoff, and exact twice-subtracted Lambda->infinity limit",
+  "native_modes_sha256": "b7dad96748baf0aec5113ffb8aaa52cfabeb8ff2d6246d769bbcf26dc2c6fe99"
+}
