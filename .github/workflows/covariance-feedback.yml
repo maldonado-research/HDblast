@@ -1,0 +1,42 @@
+name: Gaussian covariance feedback on the shell
+on:
+  push:
+    paths:
+      - 'research/HDBLAST_COVARIANCE_FEEDBACK_20261119/**'
+      - '.github/workflows/covariance-feedback.yml'
+  pull_request:
+    paths:
+      - 'research/HDBLAST_COVARIANCE_FEEDBACK_20261119/**'
+      - '.github/workflows/covariance-feedback.yml'
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            research/HDBLAST_COVARIANCE_FEEDBACK_20261119
+            research/HDBLAST_CHECKPOINT_20260927/mechanisms/pilot_5d
+            research/HDBLAST_CHECKPOINT_20260930/B1_derived_chi_source
+            research/HDBLAST_MATCHED_PARENT_SOURCES_20261119/source_check
+            research/HDBLAST_MOVING_PARENT_20261119/independent
+            research/HDBLAST_PULSE_PARTICLE_RESPONSE_20261118/classical
+            research/HDBLAST_SOURCE_WORK_20261118/coupled
+          filter: blob:none
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Authenticate archived trajectories and recompute shell and probe evolution
+        working-directory: research/HDBLAST_COVARIANCE_FEEDBACK_20261119
+        run: |
+          echo '69856335dac0a11122b753bc0b9382a9527e88eb6e8afef2c6ef9033e7bae164  SHA256SUMS' | sha256sum -c -
+          sha256sum --quiet -c SHA256SUMS
+          python -I -B -S -O reproduce.py
+          python -m pip install numpy==2.3.5 scipy==1.17.0
+          python -I -B -O reproduce.py --native --jobs 2

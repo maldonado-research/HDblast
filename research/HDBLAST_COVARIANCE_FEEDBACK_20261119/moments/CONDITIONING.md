@@ -1,0 +1,11 @@
+# How well does the force distinguish different initial correlations?
+
+For fixed background fields and matching initial field and momentum variances, the response of the scalar force to a change in the initial cross-covariance $C(q)$ is a linear integral operator. On a bounded time interval and compact momentum band its transfer kernel is continuous for smooth nonsingular coefficients and a finite mass and scale factor. It is therefore Hilbert–Schmidt between the corresponding square-integrable functions. In the continuum, injectivity on this infinite-dimensional space implies that its inverse on the range is unbounded. A small error on the force record can therefore mask a substantial change in a weakly measured direction in covariance space. [Uniqueness result and assumptions](FORCE_JET.md)
+
+We evaluated the operator on the archived quiet, closed-field shell from the fork to $s=2.10$. At fixed $X,P$, parameterize a change relative to $C=0$ by $\Delta C(q)=|C_{\rm retained}(q)|u(q)$. The factor comes from evolving the vacuum to the fork; it approximates the full admissible covariance radius there, and $|u|\le1$ is physically admissible for the pure continuum evolution. The input norm uses $q^2dq/\int_0^8q^2dq$. The output norm is the root mean square of the physical force over elapsed proper time. Both choices matter to the numerical singular values. The scalar-force kernel is $10^4(\phi(s)-0.5)\,\partial X_q(s)/\partial C_q(s_i)$, integrated with $d\nu$. Each derivative propagates with unit initial mixed covariance and zero initial diagonal entries.
+
+| Singular value, relative to strongest | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Fine wall, 96 momentum nodes and 1,025 time samples | 1 | 0.30980 | 0.07851 | 0.008441 | 0.000405 | 0.0000216 | 0.000000621 |
+
+Only three directions exceed 1% of the leading gain, and four exceed 0.1% on each tested grid. These statements describe the transfer operator in the stated norms. Estimating a number of measurable modes would require an instrument, noise statistics and a state prior. The natural force passes through zero at the mass crossing; we use the undivided physical force throughout this test. [Numerical spectra](CONDITIONING.json) · [Reproduction code](conditioning.py)
