@@ -1,0 +1,705 @@
+{
+  "schema": 1,
+  "approximation": "fixed-trajectory explicit order-y^2 forcing",
+  "units": "hatted physical density coefficient per lambda=y^2",
+  "derivative": "d/ds, s=H0*tau",
+  "scalar_clock": "fine quiet C2 cubic inverse, 8193 knots",
+  "gate_window": [
+    1.35,
+    2.05
+  ],
+  "native_inputs": {
+    "FORK.json": "d1028e10aa6440c98d71e5c99cf2c18fd336606d3068816f02d01db499918038",
+    "WALLS.zip": "a18041b6ab8591cc88e7613e0759c812d00da5655953b5cb3a25fbb36bc9d05d"
+  },
+  "runs": {
+    "fine_quiet_60": {
+      "grid": "fine",
+      "arm": "quiet",
+      "cutoff": 60,
+      "steps": 4342,
+      "order": 64,
+      "start": 1.303717032501832,
+      "end": 2.167802138417441,
+      "gate_on": 1.3499999999999999,
+      "gate_off": 2.0499999999999994,
+      "max_step": 0.00021092624192053933,
+      "max_abs_pointwise_ward": {
+        "bare": 9.094947017729282e-13,
+        "static": 5.009326287108706e-13
+      },
+      "max_free_covariance_determinant_drift": 2.7086116682895067e-09,
+      "files": {
+        "bare": {
+          "path": "tables/fine_quiet_60_bare.npz",
+          "sha256": "9779dfc0ab68d78f19313c83b6bd7ab7b70f5271a7b67ac0f2e6781ca82dbb4b",
+          "readout": {
+            "rho": -9.587011190868228,
+            "p": -45.41212846032562,
+            "j": 54.91716848045935,
+            "rad": 11.435715764455246,
+            "energy_comoving": -18.089597985693526,
+            "daughter_comoving": 21.57789291564588
+          }
+        },
+        "static": {
+          "path": "tables/fine_quiet_60_static.npz",
+          "sha256": "0f5c070fad2021dc57295da9ffe58a0f91d7d0253f3bfad07c07131d5ed6a2f6",
+          "readout": {
+            "rho": -8.821640152833314,
+            "p": 2.5055940123873155,
+            "j": -37.07262118550224,
+            "rad": 11.435715764455246,
+            "energy_comoving": -16.64543002632655,
+            "daughter_comoving": 21.57789291564588
+          }
+        }
+      }
+    },
+    "fine_quiet_120": {
+      "grid": "fine",
+      "arm": "quiet",
+      "cutoff": 120,
+      "steps": 4342,
+      "order": 64,
+      "start": 1.303717032501832,
+      "end": 2.167802138417441,
+      "gate_on": 1.3499999999999999,
+      "gate_off": 2.0499999999999994,
+      "max_step": 0.00021092624192053933,
+      "max_abs_pointwise_ward": {
+        "bare": 3.581135388230905e-12,
+        "static": 1.2860823517257813e-12
+      },
+      "max_free_covariance_determinant_drift": 2.7086116682895067e-09,
+      "files": {
+        "bare": {
+          "path": "tables/fine_quiet_120_bare.npz",
+          "sha256": "5fb4b823bd9c28749f71b6791e2dc836196f72157cd82f967a0181b56f63deaf",
+          "readout": {
+            "rho": -11.937440248388679,
+            "p": -217.7608204768647,
+            "j": 385.8989854682447,
+            "rad": 11.930009733698661,
+            "energy_comoving": -22.524589861465696,
+            "daughter_comoving": 22.510569326713714
+          }
+        },
+        "static": {
+          "path": "tables/fine_quiet_120_static.npz",
+          "sha256": "c60b7bcb0cca03d6d62d6d21b3ece231c71cd99e40d67911d9577b4222a6c9ad",
+          "readout": {
+            "rho": -8.72993797543015,
+            "p": -18.711847586575136,
+            "j": 3.8478568597663823,
+            "rad": 11.930009733698661,
+            "energy_comoving": -16.47239846407949,
+            "daughter_comoving": 22.510569326713714
+          }
+        }
+      }
+    },
+    "fine_plus_60": {
+      "grid": "fine",
+      "arm": "plus",
+      "cutoff": 60,
+      "steps": 4343,
+      "order": 64,
+      "start": 1.303717032501832,
+      "end": 2.167816627657181,
+      "gate_on": 1.3499999999999999,
+      "gate_off": 2.0500894744491642,
+      "max_step": 0.0002109287373057711,
+      "max_abs_pointwise_ward": {
+        "bare": 8.562039965909207e-13,
+        "static": 5.009326287108706e-13
+      },
+      "max_free_covariance_determinant_drift": 2.706223800608143e-09,
+      "files": {
+        "bare": {
+          "path": "tables/fine_plus_60_bare.npz",
+          "sha256": "8e78518956a4fec6e5ff4959742193dc318afdc6d92567c830b794e3f5671ccf",
+          "readout": {
+            "rho": -9.521336094030069,
+            "p": -45.35883985488522,
+            "j": 54.99366196610464,
+            "rad": 11.394763018825753,
+            "energy_comoving": -17.964005722630844,
+            "daughter_comoving": 21.498620157579925
+          }
+        },
+        "static": {
+          "path": "tables/fine_plus_60_static.npz",
+          "sha256": "56bf6e0ff184eabd90e505151d9191bb681afcb51332067608ad24032c269382",
+          "readout": {
+            "rho": -8.786964643131988,
+            "p": 2.4753794099665853,
+            "j": -36.89164622404462,
+            "rad": 11.394763018825753,
+            "energy_comoving": -16.57845932282027,
+            "daughter_comoving": 21.498620157579925
+          }
+        }
+      }
+    },
+    "fine_plus_120": {
+      "grid": "fine",
+      "arm": "plus",
+      "cutoff": 120,
+      "steps": 4343,
+      "order": 64,
+      "start": 1.303717032501832,
+      "end": 2.167816627657181,
+      "gate_on": 1.3499999999999999,
+      "gate_off": 2.0500894744491642,
+      "max_step": 0.0002109287373057711,
+      "max_abs_pointwise_ward": {
+        "bare": 3.2081004519568523e-12,
+        "static": 1.1617373729677638e-12
+      },
+      "max_free_covariance_determinant_drift": 2.706223800608143e-09,
+      "files": {
+        "bare": {
+          "path": "tables/fine_plus_120_bare.npz",
+          "sha256": "ba8f10a2f169f942974e53375e260514e20f8ac8b1a08011fa79f966dec3b0dd",
+          "readout": {
+            "rho": -11.773847096679782,
+            "p": -217.38528412400933,
+            "j": 385.53251376813455,
+            "rad": 11.887471474916294,
+            "energy_comoving": -22.21384210507507,
+            "daughter_comoving": 22.428218423767454
+          }
+        },
+        "static": {
+          "path": "tables/fine_plus_120_static.npz",
+          "sha256": "34a5ba4a7f90edcbf05c3d1f367cba921dc4f2fbe825497661e68b09c43b597e",
+          "readout": {
+            "rho": -8.694805737260117,
+            "p": -18.685943394560372,
+            "j": 3.921373886217603,
+            "rad": 11.887471474916294,
+            "energy_comoving": -16.404582138344896,
+            "daughter_comoving": 22.428218423767454
+          }
+        }
+      }
+    },
+    "fine_minus_60": {
+      "grid": "fine",
+      "arm": "minus",
+      "cutoff": 60,
+      "steps": 4340,
+      "order": 64,
+      "start": 1.303717032501832,
+      "end": 2.167913697524999,
+      "gate_on": 1.3499999999999999,
+      "gate_off": 2.049257084534003,
+      "max_step": 0.00021091711401366453,
+      "max_abs_pointwise_ward": {
+        "bare": 1.2292389328649733e-12,
+        "static": 5.520028878436278e-13
+      },
+      "max_free_covariance_determinant_drift": 2.7461973806097717e-09,
+      "files": {
+        "bare": {
+          "path": "tables/fine_minus_60_bare.npz",
+          "sha256": "31619fd948529218ff560a10f739a5ad4324181a021beea66df9dbde4ff23df5",
+          "readout": {
+            "rho": -9.819808344688564,
+            "p": -47.14485286548493,
+            "j": 57.61164455639153,
+            "rad": 11.61432650356026,
+            "energy_comoving": -18.526237361037094,
+            "daughter_comoving": 21.911809481487957
+          }
+        },
+        "static": {
+          "path": "tables/fine_minus_60_static.npz",
+          "sha256": "e85fdc5fae8ef963a39b4ad47477cc2a8e34aa8dbb276334a8640e68e3920193",
+          "readout": {
+            "rho": -8.977617834625072,
+            "p": 1.526012215254673,
+            "j": -35.697765557560096,
+            "rad": 11.61432650356026,
+            "energy_comoving": -16.937344712120126,
+            "daughter_comoving": 21.911809481487957
+          }
+        }
+      }
+    },
+    "fine_minus_120": {
+      "grid": "fine",
+      "arm": "minus",
+      "cutoff": 120,
+      "steps": 4340,
+      "order": 64,
+      "start": 1.303717032501832,
+      "end": 2.167913697524999,
+      "gate_on": 1.3499999999999999,
+      "gate_off": 2.049257084534003,
+      "max_step": 0.00021091711401366453,
+      "max_abs_pointwise_ward": {
+        "bare": 3.524291969370097e-12,
+        "static": 9.734435479913373e-13
+      },
+      "max_free_covariance_determinant_drift": 2.7461973806097717e-09,
+      "files": {
+        "bare": {
+          "path": "tables/fine_minus_120_bare.npz",
+          "sha256": "b5094d49f0b0f6117ccb03e924c07f8dc45ad079df728bb10cb7cae38a2bc408",
+          "readout": {
+            "rho": -12.413025800552369,
+            "p": -222.22725271509407,
+            "j": 393.4346716275859,
+            "rad": 12.122984824004437,
+            "energy_comoving": -23.41865077988995,
+            "daughter_comoving": 22.87145395207606
+          }
+        },
+        "static": {
+          "path": "tables/fine_minus_120_static.npz",
+          "sha256": "89ae225ae4e02e0d2d891dc03d43c28a3154c4968fdd3ba40fbd21323812389a",
+          "readout": {
+            "rho": -8.887369356748192,
+            "p": -20.0802534176331,
+            "j": 5.959820629233558,
+            "rad": 12.122984824004437,
+            "energy_comoving": -16.767080215713356,
+            "daughter_comoving": 22.87145395207606
+          }
+        }
+      }
+    },
+    "fine_far_60": {
+      "grid": "fine",
+      "arm": "far",
+      "cutoff": 60,
+      "steps": 4345,
+      "order": 64,
+      "start": 1.303717032501832,
+      "end": 2.168481031328445,
+      "gate_on": 1.3499999999999999,
+      "gate_off": 2.049887057934797,
+      "max_step": 0.00021111287733766027,
+      "max_abs_pointwise_ward": {
+        "bare": 1.0587086762825493e-12,
+        "static": 4.938272013532696e-13
+      },
+      "max_free_covariance_determinant_drift": 2.692062905929049e-09,
+      "files": {
+        "bare": {
+          "path": "tables/fine_far_60_bare.npz",
+          "sha256": "d3093ac61e8824a5227f59bafd410e6b6ac4b3f4e22f4a5cd21dbf515ab29411",
+          "readout": {
+            "rho": -9.575220127022801,
+            "p": -45.889879169809475,
+            "j": 55.867148320772166,
+            "rad": 11.438847167209472,
+            "energy_comoving": -18.064507719030345,
+            "daughter_comoving": 21.58040652931841
+          }
+        },
+        "static": {
+          "path": "tables/fine_far_60_static.npz",
+          "sha256": "a7f03c8e0c00ab0397d624e3dace2f16a50f3045cbb4064fbcf407ea2a2c931e",
+          "readout": {
+            "rho": -8.825840198918547,
+            "p": 2.1598913299976656,
+            "j": -36.40893820187211,
+            "rad": 11.438847167209472,
+            "energy_comoving": -16.65073557424992,
+            "daughter_comoving": 21.58040652931841
+          }
+        }
+      }
+    },
+    "fine_far_120": {
+      "grid": "fine",
+      "arm": "far",
+      "cutoff": 120,
+      "steps": 4345,
+      "order": 64,
+      "start": 1.303717032501832,
+      "end": 2.168481031328445,
+      "gate_on": 1.3499999999999999,
+      "gate_off": 2.049887057934797,
+      "max_step": 0.00021111287733766027,
+      "max_abs_pointwise_ward": {
+        "bare": 3.5065284009760944e-12,
+        "static": 1.4281908988778014e-12
+      },
+      "max_free_covariance_determinant_drift": 2.692062905929049e-09,
+      "files": {
+        "bare": {
+          "path": "tables/fine_far_120_bare.npz",
+          "sha256": "33a8feaa92171fcc0d79a86eb008c3121a779b4a8b8cabc6a3e200e67207091e",
+          "readout": {
+            "rho": -11.875389250273521,
+            "p": -218.69292564983274,
+            "j": 387.8213376106168,
+            "rad": 11.935406556117588,
+            "energy_comoving": -22.403982146858187,
+            "daughter_comoving": 22.51721015314034
+          }
+        },
+        "static": {
+          "path": "tables/fine_far_120_static.npz",
+          "sha256": "f6dd62114e78fca8e189dc9270a0cf420f9988c85acb8df8d874a43794eac2c8",
+          "readout": {
+            "rho": -8.73421478716618,
+            "p": -19.108611370923466,
+            "j": 4.606916257995355,
+            "rad": 11.935406556117588,
+            "energy_comoving": -16.477876053956617,
+            "daughter_comoving": 22.51721015314034
+          }
+        }
+      }
+    },
+    "coarse_quiet_60": {
+      "grid": "coarse",
+      "arm": "quiet",
+      "cutoff": 60,
+      "steps": 4342,
+      "order": 64,
+      "start": 1.303724761082836,
+      "end": 2.167778906915787,
+      "gate_on": 1.3498934913966838,
+      "gate_off": 2.0498937235575263,
+      "max_step": 0.00021091934458628003,
+      "max_abs_pointwise_ward": {
+        "bare": 1.077360423096252e-12,
+        "static": 4.813927034774679e-13
+      },
+      "max_free_covariance_determinant_drift": 2.708208990398475e-09,
+      "files": {
+        "bare": {
+          "path": "tables/coarse_quiet_60_bare.npz",
+          "sha256": "1a09be4ad5207317a58582011144db490fa0308c4956a9945986eb78ebfb6ece",
+          "readout": {
+            "rho": -9.585840368555578,
+            "p": -45.91892115563545,
+            "j": 55.90356662304523,
+            "rad": 11.438621393980517,
+            "energy_comoving": -18.0884212471789,
+            "daughter_comoving": 21.584607536343693
+          }
+        },
+        "static": {
+          "path": "tables/coarse_quiet_60_static.npz",
+          "sha256": "299b3b8d4ced8c63d5078bba68f0d5ad772d76f39dedd6f9765266485c3675d2",
+          "readout": {
+            "rho": -8.824829867829225,
+            "p": 2.1258262990348946,
+            "j": -36.34033551537032,
+            "rad": 11.438621393980517,
+            "energy_comoving": -16.65239915820069,
+            "daughter_comoving": 21.584607536343693
+          }
+        }
+      }
+    },
+    "coarse_quiet_120": {
+      "grid": "coarse",
+      "arm": "quiet",
+      "cutoff": 120,
+      "steps": 4342,
+      "order": 64,
+      "start": 1.303724761082836,
+      "end": 2.167778906915787,
+      "gate_on": 1.3498934913966838,
+      "gate_off": 2.0498937235575263,
+      "max_step": 0.00021091934458628003,
+      "max_abs_pointwise_ward": {
+        "bare": 3.808509063674137e-12,
+        "static": 1.0231815394945443e-12
+      },
+      "max_free_covariance_determinant_drift": 2.708208990398475e-09,
+      "files": {
+        "bare": {
+          "path": "tables/coarse_quiet_120_bare.npz",
+          "sha256": "e71660f2978872adb2debdd7bd58df2b5227f8cd058577c329772f3c49a733c8",
+          "readout": {
+            "rho": -11.920564656914594,
+            "p": -218.7099199163001,
+            "j": 387.7707488369484,
+            "rad": 11.933044431301623,
+            "energy_comoving": -22.494031480621732,
+            "daughter_comoving": 22.517580737390375
+          }
+        },
+        "static": {
+          "path": "tables/coarse_quiet_120_static.npz",
+          "sha256": "e619f407c8c450092dc88d4fa0c6cd941c4f31de6d67fcf9e69ee453ba7ed656",
+          "readout": {
+            "rho": -8.731144373332262,
+            "p": -19.146985587531205,
+            "j": 4.69088274560432,
+            "rad": 11.933044431301623,
+            "energy_comoving": -16.47561521187396,
+            "daughter_comoving": 22.517580737390375
+          }
+        }
+      }
+    },
+    "coarse_plus_60": {
+      "grid": "coarse",
+      "arm": "plus",
+      "cutoff": 60,
+      "steps": 4343,
+      "order": 64,
+      "start": 1.303724761082836,
+      "end": 2.167793371413562,
+      "gate_on": 1.3498934913966838,
+      "gate_off": 2.049983573687138,
+      "max_step": 0.00021091464525735404,
+      "max_abs_pointwise_ward": {
+        "bare": 9.339196083146817e-13,
+        "static": 5.666578317686799e-13
+      },
+      "max_free_covariance_determinant_drift": 2.7036144434333664e-09,
+      "files": {
+        "bare": {
+          "path": "tables/coarse_plus_60_bare.npz",
+          "sha256": "47a3dd5e86634bdc51f24beb63e1178885004d892c7d03bea3f409ff4ac9fbee",
+          "readout": {
+            "rho": -9.519863944442465,
+            "p": -45.86308181744697,
+            "j": 55.97608068781899,
+            "rad": 11.397335367486795,
+            "energy_comoving": -17.96225399181957,
+            "daughter_comoving": 21.504701526775406
+          }
+        },
+        "static": {
+          "path": "tables/coarse_plus_60_static.npz",
+          "sha256": "b1baa8ed5777b69da8b0c47a9fcf96258a306e758481d04113631c648cc28a7e",
+          "readout": {
+            "rho": -8.789885275300763,
+            "p": 2.0965200707629243,
+            "j": -36.16019654369531,
+            "rad": 11.397335367486795,
+            "energy_comoving": -16.58491684285871,
+            "daughter_comoving": 21.504701526775406
+          }
+        }
+      }
+    },
+    "coarse_plus_120": {
+      "grid": "coarse",
+      "arm": "plus",
+      "cutoff": 120,
+      "steps": 4343,
+      "order": 64,
+      "start": 1.303724761082836,
+      "end": 2.167793371413562,
+      "gate_on": 1.3498934913966838,
+      "gate_off": 2.049983573687138,
+      "max_step": 0.00021091464525735404,
+      "max_abs_pointwise_ward": {
+        "bare": 3.680611371237319e-12,
+        "static": 1.0089706847793423e-12
+      },
+      "max_free_covariance_determinant_drift": 2.7036144434333664e-09,
+      "files": {
+        "bare": {
+          "path": "tables/coarse_plus_120_bare.npz",
+          "sha256": "97aca83c0f8cdfd282d4e7a33c3f713d0a2579b45c9d173c2317b1a2f21b69af",
+          "readout": {
+            "rho": -11.756567831778138,
+            "p": -218.32591550060255,
+            "j": 387.38895015657164,
+            "rad": 11.890171781769421,
+            "energy_comoving": -22.182507932766672,
+            "daughter_comoving": 22.434594317410305
+          }
+        },
+        "static": {
+          "path": "tables/coarse_plus_120_static.npz",
+          "sha256": "927e47a164eb78ee78ee2bc806b3b32749d10bb27e5e73b432ba873b02884145",
+          "readout": {
+            "rho": -8.69574177659436,
+            "p": -19.119427635811725,
+            "j": 4.762114648574259,
+            "rad": 11.890171781769421,
+            "energy_comoving": -16.40728516184817,
+            "daughter_comoving": 22.434594317410305
+          }
+        }
+      }
+    },
+    "coarse_minus_60": {
+      "grid": "coarse",
+      "arm": "minus",
+      "cutoff": 60,
+      "steps": 4337,
+      "order": 64,
+      "start": 1.303724761082836,
+      "end": 2.167890501751768,
+      "gate_on": 1.3498934913966838,
+      "gate_off": 2.049149205012551,
+      "max_step": 0.0002109727002834738,
+      "max_abs_pointwise_ward": {
+        "bare": 1.0724754417879012e-12,
+        "static": 5.897504706808832e-13
+      },
+      "max_free_covariance_determinant_drift": 2.772087448477123e-09,
+      "files": {
+        "bare": {
+          "path": "tables/coarse_minus_60_bare.npz",
+          "sha256": "8243445ba0a4ea25848d8cb842cd4795f1322c2dcb5a67916b277284dc75857b",
+          "readout": {
+            "rho": -9.819040645690059,
+            "p": -47.643184114742986,
+            "j": 58.579794016197454,
+            "rad": 11.617895930924384,
+            "energy_comoving": -18.525847060369287,
+            "daughter_comoving": 21.919795522393
+          }
+        },
+        "static": {
+          "path": "tables/coarse_minus_60_static.npz",
+          "sha256": "03d2be69f28b2932e2dd242d0f865be29011f2a80434da19980ded2a25dc3ff6",
+          "readout": {
+            "rho": -8.981283221885768,
+            "p": 1.1426444744856483,
+            "j": -34.96029870754198,
+            "rad": 11.617895930924384,
+            "energy_comoving": -16.94522768347531,
+            "daughter_comoving": 21.919795522393
+          }
+        }
+      }
+    },
+    "coarse_minus_120": {
+      "grid": "coarse",
+      "arm": "minus",
+      "cutoff": 120,
+      "steps": 4337,
+      "order": 64,
+      "start": 1.303724761082836,
+      "end": 2.167890501751768,
+      "gate_on": 1.3498934913966838,
+      "gate_off": 2.049149205012551,
+      "max_step": 0.0002109727002834738,
+      "max_abs_pointwise_ward": {
+        "bare": 3.481659405224491e-12,
+        "static": 1.2541079286165768e-12
+      },
+      "max_free_covariance_determinant_drift": 2.772087448477123e-09,
+      "files": {
+        "bare": {
+          "path": "tables/coarse_minus_120_bare.npz",
+          "sha256": "f04a106856159ef4d58e4e889987b9f82425e5599e43214195473dce0f31351b",
+          "readout": {
+            "rho": -12.396320808842356,
+            "p": -223.12462947802553,
+            "j": 395.2040994389001,
+            "rad": 12.126683680599575,
+            "energy_comoving": -23.388470595311134,
+            "daughter_comoving": 22.87973900127139
+          }
+        },
+        "static": {
+          "path": "tables/coarse_minus_120_static.npz",
+          "sha256": "9443f57666959d934e6fcd520ddc24ea5db125efd162a12b8442b12710423da4",
+          "readout": {
+            "rho": -8.889047659156764,
+            "p": -20.513826513642933,
+            "j": 6.7979377641784415,
+            "rad": 12.126683680599575,
+            "energy_comoving": -16.771204376076675,
+            "daughter_comoving": 22.87973900127139
+          }
+        }
+      }
+    },
+    "coarse_far_60": {
+      "grid": "coarse",
+      "arm": "far",
+      "cutoff": 60,
+      "steps": 4345,
+      "order": 64,
+      "start": 1.303724761082836,
+      "end": 2.168457697712385,
+      "gate_on": 1.3498934913966838,
+      "gate_off": 2.049780803732505,
+      "max_step": 0.00021110593745410355,
+      "max_abs_pointwise_ward": {
+        "bare": 9.251974186774703e-13,
+        "static": 4.920508445138694e-13
+      },
+      "max_free_covariance_determinant_drift": 2.6887807536013497e-09,
+      "files": {
+        "bare": {
+          "path": "tables/coarse_far_60_bare.npz",
+          "sha256": "3a8a1c5c0a981f5dc929cc2911f2cad0ff246779a290fcb3917137f16b312c21",
+          "readout": {
+            "rho": -9.573771669996434,
+            "p": -46.39063461415375,
+            "j": 56.84255628291985,
+            "rad": 11.441517779456133,
+            "energy_comoving": -18.062807334298498,
+            "daughter_comoving": 21.58667851980889
+          }
+        },
+        "static": {
+          "path": "tables/coarse_far_60_static.npz",
+          "sha256": "dc1809a563636978cc375bb03522bc8857725d8e3ac7a8da898e6890ea8273c6",
+          "readout": {
+            "rho": -8.828820778440216,
+            "p": 1.780198268036751,
+            "j": -35.676128553206574,
+            "rad": 11.441517779456133,
+            "energy_comoving": -16.657310640674208,
+            "daughter_comoving": 21.58667851980889
+          }
+        }
+      }
+    },
+    "coarse_far_120": {
+      "grid": "coarse",
+      "arm": "far",
+      "cutoff": 120,
+      "steps": 4345,
+      "order": 64,
+      "start": 1.303724761082836,
+      "end": 2.168457697712385,
+      "gate_on": 1.3498934913966838,
+      "gate_off": 2.049780803732505,
+      "max_step": 0.00021110593745410355,
+      "max_abs_pointwise_ward": {
+        "bare": 3.360867140145274e-12,
+        "static": 1.0338396805309458e-12
+      },
+      "max_free_covariance_determinant_drift": 2.6887807536013497e-09,
+      "files": {
+        "bare": {
+          "path": "tables/coarse_far_120_bare.npz",
+          "sha256": "60334339706a5ec59352f26552e81e93b839466041d0eead17c73ff64159e376",
+          "readout": {
+            "rho": -11.858018758125922,
+            "p": -219.6145690619422,
+            "j": 389.6407033891695,
+            "rad": 11.938203317371997,
+            "energy_comoving": -22.37248971226048,
+            "daughter_comoving": 22.523773688395668
+          }
+        },
+        "static": {
+          "path": "tables/coarse_far_120_static.npz",
+          "sha256": "5c3df8b1da30296e9fb59914844072385728dbc77211fb4ba251d6ca457a05bc",
+          "readout": {
+            "rho": -8.735209972304034,
+            "p": -19.54106746368155,
+            "j": 5.445382605619172,
+            "rad": 11.938203317371997,
+            "energy_comoving": -16.48069540334352,
+            "daughter_comoving": 22.523773688395668
+          }
+        }
+      }
+    }
+  }
+}
