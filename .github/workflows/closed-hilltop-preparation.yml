@@ -44,7 +44,7 @@ jobs:
           python-version: '3.12'
       - name: Verify study and historical inputs
         run: |
-          echo 'db8089c989bf564d03fec7e0e5d83675a1fad5838b0b1deaa8f73ce4dda81a0b  SHA256SUMS' | sha256sum -c -
+          echo 'e3ab3f2516bbd1da095e966713b2a79baef3d2b4da5e5a17133cd50ad18620fd  SHA256SUMS' | sha256sum -c -
           python -I -B -S reproduce.py
           python -c "import json, pathlib; s=pathlib.Path('.'); root=s.resolve().parents[1]; pins=json.loads((s/'SOURCES.json').read_text()); assert all((s/p['bundled']).read_bytes()==(root/p['path']).read_bytes() for p in pins['sources'])"
       - name: Replay the scientific experiments
