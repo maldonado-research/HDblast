@@ -1,0 +1,310 @@
+# STAGED, NOT ACTIVATED. All paid research requires explicit verified config.
+# Deploy to .github/workflows/hdblast_research_round.yml on the default branch.
+name: HDBLAST bounded research round
+run-name: ${{ github.event_name == 'workflow_dispatch' && inputs.mode == 'smoke' && 'HDBLAST smoke round' || 'HDBLAST research round' }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Credential/model smoke check, or one registered research round'
+        type: choice
+        options: [smoke, research]
+        default: smoke
+  schedule:
+    - cron: '17 */6 * * *'
+
+permissions:
+  contents: read
+  actions: read
+  pull-requests: read
+
+concurrency:
+  group: hdblast-one-research-round
+  cancel-in-progress: false
+
+jobs:
+  smoke:
+    if: >-
+      github.event_name == 'workflow_dispatch' && inputs.mode == 'smoke' &&
+      github.repository == 'maldonado-research/HDblast' &&
+      github.ref_name == github.event.repository.default_branch && github.run_attempt == 1 &&
+      vars.HDBLAST_SMOKE_ENABLED == 'true' &&
+      vars.HDBLAST_CODEX_MODEL == 'gpt-6.1-sol' &&
+      vars.HDBLAST_CODEX_REASONING_EFFORT == 'ultra'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          sparse-checkout: .github/hdblast
+      - name: Gate the bounded exact-model smoke invocation
+        id: smoke_gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HDBLAST_API_KEY_CHECK: ${{ secrets.OPENAI_API_KEY }}
+          HDBLAST_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          HDBLAST_RESEARCH_ENABLED: ${{ vars.HDBLAST_RESEARCH_ENABLED }}
+          HDBLAST_SMOKE_ENABLED: ${{ vars.HDBLAST_SMOKE_ENABLED }}
+          HDBLAST_MODEL_SMOKE_PASSED: ${{ vars.HDBLAST_MODEL_SMOKE_PASSED }}
+          HDBLAST_CODEX_MODEL: ${{ vars.HDBLAST_CODEX_MODEL }}
+          HDBLAST_CODEX_REASONING_EFFORT: ${{ vars.HDBLAST_CODEX_REASONING_EFFORT }}
+          HDBLAST_CAMPAIGN_START_UTC: ${{ vars.HDBLAST_CAMPAIGN_START_UTC }}
+          HDBLAST_RESEARCH_UNTIL_UTC: ${{ vars.HDBLAST_RESEARCH_UNTIL_UTC }}
+          HDBLAST_MAX_PAID_ROUNDS_PER_DAY: ${{ vars.HDBLAST_MAX_PAID_ROUNDS_PER_DAY }}
+          HDBLAST_MAX_CAMPAIGN_INVOCATIONS: ${{ vars.HDBLAST_MAX_CAMPAIGN_INVOCATIONS }}
+          HDBLAST_SCIENCE_SHA: ${{ vars.HDBLAST_SCIENCE_SHA }}
+        run: |
+          python .github/hdblast/preflight.py --mode smoke --controls .github/hdblast \
+            --context-out "${{ runner.temp }}/hdblast-smoke-context.json"
+      - name: Test exact requested model without research or publication
+        if: steps.smoke_gate.outputs.ready == 'true'
+        timeout-minutes: 3
+        uses: openai/codex-action@86365089eb2b84e0a8fb0717b304f8bdcb13b20e # v1.12
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          codex-version: '0.160.0'
+          model: ${{ vars.HDBLAST_CODEX_MODEL }}
+          effort: ${{ vars.HDBLAST_CODEX_REASONING_EFFORT }}
+          permission-profile: ':read-only'
+          safety-strategy: drop-sudo
+          prompt: 'Return exactly HDBLAST_MODEL_SMOKE_COMPLETED. Do not run tools, change files, or publish.'
+
+  research:
+    if: >-
+      github.repository == 'maldonado-research/HDblast' &&
+      github.ref_name == github.event.repository.default_branch &&
+      github.run_attempt == 1 &&
+      vars.HDBLAST_RESEARCH_ENABLED == 'true' &&
+      vars.HDBLAST_MODEL_SMOKE_PASSED == 'true' &&
+      vars.HDBLAST_CODEX_MODEL == 'gpt-6.1-sol' &&
+      vars.HDBLAST_CODEX_REASONING_EFFORT == 'ultra' &&
+      (github.event_name == 'schedule' || inputs.mode == 'research')
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    outputs:
+      ready: ${{ steps.select.outputs.ready }}
+      run_id: ${{ steps.select.outputs.run_id }}
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONOPTIMIZE: '0'
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          path: scheduler
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: |
+            .github/hdblast
+            research
+      - name: Read the explicitly pinned science source without merging its PR chain
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ vars.HDBLAST_SCIENCE_SHA }}
+          path: science
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: |
+            research
+            hdblast
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Gate campaign, daily invocations, prior PRs and fresh task
+        id: select
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HDBLAST_API_KEY_CHECK: ${{ secrets.OPENAI_API_KEY }}
+          HDBLAST_DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          HDBLAST_RESEARCH_ENABLED: ${{ vars.HDBLAST_RESEARCH_ENABLED }}
+          HDBLAST_SMOKE_ENABLED: ${{ vars.HDBLAST_SMOKE_ENABLED }}
+          HDBLAST_MODEL_SMOKE_PASSED: ${{ vars.HDBLAST_MODEL_SMOKE_PASSED }}
+          HDBLAST_CODEX_MODEL: ${{ vars.HDBLAST_CODEX_MODEL }}
+          HDBLAST_CODEX_REASONING_EFFORT: ${{ vars.HDBLAST_CODEX_REASONING_EFFORT }}
+          HDBLAST_CAMPAIGN_START_UTC: ${{ vars.HDBLAST_CAMPAIGN_START_UTC }}
+          HDBLAST_RESEARCH_UNTIL_UTC: ${{ vars.HDBLAST_RESEARCH_UNTIL_UTC }}
+          HDBLAST_MAX_PAID_ROUNDS_PER_DAY: ${{ vars.HDBLAST_MAX_PAID_ROUNDS_PER_DAY }}
+          HDBLAST_MAX_CAMPAIGN_INVOCATIONS: ${{ vars.HDBLAST_MAX_CAMPAIGN_INVOCATIONS }}
+          HDBLAST_SCIENCE_SHA: ${{ vars.HDBLAST_SCIENCE_SHA }}
+        run: |
+          python scheduler/.github/hdblast/preflight.py --mode research \
+            --controls scheduler/.github/hdblast --science science \
+            --context-out "${{ runner.temp }}/hdblast-context.json"
+      - name: Prepare only the fresh selected round
+        if: steps.select.outputs.ready == 'true'
+        run: |
+          python - <<'PY'
+          import json, os, shutil
+          from pathlib import Path
+          context_path = Path(os.environ['RUNNER_TEMP']) / 'hdblast-context.json'
+          context = json.loads(context_path.read_text())
+          round_root = context['round_path']
+          (Path('science') / round_root).mkdir(parents=True, exist_ok=False)
+          (Path('science') / '.github').mkdir(exist_ok=True)
+          shutil.copytree('scheduler/.github/hdblast', 'science/.github/hdblast', dirs_exist_ok=True)
+          for previous in Path('scheduler/research').glob('HDBLAST_ROUND_*'):
+              destination = Path('science/research') / previous.name
+              if not destination.exists(): shutil.copytree(previous, destination)
+          with open(os.environ['GITHUB_ENV'], 'a') as output:
+              output.write(f'HDBLAST_ROUND_CONTEXT={context_path}\nHDBLAST_ROUND_DIR={round_root}\n')
+          PY
+      - name: Install pinned scientific dependencies
+        if: steps.select.outputs.ready == 'true'
+        run: python -m pip install -r science/research/HDBLAST_CHECKPOINT_20261002_SMOOTH_FRW/requirements.txt
+      - name: Run one registered research round
+        if: steps.select.outputs.ready == 'true'
+        timeout-minutes: 60
+        uses: openai/codex-action@86365089eb2b84e0a8fb0717b304f8bdcb13b20e # v1.12
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          codex-version: '0.160.0'
+          model: ${{ vars.HDBLAST_CODEX_MODEL }}
+          effort: ${{ vars.HDBLAST_CODEX_REASONING_EFFORT }}
+          permission-profile: ':workspace'
+          safety-strategy: drop-sudo
+          codex-args: '["-c", "agents.max_concurrent_threads_per_session=1", "-c", "agents.default_subagent_model=\"gpt-6.1-sol\"", "-c", "agents.default_subagent_reasoning_effort=\"ultra\""]'
+          working-directory: science
+          prompt-file: science/.github/hdblast/ROUND_PROMPT.md
+          output-file: ${{ runner.temp }}/hdblast-final-message.txt
+      - name: Retain bounded round data using immutable paths
+        if: steps.select.outputs.ready == 'true'
+        env:
+          BASH_ENV: /dev/null
+          PYTHONPATH: ''
+          RUNNER_TEMP: ${{ runner.temp }}
+        run: |
+          python -I "${{ github.workspace }}/scheduler/.github/hdblast/retain_round.py" \
+            --round-root "${{ github.workspace }}/science/research/HDBLAST_ROUND_${{ github.run_id }}-${{ github.run_attempt }}" \
+            --context "${{ runner.temp }}/hdblast-context.json" \
+            --out "${{ runner.temp }}/hdblast-round-artifact"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: steps.select.outputs.ready == 'true'
+        with:
+          name: hdblast-round-${{ steps.select.outputs.run_id }}
+          path: ${{ runner.temp }}/hdblast-round-artifact/
+          if-no-files-found: error
+          retention-days: 7
+
+  publish:
+    needs: research
+    if: needs.research.outputs.ready == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.sha }}
+          filter: blob:none
+          sparse-checkout: |
+            .github/hdblast
+            research
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: hdblast-round-${{ needs.research.outputs.run_id }}
+          path: ${{ runner.temp }}/incoming-hdblast-round
+      - name: Validate provenance, finite evidence, hashes and narrow scope
+        env:
+          ROUND_RUN_ID: ${{ github.run_id }}-${{ github.run_attempt }}
+          ROUND_SOURCE_SHA: ${{ vars.HDBLAST_SCIENCE_SHA }}
+          ROUND_SCHEDULER_SHA: ${{ github.sha }}
+        run: |
+          python .github/hdblast/round_control.py select \
+            --queue .github/hdblast/queue.json \
+            --state .github/hdblast/round_state.json \
+            --source-sha "$ROUND_SOURCE_SHA" \
+            --scheduler-sha "$ROUND_SCHEDULER_SHA" \
+            --run-id "$ROUND_RUN_ID" \
+            --model gpt-6.1-sol --effort ultra \
+            --out "$RUNNER_TEMP/trusted-hdblast-context.json"
+          cmp "$RUNNER_TEMP/trusted-hdblast-context.json" "$RUNNER_TEMP/incoming-hdblast-round/context.json"
+          python .github/hdblast/round_control.py publish \
+            --context "$RUNNER_TEMP/trusted-hdblast-context.json" \
+            --state .github/hdblast/round_state.json \
+            --round-root "$RUNNER_TEMP/incoming-hdblast-round/round" \
+            --repo-root "$GITHUB_WORKSPACE" \
+            --state-output .github/hdblast/round_state.json \
+            --metadata-out "$RUNNER_TEMP/hdblast-pr.json"
+      - name: Open one narrow PR without merging or minting a DOI
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ROUND_RUN_ID: ${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          python - <<'PY'
+          import json, os, subprocess
+          from pathlib import Path
+          run_id = os.environ['ROUND_RUN_ID']
+          metadata = json.loads((Path(os.environ['RUNNER_TEMP'])/'hdblast-pr.json').read_text())
+          if not metadata['changed']: raise SystemExit('Idempotent replay: nothing to publish')
+          subprocess.run(['git', 'config', 'user.name', 'github-actions[bot]'], check=True)
+          subprocess.run(['git', 'config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com'], check=True)
+          branch = 'research/auto-' + run_id
+          subprocess.run(['git', 'switch', '-c', branch], check=True)
+          subprocess.run(['git', 'add', '--', 'research/HDBLAST_ROUND_' + run_id, '.github/hdblast/round_state.json'], check=True)
+          subprocess.run(['git', 'commit', '-m', metadata['title']], check=True)
+          subprocess.run(['git', 'push', 'origin', 'HEAD:refs/heads/' + branch], check=True)
+          body_file = Path(os.environ['RUNNER_TEMP']) / 'hdblast-pr-body.md'
+          body_file.write_text(metadata['body'] + '\n')
+          subprocess.run(['gh', 'pr', 'create', '--head', branch, '--title', metadata['title'], '--body-file', str(body_file)], check=True)
+          PY
+
+  receipt:
+    needs: [smoke, research, publish]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Record actual invocation and failure state on a fresh runner
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HDBLAST_SMOKE_JOB_RESULT: ${{ needs.smoke.result }}
+          HDBLAST_RESEARCH_JOB_RESULT: ${{ needs.research.result }}
+          HDBLAST_PUBLICATION_JOB_RESULT: ${{ needs.publish.result }}
+          HDBLAST_REQUESTED_MODEL: ${{ vars.HDBLAST_CODEX_MODEL }}
+          HDBLAST_REQUESTED_EFFORT: ${{ vars.HDBLAST_CODEX_REASONING_EFFORT }}
+          HDBLAST_SOURCE_SHA: ${{ vars.HDBLAST_SCIENCE_SHA }}
+        run: |
+          python - <<'PY'
+          import datetime, json, os, subprocess
+          from pathlib import Path
+          repo, run_id = os.environ['GITHUB_REPOSITORY'], os.environ['GITHUB_RUN_ID']
+          data = json.loads(subprocess.check_output(['gh', 'api', f'repos/{repo}/actions/runs/{run_id}/jobs?filter=latest&per_page=100'], text=True))
+          if data['total_count'] > len(data['jobs']): raise SystemExit('Receipt job metadata was truncated')
+          model_steps = []
+          names = {'Run one registered research round', 'Test exact requested model without research or publication'}
+          for job in data['jobs']:
+              for step in job['steps']:
+                  if step['name'] in names:
+                      model_steps.append({'job': job['name'], 'name': step['name'], 'status': step['status'],
+                                          'conclusion': step['conclusion'], 'started_at': step['started_at'],
+                                          'completed_at': step['completed_at']})
+          receipt = {'schema_version': 1, 'run_id': run_id, 'run_attempt': os.environ['GITHUB_RUN_ATTEMPT'],
+                     'scheduler_sha': os.environ['GITHUB_SHA'], 'source_sha': os.environ['HDBLAST_SOURCE_SHA'],
+                     'requested_model': os.environ['HDBLAST_REQUESTED_MODEL'], 'requested_effort': os.environ['HDBLAST_REQUESTED_EFFORT'],
+                     'recorded_at_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                     'job_results': {name: os.environ['HDBLAST_' + name.upper() + '_JOB_RESULT'] for name in ('smoke', 'research', 'publication')},
+                     'observed_model_steps': model_steps,
+                     'accounting': 'Every workflow attempt conservatively consumes configured invocation allowance. Model-step startup does not prove API billing or scientific completion.',
+                     'scientific_outcome': 'Not inferred from CI/job status; read the validated scientific checkpoint when available.',
+                     'automatic_main_merge': False, 'doi_created': False}
+          destination = Path(os.environ['RUNNER_TEMP']) / 'hdblast-invocation-receipt'
+          destination.mkdir(exist_ok=False)
+          (destination / 'receipt.json').write_text(json.dumps(receipt, indent=2) + '\n')
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: hdblast-invocation-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/hdblast-invocation-receipt/receipt.json
+          if-no-files-found: error
+          retention-days: 30
