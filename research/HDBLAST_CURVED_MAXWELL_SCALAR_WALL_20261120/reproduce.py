@@ -63,6 +63,12 @@ def verify_files():
 def close_number(actual, expected, path):
     name, key = path[0], path[-1]
     if name=='loading':
+        if 'forward' in path and key=='tube_mass_error':
+            # This is the peak difference of two independent mass integrals.
+            # The primary runs also satisfy the absolute balance bound in FORWARD.md.
+            if path[-2] in ('fluid_primary','maxwell_primary') and max(actual,expected)>=1.8e-6:
+                return False
+            return min(actual,expected)>=0 and math.isclose(actual,expected,rel_tol=2e-7,abs_tol=1e-10)
         if 'errors' in path:
             # The respective scripts enforce dimensional bounds on conservation
             # residuals. Their tiny floating-point values need not coincide.
