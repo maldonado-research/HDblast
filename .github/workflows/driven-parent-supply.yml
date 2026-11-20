@@ -1,0 +1,49 @@
+name: Driven neutral parents on the HDblast wall
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_DRIVEN_PARENT_SUPPLY_20261120/**'
+      - '.github/workflows/driven-parent-supply.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_DRIVEN_PARENT_SUPPLY_20261120/**'
+      - '.github/workflows/driven-parent-supply.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    name: Reproduce sourcing from an initially empty parent field
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: research/HDBLAST_DRIVEN_PARENT_SUPPLY_20261120
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /research/HDBLAST_DRIVEN_PARENT_SUPPLY_20261120/
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check the archived parent-mode solver and preceding wall history
+        run: |
+          test "$(git hash-object prior/parent_modes.py)" = e9bad0b6909e86c8e093da3b9e0f6179cd6d5bed
+          test "$(git hash-object prior/CHARGED.json)" = aba57891f7bbe877198015dc7c10e41c504fce16
+      - name: Verify the release files and pinned inputs
+        run: |
+          echo 'b21306fc5520c894e167ac66f3d1ed91af03d8d74e9dc9dfe3413a0dac7cf923  SHA256SUMS' | sha256sum -c -
+          python -I -B -S study.py
+      - name: Run the numerical calculations and their controls
+        run: |
+          python -m pip install numpy==2.3.5 scipy==1.17.0
+          python -I -B study.py --verify --output-dir "$RUNNER_TEMP/parent-replay"

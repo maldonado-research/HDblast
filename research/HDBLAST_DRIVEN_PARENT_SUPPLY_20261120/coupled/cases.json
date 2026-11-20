@@ -1,0 +1,141 @@
+{
+  "defaults": {
+    "early_cells": 18,
+    "late_cells": 3,
+    "cfl": 0.08,
+    "depth": 0.002,
+    "remesh_time": 0.08,
+    "sample": 0,
+    "dose": 0.123,
+    "end": 20.0,
+    "final_gauge_increment": 26.0,
+    "decay_threshold": 0.53,
+    "decay_width": 0.003,
+    "initial_mass_ratio": 0.95,
+    "final_mass_ratio": 1.05,
+    "exit_field": 0.5265,
+    "exit_width": 0.003,
+    "preparation_field": 0.36,
+    "preparation_width": 0.01,
+    "preparation_gauge_increment": 3400.0,
+    "preparation_energy": 0.05,
+    "radius_limit": 120.0,
+    "daughter_mass": 1.0,
+    "drive_amplitude": 0.01,
+    "drive_start": 0.03,
+    "drive_width": 0.15,
+    "continue_stable": 0
+  },
+  "cases": {
+    "primary": {
+      "early_cells": 48,
+      "late_cells": 6,
+      "sample": 1
+    },
+    "fine": {
+      "early_cells": 64,
+      "late_cells": 6
+    },
+    "coarse": {
+      "early_cells": 24,
+      "late_cells": 6
+    },
+    "late_grid": {
+      "early_cells": 24,
+      "late_cells": 9
+    },
+    "smaller_step": {
+      "early_cells": 24,
+      "late_cells": 6,
+      "cfl": 0.04
+    },
+    "control_grid": {
+      "early_cells": 18,
+      "late_cells": 3
+    },
+    "no_drive": {
+      "drive_amplitude": 0
+    },
+    "no_pulse": {
+      "dose": 0
+    },
+    "weak": {
+      "drive_amplitude": 0.002
+    },
+    "mid": {
+      "drive_amplitude": 0.005
+    },
+    "near": {
+      "drive_amplitude": 0.008
+    },
+    "strong": {
+      "drive_amplitude": 0.015
+    },
+    "stronger": {
+      "drive_amplitude": 0.02
+    },
+    "dose_low": {
+      "dose": 0.12295
+    },
+    "dose_high": {
+      "dose": 0.12305
+    },
+    "slower": {
+      "daughter_mass": 0.5
+    },
+    "faster": {
+      "daughter_mass": 2.0
+    },
+    "late_drive": {
+      "drive_start": 0.1,
+      "drive_width": 0.15
+    },
+    "narrow": {
+      "drive_start": 0.0675,
+      "drive_width": 0.075
+    },
+    "stable": {
+      "early_cells": 48,
+      "late_cells": 6,
+      "sample": 1,
+      "end": 120.0,
+      "continue_stable": 1
+    },
+    "stable_grid": {
+      "early_cells": 24,
+      "late_cells": 4,
+      "end": 120.0,
+      "continue_stable": 1
+    },
+    "stable_fine": {
+      "early_cells": 64,
+      "late_cells": 6,
+      "end": 120.0,
+      "continue_stable": 1
+    },
+    "heavy_stable": {
+      "early_cells": 24,
+      "late_cells": 4,
+      "sample": 1,
+      "drive_amplitude": 0.0013,
+      "drive_width": 0.075,
+      "daughter_mass": 16.0,
+      "end": 120.0,
+      "continue_stable": 1
+    },
+    "heavy_fine": {
+      "early_cells": 48,
+      "late_cells": 6,
+      "drive_amplitude": 0.0013,
+      "drive_width": 0.075,
+      "daughter_mass": 16.0,
+      "end": 120.0,
+      "continue_stable": 1
+    },
+    "flip_drive": {
+      "early_cells": 48,
+      "late_cells": 6,
+      "drive_amplitude": -0.01
+    }
+  }
+}
