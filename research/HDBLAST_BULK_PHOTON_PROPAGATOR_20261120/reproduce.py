@@ -63,6 +63,13 @@ def verify_files():
 def close_number(actual, expected, path):
     # Solver residuals and mesh-difference diagnostics are compared in their own units.
     # Tiny spectral weights and pulse tails retain a relative accuracy requirement.
+    # QUADPACK's own error estimate has the units of the integrated coefficient.
+    # check_static enforces the absolute/relative tolerance requested for the integral.
+    if path[0]=='euclidean' and path[-1]=='first_correction_quadrature_error_estimate':
+        return actual >= 0 and expected >= 0
+    # This bound independently checked the incomplete beta norm by direct quadrature.
+    if path[0]=='bounds' and path[-1]=='check_norm_absolute_error':
+        return 0 <= actual <= 5e-14 and 0 <= expected <= 5e-14
     floors = {
         'relative_bracket_and_integration_difference': 3e-12, 'refinement_absolute_in_scaled_fraction': 2e-11,
         'refinement_relative': 5e-10, 'independent_relative': 5e-10,
@@ -78,20 +85,24 @@ def close_number(actual, expected, path):
     return math.isclose(actual, expected, rel_tol=2e-7, abs_tol=floors.get(path[-1],0.))
 
 
-def compare(actual, expected, path=()):
+def compare(actual, expected, path=(), differences=None):
     label = '/'.join(path)
     if isinstance(expected, dict):
         require(isinstance(actual,dict) and actual.keys()==expected.keys(), f'Different keys at {label}')
         for key in expected:
-            compare(actual[key],expected[key],(*path,key))
+            compare(actual[key],expected[key],(*path,key),differences)
     elif isinstance(expected, list):
         require(isinstance(actual,list) and len(actual)==len(expected), f'Different size at {label}')
         for i, (a,e) in enumerate(zip(actual,expected)):
-            compare(a,e,(*path,str(i)))
+            compare(a,e,(*path,str(i)),differences)
     elif isinstance(expected, float):
-        require(type(actual) in (int,float) and math.isfinite(actual) and math.isfinite(expected)
-                and close_number(actual, expected, path),
-                f'{label}: expected {expected!r}, obtained {actual!r}')
+        good = (type(actual) in (int,float) and math.isfinite(actual) and math.isfinite(expected)
+                and close_number(actual, expected, path))
+        if not good:
+            message = f'{label}: expected {expected!r}, obtained {actual!r}'
+            if differences is None:
+                raise ValueError(message)
+            differences.append(message)
     else:
         require(type(actual) is type(expected) and actual==expected, f'Scalar differs at {label}')
 
@@ -147,6 +158,8 @@ def check_static(euclidean, retarded):
         branch = retarded['branches'][f'{phi:g}']
         norm = (1+phi)**2*(2-phi)/3
         moment = leaf['first_dtn_correction']
+        require(leaf['first_correction_quadrature_error_estimate'] <= max(2e-14,2e-13*abs(moment)),
+                'Estimated quadrature error exceeds the integrated coefficient tolerance')
         equal(leaf['one_copy_norm'], norm, 'Zero-mode normalization')
         equal(leaf['independent_norm_integral'], norm, 'Independent zero-mode norm')
         equal(branch['half_norm'],norm, 'Timelike normalization')
@@ -329,9 +342,11 @@ def regenerate(destination, jobs):
     with ThreadPoolExecutor(max_workers=jobs) as pool:
         list(pool.map(run,PRODUCTS))
     data = {name:read(destination/path) for name,path in PRODUCTS.items()}
-    for name,path in PRODUCTS.items():
-        compare(data[name],read(HERE/path),(name,))
     physics(data)
+    differences = []
+    for name,path in PRODUCTS.items():
+        compare(data[name],read(HERE/path),(name,),differences)
+    require(not differences,'Numerical replay differences:\n'+'\n'.join(differences))
     print(f'Verified {len(PRODUCTS)} numerical products and cross-product physical checks.',flush=True)
 
 
