@@ -1,0 +1,3 @@
+# Historical input for the fermion calculation
+
+The conformal-field comparison uses the stable-parent trajectories from the archived driven-parent study. `PARENT.json.gz` contains its original JSON bytes under gzip compression. The three source and configuration files reproduce its high-mass parent history with the denser output sampling specified in `../quantum/narrow_trace.py`. The release verifier authenticates the uncompressed JSON and the three original files against the checksums of commit `dfdbad8b4859d331fab1dcfa4a09051d2113d906`. [Original data and source](https://github.com/maldonado-research/HDblast/tree/dfdbad8b4859d331fab1dcfa4a09051d2113d906/research/HDBLAST_DRIVEN_PARENT_SUPPLY_20261120/coupled)
