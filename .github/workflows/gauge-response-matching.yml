@@ -1,0 +1,103 @@
+name: Gauge response matching on closed descents
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_GAUGE_RESPONSE_MATCHING_20261120/**'
+      - '.github/workflows/gauge-response-matching.yml'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/feedback/FEEDBACK.json'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/feedback/coast.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/feedback/feedback.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/gauge/GAUGE.json'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/gauge/gauge.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/homogeneous/exchange.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/homogeneous/results.json'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/evolution/evolve.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/initial/constraint.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/nonlinear/nonlinear.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/archive/BLAST_REHEATING_RESULTS.json'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/archive/blast_common.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/background/background.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/curvature/curvature.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/hilltop/HILLTOP.json'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/hilltop/check.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/hilltop/hilltop.py'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_GAUGE_RESPONSE_MATCHING_20261120/**'
+      - '.github/workflows/gauge-response-matching.yml'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/feedback/FEEDBACK.json'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/feedback/coast.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/feedback/feedback.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/gauge/GAUGE.json'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/gauge/gauge.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/homogeneous/exchange.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/homogeneous/results.json'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/evolution/evolve.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/initial/constraint.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/nonlinear/nonlinear.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/archive/BLAST_REHEATING_RESULTS.json'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/archive/blast_common.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/background/background.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/curvature/curvature.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/hilltop/HILLTOP.json'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/hilltop/check.py'
+      - 'research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/hilltop/hilltop.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+
+jobs:
+  reproduce:
+    name: Reproduce the photon-response calibration and closed descents
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: research/HDBLAST_GAUGE_RESPONSE_MATCHING_20261120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /research/HDBLAST_GAUGE_RESPONSE_MATCHING_20261120/
+            /research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/feedback/FEEDBACK.json
+            /research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/feedback/coast.py
+            /research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/feedback/feedback.py
+            /research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/gauge/GAUGE.json
+            /research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/gauge/gauge.py
+            /research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/homogeneous/exchange.py
+            /research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/homogeneous/results.json
+            /research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/evolution/evolve.py
+            /research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/initial/constraint.py
+            /research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/nonlinear/nonlinear.py
+            /research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/archive/BLAST_REHEATING_RESULTS.json
+            /research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/archive/blast_common.py
+            /research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/background/background.py
+            /research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/curvature/curvature.py
+            /research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/hilltop/HILLTOP.json
+            /research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/hilltop/check.py
+            /research/HDBLAST_GAUGE_KINETIC_FIRST_DESCENT_20261119/prior/prior/gravity/previous/prior/hilltop/hilltop.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify the archive and its historical inputs
+        run: |
+          echo '4a507ef055a1d82b27adc19db2c7ff73e4ef0eb95dfa2354d4e90ce0f318e30c  SHA256SUMS' | sha256sum -c -
+          python -I -B -S reproduce.py
+          python -I -B -S - <<'PYTHON'
+          import json
+          from pathlib import Path
+          root = Path.cwd().parents[1]
+          for record in json.loads(Path("SOURCES.json").read_text())["sources"]:
+              if (root / record["path"]).read_bytes() != Path(record["bundled"]).read_bytes():
+                  raise ValueError("Historical input differs from its repository path: " + record["path"])
+          PYTHON
+      - name: Regenerate the numerical results
+        env:
+          OPENBLAS_NUM_THREADS: '1'
+          OMP_NUM_THREADS: '1'
+        run: |
+          python -m pip install numpy==2.3.5 scipy==1.17.0
+          python -I -B reproduce.py --verify --jobs 2
