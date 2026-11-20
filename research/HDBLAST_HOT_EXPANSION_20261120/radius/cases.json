@@ -1,0 +1,216 @@
+{
+  "defaults": {
+    "D": 0.0001,
+    "Q": 100000000.0,
+    "nu": 6.0,
+    "psi_star": 0.77,
+    "kappa": 100.0,
+    "a0": 2.0,
+    "dose": 0.123,
+    "height": 0.111,
+    "calibration": 0.12,
+    "late_K": 13200.0,
+    "cells": 32,
+    "late_cells": 6,
+    "cfl": 0.08,
+    "end": 28.0
+  },
+  "cases": {
+    "fixed_local_dose_2.0": {
+      "a0": 2.0
+    },
+    "fixed_local_dose_2.0025": {
+      "a0": 2.0025
+    },
+    "fixed_local_dose_2.005": {
+      "a0": 2.005
+    },
+    "fixed_local_dose_2.01": {
+      "a0": 2.01
+    },
+    "fixed_local_dose_2.015": {
+      "a0": 2.015
+    },
+    "fixed_local_dose_2.02": {
+      "a0": 2.02
+    },
+    "fixed_local_dose_2.024": {
+      "a0": 2.024
+    },
+    "fixed_local_dose_2.025": {
+      "a0": 2.025
+    },
+    "fixed_local_dose_2.05": {
+      "a0": 2.05
+    },
+    "fixed_local_dose_3.0": {
+      "a0": 3.0
+    },
+    "fixed_local_dose_4.0": {
+      "a0": 4.0
+    },
+    "reference_64": {
+      "cells": 64
+    },
+    "fixed_total_energy_2.02": {
+      "a0": 2.02,
+      "dose": 0.11938231613338632
+    },
+    "fixed_total_energy_2.1": {
+      "a0": 2.1,
+      "dose": 0.10625090331527966
+    },
+    "fixed_total_energy_3.0": {
+      "a0": 3.0,
+      "dose": 0.036442453049393676
+    },
+    "fixed_total_energy_4.0": {
+      "a0": 4.0,
+      "dose": 0.01537395412723163
+    },
+    "inverse_square_3.0": {
+      "a0": 3.0,
+      "dose": 0.05466666666666666,
+      "height": 0.04933333333333333,
+      "calibration": 0.05333333333333333,
+      "late_K": 29700.0,
+      "end": 35
+    },
+    "inverse_square_4.0": {
+      "a0": 4.0,
+      "dose": 0.03075,
+      "height": 0.02775,
+      "calibration": 0.03,
+      "late_K": 52800.0,
+      "end": 35
+    },
+    "shorter_plateau": {
+      "a0": 4.0,
+      "dose": 0.03075,
+      "height": 0.02664,
+      "calibration": 0.03,
+      "late_K": 52548.1,
+      "psi_star": 0.77,
+      "end": 65
+    },
+    "calibrated": {
+      "a0": 4.0,
+      "dose": 0.03075,
+      "height": 0.0266955,
+      "calibration": 0.03,
+      "late_K": 111985.95,
+      "psi_star": 0.85054,
+      "end": 65
+    },
+    "quarter_charge": {
+      "a0": 4.0,
+      "dose": 0.03075,
+      "height": 0.0266955,
+      "calibration": 0.03,
+      "late_K": 111985.95,
+      "psi_star": 0.85054,
+      "end": 65,
+      "Q": 25000000.0,
+      "cells": 32
+    },
+    "no_current": {
+      "a0": 4.0,
+      "dose": 0.03075,
+      "height": 0.0266955,
+      "calibration": 0.03,
+      "late_K": 111985.95,
+      "psi_star": 0.85054,
+      "end": 65,
+      "Q": 0.0,
+      "cells": 32
+    },
+    "larger_charge_medium_mesh": {
+      "a0": 4.0,
+      "dose": 0.03075,
+      "height": 0.0266955,
+      "calibration": 0.03,
+      "late_K": 111985.95,
+      "psi_star": 0.85054,
+      "end": 65,
+      "Q": 600000000.0,
+      "cells": 32
+    },
+    "larger_charge_coarse_mesh": {
+      "a0": 4.0,
+      "dose": 0.03075,
+      "height": 0.0266955,
+      "calibration": 0.03,
+      "late_K": 111985.95,
+      "psi_star": 0.85054,
+      "end": 65,
+      "Q": 600000000.0,
+      "cells": 24
+    },
+    "larger_charge_fine_mesh": {
+      "a0": 4.0,
+      "dose": 0.03075,
+      "height": 0.0266955,
+      "calibration": 0.03,
+      "late_K": 111985.95,
+      "psi_star": 0.85054,
+      "end": 65,
+      "Q": 600000000.0,
+      "cells": 48
+    },
+    "reference_charge_fine_mesh": {
+      "a0": 4.0,
+      "dose": 0.03075,
+      "height": 0.0266955,
+      "calibration": 0.03,
+      "late_K": 111985.95,
+      "psi_star": 0.85054,
+      "end": 65,
+      "Q": 100000000.0,
+      "cells": 48
+    },
+    "larger_charge_finer_mesh": {
+      "a0": 4.0,
+      "dose": 0.03075,
+      "height": 0.0266955,
+      "calibration": 0.03,
+      "late_K": 111985.95,
+      "psi_star": 0.85054,
+      "end": 65,
+      "Q": 600000000.0,
+      "cells": 64
+    },
+    "longer_plateau": {
+      "a0": 4.0,
+      "dose": 0.03075,
+      "height": 0.02672325,
+      "calibration": 0.03,
+      "late_K": 222465.30000000002,
+      "psi_star": 1.024315,
+      "end": 65
+    },
+    "launch_guard_2.02454": {
+      "a0": 2.02454,
+      "cells": 96,
+      "cfl": 0.06,
+      "end": 0.014
+    },
+    "launch_guard_2.02456": {
+      "a0": 2.02456,
+      "cells": 96,
+      "cfl": 0.06,
+      "end": 0.014
+    },
+    "larger_charge_fine_late_mesh": {
+      "a0": 4.0,
+      "dose": 0.03075,
+      "height": 0.0266955,
+      "calibration": 0.03,
+      "late_K": 111985.95,
+      "psi_star": 0.85054,
+      "end": 65,
+      "Q": 600000000.0,
+      "cells": 48,
+      "late_cells": 10
+    }
+  }
+}

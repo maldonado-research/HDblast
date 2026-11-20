@@ -1,0 +1,128 @@
+{
+  "defaults": {
+    "early_cells": 18,
+    "late_cells": 3,
+    "cfl": 0.08,
+    "depth": 0.002,
+    "remesh_time": 0.08,
+    "sample": 0,
+    "dose": 0.123,
+    "end": 60.0,
+    "final_gauge_increment": 26.0,
+    "parent_initial_density": 0.0001,
+    "charge_to_mass": 200000000.0,
+    "drag": 18.0,
+    "decay_threshold": 0.53,
+    "decay_width": 0.003,
+    "decay_rate_scale": 2000.0,
+    "initial_mass_ratio": 0.95,
+    "final_mass_ratio": 1.05,
+    "exit_field": 0.5265,
+    "exit_width": 0.003,
+    "preparation_field": 0.36,
+    "preparation_width": 0.01,
+    "preparation_gauge_increment": 3400.0,
+    "preparation_energy": 0.05,
+    "radius_limit": 120.0
+  },
+  "cases": {
+    "primary": {
+      "early_cells": 48,
+      "late_cells": 6,
+      "sample": 1
+    },
+    "fine": {
+      "early_cells": 64,
+      "late_cells": 6
+    },
+    "coarse": {
+      "early_cells": 24,
+      "late_cells": 6
+    },
+    "late_grid": {
+      "early_cells": 24,
+      "late_cells": 10
+    },
+    "cfl": {
+      "early_cells": 24,
+      "late_cells": 6,
+      "cfl": 0.04
+    },
+    "no_decay": {
+      "decay_rate_scale": 0.0
+    },
+    "no_drag": {
+      "drag": 0.0
+    },
+    "no_charge": {
+      "charge_to_mass": 0.0
+    },
+    "no_prep_gauge": {
+      "preparation_gauge_increment": 0.0
+    },
+    "no_drop_gauge": {
+      "final_gauge_increment": 3400.0
+    },
+    "low_q": {
+      "charge_to_mass": 20000000.0
+    },
+    "early_decay": {
+      "decay_threshold": 0.48
+    },
+    "late_decay": {
+      "decay_threshold": 0.58
+    },
+    "dose_low": {
+      "dose": 0.12295
+    },
+    "dose_high": {
+      "dose": 0.12305
+    },
+    "late_exit": {
+      "exit_field": 0.534,
+      "decay_threshold": 0.5375
+    },
+    "early_exit": {
+      "exit_field": 0.516,
+      "decay_threshold": 0.5195
+    },
+    "k_low": {
+      "final_gauge_increment": 21.0
+    },
+    "k_high": {
+      "final_gauge_increment": 31.0
+    },
+    "old": {
+      "final_gauge_increment": 13200.0,
+      "preparation_field": 0.18,
+      "preparation_gauge_increment": 0.0,
+      "preparation_energy": 0.0,
+      "exit_field": 0.36,
+      "exit_width": 0.02,
+      "decay_rate_scale": 100.0,
+      "decay_threshold": 0.77,
+      "decay_width": 0.03,
+      "charge_to_mass": 100000000.0,
+      "drag": 6.0
+    },
+    "dose_m5": {
+      "dose": 0.122995
+    },
+    "dose_p5": {
+      "dose": 0.123005
+    },
+    "dose_m15": {
+      "dose": 0.122985
+    },
+    "dose_p15": {
+      "dose": 0.123015
+    },
+    "control_resolution": {
+      "early_cells": 18,
+      "late_cells": 3
+    },
+    "no_source": {
+      "dose": 0
+    }
+  }
+}
