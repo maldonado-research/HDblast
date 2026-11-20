@@ -55,7 +55,7 @@ jobs:
           cmp prior/narrow_cases.json ../HDBLAST_DRIVEN_PARENT_SUPPLY_20261120/coupled/narrow_cases.json
       - name: Verify the release files and pinned inputs
         run: |
-          echo 'bb1a08ccfa2e90232e6c4aaa15777e712aedf6d84b821f71937bb66790e8d847  SHA256SUMS' | sha256sum -c -
+          echo 'ff279cd6f1d6b79113b2c2c390f10153418aa98997ebd969b813545f803040fa  SHA256SUMS' | sha256sum -c -
           python -I -B -S study.py
       - name: Run the numerical calculations and their controls
         run: |

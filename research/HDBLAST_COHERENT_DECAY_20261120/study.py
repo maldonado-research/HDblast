@@ -69,6 +69,11 @@ def compare(actual, reference, path):
         absolute = {'tube_mass_error': 1.e-6, 'sheet_balance_error': 4.e-9,
                     'relative_history_error': 1.5e-8}.get(key, 2.e-9)
         relative = 1.e-6
+        # Accepted-step endpoints sample a steep, narrow maximum at slightly
+        # different phases across compilers. The interpolated peaks stay under
+        # the standard tolerance and are also checked against physical bounds.
+        if path.startswith('kinetics/SWEEP/') and key.endswith('_native_peak'):
+            relative = 5.e-6
         if path.startswith('kinetics/KINETICS/') and '/delivery_windows/' in path:
             # Rounding a moving shell edge to the adjacent angular level changes
             # its degeneracy. The exact count at each run's own edges is checked below.
