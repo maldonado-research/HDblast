@@ -1,0 +1,174 @@
+{
+  "defaults": {
+    "early_cells": 18,
+    "late_cells": 3,
+    "cfl": 0.08,
+    "depth": 0.002,
+    "remesh_time": 0.08,
+    "sample": 0,
+    "dose": 0.123,
+    "end": 80.0,
+    "final_gauge_increment": 26.0,
+    "decay_threshold": 0.53,
+    "decay_width": 0.003,
+    "initial_mass_ratio": 0.95,
+    "final_mass_ratio": 1.05,
+    "exit_field": 0.5265,
+    "exit_width": 0.003,
+    "preparation_field": 0.36,
+    "preparation_width": 0.01,
+    "preparation_gauge_increment": 3400.0,
+    "preparation_energy": 0.05,
+    "radius_limit": 120.0,
+    "daughter_mass": 400.0,
+    "drive_amplitude": 2e-05,
+    "drive_start": 0.03,
+    "drive_width": 0.0006,
+    "kappa": 40.0,
+    "charge_to_mass": 200000000.0,
+    "drag": 18.0
+  },
+  "cases": {
+    "weak4": {
+      "kappa": 4
+    },
+    "matched40": {},
+    "rate100": {
+      "kappa": 100
+    },
+    "rate200": {
+      "kappa": 200
+    },
+    "rapid2000": {
+      "kappa": 2000
+    },
+    "historical": {
+      "daughter_mass": 1.0,
+      "drive_amplitude": 0.01,
+      "drive_width": 0.15,
+      "kappa": 2000,
+      "sample": 1
+    },
+    "primary": {
+      "final_gauge_increment": 2.5,
+      "early_cells": 48,
+      "late_cells": 6,
+      "sample": 1
+    },
+    "fine": {
+      "final_gauge_increment": 2.5,
+      "early_cells": 64,
+      "late_cells": 6
+    },
+    "coarse": {
+      "final_gauge_increment": 2.5,
+      "early_cells": 24,
+      "late_cells": 6
+    },
+    "late_grid": {
+      "final_gauge_increment": 2.5,
+      "early_cells": 24,
+      "late_cells": 9
+    },
+    "time_grid": {
+      "final_gauge_increment": 2.5,
+      "early_cells": 24,
+      "late_cells": 6,
+      "cfl": 0.04
+    },
+    "reference18": {
+      "final_gauge_increment": 2.5
+    },
+    "weak_primary": {
+      "final_gauge_increment": 2.5,
+      "kappa": 4
+    },
+    "faster_primary": {
+      "final_gauge_increment": 2.5,
+      "kappa": 200
+    },
+    "rapid_primary": {
+      "final_gauge_increment": 2.5,
+      "kappa": 2000
+    },
+    "low_dose": {
+      "final_gauge_increment": 2.5,
+      "dose": 0.12295
+    },
+    "high_dose": {
+      "final_gauge_increment": 2.5,
+      "dose": 0.12305
+    },
+    "no_drive": {
+      "final_gauge_increment": 2.5,
+      "drive_amplitude": 0
+    },
+    "no_decay": {
+      "final_gauge_increment": 2.5,
+      "kappa": 0
+    },
+    "no_charge": {
+      "final_gauge_increment": 2.5,
+      "charge_to_mass": 0
+    },
+    "no_drag": {
+      "final_gauge_increment": 2.5,
+      "drag": 0
+    },
+    "no_pulse": {
+      "final_gauge_increment": 2.5,
+      "dose": 0
+    },
+    "flipped_drive": {
+      "final_gauge_increment": 2.5,
+      "drive_amplitude": -2e-05
+    },
+    "K2": {
+      "final_gauge_increment": 2.0
+    },
+    "K23": {
+      "final_gauge_increment": 2.3
+    },
+    "K28": {
+      "final_gauge_increment": 2.8
+    },
+    "K32": {
+      "final_gauge_increment": 3.2
+    },
+    "K4": {
+      "final_gauge_increment": 4.0
+    },
+    "oldK_drive13": {
+      "drive_amplitude": 1.3e-05,
+      "sample": 1
+    },
+    "oldK_drive14": {
+      "drive_amplitude": 1.4e-05
+    },
+    "historical_weak": {
+      "daughter_mass": 1.0,
+      "drive_amplitude": 0.01,
+      "drive_width": 0.15,
+      "kappa": 0.1
+    },
+    "weak_fine": {
+      "early_cells": 48,
+      "late_cells": 6,
+      "kappa": 4,
+      "final_gauge_increment": 2.5
+    },
+    "slower04": {
+      "kappa": 0.4,
+      "final_gauge_increment": 2.5
+    },
+    "slower004": {
+      "kappa": 0.04,
+      "final_gauge_increment": 2.5
+    },
+    "finest": {
+      "early_cells": 96,
+      "late_cells": 9,
+      "final_gauge_increment": 2.5
+    }
+  }
+}
