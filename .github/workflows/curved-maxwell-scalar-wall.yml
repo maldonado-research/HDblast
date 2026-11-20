@@ -42,7 +42,7 @@ jobs:
           python-version: '3.12'
       - name: Verify the archive and its historical inputs
         run: |
-          echo '83580772a4616359c0a33484421d204ae4322dc819509a59fb40c8a772a4cb5b  SHA256SUMS' | sha256sum -c -
+          echo 'feca03666a5b9b0f6670c40b1eefcd8249be9e3aca2517025e47002eba6c94c9  SHA256SUMS' | sha256sum -c -
           python -I -B -S reproduce.py
           python -I -B -S - <<'PYTHON'
           import json
