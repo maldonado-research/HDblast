@@ -1,0 +1,160 @@
+--- a/charged_forward.cpp
++++ b/charged_forward.cpp
+@@ -17,7 +17,9 @@
+ constexpr int P = 4;
+ double late_gauge = -1.;
+ // Rest energy density summed over the six streams at a=2, q/(sqrt(3)*m), drag rate.
+-double rest_at_start = 0., active_charge = 0., charge_mass = 0., collision_rate = 0.;
++double rest_at_start = 0., charge_mass = 0., collision_rate = 0.;
++bool mobility_latched = false;
++double ramp_duration = .5;
+ constexpr double width = .001, cap = 40., calibration = .12, height = .111;
+ constexpr double lob[P] = {-1., -.4472135954999579393, .4472135954999579393, 1.};
+ constexpr double weight[P] = {1. / 6, 5. / 6, 5. / 6, 1. / 6};
+@@ -44,6 +46,7 @@
+     SCALAR_TO_SHEET,
+     LATE_SCALAR_TO_SHEET,
+     DRIFT, TEMPERATURE, ELECTRIC_WORK, ELECTRIC_WORK_A4, GAS_PRESSURE_WORK, DRAG_HEAT, ENTROPY_ESTIMATOR,
++    MOBILE_AGE, MOBILITY_IMPULSE,
+     COUNT
+ };
+ enum { I, O, GAUGE };
+@@ -72,6 +75,10 @@
+     double z = 1 / (1 - x) - 1 / x, f = logistic(z);
+     return {f, logistic(-std::abs(z)) * logistic(std::abs(z)) * (1 / (x * x) + 1 / ((1 - x) * (1 - x)))};
+ }
++// A ramp in contact mobility, with a fixed terminal force-to-mass parameter.
++double effective_force(const vector<double> &y) {
++    return charge_mass*step(y[MOBILE_AGE]/ramp_duration)[0];
++}
+ double incoming(double tau, double dose, double norm, double stop) {
+     double s = tau / width;
+     if (s <= 0 || s >= stop)
+@@ -96,7 +103,7 @@
+     const double rest=rest_at_start*std::pow(2./y[A_W],3);
+     const double random_lab=rest*(hm1*gamma-theta/gamma);
+     return {u,theta,gamma,velocity,h,hprime,rest,rest*gamma+random_lab,
+-        rest*(theta/gamma+h*u*velocity/3.),rest*active_charge*velocity,random_lab,rest*(hm1-theta)};
++        rest*(theta/gamma+h*u*velocity/3.),rest*effective_force(y)*velocity,random_lab,rest*(hm1-theta)};
+ }
+ Values wall(const vector<double> &y, double i) {
+     const double a = y[A_W], psi = y[PHI], pi = y[PI], strength = std::sqrt(8 / calibration) / width;
+@@ -263,7 +270,9 @@
+         dy[MOM] -= gas.current;
+         // Directed momentum per unit rest mass is h*u. Rest-frame first
+         // law contains positive drag heating nu*h*u^2 and compression.
+-        const double force=active_charge*w.x-(h+collision_rate)*gas.enthalpy*gas.u;
++        dy[MOBILE_AGE]=mobility_latched ? 1. : 0.;
++        dy[MOBILITY_IMPULSE]=a*effective_force(y)*w.x;
++        const double force=effective_force(y)*w.x-(h+collision_rate)*gas.enthalpy*gas.u;
+         const double heat=collision_rate*gas.enthalpy*gas.u*gas.u-3.*h*gas.theta;
+         const double htemp=gas.enthalpy_prime-1.;
+         const double mix=gas.theta*gas.u/(gas.gamma*gas.gamma);
+@@ -313,7 +322,7 @@
+ };
+ 
+ int main(int argc, char **argv) {
+-    if (argc != 16)
++    if (argc != 18)
+         return 1;
+     int cells = std::stoi(argv[1]);
+     double depth = std::stod(argv[2]), dose = std::stod(argv[3]), end = std::stod(argv[4]);
+@@ -324,9 +333,11 @@
+     rest_at_start=std::stod(argv[12]);
+     charge_mass=std::stod(argv[13]);
+     collision_rate=std::stod(argv[14]);
+-    const double activation=std::stod(argv[15]);
+-    if (activation < 0.) throw std::runtime_error("Invalid activation time");
+-    active_charge=activation==0. ? charge_mass : 0.;
++    const double magnetic_threshold=std::stod(argv[15]);
++    ramp_duration=std::stod(argv[16]);
++    const double scalar_floor=std::stod(argv[17]);
++    if (!(magnetic_threshold>=0. && magnetic_threshold<=1. && ramp_duration>0.))
++        throw std::runtime_error("Invalid mobility parameters");
+     if (rest_at_start<0. || charge_mass<0. || collision_rate<0. || late_gauge<0.)
+         throw std::runtime_error("Invalid gas or gauge parameter");
+     if (cells < 1 || late_cells < 1 || late_cells > cells || depth <= 0 || cfl <= 0)
+@@ -347,12 +358,6 @@
+     vector<double> times = {0., .001, .002, .003, .004, .005, .006, .008, .01, .02, .05};
+     for (int j = 1; j <= static_cast<int>(10 * end); j++)
+         times.push_back(j / 10.);
+-    if(want_samples && activation>0.) {
+-        for(double offset:{0.,.005,.01,.02,.03,.04,.06,.08,.12,.16,.22,.3,.4,.5,.7,1.,1.3,1.6})
+-            times.push_back(activation+offset);
+-        std::sort(times.begin(),times.end());
+-        times.erase(std::unique(times.begin(),times.end(),[](double a,double b){return std::abs(a-b)<1e-9;}),times.end());
+-    }
+     size_t next_sample = 0;
+     auto sample = [&](double time, const vector<double> &state) {
+         Values mat = wall(state, state[s.index(0, I)]);
+@@ -386,20 +391,26 @@
+     std::array<double,2> intrinsic_start{-1.,-1.};
+     const std::array<double,2> thresholds{.5,.9};
+     const std::array<std::string,2> labels{"half","ninety"};
+-    double activation_c=0.;
+-    if (activation==0.) out["activation_radius"]=y[A_W];
+     int steps = 0;
+     bool transferred = false;
+     double last_t = 0., last_r = initial.r, last_Nu = initial.n * initial.u;
+     while (t + 1e-13 < end) {
+-        if(t>=activation-1e-14 && !out.count("activation_radius")) {
+-            active_charge=charge_mass;
+-            activation_c=y[A_W]*y[C];
+-            out["activation_radius"]=y[A_W];
+-            out["activation_gas_density"]=charged_gas(y).energy;
+-            out["activation_sheet_density"]=wall(y,y[s.index(0,I)]).sheet;
+-            out["activation_bulk_sheet_flux"]=y[WAVE_TO_SHEET];
+-            out["activation_scalar_sheet_flux"]=y[SCALAR_TO_SHEET];
++        if (!mobility_latched && y[PHI]>=scalar_floor) {
++            const auto field=wall(y,y[s.index(0,I)]);
++            const double b2=field.b*field.b, strength=b2+field.x*field.x;
++            if (strength>0. && b2<magnetic_threshold*strength) {
++                mobility_latched=true;
++                out["activation_tau"]=t;
++                out["activation_psi"]=y[PHI];
++                out["activation_magnetic_share"]=b2/strength;
++                out["activation_radius"]=y[A_W];
++                out["activation_gas_density"]=charged_gas(y).energy;
++                out["activation_sheet_density"]=field.sheet;
++                out["activation_charge_work"]=y[ELECTRIC_WORK];
++                out["activation_gas_temperature"]=y[TEMPERATURE];
++                out["activation_bulk_sheet_flux"]=y[WAVE_TO_SHEET];
++                out["activation_scalar_sheet_flux"]=y[SCALAR_TO_SHEET];
++            }
+         }
+         if (!transferred && t >= transfer_time - 1e-14 && cells != late_cells) {
+             Diag before;
+@@ -471,7 +482,7 @@
+                 (std::hypot(1.,1.5*gas.theta)+1.5*gas.theta);
+             peak("gas_entropy_relative_error", (entropy-y[ENTROPY_ESTIMATOR])/(1.+std::abs(entropy)));
+             if (collision_rate==0.) peak("collisionless_impulse_error",
+-                (gas.u-active_charge*(y[C]-activation_c/y[A_W]))/(1.+std::abs(gas.u)));
++                (gas.u-y[MOBILITY_IMPULSE]/y[A_W])/(1.+std::abs(gas.u)));
+             if(gas.theta < -1e-8 || std::abs(gas.velocity)>1. || !std::isfinite(gas.theta))
+                 throw std::runtime_error("Nonphysical gas state");
+             if (y[H] > 0 && z.ew > 1e-12)
+@@ -488,11 +499,14 @@
+         if (!transferred && cells != late_cells && t < transfer_time - 1e-14)
+             dt = std::min(dt, transfer_time - t);
+         // Resolve rapid initial acceleration after a very large charge is activated.
+-        if (active_charge>0.) {
++        if (effective_force(y)>0.) {
++            // Resolve the cold carrier plasma scale if the scalar gate is opened early.
++            const double omega=effective_force(y)*std::sqrt(charged_gas(y).rest/wold.k);
++            if (omega>0.) dt=std::min(dt,.1/omega);
+             if (dy[DRIFT]!=0.) dt=std::min(dt, .05*(1.+std::abs(y[DRIFT]))/std::abs(dy[DRIFT]));
+             if (dy[TEMPERATURE]!=0.) dt=std::min(dt, .05*(1.+std::abs(y[TEMPERATURE]))/std::abs(dy[TEMPERATURE]));
+         }
+-        if (t < activation-1e-14) dt=std::min(dt,activation-t);
++
+         bool due = want_samples && next_sample < times.size() && times[next_sample] <= t + dt;
+         vector<double> old_sample;
+         if (due)
+@@ -663,6 +677,7 @@
+     out["end_thermal_density"]=gas.random_lab;
+     out["end_gas_pressure"]=gas.pressure;
+     out["end_intrinsic_random_density"]=gas.intrinsic_random;
++    out["end_mobility_fraction"]=step(y[MOBILE_AGE]/ramp_duration)[0];
+     out["end_charge_work"]=y[ELECTRIC_WORK];
+     out["end_charge_work_a4"]=y[ELECTRIC_WORK_A4];
+     out["end_heat_source_integral"]=y[DRAG_HEAT];
