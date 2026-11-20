@@ -1,0 +1,22 @@
+# Transient parity-odd coupling during scalar exit
+
+A single finite incoming bulk pulse deposits energy on a closed wall carrying a scalar, three isotropically arranged gauge fields and a small neutral parent population. This run uses the previous pulse dose 0.123, initial radius 2, initial parent density 0.0001, charge-to-mass parameter $10^8$, decay coefficient 100 and drag 6. It moves the scalar exit to $\psi=0.369$ with width 0.0006, moves the central decay threshold to 0.371, and changes the gauge action. The exact scalar and electromagnetic response is evolved together with the bulk waves, gravity, the decay fraction and the charged gas. The parent seed is assumed. All quantities use the predecessor’s dimensionless coordinates. [Baseline and equations](https://doi.org/10.5281/zenodo.24406309)
+
+Let $s$ rise from zero to one using the smooth compact step in the source. During the exit the residual scalar potential drops from 0.111 to zero, the surface kinetic coefficient rises from 0.04 to 6000.04, and $\vartheta=28000s$ multiplies the parity-odd electromagnetic density. The wall sign convention gives $\dot{(KX)}|_{\vartheta}=-\dot\vartheta B$ and $\ddot\psi|_{\vartheta}=+\vartheta_{,\psi}BX$. Their opposite works cancel in the wall energy budget. The new term has no direct metric stress. A second integration evolves $Z=KX+\vartheta B$, for which the explicit $\dot\vartheta$ term cancels. The positive kinetic coefficient and the sign cancellation check the classical evolution of this ansatz. They leave the microscopic validity of these steep couplings open. [Solver](forward.cpp) · [Finite signed-work derivation](../criterion/CRITERION.md)
+
+Across the primary exit the electromagnetic energy changes from 0.00313% electric to 95.633% electric. Treating $a^2 B$ and $a^2 Z$ as fixed during an instantaneous scalar jump gives 95.610%. The nearby numbers explain why this specific phase is reached. The comoving parity-odd work over the numerical history is +821.473 and total scalar-to-field work is +427.168. Their difference includes negative kinetic-coefficient work. Integrating the current work gives +426.746 in the same comoving electromagnetic ledger. The signs describe energy drawn from the scalar and transferred to the gas. The direct kinetic excess injected by the two-body decays is tiny in comparison. [Scalar-exit samples](HANDOFF.json) · [Full ledgers](GROWTH.json)
+
+| Configuration | Peak internal share during expansion | Radius factor while continuously at or above 90% |
+|---|---:|---:|
+| Reference, 64 early / 6 late elements | 98.517% | 2.68472 |
+| 48 / 4 elements | 98.513% | 2.68392 |
+| 24 / 3 elements | 98.468% | 2.67452 |
+| $\vartheta=0$, same $K$ | 0.00048% | No interval |
+| $\vartheta=0$, impulse-energy-matched final $K$ | 52.988% | No interval |
+| Opposite sign of $\vartheta$ | 94.104% | 1.53992 |
+| Exit width increased to 0.002 | 95.986% | 1.69005 |
+| Drag set to zero | 2.198% | No interval |
+
+The matched even control takes $K_f^{\rm ctrl}=K_f+(\Delta\vartheta)^2/K_f$. This equalizes the instantaneous added field energy for a purely magnetic initial mode. In the full finite-width run it changes the scalar response as well. The reverse sign and larger width illustrate sensitivity to the handedness and timing. Changing the dose by ±0.00005 prevented a completed exit within the simulated domain. At zero charge the peak share was below one millionth. With the decay closed no charged daughters formed. The integration stops after the first expansion maximum and a short contracting tail, at its configured time limit, or at a radius boundary. Censored controls cannot establish infinite-time behavior.
+
+For the primary run the hot interval extended from $a=10.96497$ at $\tau=6.52975$ to $a=29.43788$ at $\tau=33.60574$. The doubling occurred at $\tau=14.08321$. The minimum enclosed bulk mass was 0.09654 and the maximum absolute Friedmann residual was $6.74\times10^{-10}$. The local finite-step threshold finder intersects positivity of $H$, completion of the scalar fall, and $e_{\rm internal} - 0.9e$ at each step. It restarts when any condition fails. No radiation reservoir is populated. A common temperature, observed expansion in physical seconds and the origin of the finite incoming pulse remain open. The finite angular-mode test gives a large response and constrains which interpretations of the homogeneous solution are tenable. [Helicity data](../helicity/HELICITY.json) · [Excitation-energy test](../occupation/OCCUPATION.md)

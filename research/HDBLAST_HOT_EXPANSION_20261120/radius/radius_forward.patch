@@ -1,0 +1,180 @@
+--- decay_forward.cpp
++++ radius_forward.cpp
+@@ -16,10 +16,11 @@
+ 
+ constexpr int P = 4;
+ double late_gauge = -1.;
+-// Rest energy density summed over the six streams at a=2, q/(sqrt(3)*m), drag rate.
++// Initial parent rest energy density at the specified radius, q/(sqrt(3)*m), drag rate.
+ double rest_at_start = 0., charge_mass = 0., collision_rate = 0.;
+ double threshold_phi=.77, field_width=.03, mass_low=.95, mass_high=1.05, width_scale=100.;
+-constexpr double width = .001, cap = 40., calibration = .12, height = .111;
++constexpr double width=.001, cap=40.;
++double calibration=.12, height=.111, initial_radius=2.;
+ constexpr double lob[P] = {-1., -.4472135954999579393, .4472135954999579393, 1.};
+ constexpr double weight[P] = {1. / 6, 5. / 6, 5. / 6, 1. / 6};
+ enum {
+@@ -58,6 +59,8 @@
+ struct Values {
+     double sheet, e, p, b, x, pressure, flux, k, dk, dv, gamma, acc, extra_dk;
+ };
++double initial_comoving_rest() { return std::pow(initial_radius,3)*rest_at_start; }
++
+ struct Diag {
+     double r, u, n, mass, i, o, minmass = 1e100, minn = 1e100, minr = 1e100, minf = 1e100,
+                                 maxrx = -1e100, ax_error = 0., ax_scale = 0., az_integral = 0.,
+@@ -100,7 +103,7 @@
+     g.rate=width_scale*g.parent_mass*beta_squared*std::sqrt(beta_squared);
+     g.f=y[FRACTION];
+     g.dz=g.rate*(1.-g.f);
+-    g.stable_mass_density=rest_at_start/mass_low*std::pow(2./y[A_W],3);
++    g.stable_mass_density=rest_at_start/mass_low*std::pow(initial_radius/y[A_W],3);
+     g.parent_density=g.stable_mass_density*g.parent_mass*(1.-g.f);
+     g.gamma=1.;
+     if(g.f<=0.) return g;
+@@ -356,7 +359,7 @@
+ };
+ 
+ int main(int argc, char **argv) {
+-    if (argc != 20)
++    if (argc != 23)
+         return 1;
+     int cells = std::stoi(argv[1]);
+     double depth = std::stod(argv[2]), dose = std::stod(argv[3]), end = std::stod(argv[4]);
+@@ -364,6 +367,10 @@
+     int late_cells = std::stoi(argv[8]);
+     double transfer_time = std::stod(argv[9]);
+     late_gauge = std::stod(argv[10]);
++    initial_radius=std::stod(argv[20]);
++    height=std::stod(argv[21]);
++    calibration=std::stod(argv[22]);
++    if(!(initial_radius>0. && height>0. && calibration>0.)) throw std::runtime_error("Invalid shell radius or potential");
+     rest_at_start=std::stod(argv[12]);
+     charge_mass=std::stod(argv[13]);
+     collision_rate=std::stod(argv[14]);
+@@ -382,9 +389,11 @@
+     Solver s(cells, depth, dose, norm, stop);
+     int n = COUNT + 3 * cells * P;
+     vector<double> y(n, 0.), dy(n), stage(n), acc(n);
+-    y[A_W] = 2;
+-    // Choose mu using the exact initial Friedmann constraint at a=2,H=0.
+-    y[MASS] = 4.-16.*rest_at_start*(2.+rest_at_start);
++    y[A_W] = initial_radius;
++    // Choose mu using the exact initial Friedmann constraint at rest at the specified initial radius.
++    const double initial_wall_mass = initial_radius*initial_radius
++        - std::pow(initial_radius,4)*rest_at_start*(2.+rest_at_start);
++    y[MASS] = initial_wall_mass;
+     y[INN_MASS] = y[MASS];
+     Diag initial;
+     s.rhs(y, dy, &initial);
+@@ -424,9 +433,9 @@
+                   << ' ' << state[GAS_MOM] << ' ' << state[LAB_EXCESS] << '\n';
+     };
+     std::map<std::string, double> out{{"min_lapse", 1.},
+-                                      {"min_areal_radius", 2.},
++                                      {"min_areal_radius", initial_radius},
+                                       {"min_radial_gradient_norm", 100.},
+-                                      {"min_bulk_mass", 4.},
++                                      {"min_bulk_mass", y[MASS]},
+                                       {"max_inward_radius_derivative", -1e9}};
+     auto peak = [&](const std::string &key, double x) { out[key] = std::max(out[key], std::abs(x)); };
+     auto event = [&](const std::string &name, double t0, double a0, double h0, double t1, double a1,
+@@ -445,7 +454,10 @@
+     int steps = 0;
+     bool transferred = false;
+     double last_t = 0., last_r = initial.r, last_Nu = initial.n * initial.u;
++    double most_negative_H=0.,highest_phi=0.;
+     while (t + 1e-13 < end) {
++        highest_phi=std::max(highest_phi,y[PHI]);
++        most_negative_H=std::min(most_negative_H,y[H]);
+         if (!transferred && t >= transfer_time - 1e-14 && cells != late_cells) {
+             Diag before;
+             s.rhs(y, dy, &before);
+@@ -505,14 +517,14 @@
+             last_Nu = z.n * z.u;
+             peak("boundary_A_error", z.a_wall_error);
+             peak("surface_balance_error",
+-                 std::pow(y[A_W], 3) * z.ew + y[SHELL_WORK] - y[SHELL_IN] + y[SHELL_OUT] - 8.*rest_at_start);
++                 std::pow(y[A_W], 3) * z.ew + y[SHELL_WORK] - y[SHELL_IN] + y[SHELL_OUT] - initial_comoving_rest());
+             peak("sheet_balance_error",
+                  std::pow(y[A_W], 4) * z.sh - y[WAVE_TO_SHEET] - y[SCALAR_TO_SHEET] + y[ELECTRIC_WORK_A4]);
+             peak("fluid_balance_error", std::pow(y[A_W], 4) * y[RAD] - y[RADIATION_COMOV]);
+             const auto gas=charged_gas(y);
+             const double a3=std::pow(y[A_W],3);
+             peak("gas_balance_error",a3*gas.energy+y[GAS_PRESSURE_WORK]-y[ELECTRIC_WORK]-y[DECAY_ENERGY]);
+-            peak("parent_balance_error",a3*gas.parent_density-8.*rest_at_start-y[MASS_WORK]+y[DECAY_ENERGY]);
++            peak("parent_balance_error",a3*gas.parent_density-initial_comoving_rest()-y[MASS_WORK]+y[DECAY_ENERGY]);
+             peak("particle_number_error",gas.f+std::expm1(-y[OPTICAL_DEPTH]));
+             peak("daughter_injected_rest_error",y[DECAY_ENERGY]-y[DECAY_KINETIC]-a3*gas.rest);
+             peak("gas_primitive_error",gas.reconstruction_error);
+@@ -522,6 +534,11 @@
+                 throw std::runtime_error("Nonphysical gas state");
+             if (y[H] > 0 && z.ew > 1e-12)
+                 peak("peak_expanding_radiation_share", y[RAD] / z.ew);
++            if (z.minmass < 0.) {
++                out["negative_mass_stop"]=1.;
++                out["wall_mass_at_exclusion"]=y[MASS];
++                break;
++            }
+             if (!std::isfinite(z.mass) || z.minn <= 0)
+                 throw std::runtime_error("Gaussian chart failed");
+         }
+@@ -531,7 +548,9 @@
+         const auto prev_gas=charged_gas(y);
+         const double old_intrinsic=prev_gas.intrinsic_random;
+         const double old_charge_work=y[ELECTRIC_WORK], old_drag=y[DRAG_HEAT];
+-        double dt = std::min(dt0, end - t);
++        // A depleted pulse can send the scalar back down the entrance ramp.
++        // Resolve surface damping Xdot ~ -2X/K even when K reaches its small negative-psi plateau.
++        double dt = std::min({dt0, end-t, .48*wold.k});
+         if (!transferred && cells != late_cells && t < transfer_time - 1e-14)
+             dt = std::min(dt, transfer_time - t);
+         // Resolve rapid initial acceleration after a very large charge is activated.
+@@ -652,6 +671,7 @@
+                         if(!out.count("first_"+label+"_intrinsic_radius")) {
+                             out["first_"+label+"_intrinsic_radius"]=intrinsic_start[j];
+                             out["first_"+label+"_intrinsic_time"]=t+dt*frac;
++                            out["first_"+label+"_intrinsic_aH"]=intrinsic_start[j]*(oldh+frac*(h-oldh));
+                         }
+                     }
+                     if(intrinsic_start[j]>0.) {
+@@ -708,13 +728,14 @@
+         }
+         if (oldphi < .38 && y[PHI] >= .38 && !out.count("exit_complete_tau")) {
+             const double frac=(.38-oldphi)/(y[PHI]-oldphi);
++            out["exit_complete_aH"]=(olda+frac*(a-olda))*(oldh+frac*(h-oldh));
+             out["exit_charge_work"]=old_charge_work+frac*(y[ELECTRIC_WORK]-old_charge_work);
+             out["exit_heat_source_integral"]=old_drag+frac*(y[DRAG_HEAT]-old_drag);
+             event("exit_complete", t, olda, oldphi - .38, t + dt, a, y[PHI] - .38);
+         }
+-        if (oldh < 0 && h >= 0)
++        if (oldh < 0 && h >= 0 && most_negative_H < -1.e-4/initial_radius && olda < (1.-1.e-5)*initial_radius)
+             event("bounce", t, olda, oldh, t + dt, a, h);
+-        if (oldh > 0 && h <= 0 && t > .001)
++        if (oldh > 0 && h <= 0 && out.count("bounce_tau"))
+             event("maximum", t, olda, oldh, t + dt, a, h);
+         for (auto q : {std::pair<const char *, double>{"plateau", .012}, {"exit", .36}})
+             if (oldphi < q.second && y[PHI] >= q.second)
+@@ -724,16 +745,20 @@
+         if (h > 0 && y[RAD] >= .9 * e && y[RAD] > 1e-10)
+             out["last_rad90_expanding_radius"] = a;
+         t += dt;
+-        if ((out.count("maximum_tau") && h < -.005) || a < 1.6 || a > 16.)
++        if ((out.count("maximum_tau") && h < -.005) || a < .8*initial_radius || a > 100.*initial_radius)
+             break;
+     }
++    most_negative_H=std::min(most_negative_H,y[H]);
++    highest_phi=std::max(highest_phi,y[PHI]);
+     if (want_samples)
+         sample(t, y);
+     Diag z;
+     s.rhs(y, dy, &z);
+     const auto gas=charged_gas(y);
++    out["maximum_scalar"]=highest_phi;
++    out["minimum_expansion_rate"]=most_negative_H;
+     out["end_tau"] = t;
+-    out["initial_bulk_mass"]=4.-16.*rest_at_start*(2.+rest_at_start);
++    out["initial_bulk_mass"]=initial_wall_mass;
+     out["end_gas_density"]=gas.energy;
+     out["end_temperature"]=gas.theta;
+     out["end_daughter_fraction"]=gas.f;
