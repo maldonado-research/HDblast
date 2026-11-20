@@ -51,7 +51,7 @@ jobs:
           cmp prior/decay_forward.cpp ../HDBLAST_NEUTRAL_PARENT_DECAY_20261120/coupled/decay_forward.cpp
       - name: Verify the release files and pinned inputs
         run: |
-          echo 'cd82943f9e6d1d4e6d4f87926f47fbf4a28cc5fddde49da9a6518f4c7995fd90  SHA256SUMS' | sha256sum -c -
+          echo 'aab6478dc167101331c5297ee41bc8170538eaede2852a68cf0d391bcf1e1180  SHA256SUMS' | sha256sum -c -
           python -I -B -S study.py
       - name: Run the numerical calculations and their controls
         run: |

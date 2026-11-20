@@ -53,6 +53,11 @@ def compare(actual, expected, path):
         absolute={"tube_mass_error":2e-5,"end_tube_mass":1.5e-5,
                   "surface_balance_error":8e-8,"sheet_balance_error":8e-8,
                   "peak_daughter_velocity":5e-9}.get(key,2e-9)
+        if (path.startswith("criterion/CRITERION/dual/curvature_integrals_")
+                and key=="implied_nonnegative_radial_term"):
+            # This signed quadrature estimate is a difference between the net change
+            # and multiple accumulated stress terms. Fused operations shift it by 6e-9.
+            absolute=2e-8
         require(isinstance(actual,(float,int)) and math.isfinite(actual) and
                 math.isclose(actual,expected,abs_tol=absolute,rel_tol=1e-6),
                 f"{path}: {actual} versus {expected}")
