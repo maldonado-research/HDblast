@@ -1,5 +1,12 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-scattering="20261121" -->
+**21 November 2026 · Do collisions spread the particles’ motion while they form?** In one five-dimensional shell model, we followed newly born positive and negative particles as they accelerated, collided and changed the electric and magnetic fields around them. We used the model’s specified rate for elastic collisions between opposite charges. The measurement was made when cumulative absolute electrical work reached 1% of its full reference value. The original expanding shell and its axial electric field set the background.
+
+With the small pair of extra waves, about 7.5% of the particles had collided by that time. Collisions raised the weaker sideways pressure from less than one millionth to 38% of the pressure expected for a drifting hot gas. We also counted the particles in 20 bins of energy and direction. The fraction that would have to move to different bins to match the hot-gas prediction fell from 61.9% to 57.5%. At the later 5% work marker, 12.6% had experienced a collision and the count discrepancy was still 55.9%. In a second test the much stronger waves that previously matched both sideways pressures now gave excess pressures, and the count discrepancy fell from 47.2% to 44.7%.
+
+Three random collision sequences and additional runs with different sample sizes and time steps checked these figures. Separate tests examine how quickly encounters can occur, what changes when particles can only turn, and how a gas relaxes after the fields are removed. These results give measurable targets for the proposed heating mechanism. Connecting them to an observable feature of the early universe remains an open question. [Study and calculations](research/HDBLAST_SCATTERING_20261121) · [Source papers](research/HDBLAST_SCATTERING_20261121/SOURCES.md) · [Zenodo](https://doi.org/10.5281/zenodo.24426913)
+
 <!-- data-hdb-polarization="20261121" -->
 **21 November 2026 UTC · Can two wave polarizations spread particle pressure in both sideways directions?** Can a higher-dimensional pulse deliver energy at the right time and heat particles in both sideways directions? We tested these questions on an expanding spherical shell where charged particles appear only after a scalar field reaches a specified value.
 
