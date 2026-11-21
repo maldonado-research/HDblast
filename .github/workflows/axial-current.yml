@@ -40,7 +40,7 @@ jobs:
           python-version: '3.12'
       - name: Verify study and predecessor inputs
         run: |
-          echo '20b2a0cf7ee3d127daa1d81de0767350d3362820c5dee9be2855abf648ac4a0e  SHA256SUMS' | sha256sum -c -
+          echo 'cff1184ac9e6051828c206cb26971f002b5fbedee89bf3419faf41ad34ea7119  SHA256SUMS' | sha256sum -c -
           python -I -B -S study.py
       - name: Reproduce the calculations
         run: |

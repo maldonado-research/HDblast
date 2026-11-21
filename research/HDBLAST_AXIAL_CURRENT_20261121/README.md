@@ -34,3 +34,5 @@ python -I -B study.py --verify --output-dir ../axial-current-results --jobs 2
 ```
 
 The numerical replay uses Python 3.12, NumPy 2.3.5, SciPy 1.17.0 and a C++17 compiler available as `g++`. To redraw the figure with Matplotlib, run `python -I -B figure.py --snapshots ../axial-current-results/live/snapshots --output axial-response.png`.
+
+The replay checks all fourteen numerical products together against one of two recorded executions. Comparing Debian and GitHub's Ubuntu run exposed 30 platform-sensitive floating-point values across two coarse late-time trajectories and their derived quantities. These include tiny endpoint fields and some fourth-order angular moments. Every collision count and the finest-sample results use the original reference. The comparator retains its original numerical tolerances and requires a complete match to one execution. The compact table includes the earlier reference value, the hosted value and the checksum of the downloaded artifact. [Platform comparison](platform-reference.json) · [Archived hosted execution](https://github.com/maldonado-research/HDblast/actions/runs/44949348326)

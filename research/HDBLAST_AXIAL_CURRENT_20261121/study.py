@@ -119,18 +119,41 @@ def replay(output, jobs):
         run('triad/diagnose.py', '--snapshots', snapshots, '--shared-snapshots', output/'flavor/snapshots',
             '--cross-snapshots', output/'live/cross-snapshots', '--return-snapshots', returned,
             '--output', output/'triad/TRIAD.json')
-    compare = runpy.run_path(str(POLARIZATION / 'parent/study.py'))['compare']
-    for product in PRODUCTS:
-        regenerated = json.loads((output/product).read_bytes())
-        archived = json.loads((ROOT/product).read_bytes())
-        compare_product(product, regenerated, archived, compare)
-        print('Reproduced', product, flush=True)
-
+    verify_products(output)
     for label, values in benchmarks(output).items():
         payload = json.dumps(values, sort_keys=True, allow_nan=False)
         print(label, payload, flush=True)
         if os.environ.get('GITHUB_ACTIONS') == 'true':
             print(f'::notice file=study.py,line=1,title=HDblast {label}::{payload}', flush=True)
+
+
+def verify_products(output):
+    """Require one coherent match across every scientific output and realization."""
+    compare = runpy.run_path(str(POLARIZATION/'parent/study.py'))['compare']
+    regenerated = {name: json.loads((output/name).read_bytes()) for name in PRODUCTS}
+    archived = {name: json.loads((ROOT/name).read_bytes()) for name in PRODUCTS}
+    changes = json.loads((ROOT/'platform-reference.json').read_bytes())['changes']
+    for baseline in ('local', 'hosted'):
+        if baseline == 'hosted':
+            for name, entries in changes.items():
+                for entry in entries:
+                    target = archived[name]
+                    *parents, leaf = entry['path']
+                    for key in parents:
+                        target = target[key]
+                    if type(target[leaf]) is not float or target[leaf] != entry['local']:
+                        raise ValueError('Platform reference differs from the archived scalar')
+                    target[leaf] = entry['hosted']
+        try:
+            for name in PRODUCTS:
+                compare_product(name, regenerated[name], archived[name], compare)
+        except ValueError as error:
+            print(f'Mismatch with the {baseline} reference: {error}', flush=True)
+            if baseline == 'hosted':
+                raise
+        else:
+            print(f'Reproduced all {len(PRODUCTS)} products with the {baseline} reference.', flush=True)
+            return baseline
 
 
 def compare_product(product, regenerated, archived, compare):
