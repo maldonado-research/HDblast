@@ -1,0 +1,57 @@
+name: Axial current and particle isotropy on the HDblast shell
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_AXIAL_CURRENT_20261121/**'
+      - '.github/workflows/axial-current.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_AXIAL_CURRENT_20261121/**'
+      - '.github/workflows/axial-current.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    name: Regenerate the source, axial current and particle distribution
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    defaults:
+      run:
+        working-directory: research/HDBLAST_AXIAL_CURRENT_20261121
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /research/HDBLAST_AXIAL_CURRENT_20261121/
+            /research/HDBLAST_SCATTERING_20261121/
+            /research/HDBLAST_POLARIZATION_20261121/
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Verify study and predecessor inputs
+        run: |
+          echo '20b2a0cf7ee3d127daa1d81de0767350d3362820c5dee9be2855abf648ac4a0e  SHA256SUMS' | sha256sum -c -
+          python -I -B -S study.py
+      - name: Reproduce the calculations
+        run: |
+          python -m pip install --disable-pip-version-check numpy==2.3.5 scipy==1.17.0
+          python -I -B study.py --verify --output-dir "$RUNNER_TEMP/axial-current-results"
+      - name: Retain numerical results
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: axial-current-results
+          path: |
+            ${{ runner.temp }}/axial-current-results/**/*.json
+          if-no-files-found: ignore
+          retention-days: 14
