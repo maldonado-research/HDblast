@@ -1,0 +1,146 @@
+name: Kinetic tests of charged particle relaxation
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_KINETIC_TEST_20261121/**'
+      - '.github/workflows/kinetic-test.yml'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/boost/BOOST_TABLE.dat'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/boost/EVOLUTION.json'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/boost/FLAVOR.json'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/boost/evolve.py'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/boost/lookup.hpp'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/feedback/feedback.py'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/feedback/angular.hpp'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/prior/envelope/build.py'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/prior/envelope/ENVELOPE.json'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/prior/coupled/joined_forward.cpp'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/prior/coupled/joined.py'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_KINETIC_TEST_20261121/**'
+      - '.github/workflows/kinetic-test.yml'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/boost/BOOST_TABLE.dat'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/boost/EVOLUTION.json'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/boost/FLAVOR.json'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/boost/evolve.py'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/boost/lookup.hpp'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/feedback/feedback.py'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/feedback/angular.hpp'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/prior/envelope/build.py'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/prior/envelope/ENVELOPE.json'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/prior/coupled/joined_forward.cpp'
+      - 'research/HDBLAST_DIRECTIONAL_BIRTH_20261121/prior/coupled/joined.py'
+permissions:
+  contents: read
+
+jobs:
+  provenance:
+    name: Authenticate sources and check for a reviewed merge
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      pull-requests: read
+    outputs:
+      replay: ${{ steps.plan.outputs.result }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /research/HDBLAST_KINETIC_TEST_20261121/
+            /research/HDBLAST_DIRECTIONAL_BIRTH_20261121/boost/BOOST_TABLE.dat
+            /research/HDBLAST_DIRECTIONAL_BIRTH_20261121/boost/EVOLUTION.json
+            /research/HDBLAST_DIRECTIONAL_BIRTH_20261121/boost/FLAVOR.json
+            /research/HDBLAST_DIRECTIONAL_BIRTH_20261121/boost/evolve.py
+            /research/HDBLAST_DIRECTIONAL_BIRTH_20261121/boost/lookup.hpp
+            /research/HDBLAST_DIRECTIONAL_BIRTH_20261121/feedback/feedback.py
+            /research/HDBLAST_DIRECTIONAL_BIRTH_20261121/feedback/angular.hpp
+            /research/HDBLAST_DIRECTIONAL_BIRTH_20261121/prior/envelope/build.py
+            /research/HDBLAST_DIRECTIONAL_BIRTH_20261121/prior/envelope/ENVELOPE.json
+            /research/HDBLAST_DIRECTIONAL_BIRTH_20261121/prior/coupled/joined_forward.cpp
+            /research/HDBLAST_DIRECTIONAL_BIRTH_20261121/prior/coupled/joined.py
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Verify the release and preceding inputs
+        working-directory: research/HDBLAST_KINETIC_TEST_20261121
+        run: |
+          echo 'c38d6fa2f0d49b81e3ebb84bfd676a1a7fe0b4ab65c1641b86592ecbf59d09f6  SHA256SUMS' | sha256sum -c -
+          python -I -B -S study.py --check-prior ../HDBLAST_DIRECTIONAL_BIRTH_20261121
+      - name: Reuse scientific checks only for an identical merged tree
+        id: plan
+        uses: actions/github-script@v8
+        with:
+          script: |
+            if (context.eventName !== 'push') return true
+            try {
+              const repo = context.repo
+              const commit = async sha => (await github.rest.git.getCommit({...repo, commit_sha: sha})).data
+              const merged = await commit(context.sha)
+              if (merged.parents.length !== 2) return true
+              const head = await commit(merged.parents[1].sha)
+              if (head.tree.sha !== merged.tree.sha) return true
+              const {data: pulls} = await github.rest.repos.listPullRequestsAssociatedWithCommit({...repo, commit_sha: context.sha})
+              const pull = pulls.find(p => p.merged_at && p.base.ref === 'main' &&
+                p.merge_commit_sha === context.sha && p.head.sha === head.sha)
+              if (!pull) return true
+              const {data: runs} = await github.rest.actions.listWorkflowRuns({
+                ...repo, workflow_id: 'kinetic-test.yml', event: 'pull_request', head_sha: head.sha, per_page: 10
+              })
+              for (const run of runs.workflow_runs) {
+                if (run.conclusion !== 'success' || run.head_sha !== head.sha) continue
+                const {data} = await github.rest.actions.listJobsForWorkflowRun({...repo, run_id: run.id})
+                const passed = new Set(data.jobs.filter(j => j.conclusion === 'success').map(j => j.name))
+                if (['Replay particles', 'Replay closure', 'Replay live'].every(n => passed.has(n))) {
+                  await core.summary.addRaw('The merged tree ' + merged.tree.sha + ' matches the head of PR #' +
+                    pull.number + '. All three numerical suites passed in ' + run.html_url + '.').write()
+                  return false
+                }
+              }
+            } catch (error) {
+              core.info('Replaying because the merge could not be linked to an identical checked revision.')
+            }
+            return true
+  replay:
+    name: Replay ${{ matrix.suite }}
+    needs: provenance
+    if: needs.provenance.outputs.replay == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        suite: [particles, closure, live]
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    defaults:
+      run:
+        working-directory: research/HDBLAST_KINETIC_TEST_20261121
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          sparse-checkout-cone-mode: false
+          sparse-checkout: /research/HDBLAST_KINETIC_TEST_20261121/
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Reproduce the calculations
+        run: |
+          python -m pip install --disable-pip-version-check numpy==2.3.5 scipy==1.17.0
+          python -I -B study.py --verify --suite "${{ matrix.suite }}" --output-dir "$RUNNER_TEMP/kinetic-results"
+      - name: Save regenerated live summaries and any failed suite
+        if: always() && (failure() || matrix.suite == 'live')
+        uses: actions/upload-artifact@v6
+        with:
+          name: kinetic-results-${{ matrix.suite }}
+          path: ${{ runner.temp }}/kinetic-results/
+          if-no-files-found: ignore
+          retention-days: 14
