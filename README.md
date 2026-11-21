@@ -1,5 +1,10 @@
 # HDBLAST — Could a higher-dimensional "blast" have sparked our Big Bang?
 
+<!-- data-hdb-collision-photons="20261121" -->
+**How much light do collisions produce on the shell?** Charged particles can collide many times without passing much energy to light. At shell time 7.05, the largest particle simulation recorded 154,876 collisions. A calculation that treats each encounter in isolation predicts that their photons would carry about one part in 90 trillion of the final charged gas energy. About 83% of that light energy would lie above one quarter of the maximum photon energy allowed in each encounter.
+
+The result depends on the very weak electromagnetic coupling used in this model. Nearby encounters and the continuing force of the field can also affect how photons form. In the high-energy band, about 94% of the predicted light energy passes both tests for adequate spacing and sufficiently small bending of the particle paths. For the specified pulse, radiation from the collisions appears too weak to turn a substantial share of the gas energy into light. How a higher-dimensional disturbance could produce a hot early universe remains open. [Study and calculations](research/HDBLAST_COLLISION_PHOTONS_20261121) · [Source papers](research/HDBLAST_COLLISION_PHOTONS_20261121/SOURCES.md) · [Zenodo](https://doi.org/10.5281/zenodo.24429546)
+
 <!-- data-hdb-axial-current="20261121" -->
 **What do nine collisions do to a particle stream?** In one expanding-shell simulation, particles had an average of 9.45 encounters by shell time 7.05. The largest of their three directional pressures was still about 76% of their energy density. A very hot gas with no preferred direction would give about 33% in each direction. Tracking the current carried by the individual particles delayed the second reversal of the electric field. Feeding outgoing waves back through the surrounding space changed the collision count to 10.25 in the largest sample. Its largest directional pressure still accounted for about 75% of the energy density.
 
