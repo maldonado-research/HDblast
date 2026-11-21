@@ -1,0 +1,58 @@
+name: Photon production by charged particle collisions on the HDblast shell
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_COLLISION_PHOTONS_20261121/**'
+      - '.github/workflows/collision-photons.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_COLLISION_PHOTONS_20261121/**'
+      - '.github/workflows/collision-photons.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    name: Regenerate collision events, radiation and energy-transfer diagnostics
+    runs-on: ubuntu-latest
+    container: python:3.12.14-trixie@sha256:6dc02694c53fde08b0e39de9273a708d2f2a612f77dc173a64835c3f7a40ee35
+    timeout-minutes: 40
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    defaults:
+      run:
+        working-directory: research/HDBLAST_COLLISION_PHOTONS_20261121
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /research/HDBLAST_COLLISION_PHOTONS_20261121/
+            /research/HDBLAST_AXIAL_CURRENT_20261121/
+            /research/HDBLAST_SCATTERING_20261121/
+            /research/HDBLAST_POLARIZATION_20261121/
+      - name: Verify study and predecessor inputs
+        run: |
+          echo '7ee8ed2b7b26f960c43159a6492042da8b2a13229a9abbc347c5a1c8279e19fb  SHA256SUMS' | sha256sum -c -
+          python -I -B -S study.py
+      - name: Reproduce the calculations
+        id: results
+        run: |
+          echo "directory=$RUNNER_TEMP/collision-photons-results" >> "$GITHUB_OUTPUT"
+          python -m pip install --no-cache-dir --disable-pip-version-check numpy==2.3.5 scipy==1.17.0
+          python -I -B study.py --verify --output-dir "$RUNNER_TEMP/collision-photons-results"
+      - name: Retain numerical results
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: collision-photons-results
+          path: |
+            ${{ steps.results.outputs.directory }}/**/*.json
+          if-no-files-found: ignore
+          retention-days: 14
