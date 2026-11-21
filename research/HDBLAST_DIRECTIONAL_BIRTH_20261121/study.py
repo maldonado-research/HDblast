@@ -53,6 +53,15 @@ def compare(value, ref, path):
     if type(value) is not type(ref):
         raise ValueError(f"Changed data type at {path}")
     if isinstance(ref, dict):
+        if path == "boost/BOOST_CHECK/table/max_quadrature":
+            # The maximum is at roundoff on the reference machine. Its location and
+            # the interpolation error at that location can vary with the math library.
+            if (value.keys() != ref.keys() or not all(map(math.isfinite, value.values()))
+                    or not 0 < value["theta"] <= 1e6 or not 0 <= value["rapidity"] <= 12
+                    or not 0 <= value["quadrature_rel"] <= 1e-5
+                    or not 0 <= value["interpolation_rel"] <= .01):
+                raise ValueError(f"{path}: invalid worst-quadrature probe {value!r}")
+            return
         if value.keys() != ref.keys():
             raise ValueError(f"Changed keys at {path}")
         for k, item in ref.items():
@@ -228,8 +237,14 @@ def replay(destination):
         "--output",outputs["cosmology/BUDGET"])
     values = {name: json.loads(path.read_bytes()) for name, path in outputs.items()}
     check(values)
+    errors = []
     for name, obj in values.items():
-        compare(obj, json.loads((ROOT / (name + ".json")).read_bytes()), name)
+        try:
+            compare(obj, json.loads((ROOT / (name + ".json")).read_bytes()), name)
+        except ValueError as exc:
+            errors.append(str(exc))
+    if errors:
+        raise ValueError("Regenerated products differ:\n" + "\n".join(errors))
     print(f"All {len(values)} numerical products and physical checks passed.", flush=True)
 
 

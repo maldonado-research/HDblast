@@ -52,9 +52,17 @@ jobs:
           python-version: '3.12'
       - name: Verify release files and the preceding study inputs
         run: |
-          echo '8b4778b8d1c7eddebdff72a0299e1dfe5ac7f538051c91c00ec34cf1b380c2dc  SHA256SUMS' | sha256sum -c -
+          echo '1e439e09a744ac00685212109e0a945cbc2ff62f65474354db43b62ac0b46f55  SHA256SUMS' | sha256sum -c -
           python -I -B -S study.py --check-prior ../HDBLAST_COHERENT_DECAY_20261120
       - name: Reproduce all calculations and compare the results
         run: |
           python -m pip install numpy==2.3.5 scipy==1.17.0
           python -I -B study.py --verify --output-dir "$RUNNER_TEMP/directional-replay"
+      - name: Save regenerated products when verification fails
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: directional-replay
+          path: ${{ runner.temp }}/directional-replay/
+          if-no-files-found: ignore
+          retention-days: 3
