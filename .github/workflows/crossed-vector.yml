@@ -1,0 +1,54 @@
+name: Crossed vector scattering on the HDblast shell
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_CROSSED_VECTOR_20261121/**'
+      - '.github/workflows/crossed-vector.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'research/HDBLAST_CROSSED_VECTOR_20261121/**'
+      - '.github/workflows/crossed-vector.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce:
+    name: Rebuild crossed-vector rates, stress and unitarity diagnostics
+    runs-on: ubuntu-latest
+    container: python:3.12.14-trixie@sha256:6dc02694c53fde08b0e39de9273a708d2f2a612f77dc173a64835c3f7a40ee35
+    timeout-minutes: 45
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    defaults:
+      run:
+        working-directory: research/HDBLAST_CROSSED_VECTOR_20261121
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /research/HDBLAST_POLARIZATION_20261121/
+            /research/HDBLAST_SCATTERING_20261121/
+            /research/HDBLAST_AXIAL_CURRENT_20261121/
+            /research/HDBLAST_COLLISION_PHOTONS_20261121/
+            /research/HDBLAST_CROSSED_VECTOR_20261121/
+      - name: Reproduce the published calculations
+        id: replay
+        run: |
+          echo "directory=$RUNNER_TEMP/crossed-vector-results" >> "$GITHUB_OUTPUT"
+          python -m pip install --no-cache-dir --disable-pip-version-check numpy==2.3.5 scipy==1.17.0
+          python -I -B study.py --verify --output-dir "$RUNNER_TEMP/crossed-vector-results" --jobs 2
+      - name: Retain the rebuilt measurements
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: crossed-vector-results
+          path: ${{ steps.replay.outputs.directory }}/**/*.json
+          if-no-files-found: ignore
+          retention-days: 14
